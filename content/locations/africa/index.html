@@ -1,0 +1,162 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Africa</title>
+    <style>
+      :root { --theme: #b85c2f; --accent: #f0b35f; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23, 32, 28, 0.14); }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+      a { color: inherit; }
+      .continent-menu { position: sticky; top: 0; z-index: 3; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px, 3vw, 36px); background: rgba(251, 250, 246, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .continent-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; color: #29342f; }
+      .continent-menu a:hover, .continent-menu a.active { background: var(--theme); color: white; }
+      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(320px, 0.9fr) minmax(440px, 1.1fr); gap: clamp(16px, 2.4vw, 34px); align-items: stretch; padding: clamp(12px, 2.4vw, 30px); }
+      .hero { min-height: 0; display: grid; align-items: end; padding: clamp(18px, 3vw, 34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.74)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Landscape_of_the_savanna.jpg') center / cover; box-shadow: 0 18px 44px rgba(23, 32, 28, .18); }
+      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      h1 { margin: 0; font-size: clamp(40px, 6.5vw, 82px); line-height: .95; letter-spacing: 0; }
+      .intro { max-width: 680px; margin: 12px 0 0; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.34; }
+      .panel { min-height: 0; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; }
+      .fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+      .fact { min-height: 78px; padding: 11px; border: 1px solid var(--line); border-left: 4px solid var(--theme); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23, 32, 28, .05); }
+      .fact span, .detail span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
+      .fact strong { display: block; margin-top: 6px; font-size: clamp(18px, 2.15vw, 28px); line-height: 1; }
+      .detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .detail { padding: 10px 11px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .detail strong { display: block; margin-top: 5px; font-size: 14px; line-height: 1.18; }
+      .wide-fact { padding: 12px 14px; border-radius: 8px; background: var(--theme); color: white; }
+      .wide-fact span { display: block; margin-bottom: 5px; color: var(--accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      .wide-fact p { margin: 0; font-size: 15px; line-height: 1.25; }
+      .info-carousel { min-width: 0; overflow: hidden; }
+      .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 2px; }
+      .carousel-card { scroll-snap-align: start; min-height: 82px; padding: 12px 13px; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 8px; background: white; }
+      .carousel-card span { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      .carousel-card p { margin: 6px 0 0; font-size: 14px; line-height: 1.25; }
+      .countries-panel { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 8px; }
+      .summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+      h2 { margin: 0; font-size: 20px; letter-spacing: 0; }
+      .count, .note { color: var(--muted); font-size: 13px; }
+      .country-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(126px, 1fr)); gap: 6px; min-height: 0; max-height: 28vh; overflow: auto; margin: 0; padding: 0 4px 0 0; }
+      .country-grid a, .country-grid .empty { display: flex; align-items: center; gap: 8px; min-height: 32px; padding: 7px 9px; border: 1px solid var(--line); border-left: 3px solid var(--theme); border-radius: 7px; background: white; text-decoration: none; font-size: 13px; line-height: 1.15; box-shadow: 0 5px 14px rgba(23, 32, 28, .045); }
+      .country-grid img { flex: 0 0 auto; width: 24px; height: 18px; border-radius: 3px; object-fit: contain; background: #fff; box-shadow: 0 0 0 1px rgba(23, 32, 28, .12); } .country-grid span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .country-grid a:hover { border-color: var(--theme); transform: translateY(-1px); }
+      .empty { color: var(--muted); }
+      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 34vh; } .country-grid { max-height: none; overflow: visible; } }
+      @media (max-width: 680px) { .slide { padding: 12px; } .detail-grid, .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 460px) { .detail-grid, .fact-grid { grid-template-columns: 1fr; } .summary { display: block; } .count { display: block; margin-top: 4px; } }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted, #5f6b63); font-size: 13px; border-top: 1px solid var(--line, rgba(23,32,28,.14)); background: rgba(251,250,246,.92); }
+      .site-footer p { margin: 0; }
+      .site-footer a { color: inherit; }    </style>
+  </head>
+  <body>
+    <nav class="continent-menu" aria-label="Continents">
+        <a class="active" aria-current="page" href="../africa/index.html">Africa</a>
+        <a href="../antarctica/index.html">Antarctica</a>
+        <a href="../asia/index.html">Asia</a>
+        <a href="../europe/index.html">Europe</a>
+        <a href="../north-america/index.html">North America</a>
+        <a href="../oceania/index.html">Oceania</a>
+        <a href="../south-america/index.html">South America</a>
+    </nav>
+    <main class="slide" aria-labelledby="continent-title">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Savannas, deserts, rainforests and coastlines</p>
+          <h1 id="continent-title">Africa</h1>
+          <p class="intro">Fast-growing, young and geographically vast, with deserts, rainforest belts, highlands and long coastlines.</p>
+        </div>
+      </header>
+      <section class="panel" aria-label="Africa facts and countries">
+        <div class="fact-grid">
+          <div class="fact"><span>Population</span><strong>1.58B</strong></div>
+          <div class="fact"><span>Area</span><strong>29.6M km2</strong></div>
+          <div class="fact"><span>Density</span><strong>53/km2</strong></div>
+          <div class="fact"><span>World share</span><strong>19.1%</strong></div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail"><span>Largest population</span><strong>Nigeria</strong></div>
+          <div class="detail"><span>Regions</span><strong>North, West, Central, East, Southern Africa</strong></div>
+          <div class="detail"><span>Climate</span><strong>Desert, tropical, savanna, Mediterranean</strong></div>
+          <div class="detail"><span>Known for</span><strong>Sahara, Nile, Congo Basin</strong></div>
+          <div class="detail"><span>Character</span><strong>Youngest median age among continents</strong></div>
+          <div class="detail"><span>Listed countries</span><strong>54</strong></div>
+        </div>
+        <div class="wide-fact"><span>Overview</span><p>Youngest median age among continents</p></div>
+        <section class="info-carousel" aria-label="More about this continent">
+          <div class="carousel-track">
+          <article class="carousel-card"><span>Population growth</span><p>Africa has the world's youngest population profile and many of the fastest-growing cities.</p></article>
+          <article class="carousel-card"><span>Geography</span><p>The continent spans the Sahara, Congo Basin, Great Rift Valley, savannas and long Atlantic and Indian Ocean coasts.</p></article>
+          <article class="carousel-card"><span>Culture</span><p>Thousands of languages, regional food traditions, music scenes and trade histories shape everyday life.</p></article>
+          </div>
+        </section>
+        <div class="countries-panel">
+          <div class="summary">
+            <h2>Countries</h2>
+            <span class="count">54 countries</span>
+          </div>
+          <nav aria-label="Countries in Africa">
+            <ul class="country-grid">
+              <li><a href="algeria/index.html"><img src="https://flagcdn.com/dz.svg" alt="" loading="lazy"> <span>Algeria</span></a></li>
+              <li><a href="angola/index.html"><img src="https://flagcdn.com/ao.svg" alt="" loading="lazy"> <span>Angola</span></a></li>
+              <li><a href="benin/index.html"><img src="https://flagcdn.com/bj.svg" alt="" loading="lazy"> <span>Benin</span></a></li>
+              <li><a href="botswana/index.html"><img src="https://flagcdn.com/bw.svg" alt="" loading="lazy"> <span>Botswana</span></a></li>
+              <li><a href="burkina-faso/index.html"><img src="https://flagcdn.com/bf.svg" alt="" loading="lazy"> <span>Burkina Faso</span></a></li>
+              <li><a href="burundi/index.html"><img src="https://flagcdn.com/bi.svg" alt="" loading="lazy"> <span>Burundi</span></a></li>
+              <li><a href="cabo-verde/index.html"><img src="https://flagcdn.com/cv.svg" alt="" loading="lazy"> <span>Cabo Verde</span></a></li>
+              <li><a href="cameroon/index.html"><img src="https://flagcdn.com/cm.svg" alt="" loading="lazy"> <span>Cameroon</span></a></li>
+              <li><a href="central-african-republic/index.html"><img src="https://flagcdn.com/cf.svg" alt="" loading="lazy"> <span>Central African Republic</span></a></li>
+              <li><a href="chad/index.html"><img src="https://flagcdn.com/td.svg" alt="" loading="lazy"> <span>Chad</span></a></li>
+              <li><a href="comoros/index.html"><img src="https://flagcdn.com/km.svg" alt="" loading="lazy"> <span>Comoros</span></a></li>
+              <li><a href="democratic-republic-of-the-congo/index.html"><img src="https://flagcdn.com/cd.svg" alt="" loading="lazy"> <span>Democratic Republic of the Congo</span></a></li>
+              <li><a href="djibouti/index.html"><img src="https://flagcdn.com/dj.svg" alt="" loading="lazy"> <span>Djibouti</span></a></li>
+              <li><a href="egypt/index.html"><img src="https://flagcdn.com/eg.svg" alt="" loading="lazy"> <span>Egypt</span></a></li>
+              <li><a href="equatorial-guinea/index.html"><img src="https://flagcdn.com/gq.svg" alt="" loading="lazy"> <span>Equatorial Guinea</span></a></li>
+              <li><a href="eritrea/index.html"><img src="https://flagcdn.com/er.svg" alt="" loading="lazy"> <span>Eritrea</span></a></li>
+              <li><a href="eswatini/index.html"><img src="https://flagcdn.com/sz.svg" alt="" loading="lazy"> <span>Eswatini</span></a></li>
+              <li><a href="ethiopia/index.html"><img src="https://flagcdn.com/et.svg" alt="" loading="lazy"> <span>Ethiopia</span></a></li>
+              <li><a href="gabon/index.html"><img src="https://flagcdn.com/ga.svg" alt="" loading="lazy"> <span>Gabon</span></a></li>
+              <li><a href="gambia/index.html"><img src="https://flagcdn.com/gm.svg" alt="" loading="lazy"> <span>Gambia</span></a></li>
+              <li><a href="ghana/index.html"><img src="https://flagcdn.com/gh.svg" alt="" loading="lazy"> <span>Ghana</span></a></li>
+              <li><a href="guinea/index.html"><img src="https://flagcdn.com/gn.svg" alt="" loading="lazy"> <span>Guinea</span></a></li>
+              <li><a href="guinea-bissau/index.html"><img src="https://flagcdn.com/gw.svg" alt="" loading="lazy"> <span>Guinea-Bissau</span></a></li>
+              <li><a href="ivory-coast/index.html"><img src="https://flagcdn.com/ci.svg" alt="" loading="lazy"> <span>Ivory Coast</span></a></li>
+              <li><a href="kenya/index.html"><img src="https://flagcdn.com/ke.svg" alt="" loading="lazy"> <span>Kenya</span></a></li>
+              <li><a href="lesotho/index.html"><img src="https://flagcdn.com/ls.svg" alt="" loading="lazy"> <span>Lesotho</span></a></li>
+              <li><a href="liberia/index.html"><img src="https://flagcdn.com/lr.svg" alt="" loading="lazy"> <span>Liberia</span></a></li>
+              <li><a href="libya/index.html"><img src="https://flagcdn.com/ly.svg" alt="" loading="lazy"> <span>Libya</span></a></li>
+              <li><a href="madagascar/index.html"><img src="https://flagcdn.com/mg.svg" alt="" loading="lazy"> <span>Madagascar</span></a></li>
+              <li><a href="malawi/index.html"><img src="https://flagcdn.com/mw.svg" alt="" loading="lazy"> <span>Malawi</span></a></li>
+              <li><a href="mali/index.html"><img src="https://flagcdn.com/ml.svg" alt="" loading="lazy"> <span>Mali</span></a></li>
+              <li><a href="mauritania/index.html"><img src="https://flagcdn.com/mr.svg" alt="" loading="lazy"> <span>Mauritania</span></a></li>
+              <li><a href="mauritius/index.html"><img src="https://flagcdn.com/mu.svg" alt="" loading="lazy"> <span>Mauritius</span></a></li>
+              <li><a href="morocco/index.html"><img src="https://flagcdn.com/ma.svg" alt="" loading="lazy"> <span>Morocco</span></a></li>
+              <li><a href="mozambique/index.html"><img src="https://flagcdn.com/mz.svg" alt="" loading="lazy"> <span>Mozambique</span></a></li>
+              <li><a href="namibia/index.html"><img src="https://flagcdn.com/na.svg" alt="" loading="lazy"> <span>Namibia</span></a></li>
+              <li><a href="niger/index.html"><img src="https://flagcdn.com/ne.svg" alt="" loading="lazy"> <span>Niger</span></a></li>
+              <li><a href="nigeria/index.html"><img src="https://flagcdn.com/ng.svg" alt="" loading="lazy"> <span>Nigeria</span></a></li>
+              <li><a href="republic-of-the-congo/index.html"><img src="https://flagcdn.com/cg.svg" alt="" loading="lazy"> <span>Republic of the Congo</span></a></li>
+              <li><a href="rwanda/index.html"><img src="https://flagcdn.com/rw.svg" alt="" loading="lazy"> <span>Rwanda</span></a></li>
+              <li><a href="sao-tome-and-principe/index.html"><img src="https://flagcdn.com/st.svg" alt="" loading="lazy"> <span>Sao Tome and Principe</span></a></li>
+              <li><a href="senegal/index.html"><img src="https://flagcdn.com/sn.svg" alt="" loading="lazy"> <span>Senegal</span></a></li>
+              <li><a href="seychelles/index.html"><img src="https://flagcdn.com/sc.svg" alt="" loading="lazy"> <span>Seychelles</span></a></li>
+              <li><a href="sierra-leone/index.html"><img src="https://flagcdn.com/sl.svg" alt="" loading="lazy"> <span>Sierra Leone</span></a></li>
+              <li><a href="somalia/index.html"><img src="https://flagcdn.com/so.svg" alt="" loading="lazy"> <span>Somalia</span></a></li>
+              <li><a href="south-africa/index.html"><img src="https://flagcdn.com/za.svg" alt="" loading="lazy"> <span>South Africa</span></a></li>
+              <li><a href="south-sudan/index.html"><img src="https://flagcdn.com/ss.svg" alt="" loading="lazy"> <span>South Sudan</span></a></li>
+              <li><a href="sudan/index.html"><img src="https://flagcdn.com/sd.svg" alt="" loading="lazy"> <span>Sudan</span></a></li>
+              <li><a href="tanzania/index.html"><img src="https://flagcdn.com/tz.svg" alt="" loading="lazy"> <span>Tanzania</span></a></li>
+              <li><a href="togo/index.html"><img src="https://flagcdn.com/tg.svg" alt="" loading="lazy"> <span>Togo</span></a></li>
+              <li><a href="tunisia/index.html"><img src="https://flagcdn.com/tn.svg" alt="" loading="lazy"> <span>Tunisia</span></a></li>
+              <li><a href="uganda/index.html"><img src="https://flagcdn.com/ug.svg" alt="" loading="lazy"> <span>Uganda</span></a></li>
+              <li><a href="zambia/index.html"><img src="https://flagcdn.com/zm.svg" alt="" loading="lazy"> <span>Zambia</span></a></li>
+              <li><a href="zimbabwe/index.html"><img src="https://flagcdn.com/zw.svg" alt="" loading="lazy"> <span>Zimbabwe</span></a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="note">Rounded 2026 estimates.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
+    </footer>  </body>
+</html>

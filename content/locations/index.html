@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World</title>
+    <style>
+      :root {
+        --ink: #17201c;
+        --paper: #fbfaf6;
+        --muted: #5f6b63;
+        --line: rgba(23, 32, 28, 0.14);
+        --theme: #315f72;
+        --accent: #9bc5d2;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+      a { color: inherit; }
+      .top-menu { position: sticky; top: 0; z-index: 3; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px, 3vw, 36px); background: rgba(251, 250, 246, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; color: #29342f; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(310px, .82fr) minmax(520px, 1.18fr); gap: clamp(16px, 2.4vw, 34px); align-items: stretch; padding: clamp(12px, 2.4vw, 30px); }
+      .hero { display: grid; align-items: end; min-height: 0; padding: clamp(18px, 3vw, 34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.64)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=80') center / cover; box-shadow: 0 18px 44px rgba(23, 32, 28, .18); }
+      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      h1 { margin: 0; font-size: clamp(44px, 7vw, 92px); line-height: .95; letter-spacing: 0; }
+      .intro { max-width: 700px; margin: 12px 0 0; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.36; }
+      .panel { min-height: 0; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; }
+      .fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+      .fact { min-height: 76px; padding: 11px; border: 1px solid var(--line); border-left: 4px solid var(--theme); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23, 32, 28, .05); }
+      .fact span, .continent-card span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
+      .fact strong { display: block; margin-top: 6px; font-size: clamp(20px, 2.4vw, 32px); line-height: 1; }
+      .overview { padding: 13px 15px; border-radius: 8px; background: var(--theme); color: white; }
+      .overview span { display: block; margin-bottom: 5px; color: var(--accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      .overview p { margin: 0; font-size: 15px; line-height: 1.34; }
+      .continent-grid { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; min-height: 0; margin: 0; padding: 0; }
+      .continent-card { display: grid; align-content: end; min-height: 150px; padding: 16px; border: 1px solid var(--line); border-left: 5px solid var(--card-theme); border-radius: 8px; color: white; text-decoration: none; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.68)), var(--card-image) center / cover; box-shadow: 0 10px 24px rgba(23, 32, 28, .08); }
+      .continent-card:hover { transform: translateY(-2px); border-color: var(--card-theme); }
+      .continent-card span { color: var(--card-accent); font-weight: 700; }
+      .continent-card strong { display: block; margin-top: 6px; font-size: clamp(25px, 3vw, 40px); line-height: 1; }
+      .continent-card p { margin: 8px 0 0; max-width: 34rem; font-size: 14px; line-height: 1.3; }
+      .note { color: var(--muted); font-size: 13px; line-height: 1.35; }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer p { margin: 0; }
+      .site-footer a { color: inherit; }
+      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 34vh; } }
+      @media (max-width: 720px) { .slide { padding: 12px; } .continent-grid { grid-template-columns: 1fr; } .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .continent-card { min-height: 132px; } }
+      @media (max-width: 440px) { .fact-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <nav class="top-menu" aria-label="World">
+      <a class="active" aria-current="page" href="index.html">World</a>
+      <a href="africa/index.html">Africa</a>
+      <a href="antarctica/index.html">Antarctica</a>
+      <a href="asia/index.html">Asia</a>
+      <a href="europe/index.html">Europe</a>
+      <a href="north-america/index.html">North America</a>
+      <a href="oceania/index.html">Oceania</a>
+      <a href="south-america/index.html">South America</a>
+    </nav>
+    <main class="slide" aria-labelledby="world-title">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Earth, oceans and inhabited continents</p>
+          <h1 id="world-title">World</h1>
+          <p class="intro">A living planet shaped by oceans, continents, climates, cultures and cities. Earth connects deserts and rainforests, ice sheets and coral seas, mountain ranges and river deltas into one shared system.</p>
+        </div>
+      </header>
+      <section class="panel" aria-label="World overview">
+        <div class="fact-grid">
+          <div class="fact"><span>Continents</span><strong>7</strong></div>
+          <div class="fact"><span>Surface</span><strong>510M km2</strong></div>
+          <div class="fact"><span>Ocean share</span><strong>71%</strong></div>
+          <div class="fact"><span>Land share</span><strong>29%</strong></div>
+          <div class="fact"><span>Population</span><strong>8.2B</strong></div>
+          <div class="fact"><span>Countries</span><strong>197</strong></div>
+          <div class="fact"><span>Largest ocean</span><strong>Pacific</strong></div>
+          <div class="fact"><span>Largest desert</span><strong>Antarctica</strong></div>
+        </div>
+        <div class="overview"><span>Overview</span><p>Most people live on a small part of Earth's land surface, close to coasts, river valleys and fertile plains. The oceans regulate climate, connect continents and hold most of the planet's water, while mountain chains, forests, deserts and ice regions shape how places are settled and connected.</p></div>
+        <div>
+          <ul class="continent-grid" aria-label="Continents">
+            <li><a class="continent-card" style="--card-theme:#2f7651;--card-accent:#a7dfb8;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Landscape_of_the_savanna.jpg')" href="africa/index.html"><span>54 countries</span><strong>Africa</strong><p>Savannas, deserts, rainforests, coasts and fast-growing city regions across the world's second-largest continent.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#47738a;--card-accent:#c3e4f0;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Antarctica_6400px_from_Blue_Marble.jpg')" href="antarctica/index.html"><span>0 countries</span><strong>Antarctica</strong><p>Earth's coldest continent, dominated by ice sheets, research stations, polar winds and the largest desert on the planet.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#9b3d2e;--card-accent:#e0a84f;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tian_Shan_mountains_Central_Asia.jpg')" href="asia/index.html"><span>44 countries</span><strong>Asia</strong><p>The most populous continent, with megacities, monsoon plains, high mountains, island chains and major trade routes.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#315f72;--card-accent:#9bc5d2;--card-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')" href="europe/index.html"><span>50 countries</span><strong>Europe</strong><p>Historic capitals, dense transport networks, alpine regions, northern coasts and closely connected cultural landscapes.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#2f7651;--card-accent:#a7dfb8;--card-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')" href="north-america/index.html"><span>23 countries</span><strong>North America</strong><p>Large landscapes, global cities, island states, coastlines, mountain systems and major freshwater regions.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#087d80;--card-accent:#a7dfe1;--card-image:url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1600&q=80')" href="oceania/index.html"><span>14 countries</span><strong>Oceania</strong><p>Pacific islands, ocean routes, coral reefs, Australia, New Zealand and cultures shaped by sea distance.</p></a></li>
+            <li><a class="continent-card" style="--card-theme:#8a5b2f;--card-accent:#e0c092;--card-image:url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1600&q=80')" href="south-america/index.html"><span>12 countries</span><strong>South America</strong><p>Andes, Amazon basin, Atlantic cities, deserts, pampas and southern fjords from tropics to subpolar regions.</p></a></li>
+          </ul>
+        </div>
+        <p class="note">Rounded 2026-style world facts. Choose a continent to explore its countries, landscapes and capital cities.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

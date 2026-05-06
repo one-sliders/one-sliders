@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music</title>
+    <style>      :root { --theme: #6b3f7a; --accent: #d6a7e3; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+      a { color: inherit; }
+      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(320px,.84fr) minmax(520px,1.16fr); gap: clamp(16px,2.4vw,34px); align-items: stretch; padding: clamp(12px,2.4vw,30px); }
+      .hero { display: grid; align-items: end; padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.64)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.18); }
+      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
+      .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
+      .panel { display: grid; grid-template-rows: auto auto auto 1fr; gap: 10px; min-width: 0; }
+      .fact-grid, .story-grid, .topic-grid { display: grid; gap: 8px; }
+      .fact-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+      .story-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .topic-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .fact, .story, .topic-card, .overview { border-radius: 8px; }
+      .fact, .story, .topic-card { border: 1px solid var(--line); background: white; }
+      .fact { min-height: 76px; padding: 11px; border-left: 4px solid var(--theme); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      .fact span, .story span, .topic-card span, .overview span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
+      .fact strong { display: block; margin-top: 6px; font-size: clamp(18px,2.05vw,27px); line-height: 1; }
+      .story { min-height: 92px; padding: 12px 13px; }
+      .story strong { display: block; margin-top: 6px; font-size: 16px; line-height: 1.15; }
+      .story p { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
+      .overview { padding: 13px 15px; background: var(--theme); color: white; }
+      .overview span { margin-bottom: 5px; color: var(--accent); font-weight: 700; }
+      .overview p { margin: 0; font-size: 15px; line-height: 1.34; }
+      .topics-section { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 8px; }
+      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+      .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .section-heading span { color: var(--muted); font-size: 13px; }
+      .topic-card { display: grid; gap: 7px; min-height: 106px; padding: 13px 14px; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; }
+      .topic-card:hover { border-color: var(--theme); transform: translateY(-1px); }
+      .topic-card strong { display: block; font-size: 19px; line-height: 1.1; }
+      .topic-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.25; }
+      .empty { padding: 15px; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 8px; background: white; color: var(--muted); font-size: 15px; }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer p { margin: 0; }
+      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 38vh; } }
+      @media (max-width: 760px) { .slide { padding: 12px; } .fact-grid, .story-grid, .topic-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+      @media (max-width: 520px) { .fact-grid, .story-grid, .topic-grid { grid-template-columns: 1fr; } .section-heading { display: block; } .section-heading span { display: block; margin-top: 4px; } }
+    </style>
+  </head>
+  <body>
+    <nav class="top-menu" aria-label="Categories">
+      <a href="../sport/index.html">Sports</a>
+      <a href="../food-and-drinks/index.html">Food and Drink</a>
+      <a class="active" aria-current="page" href="index.html">Music</a>
+      <a href="../technology/index.html">Technology</a>
+      <a href="../wellness/index.html">Wellness</a>
+      <a href="../climate/index.html">Climate</a>
+    </nav>
+    <main class="slide" style="--hero: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80');" aria-labelledby="category-title">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Festivals, scenes, venues and city soundtracks</p>
+          <h1 id="category-title">Music</h1>
+          <p class="intro">Music turns places into gathering points. Some trips are built around a festival field, others around a city scene, a historic venue, a jazz week, a song contest or a local sound that belongs to one region.</p>
+        </div>
+      </header>
+      <section class="panel" aria-label="Music overview and topics">
+        <div class="fact-grid"><div class="fact"><span>Core lens</span><strong>Live culture</strong></div><div class="fact"><span>Best season</span><strong>Festival peaks</strong></div><div class="fact"><span>Place pattern</span><strong>Venues and cities</strong></div><div class="fact"><span>Crowd energy</span><strong>Shared</strong></div></div>
+        <div class="story-grid"><article class="story"><span>Event magnets</span><strong>Eurovision, Glastonbury, Coachella and jazz festivals pull audiences across borders.</strong></article><article class="story"><span>Local scenes</span><strong>Music can explain neighborhoods, nightlife, cultural identity and why a city feels alive after dark.</strong></article><article class="story"><span>Travel value</span><strong>A good music topic connects date, sound, venue, audience and the destination around it.</strong></article></div>
+        <div class="overview"><span>Why it matters</span><p>Music categories should feel less like a list of bands and more like a map of cultural moments. The best pages explain what kind of sound, crowd and place the topic creates.</p></div>
+        <section class="topics-section" aria-label="Topics">
+          <div class="section-heading"><h2>Topics</h2><span>4 topics</span></div>
+          <div class="topic-grid">
+            <a class="topic-card" href="song-contests.html"><span>Topic</span><strong>Song Contests</strong><p>Eurovision and televised music events.</p></a>
+            <a class="topic-card" href="music-festivals.html"><span>Topic</span><strong>Music Festivals</strong><p>Large festival brands and destination lineups.</p></a>
+            <a class="topic-card" href="jazz.html"><span>Topic</span><strong>Jazz</strong><p>Jazz festivals, clubs and city scenes.</p></a>
+            <a class="topic-card" href="world-music.html"><span>Topic</span><strong>World Music</strong><p>Regional sounds and cross-cultural festivals.</p></a>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
+  </body>
+</html>
+

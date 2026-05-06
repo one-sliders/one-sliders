@@ -1,0 +1,491 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stockholm, Sweden</title>
+    <style>
+      :root {
+        --theme: #006aa7;
+        --accent: #fecc00;
+        --ink: #14202a;
+        --paper: #f7f8f4;
+        --muted: #5e6b70;
+        --line: rgba(20, 32, 42, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        overflow-x: hidden;
+      }
+
+      a { color: inherit; }
+
+      .top-menu {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 8px clamp(14px, 3vw, 36px);
+        background: rgba(247, 248, 244, 0.95);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+      }
+
+      .top-menu a {
+        flex: 0 0 auto;
+        padding: 8px 11px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .top-menu a:hover,
+      .top-menu a.active {
+        background: var(--theme);
+        color: white;
+      }
+
+      .slide {
+        min-height: calc(100vh - 42px);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(280px, 34vh) 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: clamp(12px, 2.4vw, 30px);
+      }
+
+      .hero {
+        display: grid;
+        align-items: end;
+        min-height: 280px;
+        padding: clamp(18px, 3vw, 34px);
+        color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.58)),
+          url("https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=1600&q=80") center / cover;
+        box-shadow: 0 18px 44px rgba(20, 32, 42, 0.18);
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(44px, 7vw, 88px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .intro {
+        max-width: 680px;
+        margin: 12px 0 0;
+        font-size: clamp(15px, 1.5vw, 18px);
+        line-height: 1.34;
+      }
+
+      .panel {
+        min-height: 0;
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto;
+        gap: 10px;
+      }
+
+      .fact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .fact,
+      .detail,
+      .city-note,
+      .carousel-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+      }
+
+      .fact {
+        min-height: 78px;
+        padding: 11px;
+        border-left: 4px solid var(--theme);
+        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.05);
+      }
+
+      .fact span,
+      .detail span,
+      .carousel-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      .fact strong {
+        display: block;
+        margin-top: 6px;
+        font-size: clamp(18px, 2.15vw, 28px);
+        line-height: 1;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .detail {
+        padding: 10px 11px;
+      }
+
+      .detail strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      .info-carousel {
+        min-width: 0;
+        display: grid;
+        gap: 8px;
+        overflow: hidden;
+      }
+
+      .carousel-track {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 1fr);
+        gap: 8px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2px;
+      }
+
+      .carousel-card {
+        scroll-snap-align: start;
+        min-height: 84px;
+        padding: 12px 13px;
+        border-top: 4px solid var(--accent);
+      }
+
+      .carousel-card span {
+        font-weight: 700;
+      }
+
+      .carousel-card p {
+        margin: 6px 0 0;
+        color: var(--ink);
+        font-size: 14px;
+        line-height: 1.25;
+      }
+
+      .city-note {
+        margin: 0;
+        max-height: 72px;
+        overflow: auto;
+        padding: 9px 12px;
+        border-left: 5px solid var(--theme);
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .events-section {
+        min-width: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .section-heading span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .event-track {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 16px) / 3);
+        gap: 8px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 36px 6px;
+        scrollbar-width: none;
+      }
+
+      .event-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .event-carousel {
+        position: relative;
+      }
+
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(20, 32, 42, 0.78);
+        color: white;
+        font-size: 24px;
+        line-height: 1;
+        transform: translateY(-50%);
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.18);
+      }
+
+      .carousel-arrow:hover {
+        background: var(--theme);
+      }
+
+      .carousel-arrow.prev { left: 4px; }
+      .carousel-arrow.next { right: 4px; }
+
+      .event-card {
+        scroll-snap-align: start;
+        display: grid;
+        gap: 7px;
+        height: 170px;
+        padding: 14px 15px;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--accent);
+        border-radius: 8px;
+        background: white;
+        color: inherit;
+        text-decoration: none;
+        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.06);
+      }
+
+      .event-card,
+      .event-card * {
+        text-decoration: none;
+      }
+
+      .event-card:hover {
+        border-color: var(--theme);
+        transform: translateY(-1px);
+      }
+
+      .event-card time {
+        color: var(--theme);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .event-card strong {
+        display: block;
+        font-size: 17px;
+        line-height: 1.1;
+      }
+
+      .event-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .event-dots {
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+      }
+
+      .event-dots button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(20, 32, 42, 0.22);
+        cursor: pointer;
+      }
+
+      .event-dots button.active {
+        background: var(--theme);
+      }
+
+      .note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 1050px) {
+        .slide {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .slide { padding: 12px; }
+        .detail-grid,
+        .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+
+      @media (max-width: 460px) {
+        .detail-grid,
+        .fact-grid { grid-template-columns: 1fr; }
+      }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted, #5f6b63); font-size: 13px; border-top: 1px solid var(--line, rgba(23,32,28,.14)); background: rgba(251,250,246,.92); }
+      .site-footer p { margin: 0; }
+      .site-footer a { color: inherit; }    </style>
+  </head>
+  <body>
+    <nav class="top-menu" aria-label="Location navigation">
+      <a href="../index.html">Europe</a>
+      <a href="index.html">Sweden</a>
+      <a class="active" aria-current="page" href="stockholm.html">Stockholm</a>
+    </nav>
+    <main class="slide" aria-labelledby="city-title">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Capital city of Sweden</p>
+          <h1 id="city-title">Stockholm</h1>
+          <p class="intro">Stockholm is the capital city of <a href="index.html">Sweden</a>, built across islands where Lake Malaren meets the Baltic Sea.</p>
+        </div>
+      </header>
+      <section class="panel" aria-label="Stockholm facts">
+        <div class="fact-grid">
+          <div class="fact"><span>City population</span><strong>990k</strong></div>
+          <div class="fact"><span>Metro area</span><strong>2.5M</strong></div>
+          <div class="fact"><span>Founded</span><strong>1252</strong></div>
+          <div class="fact"><span>Setting</span><strong>14 islands</strong></div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail"><span>Country</span><strong><a href="index.html">Sweden</a></strong></div>
+          <div class="detail"><span>Region</span><strong>Stockholm County</strong></div>
+          <div class="detail"><span>Water</span><strong>Lake Malaren, Baltic Sea</strong></div>
+          <div class="detail"><span>Known for</span><strong>Archipelago, design, tech</strong></div>
+          <div class="detail"><span>Transit</span><strong>Metro, rail, ferries</strong></div>
+          <div class="detail"><span>Character</span><strong>Waterfront capital</strong></div>
+        </div>
+        <section class="info-carousel" aria-label="More about Stockholm">
+          <div class="carousel-track">
+            <article class="carousel-card"><span>Water city</span><p>Stockholm spreads across islands, bridges and quays between Lake Malaren and the Baltic Sea.</p></article>
+            <article class="carousel-card"><span>Urban life</span><p>Dense neighborhoods, museums, universities, restaurants and offices sit close to parks and waterfronts.</p></article>
+            <article class="carousel-card"><span>Archipelago</span><p>The Stockholm archipelago extends eastward with thousands of islands, ferries and summer communities.</p></article>
+          </div>
+          <p class="city-note">Stockholm combines historic districts, royal institutions, modern business districts and a strong public transport network. Its identity is shaped by water: ferries, bridges, harbors, lakeside walks and nearby islands make the city feel both urban and open.</p>
+        </section>
+        <section class="events-section" aria-label="Major events in Stockholm 2026">
+          <div class="section-heading">
+            <h2>2026 events</h2>
+            <span>Stockholm highlights</span>
+          </div>
+          <div class="event-carousel">
+            <button class="carousel-arrow prev" type="button" aria-label="Previous events" data-direction="-1">&#8249;</button>
+            <div class="event-track" id="stockholm-events">
+              <a class="event-card" href="https://www.svd.se/a/pBpzB1/melodifestivalen-2026-finalen-alla-artister">
+                <time datetime="2026-03-07">7 Mar</time>
+                <strong>Melodifestivalen Final</strong>
+                <p>The Swedish music final takes place at Strawberry Arena in Solna.</p>
+              </a>
+              <a class="event-card" href="https://www.stockholmmarathon.se/">
+                <time datetime="2026-05-30">30 May</time>
+                <strong>Stockholm Marathon</strong>
+                <p>A major city race finishing at Stockholm Stadium.</p>
+              </a>
+              <a class="event-card" href="https://www.asfb.se/news/sthlmfw-2026-edition-dates-set">
+                <time datetime="2026-06-08">8-11 Jun</time>
+                <strong>Stockholm Fashion Week</strong>
+                <p>Fashion events, industry meetings and public-facing creative programming.</p>
+              </a>
+              <a class="event-card" href="https://www.stockholmpride.org/festivalen/pride-parade/">
+                <time datetime="2026-08-01">1 Aug</time>
+                <strong>Stockholm Pride Parade</strong>
+                <p>Scandinavia&apos;s largest Pride parade fills the city with celebration and visibility.</p>
+              </a>
+              <a class="event-card" href="https://www.berwaldhallen.se/en/the-baltic-sea-festival">
+                <time datetime="2026-08-21">21-29 Aug</time>
+                <strong>Baltic Sea Festival</strong>
+                <p>Concerts and collaborations across Berwaldhallen and other Stockholm venues.</p>
+              </a>
+              <a class="event-card" href="https://www.visitstockholm.se/se-gora/sevardheter/stora-kommande-evenemang/">
+                <time datetime="2026">2026</time>
+                <strong>Stockholm City Events</strong>
+                <p>Visit Stockholm tracks major concerts, fairs, culture nights and seasonal events.</p>
+              </a>
+            </div>
+            <button class="carousel-arrow next" type="button" aria-label="Next events" data-direction="1">&#8250;</button>
+          </div>
+          <div class="event-dots" aria-label="Event carousel pages">
+            <button class="active" type="button" aria-label="Show first events" data-page="0"></button>
+            <button type="button" aria-label="Show next events" data-page="1"></button>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script>
+      const eventTrack = document.querySelector("#stockholm-events");
+      const eventDots = Array.from(document.querySelectorAll(".event-dots button"));
+      const eventCards = Array.from(document.querySelectorAll(".event-card"));
+      const visibleCards = 3;
+
+      function eventStep() {
+        const card = eventCards[0];
+        if (!card) return 0;
+        const gap = 8;
+        return (card.getBoundingClientRect().width + gap) * visibleCards;
+      }
+
+      function updateDots() {
+        const page = Math.round(eventTrack.scrollLeft / Math.max(eventStep(), 1));
+        eventDots.forEach((dot, index) => dot.classList.toggle("active", index === page));
+      }
+
+      document.querySelectorAll(".carousel-arrow").forEach((button) => {
+        button.addEventListener("click", () => {
+          eventTrack.scrollBy({ left: eventStep() * Number(button.dataset.direction), behavior: "smooth" });
+        });
+      });
+
+      eventDots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          eventTrack.scrollTo({ left: eventStep() * Number(dot.dataset.page), behavior: "smooth" });
+        });
+      });
+
+      eventTrack.addEventListener("scroll", updateDots, { passive: true });
+    </script>
+    <footer class="site-footer">
+      <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
+    </footer>  </body>
+</html>

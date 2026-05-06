@@ -1,0 +1,43 @@
+﻿<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sauna</title><style>
+
+      :root { --theme: #4f8a68; --accent: #c7e8ca; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+      a { color: inherit; }
+      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(320px,.9fr) minmax(440px,1.1fr); gap: clamp(16px,2.4vw,34px); align-items: stretch; padding: clamp(12px,2.4vw,30px); }
+      .hero { display: grid; align-items: end; padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.58)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.18); }
+      .topic-hero { display: grid; align-items: end; min-height: 220px; padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), url("https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1600&q=80") center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
+      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
+      .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
+      .panel { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; min-width: 0; }
+      .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
+      .topic-panel { display: grid; grid-template-columns: minmax(320px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
+      .fact-grid, .topic-grid, .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+      .topic-panel .fact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .fact, .topic-card, .note-card, .event-card { border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .fact { min-height: 78px; padding: 11px; border-left: 4px solid var(--theme); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      .fact span, .topic-card span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
+      .fact strong { display: block; margin-top: 6px; font-size: clamp(18px,2.15vw,28px); line-height: 1; }
+      .topic-card, .event-card { display: grid; gap: 7px; min-height: 132px; padding: 14px 15px; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; }
+      .topic-card:hover, .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
+      .topic-card strong, .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
+      .topic-card p, .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
+      .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+      .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
+      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+      .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .section-heading span { color: var(--muted); font-size: 13px; }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer p { margin: 0; }
+      @media (max-width: 900px) { .slide, .topic-slide { min-height: auto; } .slide, .topic-panel { grid-template-columns: 1fr; } .hero { min-height: 38vh; } .event-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 620px) { .fact-grid, .topic-grid, .topic-panel .fact-grid { grid-template-columns: 1fr; } }
+    
+    </style></head><body><nav class="top-menu" aria-label="Category navigation"><a href="index.html">Wellness</a><a class="active" aria-current="page" href="sauna.html">Sauna</a></nav><main class="topic-slide"><header class="topic-hero"><div><p class="eyebrow">Wellness topic</p><h1>Sauna</h1><p class="intro">Sauna brings together bathing rituals, heat, cold water, recovery and Nordic wellness culture.</p></div></header><section class="topic-panel"><div class="left"><div class="fact-grid"><div class="fact"><span>Category</span><strong>Wellness</strong></div><div class="fact"><span>Topic</span><strong>Sauna</strong></div><div class="fact"><span>One-sliders</span><strong>3</strong></div></div></div><div class="right"><div class="section-heading"><h2>One-sliders</h2><span>Sauna examples</span></div><div class="event-grid">
+          <a class="event-card" href="#"><time>Featured</time><strong>Finnish sauna</strong><p>Traditional sauna culture, lakeside cabins and everyday bathing rituals.</p></a>
+          <a class="event-card" href="#"><time>Featured</time><strong>Nordic spa</strong><p>Heat, cold plunge, quiet rooms and wellness destinations.</p></a>
+          <a class="event-card" href="#"><time>Featured</time><strong>Floating sauna</strong><p>Urban waterfront saunas, winter bathing and social wellness.</p></a>
+        </div></div></section></main><footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer></body></html>
