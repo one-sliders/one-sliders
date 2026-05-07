@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force)",
+      "PowerShell(. C:\\\\Users\\\\AndersEriksson\\\\3DF\\\\OneSlider\\\\rebuild-locations.ps1 2>&1)",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch"
+    ]
+  }
+}

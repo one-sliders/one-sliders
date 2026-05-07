@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#250916"/>
+      <stop offset=".58" stop-color="#8f2d56"/>
+      <stop offset="1" stop-color="#ffd166"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="73%" cy="22%" r="55%">
+      <stop stop-color="#ffe8b6" stop-opacity=".55"/>
+      <stop offset=".55" stop-color="#ffe8b6" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ffe8b6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .16"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#bg)"/>
+  <rect width="1800" height="1200" fill="url(#glow)"/>
+  <rect width="1800" height="1200" filter="url(#grain)" opacity=".42"/>
+  <path d="M0 870c270-130 470-126 720-10 260 120 575 100 1080-88v428H0z" fill="rgba(0,0,0,.25)"/>
+  <g transform="translate(260 210) scale(1.05)">
+    <circle cx="910" cy="220" r="110" fill="rgba(255,255,255,.18)"/><path d="M900 105v230M785 220h230M820 140l165 165M985 140 820 305" stroke="rgba(255,255,255,.65)" stroke-width="8"/><path d="M180 590h900" stroke="rgba(255,255,255,.18)" stroke-width="26"/><path d="M280 560V380h70v180M390 560V300h90v260M535 560V350h80v210M670 560V260h105v300" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="16"/><circle cx="315" cy="245" r="38" fill="rgba(255,209,102,.75)"/><circle cx="520" cy="185" r="28" fill="rgba(255,123,196,.75)"/><circle cx="700" cy="190" r="34" fill="rgba(111,208,255,.75)"/>
+  </g>
+  <g opacity=".45">
+    <circle cx="1450" cy="185" r="5" fill="white"/><circle cx="1510" cy="260" r="3" fill="white"/><circle cx="1320" cy="310" r="4" fill="white"/>
+    <circle cx="1120" cy="170" r="3" fill="white"/><circle cx="1560" cy="390" r="4" fill="white"/>
+  </g>
+  <text x="82" y="120" fill="rgba(255,255,255,.76)" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" letter-spacing="4">May-Jun 2026</text>
+  <text x="82" y="1012" fill="rgba(255,255,255,.82)" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="3">Sydney</text>
+  <text x="82" y="1088" fill="rgba(255,255,255,.95)" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900">Vivid Sydney</text>
+</svg>

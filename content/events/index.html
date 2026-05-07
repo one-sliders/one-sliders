@@ -52,13 +52,6 @@
     #topic-row   { display: none; } #topic-row:not(.hidden)   { display: flex; }
     #country-row { display: none; } #country-row:not(.hidden) { display: flex; }
 
-    /* cross-navigation bar */
-    .cross-nav { background: white; border-bottom: 1px solid var(--line); padding: 10px clamp(20px,5vw,80px); display: flex; flex-direction: column; gap: 6px; }
-    .cross-nav-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; overflow-x: auto; }
-    .cross-nav-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); flex: 0 0 64px; }
-    .cross-link-pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); text-decoration: none; font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; transition: background .12s, color .12s, border-color .12s; }
-    .cross-link-pill:hover { background: var(--navy); color: white; border-color: var(--navy); }
-
     @media (max-width: 768px) {
       .filter-toggle-btn {
         display: flex; width: 100%; justify-content: space-between; align-items: center;
@@ -121,28 +114,6 @@
     <h1>Events <span>2026</span></h1>
     <p>Major sports events, festivals and cultural moments across the world — 60 events, 8 months.</p>
   </header>
-
-  <!-- Cross-navigation -->
-  <nav class="cross-nav" aria-label="Explore">
-    <div class="cross-nav-row">
-      <span class="cross-nav-label">Regions</span>
-      <a class="cross-link-pill" href="../locations/africa/index.html">🌍 Africa</a>
-      <a class="cross-link-pill" href="../locations/asia/index.html">🌏 Asia</a>
-      <a class="cross-link-pill" href="../locations/europe/index.html">🌍 Europe</a>
-      <a class="cross-link-pill" href="../locations/north-america/index.html">🌎 N. America</a>
-      <a class="cross-link-pill" href="../locations/oceania/index.html">🌏 Oceania</a>
-      <a class="cross-link-pill" href="../locations/south-america/index.html">🌎 S. America</a>
-    </div>
-    <div class="cross-nav-row">
-      <span class="cross-nav-label">Topics</span>
-      <a class="cross-link-pill" href="../categories/sport/index.html">⚽ Sport</a>
-      <a class="cross-link-pill" href="../categories/music/index.html">🎵 Music</a>
-      <a class="cross-link-pill" href="../categories/climate/index.html">🌿 Climate</a>
-      <a class="cross-link-pill" href="../categories/food-and-drinks/index.html">🍽️ Food &amp; drinks</a>
-      <a class="cross-link-pill" href="../categories/technology/index.html">💻 Technology</a>
-      <a class="cross-link-pill" href="../categories/wellness/index.html">🧘 Wellness</a>
-    </div>
-  </nav>
 
   <!-- Filter panel -->
   <div class="filters" id="filters">
