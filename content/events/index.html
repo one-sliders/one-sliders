@@ -35,6 +35,7 @@
 
     /* filter panel */
     .filters { position: sticky; top: 41px; z-index: 4; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .filter-toggle-btn { display: none; }
     .filter-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 9px clamp(20px,5vw,80px); border-bottom: 1px solid var(--line); }
     .filter-row:last-child { border-bottom: none; }
     .filter-row.hidden { display: none; }
@@ -50,6 +51,22 @@
     .filter-btn[data-cat="nature"].active   { background: var(--c-nature); }
     #topic-row   { display: none; } #topic-row:not(.hidden)   { display: flex; }
     #country-row { display: none; } #country-row:not(.hidden) { display: flex; }
+
+    @media (max-width: 768px) {
+      .filter-toggle-btn {
+        display: flex; width: 100%; justify-content: space-between; align-items: center;
+        padding: 11px clamp(20px,5vw,80px); border: none; background: white;
+        font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+        color: var(--ink);
+      }
+      .filter-toggle-btn .arrow { transition: transform .2s; display: inline-block; font-style: normal; }
+      .filters.open .filter-toggle-btn .arrow { transform: rotate(180deg); }
+      .filter-badge { background: var(--navy); color: white; font-size: 10px; font-weight: 800;
+        padding: 2px 7px; border-radius: 999px; margin-left: 6px; display: none; }
+      .filter-badge.visible { display: inline; }
+      .filter-rows { display: none; }
+      .filters.open .filter-rows { display: block; }
+    }
 
     /* main grid */
     .events-wrap { padding: 28px clamp(20px,5vw,80px) 48px; display: grid; gap: 32px; }
@@ -90,7 +107,12 @@
   </header>
 
   <!-- Filter panel -->
-  <div class="filters">
+  <div class="filters" id="filters">
+    <button class="filter-toggle-btn" id="filter-toggle" aria-expanded="false">
+      <span>Filters <span class="filter-badge" id="filter-badge"></span></span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="filter-rows">
 
     <!-- Row 1: Category -->
     <div class="filter-row" id="cat-row">
@@ -125,6 +147,7 @@
       <span class="filter-label">Country</span>
     </div>
 
+    </div><!-- /.filter-rows -->
   </div>
 
   <!-- Events by month -->
@@ -390,6 +413,23 @@
         applyFilters();
       });
     });
+
+    // Mobile toggle
+    document.getElementById('filter-toggle').addEventListener('click', () => {
+      const f = document.getElementById('filters');
+      const open = f.classList.toggle('open');
+      document.getElementById('filter-toggle').setAttribute('aria-expanded', open);
+    });
+
+    function updateBadge() {
+      const count = [activeCat, activeTopic, activeCont, activeCountry].filter(v => v !== 'all').length;
+      const badge = document.getElementById('filter-badge');
+      badge.textContent = count;
+      badge.classList.toggle('visible', count > 0);
+    }
+
+    const _applyFilters = applyFilters;
+    applyFilters = function() { _applyFilters(); updateBadge(); };
   </script>
 
 </body>
