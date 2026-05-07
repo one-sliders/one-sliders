@@ -42,6 +42,7 @@
     .filter-btn { border: none; background: #eceef0; color: var(--muted); font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius: 999px; cursor: pointer; font-family: inherit; transition: background .12s, color .12s; white-space: nowrap; }
     .filter-btn:hover { background: #d4d8de; color: var(--ink); }
     .filter-btn.active { background: var(--navy); color: white; }
+    .filter-btn:disabled { opacity: .28; cursor: not-allowed; }
     .filter-btn[data-cat="motor"].active    { background: var(--c-motor); }
     .filter-btn[data-cat="sport"].active    { background: var(--c-sport); }
     .filter-btn[data-cat="festival"].active { background: var(--c-festival); }
@@ -253,16 +254,15 @@
 
   <script>
     const topicNames = {
-      'formula-1':'Formula 1', 'motogp':'MotoGP',
-      'football':'Football', 'tennis':'Tennis', 'rugby':'Rugby',
-      'running':'Running', 'cycling':'Cycling', 'horse-racing':'Horse racing',
-      'multi-sport':'Multi-sport', 'aussie-rules':'Aussie rules',
-      'music':'Music', 'art':'Art', 'food-drink':'Food & drink',
-      'carnival':'Carnival', 'new-years':"New Year's", 'winter':'Winter',
-      'film':'Film', 'religion':'Religion', 'national-day':'National day', 'tradition':'Tradition',
+      'formula-1':'Formula 1','motogp':'MotoGP',
+      'football':'Football','tennis':'Tennis','rugby':'Rugby',
+      'running':'Running','cycling':'Cycling','horse-racing':'Horse racing',
+      'multi-sport':'Multi-sport','aussie-rules':'Aussie rules',
+      'music':'Music','art':'Art','food-drink':'Food & drink',
+      'carnival':'Carnival','new-years':"New Year's",'winter':'Winter',
+      'film':'Film','religion':'Religion','national-day':'National day','tradition':'Tradition',
       'wildlife':'Wildlife',
     };
-
     const countryNames = {
       'australia':'Australia','new-zealand':'New Zealand','fiji':'Fiji',
       'usa':'USA','canada':'Canada','mexico':'Mexico',
@@ -272,58 +272,82 @@
       'brazil':'Brazil','argentina':'Argentina','colombia':'Colombia','peru':'Peru','chile':'Chile',
     };
 
-    let activeCat    = 'all';
-    let activeTopic  = 'all';
-    let activeCont   = 'all';
-    let activeCountry = 'all';
+    let activeCat = 'all', activeTopic = 'all', activeCont = 'all', activeCountry = 'all';
+
+    const allCards = () => [...document.querySelectorAll('.event-card')];
+
+    function matches(card, overrides = {}) {
+      const cat     = overrides.cat     !== undefined ? overrides.cat     : activeCat;
+      const topic   = overrides.topic   !== undefined ? overrides.topic   : activeTopic;
+      const cont    = overrides.cont    !== undefined ? overrides.cont    : activeCont;
+      const country = overrides.country !== undefined ? overrides.country : activeCountry;
+      return (cat     === 'all' || card.dataset.cat     === cat)
+          && (topic   === 'all' || card.dataset.topic   === topic)
+          && (cont    === 'all' || card.dataset.cont    === cont)
+          && (country === 'all' || card.dataset.country === country);
+    }
 
     function applyFilters() {
-      document.querySelectorAll('.event-card').forEach(card => {
-        const ok = (activeCat     === 'all' || card.dataset.cat     === activeCat)
-                && (activeTopic   === 'all' || card.dataset.topic   === activeTopic)
-                && (activeCont    === 'all' || card.dataset.cont    === activeCont)
-                && (activeCountry === 'all' || card.dataset.country === activeCountry);
-        card.classList.toggle('hidden', !ok);
+      allCards().forEach(c => c.classList.toggle('hidden', !matches(c)));
+      document.querySelectorAll('.month-section').forEach(sec =>
+        sec.classList.toggle('hidden', sec.querySelectorAll('.event-card:not(.hidden)').length === 0)
+      );
+      refreshStaticRows();
+    }
+
+    function refreshStaticRows() {
+      // Dim category buttons that yield zero results given current topic/cont/country
+      document.querySelectorAll('#cat-row .filter-btn').forEach(btn => {
+        const v = btn.dataset.cat;
+        if (v === 'all') { btn.disabled = false; return; }
+        btn.disabled = !allCards().some(c => matches(c, { cat: v }));
       });
-      document.querySelectorAll('.month-section').forEach(sec => {
-        sec.classList.toggle('hidden', sec.querySelectorAll('.event-card:not(.hidden)').length === 0);
+      // Dim continent buttons that yield zero results given current cat/topic
+      document.querySelectorAll('#cont-row .filter-btn').forEach(btn => {
+        const v = btn.dataset.cont;
+        if (v === 'all') { btn.disabled = false; return; }
+        btn.disabled = !allCards().some(c => matches(c, { cont: v, country: 'all' }));
       });
     }
 
-    function buildTopicRow(cat) {
+    function rebuildTopicRow() {
       const row = document.getElementById('topic-row');
-      if (cat === 'all') { row.classList.add('hidden'); activeTopic = 'all'; return; }
-
+      if (activeCat === 'all') { row.classList.add('hidden'); activeTopic = 'all'; return; }
       const topics = [...new Set(
-        [...document.querySelectorAll(`.event-card[data-cat="${cat}"]`)]
+        allCards().filter(c => matches(c, { topic: 'all' }))
           .map(c => c.dataset.topic).filter(Boolean).sort()
       )];
-
+      if (!topics.includes(activeTopic)) activeTopic = 'all';
       row.innerHTML = '<span class="filter-label">Topic</span>';
       const allBtn = makeBtn('all', 'All topics', 'topic');
-      allBtn.classList.add('active');
+      if (activeTopic === 'all') allBtn.classList.add('active');
       row.appendChild(allBtn);
-      topics.forEach(t => row.appendChild(makeBtn(t, topicNames[t] || t, 'topic')));
+      topics.forEach(t => {
+        const b = makeBtn(t, topicNames[t] || t, 'topic');
+        if (activeTopic === t) b.classList.add('active');
+        row.appendChild(b);
+      });
       row.classList.remove('hidden');
-      activeTopic = 'all';
     }
 
-    function buildCountryRow(continent) {
+    function rebuildCountryRow() {
       const row = document.getElementById('country-row');
-      if (continent === 'all') { row.classList.add('hidden'); activeCountry = 'all'; return; }
-
+      if (activeCont === 'all') { row.classList.add('hidden'); activeCountry = 'all'; return; }
       const countries = [...new Set(
-        [...document.querySelectorAll(`.event-card[data-cont="${continent}"]`)]
+        allCards().filter(c => matches(c, { country: 'all' }))
           .map(c => c.dataset.country).filter(Boolean).sort()
       )];
-
+      if (!countries.includes(activeCountry)) activeCountry = 'all';
       row.innerHTML = '<span class="filter-label">Country</span>';
       const allBtn = makeBtn('all', 'All countries', 'country');
-      allBtn.classList.add('active');
+      if (activeCountry === 'all') allBtn.classList.add('active');
       row.appendChild(allBtn);
-      countries.forEach(c => row.appendChild(makeBtn(c, countryNames[c] || c, 'country')));
+      countries.forEach(c => {
+        const b = makeBtn(c, countryNames[c] || c, 'country');
+        if (activeCountry === c) b.classList.add('active');
+        row.appendChild(b);
+      });
       row.classList.remove('hidden');
-      activeCountry = 'all';
     }
 
     function makeBtn(value, label, type) {
@@ -332,42 +356,37 @@
       b.textContent = label;
       b.dataset[type] = value;
       b.addEventListener('click', () => {
-        rowEl(type).querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+        document.getElementById(
+          type === 'topic' ? 'topic-row' : 'country-row'
+        ).querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
         b.classList.add('active');
-        if (type === 'topic')   { activeTopic   = value; }
-        if (type === 'country') { activeCountry = value; }
+        if (type === 'topic')   { activeTopic   = value; rebuildCountryRow(); }
+        if (type === 'country') { activeCountry = value; rebuildTopicRow(); }
         applyFilters();
       });
       return b;
     }
 
-    function rowEl(type) {
-      return document.getElementById(
-        type === 'cat' ? 'cat-row' : type === 'topic' ? 'topic-row' :
-        type === 'cont' ? 'cont-row' : 'country-row'
-      );
-    }
-
-    // Wire category buttons
     document.querySelectorAll('#cat-row .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#cat-row .filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeCat   = btn.dataset.cat;
+        activeCat = btn.dataset.cat;
         activeTopic = 'all';
-        buildTopicRow(activeCat);
+        rebuildTopicRow();
+        rebuildCountryRow();
         applyFilters();
       });
     });
 
-    // Wire continent buttons
     document.querySelectorAll('#cont-row .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#cont-row .filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeCont    = btn.dataset.cont;
+        activeCont = btn.dataset.cont;
         activeCountry = 'all';
-        buildCountryRow(activeCont);
+        rebuildCountryRow();
+        rebuildTopicRow();
         applyFilters();
       });
     });
