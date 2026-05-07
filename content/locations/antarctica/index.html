@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -73,7 +73,12 @@
       .site-footer p{margin:0}.site-footer a{color:inherit}
       @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
       @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
-    </style>
+    
+      .cross-nav-bar{padding:14px clamp(14px,3vw,36px);background:white;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px}
+      .cross-nav-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+      .cross-nav-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#5a6672;flex:0 0 64px}
+      .cross-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid rgba(0,0,0,.13);border-radius:999px;background:#f2f3f5;text-decoration:none;font-size:12px;color:#5a6672;font-weight:600;white-space:nowrap}
+      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    </style>
   </head>
   <body>
     <nav class="top-menu" aria-label="Continents">
@@ -121,6 +126,21 @@
         </div>
       </section>
     </main>
+  <nav class="cross-nav-bar" aria-label="Explore more">
+    <div class="cross-nav-row">
+      <span class="cross-nav-lbl">Events</span>
+      <a class="cross-pill" href="../../events/index.html">📅 Events 2026</a>
+    </div>
+    <div class="cross-nav-row">
+      <span class="cross-nav-lbl">Topics</span>
+      <a class="cross-pill" href="../../categories/sport/index.html">⚽ Sport</a>
+      <a class="cross-pill" href="../../categories/music/index.html">🎵 Music</a>
+      <a class="cross-pill" href="../../categories/climate/index.html">🌿 Climate</a>
+      <a class="cross-pill" href="../../categories/food-and-drinks/index.html">🍽️ Food &amp; drinks</a>
+      <a class="cross-pill" href="../../categories/technology/index.html">💻 Technology</a>
+      <a class="cross-pill" href="../../categories/wellness/index.html">🧘 Wellness</a>
+    </div>
+  </nav>
 
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
   </body>
