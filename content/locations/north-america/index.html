@@ -47,7 +47,30 @@
       .map-context{margin-top:4px}
       .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
       .map-context .map-wrap iframe{height:140px}
-      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
+      .bar-chart{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
+      .bar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:2px}
+      .bar-row{display:grid;grid-template-columns:minmax(92px,.34fr) 1fr minmax(42px,auto);gap:10px;align-items:center;font-size:13px}
+      .bar-row span:first-child{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}
+      .bar-track{height:10px;border-radius:999px;background:rgba(23,32,28,.10);overflow:hidden}
+      .bar-fill{display:block;height:100%;width:var(--value);border-radius:999px;background:linear-gradient(90deg,var(--theme),var(--accent))}
+      .bar-row strong{font-size:12px;text-align:right;white-space:nowrap}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
+      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
+      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
+      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
+      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
+      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
+      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
+
+      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
+      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
+      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
+      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
+      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
+      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
+      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
+.site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
       .site-footer p{margin:0}.site-footer a{color:inherit}
       @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
       @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
@@ -77,20 +100,22 @@
       <section class="right-col" aria-label="North America facts">
         <div class="fact-grid">
           <div class="fact"><span>Countries</span><strong>23</strong></div>
+          <div class="bar-chart" aria-label="Top 5 countries by population"><div class="bar-title">Top 5 countries by population</div><div class="bar-row"><span>USA</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>340M</strong></div><div class="bar-row"><span>Mexico</span><div class="bar-track"><i class="bar-fill" style="--value:38%"></i></div><strong>131M</strong></div><div class="bar-row"><span>Canada</span><div class="bar-track"><i class="bar-fill" style="--value:12%"></i></div><strong>42M</strong></div><div class="bar-row"><span>Guatemala</span><div class="bar-track"><i class="bar-fill" style="--value:5%"></i></div><strong>18M</strong></div><div class="bar-row"><span>Haiti</span><div class="bar-track"><i class="bar-fill" style="--value:4%"></i></div><strong>12M</strong></div></div>
           <div class="fact"><span>Area</span><strong>21.3M km2</strong></div>
-          <div class="fact"><span>Size ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Size ranking</span><strong>#3</strong></div>
           <div class="fact"><span>Share of land</span><strong>7.5%</strong></div>
           <div class="fact"><span>Population</span><strong>621M</strong></div>
-          <div class="fact"><span>Population ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Population ranking</span><strong>#4</strong></div>
           <div class="fact"><span>Largest country</span><strong>USA</strong></div>
           <div class="fact"><span>Regions</span><strong>Northern America, Central America, Caribbean</strong></div>
           <div class="fact"><span>Climate</span><strong>Arctic, temperate, desert, tropical</strong></div>
-          <div class="fact"><span>Highest point</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Largest religion</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Religious diversity</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Highest point</span><strong>Denali</strong></div>
+          <div class="fact"><span>Largest religion</span><strong>Christianity</strong></div>
+          <div class="fact"><span>Religious diversity</span><strong>High</strong></div>
           <div class="fact" style="grid-column:span 2"><span>Known for</span><strong>Rockies, Great Lakes, Caribbean</strong></div>
         </div>
         <div>
+        <div class="vbar-chart" aria-label="Top 3 highest mountains"><div class="vbar-title">Top 3 highest mountains</div><div class="vbar-grid"><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:100%"></i></div><div class="vbar-name">Denali</div><div class="vbar-meters">6 190 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:79%"></i></div><div class="vbar-name">Mount Logan</div><div class="vbar-meters">5 959 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:35%"></i></div><div class="vbar-name">Mount Saint Elias</div><div class="vbar-meters">5 489 m</div></div></div></div>
           <p class="section-label">Countries</p>
           <nav aria-label="Countries in North America"><ul class="country-grid">
               <li><a href="antigua-and-barbuda/index.html"><img src="https://flagcdn.com/ag.svg" alt="" loading="lazy" width="24" height="18"><span>Antigua and Barbuda</span></a></li>
@@ -120,6 +145,7 @@
         </div>
       </section>
     </main>
+
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
   </body>
 </html>

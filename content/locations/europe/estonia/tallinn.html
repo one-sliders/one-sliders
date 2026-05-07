@@ -44,9 +44,6 @@
       .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
       .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
       .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
-      .map-context{margin-top:4px}
-      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
-      .map-context .map-wrap iframe{height:140px}
       .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
       .site-footer p{margin:0}.site-footer a{color:inherit}
       @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
@@ -69,24 +66,20 @@
           </div>
         </div>
         <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=24.7,59.4,24.8,59.5&layer=mapnik" loading="lazy" title="Map of Tallinn"></iframe></div>
-        <div class="map-context">
-          <p>Location in country</p>
-          <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=21.8,57.5,28.2,59.7&layer=mapnik" loading="lazy" title="Tallinn in country"></iframe></div>
-        </div>
       </aside>
       <section class="right-col" aria-label="Tallinn facts">
         <div class="known-for"><span>Known for</span>Capital city in Estonia</div>
         <div class="fact-grid">
-          <div class="fact"><span>Country</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>City population</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>City ranking</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Metro population</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Language</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Currency</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Timezone</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Climate</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Highest point</span><strong>&mdash;</strong></div>
-          <div class="fact"><span>Main landmark</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Country</span><strong><a href="index.html">Estonia</a></strong></div>
+          <div class="fact"><span>City population</span><strong>Capital population</strong></div>
+          <div class="fact"><span>City ranking</span><strong>Capital city</strong></div>
+          <div class="fact"><span>Metro population</span><strong>Capital region</strong></div>
+          <div class="fact"><span>Language</span><strong>Estonian</strong></div>
+          <div class="fact"><span>Currency</span><strong>euro</strong></div>
+          <div class="fact"><span>Timezone</span><strong>UTC+02:00</strong></div>
+          <div class="fact"><span>Climate</span><strong>Temperate to boreal</strong></div>
+          <div class="fact"><span>Highest point</span><strong>Urban area</strong></div>
+          <div class="fact"><span>Main landmark</span><strong>Central district</strong></div>
         </div>
       </section>
     </main>
