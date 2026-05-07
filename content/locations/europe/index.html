@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -74,7 +74,10 @@
       .site-footer p{margin:0}.site-footer a{color:inherit}
       @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
       @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
-    </style>
+          .cross-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+      .cross-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
+      .cross-link:hover{transform:translateY(-1px);border-color:var(--theme)}
+      .cross-link-icon{font-size:18px;flex:0 0 auto}    </style>
   </head>
   <body>
     <nav class="top-menu" aria-label="Continents">
@@ -169,6 +172,23 @@
               <li><a href="united-kingdom/index.html"><img src="united-kingdom/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>United Kingdom</span></a></li>
               <li><a href="vatican-city/index.html"><img src="vatican-city/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Vatican City</span></a></li>
           </ul></nav>
+        </div>
+        <div>
+          <p class="section-label">Events 2026</p>
+          <div class="cross-links">
+            <a class="cross-link" href="../../events/index.html"><span class="cross-link-icon">📅</span><span>All 2026 events</span></a>
+          </div>
+        </div>
+        <div>
+          <p class="section-label">Topics</p>
+          <div class="cross-links">
+            <a class="cross-link" href="../../categories/sport/index.html"><span class="cross-link-icon">⚽</span><span>Sport</span></a>
+            <a class="cross-link" href="../../categories/music/index.html"><span class="cross-link-icon">🎵</span><span>Music</span></a>
+            <a class="cross-link" href="../../categories/climate/index.html"><span class="cross-link-icon">🌿</span><span>Climate</span></a>
+            <a class="cross-link" href="../../categories/food-and-drinks/index.html"><span class="cross-link-icon">🍽</span><span>Food &amp; drinks</span></a>
+            <a class="cross-link" href="../../categories/technology/index.html"><span class="cross-link-icon">💻</span><span>Technology</span></a>
+            <a class="cross-link" href="../../categories/wellness/index.html"><span class="cross-link-icon">🧘</span><span>Wellness</span></a>
+          </div>
         </div>
       </section>
     </main>
