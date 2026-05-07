@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events 2026 — Major events around the world</title>
+  <style>
+    :root {
+      --ink:    #12202e;
+      --paper:  #f2f3f5;
+      --muted:  #5a6672;
+      --line:   rgba(18,32,46,.11);
+      --navy:   #0d2137;
+      --c-motor:    #c0392b;
+      --c-sport:    #1a5c8a;
+      --c-festival: #c8740a;
+      --c-culture:  #7d3c98;
+      --c-nature:   #1a7a40;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+
+    /* nav */
+    .top-menu { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(242,243,245,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .top-menu a { flex: 0 0 auto; padding: 7px 13px; border-radius: 999px; font-size: 13px; }
+    .top-menu a:hover { background: var(--navy); color: white; }
+    .top-menu a.active { background: var(--navy); color: white; }
+
+    /* hero */
+    .hero { background: var(--navy); color: white; padding: clamp(36px,6vh,72px) clamp(20px,5vw,80px); text-align: center; }
+    .hero h1 { font-size: clamp(42px,7vw,96px); font-weight: 900; line-height: .92; letter-spacing: -.02em; }
+    .hero h1 span { color: #4fc3dc; }
+    .hero p { margin: 16px auto 0; max-width: 560px; font-size: clamp(15px,1.6vw,19px); line-height: 1.45; opacity: .82; }
+
+    /* filter panel — sticky, wraps all three rows */
+    .filters { position: sticky; top: 41px; z-index: 4; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 9px clamp(20px,5vw,80px); border-bottom: 1px solid var(--line); }
+    .filter-row:last-child { border-bottom: none; }
+    .filter-row.hidden { display: none; }
+    .filter-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); flex: 0 0 64px; }
+    .filter-btn { border: none; background: #eceef0; color: var(--muted); font-size: 12px; font-weight: 600; padding: 6px 13px; border-radius: 999px; cursor: pointer; font-family: inherit; transition: background .12s, color .12s; white-space: nowrap; }
+    .filter-btn:hover { background: #d4d8de; color: var(--ink); }
+    .filter-btn.active { background: var(--navy); color: white; }
+    /* category colours when active */
+    .filter-btn[data-cat="motor"].active    { background: var(--c-motor); }
+    .filter-btn[data-cat="sport"].active    { background: var(--c-sport); }
+    .filter-btn[data-cat="festival"].active { background: var(--c-festival); }
+    .filter-btn[data-cat="culture"].active  { background: var(--c-culture); }
+    .filter-btn[data-cat="nature"].active   { background: var(--c-nature); }
+    /* country row slides in */
+    #country-row { display: none; }
+    #country-row:not(.hidden) { display: flex; }
+
+    /* main grid */
+    .events-wrap { padding: 28px clamp(20px,5vw,80px) 48px; display: grid; gap: 32px; }
+    .month-section { display: grid; gap: 12px; }
+    .month-header { display: flex; align-items: center; gap: 12px; }
+    .month-title { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); white-space: nowrap; }
+    .month-count { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .month-line { flex: 1; height: 1px; background: var(--line); }
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 10px; }
+
+    /* event card */
+    .event-card { background: white; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,.05); transition: transform .12s, box-shadow .12s; }
+    .event-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+    .card-stripe { height: 4px; background: var(--cat-color); }
+    .card-body { padding: 12px 14px 13px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+    .cat-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 10%, white); padding: 3px 8px; border-radius: 999px; align-self: flex-start; }
+    .card-title { font-size: 15px; font-weight: 700; line-height: 1.25; }
+    .card-meta { font-size: 12px; color: var(--muted); margin-top: auto; padding-top: 4px; }
+
+    /* hidden */
+    .event-card.hidden { display: none; }
+    .month-section.hidden { display: none; }
+
+    /* footer */
+    .site-footer { padding: 14px clamp(20px,5vw,80px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: white; }
+
+    @media (max-width: 500px) { .events-grid { grid-template-columns: 1fr; } .filter-label { flex: 0 0 auto; } }
+  </style>
+</head>
+<body>
+
+  <nav class="top-menu">
+    <a href="../locations/index.html">World</a>
+    <a class="active" aria-current="page" href="index.html">Events 2026</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Events <span>2026</span></h1>
+    <p>Major sports events, festivals and cultural moments across the world — 60 events, 8 months.</p>
+  </header>
+
+  <!-- Filter panel -->
+  <div class="filters">
+
+    <!-- Row 1: Category -->
+    <div class="filter-row" id="cat-row">
+      <span class="filter-label">Category</span>
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="motor">🏎️ Motor sport</button>
+      <button class="filter-btn" data-cat="sport">🏆 Sport</button>
+      <button class="filter-btn" data-cat="festival">🎪 Festival</button>
+      <button class="filter-btn" data-cat="culture">🎭 Culture</button>
+      <button class="filter-btn" data-cat="nature">🌿 Nature</button>
+    </div>
+
+    <!-- Row 2: Continent -->
+    <div class="filter-row" id="cont-row">
+      <span class="filter-label">Region</span>
+      <button class="filter-btn active" data-cont="all">All</button>
+      <button class="filter-btn" data-cont="africa">🌍 Africa</button>
+      <button class="filter-btn" data-cont="asia">🌏 Asia</button>
+      <button class="filter-btn" data-cont="europe">🌍 Europe</button>
+      <button class="filter-btn" data-cont="north-america">🌎 N. America</button>
+      <button class="filter-btn" data-cont="oceania">🌏 Oceania</button>
+      <button class="filter-btn" data-cont="south-america">🌎 S. America</button>
+    </div>
+
+    <!-- Row 3: Country (dynamic, hidden by default) -->
+    <div class="filter-row hidden" id="country-row">
+      <span class="filter-label">Country</span>
+      <!-- populated by JS -->
+    </div>
+
+  </div>
+
+  <!-- Events by month -->
+  <main class="events-wrap">
+
+    <!-- May 2026 -->
+    <section class="month-section" id="m05">
+      <div class="month-header"><span class="month-title">May 2026</span><span class="month-line"></span><span class="month-count">8 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="motor"   data-cont="north-america" data-country="canada"       href="2026/05/canada-grand-prix.html"              style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Canadian Grand Prix</strong><span class="card-meta">22–24 May · Montreal, Canada</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="europe"        data-country="france"        href="2026/05/cannes-film-festival.html"            style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Cannes Film Festival</strong><span class="card-meta">13–24 May · Cannes, France</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="europe"        data-country="germany"       href="2026/05/champions-league-final.html"          style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Champions League Final</strong><span class="card-meta">May · Munich, Germany</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="europe"        data-country="tbc"           href="2026/05/eurovision-song-contest.html"         style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Eurovision Song Contest</strong><span class="card-meta">May · TBC, Europe</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="africa"        data-country="morocco"       href="2026/05/fes-festival-of-world-sacred-music.html" style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Fes Festival of World Sacred Music</strong><span class="card-meta">May · Fes, Morocco</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="asia"          data-country="saudi-arabia"  href="2026/05/hajj-2026.html"                       style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Hajj 2026</strong><span class="card-meta">May–Jun · Mecca, Saudi Arabia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/05/state-of-origin.html"                 style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">State of Origin</strong><span class="card-meta">May–Jul · Australia</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="oceania"      data-country="australia"     href="2026/05/vivid-sydney.html"                    style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Vivid Sydney</strong><span class="card-meta">May–Jun · Sydney, Australia</span></div></a>
+      </div>
+    </section>
+
+    <!-- June 2026 -->
+    <section class="month-section" id="m06">
+      <div class="month-header"><span class="month-title">June 2026</span><span class="month-line"></span><span class="month-count">7 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="culture" data-cont="asia"          data-country="indonesia"     href="2026/06/bali-arts-festival.html"              style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Bali Arts Festival</strong><span class="card-meta">Jun–Jul · Bali, Indonesia</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="south-america" data-country="brazil"       href="2026/06/festa-junina.html"                    style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Festa Junina</strong><span class="card-meta">June · Brazil, nationwide</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="north-america" data-country="usa"           href="2026/06/fifa-world-cup-2026.html"             style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">FIFA World Cup 2026</strong><span class="card-meta">Jun–Jul · USA, Canada, Mexico</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="south-america" data-country="peru"          href="2026/06/inti-raymi.html"                      style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Inti Raymi</strong><span class="card-meta">24 Jun · Cusco, Peru</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="europe"        data-country="monaco"        href="2026/06/monaco-grand-prix.html"               style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Monaco Grand Prix</strong><span class="card-meta">Jun · Monaco</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="oceania"      data-country="new-zealand"   href="2026/06/queenstown-winter-festival.html"       style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Queenstown Winter Festival</strong><span class="card-meta">Jun · Queenstown, New Zealand</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="europe"        data-country="uk"            href="2026/06/wimbledon.html"                       style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Wimbledon</strong><span class="card-meta">Jun–Jul · London, UK</span></div></a>
+      </div>
+    </section>
+
+    <!-- July 2026 -->
+    <section class="month-section" id="m07">
+      <div class="month-header"><span class="month-title">July 2026</span><span class="month-line"></span><span class="month-count">6 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="motor"   data-cont="europe"        data-country="uk"            href="2026/07/british-grand-prix.html"              style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">British Grand Prix</strong><span class="card-meta">Jul · Silverstone, UK</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="north-america" data-country="canada"       href="2026/07/calgary-stampede.html"                style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Calgary Stampede</strong><span class="card-meta">Jul · Calgary, Canada</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/07/commonwealth-games.html"              style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Commonwealth Games</strong><span class="card-meta">Jul–Aug · Australia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="africa"        data-country="south-africa"  href="2026/07/durban-july.html"                     style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Durban July</strong><span class="card-meta">Jul · Durban, South Africa</span></div></a>
+        <a class="event-card" data-cat="nature"  data-cont="africa"        data-country="kenya"         href="2026/07/great-migration.html"                 style="--cat-color:var(--c-nature)"  ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🌿 Nature</span><strong class="card-title">Great Migration</strong><span class="card-meta">Jul–Oct · Serengeti &amp; Masai Mara</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="europe"        data-country="france"        href="2026/07/tour-de-france.html"                  style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Tour de France</strong><span class="card-meta">Jun–Jul · France</span></div></a>
+      </div>
+    </section>
+
+    <!-- August 2026 -->
+    <section class="month-section" id="m08">
+      <div class="month-header"><span class="month-title">August 2026</span><span class="month-line"></span><span class="month-count">6 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/08/bledisloe-cup.html"                   style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Bledisloe Cup</strong><span class="card-meta">Aug · Australia / New Zealand</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="south-america" data-country="argentina"    href="2026/08/buenos-aires-tango-festival.html"     style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Buenos Aires Tango Festival</strong><span class="card-meta">Aug · Buenos Aires, Argentina</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="north-america" data-country="usa"          href="2026/08/burning-man.html"                     style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Burning Man</strong><span class="card-meta">Aug–Sep · Nevada, USA</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="south-america" data-country="colombia"     href="2026/08/medellin-flower-festival.html"        style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Medellín Flower Festival</strong><span class="card-meta">Aug · Medellín, Colombia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/08/sydney-marathon.html"                 style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Sydney Marathon</strong><span class="card-meta">Aug · Sydney, Australia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="north-america" data-country="usa"           href="2026/08/us-open-tennis.html"                  style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">US Open Tennis</strong><span class="card-meta">Aug–Sep · New York, USA</span></div></a>
+      </div>
+    </section>
+
+    <!-- September 2026 -->
+    <section class="month-section" id="m09">
+      <div class="month-header"><span class="month-title">September 2026</span><span class="month-line"></span><span class="month-count">10 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/09/afl-grand-final.html"                 style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">AFL Grand Final</strong><span class="card-meta">Sep · Melbourne, Australia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="asia"          data-country="japan"         href="2026/09/asian-games-2026.html"                style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Asian Games 2026</strong><span class="card-meta">Sep–Oct · Aichi-Nagoya, Japan</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="south-america" data-country="brazil"        href="2026/09/brazil-independence-day.html"         style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Brazil Independence Day</strong><span class="card-meta">7 Sep · Brazil, nationwide</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="south-america" data-country="chile"         href="2026/09/chile-independence-day-and-fiestas-patrias.html" style="--cat-color:var(--c-culture)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Chile Fiestas Patrias</strong><span class="card-meta">18–19 Sep · Chile, nationwide</span></div></a>
+        <a class="event-card" data-cat="nature"  data-cont="africa"        data-country="south-africa"  href="2026/09/hermanus-whale-festival.html"          style="--cat-color:var(--c-nature)"  ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🌿 Nature</span><strong class="card-title">Hermanus Whale Festival</strong><span class="card-meta">Sep · Hermanus, South Africa</span></div></a>
+        <a class="event-card" data-cat="nature"  data-cont="africa"        data-country="rwanda"        href="2026/09/kwita-izina.html"                     style="--cat-color:var(--c-nature)"  ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🌿 Nature</span><strong class="card-title">Kwita Izina</strong><span class="card-meta">Sep · Rwanda</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="africa"       data-country="malawi"        href="2026/09/lake-of-stars-festival.html"          style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Lake of Stars Festival</strong><span class="card-meta">Sep · Lake Malawi, Malawi</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="asia"          data-country="japan"         href="2026/09/motogp-japan.html"                    style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">MotoGP Japan</strong><span class="card-meta">Sep · Motegi, Japan</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="europe"       data-country="germany"       href="2026/09/oktoberfest.html"                     style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Oktoberfest</strong><span class="card-meta">19 Sep – 4 Oct · Munich, Germany</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="europe"        data-country="italy"         href="2026/09/venice-film-festival.html"            style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Venice Film Festival</strong><span class="card-meta">Aug–Sep · Venice, Italy</span></div></a>
+      </div>
+    </section>
+
+    <!-- October 2026 -->
+    <section class="month-section" id="m10">
+      <div class="month-header"><span class="month-title">October 2026</span><span class="month-line"></span><span class="month-count">9 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="sport"   data-cont="africa"        data-country="south-africa"  href="2026/10/cape-town-marathon.html"              style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Cape Town Marathon</strong><span class="card-meta">Oct · Cape Town, South Africa</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="north-america" data-country="mexico"        href="2026/10/day-of-the-dead.html"                 style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Day of the Dead</strong><span class="card-meta">1–2 Nov · Mexico, nationwide</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="asia"          data-country="india"         href="2026/10/diwali-2026.html"                     style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Diwali 2026</strong><span class="card-meta">20 Oct · India &amp; worldwide</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="oceania"       data-country="fiji"          href="2026/10/fiji-day.html"                        style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Fiji Day</strong><span class="card-meta">10 Oct · Fiji</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="north-america" data-country="mexico"        href="2026/10/mexico-city-grand-prix.html"          style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Mexico City Grand Prix</strong><span class="card-meta">Oct · Mexico City, Mexico</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/10/nrl-grand-final.html"                 style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">NRL Grand Final</strong><span class="card-meta">Oct · Sydney, Australia</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="south-america" data-country="brazil"       href="2026/10/oktoberfest-blumenau.html"            style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Oktoberfest Blumenau</strong><span class="card-meta">Oct · Blumenau, Brazil</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="asia"          data-country="singapore"     href="2026/10/singapore-grand-prix.html"            style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Singapore Grand Prix</strong><span class="card-meta">Oct · Singapore</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="north-america" data-country="usa"           href="2026/10/united-states-grand-prix.html"        style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">United States Grand Prix</strong><span class="card-meta">Oct · Austin, USA</span></div></a>
+      </div>
+    </section>
+
+    <!-- November 2026 -->
+    <section class="month-section" id="m11">
+      <div class="month-header"><span class="month-title">November 2026</span><span class="month-line"></span><span class="month-count">10 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="culture" data-cont="africa"        data-country="egypt"         href="2026/11/cairo-international-film-festival.html" style="--cat-color:var(--c-culture)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Cairo International Film Festival</strong><span class="card-meta">Nov · Cairo, Egypt</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="south-america" data-country="argentina"     href="2026/11/copa-libertadores-final.html"          style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Copa Libertadores Final</strong><span class="card-meta">Nov · TBC, South America</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="north-america" data-country="usa"           href="2026/11/las-vegas-grand-prix.html"             style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Las Vegas Grand Prix</strong><span class="card-meta">Nov · Las Vegas, USA</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="africa"        data-country="morocco"       href="2026/11/marrakech-international-film-festival.html" style="--cat-color:var(--c-culture)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Marrakech Film Festival</strong><span class="card-meta">Nov · Marrakech, Morocco</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="oceania"       data-country="australia"     href="2026/11/melbourne-cup.html"                   style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Melbourne Cup</strong><span class="card-meta">3 Nov · Melbourne, Australia</span></div></a>
+        <a class="event-card" data-cat="sport"   data-cont="north-america" data-country="usa"           href="2026/11/new-york-city-marathon.html"           style="--cat-color:var(--c-sport)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">New York City Marathon</strong><span class="card-meta">Nov · New York, USA</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="asia"          data-country="qatar"         href="2026/11/qatar-grand-prix.html"                style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Qatar Grand Prix</strong><span class="card-meta">Nov · Losail, Qatar</span></div></a>
+        <a class="event-card" data-cat="motor"   data-cont="south-america" data-country="brazil"        href="2026/11/sao-paulo-grand-prix.html"            style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">São Paulo Grand Prix</strong><span class="card-meta">Nov · São Paulo, Brazil</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="asia"          data-country="south-korea"   href="2026/11/seoul-lantern-festival.html"          style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Seoul Lantern Festival</strong><span class="card-meta">Nov · Seoul, South Korea</span></div></a>
+        <a class="event-card" data-cat="culture" data-cont="asia"          data-country="thailand"      href="2026/11/yi-peng-and-loy-krathong.html"       style="--cat-color:var(--c-culture)" ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎭 Culture</span><strong class="card-title">Yi Peng &amp; Loy Krathong</strong><span class="card-meta">Nov · Chiang Mai, Thailand</span></div></a>
+      </div>
+    </section>
+
+    <!-- December 2026 -->
+    <section class="month-section" id="m12">
+      <div class="month-header"><span class="month-title">December 2026</span><span class="month-line"></span><span class="month-count">4 events</span></div>
+      <div class="events-grid">
+        <a class="event-card" data-cat="motor"   data-cont="asia"          data-country="uae"           href="2026/12/abu-dhabi-grand-prix.html"            style="--cat-color:var(--c-motor)"   ><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏎️ Motor sport</span><strong class="card-title">Abu Dhabi Grand Prix</strong><span class="card-meta">Dec · Abu Dhabi, UAE</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="africa"       data-country="nigeria"       href="2026/12/calabar-carnival.html"                style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Calabar Carnival</strong><span class="card-meta">Dec · Calabar, Nigeria</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="south-america" data-country="brazil"       href="2026/12/new-years-eve-copacabana.html"        style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">New Year's Eve Copacabana</strong><span class="card-meta">31 Dec · Rio de Janeiro, Brazil</span></div></a>
+        <a class="event-card" data-cat="festival" data-cont="oceania"      data-country="australia"     href="2026/12/sydney-new-years-eve.html"            style="--cat-color:var(--c-festival)"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🎪 Festival</span><strong class="card-title">Sydney New Year's Eve</strong><span class="card-meta">31 Dec · Sydney, Australia</span></div></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const countryNames = {
+      'australia':'Australia','new-zealand':'New Zealand','fiji':'Fiji',
+      'usa':'USA','canada':'Canada','mexico':'Mexico',
+      'france':'France','germany':'Germany','uk':'UK','italy':'Italy','monaco':'Monaco','tbc':'TBC',
+      'morocco':'Morocco','south-africa':'South Africa','kenya':'Kenya','rwanda':'Rwanda','malawi':'Malawi','egypt':'Egypt','nigeria':'Nigeria',
+      'japan':'Japan','indonesia':'Indonesia','india':'India','singapore':'Singapore','south-korea':'South Korea','thailand':'Thailand','qatar':'Qatar','uae':'UAE','saudi-arabia':'Saudi Arabia',
+      'brazil':'Brazil','argentina':'Argentina','colombia':'Colombia','peru':'Peru','chile':'Chile',
+    };
+
+    let activeCat  = 'all';
+    let activeCont = 'all';
+    let activeCountry = 'all';
+
+    function applyFilters() {
+      document.querySelectorAll('.event-card').forEach(card => {
+        const ok = (activeCat     === 'all' || card.dataset.cat     === activeCat)
+                && (activeCont    === 'all' || card.dataset.cont     === activeCont)
+                && (activeCountry === 'all' || card.dataset.country  === activeCountry);
+        card.classList.toggle('hidden', !ok);
+      });
+      document.querySelectorAll('.month-section').forEach(sec => {
+        sec.classList.toggle('hidden', sec.querySelectorAll('.event-card:not(.hidden)').length === 0);
+      });
+    }
+
+    function buildCountryRow(continent) {
+      const row = document.getElementById('country-row');
+      if (continent === 'all') { row.classList.add('hidden'); activeCountry = 'all'; return; }
+
+      const countries = [...new Set(
+        [...document.querySelectorAll(`.event-card[data-cont="${continent}"]`)]
+          .map(c => c.dataset.country).filter(Boolean).sort()
+      )];
+
+      row.innerHTML = '<span class="filter-label">Country</span>';
+      const allBtn = makeBtn('all', 'All countries', 'country');
+      allBtn.classList.add('active');
+      row.appendChild(allBtn);
+      countries.forEach(c => row.appendChild(makeBtn(c, countryNames[c] || c, 'country')));
+      row.classList.remove('hidden');
+      activeCountry = 'all';
+    }
+
+    function makeBtn(value, label, type) {
+      const b = document.createElement('button');
+      b.className = 'filter-btn';
+      b.textContent = label;
+      b.dataset[type] = value;
+      b.addEventListener('click', () => {
+        row(type).querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        if (type === 'cat')     { activeCat     = value; }
+        if (type === 'cont')    { activeCont    = value; activeCountry = 'all'; buildCountryRow(value); }
+        if (type === 'country') { activeCountry = value; }
+        applyFilters();
+      });
+      return b;
+    }
+
+    function row(type) {
+      return document.getElementById(type === 'cat' ? 'cat-row' : type === 'cont' ? 'cont-row' : 'country-row');
+    }
+
+    // Wire category buttons
+    document.querySelectorAll('#cat-row .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#cat-row .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat = btn.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    // Wire continent buttons
+    document.querySelectorAll('#cont-row .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#cont-row .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCont = btn.dataset.cont;
+        activeCountry = 'all';
+        buildCountryRow(activeCont);
+        applyFilters();
+      });
+    });
+  </script>
+
+</body>
+</html>

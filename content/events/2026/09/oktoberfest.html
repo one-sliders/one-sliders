@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oktoberfest 2026 — Munich, Germany</title>
+  <style>
+    :root {
+      --blue:   #1a3f8f;
+      --gold:   #e8a400;
+      --ink:    #12202e;
+      --paper:  #f8f7f2;
+      --muted:  #5a6672;
+      --line:   rgba(18,32,46,.12);
+      --white:  #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+
+    /* nav */
+    .top-menu { position: sticky; top: 0; z-index: 4; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(248,247,242,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .top-menu a { flex: 0 0 auto; padding: 7px 13px; border-radius: 999px; font-size: 13px; color: var(--ink); }
+    .top-menu a:hover, .top-menu a.active { background: var(--blue); color: white; }
+
+    /* layout */
+    .slide { display: grid; grid-template-columns: minmax(300px,.86fr) minmax(480px,1.14fr); min-height: calc(100vh - 43px); gap: clamp(14px,2vw,26px); padding: clamp(12px,2vw,26px); align-items: start; }
+    .left-col { display: grid; gap: 0; position: sticky; top: 55px; }
+    .right-col { display: grid; gap: 10px; padding-top: 0; }
+
+    /* hero */
+    .hero {
+      min-height: clamp(380px, calc(100vh - 75px), 820px);
+      border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      color: white;
+      box-shadow: 0 20px 54px rgba(0,0,0,.28);
+      background:
+        linear-gradient(175deg, rgba(10,26,70,.55) 0%, rgba(6,16,48,.82) 100%),
+        url('img/oktoberfest.svg') center / cover;
+    }
+    .hero-top { padding: clamp(16px,2.4vw,28px) clamp(16px,2.4vw,28px) 0; display: flex; justify-content: space-between; align-items: flex-start; }
+    .category-pill { background: var(--gold); color: var(--ink); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; padding: 5px 11px; border-radius: 999px; }
+    .edition-pill { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.28); padding: 5px 11px; border-radius: 999px; }
+    .hero-body { padding: clamp(16px,2.4vw,28px); display: flex; flex-direction: column; justify-content: flex-end; }
+    .eyebrow { margin: 0 0 10px; font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; }
+    h1 { margin: 0; font-size: clamp(52px,7vw,96px); line-height: .90; letter-spacing: -.02em; }
+    .hero-meta { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 14px; opacity: .88; }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+    .hero-hook { margin: 16px 0 0; font-size: clamp(14px,1.4vw,17px); line-height: 1.42; opacity: .86; max-width: 380px; border-left: 3px solid var(--gold); padding-left: 12px; }
+
+    /* big number row */
+    .numbers { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+    .num-card { background: white; border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: 8px; padding: 13px 12px 11px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,.05); }
+    .num-card strong { display: block; font-size: clamp(22px,2.8vw,36px); font-weight: 800; line-height: 1; color: var(--blue); letter-spacing: -.01em; }
+    .num-card span { display: block; margin-top: 5px; font-size: 11px; text-transform: uppercase; font-weight: 700; letter-spacing: .04em; color: var(--muted); }
+
+    /* section label */
+    .sec { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin: 0 0 7px; }
+
+    /* timeline */
+    .timeline { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; box-shadow: 0 3px 10px rgba(0,0,0,.04); }
+    .tl-item { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+    .tl-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tl-item:first-child { padding-top: 0; }
+    .tl-date { font-size: 12px; font-weight: 800; color: var(--blue); display: flex; align-items: center; gap: 6px; }
+    .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: 0 0 auto; }
+    .tl-text { font-size: 13px; line-height: 1.4; color: var(--ink); }
+    .tl-text em { display: block; color: var(--muted); font-style: normal; font-size: 12px; margin-top: 2px; }
+
+    /* quick facts */
+    .qf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .qf { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 11px 13px; box-shadow: 0 3px 8px rgba(0,0,0,.04); }
+    .qf span { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
+    .qf strong { font-size: 14px; line-height: 1.35; }
+
+    /* tips row */
+    .tips { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+    .tip { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; box-shadow: 0 3px 8px rgba(0,0,0,.04); }
+    .tip .icon { font-size: 20px; line-height: 1; margin-bottom: 7px; }
+    .tip span { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
+    .tip strong { font-size: 13px; line-height: 1.38; }
+
+    /* hook bar */
+    .hook { background: var(--blue); color: white; border-radius: 8px; padding: 14px 18px; font-size: 14px; line-height: 1.5; }
+    .hook strong { display: block; font-size: clamp(15px,1.5vw,18px); margin-bottom: 6px; color: var(--gold); font-weight: 800; }
+
+    /* chart */
+    .chart-wrap { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; box-shadow: 0 3px 10px rgba(0,0,0,.04); }
+    .bar-chart { display: grid; gap: 5px; margin-top: 2px; }
+    .bar-row { display: grid; grid-template-columns: 38px 1fr 48px; gap: 8px; align-items: center; }
+    .bar-year { font-size: 11px; font-weight: 700; color: var(--muted); text-align: right; }
+    .bar-track { background: #eeeee8; border-radius: 4px; height: 20px; overflow: hidden; }
+    .bar { height: 100%; background: var(--blue); border-radius: 4px; }
+    .bar.proj { background: var(--gold); }
+    .bar-cancel { height: 100%; display: flex; align-items: center; padding: 0 9px; font-size: 11px; color: #aaa; font-style: italic; letter-spacing: .01em; }
+    .bar-val { font-size: 12px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+    .bar-val.dim { color: var(--muted); font-weight: 400; }
+    .bar-val.proj-val { color: var(--gold); }
+    .chart-note { font-size: 11px; color: var(--muted); margin: 8px 0 0; line-height: 1.4; }
+    .legend { display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
+
+    /* links */
+    .link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .link-row a { display: inline-flex; flex-direction: column; padding: 10px 16px; background: white; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; font-size: 14px; font-weight: 700; box-shadow: 0 3px 8px rgba(0,0,0,.04); transition: transform .12s; }
+    .link-row a em { font-style: normal; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+    .link-row a:hover { transform: translateY(-2px); }
+
+    /* footer */
+    .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(248,247,242,.92); }
+    .site-footer p { margin: 0; }
+
+    /* responsive */
+    @media (max-width: 1060px) { .slide { grid-template-columns: 1fr; } .left-col { position: static; } .hero { min-height: 40vh; } }
+    @media (max-width: 720px) { .numbers { grid-template-columns: repeat(2,1fr); } .tips { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .qf-grid { grid-template-columns: 1fr; } .tips { grid-template-columns: 1fr; } .numbers { grid-template-columns: repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+  <nav class="top-menu" aria-label="Event navigation">
+    <a href="../../../locations/index.html">World</a>
+    <a href="../../../locations/europe/index.html">Europe</a>
+    <a href="../../../locations/europe/germany/index.html">Germany</a>
+    <a class="active" aria-current="page" href="oktoberfest.html">Oktoberfest</a>
+  </nav>
+
+  <main class="slide">
+
+    <!-- LEFT: hero -->
+    <aside class="left-col" aria-label="Event hero">
+      <div class="hero">
+        <div class="hero-top">
+          <span class="category-pill">Food &amp; Culture</span>
+          <span class="edition-pill">191st edition</span>
+        </div>
+        <div class="hero-body">
+          <p class="eyebrow">Munich · Bavaria · Germany</p>
+          <h1>Okto&shy;berfest</h1>
+          <div class="hero-meta">
+            <span>📅 19 Sep – 4 Oct 2026</span>
+            <span>📍 Theresienwiese, Munich</span>
+          </div>
+          <p class="hero-hook">The world's largest folk festival. Two centuries of tradition, six million visitors, fourteen beer halls and one city that does it like no other.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: content -->
+    <section class="right-col" aria-label="Oktoberfest 2026 guide">
+
+      <!-- Four big numbers -->
+      <div class="numbers">
+        <div class="num-card"><strong>16</strong><span>Days</span></div>
+        <div class="num-card"><strong>~6M</strong><span>Visitors</span></div>
+        <div class="num-card"><strong>14</strong><span>Major tents</span></div>
+        <div class="num-card"><strong>~7.7M L</strong><span>Beer poured</span></div>
+      </div>
+
+      <!-- Hook -->
+      <div class="hook">
+        <strong>Nothing else sounds, smells or feels like this</strong>
+        At noon on 19 September, Munich's mayor taps the first barrel and shouts <em>"O'zapft is!"</em> — It is tapped. From that moment, 14 enormous tents fill with the sound of brass bands, the clink of one-litre steins and six million people from every corner of the world sharing the same long communal tables.
+      </div>
+
+      <!-- Timeline -->
+      <div>
+        <p class="sec">Key dates — Oktoberfest 2026</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date"><span class="tl-dot"></span>19 Sep</span>
+            <div class="tl-text">Opening day — mayor taps the first barrel at noon, Schottenhamel tent<em>No beer served anywhere before the official tap</em></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date"><span class="tl-dot"></span>20 Sep</span>
+            <div class="tl-text">Grand costume and rifle procession through Munich city centre<em>~9,000 participants, starts at 10:00</em></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date"><span class="tl-dot"></span>Weekdays</span>
+            <div class="tl-text">Calmer entry, easier to find standing room — best for first visits<em>Family Day Tuesdays: reduced prices on rides and food</em></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date"><span class="tl-dot"></span>Weekends</span>
+            <div class="tl-text">Peak crowd — tents can close entry before midday<em>Arrive by 09:00 or have a tent reservation</em></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date"><span class="tl-dot"></span>4 Oct</span>
+            <div class="tl-text">Final Sunday — last call at 22:30, grounds close at 23:30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beer price chart -->
+      <div class="chart-wrap">
+        <p class="sec">The rising cost of a Maß — price per 1-litre beer, Munich tent average (€)</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-year">2004</span><div class="bar-track"><div class="bar" style="width:41%"></div></div><span class="bar-val">€6.70</span></div>
+          <div class="bar-row"><span class="bar-year">2008</span><div class="bar-track"><div class="bar" style="width:48%"></div></div><span class="bar-val">€7.90</span></div>
+          <div class="bar-row"><span class="bar-year">2012</span><div class="bar-track"><div class="bar" style="width:56%"></div></div><span class="bar-val">€9.20</span></div>
+          <div class="bar-row"><span class="bar-year">2016</span><div class="bar-track"><div class="bar" style="width:65%"></div></div><span class="bar-val">€10.80</span></div>
+          <div class="bar-row"><span class="bar-year">2019</span><div class="bar-track"><div class="bar" style="width:72%"></div></div><span class="bar-val">€11.80</span></div>
+          <div class="bar-row"><span class="bar-year">2020</span><div class="bar-track"><div class="bar-cancel">Cancelled — COVID-19</div></div><span class="bar-val dim">—</span></div>
+          <div class="bar-row"><span class="bar-year">2021</span><div class="bar-track"><div class="bar-cancel">Cancelled — COVID-19</div></div><span class="bar-val dim">—</span></div>
+          <div class="bar-row"><span class="bar-year">2022</span><div class="bar-track"><div class="bar" style="width:77%"></div></div><span class="bar-val">€12.60</span></div>
+          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="bar" style="width:93%"></div></div><span class="bar-val">€15.30</span></div>
+          <div class="bar-row"><span class="bar-year">2026</span><div class="bar-track"><div class="bar proj" style="width:100%"></div></div><span class="bar-val proj-val">~€16.50</span></div>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span>Actual price</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Forecast 2026</span>
+        </div>
+        <p class="chart-note">Source: Oktoberfest Wirtevereinigung. 2026 is an estimate based on historical trend.</p>
+      </div>
+
+      <!-- Quick facts -->
+      <div>
+        <p class="sec">Quick facts</p>
+        <div class="qf-grid">
+          <div class="qf"><span>Venue</span><strong>Theresienwiese (The Wiesn), Munich</strong></div>
+          <div class="qf"><span>Organiser</span><strong>City of Munich</strong></div>
+          <div class="qf"><span>Admission</span><strong>Free — no ticket to enter the grounds</strong></div>
+          <div class="qf"><span>Tent seats</span><strong>Reservations needed — contact breweries from spring</strong></div>
+          <div class="qf"><span>Beer price (Maß, 1 L)</span><strong>~€15–17 in 2026</strong></div>
+          <div class="qf"><span>Licensed breweries</span><strong>Augustiner · Paulaner · Hofbräu · Löwenbräu · Spaten · Hacker-Pschorr</strong></div>
+          <div class="qf"><span>Dress</span><strong>Dirndl &amp; Lederhosen strongly encouraged — rental shops across Munich</strong></div>
+          <div class="qf"><span>Transport</span><strong>U4/U5 to Theresienwiese — or 15 min walk from city centre</strong></div>
+        </div>
+      </div>
+
+      <!-- Six tips -->
+      <div>
+        <p class="sec">Before you go</p>
+        <div class="tips">
+          <div class="tip"><div class="icon">🏨</div><span>Hotels</span><strong>Book 12–18 months ahead — Munich fills completely during Oktoberfest</strong></div>
+          <div class="tip"><div class="icon">📋</div><span>Tent reservations</span><strong>Open from spring — call each brewery directly, no third-party sellers</strong></div>
+          <div class="tip"><div class="icon">⏰</div><span>Timing</span><strong>On busy weekends, tents close entry before noon — arrive by 09:00</strong></div>
+          <div class="tip"><div class="icon">🍗</div><span>Food</span><strong>Hendl, Brezn, Schweinshaxe — eat before drinking, it is a long day</strong></div>
+          <div class="tip"><div class="icon">👗</div><span>Tracht</span><strong>You will feel more at home in Dirndl or Lederhosen than in regular clothes</strong></div>
+          <div class="tip"><div class="icon">💰</div><span>Budget</span><strong>Allow €40–60 per person for 2–3 Maß, food and the occasional ride</strong></div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <p class="sec">Explore the destination</p>
+        <div class="link-row">
+          <a href="../../../locations/europe/germany/munich.html">Munich <em>City guide</em></a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
