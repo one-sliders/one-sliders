@@ -1,468 +1,57 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sweden</title>
     <style>
-      :root {
-        --theme: #006aa7;
-        --accent: #fecc00;
-        --ink: #14202a;
-        --paper: #f7f8f4;
-        --muted: #5e6b70;
-        --line: rgba(20, 32, 42, 0.14);
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        color: var(--ink);
-        background: var(--paper);
-        overflow-x: hidden;
-      }
-
-      a { color: inherit; }
-
-      .top-menu {
-        position: sticky;
-        top: 0;
-        z-index: 3;
-        display: flex;
-        gap: 8px;
-        overflow-x: auto;
-        padding: 8px clamp(14px, 3vw, 36px);
-        background: rgba(247, 248, 244, 0.95);
-        border-bottom: 1px solid var(--line);
-        backdrop-filter: blur(10px);
-      }
-
-      .top-menu a {
-        flex: 0 0 auto;
-        padding: 8px 11px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-size: 13px;
-      }
-
-      .top-menu a:hover,
-      .top-menu a.active {
-        background: var(--theme);
-        color: white;
-      }
-
-      .slide {
-        min-height: calc(100vh - 42px);
-        display: grid;
-        grid-template-columns: minmax(280px, 0.55fr) minmax(520px, 1.45fr);
-        gap: clamp(16px, 2.4vw, 30px);
-        align-items: stretch;
-        padding: clamp(12px, 2.4vw, 30px);
-      }
-
-      .hero {
-        display: grid;
-        align-items: start;
-        align-content: space-between;
-        min-height: 0;
-        padding: clamp(16px, 2.4vw, 28px);
-        color: #ffffff;
-        border-radius: 8px;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.56)),
-          url("https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_Forest_and_Lake%3B_North_Sweden%3B_July_2005.jpg") center / cover;
-        box-shadow: 0 18px 44px rgba(20, 32, 42, 0.18);
-      }
-
-      .flag {
-        width: 112px;
-        height: 84px;
-        margin-bottom: 22px;
-        border-radius: 8px;
-        background: white;
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.34), 0 14px 28px rgba(0, 0, 0, 0.22);
-      }
-
-      .eyebrow {
-        margin: 0 0 8px;
-        color: var(--accent);
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(48px, 7vw, 84px);
-        line-height: 0.95;
-        letter-spacing: 0;
-      }
-
-      .intro {
-        max-width: 680px;
-        margin: 14px 0 0;
-        font-size: 18px;
-        line-height: 1.38;
-      }
-
-      .panel {
-        min-height: 0;
-        display: grid;
-        grid-template-rows: auto auto auto auto auto minmax(230px, 1fr) auto;
-        gap: 10px;
-      }
-
-      .fact-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .fact,
-      .detail,
-      .capital-card {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: white;
-      }
-
-      .fact {
-        min-height: 78px;
-        padding: 11px;
-        border-left: 4px solid var(--theme);
-        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.05);
-      }
-
-      .fact span,
-      .detail span,
-      .capital-card span {
-        display: block;
-        color: var(--muted);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0;
-      }
-
-      .fact strong {
-        display: block;
-        margin-top: 6px;
-        font-size: clamp(18px, 2.15vw, 28px);
-        line-height: 1;
-      }
-
-      .detail-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .detail {
-        padding: 10px 11px;
-      }
-
-      .detail strong {
-        display: block;
-        margin-top: 5px;
-        font-size: 14px;
-        line-height: 1.18;
-      }
-
-      .capital-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 14px;
-        border-left: 5px solid var(--accent);
-      }
-
-      .capital-card strong {
-        display: block;
-        margin-top: 5px;
-        font-size: 22px;
-      }
-
-      .capital-card a {
-        flex: 0 0 auto;
-        padding: 9px 12px;
-        border-radius: 999px;
-        background: var(--theme);
-        color: white;
-        text-decoration: none;
-        font-size: 14px;
-      }
-
-      .cities-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .city-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 11px 12px;
-        border: 1px solid var(--line);
-        border-left: 5px solid var(--theme);
-        border-radius: 8px;
-        background: white;
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .city-link span {
-        display: block;
-        color: var(--muted);
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0;
-      }
-
-      .city-link strong {
-        display: block;
-        margin-top: 4px;
-        font-size: 17px;
-      }
-
-      .city-link em {
-        flex: 0 0 auto;
-        color: var(--muted);
-        font-size: 13px;
-        font-style: normal;
-      }
-
-      .city-link:hover {
-        border-color: var(--theme);
-        transform: translateY(-1px);
-      }
-
-      .info-carousel {
-        min-width: 0;
-        overflow: hidden;
-        display: grid;
-        gap: 8px;
-      }
-
-      .carousel-track {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(220px, 1fr);
-        gap: 8px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 2px;
-      }
-
-      .carousel-card {
-        scroll-snap-align: start;
-        min-height: 82px;
-        padding: 12px 13px;
-        border: 1px solid var(--line);
-        border-top: 4px solid var(--accent);
-        border-radius: 8px;
-        background: white;
-      }
-
-      .carousel-card span {
-        display: block;
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0;
-      }
-
-      .carousel-card p {
-        margin: 6px 0 0;
-        font-size: 14px;
-        line-height: 1.25;
-      }
-
-      .country-note {
-        margin: 0;
-        padding: 9px 12px;
-        border: 1px solid var(--line);
-        border-left: 5px solid var(--theme);
-        border-radius: 8px;
-        background: white;
-        font-size: 13px;
-        line-height: 1.25;
-        max-height: 72px;
-        overflow: auto;
-      }
-
-      .events-section {
-        min-width: 0;
-        display: grid;
-        gap: 8px;
-      }
-
-      .section-heading {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      .section-heading h2 {
-        margin: 0;
-        font-size: 20px;
-        line-height: 1.1;
-      }
-
-      .section-heading span {
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .event-track {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: calc((100% - 16px) / 3);
-        gap: 8px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 0 36px 6px;
-        scrollbar-width: none;
-      }
-
-      .event-track::-webkit-scrollbar {
-        display: none;
-      }
-
-      .event-carousel {
-        position: relative;
-      }
-
-      .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        z-index: 1;
-        display: grid;
-        place-items: center;
-        width: 34px;
-        height: 34px;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(20, 32, 42, 0.78);
-        color: white;
-        font-size: 24px;
-        line-height: 1;
-        transform: translateY(-50%);
-        cursor: pointer;
-        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.18);
-      }
-
-      .carousel-arrow:hover {
-        background: var(--theme);
-      }
-
-      .carousel-arrow.prev { left: 4px; }
-      .carousel-arrow.next { right: 4px; }
-
-      .event-card {
-        scroll-snap-align: start;
-        display: grid;
-        gap: 7px;
-        height: 218px;
-        padding: 18px 18px;
-        border: 1px solid var(--line);
-        border-left: 5px solid var(--accent);
-        border-radius: 8px;
-        background: white;
-        color: inherit;
-        text-decoration: none;
-        box-shadow: 0 8px 18px rgba(20, 32, 42, 0.06);
-      }
-
-      .event-card:hover {
-        border-color: var(--theme);
-        transform: translateY(-1px);
-      }
-
-      .event-card,
-      .event-card * {
-        text-decoration: none;
-      }
-
-      .event-card time {
-        color: var(--theme);
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
-
-      .event-card strong {
-        display: block;
-        font-size: 20px;
-        line-height: 1.1;
-        text-decoration: none;
-      }
-
-      .event-card p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.32;
-        text-decoration: none;
-      }
-
-      .event-dots {
-        display: flex;
-        justify-content: center;
-        gap: 7px;
-      }
-
-      .event-dots button {
-        width: 8px;
-        height: 8px;
-        padding: 0;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(20, 32, 42, 0.22);
-        cursor: pointer;
-      }
-
-      .event-dots button.active {
-        background: var(--theme);
-      }
-
-      .note {
-        margin: 0;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      @media (max-width: 1050px) {
-        .slide {
-          min-height: auto;
-          grid-template-columns: 1fr;
-        }
-
-        .hero { min-height: 280px; }
-      }
-
-      @media (max-width: 680px) {
-        .slide { padding: 12px; }
-        .detail-grid,
-        .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .capital-card { align-items: flex-start; flex-direction: column; }
-      }
-
-      @media (max-width: 460px) {
-        .detail-grid,
-        .fact-grid { grid-template-columns: 1fr; }
-      }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted, #5f6b63); font-size: 13px; border-top: 1px solid var(--line, rgba(23,32,28,.14)); background: rgba(251,250,246,.92); }
-      .site-footer p { margin: 0; }
-      .site-footer a { color: inherit; }    </style>
+      :root{--theme:#006aa7;--accent:#fecc00;--ink:#14202a;--paper:#f7f8f4;--muted:#5e6b70;--line:rgba(20, 32, 42, 0.14)}
+      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
+      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+      .top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}
+      .top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
+      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}
+      .left-col{display:grid;gap:10px;position:sticky;top:55px}
+      .hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18)}
+      .eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}
+      h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}
+      .intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}
+      .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+      .map-wrap iframe{display:block;width:100%;height:210px;border:none}
+      .flag{width:88px;height:66px;border-radius:6px;background:white;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 8px 18px rgba(0,0,0,.22);margin-bottom:14px;object-fit:contain}
+      .right-col{display:grid;gap:12px;padding-top:2px}
+      .known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}
+      .known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+      .fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+      .fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
+      .fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}
+      .section-label{margin:0 0 8px;font-size:17px;font-weight:700}
+      .country-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin:0;padding:0;max-height:30vh;overflow-y:auto}
+      .country-grid a{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-left:3px solid var(--theme);border-radius:7px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
+      .country-grid a:hover{transform:translateY(-1px);border-color:var(--theme)}
+      .country-grid img{width:24px;height:18px;border-radius:3px;object-fit:contain;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+      .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+      .city-link{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+      .city-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
+      .city-link strong{display:block;margin-top:3px;font-size:16px}
+      .city-link em{color:var(--muted);font-style:normal;font-size:12px}
+      .city-link:hover{transform:translateY(-1px);border-color:var(--theme)}
+      .religion-wrap{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}
+      .religion-title{display:block;font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+      .pie{width:96px;height:96px;border-radius:50%}
+      .pie-legend{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+      .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
+      .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
+      .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
+      .map-context{margin-top:4px}
+      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
+      .map-context .map-wrap iframe{height:140px}
+      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
+      .site-footer p{margin:0}.site-footer a{color:inherit}
+      @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
+      @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
+    </style>
   </head>
   <body>
     <nav class="top-menu" aria-label="Location navigation">
@@ -471,142 +60,59 @@
       <a href="stockholm.html">Stockholm</a>
       <a href="gothenburg.html">Gothenburg</a>
     </nav>
-    <main class="slide" aria-labelledby="country-title">
-      <header class="hero">
-        <div>
-          <img class="flag" src="img/flag.svg" alt="Sweden flag">
-          <p class="eyebrow">Nordic country in Northern Europe</p>
-          <h1 id="country-title">Sweden</h1>
-          <p class="intro">Sweden belongs to <a href="../index.html">Europe</a> and is known for forests, lakes, archipelagos, northern winters and highly connected cities.</p>
-        </div>
-      </header>
-      <section class="panel" aria-label="Sweden facts">
-        <div class="fact-grid">
-          <div class="fact"><span>Population</span><strong>10.6M</strong></div>
-          <div class="fact"><span>Area</span><strong>450k km2</strong></div>
-          <div class="fact"><span>Density</span><strong>24/km2</strong></div>
-          <div class="fact"><span>Region</span><strong>Nordic</strong></div>
-        </div>
-        <div class="detail-grid">
-          <div class="detail"><span>Continent</span><strong><a href="../index.html">Europe</a></strong></div>
-          <div class="detail"><span>Currency</span><strong>Swedish krona</strong></div>
-          <div class="detail"><span>Language</span><strong>Swedish</strong></div>
-          <div class="detail"><span>Government</span><strong>Constitutional monarchy</strong></div>
-          <div class="detail"><span>Known for</span><strong>Forests, lakes, innovation</strong></div>
-          <div class="detail"><span>Calling code</span><strong>+46</strong></div>
-        </div>
-        <div class="capital-card">
+    <main class="slide">
+      <aside class="left-col">
+        <div class="hero" style="background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.56)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_Forest_and_Lake%3B_North_Sweden%3B_July_2005.jpg') center/cover">
           <div>
-            <span>Capital city</span>
-            <strong>Stockholm</strong>
+            <img class="flag" src="img/flag.svg" alt="Sweden flag">
+            <p class="eyebrow">Nordic country in Northern Europe</p>
+            <h1>Sweden</h1>
+            <p class="intro">Sweden belongs to <a href="../index.html">Europe</a> and is known for forests, lakes, archipelagos, northern winters and highly connected cities.</p>
           </div>
-          <a href="stockholm.html">Open capital</a>
         </div>
-        <div class="cities-list" aria-label="Cities in Sweden">
-          <a class="city-link" href="stockholm.html">
-            <div>
-              <span>Capital city</span>
-              <strong>Stockholm</strong>
-            </div>
-            <em>Open</em>
-          </a>
-          <a class="city-link" href="gothenburg.html">
-            <div>
-              <span>City</span>
-              <strong>Gothenburg</strong>
-            </div>
-            <em>Open</em>
-          </a>
+        <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=10.9,55.3,24.2,69.1&layer=mapnik" loading="lazy" title="Map of Sweden"></iframe></div>
+      </aside>
+      <section class="right-col" aria-label="Sweden facts">
+        <div class="known-for"><span>Known for</span>Forests, lakes, innovation</div>
+        <div class="fact-grid">
+          <div class="fact"><span>Continent</span><strong><a href="../index.html">Europe</a></strong></div>
+          <div class="fact"><span>Population</span><strong>10.6M</strong></div>
+          <div class="fact"><span>Population ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Area</span><strong>450k km2</strong></div>
+          <div class="fact"><span>Area ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Capital city</span><strong>Stockholm</strong></div>
+          <div class="fact"><span>Largest city</span><strong>Stockholm</strong></div>
+          <div class="fact"><span>Language</span><strong>Swedish</strong></div>
+          <div class="fact"><span>Currency</span><strong>Swedish krona</strong></div>
+          <div class="fact"><span>Government</span><strong>Constitutional monarchy</strong></div>
+          <div class="fact"><span>Largest religion</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Climate</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Highest point</span><strong>&mdash;</strong></div>
         </div>
-        <section class="info-carousel" aria-label="More about Sweden">
-          <div class="carousel-track">
-            <article class="carousel-card"><span>Landscape</span><p>Sweden has large forest regions, thousands of lakes, Baltic coastlines and mountain areas in the north.</p></article>
-            <article class="carousel-card"><span>Urban life</span><p>Stockholm, Gothenburg and Malmo anchor much of the country&apos;s economy, culture and transport network.</p></article>
-            <article class="carousel-card"><span>Climate</span><p>The south is milder and more temperate, while northern Sweden has long winters and subarctic conditions.</p></article>
+      <div class="religion-wrap">
+        <div>
+          <span class="religion-title">Religion dist.</span>
+          <div class="pie" style="background:conic-gradient(#006aa7 0% 38%,#fecc00 38% 58%,#b0b8b4 58% 73%,#d8d8d4 73%)"></div>
+        </div>
+        <div>
+          <ul class="pie-legend">
+            <li><span style="background:#006aa7"></span>Christianity</li>
+            <li><span style="background:#fecc00"></span>Islam</li>
+            <li><span style="background:#b0b8b4"></span>No religion</li>
+            <li><span style="background:#d8d8d4"></span>Other</li>
+          </ul>
+          <p>Data in progress</p>
+        </div>
+      </div>
+        <div>
+          <p class="section-label">Cities</p>
+          <div class="city-grid">
+          <a class="city-link" href="stockholm.html"><div><span>Capital city</span><strong>Stockholm</strong></div><em>Open</em></a>
+          <a class="city-link" href="gothenburg.html"><div><span>City</span><strong>Gothenburg</strong></div><em>Open</em></a>
           </div>
-          <p class="country-note">Sweden stretches from the Baltic Sea and fertile southern regions to forests, lakes and mountain landscapes in the north. Its cities are strongly connected by rail, ports and digital infrastructure, while much of the country keeps a close relationship to nature, seasonal light and outdoor life.</p>
-        </section>
-        <section class="events-section" aria-label="Major events in Sweden 2026">
-          <div class="section-heading">
-            <h2>2026 events</h2>
-            <span>Featured in Sweden</span>
-          </div>
-          <div class="event-carousel">
-            <button class="carousel-arrow prev" type="button" aria-label="Previous events" data-direction="-1">&#8249;</button>
-            <div class="event-track" id="sweden-events">
-              <a class="event-card" href="https://visitumea.se/en/rally-sweden-umea">
-                <time datetime="2026-02-12">12-15 Feb</time>
-                <strong>Rally Sweden</strong>
-                <p>Umea hosts Sweden&apos;s WRC winter rally, one of the country&apos;s largest annual sporting events.</p>
-              </a>
-              <a class="event-card" href="https://www.stockholmmarathon.se/">
-                <time datetime="2026-05-30">30 May</time>
-                <strong>Stockholm Marathon</strong>
-                <p>A major city marathon finishing at Stockholm Stadium, with the 2026 race already sold out.</p>
-              </a>
-              <a class="event-card" href="https://visitsweden.com/what-to-do/culture-history-and-art/culture/music/music-events-in-sweden/">
-                <time datetime="2026-06-03">3-6 Jun</time>
-                <strong>Sweden Rock</strong>
-                <p>Classic rock, hard rock, metal and blues near Solvesborg, with more than 90 bands.</p>
-              </a>
-              <a class="event-card" href="https://www.asfb.se/news/sthlmfw-2026-edition-dates-set">
-                <time datetime="2026-06-08">8-11 Jun</time>
-                <strong>Stockholm Fashion Week</strong>
-                <p>Swedish fashion returns with established brands, new voices and industry events.</p>
-              </a>
-              <a class="event-card" href="https://www.goteborg.com/en/events/way-out-west/">
-                <time datetime="2026-08-13">13-15 Aug</time>
-                <strong>Way Out West</strong>
-                <p>Music, film and culture in Gothenburg&apos;s Slottsskogen city park.</p>
-              </a>
-              <a class="event-card" href="https://www.berwaldhallen.se/en/the-baltic-sea-festival">
-                <time datetime="2026-08-21">21-29 Aug</time>
-                <strong>Baltic Sea Festival</strong>
-                <p>Stockholm concert festival with orchestral, chamber, choral, jazz and contemporary music.</p>
-              </a>
-            </div>
-            <button class="carousel-arrow next" type="button" aria-label="Next events" data-direction="1">&#8250;</button>
-          </div>
-          <div class="event-dots" aria-label="Event carousel pages">
-            <button class="active" type="button" aria-label="Show first events" data-page="0"></button>
-            <button type="button" aria-label="Show next events" data-page="1"></button>
-          </div>
-        </section>
+        </div>
       </section>
     </main>
-    <script>
-      const eventTrack = document.querySelector("#sweden-events");
-      const eventDots = Array.from(document.querySelectorAll(".event-dots button"));
-      const eventCards = Array.from(document.querySelectorAll(".event-card"));
-      const visibleCards = 3;
-
-      function eventStep() {
-        const card = eventCards[0];
-        if (!card) return 0;
-        const gap = 12;
-        return (card.getBoundingClientRect().width + gap) * visibleCards;
-      }
-
-      function updateDots() {
-        const page = Math.round(eventTrack.scrollLeft / Math.max(eventStep(), 1));
-        eventDots.forEach((dot, index) => dot.classList.toggle("active", index === page));
-      }
-
-      document.querySelectorAll(".carousel-arrow").forEach((button) => {
-        button.addEventListener("click", () => {
-          eventTrack.scrollBy({ left: eventStep() * Number(button.dataset.direction), behavior: "smooth" });
-        });
-      });
-
-      eventDots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          eventTrack.scrollTo({ left: eventStep() * Number(dot.dataset.page), behavior: "smooth" });
-        });
-      });
-
-      eventTrack.addEventListener("scroll", updateDots, { passive: true });
-    </script>
-    <footer class="site-footer">
-      <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
-    </footer>  </body>
+    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
+  </body>
 </html>

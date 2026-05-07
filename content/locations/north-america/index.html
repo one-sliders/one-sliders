@@ -1,56 +1,61 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>North America</title>
     <style>
-      :root { --theme: #2f6f4e; --accent: #9ccf9f; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23, 32, 28, 0.14); }
-      * { box-sizing: border-box; }
-      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
-      a { color: inherit; }
-      .continent-menu { position: sticky; top: 0; z-index: 3; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px, 3vw, 36px); background: rgba(251, 250, 246, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-      .continent-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; color: #29342f; }
-      .continent-menu a:hover, .continent-menu a.active { background: var(--theme); color: white; }
-      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(320px, 0.9fr) minmax(440px, 1.1fr); gap: clamp(16px, 2.4vw, 34px); align-items: stretch; padding: clamp(12px, 2.4vw, 30px); }
-      .hero { min-height: 0; display: grid; align-items: end; padding: clamp(18px, 3vw, 34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.74)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg') center / cover; box-shadow: 0 18px 44px rgba(23, 32, 28, .18); }
-      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      h1 { margin: 0; font-size: clamp(40px, 6.5vw, 82px); line-height: .95; letter-spacing: 0; }
-      .intro { max-width: 680px; margin: 12px 0 0; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.34; }
-      .panel { min-height: 0; display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; }
-      .fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-      .fact { min-height: 78px; padding: 11px; border: 1px solid var(--line); border-left: 4px solid var(--theme); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23, 32, 28, .05); }
-      .fact span, .detail span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
-      .fact strong { display: block; margin-top: 6px; font-size: clamp(18px, 2.15vw, 28px); line-height: 1; }
-      .detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-      .detail { padding: 10px 11px; border: 1px solid var(--line); border-radius: 8px; background: white; }
-      .detail strong { display: block; margin-top: 5px; font-size: 14px; line-height: 1.18; }
-      .wide-fact { padding: 12px 14px; border-radius: 8px; background: var(--theme); color: white; }
-      .wide-fact span { display: block; margin-bottom: 5px; color: var(--accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      .wide-fact p { margin: 0; font-size: 15px; line-height: 1.25; }
-      .info-carousel { min-width: 0; overflow: hidden; }
-      .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 2px; }
-      .carousel-card { scroll-snap-align: start; min-height: 82px; padding: 12px 13px; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 8px; background: white; }
-      .carousel-card span { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      .carousel-card p { margin: 6px 0 0; font-size: 14px; line-height: 1.25; }
-      .countries-panel { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 8px; }
-      .summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
-      h2 { margin: 0; font-size: 20px; letter-spacing: 0; }
-      .count, .note { color: var(--muted); font-size: 13px; }
-      .country-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(126px, 1fr)); gap: 6px; min-height: 0; max-height: 28vh; overflow: auto; margin: 0; padding: 0 4px 0 0; }
-      .country-grid a, .country-grid .empty { display: flex; align-items: center; gap: 8px; min-height: 32px; padding: 7px 9px; border: 1px solid var(--line); border-left: 3px solid var(--theme); border-radius: 7px; background: white; text-decoration: none; font-size: 13px; line-height: 1.15; box-shadow: 0 5px 14px rgba(23, 32, 28, .045); }
-      .country-grid img { flex: 0 0 auto; width: 24px; height: 18px; border-radius: 3px; object-fit: contain; background: #fff; box-shadow: 0 0 0 1px rgba(23, 32, 28, .12); } .country-grid span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .country-grid a:hover { border-color: var(--theme); transform: translateY(-1px); }
-      .empty { color: var(--muted); }
-      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 34vh; } .country-grid { max-height: none; overflow: visible; } }
-      @media (max-width: 680px) { .slide { padding: 12px; } .detail-grid, .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-      @media (max-width: 460px) { .detail-grid, .fact-grid { grid-template-columns: 1fr; } .summary { display: block; } .count { display: block; margin-top: 4px; } }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted, #5f6b63); font-size: 13px; border-top: 1px solid var(--line, rgba(23,32,28,.14)); background: rgba(251,250,246,.92); }
-      .site-footer p { margin: 0; }
-      .site-footer a { color: inherit; }    </style>
+      :root{--theme:#2f6f4e;--accent:#9ccf9f;--ink:#17201c;--paper:#fbfaf6;--muted:#5f6b63;--line:rgba(23, 32, 28, 0.14)}
+      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
+      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+      .top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}
+      .top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
+      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}
+      .left-col{display:grid;gap:10px;position:sticky;top:55px}
+      .hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18)}
+      .eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}
+      h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}
+      .intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}
+      .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+      .map-wrap iframe{display:block;width:100%;height:210px;border:none}
+      .flag{width:88px;height:66px;border-radius:6px;background:white;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 8px 18px rgba(0,0,0,.22);margin-bottom:14px;object-fit:contain}
+      .right-col{display:grid;gap:12px;padding-top:2px}
+      .known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}
+      .known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+      .fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+      .fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
+      .fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}
+      .section-label{margin:0 0 8px;font-size:17px;font-weight:700}
+      .country-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin:0;padding:0;max-height:30vh;overflow-y:auto}
+      .country-grid a{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-left:3px solid var(--theme);border-radius:7px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
+      .country-grid a:hover{transform:translateY(-1px);border-color:var(--theme)}
+      .country-grid img{width:24px;height:18px;border-radius:3px;object-fit:contain;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+      .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+      .city-link{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+      .city-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
+      .city-link strong{display:block;margin-top:3px;font-size:16px}
+      .city-link em{color:var(--muted);font-style:normal;font-size:12px}
+      .city-link:hover{transform:translateY(-1px);border-color:var(--theme)}
+      .religion-wrap{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}
+      .religion-title{display:block;font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
+      .pie{width:96px;height:96px;border-radius:50%}
+      .pie-legend{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+      .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
+      .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
+      .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
+      .map-context{margin-top:4px}
+      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
+      .map-context .map-wrap iframe{height:140px}
+      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
+      .site-footer p{margin:0}.site-footer a{color:inherit}
+      @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
+      @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
+    </style>
   </head>
   <body>
-    <nav class="continent-menu" aria-label="Continents">
-        <a href="../africa/index.html">Africa</a>
+    <nav class="top-menu" aria-label="Continents">
+      <a href="../africa/index.html">Africa</a>
         <a href="../antarctica/index.html">Antarctica</a>
         <a href="../asia/index.html">Asia</a>
         <a href="../europe/index.html">Europe</a>
@@ -58,74 +63,63 @@
         <a href="../oceania/index.html">Oceania</a>
         <a href="../south-america/index.html">South America</a>
     </nav>
-    <main class="slide" aria-labelledby="continent-title">
-      <header class="hero">
-        <div>
-          <p class="eyebrow">Great lakes, high ranges, islands and wide plains</p>
-          <h1 id="continent-title">North America</h1>
-          <p class="intro">A continent-region of Arctic lands, Caribbean islands, Central America and large northern economies.</p>
+    <main class="slide">
+      <aside class="left-col">
+        <div class="hero" style="background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.54)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg') center/cover">
+          <div>
+            <p class="eyebrow">Great lakes, high ranges, islands and wide plains</p>
+            <h1>North America</h1>
+            <p class="intro">A continent-region of Arctic lands, Caribbean islands, Central America and large northern economies.</p>
+          </div>
         </div>
-      </header>
-      <section class="panel" aria-label="North America facts and countries">
+        <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-170,7,-50,84&layer=mapnik" loading="lazy" title="Map of North America"></iframe></div>
+      </aside>
+      <section class="right-col" aria-label="North America facts">
         <div class="fact-grid">
-          <div class="fact"><span>Population</span><strong>621M</strong></div>
+          <div class="fact"><span>Countries</span><strong>23</strong></div>
           <div class="fact"><span>Area</span><strong>21.3M km2</strong></div>
-          <div class="fact"><span>Density</span><strong>29/km2</strong></div>
-          <div class="fact"><span>World share</span><strong>7.5%</strong></div>
+          <div class="fact"><span>Size ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Share of land</span><strong>7.5%</strong></div>
+          <div class="fact"><span>Population</span><strong>621M</strong></div>
+          <div class="fact"><span>Population ranking</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Largest country</span><strong>USA</strong></div>
+          <div class="fact"><span>Regions</span><strong>Northern America, Central America, Caribbean</strong></div>
+          <div class="fact"><span>Climate</span><strong>Arctic, temperate, desert, tropical</strong></div>
+          <div class="fact"><span>Highest point</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Largest religion</span><strong>&mdash;</strong></div>
+          <div class="fact"><span>Religious diversity</span><strong>&mdash;</strong></div>
+          <div class="fact" style="grid-column:span 2"><span>Known for</span><strong>Rockies, Great Lakes, Caribbean</strong></div>
         </div>
-        <div class="detail-grid">
-          <div class="detail"><span>Largest population</span><strong>USA</strong></div>
-          <div class="detail"><span>Regions</span><strong>Northern America, Central America, Caribbean</strong></div>
-          <div class="detail"><span>Climate</span><strong>Arctic, temperate, desert, tropical</strong></div>
-          <div class="detail"><span>Known for</span><strong>Rockies, Great Lakes, Caribbean</strong></div>
-          <div class="detail"><span>Character</span><strong>Connects Arctic, temperate and tropical regions</strong></div>
-          <div class="detail"><span>Listed countries</span><strong>23</strong></div>
+        <div>
+          <p class="section-label">Countries</p>
+          <nav aria-label="Countries in North America"><ul class="country-grid">
+              <li><a href="antigua-and-barbuda/index.html"><img src="https://flagcdn.com/ag.svg" alt="" loading="lazy" width="24" height="18"><span>Antigua and Barbuda</span></a></li>
+              <li><a href="bahamas/index.html"><img src="https://flagcdn.com/bs.svg" alt="" loading="lazy" width="24" height="18"><span>Bahamas</span></a></li>
+              <li><a href="barbados/index.html"><img src="https://flagcdn.com/bb.svg" alt="" loading="lazy" width="24" height="18"><span>Barbados</span></a></li>
+              <li><a href="belize/index.html"><img src="https://flagcdn.com/bz.svg" alt="" loading="lazy" width="24" height="18"><span>Belize</span></a></li>
+              <li><a href="canada/index.html"><img src="https://flagcdn.com/ca.svg" alt="" loading="lazy" width="24" height="18"><span>Canada</span></a></li>
+              <li><a href="costa-rica/index.html"><img src="https://flagcdn.com/cr.svg" alt="" loading="lazy" width="24" height="18"><span>Costa Rica</span></a></li>
+              <li><a href="cuba/index.html"><img src="https://flagcdn.com/cu.svg" alt="" loading="lazy" width="24" height="18"><span>Cuba</span></a></li>
+              <li><a href="dominica/index.html"><img src="https://flagcdn.com/dm.svg" alt="" loading="lazy" width="24" height="18"><span>Dominica</span></a></li>
+              <li><a href="dominican-republic/index.html"><img src="https://flagcdn.com/do.svg" alt="" loading="lazy" width="24" height="18"><span>Dominican Republic</span></a></li>
+              <li><a href="el-salvador/index.html"><img src="https://flagcdn.com/sv.svg" alt="" loading="lazy" width="24" height="18"><span>El Salvador</span></a></li>
+              <li><a href="grenada/index.html"><img src="https://flagcdn.com/gd.svg" alt="" loading="lazy" width="24" height="18"><span>Grenada</span></a></li>
+              <li><a href="guatemala/index.html"><img src="https://flagcdn.com/gt.svg" alt="" loading="lazy" width="24" height="18"><span>Guatemala</span></a></li>
+              <li><a href="haiti/index.html"><img src="https://flagcdn.com/ht.svg" alt="" loading="lazy" width="24" height="18"><span>Haiti</span></a></li>
+              <li><a href="honduras/index.html"><img src="https://flagcdn.com/hn.svg" alt="" loading="lazy" width="24" height="18"><span>Honduras</span></a></li>
+              <li><a href="jamaica/index.html"><img src="https://flagcdn.com/jm.svg" alt="" loading="lazy" width="24" height="18"><span>Jamaica</span></a></li>
+              <li><a href="mexico/index.html"><img src="https://flagcdn.com/mx.svg" alt="" loading="lazy" width="24" height="18"><span>Mexico</span></a></li>
+              <li><a href="nicaragua/index.html"><img src="https://flagcdn.com/ni.svg" alt="" loading="lazy" width="24" height="18"><span>Nicaragua</span></a></li>
+              <li><a href="panama/index.html"><img src="https://flagcdn.com/pa.svg" alt="" loading="lazy" width="24" height="18"><span>Panama</span></a></li>
+              <li><a href="saint-kitts-and-nevis/index.html"><img src="https://flagcdn.com/kn.svg" alt="" loading="lazy" width="24" height="18"><span>Saint Kitts and Nevis</span></a></li>
+              <li><a href="saint-lucia/index.html"><img src="https://flagcdn.com/lc.svg" alt="" loading="lazy" width="24" height="18"><span>Saint Lucia</span></a></li>
+              <li><a href="saint-vincent-and-the-grenadines/index.html"><img src="https://flagcdn.com/vc.svg" alt="" loading="lazy" width="24" height="18"><span>Saint Vincent and the Grenadines</span></a></li>
+              <li><a href="trinidad-and-tobago/index.html"><img src="https://flagcdn.com/tt.svg" alt="" loading="lazy" width="24" height="18"><span>Trinidad and Tobago</span></a></li>
+              <li><a href="usa/index.html"><img src="https://flagcdn.com/us.svg" alt="" loading="lazy" width="24" height="18"><span>USA</span></a></li>
+          </ul></nav>
         </div>
-        <div class="wide-fact"><span>Overview</span><p>Connects Arctic, temperate and tropical regions</p></div>
-        <section class="info-carousel" aria-label="More about this continent">
-          <div class="carousel-track">
-          <article class="carousel-card"><span>Regions</span><p>North America includes Arctic territories, large temperate economies, Central America and the Caribbean.</p></article>
-          <article class="carousel-card"><span>Nature</span><p>The Rockies, Great Lakes, deserts, forests and island chains create strong geographic contrast.</p></article>
-          <article class="carousel-card"><span>Cities</span><p>Large metropolitan areas sit alongside smaller island capitals and fast-growing regional hubs.</p></article>
-          </div>
-        </section>
-        <div class="countries-panel">
-          <div class="summary">
-            <h2>Countries</h2>
-            <span class="count">23 countries</span>
-          </div>
-          <nav aria-label="Countries in North America">
-            <ul class="country-grid">
-              <li><a href="antigua-and-barbuda/index.html"><img src="https://flagcdn.com/ag.svg" alt="" loading="lazy"> <span>Antigua and Barbuda</span></a></li>
-              <li><a href="bahamas/index.html"><img src="https://flagcdn.com/bs.svg" alt="" loading="lazy"> <span>Bahamas</span></a></li>
-              <li><a href="barbados/index.html"><img src="https://flagcdn.com/bb.svg" alt="" loading="lazy"> <span>Barbados</span></a></li>
-              <li><a href="belize/index.html"><img src="https://flagcdn.com/bz.svg" alt="" loading="lazy"> <span>Belize</span></a></li>
-              <li><a href="canada/index.html"><img src="https://flagcdn.com/ca.svg" alt="" loading="lazy"> <span>Canada</span></a></li>
-              <li><a href="costa-rica/index.html"><img src="https://flagcdn.com/cr.svg" alt="" loading="lazy"> <span>Costa Rica</span></a></li>
-              <li><a href="cuba/index.html"><img src="https://flagcdn.com/cu.svg" alt="" loading="lazy"> <span>Cuba</span></a></li>
-              <li><a href="dominica/index.html"><img src="https://flagcdn.com/dm.svg" alt="" loading="lazy"> <span>Dominica</span></a></li>
-              <li><a href="dominican-republic/index.html"><img src="https://flagcdn.com/do.svg" alt="" loading="lazy"> <span>Dominican Republic</span></a></li>
-              <li><a href="el-salvador/index.html"><img src="https://flagcdn.com/sv.svg" alt="" loading="lazy"> <span>El Salvador</span></a></li>
-              <li><a href="grenada/index.html"><img src="https://flagcdn.com/gd.svg" alt="" loading="lazy"> <span>Grenada</span></a></li>
-              <li><a href="guatemala/index.html"><img src="https://flagcdn.com/gt.svg" alt="" loading="lazy"> <span>Guatemala</span></a></li>
-              <li><a href="haiti/index.html"><img src="https://flagcdn.com/ht.svg" alt="" loading="lazy"> <span>Haiti</span></a></li>
-              <li><a href="honduras/index.html"><img src="https://flagcdn.com/hn.svg" alt="" loading="lazy"> <span>Honduras</span></a></li>
-              <li><a href="jamaica/index.html"><img src="https://flagcdn.com/jm.svg" alt="" loading="lazy"> <span>Jamaica</span></a></li>
-              <li><a href="mexico/index.html"><img src="https://flagcdn.com/mx.svg" alt="" loading="lazy"> <span>Mexico</span></a></li>
-              <li><a href="nicaragua/index.html"><img src="https://flagcdn.com/ni.svg" alt="" loading="lazy"> <span>Nicaragua</span></a></li>
-              <li><a href="panama/index.html"><img src="https://flagcdn.com/pa.svg" alt="" loading="lazy"> <span>Panama</span></a></li>
-              <li><a href="saint-kitts-and-nevis/index.html"><img src="https://flagcdn.com/kn.svg" alt="" loading="lazy"> <span>Saint Kitts and Nevis</span></a></li>
-              <li><a href="saint-lucia/index.html"><img src="https://flagcdn.com/lc.svg" alt="" loading="lazy"> <span>Saint Lucia</span></a></li>
-              <li><a href="saint-vincent-and-the-grenadines/index.html"><img src="https://flagcdn.com/vc.svg" alt="" loading="lazy"> <span>Saint Vincent and the Grenadines</span></a></li>
-              <li><a href="trinidad-and-tobago/index.html"><img src="https://flagcdn.com/tt.svg" alt="" loading="lazy"> <span>Trinidad and Tobago</span></a></li>
-              <li><a href="usa/index.html"><img src="https://flagcdn.com/us.svg" alt="" loading="lazy"> <span>USA</span></a></li>
-            </ul>
-          </nav>
-        </div>
-        <p class="note">Rounded 2026 estimates.</p>
       </section>
     </main>
-    <footer class="site-footer">
-      <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
-    </footer>  </body>
+    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
+  </body>
 </html>
