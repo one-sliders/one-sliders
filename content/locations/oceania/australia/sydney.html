@@ -16,10 +16,19 @@
       .cross-nav-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
       .cross-nav-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#5a6672;flex:0 0 64px}
       .cross-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid rgba(0,0,0,.13);border-radius:999px;background:#f2f3f5;text-decoration:none;font-size:12px;color:#5a6672;font-weight:600;white-space:nowrap}
-      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    </style>
+      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    
+      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
+      .nav-icon:hover{background:var(--theme);color:white}
+      .nav-icon svg{width:22px;height:22px;display:block}
+      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    </style>
   </head>
   <body>
-    <nav class="top-menu" aria-label="Location navigation"><a href="../index.html">Oceania</a><a href="index.html">Australia</a><a class="active" aria-current="page" href="sydney.html">Sydney</a></nav>
+    <nav class="top-menu" aria-label="Location navigation">
+      <a class="nav-icon" href="../../../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      <a class="nav-icon" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+      <span class="nav-divider"></span>
+      <a href="../index.html">Oceania</a><a href="index.html">Australia</a><a class="active" aria-current="page" href="sydney.html">Sydney</a></nav>
     <main class="slide"><aside class="left-col"><div class="hero"><div><p class="eyebrow">City in Australia</p><h1>Sydney</h1><p class="intro">Sydney is a city in <a href="index.html">Australia</a>, connected to travel planning, local context and events.</p></div></div><div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-1,-1,1,1&layer=mapnik" loading="lazy" title="Map of Sydney"></iframe></div></aside>
       <section class="right-col" aria-label="Sydney facts"><div class="known-for"><span>Known for</span>Local culture, visitor planning and events</div><div class="fact-grid"><div class="fact"><span>Country</span><strong><a href="index.html">Australia</a></strong></div><div class="fact"><span>City population</span><strong>Add data</strong></div><div class="fact"><span>City ranking</span><strong>City</strong></div><div class="fact"><span>Metro population</span><strong>Add data</strong></div><div class="fact"><span>Language</span><strong>English</strong></div><div class="fact"><span>Currency</span><strong>Australian dollar</strong></div><div class="fact"><span>Climate</span><strong>Tropical to temperate</strong></div><div class="fact"><span>Main landmark</span><strong>Add landmark</strong></div></div><div class="events-section"><p class="section-label">Events</p><div class="event-grid">
           <a class="event-link" href="../../../events/2026/08/sydney-marathon.html"><span>Aug 2026</span><strong>Sydney Marathon</strong></a>
