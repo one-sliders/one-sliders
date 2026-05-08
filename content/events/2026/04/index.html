@@ -33,7 +33,21 @@
     .cat-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--cat-color);background:color-mix(in srgb,var(--cat-color) 10%,white);padding:3px 8px;border-radius:999px;align-self:flex-start}
     .card-title{font-size:15px;font-weight:700;line-height:1.25}
     .card-meta{font-size:12px;color:var(--muted);margin-top:auto;padding-top:4px}
-    .empty{padding:48px clamp(20px,5vw,80px);color:var(--muted);font-size:15px}
+    .filters { background: white; border-bottom: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .filter-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 12px clamp(20px,5vw,80px); border-bottom: 1px solid var(--line); }
+    .filter-row:last-child { border-bottom: none; }
+    .filter-label { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); flex: 0 0 130px; }
+    .filter-btn { border: none; background: #eceef0; color: var(--muted); font-size: 15px; font-weight: 800; padding: 10px 24px; border-radius: 999px; cursor: pointer; font-family: inherit; transition: background .12s, color .12s, opacity .12s; white-space: nowrap; }
+    .filter-btn:hover { background: #d4d8de; color: var(--ink); }
+    .filter-btn.active { background: var(--navy); color: white; }
+    .filter-btn:disabled { opacity: .3; cursor: not-allowed; }
+    .filter-btn[data-cat="motor"].active { background: var(--c-motor); }
+    .filter-btn[data-cat="sport"].active { background: var(--c-sport); }
+    .filter-btn[data-cat="festival"].active { background: var(--c-festival); }
+    .filter-btn[data-cat="culture"].active { background: var(--c-culture); }
+    .filter-btn[data-cat="nature"].active { background: var(--c-nature); }
+    .event-card.hidden { display: none; }
+    @media (max-width: 700px) { .filter-row { gap: 8px; padding: 10px clamp(20px,5vw,80px); } .filter-label { flex: 0 0 100%; } .filter-btn { font-size: 13px; padding: 8px 14px; } }
     .site-footer{padding:14px clamp(20px,5vw,80px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:white}
     @media(max-width:500px){.events-grid{grid-template-columns:1fr}}
   </style>
@@ -48,7 +62,7 @@
     <a class="active" aria-current="page" href="index.html">April</a>
   </nav>  <header class="hero">
     <h1>April <span>2026</span></h1>
-    <p>No events scheduled for April 2026 yet.</p>
+    <p>Major events across the month, from global sport to festivals and culture.</p>
   </header>
   <div class="filters" id="filters">
     <div class="filter-row" id="cat-row">
@@ -72,7 +86,9 @@
     </div>
   </div>
   <main class="events-wrap">
-    <p class="empty">No events have been added for this month yet. <a href="../../index.html">Browse all events →</a></p>
+    <div class="events-grid">
+      <a class="event-card" data-cat="sport" data-topic="golf" data-cont="north-america" data-country="usa" href="masters-tournament.html" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="img/masters-tournament-hero.png" alt="masters-tournament" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">🏆 Sport</span><strong class="card-title">Masters Tournament</strong><span class="card-meta">9-12 Apr · Augusta, USA</span></div></a>
+    </div>
   </main>  <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
   <script>
     let activeCat = 'all';
