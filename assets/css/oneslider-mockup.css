@@ -76,6 +76,32 @@ a {
   background: var(--line);
 }
 
+.nav-back {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 8px 13px;
+  color: var(--theme);
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid rgba(33, 78, 104, 0.22);
+  border-radius: 999px;
+  background: rgba(33, 78, 104, 0.07);
+}
+
+.nav-back:hover {
+  color: #fff;
+  border-color: var(--theme);
+  background: var(--theme);
+}
+
+.nav-back svg {
+  width: 16px;
+  height: 16px;
+}
+
 .nav-pill {
   flex: 0 0 auto;
   min-width: 66px;
