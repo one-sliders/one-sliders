@@ -1,191 +1,133 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-<title>Europe</title>
-    <style>
-      :root{--theme:#315f72;--accent:#9bc5d2;--ink:#17201c;--paper:#fbfaf6;--muted:#5f6b63;--line:rgba(23, 32, 28, 0.14)}
-      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
-      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-      .top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}
-      .top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
-      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}
-      .left-col{display:grid;gap:10px;position:sticky;top:55px}
-      .hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18)}
-      .eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}
-      h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}
-      .intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}
-      .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-      .map-wrap iframe{display:block;width:100%;height:210px;border:none}
-      .flag{width:88px;height:66px;border-radius:6px;background:white;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 8px 18px rgba(0,0,0,.22);margin-bottom:14px;object-fit:contain}
-      .right-col{display:grid;gap:12px;padding-top:2px}
-      .known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}
-      .known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-      .fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-      .fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-      .fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}
-      .section-label{margin:0 0 8px;font-size:17px;font-weight:700}
-      .country-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin:0;padding:0;max-height:30vh;overflow-y:auto}
-      .country-grid a{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-left:3px solid var(--theme);border-radius:7px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
-      .country-grid a:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .country-grid img{width:24px;height:18px;border-radius:3px;object-fit:contain;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
-      .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
-      .city-link{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-      .city-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .city-link strong{display:block;margin-top:3px;font-size:16px}
-      .city-link em{color:var(--muted);font-style:normal;font-size:12px}
-      .city-link:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .religion-wrap{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}
-      .religion-title{display:block;font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
-      .pie{width:96px;height:96px;border-radius:50%}
-      .pie-legend{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-      .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
-      .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
-      .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
-      .map-context{margin-top:4px}
-      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
-      .map-context .map-wrap iframe{height:140px}
-      .bar-chart{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .bar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:2px}
-      .bar-row{display:grid;grid-template-columns:minmax(92px,.34fr) 1fr minmax(42px,auto);gap:10px;align-items:center;font-size:13px}
-      .bar-row span:first-child{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}
-      .bar-track{height:10px;border-radius:999px;background:rgba(23,32,28,.10);overflow:hidden}
-      .bar-fill{display:block;height:100%;width:var(--value);border-radius:999px;background:linear-gradient(90deg,var(--theme),var(--accent))}
-      .bar-row strong{font-size:12px;text-align:right;white-space:nowrap}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="../../../assets/css/oneslider-mockup.css">
+  <meta name="theme-color" content="#0d2137">
+  <title>Europe</title>
+</head>
+<body>
+  <nav class="top-menu" aria-label="Continents">
+    <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon active" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span>
+    <a class="nav-pill" href="../africa/index.html">Africa</a>
+    <a class="nav-pill" href="../asia/index.html">Asia</a>
+    <a class="nav-pill active" aria-current="page" href="index.html">Europe</a>
+    <a class="nav-pill" href="../north-america/index.html">N. America</a>
+    <a class="nav-pill" href="../oceania/index.html">Oceania</a>
+  </nav>
 
-      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
-.site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
-      .site-footer p{margin:0}.site-footer a{color:inherit}
-      @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
-      @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}    
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    </style>
-  </head>
-  <body>
-    <nav class="top-menu" aria-label="Continents">
-      <a class="nav-icon" href="../../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      
-      <a href="../africa/index.html">Africa</a>
-        <a href="../antarctica/index.html">Antarctica</a>
-        <a href="../asia/index.html">Asia</a>
-        <a class="active" aria-current="page" href="../europe/index.html">Europe</a>
-        <a href="../north-america/index.html">North America</a>
-        <a href="../oceania/index.html">Oceania</a>
-        <a href="../south-america/index.html">South America</a>
-    </nav>
-    <main class="slide">
-      <aside class="left-col">
-        <div class="hero" style="background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.54)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover">
-          <div>
-            <p class="eyebrow">Historic cities, northern coasts and alpine routes</p>
-            <h1>Europe</h1>
-            <p class="intro">Compact and highly connected, with dense city networks, old capitals, alpine regions and northern coastlines.</p>
-          </div>
+  <main class="page-shell">
+    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('img/europe-hero-mockup.png')">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Continent</p>
+          <h1 class="hero-title">Europe</h1>
+          <p class="hero-text">Historic cities, northern coastlines and alpine routes. Compact, diverse and highly connected by rail, air and short cross-border trips.</p>
         </div>
-        <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-25,34,45,72&layer=mapnik" loading="lazy" title="Map of Europe"></iframe></div>
-      </aside>
-      <section class="right-col" aria-label="Europe facts">
-        <div class="fact-grid">
-          <div class="fact"><span>Countries</span><strong>50</strong></div>
-          <div class="bar-chart" aria-label="Top 5 countries by population"><div class="bar-title">Top 5 countries by population</div><div class="bar-row"><span>Russia</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>146M</strong></div><div class="bar-row"><span>Turkey</span><div class="bar-track"><i class="bar-fill" style="--value:59%"></i></div><strong>86M</strong></div><div class="bar-row"><span>Germany</span><div class="bar-track"><i class="bar-fill" style="--value:57%"></i></div><strong>83M</strong></div><div class="bar-row"><span>United Kingdom</span><div class="bar-track"><i class="bar-fill" style="--value:47%"></i></div><strong>69M</strong></div><div class="bar-row"><span>France</span><div class="bar-track"><i class="bar-fill" style="--value:45%"></i></div><strong>66M</strong></div></div>
-          <div class="fact"><span>Area</span><strong>22.1M km2</strong></div>
-          <div class="fact"><span>Size ranking</span><strong>#6</strong></div>
-          <div class="fact"><span>Share of land</span><strong>8.9%</strong></div>
-          <div class="fact"><span>Population</span><strong>742M</strong></div>
-          <div class="fact"><span>Population ranking</span><strong>#3</strong></div>
-          <div class="fact"><span>Largest country</span><strong>Russia</strong></div>
-          <div class="fact"><span>Regions</span><strong>Northern, Western, Southern, Eastern Europe</strong></div>
-          <div class="fact"><span>Climate</span><strong>Temperate, boreal, Mediterranean</strong></div>
-          <div class="fact"><span>Highest point</span><strong>Mount Elbrus</strong></div>
-          <div class="fact"><span>Largest religion</span><strong>Christianity</strong></div>
-          <div class="fact"><span>Religious diversity</span><strong>High</strong></div>
-          <div class="fact" style="grid-column:span 2"><span>Known for</span><strong>Historic capitals, alpine and Nordic landscapes, dense rail networks, Mediterranean coasts, Baltic and Atlantic regions, old universities and highly connected city systems.</strong></div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span>Countries</span><strong>50</strong></div>
+          <div class="hero-stat"><span>Population</span><strong>742M</strong></div>
+          <div class="hero-stat"><span>Area</span><strong>22.1M km2</strong></div>
+          <div class="hero-stat"><span>Known for</span><strong>History, cities, rail</strong></div>
         </div>
-        <div>
-        <div class="vbar-chart" aria-label="Top 3 highest mountains"><div class="vbar-title">Top 3 highest mountains</div><div class="vbar-grid"><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:100%"></i></div><div class="vbar-name">Mount Elbrus</div><div class="vbar-meters">5 642 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:37%"></i></div><div class="vbar-name">Dykh-Tau</div><div class="vbar-meters">5 205 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:35%"></i></div><div class="vbar-name">Shkhara</div><div class="vbar-meters">5 193 m</div></div></div></div>
-          <p class="section-label">Countries</p>
-          <nav aria-label="Countries in Europe"><ul class="country-grid">
-              <li><a href="albania/index.html"><img src="albania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Albania</span></a></li>
-              <li><a href="andorra/index.html"><img src="andorra/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Andorra</span></a></li>
-              <li><a href="armenia/index.html"><img src="armenia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Armenia</span></a></li>
-              <li><a href="austria/index.html"><img src="austria/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Austria</span></a></li>
-              <li><a href="azerbaijan/index.html"><img src="azerbaijan/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Azerbaijan</span></a></li>
-              <li><a href="belarus/index.html"><img src="belarus/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Belarus</span></a></li>
-              <li><a href="belgium/index.html"><img src="belgium/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Belgium</span></a></li>
-              <li><a href="bosnia-and-herzegovina/index.html"><img src="bosnia-and-herzegovina/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Bosnia and Herzegovina</span></a></li>
-              <li><a href="bulgaria/index.html"><img src="bulgaria/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Bulgaria</span></a></li>
-              <li><a href="croatia/index.html"><img src="croatia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Croatia</span></a></li>
-              <li><a href="cyprus/index.html"><img src="cyprus/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Cyprus</span></a></li>
-              <li><a href="czechia/index.html"><img src="czechia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Czechia</span></a></li>
-              <li><a href="denmark/index.html"><img src="denmark/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Denmark</span></a></li>
-              <li><a href="estonia/index.html"><img src="estonia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Estonia</span></a></li>
-              <li><a href="finland/index.html"><img src="finland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Finland</span></a></li>
-              <li><a href="france/index.html"><img src="france/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>France</span></a></li>
-              <li><a href="georgia/index.html"><img src="georgia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Georgia</span></a></li>
-              <li><a href="germany/index.html"><img src="germany/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Germany</span></a></li>
-              <li><a href="greece/index.html"><img src="greece/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Greece</span></a></li>
-              <li><a href="hungary/index.html"><img src="hungary/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Hungary</span></a></li>
-              <li><a href="iceland/index.html"><img src="iceland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Iceland</span></a></li>
-              <li><a href="ireland/index.html"><img src="ireland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Ireland</span></a></li>
-              <li><a href="italy/index.html"><img src="italy/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Italy</span></a></li>
-              <li><a href="kosovo/index.html"><img src="kosovo/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Kosovo</span></a></li>
-              <li><a href="latvia/index.html"><img src="latvia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Latvia</span></a></li>
-              <li><a href="liechtenstein/index.html"><img src="liechtenstein/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Liechtenstein</span></a></li>
-              <li><a href="lithuania/index.html"><img src="lithuania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Lithuania</span></a></li>
-              <li><a href="luxembourg/index.html"><img src="luxembourg/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Luxembourg</span></a></li>
-              <li><a href="malta/index.html"><img src="malta/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Malta</span></a></li>
-              <li><a href="moldova/index.html"><img src="moldova/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Moldova</span></a></li>
-              <li><a href="monaco/index.html"><img src="monaco/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Monaco</span></a></li>
-              <li><a href="montenegro/index.html"><img src="montenegro/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Montenegro</span></a></li>
-              <li><a href="netherlands/index.html"><img src="netherlands/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Netherlands</span></a></li>
-              <li><a href="north-macedonia/index.html"><img src="north-macedonia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>North Macedonia</span></a></li>
-              <li><a href="norway/index.html"><img src="norway/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Norway</span></a></li>
-              <li><a href="poland/index.html"><img src="poland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Poland</span></a></li>
-              <li><a href="portugal/index.html"><img src="portugal/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Portugal</span></a></li>
-              <li><a href="romania/index.html"><img src="romania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Romania</span></a></li>
-              <li><a href="russia/index.html"><img src="russia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Russia</span></a></li>
-              <li><a href="san-marino/index.html"><img src="san-marino/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>San Marino</span></a></li>
-              <li><a href="serbia/index.html"><img src="serbia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Serbia</span></a></li>
-              <li><a href="slovakia/index.html"><img src="slovakia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Slovakia</span></a></li>
-              <li><a href="slovenia/index.html"><img src="slovenia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Slovenia</span></a></li>
-              <li><a href="spain/index.html"><img src="spain/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Spain</span></a></li>
-              <li><a href="sweden/index.html"><img src="sweden/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Sweden</span></a></li>
-              <li><a href="switzerland/index.html"><img src="switzerland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Switzerland</span></a></li>
-              <li><a href="turkey/index.html"><img src="turkey/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Turkey</span></a></li>
-              <li><a href="ukraine/index.html"><img src="ukraine/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Ukraine</span></a></li>
-              <li><a href="united-kingdom/index.html"><img src="united-kingdom/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>United Kingdom</span></a></li>
-              <li><a href="vatican-city/index.html"><img src="vatican-city/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Vatican City</span></a></li>
-          </ul></nav>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
-  </body>
+    <section class="dashboard-grid" aria-label="Europe overview">
+      <article class="card span-6">
+        <h2 class="card-title">Overview</h2>
+        <div class="fact-table">
+          <div class="fact-row"><span>Area</span><strong>22.1 million km2</strong></div>
+          <div class="fact-row"><span>Population</span><strong>742 million</strong></div>
+          <div class="fact-row"><span>Population ranking</span><strong>#3</strong></div>
+          <div class="fact-row"><span>Share of world population</span><strong>9.3%</strong></div>
+          <div class="fact-row"><span>Countries</span><strong>50</strong></div>
+          <div class="fact-row"><span>Largest country</span><strong>Russia</strong></div>
+          <div class="fact-row"><span>Smallest country</span><strong>Vatican City</strong></div>
+          <div class="fact-row"><span>Time zones</span><strong>UTC -1 to +5</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <h2 class="card-title">Key Stats</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>Human development</span><div class="bar-track"><i class="bar-fill" style="--value:94%"></i></div><strong>Very high</strong></div>
+          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill" style="--value:76%"></i></div><strong>76</strong></div>
+          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill" style="--value:92%"></i></div><strong>92%</strong></div>
+          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill" style="--value:82%"></i></div><strong>77.9</strong></div>
+          <div class="bar-row"><span>GDP nominal</span><div class="bar-track"><i class="bar-fill" style="--value:88%"></i></div><strong>$22.9T</strong></div>
+        </div>
+        <p class="source-line">Sources: UN, World Bank, Numbeo.</p>
+      </article>
+
+      <article class="card span-6">
+        <h2 class="card-title">Top 5 Countries by Population</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>Russia</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>146M</strong></div>
+          <div class="bar-row"><span>Turkey</span><div class="bar-track"><i class="bar-fill" style="--value:59%"></i></div><strong>86M</strong></div>
+          <div class="bar-row"><span>Germany</span><div class="bar-track"><i class="bar-fill" style="--value:57%"></i></div><strong>83M</strong></div>
+          <div class="bar-row"><span>United Kingdom</span><div class="bar-track"><i class="bar-fill" style="--value:47%"></i></div><strong>69M</strong></div>
+          <div class="bar-row"><span>France</span><div class="bar-track"><i class="bar-fill" style="--value:45%"></i></div><strong>66M</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <h2 class="card-title">Landscape &amp; Nature</h2>
+        <div class="metric-strip">
+          <div class="metric"><strong>5,642 m</strong><span>Highest point</span></div>
+          <div class="metric"><strong>45%</strong><span>Forest cover</span></div>
+          <div class="metric"><strong>37,000 km</strong><span>Coastline</span></div>
+          <div class="metric"><strong>4</strong><span>Main climate zones</span></div>
+        </div>
+      </article>
+
+      <article class="card span-5">
+        <h2 class="card-title">Top 3 Highest Mountains</h2>
+        <div class="mini-grid">
+          <div class="mini-tile"><div class="mini-photo" style="background-image:linear-gradient(180deg,rgba(14,52,70,.02),rgba(14,52,70,.38)),url('img/europe-hero-mockup.png')"></div><strong>Mount Elbrus</strong><span>5,642 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background-image:linear-gradient(180deg,rgba(14,52,70,.02),rgba(14,52,70,.38)),url('img/europe-hero-mockup.png')"></div><strong>Dykh-Tau</strong><span>5,205 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background-image:linear-gradient(180deg,rgba(14,52,70,.02),rgba(14,52,70,.38)),url('img/europe-hero-mockup.png')"></div><strong>Shkhara</strong><span>5,193 m</span></div>
+        </div>
+      </article>
+
+      <article class="card span-7">
+        <h2 class="card-title">Regions</h2>
+        <div class="two-list">
+          <div class="info-chip"><span>North</span><strong>Nordic cities, fjords, islands and winter routes</strong></div>
+          <div class="info-chip"><span>West</span><strong>Dense capitals, rail corridors and Atlantic access</strong></div>
+          <div class="info-chip"><span>South</span><strong>Mediterranean coasts, islands and old city networks</strong></div>
+          <div class="info-chip"><span>East</span><strong>Large land routes, mountain arcs and cultural capitals</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-12">
+        <h2 class="card-title">Why Europe?</h2>
+        <div class="icon-grid">
+          <div class="icon-tile"><strong>Rich history</strong><span>Ancient cities, cathedrals, museums and old trade routes.</span></div>
+          <div class="icon-tile"><strong>Diverse landscapes</strong><span>Alps, fjords, coastlines, islands and volcanic terrain.</span></div>
+          <div class="icon-tile"><strong>Easy to explore</strong><span>Short flights, dense rail and strong public transport.</span></div>
+          <div class="icon-tile"><strong>Culture &amp; cuisine</strong><span>Languages, food regions and local calendars.</span></div>
+          <div class="icon-tile"><strong>Year-round travel</strong><span>Summer coasts, winter mountains and city weekends.</span></div>
+        </div>
+      </article>
+
+      <article class="card span-12">
+        <h2 class="card-title">Countries</h2>
+        <div class="pill-row">
+          <a class="pill" href="albania/index.html"><img src="albania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Albania</span></a><a class="pill" href="andorra/index.html"><img src="andorra/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Andorra</span></a><a class="pill" href="armenia/index.html"><img src="armenia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Armenia</span></a><a class="pill" href="austria/index.html"><img src="austria/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Austria</span></a><a class="pill" href="azerbaijan/index.html"><img src="azerbaijan/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Azerbaijan</span></a><a class="pill" href="belarus/index.html"><img src="belarus/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Belarus</span></a><a class="pill" href="belgium/index.html"><img src="belgium/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Belgium</span></a><a class="pill" href="bosnia-and-herzegovina/index.html"><img src="bosnia-and-herzegovina/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Bosnia and Herzegovina</span></a><a class="pill" href="bulgaria/index.html"><img src="bulgaria/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Bulgaria</span></a><a class="pill" href="croatia/index.html"><img src="croatia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Croatia</span></a><a class="pill" href="cyprus/index.html"><img src="cyprus/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Cyprus</span></a><a class="pill" href="czechia/index.html"><img src="czechia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Czechia</span></a><a class="pill" href="denmark/index.html"><img src="denmark/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Denmark</span></a><a class="pill" href="estonia/index.html"><img src="estonia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Estonia</span></a><a class="pill" href="finland/index.html"><img src="finland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Finland</span></a><a class="pill" href="france/index.html"><img src="france/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>France</span></a><a class="pill" href="georgia/index.html"><img src="georgia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Georgia</span></a><a class="pill" href="germany/index.html"><img src="germany/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Germany</span></a><a class="pill" href="greece/index.html"><img src="greece/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Greece</span></a><a class="pill" href="hungary/index.html"><img src="hungary/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Hungary</span></a><a class="pill" href="iceland/index.html"><img src="iceland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Iceland</span></a><a class="pill" href="ireland/index.html"><img src="ireland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Ireland</span></a><a class="pill" href="italy/index.html"><img src="italy/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Italy</span></a><a class="pill" href="kosovo/index.html"><img src="kosovo/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Kosovo</span></a><a class="pill" href="latvia/index.html"><img src="latvia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Latvia</span></a><a class="pill" href="liechtenstein/index.html"><img src="liechtenstein/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Liechtenstein</span></a><a class="pill" href="lithuania/index.html"><img src="lithuania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Lithuania</span></a><a class="pill" href="luxembourg/index.html"><img src="luxembourg/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Luxembourg</span></a><a class="pill" href="malta/index.html"><img src="malta/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Malta</span></a><a class="pill" href="moldova/index.html"><img src="moldova/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Moldova</span></a><a class="pill" href="monaco/index.html"><img src="monaco/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Monaco</span></a><a class="pill" href="montenegro/index.html"><img src="montenegro/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Montenegro</span></a><a class="pill" href="netherlands/index.html"><img src="netherlands/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Netherlands</span></a><a class="pill" href="north-macedonia/index.html"><img src="north-macedonia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>North Macedonia</span></a><a class="pill" href="norway/index.html"><img src="norway/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Norway</span></a><a class="pill" href="poland/index.html"><img src="poland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Poland</span></a><a class="pill" href="portugal/index.html"><img src="portugal/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Portugal</span></a><a class="pill" href="romania/index.html"><img src="romania/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Romania</span></a><a class="pill" href="russia/index.html"><img src="russia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Russia</span></a><a class="pill" href="san-marino/index.html"><img src="san-marino/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>San Marino</span></a><a class="pill" href="serbia/index.html"><img src="serbia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Serbia</span></a><a class="pill" href="slovakia/index.html"><img src="slovakia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Slovakia</span></a><a class="pill" href="slovenia/index.html"><img src="slovenia/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Slovenia</span></a><a class="pill" href="spain/index.html"><img src="spain/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Spain</span></a><a class="pill" href="sweden/index.html"><img src="sweden/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Sweden</span></a><a class="pill" href="switzerland/index.html"><img src="switzerland/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Switzerland</span></a><a class="pill" href="turkey/index.html"><img src="turkey/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Turkey</span></a><a class="pill" href="ukraine/index.html"><img src="ukraine/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Ukraine</span></a><a class="pill" href="united-kingdom/index.html"><img src="united-kingdom/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>United Kingdom</span></a><a class="pill" href="vatican-city/index.html"><img src="vatican-city/img/flag.svg" alt="" loading="lazy" width="24" height="18"><span>Vatican City</span></a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
+</body>
 </html>
