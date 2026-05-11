@@ -1,184 +1,123 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-<title>Asia</title>
-    <style>
-      :root{--theme:#9b3d2e;--accent:#e0a84f;--ink:#17201c;--paper:#fbfaf6;--muted:#5f6b63;--line:rgba(23, 32, 28, 0.14)}
-      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
-      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-      .top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}
-      .top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
-      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}
-      .left-col{display:grid;gap:10px;position:sticky;top:55px}
-      .hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18)}
-      .eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}
-      h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}
-      .intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}
-      .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-      .map-wrap iframe{display:block;width:100%;height:210px;border:none}
-      .flag{width:88px;height:66px;border-radius:6px;background:white;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 8px 18px rgba(0,0,0,.22);margin-bottom:14px;object-fit:contain}
-      .right-col{display:grid;gap:12px;padding-top:2px}
-      .known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}
-      .known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-      .fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-      .fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-      .fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}
-      .section-label{margin:0 0 8px;font-size:17px;font-weight:700}
-      .country-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin:0;padding:0;max-height:30vh;overflow-y:auto}
-      .country-grid a{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-left:3px solid var(--theme);border-radius:7px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
-      .country-grid a:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .country-grid img{width:24px;height:18px;border-radius:3px;object-fit:contain;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
-      .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
-      .city-link{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-      .city-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .city-link strong{display:block;margin-top:3px;font-size:16px}
-      .city-link em{color:var(--muted);font-style:normal;font-size:12px}
-      .city-link:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .religion-wrap{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}
-      .religion-title{display:block;font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
-      .pie{width:96px;height:96px;border-radius:50%}
-      .pie-legend{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-      .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
-      .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
-      .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
-      .map-context{margin-top:4px}
-      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
-      .map-context .map-wrap iframe{height:140px}
-      .bar-chart{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .bar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:2px}
-      .bar-row{display:grid;grid-template-columns:minmax(92px,.34fr) 1fr minmax(42px,auto);gap:10px;align-items:center;font-size:13px}
-      .bar-row span:first-child{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}
-      .bar-track{height:10px;border-radius:999px;background:rgba(23,32,28,.10);overflow:hidden}
-      .bar-fill{display:block;height:100%;width:var(--value);border-radius:999px;background:linear-gradient(90deg,var(--theme),var(--accent))}
-      .bar-row strong{font-size:12px;text-align:right;white-space:nowrap}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="../../../assets/css/oneslider-mockup.css">
+  <meta name="theme-color" content="#0d2137">
+  <title>Asia</title>
+</head>
+<body>
+  <nav class="top-menu" aria-label="Continents">
+    <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon active" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span>
+    <a class="nav-back" href="../../locations/index.html" title="Back to World" aria-label="Back to World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>World</span></a>
+    <a class="nav-pill" href="../africa/index.html">Africa</a>
+    <a class="nav-pill" href="../antarctica/index.html">Antarctica</a>
+    <a class="nav-pill active" aria-current="page" href="index.html">Asia</a>
+    <a class="nav-pill" href="../europe/index.html">Europe</a>
+    <a class="nav-pill" href="../north-america/index.html">N. America</a>
+    <a class="nav-pill" href="../oceania/index.html">Oceania</a>
+    <a class="nav-pill" href="../south-america/index.html">S. America</a>
+  </nav>
 
-      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
-.site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
-      .site-footer p{margin:0}.site-footer a{color:inherit}
-      @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
-      @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}    </style>
-  </head>
-  <body>
-    <nav class="top-menu" aria-label="Continents">
-      <a class="nav-icon" href="../../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      <a href="../africa/index.html">Africa</a>
-        <a href="../antarctica/index.html">Antarctica</a>
-        <a class="active" aria-current="page" href="../asia/index.html">Asia</a>
-        <a href="../europe/index.html">Europe</a>
-        <a href="../north-america/index.html">North America</a>
-        <a href="../oceania/index.html">Oceania</a>
-        <a href="../south-america/index.html">South America</a>
-    </nav>
-    <main class="slide">
-      <aside class="left-col">
-        <div class="hero" style="background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.54)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Tian_Shan_mountains_Central_Asia.jpg') center/cover">
-          <div>
-            <p class="eyebrow">Mountain ranges, megacities, islands and steppe</p>
-            <h1>Asia</h1>
-            <p class="intro">The world population center, spanning major mountain systems, river plains, deserts, islands and megacities.</p>
-          </div>
+  <main class="page-shell">
+    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://commons.wikimedia.org/wiki/Special:FilePath/Tian_Shan_mountains_Central_Asia.jpg')">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Mountain ranges, megacities, islands and steppe</p>
+          <h1 class="hero-title">Asia</h1>
+          <p class="hero-text">The world population center, spanning major mountain systems, river plains, deserts, islands and megacities.</p>
         </div>
-        <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26,-12,150,55&layer=mapnik" loading="lazy" title="Map of Asia"></iframe></div>
-      </aside>
-      <section class="right-col" aria-label="Asia facts">
-        <div class="fact-grid">
-          <div class="fact"><span>Countries</span><strong>44</strong></div>
-          <div class="bar-chart" aria-label="Top 5 countries by population"><div class="bar-title">Top 5 countries by population</div><div class="bar-row"><span>India</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>1.4B</strong></div><div class="bar-row"><span>China</span><div class="bar-track"><i class="bar-fill" style="--value:99%"></i></div><strong>1.4B</strong></div><div class="bar-row"><span>Indonesia</span><div class="bar-track"><i class="bar-fill" style="--value:20%"></i></div><strong>284M</strong></div><div class="bar-row"><span>Pakistan</span><div class="bar-track"><i class="bar-fill" style="--value:17%"></i></div><strong>241M</strong></div><div class="bar-row"><span>Bangladesh</span><div class="bar-track"><i class="bar-fill" style="--value:12%"></i></div><strong>170M</strong></div></div>
-          <div class="fact"><span>Area</span><strong>31.0M km2</strong></div>
-          <div class="fact"><span>Size ranking</span><strong>#1</strong></div>
-          <div class="fact"><span>Share of land</span><strong>58.6%</strong></div>
-          <div class="fact"><span>Population</span><strong>4.86B</strong></div>
-          <div class="fact"><span>Population ranking</span><strong>#1</strong></div>
-          <div class="fact"><span>Largest country</span><strong>India</strong></div>
-          <div class="fact"><span>Regions</span><strong>East, South, Southeast, Central, Western Asia</strong></div>
-          <div class="fact"><span>Climate</span><strong>Arctic, desert, monsoon, tropical</strong></div>
-          <div class="fact"><span>Highest point</span><strong>Mount Everest</strong></div>
-          <div class="fact"><span>Largest religion</span><strong>Islam, Hinduism, Buddhism</strong></div>
-          <div class="fact"><span>Religious diversity</span><strong>Very high</strong></div>
-          <div class="fact" style="grid-column:span 2"><span>Known for</span><strong>Himalayan peaks, monsoon plains, megacities, island arcs, desert interiors, ancient trade routes, major river deltas and some of the world&#39;s largest economies.</strong></div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span>Countries</span><strong>44</strong></div>
+          <div class="hero-stat"><span>Area</span><strong>31.0M km2</strong></div>
+          <div class="hero-stat"><span>Population</span><strong>4.86B</strong></div>
+          <div class="hero-stat"><span>Highest point</span><strong>Mount Everest</strong></div>
         </div>
-        <div>
-        <div class="vbar-chart" aria-label="Top 3 highest mountains"><div class="vbar-title">Top 3 highest mountains</div><div class="vbar-grid"><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:100%"></i></div><div class="vbar-name">Mount Everest</div><div class="vbar-meters">8 849 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:41%"></i></div><div class="vbar-name">K2</div><div class="vbar-meters">8 611 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:35%"></i></div><div class="vbar-name">Kangchenjunga</div><div class="vbar-meters">8 586 m</div></div></div></div>
-          <p class="section-label">Countries</p>
-          <nav aria-label="Countries in Asia"><ul class="country-grid">
-              <li><a href="afghanistan/index.html"><img src="https://flagcdn.com/af.svg" alt="" loading="lazy" width="24" height="18"><span>Afghanistan</span></a></li>
-              <li><a href="bahrain/index.html"><img src="https://flagcdn.com/bh.svg" alt="" loading="lazy" width="24" height="18"><span>Bahrain</span></a></li>
-              <li><a href="bangladesh/index.html"><img src="https://flagcdn.com/bd.svg" alt="" loading="lazy" width="24" height="18"><span>Bangladesh</span></a></li>
-              <li><a href="bhutan/index.html"><img src="https://flagcdn.com/bt.svg" alt="" loading="lazy" width="24" height="18"><span>Bhutan</span></a></li>
-              <li><a href="brunei/index.html"><img src="https://flagcdn.com/bn.svg" alt="" loading="lazy" width="24" height="18"><span>Brunei</span></a></li>
-              <li><a href="cambodia/index.html"><img src="https://flagcdn.com/kh.svg" alt="" loading="lazy" width="24" height="18"><span>Cambodia</span></a></li>
-              <li><a href="china/index.html"><img src="https://flagcdn.com/cn.svg" alt="" loading="lazy" width="24" height="18"><span>China</span></a></li>
-              <li><a href="india/index.html"><img src="https://flagcdn.com/in.svg" alt="" loading="lazy" width="24" height="18"><span>India</span></a></li>
-              <li><a href="indonesia/index.html"><img src="https://flagcdn.com/id.svg" alt="" loading="lazy" width="24" height="18"><span>Indonesia</span></a></li>
-              <li><a href="iran/index.html"><img src="https://flagcdn.com/ir.svg" alt="" loading="lazy" width="24" height="18"><span>Iran</span></a></li>
-              <li><a href="iraq/index.html"><img src="https://flagcdn.com/iq.svg" alt="" loading="lazy" width="24" height="18"><span>Iraq</span></a></li>
-              <li><a href="israel/index.html"><img src="https://flagcdn.com/il.svg" alt="" loading="lazy" width="24" height="18"><span>Israel</span></a></li>
-              <li><a href="japan/index.html"><img src="https://flagcdn.com/jp.svg" alt="" loading="lazy" width="24" height="18"><span>Japan</span></a></li>
-              <li><a href="jordan/index.html"><img src="https://flagcdn.com/jo.svg" alt="" loading="lazy" width="24" height="18"><span>Jordan</span></a></li>
-              <li><a href="kazakhstan/index.html"><img src="https://flagcdn.com/kz.svg" alt="" loading="lazy" width="24" height="18"><span>Kazakhstan</span></a></li>
-              <li><a href="kuwait/index.html"><img src="https://flagcdn.com/kw.svg" alt="" loading="lazy" width="24" height="18"><span>Kuwait</span></a></li>
-              <li><a href="kyrgyzstan/index.html"><img src="https://flagcdn.com/kg.svg" alt="" loading="lazy" width="24" height="18"><span>Kyrgyzstan</span></a></li>
-              <li><a href="laos/index.html"><img src="https://flagcdn.com/la.svg" alt="" loading="lazy" width="24" height="18"><span>Laos</span></a></li>
-              <li><a href="lebanon/index.html"><img src="https://flagcdn.com/lb.svg" alt="" loading="lazy" width="24" height="18"><span>Lebanon</span></a></li>
-              <li><a href="malaysia/index.html"><img src="https://flagcdn.com/my.svg" alt="" loading="lazy" width="24" height="18"><span>Malaysia</span></a></li>
-              <li><a href="maldives/index.html"><img src="https://flagcdn.com/mv.svg" alt="" loading="lazy" width="24" height="18"><span>Maldives</span></a></li>
-              <li><a href="mongolia/index.html"><img src="https://flagcdn.com/mn.svg" alt="" loading="lazy" width="24" height="18"><span>Mongolia</span></a></li>
-              <li><a href="myanmar/index.html"><img src="https://flagcdn.com/mm.svg" alt="" loading="lazy" width="24" height="18"><span>Myanmar</span></a></li>
-              <li><a href="nepal/index.html"><img src="https://flagcdn.com/np.svg" alt="" loading="lazy" width="24" height="18"><span>Nepal</span></a></li>
-              <li><a href="north-korea/index.html"><img src="https://flagcdn.com/kp.svg" alt="" loading="lazy" width="24" height="18"><span>North Korea</span></a></li>
-              <li><a href="oman/index.html"><img src="https://flagcdn.com/om.svg" alt="" loading="lazy" width="24" height="18"><span>Oman</span></a></li>
-              <li><a href="pakistan/index.html"><img src="https://flagcdn.com/pk.svg" alt="" loading="lazy" width="24" height="18"><span>Pakistan</span></a></li>
-              <li><a href="palestine/index.html"><img src="https://flagcdn.com/ps.svg" alt="" loading="lazy" width="24" height="18"><span>Palestine</span></a></li>
-              <li><a href="philippines/index.html"><img src="https://flagcdn.com/ph.svg" alt="" loading="lazy" width="24" height="18"><span>Philippines</span></a></li>
-              <li><a href="qatar/index.html"><img src="https://flagcdn.com/qa.svg" alt="" loading="lazy" width="24" height="18"><span>Qatar</span></a></li>
-              <li><a href="saudi-arabia/index.html"><img src="https://flagcdn.com/sa.svg" alt="" loading="lazy" width="24" height="18"><span>Saudi Arabia</span></a></li>
-              <li><a href="singapore/index.html"><img src="https://flagcdn.com/sg.svg" alt="" loading="lazy" width="24" height="18"><span>Singapore</span></a></li>
-              <li><a href="south-korea/index.html"><img src="https://flagcdn.com/kr.svg" alt="" loading="lazy" width="24" height="18"><span>South Korea</span></a></li>
-              <li><a href="sri-lanka/index.html"><img src="https://flagcdn.com/lk.svg" alt="" loading="lazy" width="24" height="18"><span>Sri Lanka</span></a></li>
-              <li><a href="syria/index.html"><img src="https://flagcdn.com/sy.svg" alt="" loading="lazy" width="24" height="18"><span>Syria</span></a></li>
-              <li><a href="taiwan/index.html"><img src="https://flagcdn.com/tw.svg" alt="" loading="lazy" width="24" height="18"><span>Taiwan</span></a></li>
-              <li><a href="tajikistan/index.html"><img src="https://flagcdn.com/tj.svg" alt="" loading="lazy" width="24" height="18"><span>Tajikistan</span></a></li>
-              <li><a href="thailand/index.html"><img src="https://flagcdn.com/th.svg" alt="" loading="lazy" width="24" height="18"><span>Thailand</span></a></li>
-              <li><a href="timor-leste/index.html"><img src="https://flagcdn.com/tl.svg" alt="" loading="lazy" width="24" height="18"><span>Timor-Leste</span></a></li>
-              <li><a href="turkmenistan/index.html"><img src="https://flagcdn.com/tm.svg" alt="" loading="lazy" width="24" height="18"><span>Turkmenistan</span></a></li>
-              <li><a href="united-arab-emirates/index.html"><img src="https://flagcdn.com/ae.svg" alt="" loading="lazy" width="24" height="18"><span>United Arab Emirates</span></a></li>
-              <li><a href="uzbekistan/index.html"><img src="https://flagcdn.com/uz.svg" alt="" loading="lazy" width="24" height="18"><span>Uzbekistan</span></a></li>
-              <li><a href="vietnam/index.html"><img src="https://flagcdn.com/vn.svg" alt="" loading="lazy" width="24" height="18"><span>Vietnam</span></a></li>
-              <li><a href="yemen/index.html"><img src="https://flagcdn.com/ye.svg" alt="" loading="lazy" width="24" height="18"><span>Yemen</span></a></li>
-          </ul></nav>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
-  </body>
+    <section class="dashboard-grid" aria-label="Asia overview">
+      <article class="card span-6">
+        <h2 class="card-title">Key Facts</h2>
+        <div class="fact-table">
+          <div class="fact-row"><span>Countries</span><strong>44</strong></div>
+          <div class="fact-row"><span>Area</span><strong>31.0M km2</strong></div>
+          <div class="fact-row"><span>Size ranking</span><strong>#1</strong></div>
+          <div class="fact-row"><span>Share of land</span><strong>58.6%</strong></div>
+          <div class="fact-row"><span>Population</span><strong>4.86B</strong></div>
+          <div class="fact-row"><span>Population ranking</span><strong>#1</strong></div>
+          <div class="fact-row"><span>Largest country</span><strong>India</strong></div>
+          <div class="fact-row"><span>Regions</span><strong>East, South, Southeast, Central, Western Asia</strong></div>
+          <div class="fact-row"><span>Climate</span><strong>Arctic, desert, monsoon, tropical</strong></div>
+          <div class="fact-row"><span>Highest point</span><strong>Mount Everest</strong></div>
+          <div class="fact-row"><span>Largest religion</span><strong>Islam, Hinduism, Buddhism</strong></div>
+          <div class="fact-row"><span>Religious diversity</span><strong>Very high</strong></div>
+        </div>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">About Asia</h2>
+        <p class="hero-text" style="padding:12px 0">Himalayan peaks, monsoon plains, megacities, island arcs, desert interiors, ancient trade routes, major river deltas and some of the world&#39;s largest economies.</p>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Countries</h2>
+        <div class="mini-grid">
+          <a class="mini-tile" href="afghanistan/index.html"><strong>Afghanistan</strong></a>
+          <a class="mini-tile" href="bahrain/index.html"><strong>Bahrain</strong></a>
+          <a class="mini-tile" href="bangladesh/index.html"><strong>Bangladesh</strong></a>
+          <a class="mini-tile" href="bhutan/index.html"><strong>Bhutan</strong></a>
+          <a class="mini-tile" href="brunei/index.html"><strong>Brunei</strong></a>
+          <a class="mini-tile" href="cambodia/index.html"><strong>Cambodia</strong></a>
+          <a class="mini-tile" href="china/index.html"><strong>China</strong></a>
+          <a class="mini-tile" href="india/index.html"><strong>India</strong></a>
+          <a class="mini-tile" href="indonesia/index.html"><strong>Indonesia</strong></a>
+          <a class="mini-tile" href="iran/index.html"><strong>Iran</strong></a>
+          <a class="mini-tile" href="iraq/index.html"><strong>Iraq</strong></a>
+          <a class="mini-tile" href="israel/index.html"><strong>Israel</strong></a>
+          <a class="mini-tile" href="japan/index.html"><strong>Japan</strong></a>
+          <a class="mini-tile" href="jordan/index.html"><strong>Jordan</strong></a>
+          <a class="mini-tile" href="kazakhstan/index.html"><strong>Kazakhstan</strong></a>
+          <a class="mini-tile" href="kuwait/index.html"><strong>Kuwait</strong></a>
+          <a class="mini-tile" href="kyrgyzstan/index.html"><strong>Kyrgyzstan</strong></a>
+          <a class="mini-tile" href="laos/index.html"><strong>Laos</strong></a>
+          <a class="mini-tile" href="lebanon/index.html"><strong>Lebanon</strong></a>
+          <a class="mini-tile" href="malaysia/index.html"><strong>Malaysia</strong></a>
+          <a class="mini-tile" href="maldives/index.html"><strong>Maldives</strong></a>
+          <a class="mini-tile" href="mongolia/index.html"><strong>Mongolia</strong></a>
+          <a class="mini-tile" href="myanmar/index.html"><strong>Myanmar</strong></a>
+          <a class="mini-tile" href="nepal/index.html"><strong>Nepal</strong></a>
+          <a class="mini-tile" href="north-korea/index.html"><strong>North Korea</strong></a>
+          <a class="mini-tile" href="oman/index.html"><strong>Oman</strong></a>
+          <a class="mini-tile" href="pakistan/index.html"><strong>Pakistan</strong></a>
+          <a class="mini-tile" href="palestine/index.html"><strong>Palestine</strong></a>
+          <a class="mini-tile" href="philippines/index.html"><strong>Philippines</strong></a>
+          <a class="mini-tile" href="qatar/index.html"><strong>Qatar</strong></a>
+          <a class="mini-tile" href="saudi-arabia/index.html"><strong>Saudi Arabia</strong></a>
+          <a class="mini-tile" href="singapore/index.html"><strong>Singapore</strong></a>
+          <a class="mini-tile" href="south-korea/index.html"><strong>South Korea</strong></a>
+          <a class="mini-tile" href="sri-lanka/index.html"><strong>Sri Lanka</strong></a>
+          <a class="mini-tile" href="syria/index.html"><strong>Syria</strong></a>
+          <a class="mini-tile" href="taiwan/index.html"><strong>Taiwan</strong></a>
+          <a class="mini-tile" href="tajikistan/index.html"><strong>Tajikistan</strong></a>
+          <a class="mini-tile" href="thailand/index.html"><strong>Thailand</strong></a>
+          <a class="mini-tile" href="timor-leste/index.html"><strong>Timor-Leste</strong></a>
+          <a class="mini-tile" href="turkmenistan/index.html"><strong>Turkmenistan</strong></a>
+          <a class="mini-tile" href="united-arab-emirates/index.html"><strong>United Arab Emirates</strong></a>
+          <a class="mini-tile" href="uzbekistan/index.html"><strong>Uzbekistan</strong></a>
+          <a class="mini-tile" href="vietnam/index.html"><strong>Vietnam</strong></a>
+          <a class="mini-tile" href="yemen/index.html"><strong>Yemen</strong></a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
+</body>
 </html>

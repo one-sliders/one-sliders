@@ -1,174 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-<title>Maldives</title>
-    <style>
-      :root{--theme:#9b3d2e;--accent:#e0a84f;--ink:#17201c;--paper:#fbfaf6;--muted:#5f6b63;--line:rgba(23,32,28,.14)}
-      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
-      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-      .top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}
-      .top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
-      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}
-      .left-col{display:grid;gap:10px;position:sticky;top:55px}
-      .hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18)}
-      .eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}
-      h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}
-      .intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}
-      .map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-      .map-wrap iframe{display:block;width:100%;height:210px;border:none}
-      .flag{width:88px;height:66px;border-radius:6px;background:white;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 8px 18px rgba(0,0,0,.22);margin-bottom:14px;object-fit:contain}
-      .right-col{display:grid;gap:12px;padding-top:2px}
-      .known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}
-      .known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-      .fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-      .fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-      .fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}
-      .section-label{margin:0 0 8px;font-size:17px;font-weight:700}
-      .country-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin:0;padding:0;max-height:30vh;overflow-y:auto}
-      .country-grid a{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-left:3px solid var(--theme);border-radius:7px;background:white;text-decoration:none;font-size:13px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
-      .country-grid a:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .country-grid img{width:24px;height:18px;border-radius:3px;object-fit:contain;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
-      .city-grid{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,240px);grid-template-columns:none;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding-bottom:6px}.city-link{scroll-snap-align:start}
-      .city-link{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;text-decoration:none;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-      .city-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}
-      .city-link strong{display:block;margin-top:3px;font-size:16px}
-      .city-link em{color:var(--muted);font-style:normal;font-size:12px}
-      .city-link:hover{transform:translateY(-1px);border-color:var(--theme)}
-      .religion-wrap{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}
-      .religion-title{display:block;font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:6px}
-      .pie{width:96px;height:96px;border-radius:50%}
-      .pie-legend{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-      .pie-legend li{display:flex;align-items:center;gap:8px;font-size:13px}
-      .pie-legend li span{width:12px;height:12px;border-radius:2px;flex:0 0 auto}
-      .religion-wrap p{margin:6px 0 0;color:var(--muted);font-size:12px}
-      .map-context{margin-top:4px}
-      .map-context p{margin:0 0 4px;font-size:12px;color:var(--muted)}
-      .map-context .map-wrap iframe{height:140px}
-      .bar-chart{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .bar-row{display:grid;grid-template-columns:minmax(92px,.34fr) 1fr minmax(42px,auto);gap:10px;align-items:center;font-size:13px}
-      .bar-row span:first-child{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}
-      .bar-track{height:10px;border-radius:999px;background:rgba(23,32,28,.10);overflow:hidden}
-      .bar-fill{display:block;height:100%;width:var(--value);border-radius:999px;background:linear-gradient(90deg,var(--theme),var(--accent))}
-      .bar-row strong{font-size:12px;text-align:right;white-space:nowrap}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
-
-      .vbar-chart{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .vbar-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:0;margin-bottom:8px}
-      .vbar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;min-height:142px}
-      .vbar-item{display:grid;grid-template-rows:1fr auto auto;gap:5px;min-width:0;text-align:center}
-      .vbar-track{height:96px;display:flex;align-items:end;justify-content:center;border-radius:8px;background:rgba(23,32,28,.08);overflow:hidden}
-      .vbar-fill{display:block;width:100%;height:var(--value);background:linear-gradient(180deg,var(--accent),var(--theme));border-radius:8px 8px 0 0}
-      .vbar-name{font-size:12px;font-weight:700;line-height:1.12;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-      .vbar-meters{font-size:12px;color:var(--muted);white-space:nowrap}
-.country-events{display:grid;gap:8px}.event-grid{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,280px);grid-template-columns:none;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding-bottom:6px}.event-link{display:block;scroll-snap-align:start;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;background:white;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.05)}.event-link span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}.event-link strong{display:block;margin-top:4px;font-size:16px}.event-link em{display:block;margin-top:5px;color:var(--muted);font-size:12px;font-style:normal;line-height:1.25}.site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
-      .site-footer p{margin:0}.site-footer a{color:inherit}
-      @media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}
-      @media(max-width:600px){.fact-grid{grid-template-columns:1fr}.country-grid{max-height:none}}
-    
-      .cross-nav-bar{padding:14px clamp(14px,3vw,36px);background:white;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px}
-      .cross-nav-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-      .cross-nav-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#5a6672;flex:0 0 64px}
-      .cross-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid rgba(0,0,0,.13);border-radius:999px;background:#f2f3f5;text-decoration:none;font-size:12px;color:#5a6672;font-weight:600;white-space:nowrap}
-      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    </style>
-  </head>
-  <body>
-    <nav class="top-menu" aria-label="Location navigation">
-      <a class="nav-icon" href="../../../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      
-      <a href="../index.html">Asia</a>
-      <a class="active" aria-current="page" href="index.html">Maldives</a>
-      <a href="male.html">Male</a>
-    </nav>
-    <main class="slide">
-      <aside class="left-col">
-        <div class="hero" style="background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.56)),url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80') center/cover">
-          <div>
-            <img class="flag" src="https://flagcdn.com/mv.svg" alt="Maldives flag">
-            <p class="eyebrow">Country in Asia</p>
-            <h1>Maldives</h1>
-            <p class="intro">Maldives belongs to <a href="../index.html">Asia</a>. The capital city is <a href="male.html">Male</a>.</p>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="../../../../assets/css/oneslider-mockup.css">
+  <meta name="theme-color" content="#0d2137">
+  <title>Maldives</title>
+</head>
+<body>  <nav class="top-menu" aria-label="Location navigation">
+    <a class="nav-icon" href="../../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon active" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span>
+    <a class="nav-back" href="../index.html" title="Back to Asia" aria-label="Back to Asia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Asia</span></a>
+    <a class="nav-pill" href="../index.html">Asia</a>
+    <a class="nav-pill active" aria-current="page" href="index.html">Maldives</a>
+  </nav>  <main class="page-shell">
+    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80')">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Country in Asia</p>
+          <h1 class="hero-title">Maldives</h1>
+          <p class="hero-text">Maldives belongs to Asia. The capital city is Male.</p>
         </div>
-        <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=72.6,-0.7,73.7,7.1&layer=mapnik" loading="lazy" title="Map of Maldives"></iframe></div>
-      </aside>
-      <section class="right-col" aria-label="Maldives facts">
-        <div class="known-for"><span>Known for</span>Maldives: capital Male, largest city MAL&#201;, Varied, monsoon to desert climate</div>
-        <div class="fact-grid">
-          <div class="fact"><span>Continent</span><strong><a href="../index.html">Asia</a></strong></div>
-          <div class="bar-chart" aria-label="Top 3 cities by population"><div class="bar-title">Top 3 cities by population</div><div class="bar-row"><span>MAL&#201;</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>117k</strong></div><div class="bar-row"><span>Capital district</span><div class="bar-track"><i class="bar-fill" style="--value:50%"></i></div><strong>58k</strong></div><div class="bar-row"><span>Capital district</span><div class="bar-track"><i class="bar-fill" style="--value:25%"></i></div><strong>29k</strong></div></div>
-          <div class="fact"><span>Population</span><strong>515k</strong></div>
-          <div class="fact"><span>Population ranking</span><strong>#168</strong></div>
-          <div class="fact"><span>Area</span><strong>300 km2</strong></div>
-          <div class="fact"><span>Area ranking</span><strong>#187</strong></div>
-          <div class="fact"><span>Capital city</span><strong><a href="male.html">Male</a></strong></div>
-          <div class="fact"><span>Largest city</span><strong>MAL&#201;</strong></div>
-          <div class="fact"><span>Language</span><strong>Maldivian</strong></div>
-          <div class="fact"><span>Currency</span><strong>Maldivian rufiyaa</strong></div>
-          <div class="fact"><span>Government</span><strong>Sovereign state</strong></div>
-          <div class="fact"><span>Climate</span><strong>Varied, monsoon to desert</strong></div>
-      <div class="vbar-chart" aria-label="Top 3 highest mountains"><div class="vbar-title">Top 3 highest mountains</div><div class="vbar-grid"><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:100%"></i></div><div class="vbar-name">High point 1</div><div class="vbar-meters">1 000 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:60%"></i></div><div class="vbar-name">High point 2</div><div class="vbar-meters">720 m</div></div><div class="vbar-item"><div class="vbar-track"><i class="vbar-fill" style="--value:35%"></i></div><div class="vbar-name">High point 3</div><div class="vbar-meters">550 m</div></div></div></div>
-      </div>
-      <div class="religion-wrap">
-        <div>
-          <span class="religion-title">Religion dist.</span>
-          <div class="pie" style="background:conic-gradient(#9b3d2e 0% 88%,#e0a84f 88% 92%,#b0b8b4 92% 95%,#d8d8d4 95% 100%)"></div>
-        </div>
-        <div>
-          <ul class="pie-legend">
-            <li><span style="background:#9b3d2e"></span>Islam 88%</li>
-            <li><span style="background:#e0a84f"></span>Christianity 4%</li>
-            <li><span style="background:#b0b8b4"></span>No religion 3%</li>
-            <li><span style="background:#d8d8d4"></span>Other 5%</li>
-          </ul>
-          <p>Broad estimate by religious grouping.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><span>Capital</span><strong><a href="male.html">Male</a></strong></div>
+          <div class="hero-stat"><span>Language</span><strong>Maldivian</strong></div>
+          <div class="hero-stat"><span>Currency</span><strong>Maldivian rufiyaa</strong></div>
+          <div class="hero-stat"><span>Population</span><strong>515k</strong></div>
         </div>
       </div>
-        <div>
-          <p class="section-label">Cities</p>
-          <div class="city-grid">
-          <a class="city-link" href="male.html"><div><span>Capital city</span><strong>Male</strong></div><em>Open</em></a>
-          </div>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Maldives overview">
+      <article class="card span-6">
+        <h2 class="card-title">Key Facts</h2>
+        <div class="fact-table">
+          <div class="fact-row"><span>Continent</span><strong><a href="../index.html">Asia</a></strong></div>
+          <div class="fact-row"><span>Population</span><strong>515k</strong></div>
+          <div class="fact-row"><span>Population ranking</span><strong>#168</strong></div>
+          <div class="fact-row"><span>Area</span><strong>300 km2</strong></div>
+          <div class="fact-row"><span>Area ranking</span><strong>#187</strong></div>
+          <div class="fact-row"><span>Capital city</span><strong><a href="male.html">Male</a></strong></div>
+          <div class="fact-row"><span>Largest city</span><strong>MAL&#201;</strong></div>
+          <div class="fact-row"><span>Language</span><strong>Maldivian</strong></div>
+          <div class="fact-row"><span>Currency</span><strong>Maldivian rufiyaa</strong></div>
+          <div class="fact-row"><span>Government</span><strong>Sovereign state</strong></div>
+          <div class="fact-row"><span>Climate</span><strong>Varied, monsoon to desert</strong></div>
         </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">About Maldives</h2>
+        <p class="hero-text" style="padding:12px 0">Maldives: capital Male, largest city MAL&#201;, Varied, monsoon to desert climate</p>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Cities</h2>
+        <div class="mini-grid">
+          <a class="mini-tile" href="male.html"><strong>Male</strong></a>
+        </div>
+      </article>
+    </section>
+  </main>
 
-
-      </section>
-    </main>
-  <nav class="cross-nav-bar" aria-label="Explore more">
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Events</span>
-      <a class="cross-pill" href="../../../events/index.html">📅 Events 2026</a>
-    </div>
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Topics</span>
-      <a class="cross-pill" href="../../../categories/sport/index.html">⚽ Sport</a>
-      <a class="cross-pill" href="../../../categories/music/index.html">🎵 Music</a>
-      <a class="cross-pill" href="../../../categories/climate/index.html">🌿 Climate</a>
-      <a class="cross-pill" href="../../../categories/food-and-drinks/index.html">🍽️ Food &amp; drinks</a>
-      <a class="cross-pill" href="../../../categories/technology/index.html">💻 Technology</a>
-      <a class="cross-pill" href="../../../categories/wellness/index.html">🧘 Wellness</a>
-    </div>
-  </nav>
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
-  </body>
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
+</body>
 </html>

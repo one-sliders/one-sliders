@@ -1,59 +1,63 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-<title>Prague</title>
-    <style>
-      :root{--theme:#315f72;--accent:#9bc5d2;--ink:#14202a;--paper:#f7f8f4;--muted:#5e6b70;--line:rgba(20, 32, 42, 0.14)}
-      *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}a{color:inherit}
-      .top-menu{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow-x:auto;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.top-menu a{flex:0 0 auto;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:13px;color:var(--ink)}.top-menu a:hover,.top-menu a.active{background:var(--theme);color:white}
-      .slide{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(480px,1.1fr);min-height:calc(100vh - 43px);gap:clamp(14px,2vw,28px);padding:clamp(12px,2vw,28px);align-items:start}.left-col{display:grid;gap:10px;position:sticky;top:55px}.hero{min-height:clamp(200px,28vh,320px);border-radius:8px;overflow:hidden;display:grid;align-items:end;padding:clamp(16px,2.5vw,28px);color:white;box-shadow:0 14px 38px rgba(0,0,0,.18);background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.54)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover}.eyebrow{margin:0 0 6px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase}h1{margin:0;font-size:clamp(36px,5vw,68px);line-height:.94}.intro{margin:10px 0 0;font-size:clamp(14px,1.4vw,17px);line-height:1.36;max-width:600px}.map-wrap{border-radius:8px;overflow:hidden;border:1px solid var(--line)}.map-wrap iframe{display:block;width:100%;height:210px;border:none}
-      .right-col{display:grid;gap:12px;padding-top:2px}.known-for{margin:0;font-size:14px;line-height:1.4;padding:10px 13px;border-radius:8px;background:white;border:1px solid var(--line);border-left:4px solid var(--accent)}.known-for span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700;margin-bottom:4px}.fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.fact{padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--theme);border-radius:8px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.04)}.fact span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:600}.fact strong{display:block;margin-top:4px;font-size:clamp(13px,1.5vw,18px);line-height:1.1}.section-label{margin:0 0 8px;font-size:17px;font-weight:700}
-      .event-grid{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,280px);grid-template-columns:none;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding-bottom:6px}.event-link{display:block;scroll-snap-align:start;padding:11px 13px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;background:white;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.05)}.event-link span,.event-placeholder span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}.event-link strong,.event-placeholder strong{display:block;margin-top:4px;font-size:16px}.event-placeholder{padding:11px 13px;border:1px dashed var(--line);border-left:4px solid var(--accent);border-radius:8px;background:white;color:var(--muted)}.event-placeholder p{margin:5px 0 0;font-size:13px}.site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}.site-footer p{margin:0}.site-footer a{color:inherit}@media(max-width:1000px){.slide{grid-template-columns:1fr}.left-col{position:static}}@media(max-width:600px){.fact-grid{grid-template-columns:1fr}}
-    
-      .cross-nav-bar{padding:14px clamp(14px,3vw,36px);background:white;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px}
-      .cross-nav-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-      .cross-nav-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#5a6672;flex:0 0 64px}
-      .cross-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid rgba(0,0,0,.13);border-radius:999px;background:#f2f3f5;text-decoration:none;font-size:12px;color:#5a6672;font-weight:600;white-space:nowrap}
-      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    </style>
-  </head>
-  <body>
-    <nav class="top-menu" aria-label="Location navigation">
-      <a class="nav-icon" href="../../../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      <a href="../index.html">Europe</a><a href="index.html">Czechia</a><a class="active" aria-current="page" href="prague.html">Prague</a></nav>
-    <main class="slide"><aside class="left-col"><div class="hero"><div><p class="eyebrow">Capital city of Czechia</p><h1>Prague</h1><p class="intro">Prague is the capital city of <a href="index.html">Czechia</a>, connected to country facts, travel planning and events.</p></div></div><div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.3,50.0,14.6,50.2&layer=mapnik" loading="lazy" title="Map of Prague"></iframe></div></aside>
-      <section class="right-col" aria-label="Prague facts"><div class="known-for"><span>Known for</span>Capital city in Czechia</div><div class="fact-grid"><div class="fact"><span>Country</span><strong><a href="index.html">Czechia</a></strong></div><div class="fact"><span>City population</span><strong>Capital population</strong></div><div class="fact"><span>City ranking</span><strong>Capital city</strong></div><div class="fact"><span>Metro population</span><strong>Capital region</strong></div><div class="fact"><span>Language</span><strong>Czech, Slovak</strong></div><div class="fact"><span>Currency</span><strong>Czech koruna</strong></div><div class="fact"><span>Climate</span><strong>Temperate to boreal</strong></div><div class="fact"><span>Main landmark</span><strong>Central district</strong></div></div><div class="events-section"><p class="section-label">Events</p><div class="event-grid">
-          <div class="event-placeholder"><span>Events</span><strong>No linked 2026 events yet</strong><p>Future events for this city can be connected here.</p></div>
-          </div></div></section>
-    </main>
-  <nav class="cross-nav-bar" aria-label="Explore more">
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Events</span>
-      <a class="cross-pill" href="../../../events/index.html">📅 Events 2026</a>
-    </div>
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Topics</span>
-      <a class="cross-pill" href="../../../categories/sport/index.html">⚽ Sport</a>
-      <a class="cross-pill" href="../../../categories/music/index.html">🎵 Music</a>
-      <a class="cross-pill" href="../../../categories/climate/index.html">🌿 Climate</a>
-      <a class="cross-pill" href="../../../categories/food-and-drinks/index.html">🍽️ Food &amp; drinks</a>
-      <a class="cross-pill" href="../../../categories/technology/index.html">💻 Technology</a>
-      <a class="cross-pill" href="../../../categories/wellness/index.html">🧘 Wellness</a>
-    </div>
-  </nav>
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="../../../../assets/css/oneslider-mockup.css">
+  <meta name="theme-color" content="#0d2137">
+  <title>Prague</title>
+</head>
+<body>  <nav class="top-menu" aria-label="Location navigation">
+    <a class="nav-icon" href="../../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon active" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span>
+    <a class="nav-back" href="index.html" title="Back to Czechia" aria-label="Back to Czechia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Czechia</span></a>
+    <a class="nav-pill" href="../index.html">Europe</a>
+    <a class="nav-pill" href="index.html">Czechia</a>
+    <a class="nav-pill active" aria-current="page" href="prague.html">Prague</a>
+  </nav>  <main class="page-shell">
+    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Capital city of Czechia</p>
+          <h1 class="hero-title">Prague</h1>
+          <p class="hero-text">Prague is the capital city of Czechia, connected to country facts, travel planning and events.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span>Country</span><strong><a href="index.html">Czechia</a></strong></div>
+          <div class="hero-stat"><span>Population</span><strong>Capital population</strong></div>
+          <div class="hero-stat"><span>Metro</span><strong>Capital region</strong></div>
+          <div class="hero-stat"><span>Role</span><strong>Capital city</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Prague overview">
+      <article class="card span-6">
+        <h2 class="card-title">Key Facts</h2>
+        <div class="fact-table">
+          <div class="fact-row"><span>Country</span><strong><a href="index.html">Czechia</a></strong></div>
+          <div class="fact-row"><span>City population</span><strong>Capital population</strong></div>
+          <div class="fact-row"><span>City ranking</span><strong>Capital city</strong></div>
+          <div class="fact-row"><span>Metro population</span><strong>Capital region</strong></div>
+          <div class="fact-row"><span>Language</span><strong>Czech, Slovak</strong></div>
+          <div class="fact-row"><span>Currency</span><strong>Czech koruna</strong></div>
+          <div class="fact-row"><span>Climate</span><strong>Temperate to boreal</strong></div>
+          <div class="fact-row"><span>Main landmark</span><strong>Central district</strong></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">About Prague</h2>
+        <p class="hero-text" style="padding:12px 0">Capital city in Czechia</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
+</body>
 </html>
