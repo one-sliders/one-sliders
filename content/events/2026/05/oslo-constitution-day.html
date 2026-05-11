@@ -20,10 +20,15 @@
     <a class="nav-back" href="index.html" onclick="if (history.length > 1) { history.back(); return false; }" title="Back" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Back</span></a>
     <a class="nav-pill" href="../../index.html">Events 2026</a>
     <a class="nav-pill" href="index.html">May</a>
-    <a class="nav-pill active" aria-current="page" href="oslo-constitution-day.html">Oslo</a>
+    <a class="nav-pill active" aria-current="page" href="oslo-constitution-day.html">Constitution Day</a>
   </nav>
 
-  <details class="calendar-actions"><summary title="Save event" aria-label="Save event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></summary><div class="calendar-menu"><a href="oslo-constitution-day.ics">Download .ics<span>Apple Calendar, iPhone, Outlook and Windows Calendar</span></a></div></details>
+  <details class="calendar-actions">
+    <summary title="Save or share event" aria-label="Save or share event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></summary>
+    <div class="calendar-menu">
+      <a href="oslo-constitution-day.ics">Download .ics<span>Apple Calendar, iPhone, Outlook and Windows Calendar</span></a>
+    </div>
+  </details>
 
   <main class="page-shell">
     <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('img/oslo-constitution-day-hero.png')">
@@ -33,15 +38,66 @@
           <h1 class="hero-title">Oslo Constitution Day</h1>
           <p class="hero-text">Norway's national day fills Oslo with flags, children's parades and celebrations along Karl Johans gate toward the Royal Palace.</p>
         </div>
-        <div class="hero-stats"><div class="hero-stat"><span>Date</span><strong>17 May 2026</strong></div><div class="hero-stat"><span>City</span><strong>Oslo</strong></div><div class="hero-stat"><span>Status</span><strong>Annual date</strong></div><div class="hero-stat"><span>Best for</span><strong>Culture, families</strong></div></div>
+        <div class="hero-stats" aria-label="Constitution Day key facts">
+          <div class="hero-stat"><span>Date</span><strong>17 May 2026</strong></div>
+          <div class="hero-stat"><span>City</span><strong>Oslo</strong></div>
+          <div class="hero-stat"><span>Status</span><strong>Annual national day</strong></div>
+          <div class="hero-stat"><span>Best for</span><strong>Families, culture</strong></div>
+        </div>
       </div>
     </section>
-    <section class="dashboard-grid">
-      <article class="card span-6"><h2 class="card-title">Event Snapshot</h2><div class="fact-table"><div class="fact-row"><span>Date</span><strong>17 May 2026</strong></div><div class="fact-row"><span>Location</span><strong>Oslo, Norway</strong></div><div class="fact-row"><span>Status</span><strong>Annual national day</strong></div><div class="fact-row"><span>Category</span><strong>Culture - national day</strong></div><div class="fact-row"><span>Travel value</span><strong>High</strong></div></div></article>
-      <article class="card span-6"><h2 class="card-title">Place Links</h2><div class="two-list"><a class="route-chip" href="../../../locations/europe/norway/index.html"><span>Country</span><strong>Norway</strong></a><a class="route-chip" href="../../../locations/europe/norway/oslo.html"><span>City</span><strong>Oslo</strong></a></div></article>
-      <article class="card span-12"><h2 class="card-title">Why It Matters</h2><p class="note">Constitution Day is one of Oslo's clearest calendar moments: a city-wide public celebration where the route, crowd energy and central landmarks all matter for planning.</p></article>
+
+    <div class="action-row">
+      <a class="action-btn primary" href="#route-notes">Plan around this</a>
+      <a class="action-btn" href="oslo-constitution-day.ics">Add to calendar</a>
+    </div>
+
+    <section class="dashboard-grid" aria-label="Oslo Constitution Day overview">
+      <article class="card span-6">
+        <h2 class="card-title">Event Snapshot</h2>
+        <div class="fact-table">
+          <div class="fact-row"><span>Date</span><strong>17 May 2026</strong></div>
+          <div class="fact-row"><span>Location</span><strong>Oslo, Norway</strong></div>
+          <div class="fact-row"><span>Status</span><strong>Annual national day</strong></div>
+          <div class="fact-row"><span>Category</span><strong>Culture - national day</strong></div>
+          <div class="fact-row"><span>Travel value</span><strong>High</strong></div>
+          <div class="fact-row"><span>Best for</span><strong>Families, parades, city atmosphere</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <h2 class="card-title">Planning Score</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>Crowd energy</span><div class="bar-track"><i class="bar-fill" style="--value:92%"></i></div><strong>9/10</strong></div>
+          <div class="bar-row"><span>Central route</span><div class="bar-track"><i class="bar-fill" style="--value:88%"></i></div><strong>9/10</strong></div>
+          <div class="bar-row"><span>Family fit</span><div class="bar-track"><i class="bar-fill" style="--value:95%"></i></div><strong>10/10</strong></div>
+          <div class="bar-row"><span>Hotel pressure</span><div class="bar-track"><i class="bar-fill" style="--value:72%"></i></div><strong>7/10</strong></div>
+          <div class="bar-row"><span>Weather risk</span><div class="bar-track"><i class="bar-fill" style="--value:45%"></i></div><strong>5/10</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-12" id="route-notes">
+        <h2 class="card-title">Route Notes</h2>
+        <div class="pill-row">
+          <span class="pill">Karl Johans gate</span><span class="pill">Royal Palace route</span><span class="pill">Children's parades</span><span class="pill">Flags</span><span class="pill">Central Oslo</span><span class="pill">Family-friendly</span>
+        </div>
+      </article>
+
+      <article class="card span-7">
+        <h2 class="card-title">Why It Matters</h2>
+        <p class="note">Constitution Day is one of Oslo's clearest calendar moments: a city-wide celebration where the parade route, crowd flow and central landmarks all matter for planning.</p>
+      </article>
+
+      <article class="card span-5">
+        <h2 class="card-title">Place Links</h2>
+        <div class="two-list">
+          <a class="route-chip" href="../../../locations/europe/norway/index.html"><span>Country</span><strong>Norway</strong></a>
+          <a class="route-chip" href="../../../locations/europe/norway/oslo.html"><span>City</span><strong>Oslo</strong></a>
+        </div>
+      </article>
     </section>
   </main>
-  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>.</footer>
+
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
 </body>
 </html>
