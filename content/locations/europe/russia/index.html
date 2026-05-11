@@ -19,16 +19,18 @@
     <a class="nav-back" href="../index.html" title="Back to Europe" aria-label="Back to Europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Europe</span></a>
     <a class="nav-pill" href="../index.html">Europe</a>
     <a class="nav-pill active" aria-current="page" href="index.html">Russia</a>
-  </nav>  <main class="page-shell">
+  </nav>
+  <main class="page-shell">
     <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')">
       <div class="hero-inner">
         <div class="hero-copy">
+          <img class="flag-badge" src="https://flagcdn.com/ru.svg" alt="Russia flag">
           <p class="kicker">Country in Europe</p>
           <h1 class="hero-title">Russia</h1>
           <p class="hero-text">Russia belongs to Europe. The capital city is Moscow.</p>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><span>Capital</span><strong><a href="moscow.html">Moscow</a></strong></div>
+          <div class="hero-stat"><span>Capital</span><strong><a class="value-link" href="moscow.html">Moscow</a></strong></div>
           <div class="hero-stat"><span>Language</span><strong>Russian</strong></div>
           <div class="hero-stat"><span>Currency</span><strong>Russian ruble</strong></div>
           <div class="hero-stat"><span>Population</span><strong>146M</strong></div>
@@ -40,22 +42,81 @@
       <article class="card span-6">
         <h2 class="card-title">Key Facts</h2>
         <div class="fact-table">
-          <div class="fact-row"><span>Continent</span><strong><a href="../index.html">Europe</a></strong></div>
-          <div class="fact-row"><span>Population</span><strong>146M</strong></div>
-          <div class="fact-row"><span>Population ranking</span><strong>#9</strong></div>
-          <div class="fact-row"><span>Area</span><strong>17.1M km2</strong></div>
-          <div class="fact-row"><span>Area ranking</span><strong>#1</strong></div>
-          <div class="fact-row"><span>Capital city</span><strong><a href="moscow.html">Moscow</a></strong></div>
-          <div class="fact-row"><span>Largest city</span><strong>Moskva</strong></div>
-          <div class="fact-row"><span>Language</span><strong>Russian</strong></div>
-          <div class="fact-row"><span>Currency</span><strong>Russian ruble</strong></div>
-          <div class="fact-row"><span>Government</span><strong>Sovereign state</strong></div>
-          <div class="fact-row"><span>Climate</span><strong>Temperate to boreal</strong></div>
+          <div class="fact-row"><span>Region</span><strong>Eastern Europe / Northern Asia</strong></div>
+          <div class="fact-row"><span>Government</span><strong>Federal presidential republic</strong></div>
+          <div class="fact-row"><span>Independence</span><strong>1991</strong></div>
+          <div class="fact-row"><span>Area</span><strong>17,098,242 km2</strong></div>
+          <div class="fact-row"><span>Population density</span><strong>9/km2</strong></div>
+          <div class="fact-row"><span>Time zone</span><strong>MSK (UTC+3) to UTC+12</strong></div>
+          <div class="fact-row"><span>Calling code</span><strong>+7</strong></div>
+          <div class="fact-row"><span>Drives on</span><strong>Right</strong></div>
         </div>
       </article>
       <article class="card span-6">
-        <h2 class="card-title">About Russia</h2>
-        <p class="hero-text" style="padding:12px 0">Russia: capital Moscow, largest city Moskva, highest point Mount Elbrus, Temperate to boreal climate</p>
+        <h2 class="card-title">Quick View</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill" style="--value:82%"></i></div><strong>0.822</strong></div>
+          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill" style="--value:43%"></i></div><strong>43.0</strong></div>
+          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill" style="--value:88%"></i></div><strong>88%</strong></div>
+          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill" style="--value:56%"></i></div><strong>73.4</strong></div>
+        </div>
+        <p class="source-line">Sources: World Bank, Numbeo, UN.</p>
+      </article>
+      <article class="card span-5">
+        <h2 class="card-title">Top 3 Highest Mountains</h2>
+        <div class="mini-grid">
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Elbrus</strong><span>5,642 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Dykh-Tau</strong><span>5,205 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Koshtan-Tau</strong><span>5,152 m</span></div>
+        </div>
+      </article>
+      <article class="card span-7">
+        <h2 class="card-title">Religion (est.)</h2>
+        <div class="pie-wrap">
+          <div class="pie"></div>
+          <ul class="legend">
+            <li><span><i style="--swatch:#214e68"></i>Christianity</span><strong>73%</strong></li>
+            <li><span><i style="--swatch:#8ab7c4"></i>No religion</span><strong>18%</strong></li>
+            <li><span><i style="--swatch:#bac4c8"></i>Islam</span><strong>7%</strong></li>
+            <li><span><i style="--swatch:#e2e4df"></i>Other</span><strong>2%</strong></li>
+          </ul>
+        </div>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Why Visit </h2>
+        <div class="icon-grid">
+          <div class="icon-tile"><strong>Red Square Moscow</strong><span>St. Basil's Cathedral, the Kremlin and Lenin's Mausoleum in one iconic view.</span></div>
+          <div class="icon-tile"><strong>Hermitage St. Petersburg</strong><span>One of the world's largest art museums in a Baroque imperial palace.</span></div>
+          <div class="icon-tile"><strong>Trans-Siberian Railway</strong><span>The world's longest railway crossing 9,289 km and 8 time zones.</span></div>
+          <div class="icon-tile"><strong>Lake Baikal</strong><span>The world's deepest and oldest lake holds 20% of Earth's unfrozen fresh water.</span></div>
+          <div class="icon-tile"><strong>11 Time Zones</strong><span>A country so vast that sunrise in the east happens while the west still sleeps.</span></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">Top 3 Cities by Population</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>Moscow</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>12.5M</strong></div>
+          <div class="bar-row"><span>St. Petersburg</span><div class="bar-track"><i class="bar-fill" style="--value:43%"></i></div><strong>5.4M</strong></div>
+          <div class="bar-row"><span>Novosibirsk</span><div class="bar-track"><i class="bar-fill" style="--value:13%"></i></div><strong>1.6M</strong></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">Climate Overview</h2>
+        <div class="metric-strip">
+          <div class="metric"><strong>-8C</strong><span>Jan avg.</span></div>
+          <div class="metric"><strong>19C</strong><span>Jul avg.</span></div>
+          <div class="metric"><strong>600 mm</strong><span>Yearly rainfall</span></div>
+          <div class="metric"><strong>Subarctic / Continental (vast variation)</strong><span>Climate</span></div>
+        </div>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Other Quick Info</h2>
+        <div class="two-list">
+          <div class="info-chip"><span>Currency</span><strong>Russian ruble</strong></div>
+          <div class="info-chip"><span>Official language</span><strong>Russian</strong></div>
+          <div class="info-chip"><span>National day</span><strong>12 June</strong></div>
+          <div class="info-chip"><span>Electricity</span><strong>230V, Type C/F</strong></div>
+        </div>
       </article>
       <article class="card span-12">
         <h2 class="card-title">Cities</h2>

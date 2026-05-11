@@ -19,16 +19,18 @@
     <a class="nav-back" href="../index.html" title="Back to Europe" aria-label="Back to Europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Europe</span></a>
     <a class="nav-pill" href="../index.html">Europe</a>
     <a class="nav-pill active" aria-current="page" href="index.html">Serbia</a>
-  </nav>  <main class="page-shell">
+  </nav>
+  <main class="page-shell">
     <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')">
       <div class="hero-inner">
         <div class="hero-copy">
+          <img class="flag-badge" src="https://flagcdn.com/rs.svg" alt="Serbia flag">
           <p class="kicker">Country in Europe</p>
           <h1 class="hero-title">Serbia</h1>
           <p class="hero-text">Serbia belongs to Europe. The capital city is Belgrade.</p>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><span>Capital</span><strong><a href="belgrade.html">Belgrade</a></strong></div>
+          <div class="hero-stat"><span>Capital</span><strong><a class="value-link" href="belgrade.html">Belgrade</a></strong></div>
           <div class="hero-stat"><span>Language</span><strong>Serbian</strong></div>
           <div class="hero-stat"><span>Currency</span><strong>Serbian dinar</strong></div>
           <div class="hero-stat"><span>Population</span><strong>6.6M</strong></div>
@@ -40,22 +42,81 @@
       <article class="card span-6">
         <h2 class="card-title">Key Facts</h2>
         <div class="fact-table">
-          <div class="fact-row"><span>Continent</span><strong><a href="../index.html">Europe</a></strong></div>
-          <div class="fact-row"><span>Population</span><strong>6.6M</strong></div>
-          <div class="fact-row"><span>Population ranking</span><strong>#107</strong></div>
-          <div class="fact-row"><span>Area</span><strong>78k km2</strong></div>
-          <div class="fact-row"><span>Area ranking</span><strong>#114</strong></div>
-          <div class="fact-row"><span>Capital city</span><strong><a href="belgrade.html">Belgrade</a></strong></div>
-          <div class="fact-row"><span>Largest city</span><strong>Beograd (Belgrade)</strong></div>
-          <div class="fact-row"><span>Language</span><strong>Serbian</strong></div>
-          <div class="fact-row"><span>Currency</span><strong>Serbian dinar</strong></div>
-          <div class="fact-row"><span>Government</span><strong>Sovereign state</strong></div>
-          <div class="fact-row"><span>Climate</span><strong>Temperate to boreal</strong></div>
+          <div class="fact-row"><span>Region</span><strong>Southeast Europe / Balkans</strong></div>
+          <div class="fact-row"><span>Government</span><strong>Parliamentary republic</strong></div>
+          <div class="fact-row"><span>Independence</span><strong>2006</strong></div>
+          <div class="fact-row"><span>Area</span><strong>77,474 km2</strong></div>
+          <div class="fact-row"><span>Population density</span><strong>95/km2</strong></div>
+          <div class="fact-row"><span>Time zone</span><strong>CET (UTC+1)</strong></div>
+          <div class="fact-row"><span>Calling code</span><strong>+381</strong></div>
+          <div class="fact-row"><span>Drives on</span><strong>Right</strong></div>
         </div>
       </article>
       <article class="card span-6">
-        <h2 class="card-title">About Serbia</h2>
-        <p class="hero-text" style="padding:12px 0">Serbia: capital Belgrade, largest city Beograd (Belgrade), highest point Midzor, Temperate to boreal climate</p>
+        <h2 class="card-title">Quick View</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill" style="--value:81%"></i></div><strong>0.805</strong></div>
+          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill" style="--value:56%"></i></div><strong>56.0</strong></div>
+          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill" style="--value:81%"></i></div><strong>81%</strong></div>
+          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill" style="--value:61%"></i></div><strong>76.8</strong></div>
+        </div>
+        <p class="source-line">Sources: World Bank, Numbeo, UN.</p>
+      </article>
+      <article class="card span-5">
+        <h2 class="card-title">Top 3 Highest Mountains</h2>
+        <div class="mini-grid">
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Midzur</strong><span>2,169 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Crni Vrh</strong><span>2,156 m</span></div>
+          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Djeravica (border)</strong><span>2,656 m</span></div>
+        </div>
+      </article>
+      <article class="card span-7">
+        <h2 class="card-title">Religion (est.)</h2>
+        <div class="pie-wrap">
+          <div class="pie"></div>
+          <ul class="legend">
+            <li><span><i style="--swatch:#214e68"></i>Christianity</span><strong>93%</strong></li>
+            <li><span><i style="--swatch:#8ab7c4"></i>No religion</span><strong>3%</strong></li>
+            <li><span><i style="--swatch:#bac4c8"></i>Islam</span><strong>3%</strong></li>
+            <li><span><i style="--swatch:#e2e4df"></i>Other</span><strong>1%</strong></li>
+          </ul>
+        </div>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Why Visit </h2>
+        <div class="icon-grid">
+          <div class="icon-tile"><strong>Belgrade Nightlife</strong><span>Floating clubs on the Sava and Danube keep the city alive until dawn.</span></div>
+          <div class="icon-tile"><strong>Novi Sad EXIT Festival</strong><span>One of Europe's best summer music festivals held in a 18th-century fortress.</span></div>
+          <div class="icon-tile"><strong>Djavolja VaroÅ¡</strong><span>Devil's Town â€” natural stone columns caused by volcanic erosion.</span></div>
+          <div class="icon-tile"><strong>Tara National Park</strong><span>Dense forests, the Drina river canyon and European brown bears.</span></div>
+          <div class="icon-tile"><strong>Rakija Culture</strong><span>Serbia's national spirit â€” fruit brandy â€” is as central to culture as wine in France.</span></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">Top 3 Cities by Population</h2>
+        <div class="bar-list">
+          <div class="bar-row"><span>Belgrade</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>1.7M</strong></div>
+          <div class="bar-row"><span>Novi Sad</span><div class="bar-track"><i class="bar-fill" style="--value:17%"></i></div><strong>290k</strong></div>
+          <div class="bar-row"><span>Nis</span><div class="bar-track"><i class="bar-fill" style="--value:15%"></i></div><strong>260k</strong></div>
+        </div>
+      </article>
+      <article class="card span-6">
+        <h2 class="card-title">Climate Overview</h2>
+        <div class="metric-strip">
+          <div class="metric"><strong>-1C</strong><span>Jan avg.</span></div>
+          <div class="metric"><strong>23C</strong><span>Jul avg.</span></div>
+          <div class="metric"><strong>700 mm</strong><span>Yearly rainfall</span></div>
+          <div class="metric"><strong>Humid continental</strong><span>Climate</span></div>
+        </div>
+      </article>
+      <article class="card span-12">
+        <h2 class="card-title">Other Quick Info</h2>
+        <div class="two-list">
+          <div class="info-chip"><span>Currency</span><strong>Serbian dinar</strong></div>
+          <div class="info-chip"><span>Official language</span><strong>Serbian</strong></div>
+          <div class="info-chip"><span>National day</span><strong>15 February</strong></div>
+          <div class="info-chip"><span>Electricity</span><strong>230V, Type C/F</strong></div>
+        </div>
       </article>
       <article class="card span-12">
         <h2 class="card-title">Cities</h2>
