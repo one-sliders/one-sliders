@@ -124,6 +124,32 @@ a {
   background: var(--theme);
 }
 
+.topic-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px max(12px, calc((100vw - 1120px) / 2));
+  overflow-x: auto;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
+}
+.topic-strip::-webkit-scrollbar { display: none; }
+.topic-strip a {
+  flex: 0 0 auto;
+  padding: 5px 13px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.topic-strip a:hover {
+  color: var(--theme);
+  border-color: var(--theme);
+}
+
 .page-shell {
   width: min(1120px, 100%);
   margin: 0 auto;
