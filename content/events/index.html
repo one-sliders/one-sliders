@@ -178,10 +178,8 @@
     <!-- Row 5: Reach -->
     <div class="filter-row" id="reach-row">
       <span class="filter-label">Reach</span>
-      <button class="filter-btn" data-reach="global">&#127758; Global</button>
-      <button class="filter-btn" data-reach="continent">&#127757; Continent</button>
-      <button class="filter-btn" data-reach="national">&#127987; National</button>
-      <button class="filter-btn active" data-reach="all">All</button>
+      <button class="filter-btn active" data-reach="relevant">&#128205; Location</button>
+      <button class="filter-btn" data-reach="all">All</button>
     </div>
 
     </div><!-- /.filter-rows -->
@@ -457,7 +455,7 @@
       'brazil':'Brazil','argentina':'Argentina','colombia':'Colombia','peru':'Peru','chile':'Chile',
     };
 
-    let activeCat = 'all', activeTopic = 'all', activeCont = 'all', activeCountry = 'all', activeReach = 'all';
+    let activeCat = 'all', activeTopic = 'all', activeCont = 'all', activeCountry = 'all', activeReach = 'relevant';
     let userCountry = '', userContinent = ''; // set by IP lookup
 
     const allCards = () => [...document.querySelectorAll('.event-card')];
@@ -479,6 +477,11 @@
       const reach = overrides.reach !== undefined ? overrides.reach : activeReach;
       const cardReach = card.dataset.reach || 'global';
       const reachOk = reach === 'all'
+        || (reach === 'relevant' && (
+              cardReach === 'global'
+              || (cardReach === 'continent' && (!userContinent || card.dataset.cont === userContinent))
+              || (cardReach === 'national'  && (!userCountry  || card.dataset.country === userCountry))
+           ))
         || (reach === 'global'    && cardReach === 'global')
         || (reach === 'continent' && cardReach === 'continent')
         || (reach === 'national'  && cardReach === 'national');
@@ -613,9 +616,9 @@
     applyFilters();
 
     // Reach filter
-    document.querySelectorAll('[data-reach]').forEach(btn => {
+    document.querySelectorAll('#reach-row .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-reach]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('#reach-row .filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeReach = btn.dataset.reach;
         applyFilters();
