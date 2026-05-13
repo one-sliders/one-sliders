@@ -85,6 +85,7 @@
       .filter-badge.visible { display: inline; }
       .filter-rows { display: none; }
       .filters.open .filter-rows { display: block; }
+      #location-row, #reach-row { display: flex; }
     }
 
     /* main grid */
@@ -181,14 +182,15 @@
     </div>
 
 
-    <!-- Row 5: Timezone toggle -->
+    </div><!-- /.filter-rows -->
+
+    <!-- Always visible: Timezone toggle + Level -->
     <div class="filter-row" id="location-row">
       <span class="filter-label">Timezone</span>
       <button class="filter-btn active" id="location-toggle">&#128205; My timezone</button>
       <span id="reach-geo-label" style="font-size:11px;color:#888;align-self:center;margin-left:2px"></span>
     </div>
 
-    <!-- Row 6: Reach level -->
     <div class="filter-row" id="reach-row">
       <span class="filter-label">Level</span>
       <button class="filter-btn active" data-reach="all">All</button>
@@ -197,7 +199,6 @@
       <button class="filter-btn" data-reach="timezone" style="border-left:3px solid #22c55e">&#128336; Timezone</button>
     </div>
 
-    </div><!-- /.filter-rows -->
   </div>
 
   <!-- Events by month -->
