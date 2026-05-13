@@ -98,6 +98,12 @@
     /* event card */
     .event-card { background: white; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,.05); transition: transform .12s, box-shadow .12s; }
     .event-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+    .event-card[data-reach="global"]    { border-left: 4px solid #3b82f6; }
+    .event-card[data-reach="continent"] { border-left: 4px solid #f59e0b; }
+    .event-card[data-reach="national"]  { border-left: 4px solid #22c55e; }
+    .event-card[data-reach="global"]    .card-meta::after { content: '● Global';    color: #3b82f6; font-size: 10px; font-weight: 700; margin-left: 6px; }
+    .event-card[data-reach="continent"] .card-meta::after { content: '● Continent'; color: #f59e0b; font-size: 10px; font-weight: 700; margin-left: 6px; }
+    .event-card[data-reach="national"]  .card-meta::after { content: '● National';  color: #22c55e; font-size: 10px; font-weight: 700; margin-left: 6px; }
     .card-stripe { height: 4px; background: var(--cat-color); }
     .card-body { padding: 12px 14px 13px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
     .cat-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 10%, white); padding: 3px 8px; border-radius: 999px; align-self: flex-start; }
@@ -175,11 +181,20 @@
     </div>
 
 
-    <!-- Row 5: Reach -->
+    <!-- Row 5: Timezone toggle -->
+    <div class="filter-row" id="location-row">
+      <span class="filter-label">Timezone</span>
+      <button class="filter-btn active" id="location-toggle">&#128205; My timezone</button>
+      <span id="reach-geo-label" style="font-size:11px;color:#888;align-self:center;margin-left:2px"></span>
+    </div>
+
+    <!-- Row 6: Reach level -->
     <div class="filter-row" id="reach-row">
-      <span class="filter-label">Reach</span>
-      <button class="filter-btn active" data-reach="relevant">&#128205; Location</button>
-      <button class="filter-btn" data-reach="all">All</button>
+      <span class="filter-label">Level</span>
+      <button class="filter-btn active" data-reach="all">All</button>
+      <button class="filter-btn" data-reach="global" style="border-left:3px solid #3b82f6">&#127758; Global</button>
+      <button class="filter-btn" data-reach="continent" style="border-left:3px solid #f59e0b">&#127757; Continent</button>
+      <button class="filter-btn" data-reach="timezone" style="border-left:3px solid #22c55e">&#128336; Timezone</button>
     </div>
 
     </div><!-- /.filter-rows -->
@@ -455,8 +470,53 @@
       'brazil':'Brazil','argentina':'Argentina','colombia':'Colombia','peru':'Peru','chile':'Chile',
     };
 
-    let activeCat = 'all', activeTopic = 'all', activeCont = 'all', activeCountry = 'all', activeReach = 'relevant';
-    let userCountry = '', userContinent = ''; // set by IP lookup
+    let activeCat = 'all', activeTopic = 'all', activeCont = 'all', activeCountry = 'all', activeReach = 'all';
+    let locationOn = true;
+    let userCountry = '', userContinent = ''; // set by timezone / IP lookup
+    let tzCountries = new Set(); // countries in user's timezone region — updated by setGeo
+
+    // Timezone → { country slug, continent } — defined here so matches() can use it
+    const tzMap = {
+      'Europe/Oslo':'norway:europe',         'Europe/Stockholm':'sweden:europe',
+      'Europe/Copenhagen':'denmark:europe',  'Europe/Helsinki':'finland:europe',
+      'Europe/London':'uk:europe',           'Europe/Dublin':'ireland:europe',
+      'Europe/Paris':'france:europe',        'Europe/Berlin':'germany:europe',
+      'Europe/Rome':'italy:europe',          'Europe/Madrid':'spain:europe',
+      'Europe/Lisbon':'portugal:europe',     'Europe/Amsterdam':'netherlands:europe',
+      'Europe/Brussels':'belgium:europe',    'Europe/Vienna':'austria:europe',
+      'Europe/Zurich':'switzerland:europe',  'Europe/Warsaw':'poland:europe',
+      'Europe/Prague':'czechia:europe',      'Europe/Budapest':'hungary:europe',
+      'Europe/Athens':'greece:europe',       'Europe/Bucharest':'romania:europe',
+      'Europe/Monaco':'monaco:europe',       'Europe/Kiev':'ukraine:europe',
+      'Europe/Kyiv':'ukraine:europe',
+      'America/New_York':'usa:north-america',   'America/Chicago':'usa:north-america',
+      'America/Denver':'usa:north-america',     'America/Los_Angeles':'usa:north-america',
+      'America/Phoenix':'usa:north-america',    'America/Anchorage':'usa:north-america',
+      'America/Honolulu':'usa:north-america',   'America/Detroit':'usa:north-america',
+      'America/Toronto':'canada:north-america', 'America/Vancouver':'canada:north-america',
+      'America/Edmonton':'canada:north-america','America/Halifax':'canada:north-america',
+      'America/Winnipeg':'canada:north-america','America/Regina':'canada:north-america',
+      'America/Mexico_City':'mexico:north-america','America/Monterrey':'mexico:north-america',
+      'America/Sao_Paulo':'brazil:south-america',  'America/Recife':'brazil:south-america',
+      'America/Manaus':'brazil:south-america',      'America/Bogota':'colombia:south-america',
+      'America/Santiago':'chile:south-america',     'America/Lima':'peru:south-america',
+      'America/Argentina/Buenos_Aires':'argentina:south-america',
+      'Asia/Tokyo':'japan:asia',           'Asia/Kolkata':'india:asia',
+      'Asia/Calcutta':'india:asia',        'Asia/Singapore':'singapore:asia',
+      'Asia/Seoul':'south-korea:asia',     'Asia/Bangkok':'thailand:asia',
+      'Asia/Jakarta':'indonesia:asia',     'Asia/Riyadh':'saudi-arabia:asia',
+      'Asia/Dubai':'uae:asia',             'Asia/Qatar':'qatar:asia',
+      'Asia/Shanghai':'china:asia',        'Asia/Kuala_Lumpur':'malaysia:asia',
+      'Asia/Karachi':'pakistan:asia',      'Asia/Dhaka':'bangladesh:asia',
+      'Australia/Sydney':'australia:oceania',    'Australia/Melbourne':'australia:oceania',
+      'Australia/Brisbane':'australia:oceania',  'Australia/Perth':'australia:oceania',
+      'Australia/Adelaide':'australia:oceania',  'Pacific/Auckland':'new-zealand:oceania',
+      'Pacific/Fiji':'fiji:oceania',
+      'Africa/Johannesburg':'south-africa:africa', 'Africa/Nairobi':'kenya:africa',
+      'Africa/Lagos':'nigeria:africa',              'Africa/Cairo':'egypt:africa',
+      'Africa/Casablanca':'morocco:africa',         'Africa/Kigali':'rwanda:africa',
+      'Africa/Blantyre':'malawi:africa',
+    };
 
     const allCards = () => [...document.querySelectorAll('.event-card')];
     const today = new Date();
@@ -475,16 +535,16 @@
       const cont    = overrides.cont    !== undefined ? overrides.cont    : activeCont;
       const country = overrides.country !== undefined ? overrides.country : activeCountry;
       const reach = overrides.reach !== undefined ? overrides.reach : activeReach;
+      const locOn = overrides.locationOn !== undefined ? overrides.locationOn : locationOn;
       const cardReach = card.dataset.reach || 'global';
-      const reachOk = reach === 'all'
-        || (reach === 'relevant' && (
-              cardReach === 'global'
-              || (cardReach === 'continent' && (!userContinent || card.dataset.cont === userContinent))
-              || (cardReach === 'national'  && (!userCountry  || card.dataset.country === userCountry))
-           ))
-        || (reach === 'global'    && cardReach === 'global')
-        || (reach === 'continent' && cardReach === 'continent')
-        || (reach === 'national'  && cardReach === 'national');
+      const levelOk = reach === 'all'
+        || cardReach === reach
+        || (reach === 'timezone' && tzCountries.has(card.dataset.country));
+      const locationOk = !locOn
+        || cardReach === 'global'
+        || (cardReach === 'continent' && userContinent && card.dataset.cont === userContinent)
+        || (cardReach === 'national'  && userCountry  && card.dataset.country === userCountry);
+      const reachOk = levelOk && locationOk;
       return isCurrentOrUpcoming(card)
           && reachOk
           && (cat     === 'all' || card.dataset.cat     === cat)
@@ -615,7 +675,14 @@
     applyFilters = function() { _applyFilters(); updateBadge(); };
     applyFilters();
 
-    // Reach filter
+    // Location toggle
+    document.getElementById('location-toggle').addEventListener('click', function() {
+      locationOn = !locationOn;
+      this.classList.toggle('active', locationOn);
+      applyFilters();
+    });
+
+    // Level filter
     document.querySelectorAll('#reach-row .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#reach-row .filter-btn').forEach(b => b.classList.remove('active'));
@@ -625,26 +692,63 @@
       });
     });
 
-    // IP-based location detection (ipapi.co, no permission required)
+    // --- Location detection ---
     const contMap = { EU:'europe', NA:'north-america', AS:'asia', OC:'oceania', SA:'south-america', AF:'africa' };
-    function applyLocation(country, continent) {
-      userCountry = (country || '').toLowerCase().replace(/\s+/g,'-');
-      userContinent = contMap[continent] || '';
-      localStorage.setItem('os_country', userCountry);
-      localStorage.setItem('os_continent', userContinent);
-      localStorage.setItem('os_geo_ts', Date.now());
-      if (activeReach === 'relevant') applyFilters();
+
+    function updateGeoLabel() {
+      const el = document.getElementById('reach-geo-label');
+      if (!el) return;
+      if (!userContinent) { el.textContent = ''; return; }
+      const seen = new Set();
+      Object.values(tzMap).forEach(v => {
+        const [c, k] = v.split(':');
+        if (k === userContinent) seen.add(c.replace(/-/g,' ').replace(/\b\w/g,x=>x.toUpperCase()));
+      });
+      const contLabel = userContinent.replace(/-/g,' ').replace(/\b\w/g,x=>x.toUpperCase());
+      el.textContent = contLabel + ': ' + [...seen].join(', ');
     }
+
+    function setGeo(country, continent, save) {
+      userCountry   = country;
+      userContinent = continent;
+      // Rebuild tzCountries for the Timezone level filter
+      tzCountries = new Set(
+        Object.values(tzMap)
+          .filter(v => v.split(':')[1] === continent)
+          .map(v => v.split(':')[0])
+      );
+      if (save) {
+        localStorage.setItem('os_country',   country);
+        localStorage.setItem('os_continent', continent);
+        localStorage.setItem('os_geo_ts',    Date.now());
+        localStorage.setItem('os_geo_v',     '4');
+      }
+      updateGeoLabel();
+      if (locationOn) applyFilters();
+    }
+
+    // 1. Immediate: OS timezone — works on file://, no network needed
+    (function() {
+      const tz    = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      const entry = tzMap[tz];
+      if (entry) { const [c, k] = entry.split(':'); setGeo(c, k, false); }
+    })();
+
+    // 2. Refine with localStorage cache (if fresh)
     const cached = localStorage.getItem('os_country');
-    const ts = parseInt(localStorage.getItem('os_geo_ts') || '0');
-    if (cached && (Date.now() - ts < 86400000)) {
-      userCountry = cached;
-      userContinent = localStorage.getItem('os_continent') || '';
-      if (activeReach === 'relevant') applyFilters();
+    const ts     = parseInt(localStorage.getItem('os_geo_ts') || '0');
+    if (cached && localStorage.getItem('os_geo_v') === '4' && (Date.now() - ts < 86400000)) {
+      setGeo(cached, localStorage.getItem('os_continent') || '', false);
     } else {
+      // 3. Refine with IP lookup (works on GitHub Pages / HTTPS)
       fetch('https://ipapi.co/json/')
         .then(r => r.json())
-        .then(d => applyLocation(d.country_code, d.continent_code))
+        .then(d => {
+          const tz    = d.timezone || '';
+          const entry = tzMap[tz];
+          if (entry) { const [c,k] = entry.split(':'); setGeo(c, k, true); }
+          else if (d.continent_code) setGeo('', contMap[d.continent_code] || '', true);
+        })
         .catch(() => {});
     }
   </script>
