@@ -82,11 +82,13 @@
     .tag { min-width: 84px; text-align: center; padding: 6px 9px; border-radius: 999px; font-size: 11px; font-weight: 900; background: #eef3fb; color: var(--blue); }
     .tag.done { color: var(--green); background: #e9f6f1; }
     .tag.next { color: var(--pink); background: #faedf5; }
-    .show-grid { display: grid; gap: 10px; padding: 0 16px 16px; }
-    .show-link { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; background: #fff; }
+    .show-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; padding: 0 16px 16px; }
+    .show-link { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: 10px; background: #fff; }
     .show-link:hover { border-left-color: var(--pink); box-shadow: 0 8px 20px rgba(17,25,43,.08); }
     .show-link strong { display: block; font-size: 18px; }
     .show-link span { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+    .show-link .dot { grid-row: span 2; }
+    .show-link .tag { justify-self: start; margin-top: 8px; }
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 16px; }
     .pill { padding: 8px 11px; border-radius: 999px; background: #eef3fb; font-weight: 800; font-size: 13px; }
     .source { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12px; padding: 14px 2px 0; }
@@ -102,6 +104,7 @@
       .bar-row { grid-template-columns: 100px 1fr 48px; }
       .timeline-row { grid-template-columns: 38px 1fr; }
       .timeline-row .tag { grid-column: 2; justify-self: start; }
+      .show-grid { grid-template-columns: 1fr; }
       h1 { font-size: clamp(48px,14vw,76px); }
     }
   </style>
@@ -155,21 +158,12 @@
         </div>
       </article>
 
-      <article class="card span-6">
-        <div class="card-head"><h2 class="card-title">Show Schedule</h2><span class="chev">&gt;</span></div>
-        <div class="timeline">
-          <div class="timeline-row"><span class="dot">12</span><div><strong>Semi-final 1</strong><span>First 15 competing countries perform for 10 final places.</span></div><span class="tag done">Done</span></div>
-          <div class="timeline-row"><span class="dot">14</span><div><strong>Semi-final 2</strong><span>Second semi-final completes the Grand Final lineup.</span></div><span class="tag next">Next</span></div>
-          <div class="timeline-row"><span class="dot">16</span><div><strong>Grand Final</strong><span>Finalists, pre-qualified countries and host Austria compete for the trophy.</span></div><span class="tag">Final</span></div>
-        </div>
-      </article>
-
-      <article class="card span-6">
+      <article class="card span-12">
         <div class="card-head"><h2 class="card-title">Show Pages</h2><span class="chev">&gt;</span></div>
         <div class="show-grid">
-          <a class="show-link" href="eurovision-semi-final-1.html"><span><strong>Semi-final 1 results</strong><span>Qualifiers, eliminated entries, facts and running order</span></span><span class="chev">&gt;</span></a>
-          <a class="show-link" href="eurovision-semi-final-2.html"><span><strong>Semi-final 2</strong><span>Live show on 14 May 2026, ready for results</span></span><span class="chev">&gt;</span></a>
-          <a class="show-link" href="eurovision-grand-final.html"><span><strong>Grand Final</strong><span>Final show on 16 May 2026, ready for winner and scoreboard</span></span><span class="chev">&gt;</span></a>
+          <a class="show-link" href="eurovision-semi-final-1.html"><span class="dot">12</span><span><strong>Semi-final 1</strong><span>Qualifiers, eliminated entries and running order</span><span class="tag done">Done</span></span></a>
+          <a class="show-link" href="eurovision-semi-final-2.html"><span class="dot">14</span><span><strong>Semi-final 2</strong><span>Live show, ready for results</span><span class="tag next">Next</span></span></a>
+          <a class="show-link" href="eurovision-grand-final.html"><span class="dot">16</span><span><strong>Grand Final</strong><span>Ready for winner and scoreboard</span><span class="tag">Final</span></span></a>
         </div>
       </article>
 
