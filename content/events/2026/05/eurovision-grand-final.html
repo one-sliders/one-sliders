@@ -46,6 +46,13 @@
     .bar-row { display: grid; grid-template-columns: 120px 1fr 72px; gap: 10px; align-items: center; font-size: 13px; }
     .bar-track { height: 7px; border-radius: 99px; background: #e8ebf2; overflow: hidden; }
     .bar-fill { display: block; height: 100%; width: var(--value); border-radius: inherit; background: linear-gradient(90deg, var(--blue), #92b8ef); }
+    .list { display: grid; gap: 7px; padding: 0 16px 16px; }
+    .result-row { display: grid; grid-template-columns: 28px 42px 1fr auto; align-items: center; gap: 10px; min-height: 38px; padding: 7px 0; border-top: 1px solid var(--line); }
+    .rank { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #edf4ff; color: var(--blue); font-weight: 900; font-size: 12px; }
+    .flag-img { width: 38px; height: 28px; object-fit: cover; border-radius: 5px; box-shadow: 0 0 0 1px rgba(17,25,43,.14); background: #fff; }
+    .country strong { display: block; font-size: 14px; }
+    .country span { display: block; color: var(--muted); font-size: 12px; margin-top: 1px; }
+    .status { min-width: 84px; text-align: center; padding: 5px 8px; border-radius: 999px; font-size: 11px; font-weight: 900; color: var(--green); background: #e9f6f1; }
     .timeline { display: grid; gap: 0; padding: 0 16px 16px; }
     .timeline-row { display: grid; grid-template-columns: 38px 1fr; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
     .dot { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #eaf1ff; color: var(--blue); font-weight: 900; }
@@ -102,7 +109,7 @@
         <div class="fact-table">
           <div class="fact-row"><span>Host city</span><strong><a href="../../../locations/europe/austria/vienna.html">Vienna</a></strong></div>
           <div class="fact-row"><span>Arena</span><strong>Wiener Stadthalle</strong></div>
-          <div class="fact-row"><span>Finalists</span><strong>TBC</strong></div>
+          <div class="fact-row"><span>Finalists known</span><strong>10 from Semi-final 1</strong></div>
           <div class="fact-row"><span>Voting</span><strong>Jury + public</strong></div>
           <div class="fact-row"><span>Winner</span><strong>TBC</strong></div>
         </div>
@@ -119,19 +126,26 @@
       </article>
 
       <article class="card span-7">
-        <div class="card-head"><h2 class="card-title">Ready for Update</h2><span class="chev">&gt;</span></div>
-        <p class="status-note">Final results are intentionally empty until the show is complete. Add winner, full scoreboard, top countries and voting notes after the broadcast.</p>
-        <div class="timeline">
-          <div class="timeline-row"><span class="dot">1</span><div><strong>Winner pending</strong><span>The winning country and song can be added first.</span></div></div>
-          <div class="timeline-row"><span class="dot">12</span><div><strong>Scoreboard pending</strong><span>Use this page for jury and public voting highlights.</span></div></div>
-          <div class="timeline-row"><span class="dot">5</span><div><strong>Top finishers pending</strong><span>The top group can be shown as a compact list once confirmed.</span></div></div>
+        <div class="card-head"><h2 class="card-title">Qualified from Semi-final 1</h2><span class="chev">10</span></div>
+        <div class="list">
+          <div class="result-row"><span class="rank">1</span><img class="flag-img" src="../../../locations/europe/greece/img/flag.svg" alt="Greece flag" loading="lazy"><div class="country"><strong>Greece</strong><span>Akylas - Ferto</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">2</span><img class="flag-img" src="../../../locations/europe/finland/img/flag.svg" alt="Finland flag" loading="lazy"><div class="country"><strong>Finland</strong><span>Linda Lampenius &amp; Pete Parkkonen - Liekinheitin</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">3</span><img class="flag-img" src="../../../locations/europe/belgium/img/flag.svg" alt="Belgium flag" loading="lazy"><div class="country"><strong>Belgium</strong><span>ESSYLA - Dancing on the Ice</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">4</span><img class="flag-img" src="../../../locations/europe/sweden/img/flag.svg" alt="Sweden flag" loading="lazy"><div class="country"><strong>Sweden</strong><span>FELICIA - My System</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">5</span><img class="flag-img" src="../../../locations/europe/moldova/img/flag.svg" alt="Moldova flag" loading="lazy"><div class="country"><strong>Moldova</strong><span>Satoshi - Viva, Moldova!</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">6</span><img class="flag-img" src="../../../locations/asia/israel/img/flag.svg" alt="Israel flag" loading="lazy"><div class="country"><strong>Israel</strong><span>Noam Bettan - Michelle</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">7</span><img class="flag-img" src="../../../locations/europe/serbia/img/flag.svg" alt="Serbia flag" loading="lazy"><div class="country"><strong>Serbia</strong><span>Lavina - Kraj Mene</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">8</span><img class="flag-img" src="../../../locations/europe/croatia/img/flag.svg" alt="Croatia flag" loading="lazy"><div class="country"><strong>Croatia</strong><span>LELEK - Andromeda</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">9</span><img class="flag-img" src="../../../locations/europe/lithuania/img/flag.svg" alt="Lithuania flag" loading="lazy"><div class="country"><strong>Lithuania</strong><span>Lion Ceccah - Solo quiero mas</span></div><span class="status">Final</span></div>
+          <div class="result-row"><span class="rank">10</span><img class="flag-img" src="../../../locations/europe/poland/img/flag.svg" alt="Poland flag" loading="lazy"><div class="country"><strong>Poland</strong><span>ALICJA - Pray</span></div><span class="status">Final</span></div>
         </div>
       </article>
 
       <article class="card span-5">
         <div class="card-head"><h2 class="card-title">Final Setup</h2><span class="chev">&gt;</span></div>
         <div class="timeline">
-          <div class="timeline-row"><span class="dot">SF</span><div><strong>Semi-final qualifiers</strong><span>Entries from both semi-finals join the final.</span></div></div>
+          <div class="timeline-row"><span class="dot">10</span><div><strong>Semi-final 1 qualifiers</strong><span>10 entries are already through to Saturday.</span></div></div>
+          <div class="timeline-row"><span class="dot">SF2</span><div><strong>Semi-final 2 pending</strong><span>The next 10 qualifiers are added after the second semi-final.</span></div></div>
           <div class="timeline-row"><span class="dot">AQ</span><div><strong>Pre-qualified countries</strong><span>The host and automatic finalists complete the field.</span></div></div>
           <div class="timeline-row"><span class="dot">WIN</span><div><strong>Winner reveal</strong><span>The final combines jury and public voting into the trophy moment.</span></div></div>
         </div>
