@@ -46,6 +46,13 @@
     .bar-row { display: grid; grid-template-columns: 120px 1fr 72px; gap: 10px; align-items: center; font-size: 13px; }
     .bar-track { height: 7px; border-radius: 99px; background: #e8ebf2; overflow: hidden; }
     .bar-fill { display: block; height: 100%; width: var(--value); border-radius: inherit; background: linear-gradient(90deg, var(--blue), #92b8ef); }
+    .list { display: grid; gap: 7px; padding: 0 16px 16px; }
+    .result-row { display: grid; grid-template-columns: 28px 42px 1fr auto; align-items: center; gap: 10px; min-height: 38px; padding: 7px 0; border-top: 1px solid var(--line); }
+    .rank { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #edf4ff; color: var(--blue); font-weight: 900; font-size: 12px; }
+    .flag-img { width: 38px; height: 28px; object-fit: cover; border-radius: 5px; box-shadow: 0 0 0 1px rgba(17,25,43,.14); background: #fff; }
+    .country strong { display: block; font-size: 14px; }
+    .country span { display: block; color: var(--muted); font-size: 12px; margin-top: 1px; }
+    .status { min-width: 84px; text-align: center; padding: 5px 8px; border-radius: 999px; font-size: 11px; font-weight: 900; color: var(--amber); background: #fff6df; }
     .timeline { display: grid; gap: 0; padding: 0 16px 16px; }
     .timeline-row { display: grid; grid-template-columns: 38px 1fr; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
     .dot { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #eaf1ff; color: var(--blue); font-weight: 900; }
@@ -119,12 +126,23 @@
       </article>
 
       <article class="card span-7">
-        <div class="card-head"><h2 class="card-title">Ready for Update</h2><span class="chev">&gt;</span></div>
-        <p class="status-note">Results are intentionally empty until the live show is complete. Add qualifiers, eliminated entries and any voting notes here after the broadcast.</p>
-        <div class="timeline">
-          <div class="timeline-row"><span class="dot">10</span><div><strong>Qualifiers pending</strong><span>The 10 Grand Final places will be listed after the show.</span></div></div>
-          <div class="timeline-row"><span class="dot">5</span><div><strong>Eliminated entries pending</strong><span>The remaining songs can be moved into the out-of-contest block.</span></div></div>
-          <div class="timeline-row"><span class="dot">SF</span><div><strong>Show notes pending</strong><span>Opening, interval acts and automatic finalist appearances can be added once known.</span></div></div>
+        <div class="card-head"><h2 class="card-title">Running Order</h2><span class="chev">15</span></div>
+        <div class="list">
+          <div class="result-row"><span class="rank">1</span><img class="flag-img" src="../../../locations/europe/bulgaria/img/flag.svg" alt="Bulgaria flag" loading="lazy"><div class="country"><strong>Bulgaria</strong><span>DARA - Bangaranga</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">2</span><img class="flag-img" src="../../../locations/europe/azerbaijan/img/flag.svg" alt="Azerbaijan flag" loading="lazy"><div class="country"><strong>Azerbaijan</strong><span>JIVA - Just Go</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">3</span><img class="flag-img" src="../../../locations/europe/romania/img/flag.svg" alt="Romania flag" loading="lazy"><div class="country"><strong>Romania</strong><span>Alexandra C&#259;pit&#259;nescu - Choke Me</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">4</span><img class="flag-img" src="../../../locations/europe/luxembourg/img/flag.svg" alt="Luxembourg flag" loading="lazy"><div class="country"><strong>Luxembourg</strong><span>Eva Marija - Mother Nature</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">5</span><img class="flag-img" src="../../../locations/europe/czechia/img/flag.svg" alt="Czechia flag" loading="lazy"><div class="country"><strong>Czechia</strong><span>Daniel Zizka - CROSSROADS</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">6</span><img class="flag-img" src="../../../locations/europe/armenia/img/flag.svg" alt="Armenia flag" loading="lazy"><div class="country"><strong>Armenia</strong><span>SIM&Oacute;N - Paloma Rumba</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">7</span><img class="flag-img" src="../../../locations/europe/switzerland/img/flag.svg" alt="Switzerland flag" loading="lazy"><div class="country"><strong>Switzerland</strong><span>Veronica Fusaro - Alice</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">8</span><img class="flag-img" src="../../../locations/europe/cyprus/img/flag.svg" alt="Cyprus flag" loading="lazy"><div class="country"><strong>Cyprus</strong><span>Antigoni - JALLA</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">9</span><img class="flag-img" src="../../../locations/europe/latvia/img/flag.svg" alt="Latvia flag" loading="lazy"><div class="country"><strong>Latvia</strong><span>Atvara - &#274;n&#257;</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">10</span><img class="flag-img" src="../../../locations/europe/denmark/img/flag.svg" alt="Denmark flag" loading="lazy"><div class="country"><strong>Denmark</strong><span>S&oslash;ren Torpegaard Lund - F&oslash;r Vi G&aring;r Hjem</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">11</span><img class="flag-img" src="../../../locations/oceania/australia/img/flag.svg" alt="Australia flag" loading="lazy"><div class="country"><strong>Australia</strong><span>Delta Goodrem - Eclipse</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">12</span><img class="flag-img" src="../../../locations/europe/ukraine/img/flag.svg" alt="Ukraine flag" loading="lazy"><div class="country"><strong>Ukraine</strong><span>LEL&Eacute;KA - Ridnym</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">13</span><img class="flag-img" src="../../../locations/europe/albania/img/flag.svg" alt="Albania flag" loading="lazy"><div class="country"><strong>Albania</strong><span>Alis - N&acirc;n</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">14</span><img class="flag-img" src="../../../locations/europe/malta/img/flag.svg" alt="Malta flag" loading="lazy"><div class="country"><strong>Malta</strong><span>AIDAN - Bella</span></div><span class="status">Pending</span></div>
+          <div class="result-row"><span class="rank">15</span><img class="flag-img" src="../../../locations/europe/norway/img/flag.svg" alt="Norway flag" loading="lazy"><div class="country"><strong>Norway</strong><span>JONAS LOVV - YA YA YA</span></div><span class="status">Pending</span></div>
         </div>
       </article>
 
@@ -134,6 +152,7 @@
           <div class="timeline-row"><span class="dot">1</span><div><strong>Live performances</strong><span>15 countries perform for a place in the Grand Final.</span></div></div>
           <div class="timeline-row"><span class="dot">2</span><div><strong>Voting window</strong><span>Viewers and eligible countries decide the qualifying group.</span></div></div>
           <div class="timeline-row"><span class="dot">3</span><div><strong>Final reveal</strong><span>The qualifiers complete the Saturday lineup.</span></div></div>
+          <div class="timeline-row"><span class="dot">10</span><div><strong>Results pending</strong><span>Qualifiers and eliminated entries can be added after the show.</span></div></div>
         </div>
       </article>
 
@@ -166,7 +185,7 @@
       </article>
     </section>
     <div class="source">
-      <span>Sources: <a href="https://www.eurovision.com/eurovision-song-contest/vienna-2026">Eurovision.com</a>.</span>
+      <span>Sources: <a href="https://www.eurovision.com/eurovision-song-contest/vienna-2026/vienna-2026-second-semi-final/">Eurovision.com Second Semi-Final</a>, <a href="https://www.eurovision.com/stories/vienna-2026-semi-final-running-orders-revealed/">Eurovision.com running order</a>.</span>
       <span>Updated 13 May 2026</span>
     </div>
   </main>
