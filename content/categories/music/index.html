@@ -8,54 +8,67 @@
     <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="../../../assets/icons/site.webmanifest">
     <meta name="theme-color" content="#0d2137">
-<title>Music</title>
-    <style>      :root { --theme: #6b3f7a; --accent: #d6a7e3; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+    <title>Music</title>
+    <style>
+      :root { --theme: #6b3f7a; --accent: #d6a7e3; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
       a { color: inherit; }
       .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
       .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
       .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
-      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(320px,.84fr) minmax(520px,1.16fr); gap: clamp(16px,2.4vw,34px); align-items: stretch; padding: clamp(12px,2.4vw,30px); }
-      .hero { display: grid; align-items: end; padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.64)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.18); }
+      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: clamp(16px,2.4vw,34px); align-items: stretch; padding: clamp(12px,2.4vw,30px); }
+      .hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.64)), var(--hero) center 50% / cover; box-shadow: 0 18px 44px rgba(23,32,28,.18); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
       .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
-      .panel { display: grid; grid-template-rows: auto auto auto 1fr; gap: 10px; min-width: 0; }
-      .fact-grid, .story-grid, .topic-grid { display: grid; gap: 8px; }
-      .fact-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
-      .story-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-      .topic-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-      .fact, .story, .topic-card, .overview { border-radius: 8px; }
-      .fact, .story, .topic-card { border: 1px solid var(--line); background: white; }
-      .fact { min-height: 76px; padding: 11px; border-left: 4px solid var(--theme); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
-      .fact span, .story span, .topic-card span, .overview span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
-      .fact strong { display: block; margin-top: 6px; font-size: clamp(18px,2.05vw,27px); line-height: 1; }
-      .story { min-height: 92px; padding: 12px 13px; }
-      .story strong { display: block; margin-top: 6px; font-size: 16px; line-height: 1.15; }
-      .story p { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
-      .overview { padding: 13px 15px; background: var(--theme); color: white; }
-      .overview span { margin-bottom: 5px; color: var(--accent); font-weight: 700; }
+      .panel { display: grid; grid-template-rows: auto auto 1fr; gap: 10px; min-width: 0; }
+      .insight-grid { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(260px,.92fr); gap: 8px; }
+      .category-chart, .history-card { border: 1px solid var(--line); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      .category-chart { display: grid; gap: 8px; padding: 12px 14px; }
+      .chart-title, .history-title { color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      .bar-row { display: grid; grid-template-columns: minmax(90px,.32fr) 1fr minmax(50px,auto); gap: 10px; align-items: center; font-size: 13px; }
+      .bar-row span:first-child { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; line-height: 1.05; }
+      .bar-track { height: 11px; border-radius: 999px; background: rgba(23,32,28,.10); overflow: hidden; }
+      .bar-fill { display: block; width: var(--value); height: 100%; border-radius: 999px; background: linear-gradient(90deg,var(--theme),#9fcbd8); }
+      .bar-row strong { text-align: right; white-space: nowrap; font-size: 12px; }
+      .history-card { padding: 12px 14px; }
+      .history-list { display: grid; gap: 7px; margin-top: 9px; }
+      .history-item { display: grid; grid-template-columns: 48px minmax(0,1fr); gap: 10px; align-items: baseline; padding-top: 7px; border-top: 1px solid rgba(23,32,28,.10); }
+      .history-item time { color: var(--theme); font-size: 13px; font-weight: 700; }
+      .history-item strong { display: block; font-size: 14px; line-height: 1.16; }
+      .history-item span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; line-height: 1.22; }
+      .overview { padding: 13px 15px; border-radius: 8px; background: var(--theme); color: white; }
+      .overview span { display: block; margin-bottom: 5px; color: var(--accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       .overview p { margin: 0; font-size: 15px; line-height: 1.34; }
       .topics-section { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 8px; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .section-heading span { color: var(--muted); font-size: 13px; }
-      .topic-card { display: grid; gap: 7px; min-height: 106px; padding: 13px 14px; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; }
+      .carousel-controls { display: flex; gap: 6px; align-items: center; }
+      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
+      .carousel-button:hover { background: var(--theme); color: white; }
+      .carousel-button:disabled { opacity: .35; cursor: default; background: white; color: var(--muted); }
+      .carousel-button svg { width: 18px; height: 18px; display: block; }
+      .carousel { min-width: 0; overflow: hidden; }
+      .carousel-track.topic-grid { display: flex; gap: 8px; overflow-x: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
+      .carousel-track .topic-card { flex: 0 0 calc((100% - 16px) / 3); scroll-snap-align: start; }
+      .topic-card { display: grid; grid-template-rows: 54px auto auto; gap: 7px; min-height: 150px; padding: 0 14px 13px; overflow: hidden; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 8px; background: white; color: inherit; text-decoration: none; }
       .topic-card:hover { border-color: var(--theme); transform: translateY(-1px); }
+      .topic-thumb { display: block; width: calc(100% + 28px); height: 54px; margin: 0 -14px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
       .topic-card strong { display: block; font-size: 19px; line-height: 1.1; }
       .topic-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.25; }
       .empty { padding: 15px; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 8px; background: white; color: var(--muted); font-size: 15px; }
       .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
       .site-footer p { margin: 0; }
-      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 38vh; } }
-      @media (max-width: 760px) { .slide { padding: 12px; } .fact-grid, .story-grid, .topic-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-      @media (max-width: 520px) { .fact-grid, .story-grid, .topic-grid { grid-template-columns: 1fr; } .section-heading { display: block; } .section-heading span { display: block; margin-top: 4px; } }
-    
       .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
       .nav-icon:hover{background:var(--theme);color:white}
       .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    </style>
+      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
+      @media (max-width: 1050px) { .slide { min-height: auto; } .hero { min-height: clamp(180px,28vh,240px); } }
+      @media (max-width: 760px) { .slide { padding: 12px; } .insight-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .carousel-track .topic-card { flex-basis: calc((100% - 8px) / 2); } }
+      @media (max-width: 620px) { .insight-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 520px) { .carousel-track .topic-card { flex-basis: 100%; } .section-heading { display: flex; } }
+    </style>
   </head>
   <body>
     <nav class="top-menu" aria-label="Categories">
@@ -63,8 +76,8 @@
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
       <a class="nav-icon" href="../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
-      
       <a href="../sport/index.html">Sports</a>
+      <a href="../culture/index.html">Culture</a>
       <a href="../food-and-drinks/index.html">Food and Drink</a>
       <a class="active" aria-current="page" href="index.html">Music</a>
       <a href="../technology/index.html">Technology</a>
@@ -76,25 +89,67 @@
         <div>
           <p class="eyebrow">Festivals, scenes, venues and city soundtracks</p>
           <h1 id="category-title">Music</h1>
-          <p class="intro">Music turns places into gathering points. Some trips are built around a festival field, others around a city scene, a historic venue, a jazz week, a song contest or a local sound that belongs to one region.</p>
+          <p class="intro">Music turns places into gathering points, from festival fields and jazz clubs to song contests, historic venues and local sounds that belong to one region.</p>
         </div>
       </header>
       <section class="panel" aria-label="Music overview and topics">
-        <div class="fact-grid"><div class="fact"><span>Core lens</span><strong>Live culture</strong></div><div class="fact"><span>Best season</span><strong>Festival peaks</strong></div><div class="fact"><span>Place pattern</span><strong>Venues and cities</strong></div><div class="fact"><span>Crowd energy</span><strong>Shared</strong></div></div>
-        <div class="story-grid"><article class="story"><span>Event magnets</span><strong>Eurovision, Glastonbury, Coachella and jazz festivals pull audiences across borders.</strong></article><article class="story"><span>Local scenes</span><strong>Music can explain neighborhoods, nightlife, cultural identity and why a city feels alive after dark.</strong></article><article class="story"><span>Travel value</span><strong>A good music topic connects date, sound, venue, audience and the destination around it.</strong></article></div>
-        <div class="overview"><span>Why it matters</span><p>Music categories should feel less like a list of bands and more like a map of cultural moments. The best pages explain what kind of sound, crowd and place the topic creates.</p></div>
-        <section class="topics-section" aria-label="Topics">
-          <div class="section-heading"><h2>Topics</h2><span>4 topics</span></div>
-          <div class="topic-grid">
-            <a class="topic-card" href="song-contests.html"><span>Topic</span><strong>Song Contests</strong><p>Eurovision and televised music events.</p></a>
-            <a class="topic-card" href="music-festivals.html"><span>Topic</span><strong>Music Festivals</strong><p>Large festival brands and destination lineups.</p></a>
-            <a class="topic-card" href="jazz.html"><span>Topic</span><strong>Jazz</strong><p>Jazz festivals, clubs and city scenes.</p></a>
-            <a class="topic-card" href="world-music.html"><span>Topic</span><strong>World Music</strong><p>Regional sounds and cross-cultural festivals.</p></a>
+        <section class="insight-grid" aria-label="Music scale and history">
+          <div class="category-chart" aria-label="Music travel by live format">
+            <div class="chart-title">Music travel by live format</div>
+            <div class="bar-row"><span>Festivals</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>Peak</strong></div>
+            <div class="bar-row"><span>Song contests</span><div class="bar-track"><i class="bar-fill" style="--value:82%"></i></div><strong>Annual</strong></div>
+            <div class="bar-row"><span>Jazz</span><div class="bar-track"><i class="bar-fill" style="--value:70%"></i></div><strong>Cities</strong></div>
+            <div class="bar-row"><span>World music</span><div class="bar-track"><i class="bar-fill" style="--value:64%"></i></div><strong>Regional</strong></div>
+            <div class="bar-row"><span>Venues</span><div class="bar-track"><i class="bar-fill" style="--value:58%"></i></div><strong>Nightlife</strong></div>
           </div>
+          <div class="history-card" aria-label="Music history anchors">
+            <div class="history-title">Music anchors</div>
+            <div class="history-list">
+              <div class="history-item"><time>1956</time><div><strong>Eurovision begins</strong><span>Song contests become cross-border spectacles.</span></div></div>
+              <div class="history-item"><time>1970</time><div><strong>Glastonbury starts</strong><span>Modern festival travel takes shape.</span></div></div>
+              <div class="history-item"><time>1986</time><div><strong>SXSW launches</strong><span>City scenes and showcases merge.</span></div></div>
+              <div class="history-item"><time>1999</time><div><strong>Coachella begins</strong><span>Destination festivals enter pop culture.</span></div></div>
+            </div>
+          </div>
+        </section>
+        <div class="overview"><span>Live culture</span><p>Music categories should feel less like a list of artists and more like a map of cultural moments: sound, crowd, venue, date and destination working together.</p></div>
+        <section class="topics-section" aria-label="Music Topics">
+          <div class="section-heading"><h2>Music Topics</h2><div class="carousel-controls" data-carousel-controls aria-label="Music Topics carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
+          <div class="carousel"><div class="topic-grid carousel-track" data-carousel-track>
+            <a class="topic-card" href="song-contests.html"><img class="topic-thumb" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80" alt="" aria-hidden="true"><strong>Song Contests</strong><p>Eurovision and televised music events.</p></a>
+            <a class="topic-card" href="music-festivals.html"><img class="topic-thumb" src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80" alt="" aria-hidden="true"><strong>Music Festivals</strong><p>Large festival brands and destination lineups.</p></a>
+            <a class="topic-card" href="jazz.html"><img class="topic-thumb" src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=80" alt="" aria-hidden="true"><strong>Jazz</strong><p>Jazz festivals, clubs and city scenes.</p></a>
+            <a class="topic-card" href="world-music.html"><img class="topic-thumb" src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=900&q=80" alt="" aria-hidden="true"><strong>World Music</strong><p>Regional sounds and cross-cultural festivals.</p></a>
+          </div></div>
         </section>
       </section>
     </main>
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
+    <script>
+      (() => {
+        const track = document.querySelector('[data-carousel-track]');
+        const prev = document.querySelector('[data-carousel-prev]');
+        const next = document.querySelector('[data-carousel-next]');
+        const controls = document.querySelector('[data-carousel-controls]');
+        if (!track || !prev || !next || !controls) return;
+        const update = () => {
+          const max = track.scrollWidth - track.clientWidth - 1;
+          controls.hidden = max <= 1;
+          prev.disabled = track.scrollLeft <= 1;
+          next.disabled = track.scrollLeft >= max;
+        };
+        const step = () => {
+          const card = track.querySelector('.topic-card');
+          if (!card) return track.clientWidth;
+          const gap = parseFloat(getComputedStyle(track).gap) || 0;
+          return card.getBoundingClientRect().width + gap;
+        };
+        prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+        next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+        track.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      })();
+    </script>
   </body>
 </html>
-

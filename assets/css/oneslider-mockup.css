@@ -18,6 +18,7 @@
 
 html {
   background: var(--paper);
+  overflow-x: hidden;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -35,16 +37,138 @@ a {
 .top-menu {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 2000;
   display: flex;
   align-items: center;
   gap: 8px;
   min-height: 52px;
-  padding: 7px max(12px, calc((100vw - 1120px) / 2));
-  overflow-x: auto;
+  padding: 8px clamp(14px, 3vw, 36px);
+  overflow: visible;
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+}
+
+.event-language-menu {
+  position: relative;
+  flex: 0 0 auto;
+  margin-left: auto;
+  z-index: 1001;
+}
+
+.event-language-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 11px;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  list-style: none;
+}
+
+.event-language-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-language-menu summary svg {
+  width: 17px;
+  height: 17px;
+}
+
+.event-language-menu[open] summary,
+.event-language-menu summary:hover {
+  color: #fff;
+  background: var(--theme);
+  border-color: var(--theme);
+}
+
+.event-language-menu .event-language-list {
+  position: fixed;
+  top: 58px;
+  right: clamp(14px, 3vw, 36px);
+  z-index: 1002;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  min-width: 230px;
+  max-width: min(300px, calc(100vw - 24px));
+  margin: 0;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(18, 32, 46, 0.16);
+}
+
+.event-language-menu .event-language-list > span:first-child {
+  display: none;
+}
+
+.event-language-menu .event-language-list a {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 9px;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 10px;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.event-language-menu .event-language-list a[aria-current="true"],
+.event-language-menu .event-language-list a:hover {
+  color: #fff;
+  background: var(--theme);
+  border-color: var(--theme);
+}
+
+.event-language-menu .event-language-list a span {
+  position: static;
+  display: inline;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.event-language-menu .event-language-list a .language-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.82;
+}
+
+.event-language-menu .event-language-list a .language-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-icon {
@@ -106,6 +230,14 @@ a {
   .nav-back {
     display: inline-flex;
   }
+
+  .event-language-menu .event-language-list {
+    top: 56px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+  }
 }
 
 .nav-pill {
@@ -158,6 +290,7 @@ a {
 
 .hero-card {
   position: relative;
+  isolation: isolate;
   min-height: 230px;
   overflow: hidden;
   display: grid;
@@ -172,6 +305,32 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 12px 28px rgba(18, 32, 46, 0.16);
+}
+
+.hero-card__image,
+.hero-card__shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-card__image {
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-card__shade {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 15, 24, 0.04), rgba(5, 15, 24, 0.62)),
+    linear-gradient(90deg, rgba(5, 15, 24, 0.62), rgba(5, 15, 24, 0.18) 66%);
+}
+
+.hero-card > :not(.hero-card__image):not(.hero-card__shade) {
+  position: relative;
+  z-index: 2;
 }
 
 .event-hero {

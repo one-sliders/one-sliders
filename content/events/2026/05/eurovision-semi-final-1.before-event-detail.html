@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
+  <meta name="theme-color" content="#07152a">
+  <title>Eurovision 2026 Semi-final 1</title>
+  <style>
+    :root {
+      --ink: #11192b;
+      --paper: #f4f6fb;
+      --muted: #657186;
+      --line: rgba(17,25,43,.12);
+      --blue: #155ed6;
+      --navy: #07152a;
+      --violet: #6d37d8;
+      --pink: #d82a86;
+      --green: #157253;
+      --red: #c44848;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+    .top-menu { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; overflow-x: auto; align-items: center; padding: 8px clamp(12px,3vw,34px); background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; font-size: 13px; }
+    .top-menu a:hover, .top-menu a.active { background: var(--navy); color: white; }
+    .nav-icon { display: grid; place-items: center; width: 38px; height: 38px; padding: 0 !important; color: var(--muted); }
+    .nav-icon svg { width: 21px; height: 21px; }
+    .page { width: min(1180px, 100%); margin: 0 auto; padding: clamp(10px,2vw,24px); }
+    .hero {
+      min-height: clamp(310px, 46vw, 520px);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      border-radius: 14px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(7,21,42,.02), rgba(7,21,42,.76)),
+        linear-gradient(90deg, rgba(7,21,42,.72), rgba(7,21,42,.14) 70%),
+        url("img/eurovision-semi-final-1-hero.png") center / cover;
+      box-shadow: 0 16px 38px rgba(9,24,49,.24);
+    }
+    .hero-content { padding: clamp(18px,4vw,38px); }
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+    .flag { display: inline-grid; place-items: center; min-width: 52px; height: 36px; border-radius: 8px; background: linear-gradient(#ed2939 0 33%, #fff 33% 66%, #ed2939 66%); box-shadow: 0 0 0 1px rgba(255,255,255,.45) inset; color: transparent; }
+    .kicker { display: inline-flex; align-items: center; min-height: 32px; padding: 0 13px; border-radius: 999px; background: rgba(21,94,214,.88); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 760px; font-size: clamp(46px,7vw,92px); line-height: .88; letter-spacing: 0; }
+    .intro { max-width: 620px; margin: 12px 0 0; font-size: clamp(16px,2vw,22px); line-height: 1.28; }
+    .hero-facts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 18px; border: 1px solid rgba(255,255,255,.25); border-radius: 14px; overflow: hidden; background: rgba(6,17,36,.58); backdrop-filter: blur(10px); }
+    .hero-fact { padding: 14px 16px; border-right: 1px solid rgba(255,255,255,.2); }
+    .hero-fact:last-child { border-right: 0; }
+    .hero-fact span { display: block; font-size: 11px; opacity: .75; }
+    .hero-fact strong { display: block; margin-top: 4px; font-size: 18px; line-height: 1.15; }
+    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 5px 16px rgba(17,25,43,.06); overflow: hidden; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-12 { grid-column: span 12; }
+    .card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px 7px; }
+    .card-title { margin: 0; color: var(--blue); font-size: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+    .chev { color: var(--muted); font-size: 20px; }
+    .fact-table { padding: 0 16px 14px; }
+    .fact-row { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .fact-row span { color: var(--muted); }
+    .fact-row strong { text-align: right; }
+    .bars { display: grid; gap: 10px; padding: 2px 16px 16px; }
+    .bar-row { display: grid; grid-template-columns: 110px 1fr 48px; gap: 10px; align-items: center; font-size: 13px; }
+    .bar-track { height: 7px; border-radius: 99px; background: #e8ebf2; overflow: hidden; }
+    .bar-fill { display: block; height: 100%; width: var(--value); border-radius: inherit; background: linear-gradient(90deg, var(--blue), #92b8ef); }
+    .list { display: grid; gap: 7px; padding: 0 16px 16px; }
+    .result-row { display: grid; grid-template-columns: 28px 42px 1fr auto; align-items: center; gap: 10px; min-height: 38px; padding: 7px 0; border-top: 1px solid var(--line); }
+    .rank { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #edf4ff; color: var(--blue); font-weight: 900; font-size: 12px; }.flag-img{width:38px;height:28px;object-fit:cover;border-radius:5px;box-shadow:0 0 0 1px rgba(17,25,43,.14);background:#fff;}
+    .country strong { display: block; font-size: 14px; }
+    .country span { display: block; color: var(--muted); font-size: 12px; margin-top: 1px; }
+    .status { min-width: 84px; text-align: center; padding: 5px 8px; border-radius: 999px; font-size: 11px; font-weight: 900; }
+    .status.in { color: var(--green); background: #e9f6f1; }
+    .status.out { color: var(--red); background: #faeeee; }
+    .timeline { display: grid; gap: 0; padding: 0 16px 16px; }
+    .timeline-row { display: grid; grid-template-columns: 38px 1fr; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .dot { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #eaf1ff; color: var(--blue); font-weight: 900; }
+    .timeline-row strong { display: block; font-size: 14px; }
+    .timeline-row span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 16px; }
+    .pill { padding: 8px 11px; border-radius: 999px; background: #eef3fb; font-weight: 800; font-size: 13px; }
+    .source { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12px; padding: 14px 2px 0; }
+    .source a { text-decoration: underline; }
+    @media (max-width: 820px) {
+      .page { padding: 10px; }
+      .top-menu { padding-inline: 10px; }
+      .hero { border-radius: 10px; min-height: 430px; }
+      .hero-facts { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .hero-fact { border-bottom: 1px solid rgba(255,255,255,.2); }
+      .grid { gap: 8px; }
+      .span-4, .span-5, .span-6, .span-7, .span-12 { grid-column: span 12; }
+      .bar-row { grid-template-columns: 96px 1fr 42px; }
+      h1 { font-size: clamp(48px,14vw,76px); }
+    }
+  
+    .top-menu { overflow: visible; }
+    .event-language-menu { position: relative; flex: 0 0 auto; margin-left: auto; z-index: 1001; }
+    .event-language-menu summary { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 11px; color: var(--event-muted, var(--muted, #5a6672)); background: #fff; border: 1px solid var(--event-line, var(--line, rgba(18,32,46,.11))); border-radius: 999px; cursor: pointer; font-size: 12px; font-weight: 900; list-style: none; }
+    .event-language-menu summary::-webkit-details-marker { display: none; }
+    .event-language-menu summary svg { width: 17px; height: 17px; }
+    .event-language-menu[open] summary, .event-language-menu summary:hover { color: #fff; background: var(--event-theme, var(--navy, var(--theme, #0d2137))); border-color: var(--event-theme, var(--navy, var(--theme, #0d2137))); }
+    .event-language-menu .event-language-list { position: fixed; top: 58px; right: clamp(14px, 3vw, 36px); z-index: 1002; display: grid; grid-template-columns: 1fr; gap: 6px; min-width: 230px; max-width: min(300px, calc(100vw - 24px)); margin: 0; padding: 8px; background: rgba(255,255,255,.98); border: 1px solid var(--event-line, var(--line, rgba(18,32,46,.11))); border-radius: 8px; box-shadow: 0 14px 34px rgba(18,32,46,.16); }
+    .event-language-menu .event-language-list > span:first-child { display: none; }
+    .event-language-menu .event-language-list a { display: grid; grid-template-columns: 42px 1fr; gap: 9px; align-items: center; min-height: 34px; padding: 0 10px; color: var(--event-muted, var(--muted, #5a6672)); background: #fff; border: 1px solid var(--event-line, var(--line, rgba(18,32,46,.11))); border-radius: 999px; font-size: 12px; font-weight: 800; text-decoration: none; }
+    .event-language-menu .event-language-list a[aria-current="true"], .event-language-menu .event-language-list a:hover { color: #fff; background: var(--event-theme, var(--navy, var(--theme, #0d2137))); border-color: var(--event-theme, var(--navy, var(--theme, #0d2137))); }
+    .event-language-menu .event-language-list a span { position: static; display: inline; width: auto; height: auto; min-height: 0; padding: 0; overflow: visible; clip: auto; color: inherit; background: transparent; border: 0; border-radius: 0; font-size: inherit; font-weight: inherit; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+    .event-language-menu .event-language-list a .language-code { display: inline-flex; align-items: center; justify-content: center; color: inherit; font-size: 11px; font-weight: 900; line-height: 1; opacity: .82; }
+    .event-language-menu .event-language-list a .language-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }
+</style>
+</head>
+<body>
+  <nav class="top-menu" aria-label="Eurovision Semi-final 1 navigation"><a class="nav-icon" href="../../index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a><a class="nav-icon" href="../../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a><a class="nav-icon" href="../../../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a><span class="nav-divider"></span><a class="nav-pill" href="../../../categories/music/song-contests.html">Song Contests</a></nav>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge-row">
+          <span class="flag">Austria</span>
+          <span class="kicker">Eurovision 2026</span>
+        </div>
+        <h1>Semifinal 1</h1>
+        <p class="intro">10 entries qualified for Saturday's Grand Final after the first live semi-final at Wiener Stadthalle in Vienna.</p>
+        <div class="hero-facts" aria-label="Semi-final 1 facts">
+          <div class="hero-fact"><span>City</span><strong>Vienna</strong></div>
+          <div class="hero-fact"><span>Arena</span><strong>Wiener Stadthalle</strong></div>
+          <div class="hero-fact"><span>Date</span><strong>12 May 2026</strong></div>
+          <div class="hero-fact"><span>Qualified</span><strong>10</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Eurovision Semi-final 1 dashboard">
+      <article class="card span-5">
+        <div class="card-head"><h2 class="card-title">Quick Facts</h2></div>
+        <div class="fact-table">
+          <div class="fact-row"><span>Host city</span><strong><a href="../../../locations/europe/austria/vienna.html">Vienna</a></strong></div>
+          <div class="fact-row"><span>Arena</span><strong>Wiener Stadthalle</strong></div>
+          <div class="fact-row"><span>Competing countries</span><strong>15</strong></div>
+          <div class="fact-row"><span>Qualifying places</span><strong>10</strong></div>
+          <div class="fact-row"><span>Grand Final</span><strong>16 May 2026</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-7">
+        <div class="card-head"><h2 class="card-title">Night Outcome</h2><span class="chev">10/15</span></div>
+        <div class="bars">
+          <div class="bar-row"><span>Qualified</span><div class="bar-track"><i class="bar-fill" style="--value:67%"></i></div><strong>10</strong></div>
+          <div class="bar-row"><span>Eliminated</span><div class="bar-track"><i class="bar-fill" style="--value:33%"></i></div><strong>5</strong></div>
+          <div class="bar-row"><span>First half</span><div class="bar-track"><i class="bar-fill" style="--value:47%"></i></div><strong>7</strong></div>
+          <div class="bar-row"><span>Second half</span><div class="bar-track"><i class="bar-fill" style="--value:53%"></i></div><strong>8</strong></div>
+        </div>
+      </article>
+
+      <article class="card span-7">
+        <div class="card-head"><h2 class="card-title">Through to the Final</h2></div>
+        <div class="list">
+          <div class="result-row"><span class="rank">1</span><img class="flag-img" src="../../../locations/europe/greece/img/flag.svg" alt="Greece flag" loading="lazy"><div class="country"><strong>Greece</strong><span>Akylas - Ferto</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">2</span><img class="flag-img" src="../../../locations/europe/finland/img/flag.svg" alt="Finland flag" loading="lazy"><div class="country"><strong>Finland</strong><span>Linda Lampenius &amp; Pete Parkkonen - Liekinheitin</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">3</span><img class="flag-img" src="../../../locations/europe/belgium/img/flag.svg" alt="Belgium flag" loading="lazy"><div class="country"><strong>Belgium</strong><span>ESSYLA - Dancing on the Ice</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">4</span><img class="flag-img" src="../../../locations/europe/sweden/img/flag.svg" alt="Sweden flag" loading="lazy"><div class="country"><strong>Sweden</strong><span>FELICIA - My System</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">5</span><img class="flag-img" src="../../../locations/europe/moldova/img/flag.svg" alt="Moldova flag" loading="lazy"><div class="country"><strong>Moldova</strong><span>Satoshi - Viva, Moldova!</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">6</span><img class="flag-img" src="../../../locations/asia/israel/img/flag.svg" alt="Israel flag" loading="lazy"><div class="country"><strong>Israel</strong><span>Noam Bettan - Michelle</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">7</span><img class="flag-img" src="../../../locations/europe/serbia/img/flag.svg" alt="Serbia flag" loading="lazy"><div class="country"><strong>Serbia</strong><span>Lavina - Kraj Mene</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">8</span><img class="flag-img" src="../../../locations/europe/croatia/img/flag.svg" alt="Croatia flag" loading="lazy"><div class="country"><strong>Croatia</strong><span>LELEK - Andromeda</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">9</span><img class="flag-img" src="../../../locations/europe/lithuania/img/flag.svg" alt="Lithuania flag" loading="lazy"><div class="country"><strong>Lithuania</strong><span>Lion Ceccah - Solo quiero mas</span></div><span class="status in">Qualified</span></div>
+          <div class="result-row"><span class="rank">10</span><img class="flag-img" src="../../../locations/europe/poland/img/flag.svg" alt="Poland flag" loading="lazy"><div class="country"><strong>Poland</strong><span>ALICJA - Pray</span></div><span class="status in">Qualified</span></div>
+        </div>
+      </article>
+
+      <article class="card span-5">
+        <div class="card-head"><h2 class="card-title">Out of the Contest</h2></div>
+        <div class="list">
+          <div class="result-row"><span class="rank">11</span><img class="flag-img" src="../../../locations/europe/portugal/img/flag.svg" alt="Portugal flag" loading="lazy"><div class="country"><strong>Portugal</strong><span>Bandidos do Cante - Rosa</span></div><span class="status out">Out</span></div>
+          <div class="result-row"><span class="rank">12</span><img class="flag-img" src="../../../locations/europe/georgia/img/flag.svg" alt="Georgia flag" loading="lazy"><div class="country"><strong>Georgia</strong><span>Bzikebi - On Replay</span></div><span class="status out">Out</span></div>
+          <div class="result-row"><span class="rank">13</span><img class="flag-img" src="../../../locations/europe/montenegro/img/flag.svg" alt="Montenegro flag" loading="lazy"><div class="country"><strong>Montenegro</strong><span>Tamara Zivkovic - Nova Zora</span></div><span class="status out">Out</span></div>
+          <div class="result-row"><span class="rank">14</span><img class="flag-img" src="../../../locations/europe/estonia/img/flag.svg" alt="Estonia flag" loading="lazy"><div class="country"><strong>Estonia</strong><span>Vanilla Ninja - Too Epic To Be True</span></div><span class="status out">Out</span></div>
+          <div class="result-row"><span class="rank">15</span><img class="flag-img" src="../../../locations/europe/san-marino/img/flag.svg" alt="San Marino flag" loading="lazy"><div class="country"><strong>San Marino</strong><span>Senhit feat. Boy George - Superstar</span></div><span class="status out">Out</span></div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <div class="card-head"><h2 class="card-title">Starting Order</h2></div>
+        <div class="timeline">
+          <div class="timeline-row"><span class="dot">1</span><div><strong>Opening block</strong><span>Moldova, Sweden, Croatia, Greece and Portugal set the first run.</span></div></div>
+          <div class="timeline-row"><span class="dot">2</span><div><strong>Automatic guests</strong><span>Italy and Germany performed and voted, but did not compete in this semi-final.</span></div></div>
+          <div class="timeline-row"><span class="dot">3</span><div><strong>Closing stretch</strong><span>Belgium, Lithuania, San Marino, Poland and Serbia closed the competitive lineup.</span></div></div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <div class="card-head"><h2 class="card-title">What Happened?</h2></div>
+        <div class="timeline">
+          <div class="timeline-row"><span class="dot">15</span><div><strong>Countries performed</strong><span>15 songs competed for 10 Grand Final places.</span></div></div>
+          <div class="timeline-row"><span class="dot">10</span><div><strong>Grand Final spots filled</strong><span>The qualifiers join the pre-qualified countries and semi-final 2 qualifiers.</span></div></div>
+          <div class="timeline-row"><span class="dot">2</span><div><strong>Next live shows</strong><span>Semi-final 2 follows on 14 May, with the Grand Final on 16 May.</span></div></div>
+        </div>
+      </article>
+
+      <article class="card span-12">
+        <div class="card-head"><h2 class="card-title">Related Links</h2></div>
+        <div class="pill-row">
+          <a class="pill" href="eurovision-song-contest.html">Eurovision event</a>
+          <a class="pill" href="../../../categories/music/song-contests.html">Song contests</a>
+          <a class="pill" href="../../../locations/europe/austria/index.html">Austria</a>
+          <a class="pill" href="../../../locations/europe/austria/vienna.html">Vienna</a>
+        </div>
+      </article>
+    </section>
+    <div class="source">
+      <span>Sources: <a href="https://www.eurovision.com/eurovision-song-contest/vienna-2026">Eurovision.com</a>, <a href="https://www.eurovision.com/stories/eurovision-2026-first-semi-final-qualifiers-vienna/">Eurovision.com qualifiers</a>, <a href="https://eurovisionworld.com/eurovision/2026/semi-final">Eurovisionworld</a>.</span>
+      <span>Updated 13 May 2026</span>
+    </div>
+  </main>
+</body>
+</html>
