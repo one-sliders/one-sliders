@@ -57,5 +57,7 @@ foreach ($f in ($files | Sort-Object FullName)) {
 [void]$sb.AppendLine('</urlset>')
 
 $out = "$base\sitemap.xml"
-[System.IO.File]::WriteAllText($out, $sb.ToString(), [System.Text.Encoding]::UTF8)
+# Write without BOM (UTF-8 without BOM)
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText($out, $sb.ToString(), $utf8NoBom)
 Write-Host "sitemap.xml written: $count URLs"
