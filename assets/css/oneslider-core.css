@@ -1,0 +1,197 @@
+/* OneSliders cookie consent banner
+   Loaded on every page; only shown when geo-consent.js decides to display it. */
+
+#os-cc-root {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 2147483600;
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  pointer-events: none;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#os-cc-root[hidden] { display: none; }
+
+.os-cc-card {
+  pointer-events: auto;
+  width: min(960px, 100%);
+  background: #0d2137;
+  color: #f2f3f5;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px 24px;
+  align-items: center;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.os-cc-card h2 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.os-cc-card p {
+  margin: 0;
+  color: rgba(242,243,245,.85);
+}
+
+.os-cc-card a {
+  color: #ffd166;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.os-cc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.os-cc-btn {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.18);
+  background: transparent;
+  color: #f2f3f5;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, transform .06s;
+}
+
+.os-cc-btn:hover { background: rgba(255,255,255,.06); }
+.os-cc-btn:active { transform: translateY(1px); }
+.os-cc-btn:focus-visible {
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
+}
+
+.os-cc-btn--primary {
+  background: #ffd166;
+  border-color: #ffd166;
+  color: #0d2137;
+}
+.os-cc-btn--primary:hover {
+  background: #ffdd8a;
+  border-color: #ffdd8a;
+}
+
+.os-cc-btn--ghost {
+  border-color: rgba(255,255,255,.22);
+}
+
+/* Customize panel */
+.os-cc-options {
+  grid-column: 1 / -1;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: 4px;
+}
+
+.os-cc-card.is-customizing .os-cc-options { display: flex; }
+
+.os-cc-option {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.04);
+}
+
+.os-cc-option input[type="checkbox"] {
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+  accent-color: #ffd166;
+}
+
+.os-cc-option input[type="checkbox"]:disabled {
+  accent-color: #5a6672;
+  cursor: not-allowed;
+}
+
+.os-cc-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.os-cc-option-text strong {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.os-cc-option-text span {
+  color: rgba(242,243,245,.7);
+  font-size: 13px;
+}
+
+.os-cc-options-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Floating reopen link, injected on every page after a choice exists.
+   Visible bottom-left, very low-key — does not obscure ad slots. */
+#os-cc-reopen {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2147483500;
+  background: rgba(13,33,55,.86);
+  color: #f2f3f5;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font: 500 12.5px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  opacity: .85;
+  transition: opacity .15s, transform .12s;
+}
+#os-cc-reopen:hover { opacity: 1; transform: translateY(-1px); }
+#os-cc-reopen[hidden] { display: none; }
+
+/* Mobile: stack everything */
+@media (max-width: 640px) {
+  #os-cc-root { padding: 10px; }
+  .os-cc-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+  .os-cc-actions {
+    justify-content: stretch;
+  }
+  .os-cc-btn {
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+    padding: 11px 10px;
+  }
+  .os-cc-btn--primary { flex: 1 1 100%; }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .os-cc-btn, #os-cc-reopen { transition: none; }
+}
