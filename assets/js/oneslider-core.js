@@ -423,12 +423,15 @@
   }
 
   // ---------- Reopen link ----------
-  // Order of preference:
-  //   1. Any pre-existing element with [data-cookie-settings] (handcrafted footers)
-  //   2. Auto-inject a link into the site's <footer class="site-footer"> if any
-  //   3. Last resort: a small floating pill at bottom-left
+  // Order of preference (first match wins):
+  //   1. Any pre-existing element with [data-cookie-settings]
+  //   2. Inject a cookie-icon button into the top nav next to the language
+  //      menu (most discoverable, always visible)
+  //   3. Inject a text link into <footer class="site-footer">
+  //   4. Last resort: a small floating pill at bottom-left
   function ensureReopen() {
     if (document.getElementById('os-cc-reopen')) return;
+    if (document.getElementById('os-cc-nav'))    return;
 
     // 1. Existing opt-in element
     var existing = document.querySelector('[data-cookie-settings]');
@@ -437,7 +440,22 @@
       return;
     }
 
-    // 2. Inject into the page's site footer if it has one
+    // 2. Inject next to the language menu in the top nav
+    var langMenu = document.querySelector('.event-language-menu, .top-menu .lang-switch');
+    if (langMenu && langMenu.parentNode) {
+      var btn = el('button', {
+        id: 'os-cc-nav', type: 'button',
+        class: 'os-cc-nav-btn',
+        title: t('reopen'),
+        'aria-label': t('reopen'),
+        html: COOKIE_ICON_SVG
+      });
+      langMenu.parentNode.insertBefore(btn, langMenu);
+      bindReopen(btn);
+      return;
+    }
+
+    // 3. Inject into the page's site footer if it has one
     var footer = document.querySelector('footer.site-footer, .site-footer');
     if (footer) {
       var sep = document.createTextNode(' · ');
@@ -445,8 +463,6 @@
         href: '#', 'data-cookie-settings': '', html: t('reopen'),
         style: 'color:inherit;text-decoration:underline;text-underline-offset:2px;'
       });
-      // Append inside the first <p> if there is one (matches existing copyright line),
-      // otherwise append directly to the footer.
       var host = footer.querySelector('p') || footer;
       host.appendChild(sep);
       host.appendChild(a);
@@ -454,13 +470,13 @@
       return;
     }
 
-    // 3. Floating pill fallback
-    var btn = el('button', {
+    // 4. Floating pill fallback
+    var pill = el('button', {
       id: 'os-cc-reopen', type: 'button', html: t('reopen'),
       'aria-label': t('reopen')
     });
-    bindReopen(btn);
-    document.body.appendChild(btn);
+    bindReopen(pill);
+    document.body.appendChild(pill);
   }
 
   function bindReopen(node) {
@@ -469,6 +485,9 @@
       showBanner(loadChoice());
     });
   }
+
+  // Cookie-with-bites icon — universally readable as "cookies"
+  var COOKIE_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10c0-.46-.04-.91-.1-1.36a5 5 0 0 1-5.91-7.6A10 10 0 0 0 12 2Z"/><circle cx="8.5" cy="9" r=".7" fill="currentColor"/><circle cx="15" cy="14.5" r=".7" fill="currentColor"/><circle cx="9.5" cy="14.5" r=".7" fill="currentColor"/></svg>';
 
   // ---------- Init flow ----------
   function init() {

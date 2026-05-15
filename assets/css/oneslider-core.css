@@ -155,8 +155,41 @@
   margin-top: 4px;
 }
 
-/* Floating reopen link, injected on every page after a choice exists.
-   Visible bottom-left, very low-key — does not obscure ad slots. */
+/* Top-nav cookie button, injected next to the language menu.
+   Styled to match the .event-language-menu summary pill exactly so it
+   blends visually with the existing nav controls. */
+#os-cc-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 6px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(18,32,46,.11);
+  background: #fff;
+  color: #5a6672;
+  cursor: pointer;
+  transition: background .12s, color .12s, border-color .12s;
+  flex: 0 0 auto;
+  -webkit-tap-highlight-color: transparent;
+}
+#os-cc-nav:hover,
+#os-cc-nav:focus-visible {
+  background: #0d2137;
+  border-color: #0d2137;
+  color: #fff;
+  outline: none;
+}
+#os-cc-nav svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+/* Floating reopen link, injected only as a last-resort fallback
+   on pages without a top-nav language menu and without a footer. */
 #os-cc-reopen {
   position: fixed;
   left: calc(14px + env(safe-area-inset-left, 0px));
