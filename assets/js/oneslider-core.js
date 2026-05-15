@@ -423,24 +423,51 @@
   }
 
   // ---------- Reopen link ----------
+  // Order of preference:
+  //   1. Any pre-existing element with [data-cookie-settings] (handcrafted footers)
+  //   2. Auto-inject a link into the site's <footer class="site-footer"> if any
+  //   3. Last resort: a small floating pill at bottom-left
   function ensureReopen() {
     if (document.getElementById('os-cc-reopen')) return;
-    // Prefer site footer link if any element opts in via data-cookie-settings
+
+    // 1. Existing opt-in element
     var existing = document.querySelector('[data-cookie-settings]');
     if (existing) {
-      existing.addEventListener('click', function (e) {
-        e.preventDefault();
-        showBanner(loadChoice());
-      });
+      bindReopen(existing);
       return;
     }
-    // Otherwise inject a small floating pill
+
+    // 2. Inject into the page's site footer if it has one
+    var footer = document.querySelector('footer.site-footer, .site-footer');
+    if (footer) {
+      var sep = document.createTextNode(' · ');
+      var a = el('a', {
+        href: '#', 'data-cookie-settings': '', html: t('reopen'),
+        style: 'color:inherit;text-decoration:underline;text-underline-offset:2px;'
+      });
+      // Append inside the first <p> if there is one (matches existing copyright line),
+      // otherwise append directly to the footer.
+      var host = footer.querySelector('p') || footer;
+      host.appendChild(sep);
+      host.appendChild(a);
+      bindReopen(a);
+      return;
+    }
+
+    // 3. Floating pill fallback
     var btn = el('button', {
       id: 'os-cc-reopen', type: 'button', html: t('reopen'),
       'aria-label': t('reopen')
     });
-    btn.addEventListener('click', function () { showBanner(loadChoice()); });
+    bindReopen(btn);
     document.body.appendChild(btn);
+  }
+
+  function bindReopen(node) {
+    node.addEventListener('click', function (e) {
+      e.preventDefault();
+      showBanner(loadChoice());
+    });
   }
 
   // ---------- Init flow ----------

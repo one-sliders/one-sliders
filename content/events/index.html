@@ -119,9 +119,8 @@
     #topic-row   { display: none; } #topic-row:not(.hidden)   { display: flex; }
     #country-row { display: none; } #country-row:not(.hidden) { display: flex; }
 
-    @media (max-width: 768px) {
-      #location-row, #reach-row { display: flex; }
-    }
+    /* #location-row and #reach-row are direct children of .filters too,
+       so they collapse together with the rest when the panel is closed. */
 
     /* main grid */
     .events-wrap { padding: 28px clamp(20px,5vw,80px) 48px; display: grid; gap: 32px; }
