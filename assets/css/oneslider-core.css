@@ -3,13 +3,19 @@
 
 #os-cc-root {
   position: fixed;
-  inset: auto 0 0 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2147483600;
   display: flex;
   justify-content: center;
   padding: 14px;
+  padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  padding-left:  calc(14px + env(safe-area-inset-left, 0px));
+  padding-right: calc(14px + env(safe-area-inset-right, 0px));
   pointer-events: none;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 #os-cc-root[hidden] { display: none; }
@@ -153,8 +159,8 @@
    Visible bottom-left, very low-key — does not obscure ad slots. */
 #os-cc-reopen {
   position: fixed;
-  left: 14px;
-  bottom: 14px;
+  left: calc(14px + env(safe-area-inset-left, 0px));
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   z-index: 2147483500;
   background: rgba(13,33,55,.86);
   color: #f2f3f5;
@@ -173,12 +179,21 @@
 
 /* Mobile: stack everything */
 @media (max-width: 640px) {
-  #os-cc-root { padding: 10px; }
+  #os-cc-root {
+    padding: 10px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    padding-left:  calc(10px + env(safe-area-inset-left, 0px));
+    padding-right: calc(10px + env(safe-area-inset-right, 0px));
+  }
   .os-cc-card {
     grid-template-columns: 1fr;
     padding: 16px;
     font-size: 14px;
     border-radius: 12px;
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .os-cc-actions {
     justify-content: stretch;
