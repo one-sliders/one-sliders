@@ -1,32 +1,50 @@
 # build-sitemap.ps1
-# Generates sitemap.xml covering all HTML pages under content/
+# Generates sitemap.xml covering all English HTML pages on one-sliders.com.
+# Includes both the default-English content/ tree and the new English
+# language-prefixed en/ tree (new layout event pages live there).
+# Non-English language versions (ar/, de/, fr/, ...) are excluded.
 
 $base   = "C:\Users\AndersEriksson\3DF\OneSlider"
 $domain = "https://one-sliders.com"
-$today  = Get-Date -Format "yyyy-MM-dd"
 
-# Collect all HTML files under content/
-$files = Get-ChildItem -Path "$base\content" -Recurse -Filter "*.html" |
+# Collect English HTML files: content/ (no prefix) and en/ subtree.
+# Exclude all other language prefixes when traversing content/.
+$contentFiles = Get-ChildItem -Path "$base\content" -Recurse -Filter "*.html" |
   Where-Object { $_.FullName -notmatch '\\(ar|de|en|es|fr|ha|hi|mi|no|pt|qu|ru|sw|tpi|zh)\\' }
 
-# Priority rules
+$enFiles = @()
+if (Test-Path "$base\en") {
+  $enFiles = Get-ChildItem -Path "$base\en" -Recurse -Filter "*.html"
+}
+
+$files = $contentFiles + $enFiles
+
+# Priority rules (path uses forward slashes after normalisation)
 function Get-Priority($relPath) {
-  if ($relPath -match 'events[/\\]index\.html$')     { return '1.0' }
-  if ($relPath -match 'locations[/\\]index\.html$')  { return '0.9' }
-  if ($relPath -match 'categories[/\\]index\.html$') { return '0.9' }
-  if ($relPath -match 'events[/\\]\d{4}[/\\]\d{2}[/\\][^/\\]+\.html$') { return '0.8' }  # event detail
-  if ($relPath -match 'locations[/\\][^/\\]+[/\\]index\.html$')         { return '0.7' }  # continent
-  if ($relPath -match 'locations[/\\][^/\\]+[/\\][^/\\]+[/\\]index\.html$') { return '0.6' }  # country
-  if ($relPath -match 'locations[/\\]')              { return '0.5' }  # city
-  if ($relPath -match 'categories[/\\]')             { return '0.6' }
+  if ($relPath -match '^(?:en/)?content/events/index\.html$')                                  { return '1.0' }
+  if ($relPath -match '^(?:en/)?content/locations/index\.html$')                               { return '0.9' }
+  if ($relPath -match '^(?:en/)?content/categories/index\.html$')                              { return '0.9' }
+  # NEW: events under categories/<cat>/<topic>/events/<slug>.html
+  if ($relPath -match '^(?:en/)?content/categories/[^/]+/[^/]+/events/[^/]+\.html$')           { return '0.85' }
+  # Legacy events under content/events/YYYY/MM/<slug>.html
+  if ($relPath -match '^(?:en/)?content/events/\d{4}/\d{2}/[^/]+\.html$')                      { return '0.7' }
+  # Category index pages and topic pages
+  if ($relPath -match '^(?:en/)?content/categories/[^/]+/index\.html$')                        { return '0.8' }
+  if ($relPath -match '^(?:en/)?content/categories/[^/]+/[^/]+\.html$')                        { return '0.7' }
+  # Locations hierarchy
+  if ($relPath -match '^(?:en/)?content/locations/[^/]+/index\.html$')                         { return '0.7' }  # continent
+  if ($relPath -match '^(?:en/)?content/locations/[^/]+/[^/]+/index\.html$')                   { return '0.6' }  # country
+  if ($relPath -match '^(?:en/)?content/locations/')                                           { return '0.5' }  # city
+  if ($relPath -match '^(?:en/)?content/categories/')                                          { return '0.6' }
   return '0.5'
 }
 
 function Get-Changefreq($relPath) {
-  if ($relPath -match 'events[/\\]index\.html$') { return 'daily' }
-  if ($relPath -match 'events[/\\]\d{4}[/\\]\d{2}[/\\]') { return 'weekly' }
-  if ($relPath -match 'locations[/\\]')           { return 'monthly' }
-  if ($relPath -match 'categories[/\\]')          { return 'weekly' }
+  if ($relPath -match '^(?:en/)?content/events/index\.html$')                       { return 'daily' }
+  if ($relPath -match '^(?:en/)?content/categories/[^/]+/[^/]+/events/')            { return 'weekly' }
+  if ($relPath -match '^(?:en/)?content/events/\d{4}/\d{2}/')                       { return 'weekly' }
+  if ($relPath -match '^(?:en/)?content/locations/')                                { return 'monthly' }
+  if ($relPath -match '^(?:en/)?content/categories/')                               { return 'weekly' }
   return 'monthly'
 }
 

@@ -1,23 +1,16 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <!-- OneSlider core v3: Consent Mode v2 + GA4 + persisted choice -->
-  <script>
-  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-  try{var _c=localStorage.getItem('os_consent_v1');if(_c){_c=JSON.parse(_c);if(_c&&(!_c.ts||(Date.now()-_c.ts)<31536000000)){gtag('consent','update',{ad_storage:_c.ads?'granted':'denied',ad_user_data:_c.ads?'granted':'denied',ad_personalization:_c.ads?'granted':'denied',analytics_storage:_c.analytics?'granted':'denied'});}}}catch(e){}
-  gtag('js',new Date());gtag('config','G-1EG5HKVW09');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EG5HKVW09"></script>
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <script defer src="/assets/js/oneslider-core.js"></script>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="../../../../assets/css/oneslider-core.css">
+  <script src="../../../../assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="../../../../assets/css/oneslider-mockup.css">
+  <link rel="stylesheet" href="../../../../assets/css/locations.css?v=locations-event-layout-20260520-3">
   <meta name="theme-color" content="#0d2137">
   <title>Estonia</title>
 </head>
@@ -31,7 +24,7 @@
     <a class="nav-pill active" aria-current="page" href="index.html">Estonia</a>
   </nav>
   <main class="page-shell">
-    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')">
+    <section class="hero-card hero-card--country">
       <div class="hero-inner">
         <div class="hero-copy">
           <img class="flag-badge" src="https://flagcdn.com/ee.svg" alt="Estonia flag">
@@ -65,19 +58,19 @@
       <article class="card span-6">
         <h2 class="card-title">Quick View</h2>
         <div class="bar-list">
-          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill" style="--value:90%"></i></div><strong>0.899</strong></div>
-          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill" style="--value:64%"></i></div><strong>64.2</strong></div>
-          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill" style="--value:93%"></i></div><strong>93%</strong></div>
-          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill" style="--value:63%"></i></div><strong>78.0</strong></div>
+          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill bar-value-90"></i></div><strong>0.899</strong></div>
+          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill bar-value-64"></i></div><strong>64.2</strong></div>
+          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill bar-value-93"></i></div><strong>93%</strong></div>
+          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill bar-value-63"></i></div><strong>78.0</strong></div>
         </div>
         <p class="source-line">Sources: World Bank, Numbeo, UN.</p>
       </article>
       <article class="card span-5">
         <h2 class="card-title">Top 3 Highest Mountains</h2>
         <div class="mini-grid">
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Suur Munamagi</strong><span>318 m</span></div>
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Valgjarve korgustik</strong><span>290 m</span></div>
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Haanja plateau</strong><span>300 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Suur Munamagi</strong><span>318 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Valgjarve korgustik</strong><span>290 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Haanja plateau</strong><span>300 m</span></div>
         </div>
       </article>
       <article class="card span-7">
@@ -85,10 +78,10 @@
         <div class="pie-wrap">
           <div class="pie"></div>
           <ul class="legend">
-            <li><span><i style="--swatch:#214e68"></i>No religion</span><strong>54%</strong></li>
-            <li><span><i style="--swatch:#8ab7c4"></i>Christianity</span><strong>40%</strong></li>
-            <li><span><i style="--swatch:#bac4c8"></i>Other</span><strong>5%</strong></li>
-            <li><span><i style="--swatch:#e2e4df"></i>Islam</span><strong>1%</strong></li>
+            <li><span><i></i>No religion</span><strong>54%</strong></li>
+            <li><span><i></i>Christianity</span><strong>40%</strong></li>
+            <li><span><i></i>Other</span><strong>5%</strong></li>
+            <li><span><i></i>Islam</span><strong>1%</strong></li>
           </ul>
         </div>
       </article>
@@ -105,9 +98,9 @@
       <article class="card span-6">
         <h2 class="card-title">Top 3 Cities by Population</h2>
         <div class="bar-list">
-          <div class="bar-row"><span>Tallinn</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>454k</strong></div>
-          <div class="bar-row"><span>Tartu</span><div class="bar-track"><i class="bar-fill" style="--value:21%"></i></div><strong>94k</strong></div>
-          <div class="bar-row"><span>Narva</span><div class="bar-track"><i class="bar-fill" style="--value:13%"></i></div><strong>57k</strong></div>
+          <div class="bar-row"><span>Tallinn</span><div class="bar-track"><i class="bar-fill bar-value-100"></i></div><strong>454k</strong></div>
+          <div class="bar-row"><span>Tartu</span><div class="bar-track"><i class="bar-fill bar-value-21"></i></div><strong>94k</strong></div>
+          <div class="bar-row"><span>Narva</span><div class="bar-track"><i class="bar-fill bar-value-13"></i></div><strong>57k</strong></div>
         </div>
       </article>
       <article class="card span-6">

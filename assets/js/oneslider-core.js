@@ -1,36 +1,90 @@
 /* OneSliders core script
  * ======================
  * This file is loaded on every page via:
- *   <script defer src="/assets/js/oneslider-core.js"></script>
+ *   <script src="/assets/js/oneslider-core.js"></script>      (synchronous)
  *
- * It is the single place to add new site-wide functionality. Everything
- * is namespaced under `window.OneSlider` and registered as a module so
- * future additions don't collide.
+ * It is the SINGLE place to add new site-wide functionality. To add a
+ * new feature: scroll to the bottom and follow the module template.
  *
  * Currently bundled modules:
- *   - consent       Geo-aware cookie banner + Google Consent Mode v2
+ *   - analytics     Google Consent Mode v2 + GA4 bootstrap (runs FIRST,
+ *                   synchronously, before this script finishes parsing)
+ *   - consent       Geo-aware cookie banner UI
  *
- * To add a new module: copy the consent module pattern at the bottom
- * (`OneSlider.register('name', factory)`) and the boot loop will run it
- * automatically on DOM-ready. Modules can publish/subscribe via
- * OneSlider.on / OneSlider.emit if they need to talk to each other.
- *
- * NOTE: The Google Consent Mode default ("denied" for all) MUST be set
- * BEFORE gtag.js loads. That's why the inline snippet in <head> handles
- * it — this file only updates consent based on geo / user choice.
+ * Why synchronous? Because Google Consent Mode v2 requires
+ *   gtag('consent','default', {...denied...})
+ * to be issued BEFORE gtag.js loads. Loading this file sync at the top
+ * of <head> gives us that guarantee with zero inline JS on the page.
  */
 (function () {
   'use strict';
 
   if (window.OneSlider && window.OneSlider.__loaded) return;
 
-  // ---------- Tiny module / event-bus framework ----------
+  // =====================================================================
+  // PART 1 — synchronous boot:
+  //   set up dataLayer + Consent Mode default + load gtag.js.
+  //   This MUST happen before anything else so consent is "denied" by
+  //   default and gtag.js sees that default when it evaluates.
+  // =====================================================================
+
+  var GA_ID = 'G-1EG5HKVW09';
+  var CONSENT_STORAGE_KEY = 'os_consent_v1';
+  var CONSENT_TTL_MS      = 31536000000;  // 12 months
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag () { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // 1a. Consent Mode v2 default — must be "denied" for EU compliance.
+  gtag('consent', 'default', {
+    ad_storage:         'denied',
+    ad_user_data:       'denied',
+    ad_personalization: 'denied',
+    analytics_storage:  'denied',
+    wait_for_update:    500
+  });
+
+  // 1b. If the visitor has already chosen, restore their choice NOW,
+  //     before gtag.js loads, so the very first beacon respects it.
+  try {
+    var _stored = localStorage.getItem(CONSENT_STORAGE_KEY);
+    if (_stored) {
+      var _v = JSON.parse(_stored);
+      if (_v && (!_v.ts || Date.now() - _v.ts < CONSENT_TTL_MS)) {
+        gtag('consent', 'update', {
+          ad_storage:         _v.ads      ? 'granted' : 'denied',
+          ad_user_data:       _v.ads      ? 'granted' : 'denied',
+          ad_personalization: _v.ads      ? 'granted' : 'denied',
+          analytics_storage:  _v.analytics ? 'granted' : 'denied'
+        });
+      }
+    }
+  } catch (e) { /* localStorage may be blocked */ }
+
+  // 1c. Bootstrap GA4.
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+
+  // 1d. Inject the gtag.js loader. Async so it does not block parsing.
+  (function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    (document.head || document.documentElement).appendChild(s);
+  })();
+
+  // =====================================================================
+  // PART 2 — module framework (runs at DOM-ready)
+  // =====================================================================
+
   var modules = [];
   var listeners = {};
 
   var OneSlider = window.OneSlider = window.OneSlider || {};
   OneSlider.__loaded = true;
-  OneSlider.version  = '1.0.0';
+  OneSlider.version  = '2.0.0';
+  OneSlider.gaId     = GA_ID;
 
   OneSlider.register = function (name, factory) {
     modules.push({ name: name, factory: factory });
@@ -440,8 +494,10 @@
       return;
     }
 
-    // 2. Inject next to the language menu in the top nav
-    var langMenu = document.querySelector('.event-language-menu, .top-menu .lang-switch');
+    // 2. Inject next to the language menu in the top nav. Place it after
+    // the language menu so pages where the language menu owns margin-left:auto
+    // keep both controls grouped on the right edge.
+    var langMenu = document.querySelector('.nav-language, .event-language-menu, .top-menu .lang-switch');
     if (langMenu && langMenu.parentNode) {
       var btn = el('button', {
         id: 'os-cc-nav', type: 'button',
@@ -450,7 +506,7 @@
         'aria-label': t('reopen'),
         html: COOKIE_ICON_SVG
       });
-      langMenu.parentNode.insertBefore(btn, langMenu);
+      langMenu.parentNode.insertBefore(btn, langMenu.nextSibling);
       bindReopen(btn);
       return;
     }

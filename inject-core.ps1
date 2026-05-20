@@ -1,15 +1,14 @@
 # inject-core.ps1
-# Installs / updates the OneSliders consent + tracking snippet on every
-# HTML page. Idempotent: running it again either inserts the snippet,
-# upgrades an older version, or does nothing.
+# Installs / updates the OneSliders core snippet on every HTML page.
+# Idempotent. The current target is v4 — a minimal 2-line external load.
 
 $base = "C:\Users\AndersEriksson\3DF\OneSlider"
 
-# Snippet versions we recognise, oldest first. Anything matching ANY of
-# these is replaced by $newBlock below.
-#
+# ---- Snippet versions we recognise (oldest first) ----
 # v1: original gtag-only snippet (inject-gtag.ps1)
-# v2: first consent-mode snippet (no localStorage pre-apply)
+# v2: Consent Mode v2 inline (no localStorage pre-apply)
+# v3: Consent Mode v2 inline + localStorage pre-apply (the "core v3" comment)
+# Anything matching any of these → replaced by $newBlock (v4) below.
 $oldBlocks = @()
 
 $oldBlocks += @"
@@ -38,15 +37,7 @@ $oldBlocks += @"
   <script defer src="/assets/js/oneslider-core.js"></script>
 "@
 
-# Current snippet (v3): same as v2, but the inline script also reads any
-# saved consent choice from localStorage and applies it BEFORE gtag.js
-# loads. This means returning visitors get gtag.js bootstrapped with
-# their actual consent state from millisecond zero — no flicker, no
-# default-denied beacon firing before the choice is re-read.
-#
-# Marker comment "OneSlider core v3" is what future versions will look
-# for to detect that this exact version is already installed.
-$newBlock = @"
+$oldBlocks += @"
 
   <!-- OneSlider core v3: Consent Mode v2 + GA4 + persisted choice -->
   <script>
@@ -60,18 +51,32 @@ $newBlock = @"
   <script defer src="/assets/js/oneslider-core.js"></script>
 "@
 
+# ---- Current snippet (v4) — fully centralised ----
+# Everything (dataLayer init, Consent Mode default, localStorage pre-apply,
+# gtag.js loader, banner UI, geo lookup) lives in oneslider-core.js.
+# The HTML touches only two lines, and they NEVER need to change again.
+#
+# Sync load is correct here: the file is small (~25 KB minified-ish, cached
+# after first hit), and it must run BEFORE gtag.js for Consent Mode v2.
+$newBlock = @"
+
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
+  <script src="/assets/js/oneslider-core.js"></script>
+"@
+
 $files = Get-ChildItem -Path $base -Recurse -Filter "*.html" |
   Where-Object { $_.FullName -notmatch '\\(\.git|node_modules|tmp)\\' }
 
-$installed   = 0   # current version already present, no work
-$upgraded    = 0   # replaced an older snippet
-$inserted    = 0   # injected after <head> (had no snippet at all)
+$installed   = 0
+$upgraded    = 0
+$inserted    = 0
 $nohead      = 0
 
 foreach ($f in $files) {
   $html = [System.IO.File]::ReadAllText($f.FullName, [System.Text.Encoding]::UTF8)
 
-  if ($html -match 'OneSlider core v3') {
+  if ($html -match 'OneSlider core v4') {
     $installed++
     continue
   }
@@ -88,7 +93,7 @@ foreach ($f in $files) {
   }
   if ($matched) { continue }
 
-  # No snippet found — try to inject after <head>.
+  # No prior snippet — inject right after <head>
   $newHtml = [regex]::Replace(
     $html,
     '(?i)(<head\b[^>]*>)',
@@ -103,7 +108,7 @@ foreach ($f in $files) {
   }
 }
 
-Write-Host "Already current: $installed"
-Write-Host "Upgraded:        $upgraded"
-Write-Host "Newly inserted:  $inserted"
-Write-Host "No head tag:     $nohead"
+Write-Host "Already current (v4): $installed"
+Write-Host "Upgraded to v4:       $upgraded"
+Write-Host "Newly inserted:       $inserted"
+Write-Host "No <head> tag:        $nohead"

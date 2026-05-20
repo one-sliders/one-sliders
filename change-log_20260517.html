@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
+  <script src="/assets/js/oneslider-core.js"></script>
+  <meta charset="utf-8">
+  <title>Event QA — 2026-05-17T00:00:00+02:00</title>
+</head>
+<body>
+  <section data-run="2026-05-17T00:00:00+02:00">
+    <h1>Event QA — 2026-05-17T00:00:00+02:00</h1>
+    <p>Total events scanned: 1; total skipped via QA_confirmed.txt: 0; total events changed: 1; total flagged-but-not-fixed: 0; total newly added to QA_confirmed.txt: 0.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Approve</th>
+          <th>Event name</th>
+          <th>Updated date/time</th>
+          <th>Change comment</th>
+          <th>Reviewer comment</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" name="approve" data-event="british-grand-prix"></td>
+          <td><a href="en/content/events/2026/07/british-grand-prix.html">British Grand Prix</a></td>
+          <td>2026-05-17T00:00:00+02:00</td>
+          <td>
+            <ul>
+              <li>Check 7: fixed corrupted localized text in non-Latin British Grand Prix pages by rewriting localized files with numeric HTML entities for non-ASCII text.</li>
+              <li>Check 7: verified localized British Grand Prix files contain zero matches for <code>????</code>, <code>TBC</code>, old English QA headings, source text, or QA markers.</li>
+              <li>Check 7: verified local links and image references across localized British Grand Prix pages resolve to existing files.</li>
+            </ul>
+          </td>
+          <td><textarea name="reviewer-comment" data-event="british-grand-prix"></textarea></td>
+          <td><button data-action="regenerate" data-event="british-grand-prix">Re-run QA</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <script>
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('button[data-action="regenerate"]');
+    if (!button) return;
+    var eventSlug = button.getAttribute('data-event');
+    var textarea = document.querySelector('textarea[data-event="' + eventSlug + '"]');
+    fetch('/regenerate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: eventSlug, comment: textarea ? textarea.value : '' })
+    });
+  });
+  </script>
+</body>
+</html>

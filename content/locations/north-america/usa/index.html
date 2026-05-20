@@ -1,23 +1,16 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <!-- OneSlider core v3: Consent Mode v2 + GA4 + persisted choice -->
-  <script>
-  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-  try{var _c=localStorage.getItem('os_consent_v1');if(_c){_c=JSON.parse(_c);if(_c&&(!_c.ts||(Date.now()-_c.ts)<31536000000)){gtag('consent','update',{ad_storage:_c.ads?'granted':'denied',ad_user_data:_c.ads?'granted':'denied',ad_personalization:_c.ads?'granted':'denied',analytics_storage:_c.analytics?'granted':'denied'});}}}catch(e){}
-  gtag('js',new Date());gtag('config','G-1EG5HKVW09');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EG5HKVW09"></script>
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <script defer src="/assets/js/oneslider-core.js"></script>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="../../../../assets/css/oneslider-core.css">
+  <script src="../../../../assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../../../../assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../../../assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="../../../../assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="../../../../assets/css/oneslider-mockup.css">
+  <link rel="stylesheet" href="../../../../assets/css/locations.css?v=locations-event-layout-20260520-3">
   <meta name="theme-color" content="#0d2137">
   <title>USA</title>
 </head>
@@ -31,7 +24,7 @@
     <a class="nav-pill active" aria-current="page" href="index.html">USA</a>
   </nav>
   <main class="page-shell">
-    <section class="hero-card" style="background-image:linear-gradient(180deg,rgba(5,15,24,.04),rgba(5,15,24,.58)),linear-gradient(90deg,rgba(5,15,24,.58),rgba(5,15,24,.12) 66%),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')">
+    <section class="hero-card hero-card--country">
       <div class="hero-inner">
         <div class="hero-copy">
           <img class="flag-badge" src="https://flagcdn.com/us.svg" alt="USA flag">
@@ -65,19 +58,19 @@
       <article class="card span-6">
         <h2 class="card-title">Quick View</h2>
         <div class="bar-list">
-          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill" style="--value:92%"></i></div><strong>0.921</strong></div>
-          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill" style="--value:52%"></i></div><strong>52.0</strong></div>
-          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill" style="--value:92%"></i></div><strong>92%</strong></div>
-          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill" style="--value:66%"></i></div><strong>79.3</strong></div>
+          <div class="bar-row"><span>HDI</span><div class="bar-track"><i class="bar-fill bar-value-92"></i></div><strong>0.921</strong></div>
+          <div class="bar-row"><span>Safety index</span><div class="bar-track"><i class="bar-fill bar-value-52"></i></div><strong>52.0</strong></div>
+          <div class="bar-row"><span>Internet access</span><div class="bar-track"><i class="bar-fill bar-value-92"></i></div><strong>92%</strong></div>
+          <div class="bar-row"><span>Life expectancy</span><div class="bar-track"><i class="bar-fill bar-value-66"></i></div><strong>79.3</strong></div>
         </div>
         <p class="source-line">Sources: World Bank, Numbeo, UN.</p>
       </article>
       <article class="card span-5">
         <h2 class="card-title">Top 3 Highest Mountains</h2>
         <div class="mini-grid">
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Denali (Mount McKinley)</strong><span>6,190 m</span></div>
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Mount Saint Elias</strong><span>5,489 m</span></div>
-          <div class="mini-tile"><div class="mini-photo" style="background:linear-gradient(135deg,#0d3a52,#1a6080)"></div><strong>Mount Foraker</strong><span>5,304 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Denali (Mount McKinley)</strong><span>6,190 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Mount Saint Elias</strong><span>5,489 m</span></div>
+          <div class="mini-tile"><div class="mini-photo mini-photo--country"></div><strong>Mount Foraker</strong><span>5,304 m</span></div>
         </div>
       </article>
       <article class="card span-7">
@@ -85,10 +78,10 @@
         <div class="pie-wrap">
           <div class="pie"></div>
           <ul class="legend">
-            <li><span><i style="--swatch:#214e68"></i>Christianity</span><strong>63%</strong></li>
-            <li><span><i style="--swatch:#8ab7c4"></i>No religion</span><strong>29%</strong></li>
-            <li><span><i style="--swatch:#bac4c8"></i>Islam</span><strong>2%</strong></li>
-            <li><span><i style="--swatch:#e2e4df"></i>Other</span><strong>6%</strong></li>
+            <li><span><i></i>Christianity</span><strong>63%</strong></li>
+            <li><span><i></i>No religion</span><strong>29%</strong></li>
+            <li><span><i></i>Islam</span><strong>2%</strong></li>
+            <li><span><i></i>Other</span><strong>6%</strong></li>
           </ul>
         </div>
       </article>
@@ -98,16 +91,16 @@
           <div class="icon-tile"><strong>National Parks</strong><span>61 national parks from Yellowstone's geysers to the Grand Canyon's mile-deep gorge.</span></div>
           <div class="icon-tile"><strong>New York City</strong><span>The Empire State Building, Central Park, Times Square and the world's cultural capital.</span></div>
           <div class="icon-tile"><strong>California</strong><span>Hollywood, Silicon Valley, Yosemite and 1,350 km of Pacific coastline.</span></div>
-          <div class="icon-tile"><strong>Jazz and Blues</strong><span>American music â€” jazz, blues, rock and country â€” has shaped global culture.</span></div>
+          <div class="icon-tile"><strong>Jazz and Blues</strong><span>American music — jazz, blues, rock and country — has shaped global culture.</span></div>
           <div class="icon-tile"><strong>Iconic Road Trips</strong><span>Route 66, Pacific Coast Highway and the Blue Ridge Parkway are legendary drives.</span></div>
         </div>
       </article>
       <article class="card span-6">
         <h2 class="card-title">Top 3 Cities by Population</h2>
         <div class="bar-list">
-          <div class="bar-row"><span>New York</span><div class="bar-track"><i class="bar-fill" style="--value:100%"></i></div><strong>8.3M</strong></div>
-          <div class="bar-row"><span>Los Angeles</span><div class="bar-track"><i class="bar-fill" style="--value:48%"></i></div><strong>4.0M</strong></div>
-          <div class="bar-row"><span>Chicago</span><div class="bar-track"><i class="bar-fill" style="--value:33%"></i></div><strong>2.7M</strong></div>
+          <div class="bar-row"><span>New York</span><div class="bar-track"><i class="bar-fill bar-value-100"></i></div><strong>8.3M</strong></div>
+          <div class="bar-row"><span>Los Angeles</span><div class="bar-track"><i class="bar-fill bar-value-48"></i></div><strong>4.0M</strong></div>
+          <div class="bar-row"><span>Chicago</span><div class="bar-track"><i class="bar-fill bar-value-33"></i></div><strong>2.7M</strong></div>
         </div>
       </article>
       <article class="card span-6">
@@ -144,15 +137,15 @@
       <article class="card span-12">
         <h2 class="card-title">Upcoming Events</h2>
         <div class="event-strip">
-          <a class="event-card" href="../../../events/2026/06/us-open-golf.html"><div class="event-body"><span class="event-date">Jun 2026</span><strong>U.S. Open Golf</strong></div></a>
-          <a class="event-card" href="../../../events/2026/05/pga-championship.html"><div class="event-body"><span class="event-date">May 2026</span><strong>PGA Championship</strong></div></a>
-          <a class="event-card" href="../../../events/2026/04/masters-tournament.html"><div class="event-body"><span class="event-date">Apr 2026</span><strong>Masters Tournament</strong></div></a>
-          <a class="event-card" href="../../../events/2026/08/burning-man.html"><div class="event-body"><span class="event-date">Aug-Sep 2026</span><strong>Burning Man</strong></div></a>
-          <a class="event-card" href="../../../events/2026/08/us-open-tennis.html"><div class="event-body"><span class="event-date">Aug-Sep 2026</span><strong>US Open Tennis</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/golf/events/us-open-golf.html"><div class="event-body"><span class="event-date">Jun 2026</span><strong>U.S. Open Golf</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/golf/events/pga-championship.html"><div class="event-body"><span class="event-date">May 2026</span><strong>PGA Championship</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/golf/events/masters-tournament.html"><div class="event-body"><span class="event-date">Apr 2026</span><strong>Masters Tournament</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/culture/art/events/burning-man.html"><div class="event-body"><span class="event-date">Aug-Sep 2026</span><strong>Burning Man</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/tennis/events/us-open-tennis.html"><div class="event-body"><span class="event-date">Aug-Sep 2026</span><strong>US Open Tennis</strong></div></a>
           <a class="event-card" href="../../../events/2026/06/fifa-world-cup-2026.html"><div class="event-body"><span class="event-date">Jun-Jul 2026</span><strong>FIFA World Cup 2026</strong></div></a>
-          <a class="event-card" href="../../../events/2026/11/las-vegas-grand-prix.html"><div class="event-body"><span class="event-date">Nov 2026</span><strong>Las Vegas Grand Prix</strong></div></a>
-          <a class="event-card" href="../../../events/2026/11/new-york-city-marathon.html"><div class="event-body"><span class="event-date">Nov 2026</span><strong>New York City Marathon</strong></div></a>
-          <a class="event-card" href="../../../events/2026/10/united-states-grand-prix.html"><div class="event-body"><span class="event-date">Oct 2026</span><strong>United States Grand Prix</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/formula-1/events/las-vegas-grand-prix.html"><div class="event-body"><span class="event-date">Nov 2026</span><strong>Las Vegas Grand Prix</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/running/events/new-york-city-marathon.html"><div class="event-body"><span class="event-date">Nov 2026</span><strong>New York City Marathon</strong></div></a>
+          <a class="event-card" href="../../../../en/content/categories/sport/formula-1/events/united-states-grand-prix.html"><div class="event-body"><span class="event-date">Oct 2026</span><strong>United States Grand Prix</strong></div></a>
         </div>
       </article>
     </section>

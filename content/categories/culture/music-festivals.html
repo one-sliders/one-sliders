@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
+  <script src="../../../assets/js/oneslider-core.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
+    <link rel="canonical" href="https://one-sliders.com/content/categories/culture/music-festivals.html">
+    <meta name="description" content="Multi-day open-air gatherings built around line-ups, camping and a sense of place.">
+    <title>Music festivals</title>
+    <style>
+      :root { --theme: #2a4c7a; --accent: #7fb3ff; --ink:#17201c; --paper:#fbfaf6; --muted:#5f6b63; --line:rgba(23,32,28,.14); }
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}
+      a{color:inherit}
+      .top-menu{position:sticky;top:0;z-index:2000;display:flex;gap:8px;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+      .top-menu a:not(.nav-icon){flex:0 0 auto;padding:8px 11px;border-radius:999px;text-decoration:none;font-size:13px}
+      .top-menu a:not(.nav-icon):hover,.top-menu a.active{background:var(--theme);color:#fff}
+      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none}
+      .nav-icon:hover{background:var(--theme);color:#fff}
+      .nav-icon svg{width:22px;height:22px;display:block}
+      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
+      .topic-slide{display:grid;grid-template-rows:auto 1fr;gap:16px;padding:clamp(20px,5vw,80px)}
+      .topic-hero{display:grid;align-items:end;min-height:clamp(220px,28vh,320px);padding:clamp(20px,3.6vw,44px);color:#fff;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--theme),color-mix(in srgb, var(--theme) 60%, #000));box-shadow:0 18px 44px rgba(23,32,28,.16)}
+      .eyebrow{margin:0 0 8px;color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase}
+      h1{margin:0;font-size:clamp(40px,6vw,72px);line-height:.96}
+      .intro{max-width:740px;margin:12px 0 0;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:rgba(255,255,255,.92)}
+      .event-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+      .event-card{display:grid;gap:6px;padding:0 14px 14px;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;background:#fff;color:inherit;text-decoration:none;grid-template-rows:130px auto auto auto;transition:transform .12s,border-color .12s;overflow:hidden}
+      .event-card:hover{border-color:var(--theme);transform:translateY(-2px)}
+      .event-thumb{display:block;width:calc(100% + 28px);height:130px;margin:0 -14px 6px;object-fit:cover;background:#eee;border-bottom:1px solid var(--line)}
+      .event-card time{color:var(--theme);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+      .event-card strong{display:block;font-size:18px;line-height:1.2;margin:2px 0 0}
+      .event-card p{margin:2px 0 0;color:var(--muted);font-size:13px}
+      .empty-state{padding:28px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;background:#fff}
+      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92)}
+      .site-footer p{margin:0}
+      @media (max-width:760px){.topic-slide{padding:12px}}
+    </style>
+  </head>
+  <body>
+    <nav class="top-menu" aria-label="Category navigation">
+      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+      <span class="nav-divider"></span>
+      <a href="index.html">Culture</a>
+      <a class="active" aria-current="page" href="music-festivals.html">Music festivals</a>
+    </nav>
+    <main class="topic-slide">
+      <header class="topic-hero">
+        <div>
+          <p class="eyebrow">Culture - stages and crowds</p>
+          <h1>Music festivals</h1>
+          <p class="intro">Multi-day open-air gatherings built around line-ups, camping and a sense of place.</p>
+        </div>
+      </header>
+      <section aria-label="Events under Music festivals">
+        <div class="event-grid">
+          <a class="event-card" href="../../../en/content/categories/culture/music-festivals/events/coachella.html"><img class="event-thumb" src="../../../en/content/categories/culture/music-festivals/events/img/coachella-hero.png" alt="" loading="lazy"><time>Annual event</time><strong>Coachella</strong><p></p></a>
+          <a class="event-card" href="../../../en/content/categories/culture/music-festivals/events/tomorrowland.html"><img class="event-thumb" src="../../../en/content/categories/culture/music-festivals/events/img/tomorrowland-hero.png" alt="" loading="lazy"><time>Annual event</time><strong>Tomorrowland</strong><p></p></a>
+          <a class="event-card" href="../../../en/content/categories/culture/music-festivals/events/ultra-music-festival.html"><img class="event-thumb" src="../../../en/content/categories/culture/music-festivals/events/img/ultra-music-festival-hero.png" alt="" loading="lazy"><time>Annual event</time><strong>Ultra Music Festival</strong><p></p></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
+  </body>
+</html>

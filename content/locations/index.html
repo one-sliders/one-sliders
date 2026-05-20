@@ -1,16 +1,11 @@
 ﻿<!doctype html>
 <html lang="en">
   <head>
-  <!-- OneSlider core v3: Consent Mode v2 + GA4 + persisted choice -->
-  <script>
-  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-  try{var _c=localStorage.getItem('os_consent_v1');if(_c){_c=JSON.parse(_c);if(_c&&(!_c.ts||(Date.now()-_c.ts)<31536000000)){gtag('consent','update',{ad_storage:_c.ads?'granted':'denied',ad_user_data:_c.ads?'granted':'denied',ad_personalization:_c.ads?'granted':'denied',analytics_storage:_c.analytics?'granted':'denied'});}}}catch(e){}
-  gtag('js',new Date());gtag('config','G-1EG5HKVW09');
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EG5HKVW09"></script>
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <script defer src="/assets/js/oneslider-core.js"></script>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="../../assets/css/oneslider-core.css">
+  <script src="../../assets/js/oneslider-core.js"></script>
+  <link rel="stylesheet" href="../../assets/css/locations.css">
+  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../assets/icons/favicon.ico" sizes="any">
@@ -19,138 +14,80 @@
     <link rel="manifest" href="../../assets/icons/site.webmanifest">
     <meta name="theme-color" content="#0d2137">
 <title>World</title>
-    <style>
-      :root {
-        --ink: #17201c;
-        --paper: #fbfaf6;
-        --muted: #5f6b63;
-        --line: rgba(23, 32, 28, 0.14);
-        --theme: #315f72;
-        --accent: #9bc5d2;
-      }
-      * { box-sizing: border-box; }
-      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
-      a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 3; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px, 3vw, 36px); background: rgba(251, 250, 246, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; color: #29342f; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
-      .slide { min-height: calc(100vh - 42px); display: grid; grid-template-columns: minmax(310px, .82fr) minmax(520px, 1.18fr); gap: clamp(16px, 2.4vw, 34px); align-items: stretch; padding: clamp(12px, 2.4vw, 30px); }
-      .hero { display: grid; align-items: end; min-height: 0; padding: clamp(18px, 3vw, 34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.64)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=80') center / cover; box-shadow: 0 18px 44px rgba(23, 32, 28, .18); }
-      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      h1 { margin: 0; font-size: clamp(44px, 7vw, 92px); line-height: .95; letter-spacing: 0; }
-      .intro { max-width: 700px; margin: 12px 0 0; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.36; }
-      .panel { min-height: 0; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; }
-      .fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-      .fact { min-height: 76px; padding: 11px; border: 1px solid var(--line); border-left: 4px solid var(--theme); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23, 32, 28, .05); }
-      .fact span, .continent-card span { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0; }
-      .fact strong { display: block; margin-top: 6px; font-size: clamp(20px, 2.4vw, 32px); line-height: 1; }
-      .overview { padding: 13px 15px; border-radius: 8px; background: var(--theme); color: white; }
-      .overview span { display: block; margin-bottom: 5px; color: var(--accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      .overview p { margin: 0; font-size: 15px; line-height: 1.34; }
-      .bar-chart{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 6px 16px rgba(23,32,28,.045)}
-      .bar-row{display:grid;grid-template-columns:minmax(92px,.34fr) 1fr minmax(42px,auto);gap:10px;align-items:center;font-size:13px}
-      .bar-row span:first-child{color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:700}
-      .bar-track{height:10px;border-radius:999px;background:rgba(23,32,28,.10);overflow:hidden}
-      .bar-fill{display:block;height:100%;width:var(--value);border-radius:999px;background:linear-gradient(90deg,var(--theme),var(--accent))}
-      .bar-row strong{font-size:12px;text-align:right;white-space:nowrap}
-      .continent-grid { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; min-height: 0; margin: 0; padding: 0; }
-      .continent-card { display: grid; align-content: end; min-height: 150px; padding: 16px; border: 1px solid var(--line); border-left: 5px solid var(--card-theme); border-radius: 8px; color: white; text-decoration: none; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.68)), var(--card-image) center / cover; box-shadow: 0 10px 24px rgba(23, 32, 28, .08); }
-      .continent-card:hover { transform: translateY(-2px); border-color: var(--card-theme); }
-      .continent-card span { color: var(--card-accent); font-weight: 700; }
-      .continent-card strong { display: block; margin-top: 6px; font-size: clamp(25px, 3vw, 40px); line-height: 1; }
-      .continent-card p { margin: 8px 0 0; max-width: 34rem; font-size: 14px; line-height: 1.3; }
-      .note { color: var(--muted); font-size: 13px; line-height: 1.35; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
-      .site-footer p { margin: 0; }
-      .site-footer a { color: inherit; }
-      @media (max-width: 1050px) { .slide { min-height: auto; grid-template-columns: 1fr; } .hero { min-height: 34vh; } }
-      @media (max-width: 720px) { .slide { padding: 12px; } .continent-grid { grid-template-columns: 1fr; } .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .continent-card { min-height: 132px; } }
-      @media (max-width: 440px) { .fact-grid { grid-template-columns: 1fr; } }
-    
-      .cross-nav-bar{padding:14px clamp(14px,3vw,36px);background:white;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px}
-      .cross-nav-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-      .cross-nav-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#5a6672;flex:0 0 64px}
-      .cross-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid rgba(0,0,0,.13);border-radius:999px;background:#f2f3f5;text-decoration:none;font-size:12px;color:#5a6672;font-weight:600;white-space:nowrap}
-      .cross-pill:hover{background:#0d2137;color:white;border-color:#0d2137}    
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}    
-    .top-menu{overflow:visible;z-index:2000}
-    .event-language-menu{position:relative;flex:0 0 auto;margin-left:auto;z-index:1001}
-    .event-language-menu summary{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}
-    .event-language-menu summary::-webkit-details-marker{display:none}.event-language-menu summary svg{width:17px;height:17px}.event-language-menu[open] summary,.event-language-menu summary:hover{color:#fff;background:var(--navy,var(--theme));border-color:var(--navy,var(--theme))}
-    .event-language-menu .event-language-list{position:fixed;top:58px;right:clamp(14px,3vw,36px);z-index:1002;display:grid;grid-template-columns:1fr;gap:6px;min-width:230px;max-width:min(300px,calc(100vw - 24px));margin:0;padding:8px;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(18,32,46,.16)}
-    .event-language-menu .event-language-list>span:first-child{display:none}.event-language-menu .event-language-list a{display:grid;grid-template-columns:42px 1fr;gap:9px;align-items:center;min-height:34px;padding:0 10px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;text-decoration:none}.event-language-menu .event-language-list a[aria-current=true],.event-language-menu .event-language-list a:hover{color:#fff;background:var(--navy,var(--theme));border-color:var(--navy,var(--theme))}.event-language-menu .event-language-list a span{position:static;display:inline;width:auto;height:auto;min-height:0;padding:0;overflow:visible;clip:auto;color:inherit;background:transparent;border:0;border-radius:0;font-size:inherit;font-weight:inherit;letter-spacing:0;text-transform:none;white-space:nowrap}.language-code{display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;opacity:.82}.language-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    @media(max-width:560px){.event-language-menu .event-language-list{top:56px;right:10px;left:10px;width:auto;max-width:none}}
-</style>
   </head>
-  <body>
+  <body class="location-page location-page--root">
     <nav class="top-menu" aria-label="World">
-      <a class="nav-icon" href="../events/index.html" title="Events 2026" aria-label="Events 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      
-      <a class="active" aria-current="page" href="index.html">World</a>
-      <a href="africa/index.html">Africa</a>
-      <a href="antarctica/index.html">Antarctica</a>
-      <a href="asia/index.html">Asia</a>
-      <a href="europe/index.html">Europe</a>
-      <a href="north-america/index.html">North America</a>
-      <a href="oceania/index.html">Oceania</a>
-      <a href="south-america/index.html">South America</a>
+      <a class="nav-icon" href="../events/index.html" title="Events 2026" aria-label="Events 2026"><img src="../../assets/icons/nav-events.png" alt="" aria-hidden="true"></a>
+      <a class="nav-icon active" href="../locations/index.html" title="World" aria-label="World"><img src="../../assets/icons/nav-locations.png" alt="" aria-hidden="true"></a>
+      <a class="nav-icon" href="../categories/index.html" title="Categories" aria-label="Categories"><img src="../../assets/icons/nav-categories.png" alt="" aria-hidden="true"></a>
+      <details class="event-language-menu">
+        <summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>EN</span></summary>
+        <div class="event-language-list" aria-label="Language">
+          <span>Language</span>
+          <a href="../../content/locations/index.html" aria-current="true"><span class="language-code">EN</span><span class="language-name">English</span></a>
+          <a href="../../ar/content/locations/index.html"><span class="language-code">AR</span><span class="language-name">Arabic</span></a>
+          <a href="../../sw/content/locations/index.html"><span class="language-code">SW</span><span class="language-name">Kiswahili</span></a>
+          <a href="../../ha/content/locations/index.html"><span class="language-code">HA</span><span class="language-name">Hausa</span></a>
+          <a href="../../zh/content/locations/index.html"><span class="language-code">ZH</span><span class="language-name">Chinese</span></a>
+          <a href="../../hi/content/locations/index.html"><span class="language-code">HI</span><span class="language-name">Hindi</span></a>
+          <a href="../../ru/content/locations/index.html"><span class="language-code">RU</span><span class="language-name">Russian</span></a>
+          <a href="../../de/content/locations/index.html"><span class="language-code">DE</span><span class="language-name">Deutsch</span></a>
+          <a href="../../fr/content/locations/index.html"><span class="language-code">FR</span><span class="language-name">Francais</span></a>
+          <a href="../../es/content/locations/index.html"><span class="language-code">ES</span><span class="language-name">Espanol</span></a>
+          <a href="../../pt/content/locations/index.html"><span class="language-code">PT</span><span class="language-name">Portugues</span></a>
+          <a href="../../qu/content/locations/index.html"><span class="language-code">QU</span><span class="language-name">Quechua</span></a>
+          <a href="../../tpi/content/locations/index.html"><span class="language-code">TP</span><span class="language-name">Tok Pisin</span></a>
+          <a href="../../mi/content/locations/index.html"><span class="language-code">MI</span><span class="language-name">Maori</span></a>
+        </div>
+      </details>
     </nav>
-    <main class="slide" aria-labelledby="world-title">
-      <header class="hero">
-        <div>
-          <p class="eyebrow">Earth, oceans and inhabited continents</p>
+    <main class="location-shell" aria-labelledby="world-title">
+      <header class="location-hero">
+        <div class="location-hero__image">
+          <div class="location-hero__copy">
           <h1 id="world-title">World</h1>
           <p class="intro">A living planet shaped by oceans, continents, climates, cultures and cities. Earth connects deserts and rainforests, ice sheets and coral seas, mountain ranges and river deltas into one shared system.</p>
+          <nav class="location-quick-links" aria-label="Featured continents">
+            <a href="africa/index.html">Africa</a>
+            <a href="asia/index.html">Asia</a>
+            <a href="europe/index.html">Europe</a>
+            <a href="north-america/index.html">North America</a>
+          </nav>
+          </div>
         </div>
       </header>
-      <section class="panel" aria-label="World overview">
-        <div class="fact-grid">
-          <div class="fact"><span>Continents</span><strong>7</strong></div>
-          <div class="fact"><span>Surface</span><strong>510M km2</strong></div>
-          <div class="fact"><span>Ocean share</span><strong>71%</strong></div>
-          <div class="fact"><span>Land share</span><strong>29%</strong></div>
-          <div class="fact"><span>Population</span><strong>8.2B</strong></div>
-          <div class="fact"><span>Countries</span><strong>197</strong></div>
-          <div class="fact"><span>Largest ocean</span><strong>Pacific</strong></div>
-          <div class="fact"><span>Largest desert</span><strong>Antarctica</strong></div>
-        <div class="bar-chart" aria-label="Earth surface chart"><div class="bar-row"><span>Ocean</span><div class="bar-track"><i class="bar-fill" style="--value:71%"></i></div><strong>71%</strong></div><div class="bar-row"><span>Land</span><div class="bar-track"><i class="bar-fill" style="--value:29%"></i></div><strong>29%</strong></div><div class="bar-row"><span>Inhabited continents</span><div class="bar-track"><i class="bar-fill" style="--value:86%"></i></div><strong>6 of 7</strong></div></div>
-        </div>
-        <div class="overview"><span>Overview</span><p>Most people live on a small part of Earth's land surface, close to coasts, river valleys and fertile plains. The oceans regulate climate, connect continents and hold most of the planet's water, while mountain chains, forests, deserts and ice regions shape how places are settled and connected.</p></div>
-        <div>
-          <ul class="continent-grid" aria-label="Continents">
-            <li><a class="continent-card" style="--card-theme:#2f7651;--card-accent:#a7dfb8;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Landscape_of_the_savanna.jpg')" href="africa/index.html"><span>54 countries</span><strong>Africa</strong><p>Savannas, deserts, rainforests, coasts and fast-growing city regions across the world's second-largest continent.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#47738a;--card-accent:#c3e4f0;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Antarctica_6400px_from_Blue_Marble.jpg')" href="antarctica/index.html"><span>0 countries</span><strong>Antarctica</strong><p>Earth's coldest continent, dominated by ice sheets, research stations, polar winds and the largest desert on the planet.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#9b3d2e;--card-accent:#e0a84f;--card-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tian_Shan_mountains_Central_Asia.jpg')" href="asia/index.html"><span>44 countries</span><strong>Asia</strong><p>The most populous continent, with megacities, monsoon plains, high mountains, island chains and major trade routes.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#315f72;--card-accent:#9bc5d2;--card-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80')" href="europe/index.html"><span>50 countries</span><strong>Europe</strong><p>Historic capitals, dense transport networks, alpine regions, northern coasts and closely connected cultural landscapes.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#2f7651;--card-accent:#a7dfb8;--card-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')" href="north-america/index.html"><span>23 countries</span><strong>North America</strong><p>Large landscapes, global cities, island states, coastlines, mountain systems and major freshwater regions.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#087d80;--card-accent:#a7dfe1;--card-image:url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1600&q=80')" href="oceania/index.html"><span>14 countries</span><strong>Oceania</strong><p>Pacific islands, ocean routes, coral reefs, Australia, New Zealand and cultures shaped by sea distance.</p></a></li>
-            <li><a class="continent-card" style="--card-theme:#8a5b2f;--card-accent:#e0c092;--card-image:url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1600&q=80')" href="south-america/index.html"><span>12 countries</span><strong>South America</strong><p>Andes, Amazon basin, Atlantic cities, deserts, pampas and southern fjords from tropics to subpolar regions.</p></a></li>
-          </ul>
-        </div>
-        <p class="note">Rounded 2026-style world facts. Choose a continent to explore its countries, landscapes and capital cities.</p>
+
+      <section class="location-grid" aria-label="Continents">
+        <a class="location-card" href="africa/index.html">
+          <img class="location-thumb" src="africa/img/africa-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>Africa</strong><span>54 countries, savannas, deserts, rainforests, coasts and fast-growing city regions.</span></div>
+        </a>
+        <a class="location-card" href="antarctica/index.html">
+          <img class="location-thumb" src="antarctica/img/antarctica-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>Antarctica</strong><span>Research stations, polar winds, ice sheets and the largest desert on the planet.</span></div>
+        </a>
+        <a class="location-card" href="asia/index.html">
+          <img class="location-thumb" src="asia/img/asia-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>Asia</strong><span>44 countries, megacities, monsoon plains, high mountains and island chains.</span></div>
+        </a>
+        <a class="location-card" href="europe/index.html">
+          <img class="location-thumb" src="europe/img/europe-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>Europe</strong><span>50 countries, historic capitals, dense rail links, alpine regions and northern coasts.</span></div>
+        </a>
+        <a class="location-card" href="north-america/index.html">
+          <img class="location-thumb" src="north-america/img/north-america-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>North America</strong><span>23 countries, large landscapes, global cities, island states and freshwater regions.</span></div>
+        </a>
+        <a class="location-card" href="oceania/index.html">
+          <img class="location-thumb" src="oceania/img/oceania-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>Oceania</strong><span>14 countries, Pacific islands, ocean routes, coral reefs, Australia and New Zealand.</span></div>
+        </a>
+        <a class="location-card" href="south-america/index.html">
+          <img class="location-thumb" src="south-america/img/south-america-mini.jpg" alt="" aria-hidden="true" loading="lazy">
+          <div class="location-card__text"><strong>South America</strong><span>12 countries, Andes routes, Amazon basin, Atlantic cities, deserts and fjords.</span></div>
+        </a>
       </section>
     </main>
-  <nav class="cross-nav-bar" aria-label="Explore more">
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Events</span>
-      <a class="cross-pill" href="../events/index.html">📅 Events 2026</a>
-    </div>
-    <div class="cross-nav-row">
-      <span class="cross-nav-lbl">Topics</span>
-      <a class="cross-pill" href="../categories/sport/index.html">⚽ Sport</a>
-      <a class="cross-pill" href="../categories/music/index.html">🎵 Music</a>
-      <a class="cross-pill" href="../categories/climate/index.html">🌿 Climate</a>
-      <a class="cross-pill" href="../categories/food-and-drinks/index.html">🍽️ Food &amp; drinks</a>
-      <a class="cross-pill" href="../categories/technology/index.html">💻 Technology</a>
-      <a class="cross-pill" href="../categories/wellness/index.html">🧘 Wellness</a>
-    </div>
-  </nav>
     <footer class="site-footer">
       <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p>
     </footer>
