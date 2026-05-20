@@ -1,22 +1,272 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
+<head>
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="./assets/css/oneslider-core.css">
   <script src="./assets/js/oneslider-core.js"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=content/events/this-week.html">
-    <link rel="canonical" href="content/events/this-week.html">
 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://one-sliders.com/">
+  <title>OneSliders - World events, places and topics</title>
+  <meta name="description" content="Pick a path: this week's events, browse by category, or explore by continent.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OneSliders - World events, places and topics">
+  <meta property="og:description" content="Pick a path: this week's events, browse by category, or explore by continent.">
+  <meta property="og:url" content="https://one-sliders.com/">
+  <meta property="og:image" content="https://one-sliders.com/content/locations/img/world-hero-small.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://one-sliders.com/content/locations/img/world-hero-small.jpg">
 
-    <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-<title>One Sliders</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="content/events/this-week.html">OneSlider</a>…</p>
-  </body>
+  <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="./assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/icons/site.webmanifest">
+  <meta name="theme-color" content="#0d2137">
+
+  <style>
+    :root {
+      --ink:    #12202e;
+      --paper:  #f3f5f2;
+      --muted:  #5a6672;
+      --line:   rgba(18,32,46,.12);
+      --navy:   #0d2137;
+      --accent: #ffd166;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Brand bar */
+    .brand-bar{
+      display:flex;align-items:center;gap:10px;
+      padding:14px clamp(16px,3vw,32px);
+      background: var(--navy); color:#fff;
+    }
+    .brand-bar img{width:28px;height:28px;display:block}
+    .brand-bar strong{font-size:15px;letter-spacing:.02em;font-weight:700}
+    .brand-bar span{color:#cfd6dd;font-size:13px;margin-left:6px}
+
+    /* Hero block */
+    .lead{
+      padding: clamp(28px,6vw,68px) clamp(16px,3vw,32px) clamp(12px,3vw,24px);
+      text-align: center;
+    }
+    .lead h1{
+      margin:0;
+      font-size: clamp(36px,5vw,58px);
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: var(--navy);
+    }
+    .lead p{
+      margin: 14px auto 0;
+      max-width: 620px;
+      font-size: clamp(15px,1.4vw,17px);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    /* Choice grid */
+    main{
+      flex:1;
+      padding: clamp(16px,3vw,28px) clamp(16px,3vw,32px) clamp(28px,5vw,56px);
+    }
+    .choices{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(14px,2vw,22px);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .choice{
+      position: relative;
+      display: block;
+      min-height: clamp(320px, 42vh, 460px);
+      border-radius: 18px;
+      overflow: hidden;
+      color: #fff;
+      text-decoration: none;
+      background: #1a2533;
+      box-shadow: 0 18px 44px rgba(18,32,46,.18);
+      isolation: isolate;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .choice:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 26px 56px rgba(18,32,46,.26);
+    }
+    .choice:focus-visible{
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .choice__img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform .35s ease;
+    }
+    .choice:hover .choice__img{ transform: scale(1.03); }
+
+    .choice__shade{
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg,
+        rgba(8,18,28,.18) 0%,
+        rgba(8,18,28,.30) 38%,
+        rgba(8,18,28,.78) 100%);
+    }
+
+    .choice__body{
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: clamp(18px,2.5vw,28px);
+    }
+
+    .choice__kicker{
+      display: inline-block;
+      align-self: flex-start;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+    .choice__title{
+      margin: 12px 0 6px;
+      font-size: clamp(26px,3vw,36px);
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: #fff;
+    }
+    .choice__sub{
+      margin: 0 0 14px;
+      max-width: 32ch;
+      color: rgba(255,255,255,.88);
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+    .choice__cta{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .choice__cta svg{width:16px;height:16px;display:block}
+
+    /* Footer */
+    .site-foot{
+      padding: 16px clamp(16px,3vw,32px);
+      border-top: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    .site-foot a{color: var(--ink); margin: 0 8px; text-decoration: none}
+    .site-foot a:hover{text-decoration: underline}
+
+    @media (max-width: 640px){
+      .choice{ min-height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="brand-bar">
+    <img src="./assets/icons/one-sliders-icon.svg" alt="" aria-hidden="true">
+    <strong>OneSliders</strong>
+    <span>World events at a glance</span>
+  </header>
+
+  <section class="lead">
+    <h1>Where would you like to start?</h1>
+    <p>Pick a path: see what's happening this week, browse by topic, or explore the world by continent.</p>
+  </section>
+
+  <main>
+    <div class="choices">
+
+      <a class="choice" href="content/events/this-week.html" aria-label="This week's events">
+        <img class="choice__img"
+             src="content/events/2026/12/img/sydney-new-years-eve-hero.png"
+             alt="" aria-hidden="true" loading="eager" fetchpriority="high">
+        <div class="choice__shade"></div>
+        <div class="choice__body">
+          <span class="choice__kicker">Active calendar</span>
+          <h2 class="choice__title">This week's events</h2>
+          <p class="choice__sub">A live mosaic of every OneSliders event happening right now.</p>
+          <span class="choice__cta">Open
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="choice" href="content/categories/index.html" aria-label="Browse categories">
+        <img class="choice__img"
+             src="content/categories/img/categories-topics-hero.png"
+             alt="" aria-hidden="true" loading="lazy">
+        <div class="choice__shade"></div>
+        <div class="choice__body">
+          <span class="choice__kicker">By topic</span>
+          <h2 class="choice__title">Categories</h2>
+          <p class="choice__sub">Sport, music, culture, food, tech, climate and wellness - each with their own topics.</p>
+          <span class="choice__cta">Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="choice" href="content/locations/index.html" aria-label="Explore continents">
+        <img class="choice__img"
+             src="content/locations/img/world-hero-small.jpg"
+             alt="" aria-hidden="true" loading="lazy">
+        <div class="choice__shade"></div>
+        <div class="choice__body">
+          <span class="choice__kicker">By place</span>
+          <h2 class="choice__title">Continents</h2>
+          <p class="choice__sub">Six continents, 200+ countries and their cities - each with events and context.</p>
+          <span class="choice__cta">Travel
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <a href="./privacy.html">Privacy</a> ·
+    <a href="./terms.html">Terms</a> ·
+    <a href="#" data-cookie-settings>Cookie settings</a>
+  </footer>
+
+</body>
 </html>
