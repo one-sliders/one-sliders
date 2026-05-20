@@ -111,6 +111,58 @@
     setTimeout(boot, 0);
   }
 
+  // Compute a path that resolves to the repo root, derived from this
+  // script's own src attribute. Works for file:// and http(s):// alike.
+  // Example results: "../../" on a depth-2 page, "./" on the root page.
+  function rootHref() {
+    var s = document.currentScript ||
+            document.querySelector('script[src*="oneslider-core.js"]');
+    if (!s) return '/';
+    var src = s.getAttribute('src') || '';
+    return src.replace(/assets\/js\/oneslider-core\.js(?:\?[^/]*)?$/, '') || './';
+  }
+  OneSlider.rootHref = rootHref;
+
+  // ====================================================================
+  // Module: brand
+  // Inject a clickable "OneSliders" logo + wordmark as the first child
+  // of every top nav (nav.top-menu, nav.event-nav) so visitors can always
+  // return to the landing page. Idempotent.
+  // ====================================================================
+  OneSlider.register('brand', function (App) {
+    var root = OneSlider.rootHref();
+
+    function build() {
+      var a = document.createElement('a');
+      a.className = 'os-brand';
+      a.href = root || './';
+      a.setAttribute('aria-label', 'OneSliders home');
+
+      var img = document.createElement('img');
+      img.className = 'os-brand__logo';
+      img.src   = root + 'assets/icons/one-sliders-icon.svg';
+      img.alt   = '';
+      img.width = 22;
+      img.height = 22;
+      img.setAttribute('aria-hidden', 'true');
+
+      var text = document.createElement('span');
+      text.className = 'os-brand__text';
+      text.textContent = 'OneSliders';
+
+      a.appendChild(img);
+      a.appendChild(text);
+      return a;
+    }
+
+    var navs = document.querySelectorAll('nav.top-menu, nav.event-nav');
+    for (var i = 0; i < navs.length; i++) {
+      var nav = navs[i];
+      if (nav.querySelector(':scope > .os-brand')) continue;  // already there
+      nav.insertBefore(build(), nav.firstChild);
+    }
+  });
+
   // ====================================================================
   // Module: consent  (geo-aware cookie banner + Google Consent Mode v2)
   // ====================================================================

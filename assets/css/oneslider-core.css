@@ -1,6 +1,60 @@
-/* OneSliders cookie consent banner
-   Loaded on every page; only shown when geo-consent.js decides to display it. */
+/* OneSliders core stylesheet
+   Loaded on every page via oneslider-core.css. Covers two site-wide bits:
+     1. .os-brand   — clickable logo + wordmark injected into every top nav
+     2. #os-cc-*    — geo-aware cookie consent banner */
 
+/* ---------------------------------------------------------------------
+   Brand link in every nav
+   --------------------------------------------------------------------- */
+.os-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  margin-right: 8px;
+  padding: 4px 10px 4px 6px;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .12s ease, transform .08s ease;
+}
+.os-brand:hover,
+.os-brand:focus-visible {
+  background: rgba(13, 33, 55, .08);
+  outline: none;
+}
+.os-brand:active { transform: translateY(1px); }
+.os-brand__logo {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex: 0 0 auto;
+}
+.os-brand__text {
+  display: inline;
+  line-height: 1;
+}
+
+/* Hide the wordmark on very small screens — keep just the logo */
+@media (max-width: 420px) {
+  .os-brand__text { display: none; }
+  .os-brand { padding: 4px; }
+}
+
+/* When the nav uses a dark background (rare, but future-proof) */
+nav.top-menu[data-theme="dark"] .os-brand:hover,
+nav.event-nav[data-theme="dark"] .os-brand:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+/* ---------------------------------------------------------------------
+   Cookie consent banner
+   --------------------------------------------------------------------- */
 #os-cc-root {
   position: fixed;
   left: 0;
