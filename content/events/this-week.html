@@ -50,6 +50,14 @@
     .filter-panel button[data-filter="nature"].active{background:var(--nature);border-color:var(--nature)}
     .filter-panel button .check{margin-left:auto;font-size:14px;font-weight:900;opacity:0}
     .filter-panel button.active .check{opacity:1}
+    .filter-panel .filter-sep{margin:4px 2px;height:1px;border:0;background:var(--line)}
+    .filter-panel #active-only-toggle{font-weight:600}
+    .filter-panel #active-only-toggle .cb{display:inline-grid;place-items:center;width:18px;height:18px;border:1.5px solid var(--line);border-radius:5px;background:#fff;flex:0 0 auto}
+    .filter-panel #active-only-toggle .cb::after{content:"";width:10px;height:10px;border-radius:2px;background:transparent;transition:background .12s}
+    .filter-panel #active-only-toggle[aria-checked="true"]{background:#e9f7ef;border-color:var(--green);color:var(--ink)}
+    .filter-panel #active-only-toggle[aria-checked="true"] .cb{background:var(--green);border-color:var(--green)}
+    .filter-panel #active-only-toggle[aria-checked="true"] .cb::after{background:#fff}
+    .filter-panel #active-only-toggle .check{display:none}
     .filter-bar{position:sticky}
     /* Wrapping container so absolute panel positions relative to bar */
     .filter-wrap{position:relative}.event-status{position:absolute;left:12px;top:42px;display:inline-flex;align-items:center;gap:6px;max-width:calc(100% - 24px);padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--ink);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.event-status__dot{width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.8)}.event-status--upcoming .event-status__dot{background:#d92d20}.event-status--ongoing .event-status__dot{background:#13a35b}.event-status--ended .event-status__dot{background:#111827}
@@ -85,6 +93,10 @@
       </button>
       <span class="count" id="event-count"></span>
       <div class="filter-panel" id="filter-panel" role="menu">
+        <button id="active-only-toggle" class="filter-option" type="button" role="menuitemcheckbox" aria-checked="false">
+          <span class="cb"></span>Only active right now<span class="check">✓</span>
+        </button>
+        <hr class="filter-sep">
         <button data-filter="all"      class="active" role="menuitemradio" aria-checked="true">All categories<span class="check">✓</span></button>
         <button data-filter="sport"    role="menuitemradio" aria-checked="false">🏆 Sport<span class="check">✓</span></button>
         <button data-filter="motor"    role="menuitemradio" aria-checked="false">🏎️ Motor<span class="check">✓</span></button>
@@ -154,25 +166,52 @@
     function eventLink(event){ const base = event.href.replace(/#.*$/, ''); return base + '#parts'; }
     function layoutClass(total){ const capped = Math.min(Math.max(total, 0), 20); return capped >= 10 ? 'mosaic mosaic--fit mosaic--count-' + capped : 'mosaic mosaic--count-' + capped; }
     function createTile(event, index, total){ const compact = total >= 10; const isWide = !compact && index > 6; const isFeature = compact ? false : index < 3 || isWide; const tile = document.createElement('a'); tile.className = 'event-tile' + (isFeature ? ' event-tile--feature' : '') + (isWide ? ' event-tile--wide' : ''); tile.href = eventLink(event); tile.dataset.cat = event.cat; const img = document.createElement('img'); img.src = isFeature ? heroImage(event.image) : event.image; img.dataset.fallback = event.image; img.onerror = () => { if (img.src !== img.dataset.fallback) img.src = img.dataset.fallback; }; img.alt = ''; img.loading = 'lazy'; const meta = document.createElement('span'); meta.className = 'event-meta'; meta.textContent = (event.cat || 'event').replace('-', ' '); const date = document.createElement('span'); date.className = 'event-date'; date.textContent = dateLabel(event); const statusData = eventStatus(event); const status = document.createElement('span'); status.className = 'event-status event-status--' + statusData.key; status.innerHTML = '<span class="event-status__dot" aria-hidden="true"></span><span>' + statusData.label + '</span>'; const name = document.createElement('div'); name.className = 'event-name'; name.textContent = event.title; tile.append(img, meta, status, date, name); return tile; }
-    function render(filter){ const list = filter === 'all' ? activeEvents : activeEvents.filter(event => event.cat === filter); mosaic.className = layoutClass(list.length); mosaic.replaceChildren(...list.map((event, index) => createTile(event, index, list.length))); emptyState.classList.toggle('visible', list.length === 0); count.textContent = list.length + ' shown'; }
+    let currentCat = 'all';
+    let activeOnly = false;
+    function render(){
+      const now = new Date();
+      let list = currentCat === 'all' ? activeEvents : activeEvents.filter(event => event.cat === currentCat);
+      if (activeOnly) {
+        list = list.filter(event => {
+          const start = new Date(event.start + 'T00:00:00');
+          const end   = new Date(event.end   + 'T23:59:59');
+          return start <= now && end >= now;
+        });
+      }
+      mosaic.className = layoutClass(list.length);
+      mosaic.replaceChildren(...list.map((event, index) => createTile(event, index, list.length)));
+      emptyState.classList.toggle('visible', list.length === 0);
+      count.textContent = list.length + ' shown';
+    }
     (() => {
       const bar = document.getElementById('filter-bar');
       const toggle = document.getElementById('filter-toggle');
       const label = document.getElementById('filter-toggle-label');
-      const buttons = bar.querySelectorAll('.filter-panel button');
+      const activeBtn = document.getElementById('active-only-toggle');
+      const catButtons = bar.querySelectorAll('.filter-panel button[data-filter]');
       function open()  { bar.classList.add('open');    toggle.setAttribute('aria-expanded', 'true'); }
       function close() { bar.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+      function updateToggleLabel() {
+        const catName = currentCat === 'all' ? 'All categories'
+          : [...catButtons].find(b => b.dataset.filter === currentCat).firstChild.textContent.trim();
+        label.textContent = activeOnly ? catName + ' · active now' : catName;
+        toggle.classList.toggle('has-active', currentCat !== 'all' || activeOnly);
+      }
       toggle.addEventListener('click', () => bar.classList.contains('open') ? close() : open());
       document.addEventListener('click', e => { if (!bar.contains(e.target)) close(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-      buttons.forEach(btn => btn.addEventListener('click', () => {
-        buttons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+      activeBtn.addEventListener('click', () => {
+        activeOnly = !activeOnly;
+        activeBtn.setAttribute('aria-checked', activeOnly ? 'true' : 'false');
+        updateToggleLabel();
+        render();
+      });
+      catButtons.forEach(btn => btn.addEventListener('click', () => {
+        catButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
         btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
-        const filter = btn.dataset.filter;
-        // Pick a clean label without the trailing check-mark text
-        label.textContent = btn.firstChild.textContent.trim() || 'All categories';
-        toggle.classList.toggle('has-active', filter !== 'all');
-        render(filter);
+        currentCat = btn.dataset.filter;
+        updateToggleLabel();
+        render();
         close();
       }));
     })();
@@ -250,7 +289,7 @@
       const eventsText = activeEvents.length + ' active event' + (activeEvents.length === 1 ? '' : 's');
       document.getElementById('week-title').textContent = titleText + ' · ' + eventsText;
       document.getElementById('week-range').textContent = fmt.format(weekStart) + ' - ' + fmt.format(weekEnd);
-      render('all');
+      render();
     });
   </script>
 </body>
