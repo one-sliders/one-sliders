@@ -53,6 +53,12 @@
     return clockText(diff) + ' ago';
   }
 
+  function hasValidDate(value) {
+    if (!value) return false;
+    var date = new Date(value + 'T00:00:00');
+    return !isNaN(date.getTime());
+  }
+
   function fact(label, html) {
     return '<div class="fact"><span>' + label + '</span><strong>' + html + '</strong></div>';
   }
@@ -63,6 +69,14 @@
 
   function highlight(item) {
     return '<div class="card"><span>' + item.label + '</span><strong>' + item.title + '</strong><p>' + item.detail + '</p></div>';
+  }
+
+  function sourceCard(data) {
+    if (!data) return '';
+    var links = (data.sources || []).map(function (item) {
+      return '<a href="' + item.url + '">' + item.label + '</a>';
+    }).join(' · ');
+    return '<div class="card sources"><span>Sources</span><strong>Last updated: ' + (data.lastUpdated || 'TBC') + '</strong><p>' + (links || 'Source list TBC') + '</p></div>';
   }
 
   function isPlaceholderText(value) {
@@ -135,7 +149,7 @@
       : '';
 
     var editionDetails = editionBlocks ? '<div class="question-grid">' + editionBlocks + '</div>' : '';
-    var actions = edition.status === 'past' ? '' :
+    var actions = edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
       '<div class="actions-row">' +
         '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
         '<button class="event-button" type="button" data-save-event="' + data.slug + '" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button>' +
@@ -154,7 +168,8 @@
       finalResults +
       medalGames +
       editionDetails +
-      actions;
+      actions +
+      sourceCard(data);
 
     bindCalendar(data, edition);
     bindSaveButtons();
@@ -167,7 +182,7 @@
     if (!data || !switcher) return;
 
     var switcherEditions = data.editions.slice().sort(function (a, b) {
-      return Number(a.year) - Number(b.year);
+      return Number(b.year) - Number(a.year);  // newest year first
     });
     function requestedYearFromLocation() {
       var hashMatch = (window.location.hash || '').match(/^#year-(\d{4})$/);
