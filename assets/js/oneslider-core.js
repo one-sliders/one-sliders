@@ -196,25 +196,50 @@
     // --- derive back link --------------------------------------------
     // Priority:
     //   1. <meta name="os-back-href"> + <meta name="os-back-label">
-    //   2. Second-to-last text link in nav.top-menu (breadcrumb)
-    //   3. Default: Home
+    //   2. Explicit <a class="nav-back"> element (locations hierarchy)
+    //   3. Sibling link immediately BEFORE the .active breadcrumb
+    //      (skips own-page links that would otherwise be picked as "back")
+    //   4. Last non-active text link in nav.top-menu
+    //   5. URL-pattern derivation for event pages
+    //   6. Default: Home
     function deriveBack() {
       var mh = document.querySelector('meta[name="os-back-href"]');
       var ml = document.querySelector('meta[name="os-back-label"]');
       if (mh && mh.content) {
         return { href: mh.content, label: (ml && ml.content) || 'Back' };
       }
+      var navBack = document.querySelector('nav.top-menu .nav-back');
+      if (navBack) {
+        var span = navBack.querySelector('span');
+        return {
+          href:  navBack.getAttribute('href') || '#',
+          label: (span ? span.textContent : navBack.textContent).trim() || 'Back'
+        };
+      }
+      var active = document.querySelector(
+        'nav.top-menu .active, nav.top-menu [aria-current="page"]');
+      if (active && active.parentNode) {
+        var sib = active.previousElementSibling;
+        while (sib) {
+          if (sib.tagName === 'A' &&
+              !sib.classList.contains('nav-icon') &&
+              !sib.classList.contains('os-brand') &&
+              !sib.classList.contains('nav-divider')) {
+            return {
+              href:  sib.getAttribute('href') || '#',
+              label: sib.textContent.trim() || 'Back'
+            };
+          }
+          sib = sib.previousElementSibling;
+        }
+      }
       var links = document.querySelectorAll(
-        'nav.top-menu > a:not(.nav-icon):not(.os-brand)');
-      if (links.length >= 2) {
-        var prev = links[links.length - 2];
-        return { href: prev.getAttribute('href') || '#',
-                 label: prev.textContent.trim() || 'Back' };
+        'nav.top-menu > a:not(.nav-icon):not(.os-brand):not(.active):not([aria-current="page"])');
+      if (links.length) {
+        var last = links[links.length - 1];
+        return { href: last.getAttribute('href') || '#',
+                 label: last.textContent.trim() || 'Back' };
       }
-      if (links.length === 1) {
-        return { href: root || './', label: 'Home' };
-      }
-      // Event pages (event-nav) — derive parent topic from URL pattern.
       var m = location.pathname.match(/\/categories\/([^/]+)\/([^/]+)\/events\/[^/]+\.html?$/);
       if (m) {
         var topicLabel = m[2].replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
@@ -248,7 +273,9 @@
       events:  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
       world:   '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
       grid:    '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
-      cookie:  '<path d="M12 2a10 10 0 1 0 10 10c0-.46-.04-.91-.1-1.36a5 5 0 0 1-5.91-7.6A10 10 0 0 0 12 2Z"/><circle cx="8.5" cy="9" r=".7" fill="currentColor"/><circle cx="15" cy="14.5" r=".7" fill="currentColor"/><circle cx="9.5" cy="14.5" r=".7" fill="currentColor"/>'
+      cookie:  '<path d="M12 2a10 10 0 1 0 10 10c0-.46-.04-.91-.1-1.36a5 5 0 0 1-5.91-7.6A10 10 0 0 0 12 2Z"/><circle cx="8.5" cy="9" r=".7" fill="currentColor"/><circle cx="15" cy="14.5" r=".7" fill="currentColor"/><circle cx="9.5" cy="14.5" r=".7" fill="currentColor"/>',
+      doc:     '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>',
+      mail:    '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/>'
     };
 
     // --- build nav ----------------------------------------------------
@@ -340,7 +367,12 @@
     panel.appendChild(heading('Settings'));
     var cookieItem = item('#', 'Cookie settings', 'cookie', true);
     cookieItem.setAttribute('data-cookie-settings', '');
-    panel.appendChild(group([cookieItem]));
+    panel.appendChild(group([
+      cookieItem,
+      item(root + 'privacy.html',           'Privacy',  'doc',  true),
+      item(root + 'terms.html',             'Terms',    'doc',  true),
+      item('mailto:hello@one-sliders.com',  'Contact',  'mail', true)
+    ]));
 
     var done = document.createElement('button');
     done.type = 'button';
@@ -391,13 +423,12 @@
     var root = OneSlider.rootHref();
     var year = new Date().getFullYear();
 
+    // Minimal footer. Terms, contact email and cookie-settings access live
+    // in the iOS sheet "Settings" section on mobile, and the floating
+    // cookie pill (auto-injected by the brand module) on desktop.
     var content =
       '<p>&copy; ' + year + ' OneSliders &middot; ' +
-      'Made by <a href="https://3dfractal.no/" rel="noopener">3D Fractal</a> &middot; ' +
-      '<a href="mailto:hello@one-sliders.com">hello@one-sliders.com</a> &middot; ' +
-      '<a href="' + root + 'privacy.html">Privacy</a> &middot; ' +
-      '<a href="' + root + 'terms.html">Terms</a> &middot; ' +
-      '<a href="#" data-cookie-settings>Cookie settings</a></p>';
+      '<a href="' + root + 'privacy.html">Privacy</a></p>';
 
     var existing = document.querySelector(
       'footer.site-footer, footer.site-foot, footer.site');
