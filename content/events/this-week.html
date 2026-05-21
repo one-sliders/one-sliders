@@ -25,7 +25,7 @@
     .nav-icon{flex:0 0 auto;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;color:var(--muted);transition:background .12s,color .12s}.nav-icon:hover,.nav-icon.active{background:var(--navy);color:white}.nav-icon svg{width:22px;height:22px;display:block}
     .top-link{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:900;color:var(--muted);border:1px solid transparent}.top-link:hover,.top-link.active{background:white;border-color:var(--line);color:var(--ink)}
     .event-language-menu{position:relative;margin-left:auto}.event-language-menu summary{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}.event-language-menu summary::-webkit-details-marker{display:none}.event-language-menu svg{width:17px;height:17px}.event-language-list{position:fixed;top:58px;right:clamp(14px,3vw,36px);display:grid;gap:6px;min-width:180px;padding:8px;background:white;border:1px solid var(--line);border-radius:9px;box-shadow:0 18px 40px rgba(18,32,46,.16)}.event-language-list a{padding:9px 12px;border-radius:999px;font-size:12px;font-weight:800}.event-language-list a:hover{background:var(--navy);color:white}
-    .hero{position:relative;display:block;padding:16px clamp(18px,4vw,72px);color:var(--ink);background:#fff;border-bottom:1px solid var(--line)}.hero-inner{display:flex;align-items:center;gap:16px;max-width:none}.kicker{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:2px 0 0;font-size:clamp(28px,4vw,46px);line-height:.95;letter-spacing:0}.hero p{display:none}.week-nav{position:fixed;z-index:35;left:50%;bottom:clamp(16px,3vw,28px);display:flex;gap:8px;align-items:center;padding:8px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(6,14,11,.54);box-shadow:0 14px 32px rgba(0,0,0,.22);backdrop-filter:blur(14px);transform:translateX(-50%)}.week-nav a{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:34px;padding:0 12px;border:1px solid rgba(33,78,104,.16);border-radius:999px;background:#fff;color:var(--ink);font-size:12px;font-weight:900}.week-nav a:hover,.week-nav a.active{background:linear-gradient(180deg,var(--green),#0b6f49);border-color:var(--green);color:#fff}.week-card{min-width:240px;margin-left:auto;padding:10px 14px;border:1px solid var(--line);border-radius:14px;background:#f7faf7;box-shadow:0 8px 24px rgba(18,32,46,.06)}.week-card strong{display:block;font-size:20px;line-height:1}.week-card span{display:block;margin-top:4px;color:var(--muted);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+    .hero{position:relative;display:block;padding:16px clamp(18px,4vw,72px);color:var(--ink);background:#fff;border-bottom:1px solid var(--line)}.hero-inner{display:flex;align-items:center;gap:16px;max-width:none}.kicker{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:2px 0 0;font-size:clamp(28px,4vw,46px);line-height:.95;letter-spacing:0}.hero p{display:none}.week-nav{position:fixed;z-index:35;left:50%;bottom:clamp(16px,3vw,28px);display:flex;gap:8px;align-items:center;padding:8px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(6,14,11,.54);box-shadow:0 14px 32px rgba(0,0,0,.22);backdrop-filter:blur(14px);transform:translateX(-50%)}.week-nav a{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:34px;padding:0 12px;border:1px solid rgba(33,78,104,.16);border-radius:999px;background:#fff;color:var(--ink);font-size:12px;font-weight:900}.week-nav a:hover,.week-nav a.active{background:linear-gradient(180deg,var(--green),#0b6f49);border-color:var(--green);color:#fff}.week-nav a.today-link{min-width:64px;background:transparent;border-color:rgba(255,255,255,.36);color:#fff;font-weight:700}.week-nav a.today-link:hover{background:rgba(255,255,255,.14);color:#fff}.week-card{min-width:240px;margin-left:auto;padding:10px 14px;border:1px solid var(--line);border-radius:14px;background:#f7faf7;box-shadow:0 8px 24px rgba(18,32,46,.06)}.week-card strong{display:block;font-size:20px;line-height:1}.week-card span{display:block;margin-top:4px;color:var(--muted);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
     /* ---- Filter bar (collapsible dropdown, matches events/index.html pattern) ---- */
     .filter-bar{position:sticky;top:55px;z-index:11;display:flex;gap:10px;align-items:center;padding:8px clamp(18px,4vw,72px);background:rgba(243,245,242,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
     .filter-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;font:700 13px Arial;cursor:pointer}
@@ -195,16 +195,60 @@
       const thisWeek = new Date(); thisWeek.setHours(12,0,0,0);
       const currentDayOffset = (thisWeek.getDay() + 6) % 7;
       const currentWeekStart = new Date(thisWeek); currentWeekStart.setDate(thisWeek.getDate() - currentDayOffset); currentWeekStart.setHours(0,0,0,0);
-      const lastWeek = new Date(currentWeekStart); lastWeek.setDate(currentWeekStart.getDate() - 7);
-      const nextWeek = new Date(currentWeekStart); nextWeek.setDate(currentWeekStart.getDate() + 7);
-      const weekNavLinks = [['prev-week-link', lastWeek], ['this-week-link', currentWeekStart], ['next-week-link', nextWeek]];
-      const selectedWeekKey = isoDate(weekStart);
-      weekNavLinks.forEach(([id, target]) => {
-        const link = document.getElementById(id);
-        link.href = 'this-week.html?date=' + isoDate(target);
-        link.classList.toggle('active', selectedWeekKey === isoDate(target));
-      });
-      document.getElementById('week-title').textContent = activeEvents.length + ' active event' + (activeEvents.length === 1 ? '' : 's');
+      // Nav buttons step ±7 days relative to the VIEWED week (matches swipe).
+      // Labels show actual date ranges so the user always knows where they are.
+      const prevWeek = new Date(weekStart); prevWeek.setDate(weekStart.getDate() - 7);
+      const nextWeek = new Date(weekStart); nextWeek.setDate(weekStart.getDate() + 7);
+      const dayMonthFmt = new Intl.DateTimeFormat('en', { day:'numeric', month:'short' });
+      function rangeLabel(start) {
+        const end = new Date(start); end.setDate(start.getDate() + 6);
+        return start.getMonth() === end.getMonth()
+          ? dayMonthFmt.format(start) + '-' + end.getDate()
+          : dayMonthFmt.format(start) + ' - ' + dayMonthFmt.format(end);
+      }
+      const prevLink = document.getElementById('prev-week-link');
+      const thisLink = document.getElementById('this-week-link');
+      const nextLink = document.getElementById('next-week-link');
+      const currentKey  = isoDate(currentWeekStart);
+      const selectedKey = isoDate(weekStart);
+
+      prevLink.textContent = '‹ ' + rangeLabel(prevWeek);
+      prevLink.href = 'this-week.html?date=' + isoDate(prevWeek);
+      prevLink.classList.toggle('active', currentKey === isoDate(prevWeek));
+
+      thisLink.textContent = rangeLabel(weekStart) + (selectedKey === currentKey ? ' · today' : '');
+      thisLink.href = 'this-week.html?date=' + isoDate(weekStart);
+      thisLink.classList.add('active');
+
+      nextLink.textContent = rangeLabel(nextWeek) + ' ›';
+      nextLink.href = 'this-week.html?date=' + isoDate(nextWeek);
+      nextLink.classList.toggle('active', currentKey === isoDate(nextWeek));
+
+      // Add (or remove) a small "↺ Today" reset link when off-week
+      const nav = document.querySelector('.week-nav');
+      let todayLink = document.getElementById('today-week-link');
+      if (selectedKey !== currentKey) {
+        if (!todayLink) {
+          todayLink = document.createElement('a');
+          todayLink.id = 'today-week-link';
+          todayLink.className = 'today-link';
+          todayLink.textContent = '↺ Today';
+          nav.appendChild(todayLink);
+        }
+        todayLink.href = 'this-week.html?date=' + currentKey;
+      } else if (todayLink) {
+        todayLink.remove();
+      }
+
+      // Header card: distinguish "This week" vs viewed week
+      const weeksAway = Math.round((weekStart - currentWeekStart) / 86400000 / 7);
+      const titleText = weeksAway === 0 ? 'This week'
+                      : weeksAway === 1 ? 'Next week'
+                      : weeksAway === -1 ? 'Last week'
+                      : weeksAway > 0 ? '+' + weeksAway + ' weeks ahead'
+                      : weeksAway + ' weeks ago';
+      const eventsText = activeEvents.length + ' active event' + (activeEvents.length === 1 ? '' : 's');
+      document.getElementById('week-title').textContent = titleText + ' · ' + eventsText;
       document.getElementById('week-range').textContent = fmt.format(weekStart) + ' - ' + fmt.format(weekEnd);
       render('all');
     });
