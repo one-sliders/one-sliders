@@ -182,7 +182,7 @@
     if (!data || !switcher) return;
 
     var switcherEditions = data.editions.slice().sort(function (a, b) {
-      return Number(b.year) - Number(a.year);  // newest year first
+      return Number(a.year) - Number(b.year);
     });
     function requestedYearFromLocation() {
       var hashMatch = (window.location.hash || '').match(/^#year-(\d{4})$/);
@@ -253,6 +253,20 @@
     function markResultWinners(html) {
       var wrapper = document.createElement('div');
       wrapper.innerHTML = html;
+
+      // Reverse order of matches inside each results group so the most
+      // recent date (today's matches when ongoing) appears at the top.
+      wrapper.querySelectorAll('.match-results').forEach(function (group) {
+        var matches = [];
+        var child = group.firstElementChild;
+        while (child) {
+          if (child.classList && child.classList.contains('match-result')) matches.push(child);
+          child = child.nextElementSibling;
+        }
+        for (var i = matches.length - 1; i >= 0; i--) group.appendChild(matches[i]);
+      });
+
+      // Mark the winning side
       wrapper.querySelectorAll('.match-result').forEach(function (row) {
         var score = row.querySelector('.match-score');
         var teams = row.querySelectorAll('.country');
