@@ -164,6 +164,216 @@
   });
 
   // ====================================================================
+  // Module: iosNav
+  // iOS Human Interface Guidelines style mobile nav. Shown only on
+  // screens <=620 px. Replaces the desktop pill row with a 3-slot bar:
+  //   [<- Parent]   Page title   [...]
+  // The "..." button opens an action sheet that slides up from the
+  // bottom with Home / Events / World / All categories / Language /
+  // Cookie settings entries.
+  //
+  // Page title + back link are derived heuristically from the existing
+  // nav structure, so no per-page HTML changes are needed. Pages can
+  // override by setting <meta name="os-back-href"> and
+  // <meta name="os-back-label"> in <head>.
+  // ====================================================================
+  OneSlider.register('iosNav', function (App) {
+    if (document.querySelector('.ios-nav')) return;  // already injected
+    var root = OneSlider.rootHref();
+
+    // --- derive title -------------------------------------------------
+    function deriveTitle() {
+      var active = document.querySelector(
+        'nav.top-menu a.active, nav.top-menu a[aria-current="page"]');
+      if (active && active.textContent.trim()) return active.textContent.trim();
+      var h1 = document.querySelector('h1.event-title, .event-hero-copy h1, header h1, main h1');
+      if (h1 && h1.textContent.trim()) return h1.textContent.trim().slice(0, 60);
+      var t = document.title || '';
+      // Trim " | OneSliders", " · OneSliders", "- OneSliders"
+      return t.split(/[|·\-]\s*OneSliders/i)[0].trim() || 'OneSliders';
+    }
+
+    // --- derive back link --------------------------------------------
+    // Priority:
+    //   1. <meta name="os-back-href"> + <meta name="os-back-label">
+    //   2. Second-to-last text link in nav.top-menu (breadcrumb)
+    //   3. Default: Home
+    function deriveBack() {
+      var mh = document.querySelector('meta[name="os-back-href"]');
+      var ml = document.querySelector('meta[name="os-back-label"]');
+      if (mh && mh.content) {
+        return { href: mh.content, label: (ml && ml.content) || 'Back' };
+      }
+      var links = document.querySelectorAll(
+        'nav.top-menu > a:not(.nav-icon):not(.os-brand)');
+      if (links.length >= 2) {
+        var prev = links[links.length - 2];
+        return { href: prev.getAttribute('href') || '#',
+                 label: prev.textContent.trim() || 'Back' };
+      }
+      if (links.length === 1) {
+        return { href: root || './', label: 'Home' };
+      }
+      // Event pages (event-nav) — derive parent topic from URL pattern.
+      var m = location.pathname.match(/\/categories\/([^/]+)\/([^/]+)\/events\/[^/]+\.html?$/);
+      if (m) {
+        var topicLabel = m[2].replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+        return { href: '../../' + m[2] + '.html', label: topicLabel };
+      }
+      return { href: root || './', label: 'Home' };
+    }
+
+    // --- icon helpers -------------------------------------------------
+    function svg(d, fill) {
+      var ns = 'http://www.w3.org/2000/svg';
+      var s = document.createElementNS(ns, 'svg');
+      s.setAttribute('viewBox', '0 0 24 24');
+      s.setAttribute('aria-hidden', 'true');
+      if (fill) { s.setAttribute('fill', 'currentColor'); }
+      else {
+        s.setAttribute('fill', 'none');
+        s.setAttribute('stroke', 'currentColor');
+        s.setAttribute('stroke-width', '2');
+        s.setAttribute('stroke-linecap', 'round');
+        s.setAttribute('stroke-linejoin', 'round');
+      }
+      s.innerHTML = d;
+      return s;
+    }
+    var ICONS = {
+      back:    '<path d="m15 18-6-6 6-6"/>',
+      more:    '<circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>',
+      chev:    '<path d="m9 18 6-6-6-6"/>',
+      home:    '<path d="m3 12 9-9 9 9"/><path d="M5 10v10h14V10"/>',
+      events:  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+      world:   '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+      grid:    '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
+      cookie:  '<path d="M12 2a10 10 0 1 0 10 10c0-.46-.04-.91-.1-1.36a5 5 0 0 1-5.91-7.6A10 10 0 0 0 12 2Z"/><circle cx="8.5" cy="9" r=".7" fill="currentColor"/><circle cx="15" cy="14.5" r=".7" fill="currentColor"/><circle cx="9.5" cy="14.5" r=".7" fill="currentColor"/>'
+    };
+
+    // --- build nav ----------------------------------------------------
+    var title = deriveTitle();
+    var back  = deriveBack();
+
+    var nav = document.createElement('nav');
+    nav.className = 'ios-nav';
+    nav.setAttribute('aria-label', 'Page navigation');
+
+    var backLink = document.createElement('a');
+    backLink.className = 'ios-back';
+    backLink.href = back.href;
+    backLink.setAttribute('aria-label', 'Back to ' + back.label);
+    backLink.appendChild(svg(ICONS.back));
+    var backSpan = document.createElement('span');
+    backSpan.textContent = back.label;
+    backLink.appendChild(backSpan);
+
+    var titleEl = document.createElement('h1');
+    titleEl.className = 'ios-title';
+    titleEl.textContent = title;
+
+    var moreBtn = document.createElement('button');
+    moreBtn.type = 'button';
+    moreBtn.className = 'ios-more';
+    moreBtn.setAttribute('aria-haspopup', 'menu');
+    moreBtn.setAttribute('aria-controls', 'ios-sheet');
+    moreBtn.setAttribute('aria-label', 'Menu');
+    moreBtn.appendChild(svg(ICONS.more, true));
+
+    nav.appendChild(backLink);
+    nav.appendChild(titleEl);
+    nav.appendChild(moreBtn);
+
+    // --- build sheet --------------------------------------------------
+    function item(href, label, iconKey, chev) {
+      var el;
+      if (href) { el = document.createElement('a'); el.href = href; }
+      else      { el = document.createElement('button'); el.type = 'button'; }
+      el.className = 'ios-sheet__item';
+      if (iconKey) el.appendChild(svg(ICONS[iconKey]));
+      el.appendChild(document.createTextNode(label));
+      if (chev) {
+        var s = document.createElement('span');
+        s.className = 'ios-sheet__chevron';
+        s.appendChild(svg(ICONS.chev));
+        el.appendChild(s);
+      }
+      return el;
+    }
+
+    function group(children) {
+      var g = document.createElement('div');
+      g.className = 'ios-sheet__group';
+      children.forEach(function (c) { g.appendChild(c); });
+      return g;
+    }
+    function heading(text) {
+      var p = document.createElement('p');
+      p.className = 'ios-sheet__heading';
+      p.textContent = text;
+      return p;
+    }
+
+    var sheet = document.createElement('div');
+    sheet.className = 'ios-sheet';
+    sheet.id = 'ios-sheet';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-modal', 'true');
+    sheet.setAttribute('aria-label', 'Navigation menu');
+    sheet.hidden = true;
+    sheet.innerHTML =
+      '<div class="ios-sheet__backdrop" data-sheet-close></div>' +
+      '<div class="ios-sheet__panel" role="document">' +
+        '<span class="ios-sheet__grabber" aria-hidden="true"></span>' +
+      '</div>';
+    var panel = sheet.querySelector('.ios-sheet__panel');
+
+    panel.appendChild(heading('Browse'));
+    panel.appendChild(group([
+      item(root || './', 'Home', 'home', true),
+      item(root + 'content/events/this-week.html', 'This week', 'events', true),
+      item(root + 'content/events/index.html',     'All events', 'events', true),
+      item(root + 'content/locations/index.html',  'World',      'world',  true),
+      item(root + 'content/categories/index.html', 'Categories', 'grid',   true)
+    ]));
+
+    panel.appendChild(heading('Settings'));
+    var cookieItem = item('#', 'Cookie settings', 'cookie', true);
+    cookieItem.setAttribute('data-cookie-settings', '');
+    panel.appendChild(group([cookieItem]));
+
+    var done = document.createElement('button');
+    done.type = 'button';
+    done.className = 'ios-sheet__done';
+    done.setAttribute('data-sheet-close', '');
+    done.textContent = 'Done';
+    panel.appendChild(done);
+
+    // Insert nav right after <body> opening, sheet at end of <body>
+    document.body.insertBefore(nav, document.body.firstChild);
+    document.body.appendChild(sheet);
+
+    // --- open/close ---------------------------------------------------
+    function open()  {
+      sheet.hidden = false;
+      sheet.classList.add('ios-sheet--open');
+      document.body.classList.add('ios-sheet-open');
+    }
+    function close() {
+      sheet.classList.remove('ios-sheet--open');
+      document.body.classList.remove('ios-sheet-open');
+      setTimeout(function () { sheet.hidden = true; }, 240);
+    }
+    moreBtn.addEventListener('click', open);
+    sheet.addEventListener('click', function (e) {
+      if (e.target.closest('[data-sheet-close]')) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sheet.classList.contains('ios-sheet--open')) close();
+    });
+  });
+
+  // ====================================================================
   // Module: consent  (geo-aware cookie banner + Google Consent Mode v2)
   // ====================================================================
   OneSlider.register('consent', function (App) {
