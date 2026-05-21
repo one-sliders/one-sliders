@@ -374,6 +374,49 @@
   });
 
   // ====================================================================
+  // Module: siteFooter
+  // Standardises every page's footer to one line:
+  //   (c) YEAR OneSliders | Made by 3D Fractal | hello@one-sliders.com
+  //                                            | Privacy | Terms | Cookie settings
+  //
+  // Pages that already have <footer class="site-footer"> / "site" /
+  // "site-foot": replace their inner content (keeps the page's existing
+  // outer styling). Pages without a footer: a minimal one is appended.
+  // Pages can opt out by setting <meta name="os-footer" content="off">.
+  // ====================================================================
+  OneSlider.register('siteFooter', function (App) {
+    var opt = document.querySelector('meta[name="os-footer"]');
+    if (opt && opt.content === 'off') return;
+
+    var root = OneSlider.rootHref();
+    var year = new Date().getFullYear();
+
+    var content =
+      '<p>&copy; ' + year + ' OneSliders &middot; ' +
+      'Made by <a href="https://3dfractal.no/" rel="noopener">3D Fractal</a> &middot; ' +
+      '<a href="mailto:hello@one-sliders.com">hello@one-sliders.com</a> &middot; ' +
+      '<a href="' + root + 'privacy.html">Privacy</a> &middot; ' +
+      '<a href="' + root + 'terms.html">Terms</a> &middot; ' +
+      '<a href="#" data-cookie-settings>Cookie settings</a></p>';
+
+    var existing = document.querySelector(
+      'footer.site-footer, footer.site-foot, footer.site');
+    if (existing) {
+      existing.innerHTML = content;
+      if (!existing.classList.contains('os-footer')) {
+        existing.classList.add('os-footer');
+      }
+      return;
+    }
+
+    // No footer yet — append one (with default os-footer styling from CSS)
+    var f = document.createElement('footer');
+    f.className = 'os-footer site-footer';
+    f.innerHTML = content;
+    document.body.appendChild(f);
+  });
+
+  // ====================================================================
   // Module: consent  (geo-aware cookie banner + Google Consent Mode v2)
   // ====================================================================
   OneSlider.register('consent', function (App) {

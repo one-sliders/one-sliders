@@ -227,6 +227,31 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
 body.ios-sheet-open { overflow: hidden; }
 
 /* ---------------------------------------------------------------------
+   Standardised site footer (injected by siteFooter module)
+   --------------------------------------------------------------------- */
+.os-footer {
+  margin-top: 24px;
+  padding: 18px clamp(16px, 3vw, 32px);
+  padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(18, 32, 46, .12);
+  background: transparent;
+  color: #5a6672;
+  font: 13px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  text-align: center;
+}
+.os-footer p { margin: 0; }
+.os-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .12s, color .12s;
+}
+.os-footer a:hover {
+  color: #12202e;
+  border-bottom-color: currentColor;
+}
+
+/* ---------------------------------------------------------------------
    Cookie consent banner
    --------------------------------------------------------------------- */
 #os-cc-root {
