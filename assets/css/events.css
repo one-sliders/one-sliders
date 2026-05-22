@@ -1000,8 +1000,20 @@ a {
   gap: 12px;
 }
 
+.part-page__grid > .part-card {
+  grid-column: span 3;
+}
+
 .part-card--results {
   grid-column: span 6;
+}
+
+.part-page__grid > .part-card.part-card--results {
+  grid-column: span 6;
+}
+
+.part-page__grid > .part-card.part-card--third {
+  grid-column: span 4;
 }
 
 .part-card--results p {
@@ -1052,6 +1064,19 @@ a {
   white-space: nowrap;
 }
 
+.part-card .match-result .team-chip {
+  min-width: 0;
+  justify-self: start;
+  overflow: hidden;
+  color: var(--event-ink);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+}
+
 .part-card .match-note {
   display: block;
   margin-top: 8px;
@@ -1060,6 +1085,66 @@ a {
   font-weight: 800;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.part-card .people-table {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  min-width: 0;
+}
+
+.part-card .people-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.1fr) minmax(96px, 0.8fr) minmax(96px, 0.9fr) minmax(120px, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--event-ink);
+}
+
+.part-card .people-row--head {
+  padding-top: 0;
+  padding-bottom: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.part-card .people-row strong,
+.part-card .people-row span {
+  min-width: 0;
+}
+
+.part-card .people-row strong {
+  overflow: hidden;
+  color: var(--event-ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.part-card .people-row > span {
+  margin: 0;
+  color: var(--event-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.part-card .people-row .country {
+  justify-self: start;
+  white-space: nowrap;
 }
 
 .part-card--standings {
@@ -1327,7 +1412,7 @@ a {
   }
 
   .part-card--results {
-    grid-column: span 6;
+    grid-column: 1 / -1;
   }
 
   .part-page__grid > .part-card.part-card--standings {
@@ -1642,7 +1727,7 @@ a {
   }
 
   .part-card--results {
-    grid-column: span 6;
+    grid-column: 1 / -1;
   }
 
   .part-card .match-results {

@@ -34,6 +34,29 @@
       .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .sauna-snapshot { display: grid; gap: 9px; margin-top: 10px; margin-bottom: 12px; }
+      .snapshot-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; }
+      .snapshot-head h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .snapshot-head span { color: var(--muted); font-size: 12px; font-weight: 800; }
+      .snapshot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .snapshot-card { display: grid; gap: 7px; min-height: 126px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); }
+      .snapshot-card small { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }
+      .snapshot-card strong { font-size: 28px; line-height: .95; }
+      .snapshot-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
+      .snapshot-wide { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 8px; }
+      .heat-chart { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .heat-chart h3, .record-list h3 { margin: 0 0 9px; font-size: 18px; line-height: 1.1; }
+      .heat-bar { display: grid; grid-template-columns: 68px 1fr 64px; gap: 8px; align-items: center; margin: 8px 0; color: var(--muted); font-size: 12px; }
+      .heat-bar span:first-child { color: var(--ink); font-weight: 900; }
+      .heat-bar__track { height: 10px; overflow: hidden; border-radius: 999px; background: #edf1ee; }
+      .heat-bar__fill { display: block; height: 100%; border-radius: inherit; background: var(--theme); }
+      .record-list { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .record-item { display: grid; gap: 3px; padding-top: 8px; border-top: 1px solid var(--line); }
+      .record-item:first-of-type { padding-top: 0; border-top: 0; }
+      .record-item strong { font-size: 14px; line-height: 1.15; }
+      .record-item span { color: var(--muted); font-size: 12px; line-height: 1.25; }
+      .snapshot-sources { color: var(--muted); font-size: 11px; line-height: 1.25; }
+      .snapshot-sources a { color: var(--theme); font-weight: 800; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
       .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
       .carousel-button:hover { background: var(--theme); color: white; }
@@ -50,10 +73,126 @@
       .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
       .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
       .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
+      .bastu-affiliate { display: none; }
+      body.is-localhost .bastu-affiliate { display: grid; gap: 10px; }
+      .bastu-card { position: relative; overflow: hidden; border: 1px solid rgba(23,32,28,.14); border-radius: 8px; background: #fbfaf6; color: #17201c; box-shadow: 0 12px 28px rgba(23,32,28,.1); }
+      .bastu-card__media { position: relative; aspect-ratio: 1.9 / 1; min-height: 210px; max-height: 300px; background: #ece7df; }
+      .bastu-card__media img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+      .bastu-card__brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 15px 0; }
+      .bastu-card__brand img { display: block; width: 76px; height: auto; padding: 0; border-radius: 0; background: transparent; }
+      .bastu-card__tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 9px; border: 1px solid rgba(79,138,104,.32); border-radius: 999px; background: rgba(79,138,104,.08); color: #315a43; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+      .bastu-card__body { position: relative; display: grid; gap: 12px; padding: 12px 15px 15px; }
+      .bastu-card h2 { max-width: 520px; margin: 0; color: #17201c; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.04; }
+      .bastu-card p { margin: 0; color: #4f5c55; font-size: 14px; line-height: 1.4; }
+      .bastu-card__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+      .bastu-card__facts span { display: grid; gap: 4px; min-height: 64px; padding: 9px; border: 1px solid rgba(23,32,28,.1); border-radius: 8px; background: #fff; color: #4f8a68; font-size: 11px; font-weight: 900; }
+      .bastu-card__facts strong { color: #17201c; font-size: 13px; line-height: 1.12; }
+      .bastu-card__actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      .bastu-button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid #4f8a68; background: #4f8a68; color: #fff; font-size: 13px; font-weight: 900; text-decoration: none; }
+      .bastu-button--ghost { background: transparent; color: #315a43; border-color: rgba(79,138,104,.5); }
+      .bastu-safety { position: relative; display: grid; gap: 5px; margin-top: 1px; padding: 10px 12px; border-top: 1px solid rgba(23,32,28,.1); background: #fff; color: #4f5c55; font-size: 12px; line-height: 1.28; }
+      .bastu-safety strong { color: #315a43; font-size: 12px; text-transform: uppercase; }
+      .bastu-accessory { display: grid; grid-template-columns: minmax(140px, .42fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; padding: 12px; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; color: #17201c; }
+      .bastu-accessory__image { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; border-radius: 8px; background: #f6f1ec; }
+      .bastu-accessory__body { display: grid; gap: 10px; align-content: start; }
+      .bastu-accessory__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+      .bastu-accessory h3 { margin: 0; font-size: 22px; line-height: 1.05; }
+      .bastu-accessory p { margin: 0; color: #5f6b63; font-size: 13px; line-height: 1.32; }
+      .bastu-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .bastu-kpi { display: grid; gap: 3px; padding: 10px; border: 1px solid rgba(23,32,28,.1); border-radius: 8px; background: #fbfaf6; }
+      .bastu-kpi strong { color: #315a43; font-size: 20px; line-height: 1; }
+      .bastu-kpi span { color: #17201c; font-size: 12px; font-weight: 900; }
+      .bastu-kpi small { color: #5f6b63; font-size: 11px; line-height: 1.2; }
+      .affiliate-section { display: grid; gap: 8px; margin-top: 12px; }
+      .affiliate-section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+      .affiliate-section__head h3 { margin: 0; font-size: 22px; line-height: 1.05; }
+      .affiliate-section__head span { color: #5f6b63; font-size: 12px; font-weight: 800; }
+      .affiliate-section__intro { margin: 0; color: #5f6b63; font-size: 14px; line-height: 1.32; }
+      .affiliate-section__tools { display: flex; align-items: center; gap: 8px; }
+      .affiliate-controls { display: flex; gap: 6px; }
+      .affiliate-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 31%); gap: 8px; overflow-x: auto; padding-bottom: 2px; scroll-snap-type: x mandatory; }
+      .affiliate-row::-webkit-scrollbar { height: 0; }
+      .affiliate-product { display: grid; grid-template-rows: 140px auto; overflow: hidden; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; color: #17201c; scroll-snap-align: start; }
+      .affiliate-product img { display: block; width: 100%; height: 140px; object-fit: cover; background: #f6f1ec; }
+      .affiliate-product__body { display: grid; gap: 8px; padding: 12px; }
+      .affiliate-product__body h4 { margin: 0; font-size: 17px; line-height: 1.1; }
+      .affiliate-product__body p { margin: 0; color: #5f6b63; font-size: 13px; line-height: 1.3; }
+      .affiliate-product__meta { display: flex; flex-wrap: wrap; gap: 5px; }
+      .affiliate-product__meta span { padding: 4px 7px; border-radius: 999px; background: rgba(79,138,104,.09); color: #315a43; font-size: 11px; font-weight: 900; }
+      .sauna-type-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0; }
+      .sauna-type-tab { flex: 0 0 auto; min-height: 36px; padding: 0 12px; border: 1px solid rgba(79,138,104,.34); border-radius: 999px; background: #fff; color: #315a43; font-size: 13px; font-weight: 900; cursor: pointer; }
+      .sauna-type-tab[aria-selected="true"] { background: #4f8a68; color: #fff; border-color: #4f8a68; }
+      .sauna-type-panel { display: none; gap: 10px; }
+      .sauna-type-panel.is-active { display: grid; }
+      .sauna-type-hero { display: grid; grid-template-columns: minmax(210px, .55fr) minmax(0, 1fr); gap: 12px; padding: 12px; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; }
+      .sauna-type-hero img { display: block; width: 100%; height: 100%; min-height: 230px; object-fit: cover; border-radius: 8px; background: #f6f1ec; }
+      .sauna-type-hero__body { display: grid; gap: 10px; align-content: start; }
+      .sauna-type-hero h4 { margin: 0; font-size: 24px; line-height: 1.05; }
+      .sauna-type-hero p { margin: 0; color: #5f6b63; font-size: 14px; line-height: 1.35; }
+      .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      body:not(.is-localhost) .bastu-affiliate { display: none; }
       .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
       .site-footer p { margin: 0; }
-      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
-      @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 900px) {
+        .topic-slide { min-height: auto; gap: 10px; }
+        .topic-panel { grid-template-columns: 1fr; }
+        .left, .right { min-width: 0; }
+        .carousel-track .event-card { flex-basis: min(86vw, 360px); }
+        .sauna-type-hero { grid-template-columns: minmax(220px, .72fr) minmax(0, 1fr); }
+        .related-grid { grid-template-columns: repeat(3, minmax(190px, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 2px; }
+        .related-grid .affiliate-product { min-width: 190px; scroll-snap-align: start; }
+      }
+      @media (max-width: 620px) {
+        body { background: #f7f6f1; }
+        .top-menu { gap: 6px; padding: 7px 10px; }
+        .top-menu a { padding: 7px 10px; font-size: 12px; }
+        .nav-icon { width: 34px; height: 34px; }
+        .nav-icon svg { width: 20px; height: 20px; }
+        .topic-slide { padding: 10px; }
+        .topic-hero { min-height: 210px; padding: 18px; background-position: center; }
+        h1 { font-size: clamp(42px, 17vw, 64px); }
+        .intro { font-size: 15px; line-height: 1.35; }
+        .note-card { padding: 12px; font-size: 14px; }
+        .section-heading, .snapshot-head, .affiliate-section__head { align-items: flex-start; flex-direction: column; gap: 5px; }
+        .section-heading h2, .snapshot-head h2, .affiliate-section__head h3 { font-size: 21px; }
+        .carousel-controls { align-self: flex-end; margin-top: -36px; }
+        .event-grid { grid-template-columns: 1fr; }
+        .carousel-track.event-grid { overflow-x: auto; padding-bottom: 2px; }
+        .carousel-track .event-card { flex-basis: min(82vw, 330px); }
+        .event-card { min-height: 142px; padding-inline: 13px; grid-template-rows: 58px auto auto auto; }
+        .event-thumb { width: calc(100% + 26px); height: 58px; margin-inline: -13px; }
+        .event-card strong { font-size: 18px; }
+        .event-card p { font-size: 13px; }
+        .snapshot-grid, .snapshot-wide { grid-template-columns: 1fr; }
+        .snapshot-card { min-height: 0; }
+        .heat-bar { grid-template-columns: 62px 1fr 54px; }
+        .bastu-card__brand { align-items: flex-start; }
+        .bastu-card__actions { align-items: flex-start; flex-direction: column; }
+        .bastu-card__facts, .bastu-kpis, .bastu-accessory, .sauna-type-hero { grid-template-columns: 1fr; }
+        .affiliate-section { margin-top: 8px; }
+        .affiliate-section__intro { font-size: 13px; }
+        .sauna-type-tabs { gap: 7px; margin-inline: -10px; padding: 2px 10px 6px; scrollbar-width: none; }
+        .sauna-type-tabs::-webkit-scrollbar { height: 0; }
+        .sauna-type-tab { min-height: 38px; padding: 0 13px; }
+        .sauna-type-hero { padding: 10px; }
+        .sauna-type-hero img { min-height: 190px; max-height: 250px; }
+        .sauna-type-hero h4 { font-size: 22px; }
+        .sauna-type-hero p { font-size: 13px; }
+        .related-grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(218px, 82vw); grid-template-columns: none; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
+        .related-grid .affiliate-product { min-width: 0; scroll-snap-align: start; }
+        .affiliate-product { grid-template-rows: 132px auto; }
+        .affiliate-product img { height: 132px; }
+        .bastu-button { width: fit-content; min-height: 40px; }
+        .affiliate-row { grid-auto-columns: minmax(220px, 86%); }
+        .site-footer { padding: 12px 10px; }
+      }
+      @media (max-width: 390px) {
+        .topic-slide { padding: 8px; }
+        .topic-hero { min-height: 190px; padding: 15px; }
+        .heat-bar { grid-template-columns: 54px 1fr 48px; gap: 6px; font-size: 11px; }
+        .carousel-track .event-card { flex-basis: min(84vw, 310px); }
+        .related-grid { grid-auto-columns: minmax(206px, 84vw); }
+      }
     </style>
   </head>
   <body>
@@ -74,37 +213,108 @@
         </div>
       </header>
       <section class="topic-panel">
-        <div class="left"><div class="note-card">The largest sauna events range from congresses and trade fairs to Aufguss championships, winter sauna marathons and public bathing festivals.</div></div>
-        <div class="right">
+        <div class="left"><div class="note-card">The largest sauna events range from congresses and trade fairs to Aufguss championships, winter sauna marathons and public bathing festivals.</div>
+          <section class="sauna-snapshot" aria-label="Sauna snapshot">
+            <div class="snapshot-head"><h2>Sauna snapshot</h2><span>Records, heat and culture</span></div>
+            <div class="snapshot-grid">
+              <article class="snapshot-card"><small>Sauna capital</small><strong>3.3M</strong><p>Finland is estimated to have about 3.3 million saunas, more than one per two people.</p></article>
+              <article class="snapshot-card"><small>Event sauna scale</small><strong>360</strong><p>Sauna del Deserto at Burning Man was built to host up to 360 people at once.</p></article>
+              <article class="snapshot-card"><small>World champions</small><strong>2025</strong><p>Aufguss WM crowns world champions in theatrical sauna infusion performance.</p></article>
+            </div>
+            <div class="snapshot-wide">
+              <div class="heat-chart">
+                <h3>Heat zones people actually feel</h3>
+                <div class="heat-bar"><span>Gentle</span><div class="heat-bar__track"><i class="heat-bar__fill" style="width:58%"></i></div><span>60-70°C</span></div>
+                <div class="heat-bar"><span>Classic</span><div class="heat-bar__track"><i class="heat-bar__fill" style="width:76%"></i></div><span>75-85°C</span></div>
+                <div class="heat-bar"><span>Intense</span><div class="heat-bar__track"><i class="heat-bar__fill" style="width:92%"></i></div><span>90°C+</span></div>
+                <p class="snapshot-sources">A thermometer makes this practical: visitors can match heat to comfort, not guess by bravado.</p>
+              </div>
+              <div class="record-list">
+                <h3>What else to track?</h3>
+                <div class="record-item"><strong>Aufguss world champions</strong><span>Singles, teams and show formats turn sauna into performance: scent, towel work, heat control and storytelling.</span></div>
+                <div class="record-item"><strong>Biggest / most unusual saunas</strong><span>Large pop-up saunas, floating saunas and desert saunas are natural record-style content for this topic.</span></div>
+                <div class="record-item"><strong>Beginner mistakes</strong><span>Too hot too soon, no cooling break, not enough water, and sitting too high for the first round.</span></div>
+              </div>
+            </div>
+            <p class="snapshot-sources">Sources: <a href="https://www.guinnessworldrecords.com/news/2025/6/sauna-nation-why-finland-is-king-of-the-sauna-787205">Guinness World Records</a>, <a href="https://aufguss-wm.com/">Aufguss WM</a>, <a href="https://saunadeldeserto.com/">Sauna del Deserto</a>.</p>
+          </section>
           <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
           <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
-<a class="event-card" href="sauna/events/world-sauna-forum.html#year" data-end="2026-06-11"><img class="event-thumb" src="sauna/events/img/world-sauna-forum-mini.png" alt="" loading="lazy"><time>9 Jun 2026</time><strong>World Sauna Forum</strong><p>Jyväskylä, Finland. Global sauna business, culture and wellness gathering.</p></a>
-<a class="event-card" href="sauna/events/sauna-region-week.html#year" data-end="2026-06-14"><img class="event-thumb" src="sauna/events/img/sauna-region-week-mini.png" alt="" loading="lazy"><time>6 Jun 2026</time><strong>Sauna Region Week</strong><p>Jyväskylä Region, Finland. Regional sauna week around central Finland with pop-ups, tours and local sauna culture.</p></a>
-<a class="event-card" href="sauna/events/international-sauna-congress.html#year" data-end="2026-09-26"><img class="event-thumb" src="sauna/events/img/international-sauna-congress-mini.png" alt="" loading="lazy"><time>24 Sept 2026</time><strong>International Sauna Congress</strong><p>Oslo, Norway. The international congress for sauna societies, builders and bathing-culture specialists.</p></a>
-<a class="event-card" href="sauna/events/aufguss-wm.html#year" data-end="2026-09-20"><img class="event-thumb" src="sauna/events/img/aufguss-wm-mini.png" alt="" loading="lazy"><time>14 Sept 2026</time><strong>Aufguss WM</strong><p>Wendisch Rietz, Germany. World championship for performance Aufguss: heat, scent, choreography and storytelling.</p></a>
-<a class="event-card" href="sauna/events/modern-classic-cup.html#year" data-end="2026-10-04"><img class="event-thumb" src="sauna/events/img/modern-classic-cup-mini.png" alt="" loading="lazy"><time>1 Oct 2026</time><strong>Modern Classic Cup</strong><p>Larvik, Norway. International Aufguss competition focused on a modern classic format.</p></a>
-<a class="event-card" href="sauna/events/uk-aufguss-championships.html#year" data-end="2026-04-22"><img class="event-thumb" src="sauna/events/img/uk-aufguss-championships-mini.png" alt="" loading="lazy"><time>20 Apr 2026</time><strong>UK Aufguss Championships</strong><p>Galgorm, United Kingdom. UK qualifier and showcase for sauna masters and Aufguss performance.</p></a>
-<a class="event-card" href="sauna/events/european-sauna-marathon.html#year" data-end="2026-02-07"><img class="event-thumb" src="sauna/events/img/european-sauna-marathon-mini.png" alt="" loading="lazy"><time>7 Feb 2026</time><strong>European Sauna Marathon</strong><p>Otepää, Estonia. Teams move between saunas in an orienteering-style winter sauna race.</p></a>
-<a class="event-card" href="sauna/events/interbad-sauna-forum.html#year" data-end="2026-10-08"><img class="event-thumb" src="sauna/events/img/interbad-sauna-forum-mini.png" alt="" loading="lazy"><time>6 Oct 2026</time><strong>interbad Sauna Forum</strong><p>Stuttgart, Germany. Trade-fair meeting point for pool, spa, wellness and sauna operators.</p></a>
-<a class="event-card" href="sauna/events/world-sauna-day.html#year" data-end="2026-04-25"><img class="event-thumb" src="sauna/events/img/world-sauna-day-mini.png" alt="" loading="lazy"><time>25 Apr 2026</time><strong>World Sauna Day</strong><p>Worldwide, Global. A global participation day for sauna bathing, sauna stories and community sessions.</p></a>
-<a class="event-card" href="sauna/events/helsinki-sauna-day.html#year" data-end="2026-03-14"><img class="event-thumb" src="sauna/events/img/helsinki-sauna-day-mini.png" alt="" loading="lazy"><time>14 Mar 2026</time><strong>Helsinki Sauna Day</strong><p>Helsinki, Finland. City sauna day where unusual, private or pop-up saunas can open to visitors.</p></a>
-<a class="event-card" href="sauna/events/tampere-sauna-week.html#year" data-end="2026-06-07"><img class="event-thumb" src="sauna/events/img/tampere-sauna-week-mini.png" alt="" loading="lazy"><time>1 Jun 2026</time><strong>Tampere Sauna Week</strong><p>Tampere, Finland. A sauna capital week for public bathing, lake dips and local sauna tourism.</p></a>
-<a class="event-card" href="sauna/events/tuira-sauna-festival.html#year" data-end="2026-06-14"><img class="event-thumb" src="sauna/events/img/tuira-sauna-festival-mini.png" alt="" loading="lazy"><time>12 Jun 2026</time><strong>Tuira Sauna Festival</strong><p>Oulu, Finland. Northern Finland sauna festival built around heat, cold water and community bathing.</p></a>
-<a class="event-card" href="sauna/events/sauna-herbal-cup.html#year" data-end="2026-11-15"><img class="event-thumb" src="sauna/events/img/sauna-herbal-cup-mini.png" alt="" loading="lazy"><time>13 Nov 2026</time><strong>Sauna Herbal Cup</strong><p>Europe, Global. Competition and knowledge event around whisking, herbs, aroma and sauna rituals.</p></a>
-<a class="event-card" href="sauna/events/nordic-sauna-summit.html#year" data-end="2026-05-30"><img class="event-thumb" src="sauna/events/img/nordic-sauna-summit-mini.png" alt="" loading="lazy"><time>28 May 2026</time><strong>Nordic Sauna Summit</strong><p>Helsinki / Tallinn, Finland. Regional summit idea for public sauna operators, designers and bathing-culture communities.</p></a>
-<a class="event-card" href="sauna/events/british-sauna-week.html#year" data-end="2026-09-13"><img class="event-thumb" src="sauna/events/img/british-sauna-week-mini.png" alt="" loading="lazy"><time>7 Sept 2026</time><strong>British Sauna Week</strong><p>United Kingdom, United Kingdom. UK-wide sauna culture week for community saunas, beach saunas and bathhouse operators.</p></a>
-<a class="event-card" href="sauna/events/japan-sauna-fair.html#year" data-end="2026-07-20"><img class="event-thumb" src="sauna/events/img/japan-sauna-fair-mini.png" alt="" loading="lazy"><time>18 Jul 2026</time><strong>Japan Sauna Fair</strong><p>Tokyo, Japan. Japanese sauna event for sento, sauna goods, cold plunge culture and wellness brands.</p></a>
-<a class="event-card" href="sauna/events/sauna-expo-japan.html#year" data-end="2026-09-04"><img class="event-thumb" src="sauna/events/img/sauna-expo-japan-mini.png" alt="" loading="lazy"><time>2 Sept 2026</time><strong>Sauna & Wellness Expo Japan</strong><p>Tokyo, Japan. Trade-focused sauna and wellness expo for equipment, operators and hospitality.</p></a>
-<a class="event-card" href="sauna/events/australia-sauna-cold-plunge-festival.html#year" data-end="2026-08-23"><img class="event-thumb" src="sauna/events/img/australia-sauna-cold-plunge-festival-mini.png" alt="" loading="lazy"><time>21 Aug 2026</time><strong>Australia Sauna & Cold Plunge Festival</strong><p>Sydney, Australia. Australian festival concept around mobile saunas, cold plunges and recovery culture.</p></a>
-<a class="event-card" href="sauna/events/north-american-sauna-summit.html#year" data-end="2026-10-18"><img class="event-thumb" src="sauna/events/img/north-american-sauna-summit-mini.png" alt="" loading="lazy"><time>16 Oct 2026</time><strong>North American Sauna Summit</strong><p>Minneapolis, United States. North American meeting point for public sauna, backyard builders and bathhouse operators.</p></a>
-<a class="event-card" href="sauna/events/canadian-sauna-culture-weekend.html#year" data-end="2026-02-22"><img class="event-thumb" src="sauna/events/img/canadian-sauna-culture-weekend-mini.png" alt="" loading="lazy"><time>20 Feb 2026</time><strong>Canadian Sauna Culture Weekend</strong><p>Toronto, Canada. Winter weekend for Canadian sauna, cold exposure and Nordic-style social wellness.</p></a>
+<a class="event-card" href="sauna/events/world-sauna-forum.html#year" data-end="2026-06-11"><img class="event-thumb" src="sauna/events/img/world-sauna-forum-mini.png" alt=""><time>9 Jun 2026</time><strong>World Sauna Forum</strong><p>Jyväskylä, Finland. Global sauna business, culture and wellness gathering.</p></a>
+<a class="event-card" href="sauna/events/sauna-region-week.html#year" data-end="2026-06-14"><img class="event-thumb" src="sauna/events/img/sauna-region-week-mini.png" alt=""><time>6 Jun 2026</time><strong>Sauna Region Week</strong><p>Jyväskylä Region, Finland. Regional sauna week around central Finland with pop-ups, tours and local sauna culture.</p></a>
+<a class="event-card" href="sauna/events/international-sauna-congress.html#year" data-end="2026-09-26"><img class="event-thumb" src="sauna/events/img/international-sauna-congress-mini.png" alt=""><time>24 Sept 2026</time><strong>International Sauna Congress</strong><p>Oslo, Norway. The international congress for sauna societies, builders and bathing-culture specialists.</p></a>
+<a class="event-card" href="sauna/events/aufguss-wm.html#year" data-end="2026-09-20"><img class="event-thumb" src="sauna/events/img/aufguss-wm-mini.png" alt=""><time>14 Sept 2026</time><strong>Aufguss WM</strong><p>Wendisch Rietz, Germany. World championship for performance Aufguss: heat, scent, choreography and storytelling.</p></a>
+<a class="event-card" href="sauna/events/modern-classic-cup.html#year" data-end="2026-10-04"><img class="event-thumb" src="sauna/events/img/modern-classic-cup-mini.png" alt=""><time>1 Oct 2026</time><strong>Modern Classic Cup</strong><p>Larvik, Norway. International Aufguss competition focused on a modern classic format.</p></a>
+<a class="event-card" href="sauna/events/uk-aufguss-championships.html#year" data-end="2026-04-22"><img class="event-thumb" src="sauna/events/img/uk-aufguss-championships-mini.png" alt=""><time>20 Apr 2026</time><strong>UK Aufguss Championships</strong><p>Galgorm, United Kingdom. UK qualifier and showcase for sauna masters and Aufguss performance.</p></a>
+<a class="event-card" href="sauna/events/european-sauna-marathon.html#year" data-end="2026-02-07"><img class="event-thumb" src="sauna/events/img/european-sauna-marathon-mini.png" alt=""><time>7 Feb 2026</time><strong>European Sauna Marathon</strong><p>Otepää, Estonia. Teams move between saunas in an orienteering-style winter sauna race.</p></a>
+<a class="event-card" href="sauna/events/interbad-sauna-forum.html#year" data-end="2026-10-08"><img class="event-thumb" src="sauna/events/img/interbad-sauna-forum-mini.png" alt=""><time>6 Oct 2026</time><strong>interbad Sauna Forum</strong><p>Stuttgart, Germany. Trade-fair meeting point for pool, spa, wellness and sauna operators.</p></a>
+<a class="event-card" href="sauna/events/world-sauna-day.html#year" data-end="2026-04-25"><img class="event-thumb" src="sauna/events/img/world-sauna-day-mini.png" alt=""><time>25 Apr 2026</time><strong>World Sauna Day</strong><p>Worldwide, Global. A global participation day for sauna bathing, sauna stories and community sessions.</p></a>
+<a class="event-card" href="sauna/events/helsinki-sauna-day.html#year" data-end="2026-03-14"><img class="event-thumb" src="sauna/events/img/helsinki-sauna-day-mini.png" alt=""><time>14 Mar 2026</time><strong>Helsinki Sauna Day</strong><p>Helsinki, Finland. City sauna day where unusual, private or pop-up saunas can open to visitors.</p></a>
+<a class="event-card" href="sauna/events/tampere-sauna-week.html#year" data-end="2026-06-07"><img class="event-thumb" src="sauna/events/img/tampere-sauna-week-mini.png" alt=""><time>1 Jun 2026</time><strong>Tampere Sauna Week</strong><p>Tampere, Finland. A sauna capital week for public bathing, lake dips and local sauna tourism.</p></a>
+<a class="event-card" href="sauna/events/tuira-sauna-festival.html#year" data-end="2026-06-14"><img class="event-thumb" src="sauna/events/img/tuira-sauna-festival-mini.png" alt=""><time>12 Jun 2026</time><strong>Tuira Sauna Festival</strong><p>Oulu, Finland. Northern Finland sauna festival built around heat, cold water and community bathing.</p></a>
+<a class="event-card" href="sauna/events/sauna-herbal-cup.html#year" data-end="2026-11-15"><img class="event-thumb" src="sauna/events/img/sauna-herbal-cup-mini.png" alt=""><time>13 Nov 2026</time><strong>Sauna Herbal Cup</strong><p>Europe, Global. Competition and knowledge event around whisking, herbs, aroma and sauna rituals.</p></a>
+<a class="event-card" href="sauna/events/nordic-sauna-summit.html#year" data-end="2026-05-30"><img class="event-thumb" src="sauna/events/img/nordic-sauna-summit-mini.png" alt=""><time>28 May 2026</time><strong>Nordic Sauna Summit</strong><p>Helsinki / Tallinn, Finland. Regional summit idea for public sauna operators, designers and bathing-culture communities.</p></a>
+<a class="event-card" href="sauna/events/british-sauna-week.html#year" data-end="2026-09-13"><img class="event-thumb" src="sauna/events/img/british-sauna-week-mini.png" alt=""><time>7 Sept 2026</time><strong>British Sauna Week</strong><p>United Kingdom, United Kingdom. UK-wide sauna culture week for community saunas, beach saunas and bathhouse operators.</p></a>
+<a class="event-card" href="sauna/events/japan-sauna-fair.html#year" data-end="2026-07-20"><img class="event-thumb" src="sauna/events/img/japan-sauna-fair-mini.png" alt=""><time>18 Jul 2026</time><strong>Japan Sauna Fair</strong><p>Tokyo, Japan. Japanese sauna event for sento, sauna goods, cold plunge culture and wellness brands.</p></a>
+<a class="event-card" href="sauna/events/sauna-expo-japan.html#year" data-end="2026-09-04"><img class="event-thumb" src="sauna/events/img/sauna-expo-japan-mini.png" alt=""><time>2 Sept 2026</time><strong>Sauna & Wellness Expo Japan</strong><p>Tokyo, Japan. Trade-focused sauna and wellness expo for equipment, operators and hospitality.</p></a>
+<a class="event-card" href="sauna/events/australia-sauna-cold-plunge-festival.html#year" data-end="2026-08-23"><img class="event-thumb" src="sauna/events/img/australia-sauna-cold-plunge-festival-mini.png" alt=""><time>21 Aug 2026</time><strong>Australia Sauna & Cold Plunge Festival</strong><p>Sydney, Australia. Australian festival concept around mobile saunas, cold plunges and recovery culture.</p></a>
+<a class="event-card" href="sauna/events/north-american-sauna-summit.html#year" data-end="2026-10-18"><img class="event-thumb" src="sauna/events/img/north-american-sauna-summit-mini.png" alt=""><time>16 Oct 2026</time><strong>North American Sauna Summit</strong><p>Minneapolis, United States. North American meeting point for public sauna, backyard builders and bathhouse operators.</p></a>
+<a class="event-card" href="sauna/events/canadian-sauna-culture-weekend.html#year" data-end="2026-02-22"><img class="event-thumb" src="sauna/events/img/canadian-sauna-culture-weekend-mini.png" alt=""><time>20 Feb 2026</time><strong>Canadian Sauna Culture Weekend</strong><p>Toronto, Canada. Winter weekend for Canadian sauna, cold exposure and Nordic-style social wellness.</p></a>
           </div></div>
+        </div>
+        <div class="right">
+          <section class="bastu-affiliate affiliate-section" aria-label="Sponsored sauna type guide">
+            <div class="affiliate-section__head"><h3>Find your sauna style</h3><span>Sponsored guide</span></div>
+            <p class="affiliate-section__intro">Pick the sauna setup that feels most like you, then see the gear that naturally fits that kind of session.</p>
+            <div class="sauna-type-tabs" role="tablist" aria-label="Sauna types">
+              <button class="sauna-type-tab" type="button" role="tab" aria-selected="true" data-sauna-tab="tent">Sauna tent</button>
+              <button class="sauna-type-tab" type="button" role="tab" aria-selected="false" data-sauna-tab="cabin">Garden cabin</button>
+              <button class="sauna-type-tab" type="button" role="tab" aria-selected="false" data-sauna-tab="plunge">Cold plunge</button>
+            </div>
+            <div class="sauna-type-panel is-active" data-sauna-panel="tent">
+              <article class="sauna-type-hero">
+                <img src="sauna/affiliate/bastu/bast-product-sauna.png" alt="Bastu sauna tent set up on rocks by the water">
+                <div class="sauna-type-hero__body"><h4>Sauna tent</h4><p>Best when sauna should be portable: cabins, lake days, temporary events and small gardens. Related gear focuses on heat control, wood-fire setup and comfort between hot/cold rounds.</p><div class="affiliate-product__meta"><span>Portable</span><span>Wood-fired</span><span>Outdoor</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="related-grid">
+                <article class="affiliate-product"><img src="https://bastsauna.com/cdn/shop/files/Termometertemp.png?format=jpg&v=1776777800&width=1200" alt="Bastu sauna thermometer product photo"><div class="affiliate-product__body"><h4>Thermometer</h4><p>Track gentle, classic and intense rounds.</p><div class="affiliate-product__meta"><span>Heat control</span><span>60-90°C</span></div><a class="bastu-button" href="https://bastsauna.com/en/products/bast-thermometer-coi" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="https://bastsauna.com/cdn/shop/files/Mossapng.png?format=jpg&v=1761055343&width=1200" alt="Bastu wool sauna hat product photo"><div class="affiliate-product__body"><h4>Wool sauna hat</h4><p>Buffers the hottest air around the head.</p><div class="affiliate-product__meta"><span>100% wool</span><span>Comfort</span></div><a class="bastu-button" href="https://bastsauna.com/en/products/bastum-hat-in-100-wool?variant=51010233270614" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="sauna/affiliate/bastu/extracted/brand-p22-02-Im45.png" alt="Hands lighting a small fire"><div class="affiliate-product__body"><h4>Fire starter kit</h4><p>Smoother first heat for wood-fired sessions.</p><div class="affiliate-product__meta"><span>Setup</span><span>Wood fire</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+            <div class="sauna-type-panel" data-sauna-panel="cabin">
+              <article class="sauna-type-hero">
+                <img src="sauna/affiliate/bastu/outdoor-sauna-cabin-generic.png" alt="Outdoor garden sauna cabin">
+                <div class="sauna-type-hero__body"><h4>Garden sauna cabin</h4><p>A more permanent sauna type for homes, rentals and hospitality. Related products lean toward towels, lighting, thermometers and things that make weekly use easier.</p><div class="affiliate-product__meta"><span>Permanent</span><span>Electric</span><span>Home</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="related-grid">
+                <article class="affiliate-product"><img src="https://bastsauna.com/cdn/shop/files/Termometertemp.png?format=jpg&v=1776777800&width=1200" alt="Bastu sauna thermometer product photo"><div class="affiliate-product__body"><h4>Thermometer</h4><p>Repeat the heat level that suits your household.</p><div class="affiliate-product__meta"><span>Heat control</span><span>Routine</span></div><a class="bastu-button" href="https://bastsauna.com/en/products/bast-thermometer-coi" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="sauna/affiliate/bastu/sauna-accessories-generic.png" alt="Sauna bucket ladle stones and oils"><div class="affiliate-product__body"><h4>Bucket and ladle</h4><p>The classic setup for steam and scent.</p><div class="affiliate-product__meta"><span>Löyly</span><span>Ritual</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="sauna/affiliate/bastu/sauna-clothing-generic.png" alt="Sauna towel robe hat and slippers"><div class="affiliate-product__body"><h4>Robe and towel set</h4><p>Useful for longer evenings and cooling breaks.</p><div class="affiliate-product__meta"><span>Comfort</span><span>After sauna</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+            <div class="sauna-type-panel" data-sauna-panel="plunge">
+              <article class="sauna-type-hero">
+                <img src="sauna/events/img/australia-sauna-cold-plunge-festival-mini.png" alt="Cold plunge sauna event">
+                <div class="sauna-type-hero__body"><h4>Cold plunge setup</h4><p>For recovery-focused users, the contrast between heat and cold is the core. Related gear should help with timing, warmth between rounds and outdoor comfort.</p><div class="affiliate-product__meta"><span>Recovery</span><span>Cold water</span><span>Events</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="related-grid">
+                <article class="affiliate-product"><img src="https://bastsauna.com/cdn/shop/files/Mossapng.png?format=jpg&v=1761055343&width=1200" alt="Bastu wool sauna hat product photo"><div class="affiliate-product__body"><h4>Wool sauna hat</h4><p>Keep the head comfortable between hot and cold.</p><div class="affiliate-product__meta"><span>100% wool</span><span>Cold breaks</span></div><a class="bastu-button" href="https://bastsauna.com/en/products/bastum-hat-in-100-wool?variant=51010233270614" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="sauna/affiliate/bastu/sauna-clothing-generic.png" alt="Sauna towel robe hat and slippers"><div class="affiliate-product__body"><h4>Robe and towel set</h4><p>Dry warmth after plunges and before the next round.</p><div class="affiliate-product__meta"><span>Dry breaks</span><span>Outdoor</span></div><a class="bastu-button" href="https://bastsauna.com/en/collections/sauna-tent" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="affiliate-product"><img src="https://bastsauna.com/cdn/shop/files/Termometertemp.png?format=jpg&v=1776777800&width=1200" alt="Bastu sauna thermometer product photo"><div class="affiliate-product__body"><h4>Thermometer</h4><p>Use heat zones to plan contrast rounds.</p><div class="affiliate-product__meta"><span>Timing</span><span>Heat zones</span></div><a class="bastu-button" href="https://bastsauna.com/en/products/bast-thermometer-coi" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </main>
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
     <script>
+      if (location.href.includes('localhost')) document.body.classList.add('is-localhost');
       (() => { const track = document.querySelector('[data-carousel-track]'); const prev = document.querySelector('[data-carousel-prev]'); const next = document.querySelector('[data-carousel-next]'); const controls = document.querySelector('[data-carousel-controls]'); if (!track || !prev || !next || !controls) return; const today = new Date(); today.setHours(0, 0, 0, 0); track.querySelectorAll('.event-card[data-end]').forEach((card) => { const end = new Date(card.dataset.end + 'T23:59:59'); if (end < today) card.hidden = true; }); const update = () => { const max = track.scrollWidth - track.clientWidth - 1; controls.hidden = max <= 1; prev.disabled = track.scrollLeft <= 1; next.disabled = track.scrollLeft >= max; }; const step = () => { const card = track.querySelector('.event-card:not([hidden])'); if (!card) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })); track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); })();
+      (() => { document.querySelectorAll('.affiliate-section').forEach((section) => { const row = section.querySelector('[data-affiliate-row]'); const prev = section.querySelector('[data-affiliate-prev]'); const next = section.querySelector('[data-affiliate-next]'); if (!row || !prev || !next) return; const update = () => { const max = row.scrollWidth - row.clientWidth - 1; prev.disabled = row.scrollLeft <= 1; next.disabled = row.scrollLeft >= max; }; const step = () => { const card = row.querySelector('.affiliate-product'); if (!card) return row.clientWidth; const gap = parseFloat(getComputedStyle(row).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' })); row.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); }); })();
+      (() => { const tabs = document.querySelectorAll('[data-sauna-tab]'); const panels = document.querySelectorAll('[data-sauna-panel]'); tabs.forEach((tab) => tab.addEventListener('click', () => { const target = tab.dataset.saunaTab; tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab))); panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.saunaPanel === target)); })); })();
     </script>
   </body>
 </html>
+

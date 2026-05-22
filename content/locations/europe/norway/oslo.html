@@ -13,6 +13,27 @@
   <link rel="stylesheet" href="../../../../assets/css/oneslider-mockup.css">
   <meta name="theme-color" content="#0d2137">
   <title>Oslo</title>
+  <style>
+    .weather-card { overflow: hidden; }
+    .weather-head { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .weather-head p { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.3; }
+    .weather-status { color: var(--muted); font-size: 12px; font-weight: 800; }
+    .weather-now { display: grid; grid-template-columns: minmax(110px,.72fr) minmax(0,1fr); gap: 12px; align-items: stretch; }
+    .weather-temp { display: grid; align-content: center; gap: 4px; min-height: 132px; padding: 14px; border-radius: 8px; background: linear-gradient(135deg, rgba(13,33,55,.95), rgba(33,91,122,.86)); color: #fff; }
+    .weather-temp strong { font-size: clamp(42px,5vw,64px); line-height: .9; }
+    .weather-temp span { color: rgba(255,255,255,.78); font-size: 13px; font-weight: 800; }
+    .weather-metrics { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+    .weather-metric { display: grid; gap: 4px; min-height: 62px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .weather-metric span { color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .weather-metric strong { color: var(--ink); font-size: 17px; line-height: 1.05; }
+    .weather-days { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 6px; margin-top: 12px; }
+    .weather-day { display: grid; gap: 4px; padding: 9px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.76); }
+    .weather-day span { color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; }
+    .weather-day strong { color: var(--ink); font-size: 14px; line-height: 1.1; }
+    .weather-source { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.25; }
+    .weather-source a { color: inherit; font-weight: 800; }
+    @media (max-width: 760px) { .weather-now { grid-template-columns: 1fr; } .weather-days { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  </style>
 </head>
 <body>
   <nav class="top-menu" aria-label="Location navigation">
@@ -91,6 +112,36 @@
         </div>
       </article>
 
+      <article class="card span-12 weather-card" data-weather-card>
+        <div class="weather-head">
+          <div>
+            <h2 class="card-title">Weather in Oslo</h2>
+            <p>Live city weather for planning events, walks, fjord trips and outdoor days.</p>
+          </div>
+          <span class="weather-status" data-weather-status>Season guide</span>
+        </div>
+        <div class="weather-now">
+          <div class="weather-temp">
+            <span data-weather-summary>Typical Oslo weather</span>
+            <strong data-weather-temp>Varies</strong>
+          </div>
+          <div class="weather-metrics">
+            <div class="weather-metric"><span>Feels like</span><strong data-weather-feels>Layer up</strong></div>
+            <div class="weather-metric"><span>Wind</span><strong data-weather-wind>Fjord breeze</strong></div>
+            <div class="weather-metric"><span>Humidity</span><strong data-weather-humidity>Changeable</strong></div>
+            <div class="weather-metric"><span>Rain now</span><strong data-weather-rain>Check rain</strong></div>
+          </div>
+        </div>
+        <div class="weather-days" data-weather-days aria-label="Five day forecast">
+          <div class="weather-day"><span>Spring</span><strong>4° / 13°</strong><span>Fresh, bright days</span></div>
+          <div class="weather-day"><span>Summer</span><strong>12° / 22°</strong><span>Long evenings</span></div>
+          <div class="weather-day"><span>Autumn</span><strong>5° / 14°</strong><span>Rain can shift fast</span></div>
+          <div class="weather-day"><span>Winter</span><strong>-5° / 3°</strong><span>Snow and ice possible</span></div>
+          <div class="weather-day"><span>Events</span><strong>Pack smart</strong><span>Bring a light shell</span></div>
+        </div>
+        <p class="weather-source">Live weather from <a href="https://open-meteo.com/">Open-Meteo</a> when available. Seasonal guide remains visible offline.</p>
+      </article>
+
       <article class="card span-12">
         <h2 class="card-title">Upcoming Events</h2>
         <div class="event-strip">
@@ -134,5 +185,86 @@
   </main>
 
   <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. Updated May 2026.</footer>
+  <script>
+    (() => {
+      const card = document.querySelector('[data-weather-card]');
+      if (!card) return;
+      const status = card.querySelector('[data-weather-status]');
+      const setText = (selector, value) => {
+        const node = card.querySelector(selector);
+        if (node) node.textContent = value;
+      };
+      const codeText = (code) => {
+        const map = {
+          0: 'Clear sky', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
+          45: 'Fog', 48: 'Rime fog', 51: 'Light drizzle', 53: 'Drizzle', 55: 'Dense drizzle',
+          61: 'Light rain', 63: 'Rain', 65: 'Heavy rain', 71: 'Light snow', 73: 'Snow', 75: 'Heavy snow',
+          80: 'Rain showers', 81: 'Rain showers', 82: 'Heavy showers', 95: 'Thunderstorm'
+        };
+        return map[code] || 'Changing weather';
+      };
+      const dayName = (iso) => new Intl.DateTimeFormat('en', { weekday: 'short' }).format(new Date(`${iso}T12:00:00`));
+      const renderFallback = () => {
+        setText('[data-weather-summary]', 'Typical Oslo weather');
+        setText('[data-weather-temp]', 'Varies');
+        setText('[data-weather-feels]', 'Layer up');
+        setText('[data-weather-wind]', 'Fjord breeze');
+        setText('[data-weather-humidity]', 'Changeable');
+        setText('[data-weather-rain]', 'Check rain');
+        const days = card.querySelector('[data-weather-days]');
+        if (days) {
+          days.innerHTML = ['Spring', 'Summer', 'Autumn', 'Winter', 'Events'].map((label, index) => `
+            <div class="weather-day">
+              <span>${label}</span>
+              <strong>${['4° / 13°', '12° / 22°', '5° / 14°', '-5° / 3°', 'Pack smart'][index]}</strong>
+              <span>${['Fresh, bright days', 'Long evenings', 'Rain can shift fast', 'Snow and ice possible', 'Bring a light shell'][index]}</span>
+            </div>
+          `).join('');
+        }
+        if (status) status.textContent = 'Forecast offline';
+      };
+      const requestJson = (url) => {
+        if (window.fetch) {
+          return fetch(url).then((response) => {
+            if (!response.ok) throw new Error('Weather unavailable');
+            return response.json();
+          });
+        }
+        if (window.XMLHttpRequest) {
+          return new Promise((resolve, reject) => {
+            const request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.onload = () => request.status >= 200 && request.status < 300 ? resolve(JSON.parse(request.responseText)) : reject(new Error('Weather unavailable'));
+            request.onerror = () => reject(new Error('Weather unavailable'));
+            request.send();
+          });
+        }
+        return Promise.reject(new Error('Weather unavailable'));
+      };
+      requestJson('https://api.open-meteo.com/v1/forecast?latitude=59.9139&longitude=10.7522&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weather_code&timezone=Europe%2FOslo&forecast_days=5')
+        .then((data) => {
+          const current = data.current || {};
+          setText('[data-weather-summary]', codeText(current.weather_code));
+          setText('[data-weather-temp]', `${Math.round(current.temperature_2m)}°`);
+          setText('[data-weather-feels]', `${Math.round(current.apparent_temperature)}°`);
+          setText('[data-weather-wind]', `${Math.round(current.wind_speed_10m)} km/h`);
+          setText('[data-weather-humidity]', `${Math.round(current.relative_humidity_2m)}%`);
+          setText('[data-weather-rain]', `${Number(current.precipitation || 0).toFixed(1)} mm`);
+          const days = card.querySelector('[data-weather-days]');
+          const daily = data.daily || {};
+          if (days && daily.time) {
+            days.innerHTML = daily.time.map((date, index) => `
+              <div class="weather-day">
+                <span>${dayName(date)}</span>
+                <strong>${Math.round(daily.temperature_2m_min[index])}° / ${Math.round(daily.temperature_2m_max[index])}°</strong>
+                <span>${Number(daily.precipitation_sum[index] || 0).toFixed(1)} mm · ${codeText(daily.weather_code[index])}</span>
+              </div>
+            `).join('');
+          }
+          if (status) status.textContent = 'Live';
+        })
+        .catch(renderFallback);
+    })();
+  </script>
 </body>
 </html>

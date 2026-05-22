@@ -45,6 +45,12 @@
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
 
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(20px,5vw,80px); }
+      body.is-localhost { height: 100vh; overflow: hidden; }
+      body.is-localhost .topic-slide { height: calc(100vh - 55px); min-height: 0; grid-template-rows: auto minmax(0, 1fr); padding: clamp(12px,2.4vw,30px); overflow: hidden; }
+      body.is-localhost .topic-hero { min-height: clamp(170px,24vh,260px); }
+      body.is-localhost .topic-panel { min-height: 0; overflow: hidden; }
+      body.is-localhost .left, body.is-localhost .right { max-height: 100%; overflow: auto; padding-right: 2px; }
+      body.is-localhost .site-footer { display: none; }
       .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, rgba(8,18,12,.62), rgba(8,18,12,.26) 46%, rgba(8,18,12,0) 72%), linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.18)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(46px,7vw,92px); line-height: .92; letter-spacing: 0; }
@@ -75,6 +81,52 @@
       .ranking-source { margin-top: 9px; text-transform: none; font-weight: 600; line-height: 1.25; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .golf-local-poc { display: none; }
+      body.is-localhost .golf-local-poc { display: grid; }
+      body:not(.is-localhost) .golf-local-poc { display: none; }
+      .golf-snapshot { gap: 9px; margin-bottom: 12px; }
+      .snapshot-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; }
+      .snapshot-head h2 { margin: 0; font-size: 22px; line-height: 1.1; }
+      .snapshot-head span { color: var(--muted); font-size: 12px; font-weight: 800; }
+      .snapshot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .snapshot-card { display: grid; gap: 7px; min-height: 118px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); }
+      body.is-localhost .snapshot-card { min-height: 96px; padding: 10px; }
+      .snapshot-card small { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }
+      .snapshot-card strong { font-size: 28px; line-height: .95; }
+      .snapshot-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
+      .golf-chart { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      body.is-localhost .golf-chart { padding: 10px; }
+      .golf-chart h3 { margin: 0; font-size: 18px; line-height: 1.1; }
+      .golf-bar { display: grid; grid-template-columns: 82px 1fr 58px; gap: 8px; align-items: center; color: var(--muted); font-size: 12px; }
+      .golf-bar span:first-child { color: var(--ink); font-weight: 900; }
+      .golf-bar__track { height: 10px; overflow: hidden; border-radius: 999px; background: #edf1ee; }
+      .golf-bar__fill { display: block; height: 100%; border-radius: inherit; background: var(--theme); }
+      .golf-setup { gap: 8px; margin-top: 12px; }
+      .golf-setup__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+      .golf-setup__head h3 { margin: 0; font-size: 22px; line-height: 1.05; }
+      .golf-setup__head span { color: var(--muted); font-size: 12px; font-weight: 800; }
+      .golf-setup__intro { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.32; }
+      .golf-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0; }
+      .golf-tab { flex: 0 0 auto; min-height: 36px; padding: 0 12px; border: 1px solid rgba(36,95,70,.34); border-radius: 999px; background: #fff; color: var(--theme); font-size: 13px; font-weight: 900; cursor: pointer; }
+      .golf-tab[aria-selected="true"] { background: var(--theme); color: #fff; border-color: var(--theme); }
+      .golf-panel { display: none; gap: 10px; }
+      .golf-panel.is-active { display: grid; }
+      .golf-hero-card { display: grid; grid-template-columns: minmax(210px, .55fr) minmax(0, 1fr); gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .golf-hero-card img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; border-radius: 8px; background: #edf1ee; }
+      body.is-localhost .golf-hero-card img { min-height: 170px; }
+      .golf-hero-card__body { display: grid; gap: 10px; align-content: start; }
+      .golf-hero-card h4 { margin: 0; font-size: 24px; line-height: 1.05; }
+      .golf-hero-card p, .golf-product p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.35; }
+      .golf-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+      .golf-meta span { padding: 4px 7px; border-radius: 999px; background: rgba(36,95,70,.09); color: var(--theme); font-size: 11px; font-weight: 900; }
+      .golf-related { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .golf-product { display: grid; grid-template-rows: 130px auto; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .golf-product img { display: block; width: 100%; height: 130px; object-fit: cover; background: #edf1ee; }
+      body.is-localhost .golf-product { grid-template-rows: 92px auto; }
+      body.is-localhost .golf-product img { height: 92px; }
+      .golf-product__body { display: grid; gap: 8px; padding: 12px; }
+      .golf-product h4 { margin: 0; font-size: 17px; line-height: 1.1; }
+      .golf-button { display: inline-flex; align-items: center; justify-content: center; justify-self: start; min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--theme); background: var(--theme); color: #fff; font-size: 13px; font-weight: 900; text-decoration: none; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
       .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
       .carousel-button:hover { background: var(--theme); color: white; }
@@ -106,9 +158,9 @@
       .language-code{display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;opacity:.82}
       .language-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-      @media (max-width: 1040px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } }
+      @media (max-width: 1040px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } body.is-localhost .topic-slide { min-height: 0; } }
       @media (max-width: 760px) { .topic-slide { padding: 12px; } .ranking-groups { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: calc((100% - 8px) / 2); } }
-      @media (max-width: 620px) { .fact-grid, .event-grid { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
+      @media (max-width: 620px) { .fact-grid, .event-grid, .snapshot-grid, .golf-hero-card, .golf-related { grid-template-columns: 1fr; } .golf-bar { grid-template-columns: 74px 1fr 52px; } .carousel-track .event-card { flex-basis: 100%; } }
       @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }
     </style>
   </head>
@@ -174,6 +226,21 @@
         </div>
 
         <div class="right">
+          <section class="golf-local-poc golf-snapshot" aria-label="Golf snapshot">
+            <div class="snapshot-head"><h2>Golf snapshot</h2><span>Local POC</span></div>
+            <div class="snapshot-grid">
+              <article class="snapshot-card"><small>Oldest major</small><strong>1860</strong><p>The Open Championship is the anchor for golf history and links culture.</p></article>
+              <article class="snapshot-card"><small>Major season</small><strong>4 + 5</strong><p>Four men's majors and five women's majors shape the elite calendar.</p></article>
+              <article class="snapshot-card"><small>Round shape</small><strong>18</strong><p>The standard round creates a natural event-day rhythm: front nine, back nine, final stretch.</p></article>
+            </div>
+            <div class="golf-chart">
+              <h3>What changes a round?</h3>
+              <div class="golf-bar"><span>Distance</span><div class="golf-bar__track"><i class="golf-bar__fill" style="width:82%"></i></div><span>Driver</span></div>
+              <div class="golf-bar"><span>Control</span><div class="golf-bar__track"><i class="golf-bar__fill" style="width:74%"></i></div><span>Wedges</span></div>
+              <div class="golf-bar"><span>Scoring</span><div class="golf-bar__track"><i class="golf-bar__fill" style="width:91%"></i></div><span>Putter</span></div>
+            </div>
+          </section>
+
           <section class="ranking-card" aria-label="Top 3 golfers by world ranking average points">
             <h2>Top 3 in the world</h2>
             <div class="ranking-groups">
@@ -203,6 +270,49 @@
             <p class="ranking-source">Men: Official World Golf Ranking, 10 May 2026. Women: Rolex Rankings, 11 May 2026.</p>
           </section>
 
+          <section class="golf-local-poc golf-setup" aria-label="Sponsored golf setup guide">
+            <div class="golf-setup__head"><h3>Find your golf setup</h3><span>Sponsored guide</span></div>
+            <p class="golf-setup__intro">Pick the type of golf day you are planning, then see the gear that naturally fits that round.</p>
+            <div class="golf-tabs" role="tablist" aria-label="Golf setup types">
+              <button class="golf-tab" type="button" role="tab" aria-selected="true" data-golf-tab="starter">Starter round</button>
+              <button class="golf-tab" type="button" role="tab" aria-selected="false" data-golf-tab="travel">Travel course</button>
+              <button class="golf-tab" type="button" role="tab" aria-selected="false" data-golf-tab="tech">Stats & practice</button>
+            </div>
+            <div class="golf-panel is-active" data-golf-panel="starter">
+              <article class="golf-hero-card">
+                <img src="golf/affiliate/poc/golf-starter-kit.png" alt="Golf starter equipment on a green">
+                <div class="golf-hero-card__body"><h4>Starter round</h4><p>For newer players or casual event visitors, the best setup is simple: forgiving clubs, enough balls, glove comfort and a bag that does not get in the way.</p><div class="golf-meta"><span>Forgiving</span><span>Simple</span><span>Comfort</span></div><a class="golf-button" href="https://www.titleist.com/" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="golf-related">
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-starter-kit.png" alt="Golf bag clubs balls and glove"><div class="golf-product__body"><h4>Starter kit</h4><p>Clubs, glove, balls and tees for a low-friction first round.</p><div class="golf-meta"><span>Clubs</span><span>Balls</span></div><a class="golf-button" href="https://www.titleist.com/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-apparel.png" alt="Golf jacket polo cap and shoes"><div class="golf-product__body"><h4>Weather layer</h4><p>Useful when event days shift from sun to wind or rain.</p><div class="golf-meta"><span>Rain</span><span>Comfort</span></div><a class="golf-button" href="https://www.footjoy.com/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-tech.png" alt="Golf rangefinder watch and scorecard"><div class="golf-product__body"><h4>Basic GPS</h4><p>Yardages help beginners choose clubs without guessing.</p><div class="golf-meta"><span>Distance</span><span>Confidence</span></div><a class="golf-button" href="https://www.garmin.com/en-US/c/sports-fitness/golf-gps/" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+            <div class="golf-panel" data-golf-panel="travel">
+              <article class="golf-hero-card">
+                <img src="img/golf-hero-wide.png" alt="Golf course landscape">
+                <div class="golf-hero-card__body"><h4>Travel course</h4><p>For destination golf, gear should solve weather, walking and packing. Think layers, shoes, compact tech and a bag that travels well.</p><div class="golf-meta"><span>Walking</span><span>Weather</span><span>Travel</span></div><a class="golf-button" href="https://www.footjoy.com/" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="golf-related">
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-apparel.png" alt="Golf apparel and weather gear"><div class="golf-product__body"><h4>Rain jacket</h4><p>Lightweight protection for links and shoulder-season rounds.</p><div class="golf-meta"><span>Wind</span><span>Rain</span></div><a class="golf-button" href="https://www.footjoy.com/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-starter-kit.png" alt="Golf travel equipment"><div class="golf-product__body"><h4>Travel bag</h4><p>Protects clubs and keeps airport golf less chaotic.</p><div class="golf-meta"><span>Protection</span><span>Travel</span></div><a class="golf-button" href="https://www.titleist.com/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-tech.png" alt="Golf GPS and rangefinder"><div class="golf-product__body"><h4>Course GPS</h4><p>Useful on unfamiliar courses where carries and hazards are hard to read.</p><div class="golf-meta"><span>Hazards</span><span>Yardage</span></div><a class="golf-button" href="https://www.garmin.com/en-US/c/sports-fitness/golf-gps/" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+            <div class="golf-panel" data-golf-panel="tech">
+              <article class="golf-hero-card">
+                <img src="golf/affiliate/poc/golf-tech.png" alt="Golf technology accessories on a table">
+                <div class="golf-hero-card__body"><h4>Stats & practice</h4><p>For players who like feedback, the setup shifts from clubs to measurement: rangefinder, GPS, launch numbers and putting practice tools.</p><div class="golf-meta"><span>Data</span><span>Practice</span><span>Scoring</span></div><a class="golf-button" href="https://www.garmin.com/en-US/c/sports-fitness/golf-gps/" rel="nofollow sponsored">Mer info</a></div>
+              </article>
+              <div class="golf-related">
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-tech.png" alt="Golf rangefinder watch and scorecard"><div class="golf-product__body"><h4>Rangefinder</h4><p>Precise carry and pin numbers for better club decisions.</p><div class="golf-meta"><span>Distance</span><span>Approach</span></div><a class="golf-button" href="https://www.garmin.com/en-US/c/sports-fitness/golf-gps/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-starter-kit.png" alt="Golf balls and training gear"><div class="golf-product__body"><h4>Practice balls</h4><p>Repeatable feel matters when working on wedges and putting.</p><div class="golf-meta"><span>Practice</span><span>Feel</span></div><a class="golf-button" href="https://www.titleist.com/" rel="nofollow sponsored">Mer info</a></div></article>
+                <article class="golf-product"><img src="golf/affiliate/poc/golf-apparel.png" alt="Golf shoes and apparel"><div class="golf-product__body"><h4>Stable shoes</h4><p>Grip and comfort matter when practice turns into 18 holes.</p><div class="golf-meta"><span>Grip</span><span>Walking</span></div><a class="golf-button" href="https://www.footjoy.com/" rel="nofollow sponsored">Mer info</a></div></article>
+              </div>
+            </div>
+          </section>
+
           <section>
             <div class="section-heading">
               <h2>Upcoming majors</h2>
@@ -225,6 +335,7 @@
 
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>. All rights reserved.</p></footer>
     <script>
+      if (location.href.includes('localhost')) document.body.classList.add('is-localhost');
       (() => {
         const track = document.querySelector('[data-carousel-track]');
         const prev = document.querySelector('[data-carousel-prev]');
@@ -258,6 +369,7 @@
         window.addEventListener('resize', update);
         update();
       })();
+      (() => { const tabs = document.querySelectorAll('[data-golf-tab]'); const panels = document.querySelectorAll('[data-golf-panel]'); tabs.forEach((tab) => tab.addEventListener('click', () => { const target = tab.dataset.golfTab; tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab))); panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.golfPanel === target)); })); })();
     </script>
   </body>
 </html>
