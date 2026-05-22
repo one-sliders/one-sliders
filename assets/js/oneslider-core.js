@@ -288,12 +288,38 @@
 
     var backLink = document.createElement('a');
     backLink.className = 'ios-back';
+    // href is the static fallback parent, used when there's no in-site
+    // history (cold landing from Google, opened in a new tab, etc.).
+    // The click handler below upgrades the behaviour to "browser back"
+    // when the visitor actually navigated here from another OneSliders
+    // page — that's the natural iOS-style behaviour: tap "‹ Foo" to
+    // undo your last step, not jump to the heuristic parent.
     backLink.href = back.href;
     backLink.setAttribute('aria-label', 'Back to ' + back.label);
     backLink.appendChild(svg(ICONS.back));
     var backSpan = document.createElement('span');
     backSpan.textContent = back.label;
     backLink.appendChild(backSpan);
+
+    backLink.addEventListener('click', function (e) {
+      // Respect modifier keys / middle-click / right-click — let the
+      // browser handle "open in new tab" against the static href.
+      if (e.defaultPrevented || e.button !== 0 ||
+          e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      var ref = document.referrer || '';
+      // We came from a OneSliders page in this same tab if:
+      //   - referrer is set
+      //   - it's the same origin (or both are file://)
+      //   - there's actually something to go back to in history
+      var sameOrigin =
+        ref.indexOf(location.origin + '/') === 0 ||
+        (location.protocol === 'file:' && ref.indexOf('file://') === 0);
+      if (sameOrigin && window.history.length > 1) {
+        e.preventDefault();
+        window.history.back();
+      }
+    });
 
     var titleEl = document.createElement('h1');
     titleEl.className = 'ios-title';
