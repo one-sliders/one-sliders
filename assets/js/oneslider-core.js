@@ -295,11 +295,10 @@
     // page — that's the natural iOS-style behaviour: tap "‹ Foo" to
     // undo your last step, not jump to the heuristic parent.
     backLink.href = back.href;
+    // aria-label keeps the destination announced to screen readers
+    // even though the chevron renders icon-only.
     backLink.setAttribute('aria-label', 'Back to ' + back.label);
     backLink.appendChild(svg(ICONS.back));
-    var backSpan = document.createElement('span');
-    backSpan.textContent = back.label;
-    backLink.appendChild(backSpan);
 
     backLink.addEventListener('click', function (e) {
       // Respect modifier keys / middle-click / right-click — let the
