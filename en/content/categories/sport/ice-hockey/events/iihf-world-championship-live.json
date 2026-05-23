@@ -1,0 +1,705 @@
+{
+  "event": "iihf-world-championship",
+  "updated": "23 May 2026",
+  "sourceNote": "Update groupPanels for each group: upcomingMatches, completedMatches, and standingsDetail. Keep team names paired with their matching url and flag.",
+  "parts": {
+    "groups": {
+      "blocks": [
+        {
+          "label": "Group tracker",
+          "title": "Choose Group A or Group B",
+          "className": "part-card--group-filter",
+          "groupPanels": [
+            {
+              "id": "group-a",
+              "label": "Group A",
+              "upcomingMatches": [
+                {
+                  "dateLabel": "Today, 23 May",
+                  "time": "20:20",
+                  "group": "Group A",
+                  "venue": "Zurich",
+                  "home": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  }
+                },
+                {
+                  "dateLabel": "Tomorrow, 24 May",
+                  "time": "16:20",
+                  "group": "Group A",
+                  "venue": "Zurich",
+                  "home": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  }
+                },
+                {
+                  "dateLabel": "Tomorrow, 24 May",
+                  "time": "20:20",
+                  "group": "Group A",
+                  "venue": "Zurich",
+                  "home": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  }
+                }
+              ],
+              "standingsLabel": "Current table after 23 May early games",
+              "standingsDetail": "<span class='standings-table'><span class='standings-row standings-row--head'><span>#</span><span>Team</span><span>GP</span><span>Goals</span><span>Pts</span><span>Status</span></span><span class='standings-row standings-row--advance'><b>1</b><a class='country' href='/content/locations/europe/switzerland/index.html'><img src='/content/locations/europe/switzerland/img/flag.svg' alt='' width='20' height='14'>Switzerland</a><span>6 GP</span><span>35:5</span><strong>18</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>2</b><a class='country' href='/content/locations/europe/finland/index.html'><img src='/content/locations/europe/finland/img/flag.svg' alt='' width='20' height='14'>Finland</a><span>5 GP</span><span>24:5</span><strong>15</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>3</b><a class='country' href='/content/locations/europe/austria/index.html'><img src='/content/locations/europe/austria/img/flag.svg' alt='' width='20' height='14'>Austria</a><span>4 GP</span><span>12:14</span><strong>9</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>4</b><a class='country' href='/content/locations/europe/latvia/index.html'><img src='/content/locations/europe/latvia/img/flag.svg' alt='' width='20' height='14'>Latvia</a><span>5 GP</span><span>10:16</span><strong>6</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--outside'><b>5</b><a class='country' href='/content/locations/north-america/usa/index.html'><img src='/content/locations/north-america/usa/img/flag.svg' alt='' width='20' height='14'>United States</a><span>5 GP</span><span>14:17</span><strong>5</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>6</b><a class='country' href='/content/locations/europe/germany/index.html'><img src='/content/locations/europe/germany/img/flag.svg' alt='' width='20' height='14'>Germany</a><span>5 GP</span><span>11:17</span><strong>4</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>7</b><a class='country' href='/content/locations/europe/hungary/index.html'><img src='/content/locations/europe/hungary/img/flag.svg' alt='' width='20' height='14'>Hungary</a><span>5 GP</span><span>10:23</span><strong>3</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>8</b><a class='country' href='/content/locations/europe/united-kingdom/index.html'><img src='/content/locations/europe/united-kingdom/img/flag.svg' alt='' width='20' height='14'>United Kingdom</a><span>5 GP</span><span>4:23</span><strong>0</strong><em class='standings-status standings-status--outside'>Outside</em></span></span><span class='match-note'>Top four advance to the quarter-finals. Updated after IIHF-posted 23 May early games.</span>",
+              "completedMatches": [
+                {
+                  "date": "15 May",
+                  "home": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  },
+                  "score": "3-1",
+                  "away": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "15 May",
+                  "home": {
+                    "name": "United States",
+                    "url": "/content/locations/north-america/usa/index.html",
+                    "flag": "/content/locations/north-america/usa/img/flag.svg"
+                  },
+                  "score": "1-3",
+                  "away": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  },
+                  "score": "2-5",
+                  "away": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "Hungary",
+                    "url": "/content/locations/europe/hungary/index.html",
+                    "flag": "/content/locations/europe/hungary/img/flag.svg"
+                  },
+                  "score": "1-4",
+                  "away": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  },
+                  "score": "4-2",
+                  "away": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  },
+                  "score": "1-5",
+                  "away": {
+                    "name": "United States",
+                    "url": "/content/locations/north-america/usa/index.html",
+                    "flag": "/content/locations/north-america/usa/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  },
+                  "score": "4-2",
+                  "away": {
+                    "name": "Hungary",
+                    "url": "/content/locations/europe/hungary/index.html",
+                    "flag": "/content/locations/europe/hungary/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  },
+                  "score": "0-2",
+                  "away": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "18 May",
+                  "home": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  },
+                  "score": "6-2",
+                  "away": {
+                    "name": "United States",
+                    "url": "/content/locations/north-america/usa/index.html",
+                    "flag": "/content/locations/north-america/usa/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "18 May",
+                  "home": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  },
+                  "score": "1-6",
+                  "away": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "19 May",
+                  "home": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  },
+                  "score": "1-3",
+                  "away": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "19 May",
+                  "home": {
+                    "name": "Hungary",
+                    "url": "/content/locations/europe/hungary/index.html",
+                    "flag": "/content/locations/europe/hungary/img/flag.svg"
+                  },
+                  "score": "5-0",
+                  "away": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "20 May",
+                  "home": {
+                    "name": "Austria",
+                    "url": "/content/locations/europe/austria/index.html",
+                    "flag": "/content/locations/europe/austria/img/flag.svg"
+                  },
+                  "score": "0-9",
+                  "away": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "20 May",
+                  "home": {
+                    "name": "United States",
+                    "url": "/content/locations/north-america/usa/index.html",
+                    "flag": "/content/locations/north-america/usa/img/flag.svg"
+                  },
+                  "score": "4-3 SO",
+                  "away": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "21 May",
+                  "home": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  },
+                  "score": "7-1",
+                  "away": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "21 May",
+                  "home": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  },
+                  "score": "4-1",
+                  "away": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "22 May",
+                  "home": {
+                    "name": "Germany",
+                    "url": "/content/locations/europe/germany/index.html",
+                    "flag": "/content/locations/europe/germany/img/flag.svg"
+                  },
+                  "score": "6-2",
+                  "away": {
+                    "name": "Hungary",
+                    "url": "/content/locations/europe/hungary/index.html",
+                    "flag": "/content/locations/europe/hungary/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "22 May",
+                  "home": {
+                    "name": "Finland",
+                    "url": "/content/locations/europe/finland/index.html",
+                    "flag": "/content/locations/europe/finland/img/flag.svg"
+                  },
+                  "score": "4-0",
+                  "away": {
+                    "name": "United Kingdom",
+                    "url": "/content/locations/europe/united-kingdom/index.html",
+                    "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "23 May",
+                  "home": {
+                    "name": "Latvia",
+                    "url": "/content/locations/europe/latvia/index.html",
+                    "flag": "/content/locations/europe/latvia/img/flag.svg"
+                  },
+                  "score": "4-2",
+                  "away": {
+                    "name": "United States",
+                    "url": "/content/locations/north-america/usa/index.html",
+                    "flag": "/content/locations/north-america/usa/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "23 May",
+                  "home": {
+                    "name": "Switzerland",
+                    "url": "/content/locations/europe/switzerland/index.html",
+                    "flag": "/content/locations/europe/switzerland/img/flag.svg"
+                  },
+                  "score": "9-0",
+                  "away": {
+                    "name": "Hungary",
+                    "url": "/content/locations/europe/hungary/index.html",
+                    "flag": "/content/locations/europe/hungary/img/flag.svg"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "group-b",
+              "label": "Group B",
+              "upcomingMatches": [
+                {
+                  "dateLabel": "Today, 23 May",
+                  "time": "20:20",
+                  "group": "Group B",
+                  "venue": "Fribourg",
+                  "home": {
+                    "name": "Norway",
+                    "url": "/content/locations/europe/norway/index.html",
+                    "flag": "/content/locations/europe/norway/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  }
+                },
+                {
+                  "dateLabel": "Tomorrow, 24 May",
+                  "time": "16:20",
+                  "group": "Group B",
+                  "venue": "Fribourg",
+                  "home": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  }
+                },
+                {
+                  "dateLabel": "Tomorrow, 24 May",
+                  "time": "20:20",
+                  "group": "Group B",
+                  "venue": "Fribourg",
+                  "home": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  },
+                  "away": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  }
+                }
+              ],
+              "standingsLabel": "Current table after 23 May early games",
+              "standingsDetail": "<span class='standings-table'><span class='standings-row standings-row--head'><span>#</span><span>Team</span><span>GP</span><span>Goals</span><span>Pts</span><span>Status</span></span><span class='standings-row standings-row--advance'><b>1</b><a class='country' href='/content/locations/north-america/canada/index.html'><img src='/content/locations/north-america/canada/img/flag.svg' alt='' width='20' height='14'>Canada</a><span>5 GP</span><span>25:10</span><strong>14</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>2</b><a class='country' href='/content/locations/europe/czechia/index.html'><img src='/content/locations/europe/czechia/img/flag.svg' alt='' width='20' height='14'>Czechia</a><span>5 GP</span><span>16:10</span><strong>13</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>3</b><a class='country' href='/content/locations/europe/slovakia/index.html'><img src='/content/locations/europe/slovakia/img/flag.svg' alt='' width='20' height='14'>Slovakia</a><span>5 GP</span><span>18:10</span><strong>11</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--advance'><b>4</b><a class='country' href='/content/locations/europe/sweden/index.html'><img src='/content/locations/europe/sweden/img/flag.svg' alt='' width='20' height='14'>Sweden</a><span>5 GP</span><span>21:11</span><strong>9</strong><em class='standings-status standings-status--advance'>QF line</em></span><span class='standings-row standings-row--outside'><b>5</b><a class='country' href='/content/locations/europe/norway/index.html'><img src='/content/locations/europe/norway/img/flag.svg' alt='' width='20' height='14'>Norway</a><span>4 GP</span><span>14:8</span><strong>7</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>6</b><a class='country' href='/content/locations/europe/denmark/index.html'><img src='/content/locations/europe/denmark/img/flag.svg' alt='' width='20' height='14'>Denmark</a><span>5 GP</span><span>9:20</span><strong>3</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>7</b><a class='country' href='/content/locations/europe/slovenia/index.html'><img src='/content/locations/europe/slovenia/img/flag.svg' alt='' width='20' height='14'>Slovenia</a><span>6 GP</span><span>8:24</span><strong>3</strong><em class='standings-status standings-status--outside'>Outside</em></span><span class='standings-row standings-row--outside'><b>8</b><a class='country' href='/content/locations/europe/italy/index.html'><img src='/content/locations/europe/italy/img/flag.svg' alt='' width='20' height='14'>Italy</a><span>5 GP</span><span>2:20</span><strong>0</strong><em class='standings-status standings-status--outside'>Outside</em></span></span><span class='match-note'>Top four advance to the quarter-finals. Updated after IIHF-posted 23 May early games.</span>",
+              "completedMatches": [
+                {
+                  "date": "15 May",
+                  "home": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  },
+                  "score": "5-3",
+                  "away": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "15 May",
+                  "home": {
+                    "name": "Czechia",
+                    "url": "/content/locations/europe/czechia/index.html",
+                    "flag": "/content/locations/europe/czechia/img/flag.svg"
+                  },
+                  "score": "4-1",
+                  "away": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  },
+                  "score": "2-1",
+                  "away": {
+                    "name": "Norway",
+                    "url": "/content/locations/europe/norway/index.html",
+                    "flag": "/content/locations/europe/norway/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  },
+                  "score": "0-6",
+                  "away": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "16 May",
+                  "home": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  },
+                  "score": "3-2 OT",
+                  "away": {
+                    "name": "Czechia",
+                    "url": "/content/locations/europe/czechia/index.html",
+                    "flag": "/content/locations/europe/czechia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  },
+                  "score": "1-4",
+                  "away": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  },
+                  "score": "2-6",
+                  "away": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "17 May",
+                  "home": {
+                    "name": "Norway",
+                    "url": "/content/locations/europe/norway/index.html",
+                    "flag": "/content/locations/europe/norway/img/flag.svg"
+                  },
+                  "score": "4-0",
+                  "away": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "18 May",
+                  "home": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  },
+                  "score": "5-1",
+                  "away": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "18 May",
+                  "home": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  },
+                  "score": "3-4",
+                  "away": {
+                    "name": "Czechia",
+                    "url": "/content/locations/europe/czechia/index.html",
+                    "flag": "/content/locations/europe/czechia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "19 May",
+                  "home": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  },
+                  "score": "0-4",
+                  "away": {
+                    "name": "Norway",
+                    "url": "/content/locations/europe/norway/index.html",
+                    "flag": "/content/locations/europe/norway/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "19 May",
+                  "home": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  },
+                  "score": "4-5 SO",
+                  "away": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "20 May",
+                  "home": {
+                    "name": "Czechia",
+                    "url": "/content/locations/europe/czechia/index.html",
+                    "flag": "/content/locations/europe/czechia/img/flag.svg"
+                  },
+                  "score": "3-1",
+                  "away": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "20 May",
+                  "home": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  },
+                  "score": "6-0",
+                  "away": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "21 May",
+                  "home": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  },
+                  "score": "6-5 OT",
+                  "away": {
+                    "name": "Norway",
+                    "url": "/content/locations/europe/norway/index.html",
+                    "flag": "/content/locations/europe/norway/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "21 May",
+                  "home": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  },
+                  "score": "5-1",
+                  "away": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "22 May",
+                  "home": {
+                    "name": "Canada",
+                    "url": "/content/locations/north-america/canada/index.html",
+                    "flag": "/content/locations/north-america/canada/img/flag.svg"
+                  },
+                  "score": "3-1",
+                  "away": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "22 May",
+                  "home": {
+                    "name": "Sweden",
+                    "url": "/content/locations/europe/sweden/index.html",
+                    "flag": "/content/locations/europe/sweden/img/flag.svg"
+                  },
+                  "score": "3-0",
+                  "away": {
+                    "name": "Italy",
+                    "url": "/content/locations/europe/italy/index.html",
+                    "flag": "/content/locations/europe/italy/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "23 May",
+                  "home": {
+                    "name": "Denmark",
+                    "url": "/content/locations/europe/denmark/index.html",
+                    "flag": "/content/locations/europe/denmark/img/flag.svg"
+                  },
+                  "score": "4-0",
+                  "away": {
+                    "name": "Slovenia",
+                    "url": "/content/locations/europe/slovenia/index.html",
+                    "flag": "/content/locations/europe/slovenia/img/flag.svg"
+                  }
+                },
+                {
+                  "date": "23 May",
+                  "home": {
+                    "name": "Slovakia",
+                    "url": "/content/locations/europe/slovakia/index.html",
+                    "flag": "/content/locations/europe/slovakia/img/flag.svg"
+                  },
+                  "score": "2-3",
+                  "away": {
+                    "name": "Czechia",
+                    "url": "/content/locations/europe/czechia/index.html",
+                    "flag": "/content/locations/europe/czechia/img/flag.svg"
+                  }
+                }
+              ]
+            }
+          ],
+          "note": "Each group view shows upcoming games, completed group results and the current standings. Updated after IIHF-posted 23 May early games."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "label": "IIHF 2026 official schedule and results",
+      "url": "https://www.iihf.com/en/events/2026/wm/schedule"
+    },
+    {
+      "label": "IIHF 2026 tournament home and standings",
+      "url": "https://www.iihf.com/en/events/2026/wm/"
+    }
+  ]
+}

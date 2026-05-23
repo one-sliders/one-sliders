@@ -1016,8 +1016,53 @@ a {
   grid-column: span 4;
 }
 
+.event-slide[data-slide="parts"] .part-page {
+  gap: 8px;
+}
+
+.event-slide[data-slide="parts"] .part-page__header {
+  padding: 10px;
+}
+
+.event-slide[data-slide="parts"] .part-page__header h3 {
+  margin-top: 4px;
+  font-size: clamp(22px, 2vw, 30px);
+}
+
+.event-slide[data-slide="parts"] .part-page__header p {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.event-slide[data-slide="parts"] .part-page__grid {
+  gap: 8px;
+}
+
+.part-page__grid > .part-card.part-card--upcoming {
+  grid-column: 1 / -1;
+}
+
+.part-page__grid > .part-card.part-card--group-filter {
+  grid-column: 1 / -1;
+}
+
+.event-slide[data-slide="parts"] .part-card {
+  padding: 9px;
+}
+
+.event-slide[data-slide="parts"] .part-card strong {
+  margin-top: 3px;
+  font-size: 15px;
+}
+
+.event-slide[data-slide="parts"] .part-card p {
+  margin-top: 5px;
+  line-height: 1.18;
+}
+
 .part-card--results p {
-  max-height: clamp(220px, 31vh, 330px) !important;
+  max-height: clamp(170px, 25vh, 250px) !important;
   overflow-y: auto !important;
   padding-right: 4px;
 }
@@ -1025,8 +1070,8 @@ a {
 .part-card .match-results {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 6px;
 }
 
 .part-card .match-result {
@@ -1035,7 +1080,7 @@ a {
   align-items: center;
   gap: 6px;
   min-width: 0;
-  padding: 5px 7px;
+  padding: 4px 6px;
   border: 1px solid rgba(33, 78, 104, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
@@ -1079,12 +1124,186 @@ a {
 
 .part-card .match-note {
   display: block;
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--event-muted);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.part-card--upcoming p {
+  overflow: hidden;
+}
+
+.part-card .upcoming-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 6px;
+  padding: 2px 0;
+}
+
+.part-card .upcoming-match {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 5px 6px;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.part-card .upcoming-match__meta,
+.part-card .upcoming-match__place {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.part-card .upcoming-match__teams {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+}
+
+.part-card .upcoming-match .country {
+  min-width: 0;
+  justify-self: start;
+  white-space: nowrap;
+}
+
+.part-card .upcoming-tabs {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  overflow-x: auto;
+  padding: 2px 0 4px;
+}
+
+.part-card .upcoming-tab {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(11, 124, 81, 0.34);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--event-theme);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.part-card .upcoming-tab[aria-selected="true"] {
+  border-color: var(--event-theme);
+  background: var(--event-theme);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.part-card .upcoming-tab-panel {
+  display: block;
+}
+
+.part-card .upcoming-tab-panel[hidden] {
+  display: none;
+}
+
+.part-card .group-filter__controls {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.part-card .group-filter__button {
+  min-height: 36px;
+  padding: 0 16px;
+  border: 1px solid rgba(11, 124, 81, 0.34);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--event-theme);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.part-card .group-filter__button[aria-pressed="true"] {
+  border-color: var(--event-theme);
+  background: var(--event-theme);
+  color: #ffffff;
+}
+
+.part-card .group-filter__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.part-card .group-filter__panel[hidden] {
+  display: none;
+}
+
+.part-card .group-filter__section {
+  display: block;
+  min-width: 0;
+}
+
+.part-card .group-filter__label {
+  display: block;
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.part-card--group-filter .upcoming-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.part-card--group-filter .standings-table {
+  margin-top: 6px;
+}
+
+.part-card--group-filter .standings-row {
+  padding: 3px 6px;
+}
+
+.part-card--group-filter .group-filter__section--standings {
+  max-height: 260px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.part-card--group-filter .group-filter__section--results {
+  max-height: 260px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.part-card--group-filter .group-filter__section:first-child {
+  grid-column: auto;
+}
+
+.part-card--group-filter > p > .match-note {
+  display: none;
+}
+
+.part-card .group-filter__controls {
+  margin-top: 5px;
+}
+
+.part-card .group-filter__panel {
+  margin-top: 5px;
+  gap: 5px;
 }
 
 .part-card .people-table {
@@ -1156,15 +1375,15 @@ a {
 }
 
 .part-card--standings p {
-  max-height: clamp(220px, 31vh, 330px) !important;
+  max-height: clamp(170px, 25vh, 250px) !important;
   overflow: auto !important;
   padding-bottom: 2px;
 }
 
 .part-card .standings-table {
   display: grid;
-  gap: 5px;
-  margin-top: 10px;
+  gap: 4px;
+  margin-top: 6px;
   min-width: 0;
 }
 
@@ -1173,7 +1392,7 @@ a {
   grid-template-columns: 22px minmax(0, 1fr) 40px 38px 58px;
   align-items: center;
   gap: 6px;
-  padding: 5px 7px;
+  padding: 4px 6px;
   border: 1px solid rgba(33, 78, 104, 0.14);
   border-left: 4px solid transparent;
   border-radius: 8px;
@@ -1209,7 +1428,7 @@ a {
 .part-card .standings-row b,
 .part-card .standings-row strong {
   color: var(--event-ink);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -1429,6 +1648,10 @@ a {
 
   .part-card .match-result {
     grid-template-columns: 54px minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+
+  .part-card .upcoming-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .event-slide[data-slide="year"] .question-grid {
@@ -1739,6 +1962,10 @@ a {
     gap: 5px;
   }
 
+  .part-card .upcoming-list {
+    grid-template-columns: 1fr;
+  }
+
   .event-slide[data-slide="general"] .card--rank .rank-list {
     gap: 4px;
   }
@@ -2022,4 +2249,107 @@ a {
     outline: 2px solid rgba(11, 124, 81, 0.32);
     outline-offset: 3px;
   }
+}
+
+@media (min-width: 900px) {
+  .event-slide[data-slide="parts"] .part-card .upcoming-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .event-slide[data-slide="parts"] .part-card .upcoming-match__teams {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+
+  .event-slide[data-slide="parts"] .part-card .upcoming-match .country {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 1300px) {
+  .event-slide[data-slide="parts"] .part-card--results p,
+  .event-slide[data-slide="parts"] .part-card--standings p {
+    max-height: clamp(120px, 18vh, 180px) !important;
+  }
+}
+
+.event-slide[data-slide="parts"] .part-page__header,
+.event-slide[data-slide="parts"] .part-page > .facts-strip {
+  display: none;
+}
+
+.event-slide[data-slide="parts"] .part-card--results p,
+.event-slide[data-slide="parts"] .part-card--standings p {
+  max-height: 132px !important;
+}
+
+.event-slide[data-slide="parts"] .part-card .upcoming-list {
+  gap: 4px;
+}
+
+.event-slide[data-slide="parts"] .part-card--upcoming .upcoming-match__place,
+.event-slide[data-slide="parts"] .part-card--upcoming .match-note {
+  display: none;
+}
+
+.event-slide[data-slide="parts"] .part-card--upcoming .upcoming-match {
+  padding: 3px 5px;
+}
+
+.event-slide[data-slide="parts"] .part-card--upcoming .upcoming-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.event-slide[data-slide="parts"] .part-card--upcoming .upcoming-match__teams {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+.event-slide[data-slide="parts"] .part-card--upcoming .upcoming-match__meta {
+  font-size: 9px;
+}
+
+.event-slide[data-slide="parts"] .part-detail {
+  margin-top: 4px !important;
+}
+
+.event-slide[data-slide="parts"] .part-page__header {
+  display: block;
+}
+
+.event-slide[data-slide="parts"] .part-page > .facts-strip {
+  display: grid;
+}
+
+.event-slide[data-slide="parts"] .part-detail {
+  margin-top: 18px !important;
+}
+
+.event-slide[data-slide="parts"] .part-card--results p {
+  max-height: 300px !important;
+}
+
+.part-card--group-filter .group-filter__section--standings {
+  max-height: 260px;
+}
+
+.part-card--group-filter > p > .match-note,
+.event-slide[data-slide="parts"] .part-card--group-filter .upcoming-match__place {
+  display: block;
+}
+
+.part-card .group-filter__controls {
+  margin-top: 10px;
+}
+
+.part-card .group-filter__panel {
+  margin-top: 10px;
+  gap: 12px;
+}
+
+.event-slide[data-slide="parts"] .event-slide__content {
+  max-height: calc(100vh - 86px);
+  overflow-y: auto;
+  padding-bottom: 96px;
+  overscroll-behavior: contain;
 }

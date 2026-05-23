@@ -13,6 +13,40 @@
     }
   }
 
+  function mergeExternalPartBlocks(data, done) {
+    var parts = data && data.parts ? data.parts : [];
+    var pending = parts.filter(function (part) { return part.externalBlocksSrc; });
+    if (!pending.length) {
+      done(data);
+      return;
+    }
+
+    var remaining = pending.length;
+    function finish() {
+      remaining -= 1;
+      if (remaining <= 0) done(data);
+    }
+
+    pending.forEach(function (part) {
+      fetch(part.externalBlocksSrc, { cache: 'no-cache' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Could not load ' + part.externalBlocksSrc);
+          return response.json();
+        })
+        .then(function (externalData) {
+          var partKey = part.externalBlocksPart || part.id;
+          var externalPart = externalData && externalData.parts && externalData.parts[partKey];
+          if (!externalPart || !Array.isArray(externalPart.blocks)) return;
+          part.blocks = (part.blocks || []).concat(externalPart.blocks);
+        })
+        .catch(function (error) {
+          window.__eventRenderErrors = window.__eventRenderErrors || [];
+          window.__eventRenderErrors.push(String(error && error.message ? error.message : error));
+        })
+        .then(finish);
+    });
+  }
+
   function country(item) {
     if (!item) return '';
     var image = item.flag ? '<img src="' + item.flag + '" alt="" width="20" height="14">' : '';
@@ -22,6 +56,72 @@
 
   function countries(items) {
     return (items || []).map(country).join(' ');
+  }
+
+  function matchRows(matches, note) {
+    var rows = (matches || []).map(function (match) {
+      return '<span class="match-result">' +
+        '<time>' + (match.date || 'TBC') + '</time>' +
+        country(match.home) +
+        '<span class="match-score">' + (match.score || 'TBC') + '</span>' +
+        country(match.away) +
+      '</span>';
+    }).join('');
+    return '<span class="match-results">' + rows + '</span>' +
+      (note ? '<span class="match-note">' + note + '</span>' : '');
+  }
+
+  function upcomingRows(matches, note) {
+    var rows = (matches || []).map(function (match) {
+      return '<span class="upcoming-match">' +
+        '<span class="upcoming-match__meta">' + (match.dateLabel || match.date || 'TBC') + ' · ' + (match.time || 'TBC') + '</span>' +
+        '<span class="upcoming-match__teams">' + country(match.home) + '<span class="match-score">vs</span>' + country(match.away) + '</span>' +
+        '<span class="upcoming-match__place">' + (match.group || 'Group') + ' · ' + (match.venue || 'Venue TBC') + '</span>' +
+      '</span>';
+    }).join('');
+    return '<span class="upcoming-list" aria-label="Upcoming matches">' + rows + '</span>' +
+      (note ? '<span class="match-note">' + note + '</span>' : '');
+  }
+
+  function upcomingTabs(groups, note) {
+    var items = groups || [];
+    var tabs = items.map(function (group, index) {
+      return '<button class="upcoming-tab" type="button" role="tab" aria-selected="' + (index === 0 ? 'true' : 'false') + '" data-upcoming-tab="' + group.id + '">' + group.label + '</button>';
+    }).join('');
+    var panels = items.map(function (group, index) {
+      return '<span class="upcoming-tab-panel" role="tabpanel" data-upcoming-panel="' + group.id + '"' + (index === 0 ? '' : ' hidden') + '>' +
+        upcomingRows(group.matches, '') +
+      '</span>';
+    }).join('');
+    return '<span class="upcoming-tabs" role="tablist" aria-label="Upcoming group games">' + tabs + '</span>' +
+      panels +
+      (note ? '<span class="match-note">' + note + '</span>' : '');
+  }
+
+  function groupPanels(groups, note) {
+    var items = groups || [];
+    var controls = items.map(function (group, index) {
+      return '<button class="group-filter__button" type="button" aria-pressed="' + (index === 0 ? 'true' : 'false') + '" data-group-panel-button="' + group.id + '">' + group.label + '</button>';
+    }).join('');
+    var panels = items.map(function (group, index) {
+      return '<span class="group-filter__panel" data-group-panel="' + group.id + '"' + (index === 0 ? '' : ' hidden') + '>' +
+        '<span class="group-filter__section">' +
+          '<span class="group-filter__label">Upcoming</span>' +
+          upcomingRows(group.upcomingMatches || [], '') +
+        '</span>' +
+        '<span class="group-filter__section group-filter__section--results">' +
+          '<span class="group-filter__label">Results</span>' +
+          matchRows((group.completedMatches || []).slice().reverse(), '') +
+        '</span>' +
+        '<span class="group-filter__section group-filter__section--standings">' +
+          '<span class="group-filter__label">' + (group.standingsLabel || 'Standings') + '</span>' +
+          (group.standingsDetail || '') +
+        '</span>' +
+      '</span>';
+    }).join('');
+    return '<span class="group-filter__controls" aria-label="Choose group">' + controls + '</span>' +
+      panels +
+      (note ? '<span class="match-note">' + note + '</span>' : '');
   }
 
   function city(item) {
@@ -284,7 +384,8 @@
 
     var blocks = (part.blocks || []).map(function (item) {
       var className = item.className ? ' ' + item.className : '';
-      var detail = item.className && item.className.indexOf('part-card--results') >= 0 ? markResultWinners(item.detail) : item.detail;
+      var detail = item.groupPanels ? groupPanels(item.groupPanels, item.note) : (item.upcomingGroups ? upcomingTabs(item.upcomingGroups, item.note) : (item.upcomingMatches ? upcomingRows(item.upcomingMatches, item.note) : (item.matches ? matchRows(item.matches, item.note) : item.detail)));
+      detail = item.className && item.className.indexOf('part-card--results') >= 0 ? markResultWinners(detail) : detail;
       return '<div class="part-card' + className + '">' +
         '<span>' + item.label + '</span>' +
         '<strong>' + item.title + '</strong>' +
@@ -302,6 +403,38 @@
         '<div class="facts-strip">' + facts + '</div>' +
         '<div class="part-page__grid">' + blocks + '</div>' +
       '</article>';
+
+    target.querySelectorAll('.upcoming-tabs').forEach(function (tabs) {
+      tabs.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-upcoming-tab]');
+        if (!button) return;
+        var card = button.closest('.part-card');
+        if (!card) return;
+        var id = button.getAttribute('data-upcoming-tab');
+        card.querySelectorAll('[data-upcoming-tab]').forEach(function (item) {
+          item.setAttribute('aria-selected', item === button ? 'true' : 'false');
+        });
+        card.querySelectorAll('[data-upcoming-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-upcoming-panel') !== id;
+        });
+      });
+    });
+
+    target.querySelectorAll('.group-filter__controls').forEach(function (controls) {
+      controls.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-group-panel-button]');
+        if (!button) return;
+        var card = button.closest('.part-card');
+        if (!card) return;
+        var id = button.getAttribute('data-group-panel-button');
+        card.querySelectorAll('[data-group-panel-button]').forEach(function (item) {
+          item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+        });
+        card.querySelectorAll('[data-group-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-group-panel') !== id;
+        });
+      });
+    });
   }
 
   function initPartSwitcher() {
@@ -309,22 +442,24 @@
     var switcher = document.querySelector('[data-part-switcher]');
     if (!data || !switcher || !data.parts || !data.parts.length) return;
 
-    var defaultPart = data.defaultPart || data.parts[0].id;
-    switcher.innerHTML = data.parts.map(function (part) {
-      var pressed = part.id === defaultPart ? 'true' : 'false';
-      return '<button class="year-button part-button" type="button" aria-pressed="' + pressed + '" data-part="' + part.id + '">' + part.label + '</button>';
-    }).join('');
+    mergeExternalPartBlocks(data, function (mergedData) {
+      var defaultPart = mergedData.defaultPart || mergedData.parts[0].id;
+      switcher.innerHTML = mergedData.parts.map(function (part) {
+        var pressed = part.id === defaultPart ? 'true' : 'false';
+        return '<button class="year-button part-button" type="button" aria-pressed="' + pressed + '" data-part="' + part.id + '">' + part.label + '</button>';
+      }).join('');
 
-    switcher.addEventListener('click', function (event) {
-      var button = event.target.closest('[data-part]');
-      if (!button) return;
-      switcher.querySelectorAll('[data-part]').forEach(function (item) {
-        item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+      switcher.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-part]');
+        if (!button) return;
+        switcher.querySelectorAll('[data-part]').forEach(function (item) {
+          item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+        });
+        renderPart(mergedData, button.getAttribute('data-part'));
       });
-      renderPart(data, button.getAttribute('data-part'));
-    });
 
-    renderPart(data, defaultPart);
+      renderPart(mergedData, defaultPart);
+    });
   }
 
   function refreshCountdowns() {
