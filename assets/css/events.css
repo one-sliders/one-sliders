@@ -421,6 +421,17 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.fact-list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.fact-list li {
+  padding-left: 2px;
+}
+
 .card-grid,
 .question-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1220,6 +1231,13 @@ a {
   margin-top: 8px;
 }
 
+.part-card .group-filter__topline {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 8px;
+}
+
 .part-card .group-filter__button {
   min-height: 36px;
   padding: 0 16px;
@@ -1239,6 +1257,122 @@ a {
   background: var(--event-theme);
   color: #ffffff;
 }
+
+.part-card .follow-team {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 6px;
+  min-width: 0;
+}
+
+.part-card .follow-team__label {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.part-card .follow-team__list {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.part-card .follow-team__button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--event-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--event-ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.part-card .follow-team__button .country {
+  pointer-events: none;
+}
+
+.part-card .country--followed {
+  color: #1f2937;
+  box-shadow: 0 0 0 2px var(--team-glow, rgba(234, 179, 8, 0.18));
+}
+
+.part-card .follow-team__button[aria-pressed="true"] {
+  border-color: var(--event-theme);
+  background: #ffffff;
+}
+
+.part-card .team-color-yellow {
+  --team-bg: #fef08a;
+  --team-border: #eab308;
+  --team-glow: rgba(234, 179, 8, 0.2);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-blue {
+  --team-bg: #bfdbfe;
+  --team-border: #2563eb;
+  --team-glow: rgba(37, 99, 235, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-green {
+  --team-bg: #bbf7d0;
+  --team-border: #16a34a;
+  --team-glow: rgba(22, 163, 74, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-pink {
+  --team-bg: #fbcfe8;
+  --team-border: #db2777;
+  --team-glow: rgba(219, 39, 119, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-orange {
+  --team-bg: #fed7aa;
+  --team-border: #ea580c;
+  --team-glow: rgba(234, 88, 12, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-cyan {
+  --team-bg: #a5f3fc;
+  --team-border: #0891b2;
+  --team-glow: rgba(8, 145, 178, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-violet {
+  --team-bg: #ddd6fe;
+  --team-border: #7c3aed;
+  --team-glow: rgba(124, 58, 237, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
+.part-card .team-color-lime {
+  --team-bg: #d9f99d;
+  --team-border: #65a30d;
+  --team-glow: rgba(101, 163, 13, 0.18);
+  border-color: var(--team-border);
+  background: var(--team-bg);
+}
+
 
 .part-card .group-filter__panel {
   display: grid;
@@ -1417,6 +1551,251 @@ a {
   display: none;
 }
 
+.part-card--f1-live .standings-row {
+  grid-template-columns: 24px minmax(96px, 1.05fr) minmax(112px, 1fr) minmax(68px, 0.75fr) 38px minmax(72px, 0.65fr);
+  gap: 8px;
+  padding: 6px 8px;
+}
+
+.part-card--f1-live .standings-row > span:nth-child(4),
+.part-card--f1-live .standings-row--head > span:nth-child(4) {
+  display: block;
+}
+
+.part-card--f1-no-points .standings-row {
+  grid-template-columns: 24px minmax(96px, 1.05fr) minmax(112px, 1fr) minmax(68px, 0.75fr) minmax(72px, 0.65fr);
+}
+
+.part-card--f1-no-points .standings-row > strong,
+.part-card--f1-no-points .standings-row--head > span:nth-child(5) {
+  display: none;
+}
+
+.part-card--f1-live .standings-row--head {
+  font-size: 9px;
+}
+
+.part-card--f1-live .standings-row > span {
+  min-width: 0;
+}
+
+.part-card--f1-live .f1-driver {
+  display: block;
+  overflow: hidden;
+  color: var(--event-ink);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.part-card--f1-live .f1-team {
+  --f1-team-color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 24px;
+  padding: 3px 8px 3px 6px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--f1-team-color) 54%, #ffffff);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--f1-team-color) 13%, #ffffff);
+  color: #172033;
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 1;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.part-card--f1-live .f1-team::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--f1-team-color);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.78);
+}
+
+.part-card--f1-live .f1-team .f1-driver {
+  margin-right: 6px;
+}
+
+.part-card--f1-live .f1-team--mercedes {
+  --f1-team-color: #00a19c;
+}
+
+.part-card--f1-live .f1-team--mclaren {
+  --f1-team-color: #ff8000;
+}
+
+.part-card--f1-live .f1-team--ferrari {
+  --f1-team-color: #e10600;
+}
+
+.part-card--f1-live .f1-team--red-bull-racing,
+.part-card--f1-live .f1-team--red-bull {
+  --f1-team-color: #1e41ff;
+}
+
+.part-card--f1-live .f1-team--racing-bulls {
+  --f1-team-color: #6692ff;
+}
+
+.part-card--f1-live .f1-team--williams {
+  --f1-team-color: #00a3e0;
+}
+
+.part-card--f1-tracker .f1-leader-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 7px 9px;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.part-card--f1-tracker .f1-leader-inline > span:first-child {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.part-card--f1-tracker .f1-leader-inline strong,
+.part-card--f1-tracker .f1-leader-inline b {
+  color: var(--event-ink);
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.part-card--f1-tracker .f1-team {
+  --f1-team-color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px 3px 6px;
+  border: 1px solid color-mix(in srgb, var(--f1-team-color) 54%, #ffffff);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--f1-team-color) 13%, #ffffff);
+  color: #172033;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.part-card--f1-tracker .f1-team::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--f1-team-color);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.78);
+}
+
+.part-card--f1-tracker .f1-team--mercedes {
+  --f1-team-color: #00a19c;
+}
+
+.event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-race-status {
+  grid-column: 1 / -1;
+}
+
+.part-card--f1-race-status p {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.part-card--f1-race-status .f1-race-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.part-card--f1-race-status .f1-race-summary > span {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.part-card--f1-race-status .f1-race-summary b {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.part-card--f1-race-status .f1-race-summary strong {
+  margin: 0;
+  color: var(--event-ink);
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.part-card--f1-race-status .f1-race-summary em {
+  color: var(--event-muted);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-tracker {
+  grid-column: 1 / -1;
+}
+
+.event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-live {
+  grid-column: span 6;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker .match-results {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker .match-result {
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 5px;
+  min-height: 104px;
+  padding: 10px;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker .match-result time {
+  justify-self: start;
+  font-size: 11px;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker .match-score {
+  justify-self: start;
+  width: max-content;
+  min-width: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: var(--event-ink);
+  font-size: 11px;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker .match-result:has(.match-score:nth-child(3)) {
+  border-left-color: rgba(33, 78, 104, 0.14);
+}
+
 .part-card .standings-row--advance {
   border-left-color: var(--event-green);
 }
@@ -1482,6 +1861,10 @@ a {
 }
 
 .event-slide[data-slide="parts"] .parts-grid > .part-card.part-card--standings {
+  grid-column: span 6;
+}
+
+.event-slide[data-slide="parts"] .parts-grid > .part-card.part-card--f1-live {
   grid-column: span 6;
 }
 
@@ -2284,6 +2667,10 @@ a {
   max-height: 132px !important;
 }
 
+.event-slide[data-slide="parts"] .part-card--f1-live p {
+  max-height: clamp(218px, 31vh, 360px) !important;
+}
+
 .event-slide[data-slide="parts"] .part-card .upcoming-list {
   gap: 4px;
 }
@@ -2310,7 +2697,7 @@ a {
 }
 
 .event-slide[data-slide="parts"] .part-detail {
-  margin-top: 4px !important;
+  margin-top: 18px !important;
 }
 
 .event-slide[data-slide="parts"] .part-page__header {
@@ -2318,11 +2705,24 @@ a {
 }
 
 .event-slide[data-slide="parts"] .part-page > .facts-strip {
+  display: none !important;
+}
+
+.event-slide[data-slide="parts"] .part-page {
   display: grid;
 }
 
-.event-slide[data-slide="parts"] .part-detail {
-  margin-top: 18px !important;
+.event-slide[data-slide="parts"] .part-page__header {
+  display: none;
+}
+
+.event-slide[data-slide="parts"] .part-page__grid {
+  width: 100%;
+}
+
+.event-slide[data-slide="parts"] .part-card--f1-tracker > span,
+.event-slide[data-slide="parts"] .part-card--f1-tracker > strong {
+  display: none;
 }
 
 .event-slide[data-slide="parts"] .part-card--results p {
@@ -2342,6 +2742,10 @@ a {
   margin-top: 10px;
 }
 
+.part-card .group-filter__topline {
+  margin-top: 10px;
+}
+
 .part-card .group-filter__panel {
   margin-top: 10px;
   gap: 12px;
@@ -2352,4 +2756,90 @@ a {
   overflow-y: auto;
   padding-bottom: 96px;
   overscroll-behavior: contain;
+}
+
+@media (max-width: 700px) {
+  .event-slide[data-slide="parts"] .part-card .group-filter__topline {
+    grid-template-columns: 1fr;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .group-filter__controls {
+    flex-wrap: wrap;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .follow-team__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .follow-team__button {
+    width: 100%;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .follow-team__button .country {
+    justify-content: flex-start;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .group-filter__panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .group-filter__panel[hidden] {
+    display: none;
+  }
+
+  .event-slide[data-slide="parts"] .part-card .group-filter__section {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--event-border);
+    border-radius: 8px;
+    background: #ffffff;
+  }
+
+  .event-slide[data-slide="parts"] .part-card--group-filter .group-filter__section--results,
+  .event-slide[data-slide="parts"] .part-card--group-filter .group-filter__section--standings {
+    max-height: none;
+    overflow: visible;
+    padding-right: 10px;
+  }
+
+  .event-slide[data-slide="parts"] .part-card--group-filter .upcoming-list {
+    grid-template-columns: 1fr;
+  }
+
+  .event-slide[data-slide="parts"] .part-card--f1-tracker .match-results {
+    grid-template-columns: 1fr;
+  }
+
+  .event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-live {
+    grid-column: 1 / -1;
+  }
+
+  .part-card--f1-live .standings-row {
+    grid-template-columns: 22px minmax(92px, 1.05fr) minmax(96px, 0.95fr) minmax(58px, 0.7fr) 34px;
+  }
+
+  .part-card--f1-no-points .standings-row {
+    grid-template-columns: 22px minmax(92px, 1.05fr) minmax(96px, 0.95fr) minmax(58px, 0.7fr);
+  }
+
+  .part-card--f1-live .standings-row > .standings-status,
+  .part-card--f1-live .standings-row--head > span:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-tracker {
+    grid-column: 1 / -1;
+  }
+
+  .event-slide[data-slide="parts"] .part-page__grid > .part-card--f1-live {
+    grid-column: span 6;
+  }
 }

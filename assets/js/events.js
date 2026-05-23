@@ -1,7 +1,9 @@
-(function () {
+﻿(function () {
   'use strict';
 
   var savedKey = 'os_saved_events_v1';
+  var followedTeamsKey = 'os_followed_teams_v1';
+  var teamHighlightColors = ['yellow', 'blue', 'green', 'pink', 'orange', 'cyan', 'violet', 'lime'];
 
   function readJson(id) {
     var node = document.getElementById(id);
@@ -51,7 +53,7 @@
     if (!item) return '';
     var image = item.flag ? '<img src="' + item.flag + '" alt="" width="20" height="14">' : '';
     if (!item.url || !item.name) return item.name || 'TBC';
-    return '<a class="country" href="' + item.url + '">' + image + item.name + '</a>';
+    return '<a class="country" href="' + item.url + '" data-country-name="' + item.name + '">' + image + item.name + '</a>';
   }
 
   function countries(items) {
@@ -74,9 +76,9 @@
   function upcomingRows(matches, note) {
     var rows = (matches || []).map(function (match) {
       return '<span class="upcoming-match">' +
-        '<span class="upcoming-match__meta">' + (match.dateLabel || match.date || 'TBC') + ' · ' + (match.time || 'TBC') + '</span>' +
+        '<span class="upcoming-match__meta">' + (match.dateLabel || match.date || 'TBC') + ' Â· ' + (match.time || 'TBC') + '</span>' +
         '<span class="upcoming-match__teams">' + country(match.home) + '<span class="match-score">vs</span>' + country(match.away) + '</span>' +
-        '<span class="upcoming-match__place">' + (match.group || 'Group') + ' · ' + (match.venue || 'Venue TBC') + '</span>' +
+        '<span class="upcoming-match__place">' + (match.group || 'Group') + ' Â· ' + (match.venue || 'Venue TBC') + '</span>' +
       '</span>';
     }).join('');
     return '<span class="upcoming-list" aria-label="Upcoming matches">' + rows + '</span>' +
@@ -100,11 +102,29 @@
 
   function groupPanels(groups, note) {
     var items = groups || [];
+    function teamPicker(group) {
+      var teamsByName = {};
+      (group.upcomingMatches || []).concat(group.completedMatches || []).forEach(function (match) {
+        [match.home, match.away].forEach(function (team) {
+          if (team && team.name) teamsByName[team.name] = team;
+        });
+      });
+      return '<span class="follow-team" aria-label="Choose teams to highlight">' +
+          '<span class="follow-team__label">I cheer for</span>' +
+          '<span class="follow-team__list">' +
+            Object.keys(teamsByName).sort().map(function (name) {
+              var team = teamsByName[name];
+              return '<button class="follow-team__button" type="button" aria-pressed="false" data-follow-team="' + name + '">' + country(team) + '</button>';
+            }).join('') +
+          '</span>' +
+        '</span>';
+    }
     var controls = items.map(function (group, index) {
       return '<button class="group-filter__button" type="button" aria-pressed="' + (index === 0 ? 'true' : 'false') + '" data-group-panel-button="' + group.id + '">' + group.label + '</button>';
     }).join('');
     var panels = items.map(function (group, index) {
       return '<span class="group-filter__panel" data-group-panel="' + group.id + '"' + (index === 0 ? '' : ' hidden') + '>' +
+        teamPicker(group) +
         '<span class="group-filter__section">' +
           '<span class="group-filter__label">Upcoming</span>' +
           upcomingRows(group.upcomingMatches || [], '') +
@@ -119,9 +139,89 @@
         '</span>' +
       '</span>';
     }).join('');
-    return '<span class="group-filter__controls" aria-label="Choose group">' + controls + '</span>' +
+    return '<span class="group-filter__topline">' +
+        '<span class="group-filter__controls" aria-label="Choose group">' + controls + '</span>' +
+      '</span>' +
       panels +
       (note ? '<span class="match-note">' + note + '</span>' : '');
+  }
+
+  function normalizeTeamName(value) {
+    return String(value || '').trim().toLowerCase();
+  }
+
+  function teamColorIndex(name) {
+    var hash = 0;
+    String(name || '').split('').forEach(function (char) {
+      hash = ((hash * 31) + char.charCodeAt(0)) >>> 0;
+    });
+    return hash % teamHighlightColors.length;
+  }
+
+  function teamColorClass(name) {
+    return 'team-color-' + teamHighlightColors[teamColorIndex(normalizeTeamName(name))];
+  }
+
+  function readFollowedTeams() {
+    try {
+      var value = JSON.parse(localStorage.getItem(followedTeamsKey) || '[]');
+      return Array.isArray(value) ? value.map(normalizeTeamName).filter(Boolean) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeFollowedTeams(teams) {
+    localStorage.setItem(followedTeamsKey, JSON.stringify(teams));
+  }
+
+  function countryNameFromNode(node) {
+    if (!node) return '';
+    return node.getAttribute('data-country-name') || node.textContent || '';
+  }
+
+  function applyFollowedTeams(root) {
+    var followed = readFollowedTeams();
+    var followedSet = {};
+    followed.forEach(function (name) { followedSet[name] = true; });
+    var colorClasses = teamHighlightColors.map(function (color) { return 'team-color-' + color; }).concat(['team-color-mixed']);
+    (root || document).querySelectorAll('.follow-team__button').forEach(function (button) {
+      var name = normalizeTeamName(button.getAttribute('data-follow-team'));
+      button.classList.remove.apply(button.classList, colorClasses);
+      button.setAttribute('aria-pressed', followedSet[name] ? 'true' : 'false');
+    });
+    (root || document).querySelectorAll('.country').forEach(function (node) {
+      var name = normalizeTeamName(countryNameFromNode(node));
+      node.classList.remove.apply(node.classList, colorClasses);
+      node.classList.toggle('country--followed', !!followedSet[name]);
+      if (followedSet[name]) node.classList.add(teamColorClass(name));
+    });
+    (root || document).querySelectorAll('.match-result, .upcoming-match, .standings-row').forEach(function (row) {
+      row.classList.remove.apply(row.classList, colorClasses);
+      row.classList.remove('team-followed-row');
+    });
+  }
+
+  function f1TeamClass(name) {
+    return 'f1-team--' + String(name || 'unknown').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+
+  function enhanceF1Cards(root) {
+    (root || document).querySelectorAll('.part-card--f1-live .standings-row:not(.standings-row--head)').forEach(function (row) {
+      var cells = row.children;
+      if (cells.length < 3) return;
+      var labelCell = cells[1];
+      var teamCell = cells[2];
+      labelCell.classList.add('f1-driver');
+      var teamText = (teamCell.textContent || '').trim();
+      if (!teamText || teamText === 'TBC') return;
+      if (teamText.indexOf(' - ') >= 0) {
+        var parts = teamText.split(' - ');
+        teamCell.innerHTML = '<span class="f1-driver">' + parts[0] + '</span><span class="f1-team ' + f1TeamClass(parts.slice(1).join(' - ')) + '">' + parts.slice(1).join(' - ') + '</span>';
+      } else {
+        teamCell.classList.add('f1-team', f1TeamClass(teamText));
+      }
+    });
   }
 
   function city(item) {
@@ -172,11 +272,7 @@
   }
 
   function sourceCard(data) {
-    if (!data) return '';
-    var links = (data.sources || []).map(function (item) {
-      return '<a href="' + item.url + '">' + item.label + '</a>';
-    }).join(' · ');
-    return '<div class="card sources"><span>Sources</span><strong>Last updated: ' + (data.lastUpdated || 'TBC') + '</strong><p>' + (links || 'Source list TBC') + '</p></div>';
+    return '';
   }
 
   function isPlaceholderText(value) {
@@ -349,6 +445,7 @@
     var facts = (part.facts || []).map(function (item) {
       return fact(item.label, item.value);
     }).join('');
+    var factsStrip = facts ? '<div class="facts-strip">' + facts + '</div>' : '';
 
     function markResultWinners(html) {
       var wrapper = document.createElement('div');
@@ -400,9 +497,11 @@
           '<h3>' + part.title + '</h3>' +
           '<p>' + part.summary + '</p>' +
         '</div>' +
-        '<div class="facts-strip">' + facts + '</div>' +
+        factsStrip +
         '<div class="part-page__grid">' + blocks + '</div>' +
       '</article>';
+
+    enhanceF1Cards(target);
 
     target.querySelectorAll('.upcoming-tabs').forEach(function (tabs) {
       tabs.addEventListener('click', function (event) {
@@ -435,6 +534,25 @@
         });
       });
     });
+
+    target.querySelectorAll('.follow-team').forEach(function (picker) {
+      picker.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-follow-team]');
+        if (!button) return;
+        event.preventDefault();
+        var team = normalizeTeamName(button.getAttribute('data-follow-team'));
+        var followed = readFollowedTeams();
+        if (followed.indexOf(team) >= 0) {
+          followed = followed.filter(function (item) { return item !== team; });
+        } else {
+          followed.push(team);
+        }
+        writeFollowedTeams(followed);
+        applyFollowedTeams(target);
+      });
+    });
+
+    applyFollowedTeams(target);
   }
 
   function initPartSwitcher() {
