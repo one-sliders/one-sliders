@@ -80,6 +80,14 @@
     }
 
     var groupIds = Object.keys(live.groups || {});
+    // Empty scaffold (no groups, or no matches anywhere) -> render nothing,
+    // so wired-but-not-yet-filled events don't show an empty group card.
+    var anyMatches = groupIds.some(function (id) {
+      var g = live.groups[id];
+      return g && g.matches && g.matches.length;
+    });
+    if (!groupIds.length || !anyMatches) return null;
+
     var groups = groupIds.map(function (id) {
       var g = live.groups[id];
       var matches = (g.matches || []).map(function (mm) {
