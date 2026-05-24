@@ -172,7 +172,7 @@ a {
 .event-slide {
   position: relative;
   --event-media-gap: clamp(14px, 1.2vw, 24px);
-  --event-top-height: clamp(330px, 38vh, 410px);
+  --event-top-height: clamp(430px, 52vh, 620px);
   --event-slide-pad-x: clamp(24px, 3.2vw, 56px);
   --event-hero-inset: clamp(22px, 2.4vw, 42px);
   flex: 0 0 100%;
@@ -1924,7 +1924,7 @@ a {
   }
 
   .event-slide {
-    --event-top-height: clamp(300px, 44vh, 360px);
+    --event-top-height: clamp(380px, 50vh, 500px);
     --event-slide-pad-x: 12px;
     --event-hero-inset: 14px;
     padding-right: 12px;
@@ -2110,7 +2110,7 @@ a {
 
 @media (min-width: 701px) and (max-width: 900px) {
   .event-slide {
-    --event-top-height: clamp(330px, 40vh, 390px);
+    --event-top-height: clamp(400px, 50vh, 520px);
     --event-slide-pad-x: 20px;
     --event-hero-inset: 24px;
   }
@@ -2146,7 +2146,7 @@ a {
 
 @media (max-width: 520px) {
   .event-slide {
-    --event-top-height: clamp(360px, 45vh, 410px);
+    --event-top-height: clamp(380px, 50vh, 500px);
     --event-slide-pad-x: 12px;
     --event-hero-inset: 14px;
     padding-bottom: 112px;
@@ -2229,7 +2229,7 @@ a {
 
 @media (min-width: 901px) and (max-height: 980px) {
   .event-slide {
-    --event-top-height: clamp(300px, 34vh, 320px);
+    --event-top-height: clamp(430px, 52vh, 560px);
     padding-top: calc(52px + 12px);
     padding-bottom: 12px;
   }
