@@ -231,8 +231,8 @@ a {
   pointer-events: none;
   border-radius: 10px;
   background:
-    linear-gradient(180deg, rgba(3, 8, 10, 0.08), rgba(3, 8, 10, 0.58)),
-    linear-gradient(90deg, rgba(3, 8, 10, 0.86), rgba(3, 8, 10, 0.48) 42%, rgba(3, 8, 10, 0.06) 78%);
+    linear-gradient(180deg, rgba(3, 8, 10, 0.04), rgba(3, 8, 10, 0.44)),
+    linear-gradient(90deg, rgba(3, 8, 10, 0.80), rgba(3, 8, 10, 0.36) 42%, rgba(3, 8, 10, 0) 74%);
 }
 
 .event-slide__content {
@@ -2758,6 +2758,63 @@ a {
   overscroll-behavior: contain;
 }
 
+.event-slide[data-slide="parts"] .part-card--q2-live {
+  border-color: rgba(15, 118, 110, 0.22);
+  background:
+    linear-gradient(135deg, rgba(240, 253, 250, 0.96), rgba(255, 255, 255, 0.96));
+}
+
+.event-slide[data-slide="parts"] .part-card--q2-live p {
+  margin-top: 12px;
+}
+
+.q2-live-panel,
+.q2-update-list {
+  display: grid;
+  gap: 10px;
+}
+
+.q2-live-panel {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.q2-live-panel > span,
+.q2-update-list > span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--event-ink);
+}
+
+.q2-live-panel b {
+  color: var(--event-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.q2-live-panel em {
+  color: var(--event-ink);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.q2-update-list > span {
+  display: block;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.event-button--inline {
+  display: inline-flex;
+  width: fit-content;
+  text-decoration: none;
+}
+
 @media (max-width: 700px) {
   .event-slide[data-slide="parts"] .part-card .group-filter__topline {
     grid-template-columns: 1fr;
@@ -2831,6 +2888,10 @@ a {
   .part-card--f1-live .standings-row > .standings-status,
   .part-card--f1-live .standings-row--head > span:nth-child(6) {
     display: none;
+  }
+
+  .q2-live-panel {
+    grid-template-columns: 1fr;
   }
 }
 
