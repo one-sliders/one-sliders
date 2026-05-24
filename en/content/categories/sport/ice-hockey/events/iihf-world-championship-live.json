@@ -1,703 +1,385 @@
 {
     "event":  "iihf-world-championship",
     "updated":  "23 May 2026",
-    "sourceNote":  "Update groupPanels for each group: upcomingMatches, completedMatches, and standingsDetail. Keep team names paired with their matching url and flag.",
-    "parts":  {
-                  "groups":  {
-                                 "blocks":  [
-                                                {
-                                                    "label":  "Group tracker",
-                                                    "title":  "Choose Group A or Group B",
-                                                    "className":  "part-card--group-filter",
-                                                    "groupPanels":  [
-                                                                        {
-                                                                            "id":  "group-a",
-                                                                            "label":  "Group A",
-                                                                            "upcomingMatches":  [
-                                                                                                    {
-                                                                                                        "dateLabel":  "Today, 23 May",
-                                                                                                        "time":  "20:20",
-                                                                                                        "group":  "Group A",
-                                                                                                        "venue":  "Zurich",
-                                                                                                        "home":  {
-                                                                                                                     "name":  "Austria",
-                                                                                                                     "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                 },
-                                                                                                        "away":  {
-                                                                                                                     "name":  "Germany",
-                                                                                                                     "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                 }
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "dateLabel":  "Tomorrow, 24 May",
-                                                                                                        "time":  "16:20",
-                                                                                                        "group":  "Group A",
-                                                                                                        "venue":  "Zurich",
-                                                                                                        "home":  {
-                                                                                                                     "name":  "United Kingdom",
-                                                                                                                     "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                 },
-                                                                                                        "away":  {
-                                                                                                                     "name":  "Latvia",
-                                                                                                                     "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                 }
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "dateLabel":  "Tomorrow, 24 May",
-                                                                                                        "time":  "20:20",
-                                                                                                        "group":  "Group A",
-                                                                                                        "venue":  "Zurich",
-                                                                                                        "home":  {
-                                                                                                                     "name":  "Finland",
-                                                                                                                     "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                 },
-                                                                                                        "away":  {
-                                                                                                                     "name":  "Austria",
-                                                                                                                     "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                 }
-                                                                                                    }
-                                                                                                ],
-                                                                            "standingsLabel":  "Current table after 23 May early games",
-                                                                            "standingsDetail":  "\u003cspan class=\u0027standings-table\u0027\u003e\u003cspan class=\u0027standings-row standings-row--head\u0027\u003e\u003cspan\u003e#\u003c/span\u003e\u003cspan\u003eTeam\u003c/span\u003e\u003cspan\u003eGP\u003c/span\u003e\u003cspan\u003eGoals\u003c/span\u003e\u003cspan\u003ePts\u003c/span\u003e\u003cspan\u003eStatus\u003c/span\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e1\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/switzerland/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/switzerland/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eSwitzerland\u003c/a\u003e\u003cspan\u003e6 GP\u003c/span\u003e\u003cspan\u003e35:5\u003c/span\u003e\u003cstrong\u003e18\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e2\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/finland/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/finland/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eFinland\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e24:5\u003c/span\u003e\u003cstrong\u003e15\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e3\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/austria/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/austria/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eAustria\u003c/a\u003e\u003cspan\u003e4 GP\u003c/span\u003e\u003cspan\u003e12:14\u003c/span\u003e\u003cstrong\u003e9\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e4\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/latvia/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/latvia/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eLatvia\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e10:16\u003c/span\u003e\u003cstrong\u003e6\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e5\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/north-america/usa/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/north-america/usa/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eUnited States\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e14:17\u003c/span\u003e\u003cstrong\u003e5\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e6\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/germany/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/germany/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eGermany\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e11:17\u003c/span\u003e\u003cstrong\u003e4\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e7\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/hungary/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/hungary/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eHungary\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e10:23\u003c/span\u003e\u003cstrong\u003e3\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e8\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/united-kingdom/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/united-kingdom/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eUnited Kingdom\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e4:23\u003c/span\u003e\u003cstrong\u003e0\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\u0027match-note\u0027\u003eTop four advance to the quarter-finals. Updated after IIHF-posted 23 May early games.\u003c/span\u003e",
-                                                                            "completedMatches":  [
-                                                                                                     {
-                                                                                                         "date":  "15 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Finland",
-                                                                                                                      "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Germany",
-                                                                                                                      "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "15 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "United States",
-                                                                                                                      "url":  "/content/locations/north-america/usa/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-3",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "United Kingdom",
-                                                                                                                      "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "2-5",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Austria",
-                                                                                                                      "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Hungary",
-                                                                                                                      "url":  "/content/locations/europe/hungary/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-4",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Finland",
-                                                                                                                      "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Latvia",
-                                                                                                                      "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "United Kingdom",
-                                                                                                                      "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-5",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United States",
-                                                                                                                      "url":  "/content/locations/north-america/usa/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Austria",
-                                                                                                                      "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Hungary",
-                                                                                                                      "url":  "/content/locations/europe/hungary/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Germany",
-                                                                                                                      "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "0-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Latvia",
-                                                                                                                      "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "18 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Finland",
-                                                                                                                      "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "6-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United States",
-                                                                                                                      "url":  "/content/locations/north-america/usa/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "18 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Germany",
-                                                                                                                      "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-6",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "19 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Latvia",
-                                                                                                                      "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-3",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Austria",
-                                                                                                                      "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "19 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Hungary",
-                                                                                                                      "url":  "/content/locations/europe/hungary/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "5-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United Kingdom",
-                                                                                                                      "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "20 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Austria",
-                                                                                                                      "url":  "/content/locations/europe/austria/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/austria/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "0-9",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "20 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "United States",
-                                                                                                                      "url":  "/content/locations/north-america/usa/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-3 SO",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Germany",
-                                                                                                                      "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "21 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Finland",
-                                                                                                                      "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "7-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Latvia",
-                                                                                                                      "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "21 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United Kingdom",
-                                                                                                                      "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "22 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Germany",
-                                                                                                                      "url":  "/content/locations/europe/germany/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/germany/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "6-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Hungary",
-                                                                                                                      "url":  "/content/locations/europe/hungary/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "22 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Finland",
-                                                                                                                      "url":  "/content/locations/europe/finland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/finland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United Kingdom",
-                                                                                                                      "url":  "/content/locations/europe/united-kingdom/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "23 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Latvia",
-                                                                                                                      "url":  "/content/locations/europe/latvia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "United States",
-                                                                                                                      "url":  "/content/locations/north-america/usa/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "23 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Switzerland",
-                                                                                                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "9-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Hungary",
-                                                                                                                      "url":  "/content/locations/europe/hungary/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                                                                                                                  }
-                                                                                                     }
-                                                                                                 ]
-                                                                        },
-                                                                        {
-                                                                            "id":  "group-b",
-                                                                            "label":  "Group B",
-                                                                            "upcomingMatches":  [
-                                                                                                    {
-                                                                                                        "dateLabel":  "Tomorrow, 24 May",
-                                                                                                        "time":  "16:20",
-                                                                                                        "group":  "Group B",
-                                                                                                        "venue":  "Fribourg",
-                                                                                                        "home":  {
-                                                                                                                     "name":  "Denmark",
-                                                                                                                     "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                 },
-                                                                                                        "away":  {
-                                                                                                                     "name":  "Italy",
-                                                                                                                     "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                 }
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "dateLabel":  "Tomorrow, 24 May",
-                                                                                                        "time":  "20:20",
-                                                                                                        "group":  "Group B",
-                                                                                                        "venue":  "Fribourg",
-                                                                                                        "home":  {
-                                                                                                                     "name":  "Slovakia",
-                                                                                                                     "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                     "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                 },
-                                                                                                        "away":  {
-                                                                                                                     "name":  "Canada",
-                                                                                                                     "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                     "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                 }
-                                                                                                    }
-                                                                                                ],
-                                                                            "standingsLabel":  "Current table after Norway 3-2 Sweden on 23 May",
-                                                                            "standingsDetail":  "\u003cspan class=\u0027standings-table\u0027\u003e\u003cspan class=\u0027standings-row standings-row--head\u0027\u003e\u003cspan\u003e#\u003c/span\u003e\u003cspan\u003eTeam\u003c/span\u003e\u003cspan\u003eGP\u003c/span\u003e\u003cspan\u003eGoals\u003c/span\u003e\u003cspan\u003ePts\u003c/span\u003e\u003cspan\u003eStatus\u003c/span\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e1\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/north-america/canada/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/north-america/canada/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eCanada\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e25:10\u003c/span\u003e\u003cstrong\u003e14\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e2\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/czechia/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/czechia/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eCzechia\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e16:10\u003c/span\u003e\u003cstrong\u003e13\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e3\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/slovakia/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/slovakia/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eSlovakia\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e18:10\u003c/span\u003e\u003cstrong\u003e11\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--advance\u0027\u003e\u003cb\u003e4\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/norway/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/norway/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eNorway\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e17:10\u003c/span\u003e\u003cstrong\u003e10\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--advance\u0027\u003eQF line\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e5\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/sweden/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/sweden/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eSweden\u003c/a\u003e\u003cspan\u003e6 GP\u003c/span\u003e\u003cspan\u003e23:14\u003c/span\u003e\u003cstrong\u003e9\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e6\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/slovenia/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/slovenia/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eSlovenia\u003c/a\u003e\u003cspan\u003e6 GP\u003c/span\u003e\u003cspan\u003e8:24\u003c/span\u003e\u003cstrong\u003e3\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e7\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/denmark/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/denmark/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eDenmark\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e9:20\u003c/span\u003e\u003cstrong\u003e3\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003cspan class=\u0027standings-row standings-row--outside\u0027\u003e\u003cb\u003e8\u003c/b\u003e\u003ca class=\u0027country\u0027 href=\u0027/content/locations/europe/italy/index.html\u0027\u003e\u003cimg src=\u0027/content/locations/europe/italy/img/flag.svg\u0027 alt=\u0027\u0027 width=\u002720\u0027 height=\u002714\u0027\u003eItaly\u003c/a\u003e\u003cspan\u003e5 GP\u003c/span\u003e\u003cspan\u003e2:20\u003c/span\u003e\u003cstrong\u003e0\u003c/strong\u003e\u003cem class=\u0027standings-status standings-status--outside\u0027\u003eOutside\u003c/em\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\u0027match-note\u0027\u003eTop four advance to the quarter-finals.\u003c/span\u003e",
-                                                                            "completedMatches":  [
-                                                                                                     {
-                                                                                                         "date":  "15 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Canada",
-                                                                                                                      "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "5-3",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "15 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Czechia",
-                                                                                                                      "url":  "/content/locations/europe/czechia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Denmark",
-                                                                                                                      "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Slovakia",
-                                                                                                                      "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "2-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Norway",
-                                                                                                                      "url":  "/content/locations/europe/norway/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/norway/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Italy",
-                                                                                                                      "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "0-6",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Canada",
-                                                                                                                      "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "16 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-2 OT",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Czechia",
-                                                                                                                      "url":  "/content/locations/europe/czechia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Italy",
-                                                                                                                      "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "1-4",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovakia",
-                                                                                                                      "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Denmark",
-                                                                                                                      "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "2-6",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "17 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Norway",
-                                                                                                                      "url":  "/content/locations/europe/norway/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/norway/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "18 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Canada",
-                                                                                                                      "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "5-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Denmark",
-                                                                                                                      "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "18 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-4",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Czechia",
-                                                                                                                      "url":  "/content/locations/europe/czechia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "19 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Italy",
-                                                                                                                      "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "0-4",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Norway",
-                                                                                                                      "url":  "/content/locations/europe/norway/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/norway/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "19 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-5 SO",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovakia",
-                                                                                                                      "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "20 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Czechia",
-                                                                                                                      "url":  "/content/locations/europe/czechia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Italy",
-                                                                                                                      "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "20 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "6-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "21 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Canada",
-                                                                                                                      "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "6-5 OT",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Norway",
-                                                                                                                      "url":  "/content/locations/europe/norway/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/norway/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "21 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Slovakia",
-                                                                                                                      "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "5-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Denmark",
-                                                                                                                      "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "22 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Canada",
-                                                                                                                      "url":  "/content/locations/north-america/canada/index.html",
-                                                                                                                      "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-1",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "22 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Italy",
-                                                                                                                      "url":  "/content/locations/europe/italy/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/italy/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "23 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Denmark",
-                                                                                                                      "url":  "/content/locations/europe/denmark/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "4-0",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Slovenia",
-                                                                                                                      "url":  "/content/locations/europe/slovenia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "23 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Slovakia",
-                                                                                                                      "url":  "/content/locations/europe/slovakia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "2-3",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Czechia",
-                                                                                                                      "url":  "/content/locations/europe/czechia/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                                                                                                                  }
-                                                                                                     },
-                                                                                                     {
-                                                                                                         "date":  "23 May",
-                                                                                                         "home":  {
-                                                                                                                      "name":  "Norway",
-                                                                                                                      "url":  "/content/locations/europe/norway/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/norway/img/flag.svg"
-                                                                                                                  },
-                                                                                                         "score":  "3-2",
-                                                                                                         "away":  {
-                                                                                                                      "name":  "Sweden",
-                                                                                                                      "url":  "/content/locations/europe/sweden/index.html",
-                                                                                                                      "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                                                                                                                  }
-                                                                                                     }
-                                                                                                 ]
-                                                                        }
-                                                                    ],
-                                                    "note":  ""
-                                                }
-                                            ]
-                             }
-              },
+    "directive":  "Add or edit matches under each group. Set \u0027score\u0027 (e.g. \u00273-2\u0027 or \u00274-3 OT\u0027) when a game is played; matches without a score are treated as upcoming. Standings are computed automatically. Reference teams by their key in \u0027teams\u0027; add a new team there once if missing.",
+    "pointsSystem":  "iihf",
     "sources":  [
-                    {
-                        "label":  "IIHF 2026 official schedule and results",
-                        "url":  "https://www.iihf.com/en/events/2026/wm/schedule"
-                    },
-                    {
-                        "label":  "IIHF 2026 tournament home and standings",
-                        "url":  "https://www.iihf.com/en/events/2026/wm/"
-                    }
-                ]
+                    "https://www.iihf.com/en/events/2026/wm",
+                    "https://stats.iihf.com/Hydra/969/index.html"
+                ],
+    "teams":  {
+                  "finland":  {
+                                  "name":  "Finland",
+                                  "url":  "/content/locations/europe/finland/index.html",
+                                  "flag":  "/content/locations/europe/finland/img/flag.svg"
+                              },
+                  "germany":  {
+                                  "name":  "Germany",
+                                  "url":  "/content/locations/europe/germany/index.html",
+                                  "flag":  "/content/locations/europe/germany/img/flag.svg"
+                              },
+                  "usa":  {
+                              "name":  "United States",
+                              "url":  "/content/locations/north-america/usa/index.html",
+                              "flag":  "/content/locations/north-america/usa/img/flag.svg"
+                          },
+                  "switzerland":  {
+                                      "name":  "Switzerland",
+                                      "url":  "/content/locations/europe/switzerland/index.html",
+                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
+                                  },
+                  "united-kingdom":  {
+                                         "name":  "United Kingdom",
+                                         "url":  "/content/locations/europe/united-kingdom/index.html",
+                                         "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
+                                     },
+                  "austria":  {
+                                  "name":  "Austria",
+                                  "url":  "/content/locations/europe/austria/index.html",
+                                  "flag":  "/content/locations/europe/austria/img/flag.svg"
+                              },
+                  "hungary":  {
+                                  "name":  "Hungary",
+                                  "url":  "/content/locations/europe/hungary/index.html",
+                                  "flag":  "/content/locations/europe/hungary/img/flag.svg"
+                              },
+                  "latvia":  {
+                                 "name":  "Latvia",
+                                 "url":  "/content/locations/europe/latvia/index.html",
+                                 "flag":  "/content/locations/europe/latvia/img/flag.svg"
+                             },
+                  "canada":  {
+                                 "name":  "Canada",
+                                 "url":  "/content/locations/north-america/canada/index.html",
+                                 "flag":  "/content/locations/north-america/canada/img/flag.svg"
+                             },
+                  "sweden":  {
+                                 "name":  "Sweden",
+                                 "url":  "/content/locations/europe/sweden/index.html",
+                                 "flag":  "/content/locations/europe/sweden/img/flag.svg"
+                             },
+                  "czechia":  {
+                                  "name":  "Czechia",
+                                  "url":  "/content/locations/europe/czechia/index.html",
+                                  "flag":  "/content/locations/europe/czechia/img/flag.svg"
+                              },
+                  "denmark":  {
+                                  "name":  "Denmark",
+                                  "url":  "/content/locations/europe/denmark/index.html",
+                                  "flag":  "/content/locations/europe/denmark/img/flag.svg"
+                              },
+                  "slovakia":  {
+                                   "name":  "Slovakia",
+                                   "url":  "/content/locations/europe/slovakia/index.html",
+                                   "flag":  "/content/locations/europe/slovakia/img/flag.svg"
+                               },
+                  "norway":  {
+                                 "name":  "Norway",
+                                 "url":  "/content/locations/europe/norway/index.html",
+                                 "flag":  "/content/locations/europe/norway/img/flag.svg"
+                             },
+                  "italy":  {
+                                "name":  "Italy",
+                                "url":  "/content/locations/europe/italy/index.html",
+                                "flag":  "/content/locations/europe/italy/img/flag.svg"
+                            },
+                  "slovenia":  {
+                                   "name":  "Slovenia",
+                                   "url":  "/content/locations/europe/slovenia/index.html",
+                                   "flag":  "/content/locations/europe/slovenia/img/flag.svg"
+                               }
+              },
+    "groups":  {
+                   "group-a":  {
+                                   "label":  "Group A",
+                                   "matches":  [
+                                                   {
+                                                       "date":  "15 May",
+                                                       "home":  "finland",
+                                                       "away":  "germany",
+                                                       "score":  "3-1"
+                                                   },
+                                                   {
+                                                       "date":  "15 May",
+                                                       "home":  "usa",
+                                                       "away":  "switzerland",
+                                                       "score":  "1-3"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "united-kingdom",
+                                                       "away":  "austria",
+                                                       "score":  "2-5"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "hungary",
+                                                       "away":  "finland",
+                                                       "score":  "1-4"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "switzerland",
+                                                       "away":  "latvia",
+                                                       "score":  "4-2"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "united-kingdom",
+                                                       "away":  "usa",
+                                                       "score":  "1-5"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "austria",
+                                                       "away":  "hungary",
+                                                       "score":  "4-2"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "germany",
+                                                       "away":  "latvia",
+                                                       "score":  "0-2"
+                                                   },
+                                                   {
+                                                       "date":  "18 May",
+                                                       "home":  "finland",
+                                                       "away":  "usa",
+                                                       "score":  "6-2"
+                                                   },
+                                                   {
+                                                       "date":  "18 May",
+                                                       "home":  "germany",
+                                                       "away":  "switzerland",
+                                                       "score":  "1-6"
+                                                   },
+                                                   {
+                                                       "date":  "19 May",
+                                                       "home":  "latvia",
+                                                       "away":  "austria",
+                                                       "score":  "1-3"
+                                                   },
+                                                   {
+                                                       "date":  "19 May",
+                                                       "home":  "hungary",
+                                                       "away":  "united-kingdom",
+                                                       "score":  "5-0"
+                                                   },
+                                                   {
+                                                       "date":  "20 May",
+                                                       "home":  "austria",
+                                                       "away":  "switzerland",
+                                                       "score":  "0-9"
+                                                   },
+                                                   {
+                                                       "date":  "20 May",
+                                                       "home":  "usa",
+                                                       "away":  "germany",
+                                                       "score":  "4-3 SO"
+                                                   },
+                                                   {
+                                                       "date":  "21 May",
+                                                       "home":  "finland",
+                                                       "away":  "latvia",
+                                                       "score":  "7-1"
+                                                   },
+                                                   {
+                                                       "date":  "21 May",
+                                                       "home":  "switzerland",
+                                                       "away":  "united-kingdom",
+                                                       "score":  "4-1"
+                                                   },
+                                                   {
+                                                       "date":  "22 May",
+                                                       "home":  "germany",
+                                                       "away":  "hungary",
+                                                       "score":  "6-2"
+                                                   },
+                                                   {
+                                                       "date":  "22 May",
+                                                       "home":  "finland",
+                                                       "away":  "united-kingdom",
+                                                       "score":  "4-0"
+                                                   },
+                                                   {
+                                                       "date":  "23 May",
+                                                       "home":  "latvia",
+                                                       "away":  "usa",
+                                                       "score":  "4-2"
+                                                   },
+                                                   {
+                                                       "date":  "23 May",
+                                                       "home":  "switzerland",
+                                                       "away":  "hungary",
+                                                       "score":  "9-0"
+                                                   },
+                                                   {
+                                                       "date":  "Today, 23 May",
+                                                       "home":  "austria",
+                                                       "away":  "germany",
+                                                       "time":  "20:20",
+                                                       "venue":  "Zurich"
+                                                   },
+                                                   {
+                                                       "date":  "Tomorrow, 24 May",
+                                                       "home":  "united-kingdom",
+                                                       "away":  "latvia",
+                                                       "time":  "16:20",
+                                                       "venue":  "Zurich"
+                                                   },
+                                                   {
+                                                       "date":  "Tomorrow, 24 May",
+                                                       "home":  "finland",
+                                                       "away":  "austria",
+                                                       "time":  "20:20",
+                                                       "venue":  "Zurich"
+                                                   }
+                                               ]
+                               },
+                   "group-b":  {
+                                   "label":  "Group B",
+                                   "matches":  [
+                                                   {
+                                                       "date":  "15 May",
+                                                       "home":  "canada",
+                                                       "away":  "sweden",
+                                                       "score":  "5-3"
+                                                   },
+                                                   {
+                                                       "date":  "15 May",
+                                                       "home":  "czechia",
+                                                       "away":  "denmark",
+                                                       "score":  "4-1"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "slovakia",
+                                                       "away":  "norway",
+                                                       "score":  "2-1"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "italy",
+                                                       "away":  "canada",
+                                                       "score":  "0-6"
+                                                   },
+                                                   {
+                                                       "date":  "16 May",
+                                                       "home":  "slovenia",
+                                                       "away":  "czechia",
+                                                       "score":  "3-2 OT"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "italy",
+                                                       "away":  "slovakia",
+                                                       "score":  "1-4"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "denmark",
+                                                       "away":  "sweden",
+                                                       "score":  "2-6"
+                                                   },
+                                                   {
+                                                       "date":  "17 May",
+                                                       "home":  "norway",
+                                                       "away":  "slovenia",
+                                                       "score":  "4-0"
+                                                   },
+                                                   {
+                                                       "date":  "18 May",
+                                                       "home":  "canada",
+                                                       "away":  "denmark",
+                                                       "score":  "5-1"
+                                                   },
+                                                   {
+                                                       "date":  "18 May",
+                                                       "home":  "sweden",
+                                                       "away":  "czechia",
+                                                       "score":  "3-4"
+                                                   },
+                                                   {
+                                                       "date":  "19 May",
+                                                       "home":  "italy",
+                                                       "away":  "norway",
+                                                       "score":  "0-4"
+                                                   },
+                                                   {
+                                                       "date":  "19 May",
+                                                       "home":  "slovenia",
+                                                       "away":  "slovakia",
+                                                       "score":  "4-5 SO"
+                                                   },
+                                                   {
+                                                       "date":  "20 May",
+                                                       "home":  "czechia",
+                                                       "away":  "italy",
+                                                       "score":  "3-1"
+                                                   },
+                                                   {
+                                                       "date":  "20 May",
+                                                       "home":  "sweden",
+                                                       "away":  "slovenia",
+                                                       "score":  "6-0"
+                                                   },
+                                                   {
+                                                       "date":  "21 May",
+                                                       "home":  "canada",
+                                                       "away":  "norway",
+                                                       "score":  "6-5 OT"
+                                                   },
+                                                   {
+                                                       "date":  "21 May",
+                                                       "home":  "slovakia",
+                                                       "away":  "denmark",
+                                                       "score":  "5-1"
+                                                   },
+                                                   {
+                                                       "date":  "22 May",
+                                                       "home":  "canada",
+                                                       "away":  "slovenia",
+                                                       "score":  "3-1"
+                                                   },
+                                                   {
+                                                       "date":  "22 May",
+                                                       "home":  "sweden",
+                                                       "away":  "italy",
+                                                       "score":  "3-0"
+                                                   },
+                                                   {
+                                                       "date":  "23 May",
+                                                       "home":  "denmark",
+                                                       "away":  "slovenia",
+                                                       "score":  "4-0"
+                                                   },
+                                                   {
+                                                       "date":  "23 May",
+                                                       "home":  "slovakia",
+                                                       "away":  "czechia",
+                                                       "score":  "2-3"
+                                                   },
+                                                   {
+                                                       "date":  "23 May",
+                                                       "home":  "norway",
+                                                       "away":  "sweden",
+                                                       "score":  "3-2"
+                                                   },
+                                                   {
+                                                       "date":  "Tomorrow, 24 May",
+                                                       "home":  "denmark",
+                                                       "away":  "italy",
+                                                       "time":  "16:20",
+                                                       "venue":  "Fribourg"
+                                                   },
+                                                   {
+                                                       "date":  "Tomorrow, 24 May",
+                                                       "home":  "slovakia",
+                                                       "away":  "canada",
+                                                       "time":  "20:20",
+                                                       "venue":  "Fribourg"
+                                                   }
+                                               ]
+                               }
+               }
 }

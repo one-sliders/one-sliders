@@ -17,7 +17,11 @@
 
   function mergeExternalPartBlocks(data, done) {
     var parts = data && data.parts ? data.parts : [];
-    var pending = parts.filter(function (part) { return part.externalBlocksSrc; });
+    // A part pulls live data if it declares externalBlocksSrc (legacy block
+    // merge) or liveDataSrc (clean data-only format: teams + groups).
+    var pending = parts.filter(function (part) {
+      return part.externalBlocksSrc || part.liveDataSrc;
+    });
     if (!pending.length) {
       done(data);
       return;
@@ -30,16 +34,25 @@
     }
 
     pending.forEach(function (part) {
-      fetch(part.externalBlocksSrc, { cache: 'no-cache' })
+      var src = part.liveDataSrc || part.externalBlocksSrc;
+      fetch(src, { cache: 'no-cache' })
         .then(function (response) {
-          if (!response.ok) throw new Error('Could not load ' + part.externalBlocksSrc);
+          if (!response.ok) throw new Error('Could not load ' + src);
           return response.json();
         })
         .then(function (externalData) {
+          // New clean format: { teams, groups } -> build one group-filter block.
+          if (externalData && externalData.teams && externalData.groups) {
+            var block = buildGroupBlockFromLiveData(externalData);
+            if (block) part.blocks = (part.blocks || []).concat([block]);
+            return;
+          }
+          // Legacy format: { parts: { <id>: { blocks: [...] } } }
           var partKey = part.externalBlocksPart || part.id;
           var externalPart = externalData && externalData.parts && externalData.parts[partKey];
-          if (!externalPart || !Array.isArray(externalPart.blocks)) return;
-          part.blocks = (part.blocks || []).concat(externalPart.blocks);
+          if (externalPart && Array.isArray(externalPart.blocks)) {
+            part.blocks = (part.blocks || []).concat(externalPart.blocks);
+          }
         })
         .catch(function (error) {
           window.__eventRenderErrors = window.__eventRenderErrors || [];
@@ -47,6 +60,98 @@
         })
         .then(finish);
     });
+  }
+
+  // ---- Clean live-data format -> renderable group-filter block ----
+  // Input: { teams: { key: {name,url,flag} }, groups: { id: {label, matches[]} },
+  //          pointsSystem }
+  // A match with a score is completed; without is upcoming. Standings are
+  // computed here, never stored in the data file.
+  function buildGroupBlockFromLiveData(live) {
+    var teams = live.teams || {};
+    function resolve(key) { return teams[key] || { name: key }; }
+
+    function parseScore(score) {
+      // "3-2", "4-3 OT", "1-2 SO" -> { h, a, ot }
+      if (!score) return null;
+      var m = String(score).match(/(\d+)\s*[-–]\s*(\d+)\s*(OT|SO)?/i);
+      if (!m) return null;
+      return { h: Number(m[1]), a: Number(m[2]), ot: !!m[3] };
+    }
+
+    var groupIds = Object.keys(live.groups || {});
+    var groups = groupIds.map(function (id) {
+      var g = live.groups[id];
+      var matches = (g.matches || []).map(function (mm) {
+        return {
+          date: mm.date, time: mm.time, venue: mm.venue, group: g.label,
+          home: resolve(mm.home), away: resolve(mm.away),
+          score: mm.score, _parsed: parseScore(mm.score)
+        };
+      });
+
+      var completed = matches.filter(function (m) { return m._parsed; });
+      var upcoming  = matches.filter(function (m) { return !m._parsed; });
+
+      // ---- standings (IIHF: 3 reg win, 2 OT/SO win, 1 OT/SO loss, 0 loss) ----
+      var table = {};
+      function row(team) {
+        var k = team.name;
+        if (!table[k]) table[k] = { team: team, gp: 0, w: 0, otw: 0, otl: 0, l: 0, gf: 0, ga: 0, pts: 0 };
+        return table[k];
+      }
+      completed.forEach(function (m) {
+        var p = m._parsed, H = row(m.home), A = row(m.away);
+        H.gp++; A.gp++; H.gf += p.h; H.ga += p.a; A.gf += p.a; A.ga += p.h;
+        var simple = (live.pointsSystem === 'simple');
+        if (p.h === p.a) { H.pts++; A.pts++; }       // draw (only in simple)
+        else if (p.h > p.a) {                         // home win
+          if (p.ot && !simple) { H.otw++; H.pts += 2; A.otl++; A.pts += 1; }
+          else { H.w++; H.pts += simple ? 2 : 3; A.l++; }
+        } else {                                      // away win
+          if (p.ot && !simple) { A.otw++; A.pts += 2; H.otl++; H.pts += 1; }
+          else { A.w++; A.pts += simple ? 2 : 3; H.l++; }
+        }
+      });
+      var standings = Object.keys(table).map(function (k) { return table[k]; })
+        .sort(function (a, b) {
+          return b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf
+            || a.team.name.localeCompare(b.team.name);
+        });
+
+      return {
+        id: id, label: g.label,
+        upcomingMatches: upcoming,
+        completedMatches: completed,
+        standingsLabel: 'Standings',
+        standingsDetail: standings.length ? renderStandings(standings) : ''
+      };
+    });
+
+    return {
+      label: 'Group tracker',
+      title: 'Choose ' + groups.map(function (g) { return g.label; }).join(' or '),
+      className: 'part-card--group-filter',
+      groupPanels: groups
+    };
+  }
+
+  function renderStandings(rows) {
+    var head = '<span class="standings-row standings-row--head">' +
+      '<span>#</span><span>Team</span><span>GP</span><span>W</span><span>OT</span><span>L</span><span>PTS</span></span>';
+    var body = rows.map(function (r, i) {
+      var otCol = (r.otw + r.otl);
+      return '<span class="standings-row">' +
+        '<span>' + (i + 1) + '</span>' +
+        '<span>' + country(r.team) + '</span>' +
+        '<span>' + r.gp + '</span>' +
+        '<span>' + r.w + '</span>' +
+        '<span>' + otCol + '</span>' +
+        '<span>' + r.l + '</span>' +
+        '<span><strong>' + r.pts + '</strong></span>' +
+      '</span>';
+    }).join('');
+    return '<span class="standings-table">' + head + body + '</span>';
   }
 
   function country(item) {
