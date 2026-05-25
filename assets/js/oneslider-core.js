@@ -164,6 +164,25 @@
   });
 
   // ====================================================================
+  // Module: expiringEvents
+  // Hide event links once their data-end date is in the past. This keeps
+  // location/persona pages from advertising events that have already ended.
+  // ====================================================================
+  OneSlider.register('expiringEvents', function () {
+    var items = document.querySelectorAll('[data-expiring-events] [data-end]');
+    if (!items.length) return;
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    items.forEach(function (item) {
+      var raw = item.getAttribute('data-end');
+      if (!raw) return;
+      var end = new Date(raw + 'T00:00:00');
+      if (Number.isNaN(end.getTime())) return;
+      if (end < today) item.hidden = true;
+    });
+  });
+
+  // ====================================================================
   // Module: iosNav
   // iOS Human Interface Guidelines style mobile nav. Shown only on
   // screens <=620 px. Replaces the desktop pill row with a 3-slot bar:
@@ -962,5 +981,61 @@
   //     // App.on('consent:granted', function (state) { if (state.ads) { ... } });
   //   });
   // ====================================================================
+
+  OneSlider.register('membership-filter', function () {
+    var filter = document.querySelector('[data-membership-filter]');
+    if (!filter) return;
+
+    var reset = filter.querySelector('[data-membership-filter-reset]');
+    var buttons = Array.prototype.slice.call(filter.querySelectorAll('[data-membership-filter-value]'));
+    var chips = Array.prototype.slice.call(document.querySelectorAll('[data-memberships]'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('.continent-subgroup'));
+
+    function selectedValue() {
+      var active = buttons.find(function (button) {
+        return button.classList.contains('is-active');
+      });
+      return active ? active.getAttribute('data-membership-filter-value') : '';
+    }
+
+    function applyFilters() {
+      var selected = selectedValue();
+      var hasFilters = Boolean(selected);
+
+      if (reset) reset.classList.toggle('is-active', !hasFilters);
+
+      chips.forEach(function (chip) {
+        var memberships = (chip.getAttribute('data-memberships') || 'none').split(/\s+/);
+        var match = !hasFilters || memberships.indexOf(selected) !== -1;
+        chip.classList.toggle('is-filter-hidden', !match);
+      });
+
+      groups.forEach(function (group) {
+        var groupChips = Array.prototype.slice.call(group.querySelectorAll('[data-memberships]'));
+        if (!groupChips.length) return;
+        var visible = groupChips.some(function (chip) {
+          return !chip.classList.contains('is-filter-hidden');
+        });
+        group.classList.toggle('is-filter-empty', !visible && hasFilters);
+      });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        buttons.forEach(function (item) { item.classList.remove('is-active'); });
+        button.classList.add('is-active');
+        applyFilters();
+      });
+    });
+
+    if (reset) {
+      reset.addEventListener('click', function () {
+        buttons.forEach(function (button) { button.classList.remove('is-active'); });
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  });
 
 })();  // end IIFE

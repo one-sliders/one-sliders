@@ -3,6 +3,25 @@
      1. .os-brand   — clickable logo + wordmark injected into every top nav
      2. #os-cc-*    — geo-aware cookie consent banner */
 
+:root {
+  --os-navy: #0d2137;
+  --os-ink: #101820;
+  --os-muted: #62717c;
+  --os-bg: #f5f8fa;
+  --os-surface: #ffffff;
+  --os-line: #dce6ea;
+  --os-primary: #0d2137;
+  --os-accent: #2f6f92;
+  --os-accent-2: #3b8fb6;
+  --os-soft: #edf5f8;
+
+  --navy: var(--os-navy);
+  --ink: var(--os-ink);
+  --muted: var(--os-muted);
+  --theme: var(--os-primary);
+  --theme-2: var(--os-accent);
+}
+
 /* ---------------------------------------------------------------------
    Brand link in every nav
    --------------------------------------------------------------------- */

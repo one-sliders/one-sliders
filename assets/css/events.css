@@ -1,12 +1,12 @@
 :root {
-  --event-bg: #f7faf7;
-  --event-card: #ffffff;
-  --event-ink: #101820;
-  --event-muted: #5f6870;
-  --event-line: rgba(16, 24, 32, 0.12);
-  --event-theme: #0b7c51;
-  --event-theme-2: #149767;
-  --event-accent: #18bf7b;
+  --event-bg: var(--os-bg, #f5f8fa);
+  --event-card: var(--os-surface, #ffffff);
+  --event-ink: var(--os-ink, #101820);
+  --event-muted: var(--os-muted, #62717c);
+  --event-line: color-mix(in srgb, var(--os-line, #dce6ea) 78%, transparent);
+  --event-theme: var(--os-primary, #0d2137);
+  --event-theme-2: var(--os-accent, #2f6f92);
+  --event-accent: var(--os-accent-2, #3b8fb6);
   --event-on-image: rgba(255, 255, 255, 0.93);
   --event-gloss: rgba(255, 255, 255, 0.72);
   --event-shadow: 0 18px 46px rgba(16, 24, 32, 0.11);
@@ -24,8 +24,8 @@ body {
   overflow: hidden;
   color: var(--event-ink);
   background:
-    radial-gradient(circle at 50% 0%, rgba(11, 124, 81, 0.06), rgba(11, 124, 81, 0) 34%),
-    #fbfcfb;
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--event-accent) 10%, transparent), transparent 34%),
+    var(--event-bg);
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -220,19 +220,7 @@ a {
 }
 
 .event-slide::before {
-  content: "";
-  position: absolute;
-  top: calc(52px + 12px);
-  right: var(--event-slide-pad-x);
-  left: var(--event-slide-pad-x);
-  z-index: 1;
-  display: block;
-  height: var(--event-top-height);
-  pointer-events: none;
-  border-radius: 10px;
-  background:
-    linear-gradient(180deg, rgba(3, 8, 10, 0.04), rgba(3, 8, 10, 0.44)),
-    linear-gradient(90deg, rgba(3, 8, 10, 0.80), rgba(3, 8, 10, 0.36) 42%, rgba(3, 8, 10, 0) 74%);
+  content: none;
 }
 
 .event-slide__content {
