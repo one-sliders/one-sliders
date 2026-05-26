@@ -2510,7 +2510,7 @@ body.drink-layout-page .site-footer p {
 .drink-page-commandaria { --drink-hero-image: url('/content/categories/drinks/img/commandaria-hero.png'); }
 .drink-page-cremant { --drink-hero-image: url('/content/categories/drinks/img/cremant-hero.png'); }
 .drink-page-espresso { --drink-hero-image: url('/content/categories/drinks/img/espresso-hero.png'); }
-.drink-page-espresso-martini { --drink-hero-image: url('/content/categories/drinks/img/espresso-martini-hero.png'); --food-hero-image: url('/content/categories/drinks/img/espresso-martini-hero.png'); }
+.drink-page-espresso-martini { --drink-hero-image: url('/content/categories/drinks/img/espresso-martini-hero.png'); }
 .drink-page-french-75 { --drink-hero-image: url('/content/categories/drinks/img/french-75-hero.png'); }
 .drink-page-irish-coffee { --drink-hero-image: url('/content/categories/drinks/img/irish-coffee-hero.png'); --food-hero-image: url('/content/categories/drinks/img/irish-coffee-hero.png'); }
 .drink-page-jenever { --drink-hero-image: url('/content/categories/drinks/img/jenever-hero.png'); }
@@ -2534,23 +2534,19 @@ body.food-layout-page.drink-page-irish-coffee .food-topic__hero {
     linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.68)),
     var(--food-hero-image) center 72% / cover;
 }
-body.drink-layout-page.drink-page-irish-coffee .drink-hero {
+body.drink-layout-page.drink-page-irish-coffee .drink-hero,
+body.drink-layout-page.drink-page-espresso-martini .drink-hero {
   width: 100%;
-  height: clamp(250px, 38vh, 320px);
+  height: clamp(340px, 42vh, 420px);
   min-height: 0;
   aspect-ratio: auto;
   background-color: #070503;
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.58)),
-    var(--food-hero-image);
-  background-position: center, right center;
+    var(--drink-hero-image);
+  background-position: center, right 78%;
   background-repeat: no-repeat;
-  background-size: auto, auto 100%;
-}
-body.food-layout-page.drink-page-espresso-martini .food-topic__hero {
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.64)),
-    var(--food-hero-image) center 72% / cover;
+  background-size: auto, auto 150%;
 }
 .drink-page-raki { --drink-hero-image: url('/content/categories/drinks/img/raki-hero.png'); }
 .drink-page-rakia { --drink-hero-image: url('/content/categories/drinks/img/rakia-hero.png'); }
