@@ -146,7 +146,8 @@
       "Bash(node -e \"const fs=require\\('fs'\\); const b=fs.readFileSync\\('en/content/categories/sport/ice-hockey/events/iihf-world-championship-live.json'\\); console.log\\('First bytes:', b[0], b[1], b[2], b[3]\\); console.log\\('BOM?', b[0]===0xEF && b[1]===0xBB && b[2]===0xBF\\);\")",
       "Bash(format-hex en\\\\content\\\\categories\\\\sport\\\\ice-hockey\\\\events\\\\iihf-world-championship-live.json)",
       "Bash(xxd \"C:\\\\Users\\\\AndersEriksson\\\\3DF\\\\OneSlider\\\\en\\\\content\\\\categories\\\\sport\\\\ice-hockey\\\\events\\\\iihf-world-championship-live.json\")",
-      "Bash(xxd \"/c/Users/AndersEriksson/3DF/OneSlider/content/locations/europe/albania/img/albania-hero.png\")"
+      "Bash(xxd \"/c/Users/AndersEriksson/3DF/OneSlider/content/locations/europe/albania/img/albania-hero.png\")",
+      "Bash(xxd \"/c/Users/AndersEriksson/3DF/OneSlider/content/locations/europe/hungary/index.html\")"
     ]
   }
 }
