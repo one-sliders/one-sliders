@@ -1195,14 +1195,15 @@ html:has(body.country-onepage) {
 
 .country-brief {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(560px, 1.18fr);
-  gap: clamp(22px, 3.6vw, 64px);
+  grid-template-columns: minmax(340px, 0.72fr) minmax(680px, 1.28fr);
+  gap: clamp(20px, 2.8vw, 48px);
   align-items: center;
   min-height: calc(100vh - 126px);
 }
 
 .country-brief__copy {
   min-width: 0;
+  max-width: 560px;
 }
 
 .country-left-stack {

@@ -1,4 +1,4 @@
-# Cannes Film Festival
+﻿# Cannes Film Festival
 
 - Register slug: cannes-film-festival
 - Event page EN: en/content/categories/culture/film/events/cannes-film-festival.html
@@ -84,49 +84,64 @@
 
 ## Stages Update Plan
 
-- Overall: make the `#parts` slide feel like a live Cannes guide, not just a text recap. It should answer: what films are hot, who is deciding, who is visible at the festival, what the market numbers look like, and what happens next.
-- Keep four parts: `Opening`, `Competition`, `Market`, `Awards`.
-- Rename visible parts copy if needed:
-  - Opening: "Opening and red carpet"
-  - Competition: "Films and jury grid"
-  - Market: "Marche du Film stats"
-  - Awards: "Palme race and winners"
+- Current example structure: use two parts only.
+- Part 1: `Festival now` - broad overview of people, films, market scale and celebrity-attendee status.
+- Part 2: `Awards` - prize race before the ceremony, then actual winners after the ceremony.
+- This Cannes page can be used as the reference pattern for culture/film festival Stages at this level.
+- The goal is not many tabs. The goal is one useful "what is happening / who is there" view plus one "who won" view.
 
-### Opening
+### Reference Pattern For This Level
 
-- Keep as archive because opening night has passed.
-- Show "Opening complete".
-- Surface jury arrival / presentation names from the verified jury list.
-- Add red-carpet note: source-backed guests only; do not invent attendee names.
+Use this for similar film/culture festival pages:
 
-### Competition
+1. `Festival now`
+   - People table: name, role, country with flag/link, why it matters.
+   - Films table: film/person, role, country with flag/link, why it matters.
+   - Market / red carpet table: metrics and source-backed celebrity attendance status.
+2. `Awards`
+   - Before ceremony: frontrunner table with film, person, country with flag/link, status.
+   - After ceremony: winners table with prize, film/person, country with flag/link, official result status.
 
-- Replace long paragraph with structured blocks:
-  - "Films to watch" block with top five films and scores.
-  - "Critics split" block with Fjord and lower-score films.
-  - "Jury deciding" block with Park Chan-wook plus full jury member list.
-  - "Competition progress" stat: at least 17 of 22 screened as of 22 May; fewer than five remain.
+Avoid separate tabs for Opening, Competition and Market unless the event is so large that each has distinct live data that cannot fit into the overview.
 
-### Market
+### Festival now
 
-- Make this visually stronger:
-  - show Marche du Film as the business stage.
-  - stats block:
-    - 16,000 registered Marche participants in 2026.
-    - 40,000 professionals attending the wider Festival de Cannes.
-    - 140+ countries represented.
-    - 300 exhibiting companies.
-    - 200 booths.
-  - add "what it means": rights sales, distribution deals, project launches, streamers and producers.
+- Default part.
+- Title should be similar to: "Cannes 2026: people, films and market".
+- Show three equal-width cards across the row:
+  - `Jury` table.
+  - `Films` table.
+  - `Market / red carpet` table.
+- Use table-like rows, not prose blocks.
+- Each person/film row should include:
+  - name
+  - role
+  - country rendered as flag + name + link
+  - why it matters / film connection
+- Red carpet names are allowed only when source-backed. If not verified, keep a clear TBC/source-needed row.
 
 ### Awards
 
-- Make this a live race:
-  - ceremony date: 23 May 2026.
-  - current frontrunner card: Fatherland.
-  - chasing pack: Minotaur, Bitter Christmas, All Of A Sudden, Hope.
-  - split reactions: Fjord, Sheep in the Box, Parallel Tales, Gentle Monster, The Unknown.
-  - after ceremony, replace frontrunner text with winners table: Palme d'Or, Grand Prix, Jury Prize, Director, Actor/Actress or acting prize fields used by Cannes that year.
+- Separate part.
+- Same visual style as `Festival now`.
+- Before winners are announced:
+  - show current race/frontrunners with film, person, country with flag/link, status.
+  - label this as critical-grid context, not official prediction.
+- After winners are announced:
+  - replace pending rows with actual winners.
+  - show prize, film/person, country with flag/link and official status.
+  - never invent winners before official confirmation.
+
+## Current Page Implementation Notes
+
+- `event-part-data.defaultPart` should be `festival-now`.
+- `event-part-data.parts` should be exactly:
+  - `festival-now`
+  - `awards`
+- `festival-now.blocks` should use three `part-card--third` cards so they fill the full row.
+- `awards.blocks` should also use `part-card--third` where possible so the bottom row feels consistent.
+- Use `.people-table` / `.people-row` for these tables.
+- Countries must use the normal country chip pattern with flag + name + link.
 
 ## Stats / Graph Ideas For Script
 
@@ -171,19 +186,14 @@ Render as metric cards:
 
 When the update script runs, prefer this kind of `event-part-data` content:
 
-- `opening.blocks`
-  - "Jury presented" with names
-  - "Red carpet note" with source-backed guests only
-- `competition.blocks`
-  - "Films to watch" as ranked rows/bars
-  - "Competition progress" as 17/22 screened
-  - "Jury members" as compact list
-- `marche-du-film.blocks`
-  - "Market by the numbers" with metric cards
-  - "What happens here" with rights/deals/projects
+- `festival-now.blocks`
+  - "Jury" as a people table.
+  - "Films and filmmakers" as a people table.
+  - "Market / red carpet" as a metric/status table.
 - `awards.blocks`
-  - "Palme race" with frontrunners
-  - "After the ceremony" with exact winner-table placeholders
+  - "Awards race" as a table with film/person/country/status.
+  - "Winners table" with prize/film-or-person/country/status.
+  - "After ceremony" note describing what must be replaced once official winners are known.
 
 ## No Update / Safety Notes
 
@@ -191,3 +201,33 @@ When the update script runs, prefer this kind of `event-part-data` content:
 - Do not imply jury-grid scores are official awards predictions; label them as Screen International critical scores.
 - Do not invent award winners before the 23 May ceremony.
 - If source access fails, keep current verified names and only improve structure.
+
+# Cannes Film Festival live JSON update guide
+
+Live data file: en\content\categories\culture\film\events\cannes-film-festival-live.json
+Event page: $(System.Collections.Hashtable.Path)
+Last reviewed: 2026-05-23
+
+## What belongs in JSON
+
+Update the JSON file when the current edition changes. Keep the HTML page stable unless the structure, images or evergreen description changes.
+
+Use these blocks for user-facing information:
+
+- Live status: date, place and whether the event is upcoming, underway or complete.
+- What to update: the most useful schedule/result/programme detail for this event.
+- Update source: official source link.
+- Add extra blocks for confirmed results, standings, leaderboards, daily programmes or visual summaries when they exist.
+
+## Official source
+
+Go directly to: https://www.festival-cannes.com/en/
+
+Collect confirmed data for: Award winners, competition films, jury notes and closing-night results.
+
+## Visual guidance
+
+Use award tables and country-linked film origin chips when verified.
+
+Use tables, score cards, progress bars, country flags and compact visual summaries where they help a human scan the page. Do not add private/internal notes or unverified commentary to the visible page.
+

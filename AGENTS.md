@@ -15,7 +15,7 @@ These rules are absolute. If a rule conflicts with anything you would otherwise 
 3. **The page is a horizontal carousel.** Each slide fills 100vw × 100vh. A "Next" button slides the next one in. The user never sees stacked vertical sections.
 4. **The top navigation is fixed** (see Section 4): three icons (Events, Locations, Categories) + language switcher. Nothing else. Never duplicate slide navigation (General/Year/Parts) in the top bar.
 5. **No sidebar.** Layout inside a slide is single-column, full-width.
-6. **No tab widgets.** Parts are sub-sections within Slide 3, not tabs.
+6. **No tab widgets for primary parts.** Parts are sub-sections within Slide 3. Compact tab widgets are allowed inside a part only for closely comparable live subgroups, such as Group A / Group B upcoming fixtures.
 7. **Every country reference is rendered as `flag + name + link`** to that country's location page. Always. Inside tables, inside lists, inside fact boxes, inline in text. Plain-text country names are forbidden.
 8. **The flag image must match the country name and link.** Argentina flag only next to "Argentina". Brazil flag only next to "Brazil". Never substitute.
 9. **No white text on white background.** Text contrast must be checked against the actual card background.
@@ -148,7 +148,7 @@ Rules for the skeleton:
 - `.event-carousel__track` is a horizontal flex container with `transform: translateX(...)` controlled by JS.
 - `.event-slide` is `width: 100vw; height: 100vh; flex-shrink: 0;`.
 - The prev/next buttons are large, easy to tap, always visible (except prev on slide 1, next on the last slide).
-- No `<aside>`. No second column. No sidebar. No tab widgets.
+- No `<aside>`. No second column. No sidebar. No tab widgets for primary parts. Compact in-card tabs are allowed for comparable live subgroups inside a part.
 - Anchor links (`#general`, `#year`, `#parts`) work by snapping the carousel to that slide.
 
 ## 6. Slide Content Design
@@ -264,7 +264,7 @@ Two types of parts:
 - **Time-based parts:** match, round, stage, semifinal, qualifier
 - **Space-based parts:** tent, stage, course, venue, pavilion
 
-Parts are rendered as **stacked sub-sections inside the slider** (vertical scroll within the panel, or a horizontal carousel if there are many comparable parts). **Not as a tab widget.** Each part has its own H3 heading and its own anchor.
+Parts are rendered as **stacked sub-sections inside the slider** (vertical scroll within the panel, or a horizontal carousel if there are many comparable parts). **Primary parts are not tab widgets.** Compact in-card tabs are allowed only for closely comparable live subgroups inside a part, such as Group A / Group B upcoming fixtures. Each part has its own H3 heading and its own anchor.
 
 ### Required content per part
 
@@ -453,7 +453,7 @@ Before considering a page done, confirm all of these:
 - [ ] Page is a horizontal carousel of 2 or 3 slides
 - [ ] Each slide fills 100vw × 100vh
 - [ ] Next/Previous buttons slide between slides with smooth animation
-- [ ] No vertical-stacked layout, no sidebar, no tabs
+- [ ] No vertical-stacked layout, no sidebar, no primary-part tabs
 - [ ] Every country appears as flag + name + link
 - [ ] Every flag image matches the country it labels
 - [ ] All text is readable against its background (no white-on-white)
