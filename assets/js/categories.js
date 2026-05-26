@@ -11,25 +11,72 @@
   }
 
   const tabs = Array.from(document.querySelectorAll("[data-sport-tab]"));
-  if (!tabs.length) return;
+  if (tabs.length) {
+    const panels = new Map(
+      Array.from(document.querySelectorAll(".topic-group[id]")).map((panel) => [panel.id, panel])
+    );
 
-  const panels = new Map(
-    Array.from(document.querySelectorAll(".topic-group[id]")).map((panel) => [panel.id, panel])
-  );
+    const activate = (id) => {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.sportTab === id;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+      });
 
-  const activate = (id) => {
+      panels.forEach((panel, panelId) => {
+        panel.classList.toggle("is-active", panelId === id);
+      });
+    };
+
     tabs.forEach((tab) => {
-      const active = tab.dataset.sportTab === id;
-      tab.classList.toggle("is-active", active);
-      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.addEventListener("click", () => activate(tab.dataset.sportTab));
     });
+  }
 
-    panels.forEach((panel, panelId) => {
-      panel.classList.toggle("is-active", panelId === id);
+  const filterTabs = Array.from(document.querySelectorAll("[data-topic-filter]"));
+  if (filterTabs.length) {
+    const filterCards = Array.from(document.querySelectorAll("[data-topic-kind]"));
+    const applyTopicFilter = (filter) => {
+      filterTabs.forEach((tab) => {
+        const active = tab.dataset.topicFilter === filter;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      filterCards.forEach((card) => {
+        const kinds = (card.dataset.topicKind || "").split(" ");
+        const visible = filter === "all" || kinds.includes(filter) || (filter === "grill" && kinds.includes("street"));
+        card.hidden = !visible;
+      });
+    };
+
+    filterTabs.forEach((tab) => {
+      tab.addEventListener("click", () => applyTopicFilter(tab.dataset.topicFilter));
     });
-  };
+  }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => activate(tab.dataset.sportTab));
-  });
+  const recipeTabs = Array.from(document.querySelectorAll("[data-topic-tab]"));
+  if (recipeTabs.length) {
+    const recipePanels = new Map(
+      Array.from(document.querySelectorAll(".recipe-tab-panel[id]")).map((panel) => [panel.id, panel])
+    );
+
+    const activateRecipeTab = (id) => {
+      recipeTabs.forEach((tab) => {
+        const active = tab.dataset.topicTab === id;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      recipePanels.forEach((panel, panelId) => {
+        const active = panelId === id;
+        panel.classList.toggle("is-active", active);
+        panel.hidden = !active;
+      });
+    };
+
+    recipeTabs.forEach((tab) => {
+      tab.addEventListener("click", () => activateRecipeTab(tab.dataset.topicTab));
+    });
+  }
 })();

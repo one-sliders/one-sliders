@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = process.cwd();
-const TODAY = new Date('2026-05-25T00:00:00Z');
+const ROOT = globalThis.nodeRepl ? globalThis.nodeRepl.cwd : process.cwd();
+const TODAY = new Date('2026-05-26T00:00:00Z');
+const STAMP = '26 May 2026';
+const GENERATED_AT = '2026-05-26';
 const EVENT_DIR = 'en/content/categories/culture/national-day/events';
 const IMG_DIR = `${EVENT_DIR}/img`;
 
@@ -196,7 +198,7 @@ function eventHtml(event, dateParts) {
     eventName: event.title,
     slug: event.eventSlug,
     defaultYear: event.nextYear,
-    lastUpdated: '25 May 2026',
+    lastUpdated: STAMP,
     sources: [{ label: 'OneSliders country page', url: `/content/locations/europe/${event.countrySlug}/` }],
     editions: makeEditions(event, dateParts),
   };
@@ -259,9 +261,15 @@ function eventHtml(event, dateParts) {
 `;
 }
 
-function cardHtml(event, relPrefix) {
+function cardHtml(event, eventDir, imgDir = `${eventDir}/img`) {
   const meta = `${displayDate(event.day, event.month, event.nextYear)} · ${event.country}`;
-  return `        <a class="event-card" data-end="${event.startDate}" data-cat="culture" data-topic="national-day" data-cont="europe" data-country="${event.countrySlug}" data-keywords="${esc(`${event.title}, ${event.country} national day, public holiday`)}" href="${relPrefix}${EVENT_DIR}/${event.eventSlug}.html#year-${event.nextYear}" data-start="${event.startDate}" data-reach="national" style="--cat-color:var(--c-culture)"><img class="card-thumb" src="${relPrefix}${IMG_DIR}/${event.eventSlug}-mini.png" alt="${esc(event.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Culture</span><strong class="card-title">${esc(event.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
+  return `        <a class="event-card" data-end="${event.startDate}" data-cat="culture" data-topic="national-day" data-cont="europe" data-country="${event.countrySlug}" data-keywords="${esc(`${event.title}, ${event.country} national day, public holiday`)}" href="${eventDir}/${event.eventSlug}.html#year-${event.nextYear}" data-start="${event.startDate}" data-reach="national" style="--cat-color:var(--c-culture)"><img class="card-thumb" src="${imgDir}/${event.eventSlug}-mini.png" alt="${esc(event.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Culture</span><strong class="card-title">${esc(event.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
+}
+
+function removeLegacyNationalDayCards(file) {
+  let html = read(file);
+  html = html.replace(/\s*<a class="event-card"(?=[\s\S]*?data-topic="national-day")[\s\S]*?<\/a>/g, '');
+  write(file, html);
 }
 
 function upsertGeneratedBlock(file, startMarker, endMarker, content) {
@@ -319,15 +327,34 @@ function updateRegister(events) {
       statusLabel: 'Scheduled',
       updateMode: 'event-update',
       priority: 'normal',
-      lastChecked: '25 May 2026',
+      lastChecked: STAMP,
       sources: [{ label: 'OneSliders country page', url: `/content/locations/europe/${event.countrySlug}/` }],
       eventPageEN: `${EVENT_DIR}/${event.eventSlug}.html`,
     };
     if (bySlug.has(event.eventSlug)) registry.events[bySlug.get(event.eventSlug)] = { ...registry.events[bySlug.get(event.eventSlug)], ...record };
     else registry.events.push(record);
   }
-  registry.generatedAt = '2026-05-25';
+  registry.generatedAt = GENERATED_AT;
   write(file, `${JSON.stringify(registry, null, 2)}\n`);
+}
+
+function countryEventCard(event) {
+  return `<a class="visual-topic-card visual-topic-card--national" data-end="${event.startDate}" href="/${EVENT_DIR}/${event.eventSlug}.html#year-${event.nextYear}"><img src="/${IMG_DIR}/${event.eventSlug}-mini.png" alt="" loading="lazy"><strong>${esc(event.title)}</strong><span>${esc(displayDate(event.day, event.month, event.nextYear))} · ${esc(event.country)}</span></a>`;
+}
+
+function updateCountryPages(events) {
+  for (const event of events) {
+    const file = `content/locations/europe/${event.countrySlug}/index.html`;
+    if (!fs.existsSync(path.join(ROOT, file))) continue;
+    let html = read(file);
+    const card = countryEventCard(event);
+    if (html.includes(`/${EVENT_DIR}/${event.eventSlug}.html`)) {
+      html = html.replace(/<a class="visual-topic-card visual-topic-card--national"[^>]*href="[^"]*\/en\/content\/categories\/culture\/national-day\/events\/[^"]+"[\s\S]*?<\/a>/, card);
+    } else {
+      html = html.replace(/(<div class="country-paths country-paths--events" data-expiring-events>)/, `$1${card}`);
+    }
+    write(file, html);
+  }
 }
 
 function writeNotes(event) {
@@ -404,14 +431,17 @@ for (const event of events) {
   writeNotes(event);
 }
 
-const contentCards = events.map(event => cardHtml(event, '../../')).join('\n');
-const enCards = events.map(event => cardHtml(event, '../')).join('\n');
+const contentCards = events.map(event => cardHtml(event, `../../${EVENT_DIR}`, `../../${IMG_DIR}`)).join('\n');
+const enCards = events.map(event => cardHtml(event, '../categories/culture/national-day/events')).join('\n');
 
+removeLegacyNationalDayCards('content/events/index.html');
+removeLegacyNationalDayCards('en/content/events/index.html');
 upsertGeneratedBlock('content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', contentCards);
 upsertGeneratedBlock('en/content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', enCards);
 ensureCountryNames('content/events/index.html', events);
 ensureCountryNames('en/content/events/index.html', events);
 updateTopicPage(events);
+updateCountryPages(events);
 updateRegister(events);
 
 write('tmp/europe-national-days.json', `${JSON.stringify(events, null, 2)}\n`);

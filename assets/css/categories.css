@@ -390,10 +390,17 @@ a {
   --category-hero: url("https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?auto=format&fit=crop&w=1600&q=80");
 }
 
+.category-page--food,
 .category-page--food-and-drinks {
   --theme: #7a4b18;
   --accent: #f2c16b;
   --category-hero: url("https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1600&q=80");
+}
+
+.category-page--drinks {
+  --theme: #4f5f2a;
+  --accent: #d8c96b;
+  --category-hero: url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--technology {
@@ -469,6 +476,7 @@ a {
 .category-shell {
   min-height: calc(100vh - 55px);
   display: grid;
+  align-content: start;
   gap: 14px;
   padding: clamp(12px, 2vw, 28px) clamp(14px, 3vw, 36px);
 }
@@ -924,6 +932,7 @@ a {
   min-height: 0;
   display: grid;
   gap: 12px;
+  scroll-margin-top: 66px;
 }
 
 .section-heading {
@@ -1036,6 +1045,66 @@ a {
   gap: 8px;
 }
 
+.sport-tabs + .topic-grid,
+.sport-tabs + .topic-groups,
+.recipe-tabs + .recipe-tab-panels {
+  margin-top: 12px;
+}
+
+.category-page--food .recipe-tabs {
+  padding-left: 120px;
+}
+
+.recipe-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 3px;
+  border-bottom: 1px solid var(--line);
+}
+
+.recipe-tab {
+  min-height: 42px;
+  margin-bottom: -1px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-bottom-color: var(--line);
+  border-radius: 8px 8px 0 0;
+  background: #eef2f6;
+  color: var(--theme);
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.recipe-tab.is-active {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border-bottom-color: white;
+  color: var(--ink);
+}
+
+.recipe-tab:hover {
+  background: white;
+}
+
+.recipe-tab-panels {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  background: white;
+}
+
+.recipe-tab-panel {
+  display: none;
+}
+
+.recipe-tab-panel.is-active {
+  display: block;
+}
+
 .sport-tab {
   min-height: 34px;
   padding: 0 12px;
@@ -1113,6 +1182,767 @@ a {
   line-height: 1.2;
 }
 
+.food-layout-page {
+  --food-nav-height: 55px;
+  --food-content-gap: 12px;
+  --food-footer-height: 36px;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(47, 111, 146, 0.12), transparent 32%),
+    linear-gradient(180deg, #f5f8fa 0%, #edf5f8 100%);
+}
+
+html:has(body.food-layout-page) {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.food-topic-page .food-topic__hero {
+  min-height: 320px;
+  display: grid;
+  align-content: end;
+  padding: 28px;
+  color: white;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.68)), var(--food-hero-image) center / cover;
+  border-radius: 8px;
+}
+
+.food-topic-page .food-topic__hero p {
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.food-topic-page .eyebrow {
+  margin: 0 0 8px;
+  color: #9ee6b7;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.food-topic-page .food-topic h1 {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 0.95;
+}
+
+.food-topic-page .food-topic__panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.food-topic-page .topic-card {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 8px;
+}
+
+.food-topic-page .topic-card--wide {
+  grid-column: 1 / -1;
+}
+
+.food-topic-page .topic-card h2 {
+  margin-top: 0;
+}
+
+.food-topic-page .recipe-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.58;
+}
+
+.food-topic-page .recipe-list li + li {
+  margin-top: 8px;
+}
+
+.food-topic-page .topic-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.food-topic-page .topic-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  color: #111922;
+  font-weight: 800;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 999px;
+}
+
+.food-topic-page .topic-country img {
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+}
+
+.food-topic-page .recipe-drink-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+  overflow: hidden;
+  color: #111922;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 8px;
+}
+
+.food-topic-page .recipe-drink-card img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.food-topic-page .recipe-drink-card span {
+  display: block;
+  color: #47515c;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.food-topic-page .recipe-drink-card strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 18px;
+}
+
+.food-topic-page .recipe-music-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: center;
+  overflow: hidden;
+  color: #111922;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 8px;
+}
+
+.food-topic-page .recipe-music-card img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.food-topic-page .recipe-music-card strong {
+  display: block;
+  font-size: 18px;
+}
+
+.food-topic-page .recipe-music-card span {
+  display: block;
+  margin-top: 3px;
+  color: #47515c;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.music-topic-page {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 76% 14%, rgba(139, 92, 246, 0.10), transparent 32%),
+    linear-gradient(180deg, #f6f8fb 0%, #edf3f7 100%);
+}
+
+.music-topic-page .top-menu {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 55px;
+  background: rgba(246, 248, 251, 0.95);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.music-topic {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 18px 0 34px;
+}
+
+.music-topic__hero {
+  display: grid;
+  align-items: end;
+  min-height: clamp(320px, 46vh, 520px);
+  overflow: hidden;
+  padding: clamp(24px, 4vw, 52px);
+  color: white;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 54px rgba(17, 25, 34, 0.18);
+}
+
+.music-topic__hero > div {
+  max-width: 760px;
+}
+
+.music-topic__hero .eyebrow {
+  margin: 0 0 10px;
+  color: #c9b8ff;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.music-topic__hero h1 {
+  margin: 0;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.music-topic__hero p:last-child {
+  max-width: 680px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.35;
+}
+
+.music-topic__panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.music-topic__panel .topic-card {
+  min-height: 170px;
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(17, 25, 34, 0.06);
+}
+
+.music-topic__panel .topic-card h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.music-topic__panel .topic-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.48;
+}
+
+body.food-layout-page .top-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 40;
+  min-height: var(--food-nav-height);
+}
+
+body.food-layout-page main.food-topic.food-content-box {
+  position: fixed;
+  top: calc(var(--food-nav-height) + var(--food-content-gap));
+  right: clamp(12px, 2vw, 36px);
+  bottom: var(--food-footer-height);
+  left: clamp(12px, 2vw, 36px);
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: clamp(12px, 1.6vw, 24px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
+}
+
+body.food-layout-page .food-topic__hero {
+  min-height: clamp(280px, 42vh, 420px);
+}
+
+body.food-layout-page .food-topic__panel {
+  grid-template-columns: minmax(300px, .8fr) minmax(560px, 1.35fr) minmax(260px, .7fr);
+  gap: 10px;
+  margin-top: 10px;
+  align-items: stretch;
+}
+
+body.food-layout-page .food-topic__panel > .topic-card {
+  padding: 16px 18px;
+}
+
+body.food-layout-page .food-topic__panel > .topic-card h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+body.food-layout-page .recipe-list {
+  line-height: 1.38;
+}
+
+body.food-layout-page .recipe-list li + li {
+  margin-top: 6px;
+}
+
+body.food-layout-page .food-topic__panel > .topic-card:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.food-layout-page .food-topic__panel > .topic-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body.food-layout-page .topic-card--more {
+  display: block;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: stretch;
+  padding: 14px;
+}
+
+body.food-layout-page .topic-card--more h2 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 1.05;
+}
+
+body.food-layout-page .topic-card--more .topic-countries {
+  display: block;
+}
+
+body.food-layout-page .topic-card--more .topic-country {
+  width: 100%;
+  justify-content: flex-start;
+  min-height: 54px;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+
+body.food-layout-page .topic-card--more .recipe-drink-card {
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  margin-top: 8px;
+  min-height: 62px;
+}
+
+body.food-layout-page .topic-card--more .recipe-drink-card img {
+  width: 92px;
+  height: 62px;
+  object-fit: cover;
+  grid-row: 1 / span 2;
+}
+
+body.food-layout-page .topic-card--more .recipe-drink-card strong,
+body.food-layout-page .topic-card--more .recipe-drink-card span {
+  grid-column: 2;
+}
+
+body.food-layout-page .topic-card--more .recipe-drink-card strong {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+body.food-layout-page .topic-card--more .recipe-drink-card span {
+  margin-top: -2px;
+  color: #47515c;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+body.food-layout-page .topic-card--more .recipe-music-card {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  min-height: 62px;
+  overflow: hidden;
+  color: #111922;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 8px;
+}
+
+body.food-layout-page .topic-card--more .recipe-music-card img {
+  width: 92px;
+  height: 62px;
+  object-fit: cover;
+  grid-row: 1 / span 2;
+}
+
+body.food-layout-page .topic-card--more .recipe-music-card strong,
+body.food-layout-page .topic-card--more .recipe-music-card span {
+  display: block;
+  grid-column: 2;
+}
+
+body.food-layout-page .topic-card--more .recipe-music-card strong {
+  font-size: 14px;
+  line-height: 1.15;
+}
+
+body.food-layout-page .topic-card--more .recipe-music-card span {
+  margin-top: -2px;
+  color: #47515c;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+body.food-layout-page .topic-card--wide {
+  display: none;
+}
+
+body.food-layout-page .os-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  min-height: var(--food-footer-height);
+  height: var(--food-footer-height);
+  padding: 0 clamp(24px, 3.2vw, 56px);
+  background: transparent;
+  border-top: 0;
+}
+
+.drink-layout-page {
+  --drink-nav-height: 55px;
+  --drink-content-gap: 12px;
+  --drink-footer-height: 36px;
+  --theme: #4f5f2a;
+  --accent: #d8c96b;
+  --ink: #111922;
+  --paper: #f6f8f6;
+  --muted: #5f6b63;
+  --line: rgba(17, 25, 34, 0.14);
+  height: 100vh;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+html:has(body.drink-layout-page) {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drink-layout-page a {
+  color: inherit;
+}
+
+body.drink-layout-page .top-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--drink-nav-height);
+  padding: 8px clamp(14px, 3vw, 36px);
+  overflow-x: auto;
+  background: rgba(246, 248, 246, 0.95);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+body.drink-layout-page .top-menu a {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+body.drink-layout-page .top-menu a:hover,
+body.drink-layout-page .top-menu a.active {
+  color: white;
+  background: var(--theme);
+}
+
+.drink-layout-page .nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--muted);
+}
+
+.drink-layout-page .nav-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.drink-layout-page .nav-divider {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 18px;
+  background: var(--line);
+}
+
+body.drink-layout-page main.drink-page.drink-content-box {
+  position: fixed;
+  top: calc(var(--drink-nav-height) + var(--drink-content-gap));
+  right: clamp(12px, 2vw, 36px);
+  bottom: var(--drink-footer-height);
+  left: clamp(12px, 2vw, 36px);
+  display: grid;
+  gap: 14px;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: clamp(12px, 1.6vw, 24px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
+}
+
+.drink-layout-page .drink-hero {
+  display: grid;
+  align-items: end;
+  min-height: clamp(260px, 34vw, 430px);
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(5, 12, 18, 0.92), rgba(5, 12, 18, 0.58) 45%, rgba(5, 12, 18, 0.12)), var(--drink-hero-image) center / cover;
+  border-radius: 10px;
+  box-shadow: 0 18px 44px rgba(17, 25, 34, 0.18);
+}
+
+.drink-layout-page .hero-copy {
+  max-width: 760px;
+  padding: clamp(20px, 4vw, 48px);
+  color: white;
+}
+
+.drink-layout-page .eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.drink-layout-page .hero-copy h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 108px);
+  line-height: 0.88;
+  letter-spacing: 0;
+}
+
+.drink-layout-page .intro {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.35;
+}
+
+.drink-layout-page .content-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(520px, 1.22fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.drink-layout-page .panel {
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(17, 25, 34, 0.05);
+}
+
+.drink-layout-page .panel h2 {
+  margin: 0;
+  padding: 16px 18px 10px;
+  font-size: 24px;
+}
+
+.drink-layout-page .panel p {
+  margin: 0;
+  padding: 0 18px 16px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.drink-layout-page .fact-grid,
+.drink-layout-page .compare-grid {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+}
+
+.drink-layout-page .fact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.drink-layout-page .compare-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.drink-layout-page .fact-card {
+  padding: 12px;
+  background: #fbfcfb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.drink-layout-page .fact-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.drink-layout-page .fact-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.drink-layout-page .country-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 18px;
+}
+
+.drink-layout-page .drink-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  font-weight: 900;
+  text-decoration: none;
+  background: #fbfcfb;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.drink-layout-page .drink-country img {
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.drink-layout-page .data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.drink-layout-page .data-table th,
+.drink-layout-page .data-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--line);
+  line-height: 1.35;
+}
+
+.drink-layout-page .data-table th {
+  width: 30%;
+  color: var(--theme);
+  font-size: 14px;
+}
+
+.drink-layout-page .compare-card {
+  padding: 12px;
+  background: #fbfcfb;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+}
+
+.drink-layout-page .compare-card strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.drink-layout-page .compare-card span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+body.drink-layout-page .site-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  min-height: var(--drink-footer-height);
+  height: var(--drink-footer-height);
+  padding: 0 clamp(24px, 3.2vw, 56px);
+  color: var(--muted);
+  font-size: 13px;
+  background: transparent;
+  border-top: 0;
+}
+
+body.drink-layout-page .site-footer p {
+  margin: 0;
+  line-height: var(--drink-footer-height);
+}
+
+@media (max-width: 900px) {
+  .drink-layout-page .content-grid,
+  .drink-layout-page .compare-grid,
+  .drink-layout-page .fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drink-layout-page .drink-hero {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 800px) {
+  .food-topic-page .food-topic__panel {
+    grid-template-columns: 1fr;
+  }
+
+  body.food-layout-page .food-topic__panel > .topic-card:first-child,
+  body.food-layout-page .food-topic__panel > .topic-card:nth-child(2),
+  body.food-layout-page .topic-card--more,
+  .food-topic-page .topic-card--wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
 @media (max-width: 1050px) {
   .category-shell {
     min-height: auto;
@@ -1177,3 +2007,90 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Generated topic hero images. */
+.food-page-bacalhau { --food-hero-image: url('/content/categories/food/img/bacalhau-hero.png'); }
+.food-page-baguette { --food-hero-image: url('/content/categories/food/img/baguette-hero.png'); }
+.food-page-banitsa { --food-hero-image: url('/content/categories/food/img/banitsa-hero.png'); }
+.food-page-barbagiuan { --food-hero-image: url('/content/categories/food/img/barbagiuan-hero.png'); }
+.food-page-borscht { --food-hero-image: url('/content/categories/food/img/borscht-hero.png'); }
+.food-page-bratwurst { --food-hero-image: url('/content/categories/food/img/bratwurst-hero.png'); }
+.food-page-bryndzove-halusky { --food-hero-image: url('/content/categories/food/img/bryndzove-halusky-hero.png'); }
+.food-page-byrek { --food-hero-image: url('/content/categories/food/img/byrek-hero.png'); }
+.food-page-cepelinai { --food-hero-image: url('/content/categories/food/img/cepelinai-hero.png'); }
+.food-page-cevapi { --food-hero-image: url('/content/categories/food/img/cevapi-hero.png'); }
+.food-page-draniki { --food-hero-image: url('/content/categories/food/img/draniki-hero.png'); }
+.food-page-farikal { --food-hero-image: url('/content/categories/food/img/farikal-hero.png'); }
+.food-page-fish-and-chips { --food-hero-image: url('/content/categories/food/img/fish-and-chips-hero.png'); }
+.food-page-flija { --food-hero-image: url('/content/categories/food/img/flija-hero.png'); }
+.food-page-fondue { --food-hero-image: url('/content/categories/food/img/fondue-hero.png'); }
+.food-page-goulash { --food-hero-image: url('/content/categories/food/img/goulash-hero.png'); }
+.food-page-grey-peas-with-bacon { --food-hero-image: url('/content/categories/food/img/grey-peas-with-bacon-hero.png'); }
+.food-page-halloumi { --food-hero-image: url('/content/categories/food/img/halloumi-hero.png'); }
+.food-page-irish-stew { --food-hero-image: url('/content/categories/food/img/irish-stew-hero.png'); }
+.food-page-judd-mat-gaardebounen { --food-hero-image: url('/content/categories/food/img/judd-mat-gaardebounen-hero.png'); }
+.food-page-karjalanpiirakka { --food-hero-image: url('/content/categories/food/img/karjalanpiirakka-hero.png'); }
+.food-page-kasknopfle { --food-hero-image: url('/content/categories/food/img/kasknopfle-hero.png'); }
+.food-page-kebab { --food-hero-image: url('/content/categories/food/img/kebab-hero.png'); }
+.food-page-khachapuri { --food-hero-image: url('/content/categories/food/img/khachapuri-hero.png'); }
+.food-page-khorovats { --food-hero-image: url('/content/categories/food/img/khorovats-hero.png'); }
+.food-page-lamb-soup { --food-hero-image: url('/content/categories/food/img/lamb-soup-hero.png'); }
+.food-page-mamaliga { --food-hero-image: url('/content/categories/food/img/mamaliga-hero.png'); }
+.food-page-meatballs { --food-hero-image: url('/content/categories/food/img/meatballs-hero.png'); }
+.food-page-moules-frites { --food-hero-image: url('/content/categories/food/img/moules-frites-hero.png'); }
+.food-page-moussaka { --food-hero-image: url('/content/categories/food/img/moussaka-hero.png'); }
+.food-page-njeguski-prsut { --food-hero-image: url('/content/categories/food/img/njeguski-prsut-hero.png'); }
+.food-page-paella { --food-hero-image: url('/content/categories/food/img/paella-hero.png'); }
+.food-page-pastizzi { --food-hero-image: url('/content/categories/food/img/pastizzi-hero.png'); }
+.food-page-peka { --food-hero-image: url('/content/categories/food/img/peka-hero.png'); }
+.food-page-pierogi { --food-hero-image: url('/content/categories/food/img/pierogi-hero.png'); }
+.food-page-pizza { --food-hero-image: url('/content/categories/food/img/pizza-hero.png'); }
+.food-page-pljeskavica { --food-hero-image: url('/content/categories/food/img/pljeskavica-hero.png'); }
+.food-page-plov { --food-hero-image: url('/content/categories/food/img/plov-hero.png'); }
+.food-page-potica { --food-hero-image: url('/content/categories/food/img/potica-hero.png'); }
+.food-page-roman-pasta { --food-hero-image: url('/content/categories/food/img/roman-pasta-hero.png'); }
+.food-page-sarmale { --food-hero-image: url('/content/categories/food/img/sarmale-hero.png'); }
+.food-page-slovak-onion-soup { --food-hero-image: url('/content/categories/food/img/slovak-onion-soup-hero.png'); }
+.food-page-sm-rrebr-d { --food-hero-image: url('/content/categories/food/img/sm-rrebr-d-hero.png'); }
+.food-page-street-food { --food-hero-image: url('/content/categories/food/img/street-food-hero.png'); }
+.food-page-stroopwafel { --food-hero-image: url('/content/categories/food/img/stroopwafel-hero.png'); }
+.food-page-svickova { --food-hero-image: url('/content/categories/food/img/svickova-hero.png'); }
+.food-page-tavce-gravce { --food-hero-image: url('/content/categories/food/img/tavce-gravce-hero.png'); }
+.food-page-torta-tre-monti { --food-hero-image: url('/content/categories/food/img/torta-tre-monti-hero.png'); }
+.food-page-trinxat { --food-hero-image: url('/content/categories/food/img/trinxat-hero.png'); }
+.food-page-verivorst { --food-hero-image: url('/content/categories/food/img/verivorst-hero.png'); }
+.food-page-wiener-schnitzel { --food-hero-image: url('/content/categories/food/img/wiener-schnitzel-hero.png'); }
+.drink-page-aquavit { --drink-hero-image: url('/content/categories/drinks/img/aquavit-hero.png'); }
+.drink-page-beer { --drink-hero-image: url('/content/categories/drinks/img/beer-hero.png'); }
+.drink-page-black-tea { --drink-hero-image: url('/content/categories/drinks/img/black-tea-hero.png'); }
+.drink-page-borovicka { --drink-hero-image: url('/content/categories/drinks/img/borovicka-hero.png'); }
+.drink-page-bosnian-coffee { --drink-hero-image: url('/content/categories/drinks/img/bosnian-coffee-hero.png'); }
+.drink-page-brandy { --drink-hero-image: url('/content/categories/drinks/img/brandy-hero.png'); }
+.drink-page-champagne { --drink-hero-image: url('/content/categories/drinks/img/champagne-hero.png'); }
+.drink-page-coffee { --drink-hero-image: url('/content/categories/drinks/img/coffee-hero.png'); }
+.drink-page-commandaria { --drink-hero-image: url('/content/categories/drinks/img/commandaria-hero.png'); }
+.drink-page-cremant { --drink-hero-image: url('/content/categories/drinks/img/cremant-hero.png'); }
+.drink-page-espresso { --drink-hero-image: url('/content/categories/drinks/img/espresso-hero.png'); }
+.drink-page-irish-coffee { --drink-hero-image: url('/content/categories/drinks/img/irish-coffee-hero.png'); }
+.drink-page-jenever { --drink-hero-image: url('/content/categories/drinks/img/jenever-hero.png'); }
+.drink-page-kali { --drink-hero-image: url('/content/categories/drinks/img/kali-hero.png'); }
+.drink-page-kinnie { --drink-hero-image: url('/content/categories/drinks/img/kinnie-hero.png'); }
+.drink-page-kvass { --drink-hero-image: url('/content/categories/drinks/img/kvass-hero.png'); }
+.drink-page-ouzo { --drink-hero-image: url('/content/categories/drinks/img/ouzo-hero.png'); }
+.drink-page-port-wine { --drink-hero-image: url('/content/categories/drinks/img/port-wine-hero.png'); }
+.drink-page-raki { --drink-hero-image: url('/content/categories/drinks/img/raki-hero.png'); }
+.drink-page-rakia { --drink-hero-image: url('/content/categories/drinks/img/rakia-hero.png'); }
+.drink-page-rakija { --drink-hero-image: url('/content/categories/drinks/img/rakija-hero.png'); }
+.drink-page-riga-black-balsam { --drink-hero-image: url('/content/categories/drinks/img/riga-black-balsam-hero.png'); }
+.drink-page-sangria { --drink-hero-image: url('/content/categories/drinks/img/sangria-hero.png'); }
+.drink-page-skyr-drink { --drink-hero-image: url('/content/categories/drinks/img/skyr-drink-hero.png'); }
+.drink-page-slivovitz { --drink-hero-image: url('/content/categories/drinks/img/slivovitz-hero.png'); }
+.drink-page-stout { --drink-hero-image: url('/content/categories/drinks/img/stout-hero.png'); }
+.drink-page-tea { --drink-hero-image: url('/content/categories/drinks/img/tea-hero.png'); }
+.drink-page-tokaji { --drink-hero-image: url('/content/categories/drinks/img/tokaji-hero.png'); }
+.drink-page-tuica { --drink-hero-image: url('/content/categories/drinks/img/tuica-hero.png'); }
+.drink-page-turkish-tea { --drink-hero-image: url('/content/categories/drinks/img/turkish-tea-hero.png'); }
+.drink-page-uzvar { --drink-hero-image: url('/content/categories/drinks/img/uzvar-hero.png'); }
+.drink-page-vodka { --drink-hero-image: url('/content/categories/drinks/img/vodka-hero.png'); }
+.drink-page-vranac { --drink-hero-image: url('/content/categories/drinks/img/vranac-hero.png'); }
+.drink-page-wine { --drink-hero-image: url('/content/categories/drinks/img/wine-hero.png'); }
