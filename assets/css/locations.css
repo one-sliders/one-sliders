@@ -2083,17 +2083,47 @@ html:has(body.country-onepage) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .country-onepage .country-content-box {
+    overflow-y: auto;
+  }
+
   .country-slide {
     align-items: start;
   }
 
   .country-brief {
     grid-template-columns: 1fr;
+    height: auto;
     min-height: 0;
+    overflow: visible;
+  }
+
+  .country-brief__copy {
+    grid-template-rows: auto auto auto auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .country-hero-image {
+    aspect-ratio: 1200 / 630;
+    height: auto;
+    min-height: clamp(240px, 42vw, 320px);
   }
 
   .country-brief__panel {
+    height: auto;
+    max-height: none;
     margin-top: 4px;
+    overflow: visible;
+  }
+
+  .country-brief__panel .persona-tabs {
+    height: auto;
+  }
+
+  .persona-panel {
+    height: auto;
+    max-height: none;
   }
 }
 
@@ -2139,12 +2169,14 @@ html:has(body.country-onepage) {
   }
 
   .country-brief__panel .persona-tabs {
-    min-height: 620px;
+    height: auto;
+    min-height: 0;
   }
 
   .persona-panel {
-    height: 548px;
-    max-height: 548px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   .country-brief .hero-title {
