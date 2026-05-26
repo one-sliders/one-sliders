@@ -66,6 +66,10 @@
         const active = tab.dataset.topicTab === id;
         tab.classList.toggle("is-active", active);
         tab.setAttribute("aria-selected", active ? "true" : "false");
+        tab.tabIndex = active ? 0 : -1;
+        if (active) {
+          tab.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+        }
       });
 
       recipePanels.forEach((panel, panelId) => {
@@ -77,6 +81,22 @@
 
     recipeTabs.forEach((tab) => {
       tab.addEventListener("click", () => activateRecipeTab(tab.dataset.topicTab));
+      tab.addEventListener("keydown", (event) => {
+        const currentIndex = recipeTabs.indexOf(tab);
+        const nextKey = event.key === "ArrowRight" || event.key === "ArrowDown";
+        const prevKey = event.key === "ArrowLeft" || event.key === "ArrowUp";
+        if (!nextKey && !prevKey && event.key !== "Home" && event.key !== "End") return;
+
+        event.preventDefault();
+        let nextIndex = currentIndex;
+        if (nextKey) nextIndex = (currentIndex + 1) % recipeTabs.length;
+        if (prevKey) nextIndex = (currentIndex - 1 + recipeTabs.length) % recipeTabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = recipeTabs.length - 1;
+
+        recipeTabs[nextIndex].focus();
+        activateRecipeTab(recipeTabs[nextIndex].dataset.topicTab);
+      });
     });
   }
 })();

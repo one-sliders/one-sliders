@@ -5,7 +5,7 @@
 - Current edition: 2026
 - Status: active (group stage ongoing)
 - Update mode: standings
-- Last checked: 23 May 2026
+- Last checked: 26 May 2026
 
 ## Sources
 
@@ -59,7 +59,22 @@ Update `standingsLabel` and `standingsDetail` for Group A and Group B after all 
 ## Latest Verified Status
 
 - Group stage runs 15â€“26 May; playoffs 28â€“31 May; gold medal game 31 May
-- Event page updated through the early 23 May games: Latvia 4-2 United States, Switzerland 9-0 Hungary, Denmark 4-0 Slovenia, Slovakia 2-3 Czechia
+- Event page updated through the completed 26 May afternoon games: Hungary 1-8 Latvia, Norway 4-3 Denmark after overtime, United States 4-1 Austria, Sweden 4-2 Slovakia.
+- The 26 May 20:20 games Switzerland-Finland and Czechia-Canada were still listed as scheduled when checked.
+
+### May 26 results
+
+- Hungary 1-8 Latvia
+- Norway 4-3 Denmark (OT)
+- United States 4-1 Austria
+- Sweden 4-2 Slovakia
+
+### May 25 results
+
+- United States 7-3 Hungary
+- Czechia 1-4 Norway
+- Germany 6-3 United Kingdom
+- Slovenia 5-1 Italy
 
 ### May 22 results
 
