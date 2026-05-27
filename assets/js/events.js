@@ -4,6 +4,7 @@
   var savedKey = 'os_saved_events_v1';
   var followedTeamsKey = 'os_followed_teams_v1';
   var teamHighlightColors = ['yellow', 'blue', 'green', 'pink', 'orange', 'cyan', 'violet', 'lime'];
+  var eventTeamIcons = {};
 
   function readJson(id) {
     var node = document.getElementById(id);
@@ -21,6 +22,104 @@
       .replace(/"/g, '&quot;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
+  }
+
+  function escapeIcs(value) {
+    return String(value || '')
+      .replace(/\\/g, '\\\\')
+      .replace(/\r?\n/g, '\\n')
+      .replace(/,/g, '\\,')
+      .replace(/;/g, '\\;');
+  }
+
+  function pad2(value) {
+    return String(value).padStart(2, '0');
+  }
+
+  function calendarStamp() {
+    return new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  }
+
+  function calendarFilename(value) {
+    return String(value || 'calendar')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'calendar';
+  }
+
+  function addMinutesToDateTime(dateValue, timeValue, minutes) {
+    var dateParts = String(dateValue || '').split('-').map(Number);
+    var timeParts = String(timeValue || '').split(':').map(Number);
+    if (dateParts.length < 3 || timeParts.length < 2) return '';
+    var date = new Date(Date.UTC(dateParts[0], dateParts[1] - 1, dateParts[2], timeParts[0], timeParts[1] + minutes, 0));
+    if (isNaN(date.getTime())) return '';
+    return date.getUTCFullYear() + pad2(date.getUTCMonth() + 1) + pad2(date.getUTCDate()) +
+      'T' + pad2(date.getUTCHours()) + pad2(date.getUTCMinutes()) + '00';
+  }
+
+  function matchDateValue(match, edition) {
+    if (!match) return '';
+    if (match.dateValue) return match.dateValue;
+    var raw = String(match.date || '').trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+    var found = raw.match(/^(\d{1,2})\s+([A-Za-z]+)/);
+    if (!found || !edition || !edition.year) return '';
+    var months = {
+      jan: '01', january: '01',
+      feb: '02', february: '02',
+      mar: '03', march: '03',
+      apr: '04', april: '04',
+      may: '05',
+      jun: '06', june: '06',
+      jul: '07', july: '07',
+      aug: '08', august: '08',
+      sep: '09', sept: '09', september: '09',
+      oct: '10', october: '10',
+      nov: '11', november: '11',
+      dec: '12', december: '12'
+    };
+    var month = months[found[2].toLowerCase()];
+    return month ? edition.year + '-' + month + '-' + pad2(found[1]) : '';
+  }
+
+  function matchTimeValue(match) {
+    var raw = String((match && (match.time || match.startTime || match.score)) || '').trim();
+    var found = raw.match(/^(\d{1,2}):(\d{2})$/);
+    return found ? pad2(found[1]) + ':' + found[2] : '';
+  }
+
+  function teamLabel(item) {
+    return item && item.name ? item.name : 'TBC';
+  }
+
+  function hasNamedTeam(item) {
+    return !!(item && item.name && item.name !== 'TBC');
+  }
+
+  function matchCalendarTitle(data, edition, tab, card, match) {
+    var prefix = (data && data.eventName ? data.eventName : 'Event') + (edition && edition.year ? ' ' + edition.year : '');
+    if (hasNamedTeam(match.home) && hasNamedTeam(match.away)) {
+      return prefix + ': ' + teamLabel(match.home) + ' vs ' + teamLabel(match.away);
+    }
+    return prefix + ': ' + (match.note || (card && card.label) || (tab && tab.label) || 'Match');
+  }
+
+  function matchCalendarLocation(match, edition) {
+    return (match && match.venue) || (edition && edition.venue) || '';
+  }
+
+  function shouldRenderMatchCalendar(data, edition, tab, match) {
+    return !!(
+      data && data.slug === 'iihf-world-championship' &&
+      edition && edition.status !== 'past' &&
+      tab && tab.id === 'playoff' &&
+      matchDateValue(match, edition) &&
+      matchTimeValue(match)
+    );
+  }
+
+  function shouldSuppressEditionCalendar(data) {
+    return !!(data && data.slug === 'iihf-world-championship');
   }
 
   function mergeExternalPartBlocks(data, done) {
@@ -181,9 +280,22 @@
 
   function country(item) {
     if (!item) return '';
-    var image = item.flag ? '<img src="' + item.flag + '" alt="" width="20" height="14">' : '';
-    if (!item.url || !item.name) return item.name || 'TBC';
-    return '<a class="country" href="' + item.url + '" data-country-name="' + item.name + '">' + image + item.name + '</a>';
+    var name = item.name || 'TBC';
+    var teamIcon = item.icon || eventTeamIcon(name);
+    if (item.flag) {
+      var image = '<img src="' + escapeAttribute(item.flag) + '" alt="" width="20" height="14">';
+      if (!item.url || !item.name) return image + name;
+      return '<a class="country" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(name) + '">' + image + name + '</a>';
+    }
+    if (teamIcon && item.name) {
+      var teamImage = '<img class="country__team-icon" src="' + escapeAttribute(teamIcon) + '" alt="" width="40" height="28">';
+      if (item.url) {
+        return '<a class="country country--team" href="' + escapeAttribute(item.url) + '" data-team-name="' + escapeAttribute(name) + '">' + teamImage + name + '</a>';
+      }
+      return '<span class="country country--team" data-team-name="' + escapeAttribute(name) + '">' + teamImage + name + '</span>';
+    }
+    if (!item.url || !item.name) return name;
+    return '<a class="country" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(name) + '">' + name + '</a>';
   }
 
   function countries(items) {
@@ -351,6 +463,18 @@
     return 'team-color-' + teamHighlightColors[teamColorIndex(normalizeTeamName(name))];
   }
 
+  function setEventTeamIcons(data) {
+    eventTeamIcons = {};
+    var icons = (data && data.teamIcons) || {};
+    Object.keys(icons).forEach(function (name) {
+      eventTeamIcons[normalizeTeamName(name)] = icons[name];
+    });
+  }
+
+  function eventTeamIcon(name) {
+    return eventTeamIcons[normalizeTeamName(name)] || '';
+  }
+
   function readFollowedTeams() {
     try {
       var value = JSON.parse(localStorage.getItem(followedTeamsKey) || '[]');
@@ -366,7 +490,7 @@
 
   function countryNameFromNode(node) {
     if (!node) return '';
-    return node.getAttribute('data-country-name') || node.textContent || '';
+    return node.getAttribute('data-country-name') || node.getAttribute('data-team-name') || node.textContent || '';
   }
 
   function applyFollowedTeams(root) {
@@ -522,13 +646,51 @@
     '</span>';
   }
 
-  function renderStageMatches(matches) {
+  function renderMatchCalendarButton(data, edition, tab, card, match) {
+    if (!shouldRenderMatchCalendar(data, edition, tab, match)) return '';
+    var dateValue = matchDateValue(match, edition);
+    var timeValue = matchTimeValue(match);
+    var title = matchCalendarTitle(data, edition, tab, card, match);
+    var filenameLabel = hasNamedTeam(match.home) && hasNamedTeam(match.away)
+      ? teamLabel(match.home) + ' vs ' + teamLabel(match.away)
+      : (match.note || (card && card.label) || (tab && tab.label) || 'match');
+    var description = ((card && card.label) || (match && match.note) || 'PlayOff match') + ' - ' + (edition.dates || '');
+    var locationText = matchCalendarLocation(match, edition);
+    return '<button class="event-button event-button--match-calendar" type="button" data-calendar-download data-calendar-kind="match"' +
+      ' aria-label="' + escapeAttribute('Add to calendar: ' + title) + '"' +
+      ' data-calendar-date="' + escapeAttribute(dateValue) + '"' +
+      ' data-calendar-time="' + escapeAttribute(timeValue) + '"' +
+      ' data-calendar-timezone="' + escapeAttribute((match && match.timezone) || edition.timezone || 'Europe/Zurich') + '"' +
+      ' data-calendar-title="' + escapeAttribute(title) + '"' +
+      ' data-calendar-description="' + escapeAttribute(description) + '"' +
+      ' data-calendar-location="' + escapeAttribute(locationText) + '"' +
+      ' data-calendar-filename="' + escapeAttribute((data.slug || 'event') + '-' + edition.year + '-' + calendarFilename(filenameLabel)) + '"' +
+      '><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path></svg></button>';
+  }
+
+  function renderStageMatches(matches, context) {
     if (!matches || !matches.length) return '';
+    context = context || {};
     return '<span class="stage-match-list">' + matches.map(function (match) {
-      return '<span class="stage-match-row">' +
+      var calendarButton = renderMatchCalendarButton(context.data, context.edition, context.tab, context.card, match);
+      return '<span class="stage-match-row' + (calendarButton ? ' stage-match-row--with-action' : '') + '">' +
         '<time>' + (match.date || 'TBC') + '</time>' +
         '<span class="stage-match-row__teams">' + country(match.home) + '<b>' + (match.score || match.time || 'TBC') + '</b>' + country(match.away) + '</span>' +
         (match.note ? '<em>' + match.note + '</em>' : '') +
+        calendarButton +
+      '</span>';
+    }).join('') + '</span>';
+  }
+
+  function renderConferenceColumns(groups, context) {
+    if (!groups || !groups.length) return '';
+    context = context || {};
+    return '<span class="conference-columns">' + groups.map(function (group) {
+      return '<span class="conference-column">' +
+        '<span class="conference-column__label">' + (group.label || '') + '</span>' +
+        '<strong>' + (group.title || '') + '</strong>' +
+        (group.status ? '<em>' + group.status + '</em>' : '') +
+        renderStageMatches(group.matches || [], context) +
       '</span>';
     }).join('') + '</span>';
   }
@@ -548,6 +710,20 @@
     '</span>';
   }
 
+  function renderFinalSlots(rows) {
+    if (!rows || !rows.length) return '';
+    var body = rows.map(function (row) {
+      return '<span class="final-slot-row">' +
+        '<span>' + country(row.team) + '</span>' +
+        '<strong>' + (row.from || '') + '</strong>' +
+      '</span>';
+    }).join('');
+    return '<span class="final-slot-table">' +
+      '<span class="final-slot-row final-slot-row--head"><span>Qualified team</span><strong>From</strong></span>' +
+      body +
+    '</span>';
+  }
+
   function renderStageCountryGroups(groups) {
     if (!groups || !groups.length) return '';
     return '<span class="stage-country-groups">' + groups.map(function (group) {
@@ -560,18 +736,22 @@
     }).join('') + '</span>';
   }
 
-  function stageCard(item) {
+  function stageCard(item, data, edition, tab) {
     if (!item) return '';
     var className = item.className ? ' ' + item.className : '';
     var detail = item.type === 'standings'
       ? renderStageStandings(item.rows || [])
       : item.type === 'matches'
-        ? renderStageMatches(item.matches || [])
-        : item.type === 'ranking'
-          ? renderStageRanking(item.rows || [])
-          : item.type === 'country-groups'
-            ? renderStageCountryGroups(item.groups || [])
-            : (item.detail || '');
+        ? renderStageMatches(item.matches || [], { data: data, edition: edition, tab: tab, card: item })
+        : item.type === 'conference-columns'
+          ? renderConferenceColumns(item.groups || [], { data: data, edition: edition, tab: tab, card: item })
+          : item.type === 'final-slots'
+            ? renderFinalSlots(item.rows || [])
+            : item.type === 'ranking'
+              ? renderStageRanking(item.rows || [])
+              : item.type === 'country-groups'
+                ? renderStageCountryGroups(item.groups || [])
+                : (item.detail || '');
     return '<div class="stage-card' + className + '">' +
       '<span>' + (item.label || '') + '</span>' +
       (item.title ? '<strong>' + item.title + '</strong>' : '') +
@@ -579,7 +759,7 @@
     '</div>';
   }
 
-  function renderStageTabs(edition) {
+  function renderStageTabs(data, edition) {
     var tabs = edition.stageTabs || [];
     if (!tabs.length) return '';
     var defaultId = edition.defaultStageTab || tabs[0].id;
@@ -599,7 +779,9 @@
         : '';
       return '<div class="event-stage-panel' + (active ? ' is-active' : '') + '" id="stage-' + edition.year + '-' + tab.id + '" role="tabpanel"' + (hasMultipleTabs ? ' aria-labelledby="stage-' + edition.year + '-' + tab.id + '-tab"' : '') + (active ? '' : ' hidden') + '>' +
         header +
-        '<div class="stage-card-grid">' + (tab.cards || []).map(stageCard).join('') + '</div>' +
+        '<div class="stage-card-grid">' + (tab.cards || []).map(function (card) {
+          return stageCard(card, data, edition, tab);
+        }).join('') + '</div>' +
       '</div>';
     }).join('');
     return '<section class="event-stage-tabs' + (hasMultipleTabs ? '' : ' event-stage-tabs--single') + '" data-stage-tabs aria-label="Edition stage details">' +
@@ -652,25 +834,26 @@
   function renderEditionWithStages(data, edition, target) {
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
+    var countryHtml = data.hideEditionCountryFact ? '' : countryFact(editionCountries);
     var overviewCards = (edition.overviewCards || []).map(compactCard).join('');
     var overview = overviewCards
       ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
       : '';
-    var actions = edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
+    var actions = shouldSuppressEditionCalendar(data) || edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
       '<div class="actions-row">' +
         '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
       '</div>';
 
     target.innerHTML =
       '<div class="facts-strip facts-strip--edition">' +
-        countryFact(editionCountries) +
+        countryHtml +
         fact('City', editionCities.map(city).join(' ') || 'TBC') +
         fact('Venue', edition.venue) +
         fact('Dates', edition.dates) +
-        fact('Format', edition.format) +
+        (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
       overview +
-      renderStageTabs(edition) +
+      renderStageTabs(data, edition) +
       actions +
       sourceCard(data);
 
@@ -688,6 +871,7 @@
     if (heading) heading.textContent = data.eventName + ' ' + edition.year + ' ' + edition.headingPlace;
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
+    var countryHtml = data.hideEditionCountryFact ? '' : countryFact(editionCountries);
 
     if (edition.stageTabs && edition.stageTabs.length) {
       renderEditionWithStages(data, edition, target);
@@ -729,12 +913,12 @@
 
     target.innerHTML =
       '<div class="facts-strip">' +
-        countryFact(editionCountries) +
+        countryHtml +
         fact('City', editionCities.map(city).join(' ') || 'TBC') +
         fact('Venue', edition.venue) +
         fact('Dates', edition.dates) +
         fact('Status', edition.statusLabel) +
-        fact('Format', edition.format) +
+        (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
       lifecycle +
       finalResults +
@@ -752,6 +936,7 @@
     var data = readJson('event-year-data');
     var switcher = document.querySelector('[data-year-switcher]');
     if (!data || !switcher) return;
+    setEventTeamIcons(data);
 
     var switcherEditions = data.editions.slice().sort(function (a, b) {
       return Number(a.year) - Number(b.year);
@@ -775,8 +960,9 @@
 
     function buttonContentFor(edition) {
       var winner = edition.winner || {};
-      var winnerFlag = winner.flag
-        ? '<img class="year-button__flag" src="' + escapeAttribute(winner.flag) + '" alt="" width="20" height="14" aria-hidden="true" title="Winner: ' + escapeAttribute(winner.name || '') + '">'
+      var winnerImage = winner.icon || winner.flag;
+      var winnerFlag = winnerImage
+        ? '<img class="year-button__flag year-button__winner-icon" src="' + escapeAttribute(winnerImage) + '" alt="" width="20" height="14" aria-hidden="true" title="Winner: ' + escapeAttribute(winner.name || '') + '">'
         : '';
       return '<span class="year-button__year">' + labelFor(edition) + '</span>' + winnerFlag;
     }
@@ -980,28 +1166,58 @@
   function bindCalendar(data, edition) {
     document.querySelectorAll('[data-calendar-download]').forEach(function (button) {
       button.onclick = function () {
+        var isMatchCalendar = button.getAttribute('data-calendar-kind') === 'match';
+        var timezone = button.getAttribute('data-calendar-timezone') || 'Europe/Zurich';
+        var title = isMatchCalendar
+          ? button.getAttribute('data-calendar-title')
+          : data.eventName + ' ' + edition.year;
+        var description = isMatchCalendar
+          ? button.getAttribute('data-calendar-description')
+          : edition.calendarDescription;
+        var url = location.href.split('#')[0] + '#year';
+        var filename = isMatchCalendar
+          ? button.getAttribute('data-calendar-filename')
+          : data.slug + '-' + edition.year;
+        var startLine;
+        var endLine;
+
+        if (isMatchCalendar) {
+          var matchDate = button.getAttribute('data-calendar-date');
+          var matchTime = button.getAttribute('data-calendar-time');
+          var startDateTime = addMinutesToDateTime(matchDate, matchTime, 0);
+          var endDateTime = addMinutesToDateTime(matchDate, matchTime, 180);
+          if (!startDateTime || !endDateTime) return;
+          startLine = 'DTSTART;TZID=' + timezone + ':' + startDateTime;
+          endLine = 'DTEND;TZID=' + timezone + ':' + endDateTime;
+        } else {
+          if (!edition.startDate || !edition.endExclusive) return;
+          startLine = 'DTSTART;VALUE=DATE:' + edition.startDate.replace(/-/g, '');
+          endLine = 'DTEND;VALUE=DATE:' + edition.endExclusive.replace(/-/g, '');
+        }
+
         var ics = [
           'BEGIN:VCALENDAR',
           'VERSION:2.0',
           'PRODID:-//OneSliders//' + data.eventName + '//EN',
           'BEGIN:VEVENT',
-          'UID:' + data.slug + '-' + edition.year + '@one-sliders.com',
-          'DTSTAMP:20260517T000000Z',
-          'DTSTART;VALUE=DATE:' + edition.startDate.replace(/-/g, ''),
-          'DTEND;VALUE=DATE:' + edition.endExclusive.replace(/-/g, ''),
-          'SUMMARY:' + data.eventName + ' ' + edition.year,
-          'DESCRIPTION:' + edition.calendarDescription,
-          'URL:' + location.href.split('#')[0] + '#year',
+          'UID:' + filename + '@one-sliders.com',
+          'DTSTAMP:' + calendarStamp(),
+          startLine,
+          endLine,
+          'SUMMARY:' + escapeIcs(title),
+          'DESCRIPTION:' + escapeIcs(description),
+          (isMatchCalendar && button.getAttribute('data-calendar-location') ? 'LOCATION:' + escapeIcs(button.getAttribute('data-calendar-location')) : ''),
+          'URL:' + escapeIcs(url),
           'END:VEVENT',
           'END:VCALENDAR'
-        ].join('\r\n');
+        ].filter(Boolean).join('\r\n');
         var blob = new Blob([ics], { type: 'text/calendar' });
-        var url = URL.createObjectURL(blob);
+        var blobUrl = URL.createObjectURL(blob);
         var link = document.createElement('a');
-        link.href = url;
-        link.download = data.slug + '-' + edition.year + '.ics';
+        link.href = blobUrl;
+        link.download = filename + '.ics';
         link.click();
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(blobUrl);
       };
     });
   }

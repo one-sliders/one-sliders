@@ -2116,6 +2116,10 @@ body.drink-layout-page .site-footer p {
     grid-template-columns: 1fr;
   }
 
+  body.food-layout-page .food-topic__panel {
+    grid-template-columns: 1fr;
+  }
+
   body.food-layout-page .food-topic__panel > .topic-card:first-child,
   body.food-layout-page .food-topic__panel > .topic-card:nth-child(2),
   body.food-layout-page .topic-card--more,
@@ -2539,6 +2543,7 @@ body.drink-layout-page .site-footer p {
 .food-page-fondue { --food-hero-image: url('/content/categories/food/img/fondue-hero.png'); }
 .food-page-goulash { --food-hero-image: url('/content/categories/food/img/goulash-hero.png'); }
 .food-page-grey-peas-with-bacon { --food-hero-image: url('/content/categories/food/img/grey-peas-with-bacon-hero.png'); }
+.food-page-graddtarta { --food-hero-image: url('/content/categories/food/img/graddtarta-hero.png'); }
 .food-page-halloumi { --food-hero-image: url('/content/categories/food/img/halloumi-hero.png'); }
 .food-page-irish-stew { --food-hero-image: url('/content/categories/food/img/irish-stew-hero.png'); }
 .food-page-judd-mat-gaardebounen { --food-hero-image: url('/content/categories/food/img/judd-mat-gaardebounen-hero.png'); }
@@ -2561,8 +2566,10 @@ body.drink-layout-page .site-footer p {
 .food-page-pljeskavica { --food-hero-image: url('/content/categories/food/img/pljeskavica-hero.png'); }
 .food-page-plov { --food-hero-image: url('/content/categories/food/img/plov-hero.png'); }
 .food-page-potica { --food-hero-image: url('/content/categories/food/img/potica-hero.png'); }
+.food-page-rabarberpaj { --food-hero-image: url('/content/categories/food/img/rabarberpaj-hero.png'); }
 .food-page-roman-pasta { --food-hero-image: url('/content/categories/food/img/roman-pasta-hero.png'); }
 .food-page-sarmale { --food-hero-image: url('/content/categories/food/img/sarmale-hero.png'); }
+.food-page-scones { --food-hero-image: url('/content/categories/food/img/scones-hero.png'); }
 .food-page-slovak-onion-soup { --food-hero-image: url('/content/categories/food/img/slovak-onion-soup-hero.png'); }
 .food-page-sm-rrebr-d { --food-hero-image: url('/content/categories/food/img/sm-rrebr-d-hero.png'); }
 .food-page-street-food { --food-hero-image: url('/content/categories/food/img/street-food-hero.png'); }
