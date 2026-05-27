@@ -1,7 +1,15 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48" viewBox="0 0 64 48" role="img" aria-label="Antigua and Barbuda flag icon">
-  <clipPath id="r"><rect width="64" height="48" rx="6"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="64" height="48" fill="#009b3a"/><path d="M0 0h64L0 48z" fill="#fedf00"/><path d="M64 0v48H0z" fill="#002776" opacity=".88"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48" viewBox="0 0 64 48" role="img" aria-label="Antigua and Barbuda flag">
+  <rect width="64" height="48" fill="#ce1126"/>
+<path d="M0 0h64L32 48z" fill="#fff"/>
+<path d="M7 0h50L32 37z" fill="#0072c6"/>
+<path d="M13 0h38L32 26z" fill="#000"/>
+<path d="M16 30h32v18H16z" fill="#fff"/>
+<path d="M13 0h38L32 22z" fill="#000"/>
+<g transform="translate(32 18)" fill="#fcd116">
+  <circle r="6"/>
+  <g stroke="#fcd116" stroke-width="2">
+    <path d="M0 -12v6M0 6v7M-12 0h6M6 0h12M-8 -8l4 4M8 -8l-4 4M-8 8l4-4M8 8l-4-4"/>
   </g>
-  <rect x="0.5" y="0.5" width="63" height="47" rx="5.5" fill="none" stroke="rgba(23,32,28,.2)"/>
+</g>
+  <rect x=".5" y=".5" width="63" height="47" fill="none" stroke="rgba(16,24,32,.18)"/>
 </svg>

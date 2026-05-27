@@ -1038,4 +1038,403 @@
     applyFilters();
   });
 
+  OneSlider.register('continent-carousel', function () {
+    var carousels = Array.prototype.slice.call(document.querySelectorAll('[data-continent-carousel]'));
+    if (!carousels.length) return;
+
+    carousels.forEach(function (carousel) {
+      var track = carousel.querySelector('[data-continent-carousel-track]');
+      if (!track) return;
+
+      var panels = Array.prototype.slice.call(track.querySelectorAll('.continent-group-panel'));
+      var prev = carousel.querySelector('[data-continent-carousel-prev]');
+      var next = carousel.querySelector('[data-continent-carousel-next]');
+      var current = carousel.querySelector('[data-continent-carousel-current]');
+      var activeIndex = 0;
+      var ticking = false;
+      var touchStartX = null;
+
+      function clampIndex(index) {
+        return Math.max(0, Math.min(panels.length - 1, index));
+      }
+
+      function currentIndex() {
+        if (!panels.length || !track.clientWidth) return 0;
+        return clampIndex(Math.round(track.scrollLeft / track.clientWidth));
+      }
+
+      function labelFor(index) {
+        var panel = panels[clampIndex(index)];
+        var heading = panel && panel.querySelector('h3');
+        if (!heading) return '';
+        var clone = heading.cloneNode(true);
+        Array.prototype.slice.call(clone.querySelectorAll('span')).forEach(function (span) {
+          span.parentNode.removeChild(span);
+        });
+        return clone.textContent.replace(/\s+Europe\s*$/, '').replace(/\s+/g, ' ').trim();
+      }
+
+      function carouselIsVisible() {
+        var rect = carousel.getBoundingClientRect();
+        return rect.bottom > window.innerHeight * 0.18 && rect.top < window.innerHeight * 0.82;
+      }
+
+      function updateActiveState() {
+        carousel.classList.toggle('is-carousel-active', carouselIsVisible());
+      }
+
+      function update() {
+        activeIndex = currentIndex();
+        updateActiveState();
+        if (prev) {
+          prev.disabled = activeIndex === 0;
+          prev.textContent = activeIndex === 0 ? '\u2039 Previous' : '\u2039 ' + labelFor(activeIndex - 1);
+        }
+        if (current) current.textContent = labelFor(activeIndex);
+        if (next) {
+          next.disabled = activeIndex === panels.length - 1;
+          next.textContent = activeIndex === panels.length - 1 ? 'Next \u203a' : labelFor(activeIndex + 1) + ' \u203a';
+        }
+      }
+
+      function goTo(index) {
+        var target = panels[clampIndex(index)];
+        if (!target) return;
+        var left = target.offsetLeft - track.offsetLeft;
+        if (typeof track.scrollTo === 'function') {
+          track.scrollTo({ left: left, behavior: 'smooth' });
+        } else {
+          track.scrollLeft = left;
+        }
+      }
+
+      if (prev) {
+        prev.addEventListener('click', function () {
+          goTo(activeIndex - 1);
+        });
+      }
+
+      if (next) {
+        next.addEventListener('click', function () {
+          goTo(activeIndex + 1);
+        });
+      }
+
+      track.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          ticking = false;
+          update();
+        });
+      }, { passive: true });
+
+      track.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          goTo(activeIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          goTo(activeIndex + 1);
+        }
+      });
+
+      carousel.addEventListener('touchstart', function (event) {
+        touchStartX = event.touches[0] ? event.touches[0].clientX : null;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function (event) {
+        if (touchStartX === null) return;
+        var touchEndX = event.changedTouches[0] ? event.changedTouches[0].clientX : touchStartX;
+        var delta = touchEndX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(delta) < 70) return;
+        goTo(delta > 0 ? activeIndex - 1 : activeIndex + 1);
+      }, { passive: true });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (!carouselIsVisible()) return;
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          goTo(activeIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          goTo(activeIndex + 1);
+        }
+      });
+
+      window.addEventListener('resize', update);
+      window.addEventListener('scroll', updateActiveState, { passive: true });
+      update();
+    });
+  });
+
+  OneSlider.register('recipe-actions', function () {
+    var page = document.body;
+    if (!page || (
+        !page.classList.contains('food-topic-page') &&
+        !page.classList.contains('drink-topic-page'))) return;
+
+    var deferredInstallPrompt = null;
+    var homeButton = null;
+
+    function isIOS() {
+      var ua = navigator.userAgent || '';
+      return /iPad|iPhone|iPod/.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent || '');
+    }
+
+    function isStandalone() {
+      return Boolean(window.navigator.standalone) ||
+        (window.matchMedia &&
+          window.matchMedia('(display-mode: standalone)').matches);
+    }
+
+    function cleanText(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function findIngredientPanel() {
+      var panels = document.querySelectorAll('.topic-card, .panel');
+      for (var i = 0; i < panels.length; i++) {
+        var heading = panels[i].querySelector('h2');
+        var text = heading ? cleanText(heading.textContent).toLowerCase() : '';
+        if (text === 'ingredients' && panels[i].querySelector('ul.recipe-list')) {
+          return panels[i];
+        }
+      }
+      return null;
+    }
+
+    function recipeTitle() {
+      var h1 = document.querySelector('.food-topic h1, .drink-hero h1, main h1');
+      return cleanText(h1 && h1.textContent) || cleanText(document.title) || 'Recipe';
+    }
+
+    function ingredientsFrom(panel) {
+      var items = panel.querySelectorAll('ul.recipe-list li');
+      var list = [];
+      for (var i = 0; i < items.length; i++) {
+        var text = cleanText(items[i].textContent);
+        if (text) list.push(text);
+      }
+      return list;
+    }
+
+    function shoppingListText(title, items) {
+      return title + '\n\nIngredients\n' +
+        items.map(function (item) { return '- ' + item; }).join('\n') +
+        '\n\n' + window.location.href;
+    }
+
+    function setStatus(el, message) {
+      if (!el) return;
+      el.textContent = message || '';
+      if (el._timer) clearTimeout(el._timer);
+      if (message) {
+        el._timer = setTimeout(function () {
+          el.textContent = '';
+        }, 5200);
+      }
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise(function (resolve, reject) {
+        var area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.left = '-9999px';
+        area.style.top = '0';
+        area.style.width = '1px';
+        area.style.height = '1px';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.focus();
+        area.select();
+        area.setSelectionRange(0, area.value.length);
+        try {
+          var ok = document.execCommand('copy');
+          document.body.removeChild(area);
+          ok ? resolve() : reject(new Error('copy failed'));
+        } catch (err) {
+          document.body.removeChild(area);
+          reject(err);
+        }
+      });
+    }
+
+    function remindersLabel() {
+      if (isIOS()) return 'Add ingredients to Reminders';
+      if (navigator.share) return 'Share shopping list';
+      return 'Copy ingredients';
+    }
+
+    function homeLabel() {
+      if (isStandalone()) return 'Saved to Home Screen';
+      if (deferredInstallPrompt) return isAndroid() ? 'Install app' : 'Install OneSliders';
+      if (isIOS()) return 'Add to Home Screen';
+      if (isAndroid()) return 'Add to Home screen';
+      return 'Save page';
+    }
+
+    function updateHomeLabel() {
+      if (homeButton) {
+        homeButton.textContent = homeLabel();
+        homeButton.disabled = isStandalone();
+      }
+    }
+
+    function openInstallGuide(status) {
+      var guide = document.querySelector('.recipe-install-guide');
+      if (!guide) {
+        guide = document.createElement('div');
+        guide.className = 'recipe-install-guide';
+        guide.hidden = true;
+        guide.innerHTML =
+          '<div class="recipe-install-guide__backdrop" data-recipe-install-close></div>' +
+          '<section class="recipe-install-guide__panel" role="dialog" aria-modal="true" aria-labelledby="recipe-install-title">' +
+            '<button class="recipe-install-guide__close" type="button" data-recipe-install-close aria-label="Close">Close</button>' +
+            '<h2 id="recipe-install-title"></h2>' +
+            '<ol></ol>' +
+          '</section>';
+        document.body.appendChild(guide);
+        guide.addEventListener('click', function (event) {
+          if (event.target.closest('[data-recipe-install-close]')) {
+            guide.hidden = true;
+          }
+        });
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') guide.hidden = true;
+        });
+      }
+
+      var title = guide.querySelector('h2');
+      var list = guide.querySelector('ol');
+      var steps;
+      if (isIOS()) {
+        title.textContent = 'Add to Home Screen';
+        steps = ['Tap Share in Safari.', 'Choose Add to Home Screen.', 'Tap Add.'];
+      } else if (isAndroid()) {
+        title.textContent = 'Add to Home screen';
+        steps = ['Open the browser menu.', 'Choose Install app or Add to Home screen.', 'Confirm the shortcut.'];
+      } else {
+        title.textContent = 'Save this recipe';
+        steps = ['Use the browser menu.', 'Choose Install, Create shortcut, or Add to desktop if available.', 'Keep the recipe from your browser shortcuts.'];
+      }
+      list.innerHTML = steps.map(function (step) {
+        return '<li>' + step + '</li>';
+      }).join('');
+      guide.hidden = false;
+      setStatus(status, isIOS() ? 'Follow the Safari steps shown.' : 'Follow the browser steps shown.');
+    }
+
+    var ingredientPanel = findIngredientPanel();
+    if (!ingredientPanel || ingredientPanel.querySelector('.recipe-action-row')) return;
+
+    var title = recipeTitle();
+    var ingredients = ingredientsFrom(ingredientPanel);
+    if (!ingredients.length) return;
+
+    var row = document.createElement('div');
+    row.className = 'recipe-action-row';
+
+    var remindersButton = document.createElement('button');
+    remindersButton.type = 'button';
+    remindersButton.className = 'recipe-action-button recipe-action-button--reminders';
+    remindersButton.textContent = remindersLabel();
+
+    homeButton = document.createElement('button');
+    homeButton.type = 'button';
+    homeButton.className = 'recipe-action-button recipe-action-button--home';
+    homeButton.textContent = homeLabel();
+    homeButton.disabled = isStandalone();
+
+    var status = document.createElement('p');
+    status.className = 'recipe-action-status';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+
+    remindersButton.addEventListener('click', function () {
+      var text = shoppingListText(title, ingredients);
+      if (navigator.share) {
+        var data = {
+          title: title + ' ingredients',
+          text: text,
+          url: window.location.href
+        };
+        navigator.share(data).then(function () {
+          setStatus(status, isIOS() ? 'Choose Reminders in the share sheet to save it.' : 'Shopping list shared.');
+        }).catch(function (err) {
+          if (err && err.name === 'AbortError') return;
+          copyText(text).then(function () {
+            setStatus(status, 'Ingredients copied.');
+          }).catch(function () {
+            setStatus(status, 'Browser blocked copying. Select the ingredient list from the card.');
+          });
+        });
+        return;
+      }
+
+      copyText(text).then(function () {
+        setStatus(status, isIOS() ? 'Ingredients copied. Paste them into Reminders.' : 'Ingredients copied.');
+      }).catch(function () {
+        setStatus(status, 'Browser blocked copying. Select the ingredient list from the card.');
+      });
+    });
+
+    homeButton.addEventListener('click', function () {
+      if (isStandalone()) {
+        setStatus(status, 'This recipe is already saved to your Home Screen.');
+        return;
+      }
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        deferredInstallPrompt.userChoice.then(function (choice) {
+          if (choice && choice.outcome === 'accepted') {
+            setStatus(status, 'OneSliders installed.');
+          } else {
+            setStatus(status, 'Install cancelled.');
+          }
+          deferredInstallPrompt = null;
+          updateHomeLabel();
+        });
+        return;
+      }
+      openInstallGuide(status);
+    });
+
+    row.appendChild(remindersButton);
+    row.appendChild(homeButton);
+    row.appendChild(status);
+    var heading = ingredientPanel.querySelector('h2');
+    if (heading && heading.nextSibling) {
+      ingredientPanel.insertBefore(row, heading.nextSibling);
+    } else {
+      ingredientPanel.appendChild(row);
+    }
+
+    window.addEventListener('beforeinstallprompt', function (event) {
+      event.preventDefault();
+      deferredInstallPrompt = event;
+      updateHomeLabel();
+    });
+    window.addEventListener('appinstalled', function () {
+      deferredInstallPrompt = null;
+      updateHomeLabel();
+      setStatus(status, 'OneSliders installed.');
+    });
+  });
+
 })();  // end IIFE
