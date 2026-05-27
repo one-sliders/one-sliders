@@ -4,25 +4,24 @@ This document specifies how event pages on OneSliders are built. **Follow it lit
 
 ## 1. Purpose
 
-OneSliders is built for people who want to know about events. The site is visual, fast, and inviting. Each event page is a short, scrollable presentation — three full-screen panels — not a long article and not a dashboard.
+OneSliders is built for people who want to know about events. The site is visual, fast, and inviting. Each event page is a short, scrollable presentation with one or more full-screen panels — not a long article and not a dashboard.
 
 ## 2. Hard Rules — Do Not Violate
 
 These rules are absolute. If a rule conflicts with anything you would otherwise do, the rule wins.
 
 1. **Each event has exactly ONE URL.** No per-year URLs. No per-part URLs.
-2. **Each event page has exactly THREE slides** (or two if the event has no parts): General, Year, Parts.
-3. **The page is a horizontal carousel.** Each slide fills 100vw × 100vh. A "Next" button slides the next one in. The user never sees stacked vertical sections.
-4. **The top navigation is fixed** (see Section 4): three icons (Events, Locations, Categories) + language switcher. Nothing else. Never duplicate slide navigation (General/Year/Parts) in the top bar.
-5. **No sidebar.** Layout inside a slide is single-column, full-width.
-6. **No tab widgets for primary parts.** Parts are sub-sections within Slide 3. Compact tab widgets are allowed inside a part only for closely comparable live subgroups, such as Group A / Group B upcoming fixtures.
-7. **Every country reference is rendered as `flag + name + link`** to that country's location page. Always. Inside tables, inside lists, inside fact boxes, inline in text. Plain-text country names are forbidden.
-8. **The flag image must match the country name and link.** Argentina flag only next to "Argentina". Brazil flag only next to "Brazil". Never substitute.
-9. **No white text on white background.** Text contrast must be checked against the actual card background.
-10. **Shared `events.css` and `events.js` only.** No inline styles. No inline scripts. No per-page CSS or JS files. **`events.css` defines layout only — no per-event color or font overrides.**
-11. **Every event has exactly two images:** `{slug}-hero.png` (1200×630) and `{slug}-mini.png` (400×300). Both required. Same visual style.
-12. **No empty slides.** A slide that lacks content must be replaced with evergreen content, not hidden, not left blank.
-13. **Slide 2 must let the user navigate to the last 5 editions.** Only Slide 2 changes when switching year. Slide 1 and Slide 3 do not.
+2. **The page is a horizontal carousel when it has more than one slide.** Each slide fills 100vw × 100vh. A "Next" button slides the next one in. The user never sees stacked vertical sections.
+3. **The top navigation is fixed** (see Section 4): three icons (Events, Locations, Categories) + language switcher. Nothing else. Never duplicate slide navigation (General/Year/Parts) in the top bar.
+4. **No sidebar.** Layout inside a slide is single-column, full-width.
+5. **No tab widgets for primary parts.** Parts are sub-sections within a Parts slide. Compact tab widgets are allowed inside a part only for closely comparable live subgroups, such as Group A / Group B upcoming fixtures.
+6. **Every country reference is rendered as `flag + name + link`** to that country's location page. Always. Inside tables, inside lists, inside fact boxes, inline in text. Plain-text country names are forbidden.
+7. **The flag image must match the country name and link.** Argentina flag only next to "Argentina". Brazil flag only next to "Brazil". Never substitute.
+8. **No white text on white background.** Text contrast must be checked against the actual card background.
+9. **Shared `events.css` and `events.js` only.** No inline styles. No inline scripts. No per-page CSS or JS files. **`events.css` defines layout only — no per-event color or font overrides.**
+10. **Every event has exactly two images:** `{slug}-hero.png` (1200×630) and `{slug}-mini.png` (400×300). Both required. Same visual style.
+11. **No empty slides.** A slide that lacks content must be replaced with evergreen content, not hidden, not left blank.
+12. **If a Year slide exists, it must let the user navigate to the last 5 editions.** Only the Year slide changes when switching year; other slides do not.
 
 ## 3. URL Structure
 
@@ -91,14 +90,14 @@ This is the OneSliders signature presentation. It is not negotiable. Do not rend
 ```
 viewport: 100vw × 100vh
 
-[ Slide 1: General ] -> press Next -> [ Slide 2: Year ] -> press Next -> [ Slide 3: Parts ]
-                       <- Previous                       <- Previous
+[ Slide: General ] -> press Next -> [ optional Year ] -> press Next -> [ optional Parts / other event content ]
+                    <- Previous                       <- Previous
 ```
 
 - Each slide fills exactly **100vw width and 100vh height**. The whole viewport. No margins, no surrounding white space, no visible neighbouring slides.
 - Slides are positioned side by side horizontally inside a track that translates left/right.
 - Transition between slides is a smooth horizontal slide animation (around 400–600ms, ease-in-out).
-- A slide indicator (3 dots or labels: "General / Year / Parts") sits at the bottom of the viewport, fixed.
+- A slide indicator (dots or labels for the available slides) sits at the bottom of the viewport, fixed.
 - A "Next" button is fixed on the right edge of the viewport (vertically centered or bottom-right). A "Previous" button on the left edge appears once the user is past slide 1.
 - The carousel must also respond to keyboard arrows and touch swipe.
 - Within a slide, content may scroll vertically if it exceeds the height, but the slide itself does not move; only the inner content scrolls.
@@ -129,7 +128,7 @@ viewport: 100vw × 100vh
       </section>
 
       <section class="event-slide" id="parts" data-slide="parts">
-        <!-- Section 3 content (only if event has parts) -->
+        <!-- Optional parts content, only if event has named parts -->
       </section>
 
     </div>
@@ -149,7 +148,7 @@ Rules for the skeleton:
 - `.event-slide` is `width: 100vw; height: 100vh; flex-shrink: 0;`.
 - The prev/next buttons are large, easy to tap, always visible (except prev on slide 1, next on the last slide).
 - No `<aside>`. No second column. No sidebar. No tab widgets for primary parts. Compact in-card tabs are allowed for comparable live subgroups inside a part.
-- Anchor links (`#general`, `#year`, `#parts`) work by snapping the carousel to that slide.
+- Anchor links for included slides (for example `#general`, `#year`, `#parts`) work by snapping the carousel to that slide.
 
 ## 6. Slide Content Design
 
@@ -190,9 +189,9 @@ The event as a concept, independent of any year. Updated rarely.
 9. **Notable moments** — 3–5 short bullets.
 10. **Link to parent topic page** at the bottom.
 
-Slide 1 has no countdown, no tickets, no schedule, no affiliate links. Those belong on Slide 2.
+The General slide has no countdown, no tickets, no schedule, no affiliate links. Those belong on the Year slide when one exists.
 
-## 8. Slide 2 — Year (`#year`)
+## 8. Year Slide (`#year`, optional)
 
 The specific edition currently displayed. By default this is the next upcoming edition. The user can switch to any of the last 5 editions.
 
@@ -256,7 +255,7 @@ When the displayed edition is in the past, content swaps according to this table
 
 Persistent items: fact box, source, last-updated date.
 
-## 9. Slide 3 — Parts (`#parts`, optional)
+## 9. Parts Slide (`#parts`, optional)
 
 Only include this section if the event has named distinct parts.
 
@@ -362,7 +361,7 @@ No inline styles. No per-page CSS files. Changing the look of the site means edi
 One shared script for every event page. It handles:
 - Carousel navigation (translateX of the track, next/prev buttons, dots, keyboard, swipe)
 - Countdown ticking
-- Year switcher (re-rendering Slide 2 with selected edition's data)
+- Year switcher (re-rendering the Year slide with selected edition's data)
 - Save / remind functionality (local storage)
 - Calendar `.ics` generation
 - Language switcher
@@ -372,7 +371,7 @@ No inline scripts. No per-page JS files.
 
 ## 13. Year Switcher — How It Works
 
-Slide 2 includes a horizontal year switcher near the top:
+The Year slide includes a horizontal year switcher near the top:
 
 ```
 [ 2022 ]  [ 2018 ]  [ 2014 ]  [ 2010 ]  [ 2006 ]  [ 2026 (current) ]
@@ -380,8 +379,8 @@ Slide 2 includes a horizontal year switcher near the top:
 
 - Shows the current/upcoming edition plus the last 5 past editions.
 - The active edition is visually highlighted.
-- Clicking another edition re-renders Slide 2 with that edition's data (fact box, results or planning info, lifecycle state).
-- Slide 1 and Slide 3 do not change.
+- Clicking another edition re-renders only the Year slide with that edition's data (fact box, results or planning info, lifecycle state).
+- Other slides do not change.
 - Implementation: data for all displayable editions is embedded in the page (JSON in a script tag) and rendered by `events.js`. No additional page loads, no URL changes.
 
 ## 14. Content Rules
@@ -434,10 +433,10 @@ When generating or updating an event page:
 
 1. Identify event type (sport, festival, cultural, religious, nature, trade, awareness).
 2. Determine taxonomy parents (topic, country, city, venue).
-3. Decide if Slide 3 applies (does the event have named distinct parts?).
-4. Select which of the 20 questions apply to Slide 2.
+3. Decide if a Parts slide applies (does the event have named distinct parts?).
+4. Select which of the 20 questions apply if the page has a Year slide.
 5. Determine lifecycle state of the displayed edition (upcoming / past).
-6. Generate the carousel skeleton with 2 or 3 slides, each `100vw × 100vh`.
+6. Generate the carousel skeleton with the slides the event needs, each `100vw × 100vh`.
 7. Embed JSON data for the last 5 editions plus the current one.
 8. Apply the country rendering pattern everywhere a country appears.
 9. **Verify each flag matches the country it labels** (filename, label, link all reference the same country).
@@ -450,17 +449,17 @@ When generating or updating an event page:
 
 Before considering a page done, confirm all of these:
 
-- [ ] Page is a horizontal carousel of 2 or 3 slides
+- [ ] Page uses the event slide structure needed for this event
 - [ ] Each slide fills 100vw × 100vh
 - [ ] Next/Previous buttons slide between slides with smooth animation
 - [ ] No vertical-stacked layout, no sidebar, no primary-part tabs
 - [ ] Every country appears as flag + name + link
 - [ ] Every flag image matches the country it labels
 - [ ] All text is readable against its background (no white-on-white)
-- [ ] Year switcher on Slide 2 with last 5 editions
+- [ ] Year switcher with last 5 editions, if the page has a Year slide
 - [ ] Shared `events.css` + `events.js` only
 - [ ] Hero (1200×630) and mini (400×300) images exist
-- [ ] Countdown ticks on Slide 2
+- [ ] Countdown ticks on the Year slide, if present
 - [ ] No empty slides
 - [ ] Last-updated date visible
 

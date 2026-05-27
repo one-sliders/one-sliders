@@ -585,7 +585,29 @@
   }
 
   function sourceCard(data) {
-    return '';
+    var sourceLinks = ((data && data.sources) || []).filter(function (item) {
+      return item && item.label;
+    }).map(function (item) {
+      if (!item.url || item.url === '#') return '<span>' + item.label + '</span>';
+      return '<a href="' + escapeAttribute(item.url) + '">' + item.label + '</a>';
+    }).join(' ');
+    var updated = data && data.lastUpdated ? data.lastUpdated : 'TBC';
+    return '<div class="sources"><span>Sources</span><p>' +
+      (sourceLinks || 'Source details TBC') +
+      '<br>Last updated: ' + updated +
+    '</p></div>';
+  }
+
+  function editionActionButtons(data, edition, allowCalendar) {
+    if (!edition || edition.status === 'past') return '';
+    var buttons = [];
+    if (allowCalendar && hasValidDate(edition.startDate)) {
+      buttons.push('<button class="event-button" type="button" data-calendar-download>Add to calendar</button>');
+    }
+    buttons.push('<button class="event-button" type="button" data-save-event="' +
+      escapeAttribute(((data && data.slug) || 'event') + '-' + edition.year) +
+      '" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button>');
+    return '<div class="actions-row">' + buttons.join('') + '</div>';
   }
 
   function isPlaceholderText(value) {
@@ -839,10 +861,7 @@
     var overview = overviewCards
       ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
       : '';
-    var actions = shouldSuppressEditionCalendar(data) || edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
-      '<div class="actions-row">' +
-        '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
-      '</div>';
+    var actions = editionActionButtons(data, edition, !shouldSuppressEditionCalendar(data));
 
     target.innerHTML =
       '<div class="facts-strip facts-strip--edition">' +
@@ -906,10 +925,7 @@
       : '';
 
     var editionDetails = editionBlocks ? '<div class="question-grid">' + editionBlocks + '</div>' : '';
-    var actions = edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
-      '<div class="actions-row">' +
-        '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
-      '</div>';
+    var actions = editionActionButtons(data, edition, true);
 
     target.innerHTML =
       '<div class="facts-strip">' +
