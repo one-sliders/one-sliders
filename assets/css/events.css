@@ -2593,6 +2593,26 @@ a {
     margin-top: clamp(22px, 3vh, 34px);
   }
 
+  /* Remove nested scroll container on mobile — let event-slide handle scrolling */
+  .event-slide[data-slide="parts"] .event-slide__content {
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  /* Force all part-page__grid cards to full width on mobile */
+  .part-page__grid > .part-card,
+  .part-page__grid > .part-card.part-card--results {
+    grid-column: 1 / -1;
+  }
+
+  /* Show full results and standings tables without height clipping on mobile */
+  .event-slide[data-slide="parts"] .part-card--results p,
+  .event-slide[data-slide="parts"] .part-card--standings p {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
   .event-carousel__prev,
   .event-carousel__next {
     top: auto;
