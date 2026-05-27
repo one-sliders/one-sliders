@@ -10,6 +10,23 @@
     });
   }
 
+  const prevCategory = document.querySelector("[data-category-prev]");
+  const nextCategory = document.querySelector("[data-category-next]");
+  if (prevCategory || nextCategory) {
+    document.addEventListener("keydown", (event) => {
+      if (event.defaultPrevented) return;
+      const target = event.target;
+      const tagName = target && target.tagName ? target.tagName.toLowerCase() : "";
+      if (tagName === "input" || tagName === "textarea" || tagName === "select" || target?.isContentEditable) return;
+      if (event.key === "ArrowLeft" && prevCategory) {
+        window.location.href = prevCategory.href;
+      }
+      if (event.key === "ArrowRight" && nextCategory) {
+        window.location.href = nextCategory.href;
+      }
+    });
+  }
+
   const tabs = Array.from(document.querySelectorAll("[data-sport-tab]"));
   if (tabs.length) {
     const panels = new Map(

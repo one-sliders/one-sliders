@@ -15,6 +15,14 @@
     }
   }
 
+  function escapeAttribute(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
   function mergeExternalPartBlocks(data, done) {
     var parts = data && data.parts ? data.parts : [];
     // A part pulls live data if it declares externalBlocksSrc (legacy block
@@ -180,6 +188,56 @@
 
   function countries(items) {
     return (items || []).map(country).join(' ');
+  }
+
+  function countrySlug(item) {
+    var source = item && (item.url || item.flag);
+    if (!source) return '';
+    var clean = String(source).split('?')[0].split('#')[0].replace(/\/index\.html$/, '').replace(/\/img\/flag\.svg$/, '').replace(/\/$/, '');
+    var parts = clean.split('/').filter(Boolean);
+    return parts[parts.length - 1] || '';
+  }
+
+  function countryHeroImage(item) {
+    if (!item) return '';
+    if (item.hero) return item.hero;
+    var slug = countrySlug(item);
+    if (!slug) return '';
+    if (item.flag && String(item.flag).indexOf('/img/flag.svg') >= 0) {
+      return String(item.flag).replace('/img/flag.svg', '/img/' + slug + '-hero.png');
+    }
+    if (item.url && String(item.url).indexOf('/index.html') >= 0) {
+      return String(item.url).replace('/index.html', '/img/' + slug + '-hero.png');
+    }
+    return '';
+  }
+
+  function countryHeroCard(item) {
+    if (!item || !item.url || !item.name) return country(item);
+    var hero = countryHeroImage(item);
+    var heroImage = hero
+      ? '<img class="country-hero-card__image" src="' + escapeAttribute(hero) + '" alt="" width="96" height="72" loading="lazy">'
+      : '';
+    var flag = item.flag
+      ? '<img class="country-hero-card__flag" src="' + escapeAttribute(item.flag) + '" alt="" width="20" height="14">'
+      : '';
+    return '<a class="country country--hero-card" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(item.name) + '">' +
+      heroImage +
+      '<span class="country-hero-card__copy">' +
+        '<span class="country-hero-card__label">' + flag + item.name + '</span>' +
+        '<small>Host country</small>' +
+      '</span>' +
+    '</a>';
+  }
+
+  function countryHeroCards(items) {
+    if (!items || !items.length) return '';
+    return '<span class="country-hero-list">' + (items || []).map(countryHeroCard).join('') + '</span>';
+  }
+
+  function countryFact(items) {
+    var framed = document.body && document.body.classList.contains('event-page--framed');
+    return fact('Country', (framed ? countryHeroCards(items) : countries(items)) || 'TBC', framed ? 'fact--country-hero' : '');
   }
 
   function matchRows(matches, note) {
@@ -390,8 +448,8 @@
     return !isNaN(date.getTime());
   }
 
-  function fact(label, html) {
-    return '<div class="fact"><span>' + label + '</span><strong>' + html + '</strong></div>';
+  function fact(label, html, className) {
+    return '<div class="fact' + (className ? ' ' + className : '') + '"><span>' + label + '</span><strong>' + html + '</strong></div>';
   }
 
   function question(item) {
@@ -439,6 +497,189 @@
     }).join('') + '</div>';
   }
 
+  function compactCard(item) {
+    if (!item) return '';
+    return '<div class="edition-compact-card">' +
+      '<span>' + (item.label || '') + '</span>' +
+      '<strong>' + (item.title || '') + '</strong>' +
+      (item.detail ? '<p>' + item.detail + '</p>' : '') +
+    '</div>';
+  }
+
+  function renderStageStandings(rows) {
+    if (!rows || !rows.length) return '';
+    var body = rows.map(function (row) {
+      return '<span class="stage-standing-row">' +
+        '<b>' + (row.rank || '') + '</b>' +
+        '<span>' + country(row.team) + '</span>' +
+        '<strong>' + (row.pts || row.points || 'TBC') + '</strong>' +
+        '<em>' + (row.note || '') + '</em>' +
+      '</span>';
+    }).join('');
+    return '<span class="stage-standings">' +
+      '<span class="stage-standing-row stage-standing-row--head"><b>#</b><span>Team</span><strong>PTS</strong><em>Status</em></span>' +
+      body +
+    '</span>';
+  }
+
+  function renderStageMatches(matches) {
+    if (!matches || !matches.length) return '';
+    return '<span class="stage-match-list">' + matches.map(function (match) {
+      return '<span class="stage-match-row">' +
+        '<time>' + (match.date || 'TBC') + '</time>' +
+        '<span class="stage-match-row__teams">' + country(match.home) + '<b>' + (match.score || match.time || 'TBC') + '</b>' + country(match.away) + '</span>' +
+        (match.note ? '<em>' + match.note + '</em>' : '') +
+      '</span>';
+    }).join('') + '</span>';
+  }
+
+  function renderStageRanking(rows) {
+    if (!rows || !rows.length) return '';
+    var body = rows.map(function (row) {
+      return '<span class="stage-standing-row stage-standing-row--ranking">' +
+        '<b>' + (row.rank || '') + '</b>' +
+        '<span>' + country(row.team) + '</span>' +
+        '<strong>' + (row.result || '') + '</strong>' +
+      '</span>';
+    }).join('');
+    return '<span class="stage-standings">' +
+      '<span class="stage-standing-row stage-standing-row--head"><b>#</b><span>Team</span><strong>Place</strong></span>' +
+      body +
+    '</span>';
+  }
+
+  function renderStageCountryGroups(groups) {
+    if (!groups || !groups.length) return '';
+    return '<span class="stage-country-groups">' + groups.map(function (group) {
+      var teams = (group.teams || []).map(country).join(' ');
+      return '<span class="stage-country-group">' +
+        '<b>' + (group.label || '') + '</b>' +
+        '<span class="stage-country-group__teams">' + teams + '</span>' +
+        (group.note ? '<em>' + group.note + '</em>' : '') +
+      '</span>';
+    }).join('') + '</span>';
+  }
+
+  function stageCard(item) {
+    if (!item) return '';
+    var className = item.className ? ' ' + item.className : '';
+    var detail = item.type === 'standings'
+      ? renderStageStandings(item.rows || [])
+      : item.type === 'matches'
+        ? renderStageMatches(item.matches || [])
+        : item.type === 'ranking'
+          ? renderStageRanking(item.rows || [])
+          : item.type === 'country-groups'
+            ? renderStageCountryGroups(item.groups || [])
+            : (item.detail || '');
+    return '<div class="stage-card' + className + '">' +
+      '<span>' + (item.label || '') + '</span>' +
+      (item.title ? '<strong>' + item.title + '</strong>' : '') +
+      (detail ? '<p>' + detail + '</p>' : '') +
+    '</div>';
+  }
+
+  function renderStageTabs(edition) {
+    var tabs = edition.stageTabs || [];
+    if (!tabs.length) return '';
+    var defaultId = edition.defaultStageTab || tabs[0].id;
+    var hasMultipleTabs = tabs.length > 1;
+    var controls = hasMultipleTabs ? tabs.map(function (tab) {
+      var active = tab.id === defaultId;
+      return '<button class="event-stage-tab" id="stage-' + edition.year + '-' + tab.id + '-tab" type="button" role="tab" aria-selected="' + (active ? 'true' : 'false') + '" data-stage-tab="' + tab.id + '" aria-controls="stage-' + edition.year + '-' + tab.id + '">' + tab.label + '</button>';
+    }).join('') : '';
+    var panels = tabs.map(function (tab) {
+      var active = tab.id === defaultId;
+      var header = hasMultipleTabs && (tab.title || tab.summary)
+        ? '<div class="event-stage-panel__header">' +
+            (tab.label ? '<span>' + tab.label + '</span>' : '') +
+            (tab.title ? '<strong>' + tab.title + '</strong>' : '') +
+            (tab.summary ? '<p>' + tab.summary + '</p>' : '') +
+          '</div>'
+        : '';
+      return '<div class="event-stage-panel' + (active ? ' is-active' : '') + '" id="stage-' + edition.year + '-' + tab.id + '" role="tabpanel"' + (hasMultipleTabs ? ' aria-labelledby="stage-' + edition.year + '-' + tab.id + '-tab"' : '') + (active ? '' : ' hidden') + '>' +
+        header +
+        '<div class="stage-card-grid">' + (tab.cards || []).map(stageCard).join('') + '</div>' +
+      '</div>';
+    }).join('');
+    return '<section class="event-stage-tabs' + (hasMultipleTabs ? '' : ' event-stage-tabs--single') + '" data-stage-tabs aria-label="Edition stage details">' +
+      (hasMultipleTabs ? '<div class="event-stage-tablist" role="tablist" aria-label="Group Stage and PlayOff">' + controls + '</div>' : '') +
+      '<div class="event-stage-panels">' + panels + '</div>' +
+    '</section>';
+  }
+
+  function bindStageTabs(root) {
+    (root || document).querySelectorAll('[data-stage-tabs]').forEach(function (tabsRoot) {
+      var buttons = Array.prototype.slice.call(tabsRoot.querySelectorAll('[data-stage-tab]'));
+      var panels = Array.prototype.slice.call(tabsRoot.querySelectorAll('.event-stage-panel[id]'));
+      function activate(id, focusButton) {
+        buttons.forEach(function (button) {
+          var active = button.getAttribute('data-stage-tab') === id;
+          button.setAttribute('aria-selected', active ? 'true' : 'false');
+          button.tabIndex = active ? 0 : -1;
+          if (active && focusButton) button.focus();
+        });
+        panels.forEach(function (panel) {
+          var active = panel.id === 'stage-' + id || panel.id.slice(panel.id.lastIndexOf('-') + 1) === id;
+          if (!active) active = panel.id.indexOf('-' + id) >= 0;
+          panel.classList.toggle('is-active', active);
+          panel.hidden = !active;
+        });
+      }
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          activate(button.getAttribute('data-stage-tab'), false);
+        });
+        button.addEventListener('keydown', function (event) {
+          var currentIndex = buttons.indexOf(button);
+          var nextKey = event.key === 'ArrowRight' || event.key === 'ArrowDown';
+          var prevKey = event.key === 'ArrowLeft' || event.key === 'ArrowUp';
+          if (!nextKey && !prevKey && event.key !== 'Home' && event.key !== 'End') return;
+          event.preventDefault();
+          var nextIndex = currentIndex;
+          if (nextKey) nextIndex = (currentIndex + 1) % buttons.length;
+          if (prevKey) nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+          if (event.key === 'Home') nextIndex = 0;
+          if (event.key === 'End') nextIndex = buttons.length - 1;
+          activate(buttons[nextIndex].getAttribute('data-stage-tab'), true);
+        });
+      });
+      var selected = buttons.find(function (button) { return button.getAttribute('aria-selected') === 'true'; }) || buttons[0];
+      if (selected) activate(selected.getAttribute('data-stage-tab'), false);
+    });
+  }
+
+  function renderEditionWithStages(data, edition, target) {
+    var editionCountries = edition.countries || [];
+    var editionCities = edition.cities || [];
+    var overviewCards = (edition.overviewCards || []).map(compactCard).join('');
+    var overview = overviewCards
+      ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
+      : '';
+    var actions = edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
+      '<div class="actions-row">' +
+        '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
+      '</div>';
+
+    target.innerHTML =
+      '<div class="facts-strip facts-strip--edition">' +
+        countryFact(editionCountries) +
+        fact('City', editionCities.map(city).join(' ') || 'TBC') +
+        fact('Venue', edition.venue) +
+        fact('Dates', edition.dates) +
+        fact('Format', edition.format) +
+      '</div>' +
+      overview +
+      renderStageTabs(edition) +
+      actions +
+      sourceCard(data);
+
+    bindStageTabs(target);
+    bindCalendar(data, edition);
+    bindSaveButtons();
+    refreshCountdowns();
+  }
+
   function renderEdition(data, year) {
     var edition = data.editions.find(function (item) { return String(item.year) === String(year); }) || data.editions[0];
     var target = document.querySelector('[data-year-edition]');
@@ -447,6 +688,11 @@
     if (heading) heading.textContent = data.eventName + ' ' + edition.year + ' ' + edition.headingPlace;
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
+
+    if (edition.stageTabs && edition.stageTabs.length) {
+      renderEditionWithStages(data, edition, target);
+      return;
+    }
 
     var countdownTarget = edition.countdownDate || edition.startDate;
     var countdownLabel = edition.countdownLabel || 'Event starts';
@@ -479,12 +725,11 @@
     var actions = edition.status === 'past' || !hasValidDate(edition.startDate) ? '' :
       '<div class="actions-row">' +
         '<button class="event-button" type="button" data-calendar-download>Add to calendar</button>' +
-        '<button class="event-button" type="button" data-save-event="' + data.slug + '" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button>' +
       '</div>';
 
     target.innerHTML =
       '<div class="facts-strip">' +
-        fact('Country', countries(editionCountries) || 'TBC') +
+        countryFact(editionCountries) +
         fact('City', editionCities.map(city).join(' ') || 'TBC') +
         fact('Venue', edition.venue) +
         fact('Dates', edition.dates) +
@@ -524,6 +769,18 @@
       return edition.year + (edition.year === data.defaultYear ? ' current' : '');
     }
 
+    function ariaLabelFor(edition) {
+      return labelFor(edition) + (edition.winner && edition.winner.name ? ', winner ' + edition.winner.name : '');
+    }
+
+    function buttonContentFor(edition) {
+      var winner = edition.winner || {};
+      var winnerFlag = winner.flag
+        ? '<img class="year-button__flag" src="' + escapeAttribute(winner.flag) + '" alt="" width="20" height="14" aria-hidden="true" title="Winner: ' + escapeAttribute(winner.name || '') + '">'
+        : '';
+      return '<span class="year-button__year">' + labelFor(edition) + '</span>' + winnerFlag;
+    }
+
     function selectYear(year) {
       switcher.querySelectorAll('[data-year]').forEach(function (item) {
         var active = String(item.getAttribute('data-year')) === String(year);
@@ -531,7 +788,10 @@
         var edition = switcherEditions.find(function (candidate) {
           return String(candidate.year) === String(item.getAttribute('data-year'));
         });
-        if (edition) item.textContent = labelFor(edition);
+        if (edition) {
+          item.setAttribute('aria-label', ariaLabelFor(edition));
+          item.innerHTML = buttonContentFor(edition);
+        }
       });
       try {
         renderEdition(data, year);
@@ -545,8 +805,7 @@
 
     switcher.innerHTML = switcherEditions.map(function (edition) {
       var pressed = edition.year === requestedYear ? 'true' : 'false';
-      var label = labelFor(edition);
-      return '<button class="year-button" type="button" aria-pressed="' + pressed + '" data-year="' + edition.year + '">' + label + '</button>';
+      return '<button class="year-button" type="button" aria-pressed="' + pressed + '" data-year="' + edition.year + '" aria-label="' + escapeAttribute(ariaLabelFor(edition)) + '">' + buttonContentFor(edition) + '</button>';
     }).join('');
 
     switcher.addEventListener('click', function (event) {
