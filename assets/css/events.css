@@ -2429,6 +2429,92 @@ html:has(body.event-page--framed) {
   font-size: clamp(21px, 2.2vw, 34px);
 }
 
+.event-weather-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 10px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(33, 78, 104, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--event-ink);
+  box-shadow: var(--event-shadow-soft);
+}
+
+.event-frame__panel .event-weather-card {
+  box-shadow: none;
+}
+
+.event-weather-card__head {
+  min-width: 0;
+}
+
+.event-weather-card__head span {
+  display: block;
+  color: #4d5e69;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.event-weather-card__head strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--event-ink);
+  font-size: 16px;
+  line-height: 1.12;
+}
+
+.event-weather-card__head p,
+.event-weather-card__body p {
+  margin: 6px 0 0;
+  color: var(--event-muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.event-weather-card__body {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.event-weather-list {
+  display: grid;
+  gap: 5px;
+  max-height: 142px;
+  min-width: 0;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.event-weather-day {
+  display: grid;
+  grid-template-columns: 56px minmax(112px, 1fr) repeat(4, minmax(66px, auto));
+  gap: 5px;
+  align-items: center;
+  min-width: 0;
+  padding: 5px 6px;
+  border: 1px solid rgba(33, 78, 104, 0.12);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.event-weather-day time,
+.event-weather-day span {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.event-weather-day strong {
+  color: var(--event-ink);
+  font-size: 12px;
+  line-height: 1.15;
+}
+
 .event-stage-tabs {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
@@ -4308,10 +4394,20 @@ html:has(body.event-page--framed) {
 
   body.event-page--framed .event-frame__copy .facts-strip,
   body.event-page--framed .event-frame__panel .facts-strip--edition,
+  body.event-page--framed .event-weather-card,
   body.event-page--framed .edition-overview,
   body.event-page--framed .edition-overview__cards,
   body.event-page--framed .stage-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  body.event-page--framed .event-weather-day {
+    grid-template-columns: minmax(46px, 0.48fr) minmax(96px, 1fr) repeat(2, minmax(58px, auto));
+  }
+
+  body.event-page--framed .event-weather-day span:nth-of-type(3),
+  body.event-page--framed .event-weather-day span:nth-of-type(4) {
+    display: none;
   }
 
   body.event-page--framed .edition-overview {

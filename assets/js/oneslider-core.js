@@ -476,6 +476,9 @@
 
     var existing = document.querySelector(
       'footer.site-footer, footer.site-foot, footer.site');
+    if (!existing && !document.body.classList.contains('country-onepage')) {
+      existing = document.querySelector('footer.footer');
+    }
     if (existing) {
       existing.innerHTML = content;
       if (!existing.classList.contains('os-footer')) {
@@ -1039,17 +1042,167 @@
   });
 
   OneSlider.register('continent-carousel', function () {
+    function cleanPanelLabel(panel) {
+      var heading = panel && panel.querySelector('h3');
+      if (!heading) return '';
+      var clone = heading.cloneNode(true);
+      Array.prototype.slice.call(clone.querySelectorAll('span')).forEach(function (span) {
+        span.parentNode.removeChild(span);
+      });
+      return clone.textContent.replace(/\s+Europe\s*$/, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function prepareCarouselLists() {
+      var tracks = Array.prototype.slice.call(document.querySelectorAll(
+        '.continent-group-list:not([data-continent-carousel-track])'
+      ));
+      tracks.forEach(function (track) {
+        var panels = Array.prototype.slice.call(track.querySelectorAll(':scope > .continent-group-panel'));
+        if (panels.length <= 1) return;
+
+        var carousel = document.createElement('div');
+        carousel.className = 'continent-carousel';
+        carousel.setAttribute('data-continent-carousel', '');
+
+        var controls = document.createElement('nav');
+        controls.className = 'continent-carousel__controls';
+        controls.setAttribute('aria-label', track.getAttribute('aria-label') || 'Country group carousel');
+
+        var prev = document.createElement('button');
+        prev.className = 'continent-carousel__nav-button continent-carousel__nav-button--prev';
+        prev.type = 'button';
+        prev.setAttribute('data-continent-carousel-prev', '');
+        prev.setAttribute('aria-label', 'Previous region');
+
+        var current = document.createElement('span');
+        current.className = 'continent-carousel__nav-button continent-carousel__nav-button--current is-active';
+        current.setAttribute('data-continent-carousel-current', '');
+        current.setAttribute('aria-current', 'true');
+        current.setAttribute('aria-live', 'polite');
+        current.textContent = cleanPanelLabel(panels[0]);
+
+        var next = document.createElement('button');
+        next.className = 'continent-carousel__nav-button continent-carousel__nav-button--next';
+        next.type = 'button';
+        next.setAttribute('data-continent-carousel-next', '');
+        next.setAttribute('aria-label', 'Next region');
+
+        controls.appendChild(prev);
+        controls.appendChild(current);
+        controls.appendChild(next);
+
+        track.parentNode.insertBefore(carousel, track);
+        carousel.appendChild(controls);
+        carousel.appendChild(track);
+        track.setAttribute('data-continent-carousel-track', '');
+        if (!track.hasAttribute('tabindex')) track.setAttribute('tabindex', '0');
+      });
+    }
+
+    function upgradeCountryCards(carousel) {
+      var chips = Array.prototype.slice.call(carousel.querySelectorAll(
+        '.country-chip:not(.country-chip--with-hero)'
+      ));
+      chips.forEach(function (chip) {
+        var href = chip.getAttribute('href') || '';
+        var base = href.replace(/(?:index\.html)?(?:[#?].*)?$/, '');
+        if (base && base.charAt(base.length - 1) !== '/') base += '/';
+        var parts = base.split('/').filter(Boolean);
+        var slug = parts[parts.length - 1];
+        if (!slug) return;
+
+        var label = chip.textContent.replace(/\s+/g, ' ').trim();
+        var hero = document.createElement('span');
+        hero.className = 'country-chip__hero';
+        hero.setAttribute('aria-hidden', 'true');
+
+        var heroImage = document.createElement('img');
+        heroImage.src = base + 'img/' + slug + '-hero.png';
+        heroImage.alt = '';
+        heroImage.loading = 'lazy';
+        hero.appendChild(heroImage);
+
+        var labelWrap = document.createElement('span');
+        labelWrap.className = 'country-chip__label';
+
+        var flag = document.createElement('img');
+        flag.className = 'country-chip__flag';
+        flag.src = base + 'img/flag.svg';
+        flag.alt = '';
+
+        var name = document.createElement('span');
+        name.className = 'country-chip__name';
+        name.textContent = label;
+
+        labelWrap.appendChild(flag);
+        labelWrap.appendChild(name);
+
+        chip.classList.add('country-chip--with-hero');
+        chip.textContent = '';
+        chip.appendChild(hero);
+        chip.appendChild(labelWrap);
+      });
+    }
+
+    function ensureSideButtons(carousel) {
+      if (carousel.querySelector('[data-continent-carousel-side-prev]')) return;
+
+      var sidePrev = document.createElement('button');
+      sidePrev.className = 'continent-carousel__side-button continent-carousel__side-button--prev';
+      sidePrev.type = 'button';
+      sidePrev.setAttribute('data-continent-carousel-side-prev', '');
+      sidePrev.setAttribute('aria-label', 'Previous region');
+
+      var sideNext = document.createElement('button');
+      sideNext.className = 'continent-carousel__side-button continent-carousel__side-button--next';
+      sideNext.type = 'button';
+      sideNext.setAttribute('data-continent-carousel-side-next', '');
+      sideNext.setAttribute('aria-label', 'Next region');
+
+      carousel.appendChild(sidePrev);
+      carousel.appendChild(sideNext);
+    }
+
+    function ensureControlButtons(carousel, panels) {
+      var controls = carousel.querySelector('.continent-carousel__controls');
+      if (!controls) {
+        controls = document.createElement('nav');
+        controls.className = 'continent-carousel__controls';
+        controls.setAttribute('aria-label', 'Country group carousel');
+        carousel.insertBefore(controls, carousel.firstChild);
+      }
+
+      controls.textContent = '';
+      panels.forEach(function (panel, index) {
+        var label = cleanPanelLabel(panel);
+        var button = document.createElement('button');
+        button.className = 'continent-carousel__nav-button';
+        button.type = 'button';
+        button.textContent = label;
+        button.setAttribute('data-continent-carousel-tab', String(index));
+        button.setAttribute('aria-label', label);
+        controls.appendChild(button);
+      });
+    }
+
+    prepareCarouselLists();
+
     var carousels = Array.prototype.slice.call(document.querySelectorAll('[data-continent-carousel]'));
     if (!carousels.length) return;
 
     carousels.forEach(function (carousel) {
+      upgradeCountryCards(carousel);
+      ensureSideButtons(carousel);
+
       var track = carousel.querySelector('[data-continent-carousel-track]');
       if (!track) return;
 
       var panels = Array.prototype.slice.call(track.querySelectorAll('.continent-group-panel'));
-      var prev = carousel.querySelector('[data-continent-carousel-prev]');
-      var next = carousel.querySelector('[data-continent-carousel-next]');
-      var current = carousel.querySelector('[data-continent-carousel-current]');
+      ensureControlButtons(carousel, panels);
+
+      var tabButtons = Array.prototype.slice.call(carousel.querySelectorAll('[data-continent-carousel-tab]'));
+      var sidePrev = carousel.querySelector('[data-continent-carousel-side-prev]');
+      var sideNext = carousel.querySelector('[data-continent-carousel-side-next]');
       var activeIndex = 0;
       var ticking = false;
       var touchStartX = null;
@@ -1064,20 +1217,23 @@
       }
 
       function labelFor(index) {
-        var panel = panels[clampIndex(index)];
-        var heading = panel && panel.querySelector('h3');
-        if (!heading) return '';
-        var clone = heading.cloneNode(true);
-        Array.prototype.slice.call(clone.querySelectorAll('span')).forEach(function (span) {
-          span.parentNode.removeChild(span);
-        });
-        return clone.textContent.replace(/\s+Europe\s*$/, '').replace(/\s+/g, ' ').trim();
+        return cleanPanelLabel(panels[clampIndex(index)]);
       }
 
-      function syncTrackHeight(index) {
-        var panel = panels[clampIndex(index)];
-        if (!panel) return;
-        track.style.height = panel.offsetHeight + 'px';
+      function syncTrackHeight() {
+        var maxHeight = 0;
+        track.style.height = 'auto';
+        panels.forEach(function (panel) {
+          panel.style.minHeight = '';
+        });
+        panels.forEach(function (panel) {
+          maxHeight = Math.max(maxHeight, panel.offsetHeight);
+        });
+        if (!maxHeight) return;
+        track.style.height = maxHeight + 'px';
+        panels.forEach(function (panel) {
+          panel.style.minHeight = maxHeight + 'px';
+        });
       }
 
       function carouselIsVisible() {
@@ -1091,16 +1247,29 @@
 
       function update() {
         activeIndex = currentIndex();
-        syncTrackHeight(activeIndex);
+        syncTrackHeight();
         updateActiveState();
-        if (prev) {
-          prev.disabled = activeIndex === 0;
-          prev.textContent = activeIndex === 0 ? '\u2039 Previous' : '\u2039 ' + labelFor(activeIndex - 1);
+        tabButtons.forEach(function (button, index) {
+          var isActive = index === activeIndex;
+          button.classList.toggle('continent-carousel__nav-button--current', isActive);
+          button.classList.toggle('is-active', isActive);
+          if (isActive) {
+            button.setAttribute('aria-current', 'true');
+          } else {
+            button.removeAttribute('aria-current');
+          }
+        });
+
+        var prevLabel = activeIndex > 0 ? labelFor(activeIndex - 1) : '';
+        if (sidePrev) {
+          sidePrev.disabled = !prevLabel;
+          sidePrev.setAttribute('aria-label', prevLabel ? 'Previous region: ' + prevLabel : 'No previous region');
         }
-        if (current) current.textContent = labelFor(activeIndex);
-        if (next) {
-          next.disabled = activeIndex === panels.length - 1;
-          next.textContent = activeIndex === panels.length - 1 ? 'Next \u203a' : labelFor(activeIndex + 1) + ' \u203a';
+
+        var nextLabel = activeIndex < panels.length - 1 ? labelFor(activeIndex + 1) : '';
+        if (sideNext) {
+          sideNext.disabled = !nextLabel;
+          sideNext.setAttribute('aria-label', nextLabel ? 'Next region: ' + nextLabel : 'No next region');
         }
       }
 
@@ -1108,7 +1277,7 @@
         var targetIndex = clampIndex(index);
         var target = panels[targetIndex];
         if (!target) return;
-        syncTrackHeight(targetIndex);
+        syncTrackHeight();
         var left = target.offsetLeft - track.offsetLeft;
         if (typeof track.scrollTo === 'function') {
           track.scrollTo({ left: left, behavior: 'smooth' });
@@ -1117,14 +1286,19 @@
         }
       }
 
-      if (prev) {
-        prev.addEventListener('click', function () {
+      tabButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          goTo(parseInt(button.getAttribute('data-continent-carousel-tab'), 10) || 0);
+        });
+      });
+      if (sidePrev) {
+        sidePrev.addEventListener('click', function () {
           goTo(activeIndex - 1);
         });
       }
 
-      if (next) {
-        next.addEventListener('click', function () {
+      if (sideNext) {
+        sideNext.addEventListener('click', function () {
           goTo(activeIndex + 1);
         });
       }
@@ -1176,8 +1350,14 @@
       });
 
       window.addEventListener('resize', function () {
-        syncTrackHeight(activeIndex);
+        syncTrackHeight();
         update();
+      });
+      window.addEventListener('load', syncTrackHeight);
+      panels.forEach(function (panel) {
+        Array.prototype.slice.call(panel.querySelectorAll('img')).forEach(function (image) {
+          if (!image.complete) image.addEventListener('load', syncTrackHeight, { once: true });
+        });
       });
       window.addEventListener('scroll', updateActiveState, { passive: true });
       update();

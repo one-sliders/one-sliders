@@ -572,6 +572,167 @@
     return !isNaN(date.getTime());
   }
 
+  function parseDateOnly(value) {
+    var parts = String(value || '').split('-').map(Number);
+    if (parts.length < 3 || !parts[0] || !parts[1] || !parts[2]) return null;
+    var date = new Date(parts[0], parts[1] - 1, parts[2]);
+    return isNaN(date.getTime()) ? null : date;
+  }
+
+  function dateOnlyToday() {
+    var now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  }
+
+  function addDays(date, days) {
+    if (!date) return null;
+    var copy = new Date(date.getTime());
+    copy.setDate(copy.getDate() + days);
+    return copy;
+  }
+
+  function isoDateOnly(date) {
+    if (!date) return '';
+    return date.getFullYear() + '-' + pad2(date.getMonth() + 1) + '-' + pad2(date.getDate());
+  }
+
+  function displayDate(date) {
+    if (!date) return 'TBC';
+    return new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short' }).format(date);
+  }
+
+  function weatherWindow(edition) {
+    var start = parseDateOnly(edition && edition.startDate);
+    var exclusiveEnd = parseDateOnly(edition && edition.endExclusive);
+    var inclusiveEnd = parseDateOnly(edition && edition.endDate);
+    if (exclusiveEnd) inclusiveEnd = addDays(exclusiveEnd, -1);
+    if (!start || !inclusiveEnd) return null;
+    return {
+      start: addDays(start, -7),
+      forecastStart: start,
+      end: inclusiveEnd
+    };
+  }
+
+  function shouldShowWeather(edition) {
+    var windowDates = weatherWindow(edition);
+    if (!windowDates) return false;
+    var today = dateOnlyToday();
+    return today >= windowDates.start && today <= windowDates.end;
+  }
+
+  function weatherCodeLabel(code) {
+    var labels = {
+      0: 'Clear',
+      1: 'Mostly clear',
+      2: 'Partly cloudy',
+      3: 'Cloudy',
+      45: 'Fog',
+      48: 'Rime fog',
+      51: 'Light drizzle',
+      53: 'Drizzle',
+      55: 'Heavy drizzle',
+      56: 'Freezing drizzle',
+      57: 'Freezing drizzle',
+      61: 'Light rain',
+      63: 'Rain',
+      65: 'Heavy rain',
+      66: 'Freezing rain',
+      67: 'Freezing rain',
+      71: 'Light snow',
+      73: 'Snow',
+      75: 'Heavy snow',
+      77: 'Snow grains',
+      80: 'Rain showers',
+      81: 'Rain showers',
+      82: 'Heavy showers',
+      85: 'Snow showers',
+      86: 'Snow showers',
+      95: 'Thunderstorm',
+      96: 'Thunderstorm with hail',
+      99: 'Thunderstorm with hail'
+    };
+    return labels[Number(code)] || 'Weather';
+  }
+
+  function renderWeatherCard(data, edition) {
+    var weather = edition && edition.weather;
+    var windowDates = weatherWindow(edition);
+    if (!weather || !shouldShowWeather(edition) || !weather.latitude || !weather.longitude || !windowDates) return '';
+    var today = dateOnlyToday();
+    var queryStart = today > windowDates.forecastStart ? today : windowDates.forecastStart;
+    if (queryStart > windowDates.end) return '';
+    var title = weather.label || ((weather.location || edition.venue || data.eventName) + ' weather');
+    var note = weather.note || weather.outdoorNote || 'Forecast updates automatically while the event is close enough for weather to matter.';
+    return '<section class="event-weather-card" data-weather-card' +
+      ' data-latitude="' + escapeAttribute(weather.latitude) + '"' +
+      ' data-longitude="' + escapeAttribute(weather.longitude) + '"' +
+      ' data-start-date="' + escapeAttribute(isoDateOnly(queryStart)) + '"' +
+      ' data-end-date="' + escapeAttribute(isoDateOnly(windowDates.end)) + '"' +
+      ' data-location="' + escapeAttribute(weather.location || edition.venue || '') + '"' +
+      ' data-source-label="' + escapeAttribute(weather.sourceLabel || 'Open-Meteo forecast') + '"' +
+      '>' +
+        '<div class="event-weather-card__head">' +
+          '<span>Weather</span>' +
+          '<strong>' + title + '</strong>' +
+          '<p>' + displayDate(windowDates.start) + ' - ' + displayDate(windowDates.end) + '. ' + note + '</p>' +
+        '</div>' +
+        '<div class="event-weather-card__body" data-weather-body>Loading forecast...</div>' +
+      '</section>';
+  }
+
+  function renderWeatherRows(daily, startDate, endDate) {
+    if (!daily || !daily.time || !daily.time.length) return '';
+    var rows = daily.time.map(function (date, index) {
+      var parsed = parseDateOnly(date);
+      if ((startDate && parsed < startDate) || (endDate && parsed > endDate)) return '';
+      var min = daily.temperature_2m_min && daily.temperature_2m_min[index];
+      var max = daily.temperature_2m_max && daily.temperature_2m_max[index];
+      var rainChance = daily.precipitation_probability_max && daily.precipitation_probability_max[index];
+      var rainAmount = daily.precipitation_sum && daily.precipitation_sum[index];
+      var wind = daily.wind_speed_10m_max && daily.wind_speed_10m_max[index];
+      var tempLabel = min == null || max == null ? 'Temp TBC' : Math.round(min) + '-' + Math.round(max) + '&deg;C';
+      return '<div class="event-weather-day">' +
+        '<time>' + displayDate(parsed) + '</time>' +
+        '<strong>' + weatherCodeLabel(daily.weather_code && daily.weather_code[index]) + '</strong>' +
+        '<span>' + tempLabel + '</span>' +
+        '<span>' + (rainChance == null ? 'Rain TBC' : rainChance + '% rain') + '</span>' +
+        '<span>' + (rainAmount == null ? '0 mm' : rainAmount + ' mm') + '</span>' +
+        '<span>' + (wind == null ? 'Wind TBC' : Math.round(wind) + ' km/h wind') + '</span>' +
+      '</div>';
+    }).filter(Boolean).join('');
+    return rows ? '<div class="event-weather-list">' + rows + '</div>' : '';
+  }
+
+  function hydrateWeatherCards(root) {
+    (root || document).querySelectorAll('[data-weather-card]').forEach(function (card) {
+      var body = card.querySelector('[data-weather-body]');
+      if (!body || card.getAttribute('data-weather-loaded') === 'true') return;
+      card.setAttribute('data-weather-loaded', 'true');
+      var startDate = parseDateOnly(card.getAttribute('data-start-date'));
+      var endDate = parseDateOnly(card.getAttribute('data-end-date'));
+      var url = 'https://api.open-meteo.com/v1/forecast?' + [
+        'latitude=' + encodeURIComponent(card.getAttribute('data-latitude')),
+        'longitude=' + encodeURIComponent(card.getAttribute('data-longitude')),
+        'daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max',
+        'timezone=auto',
+        'forecast_days=16'
+      ].join('&');
+      fetch(url, { cache: 'no-cache' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Weather fetch failed');
+          return response.json();
+        })
+        .then(function (forecast) {
+          var rows = renderWeatherRows(forecast && forecast.daily, startDate, endDate);
+          body.innerHTML = rows || '<p>Forecast is not available for this event window yet.</p>';
+        })
+        .catch(function () {
+          body.innerHTML = '<p>Forecast could not load. Check the local forecast before heading to outdoor parts of the event.</p>';
+        });
+    });
+  }
+
   function fact(label, html, className) {
     return '<div class="fact' + (className ? ' ' + className : '') + '"><span>' + label + '</span><strong>' + html + '</strong></div>';
   }
@@ -861,6 +1022,7 @@
     var overview = overviewCards
       ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
       : '';
+    var weatherCard = renderWeatherCard(data, edition);
     var actions = editionActionButtons(data, edition, !shouldSuppressEditionCalendar(data));
 
     target.innerHTML =
@@ -872,11 +1034,13 @@
         (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
       overview +
+      weatherCard +
       renderStageTabs(data, edition) +
       actions +
       sourceCard(data);
 
     bindStageTabs(target);
+    hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
     refreshCountdowns();
@@ -925,6 +1089,7 @@
       : '';
 
     var editionDetails = editionBlocks ? '<div class="question-grid">' + editionBlocks + '</div>' : '';
+    var weatherCard = renderWeatherCard(data, edition);
     var actions = editionActionButtons(data, edition, true);
 
     target.innerHTML =
@@ -939,10 +1104,12 @@
       lifecycle +
       finalResults +
       medalGames +
+      weatherCard +
       editionDetails +
       actions +
       sourceCard(data);
 
+    hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
     refreshCountdowns();
@@ -957,6 +1124,9 @@
     var switcherEditions = data.editions.slice().sort(function (a, b) {
       return Number(a.year) - Number(b.year);
     });
+    if (switcherEditions.length <= 1 || data.hideYearSwitcher) {
+      switcher.hidden = true;
+    }
     function requestedYearFromLocation() {
       var hashMatch = (window.location.hash || '').match(/^#year-(\d{4})$/);
       var queryYear = new URLSearchParams(window.location.search).get('year');
