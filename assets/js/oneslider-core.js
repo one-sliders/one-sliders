@@ -1501,58 +1501,35 @@
 
     remindersButton.addEventListener('click', function () {
       if (isIOS()) {
-        // Primary: try OneSliders Groceries shortcut — creates the list automatically if installed.
-        // Detect whether the browser left the page (shortcut opened) via visibilitychange.
-        // If still on page after 400 ms the shortcut is not installed; fall back to share sheet.
-        var shortcutLeft = false;
-        var visTimer;
-
-        function onVisChange() {
-          if (document.visibilityState === 'hidden') {
-            shortcutLeft = true;
-            clearTimeout(visTimer);
-            document.removeEventListener('visibilitychange', onVisChange);
-            setStatus(status, 'Opening OneSliders Groceries…');
-          }
+        // Apple has no public web API to silently create a Groceries list from Safari.
+        // Best available path for any public user with no installation required:
+        //   1. navigator.share() — opens iOS Share Sheet immediately, user taps Reminders.
+        //   2. Clipboard copy fallback if share is not available.
+        if (navigator.share) {
+          navigator.share(groceriesShareData(title, ingredients))
+            .then(function () {
+              setStatus(status, 'Sent to Reminders.');
+            })
+            .catch(function (err) {
+              if (err && err.name === 'AbortError') {
+                setStatus(status, '');
+                return;
+              }
+              copyText(groceryItemsText(ingredients)).then(function () {
+                setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
+              }).catch(function () {
+                setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
+              });
+            });
+          return;
         }
 
-        document.addEventListener('visibilitychange', onVisChange);
-        window.location.href = groceriesShortcutUrl(title, ingredients);
-
-        visTimer = setTimeout(function () {
-          document.removeEventListener('visibilitychange', onVisChange);
-          if (shortcutLeft) return;
-
-          // Shortcut not installed — try native iOS Share Sheet.
-          // navigator.share with plain text lets the user pick Reminders directly.
-          if (navigator.share) {
-            setStatus(status, 'Choose Reminders in the share sheet, then pick your Groceries list.');
-            navigator.share(groceriesShareData(title, ingredients))
-              .then(function () {
-                setStatus(status, 'Sent to iOS.');
-              })
-              .catch(function (err) {
-                if (err && err.name === 'AbortError') {
-                  setStatus(status, '');
-                  return;
-                }
-                copyText(groceryItemsText(ingredients)).then(function () {
-                  setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
-                }).catch(function () {
-                  setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
-                });
-              });
-            return;
-          }
-
-          // No share API — copy silently.
-          copyText(groceryItemsText(ingredients)).then(function () {
-            setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
-          }).catch(function () {
-            setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
-          });
-        }, 400);
-
+        // No share API — copy silently.
+        copyText(groceryItemsText(ingredients)).then(function () {
+          setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
+        }).catch(function () {
+          setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
+        });
         return;
       }
 
