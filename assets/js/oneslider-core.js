@@ -1501,29 +1501,58 @@
 
     remindersButton.addEventListener('click', function () {
       if (isIOS()) {
-        if (navigator.share) {
-          setStatus(status, 'Opening iOS share sheet. Choose Reminders and your Groceries list.');
-          navigator.share(groceriesShareData(title, ingredients)).then(function () {
-            setStatus(status, 'Sent to iOS. Finish in Reminders if prompted.');
-          }).catch(function (err) {
-            if (err && err.name === 'AbortError') {
-              setStatus(status, 'Reminders export cancelled.');
-              return;
-            }
-            copyText(groceryItemsText(ingredients)).then(function () {
-              openGroceriesGuide(status, true);
-            }).catch(function () {
-              openGroceriesGuide(status, false);
-            });
-          });
-          return;
+        // Primary: try OneSliders Groceries shortcut — creates the list automatically if installed.
+        // Detect whether the browser left the page (shortcut opened) via visibilitychange.
+        // If still on page after 400 ms the shortcut is not installed; fall back to share sheet.
+        var shortcutLeft = false;
+        var visTimer;
+
+        function onVisChange() {
+          if (document.visibilityState === 'hidden') {
+            shortcutLeft = true;
+            clearTimeout(visTimer);
+            document.removeEventListener('visibilitychange', onVisChange);
+            setStatus(status, 'Opening OneSliders Groceries…');
+          }
         }
 
-        copyText(groceryItemsText(ingredients)).then(function () {
-          openGroceriesGuide(status, true);
-        }).catch(function () {
-          openGroceriesGuide(status, false);
-        });
+        document.addEventListener('visibilitychange', onVisChange);
+        window.location.href = groceriesShortcutUrl(title, ingredients);
+
+        visTimer = setTimeout(function () {
+          document.removeEventListener('visibilitychange', onVisChange);
+          if (shortcutLeft) return;
+
+          // Shortcut not installed — try native iOS Share Sheet.
+          // navigator.share with plain text lets the user pick Reminders directly.
+          if (navigator.share) {
+            setStatus(status, 'Choose Reminders in the share sheet, then pick your Groceries list.');
+            navigator.share(groceriesShareData(title, ingredients))
+              .then(function () {
+                setStatus(status, 'Sent to iOS.');
+              })
+              .catch(function (err) {
+                if (err && err.name === 'AbortError') {
+                  setStatus(status, '');
+                  return;
+                }
+                copyText(groceryItemsText(ingredients)).then(function () {
+                  setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
+                }).catch(function () {
+                  setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
+                });
+              });
+            return;
+          }
+
+          // No share API — copy silently.
+          copyText(groceryItemsText(ingredients)).then(function () {
+            setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
+          }).catch(function () {
+            setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
+          });
+        }, 400);
+
         return;
       }
 
@@ -1535,7 +1564,7 @@
           url: window.location.href
         };
         navigator.share(data).then(function () {
-          setStatus(status, isIOS() ? 'Choose Reminders in the share sheet to save it.' : 'Shopping list shared.');
+          setStatus(status, 'Shopping list shared.');
         }).catch(function (err) {
           if (err && err.name === 'AbortError') return;
           copyText(text).then(function () {
@@ -1548,7 +1577,7 @@
       }
 
       copyText(text).then(function () {
-        setStatus(status, isIOS() ? 'Ingredients copied. Paste them into Reminders.' : 'Ingredients copied.');
+        setStatus(status, 'Ingredients copied.');
       }).catch(function () {
         setStatus(status, 'Browser blocked copying. Select the ingredient list from the card.');
       });
