@@ -1261,6 +1261,30 @@
       };
     }
 
+    var SHOPPING_LIST_KEY = 'oneslider-shopping-list';
+
+    function saveToShoppingList(recipeTitle, items, recipeUrl) {
+      try {
+        var existing = JSON.parse(localStorage.getItem(SHOPPING_LIST_KEY) || '[]');
+        // Replace any existing items from the same recipe so re-adding is idempotent
+        existing = existing.filter(function (item) { return item.recipe !== recipeTitle; });
+        var slug = recipeTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        items.forEach(function (text, i) {
+          existing.push({
+            id: slug + '-' + i,
+            recipe: recipeTitle,
+            recipeUrl: recipeUrl,
+            text: text,
+            checked: false
+          });
+        });
+        localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(existing));
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
     function groceriesShortcutInput(title, items) {
       return [
         groceryListName(title),
@@ -1285,6 +1309,17 @@
         el._timer = setTimeout(function () {
           el.textContent = '';
         }, 5200);
+      }
+    }
+
+    function setStatusHtml(el, html) {
+      if (!el) return;
+      el.innerHTML = html || '';
+      if (el._timer) clearTimeout(el._timer);
+      if (html) {
+        el._timer = setTimeout(function () {
+          el.innerHTML = '';
+        }, 6000);
       }
     }
 
@@ -1319,9 +1354,7 @@
     }
 
     function remindersLabel() {
-      if (isIOS()) return 'Create Groceries list';
-      if (navigator.share) return 'Share shopping list';
-      return 'Copy ingredients';
+      return 'Add to list';
     }
 
     function homeLabel() {
@@ -1485,7 +1518,7 @@
 
     var remindersButton = document.createElement('button');
     remindersButton.type = 'button';
-    remindersButton.className = 'recipe-action-button recipe-action-button--reminders';
+    remindersButton.className = 'recipe-action-button recipe-action-button--list';
     remindersButton.textContent = remindersLabel();
 
     homeButton = document.createElement('button');
@@ -1500,64 +1533,15 @@
     status.setAttribute('aria-live', 'polite');
 
     remindersButton.addEventListener('click', function () {
-      if (isIOS()) {
-        // Apple has no public web API to silently create a Groceries list from Safari.
-        // Best available path for any public user with no installation required:
-        //   1. navigator.share() — opens iOS Share Sheet immediately, user taps Reminders.
-        //   2. Clipboard copy fallback if share is not available.
-        if (navigator.share) {
-          navigator.share(groceriesShareData(title, ingredients))
-            .then(function () {
-              setStatus(status, 'Sent to Reminders.');
-            })
-            .catch(function (err) {
-              if (err && err.name === 'AbortError') {
-                setStatus(status, '');
-                return;
-              }
-              copyText(groceryItemsText(ingredients)).then(function () {
-                setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
-              }).catch(function () {
-                setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
-              });
-            });
-          return;
-        }
-
-        // No share API — copy silently.
-        copyText(groceryItemsText(ingredients)).then(function () {
-          setStatus(status, 'Ingredients copied — paste into your Reminders Groceries list.');
-        }).catch(function () {
-          setStatus(status, 'Select the ingredients and copy them, then paste into Reminders.');
-        });
-        return;
+      var saved = saveToShoppingList(title, ingredients, window.location.pathname);
+      if (saved) {
+        remindersButton.textContent = 'Added ✓';
+        setTimeout(function () { remindersButton.textContent = 'Add to list'; }, 2000);
+        setStatusHtml(status,
+          'Added to your list. <a href="/shopping-list/" style="color:inherit;font-weight:900;">View list →</a>');
+      } else {
+        setStatus(status, 'Could not save — check browser storage settings.');
       }
-
-      var text = shoppingListText(title, ingredients);
-      if (navigator.share) {
-        var data = {
-          title: title + ' ingredients',
-          text: text,
-          url: window.location.href
-        };
-        navigator.share(data).then(function () {
-          setStatus(status, 'Shopping list shared.');
-        }).catch(function (err) {
-          if (err && err.name === 'AbortError') return;
-          copyText(text).then(function () {
-            setStatus(status, 'Ingredients copied.');
-          }).catch(function () {
-            setStatus(status, 'Browser blocked copying. Select the ingredient list from the card.');
-          });
-        });
-        return;
-      }
-
-      copyText(text).then(function () {
-        setStatus(status, 'Ingredients copied.');
-      }).catch(function () {
-        setStatus(status, 'Browser blocked copying. Select the ingredient list from the card.');
-      });
     });
 
     homeButton.addEventListener('click', function () {

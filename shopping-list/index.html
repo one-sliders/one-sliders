@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../assets/css/oneslider-core.css">
+  <link rel="stylesheet" href="shopping-list.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/icons/site.webmanifest">
+  <meta name="theme-color" content="#0d2137">
+  <title>Shopping List | OneSliders</title>
+</head>
+<body class="shopping-list-page">
+  <nav class="top-menu" aria-label="Site navigation">
+    <a href="/content/events/index.html">Events</a>
+    <a href="/content/locations/index.html">Locations</a>
+    <a href="/content/categories/index.html">Categories</a>
+    <a href="/content/categories/food/index.html">Food</a>
+  </nav>
+  <main class="sl-main">
+    <header class="sl-header">
+      <h1>Shopping list</h1>
+      <div class="sl-header-actions" id="sl-actions" hidden>
+        <button type="button" id="sl-clear-checked" class="sl-btn sl-btn--clear-checked">Remove checked</button>
+        <button type="button" id="sl-clear-all" class="sl-btn sl-btn--clear-all">Clear all</button>
+      </div>
+    </header>
+    <div id="sl-content"></div>
+    <p id="sl-empty" class="sl-empty">
+      Your shopping list is empty.<br>
+      <a href="/content/categories/food/index.html">Browse recipes →</a>
+    </p>
+  </main>
+  <script src="shopping-list.js"></script>
+</body>
+</html>

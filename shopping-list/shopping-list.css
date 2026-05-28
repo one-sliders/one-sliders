@@ -1,0 +1,161 @@
+.shopping-list-page {
+  min-height: 100vh;
+  background: #f2f5f8;
+  color: #1a2530;
+}
+
+.sl-main {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 28px 16px 80px;
+}
+
+/* Header */
+.sl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.sl-header h1 {
+  margin: 0;
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 900;
+  color: #0d2137;
+  line-height: 1.05;
+}
+
+.sl-header-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Action buttons */
+.sl-btn {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  font: 800 12px/1 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: opacity .15s;
+  white-space: nowrap;
+}
+
+.sl-btn:hover,
+.sl-btn:focus-visible {
+  opacity: .8;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.sl-btn--clear-checked {
+  background: #e0f2ea;
+  color: #1a6640;
+}
+
+.sl-btn--clear-all {
+  background: #fde8e6;
+  color: #b02a1e;
+}
+
+/* Recipe group card */
+.sl-group {
+  background: #fff;
+  border: 1px solid rgba(17, 25, 34, .11);
+  border-radius: 16px;
+  padding: 16px 18px 8px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(17, 25, 34, .06);
+}
+
+.sl-group__title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #0d2137;
+}
+
+.sl-group__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sl-group__title a:hover {
+  text-decoration: underline;
+}
+
+.sl-group__count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7a87;
+  white-space: nowrap;
+}
+
+/* Item list */
+.sl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sl-item {
+  border-top: 1px solid rgba(17, 25, 34, .08);
+  padding: 2px 0;
+}
+
+.sl-item label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a2530;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sl-item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #1a6640;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sl-item--checked label {
+  color: #9aa5af;
+  text-decoration: line-through;
+}
+
+/* Empty state */
+.sl-empty {
+  text-align: center;
+  padding: 56px 16px;
+  color: #6b7a87;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sl-empty a {
+  color: #0d2137;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.sl-empty a:hover {
+  opacity: .75;
+}
