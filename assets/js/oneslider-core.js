@@ -1074,6 +1074,12 @@
         return clone.textContent.replace(/\s+Europe\s*$/, '').replace(/\s+/g, ' ').trim();
       }
 
+      function syncTrackHeight(index) {
+        var panel = panels[clampIndex(index)];
+        if (!panel) return;
+        track.style.height = panel.offsetHeight + 'px';
+      }
+
       function carouselIsVisible() {
         var rect = carousel.getBoundingClientRect();
         return rect.bottom > window.innerHeight * 0.18 && rect.top < window.innerHeight * 0.82;
@@ -1085,6 +1091,7 @@
 
       function update() {
         activeIndex = currentIndex();
+        syncTrackHeight(activeIndex);
         updateActiveState();
         if (prev) {
           prev.disabled = activeIndex === 0;
@@ -1098,8 +1105,10 @@
       }
 
       function goTo(index) {
-        var target = panels[clampIndex(index)];
+        var targetIndex = clampIndex(index);
+        var target = panels[targetIndex];
         if (!target) return;
+        syncTrackHeight(targetIndex);
         var left = target.offsetLeft - track.offsetLeft;
         if (typeof track.scrollTo === 'function') {
           track.scrollTo({ left: left, behavior: 'smooth' });
@@ -1166,7 +1175,10 @@
         }
       });
 
-      window.addEventListener('resize', update);
+      window.addEventListener('resize', function () {
+        syncTrackHeight(activeIndex);
+        update();
+      });
       window.addEventListener('scroll', updateActiveState, { passive: true });
       update();
     });
@@ -1234,6 +1246,14 @@
         '\n\n' + window.location.href;
     }
 
+    function groceryItemsText(items) {
+      return items.join('\n');
+    }
+
+    function groceryListName(title) {
+      return title + ' groceries';
+    }
+
     function setStatus(el, message) {
       if (!el) return;
       el.textContent = message || '';
@@ -1276,7 +1296,7 @@
     }
 
     function remindersLabel() {
-      if (isIOS()) return 'Add ingredients to Reminders';
+      if (isIOS()) return 'Create Groceries list';
       if (navigator.share) return 'Share shopping list';
       return 'Copy ingredients';
     }
@@ -1296,7 +1316,7 @@
       }
     }
 
-    function openInstallGuide(status) {
+    function ensureRecipeGuide() {
       var guide = document.querySelector('.recipe-install-guide');
       if (!guide) {
         guide = document.createElement('div');
@@ -1308,6 +1328,9 @@
             '<button class="recipe-install-guide__close" type="button" data-recipe-install-close aria-label="Close">Close</button>' +
             '<h2 id="recipe-install-title"></h2>' +
             '<ol></ol>' +
+            '<p class="recipe-install-guide__note" hidden></p>' +
+            '<textarea class="recipe-install-guide__copy" readonly hidden></textarea>' +
+            '<div class="recipe-install-guide__actions" hidden></div>' +
           '</section>';
         document.body.appendChild(guide);
         guide.addEventListener('click', function (event) {
@@ -1319,24 +1342,67 @@
           if (event.key === 'Escape') guide.hidden = true;
         });
       }
+      return guide;
+    }
 
-      var title = guide.querySelector('h2');
+    function openRecipeGuide(options) {
+      var guide = ensureRecipeGuide();
+      var titleEl = guide.querySelector('h2');
       var list = guide.querySelector('ol');
+      var note = guide.querySelector('.recipe-install-guide__note');
+      var copyBox = guide.querySelector('.recipe-install-guide__copy');
+      var actions = guide.querySelector('.recipe-install-guide__actions');
+
+      titleEl.textContent = options.title || '';
+      list.textContent = '';
+      (options.steps || []).forEach(function (step) {
+        var item = document.createElement('li');
+        item.textContent = step;
+        list.appendChild(item);
+      });
+
+      note.textContent = options.note || '';
+      note.hidden = !options.note;
+
+      copyBox.value = options.copyText || '';
+      copyBox.hidden = !options.copyText;
+
+      actions.textContent = '';
+      actions.hidden = !options.sourceHref;
+      if (options.sourceHref) {
+        var link = document.createElement('a');
+        link.className = 'recipe-install-guide__link';
+        link.href = options.sourceHref;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = options.sourceText || 'Apple guide';
+        actions.appendChild(link);
+      }
+
+      guide.hidden = false;
+      if (options.focusCopy && options.copyText) {
+        copyBox.focus();
+        copyBox.select();
+      }
+    }
+
+    function openInstallGuide(status) {
       var steps;
+      var guideTitle;
       if (isIOS()) {
-        title.textContent = 'Add to Home Screen';
+        guideTitle = 'Add to Home Screen';
         steps = ['Tap Share in Safari.', 'Choose Add to Home Screen.', 'Tap Add.'];
       } else if (isAndroid()) {
-        title.textContent = 'Add to Home screen';
+        guideTitle = 'Add to Home screen';
         steps = ['Open the browser menu.', 'Choose Install app or Add to Home screen.', 'Confirm the shortcut.'];
       } else {
-        title.textContent = 'Save this recipe';
+        guideTitle = 'Save this recipe';
         steps = ['Use the browser menu.', 'Choose Install, Create shortcut, or Add to desktop if available.', 'Keep the recipe from your browser shortcuts.'];
       }
-      list.innerHTML = steps.map(function (step) {
-        return '<li>' + step + '</li>';
-      }).join('');
-      guide.hidden = false;
+      openRecipeGuide({
+        title: guideTitle,
+        steps: steps
+      });
       setStatus(status, isIOS() ? 'Follow the Safari steps shown.' : 'Follow the browser steps shown.');
     }
 
@@ -1346,6 +1412,32 @@
     var title = recipeTitle();
     var ingredients = ingredientsFrom(ingredientPanel);
     if (!ingredients.length) return;
+
+    function openGroceriesGuide(status, copied) {
+      var listName = groceryListName(title);
+      var copiedStep = copied ?
+        'The ingredients are copied as one item per line.' :
+        'Copy the ingredients from the box below.';
+
+      openRecipeGuide({
+        title: 'Create a Groceries list',
+        steps: [
+          copiedStep,
+          'Open Reminders on your iPhone and tap Add List.',
+          'Name the list "' + listName + '", tap List Type, choose Groceries, then tap Done.',
+          'Open the new list and paste the ingredients. Reminders sorts grocery items into sections automatically.'
+        ],
+        note: 'Requires iOS 17 or later and iCloud Reminders.',
+        copyText: groceryItemsText(ingredients),
+        focusCopy: !copied,
+        sourceHref: 'https://support.apple.com/en-mide/105086',
+        sourceText: 'Apple Reminders Groceries guide'
+      });
+
+      setStatus(status, copied ?
+        'Ingredients copied. Create a Groceries list in Reminders, then paste.' :
+        'Copy the ingredients from the guide, then paste them into a Groceries list.');
+    }
 
     var row = document.createElement('div');
     row.className = 'recipe-action-row';
@@ -1367,6 +1459,15 @@
     status.setAttribute('aria-live', 'polite');
 
     remindersButton.addEventListener('click', function () {
+      if (isIOS()) {
+        copyText(groceryItemsText(ingredients)).then(function () {
+          openGroceriesGuide(status, true);
+        }).catch(function () {
+          openGroceriesGuide(status, false);
+        });
+        return;
+      }
+
       var text = shoppingListText(title, ingredients);
       if (navigator.share) {
         var data = {

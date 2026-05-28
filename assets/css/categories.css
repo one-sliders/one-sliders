@@ -1534,6 +1534,48 @@ html:has(body.food-layout-page) {
   margin-top: 7px;
 }
 
+.recipe-install-guide__note {
+  margin: 12px 0 0;
+  color: #2e3b47;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.recipe-install-guide__copy {
+  display: block;
+  width: 100%;
+  min-height: 112px;
+  margin-top: 12px;
+  padding: 10px;
+  color: #111922;
+  background: #f7faf7;
+  border: 1px solid rgba(17, 25, 34, 0.16);
+  border-radius: 8px;
+  font: 700 13px/1.4 Arial, Helvetica, sans-serif;
+  resize: vertical;
+}
+
+.recipe-install-guide__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.recipe-install-guide__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  color: #0d2137;
+  background: #e9f2ee;
+  border: 1px solid rgba(17, 25, 34, 0.12);
+  border-radius: 8px;
+  font: 800 12px/1 Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
 .recipe-install-guide__close {
   position: absolute;
   top: 12px;
