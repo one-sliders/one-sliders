@@ -746,6 +746,7 @@
   }
 
   function sourceCard(data) {
+    if (data && data.hideReferences) return '';
     var sourceLinks = ((data && data.sources) || []).filter(function (item) {
       return item && item.label;
     }).map(function (item) {
@@ -753,8 +754,8 @@
       return '<a href="' + escapeAttribute(item.url) + '">' + item.label + '</a>';
     }).join(' ');
     var updated = data && data.lastUpdated ? data.lastUpdated : 'TBC';
-    return '<div class="sources"><span>Sources</span><p>' +
-      (sourceLinks || 'Source details TBC') +
+    return '<div class="sources"><span>References</span><p>' +
+      (sourceLinks || 'Reference details TBC') +
       '<br>Last updated: ' + updated +
     '</p></div>';
   }
