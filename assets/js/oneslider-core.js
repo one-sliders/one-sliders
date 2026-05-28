@@ -1254,6 +1254,29 @@
       return title + ' groceries';
     }
 
+    function groceriesShareData(title, items) {
+      return {
+        title: groceryListName(title),
+        text: groceryItemsText(items)
+      };
+    }
+
+    function groceriesShortcutInput(title, items) {
+      return [
+        groceryListName(title),
+        '',
+        groceryItemsText(items),
+        '',
+        window.location.href
+      ].join('\n');
+    }
+
+    function groceriesShortcutUrl(title, items) {
+      return 'shortcuts://run-shortcut?name=' +
+        encodeURIComponent('OneSliders Groceries') +
+        '&input=text&text=' + encodeURIComponent(groceriesShortcutInput(title, items));
+    }
+
     function setStatus(el, message) {
       if (!el) return;
       el.textContent = message || '';
@@ -1368,7 +1391,15 @@
       copyBox.hidden = !options.copyText;
 
       actions.textContent = '';
-      actions.hidden = !options.sourceHref;
+      actions.hidden = !(options.actions && options.actions.length) && !options.sourceHref;
+      (options.actions || []).forEach(function (action) {
+        if (!action.href || !action.text) return;
+        var actionLink = document.createElement('a');
+        actionLink.className = 'recipe-install-guide__link';
+        actionLink.href = action.href;
+        actionLink.textContent = action.text;
+        actions.appendChild(actionLink);
+      });
       if (options.sourceHref) {
         var link = document.createElement('a');
         link.className = 'recipe-install-guide__link';
@@ -1423,20 +1454,30 @@
         title: 'Create a Groceries list',
         steps: [
           copiedStep,
-          'Open Reminders on your iPhone and tap Add List.',
-          'Name the list "' + listName + '", tap List Type, choose Groceries, then tap Done.',
-          'Open the new list and paste the ingredients. Reminders sorts grocery items into sections automatically.'
+          'Use the iOS share sheet from the button and choose Reminders, or run the OneSliders Groceries shortcut if it is installed.',
+          'Choose or create a Groceries list named "' + listName + '".',
+          'Reminders sorts grocery items into sections automatically when the list type is Groceries.'
         ],
         note: 'Requires iOS 17 or later and iCloud Reminders.',
         copyText: groceryItemsText(ingredients),
         focusCopy: !copied,
+        actions: [
+          {
+            href: groceriesShortcutUrl(title, ingredients),
+            text: 'Run OneSliders shortcut'
+          },
+          {
+            href: 'x-apple-reminderkit://',
+            text: 'Open Reminders'
+          }
+        ],
         sourceHref: 'https://support.apple.com/en-mide/105086',
         sourceText: 'Apple Reminders Groceries guide'
       });
 
       setStatus(status, copied ?
-        'Ingredients copied. Create a Groceries list in Reminders, then paste.' :
-        'Copy the ingredients from the guide, then paste them into a Groceries list.');
+        'Ingredients copied for Reminders.' :
+        'Copy the ingredients from the guide, then add them to a Groceries list.');
     }
 
     var row = document.createElement('div');
@@ -1460,6 +1501,24 @@
 
     remindersButton.addEventListener('click', function () {
       if (isIOS()) {
+        if (navigator.share) {
+          setStatus(status, 'Opening iOS share sheet. Choose Reminders and your Groceries list.');
+          navigator.share(groceriesShareData(title, ingredients)).then(function () {
+            setStatus(status, 'Sent to iOS. Finish in Reminders if prompted.');
+          }).catch(function (err) {
+            if (err && err.name === 'AbortError') {
+              setStatus(status, 'Reminders export cancelled.');
+              return;
+            }
+            copyText(groceryItemsText(ingredients)).then(function () {
+              openGroceriesGuide(status, true);
+            }).catch(function () {
+              openGroceriesGuide(status, false);
+            });
+          });
+          return;
+        }
+
         copyText(groceryItemsText(ingredients)).then(function () {
           openGroceriesGuide(status, true);
         }).catch(function () {
