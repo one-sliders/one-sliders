@@ -1535,10 +1535,7 @@
     remindersButton.addEventListener('click', function () {
       var saved = saveToShoppingList(title, ingredients, window.location.pathname);
       if (saved) {
-        remindersButton.textContent = 'Added ✓';
-        setTimeout(function () { remindersButton.textContent = 'Add to list'; }, 2000);
-        setStatusHtml(status,
-          'Added to your list. <a href="/shopping-list/" style="color:inherit;font-weight:900;">View list →</a>');
+        window.location.href = '/shopping-list/';
       } else {
         setStatus(status, 'Could not save — check browser storage settings.');
       }
