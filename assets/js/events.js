@@ -298,6 +298,22 @@
     return '<a class="country" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(name) + '">' + name + '</a>';
   }
 
+  function stageParticipant(item) {
+    if (!item) return '';
+    var name = item.name || 'TBC';
+    if (item.countryFlag) {
+      var flag = '<img src="' + escapeAttribute(item.countryFlag) + '" alt="" width="20" height="14">';
+      var title = item.countryName ? ' title="' + escapeAttribute(item.countryName) + '"' : '';
+      var content = flag + '<span class="stage-participant__name">' + name + '</span>';
+      if (item.countryUrl) {
+        return '<a class="stage-participant" href="' + escapeAttribute(item.countryUrl) + '" data-team-name="' + escapeAttribute(name) + '" data-country-name="' + escapeAttribute(item.countryName || '') + '"' + title + '>' + content + '</a>';
+      }
+      return '<span class="stage-participant" data-team-name="' + escapeAttribute(name) + '" data-country-name="' + escapeAttribute(item.countryName || '') + '"' + title + '>' + content + '</span>';
+    }
+    if (item.flag || item.url || item.icon || eventTeamIcon(name)) return country(item);
+    return '<span class="stage-participant" data-team-name="' + escapeAttribute(name) + '">' + name + '</span>';
+  }
+
   function countries(items) {
     return (items || []).map(country).join(' ');
   }
@@ -312,14 +328,14 @@
 
   function countryHeroImage(item) {
     if (!item) return '';
-    if (item.hero) return item.hero;
+    if (item.mini) return item.mini;
     var slug = countrySlug(item);
     if (!slug) return '';
     if (item.flag && String(item.flag).indexOf('/img/flag.svg') >= 0) {
-      return String(item.flag).replace('/img/flag.svg', '/img/' + slug + '-hero.png');
+      return String(item.flag).replace('/img/flag.svg', '/img/' + slug + '-mini.png');
     }
     if (item.url && String(item.url).indexOf('/index.html') >= 0) {
-      return String(item.url).replace('/index.html', '/img/' + slug + '-hero.png');
+      return String(item.url).replace('/index.html', '/img/' + slug + '-mini.png');
     }
     return '';
   }
@@ -345,6 +361,18 @@
   function countryHeroCards(items) {
     if (!items || !items.length) return '';
     return '<span class="country-hero-list">' + (items || []).map(countryHeroCard).join('') + '</span>';
+  }
+
+  function removeBrokenCountryHeroImages(root) {
+    (root || document).querySelectorAll('.country-hero-card__image').forEach(function (image) {
+      if (image.complete && image.naturalWidth === 0) {
+        image.remove();
+        return;
+      }
+      image.addEventListener('error', function () {
+        image.remove();
+      }, { once: true });
+    });
   }
 
   function countryFact(items) {
@@ -859,7 +887,7 @@
       var calendarButton = renderMatchCalendarButton(context.data, context.edition, context.tab, context.card, match);
       return '<span class="stage-match-row' + (calendarButton ? ' stage-match-row--with-action' : '') + '">' +
         '<time>' + (match.date || 'TBC') + '</time>' +
-        '<span class="stage-match-row__teams">' + country(match.home) + '<b>' + (match.score || match.time || 'TBC') + '</b>' + country(match.away) + '</span>' +
+        '<span class="stage-match-row__teams">' + stageParticipant(match.home) + '<b>' + (match.score || match.time || 'TBC') + '</b>' + stageParticipant(match.away) + '</span>' +
         (match.note ? '<em>' + match.note + '</em>' : '') +
         calendarButton +
       '</span>';
@@ -879,17 +907,43 @@
     }).join('') + '</span>';
   }
 
-  function renderStageRanking(rows) {
+  function renderStageRanking(rows, options) {
     if (!rows || !rows.length) return '';
+    options = options || {};
+    var nameLabel = options.nameLabel || 'Team';
+    var resultLabel = options.resultLabel || 'Place';
+    var hideRank = Boolean(options.hideRank);
+    var rowClass = 'stage-standing-row stage-standing-row--ranking' + (hideRank ? ' stage-standing-row--no-rank' : '');
     var body = rows.map(function (row) {
-      return '<span class="stage-standing-row stage-standing-row--ranking">' +
-        '<b>' + (row.rank || '') + '</b>' +
-        '<span>' + country(row.team) + '</span>' +
+      return '<span class="' + rowClass + '">' +
+        (hideRank ? '' : '<b>' + (row.rank || '') + '</b>') +
+        '<span>' + stageParticipant(row.team) + '</span>' +
         '<strong>' + (row.result || '') + '</strong>' +
       '</span>';
     }).join('');
     return '<span class="stage-standings">' +
-      '<span class="stage-standing-row stage-standing-row--head"><b>#</b><span>Team</span><strong>Place</strong></span>' +
+      '<span class="' + rowClass + ' stage-standing-row--head">' +
+        (hideRank ? '' : '<b>#</b>') +
+        '<span>' + nameLabel + '</span><strong>' + resultLabel + '</strong></span>' +
+      body +
+    '</span>';
+  }
+
+  function renderStageRounds(rounds, options) {
+    if (!rounds || !rounds.length) return '';
+    options = options || {};
+    var roundLabel = options.roundLabel || 'Round';
+    var fieldLabel = options.fieldLabel || 'Field';
+    var advanceLabel = options.advanceLabel || 'Advance';
+    var body = rounds.map(function (round) {
+      return '<span class="stage-round-row">' +
+        '<b>' + (round.label || '') + '</b>' +
+        '<span>' + (round.field || '') + '</span>' +
+        '<strong>' + (round.advance || '') + '</strong>' +
+      '</span>';
+    }).join('');
+    return '<span class="stage-round-list">' +
+      '<span class="stage-round-row stage-round-row--head"><b>' + roundLabel + '</b><span>' + fieldLabel + '</span><strong>' + advanceLabel + '</strong></span>' +
       body +
     '</span>';
   }
@@ -932,7 +986,9 @@
           : item.type === 'final-slots'
             ? renderFinalSlots(item.rows || [])
             : item.type === 'ranking'
-              ? renderStageRanking(item.rows || [])
+              ? renderStageRanking(item.rows || [], { nameLabel: item.nameLabel, resultLabel: item.resultLabel, hideRank: item.hideRank })
+              : item.type === 'rounds'
+                ? renderStageRounds(item.rounds || [], { roundLabel: item.roundLabel, fieldLabel: item.fieldLabel, advanceLabel: item.advanceLabel })
               : item.type === 'country-groups'
                 ? renderStageCountryGroups(item.groups || [])
                 : (item.detail || '');
@@ -1015,6 +1071,10 @@
     });
   }
 
+  function initStaticStageTabs() {
+    bindStageTabs(document);
+  }
+
   function renderEditionWithStages(data, edition, target) {
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
@@ -1024,6 +1084,12 @@
       ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
       : '';
     var weatherCard = renderWeatherCard(data, edition);
+    var questionBlocks = data.showStageQuestions ? (edition.questions || []).map(question).join('') : '';
+    var questions = questionBlocks ? '<div class="question-grid">' + questionBlocks + '</div>' : '';
+    var stageTabs = renderStageTabs(data, edition);
+    var editionContent = data.templateMode === 'history'
+      ? stageTabs + questions
+      : questions + stageTabs;
     var actions = editionActionButtons(data, edition, !shouldSuppressEditionCalendar(data));
 
     target.innerHTML =
@@ -1036,11 +1102,12 @@
       '</div>' +
       overview +
       weatherCard +
-      renderStageTabs(data, edition) +
+      editionContent +
       actions +
-      sourceCard(data);
+    sourceCard(data);
 
     bindStageTabs(target);
+    removeBrokenCountryHeroImages(target);
     hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
@@ -1108,8 +1175,9 @@
       weatherCard +
       editionDetails +
       actions +
-      sourceCard(data);
+    sourceCard(data);
 
+    removeBrokenCountryHeroImages(target);
     hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
@@ -1199,48 +1267,43 @@
     });
   }
 
-  function renderPart(data, id) {
-    var parts = data.parts || [];
-    var part = parts.find(function (item) { return item.id === id; }) || parts[0];
-    var target = document.querySelector('[data-part-detail]');
-    if (!target || !part) return;
+  function markResultWinners(html) {
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = html;
 
+    // Reverse order of matches inside each results group so the most
+    // recent date (today's matches when ongoing) appears at the top.
+    wrapper.querySelectorAll('.match-results').forEach(function (group) {
+      var matches = [];
+      var child = group.firstElementChild;
+      while (child) {
+        if (child.classList && child.classList.contains('match-result')) matches.push(child);
+        child = child.nextElementSibling;
+      }
+      for (var i = matches.length - 1; i >= 0; i--) group.appendChild(matches[i]);
+    });
+
+    // Mark the winning side.
+    wrapper.querySelectorAll('.match-result').forEach(function (row) {
+      var score = row.querySelector('.match-score');
+      var teams = row.querySelectorAll('.country');
+      if (!score || teams.length < 2) return;
+      var text = score.textContent || '';
+      var values = text.match(/\d+/g);
+      if (!values || values.length < 2) return;
+      var home = Number(values[0]);
+      var away = Number(values[1]);
+      if (home === away) return;
+      teams[home > away ? 0 : 1].classList.add('country--winner');
+    });
+    return wrapper.innerHTML;
+  }
+
+  function partArticle(part) {
     var facts = (part.facts || []).map(function (item) {
       return fact(item.label, item.value);
     }).join('');
     var factsStrip = facts ? '<div class="facts-strip">' + facts + '</div>' : '';
-
-    function markResultWinners(html) {
-      var wrapper = document.createElement('div');
-      wrapper.innerHTML = html;
-
-      // Reverse order of matches inside each results group so the most
-      // recent date (today's matches when ongoing) appears at the top.
-      wrapper.querySelectorAll('.match-results').forEach(function (group) {
-        var matches = [];
-        var child = group.firstElementChild;
-        while (child) {
-          if (child.classList && child.classList.contains('match-result')) matches.push(child);
-          child = child.nextElementSibling;
-        }
-        for (var i = matches.length - 1; i >= 0; i--) group.appendChild(matches[i]);
-      });
-
-      // Mark the winning side
-      wrapper.querySelectorAll('.match-result').forEach(function (row) {
-        var score = row.querySelector('.match-score');
-        var teams = row.querySelectorAll('.country');
-        if (!score || teams.length < 2) return;
-        var text = score.textContent || '';
-        var values = text.match(/\d+/g);
-        if (!values || values.length < 2) return;
-        var home = Number(values[0]);
-        var away = Number(values[1]);
-        if (home === away) return;
-        teams[home > away ? 0 : 1].classList.add('country--winner');
-      });
-      return wrapper.innerHTML;
-    }
 
     var blocks = (part.blocks || []).map(function (item) {
       var className = item.className ? ' ' + item.className : '';
@@ -1253,7 +1316,7 @@
       '</div>';
     }).join('');
 
-    target.innerHTML =
+    return (
       '<article class="part-page" data-current-part="' + part.id + '">' +
         '<div class="part-page__header">' +
           '<span>Sub event</span>' +
@@ -1262,8 +1325,11 @@
         '</div>' +
         factsStrip +
         '<div class="part-page__grid">' + blocks + '</div>' +
-      '</article>';
+      '</article>'
+    );
+  }
 
+  function hydratePartInteractions(target) {
     enhanceF1Cards(target);
 
     target.querySelectorAll('.upcoming-tabs').forEach(function (tabs) {
@@ -1318,12 +1384,47 @@
     applyFollowedTeams(target);
   }
 
+  function renderPart(data, id) {
+    var parts = data.parts || [];
+    var part = parts.find(function (item) { return item.id === id; }) || parts[0];
+    var target = document.querySelector('[data-part-detail]');
+    if (!target || !part) return;
+
+    target.classList.remove('part-detail--stacked');
+    target.innerHTML = partArticle(part);
+    hydratePartInteractions(target);
+  }
+
+  function renderAllParts(data) {
+    var parts = data.parts || [];
+    var target = document.querySelector('[data-part-detail]');
+    if (!target || !parts.length) return;
+
+    target.classList.add('part-detail--stacked');
+    target.innerHTML = parts.map(function (part) {
+      return partArticle(part);
+    }).join('');
+    hydratePartInteractions(target);
+  }
+
   function initPartSwitcher() {
     var data = readJson('event-part-data');
+    var eventData = readJson('event-year-data');
     var switcher = document.querySelector('[data-part-switcher]');
-    if (!data || !switcher || !data.parts || !data.parts.length) return;
+    var target = document.querySelector('[data-part-detail]');
+    if (!data || !target || !data.parts || !data.parts.length) return;
 
     mergeExternalPartBlocks(data, function (mergedData) {
+      if (eventData && eventData.templateMode === 'history') {
+        if (switcher) {
+          switcher.hidden = true;
+          switcher.innerHTML = '';
+        }
+        renderAllParts(mergedData);
+        return;
+      }
+
+      if (!switcher) return;
       var defaultPart = mergedData.defaultPart || mergedData.parts[0].id;
       switcher.innerHTML = mergedData.parts.map(function (part) {
         var pressed = part.id === defaultPart ? 'true' : 'false';
@@ -1449,7 +1550,7 @@
     var prevButton = carousel.querySelector('[data-carousel-prev]');
     var nextButton = carousel.querySelector('[data-carousel-next]');
     var dots = carousel.querySelector('[data-carousel-dots]');
-    var labels = { general: 'General', year: 'Year', parts: 'Stages' };
+    var labels = { general: 'General', year: 'Year', parts: 'Parts' };
     var index = 0;
     var touchStartX = 0;
     var touchStartY = 0;
@@ -1571,6 +1672,7 @@
     initCarousel();
     initYearSwitcher();
     initPartSwitcher();
+    initStaticStageTabs();
     refreshCountdowns();
     bindSaveButtons();
     window.setInterval(refreshCountdowns, 1000);

@@ -299,7 +299,7 @@ function ensureCountryNames(file, events) {
 function updateTopicPage(events) {
   const cards = events
     .sort((a, b) => a.country.localeCompare(b.country))
-    .map(event => `          <a class="event-card" href="../../../${EVENT_DIR}/${event.eventSlug}.html"><img class="event-thumb" src="../../../${IMG_DIR}/${event.eventSlug}-hero.png" alt="" loading="lazy"><time>${esc(event.dateText)}</time><strong>${esc(event.title)}</strong><p>${esc(event.country)} national day.</p></a>`)
+    .map(event => `          <a class="event-card" href="../../../${EVENT_DIR}/${event.eventSlug}.html"><img class="event-thumb" src="../../../${IMG_DIR}/${event.eventSlug}-mini.png" alt="" loading="lazy"><time>${esc(event.dateText)}</time><strong>${esc(event.title)}</strong><p>${esc(event.country)} national day.</p></a>`)
     .join('\n');
   let html = read('content/categories/culture/national-day.html');
   html = html.replace(/<div class="event-grid">[\s\S]*?<\/div>\s*<\/section>/, `<div class="event-grid">\n${cards}\n        </div>\n      </section>`);

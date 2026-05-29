@@ -22,7 +22,7 @@ const text = {
 
 function card(lang) {
   const [title, body] = text[lang] || text.en;
-  return `            <a class="topic-card" href="climate-action.html"><img class="topic-thumb" src="../../../../content/events/2026/11/img/cop31-2026-hero.png" alt="" aria-hidden="true"><strong>${title}</strong><p>${body}</p></a>`;
+  return `            <a class="topic-card" href="climate-action.html"><img class="topic-thumb" src="../../../../content/events/2026/11/img/cop31-2026-mini.png" alt="" aria-hidden="true"><strong>${title}</strong><p>${body}</p></a>`;
 }
 
 for (const lang of languages) {
@@ -31,7 +31,8 @@ for (const lang of languages) {
   let html = fs.readFileSync(file, 'utf8');
   html = html.replaceAll('href="../../locations/index.html"', 'href="../../../../content/locations/index.html"');
   html = html.replaceAll('href="../../categories/index.html"', 'href="../index.html"');
-  html = html.replaceAll('cop31-2026-hero.svg', 'cop31-2026-hero.png');
+  html = html.replaceAll('cop31-2026-hero.svg', 'cop31-2026-mini.png');
+  html = html.replaceAll('cop31-2026-hero.png', 'cop31-2026-mini.png');
   html = html.replace(/\s*<a class="topic-card" href="climate-action\.html"[\s\S]*?<\/a>/, '');
   html = html.replace(/(\s*<\/div><\/div>\s*<\/section>\s*<\/section>\s*<\/main>)/, `\n${card(lang)}$1`);
   fs.writeFileSync(file, html, 'utf8');

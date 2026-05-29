@@ -132,6 +132,10 @@ function imgHrefFromIndex(ev) {
   return `../../../${ev.image}`;
 }
 
+function miniImage(ev) {
+  return ev.image.replace(/-hero\.(svg|png|jpe?g|webp)$/i, '-mini.png');
+}
+
 function pageFor(lang, ev) {
   const profile = profiles[lang] || profiles.en;
   const labels = profile.labels || profiles.en.labels;
@@ -227,7 +231,7 @@ function monthSection(ev, lang) {
 
 function eventCard(ev) {
   const meta = `${formatDateRange(ev.start, ev.end).replace(', 2026', '')} - ${ev.place}`;
-  return `        <a class="event-card" data-end="${ev.end}" data-cat="climate" data-topic="${ev.topic}" data-cont="${ev.cont}" data-country="${ev.country}" href="2026/${ev.month}/${ev.slug}.html" data-start="${ev.start}" data-reach="global" style="--cat-color:var(--c-climate)"><img class="card-thumb" src="../../../${ev.image}" alt="${esc(ev.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Climate</span><strong class="card-title">${esc(ev.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
+  return `        <a class="event-card" data-end="${ev.end}" data-cat="climate" data-topic="${ev.topic}" data-cont="${ev.cont}" data-country="${ev.country}" href="2026/${ev.month}/${ev.slug}.html" data-start="${ev.start}" data-reach="global" style="--cat-color:var(--c-climate)"><img class="card-thumb" src="../../../${miniImage(ev)}" alt="${esc(ev.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Climate</span><strong class="card-title">${esc(ev.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
 }
 
 function updateIndex(lang) {
