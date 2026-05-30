@@ -948,6 +948,124 @@
     '</span>';
   }
 
+  function scoreLabel(value) {
+    if (value === null || value === undefined || value === '') return 'TBC';
+    var number = Number(value);
+    if (!Number.isFinite(number)) return String(value);
+    if (number === 0) return 'E';
+    return number > 0 ? '+' + number : String(number);
+  }
+
+  function playerScoresByRound(player, par) {
+    if (!player) return [];
+    if (Array.isArray(player.toParByRound) && player.toParByRound.length) {
+      return player.toParByRound.map(function (value) { return Number(value); });
+    }
+    if (!Array.isArray(player.scores) || !player.scores.length || !par) return [];
+    var total = 0;
+    return player.scores.map(function (roundScore, index) {
+      total += Number(roundScore);
+      return total - (Number(par) * (index + 1));
+    });
+  }
+
+  function renderScoreProgression(progression) {
+    if (!progression) return '';
+    var rounds = progression.rounds || ['R1', 'R2', 'R3', 'R4'];
+    var players = (progression.players || []).slice(0, progression.limit || 10);
+    var note = progression.note || '';
+    if (!players.length) {
+      return '<span class="score-progression score-progression--empty">' +
+        '<span class="score-progression__empty">Leaderboard graph appears here after Round 1.</span>' +
+        (note ? '<span class="score-progression__note">' + note + '</span>' : '') +
+      '</span>';
+    }
+
+    var series = players.map(function (player, index) {
+      return {
+        index: index,
+        player: player,
+        values: playerScoresByRound(player, progression.par)
+      };
+    }).filter(function (item) {
+      return item.values.length >= 2 && item.values.every(function (value) { return Number.isFinite(value); });
+    });
+    if (!series.length) return '';
+
+    var values = [];
+    series.forEach(function (item) {
+      values = values.concat(item.values);
+    });
+    var min = Math.min.apply(Math, values);
+    var max = Math.max.apply(Math, values);
+    if (min === max) {
+      min -= 1;
+      max += 1;
+    }
+    min -= 1;
+    max += 1;
+
+    var width = 760;
+    var height = 250;
+    var left = 54;
+    var right = 18;
+    var top = 24;
+    var bottom = 42;
+    var plotWidth = width - left - right;
+    var plotHeight = height - top - bottom;
+    var xFor = function (index) {
+      return left + (rounds.length <= 1 ? 0 : (plotWidth * index / (rounds.length - 1)));
+    };
+    var yFor = function (value) {
+      return top + ((value - min) / (max - min)) * plotHeight;
+    };
+    var gridValues = [Math.ceil(min), 0, Math.floor(max)].filter(function (value, index, list) {
+      return value >= min && value <= max && list.indexOf(value) === index;
+    });
+    var grid = gridValues.map(function (value) {
+      var y = yFor(value);
+      return '<line class="score-progression__grid" x1="' + left + '" y1="' + y.toFixed(1) + '" x2="' + (width - right) + '" y2="' + y.toFixed(1) + '"></line>' +
+        '<text class="score-progression__axis-label" x="' + (left - 10) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end">' + scoreLabel(value) + '</text>';
+    }).join('');
+    var roundLabels = rounds.map(function (label, index) {
+      var x = xFor(index);
+      return '<text class="score-progression__round-label" x="' + x.toFixed(1) + '" y="' + (height - 12) + '" text-anchor="middle">' + label + '</text>';
+    }).join('');
+    var lines = series.map(function (item) {
+      var points = item.values.map(function (value, index) {
+        return xFor(index).toFixed(1) + ',' + yFor(value).toFixed(1);
+      }).join(' ');
+      var dots = item.values.map(function (value, index) {
+        return '<circle cx="' + xFor(index).toFixed(1) + '" cy="' + yFor(value).toFixed(1) + '" r="3.2"></circle>';
+      }).join('');
+      var winnerClass = item.player.winner || item.index === 0 ? ' score-progression__series--winner' : '';
+      return '<g class="score-progression__series score-progression__series--' + (item.index % 10) + winnerClass + '">' +
+        '<title>' + (item.player.name || 'Player') + ': ' + item.values.map(scoreLabel).join(', ') + '</title>' +
+        '<polyline points="' + points + '"></polyline>' + dots +
+      '</g>';
+    }).join('');
+    var tableRows = series.map(function (item) {
+      var finalScore = item.player.final || scoreLabel(item.values[item.values.length - 1]);
+      var winnerClass = item.player.winner || item.index === 0 ? ' score-progression__row--winner' : '';
+      return '<span class="score-progression__row' + winnerClass + '">' +
+        '<span>' + stageParticipant(item.player) + '</span>' +
+        item.values.map(function (value) { return '<b>' + scoreLabel(value) + '</b>'; }).join('') +
+        '<strong>' + finalScore + '</strong>' +
+      '</span>';
+    }).join('');
+    var tableHead = '<span class="score-progression__row score-progression__row--head"><span>Player</span>' +
+      rounds.map(function (round) { return '<b>' + round + '</b>'; }).join('') +
+      '<strong>Total</strong></span>';
+
+    return '<span class="score-progression">' +
+      '<svg class="score-progression__chart" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-label="' + escapeAttribute(progression.ariaLabel || 'Round-by-round leaderboard chart') + '">' +
+        grid + roundLabels + lines +
+      '</svg>' +
+      '<span class="score-progression__table">' + tableHead + tableRows + '</span>' +
+      (note ? '<span class="score-progression__note">' + note + '</span>' : '') +
+    '</span>';
+  }
+
   function renderFinalSlots(rows) {
     if (!rows || !rows.length) return '';
     var body = rows.map(function (row) {
@@ -989,6 +1107,8 @@
               ? renderStageRanking(item.rows || [], { nameLabel: item.nameLabel, resultLabel: item.resultLabel, hideRank: item.hideRank })
               : item.type === 'rounds'
                 ? renderStageRounds(item.rounds || [], { roundLabel: item.roundLabel, fieldLabel: item.fieldLabel, advanceLabel: item.advanceLabel })
+              : item.type === 'score-progression'
+                ? renderScoreProgression(item.progression || item)
               : item.type === 'country-groups'
                 ? renderStageCountryGroups(item.groups || [])
                 : (item.detail || '');
@@ -1143,14 +1263,20 @@
         : '<div class="countdown" data-countdown="' + countdownTarget + '" data-next-date="' + (edition.nextDate || '') + '"><span>' + countdownLabel + '</span><strong>' + daysText(countdownTarget, edition.nextDate) + '</strong><p>' + edition.countdownText + '</p></div>';
 
     var questionBlocks = (edition.questions || []).map(question).join('');
-    var highlightBlocks = (edition.highlights || []).filter(function (item) {
-      return edition.status !== 'past' || !isPlaceholderArchive(item);
-    }).map(highlight).join('');
+    var hasScoreProgression = !!(edition.scoreProgression && ((edition.scoreProgression.players || []).length || edition.scoreProgression.note));
+    var highlightBlocks = hasScoreProgression && edition.status === 'past'
+      ? ''
+      : (edition.highlights || []).filter(function (item) {
+        return edition.status !== 'past' || !isPlaceholderArchive(item);
+      }).map(highlight).join('');
     var editionBlocks = edition.status === 'past'
       ? highlightBlocks
       : (questionBlocks || highlightBlocks);
     var finalResults = edition.status === 'past' && edition.finalStandings
       ? '<div class="card card--standings"><span>Top results</span><strong>Top finishers</strong>' + standingRows(edition.finalStandings) + '</div>'
+      : '';
+    var scoreProgressionCard = edition.scoreProgression
+      ? '<div class="stage-card stage-card--wide stage-card--leaderboard-chart"><span>Leaderboard</span><strong>Round progression</strong><p>' + renderScoreProgression(edition.scoreProgression) + '</p></div>'
       : '';
     var medalGames = edition.status === 'past' && edition.medalGames
       ? '<div class="card card--standings"><span>Medal games</span><strong>Results</strong>' + resultRows(edition.medalGames) + '</div>'
@@ -1170,6 +1296,7 @@
         (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
       lifecycle +
+      scoreProgressionCard +
       finalResults +
       medalGames +
       weatherCard +
@@ -1206,7 +1333,7 @@
     }
 
     function labelFor(edition) {
-      return edition.year + (edition.year === data.defaultYear ? ' current' : '');
+      return edition.year + (edition.year === data.defaultYear && edition.status !== 'past' ? ' current' : '');
     }
 
     function ariaLabelFor(edition) {
