@@ -399,24 +399,44 @@
       '</div>';
     var panel = sheet.querySelector('.ios-sheet__panel');
 
+    function configuredItems() {
+      var meta = document.querySelector('meta[name="os-nav-items"]');
+      var raw = (document.body.getAttribute('data-os-nav-items') ||
+        (meta && meta.content) || '').trim();
+      if (!raw || raw === 'default') {
+        return null;
+      }
+      var map = {};
+      raw.split(',').forEach(function (itemName) {
+        itemName = itemName.trim().toLowerCase();
+        if (itemName) map[itemName] = true;
+      });
+      return map;
+    }
+
+    var visibleNavItems = configuredItems();
+    function wantsNavItem(name) {
+      return !visibleNavItems || !!visibleNavItems[name];
+    }
+
     panel.appendChild(heading('Browse'));
-    panel.appendChild(group([
-      item(root || './', 'Home', 'home', true),
-      item(root + 'content/events/this-week.html', 'This week', 'events', true),
-      item(root + 'content/events/index.html',     'All events', 'events', true),
-      item(root + 'content/locations/index.html',  'World',      'world',  true),
-      item(root + 'content/categories/index.html', 'Categories', 'grid',   true)
-    ]));
+    var browseItems = [];
+    if (wantsNavItem('home')) browseItems.push(item(root || './', 'Home', 'home', true));
+    if (wantsNavItem('this-week')) browseItems.push(item(root + 'content/events/this-week.html', 'This week', 'events', true));
+    if (wantsNavItem('events')) browseItems.push(item(root + 'content/events/index.html', 'All events', 'events', true));
+    if (wantsNavItem('locations')) browseItems.push(item(root + 'content/locations/index.html', 'World', 'world', true));
+    if (wantsNavItem('categories')) browseItems.push(item(root + 'content/categories/index.html', 'Categories', 'grid', true));
+    if (browseItems.length) panel.appendChild(group(browseItems));
 
     panel.appendChild(heading('Settings'));
     var cookieItem = item('#', 'Cookie settings', 'cookie', true);
     cookieItem.setAttribute('data-cookie-settings', '');
-    panel.appendChild(group([
-      cookieItem,
-      item(root + 'privacy.html',           'Privacy',  'doc',  true),
-      item(root + 'terms.html',             'Terms',    'doc',  true),
-      item('mailto:hello@one-sliders.com',  'Contact',  'mail', true)
-    ]));
+    var settingsItems = [];
+    if (wantsNavItem('cookies')) settingsItems.push(cookieItem);
+    if (wantsNavItem('privacy')) settingsItems.push(item(root + 'privacy.html', 'Privacy', 'doc', true));
+    if (wantsNavItem('terms')) settingsItems.push(item(root + 'terms.html', 'Terms', 'doc', true));
+    if (wantsNavItem('contact')) settingsItems.push(item('mailto:hello@one-sliders.com', 'Contact', 'mail', true));
+    if (settingsItems.length) panel.appendChild(group(settingsItems));
 
     var done = document.createElement('button');
     done.type = 'button';
@@ -426,6 +446,7 @@
     panel.appendChild(done);
 
     // Insert nav right after <body> opening, sheet at end of <body>
+    document.body.classList.add('os-has-ios-nav');
     document.body.insertBefore(nav, document.body.firstChild);
     document.body.appendChild(sheet);
 
@@ -474,22 +495,27 @@
       '<p>&copy; ' + year + ' OneSliders &middot; ' +
       '<a href="' + root + 'privacy.html">Privacy</a></p>';
 
-    var existing = document.querySelector(
-      'footer.site-footer, footer.site-foot, footer.site');
-    if (!existing && !document.body.classList.contains('country-onepage')) {
-      existing = document.querySelector('footer.footer');
-    }
+    var footerSelector = 'footer.os-footer, footer.site-footer, footer.site-foot, footer.site, footer.event-footer, footer.footer';
+    var existing = document.querySelector(footerSelector) || document.querySelector('footer');
     if (existing) {
       existing.innerHTML = content;
       if (!existing.classList.contains('os-footer')) {
         existing.classList.add('os-footer');
       }
+      if (document.body.classList.contains('event-page')) {
+        existing.classList.add('event-footer');
+      }
+      document.querySelectorAll('footer').forEach(function (footer) {
+        if (footer !== existing) footer.remove();
+      });
       return;
     }
 
     // No footer yet — append one (with default os-footer styling from CSS)
     var f = document.createElement('footer');
-    f.className = 'os-footer site-footer';
+    f.className = document.body.classList.contains('event-page')
+      ? 'os-footer event-footer'
+      : 'os-footer site-footer';
     f.innerHTML = content;
     document.body.appendChild(f);
   });
@@ -1104,6 +1130,7 @@
         '.country-chip:not(.country-chip--with-hero)'
       ));
       chips.forEach(function (chip) {
+        if (chip.closest('[data-country-card-skip]')) return;
         var href = chip.getAttribute('href') || '';
         var base = href.replace(/(?:index\.html)?(?:[#?].*)?$/, '');
         if (base && base.charAt(base.length - 1) !== '/') base += '/';

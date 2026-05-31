@@ -40,10 +40,13 @@
 
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(20px,5vw,80px); }
       body.is-localhost { height: 100vh; overflow: hidden; }
-      body.is-localhost .topic-slide { height: calc(100vh - 55px); min-height: 0; grid-template-rows: auto minmax(0, 1fr); padding: clamp(12px,2.4vw,30px); overflow: hidden; }
-      body.is-localhost .topic-hero { min-height: clamp(170px,24vh,260px); }
+      body.is-localhost .topic-slide { height: calc(100vh - 55px); min-height: 0; grid-template-rows: 132px minmax(0, 1fr); gap: 10px; padding: 14px clamp(16px,2.2vw,28px); overflow: hidden; }
+      body.is-localhost .topic-hero { min-height: 0; height: 100%; padding: 16px clamp(18px,2.2vw,28px); }
+      body.is-localhost .eyebrow { margin-bottom: 4px; font-size: 11px; }
+      body.is-localhost h1 { font-size: clamp(42px,4.6vw,56px); }
+      body.is-localhost .intro { max-width: 1120px; margin-top: 7px; font-size: 14.5px; line-height: 1.2; }
       body.is-localhost .topic-panel { min-height: 0; overflow: hidden; }
-      body.is-localhost .left, body.is-localhost .right { max-height: 100%; overflow: auto; padding-right: 2px; }
+      body.is-localhost .left, body.is-localhost .right { max-height: 100%; overflow: hidden; padding-right: 0; }
       body.is-localhost .site-footer { display: none; }
       .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, rgba(8,18,12,.62), rgba(8,18,12,.26) 46%, rgba(8,18,12,0) 72%), linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.18)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
@@ -55,7 +58,7 @@
       .fact-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
       .fact, .history-card, .ranking-card, .league-card, .topic-info-card, .event-card { border: 1px solid var(--line); border-radius: 8px; background: white; }
       .fact { min-height: 86px; padding: 12px 13px; border-left: 5px solid var(--accent); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
-      .fact span, .history-title, .ranking-source { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+      .fact span, .history-title { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       .fact strong { display: block; margin-top: 6px; font-size: clamp(20px,2.3vw,30px); line-height: 1; }
       .fact p { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.25; }
       .history-card, .ranking-card, .league-card, .topic-info-card { padding: 13px 14px; border-left: 5px solid var(--theme); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
@@ -90,7 +93,6 @@
       .ranking-table th { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; }
       .ranking-table th:first-child, .ranking-table td:first-child { width: 34px; color: var(--theme); font-weight: 800; text-align: center; }
       .ranking-table th:last-child, .ranking-table td:last-child { width: 54px; text-align: right; font-weight: 800; }
-      .ranking-source { margin-top: 9px; text-transform: none; font-weight: 600; line-height: 1.25; }
       .league-intro { margin: 0 0 10px; color: var(--muted); font-size: 14px; line-height: 1.32; }
       .league-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0 10px; }
       .league-tab { flex: 0 0 auto; min-height: 36px; padding: 0 14px; border: 1px solid rgba(36,95,70,.34); border-radius: 999px; background: white; color: var(--theme); font-size: 13px; font-weight: 900; cursor: pointer; }
@@ -101,7 +103,9 @@
       .league-summary strong { font-size: 18px; line-height: 1.1; }
       .league-summary span { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }
       .league-summary p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.32; }
-      .league-split { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+      .league-split { display: grid; grid-template-columns: minmax(220px,.28fr) minmax(0,1fr); gap: 10px; align-items: start; }
+      .league-split > .league-summary { grid-column: 1; }
+      .league-split > .league-block:has(.league-events--calendar) { grid-column: 2; grid-row: 1 / span 2; }
       .league-block { padding: 10px 11px; border: 1px solid rgba(23,32,28,.10); border-radius: 8px; background: white; }
       .league-block h3 { margin: 0 0 7px; color: var(--muted); font-size: 12px; text-transform: uppercase; }
       .league-ranking, .league-events { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
@@ -111,11 +115,20 @@
       .league-points { color: var(--muted); font-size: 12px; font-weight: 800; }
       .league-events li { padding: 7px 8px; border-radius: 8px; background: rgba(36,95,70,.08); color: var(--muted); font-size: 13px; line-height: 1.22; }
       .league-events strong { display: block; color: var(--ink); font-size: 13px; }
-      .league-events--calendar { max-height: 250px; overflow: auto; padding-right: 3px; }
-      .league-events--calendar li { display: grid; gap: 4px; }
-      .league-events--calendar strong a { color: var(--ink); text-decoration: none; }
-      .league-events--calendar strong a:hover { color: var(--theme); }
-      .league-event-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.25; }
+      .league-events--calendar { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px; max-height: 560px; overflow: auto; padding-right: 4px; align-items: start; }
+      .league-events--calendar li { display: grid; grid-template-rows: 94px 1fr; gap: 0; min-height: 196px; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 24px rgba(18,32,46,.07); }
+      .league-event-thumb-link { display: block; width: 100%; height: 94px; overflow: hidden; background: #edf1ee; border: 0; border-radius: 0; }
+      .league-event-thumb { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .18s ease; }
+      .league-event-thumb-link:hover .league-event-thumb { transform: scale(1.04); }
+      .league-event-copy { display: grid; gap: 7px; min-width: 0; padding: 10px; align-content: start; }
+      .league-event-topline { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+      .league-event-topline time { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }
+      .league-event-badge { padding: 3px 6px; border-radius: 999px; background: rgba(188,146,58,.16); color: #7a5410; font-size: 10px; font-weight: 900; text-transform: uppercase; }
+      .league-event-copy strong { display: block; }
+      .league-event-copy strong a { display: -webkit-box; min-height: 34px; overflow: hidden; color: var(--ink); font-size: 15px; line-height: 1.12; text-decoration: none; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+      .league-event-copy strong a:hover { color: var(--theme); }
+      .league-event-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.25; }
+      .league-event-area { padding: 4px 7px; border-radius: 999px; background: rgba(36,95,70,.08); color: var(--theme); font-size: 11px; font-weight: 900; }
       .league-event-meta .country { min-height: 22px; padding: 0 7px; font-size: 12px; }
       .league-event-meta .country img { width: 19px; height: 13px; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
@@ -190,10 +203,174 @@
       .language-code{display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;opacity:.82}
       .language-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-      @media (max-width: 1040px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } body.is-localhost .topic-slide { min-height: 0; } }
+      body.is-localhost .topic-panel { grid-template-columns: minmax(360px,.54fr) minmax(0,1.46fr); grid-template-rows: minmax(0,1fr); gap: 14px; }
+      body.is-localhost .left, body.is-localhost .right { display: grid; gap: 12px; min-height: 0; max-height: 100%; overflow: hidden; }
+      body.is-localhost .left { grid-template-rows: 238px minmax(0,1fr); }
+      body.is-localhost .right { grid-template-rows: minmax(0,1fr); }
+      body.is-localhost .topic-info-card { min-height: 0; overflow: hidden; padding: 12px 14px; }
+      body.is-localhost .league-card { position: relative; display: grid; grid-template-rows: auto auto auto minmax(0,1fr); gap: 8px; min-height: 0; overflow: hidden; padding: 12px 14px; }
+      body.is-localhost .golf-setup { min-height: 0; margin-top: 0; overflow: hidden; padding: 12px 14px; border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 8px; background: white; box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      body.is-localhost .history-card h2, body.is-localhost .ranking-card h2, body.is-localhost .league-card h2, body.is-localhost .topic-info-card h2 { margin-bottom: 6px; font-size: 18px; }
+      body.is-localhost .history-title { font-size: 10px; }
+      body.is-localhost .info-tabs, body.is-localhost .league-tabs { gap: 5px; padding: 0 0 6px; }
+      body.is-localhost .info-tab, body.is-localhost .league-tab { height: 24px; min-height: 0; padding: 0 9px; font-size: 11px; line-height: 1; }
+      body.is-localhost .roots-spotlight { grid-template-columns: 112px minmax(0,1fr); gap: 10px; }
+      body.is-localhost .roots-spotlight img.roots-image { min-height: 104px; }
+      body.is-localhost .roots-copy { gap: 6px; }
+      body.is-localhost .roots-copy p { font-size: 12.5px; line-height: 1.25; }
+      body.is-localhost .major-groups { gap: 6px; }
+      body.is-localhost .major-group { padding: 5px 6px; }
+      body.is-localhost .major-group h3 { margin-bottom: 4px; font-size: 9.5px; }
+      body.is-localhost .major-list { gap: 3px; }
+      body.is-localhost .major-list a, body.is-localhost .major-list span { padding: 3px 5px; font-size: 10px; line-height: 1.05; }
+      body.is-localhost .timeline { display: flex; gap: 6px; min-height: 0; overflow-x: auto; overflow-y: hidden; padding-bottom: 4px; }
+      body.is-localhost .timeline-item { flex: 0 0 176px; display: grid; grid-template-columns: 1fr; gap: 4px; padding: 7px; border: 1px solid rgba(23,32,28,.10); border-radius: 8px; background: rgba(159,209,107,.08); }
+      body.is-localhost .timeline-item:first-child { border-top: 1px solid rgba(23,32,28,.10); padding-top: 7px; }
+      body.is-localhost .timeline-item time { font-size: 12px; }
+      body.is-localhost .timeline-item strong { font-size: 12px; line-height: 1.12; }
+      body.is-localhost .timeline-item span { font-size: 10.5px; line-height: 1.15; }
+      body.is-localhost .league-panel { min-height: 0; }
+      body.is-localhost .league-panel.is-active { grid-template-rows: auto minmax(0,1fr); gap: 6px; }
+      body.is-localhost .league-summary { grid-template-columns: 1fr; align-items: start; gap: 4px; padding: 9px; }
+      body.is-localhost .league-summary strong { font-size: 16px; }
+      body.is-localhost .league-summary p { grid-column: 1 / -1; font-size: 12px; line-height: 1.2; }
+      body.is-localhost .league-split { grid-template-columns: minmax(260px, .24fr) minmax(0,1fr); grid-template-rows: auto minmax(0,1fr); gap: 10px; min-height: 0; }
+      body.is-localhost .league-block { min-height: 0; overflow: hidden; padding: 10px; }
+      body.is-localhost .league-block h3 { margin-bottom: 8px; font-size: 11px; }
+      body.is-localhost .league-block:has(.league-events--calendar) { display: grid; grid-template-rows: auto auto auto minmax(0,1fr); }
+      body.is-localhost .league-ranking li { gap: 7px; padding-top: 9px; font-size: 13px; }
+      body.is-localhost .league-points { font-size: 12px; }
+      body.is-localhost .league-events--calendar { display: block; height: 100%; max-height: none; min-height: 0; overflow-x: hidden; overflow-y: auto; padding: 0 4px 0 0; }
+      body.is-localhost .league-events--calendar li { display: block; min-height: 0; padding: 0; overflow: visible; border: 0; border-top: 1px solid rgba(23,32,28,.10); border-radius: 0; background: transparent; box-shadow: none; }
+      body.is-localhost .league-events--calendar li.league-event--hidden { display: none !important; }
+      body.is-localhost .league-events--calendar li:first-child { border-top: 0; }
+      body.is-localhost .league-events--calendar li.league-event--past { border-radius: 6px; background: rgba(126,93,23,.10); }
+      body.is-localhost .league-event-thumb-link { display: none; }
+      body.is-localhost .league-phase-tabs { gap: 4px; padding-bottom: 2px; }
+      body.is-localhost .league-phase-tab { flex: 0 0 auto; height: 22px; min-height: 0; padding: 0 8px; border: 1px solid rgba(36,95,70,.28); border-radius: 999px; appearance: none; background: #fff; color: var(--theme); font-size: 10px; font-weight: 900; line-height: 1; cursor: pointer; }
+      body.is-localhost .league-phase-tab[aria-pressed="true"] { border-color: var(--theme); background: var(--theme); color: #fff; }
+      body.is-localhost .league-events-header { display: grid; grid-template-columns: 78px minmax(0,1fr) minmax(122px,.27fr) minmax(118px,.24fr) minmax(145px,.32fr); gap: 10px; padding: 0 6px 5px 2px; color: var(--muted); font-size: 9.5px; font-weight: 900; line-height: 1; text-transform: uppercase; border-bottom: 1px solid rgba(23,32,28,.10); }
+      body.is-localhost .league-event-copy { display: grid; grid-template-columns: 78px minmax(0,1fr) minmax(122px,.27fr) minmax(118px,.24fr) minmax(145px,.32fr); gap: 10px; align-items: center; min-width: 0; padding: 8px 2px; }
+      body.is-localhost .league-block--upcoming .league-events-header,
+      body.is-localhost .league-block--upcoming .league-event-copy { grid-template-columns: 78px minmax(0,1fr) minmax(145px,.32fr); }
+      body.is-localhost .league-block--upcoming .league-events-header span:nth-child(3),
+      body.is-localhost .league-block--upcoming .league-events-header span:nth-child(4) { display: none; }
+      body.is-localhost .league-block--upcoming .league-event-meta { grid-column: 3; }
+      body.is-localhost .league-event-copy strong { min-width: 0; }
+      body.is-localhost .league-event-copy strong a { display: block; min-height: 0; color: var(--ink); font-size: 14px; line-height: 1.15; text-decoration: none; -webkit-line-clamp: initial; }
+      body.is-localhost .league-event-topline { display: flex; gap: 4px; min-width: 0; }
+      body.is-localhost .league-event-topline time { color: var(--theme); font-size: 10.5px; font-weight: 900; line-height: 1.1; }
+      body.is-localhost .league-events--calendar li.league-event--past .league-event-topline time { color: #7a5410; }
+      body.is-localhost .league-event-badge { padding: 2px 5px; font-size: 9px; }
+      body.is-localhost .league-event-winner { min-width: 0; font-size: 10.5px; line-height: 1.15; }
+      body.is-localhost .league-event-winner-country { min-width: 0; }
+      body.is-localhost .league-event-meta { grid-column: 5; justify-content: flex-end; gap: 4px; min-width: 0; font-size: 10.5px; line-height: 1.15; }
+      body.is-localhost .league-event-area { padding: 3px 5px; font-size: 9.5px; }
+      body.is-localhost .league-event-meta .country { min-height: 18px; gap: 4px; padding: 0 4px; font-size: 10.5px; }
+      body.is-localhost .league-event-meta .country img { width: 16px; height: 11px; }
+      body.is-localhost .league-event-winner-country.country { min-height: 18px; gap: 4px; padding: 0 4px; font-size: 10.5px; }
+      body.is-localhost .league-event-winner-country.country img { width: 16px; height: 11px; }
+      body.is-localhost .golf-setup { grid-template-rows: auto auto auto minmax(0,1fr); gap: 5px; }
+      body.is-localhost .golf-setup__head h3 { font-size: 16px; }
+      body.is-localhost .golf-setup__head span, body.is-localhost .golf-setup__intro { font-size: 11px; line-height: 1.18; }
+      body.is-localhost .golf-setup__intro { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      body.is-localhost .golf-tabs { gap: 4px; padding: 0; }
+      body.is-localhost .golf-tab { height: 23px; min-height: 0; padding: 0 7px; font-size: 10px; line-height: 1; }
+      body.is-localhost .golf-panel { min-height: 0; }
+      body.is-localhost .golf-panel.is-active { display: block; min-height: 0; overflow: hidden; padding-bottom: 0; }
+      body.is-localhost .golf-hero-card { display: block; height: auto; padding: 8px; border-color: rgba(36,95,70,.16); background: rgba(159,209,107,.07); }
+      body.is-localhost .golf-hero-card img { display: none; }
+      body.is-localhost .golf-hero-card__body { display: grid; grid-template-columns: 1fr auto; gap: 5px 8px; align-items: start; }
+      body.is-localhost .golf-hero-card h4 { font-size: 14px; }
+      body.is-localhost .golf-hero-card p, body.is-localhost .golf-product p { font-size: 10px; line-height: 1.15; }
+      body.is-localhost .golf-hero-card p { grid-column: 1 / -1; display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+      body.is-localhost .golf-meta { gap: 3px; }
+      body.is-localhost .golf-meta span { padding: 2px 5px; font-size: 9px; }
+      body.is-localhost .golf-button { height: 20px; min-height: 0; padding: 0 7px; font-size: 9.5px; line-height: 1; }
+      body.is-localhost .golf-related { display: none; }
+      body.is-localhost .golf-product { height: auto; grid-template-rows: 38px minmax(0,1fr); min-height: 0; }
+      body.is-localhost .golf-product img { height: 38px; }
+      body.is-localhost .golf-product__body { gap: 3px; padding: 5px; }
+      body.is-localhost .golf-product h4 { font-size: 11px; }
+
+      @media (max-width: 1040px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } body.is-localhost .topic-slide { min-height: 0; } body.is-localhost .topic-panel { grid-template-columns: 1fr; grid-template-rows: auto; overflow: auto; } body.is-localhost .left, body.is-localhost .right { display: grid; } body.is-localhost .topic-info-card, body.is-localhost .league-card, body.is-localhost .golf-setup { grid-column: auto; grid-row: auto; } }
       @media (max-width: 760px) { .topic-slide { padding: 12px; } .ranking-groups, .league-split, .major-groups { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: calc((100% - 8px) / 2); } }
       @media (max-width: 620px) { .fact-grid, .event-grid, .snapshot-grid, .golf-hero-card, .golf-related, .roots-spotlight { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
       @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }
+      @media (max-width: 1040px) {
+        body.is-localhost { height: auto; min-height: 100vh; overflow-x: hidden; overflow-y: auto; }
+        body.is-localhost .top-menu { overflow-x: auto; padding: 7px 10px; scrollbar-width: none; }
+        body.is-localhost .top-menu::-webkit-scrollbar { display: none; }
+        body.is-localhost .topic-slide { height: auto; min-height: calc(100svh - 55px); grid-template-rows: auto auto; gap: 10px; padding: 12px; overflow: visible; }
+        body.is-localhost .topic-hero { height: auto; min-height: 176px; padding: 18px; background-position: center; }
+        body.is-localhost .topic-hero > * { min-width: 0; }
+        body.is-localhost h1 { font-size: clamp(42px, 9vw, 64px); }
+        body.is-localhost .intro { max-width: 100%; overflow-wrap: break-word; font-size: 14px; line-height: 1.28; }
+        body.is-localhost .topic-panel,
+        body.is-localhost .left,
+        body.is-localhost .right { display: grid; grid-template-columns: 1fr; grid-template-rows: auto; gap: 12px; min-height: 0; max-height: none; overflow: visible; }
+        body.is-localhost .left { grid-template-rows: auto; }
+        body.is-localhost .right { grid-template-rows: auto; }
+        body.is-localhost .topic-info-card,
+        body.is-localhost .league-card,
+        body.is-localhost .golf-setup { min-height: 0; overflow: visible; padding: 12px; }
+        body.is-localhost .league-card { display: grid; grid-template-rows: auto auto auto; }
+        body.is-localhost .league-panel.is-active { grid-template-rows: auto auto; gap: 8px; }
+        body.is-localhost .league-split { grid-template-columns: 1fr; grid-template-rows: auto; gap: 8px; }
+        body.is-localhost .league-split > .league-summary,
+        body.is-localhost .league-split > .league-block:has(.league-events--calendar) { grid-column: 1; grid-row: auto; }
+        body.is-localhost .league-block { overflow: visible; }
+        body.is-localhost .league-block:has(.league-events--calendar) { grid-template-rows: auto auto auto; }
+        body.is-localhost .league-events--calendar { height: auto; max-height: none; overflow: visible; padding-right: 0; }
+        body.is-localhost .league-events--calendar li { border-top: 1px solid rgba(23,32,28,.10); border-radius: 8px; }
+        body.is-localhost .league-events-header { display: none; }
+        body.is-localhost .league-event-copy,
+        body.is-localhost .league-block--upcoming .league-event-copy { grid-template-columns: 96px minmax(0,1fr); gap: 6px 10px; align-items: start; padding: 10px 8px; }
+        body.is-localhost .league-event-topline { grid-column: 1; }
+        body.is-localhost .league-event-copy strong { grid-column: 2; }
+        body.is-localhost .league-event-meta,
+        body.is-localhost .league-block--upcoming .league-event-meta { grid-column: 2; justify-content: flex-start; }
+        body.is-localhost .league-event-winner { grid-column: 2; }
+        body.is-localhost .league-event-winner-country { grid-column: 2; }
+        body.is-localhost .golf-setup { grid-template-rows: auto; }
+        body.is-localhost .golf-setup__head { align-items: flex-start; flex-wrap: wrap; }
+        body.is-localhost .golf-setup__head span { white-space: normal; }
+        body.is-localhost .golf-setup__intro { white-space: normal; overflow: visible; text-overflow: clip; }
+        body.is-localhost .golf-panel.is-active { overflow: visible; }
+        body.is-localhost .golf-hero-card { display: grid; }
+        body.is-localhost .golf-hero-card__body { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 700px) {
+        .nav-divider { display: none; }
+        .top-menu a:not(.nav-icon) { padding: 8px 10px; }
+        body.is-localhost .topic-slide { padding: 10px; }
+        body.is-localhost .topic-hero { min-height: 154px; padding: 15px; }
+        body.is-localhost .eyebrow { font-size: 10px; }
+        body.is-localhost h1 { font-size: clamp(40px, 15vw, 56px); }
+        body.is-localhost .intro { font-size: 13.5px; }
+        body.is-localhost .roots-spotlight { grid-template-columns: 88px minmax(0,1fr); }
+        body.is-localhost .roots-spotlight img.roots-image { min-height: 92px; }
+        body.is-localhost .league-summary { grid-template-columns: 1fr; }
+        body.is-localhost .league-ranking li { grid-template-columns: 24px minmax(0,1fr) auto; }
+        body.is-localhost .league-event-copy,
+        body.is-localhost .league-block--upcoming .league-event-copy { grid-template-columns: 1fr; gap: 6px; padding: 10px 8px; }
+        body.is-localhost .league-event-topline,
+        body.is-localhost .league-event-copy strong,
+        body.is-localhost .league-event-meta,
+        body.is-localhost .league-event-winner,
+        body.is-localhost .league-event-winner-country,
+        body.is-localhost .league-block--upcoming .league-event-meta { grid-column: 1; }
+        body.is-localhost .league-event-copy strong a { font-size: 15px; line-height: 1.18; }
+        body.is-localhost .league-event-meta,
+        body.is-localhost .league-event-meta .country,
+        body.is-localhost .league-event-winner-country.country { max-width: 100%; }
+        body.is-localhost .golf-tabs { flex-wrap: wrap; overflow: visible; }
+        body.is-localhost .league-phase-tab,
+        body.is-localhost .league-tab,
+        body.is-localhost .info-tab,
+        body.is-localhost .golf-tab { min-height: 32px; height: 32px; padding: 0 11px; font-size: 12px; }
+        body.is-localhost .golf-hero-card p { display: block; }
+      }
     </style>
   </head>
   <body>
@@ -287,164 +464,6 @@
               </div>
             </article>
           </section>
-        </div>
-
-        <div class="right">
-          <section class="league-card" aria-label="Golf tours by league">
-            <span class="history-title">Tour guide</span>
-            <h2>PGA, LPGA &amp; LIV</h2>
-            <p class="league-intro">Use the tabs to split the men's main tour, the women's main tour, and the team league that is still active in 2026.</p>
-            <div class="league-tabs" role="tablist" aria-label="Golf league tabs">
-              <button class="league-tab" id="league-pga-tab" type="button" role="tab" aria-selected="true" aria-controls="league-pga" data-league-tab="pga">PGA</button>
-              <button class="league-tab" id="league-lpga-tab" type="button" role="tab" aria-selected="false" aria-controls="league-lpga" data-league-tab="lpga">LPGA</button>
-              <button class="league-tab" id="league-liv-tab" type="button" role="tab" aria-selected="false" aria-controls="league-liv" data-league-tab="liv">LIV</button>
-            </div>
-            <article class="league-panel is-active" id="league-pga" role="tabpanel" aria-labelledby="league-pga-tab" data-league-panel="pga">
-              <div class="league-summary"><span>FedExCup tour</span><strong>PGA Tour</strong><p>The main men's weekly tour. Players collect FedExCup points through regular events, bigger signature weeks, majors, and the playoff finish.</p></div>
-              <div class="league-split">
-                <div class="league-block">
-                  <h3>Top 3 now</h3>
-                  <ol class="league-ranking">
-                    <li><span class="league-rank">1</span><strong>Cameron Young</strong><span class="league-points">2,504</span></li>
-                    <li><span class="league-rank">2</span><strong>Scottie Scheffler</strong><span class="league-points">2,431</span></li>
-                    <li><span class="league-rank">3</span><strong>Matt Fitzpatrick</strong><span class="league-points">2,404</span></li>
-                  </ol>
-                </div>
-                <div class="league-block">
-                  <h3>2026 schedule</h3>
-                  <ul class="league-events league-events--calendar">
-                    <li><strong><a href="golf/events/sony-open-in-hawaii.html">Sony Open in Hawaii</a></strong><span class="league-event-meta">Ends Jan 18 · <span>Hawaii</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/the-american-express.html">The American Express</a></strong><span class="league-event-meta">Ends Jan 25 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/farmers-insurance-open.html">Farmers Insurance Open</a></strong><span class="league-event-meta">Ends Feb 1 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/wm-phoenix-open.html">WM Phoenix Open</a></strong><span class="league-event-meta">Ends Feb 8 · <span>Arizona</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/at-and-t-pebble-beach-pro-am.html">AT&amp;T Pebble Beach Pro-Am</a></strong><span class="league-event-meta">Ends Feb 15 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/genesis-invitational.html">Genesis Invitational</a></strong><span class="league-event-meta">Ends Feb 22 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/cognizant-classic.html">Cognizant Classic</a></strong><span class="league-event-meta">Ends Mar 1 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/arnold-palmer-invitational.html">Arnold Palmer Invitational</a></strong><span class="league-event-meta">Ends Mar 8 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/puerto-rico-open.html">Puerto Rico Open</a></strong><span class="league-event-meta">Ends Mar 8 · <span>Puerto Rico</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/the-players-championship.html">The Players Championship</a></strong><span class="league-event-meta">Ends Mar 15 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/valspar-championship.html">Valspar Championship</a></strong><span class="league-event-meta">Ends Mar 22 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/texas-children-s-houston-open.html">Texas Children's Houston Open</a></strong><span class="league-event-meta">Ends Mar 29 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/valero-texas-open.html">Valero Texas Open</a></strong><span class="league-event-meta">Ends Apr 5 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/masters-tournament.html">Masters Tournament</a></strong><span class="league-event-meta">Ends Apr 12 · <span>Georgia</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/rbc-heritage.html">RBC Heritage</a></strong><span class="league-event-meta">Ends Apr 19 · <span>South Carolina</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/zurich-classic-of-new-orleans.html">Zurich Classic of New Orleans</a></strong><span class="league-event-meta">Ends Apr 26 · <span>Louisiana</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/cadillac-championship.html">Cadillac Championship</a></strong><span class="league-event-meta">Ends May 3 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/truist-championship.html">Truist Championship</a></strong><span class="league-event-meta">Ends May 10 · <span>North Carolina</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/oneflight-myrtle-beach-classic.html">ONEflight Myrtle Beach Classic</a></strong><span class="league-event-meta">Ends May 10 · <span>South Carolina</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/pga-championship.html">PGA Championship</a></strong><span class="league-event-meta">Ends May 17 · <span>Pennsylvania</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/cj-cup-byron-nelson.html">CJ Cup Byron Nelson</a></strong><span class="league-event-meta">Ends May 24 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/charles-schwab-challenge.html">Charles Schwab Challenge</a></strong><span class="league-event-meta">Ends May 31 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/memorial-tournament.html">Memorial Tournament</a></strong><span class="league-event-meta">Ends Jun 7 · <span>Ohio</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/rbc-canadian-open.html">RBC Canadian Open</a></strong><span class="league-event-meta">Ends Jun 14 · <a class="country" href="/content/locations/north-america/canada/index.html"><img src="/content/locations/north-america/canada/img/flag.svg" alt="" width="20" height="14">Canada</a></span></li>
-                    <li><strong><a href="golf/events/us-open-golf.html">U.S. Open Golf</a></strong><span class="league-event-meta">Ends Jun 21 · <span>New York</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/travelers-championship.html">Travelers Championship</a></strong><span class="league-event-meta">Ends Jun 28 · <span>Connecticut</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/john-deere-classic.html">John Deere Classic</a></strong><span class="league-event-meta">Ends Jul 5 · <span>Illinois</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/genesis-scottish-open.html">Genesis Scottish Open</a></strong><span class="league-event-meta">Ends Jul 12 · <span>Scotland</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/isco-championship.html">ISCO Championship</a></strong><span class="league-event-meta">Ends Jul 12 · <span>Kentucky</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/the-open-championship.html">The Open Championship</a></strong><span class="league-event-meta">Ends Jul 19 · <span>England</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/corales-puntacana-championship.html">Corales Puntacana Championship</a></strong><span class="league-event-meta">Ends Jul 19 · <a class="country" href="/content/locations/north-america/dominican-republic/index.html"><img src="/content/locations/north-america/dominican-republic/img/flag.svg" alt="" width="20" height="14">Dominican Republic</a></span></li>
-                    <li><strong><a href="golf/events/3m-open.html">3M Open</a></strong><span class="league-event-meta">Ends Jul 26 · <span>Minnesota</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/rocket-classic.html">Rocket Classic</a></strong><span class="league-event-meta">Ends Aug 2 · <span>Michigan</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/wyndham-championship.html">Wyndham Championship</a></strong><span class="league-event-meta">Ends Aug 9 · <span>North Carolina</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/fedex-st-jude-championship.html">FedEx St. Jude Championship</a></strong><span class="league-event-meta">Ends Aug 16 · <span>Tennessee</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/bmw-championship.html">BMW Championship</a></strong><span class="league-event-meta">Ends Aug 23 · <span>Missouri</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/tour-championship.html">Tour Championship</a></strong><span class="league-event-meta">Ends Aug 30 · <span>Georgia</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/biltmore-championship.html">Biltmore Championship</a></strong><span class="league-event-meta">Ends Sep 20 · <span>North Carolina</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/bank-of-utah-championship.html">Bank of Utah Championship</a></strong><span class="league-event-meta">Ends Oct 4 · <span>Utah</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/baycurrent-classic.html">Baycurrent Classic</a></strong><span class="league-event-meta">Ends Oct 11 · <a class="country" href="/content/locations/asia/japan/index.html"><img src="/content/locations/asia/japan/img/flag.svg" alt="" width="20" height="14">Japan</a></span></li>
-                    <li><strong><a href="golf/events/butterfield-bermuda-championship.html">Butterfield Bermuda Championship</a></strong><span class="league-event-meta">Ends Oct 25 · <span>Bermuda</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/vidantaworld-mexico-open.html">VidantaWorld Mexico Open</a></strong><span class="league-event-meta">Ends Nov 1 · <a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></li>
-                    <li><strong><a href="golf/events/world-wide-technology-championship.html">World Wide Technology Championship</a></strong><span class="league-event-meta">Ends Nov 8 · <a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></li>
-                    <li><strong><a href="golf/events/good-good-championship.html">Good Good Championship</a></strong><span class="league-event-meta">Ends Nov 15 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/rsm-classic.html">RSM Classic</a></strong><span class="league-event-meta">Ends Nov 22 · <span>Georgia</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-            <article class="league-panel" id="league-lpga" role="tabpanel" aria-labelledby="league-lpga-tab" data-league-panel="lpga">
-              <div class="league-summary"><span>Race to CME Globe</span><strong>LPGA Tour</strong><p>The leading women's professional tour. The Race to CME Globe tracks season points and builds toward the CME Group Tour Championship.</p></div>
-              <div class="league-split">
-                <div class="league-block">
-                  <h3>Top 3 now</h3>
-                  <ol class="league-ranking">
-                    <li><span class="league-rank">1</span><strong>Jeeno Thitikul</strong><span class="league-points">595</span></li>
-                    <li><span class="league-rank">2</span><strong>Nelly Korda</strong><span class="league-points">500</span></li>
-                    <li><span class="league-rank">3</span><strong>Chizzy Iwai</strong><span class="league-points">350</span></li>
-                  </ol>
-                </div>
-                <div class="league-block">
-                  <h3>2026 schedule</h3>
-                  <ul class="league-events league-events--calendar">
-                    <li><strong><a href="golf/events/hilton-grand-vacations-tournament-of-champions.html">Hilton Grand Vacations Tournament of Champions</a></strong><span class="league-event-meta">Ends Feb 1 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/honda-lpga-thailand.html">Honda LPGA Thailand</a></strong><span class="league-event-meta">Ends Feb 22 · <a class="country" href="/content/locations/asia/thailand/index.html"><img src="/content/locations/asia/thailand/img/flag.svg" alt="" width="20" height="14">Thailand</a></span></li>
-                    <li><strong><a href="golf/events/hsbc-women-s-world-championship.html">HSBC Women's World Championship</a></strong><span class="league-event-meta">Ends Mar 1 · <a class="country" href="/content/locations/asia/singapore/index.html"><img src="/content/locations/asia/singapore/img/flag.svg" alt="" width="20" height="14">Singapore</a></span></li>
-                    <li><strong><a href="golf/events/blue-bay-lpga.html">Blue Bay LPGA</a></strong><span class="league-event-meta">Ends Mar 8 · <a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></li>
-                    <li><strong><a href="golf/events/fortinet-founders-cup.html">Fortinet Founders Cup</a></strong><span class="league-event-meta">Ends Mar 22 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/ford-championship.html">Ford Championship</a></strong><span class="league-event-meta">Ends Mar 29 · <span>Arizona</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/aramco-championship.html">Aramco Championship</a></strong><span class="league-event-meta">Ends Apr 5 · <span>Nevada</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/jm-eagle-la-championship.html">JM Eagle LA Championship</a></strong><span class="league-event-meta">Ends Apr 19 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/chevron-championship.html">Chevron Championship</a></strong><span class="league-event-meta">Ends Apr 26 · <span>Texas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/riviera-maya-open.html">Riviera Maya Open</a></strong><span class="league-event-meta">Ends May 3 · <a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></li>
-                    <li><strong><a href="golf/events/mizuho-americas-open.html">Mizuho Americas Open</a></strong><span class="league-event-meta">Ends May 10 · <span>New Jersey</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/kroger-queen-city-championship.html">Kroger Queen City Championship</a></strong><span class="league-event-meta">Ends May 17 · <span>Ohio</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/shoprite-lpga-classic.html">ShopRite LPGA Classic</a></strong><span class="league-event-meta">Ends May 31 · <span>New Jersey</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/us-womens-open-golf.html">U.S. Women's Open</a></strong><span class="league-event-meta">Ends Jun 7 · <span>California</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/meijer-lpga-classic.html">Meijer LPGA Classic</a></strong><span class="league-event-meta">Ends Jun 15 · <span>Michigan</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/dow-championship.html">Dow Championship</a></strong><span class="league-event-meta">Ends Jun 21 · <span>Michigan</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/kpmg-women-s-pga-championship.html">KPMG Women's PGA Championship</a></strong><span class="league-event-meta">Ends Jun 28 · <span>Minnesota</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/amundi-evian-championship.html">Amundi Evian Championship</a></strong><span class="league-event-meta">Ends Jul 12 · <a class="country" href="/content/locations/europe/france/index.html"><img src="/content/locations/europe/france/img/flag.svg" alt="" width="20" height="14">France</a></span></li>
-                    <li><strong><a href="golf/events/isps-handa-women-s-scottish-open.html">ISPS Handa Women's Scottish Open</a></strong><span class="league-event-meta">Ends Jul 26 · <span>Scotland</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/aig-women-s-open.html">AIG Women's Open</a></strong><span class="league-event-meta">Ends Aug 2 · <span>England</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/portland-classic.html">Portland Classic</a></strong><span class="league-event-meta">Ends Aug 16 · <span>Oregon</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/cpkc-women-s-open.html">CPKC Women's Open</a></strong><span class="league-event-meta">Ends Aug 23 · <a class="country" href="/content/locations/north-america/canada/index.html"><img src="/content/locations/north-america/canada/img/flag.svg" alt="" width="20" height="14">Canada</a></span></li>
-                    <li><strong><a href="golf/events/fm-championship.html">FM Championship</a></strong><span class="league-event-meta">Ends Aug 30 · <span>Massachusetts</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/walmart-nw-arkansas-championship.html">Walmart NW Arkansas Championship</a></strong><span class="league-event-meta">Ends Sep 27 · <span>Arkansas</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/lotte-championship.html">Lotte Championship</a></strong><span class="league-event-meta">Ends Oct 4 · <span>Hawaii</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/buick-lpga-shanghai.html">Buick LPGA Shanghai</a></strong><span class="league-event-meta">Ends Oct 18 · <a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></li>
-                    <li><strong><a href="golf/events/bmw-ladies-championship.html">BMW Ladies Championship</a></strong><span class="league-event-meta">Ends Oct 25 · <a class="country" href="/content/locations/asia/south-korea/index.html"><img src="/content/locations/asia/south-korea/img/flag.svg" alt="" width="20" height="14">South Korea</a></span></li>
-                    <li><strong><a href="golf/events/maybank-championship.html">Maybank Championship</a></strong><span class="league-event-meta">Ends Nov 1 · <a class="country" href="/content/locations/asia/malaysia/index.html"><img src="/content/locations/asia/malaysia/img/flag.svg" alt="" width="20" height="14">Malaysia</a></span></li>
-                    <li><strong><a href="golf/events/toto-japan-classic.html">Toto Japan Classic</a></strong><span class="league-event-meta">Ends Nov 8 · <a class="country" href="/content/locations/asia/japan/index.html"><img src="/content/locations/asia/japan/img/flag.svg" alt="" width="20" height="14">Japan</a></span></li>
-                    <li><strong><a href="golf/events/the-annika.html">The Annika</a></strong><span class="league-event-meta">Ends Nov 15 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/cme-group-tour-championship.html">CME Group Tour Championship</a></strong><span class="league-event-meta">Ends Nov 22 · <span>Florida</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-            <article class="league-panel" id="league-liv" role="tabpanel" aria-labelledby="league-liv-tab" data-league-panel="liv">
-              <div class="league-summary"><span>Active in 2026</span><strong>LIV Golf</strong><p>A team-and-individual league with a shorter global calendar and season standings. It is still running in 2026, with Korea live and multiple upcoming stops listed.</p></div>
-              <div class="league-split">
-                <div class="league-block">
-                  <h3>Top 3 now</h3>
-                  <ol class="league-ranking">
-                    <li><span class="league-rank">1</span><strong>Jon Rahm</strong><span class="league-points">802.33</span></li>
-                    <li><span class="league-rank">2</span><strong>Bryson DeChambeau</strong><span class="league-points">551.90</span></li>
-                    <li><span class="league-rank">3</span><strong>Lucas Herbert</strong><span class="league-points">299.18</span></li>
-                  </ol>
-                </div>
-                <div class="league-block">
-                  <h3>2026 schedule</h3>
-                  <ul class="league-events league-events--calendar">
-                    <li><strong><a href="golf/events/liv-golf-riyadh.html">LIV Golf Riyadh</a></strong><span class="league-event-meta">Ends Feb 7 · <span>Riyadh</span> · <a class="country" href="/content/locations/asia/saudi-arabia/index.html"><img src="/content/locations/asia/saudi-arabia/img/flag.svg" alt="" width="20" height="14">Saudi Arabia</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-adelaide.html">LIV Golf Adelaide</a></strong><span class="league-event-meta">Ends Feb 15 · <span>Adelaide</span> · <a class="country" href="/content/locations/oceania/australia/index.html"><img src="/content/locations/oceania/australia/img/flag.svg" alt="" width="20" height="14">Australia</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-hong-kong.html">LIV Golf Hong Kong</a></strong><span class="league-event-meta">Ends Mar 8 · <span>Hong Kong</span> · <a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-singapore.html">LIV Golf Singapore</a></strong><span class="league-event-meta">Ends Mar 15 · <a class="country" href="/content/locations/asia/singapore/index.html"><img src="/content/locations/asia/singapore/img/flag.svg" alt="" width="20" height="14">Singapore</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-south-africa.html">LIV Golf South Africa</a></strong><span class="league-event-meta">Ends Mar 22 · <a class="country" href="/content/locations/africa/south-africa/index.html"><img src="/content/locations/africa/south-africa/img/flag.svg" alt="" width="20" height="14">South Africa</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-mexico-city.html">LIV Golf Mexico City</a></strong><span class="league-event-meta">Ends Apr 19 · <span>Mexico City</span> · <a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-virginia.html">LIV Golf Virginia</a></strong><span class="league-event-meta">Ends May 10 · <span>Virginia</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-korea.html">LIV Golf Korea</a></strong><span class="league-event-meta">Ends May 31 · <span>Busan</span> · <a class="country" href="/content/locations/asia/south-korea/index.html"><img src="/content/locations/asia/south-korea/img/flag.svg" alt="" width="20" height="14">South Korea</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-andalucia.html">LIV Golf Andalucia</a></strong><span class="league-event-meta">Ends Jun 7 · <span>Andalucia</span> · <a class="country" href="/content/locations/europe/spain/index.html"><img src="/content/locations/europe/spain/img/flag.svg" alt="" width="20" height="14">Spain</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-louisiana.html">LIV Golf Louisiana</a></strong><span class="league-event-meta">Ends Jun 28 · <span>Louisiana</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-uk.html">LIV Golf UK</a></strong><span class="league-event-meta">Ends Jul 26 · <span>England</span> · <a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-new-york.html">LIV Golf New York</a></strong><span class="league-event-meta">Ends Aug 9 · <span>New York</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/liv-golf-indianapolis.html">LIV Golf Indianapolis</a></strong><span class="league-event-meta">Ends Aug 23 · <span>Indiana</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                    <li><strong><a href="golf/events/liv-team-championship-michigan.html">LIV Team Championship Michigan</a></strong><span class="league-event-meta">Ends Aug 30 · <span>Michigan</span> · <a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-            <p class="ranking-source">Updated 30 May 2026. Schedule links cover PGA Tour (45 official events), LPGA Tour (31 official events) and LIV Golf (14 official events).</p>
-          </section>
 
           <section class="golf-local-poc golf-setup" aria-label="Sponsored golf setup guide">
             <div class="golf-setup__head"><h3>Find your golf setup</h3><span>Sponsored guide</span></div>
@@ -488,32 +507,177 @@
               </div>
             </div>
           </section>
+        </div>
 
-          <section>
-            <div class="section-heading">
-              <h2>Next golf events</h2>
-              <div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls">
-                <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
-              </div>
+        <div class="right">
+            <section class="league-card" aria-label="Golf tours by league">
+              <h2>Tour guide</h2>
+            <div class="league-tabs" role="tablist" aria-label="Golf league tabs">
+              <button class="league-tab" id="league-pga-tab" type="button" role="tab" aria-selected="true" aria-controls="league-pga" data-league-tab="pga">PGA</button>
+              <button class="league-tab" id="league-lpga-tab" type="button" role="tab" aria-selected="false" aria-controls="league-lpga" data-league-tab="lpga">LPGA</button>
+              <button class="league-tab" id="league-liv-tab" type="button" role="tab" aria-selected="false" aria-controls="league-liv" data-league-tab="liv">LIV</button>
             </div>
-            <div class="carousel">
-              <div class="event-grid carousel-track" data-carousel-track>
-                <a class="event-card" data-end="2026-05-31" href="golf/events/charles-schwab-challenge.html"><img class="event-thumb" src="golf/events/img/charles-schwab-challenge-mini.png" alt="" aria-hidden="true"><time>Ends May 31</time><strong>Charles Schwab Challenge</strong><p>PGA Tour · Texas, United States</p></a>
-                <a class="event-card" data-end="2026-05-31" href="golf/events/shoprite-lpga-classic.html"><img class="event-thumb" src="golf/events/img/shoprite-lpga-classic-mini.png" alt="" aria-hidden="true"><time>Ends May 31</time><strong>ShopRite LPGA Classic</strong><p>LPGA Tour · New Jersey, United States</p></a>
-                <a class="event-card" data-end="2026-05-31" href="golf/events/liv-golf-korea.html"><img class="event-thumb" src="golf/events/img/liv-golf-korea-mini.png" alt="" aria-hidden="true"><time>Ends May 31</time><strong>LIV Golf Korea</strong><p>LIV Golf · Busan, South Korea</p></a>
-                <a class="event-card" data-end="2026-06-07" href="golf/events/memorial-tournament.html"><img class="event-thumb" src="golf/events/img/memorial-tournament-mini.png" alt="" aria-hidden="true"><time>Ends Jun 7</time><strong>Memorial Tournament</strong><p>PGA Tour · Ohio, United States</p></a>
-                <a class="event-card" data-end="2026-06-07" href="golf/events/us-womens-open-golf.html"><img class="event-thumb" src="golf/events/img/us-womens-open-golf-mini.png" alt="" aria-hidden="true"><time>Ends Jun 7</time><strong>U.S. Women's Open</strong><p>LPGA Tour · California, United States</p></a>
-                <a class="event-card" data-end="2026-06-07" href="golf/events/liv-golf-andalucia.html"><img class="event-thumb" src="golf/events/img/liv-golf-andalucia-mini.png" alt="" aria-hidden="true"><time>Ends Jun 7</time><strong>LIV Golf Andalucia</strong><p>LIV Golf · Andalucia, Spain</p></a>
-                <a class="event-card" data-end="2026-06-14" href="golf/events/rbc-canadian-open.html"><img class="event-thumb" src="golf/events/img/rbc-canadian-open-mini.png" alt="" aria-hidden="true"><time>Ends Jun 14</time><strong>RBC Canadian Open</strong><p>PGA Tour · Canada</p></a>
-                <a class="event-card" data-end="2026-06-15" href="golf/events/meijer-lpga-classic.html"><img class="event-thumb" src="golf/events/img/meijer-lpga-classic-mini.png" alt="" aria-hidden="true"><time>Ends Jun 15</time><strong>Meijer LPGA Classic</strong><p>LPGA Tour · Michigan, United States</p></a>
-                <a class="event-card" data-end="2026-06-21" href="golf/events/us-open-golf.html"><img class="event-thumb" src="golf/events/img/us-open-golf-mini.png" alt="" aria-hidden="true"><time>Ends Jun 21</time><strong>U.S. Open Golf</strong><p>PGA Tour · New York, United States</p></a>
-                <a class="event-card" data-end="2026-06-21" href="golf/events/dow-championship.html"><img class="event-thumb" src="golf/events/img/dow-championship-mini.png" alt="" aria-hidden="true"><time>Ends Jun 21</time><strong>Dow Championship</strong><p>LPGA Tour · Michigan, United States</p></a>
-                <a class="event-card" data-end="2026-06-28" href="golf/events/travelers-championship.html"><img class="event-thumb" src="golf/events/img/travelers-championship-mini.png" alt="" aria-hidden="true"><time>Ends Jun 28</time><strong>Travelers Championship</strong><p>PGA Tour · Connecticut, United States</p></a>
-                <a class="event-card" data-end="2026-06-28" href="golf/events/kpmg-women-s-pga-championship.html"><img class="event-thumb" src="golf/events/img/kpmg-women-s-pga-championship-mini.png" alt="" aria-hidden="true"><time>Ends Jun 28</time><strong>KPMG Women's PGA Championship</strong><p>LPGA Tour · Minnesota, United States</p></a>
+            <article class="league-panel is-active" id="league-pga" role="tabpanel" aria-labelledby="league-pga-tab" data-league-panel="pga">
+              <div class="league-split">
+                <div class="league-block">
+                  <h3>Top 3 now</h3>
+                  <ol class="league-ranking">
+                    <li><span class="league-rank">1</span><strong>Cameron Young</strong><span class="league-points">2,504</span></li>
+                    <li><span class="league-rank">2</span><strong>Scottie Scheffler</strong><span class="league-points">2,431</span></li>
+                    <li><span class="league-rank">3</span><strong>Matt Fitzpatrick</strong><span class="league-points">2,404</span></li>
+                  </ol>
+                </div>
+                <div class="league-summary"><span>FedExCup tour</span><strong>PGA Tour</strong><p>The main men's weekly tour. Players collect FedExCup points through regular events, bigger signature weeks, majors, and the playoff finish.</p></div>
+                <div class="league-block">
+                  <h3>2026 schedule</h3>
+                  <div class="league-phase-tabs" aria-label="Schedule filter">
+                    <button class="league-phase-tab" type="button" aria-pressed="false" data-phase-filter="past">Past</button>
+                    <button class="league-phase-tab" type="button" aria-pressed="true" data-phase-filter="upcoming">Upcoming</button>
+                  </div>
+                  <div class="league-events-header" aria-hidden="true"><span>Date</span><span>Event</span><span>Winner</span><span>Land</span><span>Place</span></div>
+                  <ul class="league-events league-events--calendar">
+                    <li><a class="league-event-thumb-link" href="golf/events/sony-open-in-hawaii.html" aria-label="Sony Open in Hawaii"><img class="league-event-thumb" src="golf/events/img/sony-open-in-hawaii-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Jan 15-18</time></span><strong><a href="golf/events/sony-open-in-hawaii.html">Sony Open in Hawaii</a></strong><span class="league-event-meta"><span class="league-event-area">Hawaii</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/the-american-express.html" aria-label="The American Express"><img class="league-event-thumb" src="golf/events/img/the-american-express-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jan 25</time></span><strong><a href="golf/events/the-american-express.html">The American Express</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/farmers-insurance-open.html" aria-label="Farmers Insurance Open"><img class="league-event-thumb" src="golf/events/img/farmers-insurance-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 1</time></span><strong><a href="golf/events/farmers-insurance-open.html">Farmers Insurance Open</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/wm-phoenix-open.html" aria-label="WM Phoenix Open"><img class="league-event-thumb" src="golf/events/img/wm-phoenix-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 8</time></span><strong><a href="golf/events/wm-phoenix-open.html">WM Phoenix Open</a></strong><span class="league-event-meta"><span class="league-event-area">Arizona</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/at-and-t-pebble-beach-pro-am.html" aria-label="AT&amp;T Pebble Beach Pro-Am"><img class="league-event-thumb" src="golf/events/img/at-and-t-pebble-beach-pro-am-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 15</time></span><strong><a href="golf/events/at-and-t-pebble-beach-pro-am.html">AT&amp;T Pebble Beach Pro-Am</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/genesis-invitational.html" aria-label="Genesis Invitational"><img class="league-event-thumb" src="golf/events/img/genesis-invitational-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 22</time></span><strong><a href="golf/events/genesis-invitational.html">Genesis Invitational</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/cognizant-classic.html" aria-label="Cognizant Classic"><img class="league-event-thumb" src="golf/events/img/cognizant-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 1</time></span><strong><a href="golf/events/cognizant-classic.html">Cognizant Classic</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/arnold-palmer-invitational.html" aria-label="Arnold Palmer Invitational"><img class="league-event-thumb" src="golf/events/img/arnold-palmer-invitational-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 8</time></span><strong><a href="golf/events/arnold-palmer-invitational.html">Arnold Palmer Invitational</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/puerto-rico-open.html" aria-label="Puerto Rico Open"><img class="league-event-thumb" src="golf/events/img/puerto-rico-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 8</time></span><strong><a href="golf/events/puerto-rico-open.html">Puerto Rico Open</a></strong><span class="league-event-meta"><span class="league-event-area">Puerto Rico</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/the-players-championship.html" aria-label="The Players Championship"><img class="league-event-thumb" src="golf/events/img/the-players-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 15</time></span><strong><a href="golf/events/the-players-championship.html">The Players Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/valspar-championship.html" aria-label="Valspar Championship"><img class="league-event-thumb" src="golf/events/img/valspar-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 22</time></span><strong><a href="golf/events/valspar-championship.html">Valspar Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/texas-childrens-houston-open.html" aria-label="Texas Children's Houston Open"><img class="league-event-thumb" src="golf/events/img/texas-childrens-houston-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 29</time></span><strong><a href="golf/events/texas-childrens-houston-open.html">Texas Children's Houston Open</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/valero-texas-open.html" aria-label="Valero Texas Open"><img class="league-event-thumb" src="golf/events/img/valero-texas-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 5</time></span><strong><a href="golf/events/valero-texas-open.html">Valero Texas Open</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/masters-tournament.html" aria-label="Masters Tournament"><img class="league-event-thumb" src="golf/events/img/masters-tournament-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 12</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/masters-tournament.html">Masters Tournament</a></strong><span class="league-event-meta"><span class="league-event-area">Georgia</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/rbc-heritage.html" aria-label="RBC Heritage"><img class="league-event-thumb" src="golf/events/img/rbc-heritage-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 19</time></span><strong><a href="golf/events/rbc-heritage.html">RBC Heritage</a></strong><span class="league-event-meta"><span class="league-event-area">South Carolina</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/zurich-classic-of-new-orleans.html" aria-label="Zurich Classic of New Orleans"><img class="league-event-thumb" src="golf/events/img/zurich-classic-of-new-orleans-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 26</time></span><strong><a href="golf/events/zurich-classic-of-new-orleans.html">Zurich Classic of New Orleans</a></strong><span class="league-event-meta"><span class="league-event-area">Louisiana</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/cadillac-championship.html" aria-label="Cadillac Championship"><img class="league-event-thumb" src="golf/events/img/cadillac-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Apr 30 - May 3</time></span><strong><a href="golf/events/cadillac-championship.html">Cadillac Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/truist-championship.html" aria-label="Truist Championship"><img class="league-event-thumb" src="golf/events/img/truist-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 10</time></span><strong><a href="golf/events/truist-championship.html">Truist Championship</a></strong><span class="league-event-meta"><span class="league-event-area">North Carolina</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/oneflight-myrtle-beach-classic.html" aria-label="ONEflight Myrtle Beach Classic"><img class="league-event-thumb" src="golf/events/img/oneflight-myrtle-beach-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 10</time></span><strong><a href="golf/events/oneflight-myrtle-beach-classic.html">ONEflight Myrtle Beach Classic</a></strong><span class="league-event-meta"><span class="league-event-area">South Carolina</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/pga-championship.html" aria-label="PGA Championship"><img class="league-event-thumb" src="golf/events/img/pga-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 17</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/pga-championship.html">PGA Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Pennsylvania</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/cj-cup-byron-nelson.html" aria-label="CJ Cup Byron Nelson"><img class="league-event-thumb" src="golf/events/img/cj-cup-byron-nelson-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 24</time></span><strong><a href="golf/events/cj-cup-byron-nelson.html">CJ Cup Byron Nelson</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/charles-schwab-challenge.html" aria-label="Charles Schwab Challenge"><img class="league-event-thumb" src="golf/events/img/charles-schwab-challenge-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 31</time></span><strong><a href="golf/events/charles-schwab-challenge.html">Charles Schwab Challenge</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/memorial-tournament.html" aria-label="Memorial Tournament"><img class="league-event-thumb" src="golf/events/img/memorial-tournament-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 7</time></span><strong><a href="golf/events/memorial-tournament.html">Memorial Tournament</a></strong><span class="league-event-meta"><span class="league-event-area">Ohio</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/rbc-canadian-open.html" aria-label="RBC Canadian Open"><img class="league-event-thumb" src="golf/events/img/rbc-canadian-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 14</time></span><strong><a href="golf/events/rbc-canadian-open.html">RBC Canadian Open</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/canada/index.html"><img src="/content/locations/north-america/canada/img/flag.svg" alt="" width="20" height="14">Canada</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/us-open-golf.html" aria-label="U.S. Open Golf"><img class="league-event-thumb" src="golf/events/img/us-open-golf-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 21</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/us-open-golf.html">U.S. Open Golf</a></strong><span class="league-event-meta"><span class="league-event-area">New York</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/travelers-championship.html" aria-label="Travelers Championship"><img class="league-event-thumb" src="golf/events/img/travelers-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 28</time></span><strong><a href="golf/events/travelers-championship.html">Travelers Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Connecticut</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/john-deere-classic.html" aria-label="John Deere Classic"><img class="league-event-thumb" src="golf/events/img/john-deere-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 5</time></span><strong><a href="golf/events/john-deere-classic.html">John Deere Classic</a></strong><span class="league-event-meta"><span class="league-event-area">Illinois</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/genesis-scottish-open.html" aria-label="Genesis Scottish Open"><img class="league-event-thumb" src="golf/events/img/genesis-scottish-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 12</time></span><strong><a href="golf/events/genesis-scottish-open.html">Genesis Scottish Open</a></strong><span class="league-event-meta"><span class="league-event-area">Scotland</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/isco-championship.html" aria-label="ISCO Championship"><img class="league-event-thumb" src="golf/events/img/isco-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 12</time></span><strong><a href="golf/events/isco-championship.html">ISCO Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Kentucky</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/the-open-championship.html" aria-label="The Open Championship"><img class="league-event-thumb" src="golf/events/img/the-open-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 19</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/the-open-championship.html">The Open Championship</a></strong><span class="league-event-meta"><span class="league-event-area">England</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/corales-puntacana-championship.html" aria-label="Corales Puntacana Championship"><img class="league-event-thumb" src="golf/events/img/corales-puntacana-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 19</time></span><strong><a href="golf/events/corales-puntacana-championship.html">Corales Puntacana Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/dominican-republic/index.html"><img src="/content/locations/north-america/dominican-republic/img/flag.svg" alt="" width="20" height="14">Dominican Republic</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/3m-open.html" aria-label="3M Open"><img class="league-event-thumb" src="golf/events/img/3m-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 26</time></span><strong><a href="golf/events/3m-open.html">3M Open</a></strong><span class="league-event-meta"><span class="league-event-area">Minnesota</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/rocket-classic.html" aria-label="Rocket Classic"><img class="league-event-thumb" src="golf/events/img/rocket-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 2</time></span><strong><a href="golf/events/rocket-classic.html">Rocket Classic</a></strong><span class="league-event-meta"><span class="league-event-area">Michigan</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/wyndham-championship.html" aria-label="Wyndham Championship"><img class="league-event-thumb" src="golf/events/img/wyndham-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 9</time></span><strong><a href="golf/events/wyndham-championship.html">Wyndham Championship</a></strong><span class="league-event-meta"><span class="league-event-area">North Carolina</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/fedex-st-jude-championship.html" aria-label="FedEx St. Jude Championship"><img class="league-event-thumb" src="golf/events/img/fedex-st-jude-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 16</time></span><strong><a href="golf/events/fedex-st-jude-championship.html">FedEx St. Jude Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Tennessee</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/bmw-championship.html" aria-label="BMW Championship"><img class="league-event-thumb" src="golf/events/img/bmw-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 23</time></span><strong><a href="golf/events/bmw-championship.html">BMW Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Missouri</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/tour-championship.html" aria-label="Tour Championship"><img class="league-event-thumb" src="golf/events/img/tour-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 30</time></span><strong><a href="golf/events/tour-championship.html">Tour Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Georgia</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/biltmore-championship.html" aria-label="Biltmore Championship Asheville"><img class="league-event-thumb" src="golf/events/img/biltmore-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Sep 17-20</time></span><strong><a href="golf/events/biltmore-championship.html">Biltmore Championship Asheville</a></strong><span class="league-event-meta"><span class="league-event-area">North Carolina</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/bank-of-utah-championship.html" aria-label="Bank of Utah Championship"><img class="league-event-thumb" src="golf/events/img/bank-of-utah-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 4</time></span><strong><a href="golf/events/bank-of-utah-championship.html">Bank of Utah Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Utah</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/baycurrent-classic.html" aria-label="Baycurrent Classic"><img class="league-event-thumb" src="golf/events/img/baycurrent-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 11</time></span><strong><a href="golf/events/baycurrent-classic.html">Baycurrent Classic</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/japan/index.html"><img src="/content/locations/asia/japan/img/flag.svg" alt="" width="20" height="14">Japan</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/butterfield-bermuda-championship.html" aria-label="Butterfield Bermuda Championship"><img class="league-event-thumb" src="golf/events/img/butterfield-bermuda-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 25</time></span><strong><a href="golf/events/butterfield-bermuda-championship.html">Butterfield Bermuda Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Bermuda</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/vidantaworld-mexico-open.html" aria-label="VidantaWorld Mexico Open"><img class="league-event-thumb" src="golf/events/img/vidantaworld-mexico-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 1</time></span><strong><a href="golf/events/vidantaworld-mexico-open.html">VidantaWorld Mexico Open</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/world-wide-technology-championship.html" aria-label="World Wide Technology Championship"><img class="league-event-thumb" src="golf/events/img/world-wide-technology-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 8</time></span><strong><a href="golf/events/world-wide-technology-championship.html">World Wide Technology Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/good-good-championship.html" aria-label="Good Good Championship"><img class="league-event-thumb" src="golf/events/img/good-good-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Nov 12-15</time></span><strong><a href="golf/events/good-good-championship.html">Good Good Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/rsm-classic.html" aria-label="RSM Classic"><img class="league-event-thumb" src="golf/events/img/rsm-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 22</time></span><strong><a href="golf/events/rsm-classic.html">RSM Classic</a></strong><span class="league-event-meta"><span class="league-event-area">Georgia</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </article>
+            <article class="league-panel" id="league-lpga" role="tabpanel" aria-labelledby="league-lpga-tab" data-league-panel="lpga">
+              <div class="league-split">
+                <div class="league-block">
+                  <h3>Top 3 now</h3>
+                  <ol class="league-ranking">
+                    <li><span class="league-rank">1</span><strong>Jeeno Thitikul</strong><span class="league-points">595</span></li>
+                    <li><span class="league-rank">2</span><strong>Nelly Korda</strong><span class="league-points">500</span></li>
+                    <li><span class="league-rank">3</span><strong>Chizzy Iwai</strong><span class="league-points">350</span></li>
+                  </ol>
+                </div>
+                <div class="league-summary"><span>Race to CME Globe</span><strong>LPGA Tour</strong><p>The leading women's professional tour. The Race to CME Globe tracks season points and builds toward the CME Group Tour Championship.</p></div>
+                <div class="league-block">
+                  <h3>2026 schedule</h3>
+                  <div class="league-phase-tabs" aria-label="Schedule filter">
+                    <button class="league-phase-tab" type="button" aria-pressed="false" data-phase-filter="past">Past</button>
+                    <button class="league-phase-tab" type="button" aria-pressed="true" data-phase-filter="upcoming">Upcoming</button>
+                  </div>
+                  <div class="league-events-header" aria-hidden="true"><span>Date</span><span>Event</span><span>Winner</span><span>Land</span><span>Place</span></div>
+                  <ul class="league-events league-events--calendar">
+                    <li><a class="league-event-thumb-link" href="golf/events/hilton-grand-vacations-tournament-of-champions.html" aria-label="Hilton Grand Vacations Tournament of Champions"><img class="league-event-thumb" src="golf/events/img/hilton-grand-vacations-tournament-of-champions-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 1</time></span><strong><a href="golf/events/hilton-grand-vacations-tournament-of-champions.html">Hilton Grand Vacations Tournament of Champions</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/honda-lpga-thailand.html" aria-label="Honda LPGA Thailand"><img class="league-event-thumb" src="golf/events/img/honda-lpga-thailand-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Feb 22</time></span><strong><a href="golf/events/honda-lpga-thailand.html">Honda LPGA Thailand</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/thailand/index.html"><img src="/content/locations/asia/thailand/img/flag.svg" alt="" width="20" height="14">Thailand</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/hsbc-womens-world-championship.html" aria-label="HSBC Women's World Championship"><img class="league-event-thumb" src="golf/events/img/hsbc-womens-world-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 1</time></span><strong><a href="golf/events/hsbc-womens-world-championship.html">HSBC Women's World Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/singapore/index.html"><img src="/content/locations/asia/singapore/img/flag.svg" alt="" width="20" height="14">Singapore</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/blue-bay-lpga.html" aria-label="Blue Bay LPGA"><img class="league-event-thumb" src="golf/events/img/blue-bay-lpga-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 8</time></span><strong><a href="golf/events/blue-bay-lpga.html">Blue Bay LPGA</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/fortinet-founders-cup.html" aria-label="Fortinet Founders Cup"><img class="league-event-thumb" src="golf/events/img/fortinet-founders-cup-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 22</time></span><strong><a href="golf/events/fortinet-founders-cup.html">Fortinet Founders Cup</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/ford-championship.html" aria-label="Ford Championship presented by Wild Horse Pass"><img class="league-event-thumb" src="golf/events/img/ford-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Mar 29</time></span><strong><a href="golf/events/ford-championship.html">Ford Championship presented by Wild Horse Pass</a></strong><span class="league-event-meta"><span class="league-event-area">Arizona</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/aramco-championship.html" aria-label="Aramco Championship"><img class="league-event-thumb" src="golf/events/img/aramco-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 5</time></span><strong><a href="golf/events/aramco-championship.html">Aramco Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Nevada</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/jm-eagle-la-championship.html" aria-label="JM Eagle LA Championship presented by Plastpro"><img class="league-event-thumb" src="golf/events/img/jm-eagle-la-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 19</time></span><strong><a href="golf/events/jm-eagle-la-championship.html">JM Eagle LA Championship presented by Plastpro</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/chevron-championship.html" aria-label="The Chevron Championship"><img class="league-event-thumb" src="golf/events/img/chevron-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Apr 26</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/chevron-championship.html">The Chevron Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Texas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/riviera-maya-open.html" aria-label="Mexico Riviera Maya Open at Mayakoba"><img class="league-event-thumb" src="golf/events/img/riviera-maya-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 3</time></span><strong><a href="golf/events/riviera-maya-open.html">Mexico Riviera Maya Open at Mayakoba</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/mizuho-americas-open.html" aria-label="Mizuho Americas Open"><img class="league-event-thumb" src="golf/events/img/mizuho-americas-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 10</time></span><strong><a href="golf/events/mizuho-americas-open.html">Mizuho Americas Open</a></strong><span class="league-event-meta"><span class="league-event-area">New Jersey</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/kroger-queen-city-championship.html" aria-label="Kroger Queen City Championship presented by P&amp;G"><img class="league-event-thumb" src="golf/events/img/kroger-queen-city-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 17</time></span><strong><a href="golf/events/kroger-queen-city-championship.html">Kroger Queen City Championship presented by P&amp;G</a></strong><span class="league-event-meta"><span class="league-event-area">Ohio</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/shoprite-lpga-classic.html" aria-label="ShopRite LPGA powered by Wakefern"><img class="league-event-thumb" src="golf/events/img/shoprite-lpga-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends May 31</time></span><strong><a href="golf/events/shoprite-lpga-classic.html">ShopRite LPGA powered by Wakefern</a></strong><span class="league-event-meta"><span class="league-event-area">New Jersey</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/us-womens-open-golf.html" aria-label="U.S. Women's Open presented by Ally"><img class="league-event-thumb" src="golf/events/img/us-womens-open-golf-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 7</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/us-womens-open-golf.html">U.S. Women's Open presented by Ally</a></strong><span class="league-event-meta"><span class="league-event-area">California</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/dow-championship.html" aria-label="Dow Championship"><img class="league-event-thumb" src="golf/events/img/dow-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 14</time></span><strong><a href="golf/events/dow-championship.html">Dow Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Michigan</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/meijer-lpga-classic.html" aria-label="Meijer LPGA Classic for Simply Give"><img class="league-event-thumb" src="golf/events/img/meijer-lpga-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 21</time></span><strong><a href="golf/events/meijer-lpga-classic.html">Meijer LPGA Classic for Simply Give</a></strong><span class="league-event-meta"><span class="league-event-area">Michigan</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/kpmg-womens-pga-championship.html" aria-label="KPMG Women's PGA Championship"><img class="league-event-thumb" src="golf/events/img/kpmg-womens-pga-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jun 28</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/kpmg-womens-pga-championship.html">KPMG Women's PGA Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Minnesota</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/amundi-evian-championship.html" aria-label="Amundi Evian Championship"><img class="league-event-thumb" src="golf/events/img/amundi-evian-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 12</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/amundi-evian-championship.html">Amundi Evian Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/europe/france/index.html"><img src="/content/locations/europe/france/img/flag.svg" alt="" width="20" height="14">France</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/isps-handa-womens-scottish-open.html" aria-label="ISPS Handa Women's Scottish Open"><img class="league-event-thumb" src="golf/events/img/isps-handa-womens-scottish-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Jul 26</time></span><strong><a href="golf/events/isps-handa-womens-scottish-open.html">ISPS Handa Women's Scottish Open</a></strong><span class="league-event-meta"><span class="league-event-area">Scotland</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/aig-womens-open.html" aria-label="AIG Women's Open"><img class="league-event-thumb" src="golf/events/img/aig-womens-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 2</time><span class="league-event-badge">Major</span></span><strong><a href="golf/events/aig-womens-open.html">AIG Women's Open</a></strong><span class="league-event-meta"><span class="league-event-area">England</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/portland-classic.html" aria-label="The Standard Portland Classic"><img class="league-event-thumb" src="golf/events/img/portland-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 16</time></span><strong><a href="golf/events/portland-classic.html">The Standard Portland Classic</a></strong><span class="league-event-meta"><span class="league-event-area">Oregon</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/cpkc-womens-open.html" aria-label="CPKC Women's Open"><img class="league-event-thumb" src="golf/events/img/cpkc-womens-open-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 23</time></span><strong><a href="golf/events/cpkc-womens-open.html">CPKC Women's Open</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/north-america/canada/index.html"><img src="/content/locations/north-america/canada/img/flag.svg" alt="" width="20" height="14">Canada</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/fm-championship.html" aria-label="FM Championship"><img class="league-event-thumb" src="golf/events/img/fm-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Aug 30</time></span><strong><a href="golf/events/fm-championship.html">FM Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Massachusetts</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/walmart-nw-arkansas-championship.html" aria-label="Walmart NW Arkansas Championship presented by P&amp;G"><img class="league-event-thumb" src="golf/events/img/walmart-nw-arkansas-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Sep 27</time></span><strong><a href="golf/events/walmart-nw-arkansas-championship.html">Walmart NW Arkansas Championship presented by P&amp;G</a></strong><span class="league-event-meta"><span class="league-event-area">Arkansas</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/lotte-championship.html" aria-label="LOTTE Championship presented by Hoakalei"><img class="league-event-thumb" src="golf/events/img/lotte-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 4</time></span><strong><a href="golf/events/lotte-championship.html">LOTTE Championship presented by Hoakalei</a></strong><span class="league-event-meta"><span class="league-event-area">Hawaii</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/buick-lpga-shanghai.html" aria-label="Buick LPGA Shanghai"><img class="league-event-thumb" src="golf/events/img/buick-lpga-shanghai-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 18</time></span><strong><a href="golf/events/buick-lpga-shanghai.html">Buick LPGA Shanghai</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/bmw-ladies-championship.html" aria-label="BMW Ladies Championship"><img class="league-event-thumb" src="golf/events/img/bmw-ladies-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Oct 25</time></span><strong><a href="golf/events/bmw-ladies-championship.html">BMW Ladies Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/south-korea/index.html"><img src="/content/locations/asia/south-korea/img/flag.svg" alt="" width="20" height="14">South Korea</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/maybank-championship.html" aria-label="Maybank Championship"><img class="league-event-thumb" src="golf/events/img/maybank-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 1</time></span><strong><a href="golf/events/maybank-championship.html">Maybank Championship</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/malaysia/index.html"><img src="/content/locations/asia/malaysia/img/flag.svg" alt="" width="20" height="14">Malaysia</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/toto-japan-classic.html" aria-label="TOTO Japan Classic"><img class="league-event-thumb" src="golf/events/img/toto-japan-classic-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 8</time></span><strong><a href="golf/events/toto-japan-classic.html">TOTO Japan Classic</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/japan/index.html"><img src="/content/locations/asia/japan/img/flag.svg" alt="" width="20" height="14">Japan</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/the-annika.html" aria-label="The ANNIKA driven by Gainbridge at Pelican"><img class="league-event-thumb" src="golf/events/img/the-annika-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 15</time></span><strong><a href="golf/events/the-annika.html">The ANNIKA driven by Gainbridge at Pelican</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/cme-group-tour-championship.html" aria-label="CME Group Tour Championship"><img class="league-event-thumb" src="golf/events/img/cme-group-tour-championship-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Ends Nov 22</time></span><strong><a href="golf/events/cme-group-tour-championship.html">CME Group Tour Championship</a></strong><span class="league-event-meta"><span class="league-event-area">Florida</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <article class="league-panel" id="league-liv" role="tabpanel" aria-labelledby="league-liv-tab" data-league-panel="liv">
+              <div class="league-split">
+                <div class="league-block">
+                  <h3>Top 3 now</h3>
+                  <ol class="league-ranking">
+                    <li><span class="league-rank">1</span><strong>Jon Rahm</strong><span class="league-points">802.33</span></li>
+                    <li><span class="league-rank">2</span><strong>Bryson DeChambeau</strong><span class="league-points">551.90</span></li>
+                    <li><span class="league-rank">3</span><strong>Lucas Herbert</strong><span class="league-points">299.18</span></li>
+                  </ol>
+                </div>
+                <div class="league-summary"><span>Launched in 2022</span><strong>LIV Golf</strong><p>Started as a Saudi PIF-backed breakaway league to challenge the PGA Tour model. It used guaranteed contracts, 54-hole events, shotgun starts and teams to attract star players and make a faster global product.</p></div>
+                <div class="league-block">
+                  <h3>2026 schedule</h3>
+                  <div class="league-phase-tabs" aria-label="Schedule filter">
+                    <button class="league-phase-tab" type="button" aria-pressed="false" data-phase-filter="past">Past</button>
+                    <button class="league-phase-tab" type="button" aria-pressed="true" data-phase-filter="upcoming">Upcoming</button>
+                  </div>
+                  <div class="league-events-header" aria-hidden="true"><span>Date</span><span>Event</span><span>Winner</span><span>Land</span><span>Place</span></div>
+                  <ul class="league-events league-events--calendar">
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-riyadh.html" aria-label="LIV Golf Riyadh"><img class="league-event-thumb" src="golf/events/img/liv-golf-riyadh-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Feb 4-7</time></span><strong><a href="golf/events/liv-golf-riyadh.html">LIV Golf Riyadh</a></strong><span class="league-event-meta"><span class="league-event-area">Riyadh</span><a class="country" href="/content/locations/asia/saudi-arabia/index.html"><img src="/content/locations/asia/saudi-arabia/img/flag.svg" alt="" width="20" height="14">Saudi Arabia</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-adelaide.html" aria-label="LIV Golf Adelaide"><img class="league-event-thumb" src="golf/events/img/liv-golf-adelaide-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Feb 12-15</time></span><strong><a href="golf/events/liv-golf-adelaide.html">LIV Golf Adelaide</a></strong><span class="league-event-meta"><span class="league-event-area">Adelaide</span><a class="country" href="/content/locations/oceania/australia/index.html"><img src="/content/locations/oceania/australia/img/flag.svg" alt="" width="20" height="14">Australia</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-hong-kong.html" aria-label="LIV Golf Hong Kong"><img class="league-event-thumb" src="golf/events/img/liv-golf-hong-kong-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Mar 5-8</time></span><strong><a href="golf/events/liv-golf-hong-kong.html">LIV Golf Hong Kong</a></strong><span class="league-event-meta"><span class="league-event-area">Hong Kong</span><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14">China</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-singapore.html" aria-label="LIV Golf Singapore"><img class="league-event-thumb" src="golf/events/img/liv-golf-singapore-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Mar 12-15</time></span><strong><a href="golf/events/liv-golf-singapore.html">LIV Golf Singapore</a></strong><span class="league-event-meta"><a class="country" href="/content/locations/asia/singapore/index.html"><img src="/content/locations/asia/singapore/img/flag.svg" alt="" width="20" height="14">Singapore</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-south-africa.html" aria-label="LIV Golf South Africa"><img class="league-event-thumb" src="golf/events/img/liv-golf-south-africa-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Mar 19-22</time></span><strong><a href="golf/events/liv-golf-south-africa.html">LIV Golf South Africa</a></strong><span class="league-event-meta"><span class="league-event-area">Johannesburg</span><a class="country" href="/content/locations/africa/south-africa/index.html"><img src="/content/locations/africa/south-africa/img/flag.svg" alt="" width="20" height="14">South Africa</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-mexico-city.html" aria-label="LIV Golf Mexico City"><img class="league-event-thumb" src="golf/events/img/liv-golf-mexico-city-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Apr 16-19</time></span><strong><a href="golf/events/liv-golf-mexico-city.html">LIV Golf Mexico City</a></strong><span class="league-event-meta"><span class="league-event-area">Mexico City</span><a class="country" href="/content/locations/north-america/mexico/index.html"><img src="/content/locations/north-america/mexico/img/flag.svg" alt="" width="20" height="14">Mexico</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-virginia.html" aria-label="LIV Golf Virginia"><img class="league-event-thumb" src="golf/events/img/liv-golf-virginia-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>May 7-10</time></span><strong><a href="golf/events/liv-golf-virginia.html">LIV Golf Virginia</a></strong><span class="league-event-meta"><span class="league-event-area">Virginia</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-korea.html" aria-label="LIV Golf Korea"><img class="league-event-thumb" src="golf/events/img/liv-golf-korea-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>May 28-31</time></span><strong><a href="golf/events/liv-golf-korea.html">LIV Golf Korea</a></strong><span class="league-event-meta"><span class="league-event-area">Busan</span><a class="country" href="/content/locations/asia/south-korea/index.html"><img src="/content/locations/asia/south-korea/img/flag.svg" alt="" width="20" height="14">South Korea</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-andalucia.html" aria-label="LIV Golf Andalucia"><img class="league-event-thumb" src="golf/events/img/liv-golf-andalucia-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Jun 4-7</time></span><strong><a href="golf/events/liv-golf-andalucia.html">LIV Golf Andalucia</a></strong><span class="league-event-meta"><span class="league-event-area">Andalucia</span><a class="country" href="/content/locations/europe/spain/index.html"><img src="/content/locations/europe/spain/img/flag.svg" alt="" width="20" height="14">Spain</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-louisiana.html" aria-label="LIV Golf Louisiana"><img class="league-event-thumb" src="golf/events/img/liv-golf-louisiana-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Jun 25-28</time></span><strong><a href="golf/events/liv-golf-louisiana.html">LIV Golf Louisiana</a></strong><span class="league-event-meta"><span class="league-event-area">Louisiana</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-uk.html" aria-label="LIV Golf UK"><img class="league-event-thumb" src="golf/events/img/liv-golf-uk-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Jul 23-26</time></span><strong><a href="golf/events/liv-golf-uk.html">LIV Golf UK</a></strong><span class="league-event-meta"><span class="league-event-area">England</span><a class="country" href="/content/locations/europe/united-kingdom/index.html"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-new-york.html" aria-label="LIV Golf New York"><img class="league-event-thumb" src="golf/events/img/liv-golf-new-york-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Aug 6-9</time></span><strong><a href="golf/events/liv-golf-new-york.html">LIV Golf New York</a></strong><span class="league-event-meta"><span class="league-event-area">New Jersey</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-golf-indianapolis.html" aria-label="LIV Golf Indianapolis"><img class="league-event-thumb" src="golf/events/img/liv-golf-indianapolis-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Aug 20-23</time></span><strong><a href="golf/events/liv-golf-indianapolis.html">LIV Golf Indianapolis</a></strong><span class="league-event-meta"><span class="league-event-area">Indiana</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                    <li><a class="league-event-thumb-link" href="golf/events/liv-team-championship-michigan.html" aria-label="LIV Team Championship Michigan"><img class="league-event-thumb" src="golf/events/img/liv-team-championship-michigan-mini.png" alt="" loading="lazy"></a><span class="league-event-copy"><span class="league-event-topline"><time>Aug 27-30</time></span><strong><a href="golf/events/liv-team-championship-michigan.html">LIV Team Championship Michigan</a></strong><span class="league-event-meta"><span class="league-event-area">Michigan</span><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14">United States</a></span></span></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
           </section>
+
         </div>
       </section>
     </main>
@@ -582,6 +746,151 @@
           });
         });
         activate(tabs.find((tab) => tab.getAttribute('aria-selected') === 'true')?.dataset.infoTab || tabs[0].dataset.infoTab);
+      })();
+      (() => {
+        const months = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const parseTourEndDate = (label) => {
+          const match = label.trim().toLowerCase().match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\s+(\d{1,2})(?:\s*-\s*(\d{1,2}))?/);
+          if (!match) return null;
+          return new Date(2026, months[match[1]], Number(match[3] || match[2]));
+        };
+        const winnerCountries = {
+          australia: { name: 'Australia', url: '/content/locations/oceania/australia/index.html', flag: '/content/locations/oceania/australia/img/flag.svg' },
+          colombia: { name: 'Colombia', url: '/content/locations/south-america/colombia/index.html', flag: '/content/locations/south-america/colombia/img/flag.svg' },
+          norway: { name: 'Norway', url: '/content/locations/europe/norway/index.html', flag: '/content/locations/europe/norway/img/flag.svg' },
+          spain: { name: 'Spain', url: '/content/locations/europe/spain/index.html', flag: '/content/locations/europe/spain/img/flag.svg' },
+          'south-korea': { name: 'South Korea', url: '/content/locations/asia/south-korea/index.html', flag: '/content/locations/asia/south-korea/img/flag.svg' },
+          thailand: { name: 'Thailand', url: '/content/locations/asia/thailand/index.html', flag: '/content/locations/asia/thailand/img/flag.svg' },
+          'united-kingdom': { name: 'United Kingdom', url: '/content/locations/europe/united-kingdom/index.html', flag: '/content/locations/europe/united-kingdom/img/flag.svg' },
+          usa: { name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }
+        };
+        const tourWinners2026 = {
+          'sony-open-in-hawaii': { name: 'Chris Gotterup', country: 'usa' },
+          'the-american-express': { name: 'Scottie Scheffler', country: 'usa' },
+          'farmers-insurance-open': { name: 'Justin Rose', country: 'united-kingdom' },
+          'wm-phoenix-open': { name: 'Chris Gotterup', country: 'usa' },
+          'at-and-t-pebble-beach-pro-am': { name: 'Collin Morikawa', country: 'usa' },
+          'genesis-invitational': { name: 'Jacob Bridgeman', country: 'usa' },
+          'cognizant-classic': { name: 'Nico Echavarria', country: 'colombia' },
+          'arnold-palmer-invitational': { name: 'Akshay Bhatia', country: 'usa' },
+          'puerto-rico-open': { name: 'Ricky Castillo', country: 'usa' },
+          'the-players-championship': { name: 'Cameron Young', country: 'usa' },
+          'valspar-championship': { name: 'Matt Fitzpatrick', country: 'united-kingdom' },
+          'texas-childrens-houston-open': { name: 'Gary Woodland', country: 'usa' },
+          'valero-texas-open': { name: 'J. J. Spaun', country: 'usa' },
+          'masters-tournament': { name: 'Rory McIlroy', country: 'united-kingdom' },
+          'rbc-heritage': { name: 'Matt Fitzpatrick', country: 'united-kingdom' },
+          'zurich-classic-of-new-orleans': { name: 'Alex Fitzpatrick / Matt Fitzpatrick', country: 'united-kingdom' },
+          'cadillac-championship': { name: 'Cameron Young', country: 'usa' },
+          'truist-championship': { name: 'Kristoffer Reitan', country: 'norway' },
+          'oneflight-myrtle-beach-classic': { name: 'Brandt Snedeker', country: 'usa' },
+          'pga-championship': { name: 'Aaron Rai', country: 'united-kingdom' },
+          'cj-cup-byron-nelson': { name: 'Wyndham Clark', country: 'usa' },
+          'hilton-grand-vacations-tournament-of-champions': { name: 'Nelly Korda', country: 'usa' },
+          'honda-lpga-thailand': { name: 'Jeeno Thitikul', country: 'thailand' },
+          'hsbc-womens-world-championship': { name: 'Hannah Green', country: 'australia' },
+          'blue-bay-lpga': { name: 'Lee Mi-hyang', country: 'south-korea' },
+          'fortinet-founders-cup': { name: 'Kim Hyo-joo', country: 'south-korea' },
+          'ford-championship': { name: 'Kim Hyo-joo', country: 'south-korea' },
+          'aramco-championship': { name: 'Lauren Coughlin', country: 'usa' },
+          'jm-eagle-la-championship': { name: 'Hannah Green', country: 'australia' },
+          'chevron-championship': { name: 'Nelly Korda', country: 'usa' },
+          'riviera-maya-open': { name: 'Nelly Korda', country: 'usa' },
+          'mizuho-americas-open': { name: 'Jeeno Thitikul', country: 'thailand' },
+          'kroger-queen-city-championship': { name: 'Lottie Woad', country: 'united-kingdom' },
+          'liv-golf-riyadh': { name: 'Elvis Smylie', country: 'australia' },
+          'liv-golf-adelaide': { name: 'Anthony Kim', country: 'usa' },
+          'liv-golf-hong-kong': { name: 'Jon Rahm', country: 'spain' },
+          'liv-golf-singapore': { name: 'Bryson DeChambeau', country: 'usa' },
+          'liv-golf-south-africa': { name: 'Bryson DeChambeau', country: 'usa' },
+          'liv-golf-mexico-city': { name: 'Jon Rahm', country: 'spain' },
+          'liv-golf-virginia': { name: 'Lucas Herbert', country: 'australia' }
+        };
+        const getEventSlug = (row) => {
+          const href = row.querySelector('strong a')?.getAttribute('href') || '';
+          return href.match(/([^/]+)\.html$/)?.[1] || '';
+        };
+        const createCountryLink = (country) => {
+          if (!country) return null;
+          const link = document.createElement('a');
+          link.className = 'country league-event-winner-country';
+          link.href = country.url;
+          const img = document.createElement('img');
+          img.src = country.flag;
+          img.alt = '';
+          img.width = 20;
+          img.height = 14;
+          link.append(img, document.createTextNode(country.name));
+          return link;
+        };
+        const renderTourBadge = (row, text, modifier) => {
+          const topline = row.querySelector('.league-event-topline');
+          if (!topline || topline.querySelector(`.${modifier}`)) return;
+          const badge = document.createElement('span');
+          badge.className = `league-event-badge ${modifier}`;
+          badge.textContent = text;
+          topline.append(badge);
+        };
+        const renderWinner = (row, winner) => {
+          const copy = row.querySelector('.league-event-copy');
+          if (!copy) return;
+          let winnerEl = row.querySelector('.league-event-winner');
+          if (!winnerEl) {
+            winnerEl = document.createElement('span');
+            winnerEl.className = 'league-event-winner';
+            const meta = row.querySelector('.league-event-meta');
+            if (meta) meta.before(winnerEl);
+            else copy.append(winnerEl);
+          }
+          winnerEl.textContent = winner?.name || 'TBC';
+          row.querySelector('.league-event-winner-country')?.remove();
+          const countryLink = createCountryLink(winnerCountries[winner?.country]);
+          if (countryLink) winnerEl.after(countryLink);
+        };
+        const applyPhaseFilter = (block, phase) => {
+          const list = block.querySelector('.league-events--calendar');
+          const rows = Array.from(list?.querySelectorAll('li') || []);
+          block.classList.toggle('league-block--upcoming', phase === 'upcoming');
+          block.classList.toggle('league-block--past', phase === 'past');
+          block.querySelectorAll('[data-phase-filter]').forEach((tab) => {
+            tab.setAttribute('aria-pressed', String(tab.dataset.phaseFilter === phase));
+          });
+          rows.forEach((row) => {
+            const hide = phase === 'past' ? !row.classList.contains('league-event--past') : row.classList.contains('league-event--past');
+            row.hidden = hide;
+            row.classList.toggle('league-event--hidden', hide);
+          });
+          if (list) list.scrollTop = 0;
+        };
+
+        document.querySelectorAll('.league-events--calendar').forEach((list) => {
+          const rows = Array.from(list.querySelectorAll('li'));
+          rows.forEach((row) => {
+            row.querySelectorAll('.league-event-badge--start, .league-event-badge--finale').forEach((badge) => badge.remove());
+            const time = row.querySelector('time');
+            if (!time) return;
+            const endDate = parseTourEndDate(time.textContent);
+            if (!endDate) return;
+            const isPast = endDate < today;
+            row.classList.toggle('league-event--past', isPast);
+            const winnerEl = row.querySelector('.league-event-winner');
+            row.querySelector('.league-event-winner-country')?.remove();
+            if (isPast) renderWinner(row, tourWinners2026[getEventSlug(row)]);
+            else if (winnerEl) winnerEl.remove();
+          });
+          if (rows[0]) renderTourBadge(rows[0], 'Start', 'league-event-badge--start');
+          if (rows.at(-1)) renderTourBadge(rows.at(-1), 'Finale', 'league-event-badge--finale');
+
+          const block = list.closest('.league-block');
+          const tabs = Array.from(block?.querySelectorAll('[data-phase-filter]') || []);
+          if (!block || !tabs.length) return;
+          tabs.forEach((tab) => {
+            tab.addEventListener('click', () => applyPhaseFilter(block, tab.dataset.phaseFilter || 'upcoming'));
+          });
+          applyPhaseFilter(block, tabs.find((tab) => tab.getAttribute('aria-pressed') === 'true')?.dataset.phaseFilter || 'upcoming');
+        });
       })();
       (() => {
         const tabs = Array.from(document.querySelectorAll('[data-league-tab]'));

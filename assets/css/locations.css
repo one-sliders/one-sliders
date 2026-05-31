@@ -1405,6 +1405,50 @@ html:has(body.country-onepage) {
   line-height: 1.1;
 }
 
+.country-history-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  max-height: clamp(210px, 30vh, 300px);
+  overflow: hidden;
+}
+
+.country-history-list {
+  display: grid;
+  gap: 7px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.country-history-list div {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--location-line);
+}
+
+.country-history-list div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.country-history-list time {
+  color: var(--location-theme);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.country-history-list span {
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.28;
+}
+
 .country-panel-card--split {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
@@ -2248,6 +2292,65 @@ html:has(body.country-onepage) {
   font-size: 13px;
 }
 
+.continent-subgroup--isles {
+  gap: 10px;
+}
+
+.isles-note,
+.isles-level p {
+  margin: 0;
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.isles-hierarchy {
+  display: grid;
+  gap: 10px;
+}
+
+.isles-level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.isles-level {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid var(--location-line);
+  border-radius: 12px;
+}
+
+.isles-level--root {
+  background: #f7fbff;
+}
+
+.isles-level--state {
+  background: #fffdf6;
+}
+
+.isles-level__tag {
+  color: var(--location-theme);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.country-chip--subdivision {
+  background: #fff;
+}
+
+.country-chip--no-flag {
+  background: #f8fbfd;
+  border-style: dashed;
+  border-color: #c8d6df;
+}
+
 .continent-subgroup strong img {
   width: 20px;
   height: 14px;
@@ -2510,6 +2613,10 @@ html:has(body.country-onepage) {
   }
 
   .continent-subgroups {
+    grid-template-columns: 1fr;
+  }
+
+  .isles-level-grid {
     grid-template-columns: 1fr;
   }
 

@@ -24,6 +24,37 @@
       .replace(/>/g, '&gt;');
   }
 
+  function siteRootHref() {
+    var script = document.currentScript ||
+      document.querySelector('script[src*="events.js"]');
+    if (!script) return '/';
+    var src = script.getAttribute('src') || '';
+    return src.replace(/assets\/js\/events\.js(?:\?[^/]*)?$/, '') || '/';
+  }
+
+  function ensureSingleFooter() {
+    var opt = document.querySelector('meta[name="os-footer"]');
+    if (opt && opt.content === 'off') return;
+
+    var root = siteRootHref();
+    var year = new Date().getFullYear();
+    var content = '<p>&copy; ' + year + ' OneSliders &middot; ' +
+      '<a href="' + escapeAttribute(root + 'privacy.html') + '">Privacy</a></p>';
+    var footers = Array.prototype.slice.call(document.querySelectorAll('footer'));
+    var footer = document.querySelector('footer.event-footer') || footers[0];
+
+    if (!footer) {
+      footer = document.createElement('footer');
+      document.body.appendChild(footer);
+    }
+
+    footer.classList.add('event-footer');
+    footer.innerHTML = content;
+    footers.forEach(function (item) {
+      if (item !== footer) item.remove();
+    });
+  }
+
   function escapeIcs(value) {
     return String(value || '')
       .replace(/\\/g, '\\\\')
@@ -349,7 +380,7 @@
     var flag = item.flag
       ? '<img class="country-hero-card__flag" src="' + escapeAttribute(item.flag) + '" alt="" width="20" height="14">'
       : '';
-    return '<a class="country country--hero-card" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(item.name) + '">' +
+    return '<a class="country country--hero-card' + (hero ? '' : ' country--hero-card--no-image') + '" href="' + escapeAttribute(item.url) + '" data-country-name="' + escapeAttribute(item.name) + '">' +
       heroImage +
       '<span class="country-hero-card__copy">' +
         '<span class="country-hero-card__label">' + flag + item.name + '</span>' +
@@ -366,11 +397,15 @@
   function removeBrokenCountryHeroImages(root) {
     (root || document).querySelectorAll('.country-hero-card__image').forEach(function (image) {
       if (image.complete && image.naturalWidth === 0) {
+        var brokenCard = image.closest('.country--hero-card');
         image.remove();
+        if (brokenCard) brokenCard.classList.add('country--hero-card--no-image');
         return;
       }
       image.addEventListener('error', function () {
+        var brokenCard = image.closest('.country--hero-card');
         image.remove();
+        if (brokenCard) brokenCard.classList.add('country--hero-card--no-image');
       }, { once: true });
     });
   }
@@ -774,18 +809,7 @@
   }
 
   function sourceCard(data) {
-    if (data && data.hideReferences) return '';
-    var sourceLinks = ((data && data.sources) || []).filter(function (item) {
-      return item && item.label;
-    }).map(function (item) {
-      if (!item.url || item.url === '#') return '<span>' + item.label + '</span>';
-      return '<a href="' + escapeAttribute(item.url) + '">' + item.label + '</a>';
-    }).join(' ');
-    var updated = data && data.lastUpdated ? data.lastUpdated : 'TBC';
-    return '<div class="sources"><span>References</span><p>' +
-      (sourceLinks || 'Reference details TBC') +
-      '<br>Last updated: ' + updated +
-    '</p></div>';
+    return '';
   }
 
   function editionActionButtons(data, edition, allowCalendar) {
@@ -953,7 +977,10 @@
     var number = Number(value);
     if (!Number.isFinite(number)) return String(value);
     if (number === 0) return 'E';
-    return number > 0 ? '+' + number : String(number);
+    var label = Number.isInteger(number)
+      ? String(number)
+      : number.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+    return number > 0 ? '+' + label : label;
   }
 
   function playerScoresByRound(player, par) {
@@ -976,7 +1003,7 @@
     var note = progression.note || '';
     if (!players.length) {
       return '<span class="score-progression score-progression--empty">' +
-        '<span class="score-progression__empty">Leaderboard graph appears here after Round 1.</span>' +
+        '<span class="score-progression__empty">' + (progression.emptyText || 'Leaderboard graph appears here after Round 1.') + '</span>' +
         (note ? '<span class="score-progression__note">' + note + '</span>' : '') +
       '</span>';
     }
@@ -988,7 +1015,7 @@
         values: playerScoresByRound(player, progression.par)
       };
     }).filter(function (item) {
-      return item.values.length >= 2 && item.values.every(function (value) { return Number.isFinite(value); });
+      return item.values.length >= 1 && item.values.every(function (value) { return Number.isFinite(value); });
     });
     if (!series.length) return '';
 
@@ -1198,7 +1225,9 @@
   function renderEditionWithStages(data, edition, target) {
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
-    var countryHtml = data.hideEditionCountryFact ? '' : countryFact(editionCountries);
+    var countryHtml = data.hideEditionCountryFact
+      ? ''
+      : (edition.countryFact ? fact('Country', edition.countryFact) : countryFact(editionCountries));
     var overviewCards = (edition.overviewCards || []).map(compactCard).join('');
     var overview = overviewCards
       ? '<div class="edition-overview"><div class="edition-overview__cards">' + overviewCards + '</div></div>'
@@ -1211,6 +1240,7 @@
       ? stageTabs + questions
       : questions + stageTabs;
     var actions = editionActionButtons(data, edition, !shouldSuppressEditionCalendar(data));
+    var historyNotice = edition.historyNotice ? highlight(edition.historyNotice) : '';
 
     target.innerHTML =
       '<div class="facts-strip facts-strip--edition">' +
@@ -1220,6 +1250,7 @@
         fact('Dates', edition.dates) +
         (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
+      historyNotice +
       overview +
       weatherCard +
       editionContent +
@@ -1242,7 +1273,9 @@
     if (heading) heading.textContent = data.eventName + ' ' + edition.year + ' ' + edition.headingPlace;
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
-    var countryHtml = data.hideEditionCountryFact ? '' : countryFact(editionCountries);
+    var countryHtml = data.hideEditionCountryFact
+      ? ''
+      : (edition.countryFact ? fact('Country', edition.countryFact) : countryFact(editionCountries));
 
     if (edition.stageTabs && edition.stageTabs.length) {
       renderEditionWithStages(data, edition, target);
@@ -1275,8 +1308,9 @@
     var finalResults = edition.status === 'past' && edition.finalStandings
       ? '<div class="card card--standings"><span>Top results</span><strong>Top finishers</strong>' + standingRows(edition.finalStandings) + '</div>'
       : '';
-    var scoreProgressionCard = edition.scoreProgression
-      ? '<div class="stage-card stage-card--wide stage-card--leaderboard-chart"><span>Leaderboard</span><strong>Round progression</strong><p>' + renderScoreProgression(edition.scoreProgression) + '</p></div>'
+    var scoreProgressionMarkup = edition.scoreProgression ? renderScoreProgression(edition.scoreProgression) : '';
+    var scoreProgressionCard = scoreProgressionMarkup
+      ? '<div class="stage-card stage-card--wide stage-card--leaderboard-chart"><span>Leaderboard</span><strong>Round progression</strong><p>' + scoreProgressionMarkup + '</p></div>'
       : '';
     var medalGames = edition.status === 'past' && edition.medalGames
       ? '<div class="card card--standings"><span>Medal games</span><strong>Results</strong>' + resultRows(edition.medalGames) + '</div>'
@@ -1285,6 +1319,7 @@
     var editionDetails = editionBlocks ? '<div class="question-grid">' + editionBlocks + '</div>' : '';
     var weatherCard = renderWeatherCard(data, edition);
     var actions = editionActionButtons(data, edition, true);
+    var historyNotice = edition.historyNotice ? highlight(edition.historyNotice) : '';
 
     target.innerHTML =
       '<div class="facts-strip">' +
@@ -1295,6 +1330,7 @@
         fact('Status', edition.statusLabel) +
         (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
+      historyNotice +
       lifecycle +
       scoreProgressionCard +
       finalResults +
@@ -1320,7 +1356,8 @@
     var switcherEditions = data.editions.slice().sort(function (a, b) {
       return Number(a.year) - Number(b.year);
     });
-    if (switcherEditions.length <= 1 || data.hideYearSwitcher) {
+    var keepSingleSwitcher = document.body && document.body.classList.contains('event-page--framed');
+    if ((switcherEditions.length <= 1 && !keepSingleSwitcher) || data.hideYearSwitcher) {
       switcher.hidden = true;
     }
     function requestedYearFromLocation() {
@@ -1796,6 +1833,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    ensureSingleFooter();
     initCarousel();
     initYearSwitcher();
     initPartSwitcher();
