@@ -1198,6 +1198,7 @@ function updateEventsIndexLinks() {
   const file = path.join(root, 'content/events/index.html');
   if (!fs.existsSync(file)) return;
   let source = fs.readFileSync(file, 'utf8');
+  source = insertGolfCardsInEventsIndex(source);
   for (const item of events) {
     source = source
       .replaceAll(`../../en/content/categories/sport/golf/events/${item.slug}.html`, `../categories/sport/golf/events/${item.slug}.html`)
@@ -1211,6 +1212,44 @@ function updateEventsIndexLinks() {
     .replaceAll(`../categories/sport/golf/events/ryder-cup.html`, `../../en/content/categories/sport/golf/events/ryder-cup.html`)
     .replaceAll(`../categories/sport/golf/events/img/ryder-cup-mini.png`, `../../en/content/categories/sport/golf/events/img/ryder-cup-mini.png`);
   fs.writeFileSync(file, source);
+}
+
+function eventsIndexCard(item) {
+  const start = startDateObj(item).toISOString().slice(0, 10);
+  const meta = `${displayDate(item)} - ${metaLocation(item)}`;
+  return `        <a class="event-card" data-end="${html(item.endDate)}" data-cat="sport" data-topic="golf" data-cont="${html(item.host.continent)}" data-country="${html(item.host.slug)}" data-keywords="${html(`${item.name}, ${tours[item.tour].name}, golf`)}" href="../categories/sport/golf/events/${html(item.slug)}.html" data-start="${html(start)}" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../categories/sport/golf/events/img/${html(item.slug)}-mini.png" alt="${html(item.name)}" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">${html(item.name)}</strong><span class="card-meta">${html(meta)}</span></div></a>`;
+}
+
+function legacyGolfIndexCards() {
+  return [
+    `        <a class="event-card" data-end="2026-06-15" data-cat="sport" data-topic="golf" data-cont="europe" data-country="norway" href="../../en/content/categories/sport/golf/events/oslo-ladies-open.html" data-start="2026-06-12" data-reach="national" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../../en/content/categories/sport/golf/events/img/oslo-ladies-open-mini.png" alt="KLPGA Oslo Ladies Open" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">KLPGA Oslo Ladies Open</strong><span class="card-meta">12-15 Jun 2026 - Oslo, Norway</span></div></a>`,
+    `        <a class="event-card" data-end="2027-09-19" data-cat="sport" data-topic="golf" data-cont="europe" data-country="ireland" data-keywords="ryder cup, ryder cup schedule, ryder cup tickets" href="../../en/content/categories/sport/golf/events/ryder-cup.html" data-start="2027-09-17" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../../en/content/categories/sport/golf/events/img/ryder-cup-mini.png" alt="Ryder Cup 2027" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">Ryder Cup 2027</strong><span class="card-meta">17-19 Sep 2027 - Adare, Ireland</span></div></a>`
+  ];
+}
+
+function removeExistingGolfTourCards(source) {
+  for (const item of events) {
+    const slug = item.slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const cardPattern = new RegExp(`\\s*<a class="event-card"(?=[^>]*href="(?:\\.\\.\\/categories\\/sport\\/golf\\/events\\/|\\.\\.\\/\\.\\.\\/en\\/content\\/categories\\/sport\\/golf\\/events\\/|\\/content\\/categories\\/sport\\/golf\\/events\\/|\\/en\\/content\\/categories\\/sport\\/golf\\/events\\/)${slug}\\.html")[^>]*>[\\s\\S]*?<\\/a>`, 'g');
+    source = source.replace(cardPattern, '');
+  }
+  return source;
+}
+
+function insertGolfCardsInEventsIndex(source) {
+  const block = [
+    '    <!-- golf-tour-events:start -->',
+    ...events
+      .slice()
+      .sort((a, b) => startDateObj(a) - startDateObj(b) || a.name.localeCompare(b.name))
+      .map(eventsIndexCard),
+    ...legacyGolfIndexCards(),
+    '    <!-- golf-tour-events:end -->'
+  ].join('\n');
+
+  source = source.replace(/\s*<!-- golf-tour-events:start -->[\s\S]*?<!-- golf-tour-events:end -->\r?\n?/g, '\n');
+  source = removeExistingGolfTourCards(source);
+  return source.replace(/(\s*<\/main>\s*<footer class="site-footer">)/, `\n${block}\n$1`);
 }
 
 function listHtmlFiles(dir) {

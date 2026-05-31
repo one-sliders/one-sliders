@@ -1,20 +1,21 @@
 /* OneSliders core script
  * ======================
  * This file is loaded on every page via:
- *   <script src="/assets/js/oneslider-core.js"></script>      (synchronous)
+ *   <script defer src="/assets/js/oneslider-core.js"></script>
  *
  * It is the SINGLE place to add new site-wide functionality. To add a
  * new feature: scroll to the bottom and follow the module template.
  *
  * Currently bundled modules:
- *   - analytics     Google Consent Mode v2 + GA4 bootstrap (runs FIRST,
- *                   synchronously, before this script finishes parsing)
+ *   - analytics     Google Consent Mode v2 + GA4 bootstrap (runs first
+ *                   inside this deferred file, before gtag.js is appended)
  *   - consent       Geo-aware cookie banner UI
  *
- * Why synchronous? Because Google Consent Mode v2 requires
+ * Why it can be deferred: Google Consent Mode v2 requires
  *   gtag('consent','default', {...denied...})
- * to be issued BEFORE gtag.js loads. Loading this file sync at the top
- * of <head> gives us that guarantee with zero inline JS on the page.
+ * to be issued BEFORE gtag.js loads. This file creates and appends gtag.js
+ * only after setting the default consent state, so deferred loading removes a
+ * render-blocking parser pause while preserving that ordering.
  */
 (function () {
   'use strict';

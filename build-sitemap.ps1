@@ -11,16 +11,29 @@ function Convert-ToUrlPath($file) {
   return $rel
 }
 
-function Get-Canonical($html) {
-  $m = [regex]::Match($html, '<link[^>]*rel=["'']canonical["''][^>]*>', 'IgnoreCase')
+function Get-Attr($tag, $name) {
+  $m = [regex]::Match($tag, "\b$([regex]::Escape($name))=[""']([^""']*)[""']", 'IgnoreCase')
   if (-not $m.Success) { return $null }
-  $h = [regex]::Match($m.Value, 'href=["'']([^"'']+)["'']', 'IgnoreCase')
-  if (-not $h.Success) { return $null }
-  return $h.Groups[1].Value.TrimEnd('/')
+  return $m.Groups[1].Value.Trim()
+}
+
+function Get-Canonical($html) {
+  foreach ($m in [regex]::Matches($html, '<link\b[^>]*>', 'IgnoreCase')) {
+    if ((Get-Attr $m.Value 'rel') -eq 'canonical') {
+      $href = Get-Attr $m.Value 'href'
+      if ($href) { return $href.TrimEnd('/') }
+    }
+  }
+  return $null
 }
 
 function Is-NoIndex($html) {
-  return [regex]::IsMatch($html, '<meta[^>]*name=["'']robots["''][^>]*content=["''][^"'']*noindex', 'IgnoreCase')
+  foreach ($m in [regex]::Matches($html, '<meta\b[^>]*>', 'IgnoreCase')) {
+    if ((Get-Attr $m.Value 'name') -eq 'robots') {
+      return (Get-Attr $m.Value 'content') -match '\bnoindex\b'
+    }
+  }
+  return $false
 }
 
 function Get-Priority($urlPath) {

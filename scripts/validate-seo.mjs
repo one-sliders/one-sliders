@@ -70,10 +70,49 @@ function tagContent(html, regex) {
   return html.match(regex)?.[1]?.trim() || "";
 }
 
+function tagAttr(tag, attrName) {
+  const escaped = attrName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return tag.match(new RegExp(`\\b${escaped}=["']([^"']*)["']`, "i"))?.[1]?.trim() || "";
+}
+
+function htmlTags(html, tagName) {
+  return [...html.matchAll(new RegExp(`<${tagName}\\b[^>]*>`, "gi"))].map((match) => match[0]);
+}
+
+function metaContent(html, nameOrProperty, value) {
+  for (const tag of htmlTags(html, "meta")) {
+    const name = tagAttr(tag, nameOrProperty);
+    if (name.toLowerCase() === value.toLowerCase()) return tagAttr(tag, "content");
+  }
+  return "";
+}
+
+function linkHref(html, relValue) {
+  for (const tag of htmlTags(html, "link")) {
+    const rel = tagAttr(tag, "rel");
+    if (rel.toLowerCase() === relValue.toLowerCase()) return tagAttr(tag, "href");
+  }
+  return "";
+}
+
+function isNoindex(html) {
+  return /\bnoindex\b/i.test(metaContent(html, "name", "robots"));
+}
+
 function hasElementIdOrName(html, fragment) {
   if (!fragment) return true;
   const escaped = fragment.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return new RegExp(`\\b(?:id|name)=["']${escaped}["']`, "i").test(html);
+}
+
+function isExcludedFromSitemap(rel) {
+  const first = rel.split("/")[0];
+  return (
+    deletedLangs.has(first) ||
+    rel.startsWith("tmp/") ||
+    rel.startsWith("docs/") ||
+    rel.startsWith("shopping-list/")
+  );
 }
 
 const files = walk(root);
@@ -109,10 +148,10 @@ for (const file of htmlFiles) {
   }
 
   const title = tagContent(html, /<title>([\s\S]*?)<\/title>/i);
-  const description = tagContent(html, /<meta\b[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i);
-  const canonical = tagContent(html, /<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i);
-  const ogUrl = tagContent(html, /<meta\b[^>]*property=["']og:url["'][^>]*content=["']([^"']+)["'][^>]*>/i);
-  const robots = tagContent(html, /<meta\b[^>]*name=["']robots["'][^>]*content=["']([^"']+)["'][^>]*>/i);
+  const description = metaContent(html, "name", "description");
+  const canonical = linkHref(html, "canonical");
+  const ogUrl = metaContent(html, "property", "og:url");
+  const robots = metaContent(html, "name", "robots");
 
   if (!title) seoIssues.push({ file: rel, issue: "missing title" });
   if (!description) seoIssues.push({ file: rel, issue: "missing meta description" });
@@ -127,25 +166,44 @@ for (const file of htmlFiles) {
 
 const sitemapXml = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const sitemapLocs = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+const sitemapLocSet = new Set(sitemapLocs.map((loc) => loc.replace(/\/$/, "")));
+const expectedSitemapLocs = [];
 const sitemapIssues = [];
 for (const loc of sitemapLocs) {
   const local = toLocalTarget(path.join(root, "index.html"), loc);
+  if (local && isExcludedFromSitemap(relPath(local.file))) {
+    sitemapIssues.push({ loc, issue: "excluded directory in sitemap" });
+  }
   if (!local || !fileSet.has(path.resolve(local.file).toLowerCase())) {
     sitemapIssues.push({ loc, issue: "target file missing" });
     continue;
   }
   const html = fs.readFileSync(local.file, "utf8");
-  const canonical = tagContent(html, /<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i);
-  const robots = tagContent(html, /<meta\b[^>]*name=["']robots["'][^>]*content=["']([^"']+)["'][^>]*>/i);
-  if (/noindex/i.test(robots)) sitemapIssues.push({ loc, issue: "noindex page in sitemap" });
+  const canonical = linkHref(html, "canonical");
+  if (isNoindex(html)) sitemapIssues.push({ loc, issue: "noindex page in sitemap" });
   if (canonical.replace(/\/$/, "") !== loc.replace(/\/$/, "")) {
     sitemapIssues.push({ loc, issue: `canonical mismatch: ${canonical}` });
+  }
+}
+
+for (const file of htmlFiles) {
+  const rel = relPath(file);
+  if (isExcludedFromSitemap(rel)) continue;
+  const html = fs.readFileSync(file, "utf8");
+  if (isNoindex(html)) continue;
+  const canonical = linkHref(html, "canonical");
+  if (!canonical) continue;
+  if (canonical.replace(/\/$/, "") !== urlFor(rel).replace(/\/$/, "")) continue;
+  expectedSitemapLocs.push(canonical);
+  if (!sitemapLocSet.has(canonical.replace(/\/$/, ""))) {
+    sitemapIssues.push({ loc: canonical, issue: "indexable canonical page missing from sitemap" });
   }
 }
 
 const result = {
   htmlFiles: htmlFiles.length,
   sitemapUrls: sitemapLocs.length,
+  expectedSitemapUrls: expectedSitemapLocs.length,
   missingRefs: missingRefs.length,
   deletedLangRefs: deletedLangRefs.length,
   fragmentMisses: fragmentMisses.length,
