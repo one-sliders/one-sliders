@@ -1,439 +1,508 @@
 {
-    "event":  "iihf-world-championship",
-    "updated":  "26 May 2026",
-    "pointsSystem":  "iihf",
-    "advanceCount":  4,
-    "advanceLabel":  "Qualified",
-    "sources":  [
-                    "https://www.iihf.com/en/events/2026/wm",
-                    "https://stats.iihf.com/Hydra/969/index.html"
-                ],
-    "teams":  {
-                  "finland":  {
-                                  "name":  "Finland",
-                                  "url":  "/content/locations/europe/finland/index.html",
-                                  "flag":  "/content/locations/europe/finland/img/flag.svg"
-                              },
-                  "germany":  {
-                                  "name":  "Germany",
-                                  "url":  "/content/locations/europe/germany/index.html",
-                                  "flag":  "/content/locations/europe/germany/img/flag.svg"
-                              },
-                  "usa":  {
-                              "name":  "United States",
-                              "url":  "/content/locations/north-america/usa/index.html",
-                              "flag":  "/content/locations/north-america/usa/img/flag.svg"
-                          },
-                  "switzerland":  {
-                                      "name":  "Switzerland",
-                                      "url":  "/content/locations/europe/switzerland/index.html",
-                                      "flag":  "/content/locations/europe/switzerland/img/flag.svg"
-                                  },
-                  "united-kingdom":  {
-                                         "name":  "United Kingdom",
-                                         "url":  "/content/locations/europe/united-kingdom/index.html",
-                                         "flag":  "/content/locations/europe/united-kingdom/img/flag.svg"
-                                     },
-                  "austria":  {
-                                  "name":  "Austria",
-                                  "url":  "/content/locations/europe/austria/index.html",
-                                  "flag":  "/content/locations/europe/austria/img/flag.svg"
-                              },
-                  "hungary":  {
-                                  "name":  "Hungary",
-                                  "url":  "/content/locations/europe/hungary/index.html",
-                                  "flag":  "/content/locations/europe/hungary/img/flag.svg"
-                              },
-                  "latvia":  {
-                                 "name":  "Latvia",
-                                 "url":  "/content/locations/europe/latvia/index.html",
-                                 "flag":  "/content/locations/europe/latvia/img/flag.svg"
-                             },
-                  "canada":  {
-                                 "name":  "Canada",
-                                 "url":  "/content/locations/north-america/canada/index.html",
-                                 "flag":  "/content/locations/north-america/canada/img/flag.svg"
-                             },
-                  "sweden":  {
-                                 "name":  "Sweden",
-                                 "url":  "/content/locations/europe/sweden/index.html",
-                                 "flag":  "/content/locations/europe/sweden/img/flag.svg"
-                             },
-                  "czechia":  {
-                                  "name":  "Czechia",
-                                  "url":  "/content/locations/europe/czechia/index.html",
-                                  "flag":  "/content/locations/europe/czechia/img/flag.svg"
-                              },
-                  "denmark":  {
-                                  "name":  "Denmark",
-                                  "url":  "/content/locations/europe/denmark/index.html",
-                                  "flag":  "/content/locations/europe/denmark/img/flag.svg"
-                              },
-                  "slovakia":  {
-                                   "name":  "Slovakia",
-                                   "url":  "/content/locations/europe/slovakia/index.html",
-                                   "flag":  "/content/locations/europe/slovakia/img/flag.svg"
-                               },
-                  "norway":  {
-                                 "name":  "Norway",
-                                 "url":  "/content/locations/europe/norway/index.html",
-                                 "flag":  "/content/locations/europe/norway/img/flag.svg"
-                             },
-                  "italy":  {
-                                "name":  "Italy",
-                                "url":  "/content/locations/europe/italy/index.html",
-                                "flag":  "/content/locations/europe/italy/img/flag.svg"
-                            },
-                  "slovenia":  {
-                                   "name":  "Slovenia",
-                                   "url":  "/content/locations/europe/slovenia/index.html",
-                                   "flag":  "/content/locations/europe/slovenia/img/flag.svg"
-                               }
-              },
-    "groups":  {
-                   "group-a":  {
-                                   "label":  "Group A",
-                                   "matches":  [
-                                                   {
-                                                       "date":  "15 May",
-                                                       "home":  "finland",
-                                                       "away":  "germany",
-                                                       "score":  "3-1"
-                                                   },
-                                                   {
-                                                       "date":  "15 May",
-                                                       "home":  "usa",
-                                                       "away":  "switzerland",
-                                                       "score":  "1-3"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "united-kingdom",
-                                                       "away":  "austria",
-                                                       "score":  "2-5"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "hungary",
-                                                       "away":  "finland",
-                                                       "score":  "1-4"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "switzerland",
-                                                       "away":  "latvia",
-                                                       "score":  "4-2"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "united-kingdom",
-                                                       "away":  "usa",
-                                                       "score":  "1-5"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "austria",
-                                                       "away":  "hungary",
-                                                       "score":  "4-2"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "germany",
-                                                       "away":  "latvia",
-                                                       "score":  "0-2"
-                                                   },
-                                                   {
-                                                       "date":  "18 May",
-                                                       "home":  "finland",
-                                                       "away":  "usa",
-                                                       "score":  "6-2"
-                                                   },
-                                                   {
-                                                       "date":  "18 May",
-                                                       "home":  "germany",
-                                                       "away":  "switzerland",
-                                                       "score":  "1-6"
-                                                   },
-                                                   {
-                                                       "date":  "19 May",
-                                                       "home":  "latvia",
-                                                       "away":  "austria",
-                                                       "score":  "1-3"
-                                                   },
-                                                   {
-                                                       "date":  "19 May",
-                                                       "home":  "hungary",
-                                                       "away":  "united-kingdom",
-                                                       "score":  "5-0"
-                                                   },
-                                                   {
-                                                       "date":  "20 May",
-                                                       "home":  "austria",
-                                                       "away":  "switzerland",
-                                                       "score":  "0-9"
-                                                   },
-                                                   {
-                                                       "date":  "20 May",
-                                                       "home":  "usa",
-                                                       "away":  "germany",
-                                                       "score":  "4-3 OT"
-                                                   },
-                                                   {
-                                                       "date":  "21 May",
-                                                       "home":  "latvia",
-                                                       "away":  "finland",
-                                                       "score":  "1-7"
-                                                   },
-                                                   {
-                                                       "date":  "21 May",
-                                                       "home":  "switzerland",
-                                                       "away":  "united-kingdom",
-                                                       "score":  "4-1"
-                                                   },
-                                                   {
-                                                       "date":  "22 May",
-                                                       "home":  "germany",
-                                                       "away":  "hungary",
-                                                       "score":  "6-2"
-                                                   },
-                                                   {
-                                                       "date":  "22 May",
-                                                       "home":  "finland",
-                                                       "away":  "united-kingdom",
-                                                       "score":  "4-0"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "latvia",
-                                                       "away":  "usa",
-                                                       "score":  "4-2"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "switzerland",
-                                                       "away":  "hungary",
-                                                       "score":  "9-0"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "austria",
-                                                       "away":  "germany",
-                                                       "score":  "2-6"
-                                                   },
-                                                   {
-                                                       "date":  "24 May",
-                                                       "home":  "united-kingdom",
-                                                       "away":  "latvia",
-                                                       "score":  "0-6"
-                                                   },
-                                                   {
-                                                       "date":  "24 May",
-                                                       "home":  "finland",
-                                                       "away":  "austria",
-                                                       "score":  "5-2"
-                                                   },
-                                                   {
-                                                       "date":  "25 May",
-                                                       "home":  "usa",
-                                                       "away":  "hungary",
-                                                       "score":  "7-3"
-                                                   },
-                                                   {
-                                                       "date":  "25 May",
-                                                       "home":  "germany",
-                                                       "away":  "united-kingdom",
-                                                       "score":  "6-3"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "hungary",
-                                                       "away":  "latvia",
-                                                       "score":  "1-8"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "usa",
-                                                       "away":  "austria",
-                                                       "score":  "4-1"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "switzerland",
-                                                       "away":  "finland"
-                                                   }
-                                               ]
-                               },
-                   "group-b":  {
-                                   "label":  "Group B",
-                                   "matches":  [
-                                                   {
-                                                       "date":  "15 May",
-                                                       "home":  "canada",
-                                                       "away":  "sweden",
-                                                       "score":  "5-3"
-                                                   },
-                                                   {
-                                                       "date":  "15 May",
-                                                       "home":  "czechia",
-                                                       "away":  "denmark",
-                                                       "score":  "4-1"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "slovakia",
-                                                       "away":  "norway",
-                                                       "score":  "2-1"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "italy",
-                                                       "away":  "canada",
-                                                       "score":  "0-6"
-                                                   },
-                                                   {
-                                                       "date":  "16 May",
-                                                       "home":  "slovenia",
-                                                       "away":  "czechia",
-                                                       "score":  "3-2 OT"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "italy",
-                                                       "away":  "slovakia",
-                                                       "score":  "1-4"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "denmark",
-                                                       "away":  "sweden",
-                                                       "score":  "2-6"
-                                                   },
-                                                   {
-                                                       "date":  "17 May",
-                                                       "home":  "norway",
-                                                       "away":  "slovenia",
-                                                       "score":  "4-0"
-                                                   },
-                                                   {
-                                                       "date":  "18 May",
-                                                       "home":  "canada",
-                                                       "away":  "denmark",
-                                                       "score":  "5-1"
-                                                   },
-                                                   {
-                                                       "date":  "18 May",
-                                                       "home":  "sweden",
-                                                       "away":  "czechia",
-                                                       "score":  "3-4"
-                                                   },
-                                                   {
-                                                       "date":  "19 May",
-                                                       "home":  "italy",
-                                                       "away":  "norway",
-                                                       "score":  "0-4"
-                                                   },
-                                                   {
-                                                       "date":  "19 May",
-                                                       "home":  "slovenia",
-                                                       "away":  "slovakia",
-                                                       "score":  "4-5 OT"
-                                                   },
-                                                   {
-                                                       "date":  "20 May",
-                                                       "home":  "czechia",
-                                                       "away":  "italy",
-                                                       "score":  "3-1"
-                                                   },
-                                                   {
-                                                       "date":  "20 May",
-                                                       "home":  "sweden",
-                                                       "away":  "slovenia",
-                                                       "score":  "6-0"
-                                                   },
-                                                   {
-                                                       "date":  "21 May",
-                                                       "home":  "canada",
-                                                       "away":  "norway",
-                                                       "score":  "6-5 OT"
-                                                   },
-                                                   {
-                                                       "date":  "21 May",
-                                                       "home":  "denmark",
-                                                       "away":  "slovakia",
-                                                       "score":  "1-5"
-                                                   },
-                                                   {
-                                                       "date":  "22 May",
-                                                       "home":  "canada",
-                                                       "away":  "slovenia",
-                                                       "score":  "3-1"
-                                                   },
-                                                   {
-                                                       "date":  "22 May",
-                                                       "home":  "sweden",
-                                                       "away":  "italy",
-                                                       "score":  "3-0"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "denmark",
-                                                       "away":  "slovenia",
-                                                       "score":  "4-0"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "slovakia",
-                                                       "away":  "czechia",
-                                                       "score":  "2-3"
-                                                   },
-                                                   {
-                                                       "date":  "23 May",
-                                                       "home":  "norway",
-                                                       "away":  "sweden",
-                                                       "score":  "3-2"
-                                                   },
-                                                   {
-                                                       "date":  "24 May",
-                                                       "home":  "denmark",
-                                                       "away":  "italy",
-                                                       "score":  "3-2 SO"
-                                                   },
-                                                   {
-                                                       "date":  "24 May",
-                                                       "home":  "slovakia",
-                                                       "away":  "canada",
-                                                       "score":  "1-5"
-                                                   },
-                                                   {
-                                                       "date":  "25 May",
-                                                       "home":  "czechia",
-                                                       "away":  "norway",
-                                                       "score":  "1-4"
-                                                   },
-                                                   {
-                                                       "date":  "25 May",
-                                                       "home":  "slovenia",
-                                                       "away":  "italy",
-                                                       "score":  "5-1"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "norway",
-                                                       "away":  "denmark",
-                                                       "score":  "4-3 OT"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "sweden",
-                                                       "away":  "slovakia",
-                                                       "score":  "4-2"
-                                                   },
-                                                   {
-                                                       "date":  "26 May",
-                                                       "home":  "czechia",
-                                                       "away":  "canada"
-                                                   }
-                                               ]
-                               }
-               }
+  "event": "iihf-world-championship",
+  "updated": "1 June 2026",
+  "pointsSystem": "iihf",
+  "advanceCount": 4,
+  "advanceLabel": "Qualified",
+  "sources": [
+    "https://www.iihf.com/en/events/2026/wm/standings/final",
+    "https://www.iihf.com/en/events/2026/wm/schedule",
+    "https://stats.iihf.com/Hydra/969/index.html"
+  ],
+  "teams": {
+    "finland": {
+      "name": "Finland",
+      "url": "/content/locations/europe/finland/index.html",
+      "flag": "/content/locations/europe/finland/img/flag.svg"
+    },
+    "germany": {
+      "name": "Germany",
+      "url": "/content/locations/europe/germany/index.html",
+      "flag": "/content/locations/europe/germany/img/flag.svg"
+    },
+    "usa": {
+      "name": "United States",
+      "url": "/content/locations/north-america/usa/index.html",
+      "flag": "/content/locations/north-america/usa/img/flag.svg"
+    },
+    "switzerland": {
+      "name": "Switzerland",
+      "url": "/content/locations/europe/switzerland/index.html",
+      "flag": "/content/locations/europe/switzerland/img/flag.svg"
+    },
+    "united-kingdom": {
+      "name": "United Kingdom",
+      "url": "/content/locations/europe/united-kingdom/index.html",
+      "flag": "/content/locations/europe/united-kingdom/img/flag.svg"
+    },
+    "austria": {
+      "name": "Austria",
+      "url": "/content/locations/europe/austria/index.html",
+      "flag": "/content/locations/europe/austria/img/flag.svg"
+    },
+    "hungary": {
+      "name": "Hungary",
+      "url": "/content/locations/europe/hungary/index.html",
+      "flag": "/content/locations/europe/hungary/img/flag.svg"
+    },
+    "latvia": {
+      "name": "Latvia",
+      "url": "/content/locations/europe/latvia/index.html",
+      "flag": "/content/locations/europe/latvia/img/flag.svg"
+    },
+    "canada": {
+      "name": "Canada",
+      "url": "/content/locations/north-america/canada/index.html",
+      "flag": "/content/locations/north-america/canada/img/flag.svg"
+    },
+    "sweden": {
+      "name": "Sweden",
+      "url": "/content/locations/europe/sweden/index.html",
+      "flag": "/content/locations/europe/sweden/img/flag.svg"
+    },
+    "czechia": {
+      "name": "Czechia",
+      "url": "/content/locations/europe/czechia/index.html",
+      "flag": "/content/locations/europe/czechia/img/flag.svg"
+    },
+    "denmark": {
+      "name": "Denmark",
+      "url": "/content/locations/europe/denmark/index.html",
+      "flag": "/content/locations/europe/denmark/img/flag.svg"
+    },
+    "slovakia": {
+      "name": "Slovakia",
+      "url": "/content/locations/europe/slovakia/index.html",
+      "flag": "/content/locations/europe/slovakia/img/flag.svg"
+    },
+    "norway": {
+      "name": "Norway",
+      "url": "/content/locations/europe/norway/index.html",
+      "flag": "/content/locations/europe/norway/img/flag.svg"
+    },
+    "italy": {
+      "name": "Italy",
+      "url": "/content/locations/europe/italy/index.html",
+      "flag": "/content/locations/europe/italy/img/flag.svg"
+    },
+    "slovenia": {
+      "name": "Slovenia",
+      "url": "/content/locations/europe/slovenia/index.html",
+      "flag": "/content/locations/europe/slovenia/img/flag.svg"
+    }
+  },
+  "groups": {
+    "group-a": {
+      "label": "Group A",
+      "matches": [
+        {
+          "date": "15 May",
+          "home": "finland",
+          "away": "germany",
+          "score": "3-1"
+        },
+        {
+          "date": "15 May",
+          "home": "usa",
+          "away": "switzerland",
+          "score": "1-3"
+        },
+        {
+          "date": "16 May",
+          "home": "united-kingdom",
+          "away": "austria",
+          "score": "2-5"
+        },
+        {
+          "date": "16 May",
+          "home": "hungary",
+          "away": "finland",
+          "score": "1-4"
+        },
+        {
+          "date": "16 May",
+          "home": "switzerland",
+          "away": "latvia",
+          "score": "4-2"
+        },
+        {
+          "date": "17 May",
+          "home": "united-kingdom",
+          "away": "usa",
+          "score": "1-5"
+        },
+        {
+          "date": "17 May",
+          "home": "austria",
+          "away": "hungary",
+          "score": "4-2"
+        },
+        {
+          "date": "17 May",
+          "home": "germany",
+          "away": "latvia",
+          "score": "0-2"
+        },
+        {
+          "date": "18 May",
+          "home": "finland",
+          "away": "usa",
+          "score": "6-2"
+        },
+        {
+          "date": "18 May",
+          "home": "germany",
+          "away": "switzerland",
+          "score": "1-6"
+        },
+        {
+          "date": "19 May",
+          "home": "latvia",
+          "away": "austria",
+          "score": "1-3"
+        },
+        {
+          "date": "19 May",
+          "home": "hungary",
+          "away": "united-kingdom",
+          "score": "5-0"
+        },
+        {
+          "date": "20 May",
+          "home": "austria",
+          "away": "switzerland",
+          "score": "0-9"
+        },
+        {
+          "date": "20 May",
+          "home": "usa",
+          "away": "germany",
+          "score": "4-3 OT"
+        },
+        {
+          "date": "21 May",
+          "home": "latvia",
+          "away": "finland",
+          "score": "1-7"
+        },
+        {
+          "date": "21 May",
+          "home": "switzerland",
+          "away": "united-kingdom",
+          "score": "4-1"
+        },
+        {
+          "date": "22 May",
+          "home": "germany",
+          "away": "hungary",
+          "score": "6-2"
+        },
+        {
+          "date": "22 May",
+          "home": "finland",
+          "away": "united-kingdom",
+          "score": "4-0"
+        },
+        {
+          "date": "23 May",
+          "home": "latvia",
+          "away": "usa",
+          "score": "4-2"
+        },
+        {
+          "date": "23 May",
+          "home": "switzerland",
+          "away": "hungary",
+          "score": "9-0"
+        },
+        {
+          "date": "23 May",
+          "home": "austria",
+          "away": "germany",
+          "score": "2-6"
+        },
+        {
+          "date": "24 May",
+          "home": "united-kingdom",
+          "away": "latvia",
+          "score": "0-6"
+        },
+        {
+          "date": "24 May",
+          "home": "finland",
+          "away": "austria",
+          "score": "5-2"
+        },
+        {
+          "date": "25 May",
+          "home": "usa",
+          "away": "hungary",
+          "score": "7-3"
+        },
+        {
+          "date": "25 May",
+          "home": "germany",
+          "away": "united-kingdom",
+          "score": "6-3"
+        },
+        {
+          "date": "26 May",
+          "home": "hungary",
+          "away": "latvia",
+          "score": "1-8"
+        },
+        {
+          "date": "26 May",
+          "home": "usa",
+          "away": "austria",
+          "score": "4-1"
+        },
+        {
+          "date": "26 May",
+          "home": "switzerland",
+          "away": "finland"
+        }
+      ]
+    },
+    "group-b": {
+      "label": "Group B",
+      "matches": [
+        {
+          "date": "15 May",
+          "home": "canada",
+          "away": "sweden",
+          "score": "5-3"
+        },
+        {
+          "date": "15 May",
+          "home": "czechia",
+          "away": "denmark",
+          "score": "4-1"
+        },
+        {
+          "date": "16 May",
+          "home": "slovakia",
+          "away": "norway",
+          "score": "2-1"
+        },
+        {
+          "date": "16 May",
+          "home": "italy",
+          "away": "canada",
+          "score": "0-6"
+        },
+        {
+          "date": "16 May",
+          "home": "slovenia",
+          "away": "czechia",
+          "score": "3-2 OT"
+        },
+        {
+          "date": "17 May",
+          "home": "italy",
+          "away": "slovakia",
+          "score": "1-4"
+        },
+        {
+          "date": "17 May",
+          "home": "denmark",
+          "away": "sweden",
+          "score": "2-6"
+        },
+        {
+          "date": "17 May",
+          "home": "norway",
+          "away": "slovenia",
+          "score": "4-0"
+        },
+        {
+          "date": "18 May",
+          "home": "canada",
+          "away": "denmark",
+          "score": "5-1"
+        },
+        {
+          "date": "18 May",
+          "home": "sweden",
+          "away": "czechia",
+          "score": "3-4"
+        },
+        {
+          "date": "19 May",
+          "home": "italy",
+          "away": "norway",
+          "score": "0-4"
+        },
+        {
+          "date": "19 May",
+          "home": "slovenia",
+          "away": "slovakia",
+          "score": "4-5 OT"
+        },
+        {
+          "date": "20 May",
+          "home": "czechia",
+          "away": "italy",
+          "score": "3-1"
+        },
+        {
+          "date": "20 May",
+          "home": "sweden",
+          "away": "slovenia",
+          "score": "6-0"
+        },
+        {
+          "date": "21 May",
+          "home": "canada",
+          "away": "norway",
+          "score": "6-5 OT"
+        },
+        {
+          "date": "21 May",
+          "home": "denmark",
+          "away": "slovakia",
+          "score": "1-5"
+        },
+        {
+          "date": "22 May",
+          "home": "canada",
+          "away": "slovenia",
+          "score": "3-1"
+        },
+        {
+          "date": "22 May",
+          "home": "sweden",
+          "away": "italy",
+          "score": "3-0"
+        },
+        {
+          "date": "23 May",
+          "home": "denmark",
+          "away": "slovenia",
+          "score": "4-0"
+        },
+        {
+          "date": "23 May",
+          "home": "slovakia",
+          "away": "czechia",
+          "score": "2-3"
+        },
+        {
+          "date": "23 May",
+          "home": "norway",
+          "away": "sweden",
+          "score": "3-2"
+        },
+        {
+          "date": "24 May",
+          "home": "denmark",
+          "away": "italy",
+          "score": "3-2 SO"
+        },
+        {
+          "date": "24 May",
+          "home": "slovakia",
+          "away": "canada",
+          "score": "1-5"
+        },
+        {
+          "date": "25 May",
+          "home": "czechia",
+          "away": "norway",
+          "score": "1-4"
+        },
+        {
+          "date": "25 May",
+          "home": "slovenia",
+          "away": "italy",
+          "score": "5-1"
+        },
+        {
+          "date": "26 May",
+          "home": "norway",
+          "away": "denmark",
+          "score": "4-3 OT"
+        },
+        {
+          "date": "26 May",
+          "home": "sweden",
+          "away": "slovakia",
+          "score": "4-2"
+        },
+        {
+          "date": "26 May",
+          "home": "czechia",
+          "away": "canada"
+        }
+      ]
+    }
+  },
+  "finalStandings": [
+    {
+      "rank": "1",
+      "team": {
+        "name": "Finland",
+        "url": "/content/locations/europe/finland/index.html",
+        "flag": "/content/locations/europe/finland/img/flag.svg"
+      },
+      "note": "Gold"
+    },
+    {
+      "rank": "2",
+      "team": {
+        "name": "Switzerland",
+        "url": "/content/locations/europe/switzerland/index.html",
+        "flag": "/content/locations/europe/switzerland/img/flag.svg"
+      },
+      "note": "Silver"
+    },
+    {
+      "rank": "3",
+      "team": {
+        "name": "Norway",
+        "url": "/content/locations/europe/norway/index.html",
+        "flag": "/content/locations/europe/norway/img/flag.svg"
+      },
+      "note": "Bronze"
+    },
+    {
+      "rank": "4",
+      "team": {
+        "name": "Canada",
+        "url": "/content/locations/north-america/canada/index.html",
+        "flag": "/content/locations/north-america/canada/img/flag.svg"
+      },
+      "note": "4th"
+    }
+  ],
+  "medalGames": [
+    {
+      "label": "Final",
+      "home": {
+        "name": "Switzerland",
+        "url": "/content/locations/europe/switzerland/index.html",
+        "flag": "/content/locations/europe/switzerland/img/flag.svg"
+      },
+      "score": "0-1 OT",
+      "away": {
+        "name": "Finland",
+        "url": "/content/locations/europe/finland/index.html",
+        "flag": "/content/locations/europe/finland/img/flag.svg"
+      }
+    },
+    {
+      "label": "Bronze",
+      "home": {
+        "name": "Canada",
+        "url": "/content/locations/north-america/canada/index.html",
+        "flag": "/content/locations/north-america/canada/img/flag.svg"
+      },
+      "score": "2-3 OT",
+      "away": {
+        "name": "Norway",
+        "url": "/content/locations/europe/norway/index.html",
+        "flag": "/content/locations/europe/norway/img/flag.svg"
+      }
+    }
+  ]
 }
