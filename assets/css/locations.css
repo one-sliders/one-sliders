@@ -2778,31 +2778,6 @@ html:has(body.country-onepage) {
 .bar-value-199 { --bar-value: 199%; }
 .bar-value-200 { --bar-value: 200%; }
 
-.internal-link-module {
-  display: grid;
-  gap: 12px;
-  margin: 18px 0;
-  padding: 14px;
-  border: 1px solid var(--location-line, rgba(17, 24, 39, 0.14));
-  border-radius: 8px;
-  background: var(--location-card, #fff);
-  color: var(--location-ink, #111827);
-  box-shadow: var(--location-shadow-soft, 0 8px 22px rgba(16, 24, 32, 0.07));
-}
-
-.internal-link-module h2 {
-  margin: 0;
-  color: var(--location-ink, #111827);
-  font-size: 16px;
-  line-height: 1.15;
-}
-
-.internal-link-module__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 8px;
-}
-
 .internal-link-card {
   display: grid;
   gap: 5px;
