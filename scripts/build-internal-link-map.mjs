@@ -168,14 +168,14 @@ function categoryFilesForEvents(events) {
 }
 
 function relatedCategories(info) {
-  const base = path.join(root, info.target.startsWith("/en/") ? "en/content/categories" : "content/categories", ...info.parts.slice(0, -1));
+  const base = path.join(root, info.target.startsWith("/en/") ? "content/categories" : "content/categories", ...info.parts.slice(0, -1));
   if (!fs.existsSync(base)) return [];
   return fs.readdirSync(base)
     .filter((name) => name.endsWith(".html") && name !== "index.html" && name !== `${info.topic}.html`)
     .slice(0, 6)
     .map((name) => {
       const slug = name.replace(/\.html$/, "");
-      const prefix = info.target.startsWith("/en/") ? "/en/content/categories" : "/content/categories";
+      const prefix = info.target.startsWith("/en/") ? "/content/categories" : "/content/categories";
       return {
         url: `${prefix}/${[...info.parts.slice(0, -1), name].join("/")}`,
         label: textFromSlug(slug),

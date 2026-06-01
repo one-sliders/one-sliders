@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = 'content/events';
-const targetRoot = 'en/content/events';
+const targetRoot = 'content/events';
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -16,11 +16,11 @@ function fixEventHtml(html, sourceFile) {
   const sourceDir = path.dirname(sourceFile).replace(/\\/g, '/');
   return html
     .replaceAll('../../../../assets/', '../../../../../assets/')
-    .replaceAll('../../../categories/', '../../../../content/categories/')
-    .replaceAll('../../../locations/', '../../../../content/locations/')
+    .replaceAll('../../../categories/', '../content/categories/')
+    .replaceAll('../../../locations/', '../content/locations/')
     .replace(/(src|href)="img\/([^"]+)"/g, `$1="../../../../../${sourceDir}/img/$2"`)
-    .replace(/<link rel="canonical" href="https:\/\/one-sliders\.com\/content\/events\/([^"]+)">/g, '<link rel="canonical" href="https://one-sliders.com/en/content/events/$1">')
-    .replace(/<meta property="og:url" content="https:\/\/one-sliders\.com\/content\/events\/([^"]+)">/g, '<meta property="og:url" content="https://one-sliders.com/en/content/events/$1">');
+    .replace(/<link rel="canonical" href="https:\/\/one-sliders\.com\/content\/events\/([^"]+)">/g, '<link rel="canonical" href="https://one-sliders.com/content/events/$1">')
+    .replace(/<meta property="og:url" content="https:\/\/one-sliders\.com\/content\/events\/([^"]+)">/g, '<meta property="og:url" content="https://one-sliders.com/content/events/$1">');
 }
 
 let count = 0;

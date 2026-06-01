@@ -15,7 +15,7 @@ function sitePath(language) {
 function relativeToRootAssets(html) {
   return html
     .replace(/href="(?:\.\.\/\.\.\/en\/content\/events\/2026\/05\/oslo-constitution-day\.html|2026\/05\/oslo-constitution-day\.html)"(?= data-start="2026-05-17")/g, 'href="2026/05/oslo-constitution-day.html"')
-    .replace(/src="((?:2026|2027|2028|2030)\/[^"]+)"/g, 'src="../../../content/events/$1"')
+    .replace(/src="((?:2026|2027|2028|2030)\/[^"]+)"/g, 'src="../content/events/$1"')
     .replaceAll('../../assets/', '../../../assets/')
     .replaceAll('href="../events/index.html"', 'href="index.html"')
     .replaceAll('href="../locations/index.html"', 'href="../locations/index.html"')
@@ -31,7 +31,7 @@ function addIndexMetadata(html, language) {
   <meta name="content-id" content="${contentId}">
   <meta name="content-language" content="${language}">
   <meta name="available-languages" content="${languageCodes.join(',')}">
-  <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/en/content/events/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/content/events/index.html">
 ${languages.map(([code]) => `  <link rel="alternate" hreflang="${code}" href="https://one-sliders.com${sitePath(code)}">`).join('\n')}
   <meta name="description" content="${description}">
   <meta property="og:title" content="World Events Calendar | OneSliders">
@@ -60,7 +60,7 @@ ${languages.map(([code, label]) => `      <a${code === language ? ' aria-current
 
   const osloHref = localizedOsloEventLanguages.has(language)
     ? '2026/05/oslo-constitution-day.html'
-    : '../../../en/content/events/2026/05/oslo-constitution-day.html';
+    : '../content/events/2026/05/oslo-constitution-day.html';
   updated = updated.replace(/href="2026\/05\/oslo-constitution-day\.html"(?= data-start="2026-05-17")/g, `href="${osloHref}"`);
 
   return updated;

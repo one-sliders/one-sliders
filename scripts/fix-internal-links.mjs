@@ -71,24 +71,24 @@ for (const file of walk(root)) {
 }
 
 for (const rel of [
-  "en/content/categories/drinks/index.html",
-  "en/content/categories/food/index.html",
+  "content/categories/drinks/index.html",
+  "content/categories/food/index.html",
 ]) {
   if (replaceInFile(rel, [["../../../assets/", "../../../../assets/"]])) changed += 1;
 }
 
 for (const rel of [
   "content/categories/sport/index.html",
-  "en/content/categories/sport/index.html",
+  "content/categories/sport/index.html",
 ]) {
   if (replaceInFile(rel, [["stanley-cup-final-2026-hero.png", "stanley-cup-final-hero.png"]])) changed += 1;
 }
 
 replaceInFile("content/categories/sport/index.html", [
-  ["../../events/2026/06/img/stanley-cup-final-hero.png", "/en/content/categories/sport/ice-hockey/events/img/stanley-cup-final-hero.png"],
+  ["../../events/2026/06/img/stanley-cup-final-hero.png", "/content/categories/sport/ice-hockey/events/img/stanley-cup-final-hero.png"],
 ]);
-replaceInFile("en/content/categories/sport/index.html", [
-  ["../../../../content/events/2026/06/img/stanley-cup-final-hero.png", "/en/content/categories/sport/ice-hockey/events/img/stanley-cup-final-hero.png"],
+replaceInFile("content/categories/sport/index.html", [
+  ["../content/events/2026/06/img/stanley-cup-final-hero.png", "/content/categories/sport/ice-hockey/events/img/stanley-cup-final-hero.png"],
 ]);
 
 replaceInFile("content/events/2026/06/fifa-world-cup-2026.html", [
@@ -107,22 +107,22 @@ replaceInFile("content/events/2026/06/fifa-world-cup-2026.html", [
   ["../../../locations/north-america/mexico/guadalajara.html", "../../../locations/north-america/mexico/index.html"],
 ]);
 
-replaceInFile("en/content/categories/music/song-contests/events/eurovision-song-contest.html", [
-  ["../../../../../../content/locations/europe/switzerland/basel.html", "../../../../../../content/locations/europe/switzerland/index.html"],
-  ["../../../../../../content/locations/europe/sweden/malmo.html", "../../../../../../content/locations/europe/sweden/index.html"],
-  ["../../../../../../content/locations/europe/united-kingdom/liverpool.html", "../../../../../../content/locations/europe/united-kingdom/index.html"],
-  ["../../../../../../content/locations/europe/italy/turin.html", "../../../../../../content/locations/europe/italy/index.html"],
-  ["../../../../../../content/locations/europe/netherlands/rotterdam.html", "../../../../../../content/locations/europe/netherlands/index.html"],
+replaceInFile("content/categories/music/song-contests/events/eurovision-song-contest.html", [
+  ["../content/locations/europe/switzerland/basel.html", "../content/locations/europe/switzerland/index.html"],
+  ["../content/locations/europe/sweden/malmo.html", "../content/locations/europe/sweden/index.html"],
+  ["../content/locations/europe/united-kingdom/liverpool.html", "../content/locations/europe/united-kingdom/index.html"],
+  ["../content/locations/europe/italy/turin.html", "../content/locations/europe/italy/index.html"],
+  ["../content/locations/europe/netherlands/rotterdam.html", "../content/locations/europe/netherlands/index.html"],
 ]);
 
-replaceInFile("en/content/events/2026/05/oslo-constitution-day.html", [
+replaceInFile("content/events/2026/05/oslo-constitution-day.html", [
   ["../../../index.html", "/content/events/index.html"],
   ["../../../../locations/", "/content/locations/"],
   ["../../../../categories/", "/content/categories/"],
 ]);
 
-replaceInFile("en/content/events/2026/06/le-mans-24-hours.html", [
-  ["https://one-sliders.com/en//en/content/categories/sport/motorsport/events/le-mans-24-hours.html", "https://one-sliders.com/en/content/categories/sport/motorsport/events/le-mans-24-hours.html"],
+replaceInFile("content/events/2026/06/le-mans-24-hours.html", [
+  ["https://one-sliders.com/en//content/categories/sport/motorsport/events/le-mans-24-hours.html", "https://one-sliders.com/content/categories/sport/motorsport/events/le-mans-24-hours.html"],
 ]);
 
 const calendars = [
@@ -182,7 +182,7 @@ const calendars = [
   },
 ];
 
-for (const base of ["content/events/2026/05", "en/content/events/2026/05"]) {
+for (const base of ["content/events/2026/05", "content/events/2026/05"]) {
   for (const calendar of calendars) {
     const target = path.join(root, base, calendar.file);
     if (!fs.existsSync(target)) {

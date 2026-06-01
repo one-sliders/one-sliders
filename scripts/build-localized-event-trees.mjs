@@ -3,7 +3,7 @@ import path from 'node:path';
 import { languages, profiles, codeLabel } from './event-language-profiles.mjs';
 import { translateEventTitle } from './event-title-translations.mjs';
 
-const sourceRoot = 'en/content/events';
+const sourceRoot = 'content/events';
 const siteBase = 'https://one-sliders.com';
 const detailLanguages = languages.filter((lang) => lang !== 'en' && lang !== 'ru');
 
@@ -48,9 +48,9 @@ function replaceTerms(text, profile) {
 
 function normalizeRootHref(href = '') {
   return href
-    .replace('../../../../content/', '../../../../../content/')
-    .replace('../../../../locations/', '../../../../../content/locations/')
-    .replace('../../../../categories/', '../../../../../content/categories/');
+    .replace('../content/', '../content/')
+    .replace('../../../../locations/', '../content/locations/')
+    .replace('../../../../categories/', '../content/categories/');
 }
 
 function fact(html, label, profile) {
@@ -70,33 +70,33 @@ function sourceTitle(html, relativePath) {
 
 function category(html, profile) {
   const match = html.match(/<a class="nav-pill" href="([^"]+)">([\s\S]*?)<\/a>/);
-  if (!match) return { href: '../../../../../content/categories/index.html', label: profile.categories.events };
+  if (!match) return { href: '../content/categories/index.html', label: profile.categories.events };
   const found = {
     href: normalizeRootHref(match[1]),
     label: replaceTerms(strip(match[2]), profile)
   };
-  if (fs.existsSync(path.resolve('en/content/events/2026/05', found.href))) return found;
+  if (fs.existsSync(path.resolve('content/events/2026/05', found.href))) return found;
   const lower = found.label.toLowerCase();
   if (lower.includes((profile.categories.sport || '').toLowerCase()) || lower.includes((profile.categories.golf || '').toLowerCase()) || lower.includes((profile.categories.football || '').toLowerCase()) || lower.includes((profile.categories.tennis || '').toLowerCase())) {
-    return { href: '../../../../../content/categories/sport/index.html', label: found.label };
+    return { href: '../content/categories/sport/index.html', label: found.label };
   }
   if (lower.includes((profile.categories.music || '').toLowerCase()) || lower.includes((profile.categories.songContests || '').toLowerCase())) {
-    return { href: '../../../../../content/categories/music/index.html', label: found.label };
+    return { href: '../content/categories/music/index.html', label: found.label };
   }
   if (lower.includes((profile.categories.nature || '').toLowerCase())) {
-    return { href: '../../../../../content/categories/climate/protected-nature.html', label: found.label };
+    return { href: '../content/categories/climate/protected-nature.html', label: found.label };
   }
   if (lower.includes((profile.categories.festival || '').toLowerCase()) || lower.includes((profile.categories.culture || '').toLowerCase()) || lower.includes((profile.categories.film || '').toLowerCase())) {
-    return { href: '../../../../../content/categories/culture/index.html', label: found.label };
+    return { href: '../content/categories/culture/index.html', label: found.label };
   }
-  return { href: '../../../../../content/categories/index.html', label: found.label };
+  return { href: '../content/categories/index.html', label: found.label };
 }
 
 function heroImage(html, relativePath) {
   const direct = html.match(/<img class="event-hero__image"[^>]+src="([^"]+)"/)?.[1];
   if (direct) return direct;
   const bg = html.match(/url\(["']?(img\/[^"')]+)["']?\)/)?.[1];
-  if (bg) return `../../../../../content/events/${path.posix.dirname(relativePath)}/${bg}`;
+  if (bg) return `../content/events/${path.posix.dirname(relativePath)}/${bg}`;
   const slug = path.posix.basename(relativePath, '.html');
   const dir = path.posix.join('content/events', path.posix.dirname(relativePath), 'img');
   for (const ext of ['png', 'svg', 'jpg', 'jpeg', 'webp']) {
@@ -129,7 +129,7 @@ function buildPage(sourceHtml, relativePath, lang) {
   const dates = fact(sourceHtml, 'Dates', profile);
   const year = relativePath.split('/')[0];
   const canonical = `${siteBase}/${lang}/content/events/${relativePath}`;
-  const enUrl = `${siteBase}/en/content/events/${relativePath}`;
+  const enUrl = `${siteBase}/content/events/${relativePath}`;
   const image = heroImage(sourceHtml, relativePath);
   const flag = flagImage(sourceHtml);
   const datesText = dates.text || profile.labels.upcoming;
@@ -190,8 +190,8 @@ function buildPage(sourceHtml, relativePath, lang) {
 <body${themeAttrs(sourceHtml)}>
   <nav class="top-menu" aria-label="${esc(profile.labels.category)}">
     <a class="nav-icon" href="../../index.html" title="${esc(profile.labels.category)}" aria-label="${esc(profile.labels.category)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-    <a class="nav-icon" href="../../../../../content/locations/index.html" title="${esc(profile.labels.global)}" aria-label="${esc(profile.labels.global)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-    <a class="nav-icon" href="../../../../../content/categories/index.html" title="${esc(profile.labels.category)}" aria-label="${esc(profile.labels.category)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <a class="nav-icon" href="../content/locations/index.html" title="${esc(profile.labels.global)}" aria-label="${esc(profile.labels.global)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../content/categories/index.html" title="${esc(profile.labels.category)}" aria-label="${esc(profile.labels.category)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
     <span class="nav-divider"></span>
     <a class="nav-pill" href="${cat.href}">${esc(cat.label)}</a>
     <div class="event-language-list" aria-label="${esc(profile.labels.language)}">

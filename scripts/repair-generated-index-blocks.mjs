@@ -15,12 +15,7 @@ function titleCase(slug) {
 }
 
 function card(event, indexRoot) {
-  let base;
-  if (indexRoot === 'en/content') {
-    base = event.rootPrefix === 'en' ? '../categories' : '../../../content/categories';
-  } else {
-    base = event.rootPrefix === 'en' ? '../../en/content/categories' : '../categories';
-  }
+  const base = '../categories';
 
   let start = '2026-01-01';
   let end = '2026-12-31';
@@ -37,7 +32,6 @@ function card(event, indexRoot) {
 
 for (const [file, root] of [
   ['content/events/index.html', 'content'],
-  ['en/content/events/index.html', 'en/content'],
 ]) {
   let html = fs.readFileSync(file, 'utf8');
   const block = `<!-- generated-minimum-events:start -->\n        ${managed.map((event) => card(event, root)).join('\n        ')}\n        <!-- generated-minimum-events:end -->`;

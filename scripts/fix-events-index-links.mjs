@@ -7,8 +7,8 @@ const rootIndex = 'content/events/index.html';
 function patchNav(html, isRoot) {
   if (isRoot) return html;
   return html
-    .replaceAll('href="../locations/index.html"', 'href="../../../content/locations/index.html"')
-    .replaceAll('href="../categories/index.html"', 'href="../../../content/categories/index.html"');
+    .replaceAll('href="../locations/index.html"', 'href="../content/locations/index.html"')
+    .replaceAll('href="../categories/index.html"', 'href="../content/categories/index.html"');
 }
 
 function patchCardLinks(html, file, language) {
@@ -18,8 +18,8 @@ function patchCardLinks(html, file, language) {
       const rel = path.relative(dirname, path.join(language, 'content/events', eventPath)).replace(/\\/g, '/');
       return rel.startsWith('..') ? rel : eventPath;
     }
-    if (fs.existsSync(path.join('en/content/events', eventPath))) {
-      const rel = path.relative(dirname, path.join('en/content/events', eventPath)).replace(/\\/g, '/');
+    if (fs.existsSync(path.join('content/events', eventPath))) {
+      const rel = path.relative(dirname, path.join('content/events', eventPath)).replace(/\\/g, '/');
       return rel;
     }
     const rootRel = path.relative(dirname, path.join('content/events', eventPath)).replace(/\\/g, '/');

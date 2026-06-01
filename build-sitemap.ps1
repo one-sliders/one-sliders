@@ -41,7 +41,7 @@ function Get-Priority($urlPath) {
   if ($urlPath -match '^(?:en/)?content/events/index\.html$') { return "0.9" }
   if ($urlPath -match '^(?:en/)?content/categories/index\.html$') { return "0.9" }
   if ($urlPath -match '^content/locations/index\.html$') { return "0.9" }
-  if ($urlPath -match '^en/content/categories/[^/]+/[^/]+/events/[^/]+\.html$') { return "0.85" }
+  if ($urlPath -match '^content/categories/[^/]+/[^/]+/events/[^/]+\.html$') { return "0.85" }
   if ($urlPath -match '^(?:en/)?content/categories/[^/]+/index\.html$') { return "0.8" }
   if ($urlPath -match '^(?:en/)?content/categories/[^/]+/[^/]+\.html$') { return "0.7" }
   if ($urlPath -match '^content/locations/[^/]+/index\.html$') { return "0.7" }
@@ -53,7 +53,7 @@ function Get-Priority($urlPath) {
 function Get-Changefreq($urlPath) {
   if ($urlPath -eq "") { return "weekly" }
   if ($urlPath -match '^(?:en/)?content/events/index\.html$') { return "daily" }
-  if ($urlPath -match '^en/content/categories/[^/]+/[^/]+/events/') { return "weekly" }
+  if ($urlPath -match '^content/categories/[^/]+/[^/]+/events/') { return "weekly" }
   if ($urlPath -match '^content/locations/') { return "monthly" }
   if ($urlPath -match '^(?:en/)?content/categories/') { return "weekly" }
   return "monthly"

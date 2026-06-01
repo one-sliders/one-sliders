@@ -1120,10 +1120,10 @@ function updateGolfPage() {
   source = ensureGolfPageStyles(source);
 
   const linkReplacements = new Map([
-    ['../../../en/content/categories/sport/golf/events/masters-tournament.html', 'golf/events/masters-tournament.html'],
-    ['../../../en/content/categories/sport/golf/events/pga-championship.html', 'golf/events/pga-championship.html'],
-    ['../../../en/content/categories/sport/golf/events/us-open-golf.html', 'golf/events/us-open-golf.html'],
-    ['../../../en/content/categories/sport/golf/events/the-open-championship.html', 'golf/events/the-open-championship.html']
+    ['../content/categories/sport/golf/events/masters-tournament.html', 'golf/events/masters-tournament.html'],
+    ['../content/categories/sport/golf/events/pga-championship.html', 'golf/events/pga-championship.html'],
+    ['../content/categories/sport/golf/events/us-open-golf.html', 'golf/events/us-open-golf.html'],
+    ['../content/categories/sport/golf/events/the-open-championship.html', 'golf/events/the-open-championship.html']
   ]);
   for (const [from, to] of linkReplacements) source = source.replaceAll(from, to);
   source = source
@@ -1201,16 +1201,16 @@ function updateEventsIndexLinks() {
   source = insertGolfCardsInEventsIndex(source);
   for (const item of events) {
     source = source
-      .replaceAll(`../../en/content/categories/sport/golf/events/${item.slug}.html`, `../categories/sport/golf/events/${item.slug}.html`)
-      .replaceAll(`/en/content/categories/sport/golf/events/${item.slug}.html`, `/content/categories/sport/golf/events/${item.slug}.html`)
-      .replaceAll(`../../en/content/categories/sport/golf/events/img/${item.slug}-mini.png`, `../categories/sport/golf/events/img/${item.slug}-mini.png`)
-      .replaceAll(`/en/content/categories/sport/golf/events/img/${item.slug}-mini.png`, `/content/categories/sport/golf/events/img/${item.slug}-mini.png`);
+      .replaceAll(`../content/categories/sport/golf/events/${item.slug}.html`, `../categories/sport/golf/events/${item.slug}.html`)
+      .replaceAll(`/content/categories/sport/golf/events/${item.slug}.html`, `/content/categories/sport/golf/events/${item.slug}.html`)
+      .replaceAll(`../content/categories/sport/golf/events/img/${item.slug}-mini.png`, `../categories/sport/golf/events/img/${item.slug}-mini.png`)
+      .replaceAll(`/content/categories/sport/golf/events/img/${item.slug}-mini.png`, `/content/categories/sport/golf/events/img/${item.slug}-mini.png`);
   }
   source = source
-    .replaceAll(`../categories/sport/golf/events/oslo-ladies-open.html`, `../../en/content/categories/sport/golf/events/oslo-ladies-open.html`)
-    .replaceAll(`../categories/sport/golf/events/img/oslo-ladies-open-mini.png`, `../../en/content/categories/sport/golf/events/img/oslo-ladies-open-mini.png`)
-    .replaceAll(`../categories/sport/golf/events/ryder-cup.html`, `../../en/content/categories/sport/golf/events/ryder-cup.html`)
-    .replaceAll(`../categories/sport/golf/events/img/ryder-cup-mini.png`, `../../en/content/categories/sport/golf/events/img/ryder-cup-mini.png`);
+    .replaceAll(`../categories/sport/golf/events/oslo-ladies-open.html`, `../content/categories/sport/golf/events/oslo-ladies-open.html`)
+    .replaceAll(`../categories/sport/golf/events/img/oslo-ladies-open-mini.png`, `../content/categories/sport/golf/events/img/oslo-ladies-open-mini.png`)
+    .replaceAll(`../categories/sport/golf/events/ryder-cup.html`, `../content/categories/sport/golf/events/ryder-cup.html`)
+    .replaceAll(`../categories/sport/golf/events/img/ryder-cup-mini.png`, `../content/categories/sport/golf/events/img/ryder-cup-mini.png`);
   fs.writeFileSync(file, source);
 }
 
@@ -1222,8 +1222,8 @@ function eventsIndexCard(item) {
 
 function legacyGolfIndexCards() {
   return [
-    `        <a class="event-card" data-end="2026-06-15" data-cat="sport" data-topic="golf" data-cont="europe" data-country="norway" href="../../en/content/categories/sport/golf/events/oslo-ladies-open.html" data-start="2026-06-12" data-reach="national" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../../en/content/categories/sport/golf/events/img/oslo-ladies-open-mini.png" alt="KLPGA Oslo Ladies Open" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">KLPGA Oslo Ladies Open</strong><span class="card-meta">12-15 Jun 2026 - Oslo, Norway</span></div></a>`,
-    `        <a class="event-card" data-end="2027-09-19" data-cat="sport" data-topic="golf" data-cont="europe" data-country="ireland" data-keywords="ryder cup, ryder cup schedule, ryder cup tickets" href="../../en/content/categories/sport/golf/events/ryder-cup.html" data-start="2027-09-17" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../../en/content/categories/sport/golf/events/img/ryder-cup-mini.png" alt="Ryder Cup 2027" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">Ryder Cup 2027</strong><span class="card-meta">17-19 Sep 2027 - Adare, Ireland</span></div></a>`
+    `        <a class="event-card" data-end="2026-06-15" data-cat="sport" data-topic="golf" data-cont="europe" data-country="norway" href="../content/categories/sport/golf/events/oslo-ladies-open.html" data-start="2026-06-12" data-reach="national" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../content/categories/sport/golf/events/img/oslo-ladies-open-mini.png" alt="KLPGA Oslo Ladies Open" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">KLPGA Oslo Ladies Open</strong><span class="card-meta">12-15 Jun 2026 - Oslo, Norway</span></div></a>`,
+    `        <a class="event-card" data-end="2027-09-19" data-cat="sport" data-topic="golf" data-cont="europe" data-country="ireland" data-keywords="ryder cup, ryder cup schedule, ryder cup tickets" href="../content/categories/sport/golf/events/ryder-cup.html" data-start="2027-09-17" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../content/categories/sport/golf/events/img/ryder-cup-mini.png" alt="Ryder Cup 2027" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">Ryder Cup 2027</strong><span class="card-meta">17-19 Sep 2027 - Adare, Ireland</span></div></a>`
   ];
 }
 
@@ -1271,10 +1271,10 @@ function updateLegacyLocationGolfLinks() {
     let changed = false;
     for (const slug of slugs) {
       const next = source
-        .replaceAll(`../../../../en/content/categories/sport/golf/events/${slug}.html`, `../../../categories/sport/golf/events/${slug}.html`)
-        .replaceAll(`/en/content/categories/sport/golf/events/${slug}.html`, `/content/categories/sport/golf/events/${slug}.html`)
-        .replaceAll(`../../../../en/content/categories/sport/golf/events/img/${slug}-mini.png`, `../../../categories/sport/golf/events/img/${slug}-mini.png`)
-        .replaceAll(`/en/content/categories/sport/golf/events/img/${slug}-mini.png`, `/content/categories/sport/golf/events/img/${slug}-mini.png`);
+        .replaceAll(`../content/categories/sport/golf/events/${slug}.html`, `../../../categories/sport/golf/events/${slug}.html`)
+        .replaceAll(`/content/categories/sport/golf/events/${slug}.html`, `/content/categories/sport/golf/events/${slug}.html`)
+        .replaceAll(`../content/categories/sport/golf/events/img/${slug}-mini.png`, `../../../categories/sport/golf/events/img/${slug}-mini.png`)
+        .replaceAll(`/content/categories/sport/golf/events/img/${slug}-mini.png`, `/content/categories/sport/golf/events/img/${slug}-mini.png`);
       if (next !== source) {
         source = next;
         changed = true;

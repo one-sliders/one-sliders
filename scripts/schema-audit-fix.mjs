@@ -117,9 +117,8 @@ function displayName(segment) {
 function breadcrumbFor(rel, title, canonical) {
   const items = [{ name: "Home", item: `${baseUrl}/` }];
   const parts = rel.split("/");
-  const prefix = parts[0] === "en" ? "en/" : "";
-  const start = prefix ? 2 : 1;
-  let current = prefix ? "en/content" : "content";
+  const start = 1;
+  let current = "content";
 
   for (let index = start; index < parts.length; index += 1) {
     const part = parts[index];

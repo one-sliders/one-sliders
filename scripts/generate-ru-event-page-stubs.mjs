@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const sourceRoot = 'en/content/events';
+const sourceRoot = 'content/events';
 const targetRoot = 'ru/content/events';
 const lang = 'ru';
 const siteBase = 'https://one-sliders.com';
@@ -19,7 +19,7 @@ function localizeHtml(html, relativePath) {
   const publicPath = `/${lang}/content/events/${relativePath.replace(/\\/g, '/')}`;
   let out = html
     .replace(/<html lang="[^"]*"/, `<html lang="${lang}"`)
-    .replaceAll(`${siteBase}/en/content/events/`, `${siteBase}/${lang}/content/events/`)
+    .replaceAll(`${siteBase}/content/events/`, `${siteBase}/${lang}/content/events/`)
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${siteBase}${publicPath}$2`)
     .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${siteBase}${publicPath}$2`);
 
@@ -27,7 +27,7 @@ function localizeHtml(html, relativePath) {
 
   // Language-folder event detail pages sit one level deeper than root content.
   // Shared topic/location/category pages still live under /content, not /ru/content.
-  out = out.replaceAll('href="../../../../content/', 'href="../../../../../content/');
+  out = out.replaceAll('href="../content/', 'href="../content/');
 
   return out;
 }

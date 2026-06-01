@@ -22,14 +22,14 @@ const text = {
 
 function card(lang) {
   const [title, body] = text[lang] || text.en;
-  return `            <a class="topic-card" href="climate-action.html"><img class="topic-thumb" src="../../../../content/events/2026/11/img/cop31-2026-mini.png" alt="" aria-hidden="true"><strong>${title}</strong><p>${body}</p></a>`;
+  return `            <a class="topic-card" href="climate-action.html"><img class="topic-thumb" src="../content/events/2026/11/img/cop31-2026-mini.png" alt="" aria-hidden="true"><strong>${title}</strong><p>${body}</p></a>`;
 }
 
 for (const lang of languages) {
   const file = path.join(root, lang, 'content', 'categories', 'climate', 'index.html');
   if (!fs.existsSync(file)) continue;
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replaceAll('href="../../locations/index.html"', 'href="../../../../content/locations/index.html"');
+  html = html.replaceAll('href="../../locations/index.html"', 'href="../content/locations/index.html"');
   html = html.replaceAll('href="../../categories/index.html"', 'href="../index.html"');
   html = html.replaceAll('cop31-2026-hero.svg', 'cop31-2026-mini.png');
   html = html.replaceAll('cop31-2026-hero.png', 'cop31-2026-mini.png');

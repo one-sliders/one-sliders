@@ -5,7 +5,7 @@ const ROOT = globalThis.nodeRepl ? globalThis.nodeRepl.cwd : process.cwd();
 const TODAY = new Date('2026-05-26T00:00:00Z');
 const STAMP = '26 May 2026';
 const GENERATED_AT = '2026-05-26';
-const EVENT_DIR = 'en/content/categories/culture/national-day/events';
+const EVENT_DIR = 'content/categories/culture/national-day/events';
 const IMG_DIR = `${EVENT_DIR}/img`;
 
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -230,9 +230,9 @@ function eventHtml(event, dateParts) {
 </head>
 <body class="event-page">
   <nav class="event-nav" aria-label="Site navigation">
-    <a class="nav-icon" href="../../../../../../content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
-    <a class="nav-icon" href="../../../../../../content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
-    <a class="nav-icon" href="../../../../../../content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
+    <a class="nav-icon" href="../content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+    <a class="nav-icon" href="../content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+    <a class="nav-icon" href="../content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
     <span class="nav-spacer"></span>
     <details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"><a href="#" aria-current="page">English</a></div></details>
   </nav>
@@ -243,7 +243,7 @@ function eventHtml(event, dateParts) {
         <div class="event-slide__content">
           <div class="event-hero-copy"><p class="event-kicker">National day</p><h1 class="event-title">${esc(event.title)}</h1><p class="event-lede">A compact guide to the annual civic date, what it means and what visitors should check before going.</p></div>
           <div class="facts-strip hero-control"><div class="fact"><span>Date</span><strong>${esc(event.dateText)}</strong></div><div class="fact"><span>Country</span><strong>${country}</strong></div><div class="fact"><span>Next edition</span><strong>${event.nextYear}</strong></div><div class="fact"><span>Type</span><strong>National day</strong></div></div>
-          <div class="card-grid"><a class="topic-card topic-card--inline" href="../../../../../../content/categories/culture/national-day.html"><img src="../../../../../../${IMG_DIR}/${event.eventSlug}-mini.png" alt="" width="400" height="300" loading="lazy"><span>Culture calendar</span><strong>National days</strong><p>Independence, constitutions, republic days and civic identity dates.</p></a><div class="card"><span>Why the date matters</span><strong>${esc(event.reason)}</strong><p>The exact programme changes by city and year, but the date remains the yearly anchor.</p></div><div class="card"><span>What visitors notice</span><strong>Flags, ceremonies and public life</strong><p>National days are often best read through local squares, official buildings, streets and evening gatherings.</p></div><div class="card"><span>Planning lens</span><strong>Check official local programmes</strong><p>Public transport, opening hours and security routes can change because this is a public holiday.</p></div></div>
+          <div class="card-grid"><a class="topic-card topic-card--inline" href="../content/categories/culture/national-day.html"><img src="../../../../../../${IMG_DIR}/${event.eventSlug}-mini.png" alt="" width="400" height="300" loading="lazy"><span>Culture calendar</span><strong>National days</strong><p>Independence, constitutions, republic days and civic identity dates.</p></a><div class="card"><span>Why the date matters</span><strong>${esc(event.reason)}</strong><p>The exact programme changes by city and year, but the date remains the yearly anchor.</p></div><div class="card"><span>What visitors notice</span><strong>Flags, ceremonies and public life</strong><p>National days are often best read through local squares, official buildings, streets and evening gatherings.</p></div><div class="card"><span>Planning lens</span><strong>Check official local programmes</strong><p>Public transport, opening hours and security routes can change because this is a public holiday.</p></div></div>
           <div class="card card--rank"><span>At a glance</span><div class="rank-list"><div class="rank-row"><strong>1</strong><span>Public meaning</span><div class="rank-row__track"><i class="rank-row__fill w100"></i></div><strong>National identity</strong></div><div class="rank-row"><strong>2</strong><span>Main date</span><div class="rank-row__track"><i class="rank-row__fill w80"></i></div><strong>${esc(event.dateText)}</strong></div><div class="rank-row"><strong>3</strong><span>Best view</span><div class="rank-row__track"><i class="rank-row__fill w65"></i></div><strong>${esc(event.city || 'Local cities')}</strong></div></div></div>
         </div>
       </section>
@@ -435,11 +435,11 @@ const contentCards = events.map(event => cardHtml(event, `../../${EVENT_DIR}`, `
 const enCards = events.map(event => cardHtml(event, '../categories/culture/national-day/events')).join('\n');
 
 removeLegacyNationalDayCards('content/events/index.html');
-removeLegacyNationalDayCards('en/content/events/index.html');
+removeLegacyNationalDayCards('content/events/index.html');
 upsertGeneratedBlock('content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', contentCards);
-upsertGeneratedBlock('en/content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', enCards);
+upsertGeneratedBlock('content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', enCards);
 ensureCountryNames('content/events/index.html', events);
-ensureCountryNames('en/content/events/index.html', events);
+ensureCountryNames('content/events/index.html', events);
 updateTopicPage(events);
 updateCountryPages(events);
 updateRegister(events);

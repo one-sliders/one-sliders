@@ -331,7 +331,7 @@ function readExistingEvents() {
 }
 
 function chooseRoot(key) {
-  return key.startsWith('technology/') ? 'content' : 'en/content';
+  return 'content';
 }
 
 function topicDirFor(rootPrefix, key) {
@@ -339,7 +339,7 @@ function topicDirFor(rootPrefix, key) {
 }
 
 function makeTopicCard(e, fromEn = false) {
-  const root = e.rootPrefix === 'en' ? '/en/content' : '/content';
+  const root = '/content';
   const href = `${root}/categories/${e.category}/${e.topic}/events/${e.slug}.html`;
   const img = `${root}/categories/${e.category}/${e.topic}/events/img/${e.slug}-mini.png`;
   return `<a class="event-card" href="${href}"><img class="event-thumb" src="${img}" alt="${esc(e.title)} thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>${esc(e.title)}</strong><p>${esc(e.country.city)}, ${esc(e.country.name)}</p></a>`;
@@ -347,7 +347,7 @@ function makeTopicCard(e, fromEn = false) {
 
 function updateTopicPage(pagePath, events) {
   if (!fs.existsSync(pagePath)) {
-    const [category, topic] = path.relative(path.join(ROOT, pagePath.includes(`${path.sep}en${path.sep}`) ? 'en/content/categories' : 'content/categories'), pagePath).replace(/\\/g, '/').replace(/\.html$/, '').split('/');
+    const [category, topic] = path.relative(path.join(ROOT, pagePath.includes(`${path.sep}en${path.sep}`) ? 'content/categories' : 'content/categories'), pagePath).replace(/\\/g, '/').replace(/\.html$/, '').split('/');
     fs.mkdirSync(path.dirname(pagePath), { recursive: true });
     fs.writeFileSync(pagePath, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${titleCase(topic)} Events 2026</title><link rel="stylesheet" href="/assets/css/categories.css"></head><body><main class="category-shell"><h1>${titleCase(topic)}</h1><section class="topics-section"><div class="topic-grid event-grid"></div></section></main></body></html>`, 'utf8');
   }
@@ -366,12 +366,7 @@ function updateTopicPage(pagePath, events) {
 }
 
 function indexCard(e, indexRoot = 'content') {
-  let base;
-  if (indexRoot === 'en/content') {
-    base = e.rootPrefix === 'en' ? '../categories' : '../../../content/categories';
-  } else {
-    base = e.rootPrefix === 'en' ? '../../en/content/categories' : '../categories';
-  }
+  const base = '../categories';
   const href = `${base}/${e.category}/${e.topic}/events/${e.slug}.html`;
   const img = `${base}/${e.category}/${e.topic}/events/img/${e.slug}-mini.png`;
   return `<a class="event-card" data-end="2026-12-31" data-cat="${esc(e.category)}" data-topic="${esc(e.topic)}" data-cont="${esc(e.country.continent)}" data-country="${esc(e.country.slug)}" href="${href}" data-start="2026-01-01" data-reach="global" style="--cat-color:var(--c-culture)"><img class="card-thumb" src="${img}" alt="${esc(e.title)}" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">${esc(titleCase(e.category))}</span><strong class="card-title">${esc(e.title)}</strong><span class="card-meta">2026 watchlist - ${esc(e.country.city)}, ${esc(e.country.name)}</span></div></a>`;
@@ -400,7 +395,7 @@ function updateCountryPages(events) {
     const pagePath = path.join(ROOT, 'content', 'locations', ...key.split('/'), 'index.html');
     if (!fs.existsSync(pagePath)) continue;
     let html = fs.readFileSync(pagePath, 'utf8');
-    const cards = list.slice(0, 12).map(e => `<a class="internal-link-card" href="/${e.rootPrefix}/content/categories/${e.category}/${e.topic}/events/${e.slug}.html"><span>${esc(titleCase(e.topic))}</span><strong>${esc(e.title)}</strong><p>2026 watchlist</p></a>`).join('');
+    const cards = list.slice(0, 12).map(e => `<a class="internal-link-card" href="/content/categories/${e.category}/${e.topic}/events/${e.slug}.html"><span>${esc(titleCase(e.topic))}</span><strong>${esc(e.title)}</strong><p>2026 watchlist</p></a>`).join('');
     const block = `<!-- generated-country-events:start -->${cards}<!-- generated-country-events:end -->`;
     if (html.includes('<!-- generated-country-events:start -->')) {
       html = html.replace(/<!-- generated-country-events:start -->[\s\S]*?<!-- generated-country-events:end -->/, block);
@@ -433,7 +428,7 @@ for (const [key, candidates] of Object.entries(additions)) {
     const c = country(countryKey);
     ensureImages(topicDir, slug);
     const pagePath = path.join(topicDir, 'events', `${slug}.html`);
-    fs.writeFileSync(pagePath, eventPage({ rootPrefix: rootPrefix === 'en/content' ? 'en' : '', category, topic, title, slug, c }), 'utf8');
+    fs.writeFileSync(pagePath, eventPage({ rootPrefix: '', category, topic, title, slug, c }), 'utf8');
     current.add(slug);
     added += 1;
     createdCount += 1;
@@ -450,7 +445,7 @@ for (const [key, candidates] of Object.entries(additions)) {
     if (!fs.existsSync(pagePath)) continue;
     const html = fs.readFileSync(pagePath, 'utf8');
     if (!html.includes('Official organiser listing TBC')) continue;
-    managed.push({ rootPrefix: rootPrefix === 'en/content' ? 'en' : '', category, topic, title, slug, country: country(countryKey) });
+    managed.push({ rootPrefix: '', category, topic, title, slug, country: country(countryKey) });
   }
 }
 
@@ -464,14 +459,13 @@ for (const e of managed) {
 for (const [key, events] of byTopicRoot) {
   const [rootPrefix, topicKey] = key.split('|');
   const [category, topic] = topicKey.split('/');
-  const primary = path.join(ROOT, rootPrefix || 'content', 'content', 'categories', category, `${topic}.html`);
+  const primary = path.join(ROOT, 'content', 'categories', category, `${topic}.html`);
   const fallback = path.join(ROOT, 'content', 'categories', category, `${topic}.html`);
   updateTopicPage(primary, events);
   if (primary !== fallback && fs.existsSync(fallback)) updateTopicPage(fallback, events);
 }
 
 updateIndex(path.join(ROOT, 'content', 'events', 'index.html'), managed, 'content');
-updateIndex(path.join(ROOT, 'en', 'content', 'events', 'index.html'), managed, 'en/content');
 updateCountryPages(managed);
 
 fs.writeFileSync(path.join(ROOT, 'tmp', 'generated-topic-minimum-events.json'), JSON.stringify(managed, null, 2), 'utf8');

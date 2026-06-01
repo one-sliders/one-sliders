@@ -416,17 +416,17 @@ function extractEvents(lang, topicSlug) {
     const img = (body.match(/<img[^>]+src="([^"]+)"/) || [,''])[1];
     const eventPath = path.join(root, lang, 'content', 'events', href.replace(/\//g, path.sep));
     if (!fs.existsSync(eventPath)) continue;
-    out.push({ href: `../../events/${href}`, end, title, meta, img: img.replace('../../../content/', '../../../../content/') });
+    out.push({ href: `../../events/${href}`, end, title, meta, img: img.replace('../content/', '../content/') });
   }
   return out.slice(0, 8);
 }
 
 function heroFor(category, slug, events) {
-  const categoryHero = `../../../../content/categories/${category}/img/${slug}-hero-wide.png`;
+  const categoryHero = `../content/categories/${category}/img/${slug}-hero-wide.png`;
   if (fs.existsSync(path.join(root, 'content', 'categories', category, 'img', `${slug}-hero-wide.png`))) return categoryHero;
   const eventHero = events.find((e) => e.img)?.img;
   if (eventHero) return eventHero;
-  return '../../../../content/events/2026/05/img/vivid-sydney-hero.png';
+  return '../content/events/2026/05/img/vivid-sydney-hero.png';
 }
 
 function languageMenu(lang, category, slug) {
@@ -486,7 +486,7 @@ function renderPage(lang, category, slug) {
     <meta name="content-id" content="categories-${category}-${slug}">
     <meta name="content-language" content="${lang}">
     <meta name="available-languages" content="${langDirs.join(',')}">
-    <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/en/content/categories/${category}/${slug}.html">
+    <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/content/categories/${category}/${slug}.html">
 ${alternates}
     <meta name="theme-color" content="#0d2137">
     <title>${esc(name)}</title>
@@ -497,7 +497,7 @@ ${css}
   <body>
     <nav class="top-menu" aria-label="Category navigation">
       <a class="nav-icon" href="../../events/index.html" title="${esc(profile.categories?.events || 'Events')}" aria-label="${esc(profile.categories?.events || 'Events')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../../../content/locations/index.html" title="${esc(labels.place || 'World')}" aria-label="${esc(labels.place || 'World')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="../content/locations/index.html" title="${esc(labels.place || 'World')}" aria-label="${esc(labels.place || 'World')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
       <a class="nav-icon" href="../index.html" title="${esc(labels.category || 'Categories')}" aria-label="${esc(labels.category || 'Categories')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
       <a href="index.html">${esc(catName)}</a>

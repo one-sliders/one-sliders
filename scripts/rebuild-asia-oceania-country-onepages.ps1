@@ -62,31 +62,31 @@ $FoodProfiles = @{
 }
 
 $EventImageBySlug = @{
-  'abu-dhabi-grand-prix' = '/en/content/categories/sport/formula-1/events/img/abu-dhabi-grand-prix-mini.png'
-  'afc-asian-cup-2027' = '/en/content/categories/sport/football/events/img/afc-asian-cup-mini.png'
-  'afl-grand-final' = '/en/content/categories/sport/aussie-rules/events/img/afl-grand-final-mini.png'
-  'asian-games-2026' = '/en/content/categories/sport/multi-sport/events/img/asian-games-mini.png'
-  'australian-open-2027' = '/en/content/categories/sport/tennis/events/img/australian-open-mini.png'
-  'bali-arts-festival' = '/en/content/categories/culture/art/events/img/bali-arts-festival-mini.png'
-  'bledisloe-cup' = '/en/content/categories/sport/rugby/events/img/bledisloe-cup-mini.png'
-  'diwali-2026' = '/en/content/categories/culture/religion/events/img/diwali-mini.png'
-  'dubai-world-cup' = '/en/content/categories/sport/horse-racing/events/img/dubai-world-cup-mini.png'
-  'fiji-day' = '/en/content/categories/culture/national-day/events/img/fiji-day-mini.png'
-  'hajj-2026' = '/en/content/categories/culture/religion/events/img/hajj-mini.png'
-  'icc-t20-world-cup-2026' = '/en/content/categories/sport/cricket/events/img/icc-t20-world-cup-mini.png'
-  'ipl-final-2026' = '/en/content/categories/sport/cricket/events/img/ipl-final-mini.png'
-  'melbourne-cup' = '/en/content/categories/sport/horse-racing/events/img/melbourne-cup-mini.png'
-  'motogp-japan' = '/en/content/categories/sport/motogp/events/img/motogp-japan-mini.png'
-  'nrl-grand-final' = '/en/content/categories/sport/rugby/events/img/nrl-grand-final-mini.png'
-  'qatar-grand-prix' = '/en/content/categories/sport/formula-1/events/img/qatar-grand-prix-mini.png'
-  'queenstown-winter-festival' = '/en/content/categories/culture/winter/events/img/queenstown-winter-festival-mini.png'
-  'seoul-lantern-festival' = '/en/content/categories/culture/tradition/events/img/seoul-lantern-festival-mini.png'
-  'singapore-grand-prix' = '/en/content/categories/sport/formula-1/events/img/singapore-grand-prix-mini.png'
-  'state-of-origin' = '/en/content/categories/sport/rugby/events/img/state-of-origin-mini.png'
-  'sydney-marathon' = '/en/content/categories/sport/running/events/img/sydney-marathon-mini.png'
-  'sydney-new-years-eve' = '/en/content/categories/culture/tradition/events/img/sydney-new-years-eve-mini.png'
-  'vivid-sydney' = '/en/content/categories/culture/art/events/img/vivid-sydney-mini.png'
-  'yi-peng-and-loy-krathong' = '/en/content/categories/culture/tradition/events/img/yi-peng-and-loy-krathong-mini.png'
+  'abu-dhabi-grand-prix' = '/content/categories/sport/formula-1/events/img/abu-dhabi-grand-prix-mini.png'
+  'afc-asian-cup-2027' = '/content/categories/sport/football/events/img/afc-asian-cup-mini.png'
+  'afl-grand-final' = '/content/categories/sport/aussie-rules/events/img/afl-grand-final-mini.png'
+  'asian-games-2026' = '/content/categories/sport/multi-sport/events/img/asian-games-mini.png'
+  'australian-open-2027' = '/content/categories/sport/tennis/events/img/australian-open-mini.png'
+  'bali-arts-festival' = '/content/categories/culture/art/events/img/bali-arts-festival-mini.png'
+  'bledisloe-cup' = '/content/categories/sport/rugby/events/img/bledisloe-cup-mini.png'
+  'diwali-2026' = '/content/categories/culture/religion/events/img/diwali-mini.png'
+  'dubai-world-cup' = '/content/categories/sport/horse-racing/events/img/dubai-world-cup-mini.png'
+  'fiji-day' = '/content/categories/culture/national-day/events/img/fiji-day-mini.png'
+  'hajj-2026' = '/content/categories/culture/religion/events/img/hajj-mini.png'
+  'icc-t20-world-cup-2026' = '/content/categories/sport/cricket/events/img/icc-t20-world-cup-mini.png'
+  'ipl-final-2026' = '/content/categories/sport/cricket/events/img/ipl-final-mini.png'
+  'melbourne-cup' = '/content/categories/sport/horse-racing/events/img/melbourne-cup-mini.png'
+  'motogp-japan' = '/content/categories/sport/motogp/events/img/motogp-japan-mini.png'
+  'nrl-grand-final' = '/content/categories/sport/rugby/events/img/nrl-grand-final-mini.png'
+  'qatar-grand-prix' = '/content/categories/sport/formula-1/events/img/qatar-grand-prix-mini.png'
+  'queenstown-winter-festival' = '/content/categories/culture/winter/events/img/queenstown-winter-festival-mini.png'
+  'seoul-lantern-festival' = '/content/categories/culture/tradition/events/img/seoul-lantern-festival-mini.png'
+  'singapore-grand-prix' = '/content/categories/sport/formula-1/events/img/singapore-grand-prix-mini.png'
+  'state-of-origin' = '/content/categories/sport/rugby/events/img/state-of-origin-mini.png'
+  'sydney-marathon' = '/content/categories/sport/running/events/img/sydney-marathon-mini.png'
+  'sydney-new-years-eve' = '/content/categories/culture/tradition/events/img/sydney-new-years-eve-mini.png'
+  'vivid-sydney' = '/content/categories/culture/art/events/img/vivid-sydney-mini.png'
+  'yi-peng-and-loy-krathong' = '/content/categories/culture/tradition/events/img/yi-peng-and-loy-krathong-mini.png'
 }
 
 function Get-DataBlock($scriptName, $functionName) {
@@ -292,7 +292,7 @@ function Build-TopicCards($slug, $continentSlug, $continentTitle) {
     $secondText = 'Reefs, lagoons, island seasons and ocean-linked events.'
   }
 
-  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/en/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/' + $continentSlug + '/img/' + $continentSlug + '-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
+  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/' + $continentSlug + '/img/' + $continentSlug + '-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
 }
 
 function Build-CountryOnePage($filePath, $continentSlug, $continentTitle, $data, $groups, $names) {

@@ -809,7 +809,287 @@
   }
 
   function sourceCard(data) {
-    return '';
+    if (!data || !data.showSourceCard) return '';
+    var sources = (data.sources || []).map(function (source) {
+      return '<a href="' + escapeAttribute(source.url) + '">' + (source.label || source.url) + '</a>';
+    }).join(' ');
+    return '<div class="sources"><span>Sources</span><p>' +
+      (sources || 'Official event information') +
+      (data.lastUpdated ? ' &middot; Last updated: ' + data.lastUpdated : '') +
+    '</p></div>';
+  }
+
+  function buildHotelAffiliateUrl(options) {
+    options = options || {};
+    var params = new URLSearchParams();
+    params.set('destination', options.destination || '');
+    params.set('checkin', options.checkIn || '');
+    params.set('checkout', options.checkOut || '');
+    params.set('adults', options.adults || 2);
+    params.set('rooms', options.rooms || 1);
+    params.set('campaign', options.campaign || '');
+    // TODO: Replace this placeholder with the approved hotel affiliate deep-link provider.
+    return (location.pathname || '') + '#year-2027';
+  }
+
+  function buildProductAffiliateUrl(options) {
+    options = options || {};
+    var params = new URLSearchParams();
+    params.set('category', options.category || '');
+    params.set('campaign', options.campaign || '');
+    // TODO: Replace this placeholder with the approved product affiliate deep-link provider.
+    return (location.pathname || '') + '#year-2027';
+  }
+
+  function renderAffiliateLink(link, className) {
+    if (!link) return '';
+    var href = link.href || '';
+    if (link.builder === 'hotel') href = buildHotelAffiliateUrl(link);
+    if (link.builder === 'product') href = buildProductAffiliateUrl(link);
+    var tracking = [
+      link.event ? ' data-event="' + escapeAttribute(link.event) + '"' : '',
+      link.affiliateType ? ' data-affiliate-type="' + escapeAttribute(link.affiliateType) + '"' : '',
+      link.campaign ? ' data-campaign="' + escapeAttribute(link.campaign) + '"' : '',
+      link.pageTopic ? ' data-page-topic="' + escapeAttribute(link.pageTopic) + '"' : '',
+      link.pageEvent ? ' data-page-event="' + escapeAttribute(link.pageEvent) + '"' : ''
+    ].join('');
+    return '<a class="event-button ' + (className || '') + '" href="' + escapeAttribute(href) + '"' +
+      ' rel="sponsored nofollow"' + tracking + '>' + (link.label || 'Open') + '</a>';
+  }
+
+  function renderHotelModule(module) {
+    if (!module) return '';
+    var stayAreas = (module.stayAreas || []).map(function (area) {
+      return '<li>' + area + '</li>';
+    }).join('');
+    return '<section class="commercial-module commercial-module--hotel" id="ryder-cup-2027-hotels">' +
+      '<div class="commercial-module__header"><span>Hotels</span><strong>' + (module.title || 'Stay near the event') + '</strong></div>' +
+      '<div class="commercial-facts">' +
+        fact('Destination', module.destination || 'TBC') +
+        fact('Check-in', module.checkIn || 'TBC') +
+        fact('Check-out', module.checkOut || 'TBC') +
+        fact('Guests', (module.adults || 2) + ' adults') +
+        fact('Rooms', module.rooms || 1) +
+      '</div>' +
+      (stayAreas ? '<div class="commercial-module__body"><span>Alternative stay areas</span><ul class="event-list event-list--compact">' + stayAreas + '</ul></div>' : '') +
+      '<div class="actions-row">' + renderAffiliateLink({
+        builder: 'hotel',
+        label: module.cta || 'Check hotel prices',
+        destination: module.destination,
+        checkIn: module.checkIn,
+        checkOut: module.checkOut,
+        adults: module.adults,
+        rooms: module.rooms,
+        campaign: module.campaign,
+        event: 'affiliate_click',
+        affiliateType: 'hotel',
+        pageTopic: module.pageTopic,
+        pageEvent: module.pageEvent
+      }, 'event-button--inline') + '</div>' +
+    '</section>';
+  }
+
+  function renderGolfTripModule(module) {
+    if (!module) return '';
+    var cards = (module.cards || []).map(function (card) {
+      return '<div class="edition-compact-card"><span>' + (card.label || 'Golf trip') + '</span><strong>' + card.title + '</strong>' +
+        (card.detail ? '<p>' + card.detail + '</p>' : '') + '</div>';
+    }).join('');
+    var actions = (module.links || []).map(function (link) {
+      return renderAffiliateLink(link, 'event-button--inline');
+    }).join('');
+    return '<section class="commercial-module commercial-module--golf-trip" id="ryder-cup-2027-golf-trip">' +
+      '<div class="commercial-module__header"><span>Golf trip</span><strong>' + (module.title || 'Turn it into a golf trip') + '</strong></div>' +
+      '<div class="edition-overview__cards edition-overview__cards--three">' + cards + '</div>' +
+      (actions ? '<div class="actions-row">' + actions + '</div>' : '') +
+    '</section>';
+  }
+
+  function renderLeadModule(module) {
+    if (!module) return '';
+    var options = (module.interests || []).map(function (interest) {
+      return '<option value="' + escapeAttribute(interest.toLowerCase().replace(/[^a-z0-9]+/g, '-')) + '">' + interest + '</option>';
+    }).join('');
+    return '<section class="commercial-module commercial-module--lead">' +
+      '<div class="commercial-module__header"><span>Updates</span><strong>' + (module.title || 'Get event updates') + '</strong></div>' +
+      '<form class="lead-form" data-event="lead_capture" data-lead-type="' + escapeAttribute(module.leadType || '') + '" data-campaign="' + escapeAttribute(module.campaign || '') + '">' +
+        '<label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>' +
+        '<label><span>Interest</span><select name="interest">' + options + '</select></label>' +
+        '<button class="event-button" type="submit">' + (module.cta || 'Send me updates') + '</button>' +
+      '</form>' +
+      '<p class="commercial-module__note">TODO: Connect this form to the approved lead-capture backend before collecting submissions.</p>' +
+    '</section>';
+  }
+
+  function renderFaqModule(items) {
+    if (!items || !items.length) return '';
+    return '<section class="commercial-module commercial-module--faq">' +
+      '<div class="commercial-module__header"><span>FAQ</span><strong>Ryder Cup 2027 questions</strong></div>' +
+      '<div class="faq-list">' + items.map(function (item) {
+        return '<details><summary>' + item.q + '</summary><p>' + item.a + '</p></details>';
+      }).join('') + '</div>' +
+    '</section>';
+  }
+
+  function renderRyderLiveModule(module) {
+    if (!module) return '';
+    var sessions = (module.sessions || []).map(function (label) {
+      return '<div class="live-session-row"><span>' + label + '</span><strong>TBC</strong><em>Not started</em></div>';
+    }).join('');
+    return '<section class="commercial-module commercial-module--results" data-ryder-live-results data-live-src="' + escapeAttribute(module.src || '') + '">' +
+      '<div class="commercial-module__header"><span>Results</span><strong>' + (module.title || 'Ryder Cup results') + '</strong></div>' +
+      '<div class="live-scoreboard">' +
+        '<div class="live-total live-total--europe"><span>' + country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + '</span><strong data-live-total="europe">TBC</strong></div>' +
+        '<div class="live-total live-total--usa"><span>' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }) + '</span><strong data-live-total="usa">TBC</strong></div>' +
+      '</div>' +
+      '<div class="edition-compact-card"><span>Current session</span><strong data-live-current-session>TBC</strong><p data-live-status>' + (module.emptyText || module.statusText || 'Results appear here during the event.') + '</p></div>' +
+      '<div class="live-session-list" data-live-session-list>' + sessions + '</div>' +
+      '<p class="commercial-module__note" data-live-updated>Not live yet.</p>' +
+    '</section>';
+  }
+
+  function renderCurrentEditionModules(edition) {
+    if (!edition || !edition.currentModules) return '';
+    return [
+      renderHotelModule(edition.currentModules.hotel),
+      renderGolfTripModule(edition.currentModules.golfTrip),
+      renderLeadModule(edition.currentModules.lead),
+      renderFaqModule(edition.currentModules.faq)
+    ].join('');
+  }
+
+  function renderHistoricalCurrentCta(edition) {
+    if (!edition || !edition.currentCta) return '';
+    return '<div class="card card--current-guide"><span>Planning the next Ryder Cup?</span>' +
+      '<strong>' + edition.currentCta.title + '</strong><p>' + edition.currentCta.detail + '</p>' +
+      '<div class="actions-row"><a class="event-button event-button--inline" href="#year-' + escapeAttribute(edition.currentCta.year || '2027') + '" data-edition-tab-target="stay">' +
+      (edition.currentCta.cta || 'View current guide') + '</a></div></div>';
+  }
+
+  function compactFacts(items) {
+    return '<div class="facts-strip facts-strip--compact">' + (items || []).map(function (item) {
+      return fact(item.label, item.value);
+    }).join('') + '</div>';
+  }
+
+  function renderCompactCountdown(edition) {
+    if (!edition || edition.status === 'past') return '';
+    var countdownTarget = edition.countdownDate || edition.startDate;
+    return '<div class="countdown countdown--compact" data-countdown="' + countdownTarget + '" data-next-date="' + (edition.nextDate || '') + '">' +
+      '<span>' + (edition.countdownLabel || 'Event starts') + '</span><strong>' + daysText(countdownTarget, edition.nextDate) + '</strong><p>' + (edition.countdownText || '') + '</p></div>';
+  }
+
+  function renderSessionScores(edition) {
+    var rows = edition && edition.sessionScores ? edition.sessionScores : [];
+    if (!rows.length) return '';
+    var europe = country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' });
+    var usa = country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' });
+    return '<div class="card card--session-scores"><span>Score by session</span><strong>Momentum after each round</strong>' +
+      '<div class="session-score-visual">' +
+        '<div class="session-score-teams"><b>' + europe + '</b><b>' + usa + '</b></div>' +
+        rows.map(function (row) {
+          var europeScore = Number(row.europe);
+          var usaScore = Number(row.usa);
+          var total = Math.max(1, europeScore + usaScore);
+          var europePct = Math.max(4, Math.min(96, (europeScore / total) * 100));
+          var usaPct = Math.max(4, Math.min(96, (usaScore / total) * 100));
+          var leader = europeScore === usaScore ? 'Tie' : (europeScore > usaScore ? 'Europe lead' : 'USA lead');
+          return '<div class="session-score-step">' +
+            '<div class="session-score-step__meta"><span>' + row.label + '</span><strong>' + row.europe + ' - ' + row.usa + '</strong><em>' + leader + '</em></div>' +
+            '<div class="session-score-bars" aria-label="' + escapeAttribute(row.label + ': Europe ' + row.europe + ', United States ' + row.usa) + '">' +
+              '<i class="session-score-bars__europe" data-score-width="' + europePct.toFixed(2) + '"></i>' +
+              '<i class="session-score-bars__usa" data-score-width="' + usaPct.toFixed(2) + '"></i>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div></div>';
+  }
+
+  function renderRyderTabPanel(tab) {
+    return '<section class="edition-tab-panel" data-edition-tab-panel="' + escapeAttribute(tab.id) + '"' + (tab.active ? '' : ' hidden') + '>' +
+      tab.html +
+    '</section>';
+  }
+
+  function renderRyderTabs(data, edition, target) {
+    var current = edition.status !== 'past';
+    var modules = edition.currentModules || {};
+    if (!current) {
+      renderRyderHistoricalEdition(data, edition, target);
+      return;
+    }
+    var defaultTab = window.__eventPendingTab || 'stay';
+    window.__eventPendingTab = '';
+    var overviewFacts = compactFacts([
+      { label: 'Venue', value: edition.venue || 'TBC' },
+      { label: 'City', value: (edition.cities || []).map(city).join(' ') || 'TBC' },
+      { label: 'Country', value: countries(edition.countries || []) || 'TBC' },
+      { label: 'Dates', value: edition.dates || 'TBC' },
+      { label: 'Format', value: edition.format || 'TBC' }
+    ]);
+    var tabs = [
+      { id: 'stay', label: 'Stay', html: renderHotelModule(modules.hotel) + '<div class="edition-compact-card"><span>Airport note</span><strong>Shannon is closest</strong><p>Cork and Dublin may also work depending on routes.</p></div>' },
+      { id: 'results', label: 'Results', html: renderRyderLiveModule(edition.liveResults) },
+      { id: 'overview', label: 'Overview', html: overviewFacts + compactFacts([
+        { label: 'Match days', value: edition.matchDays || '17-19 Sep 2027' },
+        { label: 'Teams', value: country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }) }
+      ]) + renderCompactCountdown(edition) + '<div class="edition-compact-card"><span>Official info</span><strong>Check official channels before booking</strong><p>OneSliders is an independent guide. Confirm ticketing, transport and event access with official Ryder Cup information.</p></div>' + renderFaqModule(modules.faq) },
+      { id: 'golf-trip', label: 'Golf trip', html: renderGolfTripModule(modules.golfTrip) },
+      { id: 'updates', label: 'Updates', html: renderLeadModule(modules.lead) }
+    ];
+    if (!tabs.some(function (tab) { return tab.id === defaultTab; })) defaultTab = tabs[0].id;
+    tabs.forEach(function (tab) { tab.active = tab.id === defaultTab; });
+    target.innerHTML = '<div class="edition-tabs" data-edition-tabs>' +
+      '<div class="edition-tablist" role="tablist" aria-label="Ryder Cup section">' +
+      tabs.map(function (tab) {
+        return '<button class="edition-tab" type="button" role="tab" aria-selected="' + (tab.active ? 'true' : 'false') + '" data-edition-tab="' + tab.id + '">' + tab.label + '</button>';
+      }).join('') + '</div>' +
+      '<div class="edition-tab-panels">' + tabs.map(renderRyderTabPanel).join('') + '</div></div>' +
+      sourceCard(data);
+    bindEditionTabs(target);
+  }
+
+  function renderRyderHistoricalEdition(data, edition, target) {
+    var resultTitle = edition.winner ? country(edition.winner) : (edition.resultLabel || 'Result');
+    var runnerUp = edition.runnerUp ? country(edition.runnerUp) : '';
+    target.innerHTML = '<div class="ryder-archive-panel">' +
+      '<div class="facts-strip facts-strip--compact">' +
+        fact('Venue', edition.venue || 'TBC') +
+        fact('Dates', edition.dates || 'TBC') +
+        fact('Status', edition.statusLabel || 'Complete') +
+      '</div>' +
+      '<div class="facts-strip facts-strip--compact">' +
+        fact('Winner', resultTitle) +
+        fact('Score', edition.resultScore || 'TBC') +
+        fact('Runner-up', runnerUp || 'TBC') +
+      '</div>' +
+      renderSessionScores(edition) +
+    '</div>';
+  }
+
+  function updateEditionIdentity(data, edition) {
+    if (!edition) return;
+    var title = edition.h1 || ((data && data.eventName ? data.eventName : 'Event') + ' ' + edition.year);
+    var dateValue = edition.status === 'past' ? (edition.dates || 'TBC') : (edition.dates || '13-19 Sep 2027');
+    var locationValue = countries(edition.countries || []) || 'TBC';
+    var resultValue = edition.status === 'past'
+      ? (edition.winner ? country(edition.winner) : (edition.resultLabel || edition.result || 'Result TBC'))
+      : country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' });
+    var introValue = edition.status === 'past'
+      ? 'Historical Ryder Cup result: where it was played, when it happened and who won.'
+      : 'The Ryder Cup is golf\'s Europe vs United States team match-play event. The next edition is at Adare Manor in Limerick, Ireland, with event week set for 13-19 September 2027.';
+    document.querySelectorAll('[data-year-title]').forEach(function (node) { node.textContent = title; });
+    document.querySelectorAll('[data-identity-intro]').forEach(function (node) { node.textContent = introValue; });
+    document.querySelectorAll('[data-identity-date]').forEach(function (node) { node.innerHTML = dateValue; });
+    document.querySelectorAll('[data-identity-venue]').forEach(function (node) { node.innerHTML = edition.venue || 'TBC'; });
+    document.querySelectorAll('[data-identity-location]').forEach(function (node) { node.innerHTML = locationValue; });
+    document.querySelectorAll('[data-identity-result]').forEach(function (node) { node.innerHTML = resultValue; });
+    document.querySelectorAll('[data-current-only]').forEach(function (node) {
+      node.hidden = edition.status === 'past';
+    });
+    document.querySelectorAll('[data-hide-archive]').forEach(function (node) {
+      node.hidden = edition.status === 'past';
+    });
   }
 
   function editionActionButtons(data, edition, allowCalendar) {
@@ -1262,6 +1542,8 @@
     hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
+    bindLeadForms();
+    hydrateSessionScoreBars(target);
     refreshCountdowns();
   }
 
@@ -1271,6 +1553,9 @@
     var heading = document.querySelector('[data-year-heading]');
     if (!target || !edition) return;
     if (heading) heading.textContent = data.eventName + ' ' + edition.year + ' ' + edition.headingPlace;
+    document.querySelectorAll('[data-year-title]').forEach(function (node) {
+      node.textContent = edition.h1 || (data.eventName + ' ' + edition.year);
+    });
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
     var countryHtml = data.hideEditionCountryFact
@@ -1279,6 +1564,20 @@
 
     if (edition.stageTabs && edition.stageTabs.length) {
       renderEditionWithStages(data, edition, target);
+      return;
+    }
+
+    if (data.slug === 'ryder-cup') {
+      renderRyderTabs(data, edition, target);
+      updateEditionIdentity(data, edition);
+      removeBrokenCountryHeroImages(target);
+      bindCalendar(data, edition);
+      bindSaveButtons();
+      bindLeadForms();
+      bindEditionTabTargetLinks();
+      hydrateSessionScoreBars(target);
+      hydrateRyderLiveResults(target);
+      refreshCountdowns();
       return;
     }
 
@@ -1320,6 +1619,8 @@
     var weatherCard = renderWeatherCard(data, edition);
     var actions = editionActionButtons(data, edition, true);
     var historyNotice = edition.historyNotice ? highlight(edition.historyNotice) : '';
+    var currentModules = renderCurrentEditionModules(edition);
+    var historicalCta = edition.status === 'past' ? renderHistoricalCurrentCta(edition) : '';
 
     target.innerHTML =
       '<div class="facts-strip">' +
@@ -1331,11 +1632,13 @@
         (data.hideEditionFormatFact ? '' : fact('Format', edition.format)) +
       '</div>' +
       historyNotice +
+      currentModules +
       lifecycle +
       scoreProgressionCard +
       finalResults +
       medalGames +
       weatherCard +
+      historicalCta +
       editionDetails +
       actions +
     sourceCard(data);
@@ -1344,6 +1647,9 @@
     hydrateWeatherCards(target);
     bindCalendar(data, edition);
     bindSaveButtons();
+    bindLeadForms();
+    hydrateSessionScoreBars(target);
+    hydrateRyderLiveResults(target);
     refreshCountdowns();
   }
 
@@ -1362,7 +1668,7 @@
     }
     function requestedYearFromLocation() {
       var hashMatch = (window.location.hash || '').match(/^#year-(\d{4})$/);
-      var queryYear = new URLSearchParams(window.location.search).get('year');
+      var queryYear = data.hashOnlyYearNavigation ? null : new URLSearchParams(window.location.search).get('year');
       var year = hashMatch ? hashMatch[1] : queryYear;
       return switcherEditions.some(function (edition) { return String(edition.year) === String(year); })
         ? Number(year)
@@ -1375,6 +1681,10 @@
 
     function ariaLabelFor(edition) {
       return labelFor(edition) + (edition.winner && edition.winner.name ? ', winner ' + edition.winner.name : '');
+    }
+
+    function yearHashUrl(year) {
+      return (window.location.pathname || '') + '#year-' + year;
     }
 
     function buttonContentFor(edition) {
@@ -1418,10 +1728,19 @@
       if (!button) return;
       var year = button.getAttribute('data-year');
       selectYear(year);
-      if (history.replaceState) history.replaceState(null, '', '#year-' + year);
+      if (data.hashOnlyYearNavigation) {
+        if (history.replaceState) history.replaceState(null, '', yearHashUrl(year));
+        else window.location.hash = 'year-' + year;
+      } else if (history.replaceState) {
+        history.replaceState(null, '', '#year-' + year);
+      }
     });
 
     selectYear(requestedYear);
+    if (data.hashOnlyYearNavigation && (window.location.search || !/^#year-\d{4}$/.test(window.location.hash || ''))) {
+      if (history.replaceState) history.replaceState(null, '', yearHashUrl(requestedYear));
+      else window.location.hash = 'year-' + requestedYear;
+    }
     window.addEventListener('hashchange', function () {
       var nextYear = requestedYearFromLocation();
       if (String(nextYear) !== String(requestedYear)) {
@@ -1705,6 +2024,117 @@
     });
   }
 
+  function bindLeadForms() {
+    document.querySelectorAll('[data-event="lead_capture"]').forEach(function (form) {
+      form.onsubmit = function (event) {
+        event.preventDefault();
+      };
+    });
+  }
+
+  function hydrateSessionScoreBars(root) {
+    (root || document).querySelectorAll('[data-score-width]').forEach(function (bar) {
+      var width = Math.max(4, Math.min(96, Number(bar.getAttribute('data-score-width')) || 4));
+      bar.style.setProperty('--score-width', width + '%');
+    });
+  }
+
+  function renderLiveSessions(sessions) {
+    return (sessions || []).map(function (session) {
+      var score = session.europe || session.usa ? (session.europe || '0') + ' - ' + (session.usa || '0') : 'TBC';
+      var matches = (session.matches || []).slice(0, 4).map(function (match) {
+        return '<span class="live-match-row"><b>' + (match.match || match.label || 'Match') + '</b><span>' + (match.europe || 'Europe TBC') + '</span><strong>' + (match.score || match.status || 'TBC') + '</strong><span>' + (match.usa || 'USA TBC') + '</span></span>';
+      }).join('');
+      return '<div class="live-session-row live-session-row--expanded"><span>' + (session.label || 'Session') + '</span><strong>' + score + '</strong><em>' + (session.status || 'TBC') + '</em>' + (matches ? '<div class="live-match-list">' + matches + '</div>' : '') + '</div>';
+    }).join('');
+  }
+
+  function hydrateRyderLiveResults(root) {
+    (root || document).querySelectorAll('[data-ryder-live-results]').forEach(function (panel) {
+      var src = panel.getAttribute('data-live-src');
+      if (!src || !window.fetch) return;
+      fetch(src, { cache: 'no-cache' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Could not load Ryder Cup live data');
+          return response.json();
+        })
+        .then(function (live) {
+          var europeTotal = panel.querySelector('[data-live-total="europe"]');
+          var usaTotal = panel.querySelector('[data-live-total="usa"]');
+          var currentSession = panel.querySelector('[data-live-current-session]');
+          var status = panel.querySelector('[data-live-status]');
+          var list = panel.querySelector('[data-live-session-list]');
+          var updated = panel.querySelector('[data-live-updated]');
+          if (europeTotal && live.totals && live.totals.europe !== '') europeTotal.textContent = live.totals.europe;
+          if (usaTotal && live.totals && live.totals.usa !== '') usaTotal.textContent = live.totals.usa;
+          if (currentSession) currentSession.textContent = live.currentSession || (live.status === 'not-live-yet' ? 'Not live yet' : 'TBC');
+          if (status) status.textContent = live.status === 'not-live-yet' ? 'Ryder Cup 2027 is not live yet. This panel becomes the live score hub during event week.' : 'Live and completed session results appear here as the event is updated.';
+          if (list && live.sessions && live.sessions.length) list.innerHTML = renderLiveSessions(live.sessions);
+          if (updated) updated.textContent = live.updated ? 'Last updated: ' + live.updated : 'Not live yet.';
+        })
+        .catch(function () {
+          var status = panel.querySelector('[data-live-status]');
+          if (status) status.textContent = 'Live data is not available right now. Check official Ryder Cup scoring during event play.';
+        });
+    });
+  }
+
+  function bindEditionTabs(root) {
+    (root || document).querySelectorAll('[data-edition-tabs]').forEach(function (tabsRoot) {
+      var buttons = Array.prototype.slice.call(tabsRoot.querySelectorAll('[data-edition-tab]'));
+      var panels = Array.prototype.slice.call(tabsRoot.querySelectorAll('[data-edition-tab-panel]'));
+      function activate(id, focusButton) {
+        buttons.forEach(function (button) {
+          var active = button.getAttribute('data-edition-tab') === id;
+          button.setAttribute('aria-selected', active ? 'true' : 'false');
+          button.tabIndex = active ? 0 : -1;
+          if (active && focusButton) button.focus();
+        });
+        panels.forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-edition-tab-panel') !== id;
+        });
+      }
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          activate(button.getAttribute('data-edition-tab'), false);
+        });
+        button.addEventListener('keydown', function (event) {
+          var currentIndex = buttons.indexOf(button);
+          var nextKey = event.key === 'ArrowRight' || event.key === 'ArrowDown';
+          var prevKey = event.key === 'ArrowLeft' || event.key === 'ArrowUp';
+          if (!nextKey && !prevKey && event.key !== 'Home' && event.key !== 'End') return;
+          event.preventDefault();
+          var nextIndex = currentIndex;
+          if (nextKey) nextIndex = (currentIndex + 1) % buttons.length;
+          if (prevKey) nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+          if (event.key === 'Home') nextIndex = 0;
+          if (event.key === 'End') nextIndex = buttons.length - 1;
+          activate(buttons[nextIndex].getAttribute('data-edition-tab'), true);
+        });
+      });
+      tabsRoot.addEventListener('click', function (event) {
+        var link = event.target.closest('[data-edition-tab-target]');
+        if (!link) return;
+        window.__eventPendingTab = link.getAttribute('data-edition-tab-target');
+      });
+      var selected = buttons.find(function (button) { return button.getAttribute('aria-selected') === 'true'; }) || buttons[0];
+      if (selected) activate(selected.getAttribute('data-edition-tab'), false);
+    });
+  }
+
+  function bindEditionTabTargetLinks() {
+    document.querySelectorAll('[data-edition-tab-target]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var tabId = link.getAttribute('data-edition-tab-target');
+        window.__eventPendingTab = tabId;
+        window.requestAnimationFrame(function () {
+          var button = document.querySelector('[data-edition-tab="' + tabId + '"]');
+          if (button && button.getAttribute('aria-selected') !== 'true') button.click();
+        });
+      });
+    });
+  }
+
   function initCarousel() {
     var carousel = document.querySelector('[data-carousel]');
     if (!carousel) return;
@@ -1840,6 +2270,10 @@
     initStaticStageTabs();
     refreshCountdowns();
     bindSaveButtons();
+    bindLeadForms();
+    bindEditionTabTargetLinks();
+    hydrateSessionScoreBars(document);
+    hydrateRyderLiveResults(document);
     window.setInterval(refreshCountdowns, 1000);
   });
 }());

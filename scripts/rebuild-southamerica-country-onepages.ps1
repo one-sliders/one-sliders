@@ -55,16 +55,16 @@ $FoodProfiles = @{
 }
 
 $EventImageBySlug = @{
-  'brazil-independence-day' = '/en/content/categories/culture/national-day/events/img/brazil-independence-day-mini.png'
-  'buenos-aires-tango-festival' = '/en/content/categories/culture/music/events/img/buenos-aires-tango-festival-mini.png'
-  'chile-independence-day-and-fiestas-patrias' = '/en/content/categories/culture/national-day/events/img/chile-independence-day-and-fiestas-patrias-mini.png'
-  'copa-libertadores-final' = '/en/content/categories/sport/football/events/img/copa-libertadores-final-mini.png'
-  'festa-junina' = '/en/content/categories/music/music-festivals/events/img/festa-junina-mini.png'
-  'inti-raymi' = '/en/content/categories/culture/tradition/events/img/inti-raymi-mini.png'
-  'medellin-flower-festival' = '/en/content/categories/culture/art/events/img/medellin-flower-festival-mini.png'
-  'new-years-eve-copacabana' = '/en/content/categories/culture/tradition/events/img/new-years-eve-copacabana-mini.png'
-  'oktoberfest-blumenau' = '/en/content/categories/culture/food-drink/events/img/oktoberfest-blumenau-mini.png'
-  'sao-paulo-grand-prix' = '/en/content/categories/sport/formula-1/events/img/sao-paulo-grand-prix-mini.png'
+  'brazil-independence-day' = '/content/categories/culture/national-day/events/img/brazil-independence-day-mini.png'
+  'buenos-aires-tango-festival' = '/content/categories/culture/music/events/img/buenos-aires-tango-festival-mini.png'
+  'chile-independence-day-and-fiestas-patrias' = '/content/categories/culture/national-day/events/img/chile-independence-day-and-fiestas-patrias-mini.png'
+  'copa-libertadores-final' = '/content/categories/sport/football/events/img/copa-libertadores-final-mini.png'
+  'festa-junina' = '/content/categories/music/music-festivals/events/img/festa-junina-mini.png'
+  'inti-raymi' = '/content/categories/culture/tradition/events/img/inti-raymi-mini.png'
+  'medellin-flower-festival' = '/content/categories/culture/art/events/img/medellin-flower-festival-mini.png'
+  'new-years-eve-copacabana' = '/content/categories/culture/tradition/events/img/new-years-eve-copacabana-mini.png'
+  'oktoberfest-blumenau' = '/content/categories/culture/food-drink/events/img/oktoberfest-blumenau-mini.png'
+  'sao-paulo-grand-prix' = '/content/categories/sport/formula-1/events/img/sao-paulo-grand-prix-mini.png'
 }
 
 function Repair-Text($value) {
@@ -232,7 +232,7 @@ function Build-TopicCards($slug) {
     $secondTitle = 'Southern seasons'
     $secondText = 'Patagonia, pampas, vineyards and seasonal trip planning.'
   }
-  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/en/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/south-america/img/south-america-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
+  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/south-america/img/south-america-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
 }
 
 function Build-CountryOnePage($filePath) {

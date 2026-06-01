@@ -54,19 +54,19 @@ $FoodProfiles = @{
 }
 
 $EventImageBySlug = @{
-  'burning-man' = '/en/content/categories/culture/art/events/img/burning-man-mini.png'
-  'calgary-stampede' = '/en/content/categories/culture/carnival/events/img/calgary-stampede-mini.png'
-  'canada-grand-prix' = '/en/content/categories/sport/formula-1/events/img/canadian-grand-prix-mini.png'
-  'day-of-the-dead' = '/en/content/categories/culture/tradition/events/img/day-of-the-dead-mini.png'
-  'fifa-world-cup-2026' = '/en/content/categories/sport/football/events/img/fifa-world-cup-mini.png'
-  'las-vegas-grand-prix' = '/en/content/categories/sport/formula-1/events/img/las-vegas-grand-prix-mini.png'
-  'masters-tournament' = '/en/content/categories/sport/golf/events/img/masters-tournament-mini.png'
-  'mexico-city-grand-prix' = '/en/content/categories/sport/formula-1/events/img/mexico-city-grand-prix-mini.png'
-  'new-york-city-marathon' = '/en/content/categories/sport/running/events/img/new-york-city-marathon-mini.png'
-  'pga-championship' = '/en/content/categories/sport/golf/events/img/pga-championship-mini.png'
-  'united-states-grand-prix' = '/en/content/categories/sport/formula-1/events/img/united-states-grand-prix-mini.png'
-  'us-open-golf' = '/en/content/categories/sport/golf/events/img/us-open-golf-mini.png'
-  'us-open-tennis' = '/en/content/categories/sport/tennis/events/img/us-open-tennis-mini.png'
+  'burning-man' = '/content/categories/culture/art/events/img/burning-man-mini.png'
+  'calgary-stampede' = '/content/categories/culture/carnival/events/img/calgary-stampede-mini.png'
+  'canada-grand-prix' = '/content/categories/sport/formula-1/events/img/canadian-grand-prix-mini.png'
+  'day-of-the-dead' = '/content/categories/culture/tradition/events/img/day-of-the-dead-mini.png'
+  'fifa-world-cup-2026' = '/content/categories/sport/football/events/img/fifa-world-cup-mini.png'
+  'las-vegas-grand-prix' = '/content/categories/sport/formula-1/events/img/las-vegas-grand-prix-mini.png'
+  'masters-tournament' = '/content/categories/sport/golf/events/img/masters-tournament-mini.png'
+  'mexico-city-grand-prix' = '/content/categories/sport/formula-1/events/img/mexico-city-grand-prix-mini.png'
+  'new-york-city-marathon' = '/content/categories/sport/running/events/img/new-york-city-marathon-mini.png'
+  'pga-championship' = '/content/categories/sport/golf/events/img/pga-championship-mini.png'
+  'united-states-grand-prix' = '/content/categories/sport/formula-1/events/img/united-states-grand-prix-mini.png'
+  'us-open-golf' = '/content/categories/sport/golf/events/img/us-open-golf-mini.png'
+  'us-open-tennis' = '/content/categories/sport/tennis/events/img/us-open-tennis-mini.png'
 }
 
 function Normalize-Text($value) {
@@ -229,7 +229,7 @@ function Build-TopicCards($slug) {
     $secondTitle = 'Rainforest and volcanoes'
     $secondText = 'Protected nature, ancient sites and outdoor routes.'
   }
-  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/en/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/north-america/img/north-america-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
+  return '<div class="country-paths country-paths--topics"><a class="visual-topic-card visual-topic-card--music" href="../../../categories/music/index.html"><img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="" loading="lazy"><strong>Music &amp; Culture</strong><span>Festivals, concerts and cultural calendars.</span></a><a class="visual-topic-card visual-topic-card--national" href="' + $secondHref + '"><img src="/content/locations/north-america/img/north-america-mini.png" alt="" loading="lazy"><strong>' + (Html $secondTitle) + '</strong><span>' + (Html $secondText) + '</span></a></div>'
 }
 
 function Build-CountryOnePage($filePath) {
