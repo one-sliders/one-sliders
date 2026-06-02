@@ -48,7 +48,7 @@
       position: relative;
       min-height: 100vh;
       overflow: visible;
-      padding: clamp(24px, 4vw, 46px) clamp(18px, 4vw, 56px) 22px;
+      padding: clamp(18px, 2.6vw, 34px) clamp(18px, 4vw, 56px) 18px;
       background:
         radial-gradient(circle at 78% 16%, rgba(11, 143, 104, .12), transparent 30%),
         linear-gradient(180deg, #f7faf7 0%, #eef3ef 100%);
@@ -72,11 +72,10 @@
     .brand-bar span { color: #cfd6dd; font-size: 13px; margin-left: 6px; }
     .home-grid {
       display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(460px, 1.08fr);
+      grid-template-columns: minmax(0, .92fr) minmax(440px, 1.08fr);
       gap: clamp(18px, 3.2vw, 42px);
       align-items: center;
       max-width: 1360px;
-      min-height: calc(100vh - 110px);
       margin: 0 auto;
     }
     .copy { color: var(--ink); }
@@ -142,8 +141,8 @@
     }
     .panel {
       display: grid;
-      gap: 10px;
-      padding: clamp(14px, 2vw, 20px);
+      gap: 8px;
+      padding: clamp(12px, 1.6vw, 16px);
       border: 1px solid rgba(16, 32, 51, .12);
       border-radius: 20px;
       background: rgba(255,255,255,.82);
@@ -155,7 +154,7 @@
       gap: 8px;
     }
     .stat {
-      padding: 12px 14px;
+      padding: 9px 12px;
       border-radius: 14px;
       background: rgba(255,255,255,.94);
       box-shadow: inset 0 0 0 1px var(--line);
@@ -163,7 +162,7 @@
     .stat strong {
       display: block;
       color: var(--ink);
-      font-size: clamp(28px, 3.4vw, 40px);
+      font-size: clamp(24px, 2.8vw, 34px);
       line-height: 1;
     }
     .stat span {
@@ -175,25 +174,25 @@
       text-transform: uppercase;
     }
     .one-slider-card {
-      padding: 14px 16px;
+      padding: 11px 14px 12px;
       border-radius: 16px;
       background: rgba(255,255,255,.94);
     }
     .one-slider-card h2 {
-      margin: 0 0 8px;
+      margin: 0 0 5px;
       color: var(--ink);
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1.1;
     }
     .one-slider-intro {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.38;
+      font-size: 13px;
+      line-height: 1.32;
     }
     .steps {
       display: grid;
-      gap: 7px;
+      gap: 5px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -232,24 +231,85 @@
       border-radius: inherit;
       background: linear-gradient(90deg, var(--green), #2df0aa);
     }
+    .charts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .chart-card {
+      display: grid;
+      gap: 8px;
+      padding: 11px 12px 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .94);
+    }
+    .chart-card h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.15;
+    }
+    .chart-body {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .pie {
+      aspect-ratio: 1;
+      width: min(100%, 84px);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 12px rgba(255, 255, 255, .5), 0 8px 18px rgba(17, 25, 34, .1);
+    }
+    .legend {
+      display: grid;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .legend li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .legend i {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+    .legend .legend-val {
+      margin-left: auto;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    @media (max-width: 620px) {
+      .charts { grid-template-columns: 1fr; }
+    }
     .steps li {
       display: grid;
-      grid-template-columns: 38px 1fr;
+      grid-template-columns: 28px 1fr;
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
+      font-size: 12.5px;
+      line-height: 1.3;
     }
     .steps b {
       display: grid;
       place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
       color: #fff;
       background: var(--green);
-      font-size: 16px;
+      font-size: 13px;
     }
     .paths {
       display: grid;
@@ -258,7 +318,7 @@
     }
     .path {
       position: relative;
-      min-height: 118px;
+      min-height: 84px;
       overflow: hidden;
       border-radius: 16px;
       color: #fff;
@@ -283,13 +343,29 @@
     .path span {
       position: absolute;
       right: 12px;
-      bottom: 12px;
+      bottom: 10px;
       left: 12px;
       z-index: 1;
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 850;
       line-height: 1.05;
+    }
+    .content-note {
+      max-width: 1360px;
+      margin: 14px auto 0;
+    }
+    .content-note h2 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    .content-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
     }
     @media (max-width: 960px) {
       .home { min-height: auto; overflow: visible; }
@@ -331,16 +407,16 @@
 
       <section class="panel" aria-label="OneSliders overview">
         <div class="stats">
-          <div class="stat"><strong>105</strong><span>event pages</span></div>
-          <div class="stat"><strong>108</strong><span>topic pages</span></div>
+          <div class="stat"><strong>552</strong><span>event pages</span></div>
+          <div class="stat"><strong>185</strong><span>topic pages</span></div>
           <div class="stat"><strong>449</strong><span>place pages</span></div>
         </div>
 
-        <div class="coverage" aria-label="OneSliders coverage chart">
-          <h2>Coverage snapshot</h2>
-          <div class="bar-row"><span>Events</span><div class="bar"><i style="width: 23%"></i></div><strong>105</strong></div>
-          <div class="bar-row"><span>Topics</span><div class="bar"><i style="width: 24%"></i></div><strong>108</strong></div>
-          <div class="bar-row"><span>Places</span><div class="bar"><i style="width: 100%"></i></div><strong>449</strong></div>
+        <div class="charts" aria-label="OneSliders breakdown charts" data-home-charts>
+          <!--CHARTS:START-->
+          <div class="chart-card"><h2>Events by category</h2><div class="chart-body"><div class="pie" role="img" aria-label="Events by category: 552 total" style="background:conic-gradient(#0b8f68 0.00% 47.64%, #2f6f92 47.64% 84.24%, #e0a83b 84.24% 90.40%, #c8553d 90.40% 95.11%, #7a5cc7 95.11% 98.73%, #3bb0a8 98.73% 100.00%)"></div><ul class="legend"><li><i style="background:#0b8f68"></i>Sport<span class="legend-val">263 &middot; 48%</span></li><li><i style="background:#2f6f92"></i>Culture<span class="legend-val">202 &middot; 37%</span></li><li><i style="background:#e0a83b"></i>Music<span class="legend-val">34 &middot; 6%</span></li><li><i style="background:#c8553d"></i>Wellness<span class="legend-val">26 &middot; 5%</span></li><li><i style="background:#7a5cc7"></i>Technology<span class="legend-val">20 &middot; 4%</span></li><li><i style="background:#3bb0a8"></i>Climate<span class="legend-val">7 &middot; 1%</span></li></ul></div></div>
+          <div class="chart-card"><h2>Countries by continent</h2><div class="chart-body"><div class="pie" role="img" aria-label="Countries by continent: 197 total" style="background:conic-gradient(#0b8f68 0.00% 27.41%, #2f6f92 27.41% 52.79%, #e0a83b 52.79% 75.13%, #c8553d 75.13% 86.80%, #7a5cc7 86.80% 93.91%, #3bb0a8 93.91% 100.00%)"></div><ul class="legend"><li><i style="background:#0b8f68"></i>Africa<span class="legend-val">54 &middot; 27%</span></li><li><i style="background:#2f6f92"></i>Europe<span class="legend-val">50 &middot; 25%</span></li><li><i style="background:#e0a83b"></i>Asia<span class="legend-val">44 &middot; 22%</span></li><li><i style="background:#c8553d"></i>North America<span class="legend-val">23 &middot; 12%</span></li><li><i style="background:#7a5cc7"></i>Oceania<span class="legend-val">14 &middot; 7%</span></li><li><i style="background:#3bb0a8"></i>South America<span class="legend-val">12 &middot; 6%</span></li></ul></div></div>
+          <!--CHARTS:END-->
         </div>
 
         <div class="one-slider-card">

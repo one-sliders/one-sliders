@@ -241,10 +241,28 @@ function Build-GroupHtml($slug, $groups, $names) {
   return $out
 }
 
-function Build-CityPaths($cities) {
-  $out = '<div class="country-paths">'
+function Get-CityImage($cityHref, $countrySlug, $continentSlug) {
+  $clean = ([string]$cityHref) -split '#', 2 | Select-Object -First 1
+  $citySlug = [System.IO.Path]::GetFileNameWithoutExtension($clean)
+  if ($citySlug) {
+    $cityMiniPath = Join-Path $locRoot "$continentSlug\$countrySlug\img\$citySlug-mini.png"
+    if (Test-Path $cityMiniPath) {
+      return "/content/locations/$continentSlug/$countrySlug/img/$citySlug-mini.png"
+    }
+    $cityHeroPath = Join-Path $locRoot "$continentSlug\$countrySlug\img\$citySlug-hero.png"
+    if (Test-Path $cityHeroPath) {
+      return "/content/locations/$continentSlug/$countrySlug/img/$citySlug-hero.png"
+    }
+  }
+  return "/content/locations/$continentSlug/img/$continentSlug-mini.png"
+}
+
+function Build-CityPaths($cities, $countrySlug, $continentSlug) {
+  $out = '<div class="country-paths country-paths--location-links">'
   foreach ($city in $cities) {
-    $out += '<a class="country-path" href="' + (Html $city.Href) + '"><span>City</span><strong>Open ' + (Html $city.Name) + '</strong></a>'
+    $img = Html (Get-CityImage $city.Href $countrySlug $continentSlug)
+    $alt = Html ($city.Name + ' thumbnail')
+    $out += '<a class="visual-topic-card visual-topic-card--city" href="' + (Html $city.Href) + '"><img src="' + $img + '" alt="' + $alt + '" loading="lazy" width="400" height="300"><strong>Open ' + (Html $city.Name) + '</strong><span>City</span></a>'
   }
   $out += '<a class="country-path" href="../../../locations/index.html"><span>Browse</span><strong>More locations</strong></a>'
   $out += '<a class="country-path" href="../../../categories/index.html"><span>Topics</span><strong>Travel interests</strong></a>'
@@ -366,7 +384,7 @@ function Build-CountryOnePage($filePath, $continentSlug, $continentTitle, $data,
   $foodCards += '</div></div>'
 
   $groupHtml = Build-GroupHtml $slug $groups $names
-  $cityPaths = Build-CityPaths $cities
+  $cityPaths = Build-CityPaths $cities $slug $continentSlug
   $eventCards = Build-EventCards $events $title $continentSlug
   $topicCards = Build-TopicCards $slug $continentSlug $continentTitle
   $cssVersion = "country-onepage-$continentSlug-20260527"

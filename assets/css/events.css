@@ -2380,10 +2380,7 @@ html:has(body.event-page--framed) {
 }
 
 .event-frame__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(5, 12, 18, 0.05), rgba(5, 12, 18, 0.46));
+  content: none;
 }
 
 .event-frame__media img {
@@ -3377,6 +3374,68 @@ html:has(body.event-page--framed) {
   white-space: nowrap;
 }
 
+.stage-card--long-matches .stage-match-row {
+  grid-template-columns: 70px minmax(0, 1fr);
+  align-items: start;
+  gap: 4px 8px;
+  padding: 8px;
+}
+
+.stage-card--long-matches .stage-match-row time {
+  grid-row: 1 / span 2;
+  padding-top: 6px;
+}
+
+.stage-card--long-matches .stage-match-row__teams {
+  grid-column: 2;
+  grid-template-columns: minmax(150px, 1fr) minmax(82px, auto) minmax(150px, 1fr);
+  gap: 8px;
+}
+
+.stage-card--long-matches .stage-match-row__teams .stage-participant {
+  justify-content: flex-start;
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.stage-card--long-matches .stage-participant__name {
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.stage-card--long-matches .stage-match-row__teams b {
+  min-width: 82px;
+  max-width: 140px;
+  padding-top: 5px;
+  text-align: center;
+  white-space: normal;
+}
+
+.stage-card--long-matches .stage-match-row em {
+  grid-column: 2;
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+@media (max-width: 760px) {
+  body.event-page--framed .stage-card--long-matches .stage-match-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.event-page--framed .stage-card--long-matches .stage-match-row time,
+  body.event-page--framed .stage-card--long-matches .stage-match-row__teams,
+  body.event-page--framed .stage-card--long-matches .stage-match-row em {
+    grid-column: 1;
+  }
+
+  body.event-page--framed .stage-card--long-matches .stage-match-row time {
+    grid-row: auto;
+    padding-top: 0;
+  }
+}
+
 .event-button--match-calendar {
   grid-column: 4;
   display: inline-grid;
@@ -3543,27 +3602,38 @@ html:has(body.event-page--framed) {
   font-weight: 950;
 }
 
+/* Event-page footer: kept position:fixed so it stays visible over the
+   full-screen carousel/frame, but styled to MATCH the site .os-footer
+   (same content + look as the homepage footer). */
 .event-footer {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: var(--event-footer-height);
   height: var(--event-footer-height);
-  color: var(--event-muted);
-  background: rgba(255, 255, 255, 0.9);
-  border-top: 1px solid var(--event-line);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
+  color: #5a6672;
+  background: rgba(255, 255, 255, 0.92);
+  border-top: 1px solid rgba(18, 32, 46, .12);
+  font: 13px/1 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  text-align: center;
   white-space: nowrap;
 }
 
 .event-footer a {
   display: inline;
-  color: var(--event-theme);
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .12s, color .12s;
+}
+
+.event-footer a:hover {
+  color: #12202e;
+  border-bottom-color: currentColor;
 }
 
 .event-footer p {
@@ -5496,6 +5566,289 @@ body.event-page:not(.event-page--framed) .event-carousel__dots {
   bottom: calc(clamp(16px, 3vw, 28px) + var(--event-footer-height));
 }
 
+body.event-page--non-sport [data-year-switcher],
+body.event-page--non-sport .year-switcher {
+  display: none;
+}
+
+html:has(body.event-page--non-sport),
+html:has(body.event-page--non-sport) body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.event-page--non-sport {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--event-accent) 12%, transparent), transparent 32%),
+    linear-gradient(180deg, var(--event-bg) 0%, color-mix(in srgb, var(--event-bg) 62%, #fff) 100%);
+}
+
+body.event-page--non-sport .event-carousel {
+  position: relative;
+  inset: auto;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: calc(var(--event-nav-height, 52px) + 12px) clamp(12px, 2vw, 36px) calc(var(--event-footer-height, 34px) + 16px);
+  padding: clamp(12px, 1.6vw, 24px);
+  overflow: visible;
+  border: 1px solid var(--event-line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
+}
+
+body.event-page--non-sport .event-carousel__track {
+  display: grid;
+  gap: clamp(14px, 1.8vw, 24px);
+  width: auto;
+  height: auto;
+  transform: none !important;
+  transition: none;
+}
+
+body.event-page--non-sport .event-slide {
+  flex: none;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  color: var(--event-ink);
+  background: transparent;
+}
+
+body.event-page--non-sport .event-slide[data-slide="general"],
+body.event-page--non-sport .event-slide[data-slide="year"],
+body.event-page--non-sport .event-slide[data-slide="parts"] {
+  display: grid;
+  gap: 12px;
+  padding: clamp(12px, 1.4vw, 20px);
+  border: 1px solid var(--event-line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 22px 60px rgba(16, 24, 32, 0.1);
+}
+
+body.event-page--non-sport .event-slide[data-slide="general"] {
+  padding: 0;
+  overflow: hidden;
+}
+
+body.event-page--non-sport .event-hero__image {
+  position: relative;
+  inset: auto;
+  display: block;
+  width: 100%;
+  height: clamp(230px, 38vh, 430px);
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px 20px 0 0;
+  filter: saturate(1.03) contrast(1.03);
+  box-shadow: none;
+}
+
+body.event-page--non-sport .event-slide:not([data-slide="general"]) .event-hero__image {
+  display: none;
+}
+
+body.event-page--non-sport .event-slide__content,
+body.event-page--non-sport .event-slide[data-slide="year"] .event-slide__content,
+body.event-page--non-sport .event-slide[data-slide="parts"] .event-slide__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(12px, 1.4vw, 20px);
+  overflow: visible;
+}
+
+body.event-page--non-sport .event-slide[data-slide="year"] .event-slide__content,
+body.event-page--non-sport .event-slide[data-slide="parts"] .event-slide__content {
+  padding: 0;
+}
+
+body.event-page--non-sport .event-slide__content > *,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-kicker,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-title,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-section-title,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-lede,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-subtitle,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-slide__content > .facts-strip:first-of-type,
+body.event-page--non-sport .event-slide:not([data-slide="year"]) .event-slide__content > .facts-strip + .card-grid,
+body.event-page--non-sport .event-slide[data-slide="year"] .event-section-title,
+body.event-page--non-sport .event-slide[data-slide="parts"] .part-switcher {
+  grid-column: 1 / -1;
+  margin-left: 0;
+}
+
+body.event-page--non-sport .event-kicker,
+body.event-page--non-sport .event-title,
+body.event-page--non-sport .event-section-title,
+body.event-page--non-sport .event-lede,
+body.event-page--non-sport .event-subtitle {
+  text-shadow: none;
+}
+
+body.event-page--non-sport .event-kicker {
+  margin: 0;
+  color: var(--event-theme);
+}
+
+body.event-page--non-sport .event-title {
+  margin: 0;
+  color: var(--event-ink);
+  font-size: clamp(34px, 5vw, 74px);
+  line-height: 0.96;
+}
+
+body.event-page--non-sport .event-section-title {
+  margin: 0;
+  color: var(--event-ink);
+  font-size: clamp(26px, 3vw, 44px);
+  line-height: 1;
+}
+
+body.event-page--non-sport .event-lede,
+body.event-page--non-sport .event-subtitle {
+  max-width: 760px;
+  margin: 0;
+  color: var(--event-muted);
+}
+
+body.event-page--non-sport .facts-strip,
+body.event-page--non-sport .event-slide[data-slide="general"] .facts-strip.hero-control,
+body.event-page--non-sport .event-slide[data-slide="year"] .year-edition > .facts-strip:first-child {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.event-page--non-sport .fact,
+body.event-page--non-sport .card,
+body.event-page--non-sport .question,
+body.event-page--non-sport .countdown,
+body.event-page--non-sport .topic-card,
+body.event-page--non-sport .part-card,
+body.event-page--non-sport .part-page {
+  color: var(--event-ink);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--event-line);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+body.event-page--non-sport .fact,
+body.event-page--non-sport .event-slide[data-slide="general"] .facts-strip.hero-control .fact {
+  min-width: 0;
+  padding: 12px 13px;
+}
+
+body.event-page--non-sport .fact span,
+body.event-page--non-sport .card span,
+body.event-page--non-sport .question span,
+body.event-page--non-sport .countdown span,
+body.event-page--non-sport .topic-card span {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+body.event-page--non-sport .fact strong,
+body.event-page--non-sport .card strong,
+body.event-page--non-sport .question strong {
+  color: var(--event-ink);
+  text-shadow: none;
+}
+
+body.event-page--non-sport .card p,
+body.event-page--non-sport .question p,
+body.event-page--non-sport .countdown p,
+body.event-page--non-sport .topic-card p,
+body.event-page--non-sport .event-list,
+body.event-page--non-sport .event-source {
+  color: var(--event-muted);
+  text-shadow: none;
+}
+
+body.event-page--non-sport .card-grid,
+body.event-page--non-sport .card-grid--support,
+body.event-page--non-sport .question-grid,
+body.event-page--non-sport .event-slide[data-slide="general"] .event-slide__content > .facts-strip.hero-control + .card-grid,
+body.event-page--non-sport .event-slide[data-slide="general"] .facts-strip + .card-grid,
+body.event-page--non-sport .event-slide[data-slide="general"] .card-grid--support {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+body.event-page--non-sport .year-edition,
+body.event-page--non-sport .part-detail,
+body.event-page--non-sport .parts-grid {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.event-page--non-sport .event-carousel__prev,
+body.event-page--non-sport .event-carousel__next,
+body.event-page--non-sport .event-carousel__dots {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  body.event-page--non-sport .event-carousel {
+    margin: calc(var(--event-nav-height, 52px) + 8px) 8px calc(var(--event-footer-height, 34px) + 8px);
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  body.event-page--non-sport .event-slide[data-slide="general"],
+  body.event-page--non-sport .event-slide[data-slide="year"],
+  body.event-page--non-sport .event-slide[data-slide="parts"] {
+    border-radius: 16px;
+  }
+
+  body.event-page--non-sport .event-hero__image {
+    height: clamp(170px, 44vw, 260px);
+    border-radius: 16px 16px 0 0;
+  }
+
+  body.event-page--non-sport .facts-strip,
+  body.event-page--non-sport .card-grid,
+  body.event-page--non-sport .card-grid--support,
+  body.event-page--non-sport .question-grid,
+  body.event-page--non-sport .event-slide[data-slide="general"] .event-slide__content > .facts-strip.hero-control + .card-grid,
+  body.event-page--non-sport .event-slide[data-slide="general"] .facts-strip + .card-grid,
+  body.event-page--non-sport .event-slide[data-slide="general"] .card-grid--support {
+    grid-template-columns: 1fr;
+  }
+}
+
 .internal-link-module {
   display: grid;
   gap: 12px;
@@ -5576,5 +5929,285 @@ body.event-page:not(.event-page--framed) .event-carousel__dots {
   body.event-page:not(.event-page--framed) .event-carousel__next,
   body.event-page:not(.event-page--framed) .event-carousel__dots {
     bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--event-footer-height));
+  }
+}
+
+/* Final non-sport event override: ordinary page, compact top hero, no carousel chrome. */
+html:has(body.event-page--non-sport),
+html:has(body.event-page--non-sport) body,
+body.event-page--non-sport {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body.event-page--non-sport .event-carousel {
+  position: relative !important;
+  inset: auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: calc(var(--event-nav-height, 52px) + 14px) clamp(12px, 2vw, 36px) calc(var(--event-footer-height, 34px) + 14px) !important;
+  padding: clamp(12px, 1.5vw, 22px) !important;
+  overflow: visible !important;
+  border: 1px solid var(--event-line) !important;
+  border-radius: 22px !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: 0 20px 56px rgba(16, 24, 32, 0.11) !important;
+}
+
+body.event-page--non-sport .event-carousel__track {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.event-page--non-sport .event-slide {
+  display: grid !important;
+  flex: none !important;
+  flex-basis: auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  color: var(--event-ink) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 1px solid var(--event-line) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 38px rgba(16, 24, 32, 0.08) !important;
+}
+
+body.event-page--non-sport .event-slide[data-slide="general"] {
+  overflow: hidden !important;
+}
+
+body.event-page--non-sport .event-hero__image {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: clamp(180px, 28vh, 300px) !important;
+  min-height: 0 !important;
+  max-height: 300px !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center 48% !important;
+  border: 0 !important;
+  border-radius: 18px 18px 0 0 !important;
+  box-shadow: none !important;
+}
+
+body.event-page--non-sport .event-slide:not([data-slide="general"]) .event-hero__image {
+  display: none !important;
+}
+
+body.event-page--non-sport .event-slide__content,
+body.event-page--non-sport .event-slide[data-slide="year"] .event-slide__content,
+body.event-page--non-sport .event-slide[data-slide="parts"] .event-slide__content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: clamp(12px, 1.4vw, 20px) !important;
+  overflow: visible !important;
+}
+
+body.event-page--non-sport .event-slide__content > *,
+body.event-page--non-sport .event-kicker,
+body.event-page--non-sport .event-title,
+body.event-page--non-sport .event-section-title,
+body.event-page--non-sport .event-lede,
+body.event-page--non-sport .event-subtitle,
+body.event-page--non-sport .facts-strip,
+body.event-page--non-sport .card-grid,
+body.event-page--non-sport .card-grid--support,
+body.event-page--non-sport .year-edition,
+body.event-page--non-sport .question-grid {
+  grid-column: 1 / -1 !important;
+  margin-left: 0 !important;
+}
+
+body.event-page--non-sport .event-kicker,
+body.event-page--non-sport .event-title,
+body.event-page--non-sport .event-section-title,
+body.event-page--non-sport .event-lede,
+body.event-page--non-sport .event-subtitle {
+  text-shadow: none !important;
+}
+
+body.event-page--non-sport .event-title {
+  color: var(--event-ink) !important;
+  font-size: clamp(34px, 4vw, 58px) !important;
+  line-height: 1 !important;
+}
+
+body.event-page--non-sport .event-lede,
+body.event-page--non-sport .event-subtitle {
+  color: var(--event-muted) !important;
+}
+
+body.event-page--non-sport .facts-strip,
+body.event-page--non-sport .card-grid,
+body.event-page--non-sport .card-grid--support,
+body.event-page--non-sport .question-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 10px !important;
+  margin: 0 !important;
+}
+
+body.event-page--non-sport [data-year-switcher],
+body.event-page--non-sport .year-switcher,
+body.event-page--non-sport .event-carousel__prev,
+body.event-page--non-sport .event-carousel__next,
+body.event-page--non-sport .event-carousel__dots {
+  display: none !important;
+}
+
+body.event-page--non-sport .event-onepage {
+  display: grid;
+  gap: clamp(14px, 1.8vw, 24px);
+  margin: var(--event-nav-height, 52px) clamp(12px, 2vw, 36px) calc(var(--event-footer-height, 34px) + 14px);
+  padding: clamp(12px, 1.5vw, 22px);
+  border: 1px solid var(--event-line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 20px 56px rgba(16, 24, 32, 0.11);
+}
+
+body.event-page--non-sport:not(.event-page--finland-template) .ios-nav,
+body.event-page--non-sport:not(.event-page--finland-template) .ios-back,
+body.event-page--non-sport:not(.event-page--finland-template) .ios-sheet {
+  display: none !important;
+}
+
+body.event-page--non-sport .event-onepage__hero,
+body.event-page--non-sport .event-onepage__panel,
+body.event-page--non-sport .event-onepage__left {
+  min-width: 0;
+  color: var(--event-ink);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--event-line);
+  border-radius: 18px;
+  box-shadow: 0 14px 38px rgba(16, 24, 32, 0.08);
+}
+
+body.event-page--non-sport .event-onepage__hero {
+  overflow: hidden;
+}
+
+body.event-page--non-sport .event-onepage__hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(190px, 30vh, 320px);
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+body.event-page--non-sport .event-onepage__hero-copy {
+  display: grid;
+  gap: 8px;
+  padding: clamp(14px, 1.7vw, 24px);
+}
+
+body.event-page--non-sport .event-onepage__grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(540px, 1.2fr);
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: start;
+}
+
+body.event-page--non-sport .event-onepage__left,
+body.event-page--non-sport .event-onepage__panel {
+  display: grid;
+  gap: 12px;
+  padding: clamp(14px, 1.6vw, 22px);
+}
+
+body.event-page--non-sport .event-onepage .event-kicker,
+body.event-page--non-sport .event-onepage .event-title,
+body.event-page--non-sport .event-onepage .event-section-title,
+body.event-page--non-sport .event-onepage .event-lede,
+body.event-page--non-sport .event-onepage .event-subtitle {
+  margin: 0;
+  text-shadow: none;
+}
+
+body.event-page--non-sport .event-onepage .event-kicker {
+  color: var(--event-theme);
+}
+
+body.event-page--non-sport .event-onepage .event-title {
+  color: var(--event-ink);
+  font-size: clamp(36px, 4vw, 62px);
+  line-height: 1;
+}
+
+body.event-page--non-sport .event-onepage .event-section-title {
+  color: var(--event-ink);
+  font-size: clamp(26px, 3vw, 44px);
+  line-height: 1;
+}
+
+body.event-page--non-sport .event-onepage .event-lede,
+body.event-page--non-sport .event-onepage .event-subtitle,
+body.event-page--non-sport .event-onepage .event-source {
+  color: var(--event-muted);
+}
+
+body.event-page--non-sport .event-onepage .facts-strip,
+body.event-page--non-sport .event-onepage .card-grid,
+body.event-page--non-sport .event-onepage .card-grid--support,
+body.event-page--non-sport .event-onepage .question-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.event-page--non-sport .event-onepage .fact,
+body.event-page--non-sport .event-onepage .card,
+body.event-page--non-sport .event-onepage .question,
+body.event-page--non-sport .event-onepage .countdown,
+body.event-page--non-sport .event-onepage .topic-card {
+  color: var(--event-ink);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--event-line);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+body.event-page--non-sport .event-onepage .topic-card {
+  overflow: hidden;
+}
+
+body.event-page--non-sport .event-onepage .topic-card img {
+  display: none;
+}
+
+body.event-page--non-sport .event-onepage .year-edition {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 1100px) {
+  body.event-page--non-sport .event-onepage__grid {
+    grid-template-columns: 1fr;
   }
 }

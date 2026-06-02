@@ -24,35 +24,14 @@
       .replace(/>/g, '&gt;');
   }
 
-  function siteRootHref() {
-    var script = document.currentScript ||
-      document.querySelector('script[src*="events.js"]');
-    if (!script) return '/';
-    var src = script.getAttribute('src') || '';
-    return src.replace(/assets\/js\/events\.js(?:\?[^/]*)?$/, '') || '/';
-  }
-
-  function ensureSingleFooter() {
-    var opt = document.querySelector('meta[name="os-footer"]');
-    if (opt && opt.content === 'off') return;
-
-    var root = siteRootHref();
-    var year = new Date().getFullYear();
-    var content = '<p>&copy; ' + year + ' OneSliders &middot; ' +
-      '<a href="' + escapeAttribute(root + 'privacy.html') + '">Privacy</a></p>';
-    var footers = Array.prototype.slice.call(document.querySelectorAll('footer'));
-    var footer = document.querySelector('footer.event-footer') || footers[0];
-
-    if (!footer) {
-      footer = document.createElement('footer');
-      document.body.appendChild(footer);
+  function markEventPageScope() {
+    if (!document.body || !document.body.classList.contains('event-page')) return;
+    var path = (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+    var isCategoryEvent = path.indexOf('/content/categories/') !== -1 && path.indexOf('/events/') !== -1;
+    var isSportEvent = path.indexOf('/content/categories/sport/') !== -1;
+    if (isCategoryEvent && !isSportEvent) {
+      document.body.classList.add('event-page--non-sport');
     }
-
-    footer.classList.add('event-footer');
-    footer.innerHTML = content;
-    footers.forEach(function (item) {
-      if (item !== footer) item.remove();
-    });
   }
 
   function escapeIcs(value) {
@@ -808,15 +787,10 @@
     return '<div class="card"><span>' + item.label + '</span><strong>' + item.title + '</strong><p>' + item.detail + '</p></div>';
   }
 
-  function sourceCard(data) {
-    if (!data || !data.showSourceCard) return '';
-    var sources = (data.sources || []).map(function (source) {
-      return '<a href="' + escapeAttribute(source.url) + '">' + (source.label || source.url) + '</a>';
-    }).join(' ');
-    return '<div class="sources"><span>Sources</span><p>' +
-      (sources || 'Official event information') +
-      (data.lastUpdated ? ' &middot; Last updated: ' + data.lastUpdated : '') +
-    '</p></div>';
+  function sourceCard() {
+    // Pages must never show "Sources" or "Last updated" text to the user.
+    // (Source/lastUpdated data is kept in event-year-data JSON, just not rendered.)
+    return '';
   }
 
   function buildHotelAffiliateUrl(options) {
@@ -1653,6 +1627,79 @@
     refreshCountdowns();
   }
 
+  function renderNonSportOnePage() {
+    if (!document.body || !document.body.classList.contains('event-page--non-sport')) return;
+    var data = readJson('event-year-data');
+    var carousel = document.querySelector('[data-carousel]');
+    if (!data || !carousel) return;
+    setEventTeamIcons(data);
+
+    var editions = data.editions || [];
+    var edition = editions.find(function (item) {
+      return String(item.year) === String(data.defaultYear);
+    }) || editions[0] || {};
+    var hero = document.querySelector('.event-slide[data-slide="general"] .event-hero__image') ||
+      document.querySelector('.event-hero__image');
+    var heroSrc = hero ? hero.getAttribute('src') : '';
+    var heroAlt = hero ? hero.getAttribute('alt') : (data.eventName + ' hero image');
+    var introNode = document.querySelector('.event-slide[data-slide="general"] .event-lede');
+    var intro = introNode ? introNode.textContent : (data.eventName + ' event guide.');
+    var countriesList = edition.countries || [];
+    var citiesList = edition.cities || [];
+    var questions = (edition.questions || []).slice(0, 6).map(question).join('');
+    var highlights = (edition.highlights || []).slice(0, 4).map(highlight).join('');
+    var sources = (data.sources || []).map(function (source) {
+      return '<a href="' + escapeAttribute(source.url) + '">' + escapeAttribute(source.label || source.url) + '</a>';
+    }).join(' ');
+
+    carousel.outerHTML =
+      '<main class="event-onepage" data-non-sport-event-page>' +
+        '<section class="event-onepage__hero" aria-label="' + escapeAttribute(data.eventName) + ' overview">' +
+          (heroSrc ? '<img class="event-onepage__hero-image" src="' + escapeAttribute(heroSrc) + '" alt="' + escapeAttribute(heroAlt) + '" width="1200" height="630" fetchpriority="high">' : '') +
+          '<div class="event-onepage__hero-copy">' +
+            '<p class="event-kicker">Event guide</p>' +
+            '<h1 class="event-title">' + escapeAttribute(data.eventName || 'Event') + '</h1>' +
+            '<p class="event-lede">' + escapeAttribute(intro) + '</p>' +
+          '</div>' +
+        '</section>' +
+        '<section class="event-onepage__grid" aria-label="Event details">' +
+          '<div class="event-onepage__left">' +
+            '<div class="facts-strip">' +
+              fact('Current edition', edition.year || data.defaultYear || 'TBC') +
+              countryFact(countriesList) +
+              fact('Main city', citiesList.map(city).join(' ') || 'TBC') +
+              fact('Dates', edition.dates || 'TBC') +
+            '</div>' +
+            '<div class="card-grid">' +
+              '<div class="card"><span>Status</span><strong>' + escapeAttribute(edition.statusLabel || 'TBC') + '</strong><p>' + escapeAttribute(edition.countdownText || 'Check official event information before planning.') + '</p></div>' +
+              '<div class="card"><span>Venue</span><strong>' + escapeAttribute(edition.venue || 'TBC') + '</strong><p>' + escapeAttribute(edition.format || 'Event guide') + '</p></div>' +
+            '</div>' +
+            (highlights ? '<div class="card-grid card-grid--support">' + highlights + '</div>' : '') +
+          '</div>' +
+          '<div class="event-onepage__panel">' +
+            '<div class="event-hero-copy"><p class="event-kicker">Planning</p><h2 class="event-section-title">Current edition</h2><p class="event-subtitle">One current edition, without year tabs.</p></div>' +
+            '<div class="year-edition">' +
+              '<div class="facts-strip">' +
+                countryFact(countriesList) +
+                fact('City', citiesList.map(city).join(' ') || 'TBC') +
+                fact('Venue', edition.venue || 'TBC') +
+                fact('Dates', edition.dates || 'TBC') +
+                fact('Status', edition.statusLabel || 'TBC') +
+                fact('Format', edition.format || 'TBC') +
+              '</div>' +
+              (edition.startDate ? '<div class="countdown" data-countdown="' + escapeAttribute(edition.startDate) + '" data-next-date="' + escapeAttribute(edition.nextDate || '') + '"><span>Event starts</span><strong>' + daysText(edition.startDate, edition.nextDate) + '</strong><p>' + escapeAttribute(edition.countdownText || '') + '</p></div>' : '<div class="countdown"><span>Countdown</span><strong>Date TBC</strong><p>' + escapeAttribute(edition.countdownText || 'Exact dates are TBC.') + '</p></div>') +
+              (questions ? '<div class="question-grid">' + questions + '</div>' : '') +
+              '<div class="actions-row"><button class="event-button" type="button" data-calendar-download>Add to calendar</button><button class="event-button" type="button" data-save-event="' + escapeAttribute(data.slug || data.eventName || 'event') + '" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button></div>' +
+            '</div>' +
+          '</div>' +
+        '</section>' +
+      '</main>';
+
+    bindCalendar(data, edition);
+    bindSaveButtons();
+    refreshCountdowns();
+  }
+
   function initYearSwitcher() {
     var data = readJson('event-year-data');
     var switcher = document.querySelector('[data-year-switcher]');
@@ -1717,6 +1764,13 @@
     }
 
     var requestedYear = requestedYearFromLocation();
+
+    if (document.body && document.body.classList.contains('event-page--non-sport')) {
+      switcher.hidden = true;
+      switcher.innerHTML = '';
+      selectYear(requestedYear);
+      return;
+    }
 
     switcher.innerHTML = switcherEditions.map(function (edition) {
       var pressed = edition.year === requestedYear ? 'true' : 'false';
@@ -2138,6 +2192,14 @@
   function initCarousel() {
     var carousel = document.querySelector('[data-carousel]');
     if (!carousel) return;
+    if (document.body && document.body.classList.contains('event-page--non-sport')) {
+      var nonSportTrack = carousel.querySelector('[data-carousel-track]');
+      if (nonSportTrack) nonSportTrack.style.transform = 'none';
+      carousel.querySelectorAll('[data-carousel-prev], [data-carousel-next], [data-carousel-dots]').forEach(function (node) {
+        node.hidden = true;
+      });
+      return;
+    }
 
     var track = carousel.querySelector('[data-carousel-track]');
     var slides = Array.prototype.slice.call(carousel.querySelectorAll('[data-slide]'));
@@ -2263,7 +2325,10 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    ensureSingleFooter();
+    markEventPageScope();
+    renderNonSportOnePage();
+    // Footer is rendered by the single siteFooter module in oneslider-core.js
+    // (one source for every page). events.js no longer renders its own footer.
     initCarousel();
     initYearSwitcher();
     initPartSwitcher();

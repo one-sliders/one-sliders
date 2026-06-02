@@ -274,6 +274,32 @@ body.ios-sheet-open { overflow: hidden; }
 }
 
 /* ---------------------------------------------------------------------
+   Always-visible chrome (every page, every screen)
+   Top nav stays pinned at the top, footer stays pinned at the bottom, and
+   only the page content scrolls in the middle. Event pages already do this
+   via .event-carousel / .event-frame (fixed inset:0), so they are excluded
+   here to avoid double-handling.
+   --------------------------------------------------------------------- */
+html:has(body:not(.event-page):not(.topic-onepage)) { height: 100%; }
+
+body:not(.event-page):not(.topic-onepage) {
+  min-height: 100svh;          /* svh keeps the footer visible under the iOS URL bar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer sticks to the bottom of the viewport and is always visible.
+   margin-top:auto pushes it down when the page content is short; sticky
+   (not fixed) means it never overlaps content and needs no body padding. */
+body:not(.event-page):not(.topic-onepage) > footer.os-footer {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  z-index: 30;
+  background: var(--os-surface);
+}
+
+/* ---------------------------------------------------------------------
    Cookie consent banner
    --------------------------------------------------------------------- */
 #os-cc-root {

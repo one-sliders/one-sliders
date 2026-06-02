@@ -56,8 +56,13 @@ def excluded(path):
 
 
 def read(path):
-    with open(path, encoding='utf-8') as fh:
-        return fh.read()
+    # Never crash the gate on a stray non-UTF-8 byte; fall back to cp1252 then replace.
+    try:
+        with open(path, encoding='utf-8') as fh:
+            return fh.read()
+    except UnicodeDecodeError:
+        with open(path, encoding='utf-8', errors='replace') as fh:
+            return fh.read()
 
 
 def write(path, text):
@@ -561,6 +566,58 @@ def ensure_responsive(h):
     return h, fixed, manual
 
 
+# --------------------------------------------------------------------------- no source / last-updated
+def strip_source_updated(h):
+    """Remove VISIBLE 'Sources: …' and 'Last updated / Updated …' text from the
+    rendered page. Only touches body markup — JSON (event-year-data) and JSON-LD
+    keep their sources/lastUpdated fields; those are data, not shown to the user.
+
+    Returns (html, fixed:list)."""
+    fixed = []
+
+    # Protect script blocks (JSON / JSON-LD) from edits by stashing them.
+    stash = []
+    def _stash(mo):
+        stash.append(mo.group(0))
+        return f'\x00STASH{len(stash)-1}\x00'
+    protected = re.sub(r'<script\b[^>]*>.*?</script>', _stash, h, flags=re.S | re.I)
+
+    before = protected
+
+    # 1. Whole elements dedicated to sources (e.g. <p class="event-source">…</p>,
+    #    <div class="sources">…</div>).
+    protected, n1 = re.subn(
+        r'<(p|div|span|footer)\b[^>]*class="[^"]*\b(?:event-source|sources)\b[^"]*"[^>]*>.*?</\1>',
+        '', protected, flags=re.S | re.I)
+    if n1:
+        fixed.append('source-element')
+
+    # 2. Inline "Sources: …" sentence fragments inside other text nodes,
+    #    up to the next tag or sentence end.
+    protected, n2 = re.subn(r'\s*Sources?:\s*[^<]*', '', protected)
+    if n2:
+        fixed.append('sources-text')
+
+    # 3. "Last updated: <date>." and "Updated <Month> <Year>." visible fragments.
+    protected, n3 = re.subn(r'\s*(?:Last updated|Updated)\s*:?[^<.]*\.?', '', protected)
+    if n3:
+        fixed.append('last-updated-text')
+
+    # 4. "All rights reserved" filler in footers.
+    protected, n4 = re.subn(r'\.?\s*All rights reserved\.?', '', protected)
+    if n4:
+        fixed.append('rights-text')
+
+    if protected == before:
+        return h, []
+
+    # restore stashed scripts
+    def _unstash(mo):
+        return stash[int(mo.group(1))]
+    out = re.sub(r'\x00STASH(\d+)\x00', _unstash, protected)
+    return out, fixed
+
+
 # --------------------------------------------------------------------------- report
 def coverage_report(files):
     fields = ['title', 'tlen', 'desc', 'canon', 'ogimg', 'tw', 'jsonld', 'lang', 'viewport', 'h1']
@@ -610,7 +667,9 @@ def process(files, write_changes):
                 h = h2
                 jsonld_fixed.append('json-ld(enriched)')
         h, resp_fixed, resp_manual = ensure_responsive(h)
-        for x in seo_fixed + resp_fixed + jsonld_fixed:
+        # Pages must never show "Sources" or "Last updated" text to the user.
+        h, src_fixed = strip_source_updated(h)
+        for x in seo_fixed + resp_fixed + jsonld_fixed + src_fixed:
             field_tally[x] = field_tally.get(x, 0) + 1
         for x in seo_manual + resp_manual:
             manual_log.append(f"  {rel(f)} :: {x}")

@@ -425,7 +425,8 @@ a {
 }
 
 .page-shell,
-.footer {
+.footer,
+.os-footer.site-footer {
   width: 100%;
   margin: 0 auto;
 }
@@ -950,7 +951,8 @@ a {
   font-size: 11px;
 }
 
-.country-onepage .footer {
+.country-onepage .footer,
+.country-onepage .os-footer.site-footer {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -961,10 +963,6 @@ a {
   min-height: var(--country-footer-height);
   height: var(--country-footer-height);
   padding: 0 clamp(24px, 3.2vw, 56px);
-}
-
-.country-onepage .os-footer {
-  display: none;
 }
 
 .footer a {
@@ -1275,6 +1273,11 @@ html:has(body.country-onepage) {
   box-shadow: 0 20px 52px rgba(16, 24, 32, 0.13);
 }
 
+.country-hero-image--clear {
+  background:
+    var(--country-hero-url, url("/content/locations/europe/austria/img/austria-hero.png")) center / cover no-repeat;
+}
+
 .country-hero-image--switzerland {
   background:
     linear-gradient(90deg, rgba(247, 250, 247, 0.08), rgba(247, 250, 247, 0)),
@@ -1484,6 +1487,30 @@ html:has(body.country-onepage) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.country-paths--location-links .visual-topic-card--city,
+.country-paths--location-links .visual-topic-card--country {
+  grid-template-rows: 92px auto auto;
+}
+
+.country-paths--location-links .visual-topic-card--city img,
+.country-paths--location-links .visual-topic-card--country img {
+  height: 92px;
+}
+
+.country-paths--location-links .visual-topic-card--city strong,
+.country-paths--location-links .visual-topic-card--country strong {
+  font-size: 17px;
+}
+
+.country-paths--location-links .visual-topic-card--city span,
+.country-paths--location-links .visual-topic-card--country span {
+  padding: 7px 14px 14px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .country-path {
   min-width: 0;
   padding: 13px 14px;
@@ -1596,6 +1623,225 @@ html:has(body.country-onepage) {
 
 .visual-topic-card[hidden] {
   display: none !important;
+}
+
+.country {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  margin: 2px 4px 2px 0;
+  padding: 0 9px;
+  color: var(--location-ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  vertical-align: middle;
+  background: linear-gradient(180deg, #fff, #f5f8fa);
+  border: 1px solid rgba(33, 78, 104, 0.15);
+  border-radius: 999px;
+}
+
+.country img {
+  width: 22px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(16, 32, 24, 0.12);
+}
+
+.country:hover {
+  color: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.edition-tabs {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  min-height: 0;
+}
+
+.edition-tab-input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.edition-tablist {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-self: start;
+  gap: 6px;
+  min-width: 0;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 6px;
+  background: rgba(16, 24, 32, 0.06);
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+}
+
+.edition-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 13px;
+  color: var(--location-ink);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 999px;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+#sanremo-tab-event:checked ~ .edition-tablist label[for="sanremo-tab-event"],
+#sanremo-tab-trip:checked ~ .edition-tablist label[for="sanremo-tab-trip"],
+#sanremo-tab-watch:checked ~ .edition-tablist label[for="sanremo-tab-watch"],
+#event-tab-week:checked ~ .edition-tablist label[for="event-tab-week"],
+#event-tab-trip:checked ~ .edition-tablist label[for="event-tab-trip"],
+#event-tab-watch:checked ~ .edition-tablist label[for="event-tab-watch"],
+.edition-tab:hover {
+  color: #fff;
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.edition-tab-panels,
+.edition-tab-panel {
+  min-height: 0;
+}
+
+.edition-tab-panel {
+  display: none;
+  gap: 8px;
+}
+
+.country-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.country-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 13px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  background: var(--location-theme);
+  border: 1px solid var(--location-theme);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(16, 24, 32, 0.12);
+}
+
+.country-action:hover {
+  background: var(--location-ink);
+  border-color: var(--location-ink);
+}
+
+.country-actions span {
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.event-layout-page .country-brief,
+.sanremo-event-page .country-brief {
+  grid-template-columns: minmax(420px, 0.72fr) minmax(640px, 1.28fr);
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.event-layout-page .country-brief__copy,
+.sanremo-event-page .country-brief__copy {
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  align-content: start;
+  overflow: hidden;
+}
+
+.event-layout-page .country-hero-image,
+.sanremo-event-page .country-hero-image {
+  aspect-ratio: 16 / 7.2;
+  height: auto;
+  max-height: 300px;
+  margin-bottom: 10px;
+}
+
+.event-layout-page .country-brief .hero-title,
+.sanremo-event-page .country-brief .hero-title {
+  max-width: 640px;
+  font-size: clamp(38px, 4.35vw, 58px);
+  line-height: 1;
+}
+
+.event-layout-page .country-brief .hero-text,
+.sanremo-event-page .country-brief .hero-text {
+  max-width: 600px;
+  font-size: clamp(16px, 1.35vw, 19px);
+}
+
+.event-layout-page .country-left-stack,
+.sanremo-event-page .country-left-stack {
+  align-self: start;
+  margin-top: 12px;
+}
+
+.event-layout-page .country-brief__panel,
+.sanremo-event-page .country-brief__panel {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.event-layout-page .edition-tabs,
+.sanremo-event-page .edition-tabs {
+  height: 100%;
+}
+
+.event-layout-page .edition-tab-panels,
+.sanremo-event-page .edition-tab-panels {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.event-layout-page .edition-tab-panel,
+.sanremo-event-page .edition-tab-panel {
+  align-content: start;
+}
+
+.event-layout-page .country-panel-card--split,
+.sanremo-event-page .country-panel-card--split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.event-layout-page .country-facts-tight .fact-row,
+.sanremo-event-page .country-facts-tight .fact-row {
+  grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1fr);
+}
+
+#sanremo-tab-event:checked ~ .edition-tab-panels [data-edition-tab-panel="event"],
+#sanremo-tab-trip:checked ~ .edition-tab-panels [data-edition-tab-panel="trip"],
+#sanremo-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"],
+#event-tab-week:checked ~ .edition-tab-panels [data-edition-tab-panel="event"],
+#event-tab-trip:checked ~ .edition-tab-panels [data-edition-tab-panel="trip"],
+#event-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"] {
+  display: grid;
 }
 
 .visual-topic-card--music {

@@ -2928,7 +2928,7 @@ html:has(body.topic-onepage) {
 }
 
 .topic-page--ice-hockey {
-  --topic-hero-url: url("/content/categories/sport/ice-hockey/events/img/iihf-world-championship-hero.png");
+  --topic-hero-url: url("/content/categories/sport/ice-hockey/img/ice-hockey-hero.png");
 }
 
 .topic-brief .kicker {
@@ -3282,7 +3282,7 @@ html:has(body.topic-onepage) {
   border-radius: 14px;
 }
 
-.topic-event-card img,
+.topic-event-card > img,
 .topic-visual-card img {
   width: 100%;
   height: 96px;
