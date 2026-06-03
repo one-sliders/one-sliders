@@ -340,7 +340,7 @@ a {
   gap: 8px;
   min-height: 52px;
   padding: 8px clamp(14px, 3vw, 36px);
-  overflow-x: auto;
+  overflow: visible;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 248, 250, 0.94));
   border-bottom: 1px solid var(--location-line);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.86) inset, 0 8px 22px rgba(16, 32, 46, 0.06);
@@ -1274,6 +1274,11 @@ html:has(body.country-onepage) {
 }
 
 .country-hero-image--clear {
+  /* City pages have extra copy rows, so the grid 1fr row can collapse the hero
+     to 0 height. Guarantee a real box so the background image always shows. */
+  aspect-ratio: 1200 / 630;
+  height: auto;
+  min-height: clamp(200px, 26vw, 300px);
   background:
     var(--country-hero-url, url("/content/locations/europe/austria/img/austria-hero.png")) center / cover no-repeat;
 }
