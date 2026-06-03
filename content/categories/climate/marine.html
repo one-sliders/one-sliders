@@ -40,7 +40,18 @@
       .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
       .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
       .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: white; }
-      .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
+      .left { display: grid; gap: 8px; align-content: start; }
+      .note-card { padding: 11px 14px; border-left: 5px solid var(--theme); font-size: 14px; line-height: 1.34; }
+      .note-card strong { color: var(--theme); }
+      .kpi-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+      .kpi { padding: 11px 13px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .kpi span { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
+      .kpi strong { display: block; margin-top: 4px; font-size: clamp(20px,2.4vw,28px); line-height: 1; color: var(--ink); }
+      .fact-table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: white; font-size: 14px; }
+      .fact-table th, .fact-table td { padding: 9px 13px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+      .fact-table tr:first-child th, .fact-table tr:first-child td { border-top: 0; }
+      .fact-table th { width: 42%; color: var(--muted); font-weight: 700; }
+      .fact-table td { color: var(--ink); }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
@@ -84,7 +95,25 @@
         </div>
       </header>
       <section class="topic-panel">
-        <div class="left"><div class="note-card">Marine is part of the Climate category, with kommande event gathered for quick planning and discovery.</div></div>
+        <div class="left">
+          <div class="note-card">Within Climate, Marine looks at the ocean's role in the climate system: how seas absorb heat and carbon, why warming and acidification stress reefs and marine life, and how coasts adapt to rising seas.</div>
+          <div class="kpi-grid">
+            <div class="kpi"><span>Earth covered by ocean</span><strong>~71%</strong></div>
+            <div class="kpi"><span>Excess heat absorbed</span><strong>~90%</strong></div>
+            <div class="kpi"><span>CO&#8322; taken up by ocean</span><strong>~25%</strong></div>
+            <div class="kpi"><span>Surface pH since 1800s</span><strong>&#8722;0.1</strong></div>
+          </div>
+          <table class="fact-table">
+            <tbody>
+              <tr><th>Climate role</th><td>Largest heat and carbon sink on Earth</td></tr>
+              <tr><th>Heat absorbed</th><td>~90% of excess warming</td></tr>
+              <tr><th>Main pressures</th><td>Warming, acidification, sea-level rise</td></tr>
+              <tr><th>At risk</th><td>Coral reefs, fisheries, low-lying coasts</td></tr>
+              <tr><th>Largest ocean</th><td>Pacific</td></tr>
+              <tr><th>Why it matters</th><td>Drives weather, storms and coastal life</td></tr>
+            </tbody>
+          </table>
+        </div>
         <div class="right">
           <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
           <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
