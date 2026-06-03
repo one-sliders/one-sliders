@@ -1214,7 +1214,7 @@ html:has(body.country-onepage) {
   position: fixed;
   top: calc(var(--country-nav-height) + var(--country-content-gap));
   right: clamp(12px, 2vw, 36px);
-  bottom: var(--country-footer-height);
+  bottom: calc(var(--country-footer-height) + var(--country-content-gap));
   left: clamp(12px, 2vw, 36px);
   width: auto;
   height: auto;

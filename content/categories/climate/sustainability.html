@@ -34,6 +34,12 @@
       .nav-icon svg{width:22px;height:22px;display:block}
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
+      /* Framed one-slider: nav fixed top, footer fixed bottom, frame fills between */
+      :root { --topic-nav-h: 54px; --topic-foot-h: 40px; --topic-gap: 12px; }
+      .top-menu { position: fixed; top: 0; left: 0; right: 0; z-index: 40; }
+      .site-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; display: grid; place-items: center; min-height: var(--topic-foot-h); height: var(--topic-foot-h); text-align: center; }
+      .topic-frame { position: fixed; top: calc(var(--topic-nav-h) + var(--topic-gap)); bottom: calc(var(--topic-foot-h) + var(--topic-gap)); left: clamp(12px,2vw,36px); right: clamp(12px,2vw,36px); padding: clamp(14px,1.8vw,24px); overflow: auto; background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 24px 70px rgba(16,24,32,.12); }
+      .topic-frame .topic-slide { min-height: 0; padding: 0; gap: 10px; }
       .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
@@ -52,6 +58,31 @@
       .fact-table tr:first-child th, .fact-table tr:first-child td { border-top: 0; }
       .fact-table th { width: 42%; color: var(--muted); font-weight: 700; }
       .fact-table td { color: var(--ink); }
+      .trend-card { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .trend-card h3 { margin: 0 0 2px; font-size: 14px; }
+      .trend-card .trend-sub { margin: 0 0 10px; color: var(--muted); font-size: 12px; }
+      .trend-row { display: grid; grid-template-columns: 46px 1fr 44px; gap: 8px; align-items: center; margin: 5px 0; font-size: 12px; font-weight: 700; }
+      .trend-bar { height: 10px; border-radius: 999px; background: rgba(23,32,28,.1); overflow: hidden; }
+      .trend-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--theme), var(--accent)); }
+      .trend-val { text-align: right; color: var(--theme); }
+      /* compact one-slider dashboard: fills width, no tall stacking */
+      .dash { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; align-content: start; }
+      .dash .span-all { grid-column: 1 / -1; }
+      .dash .kpi-grid { grid-template-columns: repeat(6, minmax(0,1fr)); }
+      .dash .col { display: grid; gap: 8px; align-content: start; min-width: 0; }
+      .dash .section-heading h2 { font-size: 16px; }
+      .dash .fact-table { font-size: 12.5px; }
+      .ft-head { background: var(--theme); color: #fff; width: auto; font-weight: 800; }
+      a.country { display: inline-flex; align-items: center; gap: 5px; color: inherit; text-decoration: none; }
+      a.country img { width: 20px; height: 14px; border-radius: 2px; object-fit: cover; flex: 0 0 auto; }
+      a.country:hover { color: var(--theme); }
+      .dash .fact-table th, .dash .fact-table td { padding: 6px 10px; }
+      .dash .kpi { padding: 9px 11px; }
+      .dash .kpi strong { font-size: clamp(18px,2vw,24px); }
+      .dash .note-card { font-size: 13px; padding: 10px 13px; }
+      .dash .event-grid { grid-template-columns: 1fr; }
+      @media (max-width: 1000px) { .dash { grid-template-columns: 1fr 1fr; } .dash .kpi-grid { grid-template-columns: repeat(3,1fr); } }
+      @media (max-width: 640px) { .dash { grid-template-columns: 1fr; } .dash .kpi-grid { grid-template-columns: repeat(2,1fr); } }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
@@ -86,7 +117,7 @@
       <a href="index.html">Climate</a>
       <a class="active" aria-current="page" href="sustainability.html">Sustainability</a>
     </nav>
-    <main class="topic-slide">
+    <div class="topic-frame"><main class="topic-slide">
       <header class="topic-hero" style="--hero: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80');">
         <div>
           <p class="eyebrow">Climate topic</p>
@@ -94,15 +125,40 @@
           <p class="intro">Sustainability brings together related events, guides and calendar moments inside Climate.</p>
         </div>
       </header>
-      <section class="topic-panel">
-        <div class="left"><div class="note-card">Within Climate, Sustainability covers how societies cut emissions and use resources responsibly: renewable energy, circular use of materials, and lower-impact living.</div><div class="kpi-grid"><div class="kpi"><span>UN SDGs</span><strong>17</strong></div><div class="kpi"><span>Renewables in power</span><strong>~30%</strong></div><div class="kpi"><span>Net-zero target year</span><strong>2050</strong></div><div class="kpi"><span>Paris limit</span><strong>1.5°C</strong></div></div><table class="fact-table"><tbody><tr><th>Core idea</th><td>Meet needs without depleting the future</td></tr><tr><th>Key levers</th><td>Clean energy, efficiency, recycling</td></tr><tr><th>Framework</th><td>UN Sustainable Development Goals</td></tr><tr><th>Circular economy</th><td>Reuse, repair and recycle materials</td></tr><tr><th>Measured by</th><td>Carbon, water and waste footprints</td></tr><tr><th>Why it matters</th><td>Limits warming and resource depletion</td></tr></tbody></table></div><div class="right">
-          <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
-          <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
-            <a class="event-card" href="/content/categories/climate/sustainability/events/world-environment-day.html"><img class="event-thumb" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="World Environment Day thumbnail" loading="lazy" width="400" height="300"><time>2027 watchlist</time><strong>World Environment Day</strong><p>Global, Global</p></a>
-          </div></div>
+      <section class="topic-panel dash">
+        <div class="note-card span-all">Within Climate, Sustainability covers how societies meet today's needs without depleting the future: cutting emissions, shifting to renewable energy, using materials in a circular way and lowering the footprint of daily life.</div>
+        <div class="kpi-grid span-all"><div class="kpi"><span>UN SDGs</span><strong>17</strong></div><div class="kpi"><span>Renewables in power</span><strong>~30%</strong></div><div class="kpi"><span>Net-zero target year</span><strong>2050</strong></div><div class="kpi"><span>Paris warming limit</span><strong>1.5°C</strong></div><div class="kpi"><span>Warming so far</span><strong>~1.2°C</strong></div><div class="kpi"><span>Paris Agreement</span><strong>2015</strong></div></div>
+        <div class="col">
+          <table class="fact-table"><tbody>
+            <tr><th colspan="2" class="ft-head">Renewable leaders by source</th></tr>
+            <tr><th>Solar power</th><td><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14" loading="lazy">China</a></td></tr>
+            <tr><th>Wind power</th><td><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14" loading="lazy">China</a></td></tr>
+            <tr><th>Hydropower</th><td><a class="country" href="/content/locations/asia/china/index.html"><img src="/content/locations/asia/china/img/flag.svg" alt="" width="20" height="14" loading="lazy">China</a></td></tr>
+            <tr><th>Geothermal</th><td><a class="country" href="/content/locations/north-america/usa/index.html"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14" loading="lazy">United States</a></td></tr>
+            <tr><th>Per-capita renewables</th><td><a class="country" href="/content/locations/europe/norway/index.html"><img src="/content/locations/europe/norway/img/flag.svg" alt="" width="20" height="14" loading="lazy">Norway</a></td></tr>
+            <tr><th>Highest renewable %</th><td><a class="country" href="/content/locations/europe/iceland/index.html"><img src="/content/locations/europe/iceland/img/flag.svg" alt="" width="20" height="14" loading="lazy">Iceland</a></td></tr>
+          </tbody></table>
+        </div>
+        <div class="col">
+          <div class="trend-card">
+            <h3>Renewables share of power</h3>
+            <p class="trend-sub">Long-term upward trend</p>
+            <div class="trend-row"><span>2000</span><span class="trend-bar"><i style="width:19%"></i></span><span class="trend-val">~19%</span></div>
+            <div class="trend-row"><span>2010</span><span class="trend-bar"><i style="width:20%"></i></span><span class="trend-val">~20%</span></div>
+            <div class="trend-row"><span>2020</span><span class="trend-bar"><i style="width:28%"></i></span><span class="trend-val">~28%</span></div>
+            <div class="trend-row"><span>2023</span><span class="trend-bar"><i style="width:30%"></i></span><span class="trend-val">~30%</span></div>
+          </div>
+          <table class="fact-table"><tbody><tr><th>1987</th><td>Brundtland Report</td></tr><tr><th>1992</th><td>Rio Earth Summit</td></tr><tr><th>1997</th><td>Kyoto Protocol</td></tr><tr><th>2015</th><td>Paris Agreement &amp; SDGs</td></tr></tbody></table>
+        </div>
+        <div class="col">
+          <div class="section-heading"><h2>Upcoming events</h2></div>
+          <div class="event-grid">
+            <a class="event-card" href="/content/categories/climate/sustainability/events/earth-day.html"><img class="event-thumb" src="/content/categories/climate/sustainability/events/img/earth-day-mini.png" alt="Earth Day thumbnail" loading="lazy" width="400" height="300"><time>Annual</time><strong>Earth Day</strong><p>Global</p></a>
+            <a class="event-card" href="/content/categories/climate/sustainability/events/world-environment-day.html"><img class="event-thumb" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="World Environment Day thumbnail" loading="lazy" width="400" height="300"><time>2027 watchlist</time><strong>World Environment Day</strong><p>Global</p></a>
+          </div>
         </div>
       </section>
-    </main>
+    </main></div>
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
     <script>
       (() => { const track = document.querySelector('[data-carousel-track]'); const prev = document.querySelector('[data-carousel-prev]'); const next = document.querySelector('[data-carousel-next]'); const controls = document.querySelector('[data-carousel-controls]'); if (!track || !prev || !next || !controls) return; const today = new Date(); today.setHours(0, 0, 0, 0); track.querySelectorAll('.event-card[data-end]').forEach((card) => { const end = new Date(card.dataset.end + 'T23:59:59'); if (end < today) card.hidden = true; }); const update = () => { const max = track.scrollWidth - track.clientWidth - 1; controls.hidden = max <= 1; prev.disabled = track.scrollLeft <= 1; next.disabled = track.scrollLeft >= max; }; const step = () => { const card = track.querySelector('.event-card:not([hidden])'); if (!card) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })); track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); })();
