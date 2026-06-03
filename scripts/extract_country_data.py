@@ -112,6 +112,20 @@ def extract(country_dir):
                 cities.append({'name': cname, 'href': href, 'img': img})
                 continue
         links.append({'kind': kind_u, 'label': label_u, 'href': href})
+    # Ensure the capital is reachable as a city card. Some old pages only linked
+    # the capital from the KPI value (e.g. Norway -> Oslo), so it never appeared
+    # as a city. If the capital links to a local city page that exists (with a
+    # -mini image) and isn't already listed, add it.
+    cap_href = capital_link or ''
+    if (cap_href.endswith('.html') and '/' not in cap_href and cap_href != 'index.html'
+            and not any(c['href'] == cap_href for c in cities)):
+        cslug = cap_href[:-5]
+        cfile = os.path.join(country_dir, cap_href)
+        mini = f"/content/locations/{cont}/{slug}/img/{cslug}-mini.png"
+        if os.path.isfile(cfile) and os.path.isfile(os.path.join(ROOT, mini.lstrip('/'))):
+            cities.insert(0, {'name': capital or cslug.replace('-', ' ').title(),
+                              'href': cap_href, 'img': mini})
+
     # de-dup
     seenc = set(); cities = [c for c in cities if c['href'] not in seenc and not seenc.add(c['href'])]
     seen = set(); links = [l for l in links if (l['href'], l['label']) not in seen and not seen.add((l['href'], l['label']))]
