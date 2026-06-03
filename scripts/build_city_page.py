@@ -124,7 +124,11 @@ def render(d):
     if d.get('countryCard'):
         cc = d['countryCard']
         loc += (f'<a class="visual-topic-card visual-topic-card--country" href="{esc(cc["href"])}">'
-                f'{mini_img(cc["img"], cc["name"])}<strong>Open {esc(cc["name"])}</strong><span>Country</span></a>')
+                f'{mini_img(cc["img"], cc["name"])}<strong>{esc(cc["name"])}</strong><span>Country</span></a>')
+    # sibling-city image cards (e.g. Stockholm linked from Gothenburg)
+    for c in d.get('cityCards', []):
+        loc += (f'<a class="visual-topic-card visual-topic-card--city" href="{esc(c["href"])}">'
+                f'{mini_img(c["img"], c["name"])}<strong>{esc(c["name"])}</strong><span>City</span></a>')
     loc += ''.join(
         f'<a class="country-path" href="{esc(l["href"])}"><span>{esc(l["kind"])}</span><strong>{esc(l["label"])}</strong></a>'
         for l in d.get('links', []))
@@ -290,14 +294,32 @@ def extract(city_path):
              re.findall(r'<li><strong>([^<]*)</strong>([^<]*)</li>',
                         m1(r'<h2>Worth seeing</h2><ul class="country-points">(.*?)</ul>'))]
 
-    # location links: country card + plain links
+    # location links: country card (image) + sibling-city image cards + plain links
     ll = m1(r'<div class="country-paths country-paths--location-links">(.*?)</div>\s*<div class="country-panel-card">')
     country_card = None
     mc = re.search(r'<a class="visual-topic-card visual-topic-card--country" href="([^"]*)"><img src="([^"]*)"[^>]*><strong>(?:Open )?([^<]*)</strong>', ll)
     if mc:
         country_card = {'href': mc.group(1), 'img': mc.group(2), 'name': U(mc.group(3))}
-    links = [{'kind': U(k), 'label': U(l), 'href': hr}
-             for hr, k, l in re.findall(r'<a class="country-path" href="([^"]*)"><span>([^<]*)</span><strong>([^<]*)</strong></a>', ll)]
+    # already-image city cards
+    city_cards = [{'href': hr, 'img': img, 'name': U(nm)}
+                  for hr, img, nm in re.findall(
+                  r'<a class="visual-topic-card visual-topic-card--city" href="([^"]*)"><img src="([^"]*)"[^>]*><strong>(?:Open )?([^<]*)</strong>', ll)]
+    links = []
+    for hr, k, l in re.findall(r'<a class="country-path" href="([^"]*)"><span>([^<]*)</span><strong>([^<]*)</strong></a>', ll):
+        k_u, l_u = U(k), U(l)
+        # promote a city link to an image card when its -mini.png exists in the same dir
+        is_city = k_u.lower() == 'city' or l_u.lower().startswith('open ')
+        local = hr.endswith('.html') and '/' not in hr and hr != 'index.html'
+        if is_city and local:
+            cslug = hr[:-5]
+            cname = l_u[5:].strip() if l_u.lower().startswith('open ') else cslug.replace('-', ' ').title()
+            img = f"/content/locations/{cont}/{country_slug}/img/{cslug}-mini.png"
+            if os.path.isfile(os.path.join(ROOT, img.lstrip('/'))):
+                city_cards.append({'href': hr, 'img': img, 'name': cname})
+                continue
+        links.append({'kind': k_u, 'label': l_u, 'href': hr})
+    # de-dup city cards by href
+    seen = set(); city_cards = [c for c in city_cards if c['href'] not in seen and not seen.add(c['href'])]
 
     qa = [{'q': U(q), 'a': U(a)} for q, a in
           re.findall(r'<div><strong>([^<]*)</strong><span>([^<]*)</span></div>',
@@ -321,7 +343,7 @@ def extract(city_path):
         'countrySlug': country_slug, 'countryName': country_name, 'depth': depth,
         'seo': seo, 'kicker': kicker, 'heroText': hero_text, 'snapshot': snapshot,
         'kpis': kpis, 'shortFacts': short_facts, 'worthSeeing': worth,
-        'countryCard': country_card, 'links': links, 'planningQuestions': qa,
+        'countryCard': country_card, 'cityCards': city_cards, 'links': links, 'planningQuestions': qa,
         'events': events, 'knownFor': known, 'topicCards': topics,
     }
 
@@ -340,7 +362,9 @@ def write(path, text):
 
 
 def build_city(city_path, extract_first=True):
-    data_path = os.path.splitext(city_path)[0] + '.data.json'
+    # Use .city.data.json so it never collides with the country's <slug>.data.json
+    # (matters for city-states like monaco/monaco.html + monaco/index.html).
+    data_path = os.path.splitext(city_path)[0] + '.city.data.json'
     if extract_first or not os.path.isfile(data_path):
         data = extract(city_path)
         write(data_path, json.dumps(data, ensure_ascii=False, indent=2))

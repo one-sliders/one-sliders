@@ -3,88 +3,73 @@
   "name": "San Marino",
   "continent": "europe",
   "continentName": "Europe",
-  "countrySlug": "san-marino",
-  "countryName": "San Marino",
   "depth": 4,
   "seo": {
-    "title": "Sports Events in San Marino, Europe 2026",
-    "description": "Find sports events in San Marino in 2026: calendars, nearby guides and linked event pages for planning around Europe / San Marino. Page 2.",
-    "twitterDescription": "Find sports events in San Marino in 2026: calendars, nearby guides and linked event pages for planning around Europe / San Marino. Page 2.",
-    "webpageDescription": "Find sports events in San Marino in 2026: calendars, nearby guides and linked event pages for planning around Europe / San Marino. Page 2."
+    "title": "Sports Events in San Marino 2026",
+    "description": "San Marino historical timeline, capital, population, events and travel context on OneSliders.",
+    "twitterDescription": "Find sports events in San Marino in 2026: calendars, nearby guides and linked event pages for planning around Europe / San Marino.",
+    "webpageDescription": "Find sports events in San Marino in 2026: calendars, nearby guides and linked event pages for planning around Europe / San Marino."
   },
-  "kicker": "Capital city of San Marino",
-  "heroText": "San Marino is a key city in San Marino, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
+  "kpis": {
+    "capital": "City of San Marino",
+    "capitalLink": "san-marino.html",
+    "population": "34k",
+    "area": "61 km2",
+    "currency": "euro"
+  },
+  "history": [
     {
-      "label": "Place",
-      "text": "San Marino connects local landmarks, visitor routes and event planning in San Marino."
+      "time": "301",
+      "text": "San Marino became independent from the Roman Empire, marking a key step in modern statehood."
     },
     {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
+      "time": "1291",
+      "text": "San Marino became independent from the Papal States, marking a key step in modern statehood."
     },
     {
-      "label": "Region",
-      "text": "San Marino gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "Use the events tab to jump from city context to dated OneSliders event pages."
-    }
-  ],
-  "kpis": [
-    {
-      "label": "Country",
-      "value": "San Marino",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
+      "time": "1600",
+      "text": "A constitution set out San Marino's basic framework of government."
     }
   ],
   "shortFacts": [
     {
-      "label": "Country",
-      "value": "San Marino",
-      "href": "index.html"
+      "label": "Region",
+      "value": "Southern Europe (enclave in Italy)"
     },
     {
-      "label": "Region",
-      "value": "San Marino"
+      "label": "Language",
+      "value": "Italian"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "CET (UTC+1)"
+    },
+    {
+      "label": "Drives on",
+      "value": "Right"
     }
   ],
   "worthSeeing": [
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Three Towers:",
+      "text": "The UNESCO medieval towers of Guaita, Cesta and Montale crown Monte Titano."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "World's Oldest Republic:",
+      "text": "Founded in 301 AD, San Marino claims the world's oldest constitutional government."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Panoramic Views:",
+      "text": "The old city overlooks the Adriatic coast, Apennines and even distant peaks on clear days."
     }
   ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/europe/san-marino/img/san-marino-mini.png",
-    "name": "San Marino"
-  },
+  "cities": [
+    {
+      "name": "San Marino",
+      "href": "san-marino.html",
+      "img": "/content/locations/europe/san-marino/img/san-marino-mini.png"
+    }
+  ],
   "links": [
     {
       "kind": "Browse",
@@ -100,50 +85,62 @@
   "planningQuestions": [
     {
       "q": "What is San Marino known for?",
-      "a": "Central district, local culture, visitor planning and events."
+      "a": "Three Towers, World's Oldest Republic, Panoramic Views."
     },
     {
-      "q": "How should I use this page?",
-      "a": "Start with the city facts, then jump to linked events or nearby locations."
+      "q": "What is the capital?",
+      "a": "City of San Marino."
     },
     {
-      "q": "What should I check before going?",
-      "a": "Temperate to boreal, transport access and the current event calendar."
+      "q": "Which language is useful?",
+      "a": "Italian."
+    },
+    {
+      "q": "When is the national day?",
+      "a": "3 September."
     }
   ],
   "events": [
     {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "title": "San Marino events",
-      "meta": "2026 calendar · San Marino"
+      "modifier": "national",
+      "dataEnd": "2026-09-03",
+      "href": "/content/categories/culture/national-day/events/san-marino-foundation-day.html",
+      "img": "/content/categories/culture/national-day/events/img/san-marino-foundation-day-mini.png",
+      "title": "San Marino Foundation Day",
+      "meta": "3 Sep 2026 · San Marino"
+    }
+  ],
+  "eventsEmptyText": "No future San Marino-linked events are active in the current dataset.",
+  "food": [
+    {
+      "href": "../../../categories/food/torta-tre-monti.html",
+      "img": "/content/categories/food/img/torta-tre-monti-mini.png",
+      "title": "Torta Tre Monti",
+      "label": "Signature dish"
+    },
+    {
+      "href": "../../../categories/drinks/wine.html",
+      "img": "/content/categories/drinks/img/wine-mini.png",
+      "title": "Wine",
+      "label": "Local drink"
     }
   ],
   "knownFor": [
-    "Central district",
-    "San Marino",
-    "Temperate to boreal",
-    "City transit",
-    "Events",
-    "San Marino"
+    "Three Towers",
+    "Cesta",
+    "World's Oldest Republic",
+    "Founded in 301 AD",
+    "Panoramic Views",
+    "Apennines"
   ],
   "topicCards": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
       "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Europe outdoors",
-      "text": "Routes, seasons and nearby places."
+      "href": "../../../categories/nature/index.html",
+      "img": "/content/categories/img/categories-topics-mini.png",
+      "alt": "Categories Topics",
+      "title": "Nature & places",
+      "text": "Landscapes, routes, coastlines and outdoor context."
     }
   ]
 }

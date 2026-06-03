@@ -3,88 +3,81 @@
   "name": "Monaco",
   "continent": "europe",
   "continentName": "Europe",
-  "countrySlug": "monaco",
-  "countryName": "Monaco",
   "depth": 4,
   "seo": {
-    "title": "Sports Events in Monaco, Europe 2026",
-    "description": "Find sports events in Monaco in 2026: calendars, nearby guides and linked event pages for planning around Europe / Monaco. Page 2.",
-    "twitterDescription": "Find sports events in Monaco in 2026: calendars, nearby guides and linked event pages for planning around Europe / Monaco. Page 2.",
-    "webpageDescription": "Find sports events in Monaco in 2026: calendars, nearby guides and linked event pages for planning around Europe / Monaco. Page 2."
+    "title": "Sports Events in Monaco 2026",
+    "description": "Monaco historical timeline, capital, population, events and travel context on OneSliders.",
+    "twitterDescription": "Find sports events in Monaco in 2026: calendars, nearby guides and linked event pages for planning around Europe / Monaco.",
+    "webpageDescription": "Find sports events in Monaco in 2026: calendars, nearby guides and linked event pages for planning around Europe / Monaco."
   },
-  "kicker": "Capital city of Monaco",
-  "heroText": "Monaco is a key city in Monaco, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
+  "kpis": {
+    "capital": "Monaco",
+    "capitalLink": "monaco.html",
+    "population": "38k",
+    "area": "2 km2",
+    "currency": "euro"
+  },
+  "history": [
     {
-      "label": "Place",
-      "text": "Monaco connects local landmarks, visitor routes and event planning in Monaco."
+      "time": "1297",
+      "text": "House of Grimaldi (under the sovereignty of the Republic of Genoa)."
     },
     {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
+      "time": "1814",
+      "text": "Monaco became independent from the French Empire, marking a key step in modern statehood."
     },
     {
-      "label": "Region",
-      "text": "Monaco gives the page its wider route and destination context."
+      "time": "1814",
+      "text": "Monaco became independent from occupation of the Sixth Coalition, marking a key step in modern statehood."
     },
     {
-      "label": "Events",
-      "text": "Use the events tab to jump from city context to dated OneSliders event pages."
-    }
-  ],
-  "kpis": [
-    {
-      "label": "Country",
-      "value": "Monaco",
-      "href": "index.html"
+      "time": "1861",
+      "text": "Franco-Monégasque Treaty set new terms for sovereignty or administration."
     },
     {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
+      "time": "1911",
+      "text": "A constitution set out Monaco's basic framework of government."
     }
   ],
   "shortFacts": [
     {
-      "label": "Country",
-      "value": "Monaco",
-      "href": "index.html"
+      "label": "Region",
+      "value": "Western Europe / French Riviera"
     },
     {
-      "label": "Region",
-      "value": "Monaco"
+      "label": "Language",
+      "value": "French"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "CET (UTC+1)"
+    },
+    {
+      "label": "Drives on",
+      "value": "Right"
     }
   ],
   "worthSeeing": [
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Formula 1 Grand Prix:",
+      "text": "The most glamorous race on the calendar runs through Monte-Carlo's streets."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Monte-Carlo Casino:",
+      "text": "The legendary Belle Époque casino has defined glamour since 1863."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Prince's Palace:",
+      "text": "The Grimaldi dynasty has ruled from this fortress since 1297."
     }
   ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/europe/monaco/img/monaco-mini.png",
-    "name": "Monaco"
-  },
+  "cities": [
+    {
+      "name": "Monaco",
+      "href": "monaco.html",
+      "img": "/content/locations/europe/monaco/img/monaco-mini.png"
+    }
+  ],
   "links": [
     {
       "kind": "Browse",
@@ -100,50 +93,70 @@
   "planningQuestions": [
     {
       "q": "What is Monaco known for?",
-      "a": "Central district, local culture, visitor planning and events."
+      "a": "Formula 1 Grand Prix, Monte-Carlo Casino, Prince's Palace."
     },
     {
-      "q": "How should I use this page?",
-      "a": "Start with the city facts, then jump to linked events or nearby locations."
+      "q": "What is the capital?",
+      "a": "Monaco."
     },
     {
-      "q": "What should I check before going?",
-      "a": "Temperate to boreal, transport access and the current event calendar."
+      "q": "Which language is useful?",
+      "a": "French."
+    },
+    {
+      "q": "When is the national day?",
+      "a": "19 November."
     }
   ],
   "events": [
     {
-      "modifier": "music",
-      "href": "../../../categories/sport/formula-1/events/monaco-grand-prix.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "title": "Monaco Grand Prix",
-      "meta": "Jun 2026 · Monaco"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Monaco",
-    "Temperate to boreal",
-    "City transit",
-    "Events",
-    "Monaco"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
+      "modifier": "national",
+      "dataEnd": "2026-11-19",
+      "href": "/content/categories/culture/national-day/events/monaco-national-day.html",
+      "img": "/content/categories/culture/national-day/events/img/monaco-national-day-mini.png",
+      "title": "Monaco National Day",
+      "meta": "19 Nov 2026 · Monaco"
     },
     {
       "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Europe outdoors",
-      "text": "Routes, seasons and nearby places."
+      "dataEnd": "2026-06-07",
+      "href": "/content/categories/sport/formula-1/events/monaco-grand-prix.html",
+      "img": "/content/categories/sport/formula-1/events/img/monaco-grand-prix-mini.png",
+      "title": "Monaco Grand Prix",
+      "meta": "4-7 Jun 2026 ·"
+    }
+  ],
+  "eventsEmptyText": "No future Monaco-linked events are active in the current dataset.",
+  "food": [
+    {
+      "href": "../../../categories/food/barbagiuan.html",
+      "img": "/content/categories/food/img/barbagiuan-mini.png",
+      "title": "Barbagiuan",
+      "label": "Signature dish"
+    },
+    {
+      "href": "../../../categories/drinks/champagne.html",
+      "img": "/content/categories/drinks/img/champagne-mini.png",
+      "title": "Champagne",
+      "label": "Local drink"
+    }
+  ],
+  "knownFor": [
+    "Formula 1 Grand Prix",
+    "Monte-Carlo Casino",
+    "Prince's Palace",
+    "Capital city",
+    "Local food",
+    "History"
+  ],
+  "topicCards": [
+    {
+      "modifier": "national",
+      "href": "../../../categories/nature/index.html",
+      "img": "/content/categories/img/categories-topics-mini.png",
+      "alt": "Categories Topics",
+      "title": "Nature & places",
+      "text": "Landscapes, routes, coastlines and outdoor context."
     }
   ]
 }

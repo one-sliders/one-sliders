@@ -28,7 +28,7 @@ LABELS = {
         'shortFacts': 'Short facts', 'worthSeeing': 'Worth seeing',
         'planningQuestions': 'Planning questions', 'upcomingEvents': 'Upcoming events',
         'foodDrink': 'Food &amp; drink', 'knownFor': 'Known for',
-        'city': 'City', 'open': 'Open {name}', 'browse': 'Browse', 'moreLocations': 'More locations',
+        'city': 'City', 'open': '{name}', 'browse': 'Browse', 'moreLocations': 'More locations',
         'topics': 'Topics', 'travelInterests': 'Travel interests',
         'backTo': 'Back to {cont}',
     },
@@ -40,7 +40,7 @@ LABELS = {
         'shortFacts': 'Кратко о стране', 'worthSeeing': 'Стоит увидеть',
         'planningQuestions': 'Вопросы для планирования', 'upcomingEvents': 'Предстоящие события',
         'foodDrink': 'Еда и напитки', 'knownFor': 'Известна благодаря',
-        'city': 'Город', 'open': 'Открыть {name}', 'browse': 'Обзор', 'moreLocations': 'Другие места',
+        'city': 'Город', 'open': '{name}', 'browse': 'Обзор', 'moreLocations': 'Другие места',
         'topics': 'Темы', 'travelInterests': 'Интересы для поездки',
         'backTo': 'Назад: {cont}',
     },
@@ -333,9 +333,16 @@ def output_path(data, lang):
 
 
 def build_one(country_dir):
-    data_files = glob.glob(os.path.join(country_dir, '*.data.json'))
+    slug = os.path.basename(country_dir.rstrip('/\\'))
+    # Country data is <slug>.data.json; exclude city files (*.city.data.json).
+    preferred = os.path.join(country_dir, slug + '.data.json')
+    if os.path.isfile(preferred):
+        data_files = [preferred]
+    else:
+        data_files = [f for f in glob.glob(os.path.join(country_dir, '*.data.json'))
+                      if not f.endswith('.city.data.json')]
     if not data_files:
-        print('  no *.data.json in', country_dir); return False
+        print('  no country *.data.json in', country_dir); return False
     data = json.load(open(data_files[0], encoding='utf-8'))
     langs = data.get('langs', ['en'])
     for lang in langs:
