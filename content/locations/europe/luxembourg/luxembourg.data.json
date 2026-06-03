@@ -3,77 +3,88 @@
   "name": "Luxembourg",
   "continent": "europe",
   "continentName": "Europe",
+  "countrySlug": "luxembourg",
+  "countryName": "Luxembourg",
   "depth": 4,
   "seo": {
-    "title": "Sports Events in Luxembourg 2026",
-    "description": "Luxembourg historical timeline, capital, population, events and travel context on OneSliders.",
-    "twitterDescription": "Find sports events in Luxembourg in 2026: calendars, nearby guides and linked event pages for planning around Europe / Luxembourg.",
-    "webpageDescription": "Find sports events in Luxembourg in 2026: calendars, nearby guides and linked event pages for planning around Europe / Luxembourg."
+    "title": "Sports Events in Luxembourg, Europe 2026",
+    "description": "Find sports events in Luxembourg in 2026: calendars, nearby guides and linked event pages for planning around Europe / Luxembourg. Page 2.",
+    "twitterDescription": "Find sports events in Luxembourg in 2026: calendars, nearby guides and linked event pages for planning around Europe / Luxembourg. Page 2.",
+    "webpageDescription": "Find sports events in Luxembourg in 2026: calendars, nearby guides and linked event pages for planning around Europe / Luxembourg. Page 2."
   },
-  "kpis": {
-    "capital": "Luxembourg City",
-    "capitalLink": "luxembourg.html",
-    "population": "682k",
-    "area": "2,586 km2",
-    "currency": "euro"
-  },
-  "history": [
+  "kicker": "Capital city of Luxembourg",
+  "heroText": "Luxembourg is a key city in Luxembourg, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "snapshot": [
     {
-      "time": "1815",
-      "text": "Luxembourg became independent from the French Empire and elevation to Grand Duchy of Luxembourg, marking a key step in modern statehood."
+      "label": "Place",
+      "text": "Luxembourg connects local landmarks, visitor routes and event planning in Luxembourg."
     },
     {
-      "time": "1839",
-      "text": "Independence in personal Union with the Netherlands (Treaty of London), a key milestone in Luxembourg's path toward modern sovereignty tied the territory into a wider political structure."
+      "label": "Landmark",
+      "text": "Central district is the clearest quick-reference sight for this city page."
     },
     {
-      "time": "1890",
-      "text": "End of personal union with the Kingdom of the Netherlands ruled or strongly influenced the territory before the modern state."
+      "label": "Region",
+      "text": "Luxembourg gives the page its wider route and destination context."
     },
     {
-      "time": "1944/1945",
-      "text": "Liberation from the Greater German Reich restored control after occupation."
+      "label": "Events",
+      "text": "Use the events tab to jump from city context to dated OneSliders event pages."
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Country",
+      "value": "Luxembourg",
+      "href": "index.html"
+    },
+    {
+      "label": "Population",
+      "value": "City population"
+    },
+    {
+      "label": "Metro",
+      "value": "Metro region"
+    },
+    {
+      "label": "Known for",
+      "value": "Central district"
     }
   ],
   "shortFacts": [
     {
-      "label": "Region",
-      "value": "Western Europe"
+      "label": "Country",
+      "value": "Luxembourg",
+      "href": "index.html"
     },
     {
-      "label": "Language",
-      "value": "German, French"
+      "label": "Region",
+      "value": "Luxembourg"
     },
     {
       "label": "Time zone",
-      "value": "CET (UTC+1)"
-    },
-    {
-      "label": "Drives on",
-      "value": "Right"
+      "value": "Local time"
     }
   ],
   "worthSeeing": [
     {
-      "title": "Luxembourg City Fortress:",
-      "text": "The UNESCO old quarters and fortifications on dramatic sandstone cliffs."
+      "title": "City centre:",
+      "text": "Visitor highlight."
     },
     {
-      "title": "Mullerthal Trail:",
-      "text": "Sandstone rock formations and forest paths in the \"Little Switzerland\" of Luxembourg."
+      "title": "City centre:",
+      "text": "Visitor highlight."
     },
     {
-      "title": "Moselle Wine Valley:",
-      "text": "Luxembourg's wine country along the Moselle river, bordering Germany."
+      "title": "City centre:",
+      "text": "Visitor highlight."
     }
   ],
-  "cities": [
-    {
-      "name": "Luxembourg",
-      "href": "luxembourg.html",
-      "img": "/content/locations/europe/luxembourg/img/luxembourg-mini.png"
-    }
-  ],
+  "countryCard": {
+    "href": "index.html",
+    "img": "/content/locations/europe/luxembourg/img/luxembourg-mini.png",
+    "name": "Luxembourg"
+  },
   "links": [
     {
       "kind": "Browse",
@@ -89,70 +100,50 @@
   "planningQuestions": [
     {
       "q": "What is Luxembourg known for?",
-      "a": "Luxembourg City Fortress, Mullerthal Trail, Moselle Wine Valley."
+      "a": "Central district, local culture, visitor planning and events."
     },
     {
-      "q": "What is the capital?",
-      "a": "Luxembourg City."
+      "q": "How should I use this page?",
+      "a": "Start with the city facts, then jump to linked events or nearby locations."
     },
     {
-      "q": "Which language is useful?",
-      "a": "German, French."
-    },
-    {
-      "q": "When is the national day?",
-      "a": "23 June."
+      "q": "What should I check before going?",
+      "a": "Temperate to boreal, transport access and the current event calendar."
     }
   ],
   "events": [
     {
-      "modifier": "national",
-      "dataEnd": "2026-06-23",
-      "href": "/content/categories/culture/national-day/events/luxembourg-national-day.html",
-      "img": "/content/categories/culture/national-day/events/img/luxembourg-national-day-mini.png",
-      "title": "Luxembourg National Day",
-      "meta": "23 Jun 2026 · Luxembourg"
-    }
-  ],
-  "eventsEmptyText": "No future Luxembourg-linked events are active in the current dataset.",
-  "food": [
-    {
-      "href": "../../../categories/food/judd-mat-gaardebounen.html",
-      "img": "/content/categories/food/img/judd-mat-gaardebounen-mini.png",
-      "title": "Judd mat Gaardebounen",
-      "label": "Signature dish"
-    },
-    {
-      "href": "../../../categories/drinks/cremant.html",
-      "img": "/content/categories/drinks/img/cremant-mini.png",
-      "title": "Crémant",
-      "label": "Local drink"
+      "modifier": "music",
+      "href": "../../../events/index.html",
+      "img": "/content/locations/europe/img/europe-mini.png",
+      "title": "Luxembourg events",
+      "meta": "2026 calendar · Luxembourg"
     }
   ],
   "knownFor": [
-    "Luxembourg City Fortress",
-    "Mullerthal Trail",
-    "Moselle Wine Valley",
-    "bordering Germany.",
-    "Capital city",
-    "Local food"
+    "Central district",
+    "Luxembourg",
+    "Temperate to boreal",
+    "City transit",
+    "Events",
+    "Luxembourg"
   ],
   "topicCards": [
     {
       "modifier": "music",
-      "href": "../../../categories/music/index.html",
-      "img": "/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png",
-      "alt": "Eurovision Song Contest",
-      "title": "Music & Culture",
-      "text": "Festivals, concerts and cultural calendars."
+      "href": "../../../categories/index.html",
+      "img": "/content/locations/europe/img/europe-mini.png",
+      "alt": "Europe",
+      "title": "Categories",
+      "text": "Events, themes and practical planning."
     },
     {
-      "modifier": "music",
-      "href": "../../../categories/culture/national-day.html",
-      "img": "/content/locations/europe/luxembourg/img/luxembourg-mini.png",
-      "alt": "Luxembourg",
-      "title": "National days",
-      "text": "Public holidays, identity dates and civic celebrations."
+      "modifier": "national",
+      "href": "../index.html",
+      "img": "/content/locations/europe/img/europe-mini.png",
+      "alt": "Europe",
+      "title": "Europe outdoors",
+      "text": "Routes, seasons and nearby places."
     }
   ]
 }
