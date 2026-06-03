@@ -92,6 +92,24 @@ def render(data, lang='en'):
     seo = data.get('i18n', {}).get(lang, {}).get('seo', seo)
     hero = f"/content/locations/{cont}/{slug}/img/{slug}-hero.png"
 
+    def mini_img(src, alt, w=400, h=300, eager=False):
+        """Responsive thumbnail: WebP srcset (-400/-200) + PNG fallback in src.
+        Falls back gracefully if WebP variants don't exist (older pages)."""
+        base = src[:-4] if src.endswith('.png') else src
+        # Probe which webp widths exist on disk (relative to ROOT for absolute /content paths)
+        def exists(p):
+            return os.path.isfile(os.path.join(ROOT, p.lstrip('/'))) if p.startswith('/') else False
+        srcset = []
+        for ww in (200, 400):
+            cand = f'{base}-{ww}.webp'
+            if exists(cand):
+                srcset.append(f'{cand} {ww}w')
+        load = 'eager' if eager else 'lazy'
+        srcset_attr = (f' srcset="{", ".join(srcset)}" sizes="(max-width:620px) 220px, 400px"'
+                       if srcset else '')
+        return (f'<img src="{esc(src)}"{srcset_attr} alt="{esc(alt)} thumbnail" '
+                f'loading="{load}" width="{w}" height="{h}">')
+
     def alt_url(lg):
         # Absolute — used for hreflang (Google requires absolute URLs).
         lp = '' if lg == 'en' else lg + '/'
@@ -192,7 +210,7 @@ def render(data, lang='en'):
         for w in localized(data, lang, 'worthSeeing', data['worthSeeing']))
     cities = ''.join(
         f'<a class="visual-topic-card visual-topic-card--city" href="{esc(c["href"])}">'
-        f'<img src="{esc(c["img"])}" alt="{esc(c["name"])} thumbnail" loading="lazy" width="400" height="300">'
+        f'{mini_img(c["img"], c["name"])}'
         f'<strong>{L["open"].format(name=esc(c["name"]))}</strong><span>{L["city"]}</span></a>'
         for c in data.get('cities', []))
     plain_links = ''.join(
@@ -203,23 +221,38 @@ def render(data, lang='en'):
         f'<div><strong>{esc(q["q"])}</strong><span>{esc(q["a"])}</span></div>'
         for q in localized(data, lang, 'planningQuestions', data['planningQuestions']))
     events = ''.join(
-        f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" data-end="{esc(e["dataEnd"])}" href="{esc(e["href"])}"><img src="{esc(e["img"])}" alt="{esc(e["title"])} thumbnail" loading="lazy" width="400" height="300"><strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
+        f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" data-end="{esc(e["dataEnd"])}" href="{esc(e["href"])}">{mini_img(e["img"], e["title"])}<strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
         for e in localized(data, lang, 'events', data['events']))
     food = ''.join(
-        f'<a class="visual-topic-card visual-topic-card--food" href="{esc(c["href"])}"><img src="{esc(c["img"])}" alt="{esc(c["title"])} thumbnail" loading="lazy" width="400" height="300"><strong>{esc(c["title"])}</strong><span>{esc(c["label"])}</span></a>'
+        f'<a class="visual-topic-card visual-topic-card--food" href="{esc(c["href"])}">{mini_img(c["img"], c["title"])}<strong>{esc(c["title"])}</strong><span>{esc(c["label"])}</span></a>'
         for c in localized(data, lang, 'food', data['food']))
     known = ''.join(f'<span>{esc(k)}</span>' for k in localized(data, lang, 'knownFor', data['knownFor']))
     topics = ''.join(
-        f'<a class="visual-topic-card visual-topic-card--{esc(t["modifier"])}" href="{esc(t["href"])}"><img src="{esc(t["img"])}" alt="{esc(t["alt"])} thumbnail" loading="lazy" width="400" height="300"><strong>{esc(t["title"])}</strong><span>{esc(t["text"])}</span></a>'
+        f'<a class="visual-topic-card visual-topic-card--{esc(t["modifier"])}" href="{esc(t["href"])}">{mini_img(t["img"], t["alt"])}<strong>{esc(t["title"])}</strong><span>{esc(t["text"])}</span></a>'
         for t in localized(data, lang, 'topicCards', data['topicCards']))
     empty_text = localized(data, lang, 'eventsEmptyText', data['eventsEmptyText'])
+
+    # ---- hero background ----
+    # Hero uses high-quality WebP (q92, photographic) via image-set, with the
+    # original PNG as fallback for browsers without WebP. SINGLE quotes inside
+    # url()/image-set() so they don't collide with the style="..." attribute.
+    hero_base = f"/content/locations/{cont}/{slug}/img/{slug}-hero"
+    def _has(p): return os.path.isfile(os.path.join(ROOT, p.lstrip('/')))
+    hero_1200 = f'{hero_base}-1200.webp'
+    if _has(hero_1200):
+        hero_url = (f"image-set(url('{hero_1200}') type('image/webp'), "
+                    f"url('{hero}') type('image/png'))")
+        hero_preload = hero_1200
+    else:
+        hero_url = f"url('{hero}')"
+        hero_preload = hero
 
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="{up}assets/css/oneslider-core.css">
-  <link rel="preload" as="image" href="{hero}">
+  <link rel="preload" as="image" href="{hero_preload}">
 <script defer src="{up}assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -247,7 +280,7 @@ def render(data, lang='en'):
   <main class="page-shell country-slide country-content-box">
     <section class="country-brief" aria-label="{esc(name)} one-slide overview">
       <div class="country-brief__copy">
-        <div class="country-hero-image" style="--country-hero-url: url('{hero}')" aria-hidden="true"></div>
+        <div class="country-hero-image" style="--country-hero-url: {hero_url}" aria-hidden="true"></div>
         <img class="flag-badge" src="img/flag.svg" alt="{esc(name)} flag" width="1600" height="1000" loading="lazy">
         <h1 class="hero-title">{esc(name)}</h1>
         <div class="country-left-stack"><div class="country-panel-card country-history-card"><h2>{L["history"]}</h2><div class="country-history-list">{history}</div></div></div>
