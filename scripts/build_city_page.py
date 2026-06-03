@@ -133,6 +133,16 @@ def render(d):
         f'<a class="country-path" href="{esc(l["href"])}"><span>{esc(l["kind"])}</span><strong>{esc(l["label"])}</strong></a>'
         for l in d.get('links', []))
 
+    # Landmarks (attractions in the city). Cards link into the <city>/ subfolder.
+    # Rendered only when the city has landmark data; the section is omitted otherwise
+    # so it never shows an empty block (placeholder cities just have an empty list).
+    landmarks = ''.join(
+        f'<a class="visual-topic-card visual-topic-card--landmark" href="{esc(lm["href"])}">{mini_img(lm["img"], lm["name"])}<strong>{esc(lm["name"])}</strong><span>{esc(lm.get("kicker", "Landmark"))}</span></a>'
+        for lm in d.get('landmarks', []))
+    landmarks_block = (f'<div class="country-panel-card"><h2>Landmarks</h2>'
+                       f'<div class="country-paths country-paths--topics">{landmarks}</div></div>'
+                       if landmarks else '')
+
     qa = ''.join(f'<div><strong>{esc(q["q"])}</strong><span>{esc(q["a"])}</span></div>' for q in d['planningQuestions'])
     events = ''.join(
         f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" href="{esc(e["href"])}">{mini_img(e["img"], e["title"])}<strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
@@ -199,6 +209,7 @@ def render(d):
               <div><h2>Worth seeing</h2><ul class="country-points">{worth}</ul></div>
             </div>
             <div class="country-paths country-paths--location-links">{loc}</div>
+            {landmarks_block}
             <div class="country-panel-card"><h2>Planning questions</h2><div class="country-qa-list">{qa}</div></div>
           </div>
           <div class="persona-panel view-panel--events">
@@ -338,12 +349,31 @@ def extract(city_path):
               r'<a class="visual-topic-card visual-topic-card--([^"]*)" href="([^"]*)"><img src="([^"]*)" alt="([^"]*?) thumbnail"[^>]*><strong>([^<]*)</strong><span>([^<]*)</span></a>',
               m1(r'(<div class="country-paths country-paths--topics">.*?</div>)\s*</section>'))]
 
+    # Landmarks: auto-detected from the <city>/ subfolder (sibling to this <city>.html).
+    landmarks = []
+    sub = os.path.join(os.path.dirname(city_path), slug)
+    if os.path.isdir(sub):
+        for lf in sorted(glob.glob(os.path.join(sub, '*.html'))):
+            if os.path.basename(lf) == 'index.html':
+                continue
+            lslug = os.path.splitext(os.path.basename(lf))[0]
+            lh = open(lf, encoding='utf-8').read()
+            mn = re.search(r'<h1 class="hero-title">([^<]+)</h1>', lh)
+            mk = re.search(r'<p class="kicker">([^<]*)</p>', lh)
+            ln = U(mn.group(1)) if mn else lslug.replace('-', ' ').title()
+            lk = U(mk.group(1)) if mk else 'Landmark'
+            img = f"/content/locations/{cont}/{country_slug}/{slug}/img/{lslug}-mini.png"
+            if not os.path.isfile(os.path.join(ROOT, img.lstrip('/'))):
+                img = f"/content/locations/{cont}/{country_slug}/{slug}/img/{lslug}-hero.png"
+            landmarks.append({'name': ln, 'kicker': lk, 'href': f'{slug}/{lslug}.html', 'img': img})
+
     return {
         'slug': slug, 'name': name, 'continent': cont, 'continentName': cont_name,
         'countrySlug': country_slug, 'countryName': country_name, 'depth': depth,
         'seo': seo, 'kicker': kicker, 'heroText': hero_text, 'snapshot': snapshot,
         'kpis': kpis, 'shortFacts': short_facts, 'worthSeeing': worth,
         'countryCard': country_card, 'cityCards': city_cards, 'links': links, 'planningQuestions': qa,
+        'landmarks': landmarks,
         'events': events, 'knownFor': known, 'topicCards': topics,
     }
 

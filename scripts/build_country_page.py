@@ -366,6 +366,13 @@ def build_one(country_dir):
 
 
 def main(argv):
+    if '--continent' in argv:
+        cont = argv[argv.index('--continent') + 1]
+        dirs = sorted({os.path.dirname(f) for f in
+                       glob.glob(os.path.join(ROOT, f'content/locations/{cont}/*/index.html'))})
+        n = sum(1 for d in dirs if build_one(d))
+        print(f'Built {n} country pages in {cont}.')
+        return 0
     if '--all' in argv:
         dirs = sorted({os.path.dirname(f) for f in glob.glob(os.path.join(ROOT, 'content/locations/*/*/*.data.json'))})
         for d in dirs:
