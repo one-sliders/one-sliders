@@ -1671,7 +1671,7 @@
     if (/\/categories\/sport\/golf\/events\//.test(location.pathname || '')) {
       renderRyderTabs(data, edition, target);
       updateEditionIdentity(data, edition);
-      renderEventSnapshot(data, edition);
+      // Left side stays static across year switches — no dynamic snapshot.
       removeBrokenCountryHeroImages(target);
       bindCalendar(data, edition);
       bindSaveButtons();
