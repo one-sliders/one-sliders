@@ -1499,38 +1499,48 @@
         const db = b.dataset.start || '9999-99-99';
         return da < db ? -1 : da > db ? 1 : 0;
       });
-      wrap.innerHTML = '';
+      // Build the year/month structure OFF-DOM first; only commit it if the
+      // whole build succeeds. If anything throws, restore every card so the
+      // page can never render an empty list.
       const sections = new Map();
-      cards.forEach(card => {
-        const start = card.dataset.start || '9999-99-99';
-        const year = start.slice(0, 4);
-        const month = start.slice(5, 7);
-        const yearKey = /^\d{4}$/.test(year) ? year : 'Other';
-        const monthKey = /^\d{2}$/.test(month) ? month : '00';
-        if (!sections.has(yearKey)) {
-          const yearSection = document.createElement('section');
-          yearSection.className = 'year-section';
-          yearSection.dataset.yearSection = yearKey;
-          yearSection.innerHTML = '<div class="year-header"><button class="year-toggle" type="button" aria-expanded="true">' + yearKey + '</button><span class="year-line"></span></div><div class="year-months"></div>';
-          yearSection.querySelector('.year-toggle').addEventListener('click', () => {
-            const collapsed = yearSection.classList.toggle('is-collapsed');
-            yearSection.querySelector('.year-toggle').setAttribute('aria-expanded', String(!collapsed));
-          });
-          sections.set(yearKey, { node: yearSection, months: new Map() });
-          wrap.appendChild(yearSection);
-        }
-        const yearData = sections.get(yearKey);
-        if (!yearData.months.has(monthKey)) {
-          const monthSection = document.createElement('section');
-          monthSection.className = 'month-section';
-          monthSection.id = 'm' + yearKey + monthKey;
-          const monthLabel = monthNames[Number(monthKey) - 1] || 'Unscheduled';
-          monthSection.innerHTML = '<div class="month-header"><span class="month-title">' + monthLabel + ' ' + yearKey + '</span><span class="month-line"></span></div><div class="events-grid"></div>';
-          yearData.months.set(monthKey, monthSection);
-          yearData.node.querySelector('.year-months').appendChild(monthSection);
-        }
-        yearData.months.get(monthKey).querySelector('.events-grid').appendChild(card);
-      });
+      const root = document.createDocumentFragment();
+      try {
+        cards.forEach(card => {
+          const start = card.dataset.start || '9999-99-99';
+          const year = start.slice(0, 4);
+          const month = start.slice(5, 7);
+          const yearKey = /^\d{4}$/.test(year) ? year : 'Other';
+          const monthKey = /^\d{2}$/.test(month) ? month : '00';
+          if (!sections.has(yearKey)) {
+            const yearSection = document.createElement('section');
+            yearSection.className = 'year-section';
+            yearSection.dataset.yearSection = yearKey;
+            yearSection.innerHTML = '<div class="year-header"><button class="year-toggle" type="button" aria-expanded="true">' + yearKey + '</button><span class="year-line"></span></div><div class="year-months"></div>';
+            yearSection.querySelector('.year-toggle').addEventListener('click', () => {
+              const collapsed = yearSection.classList.toggle('is-collapsed');
+              yearSection.querySelector('.year-toggle').setAttribute('aria-expanded', String(!collapsed));
+            });
+            sections.set(yearKey, { node: yearSection, months: new Map() });
+            root.appendChild(yearSection);
+          }
+          const yearData = sections.get(yearKey);
+          if (!yearData.months.has(monthKey)) {
+            const monthSection = document.createElement('section');
+            monthSection.className = 'month-section';
+            monthSection.id = 'm' + yearKey + monthKey;
+            const monthLabel = monthNames[Number(monthKey) - 1] || 'Unscheduled';
+            monthSection.innerHTML = '<div class="month-header"><span class="month-title">' + monthLabel + ' ' + yearKey + '</span><span class="month-line"></span></div><div class="events-grid"></div>';
+            yearData.months.set(monthKey, monthSection);
+            yearData.node.querySelector('.year-months').appendChild(monthSection);
+          }
+          yearData.months.get(monthKey).querySelector('.events-grid').appendChild(card);
+        });
+        wrap.innerHTML = '';
+        wrap.appendChild(root);
+      } catch (err) {
+        try { wrap.innerHTML = ''; } catch (e) {}
+        cards.forEach(c => { try { wrap.appendChild(c); } catch (e) {} });
+      }
       applyFilters();
     })();
   </script>
