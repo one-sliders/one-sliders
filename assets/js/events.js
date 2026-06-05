@@ -1160,7 +1160,9 @@
 
   function updateEditionIdentity(data, edition) {
     if (!edition) return;
-    var title = edition.h1 || ((data && data.eventName ? data.eventName : 'Event') + ' ' + edition.year);
+    // Left-side H1 stays GENERAL (event name only). The year-specific heading
+    // lives on the right under [data-year-heading].
+    var title = (data && data.eventName) ? data.eventName : 'Event';
     var dateValue = edition.dates || 'TBC';
     var locationValue = countries(edition.countries || []) || 'TBC';
     var resultValue = edition.status === 'past'
@@ -1176,12 +1178,12 @@
         introValue = (data.eventName || 'Event') + ' — schedule, venue, teams and how to plan your visit.';
       }
     }
-    document.querySelectorAll('[data-year-title]').forEach(function (node) { node.textContent = title; });
-    document.querySelectorAll('[data-identity-intro]').forEach(function (node) { node.textContent = introValue; });
-    document.querySelectorAll('[data-identity-date]').forEach(function (node) { node.innerHTML = dateValue; });
-    document.querySelectorAll('[data-identity-venue]').forEach(function (node) { node.innerHTML = edition.venue || 'TBC'; });
-    document.querySelectorAll('[data-identity-location]').forEach(function (node) { node.innerHTML = locationValue; });
-    document.querySelectorAll('[data-identity-result]').forEach(function (node) { node.innerHTML = resultValue; });
+    // The left side stays STATIC. Don't mutate [data-year-title] or [data-identity-*]
+    // when the user switches editions — the year-specific labels live on the right
+    // ([data-year-heading], year tabs, edition panels). The static HTML is the
+    // canonical generic view of the event (event name, evergreen lede, key facts).
+    // Variables computed above (title/intro/date/venue/location/result) are kept
+    // for templates that still rely on them downstream, e.g. document title.
     document.querySelectorAll('[data-current-only]').forEach(function (node) {
       node.hidden = edition.status === 'past';
     });
@@ -1651,8 +1653,9 @@
     var heading = document.querySelector('[data-year-heading]');
     if (!target || !edition) return;
     if (heading) heading.textContent = data.eventName + ' ' + edition.year + ' ' + edition.headingPlace;
+    // Left-side H1 stays generic; right-side heading carries the year-specific label.
     document.querySelectorAll('[data-year-title]').forEach(function (node) {
-      node.textContent = edition.h1 || (data.eventName + ' ' + edition.year);
+      node.textContent = data.eventName || 'Event';
     });
     var editionCountries = edition.countries || [];
     var editionCities = edition.cities || [];
