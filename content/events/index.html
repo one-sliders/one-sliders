@@ -223,6 +223,14 @@
     .rail-card p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     .rail-list span, .rail-bar span { white-space: nowrap; }
     .rail-list small { white-space: nowrap; }
+    /* iPhone: scroll the whole page natively instead of trapping scroll in a fixed-height panel */
+    @media (max-width: 760px) {
+      .events-frame { display: block; height: auto; min-height: 0; overflow: visible; margin: 8px; gap: 0; }
+      .events-frame__rail, .events-frame__panel { overflow: visible; height: auto; min-height: 0; box-shadow: none; }
+      .events-frame__rail { margin-bottom: 8px; }
+      .events-frame__panel .filter-bar { position: sticky; top: 0; z-index: 11; }
+      .events-frame__panel { padding-bottom: 24px; }
+    }
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/events/index.html#webpage","url":"https://one-sliders.com/content/events/index.html","name":"OneSliders - World Events Calendar - Sports, Culture & Locations","description":"Track major world events across sports, culture, music and festivals. Browse by date, location or category - from local national days to global tournaments.","inLanguage":"en","image":"https://one-sliders.com/content/events/2026/12/img/sydney-new-years-eve-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/events/index.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/events/index.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"OneSliders - World Events Calendar - Sports, Culture & Locations","item":"https://one-sliders.com/content/events/index.html"}]}]}</script>
 </head>
