@@ -9,8 +9,8 @@
     },
     {
       "name": "preview",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["scripts/serve-static.mjs"],
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4188", "--bind", "127.0.0.1"],
       "port": 4188
     }
   ]

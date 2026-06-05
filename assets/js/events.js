@@ -863,6 +863,53 @@
     '</section>';
   }
 
+  function renderHotelSearchModule(module) {
+    if (!module) return '';
+    var country = (module.destination || '').split(',').slice(1).join(',').trim();
+    var areas = (module.stayAreas || []).map(function (area, i) {
+      return '<label class="hotel-search__area"><input type="radio" name="hotel-area" value="' + escapeAttribute(area) + '"' + (i === 0 ? ' checked' : '') + '><span>' + area + '</span></label>';
+    }).join('');
+    return '<section class="commercial-module commercial-module--hotel hotel-search" data-hotel-search' +
+      ' data-country="' + escapeAttribute(country) + '"' +
+      ' data-campaign="' + escapeAttribute(module.campaign || '') + '"' +
+      ' data-page-topic="' + escapeAttribute(module.pageTopic || '') + '"' +
+      ' data-page-event="' + escapeAttribute(module.pageEvent || '') + '">' +
+      '<div class="commercial-module__header"><span>Hotels</span><strong>' + (module.title || 'Stay near the event') + '</strong></div>' +
+      '<div class="hotel-search__fields">' +
+        '<label>Check-in<input type="date" name="checkin" value="' + escapeAttribute(module.checkIn || '') + '"></label>' +
+        '<label>Check-out<input type="date" name="checkout" value="' + escapeAttribute(module.checkOut || '') + '"></label>' +
+        '<label>Guests<input type="number" name="adults" min="1" max="12" value="' + (module.adults || 2) + '"></label>' +
+        '<label>Rooms<input type="number" name="rooms" min="1" max="8" value="' + (module.rooms || 1) + '"></label>' +
+      '</div>' +
+      (areas ? '<fieldset class="hotel-search__areas"><legend>Area</legend>' + areas + '</fieldset>' : '') +
+      '<button type="button" class="event-button hotel-search__go" rel="sponsored nofollow">' + (module.cta || 'Check hotel prices') + '</button>' +
+    '</section>';
+  }
+
+  function bindHotelSearch(root) {
+    (root || document).querySelectorAll('[data-hotel-search]').forEach(function (box) {
+      var btn = box.querySelector('.hotel-search__go');
+      if (!btn || btn.__hsBound) return;
+      btn.__hsBound = true;
+      btn.addEventListener('click', function () {
+        var val = function (n) { var el = box.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
+        var area = box.querySelector('[name="hotel-area"]:checked');
+        var country = box.getAttribute('data-country') || '';
+        var dest = (area ? area.value : '') + (country ? ', ' + country : '');
+        var params = new URLSearchParams();
+        params.set('ss', dest);
+        if (val('checkin')) params.set('checkin', val('checkin'));
+        if (val('checkout')) params.set('checkout', val('checkout'));
+        params.set('group_adults', val('adults') || '2');
+        params.set('no_rooms', val('rooms') || '1');
+        // Functional default = Booking.com public search. Swap this base (and add
+        // your affiliate id) once an affiliate provider is approved.
+        var url = 'https://www.booking.com/searchresults.html?' + params.toString();
+        window.open(url, '_blank', 'noopener');
+      });
+    });
+  }
+
   function renderGolfTripModule(module) {
     if (!module) return '';
     var cards = (module.cards || []).map(function (card) {
@@ -898,7 +945,7 @@
   function renderFaqModule(items) {
     if (!items || !items.length) return '';
     return '<section class="commercial-module commercial-module--faq">' +
-      '<div class="commercial-module__header"><span>FAQ</span><strong>Ryder Cup 2027 questions</strong></div>' +
+      '<div class="commercial-module__header"><span>FAQ</span><strong>Common questions</strong></div>' +
       '<div class="faq-list">' + items.map(function (item) {
         return '<details><summary>' + item.q + '</summary><p>' + item.a + '</p></details>';
       }).join('') + '</div>' +
@@ -985,36 +1032,106 @@
     '</section>';
   }
 
+  function golfCleanDates(d) {
+    return (d || 'TBC').replace(/^\s*(final day listed|date listed|final day)\s*:\s*/i, '').trim() || 'TBC';
+  }
+
+  function golfChampLink(w) {
+    if (!w || !w.name) return '';
+    var flag = w.flag || w.countryFlag;
+    var url = w.url || w.countryUrl;
+    var img = flag ? '<img src="' + escapeAttribute(flag) + '" alt="" width="20" height="14">' : '';
+    var inner = img + w.name;
+    return url ? '<a class="country" href="' + escapeAttribute(url) + '">' + inner + '</a>' : '<span class="country">' + inner + '</span>';
+  }
+
+  // Replace the left "event facts" snapshot with useful, real data.
+  function renderEventSnapshot(data, edition) {
+    var card = document.querySelector('.card--event-snapshot');
+    if (!card) return;
+    var eds = data.editions || [];
+    var pastWins = eds.filter(function (e) { return e.status === 'past' && e.winner && e.winner.name; })
+                      .sort(function (a, b) { return (a.year || 0) - (b.year || 0); });
+    var champEd = (edition.status === 'past' && edition.winner && edition.winner.name)
+      ? edition : (pastWins.length ? pastWins[pastWins.length - 1] : null);
+    var champLabel = (edition.status === 'past') ? 'Champion' : 'Defending champion';
+    var years = eds.map(function (e) { return e.year; }).filter(Boolean);
+    var minY = years.length ? Math.min.apply(null, years) : null;
+    var venue = edition.venue && edition.venue.toUpperCase() !== 'TBC' &&
+                !/not listed|no confirmed/i.test(edition.venue) ? edition.venue : '';
+    var html = '<span>Key facts</span>';
+    if (champEd) {
+      html += '<div class="edition-compact-card"><span>' + champLabel + '</span><strong>' +
+        golfChampLink(champEd.winner) + '</strong><p>won ' + champEd.year +
+        (champEd.resultScore ? ' &middot; ' + champEd.resultScore : '') + '</p></div>';
+    }
+    var facts = [];
+    if (venue) facts.push({ label: 'Venue', value: venue });
+    facts.push({ label: 'Editions', value: eds.length + (minY ? ' (since ' + minY + ')' : '') });
+    if (edition.format) facts.push({ label: 'Format', value: edition.format });
+    facts.push({ label: 'Dates', value: golfCleanDates(edition.dates) });
+    card.innerHTML = html + compactFacts(facts);
+  }
+
   function renderRyderTabs(data, edition, target) {
     var current = edition.status !== 'past';
     var modules = edition.currentModules || {};
+    // Team event (Ryder/Presidents) uses session/live results; other golf events
+    // (opted in by slug) reuse this exact base but with stroke-play results.
+    var isTeam = !!(data.teamEvent || edition.sessionScores || edition.liveResults);
     if (!current) {
-      renderRyderHistoricalEdition(data, edition, target);
+      if (isTeam) {
+        renderRyderHistoricalEdition(data, edition, target);
+      } else {
+        target.innerHTML = '<div class="ryder-archive-panel">' +
+          '<div class="facts-strip facts-strip--compact">' +
+            fact('Venue', edition.venue || 'TBC') +
+            fact('Dates', edition.dates || 'TBC') +
+            fact('Status', edition.statusLabel || 'Complete') +
+          '</div>' +
+          (edition.winner ? '<div class="edition-compact-card"><span>Winner</span><strong>' + country(edition.winner) + '</strong>' + (edition.resultLabel ? '<p>' + edition.resultLabel + '</p>' : '') + '</div>' : '') +
+          '<div class="stage-card stage-card--wide stage-card--leaderboard-chart"><span>Leaderboard</span><strong>Round progression</strong><p>' + renderScoreProgression(edition.scoreProgression) + '</p></div>' +
+          sourceCard(data) + '</div>';
+      }
       return;
     }
-    var defaultTab = window.__eventPendingTab || 'stay';
+    // Default tab: Results while the event is actually being played (live),
+    // otherwise Overview (event info first, not the hotel sell).
+    var todayIso = new Date().toISOString().slice(0, 10);
+    var isLive = edition.startDate && edition.endExclusive && todayIso >= edition.startDate && todayIso < edition.endExclusive;
+    var defaultTab = window.__eventPendingTab || (isLive ? 'results' : 'overview');
     window.__eventPendingTab = '';
-    var overviewFacts = compactFacts([
+    var overviewItems = [
       { label: 'Venue', value: edition.venue || 'TBC' },
       { label: 'City', value: (edition.cities || []).map(city).join(' ') || 'TBC' },
       { label: 'Country', value: countries(edition.countries || []) || 'TBC' },
-      { label: 'Dates', value: edition.dates || 'TBC' },
-      { label: 'Format', value: edition.format || 'TBC' }
-    ]);
+      { label: 'Dates', value: edition.dates || 'TBC' }
+    ];
+    if (edition.format) overviewItems.push({ label: 'Format', value: edition.format });
+    var overviewFacts = compactFacts(overviewItems);
+    var airportNote = (modules.hotel && modules.hotel.airportNote)
+      ? '<div class="edition-compact-card"><span>Airport note</span><strong>' + modules.hotel.airportNote.title + '</strong><p>' + (modules.hotel.airportNote.detail || '') + '</p></div>'
+      : (data.slug === 'ryder-cup' ? '<div class="edition-compact-card"><span>Airport note</span><strong>Shannon is closest</strong><p>Cork and Dublin may also work depending on routes.</p></div>' : '');
+    var resultsHtml = isTeam
+      ? renderRyderLiveModule(edition.liveResults)
+      : (renderScoreProgression(edition.scoreProgression) || '<div class="edition-compact-card"><span>Results</span><strong>Results appear here once play begins</strong></div>');
+    var overviewTeam = isTeam
+      ? compactFacts([
+          { label: 'Match days', value: edition.matchDays || edition.dates || 'TBC' },
+          { label: 'Teams', value: country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }) }
+        ])
+      : '';
     var tabs = [
-      { id: 'stay', label: 'Stay', html: renderHotelModule(modules.hotel) + '<div class="edition-compact-card"><span>Airport note</span><strong>Shannon is closest</strong><p>Cork and Dublin may also work depending on routes.</p></div>' },
-      { id: 'results', label: 'Results', html: renderRyderLiveModule(edition.liveResults) },
-      { id: 'overview', label: 'Overview', html: overviewFacts + compactFacts([
-        { label: 'Match days', value: edition.matchDays || '17-19 Sep 2027' },
-        { label: 'Teams', value: country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }) }
-      ]) + renderCompactCountdown(edition) + '<div class="edition-compact-card"><span>Official info</span><strong>Check official channels before booking</strong><p>OneSliders is an independent guide. Confirm ticketing, transport and event access with official Ryder Cup information.</p></div>' + renderFaqModule(modules.faq) },
+      { id: 'stay', label: 'Stay', html: renderHotelSearchModule(modules.hotel) + airportNote },
+      { id: 'results', label: 'Results', html: resultsHtml },
+      { id: 'overview', label: 'Overview', html: overviewFacts + overviewTeam + renderCompactCountdown(edition) + renderFaqModule(modules.faq) },
       { id: 'golf-trip', label: 'Golf trip', html: renderGolfTripModule(modules.golfTrip) },
       { id: 'updates', label: 'Updates', html: renderLeadModule(modules.lead) }
-    ];
+    ].filter(function (tab) { return tab.html && tab.html.trim(); });
     if (!tabs.some(function (tab) { return tab.id === defaultTab; })) defaultTab = tabs[0].id;
     tabs.forEach(function (tab) { tab.active = tab.id === defaultTab; });
     target.innerHTML = '<div class="edition-tabs" data-edition-tabs>' +
-      '<div class="edition-tablist" role="tablist" aria-label="Ryder Cup section">' +
+      '<div class="edition-tablist" role="tablist" aria-label="' + escapeAttribute(data.eventName + ' sections') + '">' +
       tabs.map(function (tab) {
         return '<button class="edition-tab" type="button" role="tab" aria-selected="' + (tab.active ? 'true' : 'false') + '" data-edition-tab="' + tab.id + '">' + tab.label + '</button>';
       }).join('') + '</div>' +
@@ -1044,14 +1161,21 @@
   function updateEditionIdentity(data, edition) {
     if (!edition) return;
     var title = edition.h1 || ((data && data.eventName ? data.eventName : 'Event') + ' ' + edition.year);
-    var dateValue = edition.status === 'past' ? (edition.dates || 'TBC') : (edition.dates || '13-19 Sep 2027');
+    var dateValue = edition.dates || 'TBC';
     var locationValue = countries(edition.countries || []) || 'TBC';
     var resultValue = edition.status === 'past'
       ? (edition.winner ? country(edition.winner) : (edition.resultLabel || edition.result || 'Result TBC'))
       : country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' });
-    var introValue = edition.status === 'past'
-      ? 'Historical Ryder Cup result: where it was played, when it happened and who won.'
-      : 'The Ryder Cup is golf\'s Europe vs United States team match-play event. The next edition is at Adare Manor in Limerick, Ireland, with event week set for 13-19 September 2027.';
+    var introValue = edition.intro || data.intro;
+    if (!introValue) {
+      if (edition.status === 'past') {
+        introValue = 'Historical ' + (data.eventName || 'event') + ' result: where it was played, when it happened and who won.';
+      } else if (data.slug === 'ryder-cup') {
+        introValue = 'The Ryder Cup is golf\'s Europe vs United States team match-play event. The next edition is at Adare Manor in Limerick, Ireland, with event week set for 13-19 September 2027.';
+      } else {
+        introValue = (data.eventName || 'Event') + ' — schedule, venue, teams and how to plan your visit.';
+      }
+    }
     document.querySelectorAll('[data-year-title]').forEach(function (node) { node.textContent = title; });
     document.querySelectorAll('[data-identity-intro]').forEach(function (node) { node.textContent = introValue; });
     document.querySelectorAll('[data-identity-date]').forEach(function (node) { node.innerHTML = dateValue; });
@@ -1541,13 +1665,15 @@
       return;
     }
 
-    if (data.slug === 'ryder-cup') {
+    if (/\/categories\/sport\/golf\/events\//.test(location.pathname || '')) {
       renderRyderTabs(data, edition, target);
       updateEditionIdentity(data, edition);
+      renderEventSnapshot(data, edition);
       removeBrokenCountryHeroImages(target);
       bindCalendar(data, edition);
       bindSaveButtons();
       bindLeadForms();
+      bindHotelSearch(target);
       bindEditionTabTargetLinks();
       hydrateSessionScoreBars(target);
       hydrateRyderLiveResults(target);
@@ -1642,6 +1768,11 @@
       document.querySelector('.event-hero__image');
     var heroSrc = hero ? hero.getAttribute('src') : '';
     var heroAlt = hero ? hero.getAttribute('alt') : (data.eventName + ' hero image');
+    var heroSrcset = hero ? hero.getAttribute('srcset') : '';
+    if (!heroSrcset && heroSrc && /\.png$/i.test(heroSrc)) {
+      var base = heroSrc.replace(/\.png$/i, '');
+      heroSrcset = [400, 768, 1200].map(function (w) { return base + '-' + w + '.webp ' + w + 'w'; }).join(', ');
+    }
     var introNode = document.querySelector('.event-slide[data-slide="general"] .event-lede');
     var intro = introNode ? introNode.textContent : (data.eventName + ' event guide.');
     var countriesList = edition.countries || [];
@@ -1655,7 +1786,7 @@
     carousel.outerHTML =
       '<main class="event-onepage" data-non-sport-event-page>' +
         '<section class="event-onepage__hero" aria-label="' + escapeAttribute(data.eventName) + ' overview">' +
-          (heroSrc ? '<img class="event-onepage__hero-image" src="' + escapeAttribute(heroSrc) + '" alt="' + escapeAttribute(heroAlt) + '" width="1200" height="630" fetchpriority="high">' : '') +
+          (heroSrc ? '<img class="event-onepage__hero-image" src="' + escapeAttribute(heroSrc) + '"' + (heroSrcset ? ' srcset="' + heroSrcset + '" sizes="(max-width: 900px) 100vw, 60vw"' : '') + ' alt="' + escapeAttribute(heroAlt) + '" width="1200" height="630" fetchpriority="high">' : '') +
           '<div class="event-onepage__hero-copy">' +
             '<p class="event-kicker">Event guide</p>' +
             '<h1 class="event-title">' + escapeAttribute(data.eventName || 'Event') + '</h1>' +

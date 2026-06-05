@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- OneSlider core v4 -->
+  <link rel="stylesheet" href="../../assets/css/oneslider-core.css">
+  <script defer src="../../assets/js/oneslider-core.js"></script>
+  <script src="../../assets/js/event-view-shell.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://one-sliders.com/content/events/this-week-gantt.html">
+  <link rel="icon" href="../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../assets/icons/site.webmanifest">
+  <link rel="canonical" href="https://one-sliders.com/content/events/this-week-gantt.html">
+  <meta name="content-language" content="en">
+  <meta name="theme-color" content="#0d2137">
+  <title>Week Timeline - OneSliders</title>
+  <meta name="description" content="A Gantt-style weekly timeline of OneSliders events active during the selected week.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Week Timeline - OneSliders">
+  <meta property="og:description" content="A Gantt-style weekly timeline of OneSliders events active during the selected week.">
+  <meta property="og:image" content="https://one-sliders.com/content/events/2026/12/img/sydney-new-years-eve-hero.png">
+  <style>
+    :root{--ink:var(--os-ink,#12202e);--paper:var(--os-bg,#f5f8fa);--muted:var(--os-muted,#61707d);--line:rgba(18,32,46,.12);--navy:var(--os-primary,#0d2137);--accent:var(--os-accent,#2f6f92);--sport:#1a5c8a;--motor:#c0392b;--festival:#c8740a;--culture:#7d3c98;--nature:#1a7a40;--tech:#235c75;--wellness:#4f8a68;--event:#596673}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f7faf8 0,#eef5f7 100%)}a{color:inherit;text-decoration:none}
+    .event-nav{position:sticky;top:0;z-index:30;display:flex;gap:8px;align-items:center;padding:8px clamp(14px,3vw,36px);background:rgba(247,248,246,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav-icon{flex:0 0 auto;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;color:var(--muted);transition:background .12s,color .12s}.nav-icon:hover{background:var(--navy);color:white}.nav-icon svg{width:22px;height:22px;display:block}.nav-spacer{flex:1}.nav-language{position:relative}.nav-language summary{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 11px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}.nav-language summary::-webkit-details-marker{display:none}.nav-language__list{position:fixed;top:58px;right:clamp(14px,3vw,36px);display:grid;gap:6px;min-width:190px;padding:8px;background:white;border:1px solid var(--line);border-radius:9px;box-shadow:0 18px 40px rgba(18,32,46,.16)}.nav-language__list a{padding:9px 12px;border-radius:999px;font-size:12px;font-weight:800}.nav-language__list a:hover{background:var(--navy);color:white}
+    .top-link{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:900;color:var(--muted);border:1px solid transparent}.top-link:hover,.top-link.active{background:white;border-color:var(--line);color:var(--ink)}
+    .event-language-menu{position:relative;margin-left:auto}.event-language-menu summary{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}.event-language-menu summary::-webkit-details-marker{display:none}.event-language-menu svg{width:17px;height:17px}.event-language-list{position:fixed;top:58px;right:clamp(14px,3vw,36px);display:grid;gap:6px;min-width:190px;padding:8px;background:white;border:1px solid var(--line);border-radius:9px;box-shadow:0 18px 40px rgba(18,32,46,.16)}.event-language-list a{padding:9px 12px;border-radius:999px;font-size:12px;font-weight:800}.event-language-list a:hover{background:var(--navy);color:white}
+    .hero{padding:12px clamp(16px,4vw,68px);background:#fff;border-bottom:1px solid var(--line)}.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:end}.kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{display:none}.hero p{max-width:min(720px,100%);margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.week-card{min-width:245px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#edf5f8;box-shadow:0 8px 24px rgba(18,32,46,.06)}.week-card strong{display:block;font-size:21px;line-height:1}.week-card span{display:block;margin-top:4px;color:var(--muted);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.event-view-switcher{position:sticky;top:55px;z-index:22;display:flex;gap:8px;align-items:center;padding:8px clamp(16px,4vw,68px);background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);overflow-x:auto;scrollbar-width:none}.event-view-switcher::-webkit-scrollbar{display:none}.event-view-switcher a{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:12px;font-weight:900;white-space:nowrap}.event-view-switcher a:hover,.event-view-switcher a.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    .toolbar{position:sticky;top:104px;z-index:20;display:flex;gap:10px;align-items:center;padding:9px clamp(16px,4vw,68px);background:rgba(243,247,248,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.filters{display:flex;gap:7px;overflow:auto;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button,.toggle-active{white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:8px 12px;font:800 12px Arial;cursor:pointer}.filters button:hover,.toggle-active:hover{background:#fafafa}.filters button.active,.toggle-active[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}.count{margin-left:auto;color:var(--muted);font-weight:900;font-size:13px;white-space:nowrap}
+    .week-nav{position:sticky;top:157px;z-index:18;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px clamp(16px,4vw,68px);background:rgba(13,33,55,.72);border-bottom:1px solid rgba(255,255,255,.24);box-shadow:0 10px 24px rgba(18,32,46,.14);backdrop-filter:blur(14px)}.week-nav a{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:34px;padding:0 12px;border:1px solid rgba(33,78,104,.16);border-radius:999px;background:#fff;color:var(--ink);font-size:12px;font-weight:900}.week-nav a:hover,.week-nav a.active{background:linear-gradient(180deg,var(--navy),var(--accent));border-color:var(--navy);color:#fff}.week-nav a.today-link{min-width:64px;background:transparent;border-color:rgba(255,255,255,.36);color:#fff;font-weight:700}
+    main{padding:14px clamp(16px,4vw,68px) 34px}.timeline-shell{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 18px 42px rgba(18,32,46,.1)}.timeline{min-width:980px}.timeline-head,.timeline-row{display:grid;grid-template-columns:260px repeat(7,minmax(92px,1fr));align-items:stretch}.timeline-head{position:sticky;top:0;z-index:4;background:#f8fbfc;border-bottom:1px solid var(--line)}.corner{padding:13px 14px;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day{min-height:58px;padding:10px 8px;border-left:1px solid var(--line)}.day strong{display:block;font-size:16px;line-height:1}.day span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day.is-today{background:#eaf5ee;color:#143d2a}.timeline-row{position:relative;min-height:74px;border-bottom:1px solid var(--line)}.timeline-row:last-child{border-bottom:0}.event-label{position:relative;z-index:2;display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;background:#fff;border-right:1px solid var(--line)}.event-label img{width:48px;height:40px;border-radius:7px;object-fit:cover;background:#dfe7e2}.event-label strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.event-label span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.grid-cell{border-left:1px solid var(--line);background:linear-gradient(90deg,rgba(18,32,46,.035) 1px,transparent 1px)}.bar{grid-row:1;align-self:center;z-index:3;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;min-height:42px;margin:0 8px;padding:7px 10px;border-radius:8px;color:#fff;background:var(--cat-color,var(--event));box-shadow:0 9px 20px rgba(18,32,46,.17);outline:1px solid rgba(255,255,255,.45);outline-offset:-1px}.bar:hover{filter:saturate(1.08) brightness(1.02)}.bar b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}.bar small{white-space:nowrap;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;opacity:.94}.dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}.bar[data-status="ongoing"] .dot{background:#8df2b8}.bar[data-status="upcoming"] .dot{background:#ffd166}.bar[data-status="ended"] .dot{background:#d7dee4}.empty{display:none;min-height:260px;place-items:center;text-align:center;border:1px dashed var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:18px}.empty.visible{display:grid}.site-footer{display:none}
+    @media (max-width:900px){.hero{padding:12px}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:31px}.week-card{min-width:0}.event-view-switcher{top:53px;padding:7px 10px}.toolbar{top:102px;padding:8px 10px}.count{display:none}.week-nav{top:154px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px 10px}.week-nav a{min-width:0;padding:0 8px;font-size:11px}main{padding:10px 10px 34px}.timeline-shell{-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}.timeline{min-width:790px}.timeline-head,.timeline-row{grid-template-columns:190px repeat(7,86px)}.event-label{grid-template-columns:38px minmax(0,1fr);padding:8px}.event-label img{width:38px;height:34px}.bar b{font-size:12px}.event-language-list{left:10px;right:10px;min-width:0}}
+    @media (max-width:480px){.hero h1{font-size:28px}.hero p{display:none}.toolbar{gap:7px}.filters button,.toggle-active{padding:8px 10px;font-size:11px}.timeline{min-width:690px}.timeline-head,.timeline-row{grid-template-columns:156px repeat(7,76px)}.corner{padding:11px 10px}.day{padding:9px 7px}.event-label{grid-template-columns:34px minmax(0,1fr);gap:8px}.event-label img{width:34px;height:31px}.event-label strong{font-size:12px}.event-label span{font-size:10px}.bar{grid-template-columns:auto minmax(0,1fr);gap:7px;margin:0 6px;padding:7px 8px}.bar small{display:none}}
+    .events-frame{display:grid;grid-template-columns:minmax(230px,27vw) minmax(0,1fr);gap:12px;height:calc(100vh - 78px);margin:12px clamp(10px,2vw,24px) 14px;padding:0;overflow:hidden}.events-frame__rail,.events-frame__panel{min-height:0;overflow:auto;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.96);box-shadow:0 18px 42px rgba(18,32,46,.1)}.events-frame__rail{display:grid;align-content:start}.events-frame .event-view-switcher{position:static;padding:10px 12px;border-bottom:1px solid var(--line);background:#fff}.events-frame .hero{padding:14px 16px;border-bottom:0}.events-frame .hero-inner{grid-template-columns:1fr;gap:12px}.events-frame .week-card{min-width:0}.rail-stack{display:grid;gap:10px;padding:0 12px 14px}.rail-card{display:grid;gap:8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#fff,#f4f8f9)}.rail-card>span{color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.rail-card strong{font-size:18px;line-height:1.05}.rail-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.35}.rail-heatmap{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.rail-day{display:grid;gap:4px;text-align:center;color:var(--muted);font-size:9px;font-weight:900;text-transform:uppercase}.rail-day i{display:block;height:34px;border-radius:6px;background:color-mix(in srgb,var(--accent) var(--heat,10%),#e7edf0)}.rail-list{display:grid;gap:0}.rail-list a{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0;border-top:1px solid var(--line);font-size:12px;font-weight:800}.rail-list small{color:var(--muted);font-size:10px;font-weight:900;text-transform:uppercase}.events-frame__panel .toolbar,.events-frame__panel .week-nav{position:sticky;top:0}.events-frame__panel .week-nav{top:44px}.events-frame__panel .timeline-content{padding:14px}.events-frame+.site-footer,.events-frame .site-footer{display:none}@media(max-width:760px){.events-frame{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);height:calc(100dvh - 72px);margin:8px;gap:8px}.events-frame__rail{overflow:visible}.events-frame .event-view-switcher{padding:8px 10px}.events-frame .hero{padding:10px 12px}.rail-stack{display:none}.events-frame__panel .week-nav{top:50px}.events-frame__panel .timeline-content{padding:10px}}
+    .events-frame__rail,.rail-card,.rail-card *,.rail-list a,.rail-day{min-width:0}.rail-card{overflow:hidden}.events-frame .hero p{white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.rail-heatmap{grid-template-columns:repeat(7,minmax(0,1fr));overflow:hidden}.rail-day{overflow:hidden}.rail-day i{width:100%;height:26px}.rail-card strong,.rail-card p,.rail-list span{overflow:hidden;text-overflow:ellipsis}.rail-list span{white-space:nowrap}.rail-list small{white-space:nowrap}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/events/this-week-gantt.html#webpage","url":"https://one-sliders.com/content/events/this-week-gantt.html","name":"Week Timeline - OneSliders","description":"A Gantt-style weekly timeline of OneSliders events active during the selected week.","inLanguage":"en","image":"https://one-sliders.com/content/events/2026/12/img/sydney-new-years-eve-hero.png","isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}}]}</script>
+</head>
+<body>
+  <nav class="event-nav" aria-label="Site navigation">
+    <a class="nav-icon" href="/content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+    <a class="nav-icon" href="/content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+    <a class="nav-icon" href="/content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
+    <span class="nav-spacer"></span>
+    <details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"><a href="this-week-gantt.html" aria-current="page">English</a><a href="./index.html">English event index</a></div></details>
+  </nav>
+
+  <main class="events-frame" aria-label="OneSliders events views">
+    <section class="events-frame__rail" aria-label="Event view menu">
+      <nav class="event-view-switcher" aria-label="Event views">
+        <a href="index.html">All</a>
+        <a data-view-week href="this-week.html">Week</a>
+        <a class="active" data-view-timeline href="this-week-gantt.html">Timeline</a>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="kicker">OneSliders events</div>
+            <h1>Timeline</h1>
+            <p>Scan active events by duration. Multi-day events stretch across the week, single-day events stay compact, and the current day is highlighted.</p>
+          </div>
+          <div class="week-card"><strong id="week-title">Loading week</strong><span id="week-range">Dates loading</span></div>
+        </div>
+      </section>
+      <div class="rail-stack" aria-label="Timeline view context">
+        <div class="rail-card"><span>Week density</span><strong id="rail-week-peak">0 peak day</strong><div class="rail-heatmap" id="rail-week-heatmap" aria-label="Events per weekday"></div></div>
+        <div class="rail-card"><span>Week spread</span><strong>Longest bars</strong><div class="rail-list" id="rail-week-ranking" aria-label="Events covering the most days this week"></div></div>
+      </div>
+    </section>
+    <section class="events-frame__panel" aria-label="Timeline events">
+
+  <section class="toolbar" aria-label="Timeline filters">
+    <div class="filters" id="filters" role="radiogroup" aria-label="Category">
+    </div>
+    <button class="toggle-active" id="active-only-toggle" type="button" aria-pressed="false">Active now</button>
+    <div class="count" id="event-count">0 shown</div>
+  </section>
+
+  <nav class="week-nav" aria-label="Week timeline">
+    <a id="prev-week-link" href="this-week-gantt.html">Last week</a>
+    <a id="this-week-link" class="active" href="this-week-gantt.html">This week</a>
+    <a id="next-week-link" href="this-week-gantt.html">Next week</a>
+  </nav>
+
+  <section class="timeline-content">
+    <section class="timeline-shell" aria-label="Weekly event timeline">
+      <div class="timeline" id="timeline" aria-live="polite"></div>
+    </section>
+    <div class="empty" id="empty-state">No indexed OneSliders events overlap this week yet.</div>
+  </section>
+    </section>
+  </main>
+  <footer class="site-footer">This page is generated from the event register and index dates and updates automatically in the browser.</footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const dateParam = params.get('date');
+    const today = dateParam ? new Date(dateParam + 'T12:00:00') : new Date();
+    const dayOffset = (today.getDay() + 6) % 7;
+    const weekStart = new Date(today); weekStart.setDate(today.getDate() - dayOffset); weekStart.setHours(0,0,0,0);
+    const weekEnd = new Date(weekStart); weekEnd.setDate(weekStart.getDate() + 6); weekEnd.setHours(23,59,59,999);
+    const fmt = new Intl.DateTimeFormat('en', { day:'numeric', month:'short', year:'numeric' });
+    const dayFmt = new Intl.DateTimeFormat('en', { weekday:'short' });
+    const shortFmt = new Intl.DateTimeFormat('en', { day:'numeric', month:'short' });
+    const isoDate = date => { const copy = new Date(date); copy.setMinutes(copy.getMinutes() - copy.getTimezoneOffset()); return copy.toISOString().slice(0, 10); };
+    document.querySelectorAll('#view-week-link, [data-view-week]').forEach(link => { link.href = 'this-week.html?date=' + isoDate(weekStart); });
+    document.querySelectorAll('#view-timeline-link, [data-view-timeline]').forEach(link => { link.href = 'this-week-gantt.html?date=' + isoDate(weekStart); });
+    const sameDay = (a,b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    const getAttr = (node, name) => node.getAttribute(name) || '';
+    const slugFromHref = href => (href || '').split('#')[0].split('/').pop()?.replace(/\.html$/, '') || '';
+    const eventKey = event => event.slug || slugFromHref(event.href) || (event.title || '').toLowerCase();
+    const eventLink = event => (event.href || '').replace(/#.*$/, '') + '#parts';
+    const colorFor = cat => ({sport:'#1a5c8a',motor:'#c0392b',festival:'#c8740a',culture:'#7d3c98',nature:'#1a7a40',tech:'#235c75',wellness:'#4f8a68'})[cat] || '#596673';
+    const categoryLabels = { all:'All', sport:'Sport', motor:'Motor', festival:'Festival', culture:'Culture', tech:'Tech', wellness:'Wellness', nature:'Nature', event:'Event' };
+    const categoryOrder = ['sport', 'motor', 'festival', 'culture', 'tech', 'wellness', 'nature', 'event'];
+    let activeEvents = [];
+    let currentCat = 'all';
+    let activeOnly = false;
+
+    function parseCards(doc) {
+      return [...doc.querySelectorAll('.event-card')].map(card => ({
+        title: card.querySelector('.card-title')?.textContent?.trim() || '',
+        meta: card.querySelector('.card-meta')?.textContent?.replace(/\s+/g,' ').trim() || '',
+        href: getAttr(card, 'href'),
+        image: card.querySelector('img')?.getAttribute('src') || '',
+        start: getAttr(card, 'data-start'),
+        end: getAttr(card, 'data-end'),
+        cat: getAttr(card, 'data-cat') || 'event',
+        topic: getAttr(card, 'data-topic'),
+        reach: getAttr(card, 'data-reach'),
+        slug: slugFromHref(getAttr(card, 'href'))
+      })).filter(event => event.title && event.start && event.end && event.href);
+    }
+    function registerCategory(event) {
+      const topic = event.topic || '';
+      if (['formula-1', 'motorsport', 'motogp'].includes(topic)) return 'motor';
+      if (['music-festivals', 'food-drink', 'winter', 'carnival', 'new-years'].includes(topic)) return 'festival';
+      if (topic === 'wildlife') return 'nature';
+      if (topic === 'sauna') return 'wellness';
+      if (event.category === 'technology') return 'tech';
+      return event.category || 'event';
+    }
+    function registerLocation(event) {
+      const cities = event.location?.cities?.filter(Boolean) || [];
+      const countries = event.location?.countries?.filter(Boolean) || [];
+      return [...cities, ...countries].slice(0, 2).join(', ');
+    }
+    function toPagePath(event) {
+      return '../../' + (event.eventPageEN || '').replace(/^\/+/, '');
+    }
+    function toImagePath(event) {
+      return toPagePath(event).replace(/\/events\/[^/]+\.html$/, '/events/img/' + event.slug + '-mini.png');
+    }
+    function parseRegister(register) {
+      return (register.events || []).filter(event => event.eventPageEN && event.slug).map(event => ({
+        title: event.title || '',
+        meta: [event.displayDates || '', registerLocation(event)].filter(Boolean).join(' - '),
+        href: toPagePath(event) + '#year-' + (event.currentEdition || ''),
+        image: toImagePath(event),
+        start: event.startDate || '',
+        end: event.endDate || event.startDate || '',
+        cat: registerCategory(event),
+        topic: event.topic || '',
+        reach: event.reach || 'global',
+        slug: event.slug || ''
+      })).filter(event => event.title && event.start && event.end && event.href && event.image);
+    }
+    function mergeEvents(base, preferred) {
+      const merged = new Map();
+      base.forEach(event => merged.set(eventKey(event), event));
+      preferred.forEach(event => {
+        const key = eventKey(event);
+        const existing = merged.get(key) || {};
+        merged.set(key, {...existing, ...event, href: existing.href || event.href, image: existing.image || event.image, cat: existing.cat || event.cat, topic: existing.topic || event.topic, reach: existing.reach || event.reach});
+      });
+      return [...merged.values()];
+    }
+    async function loadEvents() {
+      const cacheKey = 'os_events_compact_v2';
+      try {
+        const cached = sessionStorage.getItem(cacheKey);
+        if (cached) return JSON.parse(cached);
+      } catch (error) {
+        // Cache read can fail in private modes; the page still works without it.
+      }
+      try {
+        const response = await fetch('events-compact.json', { cache: 'default' });
+        if (!response.ok) throw new Error('Compact events fetch failed');
+        const events = await response.json();
+        try { sessionStorage.setItem(cacheKey, JSON.stringify(events)); } catch (error) {}
+        return events;
+      } catch (error) {
+        return [];
+      }
+    }
+    function overlaps(event) {
+      const start = new Date(event.start + 'T00:00:00');
+      const end = new Date(event.end + 'T23:59:59');
+      return start <= weekEnd && end >= weekStart;
+    }
+    function dateLabel(event) {
+      const start = new Date(event.start + 'T00:00:00');
+      const end = new Date(event.end + 'T00:00:00');
+      return sameDay(start,end) ? fmt.format(start) : fmt.format(start) + ' - ' + fmt.format(end);
+    }
+    function eventStatus(event) {
+      const start = new Date(event.start + 'T00:00:00');
+      const end = new Date(event.end + 'T23:59:59');
+      const now = new Date();
+      if (now < start) return { key: 'upcoming', label: 'Not started' };
+      if (now > end) return { key: 'ended', label: 'Ended' };
+      return { key: 'ongoing', label: 'Ongoing' };
+    }
+    function dayColumns() {
+      return Array.from({ length: 7 }, (_, index) => {
+        const date = new Date(weekStart);
+        date.setDate(weekStart.getDate() + index);
+        return date;
+      });
+    }
+    function clampedSpan(event) {
+      const start = new Date(event.start + 'T00:00:00');
+      const end = new Date(event.end + 'T23:59:59');
+      const from = Math.max(0, Math.floor((start - weekStart) / 86400000));
+      const to = Math.min(6, Math.floor((end - weekStart) / 86400000));
+      return { from, to: Math.max(from, to) };
+    }
+    function makeHeader() {
+      const head = document.createElement('div');
+      head.className = 'timeline-head';
+      const corner = document.createElement('div');
+      corner.className = 'corner';
+      corner.textContent = 'Event';
+      head.appendChild(corner);
+      dayColumns().forEach(date => {
+        const day = document.createElement('div');
+        day.className = 'day' + (sameDay(date, new Date()) ? ' is-today' : '');
+        day.innerHTML = '<strong>' + dayFmt.format(date) + '</strong><span>' + shortFmt.format(date) + '</span>';
+        head.appendChild(day);
+      });
+      return head;
+    }
+    function makeRow(event) {
+      const row = document.createElement('div');
+      row.className = 'timeline-row';
+      const label = document.createElement('a');
+      label.className = 'event-label';
+      label.href = eventLink(event);
+      const img = document.createElement('img');
+      img.src = event.image;
+      img.alt = '';
+      img.loading = 'lazy';
+      const text = document.createElement('div');
+      text.innerHTML = '<strong>' + event.title + '</strong><span>' + (event.cat || 'event').replace('-', ' ') + '</span>';
+      label.append(img, text);
+      row.appendChild(label);
+      for (let i = 0; i < 7; i += 1) {
+        const cell = document.createElement('div');
+        cell.className = 'grid-cell';
+        row.appendChild(cell);
+      }
+      const span = clampedSpan(event);
+      const status = eventStatus(event);
+      const bar = document.createElement('a');
+      bar.className = 'bar';
+      bar.href = eventLink(event);
+      bar.dataset.status = status.key;
+      bar.style.setProperty('--cat-color', colorFor(event.cat));
+      bar.style.gridColumn = (span.from + 2) + ' / ' + (span.to + 3);
+      bar.innerHTML = '<span class="dot" aria-hidden="true"></span><b>' + event.title + '</b><small>' + status.label + ' - ' + dateLabel(event) + '</small>';
+      row.appendChild(bar);
+      return row;
+    }
+    function eventOverlapDays(event) {
+      const span = clampedSpan(event);
+      return Math.max(1, span.to - span.from + 1);
+    }
+    function renderRailVisuals(list) {
+      const heatmap = document.getElementById('rail-week-heatmap');
+      const peak = document.getElementById('rail-week-peak');
+      const ranking = document.getElementById('rail-week-ranking');
+      if (!heatmap || !peak || !ranking) return;
+      const labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+      const counts = labels.map((_, index) => {
+        const dayStart = new Date(weekStart); dayStart.setDate(weekStart.getDate() + index);
+        const dayEnd = new Date(dayStart); dayEnd.setHours(23,59,59,999);
+        return list.filter(event => new Date(event.start + 'T00:00:00') <= dayEnd && new Date(event.end + 'T23:59:59') >= dayStart).length;
+      });
+      const max = Math.max(1, ...counts);
+      peak.textContent = max + ' on peak day';
+      heatmap.replaceChildren(...counts.map((value, index) => {
+        const cell = document.createElement('span');
+        cell.className = 'rail-day';
+        cell.innerHTML = '<i style="--heat:' + Math.max(10, Math.round(value / max * 88)) + '%"></i><b>' + labels[index] + '</b>';
+        cell.title = labels[index] + ': ' + value + ' events';
+        return cell;
+      }));
+      ranking.replaceChildren(...list.slice().sort((a,b) => eventOverlapDays(b) - eventOverlapDays(a) || a.title.localeCompare(b.title)).slice(0, 4).map(event => {
+        const link = document.createElement('a');
+        link.href = eventLink(event);
+        link.innerHTML = '<span>' + event.title + '</span><small>' + eventOverlapDays(event) + 'd</small>';
+        return link;
+      }));
+    }
+    function render() {
+      const now = new Date();
+      let list = currentCat === 'all' ? activeEvents : activeEvents.filter(event => event.cat === currentCat);
+      if (activeOnly) {
+        list = list.filter(event => {
+          const start = new Date(event.start + 'T00:00:00');
+          const end = new Date(event.end + 'T23:59:59');
+          return start <= now && end >= now;
+        });
+      }
+      const timeline = document.getElementById('timeline');
+      timeline.replaceChildren(makeHeader(), ...list.map(makeRow));
+      renderRailVisuals(list);
+      document.getElementById('empty-state').classList.toggle('visible', list.length === 0);
+      document.querySelector('.timeline-shell').hidden = list.length === 0;
+      document.getElementById('event-count').textContent = list.length + ' shown';
+    }
+    function makeFilterButton(cat, count, active) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.dataset.filter = cat;
+      button.setAttribute('role', 'radio');
+      button.setAttribute('aria-checked', active ? 'true' : 'false');
+      button.className = active ? 'active' : '';
+      button.textContent = cat === 'all' ? 'All' : (categoryLabels[cat] || cat.replace('-', ' ')) + ' (' + count + ')';
+      return button;
+    }
+    function renderFilters() {
+      const filters = document.getElementById('filters');
+      const counts = activeEvents.reduce((map, event) => {
+        map.set(event.cat, (map.get(event.cat) || 0) + 1);
+        return map;
+      }, new Map());
+      const categories = [...counts.keys()].sort((a, b) => {
+        const ai = categoryOrder.includes(a) ? categoryOrder.indexOf(a) : categoryOrder.length;
+        const bi = categoryOrder.includes(b) ? categoryOrder.indexOf(b) : categoryOrder.length;
+        return ai - bi || a.localeCompare(b);
+      });
+      if (currentCat !== 'all' && !counts.has(currentCat)) currentCat = 'all';
+      filters.replaceChildren(
+        makeFilterButton('all', activeEvents.length, currentCat === 'all'),
+        ...categories.map(cat => makeFilterButton(cat, counts.get(cat), currentCat === cat))
+      );
+    }
+    function weekHref(start) {
+      return 'this-week-gantt.html?date=' + isoDate(start);
+    }
+    function rangeLabel(start) {
+      const end = new Date(start); end.setDate(start.getDate() + 6);
+      return start.getMonth() === end.getMonth() ? shortFmt.format(start) + '-' + end.getDate() : shortFmt.format(start) + ' - ' + shortFmt.format(end);
+    }
+    function updateWeekNav() {
+      const thisWeek = new Date(); thisWeek.setHours(12,0,0,0);
+      const currentDayOffset = (thisWeek.getDay() + 6) % 7;
+      const currentWeekStart = new Date(thisWeek); currentWeekStart.setDate(thisWeek.getDate() - currentDayOffset); currentWeekStart.setHours(0,0,0,0);
+      const prevWeek = new Date(weekStart); prevWeek.setDate(weekStart.getDate() - 7);
+      const nextWeek = new Date(weekStart); nextWeek.setDate(weekStart.getDate() + 7);
+      const prevLink = document.getElementById('prev-week-link');
+      const thisLink = document.getElementById('this-week-link');
+      const nextLink = document.getElementById('next-week-link');
+      const currentKey = isoDate(currentWeekStart);
+      const selectedKey = isoDate(weekStart);
+      prevLink.textContent = '< ' + rangeLabel(prevWeek);
+      prevLink.href = weekHref(prevWeek);
+      thisLink.textContent = rangeLabel(weekStart) + (selectedKey === currentKey ? ' - today' : '');
+      thisLink.href = weekHref(weekStart);
+      nextLink.textContent = rangeLabel(nextWeek) + ' >';
+      nextLink.href = weekHref(nextWeek);
+      const nav = document.querySelector('.week-nav');
+      let todayLink = document.getElementById('today-week-link');
+      if (selectedKey !== currentKey) {
+        if (!todayLink) {
+          todayLink = document.createElement('a');
+          todayLink.id = 'today-week-link';
+          todayLink.className = 'today-link';
+          todayLink.textContent = 'Today';
+          nav.appendChild(todayLink);
+        }
+        todayLink.href = weekHref(currentWeekStart);
+      } else if (todayLink) {
+        todayLink.remove();
+      }
+      const weeksAway = Math.round((weekStart - currentWeekStart) / 86400000 / 7);
+      const titleText = weeksAway === 0 ? 'This week' : weeksAway === 1 ? 'Next week' : weeksAway === -1 ? 'Last week' : weeksAway > 0 ? '+' + weeksAway + ' weeks ahead' : weeksAway + ' weeks ago';
+      document.getElementById('week-title').textContent = titleText + ' - ' + activeEvents.length + ' events';
+      document.getElementById('week-range').textContent = fmt.format(weekStart) + ' - ' + fmt.format(weekEnd);
+    }
+    document.getElementById('filters').addEventListener('click', event => {
+      const button = event.target.closest('button[data-filter]');
+      if (!button) return;
+      document.querySelectorAll('#filters button').forEach(btn => { btn.classList.remove('active'); btn.setAttribute('aria-checked', 'false'); });
+      button.classList.add('active');
+      button.setAttribute('aria-checked', 'true');
+      currentCat = button.dataset.filter;
+      render();
+    });
+    document.getElementById('active-only-toggle').addEventListener('click', event => {
+      activeOnly = !activeOnly;
+      event.currentTarget.setAttribute('aria-pressed', activeOnly ? 'true' : 'false');
+      render();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.key === 'ArrowLeft') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() - 7); location.href = weekHref(target); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() + 7); location.href = weekHref(target); }
+    });
+    const currentDateCutoff = new Date();
+    currentDateCutoff.setHours(0, 0, 0, 0);
+    const isCurrentOrUpcomingEvent = event => {
+      if (!event.end) return true;
+      const end = new Date(event.end + 'T23:59:59');
+      return Number.isNaN(end.getTime()) || end >= currentDateCutoff;
+    };
+    loadEvents().then(allEvents => {
+      activeEvents = allEvents.filter(overlaps).filter(isCurrentOrUpcomingEvent).sort((a,b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
+      updateWeekNav();
+      renderFilters();
+      render();
+    });
+  </script>
+</body>
+</html>

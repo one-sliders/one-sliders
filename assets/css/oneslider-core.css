@@ -20,6 +20,12 @@
   --muted: var(--os-muted);
   --theme: var(--os-primary);
   --theme-2: var(--os-accent);
+  /* central aliases so topic/legacy layouts resolve to the one palette */
+  --accent: var(--os-accent);
+  --line: var(--os-line);
+  --paper: var(--os-bg);
+  --surface: var(--os-surface);
+  --soft: var(--os-soft);
 }
 
 /* ---------------------------------------------------------------------
@@ -298,6 +304,32 @@ body:not(.event-page):not(.topic-onepage) > footer.os-footer {
   z-index: 30;
   background: var(--os-surface);
 }
+
+/* ---------------------------------------------------------------------
+   Framed one-slider chrome — top nav, defined ONCE and re-used by the
+   golf + topic templates (their own CSS must NOT redefine it). Sticky nav
+   in normal flow; the central .os-footer above handles the footer. All
+   colours from the central palette.
+   --------------------------------------------------------------------- */
+body.golf-event .top-menu,
+body.topic-page .top-menu {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; gap: 8px;
+  overflow-x: auto;
+  padding: 8px clamp(14px, 3vw, 36px);
+  background: color-mix(in srgb, var(--os-bg) 92%, transparent);
+  border-bottom: 1px solid var(--os-line);
+  backdrop-filter: blur(10px);
+}
+body.golf-event .top-menu a,
+body.topic-page .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
+body.golf-event .top-menu a:hover, body.golf-event .top-menu a.active,
+body.topic-page .top-menu a:hover, body.topic-page .top-menu a.active { background: var(--os-primary); color: #fff; }
+body.golf-event .nav-icon, body.topic-page .nav-icon { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; color: var(--os-muted); text-decoration: none; transition: background .12s, color .12s; }
+body.golf-event .nav-icon:hover, body.topic-page .nav-icon:hover { background: var(--os-primary); color: #fff; }
+body.golf-event .nav-icon svg, body.topic-page .nav-icon svg { width: 22px; height: 22px; display: block; }
+body.golf-event .nav-spacer, body.topic-page .nav-spacer { flex: 1 1 auto; }
+body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height: 18px; background: var(--os-line); flex: 0 0 auto; align-self: center; }
 
 /* ---------------------------------------------------------------------
    Cookie consent banner

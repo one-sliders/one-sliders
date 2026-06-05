@@ -43,6 +43,7 @@ def main():
     parser.add_argument("country")
     parser.add_argument("city")
     parser.add_argument("--source", type=Path, default=None)
+    parser.add_argument("--role", choices=("all", "hero", "mini"), default="all")
     args = parser.parse_args()
 
     source_path = args.source or latest_generated()
@@ -52,10 +53,12 @@ def main():
 
     with Image.open(source_path) as raw:
         source = raw.convert("RGB")
-        for suffix, size, ext, quality in HERO:
-            save_fit(source, img_dir / f"{args.city}-hero{suffix}{ext}", size, quality)
-        for suffix, size, ext, quality in MINI:
-            save_fit(source, img_dir / f"{args.city}-mini{suffix}{ext}", size, quality)
+        if args.role in {"all", "hero"}:
+            for suffix, size, ext, quality in HERO:
+                save_fit(source, img_dir / f"{args.city}-hero{suffix}{ext}", size, quality)
+        if args.role in {"all", "mini"}:
+            for suffix, size, ext, quality in MINI:
+                save_fit(source, img_dir / f"{args.city}-mini{suffix}{ext}", size, quality)
 
     print(f"Exported {args.continent}/{args.country}/{args.city} from {source_path}")
 

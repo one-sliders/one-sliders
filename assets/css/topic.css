@@ -1,0 +1,71 @@
+/* OneSliders — topic page layout (framed one-slider dashboard).
+   ONE shared layout for every category topic page. Colours come from the central
+   palette in oneslider-core.css (--theme, --accent, --ink, --muted, --line,
+   --paper); this file holds only topic-specific layout. No page should carry its
+   own <style> block or redefine colours. */
+
+:root { --topic-gap: 12px; }
+
+/* Top nav + footer come from the CENTRAL chrome in oneslider-core.css (re-used,
+   not copied). Body is a flex column (set by core for non-event pages): sticky
+   nav on top, central .os-footer at the bottom, this frame fills the middle. */
+body.topic-page { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+body.topic-page a { color: inherit; }
+
+/* framed card fills the space between the sticky nav and the central footer */
+.topic-page .topic-frame { flex: 1 1 auto; min-height: 0; overflow: auto; margin: var(--topic-gap) clamp(12px,2vw,36px); padding: clamp(14px,1.8vw,24px); background: color-mix(in srgb, var(--surface) 78%, transparent); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 24px 70px rgba(16,24,32,.12); }
+.topic-page .topic-slide { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 10px; padding: 0; }
+
+/* hero */
+.topic-page .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(16,24,32,.16); }
+.topic-page .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.topic-page h1 { margin: 0; font-size: clamp(40px,6vw,80px); line-height: .95; }
+.topic-page .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
+
+/* dashboard grid: KPIs full-width on top, then 3 columns */
+.topic-page .dash { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; align-content: start; }
+.topic-page .dash .span-all { grid-column: 1 / -1; }
+.topic-page .dash .col { display: grid; gap: 8px; align-content: start; min-width: 0; }
+
+.topic-page .note-card { border: 1px solid var(--line); border-radius: 8px; background: white; border-left: 5px solid var(--theme); padding: 10px 13px; font-size: 13px; line-height: 1.34; }
+.topic-page .note-card strong { color: var(--theme); }
+
+.topic-page .kpi-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px; }
+.topic-page .kpi { padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.topic-page .kpi span { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
+.topic-page .kpi strong { display: block; margin-top: 4px; font-size: clamp(18px,2vw,24px); line-height: 1; color: var(--ink); }
+
+.topic-page .fact-table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: white; font-size: 12.5px; }
+.topic-page .fact-table th, .topic-page .fact-table td { padding: 6px 10px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+.topic-page .fact-table tr:first-child th, .topic-page .fact-table tr:first-child td { border-top: 0; }
+.topic-page .fact-table th { width: 42%; color: var(--muted); font-weight: 700; }
+.topic-page .fact-table td { color: var(--ink); }
+.topic-page .fact-table th.ft-head { background: var(--theme); color: #fff; width: auto; font-weight: 800; }
+
+.topic-page .trend-card { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.topic-page .trend-card h3 { margin: 0 0 2px; font-size: 14px; }
+.topic-page .trend-sub { margin: 0 0 10px; color: var(--muted); font-size: 12px; }
+.topic-page .trend-row { display: grid; grid-template-columns: 46px 1fr 44px; gap: 8px; align-items: center; margin: 5px 0; font-size: 12px; font-weight: 700; }
+.topic-page .trend-bar { height: 10px; border-radius: 999px; background: rgba(16,24,32,.1); overflow: hidden; }
+.topic-page .trend-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--theme), var(--accent)); }
+.topic-page .trend-val { text-align: right; color: var(--theme); }
+
+/* country flag links */
+.topic-page a.country { display: inline-flex; align-items: center; gap: 5px; color: inherit; text-decoration: none; }
+.topic-page a.country img { width: 20px; height: 14px; border-radius: 2px; object-fit: cover; flex: 0 0 auto; }
+.topic-page a.country:hover { color: var(--theme); }
+
+/* events column */
+.topic-page .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.topic-page .section-heading h2 { margin: 0; font-size: 16px; line-height: 1.1; }
+.topic-page .event-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.topic-page .event-card { display: grid; gap: 6px; min-height: 120px; padding: 0 14px 12px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; border-left: 5px solid var(--accent); background: white; color: inherit; text-decoration: none; grid-template-rows: 54px auto auto; }
+.topic-page .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
+.topic-page .event-thumb { display: block; width: calc(100% + 28px); height: 54px; margin: 0 -14px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
+.topic-page .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.topic-page .event-card strong { display: block; font-size: 18px; line-height: 1.1; }
+.topic-page .event-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
+.topic-page .empty { padding: 15px; border: 1px solid var(--line); border-radius: 8px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 14px; background: white; }
+
+@media (max-width: 1000px) { .topic-page .dash { grid-template-columns: 1fr 1fr; } .topic-page .dash .kpi-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 640px) { .topic-page .dash { grid-template-columns: 1fr; } .topic-page .dash .kpi-grid { grid-template-columns: repeat(2,1fr); } }

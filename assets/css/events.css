@@ -4615,6 +4615,69 @@ html:has(body.event-page--framed) {
   line-height: 1.35;
 }
 
+/* interactive hotel search (Stay tab) */
+.hotel-search__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.hotel-search__fields label {
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--event-muted);
+}
+.hotel-search__fields input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--event-line);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--event-ink);
+  background: #fff;
+}
+.hotel-search__areas {
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+}
+.hotel-search__areas legend {
+  padding: 0;
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--event-muted);
+}
+.hotel-search__area {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 6px 6px 0;
+  padding: 6px 12px;
+  border: 1px solid var(--event-line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hotel-search__area input { accent-color: var(--event-theme); margin: 0; }
+.hotel-search__area:has(input:checked) {
+  border-color: var(--event-theme);
+  background: var(--event-theme);
+  color: #fff;
+}
+.hotel-search .hotel-search__go {
+  margin-top: 12px;
+  cursor: pointer;
+  border: 0;
+}
+
 .lead-form {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(160px, 0.8fr) auto;
@@ -6191,6 +6254,32 @@ body.event-page--non-sport .event-onepage .topic-card {
   border: 1px solid var(--event-line);
   border-radius: 14px;
   box-shadow: none;
+}
+
+/* Guard against sport carousel chrome inheriting oversized icon/button rules. */
+body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__prev,
+body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__next {
+  width: auto !important;
+  min-width: 92px !important;
+  max-width: 120px !important;
+  height: auto !important;
+  min-height: 48px !important;
+  max-height: 56px !important;
+  padding: 0 14px !important;
+  overflow: hidden !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+  white-space: nowrap !important;
+}
+
+body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__prev svg,
+body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__next svg {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
 }
 
 body.event-page--non-sport .event-onepage .topic-card {
