@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-04T00:00:00.000Z",
-  "asOf": "2026-06-04",
+  "generatedAt": "2026-06-05T00:00:00.000Z",
+  "asOf": "2026-06-05",
   "purpose": "Public event status flags for template images and unconfirmed/estimated dates.",
   "flagValues": {
     "imageStatus": [
@@ -143,7 +143,7 @@
       "slug": "african-games",
       "title": "African Games",
       "url": "/content/categories/sport/multi-sport/events/african-games.html",
-      "imageStatus": "fake-template",
+      "imageStatus": "real-event-image",
       "officialDateSet": true,
       "dateStatus": "listed",
       "dateCertaintyLabel": "Date listed",
@@ -159,7 +159,9 @@
           "label": "Eurodressage: African Games 2027 dates",
           "url": "https://www.eurodressage.com/2026/04/17/dressage-and-show-jumping-added-2027-african-games-cairo-egypt"
         }
-      ]
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "american-song-contest",
@@ -209,19 +211,21 @@
       "slug": "anime-expo",
       "title": "Anime Expo",
       "url": "/content/categories/culture/pop-culture/events/anime-expo.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Searched Anime Expo official/near-official sources; 2027 Los Angeles dates were not found. Keep TBC until SPJA/Anime Expo publishes them.",
-      "sourceStatus": "researched-no-date",
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "2-5 Jul 2026 - Los Angeles, USA",
+      "dateNote": "Anime Expo official materials list Anime Expo 2026 for 2 to 5 July 2026 at the Los Angeles Convention Center.",
+      "sourceStatus": "researched",
       "sources": [
         {
-          "label": "Anime Expo official site",
-          "url": "https://www.anime-expo.org/"
+          "label": "Anime Expo 2026 official material",
+          "url": "https://www.anime-expo.org/wp-content/uploads/2025/09/AX-26-EMO-Infographic-Final-81325.pdf"
         }
-      ]
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "army-navy-game",
@@ -249,19 +253,21 @@
       "slug": "art-basel",
       "title": "Art Basel",
       "url": "/content/categories/culture/art/events/art-basel.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Art Basel official pages list Basel 2026 and other 2027 fairs, but no Art Basel in Basel 2027 dates found.",
-      "sourceStatus": "researched-no-date",
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "18-21 Jun 2026 - Basel, Switzerland",
+      "dateNote": "Official Art Basel Basel page lists the 2026 fair from 18 to 21 June 2026.",
+      "sourceStatus": "researched",
       "sources": [
         {
-          "label": "Art Basel applications page",
-          "url": "https://www.artbasel.com/about/application"
+          "label": "Art Basel in Basel official page",
+          "url": "https://www.artbasel.com/basel?lang=en"
         }
-      ]
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "asia-cup-cricket-final",
@@ -299,16 +305,16 @@
       "title": "Australian MotoGP",
       "url": "/content/categories/sport/motogp/events/australian-motogp.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "MotoGP confirms the Australian GP moves to Adelaide from 2027, but no 2027 race weekend dates were found.",
-      "sourceStatus": "researched-no-date",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "23-25 Oct 2026 - Phillip Island, Australia",
+      "dateNote": "Australian Motorcycle Grand Prix official page confirms the 2026 MotoGP dates as 23 to 25 October 2026.",
+      "sourceStatus": "researched",
       "sources": [
         {
-          "label": "MotoGP Adelaide announcement",
-          "url": "https://www.motogp.com/en/news/2026/02/18/motogp-to-roar-into-the-city-streets-of-adelaide-from-2027/874866"
+          "label": "Australian Motorcycle Grand Prix 2026 date announcement",
+          "url": "https://www.motogp.com.au/fan-zone/news/dates-confirmed-for-2026-australian-motorcycle-grand-prix"
         }
       ]
     },
@@ -393,7 +399,7 @@
       "slug": "berlin-international-film-festival",
       "title": "Berlin International Film Festival",
       "url": "/content/categories/culture/film/events/berlin-international-film-festival.html",
-      "imageStatus": "fake-template",
+      "imageStatus": "real-event-image",
       "officialDateSet": true,
       "dateStatus": "confirmed",
       "dateCertaintyLabel": "Date set",
@@ -409,20 +415,29 @@
           "label": "filmportal Berlinale 2027 announcement",
           "url": "https://www.filmportal.de/en/node/2308635"
         }
-      ]
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-05"
     },
     {
       "slug": "bet-awards",
       "title": "BET Awards",
       "url": "/content/categories/culture/awards/events/bet-awards.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "listed",
+      "dateCertaintyLabel": "Date listed",
+      "displayedDate": "14 Jun 2026 - Los Angeles, USA",
+      "dateNote": "Television Academy entertainment industry calendar lists the 26th BET Awards for 14 June 2026; confirm against BET if a date-specific event page is published.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Television Academy entertainment industry calendar",
+          "url": "https://www.televisionacademy.com/calendar"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "biennale-of-sydney",
@@ -472,7 +487,7 @@
       "slug": "bolder-boulder",
       "title": "Bolder Boulder",
       "url": "/content/categories/sport/running/events/bolder-boulder.html",
-      "imageStatus": "fake-template",
+      "imageStatus": "real-event-image",
       "officialDateSet": true,
       "dateStatus": "confirmed",
       "dateCertaintyLabel": "Date set",
@@ -484,7 +499,9 @@
           "label": "BOLDERBoulder FAQ",
           "url": "https://www.bolderboulder.com/bolder-faqs/"
         }
-      ]
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "brasil-game-show",
@@ -529,14 +546,21 @@
       "slug": "british-motogp",
       "title": "British MotoGP",
       "url": "/content/categories/sport/motogp/events/british-motogp.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "7-9 Aug 2026 - Silverstone, UK",
+      "dateNote": "Official MotoGP 2026 calendar lists the British Grand Prix at Silverstone for 7 to 9 August 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP 2026 calendar",
+          "url": "https://www.motogp.com/en/calendar/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "busan-international-film-festival",
@@ -647,13 +671,18 @@
       "title": "CCXP Sao Paulo",
       "url": "/content/categories/culture/pop-culture/events/ccxp-sao-paulo.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "3-6 Dec 2026 - Sao Paulo, Brazil",
+      "dateNote": "Official CCXP help and CCXP26 pages list CCXP26 for 3 to 6 December 2026 in Sao Paulo.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "CCXP help: Sobre a CCXP",
+          "url": "https://ajuda.ccxp.com.br/hc/pt-br/articles/4409215607437-Sobre-a-CCXP"
+        }
+      ]
     },
     {
       "slug": "celtic-connections",
@@ -699,13 +728,22 @@
       "title": "Cheltenham Gold Cup",
       "url": "/content/categories/sport/horse-racing/events/cheltenham-gold-cup.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "19 Mar 2027 - Cheltenham, UK",
+      "dateNote": "Cheltenham Festival 2027 listings place the Festival from 16 to 19 March 2027, with Gold Cup Day on Friday 19 March.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Visit Cheltenham: Cheltenham Festival 2027",
+          "url": "https://www.visitcheltenham.com/event/the-cheltenham-festival/274525301/"
+        },
+        {
+          "label": "Cheltenham Festival 2027 schedule dates",
+          "url": "https://www.cheltenhamfestival.org.uk/cheltenham-festival-2027-schedule-dates/"
+        }
+      ]
     },
     {
       "slug": "cherry-blossom-wildlife-season",
@@ -763,27 +801,39 @@
       "slug": "city2surf-sydney",
       "title": "City2Surf Sydney",
       "url": "/content/categories/sport/running/events/city2surf-sydney.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "9 Aug 2026 - Sydney, Australia",
+      "dateNote": "Official City2Surf 2026 terms and City of Sydney listings place the Sydney City2Surf on 9 August 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "City2Surf 2026 terms and conditions",
+          "url": "https://city2surf.com.au/assets/Uploads/Legal/2026-City2Surf-Terms-and-Conditions-of-Entry.pdf"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "college-football-playoff-national-championship",
       "title": "College Football Playoff National Championship",
       "url": "/content/categories/sport/american-football/events/college-football-playoff-national-championship.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "25 Jan 2027 - Las Vegas, USA",
+      "dateNote": "Allegiant Stadium lists the 2027 College Football Playoff National Championship for Monday 25 January 2027 in Las Vegas.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Allegiant Stadium 2027 CFP National Championship",
+          "url": "https://www.allegiantstadium.com/events/detail/2027-college-football-playoff-national-championship"
+        }
+      ]
     },
     {
       "slug": "college-world-series",
@@ -815,27 +865,41 @@
       "slug": "comrades-marathon",
       "title": "Comrades Marathon",
       "url": "/content/categories/sport/running/events/comrades-marathon.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "14 Jun 2026 - Durban to Pietermaritzburg, South Africa",
+      "dateNote": "Official Comrades Marathon race information lists the 2026 race for Sunday 14 June 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Comrades Marathon race information",
+          "url": "https://comrades.com/race-information"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "copenhagen-fashion-week",
       "title": "Copenhagen Fashion Week",
       "url": "/content/categories/culture/fashion/events/copenhagen-fashion-week.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "3-7 Aug 2026 - Copenhagen, Denmark",
+      "dateNote": "Official Copenhagen Fashion Week pages list SS27 on 3-7 August 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Copenhagen Fashion Week",
+          "url": "https://copenhagenfashionweek.com/about-us"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "cotton-bowl-classic",
@@ -921,14 +985,21 @@
       "slug": "dragon-con",
       "title": "Dragon Con",
       "url": "/content/categories/culture/pop-culture/events/dragon-con.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "listed",
+      "dateCertaintyLabel": "Date listed",
+      "displayedDate": "3-7 Sep 2026 - Atlanta, USA",
+      "dateNote": "Discover Atlanta lists Dragon Con for 3 to 7 September 2026; organiser confirmation should still be preferred if a date-specific Dragon Con page is published.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Discover Atlanta: Dragon Con",
+          "url": "https://discoveratlanta.com/events/dragon-con/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "dreamhack-dallas",
@@ -973,14 +1044,16 @@
       "slug": "dubai-world-cup",
       "title": "Dubai World Cup 2027",
       "url": "/content/categories/sport/horse-racing/events/dubai-world-cup.html",
-      "imageStatus": "fake-template",
+      "imageStatus": "real-event-image",
       "officialDateSet": true,
       "dateStatus": "confirmed",
       "dateCertaintyLabel": "Date set",
       "displayedDate": "27 Mar 2027 - Dubai, UAE",
       "dateNote": "Date was already present on the event index; this flag entry is for image QA filtering.",
       "sourceStatus": "not-checked-for-date",
-      "sources": []
+      "sources": [],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-05"
     },
     {
       "slug": "dublin-tech-summit",
@@ -999,14 +1072,21 @@
       "slug": "dutch-tt-assen",
       "title": "Dutch TT Assen",
       "url": "/content/categories/sport/motogp/events/dutch-tt-assen.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "26-28 Jun 2026 - Assen, Netherlands",
+      "dateNote": "Official MotoGP 2026 calendar lists the Dutch TT at Assen for 26 to 28 June 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP 2026 calendar",
+          "url": "https://www.motogp.com/en/calendar/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "easter-in-jerusalem",
@@ -1039,13 +1119,18 @@
       "title": "Emmy Awards",
       "url": "/content/categories/culture/awards/events/emmy-awards.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "14 Sep 2026 - Los Angeles, USA",
+      "dateNote": "Television Academy calendar lists the 78th Emmy Awards NBC telecast and Governors Gala for Monday 14 September 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Television Academy calendar",
+          "url": "https://www.televisionacademy.com/calendar"
+        }
+      ]
     },
     {
       "slug": "essaouira-gnaoua-festival",
@@ -1169,13 +1254,18 @@
       "title": "French MotoGP",
       "url": "/content/categories/sport/motogp/events/french-motogp.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "8-10 May 2026 - Le Mans, France",
+      "dateNote": "Official MotoGP 2026 calendar lists the French Grand Prix at Le Mans for 8 to 10 May 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP 2026 calendar",
+          "url": "https://www.motogp.com/en/calendar/"
+        }
+      ]
     },
     {
       "slug": "frieze-london",
@@ -1208,26 +1298,36 @@
       "title": "Fuji Rock Festival",
       "url": "/content/categories/music/music-festivals/events/fuji-rock-festival.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "24-26 Jul 2026 - Naeba, Japan",
+      "dateNote": "Fuji Rock Festival information lists the 2026 event for 24, 25 and 26 July 2026 at Naeba Ski Resort.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Fuji Rock Festival information",
+          "url": "https://en.fujirockfestival.com/info/index"
+        }
+      ]
     },
     {
       "slug": "fuji-rock-festival",
       "title": "Fuji Rock Festival",
       "url": "/content/categories/culture/music-festivals/events/fuji-rock-festival.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "24-26 Jul 2026 - Naeba, Japan",
+      "dateNote": "Fuji Rock Festival information lists the 2026 event for 24, 25 and 26 July 2026 at Naeba Ski Resort.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Fuji Rock Festival information",
+          "url": "https://en.fujirockfestival.com/info/index"
+        }
+      ]
     },
     {
       "slug": "galapagos-wildlife-season",
@@ -1246,27 +1346,39 @@
       "slug": "german-motogp",
       "title": "German MotoGP",
       "url": "/content/categories/sport/motogp/events/german-motogp.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "10-12 Jul 2026 - Sachsenring, Germany",
+      "dateNote": "Official MotoGP 2026 calendar lists the German Grand Prix at Sachsenring for 10 to 12 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP 2026 calendar",
+          "url": "https://www.motogp.com/en/calendar/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "giro-d-italia",
-      "title": "Giro d Italia",
+      "title": "Giro d'Italia",
       "url": "/content/categories/sport/cycling/events/giro-d-italia.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "8-31 May 2026 - Bulgaria to Rome, Italy",
+      "dateNote": "Official Giro d\u2019Italia site lists Stage 1 on Friday 8 May 2026 and Stage 21 in Rome on Sunday 31 May 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Giro d'Italia 2026 official site",
+          "url": "https://www.giroditalia.it/en/"
+        }
+      ]
     },
     {
       "slug": "gitex-global",
@@ -1343,14 +1455,21 @@
       "slug": "goodwood-festival-of-speed",
       "title": "Goodwood Festival of Speed",
       "url": "/content/categories/sport/motorsport/events/goodwood-festival-of-speed.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "9-12 Jul 2026 - Goodwood, UK",
+      "dateNote": "Official Goodwood Festival of Speed page lists the 2026 event from 9 to 12 July 2026 at Goodwood House.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Goodwood Festival of Speed official page",
+          "url": "https://www.goodwood.com/flagship-events/festival-of-speed/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "google-pixel-launch",
@@ -1373,13 +1492,18 @@
       "title": "Grand National",
       "url": "/content/categories/sport/horse-racing/events/grand-national.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "8-10 Apr 2027 - Aintree, UK",
+      "dateNote": "The Jockey Club official Grand National page lists the Randox Grand National Festival for 8 to 10 April 2027, with Grand National Day on 10 April.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "The Jockey Club: The Grand National 2027",
+          "url": "https://www.thejockeyclub.co.uk/aintree/events-tickets/grand-national/"
+        }
+      ]
     },
     {
       "slug": "great-barrier-reef-coral-spawning",
@@ -1412,13 +1536,18 @@
       "title": "Great North Run",
       "url": "/content/categories/sport/running/events/great-north-run.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "13 Sep 2026 - Newcastle to South Shields, UK",
+      "dateNote": "Official Great Run event page lists the AJ Bell Great North Run on 13 September 2026, with a provisional event timetable for that date.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Great Run: AJ Bell Great North Run 2026",
+          "url": "https://www.greatrun.org/events/great-north-run/"
+        }
+      ]
     },
     {
       "slug": "harbin-ice-and-snow-festival",
@@ -1477,13 +1606,18 @@
       "title": "Indian Wells Masters",
       "url": "/content/categories/sport/tennis/events/indian-wells-masters.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "28 Feb - 14 Mar 2027 - Indian Wells, USA",
+      "dateNote": "BNP Paribas Open FAQ lists 2027 qualifying from 28 February to 2 March and championship matches on 14 March.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "BNP Paribas Open FAQ: 2027 schedule",
+          "url": "https://bnpparibasopen.com/visit/faqs"
+        }
+      ]
     },
     {
       "slug": "international-day-of-yoga",
@@ -1517,40 +1651,52 @@
       "slug": "ipl-final",
       "title": "IPL Final 2027",
       "url": "/content/categories/sport/cricket/events/ipl-final.html",
-      "imageStatus": "fake-template",
+      "imageStatus": "real-event-image",
       "officialDateSet": false,
       "dateStatus": "unconfirmed",
       "dateCertaintyLabel": "Date not set",
       "displayedDate": "May 2027 TBC - Host city TBC, India",
       "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
       "sourceStatus": "needs-research",
-      "sources": []
+      "sources": [],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "isle-of-man-tt",
       "title": "Isle of Man TT",
       "url": "/content/categories/sport/motorsport/events/isle-of-man-tt.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "31 May - 12 Jun 2027 - Isle of Man",
+      "dateNote": "Official Isle of Man TT announcement confirms TT 2027 from Monday 31 May to Saturday 12 June 2027.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Isle of Man TT Races: TT 2027 dates",
+          "url": "https://www.iomttraces.com/latest/news/tt-2027-dates-isle-of-man-tt-races/"
+        }
+      ]
     },
     {
       "slug": "italian-motogp",
       "title": "Italian MotoGP",
       "url": "/content/categories/sport/motogp/events/italian-motogp.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "29-31 May 2026 - Mugello, Italy",
+      "dateNote": "Official MotoGP 2026 calendar lists the Italian Grand Prix at Mugello for 29 to 31 May 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP 2026 calendar",
+          "url": "https://www.motogp.com/en/calendar/"
+        }
+      ]
     },
     {
       "slug": "japan-cup",
@@ -1569,14 +1715,21 @@
       "slug": "japan-expo-paris",
       "title": "Japan Expo Paris",
       "url": "/content/categories/culture/pop-culture/events/japan-expo-paris.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "9-12 Jul 2026 - Paris, France",
+      "dateNote": "Official Japan Expo Paris pages confirm the 2026 edition on 9-12 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Japan Expo Paris",
+          "url": "https://paris.japan-expo.com/en"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "japan-series",
@@ -1624,13 +1777,18 @@
       "title": "Kentucky Derby",
       "url": "/content/categories/sport/horse-racing/events/kentucky-derby.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "1 May 2027 - Louisville, USA",
+      "dateNote": "Kentucky Derby official pages list the 2027 Kentucky Derby for 1 May 2027, with Oaks on 30 April.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Kentucky Derby official site",
+          "url": "https://www.kentuckyderby.com/"
+        }
+      ]
     },
     {
       "slug": "khl-gagarin-cup-final",
@@ -1754,26 +1912,36 @@
       "title": "Lollapalooza Chicago",
       "url": "/content/categories/culture/music-festivals/events/lollapalooza-chicago.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "30 Jul - 2 Aug 2026 - Chicago, USA",
+      "dateNote": "Lollapalooza official FAQ confirms the 2026 Chicago festival dates as 30 July through 2 August 2026 at Grant Park.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Lollapalooza 2026 dates FAQ",
+          "url": "https://support.lollapalooza.com/hc/en-us/articles/4402035626260-What-are-the-dates-and-hours-for-Lollapalooza-2026"
+        }
+      ]
     },
     {
       "slug": "london-fashion-week",
       "title": "London Fashion Week",
       "url": "/content/categories/culture/fashion/events/london-fashion-week.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "17-21 Sep 2026 - London, UK",
+      "dateNote": "British Fashion Council lists London Fashion Week for 17 to 21 September 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "British Fashion Council: London Fashion Week",
+          "url": "https://www.britishfashioncouncil.co.uk/London-Fashion-Week"
+        }
+      ]
     },
     {
       "slug": "london-tech-week",
@@ -1795,26 +1963,36 @@
       "title": "Lucca Comics and Games",
       "url": "/content/categories/culture/pop-culture/events/lucca-comics-and-games.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "28 Oct - 1 Nov 2026 - Lucca, Italy",
+      "dateNote": "Lucca Comics & Games official 2025 wrap-up release lists the 2026 edition from 28 October to 1 November.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Lucca Comics & Games 2025 official wrap-up PDF",
+          "url": "https://www.luccacomicsandgames.com/wp-content/uploads/2025/11/CS_02.11.2025_Lucca-Comics-Games-2025_-cresce-con-oltre-280mila-biglietti-.docx.pdf"
+        }
+      ]
     },
     {
       "slug": "malaysian-motogp",
       "title": "Malaysian MotoGP",
       "url": "/content/categories/sport/motogp/events/malaysian-motogp.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "30 Oct - 1 Nov 2026 - Sepang, Malaysia",
+      "dateNote": "Official MotoGP ticket store lists the Malaysian Grand Prix from 30 October to 1 November 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MotoGP official ticket store: Malaysian GP",
+          "url": "https://tickets.motogp.com/en/21101-malaysia/"
+        }
+      ]
     },
     {
       "slug": "masai-mara-calving-season",
@@ -1860,13 +2038,18 @@
       "title": "MCM Comic Con London",
       "url": "/content/categories/culture/pop-culture/events/mcm-comic-con-london.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "23-25 Oct 2026 - London, UK",
+      "dateNote": "MCM London Comic Con official page lists the October 2026 event for 23 to 25 October 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "MCM London Comic Con official page",
+          "url": "https://www.mcmcomiccon.com/london/en-us.html"
+        }
+      ]
     },
     {
       "slug": "melbourne-food-and-wine-festival",
@@ -1950,14 +2133,21 @@
       "slug": "milan-fashion-week",
       "title": "Milan Fashion Week",
       "url": "/content/categories/culture/fashion/events/milan-fashion-week.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "19-23 Jun 2026 - Milan, Italy",
+      "dateNote": "Official city/CNMI calendar confirms Milan Fashion Week Men's Spring/Summer 2027 on 19-23 June 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Comune di Milano",
+          "url": "https://www.comune.milano.it/en/w/milano-fashion-week.-dal-19-al-23-giugno-tornano-le-sfilate-della-moda-uomo-primavera/estate-2027"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "milan-san-remo",
@@ -2002,14 +2192,21 @@
       "slug": "montreux-jazz-festival",
       "title": "Montreux Jazz Festival",
       "url": "/content/categories/culture/music/events/montreux-jazz-festival.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "3-18 Jul 2026 - Montreux, Switzerland",
+      "dateNote": "Official Montreux Jazz Festival programme lists the 60th edition on 3-18 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Montreux Jazz Festival",
+          "url": "https://www.montreuxjazzfestival.com/en/programme/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "montreux-jazz-festival",
@@ -2029,13 +2226,18 @@
       "title": "MTV Video Music Awards",
       "url": "/content/categories/culture/awards/events/mtv-video-music-awards.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "listed",
+      "dateCertaintyLabel": "Date listed",
+      "displayedDate": "6 Sep 2026 - USA",
+      "dateNote": "Television Academy entertainment industry calendar lists the MTV Video Music Awards for 6 September 2026; Paramount says additional 2026 VMA information will be announced later.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Television Academy entertainment industry calendar",
+          "url": "https://www.televisionacademy.com/calendar"
+        }
+      ]
     },
     {
       "slug": "nascar-championship-race",
@@ -2070,13 +2272,22 @@
       "title": "NBA All-Star Game",
       "url": "/content/categories/sport/basketball/events/nba-all-star-game.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "21 Feb 2027 - Phoenix, USA",
+      "dateNote": "NBA Events lists the 76th NBA All-Star Game for Sunday 21 February 2027 in Phoenix.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "NBA Events: NBA All-Star 2027",
+          "url": "https://nbaevents.nba.com/nba-all-star-2027"
+        },
+        {
+          "label": "NBA.com Phoenix Suns to host NBA All-Star 2027",
+          "url": "https://www.nba.com/news/phoenix-suns-nba-all-star-2027-official-release/"
+        }
+      ]
     },
     {
       "slug": "nba-draft",
@@ -2109,13 +2320,18 @@
       "title": "NCAA Final Four",
       "url": "/content/categories/sport/basketball/events/ncaa-final-four.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "3 & 5 Apr 2027 - Detroit, USA",
+      "dateNote": "NCAA future Final Four sites list the 2027 men's Final Four for 3 and 5 April 2027 at Ford Field in Detroit.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "NCAA Men's Final Four future dates and sites",
+          "url": "https://www.ncaa.com/mens-final-four/future-info"
+        }
+      ]
     },
     {
       "slug": "ncaa-march-madness-selection-sunday",
@@ -2148,26 +2364,36 @@
       "title": "New York Comic Con",
       "url": "/content/categories/culture/pop-culture/events/new-york-comic-con.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "8-11 Oct 2026 - New York, USA",
+      "dateNote": "New York Comic Con official FAQ lists NYCC 2026 for 8 to 11 October 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "New York Comic Con FAQ",
+          "url": "https://www.newyorkcomiccon.com/en-us/about/faqs.html"
+        }
+      ]
     },
     {
       "slug": "new-york-fashion-week",
       "title": "New York Fashion Week",
       "url": "/content/categories/culture/fashion/events/new-york-fashion-week.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "10-15 Sep 2026 - New York, USA",
+      "dateNote": "CFDA says September 2026 New York Fashion Week takes place from 10 to 15 September 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "CFDA: September 2026 Official NYFW Schedule Application",
+          "url": "https://cfda.com/news/the-september-2026-official-nyfw-schedule-application-is-open/"
+        }
+      ]
     },
     {
       "slug": "nfl-draft",
@@ -2238,27 +2464,41 @@
       "slug": "north-sea-jazz-festival",
       "title": "North Sea Jazz Festival",
       "url": "/content/categories/culture/music/events/north-sea-jazz-festival.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "10-12 Jul 2026 - Rotterdam, Netherlands",
+      "dateNote": "Official North Sea Jazz 2026 timetable confirms the festival weekend starting Friday 10 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "North Sea Jazz Festival",
+          "url": "https://www.northseajazz.com/-/media/northseajazz/rotterdam/timetables/2026-totaal.pdf"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "notting-hill-carnival",
       "title": "Notting Hill Carnival",
       "url": "/content/categories/culture/carnival/events/notting-hill-carnival.html",
-      "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "imageStatus": "real-event-image",
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "30-31 Aug 2026 - London, UK",
+      "dateNote": "Official Notting Hill Carnival site confirms Carnival 2026 on 30-31 August, with Panorama on 29 August.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Notting Hill Carnival",
+          "url": "https://nhcarnival.org/"
+        }
+      ],
+      "imageNote": "Generated photorealistic event image set completed locally: hero/mini PNG masters plus responsive WebP variants.",
+      "imageUpdatedAt": "2026-06-04"
     },
     {
       "slug": "nvidia-gtc",
@@ -2358,13 +2598,18 @@
       "title": "Paris Games Week",
       "url": "/content/categories/culture/gaming/events/paris-games-week.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "listed",
+      "dateCertaintyLabel": "Listed date",
+      "displayedDate": "22-25 Oct 2026 - Paris, France",
+      "dateNote": "Paris tourism listing gives 22-25 October 2026; kept as listed until the organiser calendar is checked directly.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Paris je t'aime",
+          "url": "https://parisjetaime.com/eng/event/paris-games-week-e100"
+        }
+      ]
     },
     {
       "slug": "paris-marathon",
@@ -2410,13 +2655,18 @@
       "title": "PAX West",
       "url": "/content/categories/culture/gaming/events/pax-west.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Confirmed date",
+      "displayedDate": "4-7 Sep 2026 - Seattle, USA",
+      "dateNote": "Official PAX West site lists 4-7 September 2026 in Seattle.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "PAX West",
+          "url": "https://west.paxsite.com/"
+        }
+      ]
     },
     {
       "slug": "peachtree-road-race",
@@ -2488,13 +2738,22 @@
       "title": "Primavera Sound Barcelona",
       "url": "/content/categories/culture/music-festivals/events/primavera-sound-barcelona.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "3-7 Jun 2026 - Barcelona, Spain",
+      "dateNote": "Festivalpilot and Parc del Forum list Primavera Sound Barcelona 2026 for 3-7 June 2026 at Parc del Forum.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "festivalpilot Primavera Sound Barcelona 2026",
+          "url": "https://festivalpilot.app/en/festivals/primavera-sound-barcelona-2026/"
+        },
+        {
+          "label": "Parc del Forum Primavera Sound 2026",
+          "url": "https://parcdelforum.barcelona/agenda/primavera-sound-2026"
+        }
+      ]
     },
     {
       "slug": "prix-de-l-arc-de-triomphe",
@@ -2631,13 +2890,18 @@
       "title": "Rock in Rio",
       "url": "/content/categories/culture/music-festivals/events/rock-in-rio.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "4-7 and 11-13 Sep 2026 - Rio de Janeiro, Brazil",
+      "dateNote": "Rock in Rio official FAQ lists the 2026 dates as 4, 5, 6, 7, 11, 12 and 13 September at Cidade do Rock.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Rock in Rio official FAQ",
+          "url": "https://rockinrio.com/rio/pt-br/faq/"
+        }
+      ]
     },
     {
       "slug": "rose-bowl-game",
@@ -2657,39 +2921,54 @@
       "title": "Roskilde Festival",
       "url": "/content/categories/culture/music/events/roskilde-festival.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "27 Jun - 4 Jul 2026 - Roskilde, Denmark",
+      "dateNote": "Roskilde Festival facts page confirms the 2026 festival takes place from 27 June to 4 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Roskilde Festival facts 2026",
+          "url": "https://www.roskilde-festival.dk/en/press/press-kit/facts-about-roskilde-festival"
+        }
+      ]
     },
     {
       "slug": "roskilde-festival",
       "title": "Roskilde Festival",
       "url": "/content/categories/music/music-festivals/events/roskilde-festival.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "27 Jun - 4 Jul 2026 - Roskilde, Denmark",
+      "dateNote": "Roskilde Festival facts page confirms the 2026 festival takes place from 27 June to 4 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Roskilde Festival facts 2026",
+          "url": "https://www.roskilde-festival.dk/en/press/press-kit/facts-about-roskilde-festival"
+        }
+      ]
     },
     {
       "slug": "roskilde-festival",
       "title": "Roskilde Festival",
       "url": "/content/categories/culture/music-festivals/events/roskilde-festival.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "27 Jun - 4 Jul 2026 - Roskilde, Denmark",
+      "dateNote": "Roskilde Festival facts page confirms the 2026 festival takes place from 27 June to 4 July 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Roskilde Festival facts 2026",
+          "url": "https://www.roskilde-festival.dk/en/press/press-kit/facts-about-roskilde-festival"
+        }
+      ]
     },
     {
       "slug": "royal-ascot",
@@ -3012,13 +3291,22 @@
       "title": "Sziget Festival Budapest",
       "url": "/content/categories/culture/music-festivals/events/sziget-festival-budapest.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "11-15 Aug 2026 - Budapest, Hungary",
+      "dateNote": "Sziget festival information lists the 2026 event from 11 to 15 August 2026 in Budapest.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Sziget festival info",
+          "url": "https://szigetfestival.com/it/festival-info"
+        },
+        {
+          "label": "Budapest Sziget Festival 2026 listing",
+          "url": "https://www.budapest.com/en/events/sziget-festival-2026"
+        }
+      ]
     },
     {
       "slug": "taste-of-chicago",
@@ -3641,16 +3929,25 @@
     },
     {
       "slug": "youth-olympic-games",
-      "title": "Youth Olympic Games",
+      "title": "Youth Olympic Games Dakar 2026",
       "url": "/content/categories/sport/multi-sport/events/youth-olympic-games.html",
       "imageStatus": "fake-template",
-      "officialDateSet": false,
-      "dateStatus": "unconfirmed",
-      "dateCertaintyLabel": "Date not set",
-      "displayedDate": "2027 date TBC",
-      "dateNote": "Official date is not set; page remains a watchlist until an organiser or venue confirms the next edition.",
-      "sourceStatus": "needs-research",
-      "sources": []
+      "officialDateSet": true,
+      "dateStatus": "confirmed",
+      "dateCertaintyLabel": "Date set",
+      "displayedDate": "31 Oct - 13 Nov 2026 - Dakar, Senegal",
+      "dateNote": "Olympics/IOC Dakar 2026 materials confirm the Youth Olympic Games in Senegal from 31 October to 13 November 2026.",
+      "sourceStatus": "researched",
+      "sources": [
+        {
+          "label": "Olympics: Dakar 2026",
+          "url": "https://www.olympics.com/en/olympic-games/dakar-2026"
+        },
+        {
+          "label": "IOC Newsroom: Dakar 2026 delivery phase",
+          "url": "https://newsroom.olympics.com/record/3178"
+        }
+      ]
     }
   ]
 }

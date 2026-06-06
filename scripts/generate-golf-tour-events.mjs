@@ -8,6 +8,7 @@ const eventDir = path.join(root, 'content/categories/sport/golf/events');
 const eventImgDir = path.join(eventDir, 'img');
 const espnHistory = readJsonIfExists(path.join(root, 'scripts/data/golf-espn-history.json'));
 const espnLeaderboards = readJsonIfExists(path.join(root, 'scripts/data/golf-espn-leaderboards.json'));
+const legacyGolfStandaloneSlugs = ['oslo-ladies-open', 'ryder-cup', 'solheim-cup'];
 
 const countries = {
   usa: country('United States', '/content/locations/north-america/usa/index.html', '/content/locations/north-america/usa/img/flag.svg', 'north-america', 'usa'),
@@ -1207,10 +1208,10 @@ function updateEventsIndexLinks() {
       .replaceAll(`/content/categories/sport/golf/events/img/${item.slug}-mini.png`, `/content/categories/sport/golf/events/img/${item.slug}-mini.png`);
   }
   source = source
-    .replaceAll(`../categories/sport/golf/events/oslo-ladies-open.html`, `../content/categories/sport/golf/events/oslo-ladies-open.html`)
-    .replaceAll(`../categories/sport/golf/events/img/oslo-ladies-open-mini.png`, `../content/categories/sport/golf/events/img/oslo-ladies-open-mini.png`)
-    .replaceAll(`../categories/sport/golf/events/ryder-cup.html`, `../content/categories/sport/golf/events/ryder-cup.html`)
-    .replaceAll(`../categories/sport/golf/events/img/ryder-cup-mini.png`, `../content/categories/sport/golf/events/img/ryder-cup-mini.png`);
+    .replaceAll(`../content/categories/sport/golf/events/oslo-ladies-open.html`, `../categories/sport/golf/events/oslo-ladies-open.html`)
+    .replaceAll(`../content/categories/sport/golf/events/img/oslo-ladies-open-mini.png`, `../categories/sport/golf/events/img/oslo-ladies-open-mini.png`)
+    .replaceAll(`../content/categories/sport/golf/events/ryder-cup.html`, `../categories/sport/golf/events/ryder-cup.html`)
+    .replaceAll(`../content/categories/sport/golf/events/img/ryder-cup-mini.png`, `../categories/sport/golf/events/img/ryder-cup-mini.png`);
   fs.writeFileSync(file, source);
 }
 
@@ -1222,8 +1223,8 @@ function eventsIndexCard(item) {
 
 function legacyGolfIndexCards() {
   return [
-    `        <a class="event-card" data-end="2026-06-15" data-cat="sport" data-topic="golf" data-cont="europe" data-country="norway" href="../content/categories/sport/golf/events/oslo-ladies-open.html" data-start="2026-06-12" data-reach="national" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../content/categories/sport/golf/events/img/oslo-ladies-open-mini.png" alt="KLPGA Oslo Ladies Open" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">KLPGA Oslo Ladies Open</strong><span class="card-meta">12-15 Jun 2026 - Oslo, Norway</span></div></a>`,
-    `        <a class="event-card" data-end="2027-09-19" data-cat="sport" data-topic="golf" data-cont="europe" data-country="ireland" data-keywords="ryder cup, ryder cup schedule, ryder cup tickets" href="../content/categories/sport/golf/events/ryder-cup.html" data-start="2027-09-17" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../content/categories/sport/golf/events/img/ryder-cup-mini.png" alt="Ryder Cup 2027" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">Ryder Cup 2027</strong><span class="card-meta">17-19 Sep 2027 - Adare, Ireland</span></div></a>`
+    `        <a class="event-card" data-end="2026-06-15" data-cat="sport" data-topic="golf" data-cont="europe" data-country="norway" href="../categories/sport/golf/events/oslo-ladies-open.html" data-start="2026-06-12" data-reach="national" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../categories/sport/golf/events/img/oslo-ladies-open-mini.png" alt="KLPGA Oslo Ladies Open" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">KLPGA Oslo Ladies Open</strong><span class="card-meta">12-15 Jun 2026 - Oslo, Norway</span></div></a>`,
+    `        <a class="event-card" data-end="2027-09-19" data-cat="sport" data-topic="golf" data-cont="europe" data-country="ireland" data-keywords="ryder cup, ryder cup schedule, ryder cup tickets" href="../categories/sport/golf/events/ryder-cup.html" data-start="2027-09-17" data-reach="global" style="--cat-color:var(--c-sport)"><img class="card-thumb" src="../categories/sport/golf/events/img/ryder-cup-mini.png" alt="Ryder Cup 2027" loading="lazy" width="400" height="300"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Sport</span><strong class="card-title">Ryder Cup 2027</strong><span class="card-meta">17-19 Sep 2027 - Adare, Ireland</span></div></a>`
   ];
 }
 
@@ -1280,7 +1281,42 @@ function updateLegacyLocationGolfLinks() {
         changed = true;
       }
     }
+    const legacyNext = source
+      .replaceAll(`../../../events/2026/06/img/oslo-ladies-open-mini.png`, `../../../categories/sport/golf/events/img/oslo-ladies-open-mini.png`)
+      .replaceAll(`/content/events/2026/06/img/oslo-ladies-open-mini.png`, `/content/categories/sport/golf/events/img/oslo-ladies-open-mini.png`);
+    if (legacyNext !== source) {
+      source = legacyNext;
+      changed = true;
+    }
     if (changed) fs.writeFileSync(file, source);
+  }
+}
+
+function updateLegacyGolfStaticRefs() {
+  const replacements = new Map([
+    ['content/events/2026/05/pga-championship.html', 'content/categories/sport/golf/events/pga-championship.html'],
+    ['/content/events/2026/05/pga-championship.html', '/content/categories/sport/golf/events/pga-championship.html']
+  ]);
+  for (const file of [path.join(root, 'change-log_20260516.html')]) {
+    if (!fs.existsSync(file)) continue;
+    let source = fs.readFileSync(file, 'utf8');
+    const before = source;
+    for (const [from, to] of replacements) source = source.replaceAll(from, to);
+    if (source !== before) fs.writeFileSync(file, source);
+  }
+}
+
+function updateLegacyStandaloneGolfEventShells() {
+  for (const slug of legacyGolfStandaloneSlugs) {
+    const file = path.join(eventDir, `${slug}.html`);
+    if (!fs.existsSync(file)) continue;
+    let source = fs.readFileSync(file, 'utf8');
+    const next = source
+      .replaceAll('../../../../../../assets/', '/assets/')
+      .replaceAll('href="../../../../events/index.html"', 'href="/content/events/index.html"')
+      .replaceAll('href="../../../../locations/index.html"', 'href="/content/locations/index.html"')
+      .replaceAll('href="../../../index.html"', 'href="/content/categories/index.html"');
+    if (next !== source) fs.writeFileSync(file, next);
   }
 }
 
@@ -1319,6 +1355,8 @@ updateGolfPage();
 updateCountryPages();
 updateEventsIndexLinks();
 updateLegacyLocationGolfLinks();
+updateLegacyGolfStaticRefs();
+updateLegacyStandaloneGolfEventShells();
 updateSitemap();
 
 console.log(`Generated ${events.length} golf tour event pages and linked them from golf/country pages.`);

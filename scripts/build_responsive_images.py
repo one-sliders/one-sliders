@@ -24,8 +24,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Hero is large and detail-rich -> high quality so it stays photographic
 # (q80 turned photos "painting-like"). Mini cards are tiny -> lower quality is
 # invisible and saves ~90%.
-HERO_WIDTHS = [1200, 768, 400]
-MINI_WIDTHS = [400, 200]
+HERO_SIZES = [(1200, 630), (768, 403), (400, 210)]
+MINI_SIZES = [(400, 300), (200, 150)]
 HERO_QUALITY = 92
 MINI_QUALITY = 82
 
@@ -45,19 +45,29 @@ def best_source(img_dir, base):
     return max(found, key=lambda c: Image.open(c).size[0])
 
 
-def make_variants(img_dir, base, widths, quality):
+def cover(im, size):
+    target_w, target_h = size
+    source_w, source_h = im.size
+    scale = max(target_w / source_w, target_h / source_h)
+    next_w, next_h = round(source_w * scale), round(source_h * scale)
+    resized = im.resize((next_w, next_h), Image.LANCZOS)
+    left = max(0, (next_w - target_w) // 2)
+    top = max(0, (next_h - target_h) // 2)
+    return resized.crop((left, top, left + target_w, top + target_h))
+
+
+def make_variants(img_dir, base, sizes, quality):
     src = best_source(img_dir, base)
     if not src:
         return []
     im = Image.open(src).convert('RGB')
     sw, sh = im.size
     out = []
-    for w in widths:
-        if w > sw:
+    for w, h in sizes:
+        if w > sw or h > sh:
             continue  # never upscale
-        h = round(sh * w / sw)
         target = os.path.join(img_dir, f'{base}-{w}.webp')
-        resized = im.resize((w, h), Image.LANCZOS)
+        resized = cover(im, (w, h))
         resized.save(target, 'WEBP', quality=quality, method=6)
         out.append((w, target, os.path.getsize(target)))
     return out
@@ -70,17 +80,17 @@ def process_country(country_dir):
     slug = os.path.basename(country_dir.rstrip('/\\'))
     made = 0
     # (base, widths, quality). Heroes high-q (photographic), minis low-q.
-    roles = [(f'{slug}-hero', HERO_WIDTHS, HERO_QUALITY),
-             (f'{slug}-mini', MINI_WIDTHS, MINI_QUALITY)]
+    roles = [(f'{slug}-hero', HERO_SIZES, HERO_QUALITY),
+             (f'{slug}-mini', MINI_SIZES, MINI_QUALITY)]
     names = {r[0] for r in roles}
     for png in glob.glob(os.path.join(img_dir, '*-mini.png')):
         b = os.path.basename(png)[:-4]
         if b not in names:
-            roles.append((b, MINI_WIDTHS, MINI_QUALITY)); names.add(b)
+            roles.append((b, MINI_SIZES, MINI_QUALITY)); names.add(b)
     for png in glob.glob(os.path.join(img_dir, '*-hero.png')):
         b = os.path.basename(png)[:-4]
         if b not in names:
-            roles.append((b, HERO_WIDTHS, HERO_QUALITY)); names.add(b)
+            roles.append((b, HERO_SIZES, HERO_QUALITY)); names.add(b)
     for base, widths, quality in roles:
         v = make_variants(img_dir, base, widths, quality)
         made += len(v)

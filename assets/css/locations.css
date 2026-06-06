@@ -1719,6 +1719,7 @@ html:has(body.country-onepage) {
 #event-tab-week:checked ~ .edition-tablist label[for="event-tab-week"],
 #event-tab-trip:checked ~ .edition-tablist label[for="event-tab-trip"],
 #event-tab-watch:checked ~ .edition-tablist label[for="event-tab-watch"],
+#event-tab-history:checked ~ .edition-tablist label[for="event-tab-history"],
 .edition-tab:hover {
   color: #fff;
   background: var(--location-theme);
@@ -1847,8 +1848,270 @@ html:has(body.country-onepage) {
 #sanremo-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"],
 #event-tab-week:checked ~ .edition-tab-panels [data-edition-tab-panel="event"],
 #event-tab-trip:checked ~ .edition-tab-panels [data-edition-tab-panel="trip"],
-#event-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"] {
+#event-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"],
+#event-tab-history:checked ~ .edition-tab-panels [data-edition-tab-panel="history"] {
   display: grid;
+}
+
+.oscars-database-page {
+  --oscars-gold: #c99a2e;
+  --oscars-ink: #141923;
+  --oscars-wine: #642032;
+}
+
+.oscars-database-page .oscars-explorer {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.oscars-hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(300px, 1.2fr);
+  gap: 14px;
+  align-items: stretch;
+  min-height: clamp(260px, 35vh, 360px);
+}
+
+.oscars-hero .country-hero-image {
+  height: 100%;
+  min-height: 240px;
+  margin: 0;
+}
+
+.oscars-hero__copy {
+  display: grid;
+  align-content: end;
+  min-height: 240px;
+  padding: clamp(18px, 3vw, 32px);
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(20, 25, 35, 0.94), rgba(100, 32, 50, 0.88)),
+    #141923;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 18px 44px rgba(20, 25, 35, 0.18);
+}
+
+.oscars-hero__copy .eyebrow {
+  margin: 0 0 8px;
+  color: #f4cf74;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.oscars-hero__copy .hero-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.92;
+}
+
+.oscars-hero__copy .hero-text {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.oscars-anchor-nav,
+.oscars-chip-carousel,
+.oscars-year-carousel,
+.oscars-category-tabs {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 8px;
+  background: rgba(20, 25, 35, 0.06);
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+  scrollbar-width: none;
+}
+
+.oscars-anchor-nav {
+  grid-column: 1 / -1;
+}
+
+.oscars-anchor-nav::-webkit-scrollbar,
+.oscars-chip-carousel::-webkit-scrollbar,
+.oscars-year-carousel::-webkit-scrollbar,
+.oscars-category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.oscars-anchor-nav a,
+.oscars-chip-carousel button,
+.oscars-year-carousel button,
+.oscars-category-tabs button {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 14px;
+  color: var(--location-ink);
+  font-size: 13px;
+  font-weight: 900;
+  background: #fff;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.oscars-anchor-nav a:hover,
+.oscars-chip-carousel button:hover,
+.oscars-year-carousel button:hover,
+.oscars-category-tabs button:hover,
+.oscars-chip-carousel button.is-active,
+.oscars-year-carousel button.is-active,
+.oscars-category-tabs button.is-active {
+  color: #fff;
+  background: var(--oscars-ink);
+  border-color: var(--oscars-ink);
+}
+
+.oscars-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 10px;
+}
+
+.oscars-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.oscars-section-head span {
+  color: var(--oscars-wine);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.oscars-section-head h2 {
+  margin: 2px 0 0;
+}
+
+.oscars-section-head p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--location-muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.oscars-stat-grid,
+.oscars-record-grid,
+.oscars-stats-layout {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.oscars-stat-grid div,
+.oscars-record-grid div,
+.oscars-stat-card,
+.oscars-winner-row {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--location-line);
+  border-radius: 14px;
+}
+
+.oscars-stat-grid span,
+.oscars-stat-card span,
+.oscars-winner-row span,
+.oscars-record-grid span {
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.oscars-stat-grid strong,
+.oscars-stat-card strong,
+.oscars-winner-row strong,
+.oscars-record-grid strong {
+  color: var(--location-ink);
+  font-size: 17px;
+  line-height: 1.12;
+}
+
+.oscars-winner-list {
+  display: grid;
+  gap: 8px;
+}
+
+.oscars-winner-row {
+  grid-template-columns: minmax(130px, 0.8fr) minmax(180px, 1.2fr) minmax(130px, 0.8fr);
+  align-items: center;
+}
+
+.oscars-winner-row em {
+  color: var(--location-muted);
+  font-style: normal;
+  font-size: 12px;
+}
+
+.oscars-stat-card h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.oscars-stat-card ol {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.oscars-stat-card li {
+  color: var(--location-muted);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.oscars-stat-card li strong {
+  font-size: 14px;
+}
+
+.oscars-loading {
+  color: var(--location-muted);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .oscars-hero,
+  .oscars-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .oscars-section-head {
+    display: grid;
+  }
+
+  .oscars-stat-grid,
+  .oscars-record-grid,
+  .oscars-stats-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .oscars-winner-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .oscars-stat-grid,
+  .oscars-record-grid,
+  .oscars-stats-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 .visual-topic-card--music {

@@ -1012,6 +1012,120 @@
   //   });
   // ====================================================================
 
+  OneSlider.register('recipe-servings', function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-recipe-servings]'));
+    if (!cards.length) return;
+
+    function clamp(value, min, max) {
+      if (!isFinite(value)) return min;
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function pluralize(value, singular, plural) {
+      return Math.abs(value - 1) < 0.001 ? singular : plural;
+    }
+
+    function fractionText(value) {
+      var whole = Math.floor(value);
+      var fraction = value - whole;
+      var options = [
+        { n: 0, t: '' },
+        { n: 0.25, t: '1/4' },
+        { n: 0.333, t: '1/3' },
+        { n: 0.5, t: '1/2' },
+        { n: 0.667, t: '2/3' },
+        { n: 0.75, t: '3/4' }
+      ];
+      var best = options.reduce(function (winner, item) {
+        return Math.abs(item.n - fraction) < Math.abs(winner.n - fraction) ? item : winner;
+      }, options[0]);
+
+      if (best.n === 0 && fraction > 0.875) return String(whole + 1);
+      if (best.n === 0) return String(whole);
+      if (!whole) return best.t;
+      return whole + ' ' + best.t;
+    }
+
+    function decimalText(value) {
+      return (Math.round(value * 100) / 100).toFixed(2).replace(/\.?0+$/, '');
+    }
+
+    function numberText(value, unit, round) {
+      if (round) return String(Math.round(value));
+      if (unit === 'g' || unit === 'ml') return String(Math.round(value));
+      return fractionText(value);
+    }
+
+    function formatQuantity(node, servings, baseServings, volumeUnit) {
+      var base = Number(node.getAttribute('data-base'));
+      var unit = node.getAttribute('data-unit') || '';
+      if (!isFinite(base)) return;
+      var amount = base * servings / baseServings;
+      var rounded = node.hasAttribute('data-round');
+      var hasVolumeBase = node.hasAttribute('data-volume-base');
+      var volumeBase = hasVolumeBase ? Number(node.getAttribute('data-volume-base')) : 0;
+
+      if (unit === 'ml' || hasVolumeBase) {
+        var volumeAmount = (hasVolumeBase && isFinite(volumeBase) ? volumeBase : base) * servings / baseServings;
+        node.textContent = volumeUnit === 'dl'
+          ? decimalText(volumeAmount / 100) + ' dl'
+          : String(Math.round(volumeAmount)) + ' ml';
+        return;
+      }
+
+      var text = numberText(amount, unit, rounded);
+
+      if (unit === 'egg') {
+        var singular = node.getAttribute('data-singular') || 'egg';
+        var plural = node.getAttribute('data-plural') || 'eggs';
+        node.textContent = text + ' ' + pluralize(amount, singular, plural);
+        return;
+      }
+
+      node.textContent = unit ? text + ' ' + unit : text;
+    }
+
+    function peopleLabel(count) {
+      return count + ' ' + (count === 1 ? 'person' : 'people');
+    }
+
+    cards.forEach(function (card) {
+      var input = card.querySelector('[data-recipe-servings-input]');
+      if (!input) return;
+
+      var baseServings = Number(card.getAttribute('data-recipe-base-servings')) || Number(input.value) || 1;
+      var quantities = Array.prototype.slice.call(card.querySelectorAll('[data-recipe-quantity]'));
+      var label = card.querySelector('[data-recipe-servings-label]');
+      var volumeSelect = card.querySelector('[data-recipe-volume-unit]');
+      var baseLabel = card.querySelector('[data-recipe-base-label]');
+      var methodNote = document.querySelector('[data-recipe-method-note]');
+
+      if (baseLabel) baseLabel.textContent = peopleLabel(baseServings);
+
+      function render() {
+        var min = Number(input.getAttribute('min')) || 1;
+        var max = Number(input.getAttribute('max')) || 24;
+        var value = clamp(Math.round(Number(input.value) || baseServings), min, max);
+        input.value = value;
+        var volumeUnit = volumeSelect ? volumeSelect.value : 'ml';
+
+        quantities.forEach(function (node) {
+          formatQuantity(node, value, baseServings, volumeUnit);
+        });
+
+        if (label) label.textContent = peopleLabel(value);
+        if (methodNote) {
+          methodNote.textContent = 'Amounts are set for ' + peopleLabel(value) + '. Bake time stays about the same.';
+        }
+      }
+
+      input.addEventListener('input', render);
+      input.addEventListener('change', render);
+      if (volumeSelect) volumeSelect.addEventListener('change', render);
+      render();
+    });
+  });
+
   OneSlider.register('membership-filter', function () {
     var filter = document.querySelector('[data-membership-filter]');
     if (!filter) return;
@@ -1789,6 +1903,252 @@
       deferredInstallPrompt = null;
       updateHomeLabel();
       setStatus(status, 'OneSliders installed.');
+    });
+  });
+
+  // ====================================================================
+  // Module: oscarsExplorer
+  // JSON-powered single-page explorer for /culture/awards/events/oscars.html.
+  // All award data comes from files declared on [data-oscars-explorer].
+  // ====================================================================
+  OneSlider.register('oscarsExplorer', function () {
+    var root = document.querySelector('[data-oscars-explorer]');
+    if (!root || !window.fetch) return;
+
+    function listFromAttr(name) {
+      return (root.getAttribute(name) || '')
+        .split(',')
+        .map(function (item) { return item.trim(); })
+        .filter(Boolean)
+        .filter(function (item) { return item.toLowerCase().indexOf('oscars') !== -1; });
+    }
+
+    function esc(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function fetchJson(url) {
+      return fetch(url, { cache: 'no-cache' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Could not load ' + url);
+          return response.json();
+        })
+        .then(function (json) {
+          json.__src = url;
+          return json;
+        });
+    }
+
+    var decadeUrls = listFromAttr('data-oscars-decades');
+    var statUrls = listFromAttr('data-oscars-stats');
+    var recordUrls = listFromAttr('data-oscars-records');
+    var els = {
+      summary: root.querySelector('[data-oscars-summary]'),
+      decades: root.querySelector('[data-oscars-decades-nav]'),
+      years: root.querySelector('[data-oscars-years-nav]'),
+      categories: root.querySelector('[data-oscars-categories]'),
+      winners: root.querySelector('[data-oscars-winners]'),
+      stats: root.querySelector('[data-oscars-statistics]'),
+      records: root.querySelector('[data-oscars-records-panel]'),
+      decadeTitle: root.querySelector('[data-oscars-decade-title]'),
+      decadeNote: root.querySelector('[data-oscars-decade-note]'),
+      yearNote: root.querySelector('[data-oscars-year-note]'),
+      winnersTitle: root.querySelector('[data-oscars-winners-title]'),
+      winnersNote: root.querySelector('[data-oscars-winners-note]')
+    };
+    var state = { decade: '', year: 0, category: 'All' };
+    var decades = [];
+    var stats = [];
+    var records = [];
+
+    function awardsForYear(yearItem) {
+      return yearItem && Array.isArray(yearItem.awards) ? yearItem.awards : [];
+    }
+
+    function activeDecade() {
+      return decades.filter(function (item) { return item.decade === state.decade; })[0] || decades[0];
+    }
+
+    function activeYear() {
+      var decade = activeDecade();
+      var years = decade && Array.isArray(decade.years) ? decade.years : [];
+      return years.filter(function (item) { return Number(item.year) === Number(state.year); })[0] || years[0];
+    }
+
+    function allAwards() {
+      var rows = [];
+      decades.forEach(function (decade) {
+        (decade.years || []).forEach(function (year) {
+          awardsForYear(year).forEach(function (award) {
+            rows.push({ decade: decade.decade, year: year.year, ceremony: year.ceremony, award: award });
+          });
+        });
+      });
+      return rows;
+    }
+
+    function renderSummary() {
+      if (!els.summary) return;
+      var years = 0;
+      var cats = {};
+      var rows = 0;
+      decades.forEach(function (decade) {
+        years += (decade.years || []).length;
+        (decade.years || []).forEach(function (year) {
+          awardsForYear(year).forEach(function (award) {
+            rows += 1;
+            cats[award.category] = true;
+          });
+        });
+      });
+      els.summary.innerHTML =
+        '<div><span>Decades</span><strong>' + decades.length + '</strong></div>' +
+        '<div><span>Years</span><strong>' + years + '</strong></div>' +
+        '<div><span>Categories</span><strong>' + Object.keys(cats).length + '</strong></div>' +
+        '<div><span>Rows</span><strong>' + rows + '</strong></div>';
+    }
+
+    function renderDecades() {
+      if (!els.decades) return;
+      els.decades.innerHTML = decades.map(function (decade) {
+        var count = (decade.years || []).length;
+        return '<button type="button" data-oscars-decade="' + esc(decade.decade) + '"' +
+          (decade.decade === state.decade ? ' class="is-active"' : '') + '>' +
+          esc(decade.decade) + ' <span>(' + count + ')</span></button>';
+      }).join('');
+    }
+
+    function renderYears() {
+      var decade = activeDecade();
+      var years = decade && Array.isArray(decade.years) ? decade.years.slice() : [];
+      years.sort(function (a, b) { return Number(a.year) - Number(b.year); });
+      if (els.decadeTitle) els.decadeTitle.textContent = decade ? decade.decade + ' ceremonies' : 'Choose a year';
+      if (els.decadeNote) els.decadeNote.textContent = decade ? 'Loaded from ' + decade.__src + '.' : 'No decade data loaded.';
+      if (!els.years) return;
+      els.years.innerHTML = years.map(function (year) {
+        return '<button type="button" data-oscars-year="' + esc(year.year) + '"' +
+          (Number(year.year) === Number(state.year) ? ' class="is-active"' : '') + '>' +
+          esc(year.year) + '<span> #' + esc(year.ceremony || '') + '</span></button>';
+      }).join('');
+    }
+
+    function renderCategories() {
+      var year = activeYear();
+      var cats = { All: true };
+      awardsForYear(year).forEach(function (award) { cats[award.category] = true; });
+      var names = Object.keys(cats);
+      if (names.indexOf(state.category) === -1) state.category = 'All';
+      if (els.yearNote) {
+        els.yearNote.textContent = year ? 'Showing categories for the ' + (year.ceremony || '') + 'th ceremony in ' + year.year + '.' : 'Select a year.';
+      }
+      if (!els.categories) return;
+      els.categories.innerHTML = names.map(function (name) {
+        return '<button type="button" data-oscars-category="' + esc(name) + '"' +
+          (name === state.category ? ' class="is-active"' : '') + '>' + esc(name) + '</button>';
+      }).join('');
+    }
+
+    function awardRow(row) {
+      var award = row.award;
+      var detail = award.film && award.film !== award.winner ? award.film : (award.notes || award.winnerType || '');
+      return '<div class="oscars-winner-row">' +
+        '<span>' + esc(row.year) + ' / Ceremony ' + esc(row.ceremony || '') + '</span>' +
+        '<strong>' + esc(award.category) + '</strong>' +
+        '<div><strong>' + esc(award.winner || 'TBC') + '</strong><em>' + esc(detail) + '</em></div>' +
+        '</div>';
+    }
+
+    function renderWinners() {
+      var year = activeYear();
+      var rows = awardsForYear(year).map(function (award) {
+        return { year: year.year, ceremony: year.ceremony, award: award };
+      });
+      if (state.category !== 'All') {
+        rows = rows.filter(function (row) { return row.award.category === state.category; });
+      }
+      if (els.winnersTitle) els.winnersTitle.textContent = year ? 'Winners from ' + year.year : 'Winners';
+      if (els.winnersNote) els.winnersNote.textContent = rows.length ? rows.length + ' winner rows currently visible.' : 'No winners for this selection yet.';
+      if (!els.winners) return;
+      els.winners.innerHTML = rows.length ? rows.map(awardRow).join('') : '<p class="oscars-loading">No rows in the selected JSON yet.</p>';
+    }
+
+    function renderStats() {
+      if (!els.stats) return;
+      els.stats.innerHTML = stats.map(function (stat) {
+        var rows = Array.isArray(stat.items) ? stat.items : [];
+        return '<article class="oscars-stat-card">' +
+          '<h3>' + esc(stat.title || stat.stat || 'Oscars list') + '</h3>' +
+          '<ol>' + rows.slice(0, 8).map(function (item) {
+            var value = item.value || item.count || item.year || '';
+            var suffix = value ? ' <span>' + esc(value) + '</span>' : '';
+            return '<li><strong>' + esc(item.name || item.winner || item.film || item.person || 'TBC') + '</strong>' + suffix + '</li>';
+          }).join('') + '</ol>' +
+          '</article>';
+      }).join('');
+    }
+
+    function renderRecords() {
+      if (!els.records) return;
+      els.records.innerHTML = records.map(function (item) {
+        return '<div><strong>' + esc(item.title || item.name || 'Oscars record') + '</strong><span>' +
+          esc(item.detail || item.value || '') + '</span></div>';
+      }).join('');
+    }
+
+    function renderAll() {
+      renderSummary();
+      renderDecades();
+      renderYears();
+      renderCategories();
+      renderWinners();
+      renderStats();
+      renderRecords();
+    }
+
+    root.addEventListener('click', function (event) {
+      var decadeButton = event.target.closest('[data-oscars-decade]');
+      var yearButton = event.target.closest('[data-oscars-year]');
+      var categoryButton = event.target.closest('[data-oscars-category]');
+      if (decadeButton) {
+        state.decade = decadeButton.getAttribute('data-oscars-decade');
+        var decade = activeDecade();
+        var years = decade && decade.years ? decade.years : [];
+        state.year = years.length ? Number(years[years.length - 1].year) : 0;
+        state.category = 'All';
+        renderAll();
+      } else if (yearButton) {
+        state.year = Number(yearButton.getAttribute('data-oscars-year'));
+        state.category = 'All';
+        renderAll();
+      } else if (categoryButton) {
+        state.category = categoryButton.getAttribute('data-oscars-category') || 'All';
+        renderAll();
+      }
+    });
+
+    Promise.all([
+      Promise.all(decadeUrls.map(fetchJson)),
+      Promise.all(statUrls.map(fetchJson)),
+      Promise.all(recordUrls.map(fetchJson))
+    ]).then(function (result) {
+      decades = result[0].sort(function (a, b) { return String(a.decade).localeCompare(String(b.decade)); });
+      stats = result[1];
+      records = [];
+      result[2].forEach(function (file) {
+        records = records.concat(Array.isArray(file.items) ? file.items : []);
+      });
+      var defaultDecade = decades[decades.length - 1];
+      var defaultYears = defaultDecade && defaultDecade.years ? defaultDecade.years : [];
+      state.decade = defaultDecade ? defaultDecade.decade : '';
+      state.year = defaultYears.length ? Number(defaultYears[defaultYears.length - 1].year) : 0;
+      renderAll();
+    }).catch(function (error) {
+      if (els.winners) els.winners.innerHTML = '<p class="oscars-loading">Could not load Oscars JSON data.</p>';
+      if (window.console) console.warn('[OneSlider] oscarsExplorer', error);
     });
   });
 
