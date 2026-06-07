@@ -518,15 +518,20 @@
       if (event.key === 'ArrowLeft') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() - 7); location.href = weekHref(target); }
       if (event.key === 'ArrowRight') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() + 7); location.href = weekHref(target); }
     });
+    const isLocalEventsPreview = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
     const currentDateCutoff = new Date();
     currentDateCutoff.setHours(0, 0, 0, 0);
     const isCurrentOrUpcomingEvent = event => {
-      if (!event.end) return true;
-      const end = new Date(event.end + 'T23:59:59');
+      const endValue = event.end || event.start;
+      if (!endValue) return true;
+      const end = new Date(endValue + 'T23:59:59');
       return Number.isNaN(end.getTime()) || end >= currentDateCutoff;
     };
     loadEvents().then(allEvents => {
-      activeEvents = allEvents.filter(overlaps).filter(isCurrentOrUpcomingEvent).sort((a,b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
+      activeEvents = allEvents
+        .filter(overlaps)
+        .filter(event => isLocalEventsPreview || isCurrentOrUpcomingEvent(event))
+        .sort((a,b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
       updateWeekNav();
       renderFilters();
       render();
