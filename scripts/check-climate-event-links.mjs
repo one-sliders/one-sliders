@@ -43,4 +43,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log(`Checked ${languages.length * slugs.length} climate event pages. All internal links and assets resolve.`);
+console.log(`Checked ${languages.length * slugs.length} climate event views. All internal links and assets resolve.`);

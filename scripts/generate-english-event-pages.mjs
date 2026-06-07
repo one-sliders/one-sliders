@@ -37,4 +37,4 @@ for (const source of walk(root)) {
   count += 1;
 }
 
-console.log(`Generated ${count} English event pages in ${targetRoot}.`);
+console.log(`Generated ${count} English event views in ${targetRoot}.`);

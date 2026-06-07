@@ -218,7 +218,7 @@ function eventContextLinks(event) {
       url: event.category.target,
       label: `Other ${event.category.label.toLowerCase()} events`,
       title: `${event.category.label} topic`,
-      meta: "Parent category and nearby event guides.",
+      meta: "Parent category and nearby event views.",
     },
   ];
   for (const country of event.countries) {
@@ -285,7 +285,7 @@ function updateLocations(events) {
       url: event.url,
       label: event.category.label,
       title: event.title,
-      meta: event.startDate || "Event guide",
+      meta: event.startDate || "Event view",
     }));
     const html = fs.readFileSync(file, "utf8");
     const block = moduleHtml(`Events in ${country.name}`, links);
@@ -317,7 +317,7 @@ function updateCategories(events) {
     const links = [
       ...categoryEvents.map((event) => ({
         url: event.url,
-        label: "Event guide",
+        label: "Event view",
         title: event.title,
         meta: event.countries.map((country) => country.name).join(", ") || "OneSliders event",
       })),
@@ -375,5 +375,5 @@ const locationChanges = updateLocations(events);
 const categoryChanges = updateCategories(events);
 const rowCount = writeMap(events);
 
-console.log(`Mapped ${events.length} event pages into ${rowCount} link rows.`);
-console.log(`Updated ${eventChanges} event pages, ${locationChanges} location pages, ${categoryChanges} category pages.`);
+console.log(`Mapped ${events.length} event views into ${rowCount} link rows.`);
+console.log(`Updated ${eventChanges} event views, ${locationChanges} location pages, ${categoryChanges} category pages.`);

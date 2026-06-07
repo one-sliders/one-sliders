@@ -1,11 +1,11 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 import { languages } from './event-language-profiles.mjs';
 
 const root = process.cwd();
 
 const national = new Set([
-  '2026/05/oslo-constitution-day.html',
+  '2026/05/norwegian-constitution-day.html',
   '2026/05/state-of-origin.html',
   '2026/05/vivid-sydney.html',
   '2026/06/bali-arts-festival.html',

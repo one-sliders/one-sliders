@@ -223,7 +223,7 @@ function buildMain(data) {
               <div><time>Place</time><span>${escapeText(cityName)} connects local landmarks, visitor routes and event planning in ${escapeText(countryName)}.</span></div>
               <div><time>Landmark</time><span>${escapeText(landmark)} is the clearest quick-reference sight for this city page.</span></div>
               <div><time>Region</time><span>${escapeText(region)} gives the page its wider route and destination context.</span></div>
-              <div><time>Events</time><span>Use the events tab to jump from city context to dated OneSliders event pages.</span></div>
+              <div><time>Events</time><span>Use the events tab to jump from city context to dated OneSliders event views.</span></div>
             </div>
           </div>
         </div>

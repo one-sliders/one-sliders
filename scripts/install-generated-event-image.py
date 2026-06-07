@@ -33,6 +33,51 @@ def newest_generated_png() -> Path:
     return max(files, key=lambda p: p.stat().st_mtime)
 
 
+def sync_index_status_flags(html: str, flags: dict) -> str:
+    status_by_href = {
+        ".." + entry.get("url", "").replace("/content", ""): entry
+        for entry in flags.get("events", [])
+        if entry.get("url")
+    }
+    card_pattern = re.compile(r'<a class="event-card"[^>]*>')
+
+    def replace(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        href_match = re.search(r'href="([^"]+)"', tag)
+        if not href_match:
+            return tag
+        status = status_by_href.get(href_match.group(1))
+        if not status:
+            return tag
+
+        next_tag = re.sub(r'\sdata-image-status="fake"', "", tag)
+        next_tag = re.sub(r'\sdata-official-date="[^"]*"', "", next_tag)
+        next_tag = re.sub(r'\sdata-date-status="[^"]*"', "", next_tag)
+
+        if status.get("imageStatus") == "fake-template":
+            next_tag = next_tag.replace(
+                '<a class="event-card"',
+                '<a class="event-card" data-image-status="fake"',
+                1,
+            )
+        if status.get("officialDateSet") is False:
+            next_tag = next_tag.replace(
+                '<a class="event-card"',
+                '<a class="event-card" data-official-date="false"',
+                1,
+            )
+        if status.get("dateStatus"):
+            next_tag = next_tag.replace(
+                '<a class="event-card"',
+                f'<a class="event-card" data-date-status="{status.get("dateStatus")}"',
+                1,
+            )
+
+        return next_tag
+
+    return card_pattern.sub(replace, html)
+
+
 def event_url_for_slug(flags: dict, slug: str) -> str:
     for entry in flags.get("events", []):
         if entry.get("slug") == slug:
@@ -41,7 +86,7 @@ def event_url_for_slug(flags: dict, slug: str) -> str:
 
 
 def install_image(slug: str, src: Path) -> dict:
-    flags = json.loads(FLAGS_PATH.read_text(encoding="utf-8"))
+    flags = json.loads(FLAGS_PATH.read_text(encoding="utf-8-sig"))
     url = event_url_for_slug(flags, slug)
     if not url:
         raise SystemExit(f"No event-status-flags entry for slug: {slug}")
@@ -75,15 +120,6 @@ def install_image(slug: str, src: Path) -> dict:
             method=6,
         )
 
-    html = INDEX_PATH.read_text(encoding="utf-8")
-    escaped_slug = re.escape(slug)
-    html = re.sub(
-        rf'<a class="event-card" data-image-status="fake"([^>]*{escaped_slug}\.html[^>]*)>',
-        r'<a class="event-card"\1>',
-        html,
-    )
-    INDEX_PATH.write_text(html, encoding="utf-8")
-
     for entry in flags.get("events", []):
         if entry.get("slug") == slug:
             entry["imageStatus"] = "real-event-image"
@@ -91,8 +127,11 @@ def install_image(slug: str, src: Path) -> dict:
                 "Generated photorealistic event image set completed locally: "
                 "hero/mini PNG masters plus responsive WebP variants."
             )
-            entry["imageUpdatedAt"] = "2026-06-04"
-            break
+            entry["imageUpdatedAt"] = "2026-06-07"
+
+    html = INDEX_PATH.read_text(encoding="utf-8")
+    html = sync_index_status_flags(html, flags)
+    INDEX_PATH.write_text(html, encoding="utf-8")
     FLAGS_PATH.write_text(json.dumps(flags, indent=2) + "\n", encoding="utf-8")
 
     expected = [

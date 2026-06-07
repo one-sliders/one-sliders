@@ -17,11 +17,11 @@
   <link rel="canonical" href="https://one-sliders.com/content/events/this-week-gantt.html">
   <meta name="content-language" content="en">
   <meta name="theme-color" content="#0d2137">
-  <title>Week Timeline - OneSliders</title>
-  <meta name="description" content="A Gantt-style weekly timeline of OneSliders events active during the selected week.">
+  <title>Week Timeline</title>
+  <meta name="description" content="A Gantt-style weekly timeline of events active during the selected week.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Week Timeline - OneSliders">
-  <meta property="og:description" content="A Gantt-style weekly timeline of OneSliders events active during the selected week.">
+  <meta property="og:title" content="Week Timeline">
+  <meta property="og:description" content="A Gantt-style weekly timeline of events active during the selected week.">
   <meta property="og:image" content="https://one-sliders.com/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png">
   <style>
     :root{--ink:var(--os-ink,#12202e);--paper:var(--os-bg,#f5f8fa);--muted:var(--os-muted,#61707d);--line:rgba(18,32,46,.12);--navy:var(--os-primary,#0d2137);--accent:var(--os-accent,#2f6f92);--sport:#1a5c8a;--motor:#c0392b;--festival:#c8740a;--culture:#7d3c98;--nature:#1a7a40;--tech:#235c75;--wellness:#4f8a68;--event:#596673}
@@ -33,7 +33,7 @@
     .hero{padding:12px clamp(16px,4vw,68px);background:#fff;border-bottom:1px solid var(--line)}.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:end}.kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{display:none}.hero p{max-width:min(720px,100%);margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.week-card{min-width:245px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#edf5f8;box-shadow:0 8px 24px rgba(18,32,46,.06)}.week-card strong{display:block;font-size:21px;line-height:1}.week-card span{display:block;margin-top:4px;color:var(--muted);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.event-view-switcher{position:sticky;top:55px;z-index:22;display:flex;gap:8px;align-items:center;padding:8px clamp(16px,4vw,68px);background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);overflow-x:auto;scrollbar-width:none}.event-view-switcher::-webkit-scrollbar{display:none}.event-view-switcher a{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:12px;font-weight:900;white-space:nowrap}.event-view-switcher a:hover,.event-view-switcher a.active{background:var(--navy);border-color:var(--navy);color:#fff}
     .toolbar{position:sticky;top:104px;z-index:20;display:flex;gap:10px;align-items:center;padding:9px clamp(16px,4vw,68px);background:rgba(243,247,248,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.filters{display:flex;gap:7px;overflow:auto;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button,.toggle-active{white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:8px 12px;font:800 12px Arial;cursor:pointer}.filters button:hover,.toggle-active:hover{background:#fafafa}.filters button.active,.toggle-active[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}.count{margin-left:auto;color:var(--muted);font-weight:900;font-size:13px;white-space:nowrap}
     .week-nav{position:sticky;top:157px;z-index:18;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px clamp(16px,4vw,68px);background:rgba(13,33,55,.72);border-bottom:1px solid rgba(255,255,255,.24);box-shadow:0 10px 24px rgba(18,32,46,.14);backdrop-filter:blur(14px)}.week-nav a{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:34px;padding:0 12px;border:1px solid rgba(33,78,104,.16);border-radius:999px;background:#fff;color:var(--ink);font-size:12px;font-weight:900}.week-nav a:hover,.week-nav a.active{background:linear-gradient(180deg,var(--navy),var(--accent));border-color:var(--navy);color:#fff}.week-nav a.today-link{min-width:64px;background:transparent;border-color:rgba(255,255,255,.36);color:#fff;font-weight:700}
-    main{padding:14px clamp(16px,4vw,68px) 34px}.timeline-shell{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 18px 42px rgba(18,32,46,.1)}.timeline{min-width:980px}.timeline-head,.timeline-row{display:grid;grid-template-columns:260px repeat(7,minmax(92px,1fr));align-items:stretch}.timeline-head{position:sticky;top:0;z-index:4;background:#f8fbfc;border-bottom:1px solid var(--line)}.corner{padding:13px 14px;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day{min-height:58px;padding:10px 8px;border-left:1px solid var(--line)}.day strong{display:block;font-size:16px;line-height:1}.day span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day.is-today{background:#eaf5ee;color:#143d2a}.timeline-row{position:relative;min-height:74px;border-bottom:1px solid var(--line)}.timeline-row:last-child{border-bottom:0}.event-label{position:relative;z-index:2;display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;background:#fff;border-right:1px solid var(--line)}.event-label img{width:48px;height:40px;border-radius:7px;object-fit:cover;background:#dfe7e2}.event-label strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.event-label span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.grid-cell{border-left:1px solid var(--line);background:linear-gradient(90deg,rgba(18,32,46,.035) 1px,transparent 1px)}.bar{grid-row:1;align-self:center;z-index:3;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;min-height:42px;margin:0 8px;padding:7px 10px;border-radius:8px;color:#fff;background:var(--cat-color,var(--event));box-shadow:0 9px 20px rgba(18,32,46,.17);outline:1px solid rgba(255,255,255,.45);outline-offset:-1px}.bar:hover{filter:saturate(1.08) brightness(1.02)}.bar b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}.bar small{white-space:nowrap;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;opacity:.94}.dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}.bar[data-status="ongoing"] .dot{background:#8df2b8}.bar[data-status="upcoming"] .dot{background:#ffd166}.bar[data-status="ended"] .dot{background:#d7dee4}.empty{display:none;min-height:260px;place-items:center;text-align:center;border:1px dashed var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:18px}.empty.visible{display:grid}.site-footer{display:none}
+    main{padding:14px clamp(16px,4vw,68px) 34px}.timeline-shell{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 18px 42px rgba(18,32,46,.1)}.timeline{min-width:980px}.timeline-head,.timeline-row{display:grid;grid-template-columns:260px repeat(7,minmax(92px,1fr));align-items:stretch}.timeline-head{position:sticky;top:0;z-index:4;background:#f8fbfc;border-bottom:1px solid var(--line)}.corner{padding:13px 14px;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day{min-height:58px;padding:10px 8px;border-left:1px solid var(--line)}.day strong{display:block;font-size:16px;line-height:1}.day span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.day.is-today{background:#eaf5ee;color:#143d2a}.timeline-row{position:relative;min-height:74px;border-bottom:1px solid var(--line)}.timeline-row:last-child{border-bottom:0}.event-label{position:relative;z-index:2;display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;background:#fff;border-right:1px solid var(--line)}.event-label img{width:48px;height:40px;border-radius:7px;object-fit:cover;background:#dfe7e2}.event-label strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}.event-label span{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.event-label .national-day-label{display:inline-flex;align-items:center;gap:6px}.event-label .national-day-label img{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px rgba(18,32,46,.14);background:#fff}.grid-cell{border-left:1px solid var(--line);background:linear-gradient(90deg,rgba(18,32,46,.035) 1px,transparent 1px)}.bar{grid-row:1;align-self:center;z-index:3;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;min-height:42px;margin:0 8px;padding:7px 10px;border-radius:8px;color:#fff;background:var(--cat-color,var(--event));box-shadow:0 9px 20px rgba(18,32,46,.17);outline:1px solid rgba(255,255,255,.45);outline-offset:-1px}.bar--national-day{grid-template-columns:auto auto minmax(0,1fr) auto}.bar:hover{filter:saturate(1.08) brightness(1.02)}.bar b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}.bar small{white-space:nowrap;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;opacity:.94}.dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}.bar-flag{width:18px;height:12px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.55)}.bar[data-status="ongoing"] .dot{background:#8df2b8}.bar[data-status="upcoming"] .dot{background:#ffd166}.bar[data-status="ended"] .dot{background:#d7dee4}.empty{display:none;min-height:260px;place-items:center;text-align:center;border:1px dashed var(--line);border-radius:10px;background:#fff;color:var(--muted);font-size:18px}.empty.visible{display:grid}.site-footer{display:none}
     @media (max-width:900px){.hero{padding:12px}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:31px}.week-card{min-width:0}.event-view-switcher{top:53px;padding:7px 10px}.toolbar{top:102px;padding:8px 10px}.count{display:none}.week-nav{top:154px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px 10px}.week-nav a{min-width:0;padding:0 8px;font-size:11px}main{padding:10px 10px 34px}.timeline-shell{-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}.timeline{min-width:790px}.timeline-head,.timeline-row{grid-template-columns:190px repeat(7,86px)}.event-label{grid-template-columns:38px minmax(0,1fr);padding:8px}.event-label img{width:38px;height:34px}.bar b{font-size:12px}.event-language-list{left:10px;right:10px;min-width:0}}
     @media (max-width:480px){.hero h1{font-size:28px}.hero p{display:none}.toolbar{gap:7px}.filters button,.toggle-active{padding:8px 10px;font-size:11px}.timeline{min-width:690px}.timeline-head,.timeline-row{grid-template-columns:156px repeat(7,76px)}.corner{padding:11px 10px}.day{padding:9px 7px}.event-label{grid-template-columns:34px minmax(0,1fr);gap:8px}.event-label img{width:34px;height:31px}.event-label strong{font-size:12px}.event-label span{font-size:10px}.bar{grid-template-columns:auto minmax(0,1fr);gap:7px;margin:0 6px;padding:7px 8px}.bar small{display:none}}
     .events-frame{display:grid;grid-template-columns:minmax(230px,27vw) minmax(0,1fr);gap:12px;height:calc(100vh - 78px);margin:12px clamp(10px,2vw,24px) 14px;padding:0;overflow:hidden}.events-frame__rail,.events-frame__panel{min-height:0;overflow:auto;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.96);box-shadow:0 18px 42px rgba(18,32,46,.1)}.events-frame__rail{display:grid;align-content:start}.events-frame .event-view-switcher{position:static;padding:10px 12px;border-bottom:1px solid var(--line);background:#fff}.events-frame .hero{padding:14px 16px;border-bottom:0}.events-frame .hero-inner{grid-template-columns:1fr;gap:12px}.events-frame .week-card{min-width:0}.rail-stack{display:grid;gap:10px;padding:0 12px 14px}.rail-card{display:grid;gap:8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#fff,#f4f8f9)}.rail-card>span{color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.rail-card strong{font-size:18px;line-height:1.05}.rail-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.35}.rail-heatmap{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.rail-day{display:grid;gap:4px;text-align:center;color:var(--muted);font-size:9px;font-weight:900;text-transform:uppercase}.rail-day i{display:block;height:34px;border-radius:6px;background:color-mix(in srgb,var(--accent) var(--heat,10%),#e7edf0)}.rail-list{display:grid;gap:0}.rail-list a{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0;border-top:1px solid var(--line);font-size:12px;font-weight:800}.rail-list small{color:var(--muted);font-size:10px;font-weight:900;text-transform:uppercase}.events-frame__panel .toolbar,.events-frame__panel .week-nav{position:sticky;top:0}.events-frame__panel .week-nav{top:44px}.events-frame__panel .timeline-content{padding:14px}.events-frame+.site-footer,.events-frame .site-footer{display:none}@media(max-width:760px){.events-frame{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);height:calc(100dvh - 72px);margin:8px;gap:8px}.events-frame__rail{overflow:visible}.events-frame .event-view-switcher{padding:8px 10px}.events-frame .hero{padding:10px 12px}.rail-stack{display:none}.events-frame__panel .week-nav{top:50px}.events-frame__panel .timeline-content{padding:10px}}
@@ -49,7 +49,7 @@
       .events-frame__panel .timeline-content{padding:10px 10px 24px}
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/events/this-week-gantt.html#webpage","url":"https://one-sliders.com/content/events/this-week-gantt.html","name":"Week Timeline - OneSliders","description":"A Gantt-style weekly timeline of OneSliders events active during the selected week.","inLanguage":"en","image":"https://one-sliders.com/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png","isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/events/this-week-gantt.html#webpage","url":"https://one-sliders.com/content/events/this-week-gantt.html","name":"Week Timeline","description":"A Gantt-style weekly timeline of events active during the selected week.","inLanguage":"en","image":"https://one-sliders.com/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png","isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}}]}</script>
 </head>
 <body>
   <nav class="event-nav" aria-label="Site navigation">
@@ -60,7 +60,7 @@
     <details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"><a href="this-week-gantt.html" aria-current="page">English</a><a href="./index.html">English event index</a></div></details>
   </nav>
 
-  <main class="events-frame" aria-label="OneSliders events views">
+  <main class="events-frame" aria-label="events views">
     <section class="events-frame__rail" aria-label="Event view menu">
       <nav class="event-view-switcher" aria-label="Event views">
         <a href="index.html">All</a>
@@ -71,7 +71,7 @@
       <section class="hero">
         <div class="hero-inner">
           <div>
-            <div class="kicker">OneSliders events</div>
+            <div class="kicker">events</div>
             <h1>Timeline</h1>
             <p>Scan active events by duration. Multi-day events stretch across the week, single-day events stay compact, and the current day is highlighted.</p>
           </div>
@@ -102,7 +102,7 @@
     <section class="timeline-shell" aria-label="Weekly event timeline">
       <div class="timeline" id="timeline" aria-live="polite"></div>
     </section>
-    <div class="empty" id="empty-state">No indexed OneSliders events overlap this week yet.</div>
+    <div class="empty" id="empty-state">No indexed events overlap this week yet.</div>
   </section>
     </section>
   </main>
@@ -192,7 +192,7 @@
       return [...merged.values()];
     }
     async function loadEvents() {
-      const cacheKey = 'os_events_compact_v2';
+      const cacheKey = 'os_events_compact_v3';
       try {
         const cached = sessionStorage.getItem(cacheKey);
         if (cached) return JSON.parse(cached);
@@ -226,6 +226,66 @@
       if (now < start) return { key: 'upcoming', label: 'Not started' };
       if (now > end) return { key: 'ended', label: 'Ended' };
       return { key: 'ongoing', label: 'Ongoing' };
+    }
+    const nationalDayFlags = {
+      'albania-independence-day':['europe','albania'],
+      'our-lady-of-meritxell-day':['europe','andorra'],
+      'armenia-independence-day':['europe','armenia'],
+      'austria-national-day':['europe','austria'],
+      'azerbaijan-republic-day':['europe','azerbaijan'],
+      'belarus-independence-day':['europe','belarus'],
+      'belgian-national-day':['europe','belgium'],
+      'bosnia-and-herzegovina-statehood-day':['europe','bosnia-and-herzegovina'],
+      'bulgaria-liberation-day':['europe','bulgaria'],
+      'croatia-statehood-day':['europe','croatia'],
+      'cyprus-independence-day':['europe','cyprus'],
+      'czech-independent-state-day':['europe','czechia'],
+      'denmark-constitution-day':['europe','denmark'],
+      'estonia-independence-day':['europe','estonia'],
+      'finland-independence-day':['europe','finland'],
+      'bastille-day':['europe','france'],
+      'georgia-independence-day':['europe','georgia'],
+      'day-of-german-unity':['europe','germany'],
+      'greek-independence-day':['europe','greece'],
+      'saint-stephen-s-day':['europe','hungary'],
+      'iceland-national-day':['europe','iceland'],
+      'saint-patrick-s-day':['europe','ireland'],
+      'festa-della-repubblica':['europe','italy'],
+      'kosovo-independence-day':['europe','kosovo'],
+      'latvia-independence-day':['europe','latvia'],
+      'liechtenstein-national-day':['europe','liechtenstein'],
+      'lithuania-independence-day':['europe','lithuania'],
+      'luxembourg-national-day':['europe','luxembourg'],
+      'malta-freedom-day':['europe','malta'],
+      'moldova-independence-day':['europe','moldova'],
+      'monaco-national-day':['europe','monaco'],
+      'montenegro-statehood-day':['europe','montenegro'],
+      'king-s-day':['europe','netherlands'],
+      'north-macedonia-independence-day':['europe','north-macedonia'],
+      'norwegian-constitution-day':['europe','norway'],
+      'poland-independence-day':['europe','poland'],
+      'portugal-day':['europe','portugal'],
+      'great-union-day':['europe','romania'],
+      'russia-day':['europe','russia'],
+      'san-marino-foundation-day':['europe','san-marino'],
+      'serbia-statehood-day':['europe','serbia'],
+      'slovakia-constitution-day':['europe','slovakia'],
+      'slovenia-statehood-day':['europe','slovenia'],
+      'spain-national-day':['europe','spain'],
+      'sweden-national-day':['europe','sweden'],
+      'swiss-national-day':['europe','switzerland'],
+      'republic-day-of-turkey':['europe','turkey'],
+      'ukraine-independence-day':['europe','ukraine'],
+      'chair-of-saint-peter':['europe','vatican-city'],
+      'brazil-independence-day':['south-america','brazil'],
+      'chile-independence-day-and-fiestas-patrias':['south-america','chile'],
+      'fiji-day':['oceania','fiji']
+    };
+    function nationalDayFlag(event) {
+      if (event.topic !== 'national-day') return '';
+      const key = event.slug || slugFromHref(event.href);
+      const parts = nationalDayFlags[key];
+      return parts ? '../locations/' + parts[0] + '/' + parts[1] + '/img/flag.svg' : '';
     }
     function dayColumns() {
       return Array.from({ length: 7 }, (_, index) => {
@@ -267,7 +327,23 @@
       img.alt = '';
       img.loading = 'lazy';
       const text = document.createElement('div');
-      text.innerHTML = '<strong>' + event.title + '</strong><span>' + (event.cat || 'event').replace('-', ' ') + '</span>';
+      const title = document.createElement('strong');
+      title.textContent = event.title;
+      const meta = document.createElement('span');
+      const flag = nationalDayFlag(event);
+      if (flag) {
+        meta.className = 'national-day-label';
+        const flagImg = document.createElement('img');
+        flagImg.src = flag;
+        flagImg.alt = '';
+        flagImg.width = 18;
+        flagImg.height = 12;
+        flagImg.loading = 'lazy';
+        meta.append(flagImg, document.createTextNode('National Day'));
+      } else {
+        meta.textContent = (event.cat || 'event').replace('-', ' ');
+      }
+      text.append(title, meta);
       label.append(img, text);
       row.appendChild(label);
       for (let i = 0; i < 7; i += 1) {
@@ -278,12 +354,30 @@
       const span = clampedSpan(event);
       const status = eventStatus(event);
       const bar = document.createElement('a');
-      bar.className = 'bar';
+      bar.className = 'bar' + (flag ? ' bar--national-day' : '');
       bar.href = eventLink(event);
       bar.dataset.status = status.key;
       bar.style.setProperty('--cat-color', colorFor(event.cat));
       bar.style.gridColumn = (span.from + 2) + ' / ' + (span.to + 3);
-      bar.innerHTML = '<span class="dot" aria-hidden="true"></span><b>' + event.title + '</b><small>' + status.label + ' - ' + dateLabel(event) + '</small>';
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.setAttribute('aria-hidden', 'true');
+      const name = document.createElement('b');
+      name.textContent = event.title;
+      const detail = document.createElement('small');
+      detail.textContent = status.label + ' - ' + dateLabel(event);
+      bar.append(dot);
+      if (flag) {
+        const barFlag = document.createElement('img');
+        barFlag.className = 'bar-flag';
+        barFlag.src = flag;
+        barFlag.alt = '';
+        barFlag.width = 18;
+        barFlag.height = 12;
+        barFlag.loading = 'lazy';
+        bar.append(barFlag);
+      }
+      bar.append(name, detail);
       row.appendChild(bar);
       return row;
     }

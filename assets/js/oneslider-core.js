@@ -124,6 +124,11 @@
   }
   OneSlider.rootHref = rootHref;
 
+  function isHomePage() {
+    var p = window.location.pathname || '';
+    return p === '/' || /\/index\.html$/i.test(p) && !/^\/content\//i.test(p);
+  }
+
   // ====================================================================
   // Module: brand
   // Inject a clickable "OneSliders" logo + wordmark as the first child
@@ -137,7 +142,7 @@
       var a = document.createElement('a');
       a.className = 'os-brand';
       a.href = root || './';
-      a.setAttribute('aria-label', 'OneSliders home');
+      a.setAttribute('aria-label', 'Home');
 
       var img = document.createElement('img');
       img.className = 'os-brand__logo';
@@ -220,7 +225,7 @@
     //   3. Sibling link immediately BEFORE the .active breadcrumb
     //      (skips own-page links that would otherwise be picked as "back")
     //   4. Last non-active text link in nav.top-menu
-    //   5. URL-pattern derivation for event pages
+    //   5. URL-pattern derivation for event views
     //   6. Default: Home
     function deriveBack() {
       var mh = document.querySelector('meta[name="os-back-href"]');
@@ -488,12 +493,13 @@
 
     var root = OneSlider.rootHref();
     var year = new Date().getFullYear();
+    var ownerText = isHomePage() ? ' OneSliders &middot;' : ' 3D Fractal &middot;';
 
     // Minimal footer. Terms, contact email and cookie-settings access live
     // in the iOS sheet "Settings" section on mobile, and the floating
     // cookie pill (auto-injected by the brand module) on desktop.
     var content =
-      '<p>&copy; ' + year + ' OneSliders &middot; ' +
+      '<p>&copy; ' + year + ownerText + ' ' +
       '<a href="' + root + 'privacy.html">Privacy</a></p>';
 
     var footerSelector = 'footer.os-footer, footer.site-footer, footer.site-foot, footer.site, footer.event-footer, footer.footer';
@@ -1695,12 +1701,12 @@
     }
 
     function ensureRecipeGuide() {
-      var guide = document.querySelector('.recipe-install-guide');
-      if (!guide) {
-        guide = document.createElement('div');
-        guide.className = 'recipe-install-guide';
-        guide.hidden = true;
-        guide.innerHTML =
+      var overview = document.querySelector('.recipe-install-overview');
+      if (!overview) {
+        overview = document.createElement('div');
+        overview.className = 'recipe-install-overview';
+        overview.hidden = true;
+        overview.innerHTML =
           '<div class="recipe-install-guide__backdrop" data-recipe-install-close></div>' +
           '<section class="recipe-install-guide__panel" role="dialog" aria-modal="true" aria-labelledby="recipe-install-title">' +
             '<button class="recipe-install-guide__close" type="button" data-recipe-install-close aria-label="Close">Close</button>' +
@@ -1710,26 +1716,26 @@
             '<textarea class="recipe-install-guide__copy" readonly hidden></textarea>' +
             '<div class="recipe-install-guide__actions" hidden></div>' +
           '</section>';
-        document.body.appendChild(guide);
-        guide.addEventListener('click', function (event) {
+        document.body.appendChild(overview);
+        overview.addEventListener('click', function (event) {
           if (event.target.closest('[data-recipe-install-close]')) {
-            guide.hidden = true;
+            overview.hidden = true;
           }
         });
         document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') guide.hidden = true;
+          if (event.key === 'Escape') overview.hidden = true;
         });
       }
-      return guide;
+      return overview;
     }
 
     function openRecipeGuide(options) {
-      var guide = ensureRecipeGuide();
-      var titleEl = guide.querySelector('h2');
-      var list = guide.querySelector('ol');
-      var note = guide.querySelector('.recipe-install-guide__note');
-      var copyBox = guide.querySelector('.recipe-install-guide__copy');
-      var actions = guide.querySelector('.recipe-install-guide__actions');
+      var overview = ensureRecipeGuide();
+      var titleEl = overview.querySelector('h2');
+      var list = overview.querySelector('ol');
+      var note = overview.querySelector('.recipe-install-guide__note');
+      var copyBox = overview.querySelector('.recipe-install-guide__copy');
+      var actions = overview.querySelector('.recipe-install-guide__actions');
 
       titleEl.textContent = options.title || '';
       list.textContent = '';
@@ -1761,11 +1767,11 @@
         link.href = options.sourceHref;
         link.target = '_blank';
         link.rel = 'noopener';
-        link.textContent = options.sourceText || 'Apple guide';
+        link.textContent = options.sourceText || 'Apple steps';
         actions.appendChild(link);
       }
 
-      guide.hidden = false;
+      overview.hidden = false;
       if (options.focusCopy && options.copyText) {
         copyBox.focus();
         copyBox.select();
@@ -1827,12 +1833,12 @@
           }
         ],
         sourceHref: 'https://support.apple.com/en-mide/105086',
-        sourceText: 'Apple Reminders Groceries guide'
+        sourceText: 'Apple Reminders Groceries steps'
       });
 
       setStatus(status, copied ?
         'Ingredients copied for Reminders.' :
-        'Copy the ingredients from the guide, then add them to a Groceries list.');
+        'Copy the ingredients from the list, then add them to a Groceries list.');
     }
 
     var row = document.createElement('div');
@@ -1931,6 +1937,32 @@
         .replace(/"/g, '&quot;');
     }
 
+    function displayCategory(category) {
+      var label = String(category || '').replace(/^Best\s+/i, '');
+      return label === 'Picture' ? 'Film' : label;
+    }
+
+    function categoryIconType(category) {
+      var name = String(category || '').toLowerCase();
+      if (name.indexOf('song') !== -1 || name.indexOf('score') !== -1) return 'music';
+      if (name.indexOf('sound') !== -1) return 'sound';
+      if (name.indexOf('actor') !== -1 || name.indexOf('actress') !== -1) return 'acting';
+      if (name.indexOf('screenplay') !== -1) return 'writing';
+      if (name.indexOf('cinematography') !== -1) return 'camera';
+      if (name.indexOf('editing') !== -1) return 'editing';
+      if (name.indexOf('design') !== -1) return 'design';
+      if (name.indexOf('costume') !== -1) return 'costume';
+      if (name.indexOf('makeup') !== -1 || name.indexOf('hairstyling') !== -1) return 'makeup';
+      if (name.indexOf('visual effects') !== -1) return 'effects';
+      if (name.indexOf('international') !== -1) return 'world';
+      if (name.indexOf('animated') !== -1) return 'animation';
+      if (name.indexOf('documentary') !== -1) return 'documentary';
+      if (name.indexOf('short') !== -1) return 'short';
+      if (name.indexOf('casting') !== -1) return 'casting';
+      if (name.indexOf('director') !== -1) return 'director';
+      return 'picture';
+    }
+
     function fetchJson(url) {
       return fetch(url, { cache: 'no-cache' })
         .then(function (response) {
@@ -1950,17 +1982,17 @@
       summary: root.querySelector('[data-oscars-summary]'),
       decades: root.querySelector('[data-oscars-decades-nav]'),
       years: root.querySelector('[data-oscars-years-nav]'),
-      categories: root.querySelector('[data-oscars-categories]'),
-      winners: root.querySelector('[data-oscars-winners]'),
+      categoryPicker: root.querySelector('[data-oscars-category-picker]'),
+      decadeMatrix: root.querySelector('[data-oscars-decade-matrix]'),
       stats: root.querySelector('[data-oscars-statistics]'),
       records: root.querySelector('[data-oscars-records-panel]'),
-      decadeTitle: root.querySelector('[data-oscars-decade-title]'),
-      decadeNote: root.querySelector('[data-oscars-decade-note]'),
-      yearNote: root.querySelector('[data-oscars-year-note]'),
-      winnersTitle: root.querySelector('[data-oscars-winners-title]'),
-      winnersNote: root.querySelector('[data-oscars-winners-note]')
+      tabs: root.querySelector('[data-oscars-tabs]'),
+      matrixTitle: root.querySelector('[data-oscars-matrix-title]'),
+      matrixNote: root.querySelector('[data-oscars-matrix-note]'),
+      activeRange: root.querySelector('[data-oscars-active-range]'),
+      categoryCount: root.querySelector('[data-oscars-category-count]')
     };
-    var state = { decade: '', year: 0, category: 'All' };
+    var state = { decade: '', year: 0, tab: 'history', categories: [] };
     var decades = [];
     var stats = [];
     var records = [];
@@ -1973,22 +2005,109 @@
       return decades.filter(function (item) { return item.decade === state.decade; })[0] || decades[0];
     }
 
-    function activeYear() {
-      var decade = activeDecade();
-      var years = decade && Array.isArray(decade.years) ? decade.years : [];
-      return years.filter(function (item) { return Number(item.year) === Number(state.year); })[0] || years[0];
-    }
-
-    function allAwards() {
+    function allYears(descending) {
       var rows = [];
       decades.forEach(function (decade) {
         (decade.years || []).forEach(function (year) {
-          awardsForYear(year).forEach(function (award) {
-            rows.push({ decade: decade.decade, year: year.year, ceremony: year.ceremony, award: award });
-          });
+          rows.push(year);
         });
       });
+      rows.sort(function (a, b) {
+        return descending ? Number(b.year) - Number(a.year) : Number(a.year) - Number(b.year);
+      });
       return rows;
+    }
+
+    function allYearsRange() {
+      var years = allYears(false).map(function (item) { return Number(item.year); }).filter(Boolean);
+      if (!years.length) return 'Loading';
+      return years[0] + '-' + years[years.length - 1];
+    }
+
+    function decadeStart(decade) {
+      var match = String(decade && decade.decade ? decade.decade : decade || '').match(/(\d{4})/);
+      return match ? Number(match[1]) : 0;
+    }
+
+    function decadeRange(decade) {
+      var years = decade && Array.isArray(decade.years) ? decade.years.map(function (item) { return Number(item.year); }).filter(Boolean) : [];
+      if (years.length) {
+        years.sort(function (a, b) { return a - b; });
+        return years[0] + '-' + years[years.length - 1];
+      }
+      var start = decadeStart(decade);
+      return start ? start + '-' + (start + 9) : String(decade && decade.decade ? decade.decade : decade || '');
+    }
+
+    function decadeFullRange(decade) {
+      var start = decadeStart(decade);
+      return start ? start + '-' + (start + 9) : String(decade && decade.decade ? decade.decade : decade || '');
+    }
+
+    function decadeHash(decade) {
+      return decadeRange(decade).toLowerCase();
+    }
+
+    function decadeFromHash() {
+      var hash = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).toLowerCase();
+      if (!hash) return null;
+      return decades.filter(function (decade) {
+        return decadeHash(decade) === hash ||
+          decadeFullRange(decade).toLowerCase() === hash ||
+          String(decade.decade || '').toLowerCase() === hash;
+      })[0] || null;
+    }
+
+    function yearFromHash() {
+      var hash = decodeURIComponent((window.location.hash || '').replace(/^#/, '')).toLowerCase();
+      var match = hash.match(/^year-(\d{4})$/) || hash.match(/^(\d{4})$/);
+      return match ? Number(match[1]) : 0;
+    }
+
+    function decadeForYear(year) {
+      return decades.filter(function (decade) {
+        return (decade.years || []).some(function (item) { return Number(item.year) === Number(year); });
+      })[0] || null;
+    }
+
+    function applyHashState() {
+      var hashYear = yearFromHash();
+      var hashDecade = hashYear ? decadeForYear(hashYear) : decadeFromHash();
+      if (hashDecade) state.decade = hashDecade.decade;
+      state.year = hashYear || 0;
+      return Boolean(hashDecade || hashYear);
+    }
+
+    function setTab(name) {
+      state.tab = name || 'history';
+      root.querySelectorAll('[data-oscars-tab]').forEach(function (button) {
+        button.setAttribute('aria-selected', button.getAttribute('data-oscars-tab') === state.tab ? 'true' : 'false');
+      });
+      root.querySelectorAll('[data-oscars-panel]').forEach(function (panel) {
+        panel.hidden = panel.getAttribute('data-oscars-panel') !== state.tab;
+      });
+    }
+
+    function bindStayModule() {
+      root.querySelectorAll('[data-oscars-stay-module]').forEach(function (box) {
+        var button = box.querySelector('.hotel-search__go');
+        if (!button || button.__oscarsStayBound) return;
+        button.__oscarsStayBound = true;
+        button.addEventListener('click', function () {
+          var value = function (name) {
+            var field = box.querySelector('[name="' + name + '"]');
+            return field ? field.value : '';
+          };
+          var area = box.querySelector('[name="hotel-area"]:checked');
+          var params = new URLSearchParams();
+          params.set('ss', (area ? area.value : 'Hollywood') + ', Los Angeles, United States');
+          if (value('checkin')) params.set('checkin', value('checkin'));
+          if (value('checkout')) params.set('checkout', value('checkout'));
+          params.set('group_adults', value('adults') || '2');
+          params.set('no_rooms', value('rooms') || '1');
+          window.open('https://www.booking.com/searchresults.html?' + params.toString(), '_blank', 'noopener');
+        });
+      });
     }
 
     function renderSummary() {
@@ -2006,80 +2125,228 @@
         });
       });
       els.summary.innerHTML =
-        '<div><span>Decades</span><strong>' + decades.length + '</strong></div>' +
-        '<div><span>Years</span><strong>' + years + '</strong></div>' +
-        '<div><span>Categories</span><strong>' + Object.keys(cats).length + '</strong></div>' +
-        '<div><span>Rows</span><strong>' + rows + '</strong></div>';
+        '<div class="fact"><span>Next Oscars</span><strong>14 Mar 2027</strong></div>' +
+        '<div class="fact"><span>Venue</span><strong>Dolby Theatre</strong></div>' +
+        '<div class="fact"><span>Years loaded</span><strong>' + years + '</strong></div>' +
+        '<div class="fact"><span>Categories</span><strong>' + Object.keys(cats).length + '</strong></div>';
     }
 
     function renderDecades() {
       if (!els.decades) return;
-      els.decades.innerHTML = decades.map(function (decade) {
-        var count = (decade.years || []).length;
-        return '<button type="button" data-oscars-decade="' + esc(decade.decade) + '"' +
-          (decade.decade === state.decade ? ' class="is-active"' : '') + '>' +
-          esc(decade.decade) + ' <span>(' + count + ')</span></button>';
-      }).join('');
+      els.decades.innerHTML = '';
     }
 
     function renderYears() {
+      if (!els.years) return;
       var decade = activeDecade();
       var years = decade && Array.isArray(decade.years) ? decade.years.slice() : [];
       years.sort(function (a, b) { return Number(a.year) - Number(b.year); });
-      if (els.decadeTitle) els.decadeTitle.textContent = decade ? decade.decade + ' ceremonies' : 'Choose a year';
-      if (els.decadeNote) els.decadeNote.textContent = decade ? 'Loaded from ' + decade.__src + '.' : 'No decade data loaded.';
-      if (!els.years) return;
       els.years.innerHTML = years.map(function (year) {
-        return '<button type="button" data-oscars-year="' + esc(year.year) + '"' +
-          (Number(year.year) === Number(state.year) ? ' class="is-active"' : '') + '>' +
-          esc(year.year) + '<span> #' + esc(year.ceremony || '') + '</span></button>';
+        var active = Number(year.year) === Number(state.year);
+        return '<a class="year-button' + (active ? ' is-active' : '') + '" href="#year-' + esc(year.year) + '" data-oscars-year="' + esc(year.year) + '" aria-pressed="' + (active ? 'true' : 'false') + '">' +
+          '<span class="year-button__year">' + esc(year.year) + '</span></a>';
       }).join('');
     }
 
-    function renderCategories() {
-      var year = activeYear();
-      var cats = { All: true };
-      awardsForYear(year).forEach(function (award) { cats[award.category] = true; });
-      var names = Object.keys(cats);
-      if (names.indexOf(state.category) === -1) state.category = 'All';
-      if (els.yearNote) {
-        els.yearNote.textContent = year ? 'Showing categories for the ' + (year.ceremony || '') + 'th ceremony in ' + year.year + '.' : 'Select a year.';
-      }
-      if (!els.categories) return;
-      els.categories.innerHTML = names.map(function (name) {
-        return '<button type="button" data-oscars-category="' + esc(name) + '"' +
-          (name === state.category ? ' class="is-active"' : '') + '>' + esc(name) + '</button>';
-      }).join('');
-    }
-
-    function awardRow(row) {
-      var award = row.award;
-      var detail = award.film && award.film !== award.winner ? award.film : (award.notes || award.winnerType || '');
-      return '<div class="oscars-winner-row">' +
-        '<span>' + esc(row.year) + ' / Ceremony ' + esc(row.ceremony || '') + '</span>' +
-        '<strong>' + esc(award.category) + '</strong>' +
-        '<div><strong>' + esc(award.winner || 'TBC') + '</strong><em>' + esc(detail) + '</em></div>' +
-        '</div>';
-    }
-
-    function renderWinners() {
-      var year = activeYear();
-      var rows = awardsForYear(year).map(function (award) {
-        return { year: year.year, ceremony: year.ceremony, award: award };
+    function renderDecadeMatrix() {
+      var decade = activeDecade();
+      var years = decade && Array.isArray(decade.years) ? decade.years.slice() : [];
+      years.sort(function (a, b) { return Number(a.year) - Number(b.year); });
+      if (els.matrixTitle) els.matrixTitle.textContent = decade ? 'Vinnare per år: ' + decadeRange(decade) : 'Vinnare per år';
+      if (els.matrixNote) els.matrixNote.textContent = decade ? 'Kategorier som rader, år som kolumner.' : 'Välj ett decennium.';
+      if (els.matrixTitle) els.matrixTitle.textContent = decade ? 'Pris per år: ' + decadeRange(decade) : 'Pris per år';
+      if (els.matrixNote) els.matrixNote.textContent = 'Alla laddade kategorier visas som rader. Åren är kolumner.';
+      if (els.activeRange) els.activeRange.textContent = decade ? decadeRange(decade) : 'Loading';
+      if (els.matrixTitle) els.matrixTitle.textContent = decade ? 'Pris per år: ' + decadeRange(decade) : 'Pris per år';
+      if (els.matrixNote) els.matrixNote.textContent = 'Alla laddade kategorier visas som rader. Åren är kolumner.';
+      if (els.activeRange) els.activeRange.textContent = decade ? decadeRange(decade) : 'Loading';
+      if (!els.decadeMatrix) return;
+      var categories = [];
+      years.forEach(function (year) {
+        awardsForYear(year).forEach(function (award) {
+          if (categories.indexOf(award.category) === -1) categories.push(award.category);
+        });
       });
-      if (state.category !== 'All') {
-        rows = rows.filter(function (row) { return row.award.category === state.category; });
+      if (els.categoryCount) els.categoryCount.textContent = categories.length + ' categories';
+      var preferred = [
+        'Best Picture',
+        'Best Director',
+        'Best Actor',
+        'Best Actress',
+        'Best Supporting Actor',
+        'Best Supporting Actress',
+        'Best Original Screenplay',
+        'Best Adapted Screenplay',
+        'Best Cinematography',
+        'Best Film Editing',
+        'Best Production Design',
+        'Best Costume Design',
+        'Best Makeup and Hairstyling',
+        'Best Original Score',
+        'Best Original Song',
+        'Best Casting',
+        'Best Sound',
+        'Best Sound Editing',
+        'Best Sound Mixing',
+        'Best Visual Effects',
+        'Best International Feature Film',
+        'Best Animated Feature',
+        'Best Documentary Feature',
+        'Best Animated Short Film',
+        'Best Live Action Short Film',
+        'Best Documentary Short'
+      ];
+      categories.sort(function (a, b) {
+        var ai = preferred.indexOf(a);
+        var bi = preferred.indexOf(b);
+        if (ai !== -1 || bi !== -1) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+        return a.localeCompare(b);
+      });
+      var header = '<div class="oscars-matrix-row oscars-matrix-row--head">' +
+        '<span>Resultat</span>' + categories.map(function (category) { return '<span>' + esc(category) + '</span>'; }).join('') +
+        '</div>';
+      var body = years.map(function (year) {
+        var byCategory = {};
+        awardsForYear(year).forEach(function (award) { byCategory[award.category] = award; });
+        return '<div class="oscars-matrix-row' + (Number(year.year) === Number(state.year) ? ' is-target' : '') + '" id="year-' + esc(year.year) + '">' +
+          '<strong>' + esc(year.year) + '</strong>' +
+          categories.map(function (category) {
+            var award = byCategory[category];
+            if (!award) return '<span class="oscars-matrix-empty">TBC</span>';
+            var detail = award.film && award.film !== award.winner ? '<em>' + esc(award.film) + '</em>' : '';
+            return '<span><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
+          }).join('') +
+          '</div>';
+      }).join('');
+      els.decadeMatrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
+    }
+
+    function renderAwardMatrix() {
+      var years = allYears(true);
+      var range = allYearsRange();
+      if (els.matrixTitle) els.matrixTitle.textContent = 'Vinnare per år: ' + range;
+      if (els.matrixNote) els.matrixNote.textContent = 'Välj en eller flera kategorier. Åren visas som rader.';
+      if (els.activeRange) els.activeRange.textContent = range;
+      if (!els.decadeMatrix) return;
+
+      var categories = [];
+      years.forEach(function (year) {
+        awardsForYear(year).forEach(function (award) {
+          if (categories.indexOf(award.category) === -1) categories.push(award.category);
+        });
+      });
+      if (els.categoryCount) els.categoryCount.textContent = categories.length + ' categories';
+      var preferred = ['Best Picture', 'Best Director', 'Best Actor', 'Best Actress'];
+      preferred = [
+        'Best Picture',
+        'Best Director',
+        'Best Actor',
+        'Best Actress',
+        'Best Supporting Actor',
+        'Best Supporting Actress',
+        'Best Original Screenplay',
+        'Best Adapted Screenplay',
+        'Best Cinematography',
+        'Best Film Editing',
+        'Best Production Design',
+        'Best Costume Design',
+        'Best Makeup and Hairstyling',
+        'Best Original Score',
+        'Best Original Song',
+        'Best Sound',
+        'Best Sound Editing',
+        'Best Sound Mixing',
+        'Best Visual Effects',
+        'Best International Feature Film',
+        'Best Animated Feature',
+        'Best Documentary Feature',
+        'Best Animated Short Film',
+        'Best Live Action Short Film',
+        'Best Documentary Short'
+      ];
+      categories.sort(function (a, b) {
+        var ai = preferred.indexOf(a);
+        var bi = preferred.indexOf(b);
+        if (ai !== -1 || bi !== -1) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+        return a.localeCompare(b);
+      });
+      if (!state.categories.length || !state.categories.some(function (category) { return categories.indexOf(category) !== -1; })) {
+        state.categories = preferred.filter(function (category) { return categories.indexOf(category) !== -1; }).slice(0, 4);
+        if (!state.categories.length) state.categories = categories.slice(0, 4);
+      } else {
+        state.categories = state.categories.filter(function (category) { return categories.indexOf(category) !== -1; });
       }
-      if (els.winnersTitle) els.winnersTitle.textContent = year ? 'Winners from ' + year.year : 'Winners';
-      if (els.winnersNote) els.winnersNote.textContent = rows.length ? rows.length + ' winner rows currently visible.' : 'No winners for this selection yet.';
-      if (!els.winners) return;
-      els.winners.innerHTML = rows.length ? rows.map(awardRow).join('') : '<p class="oscars-loading">No rows in the selected JSON yet.</p>';
+      var selectedCategories = state.categories.slice();
+      if (els.categoryPicker) {
+        els.categoryPicker.innerHTML = categories.map(function (category) {
+          var active = selectedCategories.indexOf(category) !== -1;
+          return '<button class="oscars-category-pill' + (active ? ' is-active' : '') + '" type="button" data-oscars-category-toggle="' + esc(category) + '" aria-pressed="' + (active ? 'true' : 'false') + '">' +
+            '<span class="oscars-category-icon oscars-category-icon--' + esc(categoryIconType(category)) + '" aria-hidden="true"></span>' +
+            '<span>' + esc(displayCategory(category)) + '</span></button>';
+        }).join('');
+      }
+
+      var awardsByYear = {};
+      years.forEach(function (year) {
+        awardsByYear[year.year] = {};
+        awardsForYear(year).forEach(function (award) {
+          awardsByYear[year.year][award.category] = award;
+        });
+      });
+
+      var header = '<div class="oscars-matrix-row oscars-matrix-row--head">' +
+        '<span>År</span>' + selectedCategories.map(function (category) { return '<span>' + esc(displayCategory(category)) + '</span>'; }).join('') +
+        '</div>';
+      var body = years.map(function (year) {
+        return '<div class="oscars-matrix-row' + (Number(year.year) === Number(state.year) ? ' is-target' : '') + '" id="year-' + esc(year.year) + '">' +
+          '<strong>' + esc(year.year) + '</strong>' +
+          selectedCategories.map(function (category) {
+            var award = awardsByYear[year.year] && awardsByYear[year.year][category];
+            if (!award) return '<span class="oscars-matrix-empty">TBC</span>';
+            var detail = award.film && award.film !== award.winner ? '<em>' + esc(award.film) + '</em>' : '';
+            return '<span><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
+          }).join('') +
+          '</div>';
+      }).join('');
+      els.decadeMatrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
     }
 
     function renderStats() {
       if (!els.stats) return;
-      els.stats.innerHTML = stats.map(function (stat) {
+      function numericValue(item) {
+        var match = String(item.value || item.count || item.year || '').match(/\d+/);
+        return match ? Number(match[0]) : 0;
+      }
+      var statMap = {};
+      stats.forEach(function (stat) {
+        statMap[stat.stat || stat.title || ''] = stat;
+      });
+      var wins = statMap['most-awards'];
+      var nominations = statMap['most-nominations'];
+      var kpis = [
+        { label: 'Record wins', value: wins && wins.items && wins.items[0] ? numericValue(wins.items[0]) : 0, note: wins && wins.items && wins.items[0] ? wins.items[0].name : 'TBC' },
+        { label: 'Record nominations', value: nominations && nominations.items && nominations.items[0] ? numericValue(nominations.items[0]) : 0, note: nominations && nominations.items && nominations.items[0] ? nominations.items[0].name : 'TBC' },
+        { label: 'Record charts', value: '2', note: 'Wins and nominations' }
+      ];
+      var kpiHtml = '<div class="oscars-visual-kpis">' + kpis.map(function (item) {
+        return '<div><span>' + esc(item.label) + '</span><strong>' + esc(item.value) + '</strong><em>' + esc(item.note) + '</em></div>';
+      }).join('') + '</div>';
+      var cards = stats.map(function (stat) {
         var rows = Array.isArray(stat.items) ? stat.items : [];
+        var chart = stat.stat === 'most-awards' || stat.stat === 'most-nominations';
+        var historyList = stat.stat === 'best-picture-winners' || stat.stat === 'best-actor-winners' || stat.stat === 'best-actress-winners';
+        var max = rows.reduce(function (top, item) { return Math.max(top, numericValue(item)); }, 1);
+        if (historyList) return '';
+        if (chart) {
+          return '<article class="oscars-stat-card oscars-stat-card--chart">' +
+            '<h3>' + esc(stat.title || 'Oscars list') + '</h3>' +
+            '<div class="oscars-bar-chart">' + rows.slice(0, 7).map(function (item) {
+              var value = numericValue(item);
+              var pct = Math.max(6, Math.round((value / max) * 100));
+              return '<div class="oscars-bar-row"><span>' + esc(item.name || 'TBC') + '</span><b>' + esc(item.value || value) + '</b><i style="--bar:' + pct + '%"></i></div>';
+            }).join('') + '</div>' +
+            '</article>';
+        }
         return '<article class="oscars-stat-card">' +
           '<h3>' + esc(stat.title || stat.stat || 'Oscars list') + '</h3>' +
           '<ol>' + rows.slice(0, 8).map(function (item) {
@@ -2089,12 +2356,13 @@
           }).join('') + '</ol>' +
           '</article>';
       }).join('');
+      els.stats.innerHTML = kpiHtml + cards;
     }
 
     function renderRecords() {
       if (!els.records) return;
       els.records.innerHTML = records.map(function (item) {
-        return '<div><strong>' + esc(item.title || item.name || 'Oscars record') + '</strong><span>' +
+        return '<div class="stage-card"><strong>' + esc(item.title || item.name || 'Oscars record') + '</strong><span>' +
           esc(item.detail || item.value || '') + '</span></div>';
       }).join('');
     }
@@ -2102,30 +2370,52 @@
     function renderAll() {
       renderSummary();
       renderDecades();
-      renderYears();
-      renderCategories();
-      renderWinners();
+      renderAwardMatrix();
       renderStats();
       renderRecords();
+      bindStayModule();
     }
 
     root.addEventListener('click', function (event) {
       var decadeButton = event.target.closest('[data-oscars-decade]');
-      var yearButton = event.target.closest('[data-oscars-year]');
-      var categoryButton = event.target.closest('[data-oscars-category]');
       if (decadeButton) {
+        event.preventDefault();
         state.decade = decadeButton.getAttribute('data-oscars-decade');
-        var decade = activeDecade();
-        var years = decade && decade.years ? decade.years : [];
-        state.year = years.length ? Number(years[years.length - 1].year) : 0;
-        state.category = 'All';
+        state.year = 0;
         renderAll();
-      } else if (yearButton) {
-        state.year = Number(yearButton.getAttribute('data-oscars-year'));
-        state.category = 'All';
+        history.replaceState(null, '', '#' + decadeHash(activeDecade()));
+      }
+      var yearButton = event.target.closest('[data-oscars-year]');
+      if (yearButton) {
+        event.preventDefault();
+        state.year = Number(yearButton.getAttribute('data-oscars-year')) || 0;
+        var yearDecade = decadeForYear(state.year);
+        if (yearDecade) state.decade = yearDecade.decade;
+        setTab('history');
         renderAll();
-      } else if (categoryButton) {
-        state.category = categoryButton.getAttribute('data-oscars-category') || 'All';
+        history.replaceState(null, '', '#year-' + state.year);
+      }
+      var tabButton = event.target.closest('[data-oscars-tab]');
+      if (tabButton) {
+        setTab(tabButton.getAttribute('data-oscars-tab'));
+      }
+      var categoryButton = event.target.closest('[data-oscars-category-toggle]');
+      if (categoryButton) {
+        event.preventDefault();
+        var category = categoryButton.getAttribute('data-oscars-category-toggle');
+        var index = state.categories.indexOf(category);
+        if (index === -1) {
+          state.categories.push(category);
+        } else if (state.categories.length > 1) {
+          state.categories.splice(index, 1);
+        }
+        renderAwardMatrix();
+      }
+    });
+
+    window.addEventListener('hashchange', function () {
+      if (applyHashState()) {
+        setTab('history');
         renderAll();
       }
     });
@@ -2141,13 +2431,14 @@
       result[2].forEach(function (file) {
         records = records.concat(Array.isArray(file.items) ? file.items : []);
       });
-      var defaultDecade = decades[decades.length - 1];
-      var defaultYears = defaultDecade && defaultDecade.years ? defaultDecade.years : [];
+      var hasHashState = applyHashState();
+      var defaultDecade = activeDecade() || decades[decades.length - 1];
+      if (!hasHashState) defaultDecade = decades[decades.length - 1];
       state.decade = defaultDecade ? defaultDecade.decade : '';
-      state.year = defaultYears.length ? Number(defaultYears[defaultYears.length - 1].year) : 0;
+      setTab('history');
       renderAll();
     }).catch(function (error) {
-      if (els.winners) els.winners.innerHTML = '<p class="oscars-loading">Could not load Oscars JSON data.</p>';
+      if (els.decadeMatrix) els.decadeMatrix.innerHTML = '<p class="oscars-loading">Could not load Oscars JSON data.</p>';
       if (window.console) console.warn('[OneSlider] oscarsExplorer', error);
     });
   });

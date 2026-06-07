@@ -1359,4 +1359,4 @@ updateLegacyGolfStaticRefs();
 updateLegacyStandaloneGolfEventShells();
 updateSitemap();
 
-console.log(`Generated ${events.length} golf tour event pages and linked them from golf/country pages.`);
+console.log(`Generated ${events.length} golf tour event views and linked them from golf/country pages.`);

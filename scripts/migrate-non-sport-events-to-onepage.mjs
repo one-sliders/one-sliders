@@ -133,10 +133,10 @@ function buildPage(file, html) {
   const city = Array.isArray(edition.cities) && edition.cities[0] ? edition.cities[0].name : '';
   const venue = edition.venue || 'TBC';
   const dates = edition.dates || (year ? `${year} date TBC` : 'Date TBC');
-  const format = edition.format || `${topicName} guide`;
-  const status = edition.statusLabel || edition.status || 'Guide';
-  const description = extractMeta(html, 'description') || `${eventName} guide for ${categoryName} / ${topicName}.`;
-  const lede = sentence(edition.result || description, `${eventName} is an evergreen ${topicName.toLowerCase()} event guide with current planning details in one place.`);
+  const format = edition.format || `${topicName} overview`;
+  const status = edition.statusLabel || edition.status || 'Overview';
+  const description = extractMeta(html, 'description') || `${eventName} overview for ${categoryName} / ${topicName}.`;
+  const lede = sentence(edition.result || description, `${eventName} is an evergreen ${topicName.toLowerCase()} event view with current planning details in one place.`);
   const hero = `/content/categories/${parts.slice(2, -1).join('/')}/img/${eventSlug}-hero.png`.replace('/events/img/', '/events/img/');
   const heroPath = `/content/categories/${parts.slice(2, parts.length - 1).join('/')}/img/${eventSlug}-hero.png`;
   const miniPath = `/content/categories/${parts.slice(2, parts.length - 1).join('/')}/img/${eventSlug}-mini.png`;
@@ -166,7 +166,7 @@ function buildPage(file, html) {
     '@graph': [
       { '@type': 'Organization', '@id': 'https://one-sliders.com/#organization', name: 'OneSliders', url: 'https://one-sliders.com/', logo: 'https://one-sliders.com/assets/icons/one-sliders-icon.svg' },
       { '@type': 'WebSite', '@id': 'https://one-sliders.com/#website', url: 'https://one-sliders.com/', name: 'OneSliders', publisher: { '@id': 'https://one-sliders.com/#organization' } },
-      { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: `${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Guide`, description, inLanguage: 'en', image: `https://one-sliders.com${heroPath}`, isPartOf: { '@id': 'https://one-sliders.com/#website' }, publisher: { '@id': 'https://one-sliders.com/#organization' } }
+      { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: `${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Results`, description, inLanguage: 'en', image: `https://one-sliders.com${heroPath}`, isPartOf: { '@id': 'https://one-sliders.com/#website' }, publisher: { '@id': 'https://one-sliders.com/#organization' } }
     ]
   };
 
@@ -183,14 +183,14 @@ function buildPage(file, html) {
   <link rel="manifest" href="/assets/icons/site.webmanifest">
   <link rel="canonical" href="${escapeHtml(canonical)}"><meta name="content-language" content="en">
   <meta name="description" content="${escapeHtml(description)}">
-  <meta property="og:title" content="${escapeHtml(`${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Guide`)}">
+  <meta property="og:title" content="${escapeHtml(`${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Results`)}">
   <meta property="og:image" content="https://one-sliders.com${escapeHtml(heroPath)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="${escapeHtml(canonical)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://one-sliders.com${escapeHtml(heroPath)}">
-  <title>${escapeHtml(`${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Guide`)}</title><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="website">
+  <title>${escapeHtml(`${eventName}${year ? ` ${year}` : ''} - Dates, Schedule & Results`)}</title><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="website">
   <script defer src="/assets/js/oneslider-core.js"></script>
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
@@ -214,7 +214,7 @@ function buildPage(file, html) {
           <div class="country-panel-card">
             <h2>Overview</h2>
             <div class="country-qa-list">
-              <div><strong>${escapeHtml(topicName)} event</strong><span>${escapeHtml(`${eventName} is tracked as an evergreen guide with current planning details kept separate from the general overview.`)}</span></div>
+              <div><strong>${escapeHtml(topicName)} event</strong><span>${escapeHtml(`${eventName} is tracked as an evergreen visual event view with current planning details kept separate from the general overview.`)}</span></div>
               <div><strong>Format</strong><span>${escapeHtml(format)}</span></div>
               <div><strong>Why follow it</strong><span>${escapeHtml(sentence(edition.result || edition.countdownText || description, 'Use this page for dates, venue, programme and visitor context.'))}</span></div>
             </div>
@@ -228,7 +228,7 @@ function buildPage(file, html) {
           <div class="country-kpi"><span>Venue</span><strong>${escapeHtml(venue)}</strong></div>
           <div class="country-kpi"><span>Timing</span><strong>${escapeHtml(dates)}</strong></div>
         </div>
-        <section class="edition-tabs edition-tabs--static" aria-label="Choose ${escapeHtml(eventName)} guide section">
+        <section class="edition-tabs edition-tabs--static" aria-label="Choose ${escapeHtml(eventName)} overview section">
           <input class="edition-tab-input" type="radio" name="event-section" id="event-tab-week" checked>
           <input class="edition-tab-input" type="radio" name="event-section" id="event-tab-trip">
           <input class="edition-tab-input" type="radio" name="event-section" id="event-tab-watch">
@@ -336,4 +336,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Migrated ${changed} non-sport, non-national-day event pages.`);
+console.log(`Migrated ${changed} non-sport, non-national-day event views.`);

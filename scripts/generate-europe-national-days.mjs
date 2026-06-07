@@ -2,11 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = globalThis.nodeRepl ? globalThis.nodeRepl.cwd : process.cwd();
-const TODAY = new Date('2026-05-26T00:00:00Z');
-const STAMP = '26 May 2026';
-const GENERATED_AT = '2026-05-26';
+const TODAY = new Date('2026-06-07T00:00:00Z');
+const STAMP = '7 June 2026';
+const GENERATED_AT = '2026-06-07';
 const EVENT_DIR = 'content/categories/culture/national-day/events';
 const IMG_DIR = `${EVENT_DIR}/img`;
+const DATA_FILE = 'scripts/data/national-days.json';
 
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fullMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -14,7 +15,7 @@ const fullMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
 const overrides = {
   austria: { date: '26 October', title: 'Austria National Day', reason: 'neutrality and modern civic identity', city: 'Vienna' },
   switzerland: { date: '1 August', title: 'Swiss National Day', reason: 'Swiss founding tradition and cantonal identity', city: 'Bern' },
-  norway: { date: '17 May', title: 'Oslo Constitution Day', reason: 'the signing of Norway\'s constitution in 1814', city: 'Oslo' },
+  norway: { date: '17 May', title: 'Norwegian Constitution Day', reason: 'the signing of Norway\'s constitution in 1814', city: 'Oslo' },
   'united-kingdom': { skip: true },
 };
 
@@ -101,7 +102,7 @@ function slugify(value) {
 }
 
 function read(file) {
-  return fs.readFileSync(path.join(ROOT, file), 'utf8');
+  return fs.readFileSync(path.join(ROOT, file), 'utf8').replace(/^\uFEFF/, '');
 }
 
 function write(file, content) {
@@ -142,15 +143,15 @@ function displayDate(day, month, year) {
   return `${day} ${monthNames[month - 1]} ${year}`;
 }
 
-function countryChip(country, slug, prefix = '../../../../../../') {
-  return `<a class="country" href="${prefix}content/locations/europe/${slug}/index.html"><img src="${prefix}content/locations/europe/${slug}/img/flag.svg" alt="" width="20" height="14">${esc(country)}</a>`;
+function countryChip(country, slug, prefix = '../../../../../../', continent = 'europe') {
+  return `<a class="country" href="${prefix}content/locations/${continent}/${slug}/index.html"><img src="${prefix}content/locations/${continent}/${slug}/img/flag.svg" alt="" width="20" height="14">${esc(country)}</a>`;
 }
 
-function cityLink(countrySlug, city) {
+function cityLink(countrySlug, city, continent = 'europe') {
   if (!city || city.toUpperCase() === 'TBC') return '';
   const citySlug = slugify(city);
-  const file = `content/locations/europe/${countrySlug}/${citySlug}.html`;
-  return fs.existsSync(path.join(ROOT, file)) ? `/content/locations/europe/${countrySlug}/${citySlug}.html` : '';
+  const file = `content/locations/${continent}/${countrySlug}/${citySlug}.html`;
+  return fs.existsSync(path.join(ROOT, file)) ? `/content/locations/${continent}/${countrySlug}/${citySlug}.html` : '';
 }
 
 function makeEditions(event, dateParts) {
@@ -161,7 +162,11 @@ function makeEditions(event, dateParts) {
     end.setUTCDate(end.getUTCDate() + 1);
     const endExclusive = end.toISOString().slice(0, 10);
     const status = year < event.nextYear ? 'past' : 'upcoming';
-    const chip = `<a class="country" href="/content/locations/europe/${event.countrySlug}/index.html"><img src="/content/locations/europe/${event.countrySlug}/img/flag.svg" alt="" width="20" height="14">${esc(event.country)}</a>`;
+    const continent = event.continent || 'europe';
+    const chip = `<a class="country" href="/content/locations/${continent}/${event.countrySlug}/index.html"><img src="/content/locations/${continent}/${event.countrySlug}/img/flag.svg" alt="" width="20" height="14">${esc(event.country)}</a>`;
+    const whereDetail = event.countrySlug === 'norway'
+      ? 'Norwegian Constitution Day is nationwide. In Oslo, watch the children parade by the palace. In Stavanger, follow the city-centre parade and harbour crowds. In Bergen, expect local parades around the centre. Check each municipality\'s 17 May programme before travel.'
+      : `${event.title} uses one national date, but the useful visitor plan starts with the city. ${event.city ? `In ${event.city}, expect official or highly visible civic moments, but local celebrations can vary by municipality.` : 'Local celebrations vary by city and region.'} Check municipal programmes before travel.`;
     editions.push({
       year,
       headingPlace: `in ${event.country}`,
@@ -171,20 +176,21 @@ function makeEditions(event, dateParts) {
       endExclusive,
       nextDate: iso(year + 1, dateParts.month, dateParts.day),
       dates: displayDate(dateParts.day, dateParts.month, year),
-      countries: [{ name: event.country, url: `/content/locations/europe/${event.countrySlug}/index.html`, flag: `/content/locations/europe/${event.countrySlug}/img/flag.svg` }],
-      cities: event.city ? [{ name: event.city, ...(event.cityUrl ? { url: event.cityUrl } : {}) }] : [],
+      countries: [{ name: event.country, url: `/content/locations/${continent}/${event.countrySlug}/index.html`, flag: `/content/locations/${continent}/${event.countrySlug}/img/flag.svg` }],
+      cities: [{ name: 'Nationwide' }],
       venue: event.country,
-      format: 'National day programme',
-      countdownText: status === 'past' ? 'Archive edition; add verified local programme notes when available.' : `${event.title} is observed every year on ${event.dateText}.`,
+      format: 'Fixed annual civic date',
+      countdownText: `${event.title} follows the same calendar date: ${event.dateText}.`,
       calendarDescription: `${event.title} ${year}.`,
-      questions: status === 'past' ? [] : [
-        { q: 'When is the event?', a: displayDate(dateParts.day, dateParts.month, year), detail: `${event.title} is observed annually on ${event.dateText}.` },
-        { q: `Why is ${dateParts.day} ${monthNames[dateParts.month - 1]} important?`, a: event.reason, detail: 'Use this as the quick answer, then check official local programmes close to the date.' },
-        { q: 'Where is it held?', a: `Across ${chip}`, detail: event.city ? `${esc(event.city)} may carry official or highly visible ceremonies, but local celebrations can vary.` : 'Local celebrations vary by city and region.' },
-        { q: 'What do people do?', a: 'Expect flags, public ceremonies and local gatherings', detail: 'National days are civic events, so the best programme is usually local rather than one central ticketed venue.' },
-        { q: 'Do I need tickets?', a: 'Usually not for public outdoor moments', detail: 'Some concerts, museums, guided tours or special viewing areas may require booking.' },
-        { q: 'What should visitors check?', a: 'Transport, opening hours and official city programmes', detail: 'Public holidays can change shop hours, road access and public transport.' },
-        { q: 'What is new this year?', a: `${event.title} ${year}`, detail: 'Specific speeches, concerts, parades and security notes should be updated when official programmes are published.' },
+      questions: [
+        { q: 'Where can I celebrate?', a: chip, detail: whereDetail },
+        { q: 'Date', a: displayDate(dateParts.day, dateParts.month, year), detail: `${event.title} is observed annually on ${event.dateText}.` },
+        { q: 'Public holiday', a: 'National public holiday', detail: `${event.dateText} is ${event.country}'s national day and a countrywide public holiday or civic observance.` },
+        { q: 'Ceremony', a: 'Official ceremonies', detail: 'Expect flag raising, speeches, wreath-laying or civic ceremonies, with exact local timing set by each municipality or organiser.' },
+        { q: 'Parade', a: 'Local parades and processions', detail: 'The core pattern is annual: flags, civic groups, schools, bands or local parades, with routes published locally.' },
+        { q: 'Opening hours', a: 'Public-holiday hours', detail: 'Many shops and services use holiday hours. Restaurants, museums and transport vary by city, so check local listings for the place you visit.' },
+        { q: 'Transport', a: 'Local parade traffic', detail: 'Plan for closed streets, busy public transport and walking routes around town centres during ceremonies and parades.' },
+        { q: 'Weather', a: 'Seasonal weather', detail: 'Check the local forecast a few days before the national day and dress for outdoor waiting.' },
       ],
       highlights: [],
       lifecycleLabel: status === 'past' ? 'Archive' : 'Programme',
@@ -193,17 +199,85 @@ function makeEditions(event, dateParts) {
   return editions;
 }
 
+function countryChipAbs(event) {
+  const continent = event.continent || 'europe';
+  return `<a class="country" href="/content/locations/${continent}/${event.countrySlug}/index.html"><img src="/content/locations/${continent}/${event.countrySlug}/img/flag.svg" alt="" width="20" height="14">${esc(event.country)}</a>`;
+}
+
+function defaultRhythm(event) {
+  return event.rhythm || [
+    { time: 'Morning', label: 'Flags and official moments' },
+    { time: 'Midday', label: 'Local ceremonies' },
+    { time: 'Afternoon', label: 'Family visits and city walks' },
+    { time: 'Evening', label: 'Public gatherings' },
+  ];
+}
+
+function defaultBars(event) {
+  return event.foodBars || [
+    { label: 'Local holiday food', width: 88, note: 'check city' },
+    { label: 'Flags', width: 96, note: 'high' },
+    { label: 'Ceremonies', width: 78, note: 'official' },
+    { label: 'Family meals', width: 66, note: 'common' },
+  ];
+}
+
+function defaultPlaces(event) {
+  if (event.places && event.places.length) return event.places;
+  const city = event.city && !/^nationwide$/i.test(event.city) ? event.city : 'Capital city';
+  return [
+    { name: city, note: 'official ceremonies and the most visible programme' },
+    { name: 'Town centres', note: 'local flags, speeches and public-holiday crowds' },
+    { name: 'Main squares', note: 'good first stop after checking municipal timings' },
+  ];
+}
+
+function defaultStayCities(event) {
+  if (event.stayCities && event.stayCities.length) return event.stayCities;
+  const continent = event.continent || 'europe';
+  if (event.city && !/^nationwide$/i.test(event.city)) return [{ name: event.city, url: event.cityUrl || `/content/locations/${continent}/${event.countrySlug}/index.html` }];
+  return [{ name: event.country, url: `/content/locations/${continent}/${event.countrySlug}/index.html` }];
+}
+
+function defaultAnthem(event) {
+  if (!event.anthem || !event.anthem.title || !event.anthem.note) {
+    throw new Error(`Missing anthem content for ${event.eventSlug}`);
+  }
+  return event.anthem;
+}
+
+function nationalDayWhy(event) {
+  if (!event.why || !event.why.title || !event.why.text) {
+    throw new Error(`Missing why content for ${event.eventSlug}`);
+  }
+  return event.why;
+}
+
+function pctClass(width) {
+  const safe = Math.max(10, Math.min(100, Number(width) || 64));
+  const rounded = Math.round(safe / 10) * 10;
+  return `class="nd-w${rounded}"`;
+}
+
 function eventHtml(event, dateParts) {
   const yearData = {
     eventName: event.title,
     slug: event.eventSlug,
+    eventType: 'national-day',
     defaultYear: event.nextYear,
     lastUpdated: STAMP,
-    sources: [{ label: 'OneSliders country page', url: `/content/locations/europe/${event.countrySlug}/` }],
+    sources: [{ label: 'OneSliders country page', url: `/content/locations/${event.continent || 'europe'}/${event.countrySlug}/` }],
     editions: makeEditions(event, dateParts),
   };
 
-  const country = countryChip(event.country, event.countrySlug);
+  const country = countryChipAbs(event);
+  const bodyClass = `event-page event-page--framed event-page--non-sport event-page--national-day${event.eventSlug === 'norwegian-constitution-day' ? ' event-page--norway-national-day' : ''}`;
+  const rhythm = defaultRhythm(event).map(item => `<div><time>${esc(item.time)}</time><b>${esc(item.label)}</b></div>`).join('');
+  const bars = defaultBars(event).map(item => `<p><b>${esc(item.label)}</b><i ${pctClass(item.width)}></i><em>${esc(item.note)}</em></p>`).join('');
+  const places = defaultPlaces(event).map(item => `<tr><th>${esc(item.name)}</th><td>${esc(item.note)}</td></tr>`).join('');
+  const stay = defaultStayCities(event).slice(0, 4).map(item => `<a href="${esc(item.url || `/content/locations/europe/${event.countrySlug}/index.html`)}">Stay ${esc(item.name)}</a>`).join('');
+  const anthem = defaultAnthem(event);
+  const why = nationalDayWhy(event);
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -216,11 +290,11 @@ function eventHtml(event, dateParts) {
   <link rel="icon" href="../../../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../../../../../assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="../../../../../../assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="../../../../../../assets/css/events.css?v=events-sport-tracker-20260521">
-  <script defer src="../../../../../../assets/js/events.js?v=tbc-actions-20260520"></script>
+  <link rel="stylesheet" href="../../../../../../assets/css/events.css?v=national-day-frame-20260607d">
+  <script defer src="../../../../../../assets/js/events.js?v=national-day-frame-20260607d"></script>
   <link rel="preload" as="image" href="../../../../../../${IMG_DIR}/${event.eventSlug}-hero.png">
   <link rel="canonical" href="https://one-sliders.com/${EVENT_DIR}/${event.eventSlug}.html">
-  <meta name="description" content="${esc(event.title)} guide with date, meaning, visitor questions and current edition details.">
+  <meta name="description" content="${esc(event.title)} event view with date, meaning, city planning, food notes and national-day context.">
   <meta name="keywords" content="${esc(event.eventSlug.replace(/-/g, ' '))}, national day, ${esc(event.country.toLowerCase())} public holiday, ${esc(event.dateText.toLowerCase())}">
   <meta property="og:title" content="${esc(event.title)} | OneSliders">
   <meta property="og:image" content="https://one-sliders.com/${IMG_DIR}/${event.eventSlug}-hero.png">
@@ -228,33 +302,45 @@ function eventHtml(event, dateParts) {
   <title>${esc(event.title)} | OneSliders</title>
 <script type="application/json" id="event-year-data">${JSON.stringify(yearData)}</script>
 </head>
-<body class="event-page">
+<body class="${bodyClass}">
   <nav class="event-nav" aria-label="Site navigation">
-    <a class="nav-icon" href="../content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
-    <a class="nav-icon" href="../content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
-    <a class="nav-icon" href="../content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
+    <a class="nav-icon" href="/content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+    <a class="nav-icon" href="/content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+    <a class="nav-icon" href="/content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
     <span class="nav-spacer"></span>
     <details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"><a href="#" aria-current="page">English</a></div></details>
   </nav>
-  <main class="event-carousel" data-carousel>
-    <div class="event-carousel__track" data-carousel-track>
-      <section class="event-slide event-slide--hero" id="general" data-slide="general">
-        <img class="event-hero__image" src="../../../../../../${IMG_DIR}/${event.eventSlug}-hero.png" alt="" width="1200" height="630" fetchpriority="high">
-        <div class="event-slide__content">
-          <div class="event-hero-copy"><p class="event-kicker">National day</p><h1 class="event-title">${esc(event.title)}</h1><p class="event-lede">A compact guide to the annual civic date, what it means and what visitors should check before going.</p></div>
-          <div class="facts-strip hero-control"><div class="fact"><span>Date</span><strong>${esc(event.dateText)}</strong></div><div class="fact"><span>Country</span><strong>${country}</strong></div><div class="fact"><span>Next edition</span><strong>${event.nextYear}</strong></div><div class="fact"><span>Type</span><strong>National day</strong></div></div>
-          <div class="card-grid"><a class="topic-card topic-card--inline" href="../content/categories/culture/national-day.html"><img src="../../../../../../${IMG_DIR}/${event.eventSlug}-mini.png" alt="" width="400" height="300" loading="lazy"><span>Culture calendar</span><strong>National days</strong><p>Independence, constitutions, republic days and civic identity dates.</p></a><div class="card"><span>Why the date matters</span><strong>${esc(event.reason)}</strong><p>The exact programme changes by city and year, but the date remains the yearly anchor.</p></div><div class="card"><span>What visitors notice</span><strong>Flags, ceremonies and public life</strong><p>National days are often best read through local squares, official buildings, streets and evening gatherings.</p></div><div class="card"><span>Planning lens</span><strong>Check official local programmes</strong><p>Public transport, opening hours and security routes can change because this is a public holiday.</p></div></div>
-          <div class="card card--rank"><span>At a glance</span><div class="rank-list"><div class="rank-row"><strong>1</strong><span>Public meaning</span><div class="rank-row__track"><i class="rank-row__fill w100"></i></div><strong>National identity</strong></div><div class="rank-row"><strong>2</strong><span>Main date</span><div class="rank-row__track"><i class="rank-row__fill w80"></i></div><strong>${esc(event.dateText)}</strong></div><div class="rank-row"><strong>3</strong><span>Best view</span><div class="rank-row__track"><i class="rank-row__fill w65"></i></div><strong>${esc(event.city || 'Local cities')}</strong></div></div></div>
+  <main class="event-frame national-day-frame" id="general" aria-labelledby="event-title" data-non-sport-event-page>
+    <section class="event-frame__visual" aria-label="${esc(event.title)} overview">
+      <div class="event-frame__media">
+        <img src="../../../../../../${IMG_DIR}/${event.eventSlug}-hero.png" srcset="../../../../../../${IMG_DIR}/${event.eventSlug}-hero-400.webp 400w, ../../../../../../${IMG_DIR}/${event.eventSlug}-hero-768.webp 768w, ../../../../../../${IMG_DIR}/${event.eventSlug}-hero-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 42vw" alt="${esc(event.title)} visual" width="1200" height="630" fetchpriority="high">
+      </div>
+      <div class="event-frame__copy">
+        <div>
+          <p class="event-kicker">National day</p>
+          <h1 class="event-title" id="event-title">${esc(event.title)}</h1>
         </div>
-      </section>
-      <section class="event-slide" id="year" data-slide="year">
-        <img class="event-hero__image" src="../../../../../../${IMG_DIR}/${event.eventSlug}-hero.png" alt="" width="1200" height="630" loading="lazy">
-        <div class="event-slide__content"><div class="event-hero-copy"><p class="event-kicker">Edition guide</p><h2 class="event-section-title" data-year-heading>${esc(event.title)} ${event.nextYear}</h2><p class="event-subtitle">Dates, place and practical notes for the selected edition.</p></div><div class="year-switcher hero-control" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition></div></div>
-      </section>
-    </div>
-    <button class="event-carousel__prev" type="button" data-carousel-prev aria-label="Previous slide">Previous</button>
-    <button class="event-carousel__next" type="button" data-carousel-next aria-label="Next slide">Next</button>
-    <nav class="event-carousel__dots" data-carousel-dots aria-label="Slide navigation"></nav>
+        <div class="card-grid">
+          <div class="card"><span>Why this day?</span><strong>${esc(why.title)}</strong><p>${esc(why.text)}</p></div>
+          <div class="card"><span>Before you go</span><strong>Check the municipality programme</strong><p>Use the city programme for street closures, transport changes and public-holiday opening hours.</p></div>
+        </div>
+        <div class="question-grid">
+          <div class="question"><span>Country guide</span><strong>${country}</strong><p>${esc(event.happensNote || 'Expect the national date to be shared, but the visible celebration to be local.')}</p></div>
+          <div class="question"><span>Transport</span><strong>Plan around official routes</strong><p>Central streets can close early. Pick your city, check the municipal route map and leave extra time for walking.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="event-frame__panel" aria-label="${esc(event.title)} planning">
+      <div class="event-frame__panel-header"><p class="event-kicker">Planning</p><h2 class="event-section-title">In practice</h2><p class="event-subtitle">Pick the city first, then check its route, timing, food stops and transport changes.</p><div class="actions-row"><a class="event-button event-button--inline" href="/content/categories/culture/national-day.html">All national days</a></div></div>
+      <div class="year-edition">
+        <div class="national-day-visuals" aria-label="${esc(event.title)} visual guide">
+          <div class="nd-panel nd-panel--wide"><span>Day rhythm</span><strong>${esc(event.rhythmTitle || 'From official moments to local gatherings')}</strong><div class="nd-timeline">${rhythm}</div></div>
+          <div class="nd-panel"><span>Food and day mix</span><strong>${esc(event.foodTitle || 'What fills the day')}</strong><div class="nd-bars">${bars}</div></div>
+          <div class="nd-panel"><span>City feel</span><strong>Pick your scene</strong><table class="nd-table"><tbody>${places}</tbody></table>${stay ? `<div class="stay-city-buttons" aria-label="Stay choices">${stay}</div>` : ''}</div>
+          <div class="nd-panel nd-panel--anthem"><span>National anthem</span><strong>${esc(anthem.title)}</strong><p>${esc(anthem.note)}</p><dl class="anthem-facts">${anthem.writer ? `<div><dt>Words</dt><dd>${esc(anthem.writer)}</dd></div>` : ''}${anthem.composer ? `<div><dt>Music</dt><dd>${esc(anthem.composer)}</dd></div>` : ''}${anthem.created ? `<div><dt>Created</dt><dd>${esc(anthem.created)}</dd></div>` : ''}${anthem.adopted ? `<div><dt>Adopted</dt><dd>${esc(anthem.adopted)}</dd></div>` : ''}</dl><div class="nd-notes" aria-label="Anthem motif"><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
@@ -262,27 +348,35 @@ function eventHtml(event, dateParts) {
 }
 
 function cardHtml(event, eventDir, imgDir = `${eventDir}/img`) {
-  const meta = `${displayDate(event.day, event.month, event.nextYear)} · ${event.country}`;
-  return `        <a class="event-card" data-end="${event.startDate}" data-cat="culture" data-topic="national-day" data-cont="europe" data-country="${event.countrySlug}" data-keywords="${esc(`${event.title}, ${event.country} national day, public holiday`)}" href="${eventDir}/${event.eventSlug}.html#year-${event.nextYear}" data-start="${event.startDate}" data-reach="national" style="--cat-color:var(--c-culture)"><img class="card-thumb" src="${imgDir}/${event.eventSlug}-mini.png" alt="${esc(event.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill">Culture</span><strong class="card-title">${esc(event.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
+  const meta = `${displayDate(event.day, event.month, event.nextYear)} - ${event.country}`;
+  const continent = event.continent || 'europe';
+  const flag = `../locations/${continent}/${event.countrySlug}/img/flag.svg`;
+  return `        <a class="event-card" data-end="${event.startDate}" data-cat="culture" data-topic="national-day" data-cont="${continent}" data-country="${event.countrySlug}" data-keywords="${esc(`${event.title}, ${event.country} national day, public holiday`)}" href="${eventDir}/${event.eventSlug}.html" data-start="${event.startDate}" data-reach="national" style="--cat-color:var(--c-culture)"><img class="card-thumb" src="${imgDir}/${event.eventSlug}-mini.png" alt="${esc(event.title)}" loading="lazy"><div class="card-stripe"></div><div class="card-body"><span class="cat-pill"><img src="${flag}" alt="" width="18" height="12" loading="lazy">National Day</span><strong class="card-title">${esc(event.title)}</strong><span class="card-meta">${esc(meta)}</span></div></a>`;
 }
 
 function removeLegacyNationalDayCards(file) {
   let html = read(file);
-  html = html.replace(/\s*<a class="event-card"(?=[\s\S]*?data-topic="national-day")[\s\S]*?<\/a>/g, '');
+  html = html.replace(/\s*<a class="event-card"[\s\S]*?<\/a>/g, card =>
+    /\bdata-topic="national-day"/.test(card) ? '' : card
+  );
   write(file, html);
 }
 
-function upsertGeneratedBlock(file, startMarker, endMarker, content) {
-  const html = read(file);
-  const block = `${startMarker}\n${content}\n${endMarker}`;
-  let next;
-  if (html.includes(startMarker) && html.includes(endMarker)) {
-    const re = new RegExp(`${startMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${endMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
-    next = html.replace(re, block);
-  } else {
-    next = html.replace('</main>', `${block}\n  </main>`);
+function stripGeneratedNationalDayBlock(html) {
+  return html.replace(/\n?\s*<!-- Europe national days generated: start -->[\s\S]*?<!-- Europe national days generated: end -->\n?/g, '\n');
+}
+
+function upsertNationalDayCardsIntoMonths(file, events) {
+  removeLegacyNationalDayCards(file);
+  let html = stripGeneratedNationalDayBlock(read(file));
+  for (const event of [...events].sort((a, b) => a.startDate.localeCompare(b.startDate))) {
+    const monthId = `m${event.startDate.slice(0, 7).replace('-', '')}`;
+    const card = cardHtml(event, '../categories/culture/national-day/events');
+    const re = new RegExp(`(<section class="month-section" id="${monthId}">[\\s\\S]*?<div class="events-grid">)([\\s\\S]*?)(\\n\\s*</div>\\s*</section>)`);
+    if (!re.test(html)) throw new Error(`Missing month section ${monthId} for ${event.eventSlug}`);
+    html = html.replace(re, `$1$2\n${card}$3`);
   }
-  write(file, next);
+  write(file, html);
 }
 
 function ensureCountryNames(file, events) {
@@ -317,7 +411,7 @@ function updateRegister(events) {
       category: 'culture',
       topic: 'national-day',
       notesFile: `docs/events/culture/national-day/${event.eventSlug}.md`,
-      location: { countries: [event.country], cities: event.city ? [event.city] : [], venue: event.country },
+      location: { countries: [event.country], cities: ['Nationwide'], venue: event.country },
       currentEdition: event.nextYear,
       startDate: event.startDate,
       endDate: event.startDate,
@@ -328,7 +422,7 @@ function updateRegister(events) {
       updateMode: 'event-update',
       priority: 'normal',
       lastChecked: STAMP,
-      sources: [{ label: 'OneSliders country page', url: `/content/locations/europe/${event.countrySlug}/` }],
+      sources: [{ label: 'OneSliders country page', url: `/content/locations/${event.continent || 'europe'}/${event.countrySlug}/` }],
       eventPageEN: `${EVENT_DIR}/${event.eventSlug}.html`,
     };
     if (bySlug.has(event.eventSlug)) registry.events[bySlug.get(event.eventSlug)] = { ...registry.events[bySlug.get(event.eventSlug)], ...record };
@@ -339,12 +433,12 @@ function updateRegister(events) {
 }
 
 function countryEventCard(event) {
-  return `<a class="visual-topic-card visual-topic-card--national" data-end="${event.startDate}" href="/${EVENT_DIR}/${event.eventSlug}.html#year-${event.nextYear}"><img src="/${IMG_DIR}/${event.eventSlug}-mini.png" alt="" loading="lazy"><strong>${esc(event.title)}</strong><span>${esc(displayDate(event.day, event.month, event.nextYear))} · ${esc(event.country)}</span></a>`;
+  return `<a class="visual-topic-card visual-topic-card--national" data-end="${event.startDate}" href="/${EVENT_DIR}/${event.eventSlug}.html"><img src="/${IMG_DIR}/${event.eventSlug}-mini.png" alt="" loading="lazy"><strong>${esc(event.title)}</strong><span>${esc(displayDate(event.day, event.month, event.nextYear))} Â· ${esc(event.country)}</span></a>`;
 }
 
 function updateCountryPages(events) {
   for (const event of events) {
-    const file = `content/locations/europe/${event.countrySlug}/index.html`;
+    const file = `content/locations/${event.continent || 'europe'}/${event.countrySlug}/index.html`;
     if (!fs.existsSync(path.join(ROOT, file))) continue;
     let html = read(file);
     const card = countryEventCard(event);
@@ -367,12 +461,12 @@ Internal reference notes for the OneSliders national-day event page.
 - English page: \`${EVENT_DIR}/${event.eventSlug}.html\`
 - Country: ${event.country}
 - Date: ${event.dateText}
-- Current edition: ${event.nextYear}
+- Displayed edition: ${event.nextYear}
 - Status: upcoming
 
 ## Source
 
-- OneSliders country page: \`/content/locations/europe/${event.countrySlug}/\`
+- OneSliders country page: \`/content/locations/${event.continent || 'europe'}/${event.countrySlug}/\`
 
 ## Update Notes
 
@@ -403,9 +497,10 @@ function collectEvents() {
       const candidate2026 = new Date(`${iso(2026, parts.month, parts.day)}T00:00:00Z`);
       const nextYear = candidate2026 < TODAY ? 2027 : 2026;
       const title = override.title || titleOverrides[countrySlug] || `${country} National Day`;
-      const eventSlug = countrySlug === 'norway' ? 'oslo-constitution-day' : slugify(title);
+      const eventSlug = countrySlug === 'norway' ? 'norwegian-constitution-day' : slugify(title);
       const city = override.city || extractCapital(page);
       return {
+        continent: 'europe',
         countrySlug,
         country,
         dateText,
@@ -416,14 +511,145 @@ function collectEvents() {
         title,
         eventSlug,
         city,
-        cityUrl: cityLink(countrySlug, city),
+        cityUrl: cityLink(countrySlug, city, 'europe'),
         reason: override.reason || reasonOverrides[countrySlug] || `a defining civic date in ${country}'s national calendar`,
       };
     })
     .filter(Boolean);
 }
 
-const events = collectEvents();
+function enrichNationalDayEvent(event) {
+  const next = { ...event };
+  next.continent = next.continent || 'europe';
+  next.cityUrl = next.cityUrl || cityLink(next.countrySlug, next.city || '', next.continent);
+  next.startDate = next.startDate || iso(next.nextYear, next.month, next.day);
+  if (next.countrySlug === 'norway') {
+    next.happens = 'Children parades, flags and local ceremonies';
+    next.happensNote = 'The national date is fixed; the route, timing and crowd pattern are decided locally.';
+    next.rhythmTitle = 'From breakfast to parade crowds';
+    next.rhythm = [
+      { time: 'Morning', label: 'Breakfasts, bunad, flags' },
+      { time: 'Late morning', label: 'Children parades' },
+      { time: 'Afternoon', label: 'Food, family visits, concerts' },
+      { time: 'Evening', label: 'Local gatherings' },
+    ];
+    next.foodTitle = 'What fills the day';
+    next.foodBars = [
+      { label: 'Ice cream', width: 96, note: 'very high' },
+      { label: 'Hot dogs', width: 88, note: 'classic' },
+      { label: 'Waffles', width: 70, note: 'common' },
+      { label: 'Cake breakfast', width: 62, note: 'families' },
+    ];
+    next.places = [
+      { name: 'Oslo', note: 'royal palace route, biggest crowds' },
+      { name: 'Stavanger', note: 'harbour, city-centre parade' },
+      { name: 'Bergen', note: 'centre parades and local bands' },
+    ];
+    next.stayCities = [
+      { name: 'Oslo', url: '/content/locations/europe/norway/oslo.html' },
+      { name: 'Bergen', url: '/content/locations/europe/norway/index.html' },
+      { name: 'Stavanger', url: '/content/locations/europe/norway/index.html' },
+      { name: 'Trondheim', url: '/content/locations/europe/norway/index.html' },
+    ];
+    next.anthem = {
+      title: 'Ja, vi elsker dette landet',
+      note: 'Words by Bjornstjerne Bjornson, melody by Rikard Nordraak. Often sung at school and civic gatherings on 17 May.',
+    };
+  }
+  return next;
+}
+
+function extraNationalDayEvents() {
+  return [
+    {
+      continent: 'south-america',
+      countrySlug: 'brazil',
+      country: 'Brazil',
+      dateText: '7 September',
+      day: 7,
+      month: 9,
+      nextYear: 2026,
+      title: 'Brazil Independence Day',
+      eventSlug: 'brazil-independence-day',
+      city: 'Brasilia',
+      cityUrl: '/content/locations/south-america/brazil/brasilia.html',
+      reason: 'Brazilian independence from Portugal in 1822',
+      places: [
+        { name: 'Brasilia', note: 'official capital programme and civic ceremonies' },
+        { name: 'Rio de Janeiro', note: 'large-city holiday crowds and public spaces' },
+        { name: 'Sao Paulo', note: 'urban holiday base with transport planning needed' },
+      ],
+      stayCities: [
+        { name: 'Brasilia', url: '/content/locations/south-america/brazil/brasilia.html' },
+        { name: 'Rio', url: '/content/locations/south-america/brazil/rio-de-janeiro.html' },
+        { name: 'Sao Paulo', url: '/content/locations/south-america/brazil/sao-paulo.html' },
+      ],
+    },
+    {
+      continent: 'south-america',
+      countrySlug: 'chile',
+      country: 'Chile',
+      dateText: '18 September',
+      day: 18,
+      month: 9,
+      nextYear: 2026,
+      title: 'Chile Fiestas Patrias',
+      eventSlug: 'chile-independence-day-and-fiestas-patrias',
+      city: 'Santiago',
+      cityUrl: '/content/locations/south-america/chile/santiago.html',
+      reason: 'Chile\'s first national government junta in 1810 and the wider Fiestas Patrias holiday',
+      places: [
+        { name: 'Santiago', note: 'largest urban base and civic holiday programme' },
+        { name: 'Fondas', note: 'traditional food, music and dancing venues' },
+        { name: 'Local towns', note: 'family gatherings and municipal celebrations' },
+      ],
+      stayCities: [
+        { name: 'Santiago', url: '/content/locations/south-america/chile/santiago.html' },
+      ],
+    },
+    {
+      continent: 'oceania',
+      countrySlug: 'fiji',
+      country: 'Fiji',
+      dateText: '10 October',
+      day: 10,
+      month: 10,
+      nextYear: 2026,
+      title: 'Fiji Day',
+      eventSlug: 'fiji-day',
+      city: 'Suva',
+      cityUrl: '/content/locations/oceania/fiji/suva.html',
+      reason: 'Fiji\'s independence in 1970',
+      places: [
+        { name: 'Suva', note: 'capital ceremonies and civic programme' },
+        { name: 'Nadi', note: 'visitor base; check local holiday services' },
+        { name: 'Resort areas', note: 'ask locally which ceremonies or cultural moments are open' },
+      ],
+      stayCities: [
+        { name: 'Suva', url: '/content/locations/oceania/fiji/suva.html' },
+        { name: 'Fiji', url: '/content/locations/oceania/fiji/index.html' },
+      ],
+    },
+  ];
+}
+
+function loadNationalDayData() {
+  const full = path.join(ROOT, DATA_FILE);
+  let data;
+  if (fs.existsSync(full)) {
+    data = JSON.parse(fs.readFileSync(full, 'utf8'));
+  } else {
+    data = collectEvents();
+  }
+  const seen = new Set(data.map(event => event.eventSlug));
+  for (const event of extraNationalDayEvents()) {
+    if (!seen.has(event.eventSlug)) data.push(event);
+  }
+  return data.map(enrichNationalDayEvent);
+}
+
+const events = loadNationalDayData();
+write(DATA_FILE, `${JSON.stringify(events, null, 2)}\n`);
 fs.mkdirSync(path.join(ROOT, IMG_DIR), { recursive: true });
 
 for (const event of events) {
@@ -431,19 +657,12 @@ for (const event of events) {
   writeNotes(event);
 }
 
-const contentCards = events.map(event => cardHtml(event, `../../${EVENT_DIR}`, `../../${IMG_DIR}`)).join('\n');
-const enCards = events.map(event => cardHtml(event, '../categories/culture/national-day/events')).join('\n');
-
-removeLegacyNationalDayCards('content/events/index.html');
-removeLegacyNationalDayCards('content/events/index.html');
-upsertGeneratedBlock('content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', contentCards);
-upsertGeneratedBlock('content/events/index.html', '    <!-- Europe national days generated: start -->', '    <!-- Europe national days generated: end -->', enCards);
-ensureCountryNames('content/events/index.html', events);
+upsertNationalDayCardsIntoMonths('content/events/index.html', events);
 ensureCountryNames('content/events/index.html', events);
 updateTopicPage(events);
 updateCountryPages(events);
 updateRegister(events);
 
-write('tmp/europe-national-days.json', `${JSON.stringify(events, null, 2)}\n`);
-console.log(`Generated ${events.length} European national-day events.`);
+write('tmp/national-days.json', `${JSON.stringify(events, null, 2)}\n`);
+console.log(`Generated ${events.length} national-day events.`);
 console.log(events.map(event => `${event.country}: ${event.title} (${event.startDate})`).join('\n'));

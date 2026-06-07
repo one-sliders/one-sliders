@@ -913,33 +913,21 @@
   function renderGolfTripModule(module) {
     if (!module) return '';
     var cards = (module.cards || []).map(function (card) {
-      return '<div class="edition-compact-card"><span>' + (card.label || 'Golf trip') + '</span><strong>' + card.title + '</strong>' +
+      return '<div class="edition-compact-card"><span>' + (card.label || module.cardLabel || 'Trip') + '</span><strong>' + card.title + '</strong>' +
         (card.detail ? '<p>' + card.detail + '</p>' : '') + '</div>';
     }).join('');
     var actions = (module.links || []).map(function (link) {
       return renderAffiliateLink(link, 'event-button--inline');
     }).join('');
-    return '<section class="commercial-module commercial-module--golf-trip" id="ryder-cup-2027-golf-trip">' +
-      '<div class="commercial-module__header"><span>Golf trip</span><strong>' + (module.title || 'Turn it into a golf trip') + '</strong></div>' +
+    return '<section class="commercial-module commercial-module--golf-trip">' +
+      '<div class="commercial-module__header"><span>' + (module.eyebrow || module.tabLabel || 'Trip') + '</span><strong>' + (module.title || 'Turn it into a trip') + '</strong></div>' +
       '<div class="edition-overview__cards edition-overview__cards--three">' + cards + '</div>' +
       (actions ? '<div class="actions-row">' + actions + '</div>' : '') +
     '</section>';
   }
 
   function renderLeadModule(module) {
-    if (!module) return '';
-    var options = (module.interests || []).map(function (interest) {
-      return '<option value="' + escapeAttribute(interest.toLowerCase().replace(/[^a-z0-9]+/g, '-')) + '">' + interest + '</option>';
-    }).join('');
-    return '<section class="commercial-module commercial-module--lead">' +
-      '<div class="commercial-module__header"><span>Updates</span><strong>' + (module.title || 'Get event updates') + '</strong></div>' +
-      '<form class="lead-form" data-event="lead_capture" data-lead-type="' + escapeAttribute(module.leadType || '') + '" data-campaign="' + escapeAttribute(module.campaign || '') + '">' +
-        '<label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>' +
-        '<label><span>Interest</span><select name="interest">' + options + '</select></label>' +
-        '<button class="event-button" type="submit">' + (module.cta || 'Send me updates') + '</button>' +
-      '</form>' +
-      '<p class="commercial-module__note">TODO: Connect this form to the approved lead-capture backend before collecting submissions.</p>' +
-    '</section>';
+    return '';
   }
 
   function renderFaqModule(items) {
@@ -981,10 +969,10 @@
 
   function renderHistoricalCurrentCta(edition) {
     if (!edition || !edition.currentCta) return '';
-    return '<div class="card card--current-guide"><span>Planning the next Ryder Cup?</span>' +
+    return '<div class="card card--current-overview"><span>Planning the next Ryder Cup?</span>' +
       '<strong>' + edition.currentCta.title + '</strong><p>' + edition.currentCta.detail + '</p>' +
       '<div class="actions-row"><a class="event-button event-button--inline" href="#year-' + escapeAttribute(edition.currentCta.year || '2027') + '" data-edition-tab-target="stay">' +
-      (edition.currentCta.cta || 'View current guide') + '</a></div></div>';
+      (edition.currentCta.cta || 'View current overview') + '</a></div></div>';
   }
 
   function compactFacts(items) {
@@ -1121,11 +1109,12 @@
           { label: 'Teams', value: country({ name: 'Europe', icon: '/assets/icons/europe-team.svg' }) + ' vs ' + country({ name: 'United States', url: '/content/locations/north-america/usa/index.html', flag: '/content/locations/north-america/usa/img/flag.svg' }) }
         ])
       : '';
+    var overviewStages = !isTeam ? renderStageTabs(data, edition) : '';
     var tabs = [
       { id: 'stay', label: 'Stay', html: renderHotelSearchModule(modules.hotel) + airportNote },
       { id: 'results', label: 'Results', html: resultsHtml },
-      { id: 'overview', label: 'Overview', html: overviewFacts + overviewTeam + renderCompactCountdown(edition) + renderFaqModule(modules.faq) },
-      { id: 'golf-trip', label: 'Golf trip', html: renderGolfTripModule(modules.golfTrip) },
+      { id: 'overview', label: 'Overview', html: overviewFacts + overviewTeam + renderCompactCountdown(edition) + overviewStages + renderFaqModule(modules.faq) },
+      { id: 'golf-trip', label: (modules.golfTrip && modules.golfTrip.tabLabel) || 'Golf trip', html: renderGolfTripModule(modules.golfTrip) },
       { id: 'updates', label: 'Updates', html: renderLeadModule(modules.lead) }
     ].filter(function (tab) { return tab.html && tab.html.trim(); });
     if (!tabs.some(function (tab) { return tab.id === defaultTab; })) defaultTab = tabs[0].id;
@@ -1138,6 +1127,7 @@
       '<div class="edition-tab-panels">' + tabs.map(renderRyderTabPanel).join('') + '</div></div>' +
       sourceCard(data);
     bindEditionTabs(target);
+    bindStageTabs(target);
   }
 
   function renderRyderHistoricalEdition(data, edition, target) {
@@ -1663,12 +1653,12 @@
       ? ''
       : (edition.countryFact ? fact('Country', edition.countryFact) : countryFact(editionCountries));
 
-    if (edition.stageTabs && edition.stageTabs.length) {
+    if (edition.stageTabs && edition.stageTabs.length && !edition.editionTabs) {
       renderEditionWithStages(data, edition, target);
       return;
     }
 
-    if (/\/categories\/sport\/golf\/events\//.test(location.pathname || '')) {
+    if (/\/categories\/sport\/golf\/events\//.test(location.pathname || '') || edition.editionTabs) {
       renderRyderTabs(data, edition, target);
       updateEditionIdentity(data, edition);
       // Left side stays static across year switches — no dynamic snapshot.
@@ -1761,6 +1751,7 @@
     var data = readJson('event-year-data');
     var carousel = document.querySelector('[data-carousel]');
     if (!data || !carousel) return;
+    if (data.templateMode === 'carousel') return;
     setEventTeamIcons(data);
 
     var editions = data.editions || [];
@@ -1777,51 +1768,117 @@
       heroSrcset = [400, 768, 1200].map(function (w) { return base + '-' + w + '.webp ' + w + 'w'; }).join(', ');
     }
     var introNode = document.querySelector('.event-slide[data-slide="general"] .event-lede');
-    var intro = introNode ? introNode.textContent : (data.eventName + ' event guide.');
+    var intro = introNode ? introNode.textContent : (data.eventName + ' event view.');
     var countriesList = edition.countries || [];
     var citiesList = edition.cities || [];
-    var questions = (edition.questions || []).slice(0, 6).map(question).join('');
+    var currentPath = (window.location && window.location.pathname ? window.location.pathname : '').toLowerCase();
+    var isNationalDay = data.eventType === 'national-day' || data.topic === 'national-day' || currentPath.indexOf('/national-day/') !== -1;
+    if (isNationalDay && (/compact visual event view/i.test(intro) || /event view\.$/i.test(intro))) intro = '';
+    var questionItems = edition.questions || [];
+    if (isNationalDay) {
+      questionItems = questionItems.filter(function (item) {
+        return !/^(date|public holiday)$/i.test(item && item.q ? item.q : '');
+      }).slice(0, 4);
+      if (data.slug === 'norwegian-constitution-day') {
+        var whereQuestion = questionItems.find(function (item) {
+          return /^where/i.test(item && item.q ? item.q : '');
+        });
+        questionItems = [
+          whereQuestion,
+          {
+            q: 'Transport',
+            a: 'Plan around parade routes',
+            detail: 'Central streets can close early, especially around children\'s parades. Pick your city, check the municipal route map and leave extra time for walking.'
+          }
+        ].filter(Boolean);
+      }
+    } else {
+      questionItems = questionItems.slice(0, 6);
+    }
+    var questions = questionItems.map(question).join('');
     var highlights = (edition.highlights || []).slice(0, 4).map(highlight).join('');
     var sources = (data.sources || []).map(function (source) {
       return '<a href="' + escapeAttribute(source.url) + '">' + escapeAttribute(source.label || source.url) + '</a>';
     }).join(' ');
+    var leftFacts = isNationalDay
+      ? fact('Date', (edition.dates || '').replace(/\s+\d{4}$/, '') || '') + countryFact(countriesList)
+      : fact('Edition', edition.year || data.defaultYear || 'TBC') +
+        countryFact(countriesList) +
+        fact('Main city', citiesList.map(city).join(' ') || 'TBC') +
+        fact('Dates', edition.dates || 'TBC');
+    var supportCards = isNationalDay
+      ? '<div class="card"><span>What happens</span><strong>Children parades, flags and local ceremonies</strong><p>The national date is fixed; the route, timing and crowd pattern are decided locally.</p></div>' +
+        '<div class="card"><span>Before you go</span><strong>Check the municipality programme</strong><p>Use the city programme for street closures, transport changes and public-holiday opening hours.</p></div>'
+      : '<div class="card"><span>Status</span><strong>' + escapeAttribute(edition.statusLabel || 'TBC') + '</strong><p>' + escapeAttribute(edition.countdownText || 'Check official event information before planning.') + '</p></div>' +
+        '<div class="card"><span>Venue</span><strong>' + escapeAttribute(edition.venue || 'TBC') + '</strong><p>' + escapeAttribute(edition.format || 'Event view') + '</p></div>';
+    var panelHeader = isNationalDay
+      ? '<div class="event-hero-copy"><p class="event-kicker">Planning</p><h2 class="event-section-title">17 May in practice</h2><p class="event-subtitle">Pick the city first, then check its route, timing, food stops and transport changes.</p></div>'
+      : '<div class="event-hero-copy"><p class="event-kicker">Planning</p><h2 class="event-section-title">Edition details</h2><p class="event-subtitle">Key dates, place and practical notes for this event.</p></div>';
+    var heroKicker = isNationalDay && data.slug === 'norwegian-constitution-day'
+      ? 'Norway · 17 May'
+      : 'Event view';
+    var panelFacts = isNationalDay
+      ? ''
+      : '<div class="facts-strip">' +
+          countryFact(countriesList) +
+          fact('City', citiesList.map(city).join(' ') || 'TBC') +
+          fact('Venue', edition.venue || 'TBC') +
+          fact('Dates', edition.dates || 'TBC') +
+          fact('Status', edition.statusLabel || 'TBC') +
+          fact('Format', edition.format || 'TBC') +
+        '</div>';
+    var countdownCard = isNationalDay
+      ? ''
+      : (edition.startDate ? '<div class="countdown" data-countdown="' + escapeAttribute(edition.startDate) + '" data-next-date="' + escapeAttribute(edition.nextDate || '') + '"><span>Event starts</span><strong>' + daysText(edition.startDate, edition.nextDate) + '</strong><p>' + escapeAttribute(edition.countdownText || '') + '</p></div>' : '<div class="countdown"><span>Countdown</span><strong>Date TBC</strong><p>' + escapeAttribute(edition.countdownText || 'Exact dates are TBC.') + '</p></div>');
+    var visualModules = '';
+    if (data.slug === 'norwegian-constitution-day') {
+      visualModules =
+        '<div class="national-day-visuals" aria-label="17 May visual guide">' +
+          '<div class="nd-panel nd-panel--wide"><span>Day rhythm</span><strong>From breakfast to parade crowds</strong><div class="nd-timeline">' +
+            '<div><time>Morning</time><b>Breakfasts, bunad, flags</b></div>' +
+            '<div><time>Late morning</time><b>Children parades</b></div>' +
+            '<div><time>Afternoon</time><b>Food, family visits, concerts</b></div>' +
+            '<div><time>Evening</time><b>Local gatherings</b></div>' +
+          '</div></div>' +
+          '<div class="nd-panel"><span>Food meter</span><strong>What fills the day</strong><div class="nd-bars">' +
+            '<p><b>Ice cream</b><i class="nd-w96"></i><em>very high</em></p>' +
+            '<p><b>Hot dogs</b><i class="nd-w88"></i><em>classic</em></p>' +
+            '<p><b>Waffles</b><i class="nd-w70"></i><em>common</em></p>' +
+            '<p><b>Cake breakfast</b><i class="nd-w62"></i><em>families</em></p>' +
+          '</div></div>' +
+          '<div class="nd-panel"><span>City feel</span><strong>Pick your scene</strong><table class="nd-table"><tbody>' +
+            '<tr><th>Oslo</th><td>royal palace route, biggest crowds</td></tr>' +
+            '<tr><th>Stavanger</th><td>harbour, city-centre parade</td></tr>' +
+            '<tr><th>Bergen</th><td>centre parades and local bands</td></tr>' +
+          '</tbody></table></div>' +
+          '<div class="nd-panel nd-panel--anthem"><span>National anthem</span><strong>Ja, vi elsker dette landet</strong><p>Words by Bjørnstjerne Bjørnson, melody by Rikard Nordraak. Often sung at school and civic gatherings on 17 May.</p><div class="nd-notes" aria-label="Anthem motif"><i></i><i></i><i></i><i></i><i></i></div></div>' +
+        '</div>';
+    }
 
     carousel.outerHTML =
       '<main class="event-onepage" data-non-sport-event-page>' +
         '<section class="event-onepage__hero" aria-label="' + escapeAttribute(data.eventName) + ' overview">' +
           (heroSrc ? '<img class="event-onepage__hero-image" src="' + escapeAttribute(heroSrc) + '"' + (heroSrcset ? ' srcset="' + heroSrcset + '" sizes="(max-width: 900px) 100vw, 60vw"' : '') + ' alt="' + escapeAttribute(heroAlt) + '" width="1200" height="630" fetchpriority="high">' : '') +
           '<div class="event-onepage__hero-copy">' +
-            '<p class="event-kicker">Event guide</p>' +
+            '<p class="event-kicker">' + heroKicker + '</p>' +
             '<h1 class="event-title">' + escapeAttribute(data.eventName || 'Event') + '</h1>' +
-            '<p class="event-lede">' + escapeAttribute(intro) + '</p>' +
+            (intro ? '<p class="event-lede">' + escapeAttribute(intro) + '</p>' : '') +
           '</div>' +
         '</section>' +
         '<section class="event-onepage__grid" aria-label="Event details">' +
           '<div class="event-onepage__left">' +
-            '<div class="facts-strip">' +
-              fact('Current edition', edition.year || data.defaultYear || 'TBC') +
-              countryFact(countriesList) +
-              fact('Main city', citiesList.map(city).join(' ') || 'TBC') +
-              fact('Dates', edition.dates || 'TBC') +
-            '</div>' +
+            '<div class="facts-strip">' + leftFacts + '</div>' +
             '<div class="card-grid">' +
-              '<div class="card"><span>Status</span><strong>' + escapeAttribute(edition.statusLabel || 'TBC') + '</strong><p>' + escapeAttribute(edition.countdownText || 'Check official event information before planning.') + '</p></div>' +
-              '<div class="card"><span>Venue</span><strong>' + escapeAttribute(edition.venue || 'TBC') + '</strong><p>' + escapeAttribute(edition.format || 'Event guide') + '</p></div>' +
+              supportCards +
             '</div>' +
             (highlights ? '<div class="card-grid card-grid--support">' + highlights + '</div>' : '') +
           '</div>' +
           '<div class="event-onepage__panel">' +
-            '<div class="event-hero-copy"><p class="event-kicker">Planning</p><h2 class="event-section-title">Current edition</h2><p class="event-subtitle">One current edition, without year tabs.</p></div>' +
+            panelHeader +
             '<div class="year-edition">' +
-              '<div class="facts-strip">' +
-                countryFact(countriesList) +
-                fact('City', citiesList.map(city).join(' ') || 'TBC') +
-                fact('Venue', edition.venue || 'TBC') +
-                fact('Dates', edition.dates || 'TBC') +
-                fact('Status', edition.statusLabel || 'TBC') +
-                fact('Format', edition.format || 'TBC') +
-              '</div>' +
-              (edition.startDate ? '<div class="countdown" data-countdown="' + escapeAttribute(edition.startDate) + '" data-next-date="' + escapeAttribute(edition.nextDate || '') + '"><span>Event starts</span><strong>' + daysText(edition.startDate, edition.nextDate) + '</strong><p>' + escapeAttribute(edition.countdownText || '') + '</p></div>' : '<div class="countdown"><span>Countdown</span><strong>Date TBC</strong><p>' + escapeAttribute(edition.countdownText || 'Exact dates are TBC.') + '</p></div>') +
+              panelFacts +
+              countdownCard +
+              visualModules +
               (questions ? '<div class="question-grid">' + questions + '</div>' : '') +
               '<div class="actions-row"><button class="event-button" type="button" data-calendar-download>Add to calendar</button><button class="event-button" type="button" data-save-event="' + escapeAttribute(data.slug || data.eventName || 'event') + '" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button></div>' +
             '</div>' +

@@ -4784,6 +4784,611 @@ html:has(body.event-page--framed) {
   gap: 8px;
 }
 
+.oscars-event-page .event-frame__panel {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.oscars-event-page .edition-tabs {
+  min-height: 0;
+}
+
+.oscars-event-page .edition-tab-panels {
+  display: grid;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.oscars-event-page .edition-tab-panel {
+  align-content: start;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+}
+
+.oscars-event-page .edition-tab-panel[hidden] {
+  display: none;
+}
+
+.oscars-event-page .year-button {
+  text-decoration: none;
+}
+
+.oscars-event-page .facts-strip {
+  gap: 8px;
+}
+
+.oscars-event-page .facts-strip .fact {
+  display: grid;
+  gap: 3px;
+  align-content: start;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid rgba(33, 78, 104, 0.12);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.oscars-event-page .facts-strip .fact span {
+  color: var(--event-muted);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.oscars-event-page .facts-strip .fact strong {
+  color: var(--event-ink);
+  font-size: 18px;
+  line-height: 1.05;
+}
+
+.oscars-years-nav {
+  margin-bottom: 2px;
+}
+
+.oscars-category-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  overflow: visible;
+  padding: 4px 2px 10px;
+}
+
+.oscars-category-pill {
+  flex: 1 1 118px;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  color: var(--event-ink);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(16, 24, 32, 0.04);
+  cursor: pointer;
+  text-align: center;
+}
+
+.oscars-category-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  color: currentColor;
+  opacity: 0.7;
+}
+
+.oscars-category-icon::before,
+.oscars-category-icon::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.oscars-category-icon--picture::before,
+.oscars-category-icon--documentary::before,
+.oscars-category-icon--short::before {
+  inset: 2px 1px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+}
+
+.oscars-category-icon--director::before {
+  left: 2px;
+  top: 3px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 10px solid currentColor;
+}
+
+.oscars-category-icon--acting::before {
+  top: 1px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.oscars-category-icon--acting::after {
+  left: 2px;
+  bottom: 1px;
+  width: 10px;
+  height: 6px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.oscars-category-icon--writing::before {
+  left: 2px;
+  top: 7px;
+  width: 12px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: rotate(-35deg);
+}
+
+.oscars-category-icon--camera::before {
+  inset: 4px 1px 2px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+}
+
+.oscars-category-icon--camera::after {
+  right: 3px;
+  top: 1px;
+  width: 5px;
+  height: 4px;
+  border-radius: 2px 2px 0 0;
+  background: currentColor;
+}
+
+.oscars-category-icon--editing::before {
+  inset: 2px;
+  background:
+    linear-gradient(currentColor, currentColor) 0 0 / 100% 3px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 6px / 100% 3px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 12px / 100% 3px no-repeat;
+}
+
+.oscars-category-icon--design::before,
+.oscars-category-icon--animation::before {
+  inset: 1px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  box-shadow: inset 5px 0 0 transparent;
+}
+
+.oscars-category-icon--costume::before {
+  left: 2px;
+  top: 5px;
+  width: 10px;
+  height: 7px;
+  border: 2px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.oscars-category-icon--makeup::before {
+  left: 6px;
+  top: 1px;
+  width: 4px;
+  height: 12px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: rotate(30deg);
+}
+
+.oscars-category-icon--music::before {
+  left: 7px;
+  top: 1px;
+  width: 3px;
+  height: 10px;
+  background: currentColor;
+}
+
+.oscars-category-icon--music::after {
+  left: 2px;
+  bottom: 1px;
+  width: 7px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.oscars-category-icon--sound::before {
+  left: 1px;
+  top: 4px;
+  width: 5px;
+  height: 6px;
+  background: currentColor;
+  clip-path: polygon(0 30%, 45% 30%, 100% 0, 100% 100%, 45% 70%, 0 70%);
+}
+
+.oscars-category-icon--sound::after {
+  right: 1px;
+  top: 2px;
+  width: 7px;
+  height: 10px;
+  border: 2px solid currentColor;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.oscars-category-icon--effects::before {
+  inset: 1px;
+  background:
+    radial-gradient(circle at 50% 50%, currentColor 0 2px, transparent 3px),
+    linear-gradient(currentColor, currentColor) 50% 0 / 2px 100% no-repeat,
+    linear-gradient(90deg, currentColor, currentColor) 0 50% / 100% 2px no-repeat;
+}
+
+.oscars-category-icon--world::before {
+  inset: 1px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.oscars-category-icon--world::after {
+  left: 6px;
+  top: 1px;
+  width: 2px;
+  height: 12px;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+.oscars-category-icon--casting::before {
+  inset: 2px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.oscars-category-icon--casting::after {
+  right: 0;
+  bottom: 0;
+  width: 5px;
+  height: 5px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.oscars-category-pill.is-active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--event-theme), var(--event-theme-2));
+}
+
+.oscars-category-pill.is-active .oscars-category-icon--casting::after {
+  background: var(--event-theme);
+}
+
+@media (max-width: 620px) {
+  .oscars-matrix-row {
+    grid-template-columns: 58px;
+  }
+
+  .oscars-category-pill {
+    flex-basis: 104px;
+  }
+}
+
+.oscars-decade-matrix {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.oscars-matrix-scroll {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.oscars-matrix-row {
+  display: grid;
+  grid-template-columns: 72px;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.oscars-matrix-row > * {
+  display: grid;
+  align-content: start;
+  min-height: 58px;
+  min-width: 0;
+  padding: 9px;
+  color: var(--event-muted);
+  font-size: 12px;
+  line-height: 1.25;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  background: #fff;
+  border: 1px solid rgba(33, 78, 104, 0.16);
+  border-radius: 8px;
+}
+
+.oscars-matrix-row > :first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  color: var(--event-theme);
+  font-weight: 900;
+  background: #fff9ea;
+}
+
+.oscars-matrix-row.is-target > *,
+.oscars-matrix-row > .is-target {
+  border-color: rgba(201, 154, 46, 0.72);
+  background: #fffaf0;
+}
+
+.oscars-matrix-row--head > * {
+  min-height: 40px;
+  color: var(--event-theme);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: rgba(100, 32, 50, 0.06);
+}
+
+.oscars-matrix-row b {
+  display: block;
+  color: var(--event-ink);
+  font-size: 13px;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .oscars-matrix-row {
+    grid-template-columns: 58px;
+  }
+}
+
+.oscars-matrix-row em {
+  display: block;
+  margin-top: 4px;
+  color: var(--event-muted);
+  font-style: normal;
+}
+
+.oscars-matrix-empty {
+  opacity: 0.55;
+}
+
+.oscars-stats-layout,
+.oscars-record-grid,
+.oscars-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.oscars-stats-layout {
+  align-items: start;
+}
+
+.oscars-visual-kpis {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.oscars-visual-kpis > div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px;
+  color: var(--event-ink);
+  border: 1px solid rgba(33, 78, 104, 0.14);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(100, 32, 50, 0.08), rgba(201, 154, 46, 0.16));
+}
+
+.oscars-visual-kpis span,
+.oscars-bar-row span,
+.oscars-winner-timeline span {
+  color: var(--event-muted);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.oscars-visual-kpis strong {
+  color: var(--event-ink);
+  font-size: 30px;
+  line-height: 0.95;
+}
+
+.oscars-visual-kpis em {
+  color: var(--event-muted);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.oscars-stat-card {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(33, 78, 104, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--event-ink);
+}
+
+.oscars-stat-card h3 {
+  margin: 0;
+  color: var(--event-ink);
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.oscars-stat-card ol {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.oscars-stat-card--chart {
+  gap: 10px;
+}
+
+.oscars-bar-chart {
+  display: grid;
+  gap: 8px;
+}
+
+.oscars-bar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 10px;
+  align-items: center;
+}
+
+.oscars-bar-row span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--event-ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: none;
+}
+
+.oscars-bar-row b {
+  color: var(--event-theme);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.oscars-bar-row i {
+  grid-column: 1 / -1;
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(16, 24, 32, 0.08);
+}
+
+.oscars-bar-row i::before {
+  content: "";
+  display: block;
+  width: var(--bar, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--event-theme), var(--event-theme-2));
+}
+
+.oscars-stat-card--timeline {
+  gap: 10px;
+}
+
+.oscars-winner-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.oscars-winner-timeline > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid rgba(33, 78, 104, 0.12);
+  border-radius: 8px;
+  background: #fffaf0;
+}
+
+.oscars-winner-timeline strong {
+  color: var(--event-ink);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.oscars-stat-card li,
+.oscars-record-grid span,
+.oscars-visit-grid span {
+  color: var(--event-muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.oscars-stat-card li strong,
+.oscars-record-grid strong,
+.oscars-visit-grid strong {
+  color: var(--event-ink);
+}
+
+.oscars-insight-card {
+  gap: 8px;
+}
+
+.oscars-mini-bars {
+  display: grid;
+  gap: 7px;
+}
+
+.oscars-mini-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  align-items: center;
+  color: var(--event-muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.oscars-mini-bar i {
+  grid-column: 1 / -1;
+  display: block;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(16, 24, 32, 0.08);
+}
+
+.oscars-mini-bar i::before {
+  content: "";
+  display: block;
+  width: var(--bar, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--event-theme), var(--event-theme-2));
+}
+
+.oscars-kpi-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.oscars-next-card p,
+.oscars-last-card p {
+  margin: 0;
+  color: var(--event-muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .facts-strip--compact {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
@@ -6256,6 +6861,358 @@ body.event-page--non-sport .event-onepage .topic-card {
   box-shadow: none;
 }
 
+body.event-page--non-sport .national-day-visuals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+body.event-page--non-sport .nd-panel {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 14px;
+  color: var(--event-ink);
+  background: #fff;
+  border: 1px solid var(--event-line);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(16, 24, 32, 0.07);
+}
+
+body.event-page--national-day .event-frame__media {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 1200 / 630;
+}
+
+body.event-page--national-day .event-frame__visual {
+  overflow: hidden;
+}
+
+body.event-page--national-day .event-frame__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.event-page--non-sport .nd-panel--wide {
+  grid-column: 1 / -1;
+}
+
+body.event-page--non-sport .nd-panel > span {
+  color: var(--event-muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.event-page--non-sport .nd-panel > strong {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.05;
+}
+
+body.event-page--non-sport .nd-panel p {
+  margin: 0;
+  color: var(--event-muted);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+body.event-page--non-sport .nd-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+body.event-page--non-sport .nd-timeline div {
+  display: grid;
+  gap: 5px;
+  min-height: 82px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(186, 12, 47, 0.1), rgba(0, 32, 91, 0.08));
+  border: 1px solid rgba(0, 32, 91, 0.14);
+  border-radius: 10px;
+}
+
+body.event-page--non-sport .nd-timeline time {
+  color: #ba0c2f;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body.event-page--non-sport .nd-timeline b,
+body.event-page--non-sport .nd-bars b,
+body.event-page--non-sport .nd-table th {
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+body.event-page--non-sport .nd-bars {
+  display: grid;
+  gap: 8px;
+}
+
+body.event-page--non-sport .nd-bars p {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr) 62px;
+  gap: 8px;
+  align-items: center;
+}
+
+body.event-page--non-sport .nd-bars i {
+  display: block;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e5eaf0;
+}
+
+body.event-page--non-sport .nd-bars i::before {
+  content: "";
+  display: block;
+  width: 64%;
+  height: 100%;
+  background: linear-gradient(90deg, #ba0c2f, #00205b);
+  border-radius: inherit;
+}
+
+body.event-page--non-sport .nd-bars .nd-w96::before { width: 96%; }
+body.event-page--non-sport .nd-bars .nd-w88::before { width: 88%; }
+body.event-page--non-sport .nd-bars .nd-w70::before { width: 70%; }
+body.event-page--non-sport .nd-bars .nd-w62::before { width: 62%; }
+body.event-page--non-sport .nd-bars .nd-w10::before { width: 10%; }
+body.event-page--non-sport .nd-bars .nd-w20::before { width: 20%; }
+body.event-page--non-sport .nd-bars .nd-w30::before { width: 30%; }
+body.event-page--non-sport .nd-bars .nd-w40::before { width: 40%; }
+body.event-page--non-sport .nd-bars .nd-w50::before { width: 50%; }
+body.event-page--non-sport .nd-bars .nd-w60::before { width: 60%; }
+body.event-page--non-sport .nd-bars .nd-w80::before { width: 80%; }
+body.event-page--non-sport .nd-bars .nd-w90::before { width: 90%; }
+body.event-page--non-sport .nd-bars .nd-w100::before { width: 100%; }
+
+body.event-page--non-sport .nd-bars em {
+  color: var(--event-muted);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: right;
+}
+
+body.event-page--non-sport .nd-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+body.event-page--non-sport .nd-table th,
+body.event-page--non-sport .nd-table td {
+  padding: 8px 0;
+  border-top: 1px solid var(--event-line);
+  color: var(--event-muted);
+  font-size: 13px;
+  line-height: 1.25;
+  text-align: left;
+  vertical-align: top;
+}
+
+body.event-page--non-sport .nd-table th {
+  width: 86px;
+  color: var(--event-ink);
+}
+
+body.event-page--non-sport .nd-notes {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  min-height: 40px;
+}
+
+body.event-page--non-sport .anthem-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+}
+
+body.event-page--non-sport .anthem-facts div {
+  min-width: 0;
+  padding: 7px 8px;
+  background: rgba(0, 32, 91, 0.05);
+  border: 1px solid rgba(0, 32, 91, 0.12);
+  border-radius: 8px;
+}
+
+body.event-page--non-sport .anthem-facts dt,
+body.event-page--non-sport .anthem-facts dd {
+  margin: 0;
+}
+
+body.event-page--non-sport .anthem-facts dt {
+  color: var(--event-muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body.event-page--non-sport .anthem-facts dd {
+  color: var(--event-ink);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+body.event-page--non-sport .nd-notes i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00205b;
+  box-shadow: 0 0 0 4px rgba(0, 32, 91, 0.09);
+}
+
+body.event-page--non-sport .nd-notes i:nth-child(2) { margin-bottom: 10px; background: #ba0c2f; }
+body.event-page--non-sport .nd-notes i:nth-child(3) { margin-bottom: 18px; }
+body.event-page--non-sport .nd-notes i:nth-child(4) { margin-bottom: 8px; background: #ba0c2f; }
+body.event-page--non-sport .nd-notes i:nth-child(5) { margin-bottom: 24px; }
+
+body.event-page--norway-national-day .event-onepage {
+  gap: 10px;
+  margin-top: calc(var(--event-nav-height, 52px) + 6px);
+  padding: 10px;
+}
+
+body.event-page--norway-national-day .event-onepage__hero-copy {
+  padding: 12px 14px;
+}
+
+body.event-page--norway-national-day .event-onepage__grid {
+  grid-template-columns: minmax(280px, 0.55fr) minmax(620px, 1.45fr);
+  gap: 10px;
+}
+
+body.event-page--norway-national-day .event-onepage__left,
+body.event-page--norway-national-day .event-onepage__panel {
+  gap: 9px;
+  padding: 12px;
+}
+
+body.event-page--norway-national-day .event-onepage .event-title {
+  font-size: clamp(32px, 3.2vw, 50px);
+}
+
+body.event-page--norway-national-day .event-onepage .event-section-title {
+  font-size: clamp(24px, 2.4vw, 36px);
+}
+
+body.event-page--norway-national-day .event-onepage .facts-strip,
+body.event-page--norway-national-day .event-onepage .card-grid,
+body.event-page--norway-national-day .event-onepage .question-grid,
+body.event-page--norway-national-day .national-day-visuals {
+  gap: 8px;
+}
+
+body.event-page--norway-national-day .national-day-visuals {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.event-page--norway-national-day .nd-panel--wide {
+  grid-column: auto;
+}
+
+body.event-page--norway-national-day .nd-panel--anthem {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+body.event-page--norway-national-day .nd-panel--anthem > span,
+body.event-page--norway-national-day .nd-panel--anthem > strong,
+body.event-page--norway-national-day .nd-panel--anthem > p {
+  grid-column: 1;
+}
+
+body.event-page--norway-national-day .nd-panel--anthem .nd-notes {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+body.event-page--norway-national-day .event-onepage .fact,
+body.event-page--norway-national-day .event-onepage .card,
+body.event-page--norway-national-day .event-onepage .question,
+body.event-page--norway-national-day .nd-panel {
+  padding: 11px;
+  border-radius: 12px;
+}
+
+body.event-page--norway-national-day .nd-panel {
+  gap: 7px;
+}
+
+body.event-page--norway-national-day .nd-panel > strong {
+  font-size: clamp(17px, 1.5vw, 21px);
+}
+
+body.event-page--norway-national-day .nd-panel p,
+body.event-page--norway-national-day .event-onepage .card p,
+body.event-page--norway-national-day .event-onepage .question p,
+body.event-page--norway-national-day .event-onepage .event-subtitle {
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+body.event-page--norway-national-day .nd-timeline div {
+  min-height: 68px;
+  padding: 8px;
+}
+
+body.event-page--norway-national-day .nd-timeline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.event-page--norway-national-day .nd-bars {
+  gap: 6px;
+}
+
+body.event-page--norway-national-day .stay-city-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+body.event-page--norway-national-day .stay-city-buttons a,
+body.event-page--norway-national-day .stay-city-buttons button {
+  min-width: 0;
+  padding: 8px 9px;
+  color: var(--event-ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(0, 32, 91, 0.22);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+body.event-page--norway-national-day .stay-city-buttons a:hover,
+body.event-page--norway-national-day .stay-city-buttons button:hover {
+  border-color: #ba0c2f;
+}
+
+@media (max-width: 760px) {
+  body.event-page--non-sport .national-day-visuals,
+  body.event-page--non-sport .nd-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Guard against sport carousel chrome inheriting oversized icon/button rules. */
 body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__prev,
 body.event-page:not(.event-page--framed):not(.event-page--non-sport) .event-carousel__next {
@@ -6299,4 +7256,8 @@ body.event-page--non-sport .event-onepage .year-edition {
   body.event-page--non-sport .event-onepage__grid {
     grid-template-columns: 1fr;
   }
+}
+
+body.event-page--framed.oscars-event-page .event-frame__copy .topic-card {
+  display: grid;
 }

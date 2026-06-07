@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 
 const root = typeof process === "undefined" ? nodeRepl.cwd : process.cwd();
@@ -115,7 +115,7 @@ replaceInFile("content/categories/music/song-contests/events/eurovision-song-con
   ["../content/locations/europe/netherlands/rotterdam.html", "../content/locations/europe/netherlands/index.html"],
 ]);
 
-replaceInFile("content/events/2026/05/oslo-constitution-day.html", [
+replaceInFile("content/events/2026/05/norwegian-constitution-day.html", [
   ["../../../index.html", "/content/events/index.html"],
   ["../../../../locations/", "/content/locations/"],
   ["../../../../categories/", "/content/categories/"],

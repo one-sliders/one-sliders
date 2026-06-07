@@ -1,4 +1,4 @@
-# add-reach-filter.ps1
+﻿# add-reach-filter.ps1
 # Adds data-reach attributes to all event cards + Reach filter row + location-aware JS
 
 $file = "C:\Users\AndersEriksson\3DF\OneSlider\content\events\index.html"
@@ -108,7 +108,7 @@ $reach = @{
   # National
   'state-of-origin'                 = 'national'
   'vivid-sydney'                    = 'national'
-  'oslo-constitution-day'           = 'national'
+  'norwegian-constitution-day'           = 'national'
   'oya-festival'                    = 'national'
   'calgary-stampede'                = 'national'
   'queenstown-winter-festival'      = 'national'

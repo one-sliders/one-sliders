@@ -70,7 +70,7 @@ function derivedDescription(html) {
   let text = [h1, intro].filter(Boolean).join(": ");
   if (text.length < 80) text = body;
   text = text.replace(/\s*\|\s*OneSliders\s*/gi, " ").trim();
-  return clip(text || "OneSliders visual guide.");
+  return clip(text || "OneSliders visual event view.");
 }
 
 let changed = 0;

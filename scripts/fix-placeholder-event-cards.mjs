@@ -94,7 +94,7 @@ function eventPage({ category, topic, title, slug, country }) {
       countries: [{ name: country.name, url: country.url, flag: country.flag }],
       cities: [{ name: country.city }],
       venue: 'Venue TBC',
-      format: `${topicLabel} event guide`,
+      format: `${topicLabel} event view`,
       result: year === 2027 ? '' : 'Final details TBC.',
       countdownText: 'Exact dates are TBC; check the official organiser before travel.',
       calendarDescription: `${title} ${year}.`,
@@ -117,12 +117,12 @@ function eventPage({ category, topic, title, slug, country }) {
   <script defer src="/assets/js/events.js"></script>
   <link rel="preload" as="image" href="${imgPath}-hero.png">
   <link rel="canonical" href="https://one-sliders.com${topicPath}/events/${slug}.html">
-  <meta name="description" content="${esc(title)} 2027 guide: dates, venue, programme and travel context for ${categoryLabel} / ${topicLabel}.">
-  <meta property="og:title" content="${esc(title)} 2027 - Dates, Schedule &amp; Guide">
+  <meta name="description" content="${esc(title)} 2027 overview: dates, venue, programme and travel context for ${categoryLabel} / ${topicLabel}.">
+  <meta property="og:title" content="${esc(title)} 2027 - Dates, Schedule &amp; Results">
   <meta property="og:image" content="https://one-sliders.com${imgPath}-hero.png">
   <meta property="og:url" content="https://one-sliders.com${topicPath}/events/${slug}.html">
   <meta name="twitter:card" content="summary_large_image">
-  <title>${esc(title)} 2027 - Dates, Schedule &amp; Guide</title>
+  <title>${esc(title)} 2027 - Dates, Schedule &amp; Results</title>
   <script type="application/json" id="event-year-data">${JSON.stringify(yearData)}</script>
 </head>
 <body class="event-page">
@@ -137,16 +137,16 @@ function eventPage({ category, topic, title, slug, country }) {
       <section class="event-slide event-slide--hero" id="general" data-slide="general">
         <img class="event-hero__image" src="${imgPath}-hero.png" alt="${esc(title)} hero image" width="1200" height="630" fetchpriority="high">
         <div class="event-slide__content">
-          <div class="event-hero-copy"><p class="event-kicker">${categoryLabel} / ${topicLabel}</p><h1 class="event-title">${esc(title)}</h1><p class="event-lede">${esc(title)} is tracked as a ${topicLabel.toLowerCase()} event with one evergreen page and one edition guide.</p></div>
+          <div class="event-hero-copy"><p class="event-kicker">${categoryLabel} / ${topicLabel}</p><h1 class="event-title">${esc(title)}</h1><p class="event-lede">${esc(title)} is tracked as a ${topicLabel.toLowerCase()} event with one evergreen page and one edition view.</p></div>
           <div class="facts-strip hero-control"><div class="fact"><span>Frequency</span><strong>Recurring</strong></div><div class="fact"><span>Current edition</span><strong>2027</strong></div><div class="fact"><span>Main city</span><strong>${esc(country.city)}</strong></div><div class="fact"><span>Country</span><strong>${countryChip(country)}</strong></div></div>
-          <div class="card-grid"><a class="topic-card topic-card--inline" href="${topicPath}.html"><img src="${imgPath}-mini.png" alt="${esc(title)} thumbnail" width="400" height="300" loading="lazy"><span>More ${topicLabel}</span><strong>Back to ${topicLabel}</strong><p>Explore related event guides in this topic.</p></a><div class="card"><span>History</span><strong>Why people follow it</strong><p>This guide is prepared as a watchlist page. Replace TBC fields with verified organiser details as the edition opens.</p></div><div class="card"><span>Format / rules</span><strong>Edition details can change</strong><p>The year slide keeps date, venue and programme updates together without creating separate URLs.</p></div></div>
+          <div class="card-grid"><a class="topic-card topic-card--inline" href="${topicPath}.html"><img src="${imgPath}-mini.png" alt="${esc(title)} thumbnail" width="400" height="300" loading="lazy"><span>More ${topicLabel}</span><strong>Back to ${topicLabel}</strong><p>Explore related event views in this topic.</p></a><div class="card"><span>History</span><strong>Why people follow it</strong><p>This overview is prepared as a watchlist page. Replace TBC fields with verified organiser details as the edition opens.</p></div><div class="card"><span>Format / rules</span><strong>Edition details can change</strong><p>The year slide keeps date, venue and programme updates together without creating separate URLs.</p></div></div>
           <div class="card-grid card-grid--support"><div class="card"><span>Records</span><strong>Records TBC</strong><p>Add verified records only when a reliable source is available.</p></div><div class="card"><span>Notable moments</span><ul class="event-list"><li>Host context: ${countryChip(country)}.</li><li>Current edition: 2027 planning page.</li><li>Last updated: ${LAST_UPDATED}.</li></ul></div></div>
           <div class="card card--editions"><span>Recent editions</span><table class="event-table"><thead><tr><th>Year</th><th>Host / place</th><th>Country</th></tr></thead><tbody>${editions}</tbody></table></div>
         </div>
       </section>
       <section class="event-slide" id="year" data-slide="year">
         <img class="event-hero__image" src="${imgPath}-hero.png" alt="${esc(title)} hero image" width="1200" height="630" loading="lazy">
-        <div class="event-slide__content"><div class="event-hero-copy"><p class="event-kicker">Edition guide</p><h2 class="event-section-title" data-year-heading>${esc(title)} 2027 in ${esc(country.city)}</h2><p class="event-subtitle">Switch between recent editions without leaving the page.</p></div><div class="year-switcher hero-control" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition><div class="facts-strip"><div class="fact"><span>Country</span><strong>${countryChip(country)}</strong></div><div class="fact"><span>City</span><strong>${esc(country.city)}</strong></div><div class="fact"><span>Venue</span><strong>TBC</strong></div><div class="fact"><span>Dates</span><strong>2027 date TBC</strong></div><div class="fact"><span>Status</span><strong>Watchlist</strong></div><div class="fact"><span>Format</span><strong>${topicLabel} guide</strong></div></div><div class="countdown"><span>Countdown</span><strong>Date TBC</strong><p>Exact dates are TBC; check the official organiser before travel.</p></div><div class="question-grid"><div class="question"><span>When is the event?</span><strong>2027 date TBC</strong><p>Update from the official organiser when confirmed.</p></div><div class="question"><span>Where is it held?</span><strong>${esc(country.city)}, ${countryChip(country)}</strong><p>Venue details are TBC.</p></div><div class="question"><span>How do I buy tickets?</span><strong>Use official channels</strong><p>Ticket windows and access conditions can change.</p></div><div class="question"><span>What is the programme?</span><strong>Programme TBC</strong><p>Add the official schedule when published.</p></div><div class="question"><span>What happened last edition?</span><strong>Archive TBC</strong><p>Add verified highlights when available.</p></div></div><div class="actions-row"><button class="event-button" type="button" data-calendar-download>Add to calendar</button><button class="event-button" type="button" data-save-event="${slug}" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button></div><p class="event-source">Sources: official organiser listing TBC. Last updated: ${LAST_UPDATED}.</p></div></div>
+        <div class="event-slide__content"><div class="event-hero-copy"><p class="event-kicker">Edition view</p><h2 class="event-section-title" data-year-heading>${esc(title)} 2027 in ${esc(country.city)}</h2><p class="event-subtitle">Switch between recent editions without leaving the page.</p></div><div class="year-switcher hero-control" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition><div class="facts-strip"><div class="fact"><span>Country</span><strong>${countryChip(country)}</strong></div><div class="fact"><span>City</span><strong>${esc(country.city)}</strong></div><div class="fact"><span>Venue</span><strong>TBC</strong></div><div class="fact"><span>Dates</span><strong>2027 date TBC</strong></div><div class="fact"><span>Status</span><strong>Watchlist</strong></div><div class="fact"><span>Format</span><strong>${topicLabel} overview</strong></div></div><div class="countdown"><span>Countdown</span><strong>Date TBC</strong><p>Exact dates are TBC; check the official organiser before travel.</p></div><div class="question-grid"><div class="question"><span>When is the event?</span><strong>2027 date TBC</strong><p>Update from the official organiser when confirmed.</p></div><div class="question"><span>Where is it held?</span><strong>${esc(country.city)}, ${countryChip(country)}</strong><p>Venue details are TBC.</p></div><div class="question"><span>How do I buy tickets?</span><strong>Use official channels</strong><p>Ticket windows and access conditions can change.</p></div><div class="question"><span>What is the programme?</span><strong>Programme TBC</strong><p>Add the official schedule when published.</p></div><div class="question"><span>What happened last edition?</span><strong>Archive TBC</strong><p>Add verified highlights when available.</p></div></div><div class="actions-row"><button class="event-button" type="button" data-calendar-download>Add to calendar</button><button class="event-button" type="button" data-save-event="${slug}" data-save-label="Save / remind me" data-saved-label="Saved">Save / remind me</button></div><p class="event-source">Sources: official organiser listing TBC. Last updated: ${LAST_UPDATED}.</p></div></div>
       </section>
     </div>
     <button class="event-carousel__prev" type="button" data-carousel-prev aria-label="Previous slide">Previous</button><button class="event-carousel__next" type="button" data-carousel-next aria-label="Next slide">Next</button><nav class="event-carousel__dots" data-carousel-dots aria-label="Slide navigation"></nav>
@@ -200,9 +200,9 @@ for (const link of existingLinks) {
       img: link.img,
       meta: link.meta,
       title: link.title,
-      description: 'Open the event guide'
+      description: 'Open the event view'
     })
   );
 }
 
-console.log(`Created or confirmed ${events.length} watchlist event pages and linked ${existingLinks.length} existing event cards.`);
+console.log(`Created or confirmed ${events.length} watchlist event views and linked ${existingLinks.length} existing event cards.`);

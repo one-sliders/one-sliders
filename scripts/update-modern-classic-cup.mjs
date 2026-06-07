@@ -176,9 +176,9 @@ replaceJson('event-part-data', (data) => {
 });
 
 html = html
-  .replace('content="Modern Classic Cup sauna event guide with dates, place, programme and visitor planning."', 'content="Modern Classic Cup guide: what Classic Aufguss is, how the competition works, and how to plan the 2026 Farris Bad event in Larvik."')
+  .replace('content="Modern Classic Cup sauna event view with dates, place, programme and visitor planning."', 'content="Modern Classic Cup overview: what Classic Aufguss is, how the competition works, and how to plan the 2026 Farris Bad event in Larvik."')
   .replace('International Aufguss competition focused on a modern classic format.', 'Modern Classic Cup is a Classic Aufguss competition: sauna masters turn heat, scent, steam, towel technique and music into a judged sauna ritual.')
-  .replace('Modern Classic Cup connects sauna ritual with hospitality, design, recovery, cold water and community bathing.', 'Modern Classic Cup is useful because it explains modern sauna culture from the inside: not just sitting in heat, but how a skilled sauna master guides scent, steam, temperature and atmosphere.')
+  .replace('Modern Classic Cup connects sauna ritual with hospitality, design, recovery, cold water and community bathing.', 'Modern Classic Cup is useful because it explains modern sauna culture from the inside: not just sitting in heat, but how a skilled sauna master pages scent, steam, temperature and atmosphere.')
   .replace('Expect a mix of talks, sauna sessions, demonstrations, networking or local bathing routes depending on the event.', 'Expect scheduled Aufguss routines, judging, finalist sessions and spa access planning. The important thing is capacity: each performance happens inside an actual sauna room.')
   .replace('Where official 2026 data is not yet published, this page keeps the event useful but labels details as TBC.', 'Official listings place the 2026 final at Farris Bad, 1-4 October. Check the organizer before booking because session access and spa entry can be separate.')
   .replace('Core visitor value: sauna sessions, local etiquette and bathing culture.', 'Core visitor value: seeing how scent, heat and towel technique become a structured sauna performance.')

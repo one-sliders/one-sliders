@@ -218,7 +218,7 @@ function makeTitle(record, existingTitles) {
       } else if (record.rel.startsWith("en/")) {
         name = compactName(`English ${name}`, 34);
       } else {
-        name = compactName(`${name} Guide`, 34);
+        name = compactName(`${name} Overview`, 34);
       }
       title = `${name} Events ${year} — Schedule & Calendar`;
     }
@@ -247,11 +247,11 @@ function makeDescription(record, existingDescriptions) {
   const context = record.context || "OneSliders";
   let description;
   if (record.type === "event") {
-    description = `${record.name} ${record.year}: dates, schedule, results, venue and winner updates in a quick OneSliders guide for ${context}.`;
+    description = `${record.name} ${record.year}: dates, schedule, results, venue and winner updates in a quick OneSliders overview for ${context}.`;
   } else if (record.type === "category") {
-    description = `${record.name} events calendar for ${year}: key dates, schedules and linked guides across ${context} on OneSliders.`;
+    description = `${record.name} events calendar for ${year}: key dates, schedules and linked pages across ${context} on OneSliders.`;
   } else {
-    description = `Find sports events in ${record.name} in ${year}: calendars, nearby guides and linked event pages for planning around ${context}.`;
+    description = `Find sports events in ${record.name} in ${year}: calendars, nearby pages and linked event views for planning around ${context}.`;
   }
   description = truncateWords(description.replace(/\s+/g, " "));
   let suffix = 2;

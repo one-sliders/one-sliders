@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 
 function contentPath(language, type, year, month, slug) {
@@ -7,48 +7,48 @@ function contentPath(language, type, year, month, slug) {
 
 const registry = [
   {
-    content_id: 'oslo-constitution-day-2026',
+    content_id: 'norwegian-constitution-day-2026',
     language: 'en',
-    slug: 'oslo-constitution-day',
+    slug: 'norwegian-constitution-day',
     title: 'Norway Constitution Day in Oslo 2026',
     meta_description: "Norway Constitution Day is celebrated across the country on 17 May. This OneSliders page focuses on the Oslo celebration, with the children's parade, flags and ceremonies in the capital.",
-    path: contentPath('en', 'events', '2026', '05', 'oslo-constitution-day'),
+    path: contentPath('en', 'events', '2026', '05', 'norwegian-constitution-day'),
     translation_status: 'published'
   },
   {
-    content_id: 'oslo-constitution-day-2026',
+    content_id: 'norwegian-constitution-day-2026',
     language: 'no',
-    slug: 'oslo-constitution-day',
+    slug: 'norwegian-constitution-day',
     title: '17. mai i Oslo 2026',
     meta_description: '17. mai feires over hele Norge. Denne OneSliders-siden fokuserer p\u00e5 feiringen i Oslo, med barnetog, flagg, musikk og seremonier i hovedstaden.',
-    path: contentPath('no', 'events', '2026', '05', 'oslo-constitution-day'),
+    path: contentPath('no', 'events', '2026', '05', 'norwegian-constitution-day'),
     translation_status: 'published'
   },
   {
-    content_id: 'oslo-constitution-day-2026',
+    content_id: 'norwegian-constitution-day-2026',
     language: 'ru',
-    slug: 'oslo-constitution-day',
+    slug: 'norwegian-constitution-day',
     title: '\u0414\u0435\u043d\u044c \u041a\u043e\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u0438 \u041d\u043e\u0440\u0432\u0435\u0433\u0438\u0438 \u0432 \u041e\u0441\u043b\u043e 2026',
     meta_description: '\u0414\u0435\u043d\u044c \u041a\u043e\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u0438 \u041d\u043e\u0440\u0432\u0435\u0433\u0438\u0438 \u043e\u0442\u043c\u0435\u0447\u0430\u044e\u0442 \u043f\u043e \u0432\u0441\u0435\u0439 \u0441\u0442\u0440\u0430\u043d\u0435 17 \u043c\u0430\u044f. \u042d\u0442\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 OneSliders \u043f\u043e\u0441\u0432\u044f\u0449\u0435\u043d\u0430 \u043f\u0440\u0430\u0437\u0434\u043d\u043e\u0432\u0430\u043d\u0438\u044e \u0432 \u041e\u0441\u043b\u043e: \u0434\u0435\u0442\u0441\u043a\u043e\u043c\u0443 \u043f\u0430\u0440\u0430\u0434\u0443, \u0444\u043b\u0430\u0433\u0430\u043c \u0438 \u0446\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u044f\u043c \u0432 \u0441\u0442\u043e\u043b\u0438\u0446\u0435.',
-    path: contentPath('ru', 'events', '2026', '05', 'oslo-constitution-day'),
+    path: contentPath('ru', 'events', '2026', '05', 'norwegian-constitution-day'),
     translation_status: 'published'
   },
   {
-    content_id: 'oslo-constitution-day-2026',
+    content_id: 'norwegian-constitution-day-2026',
     language: 'de',
-    slug: 'oslo-constitution-day',
+    slug: 'norwegian-constitution-day',
     title: 'Norwegens Verfassungstag in Oslo 2026',
     meta_description: 'Norwegens Verfassungstag wird am 17. Mai im ganzen Land gefeiert. Diese OneSliders-Seite konzentriert sich auf die Feier in Oslo mit Kinderumzug, Flaggen und Zeremonien in der Hauptstadt.',
-    path: contentPath('de', 'events', '2026', '05', 'oslo-constitution-day'),
+    path: contentPath('de', 'events', '2026', '05', 'norwegian-constitution-day'),
     translation_status: 'published'
   },
   {
-    content_id: 'oslo-constitution-day-2026',
+    content_id: 'norwegian-constitution-day-2026',
     language: 'fr',
-    slug: 'oslo-constitution-day',
+    slug: 'norwegian-constitution-day',
     title: 'F\u00eate de la Constitution norv\u00e9gienne \u00e0 Oslo 2026',
     meta_description: 'La f\u00eate de la Constitution norv\u00e9gienne est c\u00e9l\u00e9br\u00e9e dans tout le pays le 17 mai. Cette page OneSliders se concentre sur la c\u00e9l\u00e9bration \u00e0 Oslo, avec le d\u00e9fil\u00e9 des enfants, les drapeaux et les c\u00e9r\u00e9monies dans la capitale.',
-    path: contentPath('fr', 'events', '2026', '05', 'oslo-constitution-day'),
+    path: contentPath('fr', 'events', '2026', '05', 'norwegian-constitution-day'),
     translation_status: 'published'
   }
 ];

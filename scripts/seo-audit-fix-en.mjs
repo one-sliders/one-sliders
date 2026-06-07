@@ -148,7 +148,7 @@ function normalizeDescription(text, fallbackTitle) {
 
   if (description.length < 50) {
     const base = fallbackTitle.replace(/\s*\|\s*OneSliders\s*$/i, "");
-    description = `${base} on OneSliders, with a concise visual guide, key facts and useful links for planning or browsing.`;
+    description = `${base} on OneSliders, with a concise visual event view, key facts and useful links for planning or browsing.`;
   }
 
   if (description.length > 160) {

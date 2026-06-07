@@ -55,4 +55,4 @@ for (const source of walk(sourceRoot)) {
   }
 }
 
-console.log(`Created ${created} RU event pages and copied ${copiedAssets} calendar files.`);
+console.log(`Created ${created} RU event views and copied ${copiedAssets} calendar files.`);

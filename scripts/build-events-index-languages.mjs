@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+﻿import fs from 'node:fs';
 import path from 'node:path';
 import { languages as languageCodes, languageNames, codeLabel } from './event-language-profiles.mjs';
 
@@ -14,7 +14,7 @@ function sitePath(language) {
 
 function relativeToRootAssets(html) {
   return html
-    .replace(/href="(?:\.\.\/\.\.\/en\/content\/events\/2026\/05\/oslo-constitution-day\.html|2026\/05\/oslo-constitution-day\.html)"(?= data-start="2026-05-17")/g, 'href="2026/05/oslo-constitution-day.html"')
+    .replace(/href="(?:\.\.\/\.\.\/en\/content\/events\/2026\/05\/norwegian-constitution-day\.html|2026\/05\/norwegian-constitution-day\.html)"(?= data-start="2026-05-17")/g, 'href="2026/05/norwegian-constitution-day.html"')
     .replace(/src="((?:2026|2027|2028|2030)\/[^"]+)"/g, 'src="../content/events/$1"')
     .replaceAll('../../assets/', '../../../assets/')
     .replaceAll('href="../events/index.html"', 'href="index.html"')
@@ -59,9 +59,9 @@ ${languages.map(([code, label]) => `      <a${code === language ? ' aria-current
   }
 
   const osloHref = localizedOsloEventLanguages.has(language)
-    ? '2026/05/oslo-constitution-day.html'
-    : '../content/events/2026/05/oslo-constitution-day.html';
-  updated = updated.replace(/href="2026\/05\/oslo-constitution-day\.html"(?= data-start="2026-05-17")/g, `href="${osloHref}"`);
+    ? '2026/05/norwegian-constitution-day.html'
+    : '../content/events/2026/05/norwegian-constitution-day.html';
+  updated = updated.replace(/href="2026\/05\/norwegian-constitution-day\.html"(?= data-start="2026-05-17")/g, `href="${osloHref}"`);
 
   return updated;
 }

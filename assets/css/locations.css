@@ -1919,7 +1919,8 @@ html:has(body.country-onepage) {
 .oscars-anchor-nav,
 .oscars-chip-carousel,
 .oscars-year-carousel,
-.oscars-category-tabs {
+.oscars-category-tabs,
+.oscars-tablist {
   display: flex;
   gap: 8px;
   min-width: 0;
@@ -1938,14 +1939,16 @@ html:has(body.country-onepage) {
 .oscars-anchor-nav::-webkit-scrollbar,
 .oscars-chip-carousel::-webkit-scrollbar,
 .oscars-year-carousel::-webkit-scrollbar,
-.oscars-category-tabs::-webkit-scrollbar {
+.oscars-category-tabs::-webkit-scrollbar,
+.oscars-tablist::-webkit-scrollbar {
   display: none;
 }
 
 .oscars-anchor-nav a,
 .oscars-chip-carousel button,
 .oscars-year-carousel button,
-.oscars-category-tabs button {
+.oscars-category-tabs button,
+.oscars-tablist label {
   flex: 0 0 auto;
   min-height: 36px;
   padding: 0 14px;
@@ -1956,6 +1959,8 @@ html:has(body.country-onepage) {
   border: 1px solid rgba(33, 78, 104, 0.14);
   border-radius: 999px;
   cursor: pointer;
+  display: grid;
+  place-items: center;
 }
 
 .oscars-anchor-nav a:hover,
@@ -1964,7 +1969,11 @@ html:has(body.country-onepage) {
 .oscars-category-tabs button:hover,
 .oscars-chip-carousel button.is-active,
 .oscars-year-carousel button.is-active,
-.oscars-category-tabs button.is-active {
+.oscars-category-tabs button.is-active,
+#oscars-tab-matrix:checked ~ .oscars-tablist label[for="oscars-tab-matrix"],
+#oscars-tab-top:checked ~ .oscars-tablist label[for="oscars-tab-top"],
+#oscars-tab-facts:checked ~ .oscars-tablist label[for="oscars-tab-facts"],
+#oscars-tab-visit:checked ~ .oscars-tablist label[for="oscars-tab-visit"] {
   color: #fff;
   background: var(--oscars-ink);
   border-color: var(--oscars-ink);
@@ -2005,7 +2014,8 @@ html:has(body.country-onepage) {
 
 .oscars-stat-grid,
 .oscars-record-grid,
-.oscars-stats-layout {
+.oscars-stats-layout,
+.oscars-visit-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
@@ -2013,6 +2023,7 @@ html:has(body.country-onepage) {
 
 .oscars-stat-grid div,
 .oscars-record-grid div,
+.oscars-visit-grid div,
 .oscars-stat-card,
 .oscars-winner-row {
   display: grid;
@@ -2027,7 +2038,8 @@ html:has(body.country-onepage) {
 .oscars-stat-grid span,
 .oscars-stat-card span,
 .oscars-winner-row span,
-.oscars-record-grid span {
+.oscars-record-grid span,
+.oscars-visit-grid span {
   color: var(--location-muted);
   font-size: 12px;
   line-height: 1.35;
@@ -2036,15 +2048,114 @@ html:has(body.country-onepage) {
 .oscars-stat-grid strong,
 .oscars-stat-card strong,
 .oscars-winner-row strong,
-.oscars-record-grid strong {
+.oscars-record-grid strong,
+.oscars-visit-grid strong {
   color: var(--location-ink);
   font-size: 17px;
   line-height: 1.12;
 }
 
+.oscars-tabs-shell {
+  display: grid;
+  gap: 10px;
+}
+
+.oscars-tab-input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.oscars-tab-panels {
+  min-width: 0;
+}
+
+.oscars-tab-panel {
+  display: none;
+}
+
+#oscars-tab-matrix:checked ~ .oscars-tab-panels [data-oscars-panel="matrix"],
+#oscars-tab-top:checked ~ .oscars-tab-panels [data-oscars-panel="top"],
+#oscars-tab-facts:checked ~ .oscars-tab-panels [data-oscars-panel="facts"],
+#oscars-tab-visit:checked ~ .oscars-tab-panels [data-oscars-panel="visit"] {
+  display: block;
+}
+
 .oscars-winner-list {
   display: grid;
   gap: 8px;
+}
+
+.oscars-decade-matrix {
+  margin-top: 10px;
+  min-width: 0;
+}
+
+.oscars-matrix-scroll {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.oscars-matrix-row {
+  display: grid;
+  gap: 6px;
+  min-width: max-content;
+}
+
+.oscars-matrix-row > * {
+  display: grid;
+  align-content: start;
+  min-height: 56px;
+  min-width: 0;
+  padding: 10px;
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.25;
+  background: #fff;
+  border: 1px solid var(--location-line);
+  border-radius: 12px;
+}
+
+.oscars-matrix-row > :first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  color: var(--oscars-wine);
+  font-weight: 900;
+  background: #fff9ea;
+}
+
+.oscars-matrix-row--head > * {
+  min-height: 42px;
+  color: var(--oscars-wine);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: rgba(100, 32, 50, 0.06);
+}
+
+.oscars-matrix-row b {
+  display: block;
+  color: var(--location-ink);
+  font-size: 13px;
+  line-height: 1.18;
+}
+
+.oscars-matrix-row em {
+  display: block;
+  margin-top: 4px;
+  color: var(--location-muted);
+  font-style: normal;
+}
+
+.oscars-matrix-empty {
+  opacity: 0.45;
 }
 
 .oscars-winner-row {
@@ -2104,6 +2215,7 @@ html:has(body.country-onepage) {
   .oscars-winner-row {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 560px) {

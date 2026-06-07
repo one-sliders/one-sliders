@@ -1,4 +1,4 @@
-# fix-event-dates.ps1
+﻿# fix-event-dates.ps1
 # Adds data-start + fixes vague card-meta dates on events/index.html
 
 $file = "C:\Users\AndersEriksson\3DF\OneSlider\content\events\index.html"
@@ -10,7 +10,7 @@ $events = @{
   'masters-tournament'                    = @('2026-04-09', '9-12 Apr 2026')
   # May 2026
   'pga-championship'                      = @('2026-05-14', '14-17 May 2026')
-  'oslo-constitution-day'                 = @('2026-05-17', '17 May 2026')
+  'norwegian-constitution-day'                 = @('2026-05-17', '17 May 2026')
   'cannes-film-festival'                  = @('2026-05-13', '13-23 May 2026')
   'eurovision-song-contest'               = @('2026-05-12', '12-16 May 2026')
   'canada-grand-prix'                     = @('2026-05-22', '22-24 May 2026')
@@ -132,7 +132,7 @@ foreach ($slug in $events.Keys) {
   $html = [regex]::Replace($html, $pattern, "`$1 data-start=""$start""")
   if ($html -ne $before) { $count++ }
 
-  # Fix card-meta date text — replace only vague dates (no 4-digit year in them)
+  # Fix card-meta date text â€” replace only vague dates (no 4-digit year in them)
   # Pattern: card containing this slug, then card-meta with vague date
   $metaPattern = '(href="[^"]*' + [regex]::Escape($slug) + '[^"]*"[^<]*(?:<[^>]+>[^<]*)*?<span class="card-meta">)[^<]+(</span>)'
   $html = [regex]::Replace($html, $metaPattern, {
@@ -140,8 +140,8 @@ foreach ($slug in $events.Keys) {
     $existing = [regex]::Match($m.Value, '<span class="card-meta">([^<]+)</span>').Groups[1].Value
     # Only replace if date portion looks vague (no 4-digit year)
     if ($existing -notmatch '\d{4}') {
-      $loc = [regex]::Match($existing, ' · (.+)$').Groups[1].Value
-      $m.Value -replace '<span class="card-meta">[^<]+</span>', "<span class=""card-meta"">$display · $loc</span>"
+      $loc = [regex]::Match($existing, ' Â· (.+)$').Groups[1].Value
+      $m.Value -replace '<span class="card-meta">[^<]+</span>', "<span class=""card-meta"">$display Â· $loc</span>"
     } else {
       $m.Value
     }
