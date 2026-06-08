@@ -4877,7 +4877,8 @@ html:has(body.event-page--framed) {
     overflow: visible;
   }
   /* Hide the header row (it's redundant when each row labels its own cells) */
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row--head { display: none; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row--head,
+  .awards-event-page .oscars-decade-matrix .awards-matrix-row--head { display: none !important; }
   /* Each row becomes a card */
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row {
     display: block;
@@ -4889,25 +4890,81 @@ html:has(body.event-page--framed) {
     background: rgba(255,255,255,.94);
     box-shadow: 0 4px 14px rgba(13,33,55,.06);
   }
-  /* Year header (JS renderer uses <strong>, static generator uses <b>) */
+  /* Year header (large, full-width, with separator line) */
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > b,
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > strong {
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > strong,
+  .awards-event-page .oscars-year-head > strong {
     display: block;
-    margin: -4px -4px 10px;
-    padding: 0 4px 8px;
+    margin: -4px -4px 12px;
+    padding: 0 4px 10px;
     border-bottom: 2px solid #0d2137;
     color: #0d2137;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 900;
     line-height: 1;
   }
-  /* Each category cell becomes a labeled row inside the card. Match BOTH the
-     Oscars JS-renderer (only data-awards-category-label) and the static
-     generator (data-awards-category-column). */
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-label],
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-label],
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-column],
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-column] {
+  .awards-event-page .oscars-year-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 10px;
+    margin: -4px -4px 10px;
+    padding: 0 4px 10px;
+    border-bottom: 2px solid #0d2137;
+  }
+  .awards-event-page .oscars-year-meta {
+    margin: 0;
+    color: #62717c;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  /* Big winner highlight */
+  .awards-event-page .oscars-year-highlight {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(13,33,55,.06), rgba(47,111,146,.05));
+    border: 1px solid rgba(13,33,55,.10);
+  }
+  .awards-event-page .oscars-year-highlight > span {
+    color: #62717c;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .awards-event-page .oscars-year-highlight > strong {
+    color: #0d2137;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .awards-event-page .oscars-year-highlight > em {
+    color: #2f6f92;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  /* Awards block (the wrapper around all category cells) */
+  .awards-event-page .oscars-year-awards {
+    display: block;
+  }
+  /* Each category cell becomes a labeled row inside the card. Match every flavor:
+     - JS-renderer cells in .oscars-year-awards (with category label attr)
+     - Direct cells in .oscars-matrix-row (with or without attrs)
+     - Plain <span> children of .oscars-matrix-row (the current live HTML — the
+       label comes from the head row's columns via nth-child mapping below). */
+  .awards-event-page .oscars-year-awards > div,
+  .awards-event-page .oscars-year-awards > span,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > div,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span {
     display: grid;
     grid-template-columns: minmax(90px, 0.42fr) minmax(0, 1fr);
     align-items: baseline;
@@ -4917,13 +4974,13 @@ html:has(body.event-page--framed) {
     font-size: 14px;
     line-height: 1.35;
   }
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div:last-child,
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span:last-child {
+  .awards-event-page .oscars-year-awards > :last-child,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > :last-child {
     border-bottom: 0;
   }
-  /* Category label: prefer the explicit label attr, fall back to the slug */
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-label]::before,
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-label]::before {
+  /* Category label: from data attr if present, otherwise positional fallback */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > [data-awards-category-label]::before,
+  .awards-event-page .oscars-year-awards > [data-awards-category-label]::before {
     content: attr(data-awards-category-label);
     color: #62717c;
     font-size: 11px;
@@ -4933,17 +4990,34 @@ html:has(body.event-page--framed) {
     white-space: normal;
     word-break: break-word;
   }
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-column]:not([data-awards-category-label])::before,
-  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-column]:not([data-awards-category-label])::before {
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > [data-awards-category-column]:not([data-awards-category-label])::before {
     content: attr(data-awards-category-column);
     color: #62717c;
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: .04em;
-    white-space: normal;
-    word-break: break-word;
   }
+  /* Positional fallback: read the label from the (hidden) head row's nth column.
+     The head row has structure: <span>Year</span><span>Film</span><span>Director</span>...
+     so the 2nd row cell maps to the 2nd head label, etc. */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:not([data-awards-category-label]):not([data-awards-category-column])::before {
+    content: 'Award';
+    color: #62717c;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  /* Use CSS counter to label spans by their position. Since we have a fixed
+     set of category names in the head row, we provide named contents via
+     :nth-child rules below for the common Oscars layout (Film/Director/Actor/Actress). */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(2):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Picture'; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(3):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Director'; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(4):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Actor'; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(5):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Actress'; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(6):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Supporting Actor'; }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:nth-child(7):not([data-awards-category-label]):not([data-awards-category-column])::before { content: 'Best Supporting Actress'; }
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row b {
     font-size: 15px;
     line-height: 1.25;

@@ -2206,10 +2206,33 @@
         '<span>Resultat</span>' + categories.map(function (category) { return '<span>' + esc(category) + '</span>'; }).join('') +
         '</div>';
       var body = years.map(function (year) {
+        var awards = awardsForYear(year);
         var byCategory = {};
-        awardsForYear(year).forEach(function (award) { byCategory[award.category] = award; });
-        return '<div class="oscars-matrix-row' + (Number(year.year) === Number(state.year) ? ' is-target' : '') + '" id="year-' + esc(year.year) + '">' +
-          '<strong>' + esc(year.year) + '</strong>' +
+        awards.forEach(function (award) { byCategory[award.category] = award; });
+        // "Big winner" highlight: the film with the most wins in this year.
+        // Real data only — if no clear lead, skip the highlight.
+        var filmTally = {};
+        awards.forEach(function (a) {
+          if (a.film) filmTally[a.film] = (filmTally[a.film] || 0) + 1;
+        });
+        var bigWinner = '';
+        var bigCount = 0;
+        Object.keys(filmTally).forEach(function (f) {
+          if (filmTally[f] > bigCount) { bigCount = filmTally[f]; bigWinner = f; }
+        });
+        var ceremonyLabel = year.ceremony
+          ? ordinal(year.ceremony) + ' ceremony'
+          : (awards.length ? awards.length + ' categories' : '');
+        var highlight = (bigWinner && bigCount > 1)
+          ? '<p class="oscars-year-highlight"><span>Big winner</span><strong>' + esc(bigWinner) + '</strong><em>' + bigCount + ' wins</em></p>'
+          : '';
+        var meta = ceremonyLabel
+          ? '<p class="oscars-year-meta">' + esc(ceremonyLabel) + '</p>'
+          : '';
+        return '<div class="oscars-matrix-row oscars-year-card' + (Number(year.year) === Number(state.year) ? ' is-target' : '') + '" id="year-' + esc(year.year) + '">' +
+          '<div class="oscars-year-head"><strong>' + esc(year.year) + '</strong>' + meta + '</div>' +
+          highlight +
+          '<div class="oscars-year-awards">' +
           categories.map(function (category) {
             var award = byCategory[category];
             var labelAttr = ' data-awards-category-label="' + esc(category) + '"';
@@ -2217,9 +2240,18 @@
             var detail = award.film && award.film !== award.winner ? '<em>' + esc(award.film) + '</em>' : '';
             return '<span' + labelAttr + '><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
           }).join('') +
+          '</div>' +
           '</div>';
       }).join('');
       els.decadeMatrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
+    }
+
+    function ordinal(n) {
+      n = Number(n);
+      if (!Number.isFinite(n)) return String(n);
+      var s = ['th', 'st', 'nd', 'rd'];
+      var v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
     }
 
     function renderAwardMatrix() {
