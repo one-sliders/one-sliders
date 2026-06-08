@@ -2212,9 +2212,10 @@
           '<strong>' + esc(year.year) + '</strong>' +
           categories.map(function (category) {
             var award = byCategory[category];
-            if (!award) return '<span class="oscars-matrix-empty">TBC</span>';
+            var labelAttr = ' data-awards-category-label="' + esc(category) + '"';
+            if (!award) return '<span class="oscars-matrix-empty"' + labelAttr + '>TBC</span>';
             var detail = award.film && award.film !== award.winner ? '<em>' + esc(award.film) + '</em>' : '';
-            return '<span><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
+            return '<span' + labelAttr + '><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
           }).join('') +
           '</div>';
       }).join('');

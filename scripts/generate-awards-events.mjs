@@ -848,7 +848,7 @@ function historyPanel(event) {
       <div class="oscars-matrix-row oscars-matrix-row--head awards-matrix-row awards-matrix-row--${matrix.categories.length}">
         <strong>&Aring;R</strong>${matrix.categories.map((category) => `<strong data-awards-category-column="${esc(category.key)}">${esc(category.label)}</strong>`).join('')}
       </div>
-      ${matrix.rows.map((row) => `<div class="oscars-matrix-row awards-matrix-row awards-matrix-row--${matrix.categories.length}"><b>${esc(row.year)}</b>${matrix.categories.map((category) => winnerCell(row.values[category.key], category.key)).join('')}</div>`).join('')}
+      ${matrix.rows.map((row) => `<div class="oscars-matrix-row awards-matrix-row awards-matrix-row--${matrix.categories.length}"><b>${esc(row.year)}</b>${matrix.categories.map((category) => winnerCell(row.values[category.key], category.key, category.label)).join('')}</div>`).join('')}
     </div>
   </div>`;
 }
@@ -944,14 +944,15 @@ function deriveArchiveRows(event, categories) {
   return rows;
 }
 
-function winnerCell(value, categoryKey) {
+function winnerCell(value, categoryKey, categoryLabel) {
+  const labelAttr = categoryLabel ? ` data-awards-category-label="${esc(categoryLabel)}"` : '';
   value = cleanAwardText(value);
-  if (!value) return `<span class="oscars-matrix-empty" data-awards-category-column="${esc(categoryKey)}">TBC</span>`;
-  if (value === 'TBC' || value === 'Not held yet' || value === 'Not awarded' || value === 'Current edition') return `<span class="oscars-matrix-empty" data-awards-category-column="${esc(categoryKey)}">${esc(value)}</span>`;
+  if (!value) return `<span class="oscars-matrix-empty" data-awards-category-column="${esc(categoryKey)}"${labelAttr}>TBC</span>`;
+  if (value === 'TBC' || value === 'Not held yet' || value === 'Not awarded' || value === 'Current edition') return `<span class="oscars-matrix-empty" data-awards-category-column="${esc(categoryKey)}"${labelAttr}>${esc(value)}</span>`;
   const parts = String(value).split(', ');
   const title = parts[0] || value;
   const subtitle = parts.slice(1).join(', ');
-  return `<div data-awards-category-column="${esc(categoryKey)}"><b>${esc(title)}</b>${subtitle ? `<em>${esc(subtitle)}</em>` : ''}</div>`;
+  return `<div data-awards-category-column="${esc(categoryKey)}"${labelAttr}><b>${esc(title)}</b>${subtitle ? `<em>${esc(subtitle)}</em>` : ''}</div>`;
 }
 
 function cleanAwardText(value) {

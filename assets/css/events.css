@@ -4835,10 +4835,9 @@ html:has(body.event-page--framed) {
   text-transform: uppercase;
 }
 
-/* Mobile/small windows: reorder so the archive/tabs panel comes FIRST
-   (it's why people open the page), then the hero + intro copy below.
-   Otherwise users scroll through 800px+ of intro before seeing content
-   and feel stuck. */
+/* Mobile/small windows: keep natural order (hero + intro first, archive panel
+   below) and let everything flow. The fixed app-shell on awards collapsed the
+   archive panel to a few pixels on small viewports. */
 @media (max-width: 980px), (max-height: 760px) {
   .awards-event-page .event-frame {
     display: flex !important;
@@ -4846,8 +4845,6 @@ html:has(body.event-page--framed) {
     height: auto !important;
     min-height: 0;
   }
-  .awards-event-page .event-frame__panel { order: 1; }
-  .awards-event-page .event-frame__visual { order: 2; }
   .awards-event-page .event-frame__visual {
     display: block;
     height: auto;
@@ -4865,6 +4862,104 @@ html:has(body.event-page--framed) {
   .awards-event-page .event-frame__copy {
     height: auto;
     min-height: 0;
+  }
+  .awards-event-page .event-frame__panel {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  /* Convert the year-by-category MATRIX into stacked YEAR CARDS on mobile —
+     one card per year, all category winners listed inside, scroll vertically.
+     Much more readable than the horizontal multi-column cells. */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-scroll {
+    display: block;
+    overflow: visible;
+  }
+  /* Hide the header row (it's redundant when each row labels its own cells) */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row--head { display: none; }
+  /* Each row becomes a card */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row {
+    display: block;
+    grid-template-columns: none;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid rgba(13,33,55,.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 4px 14px rgba(13,33,55,.06);
+  }
+  /* Year header (JS renderer uses <strong>, static generator uses <b>) */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > b,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > strong {
+    display: block;
+    margin: -4px -4px 10px;
+    padding: 0 4px 8px;
+    border-bottom: 2px solid #0d2137;
+    color: #0d2137;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  /* Each category cell becomes a labeled row inside the card. Match BOTH the
+     Oscars JS-renderer (only data-awards-category-label) and the static
+     generator (data-awards-category-column). */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-label],
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-label],
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-column],
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-column] {
+    display: grid;
+    grid-template-columns: minmax(90px, 0.42fr) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 2px;
+    border-bottom: 1px solid rgba(13,33,55,.08);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div:last-child,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span:last-child {
+    border-bottom: 0;
+  }
+  /* Category label: prefer the explicit label attr, fall back to the slug */
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-label]::before,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-label]::before {
+    content: attr(data-awards-category-label);
+    color: #62717c;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > div[data-awards-category-column]:not([data-awards-category-label])::before,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > span[data-awards-category-column]:not([data-awards-category-label])::before {
+    content: attr(data-awards-category-column);
+    color: #62717c;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row b {
+    font-size: 15px;
+    line-height: 1.25;
+  }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row em {
+    display: block;
+    margin-top: 2px;
+    color: #62717c;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-empty {
+    color: #99a3ad;
+    font-size: 13px;
+    font-style: italic;
   }
 }
 
