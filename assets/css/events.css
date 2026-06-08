@@ -4890,14 +4890,18 @@ html:has(body.event-page--framed) {
     background: var(--os-surface);
     box-shadow: 0 4px 14px color-mix(in srgb, var(--os-navy) 6%, transparent);
   }
-  /* Year header (large, full-width, with separator line) */
+  /* Year header (large, full-width, with separator line) - override the
+     desktop "first-child" yellow background that lingers from the matrix
+     layout, and align with the central navy palette. */
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > b,
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > strong,
+  .awards-event-page .oscars-decade-matrix .oscars-matrix-row > :first-child,
   .awards-event-page .oscars-year-head > strong {
     display: block;
     margin: -4px -4px 12px;
     padding: 0 4px 10px;
     border-bottom: 2px solid var(--os-navy);
+    background: transparent !important;
     color: var(--os-navy);
     font-size: 32px;
     font-weight: 900;
