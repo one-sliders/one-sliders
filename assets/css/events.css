@@ -5185,6 +5185,21 @@ html:has(body.event-page--framed) {
   align-items: start;
 }
 
+.awards-single-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.awards-single-section {
+  display: grid;
+  gap: 10px;
+}
+
+.awards-single-section + .awards-single-section {
+  padding-top: 12px;
+  border-top: 1px solid rgba(33, 78, 104, 0.12);
+}
+
 .oscars-visual-kpis {
   grid-column: 1 / -1;
   display: grid;

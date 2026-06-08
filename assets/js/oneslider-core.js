@@ -2443,4 +2443,50 @@
     });
   });
 
+  OneSlider.register('awardsTemplateTabs', function () {
+    var roots = Array.prototype.slice.call(document.querySelectorAll('[data-awards-tabs]'));
+    if (!roots.length) return;
+
+    roots.forEach(function (root) {
+      function setTab(tab) {
+        root.querySelectorAll('[data-awards-tab]').forEach(function (button) {
+          var active = button.getAttribute('data-awards-tab') === tab;
+          button.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        root.querySelectorAll('[data-awards-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-awards-panel') !== tab;
+        });
+      }
+
+      function setCategory(category, active) {
+        var buttons = root.querySelectorAll('[data-awards-category-toggle="' + category + '"]');
+        buttons.forEach(function (button) {
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        root.querySelectorAll('[data-awards-category-column="' + category + '"]').forEach(function (cell) {
+          cell.hidden = !active;
+        });
+      }
+
+      root.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-awards-tab]');
+        if (button && root.contains(button)) {
+          event.preventDefault();
+          setTab(button.getAttribute('data-awards-tab') || 'history');
+          return;
+        }
+
+        var categoryButton = event.target.closest('[data-awards-category-toggle]');
+        if (!categoryButton || !root.contains(categoryButton)) return;
+        event.preventDefault();
+        var category = categoryButton.getAttribute('data-awards-category-toggle');
+        var activeButtons = root.querySelectorAll('[data-awards-category-toggle][aria-pressed="true"]');
+        var willBeActive = categoryButton.getAttribute('aria-pressed') !== 'true';
+        if (!willBeActive && activeButtons.length <= 1) return;
+        setCategory(category, willBeActive);
+      });
+    });
+  });
+
 })();  // end IIFE

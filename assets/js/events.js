@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   'use strict';
 
   var savedKey = 'os_saved_events_v1';
@@ -410,9 +410,9 @@
   function upcomingRows(matches, note) {
     var rows = (matches || []).map(function (match) {
       return '<span class="upcoming-match">' +
-        '<span class="upcoming-match__meta">' + (match.dateLabel || match.date || 'TBC') + ' Â· ' + (match.time || 'TBC') + '</span>' +
+        '<span class="upcoming-match__meta">' + (match.dateLabel || match.date || 'TBC') + ' · ' + (match.time || 'TBC') + '</span>' +
         '<span class="upcoming-match__teams">' + country(match.home) + '<span class="match-score">vs</span>' + country(match.away) + '</span>' +
-        '<span class="upcoming-match__place">' + (match.group || 'Group') + ' Â· ' + (match.venue || 'Venue TBC') + '</span>' +
+        '<span class="upcoming-match__place">' + (match.group || 'Group') + ' · ' + (match.venue || 'Venue TBC') + '</span>' +
       '</span>';
     }).join('');
     return '<span class="upcoming-list" aria-label="Upcoming matches">' + rows + '</span>' +

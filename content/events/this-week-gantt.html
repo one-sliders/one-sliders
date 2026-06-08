@@ -518,7 +518,6 @@
       if (event.key === 'ArrowLeft') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() - 7); location.href = weekHref(target); }
       if (event.key === 'ArrowRight') { event.preventDefault(); const target = new Date(weekStart); target.setDate(weekStart.getDate() + 7); location.href = weekHref(target); }
     });
-    const isLocalEventsPreview = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
     const currentDateCutoff = new Date();
     currentDateCutoff.setHours(0, 0, 0, 0);
     const isCurrentOrUpcomingEvent = event => {
@@ -530,7 +529,7 @@
     loadEvents().then(allEvents => {
       activeEvents = allEvents
         .filter(overlaps)
-        .filter(event => isLocalEventsPreview || isCurrentOrUpcomingEvent(event))
+        .filter(isCurrentOrUpcomingEvent)
         .sort((a,b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
       updateWeekNav();
       renderFilters();

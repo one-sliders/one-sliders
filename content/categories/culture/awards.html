@@ -1,112 +1,547 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
-  
   <link rel="preload" as="image" href="/content/categories/culture/awards/events/img/oscars-hero.png">
-<script defer src="../../../assets/js/oneslider-core.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="../../../assets/js/oneslider-core.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Awards: Awards brings together related events, pages and calendar moments inside Culture.">
+  <meta property="og:description" content="Awards brings together ceremonies, winners, nominees, records and awards-week planning across culture.">
   <meta property="og:title" content="Awards">
-  <meta name="description" content="Awards: Awards brings together related events, pages and calendar moments inside Culture.">
+  <meta name="description" content="Awards brings together ceremonies, winners, nominees, records and awards-week planning across culture.">
   <meta property="og:url" content="https://one-sliders.com/content/categories/culture/awards.html">
   <link rel="canonical" href="https://one-sliders.com/content/categories/culture/awards.html">
-    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-    <title>Awards</title><meta property="og:image" content="https://one-sliders.com/content/categories/culture/awards/events/img/oscars-hero.png"><meta name="content-language" content="en">
-    <style>
-      :root { --theme: #7d3c98; --accent: #e1b5f2; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
-      * { box-sizing: border-box; }
-      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
-      a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
-      .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
-      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
-      .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
-      .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
-      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: white; }
-      .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
-      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-      .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: white; }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: white; color: var(--muted); }
-      .carousel-button svg { width: 18px; height: 18px; display: block; }
-      .carousel { min-width: 0; overflow: hidden; }
-      .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
-      .carousel-track.event-grid { display: flex; grid-template-columns: none; gap: 8px; overflow-x: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
-      .carousel-track .event-card { flex: 0 0 calc((100% - 16px) / 3); scroll-snap-align: start; }
-      .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
-      .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
-      .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
-      .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-      .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
-      .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
-      .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
-      .site-footer p { margin: 0; }
-      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
-      @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
-    </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/culture/awards.html#webpage","url":"https://one-sliders.com/content/categories/culture/awards.html","name":"Awards","description":"Awards: Awards brings together related events, pages and calendar moments inside Culture.","inLanguage":"en","image":"https://one-sliders.com/content/categories/culture/awards/events/img/oscars-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Culture","item":"https://one-sliders.com/content/categories/culture/index.html"},{"@type":"ListItem","position":4,"name":"Awards","item":"https://one-sliders.com/content/categories/culture/awards.html"}]}]}</script>
+  <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../../../assets/icons/site.webmanifest">
+  <meta name="theme-color" content="#0d2137">
+  <title>Awards</title>
+  <meta property="og:image" content="https://one-sliders.com/content/categories/culture/awards/events/img/oscars-hero.png">
+  <meta name="content-language" content="en">
+  <style>
+    :root {
+      --theme: #0d2137;
+      --accent: #d9a441;
+      --accent-2: #72b7c9;
+      --ink: #101820;
+      --muted: #63707c;
+      --paper: #eef5f7;
+      --line: rgba(13,33,55,.13);
+      --surface: rgba(255,255,255,.88);
+      --type-film: #3c6f93;
+      --type-film-soft: #e1eef6;
+      --type-music: #7c5a93;
+      --type-music-soft: #eee5f4;
+      --type-tv: #4f8062;
+      --type-tv-soft: #e2f0e8;
+      --type-theatre: #a86b3a;
+      --type-theatre-soft: #f3e5d8;
+    }
+    * { box-sizing: border-box; }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(238,245,247,.96), rgba(238,245,247,.72)),
+        url("/content/categories/culture/awards/events/img/oscars-hero.png") center / cover no-repeat;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body.awards-onepage.os-has-ios-nav { padding-top: 0 !important; }
+    a { color: inherit; }
+    .top-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px clamp(14px,3vw,36px);
+      background: rgba(247,250,251,.92);
+      border-bottom: 1px solid rgba(13,33,55,.08);
+      backdrop-filter: blur(16px);
+    }
+    .top-menu a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #26313f;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .top-menu a:hover,
+    .top-menu a.active { background: var(--theme); color: white; }
+    .nav-icon {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #556170;
+      text-decoration: none;
+      transition: background .12s, color .12s;
+    }
+    .nav-icon svg { width: 22px; height: 22px; display: block; }
+    .nav-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--line);
+      flex: 0 0 auto;
+      align-self: center;
+    }
+    .awards-shell {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      align-items: stretch;
+      padding: 64px 26px 36px;
+      overflow: hidden;
+    }
+    .awards-brief {
+      display: grid;
+      grid-template-columns: minmax(360px, .56fr) minmax(650px, 1fr);
+      gap: 26px;
+      min-height: 0;
+      padding: 22px;
+      border: 1px solid rgba(13,33,55,.10);
+      border-radius: 26px;
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 18px 60px rgba(13,33,55,.16);
+      backdrop-filter: blur(18px);
+    }
+    .awards-brief__copy {
+      position: relative;
+      display: grid;
+      grid-template-rows: 246px auto 1fr;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .awards-hero-image {
+      min-height: 0;
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(13,33,55,.04), rgba(13,33,55,.12)),
+        url("/content/categories/culture/awards/events/img/golden-globe-awards-hero.png") center / cover no-repeat;
+      box-shadow: 0 12px 34px rgba(13,33,55,.18);
+    }
+    .hero-title {
+      margin: 24px 0 0;
+      font-size: clamp(64px,7vw,104px);
+      line-height: .82;
+      letter-spacing: 0;
+      color: #101820;
+    }
+    .topic-card {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      grid-template-rows: auto auto auto;
+      column-gap: 12px;
+      align-items: center;
+      width: min(100%, 414px);
+      margin-top: 0;
+      padding: 8px 11px 8px 8px;
+      border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      color: #101820;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(13,33,55,.08);
+      overflow: hidden;
+    }
+    .topic-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .topic-card img {
+      grid-row: 1 / 4;
+      width: 92px;
+      height: 62px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .topic-card span {
+      color: #8a641f;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .topic-card strong {
+      display: block;
+      color: #101820;
+      font-size: 17px;
+      line-height: 1.05;
+    }
+    .topic-card p {
+      margin: 2px 0 0;
+      color: #65717e;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+    .award-left-stack {
+      display: grid;
+      gap: 10px;
+      align-self: end;
+      min-height: 0;
+    }
+    .award-panel-card {
+      min-width: 0;
+      min-height: 0;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 12px 28px rgba(13,33,55,.08);
+      overflow: hidden;
+    }
+    .award-panel-card h2,
+    .award-panel-card h3 {
+      margin: 0 0 7px;
+      color: #101820;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .award-bars {
+      display: grid;
+      gap: 8px;
+    }
+    .award-bar-row {
+      display: grid;
+      grid-template-columns: minmax(74px, .45fr) minmax(0, 1fr) 24px;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--type-color, #101820);
+    }
+    .award-bar-row i {
+      position: relative;
+      height: 12px;
+      border-radius: 999px;
+      background: #e8eef1;
+      overflow: hidden;
+    }
+    .award-bar-row i::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--w);
+      border-radius: inherit;
+      background: var(--type-color, linear-gradient(90deg, var(--accent), var(--accent-2)));
+    }
+    .award-bar-row--film { --type-color: var(--type-film); }
+    .award-bar-row--music { --type-color: var(--type-music); }
+    .award-bar-row--tv { --type-color: var(--type-tv); }
+    .award-bar-row--theatre { --type-color: var(--type-theatre); }
+    .bar--10 { --w: 10%; }
+    .bar--12 { --w: 12%; }
+    .bar--24 { --w: 24%; }
+    .bar--30 { --w: 30%; }
+    .bar--40 { --w: 40%; }
+    .bar--50 { --w: 50%; }
+    .bar--72 { --w: 72%; }
+    .awards-brief__panel {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr);
+      min-width: 0;
+      min-height: 0;
+      padding: 18px;
+      border: 1px solid rgba(13,33,55,.10);
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.34);
+      overflow: hidden;
+    }
+    .award-dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: minmax(0, 1.15fr) minmax(0, .85fr) minmax(0, 1fr);
+      gap: 8px;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .season-grid {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      min-height: 0;
+    }
+    .months {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap: 6px;
+      min-height: 0;
+    }
+    .month {
+      display: grid;
+      align-content: space-between;
+      min-height: 50px;
+      padding: 8px 9px;
+      border-radius: 12px;
+      background: #f2f6f8;
+      color: #283241;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .month strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 24px;
+      color: #101820;
+    }
+    .month.is-hot {
+      background: #dfc779;
+      color: #101820;
+      border: 1px solid rgba(13,33,55,.10);
+    }
+    .month.is-hot strong { color: #101820; }
+    .event-grid {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      min-height: 0;
+    }
+    .event-card {
+      display: grid;
+      grid-template-rows: 44px 13px 16px;
+      min-width: 0;
+      min-height: 0;
+      padding: 0 10px 6px;
+      border-radius: 12px;
+      background: #101820;
+      color: white;
+      text-decoration: none;
+      overflow: hidden;
+    }
+    .event-card--film { background: var(--type-film); }
+    .event-card--music { background: var(--type-music); }
+    .event-card--tv { background: var(--type-tv); }
+    .event-card--theatre { background: var(--type-theatre); }
+    .event-card--film time { color: #c9e0ef; }
+    .event-card--music time { color: #e1cde9; }
+    .event-card--tv time { color: #c8e2d1; }
+    .event-card--theatre time { color: #ead2bb; }
+    .event-card img {
+      width: calc(100% + 20px);
+      height: 44px;
+      margin: 0 -10px 6px;
+      object-fit: cover;
+    }
+    .event-card time {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      color: #f9d777;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .event-card strong {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      margin-top: 3px;
+      font-size: 13px;
+      line-height: 1.05;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .records-grid {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      min-height: 0;
+    }
+    .records-grid .award-panel-card { padding: 8px 16px; }
+    .records-grid .award-panel-card h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    .record-list {
+      display: grid;
+      gap: 3px;
+      min-height: 0;
+    }
+    .record-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 86px 28px;
+      align-items: center;
+      gap: 10px;
+      min-height: 18px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--type-soft, #f2f6f8);
+      border: 1px solid color-mix(in srgb, var(--type-color, #0d2137) 18%, transparent);
+    }
+    .record-row span,
+    .record-row strong {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .record-row strong {
+      color: #101820;
+      font-size: 11px;
+      line-height: 1.05;
+    }
+    .record-row span {
+      color: #667381;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .record-row b {
+      color: var(--type-color, var(--theme));
+      font-size: 16px;
+      line-height: 1;
+    }
+    .record-row--film { --type-color: var(--type-film); --type-soft: var(--type-film-soft); }
+    .record-row--music { --type-color: var(--type-music); --type-soft: var(--type-music-soft); }
+    .record-row--theatre { --type-color: var(--type-theatre); --type-soft: var(--type-theatre-soft); }
+    .record-row--tv { --type-color: var(--type-tv); --type-soft: var(--type-tv-soft); }
+    .footer {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      padding: 8px 16px;
+      color: rgba(16,24,32,.66);
+      text-align: center;
+      font-size: 11px;
+    }
+    .footer a { color: inherit; }
+    @media (max-width: 1080px) {
+      .awards-brief { grid-template-columns: .78fr 1.22fr; }
+      .event-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .awards-shell { padding: 54px 12px 14px; }
+      .awards-brief { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+      .awards-brief__panel { display: none; }
+      .awards-brief__copy { grid-template-rows: 180px auto 1fr; }
+      .hero-title { font-size: clamp(58px,19vw,84px); }
+      .footer { display: none; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/culture/awards.html#webpage","url":"https://one-sliders.com/content/categories/culture/awards.html","name":"Awards","description":"Awards: a visual one-screen guide to major culture awards, seasons, ceremonies and linked event pages.","inLanguage":"en","image":"https://one-sliders.com/content/categories/culture/awards/events/img/oscars-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Culture","item":"https://one-sliders.com/content/categories/culture/index.html"},{"@type":"ListItem","position":4,"name":"Awards","item":"https://one-sliders.com/content/categories/culture/awards.html"}]}]}</script>
 </head>
-  <body>
-    <nav class="top-menu" aria-label="Category navigation">
-      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
-      <span class="nav-divider"></span>
-      <a href="index.html">Culture</a>
-      <a class="active" aria-current="page" href="awards.html">Awards</a>
-    </nav>
-    <main class="topic-slide">
-      <header class="topic-hero" style="--hero: url('/content/categories/culture/awards/events/img/oscars-hero.png');">
+<body class="awards-onepage topic-onepage" data-os-nav-items="home,events,locations,categories,privacy,terms,cookies">
+  <nav class="top-menu" aria-label="Category navigation">
+    <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span>
+    <a href="index.html">Culture</a>
+    <a class="active" aria-current="page" href="awards.html">Awards</a>
+  </nav>
+
+  <main class="awards-shell" aria-labelledby="awards-title">
+    <section class="awards-brief" aria-label="Awards one-slide overview">
+      <div class="awards-brief__copy">
+        <div class="awards-hero-image" aria-hidden="true"></div>
         <div>
-          <p class="eyebrow">Culture topic</p>
-          <h1>Awards</h1>
-          <p class="intro">Awards brings together related events, pages and calendar moments inside Culture.</p>
+          <h1 class="hero-title" id="awards-title">Awards</h1>
         </div>
-      </header>
-      <section class="topic-panel">
-        <div class="left"><div class="note-card">Awards is part of the Culture category, with kommande event gathered for quick planning and discovery.</div></div>
-        <div class="right">
-          <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
-          <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
-<!-- generated-topic-fill:start -->
-<a class="event-card" data-end="2027-03-14" href="/content/categories/culture/awards/events/oscars.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/oscars-mini.png" alt="Oscars thumbnail" loading="lazy" width="400" height="300"><time>14 March 2027</time><strong>Oscars</strong><p>Academy Awards winners, history and statistics</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/golden-globe-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/golden-globe-awards-mini.png" alt="Golden Globe Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Golden Globe Awards</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/bafta-film-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/bafta-film-awards-mini.png" alt="BAFTA Film Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>BAFTA Film Awards</strong><p>London, United Kingdom</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/emmy-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/emmy-awards-mini.png" alt="Emmy Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Emmy Awards</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/tony-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/tony-awards-mini.png" alt="Tony Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Tony Awards</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/cesar-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/cesar-awards-mini.png" alt="Cesar Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Cesar Awards</strong><p>Paris, France</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/brit-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/brit-awards-mini.png" alt="Brit Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Brit Awards</strong><p>London, United Kingdom</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/mtv-video-music-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/mtv-video-music-awards-mini.png" alt="MTV Video Music Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>MTV Video Music Awards</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/culture/awards/events/bet-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/bet-awards-mini.png" alt="BET Awards thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>BET Awards</strong><p>Los Angeles, United States</p></a>
-<!-- generated-topic-fill:end -->
-            <a class="event-card" data-end="2027-02-28" href="/content/categories/culture/awards/events/grammy-awards.html"><img class="event-thumb" src="/content/categories/culture/awards/events/img/grammy-awards-mini.png" alt="Grammy Awards 2027 thumbnail" aria-hidden="true" width="400" height="300" loading="lazy"><time>February 2027</time><strong>Grammy Awards 2027</strong><p>Los Angeles, USA</p></a>
-          </div></div>
+        <div class="award-left-stack">
+          <div class="award-panel-card">
+            <h2>Event mix</h2>
+            <div class="award-bars" aria-label="Award event categories">
+              <div class="award-bar-row award-bar-row--film"><span>Film</span><i class="bar--40"></i><b>4</b></div>
+              <div class="award-bar-row award-bar-row--music"><span>Music</span><i class="bar--40"></i><b>4</b></div>
+              <div class="award-bar-row award-bar-row--tv"><span>TV</span><i class="bar--10"></i><b>1</b></div>
+              <div class="award-bar-row award-bar-row--theatre"><span>Theatre</span><i class="bar--10"></i><b>1</b></div>
+            </div>
+          </div>
+          <a class="topic-card" href="index.html" aria-label="Open the Culture topic page">
+            <img src="/content/categories/culture/awards/events/img/golden-globe-awards-mini.png" alt="" width="400" height="300" loading="eager">
+            <span>More culture</span>
+            <strong>Culture topic</strong>
+            <p>Festivals, awards and cultural calendar moments.</p>
+          </a>
         </div>
-      </section>
-    </main>
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
-    <script>
-      (() => { const track = document.querySelector('[data-carousel-track]'); const prev = document.querySelector('[data-carousel-prev]'); const next = document.querySelector('[data-carousel-next]'); const controls = document.querySelector('[data-carousel-controls]'); if (!track || !prev || !next || !controls) return; const today = new Date(); today.setHours(0, 0, 0, 0); track.querySelectorAll('.event-card[data-end]').forEach((card) => { const end = new Date(card.dataset.end + 'T23:59:59'); if (end < today) card.hidden = true; }); const update = () => { const max = track.scrollWidth - track.clientWidth - 1; controls.hidden = max <= 1; prev.disabled = track.scrollLeft <= 1; next.disabled = track.scrollLeft >= max; }; const step = () => { const card = track.querySelector('.event-card:not([hidden])'); if (!card) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })); track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); })();
-    </script>
-  </body>
+      </div>
+
+      <div class="awards-brief__panel">
+        <section class="award-dashboard" aria-label="Awards dashboard">
+          <div class="season-grid">
+            <div class="award-panel-card">
+              <h2>Season rhythm</h2>
+              <div class="months" aria-label="Award season density">
+                <div class="month">Jan<strong>1</strong></div>
+                <div class="month is-hot">Feb<strong>4</strong></div>
+                <div class="month">Mar<strong>1</strong></div>
+                <div class="month">Apr<strong>0</strong></div>
+                <div class="month">May<strong>0</strong></div>
+                <div class="month is-hot">Jun<strong>2</strong></div>
+                <div class="month">Jul<strong>0</strong></div>
+                <div class="month">Aug<strong>0</strong></div>
+                <div class="month is-hot">Sep<strong>2</strong></div>
+                <div class="month">Oct<strong>0</strong></div>
+                <div class="month">Nov<strong>0</strong></div>
+                <div class="month">Dec<strong>0</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="records-grid">
+            <div class="award-panel-card">
+              <h2>Top films</h2>
+              <div class="record-list" aria-label="Films with most Oscars">
+                <div class="record-row record-row--film"><strong>Ben-Hur</strong><span>Oscars</span><b>11</b></div>
+                <div class="record-row record-row--film"><strong>Titanic</strong><span>Oscars</span><b>11</b></div>
+                <div class="record-row record-row--film"><strong>The Lord of the Rings: The Return of the King</strong><span>Oscars</span><b>11</b></div>
+                <div class="record-row record-row--film"><strong>West Side Story</strong><span>Oscars</span><b>10</b></div>
+              </div>
+            </div>
+            <div class="award-panel-card">
+              <h2>Top artists</h2>
+              <div class="record-list" aria-label="Artists and people with major award records">
+                <div class="record-row record-row--music"><strong>Beyonce</strong><span>Grammys</span><b>35</b></div>
+                <div class="record-row record-row--music"><strong>Georg Solti</strong><span>Grammys</span><b>31</b></div>
+                <div class="record-row record-row--music"><strong>Quincy Jones</strong><span>Grammys</span><b>28</b></div>
+                <div class="record-row record-row--music"><strong>Alison Krauss</strong><span>Grammys</span><b>27</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-grid" aria-label="Featured award events">
+            <a class="event-card event-card--music" data-start="2026-06-28" data-end="2026-06-28" data-date-status="confirmed" data-official-date="true" data-next-edition="2027 date TBC" href="/content/categories/culture/awards/events/bet-awards.html"><img src="/content/categories/culture/awards/events/img/bet-awards-mini.png" alt="BET Awards thumbnail" loading="lazy" width="400" height="300"><time>28 Jun 2026</time><strong>BET Awards</strong></a>
+            <a class="event-card event-card--tv" data-start="2026-09-14" data-end="2026-09-14" data-date-status="confirmed" data-official-date="true" data-next-edition="2027 date TBC" href="/content/categories/culture/awards/events/emmy-awards.html"><img src="/content/categories/culture/awards/events/img/emmy-awards-mini.png" alt="Emmy Awards thumbnail" loading="lazy" width="400" height="300"><time>14 Sep 2026</time><strong>Emmy Awards</strong></a>
+            <a class="event-card event-card--music" data-start="2026-09-29" data-end="2026-09-29" data-date-status="confirmed" data-official-date="true" data-next-edition="2027 date TBC" href="/content/categories/culture/awards/events/mtv-video-music-awards.html"><img src="/content/categories/culture/awards/events/img/mtv-video-music-awards-mini.png" alt="MTV Video Music Awards thumbnail" loading="lazy" width="400" height="300"><time>29 Sep 2026</time><strong>MTV Video Music Awards</strong></a>
+            <a class="event-card event-card--film" data-start="2027-01-10" data-end="2027-01-10" data-date-status="confirmed" data-official-date="true" data-next-edition="9 Jan 2028 expected" href="/content/categories/culture/awards/events/golden-globe-awards.html"><img src="/content/categories/culture/awards/events/img/golden-globe-awards-mini.png" alt="Golden Globe Awards thumbnail" loading="lazy" width="400" height="300"><time>10 Jan 2027</time><strong>Golden Globe Awards</strong></a>
+            <a class="event-card event-card--music" data-start="2027-02-07" data-end="2027-02-07" data-date-status="confirmed" data-official-date="true" data-next-edition="2028 date TBC" href="/content/categories/culture/awards/events/grammy-awards.html"><img src="/content/categories/culture/awards/events/img/grammy-awards-mini.png" alt="Grammy Awards thumbnail" loading="lazy" width="400" height="300"><time>7 Feb 2027</time><strong>Grammy Awards</strong></a>
+            <a class="event-card event-card--film" data-start="2027-02-21" data-end="2027-02-21" data-date-status="estimated" data-official-date="false" data-next-edition="2028 date TBC" href="/content/categories/culture/awards/events/bafta-film-awards.html"><img src="/content/categories/culture/awards/events/img/bafta-film-awards-mini.png" alt="BAFTA Film Awards thumbnail" loading="lazy" width="400" height="300"><time>21 Feb 2027 expected</time><strong>BAFTA Film Awards</strong></a>
+            <a class="event-card event-card--film" data-start="2027-02-25" data-end="2027-02-25" data-date-status="confirmed" data-official-date="true" data-next-edition="2028 date TBC" href="/content/categories/culture/awards/events/cesar-awards.html"><img src="/content/categories/culture/awards/events/img/cesar-awards-mini.png" alt="Cesar Awards thumbnail" loading="lazy" width="400" height="300"><time>25 Feb 2027</time><strong>Cesar Awards</strong></a>
+            <a class="event-card event-card--music" data-start="2027-02-28" data-end="2027-02-28" data-date-status="estimated" data-official-date="false" data-next-edition="2028 date TBC" href="/content/categories/culture/awards/events/brit-awards.html"><img src="/content/categories/culture/awards/events/img/brit-awards-mini.png" alt="Brit Awards thumbnail" loading="lazy" width="400" height="300"><time>28 Feb 2027 expected</time><strong>Brit Awards</strong></a>
+            <a class="event-card event-card--film" data-start="2027-03-14" data-end="2027-03-14" data-date-status="confirmed" data-official-date="true" data-next-edition="5 Mar 2028" href="/content/categories/culture/awards/events/oscars.html"><img src="/content/categories/culture/awards/events/img/oscars-mini.png" alt="Oscars thumbnail" loading="lazy" width="400" height="300"><time>14 Mar 2027</time><strong>Oscars</strong></a>
+            <a class="event-card event-card--theatre" data-start="2027-06-13" data-end="2027-06-13" data-date-status="estimated" data-official-date="false" data-next-edition="2028 date TBC" href="/content/categories/culture/awards/events/tony-awards.html"><img src="/content/categories/culture/awards/events/img/tony-awards-mini.png" alt="Tony Awards thumbnail" loading="lazy" width="400" height="300"><time>13 Jun 2027 expected</time><strong>Tony Awards</strong></a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>.</footer>
+</body>
 </html>
