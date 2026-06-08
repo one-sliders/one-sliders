@@ -4835,17 +4835,26 @@ html:has(body.event-page--framed) {
   text-transform: uppercase;
 }
 
-/* Mobile/small windows: don't let the awards hero column eat the whole viewport.
-   The default .event-frame__visual grid (hero + copy stack) computes to ~100vh
-   which makes the page feel stuck. Constrain hero + let copy flow naturally. */
+/* Mobile/small windows: reorder so the archive/tabs panel comes FIRST
+   (it's why people open the page), then the hero + intro copy below.
+   Otherwise users scroll through 800px+ of intro before seeing content
+   and feel stuck. */
 @media (max-width: 980px), (max-height: 760px) {
+  .awards-event-page .event-frame {
+    display: flex !important;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 0;
+  }
+  .awards-event-page .event-frame__panel { order: 1; }
+  .awards-event-page .event-frame__visual { order: 2; }
   .awards-event-page .event-frame__visual {
     display: block;
     height: auto;
     min-height: 0;
   }
   .awards-event-page .event-frame__media {
-    height: clamp(160px, 30vw, 280px);
+    height: clamp(140px, 28vw, 220px);
     margin-bottom: 12px;
   }
   .awards-event-page .event-frame__media img {
