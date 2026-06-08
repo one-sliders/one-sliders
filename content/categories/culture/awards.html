@@ -437,12 +437,63 @@
       .event-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
     @media (max-width: 760px) {
-      .awards-shell { padding: 54px 12px 14px; }
+      /* Release the fixed/overflow-hidden app-shell so the whole page can
+         scroll natively on mobile (otherwise the dashboard panel below the
+         intro gets clipped to a few hundred pixels). */
+      html:has(body.awards-onepage),
+      body.awards-onepage {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow: visible !important;
+      }
+      .awards-shell {
+        position: static;
+        inset: auto;
+        display: block;
+        overflow: visible;
+        padding: 54px 12px 14px;
+      }
       .awards-brief { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
-      .awards-brief__panel { display: none; }
       .awards-brief__copy { grid-template-rows: 180px auto auto; align-content: start; }
       .hero-title { font-size: clamp(58px,19vw,84px); }
       .footer { display: none; }
+
+      /* Show the dashboard panel on mobile (it was display:none which hid all
+         10 event cards + Season rhythm + Top films/artists from phone users). */
+      .awards-brief__panel {
+        display: grid;
+        overflow: visible;
+        padding: 12px;
+      }
+      .award-dashboard {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 12px;
+        overflow: visible;
+      }
+      /* Season rhythm: 12 months fit on 4 cols, taller cells so numbers read */
+      .season-grid { grid-template-columns: 1fr; }
+      .months { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+      .month { min-height: 56px; font-size: 11px; }
+      .month strong { font-size: 20px; }
+      /* Records: stack the two lists (Top films + Top artists) vertically */
+      .records-grid { grid-template-columns: 1fr; }
+      /* Event cards: 2 columns, taller image, larger title, real touch target */
+      .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .event-card {
+        grid-template-rows: 90px 14px 18px;
+        padding: 0 12px 10px;
+        min-height: 0;
+      }
+      .event-card img {
+        width: calc(100% + 24px);
+        height: 90px;
+        margin: 0 -12px 8px;
+      }
+      .event-card time { font-size: 11px; }
+      .event-card strong { font-size: 14px; white-space: normal; line-height: 1.15; }
     }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/culture/awards.html#webpage","url":"https://one-sliders.com/content/categories/culture/awards.html","name":"Awards","description":"Awards: a visual one-screen guide to major culture awards, seasons, ceremonies and linked event pages.","inLanguage":"en","image":"https://one-sliders.com/content/categories/culture/awards/events/img/oscars-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/culture/awards.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Culture","item":"https://one-sliders.com/content/categories/culture/index.html"},{"@type":"ListItem","position":4,"name":"Awards","item":"https://one-sliders.com/content/categories/culture/awards.html"}]}]}</script>
