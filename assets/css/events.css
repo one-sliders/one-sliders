@@ -4840,15 +4840,6 @@ html:has(body.event-page--framed) {
    below) and let everything flow. The fixed app-shell on awards collapsed the
    archive panel to a few pixels on small viewports. */
 @media (max-width: 980px), (max-height: 760px) {
-  /* iOS Safari has scroll-jacking issues with position:fixed footers when
-     the parent has overflow/transform. Make the awards footer flow at the
-     end of the document instead so it sits cleanly at the page bottom and
-     doesn't drift mid-scroll. */
-  body.awards-event-page .event-footer,
-  body.awards-event-page footer.os-footer {
-    position: static;
-    margin-top: 24px;
-  }
   /* Restore the desktop browse nav (Events / Locations / Categories icons)
      on awards mobile so users can navigate to other parts of the site
      without going through the iOS back-arrow. Same pattern as events/index. */
