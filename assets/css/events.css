@@ -2,9 +2,9 @@
   --event-bg: var(--os-bg, #f5f8fa);
   --event-card: var(--os-surface, #ffffff);
   --event-ink: var(--os-ink, #101820);
-  --event-muted: var(--os-muted, #62717c);
+  --event-muted: var(--os-muted, var(--os-muted));
   --event-line: color-mix(in srgb, var(--os-line, #dce6ea) 78%, transparent);
-  --event-theme: var(--os-primary, #0d2137);
+  --event-theme: var(--os-primary, var(--os-navy));
   --event-theme-2: var(--os-accent, #2f6f92);
   --event-accent: var(--os-accent-2, #3b8fb6);
   --event-on-image: rgba(255, 255, 255, 0.93);
@@ -4885,10 +4885,10 @@ html:has(body.event-page--framed) {
     grid-template-columns: none;
     margin-bottom: 12px;
     padding: 14px;
-    border: 1px solid rgba(13,33,55,.12);
+    border: 1px solid var(--os-line);
     border-radius: 14px;
-    background: rgba(255,255,255,.94);
-    box-shadow: 0 4px 14px rgba(13,33,55,.06);
+    background: var(--os-surface);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--os-navy) 6%, transparent);
   }
   /* Year header (large, full-width, with separator line) */
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > b,
@@ -4897,8 +4897,8 @@ html:has(body.event-page--framed) {
     display: block;
     margin: -4px -4px 12px;
     padding: 0 4px 10px;
-    border-bottom: 2px solid #0d2137;
-    color: #0d2137;
+    border-bottom: 2px solid var(--os-navy);
+    color: var(--os-navy);
     font-size: 32px;
     font-weight: 900;
     line-height: 1;
@@ -4910,11 +4910,11 @@ html:has(body.event-page--framed) {
     gap: 10px;
     margin: -4px -4px 10px;
     padding: 0 4px 10px;
-    border-bottom: 2px solid #0d2137;
+    border-bottom: 2px solid var(--os-navy);
   }
   .awards-event-page .oscars-year-meta {
     margin: 0;
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
@@ -4929,24 +4929,24 @@ html:has(body.event-page--framed) {
     margin: 0 0 12px;
     padding: 10px 12px;
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(13,33,55,.06), rgba(47,111,146,.05));
-    border: 1px solid rgba(13,33,55,.10);
+    background: var(--os-soft);
+    border: 1px solid var(--os-line);
   }
   .awards-event-page .oscars-year-highlight > span {
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 10px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: .04em;
   }
   .awards-event-page .oscars-year-highlight > strong {
-    color: #0d2137;
+    color: var(--os-navy);
     font-size: 16px;
     font-weight: 800;
     line-height: 1.2;
   }
   .awards-event-page .oscars-year-highlight > em {
-    color: #2f6f92;
+    color: var(--os-accent);
     font-size: 12px;
     font-style: normal;
     font-weight: 800;
@@ -4970,7 +4970,7 @@ html:has(body.event-page--framed) {
     align-items: baseline;
     gap: 10px;
     padding: 8px 2px;
-    border-bottom: 1px solid rgba(13,33,55,.08);
+    border-bottom: 1px solid var(--os-line);
     font-size: 14px;
     line-height: 1.35;
   }
@@ -4982,7 +4982,7 @@ html:has(body.event-page--framed) {
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > [data-awards-category-label]::before,
   .awards-event-page .oscars-year-awards > [data-awards-category-label]::before {
     content: attr(data-awards-category-label);
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
@@ -4992,7 +4992,7 @@ html:has(body.event-page--framed) {
   }
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row > [data-awards-category-column]:not([data-awards-category-label])::before {
     content: attr(data-awards-category-column);
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
@@ -5003,7 +5003,7 @@ html:has(body.event-page--framed) {
      so the 2nd row cell maps to the 2nd head label, etc. */
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row:not(.oscars-matrix-row--head) > span:not([data-awards-category-label]):not([data-awards-category-column])::before {
     content: 'Award';
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
@@ -5025,15 +5025,16 @@ html:has(body.event-page--framed) {
   .awards-event-page .oscars-decade-matrix .oscars-matrix-row em {
     display: block;
     margin-top: 2px;
-    color: #62717c;
+    color: var(--os-muted);
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
   }
   .awards-event-page .oscars-decade-matrix .oscars-matrix-empty {
-    color: #99a3ad;
+    color: var(--os-muted);
     font-size: 13px;
     font-style: italic;
+    opacity: .72;
   }
 }
 
