@@ -2244,6 +2244,45 @@
           '</div>';
       }).join('');
       els.decadeMatrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
+      enhanceCountriesInMatrix(els.decadeMatrix);
+    }
+
+    // Replace plain country names (inside <em>/<b> cells) with a linked
+    // flag + name pill, wherever a country appears in the matrix.
+    function enhanceCountriesInMatrix(root) {
+      if (!root) return;
+      var map = {
+        'United States': 'north-america/usa', 'USA': 'north-america/usa', 'United Kingdom': 'europe/united-kingdom',
+        'UK': 'europe/united-kingdom', 'France': 'europe/france', 'Germany': 'europe/germany',
+        'Italy': 'europe/italy', 'Spain': 'europe/spain', 'Sweden': 'europe/sweden',
+        'Norway': 'europe/norway', 'Denmark': 'europe/denmark', 'Finland': 'europe/finland',
+        'Ireland': 'europe/ireland', 'Netherlands': 'europe/netherlands', 'Belgium': 'europe/belgium',
+        'Austria': 'europe/austria', 'Switzerland': 'europe/switzerland', 'Portugal': 'europe/portugal',
+        'Poland': 'europe/poland', 'Hungary': 'europe/hungary', 'Russia': 'europe/russia',
+        'Greece': 'europe/greece', 'Turkey': 'asia/turkey', 'Romania': 'europe/romania',
+        'Iceland': 'europe/iceland', 'Czech Republic': 'europe/czech-republic',
+        'South Korea': 'asia/south-korea', 'Japan': 'asia/japan', 'China': 'asia/china',
+        'India': 'asia/india', 'Iran': 'asia/iran', 'Israel': 'asia/israel',
+        'Taiwan': 'asia/taiwan', 'Thailand': 'asia/thailand', 'Vietnam': 'asia/vietnam',
+        'Australia': 'oceania/australia', 'New Zealand': 'oceania/new-zealand',
+        'Canada': 'north-america/canada', 'Mexico': 'north-america/mexico',
+        'Brazil': 'south-america/brazil', 'Argentina': 'south-america/argentina',
+        'Chile': 'south-america/chile', 'South Africa': 'africa/south-africa',
+        'Egypt': 'africa/egypt', 'Morocco': 'africa/morocco', 'Nigeria': 'africa/nigeria'
+      };
+      var pill = function (name) {
+        var path = map[name];
+        if (!path) return name;
+        var url = '/content/locations/' + path + '/index.html';
+        var flag = '/content/locations/' + path + '/img/flag.svg';
+        return '<a class="country" href="' + url + '"><img src="' + flag + '" alt="" width="20" height="14" loading="lazy">' + name + '</a>';
+      };
+      var cells = root.querySelectorAll('em, b');
+      for (var i = 0; i < cells.length; i++) {
+        var el = cells[i];
+        var txt = (el.textContent || '').trim();
+        if (map[txt]) el.innerHTML = pill(txt);
+      }
     }
 
     function ordinal(n) {
@@ -2342,6 +2381,7 @@
           '</div>';
       }).join('');
       els.decadeMatrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
+      enhanceCountriesInMatrix(els.decadeMatrix);
     }
 
     function renderStats() {
