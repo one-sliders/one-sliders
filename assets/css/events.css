@@ -4839,11 +4839,25 @@ html:has(body.event-page--framed) {
    below) and let everything flow. The fixed app-shell on awards collapsed the
    archive panel to a few pixels on small viewports. */
 @media (max-width: 980px), (max-height: 760px) {
+  /* Restore the desktop browse nav (Events / Locations / Categories icons)
+     on awards mobile so users can navigate to other parts of the site
+     without going through the iOS back-arrow. Same pattern as events/index. */
+  body.awards-event-page nav.event-nav {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+  body.awards-event-page .ios-nav { display: none !important; }
+
   .awards-event-page .event-frame {
     display: flex !important;
     flex-direction: column;
     height: auto !important;
     min-height: 0;
+    padding-top: 60px;
   }
   .awards-event-page .event-frame__visual {
     display: block;
