@@ -4,9 +4,11 @@
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
   
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80">
+    <link rel="stylesheet" href="../../../assets/css/categories.css">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80">
 <script defer src="../../../assets/js/oneslider-core.js"></script>
-    <meta charset="utf-8">
+      <script defer src="../../../assets/js/categories.js"></script>
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.">
   <meta name="twitter:title" content="Music Festivals Events 2026 — Schedule &amp; Calendar">
@@ -22,34 +24,33 @@
     <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-    <title>Music Festivals Events 2026 — Schedule &amp; Calendar</title>
+<title>Music Festivals Events 2026 — Schedule &amp; Calendar</title>
     <style>
-      :root { --theme: #6b3f7a; --accent: #d6a7e3; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+      :root { --theme: var(--os-purple); --accent: var(--os-line); --ink: color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent)); --paper: color-mix(in srgb, var(--os-surface) 80%, var(--os-transparent)); --muted: var(--os-accent); --line: var(--os-red); }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
       a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: var(--os-accent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
       .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: var(--os-surface); }
       .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
+      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
       .nav-icon svg{width:22px;height:22px;display:block}
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
+      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
       .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
       .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
-      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
       .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: white; }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: white; color: var(--muted); }
+      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--os-surface); color: var(--theme); cursor: pointer; }
+      .carousel-button:hover { background: var(--theme); color: var(--os-surface); }
+      .carousel-button:disabled { opacity: .35; cursor: default; background: var(--os-surface); color: var(--muted); }
       .carousel-button svg { width: 18px; height: 18px; display: block; }
       .carousel { min-width: 0; overflow: hidden; }
       .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
@@ -62,14 +63,14 @@
       .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
       .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
       .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: var(--os-scrim); }
       .site-footer p { margin: 0; }
       @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
       @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#webpage","url":"https://one-sliders.com/content/categories/music/music-festivals.html","name":"Music Festivals Events 2026 — Schedule & Calendar","description":"Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.","inLanguage":"en","image":"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80","breadcrumb":{"@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Music","item":"https://one-sliders.com/content/categories/music/index.html"},{"@type":"ListItem","position":4,"name":"Music Festivals Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/music/music-festivals.html"}]}],"name":"Music Festivals Events 2026","description":"Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music."}</script>
 </head>
-  <body>
+  <body class="category-page category-page--music topic-onepage topic-page--music-festivals" data-os-category="music" data-cat="music">
     <nav class="top-menu" aria-label="Category navigation">
       <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>

@@ -124,6 +124,99 @@
   }
   OneSlider.rootHref = rootHref;
 
+  // ====================================================================
+  // Module: system palette
+  // OneSliders has two live palettes:
+  //   - Harmonized for light system mode
+  //   - Night for dark system mode
+  // The old temporary palette picker UI is intentionally gone. QA query
+  // params/localStorage are ignored so production always follows the device.
+  // ====================================================================
+  (function initSystemPalette() {
+    var palettes = {
+      harmonized: 'assets/css/palettes/oneslider-palette-harmonized.css',
+      night: 'assets/css/palettes/oneslider-palette-night.css'
+    };
+    var media = null;
+
+    function desiredPalette() {
+      return media && media.matches ? 'night' : 'harmonized';
+    }
+
+    function removeToolbar() {
+      var toolbar = document.getElementById('os-palette-toolbar');
+      if (toolbar && toolbar.parentNode) toolbar.parentNode.removeChild(toolbar);
+      var style = document.getElementById('os-palette-toolbar-style');
+      if (style && style.parentNode) style.parentNode.removeChild(style);
+    }
+
+    function setPalette(name) {
+      if (!palettes[name]) name = 'harmonized';
+      removeToolbar();
+      var href = rootHref() + palettes[name] + '?v=semantic-sport-20260610';
+      var link = document.getElementById('os-palette-preview-css') || document.createElement('link');
+      link.id = 'os-palette-preview-css';
+      link.rel = 'stylesheet';
+      link.href = href;
+      (document.head || document.documentElement).appendChild(link);
+      OneSlider.palettePreview = name;
+      OneSlider.paletteMode = name === 'night' ? 'dark' : 'light';
+      return name;
+    }
+
+    function applySystemPalette() {
+      return setPalette(desiredPalette());
+    }
+
+    try {
+      localStorage.removeItem('os_palette_preview');
+    } catch (e) { /* localStorage may be blocked */ }
+
+    try {
+      media = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    } catch (e) {
+      media = null;
+    }
+
+    applySystemPalette();
+    if (media) {
+      if (media.addEventListener) media.addEventListener('change', applySystemPalette);
+      else if (media.addListener) media.addListener(applySystemPalette);
+    }
+
+    OneSlider.setPalettePreview = applySystemPalette;
+    OneSlider.availablePalettePreviews = Object.keys(palettes);
+  })();
+
+  // ====================================================================
+  // Module: categoryIdentity
+  // Adds a central category marker from the URL so old topic pages with
+  // inline CSS still use the same semantic colour as their parent category.
+  // ====================================================================
+  OneSlider.register('categoryIdentity', function () {
+    var match = (window.location.pathname || '').match(/\/content\/categories\/([^/]+)(?:\/|\.html|$)/i);
+    if (!match) return;
+    var category = match[1].toLowerCase();
+    var known = {
+      festival: true,
+      sport: true,
+      music: true,
+      climate: true,
+      food: true,
+      'food-and-drinks': true,
+      drinks: true,
+      technology: true,
+      wellness: true,
+      culture: true,
+      nature: true
+    };
+    if (!known[category]) return;
+    document.body.setAttribute('data-os-category', category);
+    if (!document.body.getAttribute('data-cat')) {
+      document.body.setAttribute('data-cat', category);
+    }
+  });
+
   function isHomePage() {
     var p = window.location.pathname || '';
     return p === '/' || /\/index\.html$/i.test(p) && !/^\/content\//i.test(p);
@@ -164,6 +257,7 @@
     var navs = document.querySelectorAll('nav.top-menu, nav.event-nav');
     for (var i = 0; i < navs.length; i++) {
       var nav = navs[i];
+      if (nav.getAttribute('data-os-brand') === 'off') continue;
       if (nav.querySelector(':scope > .os-brand')) continue;  // already there
       nav.insertBefore(build(), nav.firstChild);
     }
@@ -204,7 +298,150 @@
   // ====================================================================
   OneSlider.register('iosNav', function (App) {
     if (document.querySelector('.ios-nav')) return;  // already injected
+    var opt = document.querySelector('meta[name="os-ios-nav"]');
+    if ((opt && opt.content === 'off') ||
+        document.body.getAttribute('data-os-ios-nav') === 'off') {
+      return;
+    }
     var root = OneSlider.rootHref();
+
+    function ensureIosNavStyle() {
+      if (document.getElementById('os-ios-nav-runtime-style')) return;
+      var style = document.createElement('style');
+      style.id = 'os-ios-nav-runtime-style';
+      style.textContent =
+        '@media (max-width:620px){' +
+          'body.os-has-ios-nav.topic-page nav.top-menu,' +
+          'body.os-has-ios-nav.food-topic-page nav.top-menu,' +
+          'body.os-has-ios-nav.food-layout-page nav.top-menu,' +
+          'body.os-has-ios-nav.country-onepage nav.top-menu,' +
+          'body.os-has-ios-nav.event-page nav.top-menu,' +
+          'body.os-has-ios-nav.event-page nav.event-nav{display:none!important}' +
+          'body.os-has-ios-nav.topic-page .ios-nav,' +
+          'body.os-has-ios-nav.food-topic-page .ios-nav,' +
+          'body.os-has-ios-nav.food-layout-page .ios-nav,' +
+          'body.os-has-ios-nav.country-onepage .ios-nav,' +
+          'body.os-has-ios-nav.event-page .ios-nav{display:grid!important}' +
+          'body.os-has-ios-nav .ios-title{' +
+            'margin:0!important;' +
+            'color:var(--ink,color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent)))!important;' +
+            'font-size:17px!important;' +
+            'font-weight:600!important;' +
+            'line-height:1!important;' +
+            'letter-spacing:0!important;' +
+            'white-space:nowrap!important;' +
+            'overflow:hidden!important;' +
+            'text-overflow:ellipsis!important;' +
+            'max-width:34vw!important;' +
+            'text-align:center!important' +
+          '}' +
+          'body.os-has-ios-nav .ios-back{font-size:17px!important;line-height:1!important}' +
+        '}' +
+        '@media (max-width:620px),(max-height:760px){' +
+          'body.os-has-ios-nav.event-page nav.event-nav,' +
+          'body.os-has-ios-nav.event-page nav.top-menu{display:none!important}' +
+          'body.os-has-ios-nav.event-page .ios-nav{display:grid!important}' +
+          'body.os-has-ios-nav.event-page .ios-back{display:inline-flex!important}' +
+          'body.os-has-ios-nav.event-page .ios-sheet:not([hidden]){display:block!important}' +
+        '}';
+      (document.head || document.documentElement).appendChild(style);
+    }
+
+    function titleCaseSlug(value) {
+      var special = {
+        usa: 'USA',
+        uk: 'UK',
+        uae: 'UAE'
+      };
+      return String(value || '')
+        .replace(/\.html?$/i, '')
+        .replace(/-+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .split(' ')
+        .map(function (word) {
+          var lower = word.toLowerCase();
+          return special[lower] || lower.replace(/^\w/, function (c) { return c.toUpperCase(); });
+        })
+        .join(' ');
+    }
+
+    function pagePathParts() {
+      return (window.location.pathname || '')
+        .replace(/\\/g, '/')
+        .replace(/\/+$/, '/')
+        .split('/')
+        .filter(Boolean);
+    }
+
+    function centralHref(path) {
+      return root + String(path || '').replace(/^\/+/, '');
+    }
+
+    function fromUrlHierarchy() {
+      var parts = pagePathParts();
+      var contentIndex = parts.indexOf('content');
+      if (contentIndex < 0) return null;
+
+      var section = parts[contentIndex + 1];
+      var tail = parts.slice(contentIndex + 2);
+
+      if (section === 'categories') {
+        var eventIndex = tail.indexOf('events');
+        if (eventIndex > 0) {
+          var topicParts = tail.slice(0, eventIndex);
+          var topicSlug = topicParts[topicParts.length - 1];
+          return {
+            href: centralHref('content/categories/' + topicParts.join('/') + '.html'),
+            label: titleCaseSlug(topicSlug)
+          };
+        }
+
+        if (tail.length >= 2 && /\.html?$/i.test(tail[tail.length - 1])) {
+          var categorySlug = tail[0];
+          return {
+            href: centralHref('content/categories/' + categorySlug + '/index.html'),
+            label: titleCaseSlug(categorySlug)
+          };
+        }
+
+        if (tail.length >= 2 && tail[tail.length - 1].toLowerCase() === 'index.html') {
+          return {
+            href: centralHref('content/categories/index.html'),
+            label: 'Categories'
+          };
+        }
+      }
+
+      if (section === 'locations') {
+        if (tail.length >= 3 && /\.html?$/i.test(tail[tail.length - 1])) {
+          var countryParts = tail.slice(0, -1);
+          var countrySlug = countryParts[countryParts.length - 1];
+          return {
+            href: centralHref('content/locations/' + countryParts.join('/') + '/index.html'),
+            label: titleCaseSlug(countrySlug)
+          };
+        }
+
+        if (tail.length >= 3 && tail[tail.length - 1].toLowerCase() === 'index.html') {
+          var continentParts = tail.slice(0, -2);
+          var continentSlug = continentParts[continentParts.length - 1];
+          return {
+            href: centralHref('content/locations/' + continentParts.join('/') + '/index.html'),
+            label: titleCaseSlug(continentSlug)
+          };
+        }
+
+        if (tail.length >= 2 && tail[tail.length - 1].toLowerCase() === 'index.html') {
+          return {
+            href: centralHref('content/locations/index.html'),
+            label: 'World'
+          };
+        }
+      }
+
+      return null;
+    }
 
     // --- derive title -------------------------------------------------
     function deriveTitle() {
@@ -225,7 +462,7 @@
     //   3. Sibling link immediately BEFORE the .active breadcrumb
     //      (skips own-page links that would otherwise be picked as "back")
     //   4. Last non-active text link in nav.top-menu
-    //   5. URL-pattern derivation for event views
+    //   5. URL-pattern derivation for Topic / Event / Location views
     //   6. Default: Home
     function deriveBack() {
       var mh = document.querySelector('meta[name="os-back-href"]');
@@ -265,13 +502,12 @@
         return { href: last.getAttribute('href') || '#',
                  label: last.textContent.trim() || 'Back' };
       }
-      var m = location.pathname.match(/\/categories\/([^/]+)\/([^/]+)\/events\/[^/]+\.html?$/);
-      if (m) {
-        var topicLabel = m[2].replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-        return { href: '../../' + m[2] + '.html', label: topicLabel };
-      }
+      var hierarchical = fromUrlHierarchy();
+      if (hierarchical) return hierarchical;
       return { href: root || './', label: 'Home' };
     }
+
+    App.deriveMobileBack = deriveBack;
 
     // --- icon helpers -------------------------------------------------
     function svg(d, fill) {
@@ -357,9 +593,25 @@
     moreBtn.setAttribute('aria-label', 'Menu');
     moreBtn.appendChild(svg(ICONS.more, true));
 
+    function iconLink(href, label, iconKey) {
+      var a = document.createElement('a');
+      a.className = 'ios-action';
+      a.href = href;
+      a.setAttribute('aria-label', label);
+      a.appendChild(svg(ICONS[iconKey]));
+      return a;
+    }
+
+    var actions = document.createElement('div');
+    actions.className = 'ios-actions';
+    actions.appendChild(iconLink(root + 'content/events/index.html', 'Events', 'events'));
+    actions.appendChild(iconLink(root + 'content/locations/index.html', 'Locations', 'world'));
+    actions.appendChild(iconLink(root + 'content/categories/index.html', 'Categories', 'grid'));
+    actions.appendChild(moreBtn);
+
     nav.appendChild(backLink);
     nav.appendChild(titleEl);
-    nav.appendChild(moreBtn);
+    nav.appendChild(actions);
 
     // --- build sheet --------------------------------------------------
     function item(href, label, iconKey, chev) {
@@ -453,6 +705,7 @@
 
     // Insert nav right after <body> opening, sheet at end of <body>
     document.body.classList.add('os-has-ios-nav');
+    ensureIosNavStyle();
     document.body.insertBefore(nav, document.body.firstChild);
     document.body.appendChild(sheet);
 
@@ -493,7 +746,51 @@
 
     var root = OneSlider.rootHref();
     var year = new Date().getFullYear();
-    var ownerText = isHomePage() ? ' OneSliders &middot;' : ' 3D Fractal &middot;';
+    var ownerText = ' OneSliders &middot;';
+
+    function ensureFooterStyle() {
+      if (document.getElementById('os-footer-runtime-style')) return;
+      var style = document.createElement('style');
+      style.id = 'os-footer-runtime-style';
+      style.textContent =
+        'body.os-has-site-footer>footer.os-footer{' +
+          'display:block!important;' +
+          'visibility:visible!important;' +
+          'position:sticky!important;' +
+          'bottom:0!important;' +
+          'margin-top:auto!important;' +
+          'z-index:60!important;' +
+          'flex:0 0 auto!important;' +
+          'background:var(--os-footer-bg,var(--os-surface,#fff))!important;' +
+          'color:var(--os-footer-ink,var(--os-muted,#5a6672))!important;' +
+          'border-top:.5px solid var(--os-footer-line,color-mix(in srgb,var(--os-line,rgba(18,32,46,.12)) 62%,var(--os-transparent,transparent)))!important' +
+        '}' +
+        'body.os-has-site-footer>footer.os-footer a{color:inherit!important;border-bottom-color:transparent!important}' +
+        '@media(min-width:761px){' +
+          'body.os-has-site-footer.topic-onepage>footer.os-footer,' +
+          'body.os-has-site-footer.event-page>footer.os-footer{' +
+            'position:fixed!important;' +
+            'left:0!important;' +
+            'right:0!important;' +
+            'bottom:0!important;' +
+            'margin-top:0!important' +
+          '}' +
+        '}' +
+        '@media(max-width:760px){' +
+          'body.os-has-site-footer{min-height:100svh!important;display:flex!important;flex-direction:column!important}' +
+          'body.os-has-site-footer>main{flex:1 0 auto}' +
+          'body.os-has-site-footer>footer.os-footer{display:block!important;position:sticky!important;bottom:0!important}' +
+          'body.os-has-site-footer.topic-onepage>footer.os-footer,' +
+          'body.os-has-site-footer.event-page>footer.os-footer{' +
+            'position:fixed!important;' +
+            'left:0!important;' +
+            'right:0!important;' +
+            'bottom:0!important;' +
+            'margin-top:0!important' +
+          '}' +
+        '}';
+      (document.head || document.documentElement).appendChild(style);
+    }
 
     // Minimal footer. Terms, contact email and cookie-settings access live
     // in the iOS sheet "Settings" section on mobile, and the floating
@@ -515,6 +812,11 @@
       document.querySelectorAll('footer').forEach(function (footer) {
         if (footer !== existing) footer.remove();
       });
+      if (existing.parentNode === document.body && existing !== document.body.lastElementChild) {
+        document.body.appendChild(existing);
+      }
+      document.body.classList.add('os-has-site-footer');
+      ensureFooterStyle();
       return;
     }
 
@@ -525,6 +827,8 @@
       : 'os-footer site-footer';
     f.innerHTML = content;
     document.body.appendChild(f);
+    document.body.classList.add('os-has-site-footer');
+    ensureFooterStyle();
   });
 
   // ====================================================================
@@ -2513,6 +2817,210 @@
     }).catch(function (error) {
       if (els.decadeMatrix) els.decadeMatrix.innerHTML = '<p class="oscars-loading">Could not load Oscars JSON data.</p>';
       if (window.console) console.warn('[OneSlider] oscarsExplorer', error);
+    });
+  });
+
+  // ====================================================================
+  // Module: nobelPrizeExplorer
+  // JSON-powered single-page explorer for /technology/awards/events/nobel-prize.html.
+  // Data comes from Nobel Prize API exports declared on [data-nobel-explorer].
+  // ====================================================================
+  OneSlider.register('nobelPrizeExplorer', function () {
+    var root = document.querySelector('[data-nobel-explorer]');
+    if (!root || !window.fetch) return;
+
+    function listFromAttr(name) {
+      return (root.getAttribute(name) || '')
+        .split(',')
+        .map(function (item) { return item.trim(); })
+        .filter(Boolean)
+        .filter(function (item) { return item.toLowerCase().indexOf('nobel-prize') !== -1; });
+    }
+
+    function esc(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function fetchJson(url) {
+      return fetch(url, { cache: 'no-cache' }).then(function (response) {
+        if (!response.ok) throw new Error('Could not load ' + url);
+        return response.json();
+      });
+    }
+
+    function categoryIconType(category) {
+      var name = String(category || '').toLowerCase();
+      if (name.indexOf('peace') !== -1) return 'world';
+      if (name.indexOf('literature') !== -1) return 'writing';
+      if (name.indexOf('chemistry') !== -1 || name.indexOf('physics') !== -1) return 'effects';
+      if (name.indexOf('medicine') !== -1) return 'makeup';
+      if (name.indexOf('economic') !== -1) return 'picture';
+      return 'picture';
+    }
+
+    var decadeUrls = listFromAttr('data-nobel-decades');
+    var recordUrls = listFromAttr('data-nobel-records');
+    var els = {
+      summary: root.querySelector('[data-nobel-summary]'),
+      categoryPicker: root.querySelector('[data-nobel-category-picker]'),
+      matrix: root.querySelector('[data-nobel-matrix]'),
+      records: root.querySelector('[data-nobel-records-panel]'),
+      tabs: root.querySelector('[data-nobel-tabs]'),
+      matrixTitle: root.querySelector('[data-nobel-matrix-title]'),
+      matrixNote: root.querySelector('[data-nobel-matrix-note]')
+    };
+    var state = { tab: 'history', categories: [] };
+    var decades = [];
+    var records = [];
+
+    function awardsForYear(yearItem) {
+      return yearItem && Array.isArray(yearItem.awards) ? yearItem.awards : [];
+    }
+
+    function allYears(descending) {
+      var rows = [];
+      decades.forEach(function (decade) {
+        (decade.years || []).forEach(function (year) { rows.push(year); });
+      });
+      rows.sort(function (a, b) {
+        return descending ? Number(b.year) - Number(a.year) : Number(a.year) - Number(b.year);
+      });
+      return rows;
+    }
+
+    function setTab(name) {
+      state.tab = name || 'history';
+      root.querySelectorAll('[data-nobel-tab]').forEach(function (button) {
+        button.setAttribute('aria-selected', button.getAttribute('data-nobel-tab') === state.tab ? 'true' : 'false');
+      });
+      root.querySelectorAll('[data-nobel-panel]').forEach(function (panel) {
+        panel.hidden = panel.getAttribute('data-nobel-panel') !== state.tab;
+      });
+    }
+
+    function renderSummary() {
+      if (!els.summary) return;
+      var years = allYears(false);
+      var categories = {};
+      var awards = 0;
+      years.forEach(function (year) {
+        awardsForYear(year).forEach(function (award) {
+          awards += 1;
+          categories[award.category] = true;
+        });
+      });
+      els.summary.innerHTML =
+        '<div class="fact"><span>Next laureates</span><strong>Oct 2026</strong></div>' +
+        '<div class="fact"><span>Ceremony</span><strong>10 Dec</strong></div>' +
+        '<div class="fact"><span>Years loaded</span><strong>' + esc(years.length) + '</strong></div>' +
+        '<div class="fact"><span>Prize rows</span><strong>' + esc(awards) + '</strong></div>';
+    }
+
+    function renderMatrix() {
+      var years = allYears(true);
+      if (els.matrixTitle) els.matrixTitle.textContent = 'Nobel winners per year: 1970-2025';
+      if (els.matrixNote) els.matrixNote.textContent = 'Categories are columns. Each cell shows laureate names and the official motivation when available.';
+      if (!els.matrix) return;
+
+      var categories = [];
+      years.forEach(function (year) {
+        awardsForYear(year).forEach(function (award) {
+          if (categories.indexOf(award.category) === -1) categories.push(award.category);
+        });
+      });
+      var preferred = ['Physics', 'Chemistry', 'Physiology or Medicine', 'Literature', 'Peace', 'Economic Sciences'];
+      categories.sort(function (a, b) {
+        var ai = preferred.indexOf(a);
+        var bi = preferred.indexOf(b);
+        if (ai !== -1 || bi !== -1) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+        return a.localeCompare(b);
+      });
+      if (!state.categories.length) state.categories = preferred.filter(function (category) { return categories.indexOf(category) !== -1; });
+      var selectedCategories = state.categories.filter(function (category) { return categories.indexOf(category) !== -1; });
+      if (!selectedCategories.length) selectedCategories = categories.slice(0, 6);
+
+      if (els.categoryPicker) {
+        els.categoryPicker.innerHTML = categories.map(function (category) {
+          var active = selectedCategories.indexOf(category) !== -1;
+          return '<button class="oscars-category-pill' + (active ? ' is-active' : '') + '" type="button" data-nobel-category-toggle="' + esc(category) + '" aria-pressed="' + (active ? 'true' : 'false') + '">' +
+            '<span class="oscars-category-icon oscars-category-icon--' + esc(categoryIconType(category)) + '" aria-hidden="true"></span>' +
+            '<span>' + esc(category) + '</span></button>';
+        }).join('');
+      }
+
+      var awardsByYear = {};
+      years.forEach(function (year) {
+        awardsByYear[year.year] = {};
+        awardsForYear(year).forEach(function (award) { awardsByYear[year.year][award.category] = award; });
+      });
+
+      var header = '<div class="oscars-matrix-row oscars-matrix-row--head"><span>Year</span>' +
+        selectedCategories.map(function (category) { return '<span>' + esc(category) + '</span>'; }).join('') +
+        '</div>';
+      var body = years.map(function (year) {
+        return '<div class="oscars-matrix-row" id="year-' + esc(year.year) + '"><strong>' + esc(year.year) + '</strong>' +
+          selectedCategories.map(function (category) {
+            var award = awardsByYear[year.year] && awardsByYear[year.year][category];
+            if (!award) return '<span class="oscars-matrix-empty">No prize</span>';
+            var detail = award.film && award.film !== award.winner ? '<em>' + esc(award.film) + '</em>' : '';
+            return '<span><b>' + esc(award.winner || 'TBC') + '</b>' + detail + '</span>';
+          }).join('') +
+          '</div>';
+      }).join('');
+      els.matrix.innerHTML = '<div class="oscars-matrix-scroll">' + header + body + '</div>';
+    }
+
+    function renderRecords() {
+      if (!els.records) return;
+      els.records.innerHTML = records.map(function (item) {
+        return '<div class="stage-card"><strong>' + esc(item.title || 'Nobel fact') + '</strong><span>' + esc(item.value || '') + '</span><p>' + esc(item.note || item.detail || '') + '</p></div>';
+      }).join('');
+    }
+
+    function renderAll() {
+      renderSummary();
+      renderMatrix();
+      renderRecords();
+    }
+
+    root.addEventListener('click', function (event) {
+      var tabButton = event.target.closest('[data-nobel-tab]');
+      if (tabButton) {
+        event.preventDefault();
+        setTab(tabButton.getAttribute('data-nobel-tab'));
+        return;
+      }
+      var categoryButton = event.target.closest('[data-nobel-category-toggle]');
+      if (!categoryButton) return;
+      event.preventDefault();
+      var category = categoryButton.getAttribute('data-nobel-category-toggle');
+      var index = state.categories.indexOf(category);
+      if (index === -1) {
+        state.categories.push(category);
+      } else if (state.categories.length > 1) {
+        state.categories.splice(index, 1);
+      }
+      renderMatrix();
+    });
+
+    Promise.all([
+      Promise.all(decadeUrls.map(fetchJson)),
+      Promise.all(recordUrls.map(fetchJson))
+    ]).then(function (result) {
+      decades = result[0].sort(function (a, b) { return String(a.decade).localeCompare(String(b.decade)); });
+      records = [];
+      result[1].forEach(function (file) {
+        records = records.concat(Array.isArray(file.records) ? file.records : (Array.isArray(file.items) ? file.items : []));
+      });
+      setTab('history');
+      renderAll();
+    }).catch(function (error) {
+      if (els.matrix) els.matrix.innerHTML = '<p class="oscars-loading">Could not load Nobel Prize JSON data.</p>';
+      if (window.console) console.warn('[OneSlider] nobelPrizeExplorer', error);
     });
   });
 

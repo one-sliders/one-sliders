@@ -230,6 +230,22 @@ def render(data, lang='en'):
     topics = ''.join(
         f'<a class="visual-topic-card visual-topic-card--{esc(t["modifier"])}" href="{esc(t["href"])}">{mini_img(t["img"], t["alt"])}<strong>{esc(t["title"])}</strong><span>{esc(t["text"])}</span></a>'
         for t in localized(data, lang, 'topicCards', data['topicCards']))
+    states = localized(data, lang, 'states', data.get('states', []))
+    states_note = localized(data, lang, 'statesNote', data.get('statesNote', ''))
+    states_flag_note = localized(data, lang, 'statesFlagNote', data.get('statesFlagNote', ''))
+    states_block = ''
+    if states:
+        state_rows = ''.join(
+            f'<tr><th scope="row">{esc(s["name"])}</th><td>{esc(s["abbr"])}</td><td>{esc(s["capital"])}</td><td>{esc(s["region"])}</td><td>{esc(s["admitted"])}</td><td>{esc(s["population2020"])}</td><td>{esc(s["nickname"])}</td></tr>'
+            for s in states)
+        states_block = (
+            f'<div class="country-panel-card country-states-card"><h2>States &amp; federal district</h2>'
+            f'<p class="country-state-note">{esc(states_note)}</p>'
+            f'<p class="country-state-note country-state-note--flag">{esc(states_flag_note)}</p>'
+            f'<div class="country-state-table-wrap" tabindex="0"><table class="country-state-table">'
+            f'<thead><tr><th>State</th><th>Code</th><th>Capital</th><th>Region</th><th>Joined</th><th>2020 pop.</th><th>Nickname</th></tr></thead>'
+            f'<tbody>{state_rows}</tbody></table></div></div>'
+        )
     empty_text = localized(data, lang, 'eventsEmptyText', data['eventsEmptyText'])
 
     # ---- hero background ----
@@ -309,6 +325,7 @@ def render(data, lang='en'):
           </div>
           <div class="persona-panel view-panel--context">
 
+            {states_block}
             <div class="country-panel-card country-panel-card--food"><h2>{L["foodDrink"]}</h2><div class="country-paths country-paths--topics country-paths--food">{food}</div></div>
             <div class="country-panel-card"><h2>{L["knownFor"]}</h2><div class="country-identity-grid">{known}</div></div>
             <div class="country-paths country-paths--topics">{topics}</div>

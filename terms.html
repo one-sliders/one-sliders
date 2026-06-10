@@ -19,10 +19,8 @@
   <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="./assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#0d2137">
-
-  <style>
-    :root { --ink:#12202e; --paper:#f2f3f5; --muted:#5a6672; --line:rgba(18,32,46,.11); --navy:#0d2137; }
+<style>
+    :root { --ink:var(--os-primary); --paper:var(--os-bg); --muted:var(--os-compare-blue); --line:color-mix(in srgb, var(--os-scrim) 11%, var(--os-transparent)); --navy:var(--os-primary); }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
@@ -30,15 +28,15 @@
       color: var(--ink);
       background: var(--paper);
     }
-    header.topbar { background: var(--navy); color: #fff; padding: 14px 24px; }
-    header.topbar a { color: #ffd166; text-decoration: none; font-weight: 600; }
+    header.topbar { background: var(--navy); color: var(--os-surface); padding: 14px 24px; }
+    header.topbar a { color: var(--os-soft); text-decoration: none; font-weight: 600; }
     main { max-width: 760px; margin: 32px auto 80px; padding: 0 22px; }
     h1 { font-size: 30px; margin: 0 0 6px; }
     .subtitle { color: var(--muted); margin: 0 0 28px; }
     h2 { font-size: 20px; margin: 32px 0 8px; color: var(--navy); }
     p, ul { margin: 8px 0; }
     ul { padding-left: 22px; }
-    a { color: #1a5c8a; }
+    a { color: var(--os-compare-blue); }
     footer.site {
       border-top: 1px solid var(--line);
       padding: 20px 24px;

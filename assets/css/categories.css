@@ -1,9 +1,10 @@
+@import url("/assets/css/oneslider-core.css");
 :root {
-  --ink: #12202e;
-  --paper: #f2f3f5;
-  --muted: #5a6672;
-  --line: rgba(18, 32, 46, .11);
-  --navy: #0d2137;
+  --ink: var(--os-ink);
+  --paper: var(--os-bg);
+  --muted: var(--os-muted);
+  --line: color-mix(in srgb, var(--os-scrim) 11%, var(--os-transparent));
+  --navy: var(--os-primary);
 }
 
 * {
@@ -13,7 +14,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--os-font-sans);
   color: var(--ink);
   background: var(--paper);
   overflow-x: hidden;
@@ -32,7 +33,7 @@ a {
   gap: 8px;
   overflow: visible;
   padding: 8px clamp(14px, 3vw, 36px);
-  background: rgba(242, 243, 245, .97);
+  background: color-mix(in srgb, var(--os-surface) 97%, var(--os-transparent));
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -47,7 +48,7 @@ a {
 .top-menu a:hover,
 .top-menu a.active {
   background: var(--navy);
-  color: white;
+  color: var(--os-surface);
 }
 
 .nav-icon {
@@ -64,7 +65,7 @@ a {
 
 .nav-icon:hover {
   background: var(--navy);
-  color: white;
+  color: var(--os-surface);
 }
 
 .nav-icon svg {
@@ -89,8 +90,8 @@ a {
   min-height: clamp(430px, 64vh, 680px);
   padding: clamp(56px, 12vh, 130px) clamp(20px, 5vw, 80px) clamp(34px, 8vh, 78px);
   overflow: hidden;
-  background: #07121e url("/content/categories/img/categories-topics-hero.png") center 42% / cover no-repeat;
-  color: white;
+  background: var(--os-bg) url("/content/categories/img/categories-topics-hero.png") center 42% / cover no-repeat;
+  color: var(--os-surface);
 }
 
 .hero::before {
@@ -99,8 +100,8 @@ a {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(7, 18, 30, .92) 0%, rgba(7, 18, 30, .62) 48%, rgba(7, 18, 30, .18) 100%),
-    linear-gradient(0deg, rgba(7, 18, 30, .74), rgba(7, 18, 30, 0) 48%);
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)) 48%, color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent)) 100%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%);
 }
 
 .hero-copy {
@@ -120,7 +121,7 @@ a {
   max-width: 610px;
   font-size: clamp(17px, 1.8vw, 24px);
   line-height: 1.28;
-  color: rgba(255, 255, 255, .86);
+  color: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
 }
 
 .hero-links {
@@ -135,17 +136,17 @@ a {
   align-items: center;
   min-height: 38px;
   padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, .24);
+  border: 1px solid color-mix(in srgb, var(--os-surface) 24%, var(--os-transparent));
   border-radius: 999px;
-  background: rgba(255, 255, 255, .12);
-  color: white;
+  background: color-mix(in srgb, var(--os-surface) 12%, var(--os-transparent));
+  color: var(--os-surface);
   font-size: 13px;
   font-weight: 800;
   backdrop-filter: blur(10px);
 }
 
 .hero-links a:hover {
-  background: white;
+  background: var(--os-surface);
   color: var(--navy);
 }
 
@@ -162,14 +163,14 @@ a {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+  background: var(--os-surface);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
   transition: transform .12s, box-shadow .12s;
 }
 
 .cat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .11);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--os-scrim) 11%, var(--os-transparent));
 }
 
 .cat-thumb {
@@ -185,10 +186,22 @@ a {
 }
 
 .cat-text strong {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 4px;
+}
+
+.cat-text strong::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--os-card-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--os-card-accent) 16%, var(--os-transparent));
 }
 
 .cat-text span {
@@ -201,7 +214,7 @@ a {
   color: var(--muted);
   font-size: 13px;
   border-top: 1px solid var(--line);
-  background: white;
+  background: var(--os-surface);
 }
 
 .event-language-menu {
@@ -218,7 +231,7 @@ a {
   min-height: 36px;
   padding: 0 11px;
   color: var(--muted);
-  background: #fff;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 999px;
   cursor: pointer;
@@ -238,7 +251,7 @@ a {
 
 .event-language-menu[open] summary,
 .event-language-menu summary:hover {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--navy);
   border-color: var(--navy);
 }
@@ -255,10 +268,10 @@ a {
   max-width: min(300px, calc(100vw - 24px));
   margin: 0;
   padding: 8px;
-  background: rgba(255, 255, 255, .98);
+  background: color-mix(in srgb, var(--os-surface) 98%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(18, 32, 46, .16);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
 }
 
 .event-language-menu .event-language-list > span:first-child {
@@ -273,7 +286,7 @@ a {
   min-height: 34px;
   padding: 0 10px;
   color: var(--muted);
-  background: #fff;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 12px;
@@ -283,7 +296,7 @@ a {
 
 .event-language-menu .event-language-list a[aria-current="true"],
 .event-language-menu .event-language-list a:hover {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--navy);
   border-color: var(--navy);
 }
@@ -298,7 +311,7 @@ a {
   overflow: visible;
   clip: auto;
   color: inherit;
-  background: transparent;
+  background: var(--os-transparent);
   border: 0;
   border-radius: 0;
   font-size: inherit;
@@ -367,11 +380,17 @@ a {
 }
 
 .category-page {
-  --theme: #245f46;
-  --accent: #b8dd72;
+  --theme: var(--c-sport);
+  --accent: color-mix(in srgb, var(--c-sport) 62%, var(--os-surface));
+  --os-card-accent: var(--theme);
   --category-hero: url("/content/categories/sport/img/sports-general-hero.png");
   color: var(--ink);
   background: var(--paper);
+}
+
+.category-page--sport {
+  --theme: var(--c-sport);
+  --accent: color-mix(in srgb, var(--c-sport) 62%, var(--os-surface));
 }
 
 .category-page--root {
@@ -379,33 +398,33 @@ a {
 }
 
 .category-page--music {
-  --theme: #6b3f7a;
-  --accent: #d6a7e3;
+  --theme: var(--c-music);
+  --accent: color-mix(in srgb, var(--c-music) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--culture {
-  --theme: #7d3c98;
-  --accent: #e1b5f2;
+  --theme: var(--c-culture);
+  --accent: color-mix(in srgb, var(--c-culture) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1526289034009-0240ddb68ce3?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--food,
 .category-page--food-and-drinks {
-  --theme: #7a4b18;
-  --accent: #f2c16b;
+  --theme: var(--c-food);
+  --accent: color-mix(in srgb, var(--c-food) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--drinks {
-  --theme: #4f5f2a;
-  --accent: #d8c96b;
+  --theme: var(--c-drinks);
+  --accent: color-mix(in srgb, var(--c-drinks) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--technology {
-  --theme: #214f7a;
-  --accent: #8ec5ff;
+  --theme: var(--c-tech);
+  --accent: color-mix(in srgb, var(--c-tech) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
 }
 
@@ -446,14 +465,14 @@ a {
 }
 
 .category-page--wellness {
-  --theme: #4f7a56;
-  --accent: #b8e2a3;
+  --theme: var(--c-wellness);
+  --accent: color-mix(in srgb, var(--c-wellness) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--climate {
-  --theme: #2f6b76;
-  --accent: #a5dbe3;
+  --theme: var(--c-climate);
+  --accent: color-mix(in srgb, var(--c-climate) 62%, var(--os-surface));
   --category-hero: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80");
 }
 
@@ -465,12 +484,21 @@ a {
 .category-page .event-language-menu .event-language-list a:hover {
   background: var(--theme);
   border-color: var(--theme);
-  color: white;
+  color: var(--os-surface);
 }
 
 .category-page .nav-icon:hover {
   background: var(--theme);
-  color: white;
+  color: var(--os-surface);
+}
+
+.category-page .recipe-tab.is-active,
+.category-page .sport-tab.is-active,
+.category-page .filter-btn.active,
+.category-page .filter-panel button.active {
+  background: var(--theme) !important;
+  border-color: var(--theme) !important;
+  color: var(--os-surface) !important;
 }
 
 .category-shell {
@@ -496,11 +524,11 @@ a {
   gap: 8px;
   min-height: 42px;
   padding: 0 14px 0 11px;
-  border: 1px solid rgba(18, 32, 46, .18);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   border-radius: 999px;
-  background: rgba(255, 255, 255, .92);
+  background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent));
   color: var(--theme);
-  box-shadow: 0 12px 30px rgba(18, 32, 46, .16);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
   backdrop-filter: blur(10px);
   font-size: 13px;
   font-weight: 900;
@@ -516,7 +544,7 @@ a {
 .category-back:hover,
 .category-back:focus-visible {
   background: var(--theme);
-  color: white;
+  color: var(--os-surface);
   outline: 0;
 }
 
@@ -529,11 +557,11 @@ a {
   gap: 8px;
   min-height: 46px;
   padding: 0 16px;
-  border: 1px solid rgba(18, 32, 46, .18);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   border-radius: 999px;
-  background: rgba(255, 255, 255, .94);
+  background: color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent));
   color: var(--theme);
-  box-shadow: 0 12px 30px rgba(18, 32, 46, .16);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
   backdrop-filter: blur(10px);
   font-size: 14px;
   font-weight: 900;
@@ -552,7 +580,7 @@ a {
 .category-switch:hover,
 .category-switch:focus-visible {
   background: var(--theme);
-  color: white;
+  color: var(--os-surface);
   outline: 0;
 }
 
@@ -569,8 +597,8 @@ a {
   min-height: inherit;
   overflow: hidden;
   border-radius: 12px;
-  background: #07121e var(--category-hero) center / cover no-repeat;
-  box-shadow: 0 18px 48px rgba(18, 32, 46, .22);
+  background: var(--os-bg) var(--category-hero) center / cover no-repeat;
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--os-scrim) 22%, var(--os-transparent));
 }
 
 .category-hero__image::after {
@@ -578,8 +606,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(5, 14, 23, .86), rgba(5, 14, 23, .52) 44%, rgba(5, 14, 23, 0) 78%),
-    linear-gradient(0deg, rgba(5, 14, 23, .50), rgba(5, 14, 23, 0) 52%);
+    linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 52%, var(--os-transparent)) 44%, var(--os-transparent) 78%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%);
 }
 
 .category-page--drinks .category-hero__image::after {
@@ -611,14 +639,14 @@ a {
   font-size: clamp(42px, 6vw, 82px);
   line-height: .86;
   letter-spacing: 0;
-  color: white;
+  color: var(--os-surface);
   white-space: nowrap;
 }
 
 .category-hero__copy .intro {
   max-width: 620px;
   margin: 0;
-  color: rgba(255, 255, 255, .86);
+  color: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
   font-size: clamp(14px, 1.2vw, 17px);
   line-height: 1.28;
 }
@@ -630,13 +658,13 @@ a {
 
 .category-page--drinks .category-hero__copy .eyebrow {
   color: var(--accent);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, .84);
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
 }
 
 .category-page--drinks .category-hero__copy h1,
 .category-page--drinks .category-hero__copy .intro {
-  color: white;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, .86), 0 0 2px rgba(0, 0, 0, .92);
+  color: var(--os-surface);
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong), 0 0 2px color-mix(in srgb, var(--os-scrim) 92%, var(--os-transparent));
 }
 
 .category-quick-links {
@@ -651,17 +679,17 @@ a {
   align-items: center;
   min-height: 32px;
   padding: 0 11px;
-  border: 1px solid rgba(255, 255, 255, .24);
+  border: 1px solid color-mix(in srgb, var(--os-surface) 24%, var(--os-transparent));
   border-radius: 999px;
-  background: rgba(255, 255, 255, .12);
-  color: white;
+  background: color-mix(in srgb, var(--os-surface) 12%, var(--os-transparent));
+  color: var(--os-surface);
   font-size: 12px;
   font-weight: 900;
   text-decoration: none;
 }
 
 .category-quick-links a:hover {
-  background: white;
+  background: var(--os-surface);
   color: var(--theme);
 }
 
@@ -689,8 +717,8 @@ a {
 .history-card {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: white;
-  box-shadow: 0 8px 18px rgba(18, 32, 46, .05);
+  background: var(--os-surface);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent));
 }
 
 .category-chart {
@@ -727,7 +755,7 @@ a {
 .bar-track {
   height: 8px;
   border-radius: 999px;
-  background: rgba(18, 32, 46, .10);
+  background: color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
   overflow: hidden;
 }
 
@@ -736,7 +764,7 @@ a {
   width: var(--value);
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--theme), #9fcbd8);
+  background: linear-gradient(90deg, var(--theme), var(--os-line));
 }
 
 .bar-fill.w100 { --value: 100%; }
@@ -788,7 +816,7 @@ a {
   gap: 10px;
   align-items: baseline;
   padding-top: 7px;
-  border-top: 1px solid rgba(18, 32, 46, .10);
+  border-top: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .history-item time {
@@ -821,9 +849,9 @@ a {
 .kpi {
   min-width: 0;
   padding: 8px 9px;
-  border: 1px solid rgba(18, 32, 46, .10);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
   border-radius: 8px;
-  background: rgba(18, 32, 46, .035);
+  background: color-mix(in srgb, var(--os-scrim) 4%, var(--os-transparent));
 }
 
 .kpi strong {
@@ -869,7 +897,7 @@ a {
   gap: 8px;
   align-items: start;
   padding: 6px 0;
-  border-top: 1px solid rgba(18, 32, 46, .10);
+  border-top: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .continent-row:first-child {
@@ -911,9 +939,9 @@ a {
   gap: 5px;
   height: 88px;
   overflow: hidden;
-  border: 1px solid rgba(18, 32, 46, .10);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
   border-radius: 8px;
-  background: rgba(18, 32, 46, .035);
+  background: color-mix(in srgb, var(--os-scrim) 4%, var(--os-transparent));
   color: inherit;
   text-decoration: none;
 }
@@ -958,7 +986,7 @@ a {
   padding: 13px 15px;
   border-radius: 8px;
   background: var(--theme);
-  color: white;
+  color: var(--os-surface);
 }
 
 .overview span {
@@ -1018,20 +1046,20 @@ a {
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: white;
+  background: var(--os-surface);
   color: var(--theme);
   cursor: pointer;
 }
 
 .carousel-button:hover {
   background: var(--theme);
-  color: white;
+  color: var(--os-surface);
 }
 
 .carousel-button:disabled {
   opacity: .35;
   cursor: default;
-  background: white;
+  background: var(--os-surface);
   color: var(--muted);
 }
 
@@ -1060,8 +1088,8 @@ a {
   border: 1px solid var(--line);
   border-left: 5px solid var(--accent);
   border-radius: 8px;
-  background: white;
-  box-shadow: 0 8px 18px rgba(18, 32, 46, .05);
+  background: var(--os-surface);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent));
 }
 
 .middle-category-card:hover {
@@ -1116,8 +1144,8 @@ a {
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(238, 242, 246, .9);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72);
+  background: color-mix(in srgb, var(--os-surface) 90%, var(--os-transparent));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x proximity;
@@ -1133,27 +1161,27 @@ a {
   padding: 0 16px;
   border: 0;
   border-radius: 999px;
-  background: transparent;
+  background: var(--os-transparent);
   color: var(--theme);
   font-size: 13px;
   font-weight: 900;
   cursor: pointer;
   scroll-snap-align: start;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--os-transparent);
 }
 
 .recipe-tab.is-active {
   position: relative;
   z-index: 1;
-  background: white;
+  background: var(--os-surface);
   color: var(--ink);
-  box-shadow: 0 3px 10px rgba(18, 32, 46, .14);
+  box-shadow: 0 3px 10px color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
 }
 
 .recipe-tab:hover,
 .recipe-tab:focus-visible {
-  background: white;
+  background: var(--os-surface);
   outline: 0;
 }
 
@@ -1161,8 +1189,8 @@ a {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: white;
-  box-shadow: 0 8px 24px rgba(18, 32, 46, .06);
+  background: var(--os-surface);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
 }
 
 .recipe-tab-panel {
@@ -1178,7 +1206,7 @@ a {
   padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: white;
+  background: var(--os-surface);
   color: var(--theme);
   font-size: 13px;
   font-weight: 900;
@@ -1189,7 +1217,7 @@ a {
 .sport-tab:hover {
   background: var(--theme);
   border-color: var(--theme);
-  color: white;
+  color: var(--os-surface);
 }
 
 .topic-group h3 {
@@ -1218,10 +1246,10 @@ a {
   border: 1px solid var(--line);
   border-left: 0;
   border-radius: 8px;
-  background: white;
+  background: var(--os-surface);
   color: inherit;
   text-decoration: none;
-  box-shadow: 0 8px 18px rgba(18, 32, 46, .06);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
 }
 
 .topic-card:hover,
@@ -1260,8 +1288,8 @@ a {
   height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 18%, rgba(47, 111, 146, 0.12), transparent 32%),
-    linear-gradient(180deg, #f5f8fa 0%, #edf5f8 100%);
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--os-compare-blue) 12%, var(--os-transparent)), var(--os-transparent) 32%),
+    linear-gradient(180deg, var(--os-surface) 0%, var(--os-bg) 100%);
 }
 
 html:has(body.food-layout-page) {
@@ -1274,8 +1302,8 @@ html:has(body.food-layout-page) {
   display: grid;
   align-content: end;
   padding: 28px;
-  color: white;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.68)), var(--food-hero-image) center / cover;
+  color: var(--os-surface);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), var(--os-image-overlay-medium)), var(--food-hero-image) center / cover;
   border-radius: 8px;
 }
 
@@ -1287,7 +1315,7 @@ html:has(body.food-layout-page) {
 
 .food-topic-page .eyebrow {
   margin: 0 0 8px;
-  color: #9ee6b7;
+  color: var(--os-soft);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1308,8 +1336,8 @@ html:has(body.food-layout-page) {
 
 .food-topic-page .topic-card {
   padding: 18px;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
 }
 
@@ -1342,11 +1370,11 @@ html:has(body.food-layout-page) {
   align-items: center;
   gap: 7px;
   padding: 7px 10px;
-  color: #111922;
+  color: var(--os-primary);
   font-weight: 800;
   text-decoration: none;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 999px;
 }
 
@@ -1362,10 +1390,10 @@ html:has(body.food-layout-page) {
   gap: 12px;
   align-items: center;
   overflow: hidden;
-  color: #111922;
+  color: var(--os-primary);
   text-decoration: none;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
 }
 
@@ -1377,7 +1405,7 @@ html:has(body.food-layout-page) {
 
 .food-topic-page .recipe-drink-card span {
   display: block;
-  color: #47515c;
+  color: var(--os-compare-blue);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1395,10 +1423,10 @@ html:has(body.food-layout-page) {
   gap: 12px;
   align-items: center;
   overflow: hidden;
-  color: #111922;
+  color: var(--os-primary);
   text-decoration: none;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
 }
 
@@ -1416,7 +1444,7 @@ html:has(body.food-layout-page) {
 .food-topic-page .recipe-music-card span {
   display: block;
   margin-top: 3px;
-  color: #47515c;
+  color: var(--os-compare-blue);
   font-size: 12px;
   line-height: 1.25;
 }
@@ -1427,7 +1455,7 @@ html:has(body.food-layout-page) {
   gap: 8px;
   margin: 10px 0 14px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(17, 25, 34, 0.12);
+  border-bottom: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 .recipe-action-button {
@@ -1438,41 +1466,41 @@ html:has(body.food-layout-page) {
   min-height: 42px;
   max-width: 100%;
   padding: 0 14px;
-  color: #fff;
-  background: #0d2137;
+  color: var(--os-surface);
+  background: var(--os-primary);
   border: 0;
   border-radius: 8px;
-  box-shadow: 0 8px 18px rgba(17, 25, 34, 0.14);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
   cursor: pointer;
-  font: 800 13px/1.1 Arial, Helvetica, sans-serif;
+  font: 800 13px/1.1 var(--os-font-sans);
   text-align: center;
   white-space: normal;
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
 }
 
 .recipe-action-button--list {
-  background: #1a6640;
+  background: var(--os-accent);
 }
 
 .recipe-action-button--home {
-  background: #2f6f92;
+  background: var(--os-compare-blue);
 }
 
 .recipe-action-button:hover,
 .recipe-action-button:focus-visible {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(17, 25, 34, 0.18);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   outline: none;
 }
 
 .recipe-action-button:active {
   transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(17, 25, 34, 0.14);
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
 }
 
 .recipe-action-button:disabled {
-  color: #d6dde3;
-  background: #5f6b76;
+  color: var(--os-soft);
+  background: var(--os-compare-blue);
   cursor: default;
   transform: none;
   box-shadow: none;
@@ -1482,7 +1510,7 @@ html:has(body.food-layout-page) {
   flex: 1 0 100%;
   min-height: 17px;
   margin: 0;
-  color: #2e3b47;
+  color: var(--os-primary);
   font-size: 12px;
   font-weight: 800;
   line-height: 1.35;
@@ -1505,23 +1533,23 @@ html:has(body.food-layout-page) {
 .recipe-install-guide__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(7, 14, 22, 0.46);
+  background: var(--os-image-overlay-medium);
 }
 
 .recipe-install-guide__panel {
   position: relative;
   width: min(420px, 100%);
   padding: 18px;
-  color: #111922;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  color: var(--os-primary);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
-  box-shadow: 0 22px 60px rgba(7, 14, 22, 0.28);
+  box-shadow: 0 22px 60px color-mix(in srgb, var(--os-scrim) 28%, var(--os-transparent));
 }
 
 .recipe-install-guide__panel h2 {
   margin: 0 82px 12px 0;
-  color: #111922;
+  color: var(--os-primary);
   font-size: 24px;
   line-height: 1.05;
 }
@@ -1529,7 +1557,7 @@ html:has(body.food-layout-page) {
 .recipe-install-guide__panel ol {
   margin: 0;
   padding-left: 22px;
-  color: #2e3b47;
+  color: var(--os-primary);
   font-size: 15px;
   line-height: 1.45;
 }
@@ -1540,7 +1568,7 @@ html:has(body.food-layout-page) {
 
 .recipe-install-guide__note {
   margin: 12px 0 0;
-  color: #2e3b47;
+  color: var(--os-primary);
   font-size: 13px;
   font-weight: 800;
   line-height: 1.35;
@@ -1552,11 +1580,11 @@ html:has(body.food-layout-page) {
   min-height: 112px;
   margin-top: 12px;
   padding: 10px;
-  color: #111922;
-  background: #f7faf7;
-  border: 1px solid rgba(17, 25, 34, 0.16);
+  color: var(--os-primary);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
   border-radius: 8px;
-  font: 700 13px/1.4 Arial, Helvetica, sans-serif;
+  font: 700 13px/1.4 var(--os-font-sans);
   resize: vertical;
 }
 
@@ -1572,11 +1600,11 @@ html:has(body.food-layout-page) {
   align-items: center;
   min-height: 34px;
   padding: 0 12px;
-  color: #0d2137;
-  background: #e9f2ee;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  color: var(--os-primary);
+  background: var(--os-bg);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
-  font: 800 12px/1 Arial, Helvetica, sans-serif;
+  font: 800 12px/1 var(--os-font-sans);
   text-decoration: none;
 }
 
@@ -1586,20 +1614,20 @@ html:has(body.food-layout-page) {
   right: 12px;
   min-height: 34px;
   padding: 0 12px;
-  color: #fff;
-  background: #0d2137;
+  color: var(--os-surface);
+  background: var(--os-primary);
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  font: 800 12px/1 Arial, Helvetica, sans-serif;
+  font: 800 12px/1 var(--os-font-sans);
 }
 
 .music-topic-page {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 76% 14%, rgba(139, 92, 246, 0.10), transparent 32%),
-    linear-gradient(180deg, #f6f8fb 0%, #edf3f7 100%);
+    radial-gradient(circle at 76% 14%, color-mix(in srgb, var(--os-purple) 10%, var(--os-transparent)), var(--os-transparent) 32%),
+    linear-gradient(180deg, var(--os-surface) 0%, var(--os-bg) 100%);
 }
 
 .music-topic-page .top-menu {
@@ -1607,7 +1635,7 @@ html:has(body.food-layout-page) {
   top: 0;
   z-index: 40;
   min-height: 55px;
-  background: rgba(246, 248, 251, 0.95);
+  background: color-mix(in srgb, var(--os-surface) 95%, var(--os-transparent));
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -1624,11 +1652,11 @@ html:has(body.food-layout-page) {
   min-height: clamp(320px, 46vh, 520px);
   overflow: hidden;
   padding: clamp(24px, 4vw, 52px);
-  color: white;
+  color: var(--os-surface);
   background-position: center;
   background-size: cover;
   border-radius: 12px;
-  box-shadow: 0 20px 54px rgba(17, 25, 34, 0.18);
+  box-shadow: 0 20px 54px color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
 }
 
 .music-topic__hero > div {
@@ -1637,7 +1665,7 @@ html:has(body.food-layout-page) {
 
 .music-topic__hero .eyebrow {
   margin: 0 0 10px;
-  color: #c9b8ff;
+  color: var(--os-line);
   font-size: 13px;
   font-weight: 900;
   text-transform: uppercase;
@@ -1653,7 +1681,7 @@ html:has(body.food-layout-page) {
 .music-topic__hero p:last-child {
   max-width: 680px;
   margin: 14px 0 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.35;
 }
@@ -1668,10 +1696,10 @@ html:has(body.food-layout-page) {
 .music-topic__panel .topic-card {
   min-height: 170px;
   padding: 22px;
-  background: white;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(17, 25, 34, 0.06);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
 }
 
 .music-topic__panel .topic-card h2 {
@@ -1708,10 +1736,10 @@ body.food-layout-page main.food-topic.food-content-box {
   margin: 0;
   padding: clamp(12px, 1.6vw, 24px);
   overflow-y: auto;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 body.food-layout-page .food-topic__hero {
@@ -1756,15 +1784,15 @@ body.food-layout-page .recipe-servings-control {
   gap: 8px;
   align-items: center;
   padding: 10px;
-  color: #111922;
-  background: rgba(122, 75, 24, 0.08);
-  border: 1px solid rgba(122, 75, 24, 0.18);
+  color: var(--os-primary);
+  background: color-mix(in srgb, var(--os-muted) 8%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-muted) 18%, var(--os-transparent));
   border-radius: 8px;
 }
 
 body.food-layout-page .recipe-servings-control label,
 body.food-layout-page .recipe-servings-control span {
-  color: #3f2b14;
+  color: var(--os-ink);
   font-size: 13px;
   font-weight: 900;
 }
@@ -1773,9 +1801,9 @@ body.food-layout-page .recipe-servings-control input {
   width: 100%;
   min-height: 40px;
   padding: 0 10px;
-  color: #111922;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.18);
+  color: var(--os-primary);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   border-radius: 8px;
   font: inherit;
   font-weight: 900;
@@ -1785,21 +1813,21 @@ body.food-layout-page .recipe-servings-control select {
   width: 100%;
   min-height: 40px;
   padding: 0 10px;
-  color: #111922;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.18);
+  color: var(--os-primary);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   border-radius: 8px;
   font: inherit;
   font-weight: 900;
 }
 
 body.food-layout-page .recipe-servings-control input:focus-visible {
-  outline: 3px solid rgba(122, 75, 24, 0.28);
+  outline: 3px solid color-mix(in srgb, var(--os-muted) 28%, var(--os-transparent));
   outline-offset: 2px;
 }
 
 body.food-layout-page .recipe-servings-control select:focus-visible {
-  outline: 3px solid rgba(122, 75, 24, 0.28);
+  outline: 3px solid color-mix(in srgb, var(--os-muted) 28%, var(--os-transparent));
   outline-offset: 2px;
 }
 
@@ -1811,15 +1839,15 @@ body.food-layout-page .recipe-box-grid {
 
 body.food-layout-page .recipe-box {
   padding: 8px 10px;
-  color: #111922;
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  color: var(--os-primary);
+  background: color-mix(in srgb, var(--os-surface) 76%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
 }
 
 body.food-layout-page .recipe-box h3 {
   margin: 0 0 5px;
-  color: #3f2b14;
+  color: var(--os-ink);
   font-size: 13px;
   font-weight: 900;
   line-height: 1.15;
@@ -1827,19 +1855,19 @@ body.food-layout-page .recipe-box h3 {
 
 body.food-layout-page .recipe-box p {
   margin: 0;
-  color: #313b45;
+  color: var(--os-primary);
   font-size: 14px;
   line-height: 1.3;
 }
 
 body.food-layout-page [data-recipe-quantity] {
-  color: #734915;
+  color: var(--os-muted);
   font-weight: 900;
 }
 
 body.food-layout-page .recipe-scale-note {
   margin: 0 0 10px;
-  color: #47515c;
+  color: var(--os-compare-blue);
   font-size: 13px;
   line-height: 1.35;
 }
@@ -1907,7 +1935,7 @@ body.food-layout-page .topic-card--more .recipe-drink-card strong {
 
 body.food-layout-page .topic-card--more .recipe-drink-card span {
   margin-top: -2px;
-  color: #47515c;
+  color: var(--os-compare-blue);
   font-size: 13px;
   font-weight: 400;
   line-height: 1.25;
@@ -1922,10 +1950,10 @@ body.food-layout-page .topic-card--more .recipe-music-card {
   margin-top: 8px;
   min-height: 62px;
   overflow: hidden;
-  color: #111922;
+  color: var(--os-primary);
   text-decoration: none;
-  background: #fff;
-  border: 1px solid rgba(17, 25, 34, 0.12);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   border-radius: 8px;
 }
 
@@ -1949,7 +1977,7 @@ body.food-layout-page .topic-card--more .recipe-music-card strong {
 
 body.food-layout-page .topic-card--more .recipe-music-card span {
   margin-top: -2px;
-  color: #47515c;
+  color: var(--os-compare-blue);
   font-size: 13px;
   line-height: 1.25;
 }
@@ -1969,7 +1997,7 @@ body.food-layout-page .os-footer {
   min-height: var(--food-footer-height);
   height: var(--food-footer-height);
   padding: 0 clamp(24px, 3.2vw, 56px);
-  background: transparent;
+  background: var(--os-transparent);
   border-top: 0;
 }
 
@@ -1977,12 +2005,12 @@ body.food-layout-page .os-footer {
   --drink-nav-height: 55px;
   --drink-content-gap: 12px;
   --drink-footer-height: 36px;
-  --theme: #4f5f2a;
-  --accent: #d8c96b;
-  --ink: #111922;
-  --paper: #f6f8f6;
-  --muted: #5f6b63;
-  --line: rgba(17, 25, 34, 0.14);
+  --theme: var(--os-muted);
+  --accent: var(--os-line);
+  --ink: var(--os-primary);
+  --paper: var(--os-surface);
+  --muted: var(--os-accent);
+  --line: color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
   height: 100vh;
   overflow: hidden;
   color: var(--ink);
@@ -2010,7 +2038,7 @@ body.drink-layout-page .top-menu {
   min-height: var(--drink-nav-height);
   padding: 8px clamp(14px, 3vw, 36px);
   overflow-x: auto;
-  background: rgba(246, 248, 246, 0.95);
+  background: color-mix(in srgb, var(--os-surface) 95%, var(--os-transparent));
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -2026,7 +2054,7 @@ body.drink-layout-page .top-menu a {
 
 body.drink-layout-page .top-menu a:hover,
 body.drink-layout-page .top-menu a.active {
-  color: white;
+  color: var(--os-surface);
   background: var(--theme);
 }
 
@@ -2063,10 +2091,10 @@ body.drink-layout-page main.drink-page.drink-content-box {
   margin: 0;
   padding: clamp(12px, 1.6vw, 24px);
   overflow-y: auto;
-  background: rgba(255, 255, 255, 0.72);
+  background: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.12);
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 .drink-layout-page .drink-hero {
@@ -2079,21 +2107,21 @@ body.drink-layout-page main.drink-page.drink-content-box {
   margin-inline: auto;
   padding: 28px;
   overflow: hidden;
-  color: #13202c;
-  background-color: #f4eee2;
+  color: var(--os-primary);
+  background-color: var(--os-bg);
   background-image: var(--drink-hero-image);
   background-position: center 70%;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
-  box-shadow: 0 18px 44px rgba(17, 25, 34, 0.18);
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
 }
 
 .drink-layout-page .hero-copy {
   max-width: min(760px, 100%);
   padding: 0;
-  color: white;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, .86), 0 0 2px rgba(0, 0, 0, .92);
+  color: var(--os-surface);
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong), 0 0 2px color-mix(in srgb, var(--os-scrim) 92%, var(--os-transparent));
 }
 
 .drink-layout-page .eyebrow {
@@ -2113,7 +2141,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
 
 .drink-layout-page .intro {
   margin: 14px 0 0;
-  color: rgba(255, 255, 255, 0.90);
+  color: color-mix(in srgb, var(--os-surface) 90%, var(--os-transparent));
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.35;
 }
@@ -2129,10 +2157,10 @@ body.drink-layout-page main.drink-page.drink-content-box {
 .drink-layout-page .panel {
   overflow: hidden;
   margin-bottom: 12px;
-  background: white;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: 0 8px 18px rgba(17, 25, 34, 0.05);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent));
 }
 
 .drink-layout-page .panel h2 {
@@ -2165,7 +2193,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
 
 .drink-layout-page .fact-card {
   padding: 12px;
-  background: #fbfcfb;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 8px;
 }
@@ -2199,7 +2227,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
   padding: 7px 10px;
   font-weight: 900;
   text-decoration: none;
-  background: #fbfcfb;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 999px;
 }
@@ -2233,7 +2261,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
 
 .drink-layout-page .compare-card {
   padding: 12px;
-  background: #fbfcfb;
+  background: var(--os-surface);
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -2300,7 +2328,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
   place-items: center;
   width: 32px;
   height: 32px;
-  color: white;
+  color: var(--os-surface);
   font-size: 13px;
   font-weight: 900;
   content: counter(recipe-step);
@@ -2322,7 +2350,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
   background: conic-gradient(var(--slice-a) 0 var(--a), var(--slice-b) var(--a) var(--b), var(--slice-c) var(--b) var(--c), var(--slice-d) var(--c) 100%);
   border: 1px solid var(--line);
   border-radius: 50%;
-  box-shadow: inset 0 0 0 18px rgba(255, 255, 255, 0.5), 0 10px 24px rgba(17, 25, 34, 0.1);
+  box-shadow: inset 0 0 0 18px color-mix(in srgb, var(--os-surface) 50%, var(--os-transparent)), 0 10px 24px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .drink-layout-page .chart-legend {
@@ -2364,7 +2392,7 @@ body.drink-layout-page .site-footer {
   padding: 0 clamp(24px, 3.2vw, 56px);
   color: var(--muted);
   font-size: 13px;
-  background: transparent;
+  background: var(--os-transparent);
   border-top: 0;
 }
 
@@ -2536,7 +2564,7 @@ body.drink-layout-page .site-footer p {
 @media (max-width: 620px) {
   body.category-page {
     background:
-      linear-gradient(180deg, #f7f8fa 0%, #eef2f5 100%);
+      linear-gradient(180deg, var(--os-surface) 0%, var(--os-bg) 100%);
   }
 
   .category-shell {
@@ -2550,13 +2578,13 @@ body.drink-layout-page .site-footer p {
 
   .category-hero__image {
     border-radius: 14px;
-    box-shadow: 0 16px 42px rgba(18, 32, 46, .16);
+    box-shadow: 0 16px 42px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
   }
 
   .category-hero__image::after {
     background:
-      linear-gradient(90deg, rgba(7, 17, 28, .82), rgba(7, 17, 28, .42) 54%, rgba(7, 17, 28, .10)),
-      linear-gradient(0deg, rgba(7, 17, 28, .70), rgba(7, 17, 28, .08) 58%);
+      linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 42%, var(--os-transparent)) 54%, color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent))),
+      linear-gradient(0deg, var(--os-image-overlay-medium), color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)) 58%);
   }
 
   .category-hero__copy {
@@ -2566,7 +2594,7 @@ body.drink-layout-page .site-footer p {
 
   .category-hero__copy .eyebrow {
     max-width: 92%;
-    color: #f0c464;
+    color: var(--os-line);
     font-size: 16px;
     line-height: 1.12;
   }
@@ -2578,7 +2606,7 @@ body.drink-layout-page .site-footer p {
 
   .category-hero__copy .intro {
     max-width: 94%;
-    color: rgba(255, 255, 255, .92);
+    color: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent));
     font-size: 20px;
     line-height: 1.22;
   }
@@ -2606,8 +2634,8 @@ body.drink-layout-page .site-footer p {
     overflow-x: auto !important;
     overflow-y: hidden !important;
     border-radius: 18px;
-    background: rgba(238, 242, 246, .86);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .88);
+    background: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
@@ -2619,23 +2647,23 @@ body.drink-layout-page .site-footer p {
     padding: 0 18px;
     border: 0 !important;
     border-radius: 16px;
-    background: transparent;
-    color: #734915;
+    background: var(--os-transparent);
+    color: var(--os-muted);
     font-size: 18px;
     line-height: 1;
   }
 
   .recipe-tab.is-active {
-    background: #fff;
-    color: #142132;
-    box-shadow: 0 8px 22px rgba(18, 32, 46, .14);
+    background: var(--os-surface);
+    color: var(--os-primary);
+    box-shadow: 0 8px 22px color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
   }
 
   .recipe-tab-panels {
     padding: 16px;
     border: 0;
     border-radius: 0;
-    background: transparent;
+    background: var(--os-transparent);
     box-shadow: none;
   }
 
@@ -2645,10 +2673,10 @@ body.drink-layout-page .site-footer p {
 
   .recipe-tab-panels .topic-card {
     min-height: 168px;
-    border: 1px solid rgba(18, 32, 46, .10);
+    border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
     border-radius: 12px;
-    background: rgba(255, 255, 255, .96);
-    box-shadow: 0 14px 34px rgba(18, 32, 46, .10);
+    background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+    box-shadow: 0 14px 34px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
   }
 
   .recipe-tab-panels .topic-thumb {
@@ -2924,17 +2952,17 @@ body.food-layout-page.drink-page-irish-coffee .food-topic__hero {
   --topic-nav-height: 53px;
   --topic-content-gap: 12px;
   --topic-footer-height: 36px;
-  --theme: #0d5966;
-  --accent: #78d7e6;
-  --paper: #f3f7f8;
-  --ink: #102033;
-  --muted: #596b75;
-  --line: rgba(16, 32, 51, 0.13);
+  --theme: var(--os-ink);
+  --accent: var(--os-line);
+  --paper: var(--os-surface);
+  --ink: var(--os-primary);
+  --muted: var(--os-compare-blue);
+  --line: color-mix(in srgb, var(--os-scrim) 13%, var(--os-transparent));
   height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 78% 18%, rgba(120, 215, 230, 0.16), transparent 32%),
-    linear-gradient(180deg, #f7fafb 0%, #edf3f5 100%);
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--os-compare-blue) 16%, var(--os-transparent)), var(--os-transparent) 32%),
+    linear-gradient(180deg, var(--os-surface) 0%, var(--os-bg) 100%);
   overflow: hidden;
 }
 
@@ -2951,15 +2979,15 @@ html:has(body.topic-onepage) {
   z-index: 40;
   align-items: center;
   min-height: var(--topic-nav-height);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 248, 250, 0.94));
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.88) inset, 0 8px 22px rgba(16, 32, 51, 0.06);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--os-surface) 98%, var(--os-transparent)), color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent)));
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent)) inset, 0 8px 22px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
 }
 
 .topic-onepage .nav-icon.active,
 .topic-onepage .nav-icon:hover,
 .topic-onepage .top-menu a:hover,
 .topic-onepage .top-menu a.active {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--theme);
 }
 
@@ -2989,10 +3017,10 @@ html:has(body.topic-onepage) {
   margin: 0;
   padding: clamp(12px, 1.6vw, 24px);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.74);
+  background: color-mix(in srgb, var(--os-surface) 62%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-surface) 74%, var(--os-transparent));
   border-radius: 24px;
-  box-shadow: 0 22px 58px rgba(16, 32, 51, 0.12);
+  box-shadow: 0 22px 58px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   backdrop-filter: blur(16px);
 }
 
@@ -3032,9 +3060,9 @@ html:has(body.topic-onepage) {
   border: 1px solid var(--line);
   border-radius: 18px;
   background:
-    linear-gradient(90deg, rgba(5, 15, 24, 0.08), rgba(5, 15, 24, 0)),
+    linear-gradient(90deg, color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)), var(--os-transparent)),
     var(--topic-hero-url, url("/content/categories/sport/img/sports-general-hero.png")) center / cover no-repeat;
-  box-shadow: 0 18px 38px rgba(16, 32, 51, 0.12);
+  box-shadow: 0 18px 38px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 .topic-page--ice-hockey {
@@ -3085,10 +3113,10 @@ html:has(body.topic-onepage) {
   max-height: 100%;
   padding: clamp(14px, 1.5vw, 22px);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.82);
+  background: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-surface) 82%, var(--os-transparent));
   border-radius: 22px;
-  box-shadow: 0 16px 44px rgba(16, 32, 51, 0.10);
+  box-shadow: 0 16px 44px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .topic-kpis {
@@ -3100,7 +3128,7 @@ html:has(body.topic-onepage) {
 .topic-kpi,
 .topic-panel-card,
 .topic-path {
-  background: rgba(255, 255, 255, 0.96);
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 14px;
 }
@@ -3174,7 +3202,7 @@ html:has(body.topic-onepage) {
   min-height: 28px;
   padding: 4px 8px;
   color: var(--ink);
-  background: rgba(120, 215, 230, 0.14);
+  background: color-mix(in srgb, var(--os-compare-blue) 14%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 12px;
@@ -3185,14 +3213,14 @@ html:has(body.topic-onepage) {
 
 .topic-chip:hover,
 .topic-country:hover {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--theme);
   border-color: var(--theme);
 }
 
 .topic-country--static:hover {
   color: var(--ink);
-  background: rgba(120, 215, 230, 0.14);
+  background: color-mix(in srgb, var(--os-compare-blue) 14%, var(--os-transparent));
   border-color: var(--line);
 }
 
@@ -3201,7 +3229,7 @@ html:has(body.topic-onepage) {
   height: 14px;
   object-fit: cover;
   border-radius: 2px;
-  box-shadow: 0 0 0 1px rgba(16, 32, 51, 0.08);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
 }
 
 .topic-persona-tabs {
@@ -3226,7 +3254,7 @@ html:has(body.topic-onepage) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   padding: 6px;
-  background: rgba(16, 32, 51, 0.07);
+  background: color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 999px;
 }
@@ -3246,9 +3274,9 @@ html:has(body.topic-onepage) {
 #view-ice-start:checked ~ .topic-tablist label[for="view-ice-start"],
 #view-ice-events:checked ~ .topic-tablist label[for="view-ice-events"],
 #view-ice-context:checked ~ .topic-tablist label[for="view-ice-context"] {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--theme);
-  box-shadow: 0 8px 18px rgba(13, 89, 102, 0.2);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-compare-blue) 20%, var(--os-transparent));
 }
 
 .topic-tab-panel {
@@ -3332,13 +3360,13 @@ html:has(body.topic-onepage) {
 }
 
 .topic-path:hover {
-  color: #fff;
+  color: var(--os-surface);
   background: var(--theme);
   border-color: var(--theme);
 }
 
 .topic-path:hover span {
-  color: rgba(255, 255, 255, 0.76);
+  color: color-mix(in srgb, var(--os-surface) 76%, var(--os-transparent));
 }
 
 .topic-qa-list {
@@ -3350,7 +3378,7 @@ html:has(body.topic-onepage) {
 .topic-qa-list div {
   min-width: 0;
   padding: 9px 10px;
-  background: #fff;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 10px;
 }
@@ -3386,7 +3414,7 @@ html:has(body.topic-onepage) {
   min-width: 0;
   overflow: hidden;
   color: var(--ink);
-  background: #fff;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-left: 6px solid var(--accent);
   border-radius: 14px;
@@ -3448,7 +3476,7 @@ html:has(body.topic-onepage) {
   margin: 0;
   padding: 11px 12px;
   color: var(--muted);
-  background: #fff;
+  background: var(--os-surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   font-size: 13px;
@@ -3471,7 +3499,7 @@ html:has(body.topic-onepage) {
   min-height: 36px;
   padding: 6px 8px;
   color: var(--ink);
-  background: rgba(120, 215, 230, 0.14);
+  background: color-mix(in srgb, var(--os-compare-blue) 14%, var(--os-transparent));
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 12px;
@@ -3490,7 +3518,7 @@ html:has(body.topic-onepage) {
   min-height: var(--topic-footer-height);
   padding: 0 clamp(24px, 3.2vw, 56px);
   color: var(--muted);
-  background: transparent;
+  background: var(--os-transparent);
   border-top: 0;
 }
 
@@ -3591,7 +3619,7 @@ body.category-page--wellness {
 }
 
 body.category-page--wellness {
-  background: #07120d;
+  background: var(--os-bg);
 }
 
 .wellness-oneslider {
@@ -3612,8 +3640,8 @@ body.category-page--wellness {
   min-height: 0;
   overflow: hidden;
   border-radius: 12px;
-  background: #07120d var(--category-hero) center / cover no-repeat;
-  box-shadow: 0 18px 50px rgba(18, 32, 46, .22);
+  background: var(--os-bg) var(--category-hero) center / cover no-repeat;
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--os-scrim) 22%, var(--os-transparent));
 }
 
 .wellness-slide::before {
@@ -3622,8 +3650,8 @@ body.category-page--wellness {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(5, 13, 9, .90), rgba(5, 13, 9, .70) 42%, rgba(5, 13, 9, .42)),
-    linear-gradient(0deg, rgba(5, 13, 9, .62), rgba(5, 13, 9, .08) 48%);
+    linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 70%, var(--os-transparent)) 42%, color-mix(in srgb, var(--os-scrim) 42%, var(--os-transparent))),
+    linear-gradient(0deg, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)) 48%);
 }
 
 .wellness-slide__copy {
@@ -3632,7 +3660,7 @@ body.category-page--wellness {
   gap: clamp(10px, 1.4vw, 16px);
   min-width: 0;
   padding: clamp(22px, 4vw, 54px);
-  color: #fff;
+  color: var(--os-surface);
 }
 
 .wellness-kicker {
@@ -3647,7 +3675,7 @@ body.category-page--wellness {
 
 .wellness-slide__copy h1 {
   margin: 0;
-  color: #fff;
+  color: var(--os-surface);
   font-size: clamp(58px, 8vw, 118px);
   line-height: .84;
   letter-spacing: 0;
@@ -3656,7 +3684,7 @@ body.category-page--wellness {
 .wellness-slide__copy p:not(.wellness-kicker) {
   max-width: 600px;
   margin: 0;
-  color: rgba(255, 255, 255, .86);
+  color: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
   font-size: clamp(15px, 1.35vw, 19px);
   line-height: 1.32;
 }
@@ -3674,9 +3702,9 @@ body.category-page--wellness {
   place-items: center;
   min-height: 38px;
   padding: 6px 10px;
-  color: #fff;
-  background: rgba(255, 255, 255, .14);
-  border: 1px solid rgba(255, 255, 255, .22);
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-surface) 14%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-surface) 22%, var(--os-transparent));
   border-radius: 999px;
   font-size: 12px;
   font-weight: 900;
@@ -3702,19 +3730,19 @@ body.category-page--wellness {
   min-height: 0;
   padding: clamp(13px, 1.35vw, 18px);
   color: var(--ink);
-  background: rgba(255, 255, 255, .93);
-  border: 1px solid rgba(255, 255, 255, .60);
+  background: color-mix(in srgb, var(--os-surface) 93%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-surface) 60%, var(--os-transparent));
   border-left: 6px solid var(--accent);
   border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(5, 13, 9, .20);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--os-scrim) 20%, var(--os-transparent));
   text-decoration: none;
   backdrop-filter: blur(10px);
 }
 
 .wellness-paths a:hover,
 .wellness-paths a:focus-visible {
-  border-color: #fff;
-  background: #fff;
+  border-color: var(--os-surface);
+  background: var(--os-surface);
   outline: 0;
   transform: translateY(-2px);
 }
@@ -3860,4 +3888,93 @@ body.category-page--wellness {
   .wellness-paths em {
     display: none;
   }
+}
+
+/* Palette-safe food category hero. */
+body.category-page--food .category-hero__image::after {
+  background:
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 44%, var(--os-transparent) 78%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%);
+}
+
+body.category-page--food .category-hero__copy .eyebrow {
+  color: var(--os-gold);
+}
+
+body.category-page--food .category-hero__copy h1 {
+  color: var(--os-on-image);
+}
+
+body.category-page--food .category-hero__copy .intro {
+  color: var(--os-on-image-muted);
+}
+
+/* Palette-safe recipe heroes. */
+.food-topic-page .food-topic__hero {
+  color: var(--os-on-image);
+  background:
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-image-overlay-soft) 100%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%),
+    var(--food-hero-image) center / cover;
+}
+
+.food-topic-page .food-topic__hero .eyebrow {
+  color: var(--os-gold);
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+}
+
+.food-topic-page .food-topic__hero h1 {
+  color: var(--os-on-image);
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong);
+}
+
+.food-topic-page .food-topic__hero p:not(.eyebrow) {
+  color: var(--os-on-image-muted);
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+}
+
+/* Palette-safe music topic heroes. */
+.music-topic__hero {
+  color: var(--os-on-image);
+  background:
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 48%, var(--os-image-overlay-soft) 100%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%),
+    var(--music-hero-image, var(--category-hero)) center / cover;
+}
+
+.music-topic__hero .eyebrow {
+  color: var(--os-gold);
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+}
+
+.music-topic__hero h1 {
+  color: var(--os-on-image);
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong);
+}
+
+.music-topic__hero p:last-child {
+  color: var(--os-on-image-muted);
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+}
+
+/* Palette-safe category overview heroes. */
+.category-page .category-hero__image::after {
+  background:
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-transparent) 78%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%) !important;
+}
+
+.category-page .category-hero__copy .eyebrow {
+  color: var(--os-gold) !important;
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+}
+
+.category-page .category-hero__copy h1 {
+  color: var(--os-on-image) !important;
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong) !important;
+}
+
+.category-page .category-hero__copy .intro {
+  color: var(--os-on-image-muted) !important;
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
 }

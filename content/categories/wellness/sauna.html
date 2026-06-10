@@ -4,9 +4,11 @@
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
   
-  <link rel="preload" as="image" href="sauna/events/img/world-sauna-forum-hero.png">
+    <link rel="stylesheet" href="../../../assets/css/categories.css">
+<link rel="preload" as="image" href="sauna/events/img/world-sauna-forum-hero.png">
 <script defer src="../../../assets/js/oneslider-core.js"></script>
-    <meta charset="utf-8">
+      <script defer src="../../../assets/js/categories.js"></script>
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="Sauna events calendar for 2026: key dates, schedules and linked pages across Wellness.">
   <meta name="twitter:title" content="Sauna Events 2026 — Schedule &amp; Calendar">
@@ -22,27 +24,26 @@
     <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-    <meta name="theme-color" content="#0d2137">
-    <title>Sauna Events 2026 — Schedule &amp; Calendar</title>
+<title>Sauna Events 2026 — Schedule &amp; Calendar</title>
     <style>
-      :root { --theme: #4f8a68; --accent: #c7e8ca; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+      :root { --theme: var(--os-accent); --accent: var(--os-soft); --ink: var(--os-primary); --paper: var(--os-surface); --muted: var(--os-accent); --line: color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent)); }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
       a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: color-mix(in srgb, var(--os-surface) 95%, var(--os-transparent)); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
       .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: var(--os-surface); }
       .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
+      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
       .nav-icon svg{width:22px;height:22px;display:block}
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.62)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
+      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
       .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
       .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
-      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
       .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
@@ -51,26 +52,26 @@
       .snapshot-head h2 { margin: 0; font-size: 22px; line-height: 1.1; }
       .snapshot-head span { color: var(--muted); font-size: 12px; font-weight: 800; }
       .snapshot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-      .snapshot-card { display: grid; gap: 7px; min-height: 126px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--ink); }
+      .snapshot-card { display: grid; gap: 7px; min-height: 126px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); color: var(--ink); }
       .snapshot-card small { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }
       .snapshot-card strong { font-size: 28px; line-height: .95; }
       .snapshot-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
       .snapshot-wide { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 8px; }
-      .heat-chart { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .heat-chart { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
       .heat-chart h3, .record-list h3 { margin: 0 0 9px; font-size: 18px; line-height: 1.1; }
       .heat-bar { display: grid; grid-template-columns: 68px 1fr 64px; gap: 8px; align-items: center; margin: 8px 0; color: var(--muted); font-size: 12px; }
       .heat-bar span:first-child { color: var(--ink); font-weight: 900; }
-      .heat-bar__track { height: 10px; overflow: hidden; border-radius: 999px; background: #edf1ee; }
+      .heat-bar__track { height: 10px; overflow: hidden; border-radius: 999px; background: var(--os-bg); }
       .heat-bar__fill { display: block; height: 100%; border-radius: inherit; background: var(--theme); }
-      .record-list { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+      .record-list { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
       .record-item { display: grid; gap: 3px; padding-top: 8px; border-top: 1px solid var(--line); }
       .record-item:first-of-type { padding-top: 0; border-top: 0; }
       .record-item strong { font-size: 14px; line-height: 1.15; }
       .record-item span { color: var(--muted); font-size: 12px; line-height: 1.25; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: white; }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: white; color: var(--muted); }
+      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--os-surface); color: var(--theme); cursor: pointer; }
+      .carousel-button:hover { background: var(--theme); color: var(--os-surface); }
+      .carousel-button:disabled { opacity: .35; cursor: default; background: var(--os-surface); color: var(--muted); }
       .carousel-button svg { width: 18px; height: 18px; display: block; }
       .carousel { min-width: 0; overflow: hidden; }
       .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
@@ -85,63 +86,63 @@
       .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
       .bastu-affiliate { display: none; }
       body.is-localhost .bastu-affiliate { display: grid; gap: 10px; }
-      .bastu-card { position: relative; overflow: hidden; border: 1px solid rgba(23,32,28,.14); border-radius: 8px; background: #fbfaf6; color: #17201c; box-shadow: 0 12px 28px rgba(23,32,28,.1); }
-      .bastu-card__media { position: relative; aspect-ratio: 1.9 / 1; min-height: 210px; max-height: 300px; background: #ece7df; }
+      .bastu-card { position: relative; overflow: hidden; border: 1px solid color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); color: var(--os-primary); box-shadow: 0 12px 28px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); }
+      .bastu-card__media { position: relative; aspect-ratio: 1.9 / 1; min-height: 210px; max-height: 300px; background: var(--os-bg); }
       .bastu-card__media img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
       .bastu-card__brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 15px 0; }
-      .bastu-card__brand img { display: block; width: 76px; height: auto; padding: 0; border-radius: 0; background: transparent; }
-      .bastu-card__tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 9px; border: 1px solid rgba(79,138,104,.32); border-radius: 999px; background: rgba(79,138,104,.08); color: #315a43; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+      .bastu-card__brand img { display: block; width: 76px; height: auto; padding: 0; border-radius: 0; background: var(--os-transparent); }
+      .bastu-card__tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 9px; border: 1px solid color-mix(in srgb, var(--os-accent) 32%, var(--os-transparent)); border-radius: 999px; background: color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent)); color: var(--os-accent); font-size: 11px; font-weight: 900; text-transform: uppercase; }
       .bastu-card__body { position: relative; display: grid; gap: 12px; padding: 12px 15px 15px; }
-      .bastu-card h2 { max-width: 520px; margin: 0; color: #17201c; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.04; }
-      .bastu-card p { margin: 0; color: #4f5c55; font-size: 14px; line-height: 1.4; }
+      .bastu-card h2 { max-width: 520px; margin: 0; color: var(--os-primary); font-size: clamp(22px, 2.3vw, 30px); line-height: 1.04; }
+      .bastu-card p { margin: 0; color: var(--os-accent); font-size: 14px; line-height: 1.4; }
       .bastu-card__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
-      .bastu-card__facts span { display: grid; gap: 4px; min-height: 64px; padding: 9px; border: 1px solid rgba(23,32,28,.1); border-radius: 8px; background: #fff; color: #4f8a68; font-size: 11px; font-weight: 900; }
-      .bastu-card__facts strong { color: #17201c; font-size: 13px; line-height: 1.12; }
+      .bastu-card__facts span { display: grid; gap: 4px; min-height: 64px; padding: 9px; border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); color: var(--os-accent); font-size: 11px; font-weight: 900; }
+      .bastu-card__facts strong { color: var(--os-primary); font-size: 13px; line-height: 1.12; }
       .bastu-card__actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-      .bastu-button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid #4f8a68; background: #4f8a68; color: #fff; font-size: 13px; font-weight: 900; text-decoration: none; }
-      .bastu-button--ghost { background: transparent; color: #315a43; border-color: rgba(79,138,104,.5); }
-      .bastu-safety { position: relative; display: grid; gap: 5px; margin-top: 1px; padding: 10px 12px; border-top: 1px solid rgba(23,32,28,.1); background: #fff; color: #4f5c55; font-size: 12px; line-height: 1.28; }
-      .bastu-safety strong { color: #315a43; font-size: 12px; text-transform: uppercase; }
-      .bastu-accessory { display: grid; grid-template-columns: minmax(140px, .42fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; padding: 12px; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; color: #17201c; }
-      .bastu-accessory__image { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; border-radius: 8px; background: #f6f1ec; }
+      .bastu-button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--os-accent); background: var(--os-accent); color: var(--os-surface); font-size: 13px; font-weight: 900; text-decoration: none; }
+      .bastu-button--ghost { background: var(--os-transparent); color: var(--os-accent); border-color: color-mix(in srgb, var(--os-accent) 50%, var(--os-transparent)); }
+      .bastu-safety { position: relative; display: grid; gap: 5px; margin-top: 1px; padding: 10px 12px; border-top: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); background: var(--os-surface); color: var(--os-accent); font-size: 12px; line-height: 1.28; }
+      .bastu-safety strong { color: var(--os-accent); font-size: 12px; text-transform: uppercase; }
+      .bastu-accessory { display: grid; grid-template-columns: minmax(140px, .42fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; padding: 12px; border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); color: var(--os-primary); }
+      .bastu-accessory__image { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; border-radius: 8px; background: var(--os-bg); }
       .bastu-accessory__body { display: grid; gap: 10px; align-content: start; }
       .bastu-accessory__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
       .bastu-accessory h3 { margin: 0; font-size: 22px; line-height: 1.05; }
-      .bastu-accessory p { margin: 0; color: #5f6b63; font-size: 13px; line-height: 1.32; }
+      .bastu-accessory p { margin: 0; color: var(--os-accent); font-size: 13px; line-height: 1.32; }
       .bastu-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-      .bastu-kpi { display: grid; gap: 3px; padding: 10px; border: 1px solid rgba(23,32,28,.1); border-radius: 8px; background: #fbfaf6; }
-      .bastu-kpi strong { color: #315a43; font-size: 20px; line-height: 1; }
-      .bastu-kpi span { color: #17201c; font-size: 12px; font-weight: 900; }
-      .bastu-kpi small { color: #5f6b63; font-size: 11px; line-height: 1.2; }
+      .bastu-kpi { display: grid; gap: 3px; padding: 10px; border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); }
+      .bastu-kpi strong { color: var(--os-accent); font-size: 20px; line-height: 1; }
+      .bastu-kpi span { color: var(--os-primary); font-size: 12px; font-weight: 900; }
+      .bastu-kpi small { color: var(--os-accent); font-size: 11px; line-height: 1.2; }
       .affiliate-section { display: grid; gap: 8px; margin-top: 12px; }
       .affiliate-section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
       .affiliate-section__head h3 { margin: 0; font-size: 22px; line-height: 1.05; }
-      .affiliate-section__head span { color: #5f6b63; font-size: 12px; font-weight: 800; }
-      .affiliate-section__intro { margin: 0; color: #5f6b63; font-size: 14px; line-height: 1.32; }
+      .affiliate-section__head span { color: var(--os-accent); font-size: 12px; font-weight: 800; }
+      .affiliate-section__intro { margin: 0; color: var(--os-accent); font-size: 14px; line-height: 1.32; }
       .affiliate-section__tools { display: flex; align-items: center; gap: 8px; }
       .affiliate-controls { display: flex; gap: 6px; }
       .affiliate-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 31%); gap: 8px; overflow-x: auto; padding-bottom: 2px; scroll-snap-type: x mandatory; }
       .affiliate-row::-webkit-scrollbar { height: 0; }
-      .affiliate-product { display: grid; grid-template-rows: 140px auto; overflow: hidden; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; color: #17201c; scroll-snap-align: start; }
-      .affiliate-product img { display: block; width: 100%; height: 140px; object-fit: cover; background: #f6f1ec; }
+      .affiliate-product { display: grid; grid-template-rows: 140px auto; overflow: hidden; border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); color: var(--os-primary); scroll-snap-align: start; }
+      .affiliate-product img { display: block; width: 100%; height: 140px; object-fit: cover; background: var(--os-bg); }
       .affiliate-product__body { display: grid; gap: 8px; padding: 12px; }
       .affiliate-product__body h4 { margin: 0; font-size: 17px; line-height: 1.1; }
-      .affiliate-product__body p { margin: 0; color: #5f6b63; font-size: 13px; line-height: 1.3; }
+      .affiliate-product__body p { margin: 0; color: var(--os-accent); font-size: 13px; line-height: 1.3; }
       .affiliate-product__meta { display: flex; flex-wrap: wrap; gap: 5px; }
-      .affiliate-product__meta span { padding: 4px 7px; border-radius: 999px; background: rgba(79,138,104,.09); color: #315a43; font-size: 11px; font-weight: 900; }
+      .affiliate-product__meta span { padding: 4px 7px; border-radius: 999px; background: color-mix(in srgb, var(--os-accent) 9%, var(--os-transparent)); color: var(--os-accent); font-size: 11px; font-weight: 900; }
       .sauna-type-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0; }
-      .sauna-type-tab { flex: 0 0 auto; min-height: 36px; padding: 0 12px; border: 1px solid rgba(79,138,104,.34); border-radius: 999px; background: #fff; color: #315a43; font-size: 13px; font-weight: 900; cursor: pointer; }
-      .sauna-type-tab[aria-selected="true"] { background: #4f8a68; color: #fff; border-color: #4f8a68; }
+      .sauna-type-tab { flex: 0 0 auto; min-height: 36px; padding: 0 12px; border: 1px solid color-mix(in srgb, var(--os-accent) 34%, var(--os-transparent)); border-radius: 999px; background: var(--os-surface); color: var(--os-accent); font-size: 13px; font-weight: 900; cursor: pointer; }
+      .sauna-type-tab[aria-selected="true"] { background: var(--os-accent); color: var(--os-surface); border-color: var(--os-accent); }
       .sauna-type-panel { display: none; gap: 10px; }
       .sauna-type-panel.is-active { display: grid; }
-      .sauna-type-hero { display: grid; grid-template-columns: minmax(210px, .55fr) minmax(0, 1fr); gap: 12px; padding: 12px; border: 1px solid rgba(23,32,28,.12); border-radius: 8px; background: #fff; }
-      .sauna-type-hero img { display: block; width: 100%; height: 100%; min-height: 230px; object-fit: cover; border-radius: 8px; background: #f6f1ec; }
+      .sauna-type-hero { display: grid; grid-template-columns: minmax(210px, .55fr) minmax(0, 1fr); gap: 12px; padding: 12px; border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)); border-radius: 8px; background: var(--os-surface); }
+      .sauna-type-hero img { display: block; width: 100%; height: 100%; min-height: 230px; object-fit: cover; border-radius: 8px; background: var(--os-bg); }
       .sauna-type-hero__body { display: grid; gap: 10px; align-content: start; }
       .sauna-type-hero h4 { margin: 0; font-size: 24px; line-height: 1.05; }
-      .sauna-type-hero p { margin: 0; color: #5f6b63; font-size: 14px; line-height: 1.35; }
+      .sauna-type-hero p { margin: 0; color: var(--os-accent); font-size: 14px; line-height: 1.35; }
       .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
       body:not(.is-localhost) .bastu-affiliate { display: none; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
       .site-footer p { margin: 0; }
       @media (max-width: 900px) {
         .topic-slide { min-height: auto; gap: 10px; }
@@ -153,7 +154,7 @@
         .related-grid .affiliate-product { min-width: 190px; scroll-snap-align: start; }
       }
       @media (max-width: 620px) {
-        body { background: #f7f6f1; }
+        body { background: var(--os-surface); }
         .top-menu { gap: 6px; padding: 7px 10px; }
         .top-menu a { padding: 7px 10px; font-size: 12px; }
         .nav-icon { width: 34px; height: 34px; }
@@ -203,10 +204,32 @@
         .carousel-track .event-card { flex-basis: min(84vw, 310px); }
         .related-grid { grid-auto-columns: minmax(206px, 84vw); }
       }
+      .topic-page--sauna .right .carousel-track.event-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 16px) / 3);
+        grid-template-rows: repeat(2, minmax(132px, auto));
+        overflow-x: auto;
+      }
+      @media (max-width: 900px) {
+        .topic-page--sauna .right .carousel-track.event-grid {
+          grid-auto-columns: min(86vw, 360px);
+        }
+      }
+      @media (max-width: 620px) {
+        .topic-page--sauna .right .carousel-track.event-grid {
+          grid-auto-columns: min(82vw, 330px);
+        }
+      }
+      @media (max-width: 390px) {
+        .topic-page--sauna .right .carousel-track.event-grid {
+          grid-auto-columns: min(84vw, 310px);
+        }
+      }
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/wellness/sauna.html#webpage","url":"https://one-sliders.com/content/categories/wellness/sauna.html","name":"Sauna Events 2026 — Schedule & Calendar","description":"Sauna events calendar for 2026: key dates, schedules and linked pages across Wellness.","inLanguage":"en","image":"https://one-sliders.com/content/categories/wellness/sauna/events/img/world-sauna-forum-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/wellness/sauna.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/wellness/sauna.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Wellness","item":"https://one-sliders.com/content/categories/wellness/index.html"},{"@type":"ListItem","position":4,"name":"Sauna Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/wellness/sauna.html"}]}],"name":"Sauna Events 2026","description":"Sauna events calendar for 2026: key dates, schedules and linked pages across Wellness."}</script>
 </head>
-  <body>
+  <body class="category-page category-page--wellness topic-onepage topic-page--sauna" data-os-category="wellness" data-cat="wellness">
     <nav class="top-menu" aria-label="Category navigation">
       <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
@@ -247,6 +270,8 @@
               </div>
             </div>
           </section>
+        </div>
+        <div class="right">
           <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
           <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
 <a class="event-card" href="sauna/events/world-sauna-forum.html#year" data-end="2026-06-11"><img class="event-thumb" src="sauna/events/img/world-sauna-forum-mini.png" alt="World Sauna Forum thumbnail" width="400" height="300" loading="lazy"><time>9 Jun 2026</time><strong>World Sauna Forum</strong><p>Jyväskylä, Finland. Global sauna business, culture and wellness gathering.</p></a>
@@ -270,8 +295,6 @@
 <a class="event-card" href="sauna/events/north-american-sauna-summit.html#year" data-end="2026-10-18"><img class="event-thumb" src="sauna/events/img/north-american-sauna-summit-mini.png" alt="North American Sauna Summit thumbnail" width="400" height="300" loading="lazy"><time>16 Oct 2026</time><strong>North American Sauna Summit</strong><p>Minneapolis, United States. North American meeting point for public sauna, backyard builders and bathhouse operators.</p></a>
 <a class="event-card" href="sauna/events/canadian-sauna-culture-weekend.html#year" data-end="2026-02-22"><img class="event-thumb" src="sauna/events/img/canadian-sauna-culture-weekend-mini.png" alt="Canadian Sauna Culture Weekend thumbnail" width="400" height="300" loading="lazy"><time>20 Feb 2026</time><strong>Canadian Sauna Culture Weekend</strong><p>Toronto, Canada. Winter weekend for Canadian sauna, cold exposure and Nordic-style social wellness.</p></a>
           </div></div>
-        </div>
-        <div class="right">
           <section class="bastu-affiliate affiliate-section" aria-label="Sponsored sauna type overview">
             <div class="affiliate-section__head"><h3>Find your sauna style</h3><span>Sponsored overview</span></div>
             <p class="affiliate-section__intro">Pick the sauna setup that feels most like you, then see the gear that naturally fits that kind of session.</p>
@@ -325,4 +348,3 @@
     </script>
   </body>
 </html>
-

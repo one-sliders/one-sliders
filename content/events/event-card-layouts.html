@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Link Box Layouts</title><meta property="og:image" content="https://one-sliders.com/content/categories/sport/rugby/events/img/state-of-origin-mini.png"><meta property="og:description" content="Link Box Layouts: dates, schedule, location and guide on OneSliders."><meta property="og:url" content="https://one-sliders.com/content/events/event-card-layouts.html"><meta name="twitter:card" content="summary_large_image"><meta property="og:title" content="Link Box Layouts"><meta property="og:type" content="website"><meta name="content-language" content="en"><link rel="canonical" href="https://one-sliders.com/content/events/event-card-layouts.html"><meta name="description" content="Link Box Layouts: dates, schedule, location and guide on OneSliders.">
+  <link rel="stylesheet" href="../../assets/css/oneslider-core.css?v=semantic-sport-20260610">
+  <link rel="stylesheet" href="../../assets/css/content-cards.css?v=bafta-style-tabs-20260610">
+  <style>
+    :root {
+      --ink: var(--os-ink, #172033);
+      --paper: var(--os-bg, #f6f7fb);
+      --surface: var(--os-surface, #fff);
+      --muted: var(--os-muted, #61708a);
+      --line: var(--os-line, rgba(23,32,51,.13));
+      --accent: var(--os-accent, #d84a4a);
+      --sport: var(--c-sport, var(--os-compare-blue, #2f6fed));
+      --gold: var(--os-gold, #c99a22);
+      --purple: var(--os-purple, #7651c9);
+      --green: var(--os-compare-green, #238b62);
+      --scrim: var(--os-scrim, #0c1322);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--paper), var(--surface));
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .layout-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px clamp(14px, 3vw, 36px);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .nav-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--muted);
+    }
+    .nav-icon:hover { color: var(--surface); background: var(--ink); }
+    .nav-icon svg { width: 22px; height: 22px; }
+    .nav-spacer { flex: 1; }
+    .lang-pill {
+      display: inline-grid;
+      place-items: center;
+      min-height: 34px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--surface);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .page-hero {
+      display: grid;
+      gap: 10px;
+      padding: 34px clamp(18px, 5vw, 76px) 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-hero span {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(38px, 7vw, 86px);
+      line-height: .9;
+      letter-spacing: 0;
+    }
+    .page-hero p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .count-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding: 14px clamp(18px, 5vw, 76px);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .count-strip strong {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: var(--surface);
+      background: var(--ink);
+      font-size: 13px;
+    }
+    .count-strip span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .section-heading {
+      display: grid;
+      gap: 6px;
+      padding: 24px clamp(18px, 5vw, 76px) 0;
+    }
+    .section-heading span {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .section-heading p {
+      max-width: 780px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .layout-divider {
+      width: calc(100% - clamp(18px, 5vw, 76px) * 2);
+      height: 1px;
+      margin: 8px auto 0;
+      border: 0;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+    .layout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 18px;
+      padding: 22px clamp(18px, 5vw, 76px) 64px;
+    }
+    .standard-proposal {
+      display: grid;
+      gap: 18px;
+      padding: 22px clamp(18px, 5vw, 76px) 42px;
+      border-bottom: 1px solid var(--line);
+    }
+    .standard-proposal__note {
+      display: grid;
+      gap: 8px;
+      max-width: 980px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px color-mix(in srgb, var(--scrim) 7%, transparent);
+    }
+    .standard-proposal__note h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+    .standard-proposal__note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .standard-proposal__themes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .standard-theme {
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--cc-line);
+      border-radius: 14px;
+      box-shadow: 0 18px 42px var(--cc-shadow);
+    }
+    .standard-theme h3 {
+      margin: 0;
+      color: var(--cc-ink);
+      font-size: 24px;
+      line-height: 1.05;
+    }
+    .standard-theme p {
+      margin: 0;
+      color: var(--cc-muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .device-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+      gap: 14px;
+      align-items: start;
+    }
+    .device-preview {
+      display: grid;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--cc-line);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--cc-surface) 84%, var(--cc-bg));
+    }
+    .device-preview__label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--cc-muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .device-preview--phone {
+      position: relative;
+      width: min(100%, 360px);
+      max-width: 360px;
+      min-height: 640px;
+      justify-self: center;
+      border: 8px solid color-mix(in srgb, var(--cc-ink) 78%, transparent);
+      border-radius: 34px;
+      padding: 28px 12px 16px;
+      background: var(--cc-bg);
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--cc-surface) 22%, transparent),
+        0 18px 36px var(--cc-shadow);
+      overflow: hidden;
+    }
+    .device-preview--phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: 92px;
+      height: 7px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--cc-ink) 42%, transparent);
+      transform: translateX(-50%);
+    }
+    .device-preview--phone .content-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .device-preview--phone .content-card,
+    .device-preview--phone .content-card--stack,
+    .device-preview--phone .content-card--media,
+    .device-preview--phone .content-card--row,
+    .device-preview--phone .content-card--mini,
+    .device-preview--phone .content-card--cover {
+      width: 100%;
+    }
+    .layout-example {
+      display: grid;
+      gap: 12px;
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      box-shadow: 0 16px 42px color-mix(in srgb, var(--scrim) 8%, transparent);
+    }
+    .layout-example__meta {
+      display: grid;
+      gap: 5px;
+    }
+    .layout-example__meta span {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .layout-example__meta h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .layout-example__meta code {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      white-space: normal;
+    }
+    .demo-stage {
+      display: grid;
+      align-items: center;
+      min-height: 230px;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--paper);
+      overflow: hidden;
+    }
+    .demo-stage--stack {
+      align-content: center;
+      gap: 10px;
+    }
+    .demo-continent-card {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 13px;
+      align-items: center;
+      overflow: hidden;
+      min-height: 118px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 14px 34px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-continent-card img {
+      width: 118px;
+      height: 118px;
+      object-fit: cover;
+    }
+    .demo-continent-card div {
+      display: grid;
+      gap: 6px;
+      padding: 12px 14px 12px 0;
+    }
+    .demo-continent-card strong {
+      font-size: 22px;
+      line-height: 1.05;
+    }
+    .demo-continent-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .demo-continent-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .demo-continent-mini-grid a {
+      display: grid;
+      place-items: center;
+      min-height: 38px;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .demo-location-visual {
+      display: grid;
+      grid-template-rows: 142px auto auto;
+      gap: 7px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 14px 32px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-location-visual img {
+      width: 100%;
+      height: 142px;
+      object-fit: cover;
+    }
+    .demo-location-visual strong {
+      padding: 0 13px;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+    .demo-location-visual span {
+      padding: 0 13px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .demo-country-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .demo-country-chip {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      flex: 1 1 178px;
+      min-width: 0;
+      padding: 7px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 8px 20px color-mix(in srgb, var(--scrim) 7%, transparent);
+    }
+    .demo-country-chip img {
+      width: 58px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .demo-country-chip div {
+      min-width: 0;
+    }
+    .demo-country-chip strong {
+      display: block;
+      overflow: hidden;
+      font-size: 15px;
+      line-height: 1.1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .demo-country-chip span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-country-path {
+      display: grid;
+      gap: 5px;
+      min-height: 96px;
+      align-content: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--scrim) 8%, transparent);
+    }
+    .demo-country-path span {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-country-path strong {
+      font-size: 22px;
+      line-height: 1.05;
+    }
+    .demo-category-card {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 13px;
+      align-items: center;
+      overflow: hidden;
+      min-height: 118px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 14px 34px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-category-card img {
+      width: 118px;
+      height: 118px;
+      object-fit: cover;
+    }
+    .demo-category-card div {
+      display: grid;
+      gap: 6px;
+      padding: 12px 14px 12px 0;
+    }
+    .demo-category-card strong {
+      font-size: 22px;
+      line-height: 1.05;
+    }
+    .demo-category-card span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .demo-middle-category {
+      display: grid;
+      gap: 7px;
+      min-height: 132px;
+      align-content: end;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--surface);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--scrim) 12%, transparent), color-mix(in srgb, var(--scrim) 78%, transparent)),
+        url("/content/categories/sport/img/sport-mini.png") center / cover no-repeat;
+      box-shadow: 0 14px 34px color-mix(in srgb, var(--scrim) 12%, transparent);
+    }
+    .demo-middle-category strong {
+      font-size: 24px;
+      line-height: 1.05;
+    }
+    .demo-middle-category span {
+      max-width: 320px;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .demo-topic-card {
+      display: grid;
+      grid-template-rows: 140px auto auto;
+      gap: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 14px 32px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-topic-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .demo-topic-card strong {
+      padding: 0 14px;
+      font-size: 21px;
+      line-height: 1.08;
+    }
+    .demo-topic-card p {
+      margin: 0;
+      padding: 0 14px 15px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .demo-topic-wide {
+      display: grid;
+      gap: 9px;
+      min-height: 190px;
+      align-content: end;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--surface);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--scrim) 8%, transparent), color-mix(in srgb, var(--scrim) 82%, transparent)),
+        url("/content/categories/climate/sustainability/events/img/world-environment-day-mini.png") center / cover no-repeat;
+      box-shadow: 0 14px 34px color-mix(in srgb, var(--scrim) 12%, transparent);
+    }
+    .demo-topic-wide strong {
+      font-size: 27px;
+      line-height: 1.02;
+    }
+    .demo-topic-wide p {
+      max-width: 420px;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .demo-card-index {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 238px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--sport);
+      border-radius: 9px;
+      background: var(--surface);
+      box-shadow: 0 2px 8px color-mix(in srgb, var(--scrim) 5%, transparent);
+    }
+    .demo-card-index img {
+      display: block;
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+    .demo-card-index__stripe { height: 4px; background: var(--sport); }
+    .demo-card-index__body {
+      display: grid;
+      gap: 6px;
+      padding: 12px 14px 13px;
+    }
+    .demo-pill {
+      justify-self: start;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: var(--sport);
+      background: color-mix(in srgb, var(--sport) 10%, var(--surface));
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-title { font-weight: 900; line-height: 1.18; }
+    .demo-meta { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .demo-tile {
+      position: relative;
+      min-height: 210px;
+      overflow: hidden;
+      border: 2px solid var(--purple);
+      border-radius: 14px;
+      color: var(--surface);
+      background: var(--scrim);
+      box-shadow: 0 10px 26px color-mix(in srgb, var(--scrim) 13%, transparent);
+    }
+    .demo-tile img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .demo-tile__cat,
+    .demo-tile__date,
+    .demo-tile__name {
+      position: absolute;
+      z-index: 1;
+      border-radius: 999px;
+      font-weight: 900;
+    }
+    .demo-tile__cat {
+      top: 12px;
+      left: 12px;
+      padding: 5px 8px;
+      background: var(--purple);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+    .demo-tile__date {
+      top: 12px;
+      right: 12px;
+      padding: 5px 8px;
+      color: var(--ink);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+    .demo-tile__name {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      width: max-content;
+      max-width: calc(100% - 24px);
+      padding: 7px 10px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--scrim) 72%, transparent);
+      font-size: 21px;
+      line-height: 1.05;
+      backdrop-filter: blur(8px);
+    }
+    .demo-tile-wide {
+      position: relative;
+      min-height: 210px;
+      overflow: hidden;
+      border: 2px solid var(--green);
+      border-radius: 14px;
+      color: var(--surface);
+      background: linear-gradient(90deg, var(--scrim) 0%, var(--ink) 40%, var(--paper) 40%);
+    }
+    .demo-tile-wide img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 64%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .demo-tile-wide strong {
+      position: absolute;
+      left: 14px;
+      bottom: 16px;
+      z-index: 1;
+      max-width: 42%;
+      font-size: 24px;
+      line-height: 1.05;
+    }
+    .demo-tile-wide span {
+      position: absolute;
+      left: 14px;
+      top: 44px;
+      z-index: 1;
+      max-width: 34%;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-topic-compact {
+      display: grid;
+      grid-template-rows: 54px auto auto auto;
+      gap: 7px;
+      min-height: 152px;
+      overflow: hidden;
+      padding: 0 15px 14px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .demo-topic-compact img {
+      width: calc(100% + 30px);
+      height: 54px;
+      margin-left: -15px;
+      object-fit: cover;
+    }
+    .demo-topic-compact time {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-topic-compact strong { font-size: 20px; line-height: 1.1; }
+    .demo-topic-compact p { margin: 0; color: var(--muted); font-size: 14px; }
+    .demo-culture-grid {
+      display: grid;
+      gap: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px color-mix(in srgb, var(--scrim) 8%, transparent);
+    }
+    .demo-culture-grid img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+    .demo-culture-grid div {
+      display: grid;
+      gap: 5px;
+      padding: 0 13px 14px;
+    }
+    .demo-culture-grid time {
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-culture-grid strong { font-size: 18px; line-height: 1.12; }
+    .demo-culture-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.3; }
+    .demo-awards-card {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 11px;
+      align-items: center;
+      min-height: 100px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px color-mix(in srgb, var(--scrim) 12%, transparent);
+    }
+    .demo-awards-card img {
+      width: 82px;
+      height: 72px;
+      border-radius: 9px;
+      object-fit: cover;
+    }
+    .demo-awards-card div { display: grid; gap: 5px; min-width: 0; }
+    .demo-awards-card time {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-awards-card strong {
+      overflow: hidden;
+      font-size: 16px;
+      line-height: 1.12;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .demo-visual-topic {
+      display: grid;
+      grid-template-rows: 142px auto auto;
+      gap: 7px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 14px 32px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-visual-topic img {
+      width: 100%;
+      height: 142px;
+      object-fit: cover;
+    }
+    .demo-visual-topic strong { padding: 0 13px; font-size: 19px; line-height: 1.1; }
+    .demo-visual-topic span { padding: 0 13px 14px; color: var(--muted); font-size: 13px; font-weight: 800; }
+    .demo-link-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      min-height: 96px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 12px 26px color-mix(in srgb, var(--scrim) 10%, transparent);
+    }
+    .demo-link-card img {
+      width: 74px;
+      height: 74px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .demo-link-card span {
+      display: block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-link-card strong { display: block; margin-top: 4px; font-size: 18px; line-height: 1.1; }
+    .demo-event-topic {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 8px 11px 8px 8px;
+      border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--scrim) 18%, transparent);
+    }
+    .demo-event-topic img {
+      grid-row: 1 / 4;
+      width: 92px;
+      height: 62px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .demo-event-topic span {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .demo-event-topic strong { font-size: 18px; line-height: 1.1; }
+    .demo-event-topic p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.3; }
+    .demo-calendar-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 12px 26px color-mix(in srgb, var(--scrim) 8%, transparent);
+    }
+    .demo-calendar-date {
+      display: grid;
+      place-items: center;
+      min-height: 74px;
+      border-radius: 10px;
+      color: var(--surface);
+      background: var(--ink);
+      text-align: center;
+      font-weight: 900;
+    }
+    .demo-calendar-date small {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    .demo-calendar-card strong { display: block; font-size: 18px; line-height: 1.12; }
+    .demo-calendar-card span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; font-weight: 800; }
+    @media (max-width: 700px) {
+      .layout-grid { grid-template-columns: 1fr; }
+      .standard-proposal__themes { grid-template-columns: 1fr; }
+      .device-pair { grid-template-columns: 1fr; }
+      .device-preview--phone { max-width: none; }
+      .demo-continent-mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .demo-stage { padding: 12px; }
+      .demo-tile-wide img { inset: 0; width: 100%; z-index: 0; }
+      .demo-tile-wide strong {
+        max-width: calc(100% - 28px);
+        padding: 7px 10px;
+        border-radius: 10px;
+        background: color-mix(in srgb, var(--scrim) 72%, transparent);
+      }
+      .demo-tile-wide span {
+        max-width: calc(100% - 28px);
+        color: var(--ink);
+        background: color-mix(in srgb, var(--surface) 88%, transparent);
+        padding: 5px 8px;
+        border-radius: 999px;
+      }
+    }
+  </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/events/event-card-layouts.html#webpage","url":"https://one-sliders.com/content/events/event-card-layouts.html","name":"Link Box Layouts","description":"Link Box Layouts: dates, schedule, location and guide on OneSliders.","inLanguage":"en","image":"https://one-sliders.com/content/categories/sport/rugby/events/img/state-of-origin-mini.png","breadcrumb":{"@id":"https://one-sliders.com/content/events/event-card-layouts.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/events/event-card-layouts.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Link Box Layouts","item":"https://one-sliders.com/content/events/event-card-layouts.html"}]}]}</script></head>
+<body>
+  <nav class="layout-nav" aria-label="Site navigation">
+    <a class="nav-icon" href="/content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></a>
+    <a class="nav-icon" href="/content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg></a>
+    <a class="nav-icon" href="/content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+    <span class="nav-spacer"></span>
+    <span class="lang-pill">EN</span>
+  </nav>
+
+  <header class="page-hero">
+    <span>Internal visual check</span>
+    <h1>Link Box Layouts</h1>
+    <p>Distinct linked box patterns currently used around OneSliders. Location, category and topic links are shown first so the full navigation family sits above the event-link family.</p>
+  </header>
+
+  <div class="count-strip" aria-label="Layout count">
+    <strong>18 distinct layouts</strong>
+    <span>4 location-link layouts + 4 category/topic layouts above the divider + 10 event/related layouts below it</span>
+  </div>
+
+  <section class="section-heading" aria-labelledby="standard-card-title">
+    <span>Standard proposal</span>
+    <h2 id="standard-card-title">Neutral Content Cards</h2>
+    <p>New shared CSS: <code>assets/css/content-cards.css</code>. The naming is based on content shape: cover, media, row and mini. Flags, dates and labels are badges inside image cards, not separate card families.</p>
+  </section>
+
+  <section class="standard-proposal" aria-label="Standard content card proposal">
+    <div class="standard-proposal__note">
+      <h3>Suggested base types</h3>
+      <p>Reduce the standard to <strong>five image-first components</strong>: cover, stack, media, row and mini. Dates, flags, labels and metadata become badges or text inside those cards instead of separate card layouts.</p>
+    </div>
+
+    <div class="standard-proposal__themes">
+      <section class="content-card-theme standard-theme" data-card-theme="day" aria-label="Day theme content cards">
+        <h3>Normal Theme</h3>
+        <p>PC keeps natural card widths. Phone stacks the same components full width.</p>
+        <div class="device-pair">
+          <div class="device-preview device-preview--pc">
+            <div class="device-preview__label"><span>PC components</span><span>natural width</span></div>
+            <div class="content-tabs">
+              <div class="content-tabs__list" role="tablist" aria-label="Example content tabs">
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="true">Featured</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Latest</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Saved</button>
+              </div>
+            </div>
+            <div class="content-card-grid">
+              <a class="content-card content-card--stack" href="/content/categories/sport/rugby/events/state-of-origin.html" data-edge="sport">
+                <img class="content-card__media" src="/content/categories/sport/rugby/events/img/state-of-origin-mini.png" alt="">
+                <span class="content-card__stripe"></span>
+                <span class="content-card__body">
+                  <span class="content-card__pill-row"><span class="content-card__pill">Sport</span></span>
+                  <strong class="content-card__title">State of Origin</strong>
+                  <span class="content-card__line"><img src="/content/locations/oceania/australia/img/flag.svg" alt=""> 27 May - 8 Jul 2026 - Australia</span>
+                  <span class="content-card__link">National</span>
+                </span>
+              </a>
+              <a class="content-card content-card--cover" href="/content/categories/index.html" data-edge="purple">
+                <img class="content-card__media" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="">
+                <span class="content-card__body">
+                  <span class="content-card__eyebrow">Cover</span>
+                  <strong class="content-card__title">Featured content</strong>
+                  <p class="content-card__description">Full-bleed image with readable overlay.</p>
+                </span>
+              </a>
+              <a class="content-card content-card--media" href="/content/categories/index.html" data-edge="gold">
+                <span class="content-card__media-wrap">
+                  <img class="content-card__media" src="/content/categories/sport/img/sport-mini.png" alt="">
+                  <span class="content-card__badge">Label</span>
+                </span>
+                <span class="content-card__body">
+                  <span class="content-card__eyebrow">Media</span>
+                  <strong class="content-card__title">Image first card</strong>
+                  <span class="content-card__meta">Useful for category or event links</span>
+                </span>
+              </a>
+              <a class="content-card content-card--row" href="/content/locations/europe/index.html" data-edge="green">
+                <span class="content-card__media-wrap">
+                  <img class="content-card__media" src="/content/locations/europe/img/europe-mini.jpg" alt="">
+                  <span class="content-card__badge"><img src="/content/locations/europe/sweden/img/flag.svg" alt=""> Flag</span>
+                </span>
+                <span class="content-card__body">
+                  <span class="content-card__eyebrow">Row</span>
+                  <strong class="content-card__title">Image row card</strong>
+                  <p class="content-card__description">Good when scanning lists.</p>
+                </span>
+              </a>
+              <a class="content-card content-card--mini" href="/content/events/index.html" data-edge="red">
+                <img class="content-card__media" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="">
+                <span class="content-card__body">
+                  <span class="content-card__eyebrow">Mini</span>
+                  <strong class="content-card__title">Compact card</strong>
+                  <span class="content-card__meta">Dec 10 · metadata</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="device-preview device-preview--phone">
+            <div class="device-preview__label"><span>Phone components</span><span>stacked</span></div>
+            <div class="content-tabs">
+              <div class="content-tabs__list" role="tablist" aria-label="Example phone content tabs">
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="true">Featured</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Latest</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Saved</button>
+              </div>
+            </div>
+            <div class="content-card-grid">
+              <a class="content-card content-card--stack" href="/content/categories/sport/rugby/events/state-of-origin.html" data-edge="sport">
+                <img class="content-card__media" src="/content/categories/sport/rugby/events/img/state-of-origin-mini.png" alt="">
+                <span class="content-card__stripe"></span>
+                <span class="content-card__body">
+                  <span class="content-card__pill-row"><span class="content-card__pill">Sport</span></span>
+                  <strong class="content-card__title">State of Origin</strong>
+                  <span class="content-card__line"><img src="/content/locations/oceania/australia/img/flag.svg" alt=""> 27 May - 8 Jul 2026</span>
+                  <span class="content-card__link">National</span>
+                </span>
+              </a>
+              <a class="content-card content-card--cover" href="/content/categories/index.html" data-edge="purple">
+                <img class="content-card__media" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Cover</span><strong class="content-card__title">Featured content</strong><p class="content-card__description">Image and overlay stay readable.</p></span>
+              </a>
+              <a class="content-card content-card--media" href="/content/categories/index.html" data-edge="gold">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/categories/sport/img/sport-mini.png" alt=""><span class="content-card__badge">Label</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Media</span><strong class="content-card__title">Image first card</strong><span class="content-card__meta">Full width on phone</span></span>
+              </a>
+              <a class="content-card content-card--row" href="/content/locations/europe/index.html" data-edge="green">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/locations/europe/img/europe-mini.jpg" alt=""><span class="content-card__badge"><img src="/content/locations/europe/sweden/img/flag.svg" alt=""> Flag</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Row</span><strong class="content-card__title">Image row card</strong><p class="content-card__description">Still compact on mobile.</p></span>
+              </a>
+              <a class="content-card content-card--mini" href="/content/events/index.html" data-edge="red">
+                <img class="content-card__media" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Mini</span><strong class="content-card__title">Compact card</strong><span class="content-card__meta">Date · metadata</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-card-theme standard-theme" data-card-theme="night" aria-label="Night theme content cards">
+        <h3>Night Theme</h3>
+        <p>Same four components, dark tokens. The phone frame uses the same HTML classes.</p>
+        <div class="device-pair">
+          <div class="device-preview device-preview--pc">
+            <div class="device-preview__label"><span>PC components</span><span>natural width</span></div>
+            <div class="content-tabs">
+              <div class="content-tabs__list" role="tablist" aria-label="Example night content tabs">
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="true">Featured</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Latest</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Saved</button>
+              </div>
+            </div>
+            <div class="content-card-grid">
+              <a class="content-card content-card--stack" href="/content/categories/sport/rugby/events/state-of-origin.html" data-edge="sport">
+                <img class="content-card__media" src="/content/categories/sport/rugby/events/img/state-of-origin-mini.png" alt="">
+                <span class="content-card__stripe"></span>
+                <span class="content-card__body">
+                  <span class="content-card__pill-row"><span class="content-card__pill">Sport</span></span>
+                  <strong class="content-card__title">State of Origin</strong>
+                  <span class="content-card__line"><img src="/content/locations/oceania/australia/img/flag.svg" alt=""> 27 May - 8 Jul 2026 - Australia</span>
+                  <span class="content-card__link">National</span>
+                </span>
+              </a>
+              <a class="content-card content-card--cover" href="/content/categories/index.html" data-edge="purple">
+                <img class="content-card__media" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Cover</span><strong class="content-card__title">Featured content</strong><p class="content-card__description">Full-bleed image with readable overlay.</p></span>
+              </a>
+              <a class="content-card content-card--media" href="/content/categories/index.html" data-edge="gold">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/categories/sport/img/sport-mini.png" alt=""><span class="content-card__badge">Label</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Media</span><strong class="content-card__title">Image first card</strong><span class="content-card__meta">Useful for category or event links</span></span>
+              </a>
+              <a class="content-card content-card--row" href="/content/locations/europe/index.html" data-edge="green">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/locations/europe/img/europe-mini.jpg" alt=""><span class="content-card__badge"><img src="/content/locations/europe/sweden/img/flag.svg" alt=""> Flag</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Row</span><strong class="content-card__title">Image row card</strong><p class="content-card__description">Good when scanning lists.</p></span>
+              </a>
+              <a class="content-card content-card--mini" href="/content/events/index.html" data-edge="red">
+                <img class="content-card__media" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Mini</span><strong class="content-card__title">Compact card</strong><span class="content-card__meta">Dec 10 · metadata</span></span>
+              </a>
+            </div>
+          </div>
+          <div class="device-preview device-preview--phone">
+            <div class="device-preview__label"><span>Phone components</span><span>stacked</span></div>
+            <div class="content-tabs">
+              <div class="content-tabs__list" role="tablist" aria-label="Example night phone content tabs">
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="true">Featured</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Latest</button>
+                <button class="content-tabs__tab" type="button" role="tab" aria-selected="false">Saved</button>
+              </div>
+            </div>
+            <div class="content-card-grid">
+              <a class="content-card content-card--stack" href="/content/categories/sport/rugby/events/state-of-origin.html" data-edge="sport">
+                <img class="content-card__media" src="/content/categories/sport/rugby/events/img/state-of-origin-mini.png" alt="">
+                <span class="content-card__stripe"></span>
+                <span class="content-card__body">
+                  <span class="content-card__pill-row"><span class="content-card__pill">Sport</span></span>
+                  <strong class="content-card__title">State of Origin</strong>
+                  <span class="content-card__line"><img src="/content/locations/oceania/australia/img/flag.svg" alt=""> 27 May - 8 Jul 2026</span>
+                  <span class="content-card__link">National</span>
+                </span>
+              </a>
+              <a class="content-card content-card--cover" href="/content/categories/index.html" data-edge="purple">
+                <img class="content-card__media" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Cover</span><strong class="content-card__title">Featured content</strong><p class="content-card__description">Image and overlay stay readable.</p></span>
+              </a>
+              <a class="content-card content-card--media" href="/content/categories/index.html" data-edge="gold">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/categories/sport/img/sport-mini.png" alt=""><span class="content-card__badge">Label</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Media</span><strong class="content-card__title">Image first card</strong><span class="content-card__meta">Full width on phone</span></span>
+              </a>
+              <a class="content-card content-card--row" href="/content/locations/europe/index.html" data-edge="green">
+                <span class="content-card__media-wrap"><img class="content-card__media" src="/content/locations/europe/img/europe-mini.jpg" alt=""><span class="content-card__badge"><img src="/content/locations/europe/sweden/img/flag.svg" alt=""> Flag</span></span>
+                <span class="content-card__body"><span class="content-card__eyebrow">Row</span><strong class="content-card__title">Image row card</strong><p class="content-card__description">Still compact on mobile.</p></span>
+              </a>
+              <a class="content-card content-card--mini" href="/content/events/index.html" data-edge="red">
+                <img class="content-card__media" src="/content/categories/climate/sustainability/events/img/world-environment-day-mini.png" alt="">
+                <span class="content-card__body"><span class="content-card__eyebrow">Mini</span><strong class="content-card__title">Compact card</strong><span class="content-card__meta">Date · metadata</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</body>
+</html>
+

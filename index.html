@@ -9,6 +9,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="os-ios-nav" content="off">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://one-sliders.com/"><meta name="content-language" content="en">
   <title>OneSliders - Events, topics and places at a glance</title>
@@ -25,24 +26,34 @@
   <link rel="icon" href="./assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="./assets/icons/site.webmanifest">
-  <meta name="theme-color" content="#0d2137">
-
   <style>
     :root {
-      --ink: #102033;
-      --muted: #5b6875;
-      --navy: #0d2137;
-      --green: #0b8f68;
-      --gold: #ffd166;
-      --line: rgba(16, 32, 51, .14);
+      --ink: var(--os-ink);
+      --muted: var(--os-muted);
+      --navy: var(--os-primary);
+      --green: var(--os-accent);
+      --gold: var(--os-gold);
+      --line: var(--os-line);
+      --home-surface: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
+      --home-surface-strong: color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent));
+      --home-shadow: color-mix(in srgb, var(--os-ink) 18%, var(--os-transparent));
+      --home-glow: color-mix(in srgb, var(--os-accent) 13%, var(--os-transparent));
+      --home-image-overlay-a: color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
+      --home-image-overlay-b: color-mix(in srgb, var(--os-scrim) 82%, var(--os-transparent));
+      --chart-1: var(--os-accent);
+      --chart-2: var(--os-compare-blue);
+      --chart-3: var(--os-gold);
+      --chart-4: var(--os-red);
+      --chart-5: var(--os-purple);
+      --chart-6: var(--os-compare-green);
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
       min-height: 100vh;
       color: var(--ink);
-      background: #f4f7f4;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--os-bg);
+      font-family: var(--os-font-system-full);
     }
     .home {
       position: relative;
@@ -50,8 +61,8 @@
       overflow: visible;
       padding: clamp(18px, 2.6vw, 34px) clamp(18px, 4vw, 56px) 18px;
       background:
-        radial-gradient(circle at 78% 16%, rgba(11, 143, 104, .12), transparent 30%),
-        linear-gradient(180deg, #f7faf7 0%, #eef3ef 100%);
+        radial-gradient(circle at 78% 16%, var(--home-glow), var(--os-transparent) 30%),
+        linear-gradient(180deg, var(--os-bg) 0%, var(--os-soft) 100%);
     }
     .brand-bar {
       position: relative;
@@ -63,13 +74,44 @@
       gap: 10px;
       height: auto;
       padding: 14px clamp(16px, 3vw, 32px);
-      background: rgba(13, 33, 55, .92);
-      color: #fff;
+      background: color-mix(in srgb, var(--os-chrome-bg) 94%, var(--os-transparent));
+      color: var(--os-chrome-ink);
       backdrop-filter: blur(14px);
     }
     .brand-bar img { width: 28px; height: 28px; display: block; }
     .brand-bar strong { font-size: 15px; letter-spacing: .02em; font-weight: 700; }
-    .brand-bar span { color: #cfd6dd; font-size: 13px; margin-left: 6px; }
+    .brand-bar span { color: var(--os-chrome-muted); font-size: 13px; margin-left: 6px; }
+    .home-menu {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px clamp(14px, 3vw, 36px);
+      background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .home-menu .nav-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background .12s, color .12s;
+    }
+    .home-menu .nav-icon:hover {
+      background: var(--navy);
+      color: var(--os-surface);
+    }
+    .home-menu .nav-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
     .home-grid {
       display: grid;
       grid-template-columns: minmax(0, .92fr) minmax(440px, 1.08fr);
@@ -121,8 +163,8 @@
       padding: 16px 18px;
       border-radius: 16px;
       color: var(--ink);
-      background: rgba(255, 255, 255, .82);
-      box-shadow: inset 0 0 0 1px rgba(16, 32, 51, .1);
+      background: var(--home-surface);
+      box-shadow: inset 0 0 0 1px var(--line);
     }
     .purpose span {
       display: block;
@@ -143,10 +185,10 @@
       display: grid;
       gap: 8px;
       padding: clamp(12px, 1.6vw, 16px);
-      border: 1px solid rgba(16, 32, 51, .12);
+      border: 1px solid var(--line);
       border-radius: 20px;
-      background: rgba(255,255,255,.82);
-      box-shadow: 0 22px 60px rgba(16, 32, 51, .12);
+      background: var(--home-surface);
+      box-shadow: 0 22px 60px var(--home-shadow);
     }
     .stats {
       display: grid;
@@ -156,7 +198,7 @@
     .stat {
       padding: 9px 12px;
       border-radius: 14px;
-      background: rgba(255,255,255,.94);
+      background: var(--home-surface-strong);
       box-shadow: inset 0 0 0 1px var(--line);
     }
     .stat strong {
@@ -176,7 +218,7 @@
     .one-slider-card {
       padding: 11px 14px 12px;
       border-radius: 16px;
-      background: rgba(255,255,255,.94);
+      background: var(--home-surface-strong);
     }
     .one-slider-card h2 {
       margin: 0 0 5px;
@@ -202,7 +244,7 @@
       gap: 8px;
       padding: 13px 16px;
       border-radius: 16px;
-      background: rgba(255,255,255,.94);
+      background: var(--home-surface-strong);
     }
     .coverage h2 {
       margin: 0;
@@ -223,13 +265,13 @@
       height: 12px;
       overflow: hidden;
       border-radius: 999px;
-      background: rgba(16, 32, 51, .1);
+      background: var(--os-primary-soft);
     }
     .bar i {
       display: block;
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, var(--green), #2df0aa);
+      background: linear-gradient(90deg, var(--green), var(--os-compare-green));
     }
     .charts {
       display: grid;
@@ -241,7 +283,7 @@
       gap: 8px;
       padding: 11px 12px 12px;
       border-radius: 16px;
-      background: rgba(255, 255, 255, .94);
+      background: var(--home-surface-strong);
     }
     .chart-card h2 {
       margin: 0;
@@ -260,7 +302,13 @@
       width: min(100%, 84px);
       border: 1px solid var(--line);
       border-radius: 50%;
-      box-shadow: inset 0 0 0 12px rgba(255, 255, 255, .5), 0 8px 18px rgba(17, 25, 34, .1);
+      box-shadow: inset 0 0 0 12px color-mix(in srgb, var(--os-surface) 46%, var(--os-transparent)), 0 8px 18px var(--home-shadow);
+    }
+    .pie--events {
+      background: conic-gradient(var(--chart-1) 0.00% 47.74%, var(--chart-2) 47.74% 84.27%, var(--chart-3) 84.27% 90.42%, var(--chart-4) 90.42% 95.12%, var(--chart-5) 95.12% 98.73%, var(--chart-6) 98.73% 100.00%);
+    }
+    .pie--countries {
+      background: conic-gradient(var(--chart-1) 0.00% 27.41%, var(--chart-2) 27.41% 52.79%, var(--chart-3) 52.79% 75.13%, var(--chart-4) 75.13% 86.80%, var(--chart-5) 86.80% 93.91%, var(--chart-6) 93.91% 100.00%);
     }
     .legend {
       display: grid;
@@ -284,6 +332,12 @@
       border-radius: 3px;
       flex: 0 0 auto;
     }
+    .legend .legend-dot-1 { background: var(--chart-1); }
+    .legend .legend-dot-2 { background: var(--chart-2); }
+    .legend .legend-dot-3 { background: var(--chart-3); }
+    .legend .legend-dot-4 { background: var(--chart-4); }
+    .legend .legend-dot-5 { background: var(--chart-5); }
+    .legend .legend-dot-6 { background: var(--chart-6); }
     .legend .legend-val {
       margin-left: auto;
       color: var(--muted);
@@ -307,7 +361,7 @@
       width: 26px;
       height: 26px;
       border-radius: 9px;
-      color: #fff;
+      color: var(--os-chrome-ink);
       background: var(--green);
       font-size: 13px;
     }
@@ -321,9 +375,9 @@
       min-height: 84px;
       overflow: hidden;
       border-radius: 16px;
-      color: #fff;
+      color: var(--os-chrome-ink);
       text-decoration: none;
-      background: #102033;
+      background: var(--os-chrome-bg);
     }
     .path img {
       position: absolute;
@@ -338,7 +392,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5,14,24,.14), rgba(5,14,24,.82));
+      background: linear-gradient(180deg, var(--home-image-overlay-a), var(--home-image-overlay-b));
     }
     .path span {
       position: absolute;
@@ -346,7 +400,7 @@
       bottom: 10px;
       left: 12px;
       z-index: 1;
-      color: #fff;
+      color: var(--os-chrome-ink);
       font-size: 15px;
       font-weight: 850;
       line-height: 1.05;
@@ -387,6 +441,11 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/#webpage","url":"https://one-sliders.com/","name":"OneSliders - Events, topics and places at a glance","description":"OneSliders turns events, topics and places into compact visual guides with the facts, context and links people need.","inLanguage":"en","image":"https://one-sliders.com//content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png","breadcrumb":{"@id":"https://one-sliders.com/#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"}]}]}</script>
 </head>
 <body>
+  <nav class="home-menu" aria-label="Site navigation">
+    <a class="nav-icon" href="/content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+    <a class="nav-icon" href="/content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
+    <a class="nav-icon" href="/content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
+  </nav>
   <header class="brand-bar">
     <img src="./assets/icons/one-sliders-icon.svg" alt="OneSliders icon" aria-hidden="true" width="512" height="512" loading="lazy">
     <strong>OneSliders</strong>
@@ -414,8 +473,8 @@
 
         <div class="charts" aria-label="OneSliders breakdown charts" data-home-charts>
           <!--CHARTS:START-->
-          <div class="chart-card"><h2>Events by category</h2><div class="chart-body"><div class="pie" role="img" aria-label="Events by category: 553 total" style="background:conic-gradient(#0b8f68 0.00% 47.74%, #2f6f92 47.74% 84.27%, #e0a83b 84.27% 90.42%, #c8553d 90.42% 95.12%, #7a5cc7 95.12% 98.73%, #3bb0a8 98.73% 100.00%)"></div><ul class="legend"><li><i style="background:#0b8f68"></i>Sport<span class="legend-val">264 &middot; 48%</span></li><li><i style="background:#2f6f92"></i>Culture<span class="legend-val">202 &middot; 37%</span></li><li><i style="background:#e0a83b"></i>Music<span class="legend-val">34 &middot; 6%</span></li><li><i style="background:#c8553d"></i>Wellness<span class="legend-val">26 &middot; 5%</span></li><li><i style="background:#7a5cc7"></i>Technology<span class="legend-val">20 &middot; 4%</span></li><li><i style="background:#3bb0a8"></i>Climate<span class="legend-val">7 &middot; 1%</span></li></ul></div></div>
-          <div class="chart-card"><h2>Countries by continent</h2><div class="chart-body"><div class="pie" role="img" aria-label="Countries by continent: 197 total" style="background:conic-gradient(#0b8f68 0.00% 27.41%, #2f6f92 27.41% 52.79%, #e0a83b 52.79% 75.13%, #c8553d 75.13% 86.80%, #7a5cc7 86.80% 93.91%, #3bb0a8 93.91% 100.00%)"></div><ul class="legend"><li><i style="background:#0b8f68"></i>Africa<span class="legend-val">54 &middot; 27%</span></li><li><i style="background:#2f6f92"></i>Europe<span class="legend-val">50 &middot; 25%</span></li><li><i style="background:#e0a83b"></i>Asia<span class="legend-val">44 &middot; 22%</span></li><li><i style="background:#c8553d"></i>North America<span class="legend-val">23 &middot; 12%</span></li><li><i style="background:#7a5cc7"></i>Oceania<span class="legend-val">14 &middot; 7%</span></li><li><i style="background:#3bb0a8"></i>South America<span class="legend-val">12 &middot; 6%</span></li></ul></div></div>
+          <div class="chart-card"><h2>Events by category</h2><div class="chart-body"><div class="pie pie--events" role="img" aria-label="Events by category: 553 total"></div><ul class="legend"><li><i class="legend-dot-1"></i>Sport<span class="legend-val">264 &middot; 48%</span></li><li><i class="legend-dot-2"></i>Culture<span class="legend-val">202 &middot; 37%</span></li><li><i class="legend-dot-3"></i>Music<span class="legend-val">34 &middot; 6%</span></li><li><i class="legend-dot-4"></i>Wellness<span class="legend-val">26 &middot; 5%</span></li><li><i class="legend-dot-5"></i>Technology<span class="legend-val">20 &middot; 4%</span></li><li><i class="legend-dot-6"></i>Climate<span class="legend-val">7 &middot; 1%</span></li></ul></div></div>
+          <div class="chart-card"><h2>Countries by continent</h2><div class="chart-body"><div class="pie pie--countries" role="img" aria-label="Countries by continent: 197 total"></div><ul class="legend"><li><i class="legend-dot-1"></i>Africa<span class="legend-val">54 &middot; 27%</span></li><li><i class="legend-dot-2"></i>Europe<span class="legend-val">50 &middot; 25%</span></li><li><i class="legend-dot-3"></i>Asia<span class="legend-val">44 &middot; 22%</span></li><li><i class="legend-dot-4"></i>North America<span class="legend-val">23 &middot; 12%</span></li><li><i class="legend-dot-5"></i>Oceania<span class="legend-val">14 &middot; 7%</span></li><li><i class="legend-dot-6"></i>South America<span class="legend-val">12 &middot; 6%</span></li></ul></div></div>
           <!--CHARTS:END-->
         </div>
 

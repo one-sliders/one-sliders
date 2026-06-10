@@ -1,0 +1,87 @@
+/* OneSliders palette option: night.
+   Dark mode companion to the harmonized palette. It imports the same legacy
+   mappings, then swaps the semantic tokens to their dark equivalents. */
+
+@import url("./oneslider-palette-harmonized.css");
+
+:root {
+  --os-ink: #edf5f8;
+  --os-muted: #a8b7c1;
+  --os-bg: #0b1118;
+  --os-surface: #111b24;
+  --os-soft: #172635;
+  --os-line: #2b3d4c;
+  --os-primary: #dcebf5;
+  --os-primary-soft: #203142;
+  --os-accent: #6fb39a;
+  --os-gold: #d9b55f;
+  --os-red: #d96f7f;
+  --os-purple: #b79ac8;
+  --os-sport-colour: #79aac9;
+  --os-motor-colour: var(--os-red);
+  --os-music-colour: var(--os-red);
+  --os-climate-colour: #66b8aa;
+  --os-food-colour: var(--os-compare-orange);
+  --os-drinks-colour: var(--os-gold);
+  --os-technology-colour: var(--os-primary);
+  --os-wellness-colour: var(--os-compare-green);
+  --os-culture-colour: var(--os-purple);
+  --os-festival-colour: var(--os-gold);
+  --os-nature-colour: var(--os-climate-colour);
+  --c-sport: var(--os-sport-colour);
+  --c-motor: var(--os-motor-colour);
+  --c-music: var(--os-music-colour);
+  --c-climate: var(--os-climate-colour);
+  --c-food: var(--os-food-colour);
+  --c-drinks: var(--os-drinks-colour);
+  --c-tech: var(--os-technology-colour);
+  --c-wellness: var(--os-wellness-colour);
+  --c-culture: var(--os-culture-colour);
+  --c-festival: var(--os-festival-colour);
+  --c-nature: var(--os-nature-colour);
+  --os-compare-blue: #79aac9;
+  --os-compare-green: #7fb887;
+  --os-compare-orange: #d89a6a;
+  --os-transparent: transparent;
+  --os-scrim: #06111c;
+  --os-on-image: #f5f8fa;
+  --os-on-image-muted: color-mix(in srgb, var(--os-on-image) 82%, var(--os-transparent));
+  --os-image-overlay-soft: color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  --os-image-overlay-medium: color-mix(in srgb, var(--os-scrim) 52%, var(--os-transparent));
+  --os-image-overlay-strong: color-mix(in srgb, var(--os-scrim) 78%, var(--os-transparent));
+  --os-chrome-bg: #0f1a24;
+  --os-chrome-ink: var(--os-ink);
+  --os-chrome-muted: var(--os-muted);
+
+  --os-navy: var(--os-primary);
+  --os-accent-2: var(--os-compare-blue);
+  --navy: var(--os-primary);
+  --ink: var(--os-ink);
+  --muted: var(--os-muted);
+  --theme: var(--os-primary);
+  --theme-2: var(--os-accent);
+  --accent: var(--os-accent);
+  --line: var(--os-line);
+  --paper: var(--os-bg);
+  --surface: var(--os-surface);
+  --soft: var(--os-soft);
+
+  --location-bg: var(--os-bg);
+  --location-card: var(--os-surface);
+  --location-ink: var(--os-ink);
+  --location-muted: var(--os-muted);
+  --location-line: var(--os-line);
+  --location-theme: var(--os-primary);
+  --location-theme-2: var(--os-accent);
+  --location-accent: var(--os-compare-blue);
+  --location-soft: var(--os-soft);
+
+  --event-bg: var(--os-bg);
+  --event-card: var(--os-surface);
+  --event-ink: var(--os-ink);
+  --event-muted: var(--os-muted);
+  --event-line: var(--os-line);
+  --event-theme: var(--os-primary);
+  --event-theme-2: var(--os-accent);
+  --event-accent: var(--os-compare-blue);
+}

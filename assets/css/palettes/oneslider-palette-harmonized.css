@@ -1,0 +1,90 @@
+/* OneSliders palette option: harmonized.
+   The proposed compact palette: 15 colours for text, surfaces, buttons,
+   status and comparison graphics. Load after oneslider-core.css. */
+
+:root {
+  --os-font-sans: Inter, Arial, Helvetica, sans-serif;
+  --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --os-font-system-full: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --os-ink: #101820;
+  --os-muted: #5a6672;
+  --os-bg: #f5f8fa;
+  --os-surface: #ffffff;
+  --os-soft: #edf5f8;
+  --os-line: #dce6ea;
+  --os-primary: #0d2137;
+  --os-primary-soft: #e9f2ee;
+  --os-accent: #2f6f92;
+  --os-gold: #d6a84a;
+  --os-red: #9f3545;
+  --os-purple: #6b4f7a;
+  --os-sport-colour: #3b8fb6;
+  --os-motor-colour: var(--os-red);
+  --os-music-colour: var(--os-red);
+  --os-climate-colour: #1f7a6d;
+  --os-food-colour: var(--os-compare-orange);
+  --os-drinks-colour: var(--os-gold);
+  --os-technology-colour: var(--os-primary);
+  --os-wellness-colour: var(--os-compare-green);
+  --os-culture-colour: var(--os-purple);
+  --os-festival-colour: var(--os-gold);
+  --os-nature-colour: var(--os-climate-colour);
+  --c-sport: var(--os-sport-colour);
+  --c-motor: var(--os-motor-colour);
+  --c-music: var(--os-music-colour);
+  --c-climate: var(--os-climate-colour);
+  --c-food: var(--os-food-colour);
+  --c-drinks: var(--os-drinks-colour);
+  --c-tech: var(--os-technology-colour);
+  --c-wellness: var(--os-wellness-colour);
+  --c-culture: var(--os-culture-colour);
+  --c-festival: var(--os-festival-colour);
+  --c-nature: var(--os-nature-colour);
+  --os-compare-blue: #2f6f92;
+  --os-compare-green: #4f7a56;
+  --os-compare-orange: #b46b3c;
+  --os-transparent: transparent;
+  --os-scrim: #06111c;
+  --os-on-image: #f5f8fa;
+  --os-on-image-muted: color-mix(in srgb, var(--os-on-image) 82%, var(--os-transparent));
+  --os-image-overlay-soft: color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  --os-image-overlay-medium: color-mix(in srgb, var(--os-scrim) 52%, var(--os-transparent));
+  --os-image-overlay-strong: color-mix(in srgb, var(--os-scrim) 78%, var(--os-transparent));
+  --os-chrome-bg: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+  --os-chrome-ink: var(--os-ink);
+  --os-chrome-muted: var(--os-muted);
+
+  --os-navy: var(--os-primary);
+  --os-accent-2: var(--os-compare-blue);
+  --navy: var(--os-primary);
+  --ink: var(--os-ink);
+  --muted: var(--os-muted);
+  --theme: var(--os-primary);
+  --theme-2: var(--os-accent);
+  --accent: var(--os-accent);
+  --line: var(--os-line);
+  --paper: var(--os-bg);
+  --surface: var(--os-surface);
+  --soft: var(--os-soft);
+
+  --location-bg: var(--os-bg);
+  --location-card: var(--os-surface);
+  --location-ink: var(--os-ink);
+  --location-muted: var(--os-muted);
+  --location-line: var(--os-line);
+  --location-theme: var(--os-primary);
+  --location-theme-2: var(--os-accent);
+  --location-accent: var(--os-compare-blue);
+  --location-soft: var(--os-soft);
+
+  --event-bg: var(--os-bg);
+  --event-card: var(--os-surface);
+  --event-ink: var(--os-ink);
+  --event-muted: var(--os-muted);
+  --event-line: var(--os-line);
+  --event-theme: var(--os-primary);
+  --event-theme-2: var(--os-accent);
+  --event-accent: var(--os-compare-blue);
+}
+

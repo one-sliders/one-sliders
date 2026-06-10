@@ -3,479 +3,19 @@
      1. .os-brand   — clickable logo + wordmark injected into every top nav
      2. #os-cc-*    — geo-aware cookie consent banner */
 
-:root {
-  --os-font-sans: Inter, Arial, Helvetica, sans-serif;
-  --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --os-font-system-full: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --os-navy: #0d2137;
-  --os-ink: #101820;
-  --os-muted: #62717c;
-  --os-bg: #f5f8fa;
-  --os-surface: #ffffff;
-  --os-line: #dce6ea;
-  --os-primary: #0d2137;
-  --os-accent: #2f6f92;
-  --os-accent-2: #3b8fb6;
-  --os-soft: #edf5f8;
+@import url("/assets/css/palettes/oneslider-palette-current.css");
 
+:root {
   --navy: var(--os-navy);
   --ink: var(--os-ink);
   --muted: var(--os-muted);
   --theme: var(--os-primary);
   --theme-2: var(--os-accent);
-  /* central aliases so topic/legacy layouts resolve to the one palette */
   --accent: var(--os-accent);
   --line: var(--os-line);
   --paper: var(--os-bg);
   --surface: var(--os-surface);
   --soft: var(--os-soft);
-  /* Central raw palette: generated from legacy CSS. Edit colors here, not in page CSS. */
-  --os-color-001: #00205b;
-  --os-color-002: #006d77;
-  --os-color-003: #00a19c;
-  --os-color-004: #00a3e0;
-  --os-color-005: #07120d;
-  --os-color-006: #07121e;
-  --os-color-007: #0891b2;
-  --os-color-008: #0b4f6c;
-  --os-color-009: #0b8f68;
-  --os-color-010: #0d2137;
-  --os-color-011: #0d5966;
-  --os-color-012: #101820;
-  --os-color-013: #102033;
-  --os-color-014: #102739;
-  --os-color-015: #104d3a;
-  --os-color-016: #111827;
-  --os-color-017: #111922;
-  --os-color-018: #111923;
-  --os-color-019: #12202e;
-  --os-color-020: #13202c;
-  --os-color-021: #141923;
-  --os-color-022: #142132;
-  --os-color-023: #1457b8;
-  --os-color-024: #163b50;
-  --os-color-025: #166534;
-  --os-color-026: #16a34a;
-  --os-color-027: #172033;
-  --os-color-028: #17315f;
-  --os-color-029: #17384c;
-  --os-color-030: #174f91;
-  --os-color-031: #1a2530;
-  --os-color-032: #1a6640;
-  --os-color-033: #1e41ff;
-  --os-color-034: #1e745f;
-  --os-color-035: #1f2937;
-  --os-color-036: #1f5bd6;
-  --os-color-037: #1f7888;
-  --os-color-038: #214e68;
-  --os-color-039: #214f7a;
-  --os-color-040: #244f9e;
-  --os-color-041: #245f46;
-  --os-color-042: #2563eb;
-  --os-color-043: #265f48;
-  --os-color-044: #2d7d46;
-  --os-color-045: #2e3b47;
-  --os-color-046: #2f6b76;
-  --os-color-047: #2f6f92;
-  --os-color-048: #2fd49d;
-  --os-color-049: #313b45;
-  --os-color-050: #347a76;
-  --os-color-051: #3b8fb6;
-  --os-color-052: #3f2b14;
-  --os-color-053: #47515c;
-  --os-color-054: #475569;
-  --os-color-055: #4b5563;
-  --os-color-056: #4d5e69;
-  --os-color-057: #4d6b2f;
-  --os-color-058: #4f5f2a;
-  --os-color-059: #4f7a56;
-  --os-color-060: #596b75;
-  --os-color-061: #5a6672;
-  --os-color-062: #5a6a74;
-  --os-color-063: #5b6875;
-  --os-color-064: #5e6872;
-  --os-color-065: #5f6b63;
-  --os-color-066: #5f6b76;
-  --os-color-067: #5f7d72;
-  --os-color-068: #60717d;
-  --os-color-069: #62717c;
-  --os-color-070: #642032;
-  --os-color-071: #64748b;
-  --os-color-072: #65a30d;
-  --os-color-073: #6692ff;
-  --os-color-074: #6b3f7a;
-  --os-color-075: #6b4d2e;
-  --os-color-076: #734915;
-  --os-color-077: #78d7e6;
-  --os-color-078: #7a4b18;
-  --os-color-079: #7b4db2;
-  --os-color-080: #7c3aed;
-  --os-color-081: #7d3c98;
-  --os-color-082: #7d8a95;
-  --os-color-083: #7ea4b2;
-  --os-color-084: #7fa7b4;
-  --os-color-085: #8a2452;
-  --os-color-086: #8ab7c4;
-  --os-color-087: #8b5cf6;
-  --os-color-088: #8bb6c2;
-  --os-color-089: #8ec5ff;
-  --os-color-090: #92b8c8;
-  --os-color-091: #9a4f1f;
-  --os-color-092: #9bc5d2;
-  --os-color-093: #9ec5ff;
-  --os-color-094: #9ee6b7;
-  --os-color-095: #9fcbd8;
-  --os-color-096: #a5dbe3;
-  --os-color-097: #a5f3fc;
-  --os-color-098: #a9efc9;
-  --os-color-099: #b02a1e;
-  --os-color-100: #b23a48;
-  --os-color-101: #b46b3c;
-  --os-color-102: #b5c77f;
-  --os-color-103: #b8dd72;
-  --os-color-104: #b8e2a3;
-  --os-color-105: #ba0c2f;
-  --os-color-106: #bac4c8;
-  --os-color-107: #bbf7d0;
-  --os-color-108: #bfdbfe;
-  --os-color-109: #c66a00;
-  --os-color-110: #c7a366;
-  --os-color-111: #c8d6df;
-  --os-color-112: #c9272d;
-  --os-color-113: #c99a2e;
-  --os-color-114: #c9b8ff;
-  --os-color-115: #d0b37a;
-  --os-color-116: #d62828;
-  --os-color-117: #d6a7e3;
-  --os-color-118: #d6a84a;
-  --os-color-119: #d6dde3;
-  --os-color-120: #d8c96b;
-  --os-color-121: #d9f99d;
-  --os-color-122: #db2777;
-  --os-color-123: #dce6ea;
-  --os-color-124: #dcfce7;
-  --os-color-125: #ddd6fe;
-  --os-color-126: #dfe9ec;
-  --os-color-127: #dff7df;
-  --os-color-128: #e0f2ea;
-  --os-color-129: #e10600;
-  --os-color-130: #e1b5f2;
-  --os-color-131: #e2e4df;
-  --os-color-132: #e5eaf0;
-  --os-color-133: #e9f2ee;
-  --os-color-134: #ea580c;
-  --os-color-135: #eab308;
-  --os-color-136: #eaf2f8;
-  --os-color-137: #edf3f5;
-  --os-color-138: #edf3f7;
-  --os-color-139: #edf5f1;
-  --os-color-140: #edf5f8;
-  --os-color-141: #edf5ff;
-  --os-color-142: #eef2f5;
-  --os-color-143: #eef2f7;
-  --os-color-144: #eef5f7;
-  --os-color-145: #eef7ff;
-  --os-color-146: #f0c464;
-  --os-color-147: #f2c16b;
-  --os-color-148: #f2f3f5;
-  --os-color-149: #f2f7f8;
-  --os-color-150: #f3c968;
-  --os-color-151: #f3f7f8;
-  --os-color-152: #f4cf74;
-  --os-color-153: #f4eee2;
-  --os-color-154: #f5f8fa;
-  --os-color-155: #f6f7f4;
-  --os-color-156: #f6f8f6;
-  --os-color-157: #f6f8fb;
-  --os-color-158: #f7d35a;
-  --os-color-159: #f7f8fa;
-  --os-color-160: #f7faf7;
-  --os-color-161: #f7fafb;
-  --os-color-162: #f7fafc;
-  --os-color-163: #f7fbff;
-  --os-color-164: #f8fbfb;
-  --os-color-165: #f8fbfd;
-  --os-color-166: #fbcfe8;
-  --os-color-167: #fbfcfb;
-  --os-color-168: #fbfcfd;
-  --os-color-169: #fde8e6;
-  --os-color-170: #fed7aa;
-  --os-color-171: #fef08a;
-  --os-color-172: #ff8000;
-  --os-color-173: #ffd166;
-  --os-color-174: #fff;
-  --os-color-175: #fff9ea;
-  --os-color-176: #fffaf0;
-  --os-color-177: #fffdf6;
-  --os-color-178: #ffffff;
-  --os-color-179: rgba(0, 0, 0, .06);
-  --os-color-180: rgba(0, 0, 0, .11);
-  --os-color-181: rgba(0, 0, 0, .84);
-  --os-color-182: rgba(0, 0, 0, .86);
-  --os-color-183: rgba(0, 0, 0, .92);
-  --os-color-184: rgba(0, 0, 0, 0.06);
-  --os-color-185: rgba(0, 0, 0, 0.11);
-  --os-color-186: rgba(0, 0, 0, 0.12);
-  --os-color-187: rgba(0, 0, 0, 0.16);
-  --os-color-188: rgba(0, 0, 0, 0.2);
-  --os-color-189: rgba(0, 0, 0, 0.22);
-  --os-color-190: rgba(0, 0, 0, 0.28);
-  --os-color-191: rgba(0, 0, 0, 0.38);
-  --os-color-192: rgba(0, 0, 0, 0.42);
-  --os-color-193: rgba(0, 0, 0, 0.44);
-  --os-color-194: rgba(0, 0, 0, 0.48);
-  --os-color-195: rgba(0, 0, 0, 0.68);
-  --os-color-196: rgba(0, 32, 91, 0.05);
-  --os-color-197: rgba(0, 32, 91, 0.08);
-  --os-color-198: rgba(0, 32, 91, 0.09);
-  --os-color-199: rgba(0, 32, 91, 0.12);
-  --os-color-200: rgba(0, 32, 91, 0.14);
-  --os-color-201: rgba(0, 32, 91, 0.22);
-  --os-color-202: rgba(0,0,0,.08);
-  --os-color-203: rgba(0,0,0,.62);
-  --os-color-204: rgba(10, 16, 18, 0.62);
-  --os-color-205: rgba(100, 32, 50, 0.06);
-  --os-color-206: rgba(100, 32, 50, 0.08);
-  --os-color-207: rgba(100, 32, 50, 0.88);
-  --os-color-208: rgba(101, 163, 13, 0.18);
-  --os-color-209: rgba(11, 124, 81, 0.07);
-  --os-color-210: rgba(11, 124, 81, 0.08);
-  --os-color-211: rgba(11, 124, 81, 0.18);
-  --os-color-212: rgba(11, 124, 81, 0.2);
-  --os-color-213: rgba(11, 124, 81, 0.22);
-  --os-color-214: rgba(11, 124, 81, 0.26);
-  --os-color-215: rgba(11, 124, 81, 0.32);
-  --os-color-216: rgba(11, 124, 81, 0.34);
-  --os-color-217: rgba(11, 124, 81, 0);
-  --os-color-218: rgba(11, 79, 108, 0.08);
-  --os-color-219: rgba(11, 79, 108, 0.34);
-  --os-color-220: rgba(120, 215, 230, 0.14);
-  --os-color-221: rgba(120, 215, 230, 0.16);
-  --os-color-222: rgba(122, 75, 24, 0.08);
-  --os-color-223: rgba(122, 75, 24, 0.18);
-  --os-color-224: rgba(122, 75, 24, 0.28);
-  --os-color-225: rgba(124, 58, 237, 0.18);
-  --os-color-226: rgba(13, 29, 54, 0.58);
-  --os-color-227: rgba(13, 33, 55, 0.14);
-  --os-color-228: rgba(13, 33, 55, 0.72);
-  --os-color-229: rgba(13, 89, 102, 0.2);
-  --os-color-230: rgba(139, 92, 246, 0.10);
-  --os-color-231: rgba(14, 52, 70, 0.02);
-  --os-color-232: rgba(14, 52, 70, 0.38);
-  --os-color-233: rgba(15, 118, 110, 0.18);
-  --os-color-234: rgba(15, 118, 110, 0.22);
-  --os-color-235: rgba(158, 197, 255, 0.45);
-  --os-color-236: rgba(16, 24, 32, 0.04);
-  --os-color-237: rgba(16, 24, 32, 0.06);
-  --os-color-238: rgba(16, 24, 32, 0.07);
-  --os-color-239: rgba(16, 24, 32, 0.08);
-  --os-color-240: rgba(16, 24, 32, 0.1);
-  --os-color-241: rgba(16, 24, 32, 0.11);
-  --os-color-242: rgba(16, 24, 32, 0.12);
-  --os-color-243: rgba(16, 24, 32, 0.13);
-  --os-color-244: rgba(16, 24, 32, 0.14);
-  --os-color-245: rgba(16, 24, 32, 0.16);
-  --os-color-246: rgba(16, 32, 24, 0.12);
-  --os-color-247: rgba(16, 32, 46, 0.06);
-  --os-color-248: rgba(16, 32, 51, 0.06);
-  --os-color-249: rgba(16, 32, 51, 0.07);
-  --os-color-250: rgba(16, 32, 51, 0.08);
-  --os-color-251: rgba(16, 32, 51, 0.1);
-  --os-color-252: rgba(16, 32, 51, 0.10);
-  --os-color-253: rgba(16, 32, 51, 0.12);
-  --os-color-254: rgba(16, 32, 51, 0.13);
-  --os-color-255: rgba(16,24,32,.1);
-  --os-color-256: rgba(16,24,32,.12);
-  --os-color-257: rgba(16,24,32,.16);
-  --os-color-258: rgba(17, 24, 39, 0.12);
-  --os-color-259: rgba(17, 24, 39, 0.16);
-  --os-color-260: rgba(17, 24, 39, 0.34);
-  --os-color-261: rgba(17, 25, 34, 0.05);
-  --os-color-262: rgba(17, 25, 34, 0.06);
-  --os-color-263: rgba(17, 25, 34, 0.07);
-  --os-color-264: rgba(17, 25, 34, 0.1);
-  --os-color-265: rgba(17, 25, 34, 0.12);
-  --os-color-266: rgba(17, 25, 34, 0.14);
-  --os-color-267: rgba(17, 25, 34, 0.16);
-  --os-color-268: rgba(17, 25, 34, 0.18);
-  --os-color-269: rgba(18, 32, 46, .035);
-  --os-color-270: rgba(18, 32, 46, .05);
-  --os-color-271: rgba(18, 32, 46, .06);
-  --os-color-272: rgba(18, 32, 46, .10);
-  --os-color-273: rgba(18, 32, 46, .11);
-  --os-color-274: rgba(18, 32, 46, .12);
-  --os-color-275: rgba(18, 32, 46, .14);
-  --os-color-276: rgba(18, 32, 46, .16);
-  --os-color-277: rgba(18, 32, 46, .18);
-  --os-color-278: rgba(18, 32, 46, .22);
-  --os-color-279: rgba(18, 32, 46, 0.04);
-  --os-color-280: rgba(18, 32, 46, 0.045);
-  --os-color-281: rgba(18, 32, 46, 0.05);
-  --os-color-282: rgba(18, 32, 46, 0.06);
-  --os-color-283: rgba(18, 32, 46, 0.07);
-  --os-color-284: rgba(18, 32, 46, 0.09);
-  --os-color-285: rgba(18, 32, 46, 0.10);
-  --os-color-286: rgba(18, 32, 46, 0.12);
-  --os-color-287: rgba(18, 32, 46, 0.13);
-  --os-color-288: rgba(18, 32, 46, 0.14);
-  --os-color-289: rgba(18, 32, 46, 0.15);
-  --os-color-290: rgba(18, 32, 46, 0.16);
-  --os-color-291: rgba(18, 32, 46, 0.18);
-  --os-color-292: rgba(18, 32, 46, 0.20);
-  --os-color-293: rgba(18, 32, 46, 0.22);
-  --os-color-294: rgba(18, 32, 46, 0.24);
-  --os-color-295: rgba(18, 32, 46, 0.28);
-  --os-color-296: rgba(186, 12, 47, 0.1);
-  --os-color-297: rgba(20, 25, 35, 0.06);
-  --os-color-298: rgba(20, 25, 35, 0.18);
-  --os-color-299: rgba(20, 25, 35, 0.94);
-  --os-color-300: rgba(20, 87, 184, 0.28);
-  --os-color-301: rgba(201, 154, 46, 0.16);
-  --os-color-302: rgba(201, 154, 46, 0.72);
-  --os-color-303: rgba(219, 39, 119, 0.18);
-  --os-color-304: rgba(22, 101, 52, 0.18);
-  --os-color-305: rgba(22, 163, 74, 0.18);
-  --os-color-306: rgba(220, 252, 231, 0.72);
-  --os-color-307: rgba(234, 179, 8, 0.18);
-  --os-color-308: rgba(234, 179, 8, 0.2);
-  --os-color-309: rgba(234, 88, 12, 0.18);
-  --os-color-310: rgba(237, 252, 244, 0.98);
-  --os-color-311: rgba(238, 242, 246, .86);
-  --os-color-312: rgba(238, 242, 246, .9);
-  --os-color-313: rgba(240, 253, 244, 0.9);
-  --os-color-314: rgba(240, 253, 250, 0.96);
-  --os-color-315: rgba(241, 248, 250, 0.94);
-  --os-color-316: rgba(242, 243, 245, .97);
-  --os-color-317: rgba(242, 243, 245, 0.97);
-  --os-color-318: rgba(243, 248, 250, 0.94);
-  --os-color-319: rgba(246, 247, 244, 0.94);
-  --os-color-320: rgba(246, 248, 246, 0.95);
-  --os-color-321: rgba(246, 248, 251, 0.95);
-  --os-color-322: rgba(246, 249, 250, 0.94);
-  --os-color-323: rgba(246, 250, 252, 0.82);
-  --os-color-324: rgba(246, 250, 252, 0.92);
-  --os-color-325: rgba(247, 250, 247, 0.08);
-  --os-color-326: rgba(247, 250, 247, 0);
-  --os-color-327: rgba(255, 255, 255, .12);
-  --os-color-328: rgba(255, 255, 255, .14);
-  --os-color-329: rgba(255, 255, 255, .22);
-  --os-color-330: rgba(255, 255, 255, .24);
-  --os-color-331: rgba(255, 255, 255, .60);
-  --os-color-332: rgba(255, 255, 255, .72);
-  --os-color-333: rgba(255, 255, 255, .86);
-  --os-color-334: rgba(255, 255, 255, .88);
-  --os-color-335: rgba(255, 255, 255, .92);
-  --os-color-336: rgba(255, 255, 255, .93);
-  --os-color-337: rgba(255, 255, 255, .94);
-  --os-color-338: rgba(255, 255, 255, .96);
-  --os-color-339: rgba(255, 255, 255, .98);
-  --os-color-340: rgba(255, 255, 255, 0.12);
-  --os-color-341: rgba(255, 255, 255, 0.13);
-  --os-color-342: rgba(255, 255, 255, 0.14);
-  --os-color-343: rgba(255, 255, 255, 0.16);
-  --os-color-344: rgba(255, 255, 255, 0.18);
-  --os-color-345: rgba(255, 255, 255, 0.2);
-  --os-color-346: rgba(255, 255, 255, 0.22);
-  --os-color-347: rgba(255, 255, 255, 0.24);
-  --os-color-348: rgba(255, 255, 255, 0.34);
-  --os-color-349: rgba(255, 255, 255, 0.35);
-  --os-color-350: rgba(255, 255, 255, 0.36);
-  --os-color-351: rgba(255, 255, 255, 0.46);
-  --os-color-352: rgba(255, 255, 255, 0.5);
-  --os-color-353: rgba(255, 255, 255, 0.55);
-  --os-color-354: rgba(255, 255, 255, 0.62);
-  --os-color-355: rgba(255, 255, 255, 0.72);
-  --os-color-356: rgba(255, 255, 255, 0.74);
-  --os-color-357: rgba(255, 255, 255, 0.76);
-  --os-color-358: rgba(255, 255, 255, 0.78);
-  --os-color-359: rgba(255, 255, 255, 0.8);
-  --os-color-360: rgba(255, 255, 255, 0.82);
-  --os-color-361: rgba(255, 255, 255, 0.84);
-  --os-color-362: rgba(255, 255, 255, 0.86);
-  --os-color-363: rgba(255, 255, 255, 0.88);
-  --os-color-364: rgba(255, 255, 255, 0.9);
-  --os-color-365: rgba(255, 255, 255, 0.90);
-  --os-color-366: rgba(255, 255, 255, 0.92);
-  --os-color-367: rgba(255, 255, 255, 0.93);
-  --os-color-368: rgba(255, 255, 255, 0.94);
-  --os-color-369: rgba(255, 255, 255, 0.95);
-  --os-color-370: rgba(255, 255, 255, 0.96);
-  --os-color-371: rgba(255, 255, 255, 0.97);
-  --os-color-372: rgba(255, 255, 255, 0.98);
-  --os-color-373: rgba(255, 255, 255, 0);
-  --os-color-374: rgba(31, 120, 136, 0.14);
-  --os-color-375: rgba(33, 78, 104, 0.07);
-  --os-color-376: rgba(33, 78, 104, 0.09);
-  --os-color-377: rgba(33, 78, 104, 0.1);
-  --os-color-378: rgba(33, 78, 104, 0.10);
-  --os-color-379: rgba(33, 78, 104, 0.12);
-  --os-color-380: rgba(33, 78, 104, 0.14);
-  --os-color-381: rgba(33, 78, 104, 0.15);
-  --os-color-382: rgba(33, 78, 104, 0.16);
-  --os-color-383: rgba(33, 78, 104, 0.18);
-  --os-color-384: rgba(33, 78, 104, 0.20);
-  --os-color-385: rgba(33, 78, 104, 0.22);
-  --os-color-386: rgba(33, 78, 104, 0.28);
-  --os-color-387: rgba(37, 99, 235, 0.18);
-  --os-color-388: rgba(47, 111, 146, 0.12);
-  --os-color-389: rgba(47, 111, 146, 0.16);
-  --os-color-390: rgba(5, 13, 9, .08);
-  --os-color-391: rgba(5, 13, 9, .20);
-  --os-color-392: rgba(5, 13, 9, .42);
-  --os-color-393: rgba(5, 13, 9, .62);
-  --os-color-394: rgba(5, 13, 9, .70);
-  --os-color-395: rgba(5, 13, 9, .90);
-  --os-color-396: rgba(5, 14, 23, .50);
-  --os-color-397: rgba(5, 14, 23, .52);
-  --os-color-398: rgba(5, 14, 23, .86);
-  --os-color-399: rgba(5, 14, 23, 0.50);
-  --os-color-400: rgba(5, 14, 23, 0.52);
-  --os-color-401: rgba(5, 14, 23, 0.86);
-  --os-color-402: rgba(5, 14, 23, 0);
-  --os-color-403: rgba(5, 15, 24, 0.03);
-  --os-color-404: rgba(5, 15, 24, 0.04);
-  --os-color-405: rgba(5, 15, 24, 0.08);
-  --os-color-406: rgba(5, 15, 24, 0.12);
-  --os-color-407: rgba(5, 15, 24, 0.18);
-  --os-color-408: rgba(5, 15, 24, 0.58);
-  --os-color-409: rgba(5, 15, 24, 0.62);
-  --os-color-410: rgba(5, 15, 24, 0.66);
-  --os-color-411: rgba(5, 15, 24, 0.68);
-  --os-color-412: rgba(5, 15, 24, 0.70);
-  --os-color-413: rgba(5, 15, 24, 0);
-  --os-color-414: rgba(6, 14, 11, 0.54);
-  --os-color-415: rgba(6, 22, 34, 0.34);
-  --os-color-416: rgba(6, 22, 34, 0.36);
-  --os-color-417: rgba(64, 180, 112, 0.2);
-  --os-color-418: rgba(64, 180, 112, 0.28);
-  --os-color-419: rgba(64, 180, 112, 0.5);
-  --os-color-420: rgba(7, 14, 22, 0.28);
-  --os-color-421: rgba(7, 14, 22, 0.46);
-  --os-color-422: rgba(7, 17, 28, .08);
-  --os-color-423: rgba(7, 17, 28, .10);
-  --os-color-424: rgba(7, 17, 28, .42);
-  --os-color-425: rgba(7, 17, 28, .70);
-  --os-color-426: rgba(7, 17, 28, .82);
-  --os-color-427: rgba(7, 18, 30, .18);
-  --os-color-428: rgba(7, 18, 30, .62);
-  --os-color-429: rgba(7, 18, 30, .74);
-  --os-color-430: rgba(7, 18, 30, .92);
-  --os-color-431: rgba(7, 18, 30, 0);
-  --os-color-432: rgba(7, 21, 42, 0.04);
-  --os-color-433: rgba(7, 21, 42, 0.045);
-  --os-color-434: rgba(7, 21, 42, 0.06);
-  --os-color-435: rgba(7, 21, 42, 0.07);
-  --os-color-436: rgba(7, 21, 42, 0.10);
-  --os-color-437: rgba(7, 21, 42, 0.14);
-  --os-color-438: rgba(7, 21, 42, 0.16);
-  --os-color-439: rgba(7, 21, 42, 0.70);
-  --os-color-440: rgba(7, 21, 42, 0.72);
-  --os-color-441: rgba(8, 145, 178, 0.18);
-  --os-color-442: rgba(8, 22, 42, 0.28);
-  --os-color-443: rgba(94, 104, 114, 0.9);
-  --os-color-444: transparent;
-  --os-color-445: white;
-
 }
 
 /* ---------------------------------------------------------------------
@@ -495,12 +35,12 @@
   font-size: 14px;
   letter-spacing: .01em;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--os-transparent);
   transition: background .12s ease, transform .08s ease;
 }
 .os-brand:hover,
 .os-brand:focus-visible {
-  background: rgba(13, 33, 55, .08);
+  background: color-mix(in srgb, var(--os-scrim) 11%, var(--os-transparent));
   outline: none;
 }
 .os-brand:active { transform: translateY(1px); }
@@ -524,7 +64,7 @@
 /* When the nav uses a dark background (rare, but future-proof) */
 nav.top-menu[data-theme="dark"] .os-brand:hover,
 nav.event-nav[data-theme="dark"] .os-brand:hover {
-  background: rgba(255, 255, 255, .12);
+  background: color-mix(in srgb, var(--os-surface) 12%, var(--os-transparent));
 }
 
 /* ---------------------------------------------------------------------
@@ -536,8 +76,8 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
 
 @media (max-width: 620px) {
   /* Hide the desktop pill row + breadcrumbs on phones */
-  nav.top-menu,
-  nav.event-nav { display: none !important; }
+  body.os-has-ios-nav nav.top-menu,
+  body.os-has-ios-nav nav.event-nav { display: none !important; }
 
   body.os-has-ios-nav:not(.event-page) {
     padding-top: calc(44px + env(safe-area-inset-top, 0px)) !important;
@@ -555,8 +95,8 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
     padding-top:   env(safe-area-inset-top, 0px);
     padding-left:  calc(8px + env(safe-area-inset-left, 0px));
     padding-right: calc(8px + env(safe-area-inset-right, 0px));
-    background: rgba(251, 250, 246, .96);
-    border-bottom: 1px solid rgba(60, 60, 67, .14);
+    background: var(--os-chrome-bg);
+    border-bottom: 1px solid var(--os-line);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial, sans-serif;
@@ -565,14 +105,14 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   .ios-back {
     display: inline-flex; align-items: center; gap: 2px;
     min-height: 44px; padding: 0 6px;
-    color: var(--theme, var(--navy, #0d2137));
+    color: var(--os-chrome-muted);
     text-decoration: none;
     font-size: 17px;
     font-weight: 400;
     line-height: 1;
     max-width: 38vw;
     overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: var(--os-transparent);
   }
   .ios-back > span {
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -582,31 +122,44 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
 
   .ios-title {
     margin: 0;
-    color: var(--ink, #17201c);
+    color: var(--os-chrome-ink);
     font-size: 17px;
     font-weight: 600;
     letter-spacing: -.01em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 56vw;
+    max-width: 34vw;
     text-align: center;
   }
 
-  .ios-more {
+  .ios-actions {
     justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .ios-action,
+  .ios-more {
     display: inline-grid; place-items: center;
-    width: 44px; height: 44px;
+    width: 36px; height: 44px;
     padding: 0;
     margin: 0;
-    background: transparent;
+    background: color-mix(in srgb, var(--os-chrome-bg) 78%, var(--os-surface));
     border: 0;
-    color: var(--theme, var(--navy, #0d2137));
+    color: var(--os-chrome-muted);
     cursor: pointer;
     border-radius: 999px;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: var(--os-transparent);
   }
-  .ios-more:active { background: rgba(60, 60, 67, .12); }
+  .ios-action {
+    text-decoration: none;
+  }
+  .ios-action:active,
+  .ios-more:active { background: var(--os-primary-soft); }
+  .ios-action svg,
   .ios-more svg { width: 22px; height: 22px; display: block; }
 }
 
@@ -622,7 +175,7 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
 .ios-sheet[hidden] { display: none; }
 .ios-sheet__backdrop {
   position: absolute; inset: 0;
-  background: rgba(0, 0, 0, .34);
+  background: color-mix(in srgb, var(--os-scrim) 54%, var(--os-transparent));
   opacity: 0;
   animation: ios-fade .22s ease forwards;
 }
@@ -630,7 +183,7 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   position: absolute; left: 0; right: 0; bottom: 0;
   max-height: 86vh;
   overflow-y: auto;
-  background: #f2f2f7;
+  background: var(--os-bg);
   border-radius: 14px 14px 0 0;
   padding: 6px 14px calc(20px + env(safe-area-inset-bottom, 0px));
   transform: translateY(100%);
@@ -644,18 +197,18 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   width: 36px; height: 5px;
   margin: 6px auto 14px;
   border-radius: 999px;
-  background: rgba(60, 60, 67, .30);
+  background: var(--os-line);
 }
 .ios-sheet__group {
   display: block;
   margin: 0 0 16px;
-  background: #fff;
+  background: var(--os-surface);
   border-radius: 12px;
   overflow: hidden;
 }
 .ios-sheet__heading {
   margin: 18px 14px 6px;
-  color: rgba(60, 60, 67, .60);
+  color: var(--os-muted);
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -668,40 +221,40 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   gap: 12px;
   min-height: 44px;
   padding: 10px 14px;
-  color: var(--ink, #17201c);
+  color: var(--os-ink);
   text-decoration: none;
-  background: transparent;
+  background: var(--os-transparent);
   border: 0;
-  border-bottom: 1px solid rgba(60, 60, 67, .10);
+  border-bottom: 1px solid var(--os-line);
   font-size: 17px;
   font-weight: 400;
   font-family: inherit;
   text-align: left;
   width: 100%;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--os-transparent);
 }
 .ios-sheet__item:last-child { border-bottom: 0; }
-.ios-sheet__item:active { background: rgba(60, 60, 67, .06); }
-.ios-sheet__item svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--theme, var(--navy, #0d2137)); }
-.ios-sheet__chevron { margin-left: auto; color: rgba(60, 60, 67, .30); }
+.ios-sheet__item:active { background: var(--os-primary-soft); }
+.ios-sheet__item svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--os-primary); }
+.ios-sheet__chevron { margin-left: auto; color: var(--os-muted); }
 .ios-sheet__chevron svg { width: 14px; height: 14px; color: inherit; }
 .ios-sheet__done {
   display: block;
   width: 100%;
   min-height: 50px;
   margin-top: 6px;
-  background: #fff;
+  background: var(--os-surface);
   border: 0;
   border-radius: 12px;
-  color: var(--theme, var(--navy, #0d2137));
+  color: var(--os-primary);
   font-size: 17px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--os-transparent);
 }
-.ios-sheet__done:active { background: #ebebee; }
+.ios-sheet__done:active { background: var(--os-primary-soft); }
 body.ios-sheet-open { overflow: hidden; }
 
 /* ---------------------------------------------------------------------
@@ -711,9 +264,9 @@ body.ios-sheet-open { overflow: hidden; }
   margin-top: 24px;
   padding: 18px clamp(16px, 3vw, 32px);
   padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-  border-top: 1px solid rgba(18, 32, 46, .12);
-  background: transparent;
-  color: #5a6672;
+  border-top: .5px solid var(--os-footer-line, color-mix(in srgb, var(--os-line, rgba(18, 32, 46, .12)) 62%, var(--os-transparent, transparent)));
+  background: var(--os-footer-bg, var(--os-surface, #fff));
+  color: var(--os-footer-ink, var(--os-muted, #5a6672));
   font: 13px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   text-align: center;
 }
@@ -721,11 +274,11 @@ body.ios-sheet-open { overflow: hidden; }
 .os-footer a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--os-transparent);
   transition: border-color .12s, color .12s;
 }
 .os-footer a:hover {
-  color: #12202e;
+  color: var(--os-primary);
   border-bottom-color: currentColor;
 }
 
@@ -752,28 +305,56 @@ body:not(.event-page):not(.topic-onepage) > footer.os-footer {
   bottom: 0;
   margin-top: auto;
   z-index: 30;
-  background: var(--os-surface);
+  background: var(--os-footer-bg, var(--os-surface, #fff));
 }
 
-/* Mobile: extend the same flex-column + sticky-footer chrome to event-page
-   templates too. The desktop event-frame layout uses position:fixed on the
-   footer which iOS Safari scroll-jacks. On phones we flow body+frame+footer
-   naturally and let the footer be sticky like every other page. */
+@media (min-width: 761px) {
+  body.topic-onepage > footer.os-footer,
+  body.event-page > footer.os-footer,
+  body.topic-onepage > footer.event-footer,
+  body.event-page > footer.event-footer {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin-top: 0 !important;
+    z-index: 60;
+    background: var(--os-footer-bg, var(--os-surface, #fff));
+  }
+}
+
+/* Mobile: event pages keep the global footer at the viewport bottom too.
+   Their main content is often a fixed/full-frame presentation, so a normal
+   in-flow footer can appear in the wrong place. */
 @media (max-width: 760px) {
-  html:has(body.event-page) { height: 100%; }
+  html:has(body.event-page),
+  html:has(body.topic-onepage) { height: 100%; }
+  body.topic-onepage,
   body.event-page {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
   }
+  body.topic-onepage > footer.os-footer,
   body.event-page > footer.os-footer,
+  body.topic-onepage > footer.event-footer,
   body.event-page > footer.event-footer {
-    position: sticky;
-    bottom: 0;
-    margin-top: auto;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin-top: 0 !important;
     z-index: 30;
-    background: var(--os-surface);
+    background: var(--os-footer-bg, var(--os-surface, #fff));
   }
+}
+
+body.os-has-site-footer.topic-onepage > footer.os-footer {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -788,16 +369,16 @@ body.topic-page .top-menu {
   display: flex; align-items: center; gap: 8px;
   overflow-x: auto;
   padding: 8px clamp(14px, 3vw, 36px);
-  background: color-mix(in srgb, var(--os-bg) 92%, transparent);
+  background: color-mix(in srgb, var(--os-bg) 92%, var(--os-transparent));
   border-bottom: 1px solid var(--os-line);
   backdrop-filter: blur(10px);
 }
 body.golf-event .top-menu a,
 body.topic-page .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
 body.golf-event .top-menu a:hover, body.golf-event .top-menu a.active,
-body.topic-page .top-menu a:hover, body.topic-page .top-menu a.active { background: var(--os-primary); color: #fff; }
+body.topic-page .top-menu a:hover, body.topic-page .top-menu a.active { background: var(--os-primary); color: var(--os-surface); }
 body.golf-event .nav-icon, body.topic-page .nav-icon { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; color: var(--os-muted); text-decoration: none; transition: background .12s, color .12s; }
-body.golf-event .nav-icon:hover, body.topic-page .nav-icon:hover { background: var(--os-primary); color: #fff; }
+body.golf-event .nav-icon:hover, body.topic-page .nav-icon:hover { background: var(--os-primary); color: var(--os-surface); }
 body.golf-event .nav-icon svg, body.topic-page .nav-icon svg { width: 22px; height: 22px; display: block; }
 body.golf-event .nav-spacer, body.topic-page .nav-spacer { flex: 1 1 auto; }
 body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height: 18px; background: var(--os-line); flex: 0 0 auto; align-self: center; }
@@ -827,11 +408,11 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 .os-cc-card {
   pointer-events: auto;
   width: min(960px, 100%);
-  background: #0d2137;
-  color: #f2f3f5;
-  border: 1px solid rgba(255,255,255,.12);
+  background: var(--os-primary);
+  color: var(--os-bg);
+  border: 1px solid var(--os-compare-blue);
   border-radius: 14px;
-  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--os-accent) 35%, var(--os-transparent));
   padding: 20px 22px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -850,11 +431,11 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 
 .os-cc-card p {
   margin: 0;
-  color: rgba(242,243,245,.85);
+  color: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
 }
 
 .os-cc-card a {
-  color: #ffd166;
+  color: var(--os-soft);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -868,9 +449,9 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 
 .os-cc-btn {
   appearance: none;
-  border: 1px solid rgba(255,255,255,.18);
-  background: transparent;
-  color: #f2f3f5;
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
+  background: var(--os-transparent);
+  color: var(--os-bg);
   padding: 9px 16px;
   border-radius: 8px;
   font: inherit;
@@ -880,25 +461,25 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   transition: background .12s, border-color .12s, transform .06s;
 }
 
-.os-cc-btn:hover { background: rgba(255,255,255,.06); }
+.os-cc-btn:hover { background: color-mix(in srgb, var(--os-surface) 16%, var(--os-transparent)); }
 .os-cc-btn:active { transform: translateY(1px); }
 .os-cc-btn:focus-visible {
-  outline: 2px solid #ffd166;
+  outline: 2px solid var(--os-soft);
   outline-offset: 2px;
 }
 
 .os-cc-btn--primary {
-  background: #ffd166;
-  border-color: #ffd166;
-  color: #0d2137;
+  background: var(--os-soft);
+  border-color: var(--os-soft);
+  color: var(--os-primary);
 }
 .os-cc-btn--primary:hover {
-  background: #ffdd8a;
-  border-color: #ffdd8a;
+  background: color-mix(in srgb, var(--os-surface) 24%, var(--os-transparent));
+  border-color: color-mix(in srgb, var(--os-surface) 24%, var(--os-transparent));
 }
 
 .os-cc-btn--ghost {
-  border-color: rgba(255,255,255,.22);
+  border-color: color-mix(in srgb, var(--os-scrim) 72%, var(--os-transparent));
 }
 
 /* Customize panel */
@@ -908,7 +489,7 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   flex-direction: column;
   gap: 10px;
   padding: 12px 0 0;
-  border-top: 1px solid rgba(255,255,255,.1);
+  border-top: 1px solid color-mix(in srgb, var(--os-scrim) 22%, var(--os-transparent));
   margin-top: 4px;
 }
 
@@ -920,18 +501,18 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   align-items: flex-start;
   padding: 10px 12px;
   border-radius: 10px;
-  background: rgba(255,255,255,.04);
+  background: color-mix(in srgb, var(--os-compare-blue) 16%, var(--os-transparent));
 }
 
 .os-cc-option input[type="checkbox"] {
   margin-top: 4px;
   width: 16px;
   height: 16px;
-  accent-color: #ffd166;
+  accent-color: var(--os-soft);
 }
 
 .os-cc-option input[type="checkbox"]:disabled {
-  accent-color: #5a6672;
+  accent-color: var(--os-compare-blue);
   cursor: not-allowed;
 }
 
@@ -948,7 +529,7 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 }
 
 .os-cc-option-text span {
-  color: rgba(242,243,245,.7);
+  color: color-mix(in srgb, var(--os-surface) 36%, var(--os-transparent));
   font-size: 13px;
 }
 
@@ -971,19 +552,19 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   margin-left: 6px;
   padding: 0;
   border-radius: 999px;
-  border: 1px solid rgba(18,32,46,.11);
-  background: #fff;
-  color: #5a6672;
+  border: 1px solid color-mix(in srgb, var(--os-surface) 14%, var(--os-transparent));
+  background: var(--os-surface);
+  color: var(--os-compare-blue);
   cursor: pointer;
   transition: background .12s, color .12s, border-color .12s;
   flex: 0 0 auto;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--os-transparent);
 }
 #os-cc-nav:hover,
 #os-cc-nav:focus-visible {
-  background: #0d2137;
-  border-color: #0d2137;
-  color: #fff;
+  background: var(--os-primary);
+  border-color: var(--os-primary);
+  color: var(--os-surface);
   outline: none;
 }
 #os-cc-nav svg {
@@ -999,15 +580,15 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   left: calc(14px + env(safe-area-inset-left, 0px));
   bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   z-index: 2147483500;
-  background: rgba(13,33,55,.86);
-  color: #f2f3f5;
-  border: 1px solid rgba(255,255,255,.16);
+  background: color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
+  color: var(--os-bg);
+  border: 1px solid color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent));
   border-radius: 999px;
   padding: 7px 12px;
   font: 500 12.5px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--os-surface) 34%, var(--os-transparent));
   opacity: .85;
   transition: opacity .15s, transform .12s;
 }
@@ -1046,4 +627,356 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .os-cc-btn, #os-cc-reopen { transition: none; }
+}
+
+/* Palette-safe image tile labels used by event overview mosaics. */
+.event-tile .event-name {
+  color: var(--os-on-image) !important;
+  background: color-mix(in srgb, var(--os-scrim) 72%, var(--os-transparent)) !important;
+  text-shadow: 0 1px 8px var(--os-image-overlay-strong) !important;
+}
+
+.event-tile--wide .event-name {
+  color: var(--os-on-image) !important;
+}
+
+/* Palette-safe legacy topic heroes, including older pages with local <style> blocks. */
+.topic-hero {
+  color: var(--os-on-image) !important;
+  background:
+    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-image-overlay-soft) 100%),
+    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%),
+    var(--hero) center / cover !important;
+}
+
+.topic-hero .eyebrow {
+  color: var(--os-gold) !important;
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+}
+
+.topic-hero h1 {
+  color: var(--os-on-image) !important;
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong) !important;
+}
+
+.topic-hero .intro {
+  color: var(--os-on-image-muted) !important;
+  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+}
+
+/* ---------------------------------------------------------------------
+   Universal palette-safe chrome and cards.
+   Navigation is neutral chrome; category identity belongs in small signals,
+   not page-wide bars or card frames.
+   --------------------------------------------------------------------- */
+:root {
+  --os-card-bg: var(--os-surface);
+  --os-card-ink: var(--os-ink);
+  --os-card-muted: var(--os-muted);
+  --os-card-line: var(--os-line);
+  --os-card-radius: 10px;
+  --os-card-shadow: 0 8px 24px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
+  --os-card-shadow-hover: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
+  --os-card-media-bg: var(--os-soft);
+  --os-card-accent: var(--cat-color, var(--accent, var(--theme, var(--os-accent))));
+  --os-card-accent-width: 5px;
+  --os-signal-bg: color-mix(in srgb, var(--os-surface) 82%, var(--os-accent));
+  --os-signal-ink: var(--os-ink);
+  --os-sport-colour: #3b8fb6;
+  --os-motor-colour: var(--os-red);
+  --os-music-colour: var(--os-red);
+  --os-climate-colour: #1f7a6d;
+  --os-food-colour: var(--os-compare-orange);
+  --os-drinks-colour: var(--os-gold);
+  --os-technology-colour: var(--os-primary);
+  --os-wellness-colour: var(--os-compare-green);
+  --os-culture-colour: var(--os-purple);
+  --os-festival-colour: var(--os-gold);
+  --os-nature-colour: var(--os-climate-colour);
+  --c-sport: var(--os-sport-colour);
+  --c-motor: var(--os-motor-colour);
+  --c-music: var(--os-music-colour);
+  --c-climate: var(--os-climate-colour);
+  --c-food: var(--os-food-colour);
+  --c-drinks: var(--os-drinks-colour);
+  --c-tech: var(--os-technology-colour);
+  --c-wellness: var(--os-wellness-colour);
+  --c-culture: var(--os-culture-colour);
+  --c-festival: var(--os-festival-colour);
+  --c-nature: var(--os-nature-colour);
+  --cont-europe: #2f80ed;
+  --cont-north-america: #00a7a7;
+  --cont-south-america: #2fa84f;
+  --cont-asia: #d9a21b;
+  --cont-africa: #c75b2c;
+  --cont-oceania: #8b5cf6;
+  --cont-global: var(--os-muted);
+}
+
+[data-cat="sport"],
+[data-os-category="sport"] { --c-sport: var(--os-sport-colour, #3b8fb6); }
+[data-cat="sport"] { --os-card-accent: var(--c-sport); }
+[data-cat="motor"] { --os-card-accent: var(--c-motor); }
+[data-cat="culture"] { --os-card-accent: var(--c-culture); }
+[data-cat="music"] { --os-card-accent: var(--c-music); }
+[data-cat="festival"] { --os-card-accent: var(--c-festival, var(--os-gold)); }
+[data-cat="wellness"] { --os-card-accent: var(--c-wellness); }
+[data-cat="tech"],
+[data-cat="technology"] { --os-card-accent: var(--c-tech); }
+[data-cat="climate"],
+[data-cat="nature"] { --os-card-accent: var(--c-climate); }
+[data-cat="food"] { --os-card-accent: var(--c-food); }
+[data-cat="drinks"] { --os-card-accent: var(--c-drinks); }
+
+body[data-os-category="festival"] {
+  --theme: var(--c-festival, var(--os-gold)) !important;
+  --accent: color-mix(in srgb, var(--c-festival, var(--os-gold)) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-festival, var(--os-gold)) !important;
+}
+body[data-os-category="sport"] {
+  --theme: var(--c-sport) !important;
+  --accent: color-mix(in srgb, var(--c-sport) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-sport) !important;
+}
+body[data-os-category="music"] {
+  --theme: var(--c-music) !important;
+  --accent: color-mix(in srgb, var(--c-music) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-music) !important;
+}
+body[data-os-category="climate"] {
+  --theme: var(--c-climate) !important;
+  --accent: color-mix(in srgb, var(--c-climate) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-climate) !important;
+}
+body[data-os-category="food"] {
+  --theme: var(--c-food) !important;
+  --accent: color-mix(in srgb, var(--c-food) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-food) !important;
+}
+body[data-os-category="food-and-drinks"] {
+  --theme: var(--c-food) !important;
+  --accent: color-mix(in srgb, var(--c-food) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-food) !important;
+}
+body[data-os-category="drinks"] {
+  --theme: var(--c-drinks) !important;
+  --accent: color-mix(in srgb, var(--c-drinks) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-drinks) !important;
+}
+body[data-os-category="technology"] {
+  --theme: var(--c-tech) !important;
+  --accent: color-mix(in srgb, var(--c-tech) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-tech) !important;
+}
+body[data-os-category="wellness"] {
+  --theme: var(--c-wellness) !important;
+  --accent: color-mix(in srgb, var(--c-wellness) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-wellness) !important;
+}
+body[data-os-category="culture"] {
+  --theme: var(--c-culture) !important;
+  --accent: color-mix(in srgb, var(--c-culture) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-culture) !important;
+}
+body[data-os-category="nature"] {
+  --theme: var(--c-climate) !important;
+  --accent: color-mix(in srgb, var(--c-climate) 62%, var(--os-surface)) !important;
+  --os-card-accent: var(--c-climate) !important;
+}
+
+body[data-os-category] .top-menu a:hover,
+body[data-os-category] .top-menu a.active,
+body[data-os-category] .top-menu a[aria-current="page"],
+body[data-os-category] .nav-icon:hover,
+body[data-os-category] .event-language-menu[open] summary,
+body[data-os-category] .event-language-menu summary:hover,
+body[data-os-category] .event-language-menu .event-language-list a[aria-current="true"],
+body[data-os-category] .event-language-menu .event-language-list a:hover,
+body[data-os-category] .recipe-tab.is-active,
+body[data-os-category] .sport-tab.is-active,
+body[data-os-category] .filter-btn.active,
+body[data-os-category] .filter-panel button.active {
+  background: var(--theme) !important;
+  border-color: var(--theme) !important;
+  color: var(--os-surface) !important;
+}
+
+nav.top-menu,
+nav.event-nav {
+  background: var(--os-chrome-bg) !important;
+  border-bottom: 1px solid var(--os-line) !important;
+  color: var(--os-chrome-ink) !important;
+}
+
+nav.top-menu a,
+nav.event-nav a,
+nav.top-menu summary,
+nav.event-nav summary {
+  color: var(--os-chrome-muted) !important;
+}
+
+nav.top-menu a:hover,
+nav.event-nav a:hover,
+nav.top-menu a.active,
+nav.event-nav a.active,
+nav.top-menu a[aria-current="page"],
+nav.event-nav a[aria-current="page"],
+nav.top-menu .nav-icon.active,
+nav.event-nav .nav-icon.active {
+  background: color-mix(in srgb, var(--os-chrome-bg) 70%, var(--os-surface)) !important;
+  color: var(--os-chrome-ink) !important;
+}
+
+nav.top-menu .nav-divider,
+nav.event-nav .nav-divider {
+  background: var(--os-line) !important;
+}
+
+.os-card,
+.cat-card,
+.topic-card,
+.topic-event-card,
+.event-card,
+.middle-category-card,
+.history-card,
+.panel,
+.fact-card,
+.focus-card,
+.ranking-card,
+.league-card,
+.topic-info-card,
+.compare-card,
+.category-chart,
+.kpi,
+.fact-table,
+.trend-card,
+.note-card,
+.rail-card,
+.week-card,
+.topic-panel-card,
+.award-card,
+.calendar-card,
+.info-card,
+.stat-card {
+  background: var(--os-card-bg) !important;
+  color: var(--os-card-ink) !important;
+  border: 1px solid var(--os-card-line) !important;
+  border-left: var(--os-card-accent-width) solid var(--os-card-accent) !important;
+  border-radius: var(--os-card-radius) !important;
+  box-shadow: var(--os-card-shadow) !important;
+  overflow: hidden;
+}
+
+.os-card--flat,
+.note-card,
+.rail-card,
+.week-card,
+.kpi,
+.fact-table,
+.trend-card {
+  box-shadow: none !important;
+}
+
+.os-card:hover,
+.cat-card:hover,
+.topic-card:hover,
+.topic-event-card:hover,
+.event-card:hover,
+.middle-category-card:hover,
+.history-card:hover,
+.panel:hover,
+.fact-card:hover,
+.focus-card:hover,
+.ranking-card:hover,
+.league-card:hover,
+.topic-info-card:hover,
+.compare-card:hover,
+.award-card:hover,
+.calendar-card:hover,
+.info-card:hover,
+.stat-card:hover {
+  border-color: var(--os-card-line) !important;
+  border-left-color: var(--os-card-accent) !important;
+  box-shadow: var(--os-card-shadow-hover) !important;
+}
+
+.os-card__media,
+.os-card img:first-child,
+.cat-thumb,
+.topic-thumb,
+.event-thumb,
+.card-thumb {
+  background: var(--os-card-media-bg) !important;
+  border-bottom: 4px solid var(--os-card-accent) !important;
+}
+
+.os-card__body,
+.card-body,
+.card-text,
+.cat-text,
+.topic-card p,
+.topic-card span,
+.topic-event-card > span,
+.event-card p,
+.card-meta,
+.kpi span,
+.trend-sub,
+.note-card p {
+  color: var(--os-card-muted) !important;
+}
+
+.os-card__title,
+.cat-card strong,
+.topic-card strong,
+.topic-event-card strong,
+.event-card strong,
+.card-title,
+.history-title,
+.category-chart .chart-title,
+.topic-card h2,
+.topic-card h3,
+.note-card h2,
+.note-card h3 {
+  color: var(--os-card-ink) !important;
+}
+
+.os-signal,
+.cat-pill,
+.event-meta,
+.event-date,
+.event-status,
+.tag,
+.badge,
+.chip {
+  background: var(--os-signal-bg) !important;
+  color: var(--os-signal-ink) !important;
+  border-color: var(--os-card-line) !important;
+}
+
+.os-signal--accent,
+.recipe-tab.is-active,
+.sport-tab.is-active,
+.filter-btn.active,
+.filter-panel button.active {
+  background: var(--os-accent) !important;
+  color: var(--os-surface) !important;
+  border-color: var(--os-accent) !important;
+}
+
+.event-card[data-reach],
+.topic-page .event-card,
+.topic-page .note-card,
+.topic-page .empty,
+.topic-event-card,
+.middle-category-card,
+.wellness-paths a {
+  border-left-width: var(--os-card-accent-width) !important;
+  border-left-color: var(--os-card-accent) !important;
+}
+
+.event-card .cat-pill,
+.topic-event-card .cat-pill {
+  color: var(--cat-color, var(--os-card-accent)) !important;
+  background: color-mix(in srgb, var(--cat-color, var(--os-card-accent)) 12%, var(--os-surface)) !important;
+  border-color: color-mix(in srgb, var(--cat-color, var(--os-card-accent)) 26%, var(--os-line)) !important;
 }

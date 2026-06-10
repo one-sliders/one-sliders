@@ -19,27 +19,27 @@
     <meta name="description" content="Festival events calendar for 2026: key dates, schedules and linked pages across Festival.">
     <title>Festival Events 2026 — Schedule &amp; Calendar</title>
     <style>
-      :root{--theme:#a23a7a;--accent:#ffb3d6;--ink:#17201c;--paper:#fbfaf6;--muted:#5f6b63;--line:rgba(23,32,28,.14)}
+      :root{--theme:var(--c-festival);--accent:var(--os-gold);--ink:color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent));--paper:color-mix(in srgb, var(--os-surface) 80%, var(--os-transparent));--muted:var(--os-accent);--line:var(--os-red)}
       *{box-sizing:border-box}
       body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}
       a{color:inherit}
-      .top-menu{position:sticky;top:0;z-index:2000;display:flex;gap:8px;padding:8px clamp(14px,3vw,36px);background:rgba(251,250,246,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+      .top-menu{position:sticky;top:0;z-index:2000;display:flex;gap:8px;padding:8px clamp(14px,3vw,36px);background:var(--os-accent);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
       .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none}
-      .nav-icon:hover{background:var(--theme);color:#fff}
+      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
       .nav-icon svg{width:22px;height:22px;display:block}
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
       .top-menu a:not(.nav-icon){padding:8px 11px;border-radius:999px;text-decoration:none;font-size:13px}
-      .top-menu a.active{background:var(--theme);color:#fff}
+      .top-menu a.active{background:var(--theme);color:var(--os-surface)}
       main{padding:clamp(20px,5vw,80px);max-width:900px;margin:0 auto}
-      .hero{padding:clamp(28px,5vw,56px);color:#fff;border-radius:12px;background:linear-gradient(135deg,var(--theme),color-mix(in srgb, var(--theme) 60%, #000));box-shadow:0 18px 44px rgba(23,32,28,.16);margin-bottom:24px}
+      .hero{padding:clamp(28px,5vw,56px);color:var(--os-surface);border-radius:12px;background:linear-gradient(135deg,var(--theme),color-mix(in srgb, var(--theme) 60%, var(--os-soft)));box-shadow:0 18px 44px color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent));margin-bottom:24px}
       .eyebrow{margin:0 0 8px;color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase}
-      h1{margin:0;font-size:clamp(40px,6vw,72px);line-height:.96;color:#fff}
-      .intro{max-width:640px;margin:12px 0 0;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:rgba(255,255,255,.92)}
+      h1{margin:0;font-size:clamp(40px,6vw,72px);line-height:.96;color:var(--os-surface)}
+      .intro{max-width:640px;margin:12px 0 0;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:color-mix(in srgb, var(--os-scrim) 68%, var(--os-transparent))}
       .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-      .related a{padding:8px 14px;background:rgba(255,255,255,.18);color:#fff;text-decoration:none;border-radius:999px;font-size:14px;font-weight:600}
-      .related a:hover{background:rgba(255,255,255,.32)}
-      .empty-state{padding:28px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;background:#fff}
-      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:rgba(251,250,246,.92);margin-top:24px}
+      .related a{padding:8px 14px;background:color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));color:var(--os-surface);text-decoration:none;border-radius:999px;font-size:14px;font-weight:600}
+      .related a:hover{background:color-mix(in srgb, var(--os-accent) 12%, var(--os-transparent))}
+      .empty-state{padding:28px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;background:var(--os-surface)}
+      .site-footer{padding:14px clamp(14px,3vw,36px);color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:var(--os-scrim);margin-top:24px}
       .site-footer p{margin:0;text-align:center}
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/festival/index.html#webpage","url":"https://one-sliders.com/content/categories/festival/index.html","name":"Festival Events 2026 — Schedule & Calendar","description":"Festival events calendar for 2026: key dates, schedules and linked pages across Festival.","inLanguage":"en","image":"https://one-sliders.com/assets/icons/one-sliders-icon.svg","breadcrumb":{"@id":"https://one-sliders.com/content/categories/festival/index.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/festival/index.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Festival","item":"https://one-sliders.com/content/categories/festival/index.html"},{"@type":"ListItem","position":4,"name":"Festival Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/festival/index.html"}]}],"name":"Festival Events 2026","description":"Festival events calendar for 2026: key dates, schedules and linked pages across Festival."}</script>

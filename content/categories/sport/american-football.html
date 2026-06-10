@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
   <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
+  <link rel="stylesheet" href="../../../assets/css/oneslider-core.css?v=semantic-sport-20260610">
   
-  <link rel="preload" as="image" href="/content/categories/sport/american-football/events/img/super-bowl-hero.png">
-<script defer src="../../../assets/js/oneslider-core.js"></script>
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../assets/css/categories.css">
+<link rel="preload" as="image" href="/content/categories/sport/american-football/events/img/super-bowl-hero.png">
+<script defer src="../../../assets/js/oneslider-core.js?v=semantic-sport-20260610"></script>
+      <script defer src="../../../assets/js/categories.js"></script>
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="American Football events calendar for 2026: key dates, schedules and linked pages across Sport.">
   <meta name="twitter:title" content="American Football Events 2026 — Schedule &amp; Calendar">
@@ -27,38 +29,37 @@
     <meta name="available-languages" content="en">
     <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/content/categories/sport/american-football.html">
     <link rel="alternate" hreflang="en" href="https://one-sliders.com/content/categories/sport/american-football.html">
-    <meta name="theme-color" content="#0d2137">
-    <title>American Football Events 2026 — Schedule &amp; Calendar</title>
+<title>American Football Events 2026 — Schedule &amp; Calendar</title>
     <style>
-      :root { --theme: #245f46; --accent: #9fd16b; --ink: #17201c; --paper: #fbfaf6; --muted: #5f6b63; --line: rgba(23,32,28,.14); }
+      :root { --theme: var(--c-sport); --accent: color-mix(in srgb, var(--c-sport) 62%, var(--os-surface)); --ink: var(--os-primary); --paper: var(--os-surface); --muted: var(--os-accent); --line: color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent)); }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
       a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2000; display: flex; gap: 8px; overflow: visible; padding: 8px clamp(14px,3vw,36px); background: rgba(251,250,246,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+      .top-menu { position: sticky; top: 0; z-index: 2000; display: flex; gap: 8px; overflow: visible; padding: 8px clamp(14px,3vw,36px); background: color-mix(in srgb, var(--os-surface) 95%, var(--os-transparent)); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
       .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: white; }
+      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: var(--os-surface); }
       .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:white}
+      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
       .nav-icon svg{width:22px;height:22px;display:block}
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
 
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(20px,5vw,80px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: white; border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, rgba(8,18,12,.62), rgba(8,18,12,.26) 46%, rgba(8,18,12,0) 72%), linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.18)), var(--hero) center / cover; box-shadow: 0 18px 44px rgba(23,32,28,.16); }
+      .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 26%, var(--os-transparent)) 46%, var(--os-transparent) 72%), linear-gradient(180deg, color-mix(in srgb, var(--os-surface) 2%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(46px,7vw,92px); line-height: .92; letter-spacing: 0; }
       .intro { max-width: 740px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
       .topic-panel { display: grid; grid-template-columns: minmax(320px,.88fr) minmax(480px,1.12fr); gap: 10px; min-width: 0; }
       .left, .right { min-width: 0; display: grid; gap: 10px; align-content: start; }
       .fact-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
-      .fact, .history-card, .focus-card, .event-card { border: 1px solid var(--line); border-radius: 8px; background: white; }
-      .fact { min-height: 86px; padding: 12px 13px; border-left: 5px solid var(--accent); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      .fact, .history-card, .focus-card, .event-card { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
+      .fact { min-height: 86px; padding: 12px 13px; border-left: 5px solid var(--accent); box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
       .fact span, .history-title, .ranking-source { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       .fact strong { display: block; margin-top: 6px; font-size: clamp(20px,2.3vw,30px); line-height: 1; }
       .fact p { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.25; }
-      .history-card, .focus-card { padding: 13px 14px; border-left: 5px solid var(--theme); box-shadow: 0 8px 18px rgba(23,32,28,.05); }
+      .history-card, .focus-card { padding: 13px 14px; border-left: 5px solid var(--theme); box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
       .history-card h2, .focus-card h2 { margin: 0 0 9px; font-size: 20px; line-height: 1.1; }
       .timeline { display: grid; gap: 7px; }
-      .timeline-item { display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 10px; padding-top: 7px; border-top: 1px solid rgba(23,32,28,.10); }
+      .timeline-item { display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 10px; padding-top: 7px; border-top: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); }
       .timeline-item:first-child { border-top: 0; padding-top: 0; }
       .timeline-item time { color: var(--theme); font-size: 13px; font-weight: 800; }
       .timeline-item strong { display: block; font-size: 14px; line-height: 1.16; }
@@ -66,15 +67,15 @@
       .focus-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
       .focus-item h3 { margin: 0 0 6px; color: var(--muted); font-size: 12px; line-height: 1; text-transform: uppercase; letter-spacing: 0; }
       .focus-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-      .focus-item { padding: 10px 11px; border: 1px solid rgba(23,32,28,.10); border-radius: 8px; background: rgba(159,209,107,.08); }
+      .focus-item { padding: 10px 11px; border: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); border-radius: 8px; background: color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent)); }
       .focus-item strong { display: block; color: var(--theme); font-size: 14px; line-height: 1.1; }
       .focus-item span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.25; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
       .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: white; }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: white; color: var(--muted); }
+      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--os-surface); color: var(--theme); cursor: pointer; }
+      .carousel-button:hover { background: var(--theme); color: var(--os-surface); }
+      .carousel-button:disabled { opacity: .35; cursor: default; background: var(--os-surface); color: var(--muted); }
       .carousel-button svg { width: 18px; height: 18px; display: block; }
       .carousel { min-width: 0; overflow: hidden; }
       .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
@@ -86,19 +87,19 @@
       .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
       .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
       .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: rgba(251,250,246,.92); }
+      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
       .site-footer p { margin: 0; }
 
       .event-language-menu{position:relative;flex:0 0 auto;margin-left:auto;z-index:1001}
-      .event-language-menu summary{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}
+      .event-language-menu summary{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;color:var(--muted);background:var(--os-surface);border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:12px;font-weight:900;list-style:none}
       .event-language-menu summary::-webkit-details-marker{display:none}
       .event-language-menu summary svg{width:17px;height:17px}
-      .event-language-menu[open] summary,.event-language-menu summary:hover{color:#fff;background:var(--theme);border-color:var(--theme)}
-      .event-language-menu .event-language-list{position:fixed;top:58px;right:clamp(14px,3vw,36px);z-index:1002;display:grid;grid-template-columns:1fr;gap:6px;min-width:230px;max-width:min(300px,calc(100vw - 24px));margin:0;padding:8px;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px rgba(18,32,46,.16)}
+      .event-language-menu[open] summary,.event-language-menu summary:hover{color:var(--os-surface);background:var(--theme);border-color:var(--theme)}
+      .event-language-menu .event-language-list{position:fixed;top:58px;right:clamp(14px,3vw,36px);z-index:1002;display:grid;grid-template-columns:1fr;gap:6px;min-width:230px;max-width:min(300px,calc(100vw - 24px));margin:0;padding:8px;background:color-mix(in srgb, var(--os-surface) 98%, var(--os-transparent));border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 34px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent))}
       .event-language-menu .event-language-list>span:first-child{display:none}
-      .event-language-menu .event-language-list a{display:grid;grid-template-columns:42px 1fr;gap:9px;align-items:center;min-height:34px;padding:0 10px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;text-decoration:none}
-      .event-language-menu .event-language-list a[aria-current=true],.event-language-menu .event-language-list a:hover{color:#fff;background:var(--theme);border-color:var(--theme)}
-      .event-language-menu .event-language-list a span{position:static;display:inline;width:auto;height:auto;min-height:0;padding:0;overflow:visible;clip:auto;color:inherit;background:transparent;border:0;border-radius:0;font-size:inherit;font-weight:inherit;letter-spacing:0;text-transform:none;white-space:nowrap}
+      .event-language-menu .event-language-list a{display:grid;grid-template-columns:42px 1fr;gap:9px;align-items:center;min-height:34px;padding:0 10px;color:var(--muted);background:var(--os-surface);border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;text-decoration:none}
+      .event-language-menu .event-language-list a[aria-current=true],.event-language-menu .event-language-list a:hover{color:var(--os-surface);background:var(--theme);border-color:var(--theme)}
+      .event-language-menu .event-language-list a span{position:static;display:inline;width:auto;height:auto;min-height:0;padding:0;overflow:visible;clip:auto;color:inherit;background:var(--os-transparent);border:0;border-radius:0;font-size:inherit;font-weight:inherit;letter-spacing:0;text-transform:none;white-space:nowrap}
       .language-code{display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;opacity:.82}
       .language-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
@@ -109,7 +110,7 @@
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/sport/american-football.html#webpage","url":"https://one-sliders.com/content/categories/sport/american-football.html","name":"American Football Events 2026 — Schedule & Calendar","description":"American Football events calendar for 2026: key dates, schedules and linked pages across Sport.","inLanguage":"en","image":"https://one-sliders.com/content/categories/sport/american-football/events/img/super-bowl-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/sport/american-football.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/sport/american-football.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Sport","item":"https://one-sliders.com/content/categories/sport/index.html"},{"@type":"ListItem","position":4,"name":"American Football Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/sport/american-football.html"}]}],"name":"American Football Events 2026","description":"American Football events calendar for 2026: key dates, schedules and linked pages across Sport."}</script>
 </head>
-  <body>
+  <body class="category-page category-page--sport topic-onepage topic-page--american-football" data-os-category="sport" data-cat="sport">
     <nav class="top-menu" aria-label="Category navigation">
       <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
