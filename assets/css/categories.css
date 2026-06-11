@@ -4709,6 +4709,17 @@ body.category-page .category-shell.category-content-box .category-parent-card p 
     grid-row: auto;
   }
 
+  /* Sport pages also need their inner facts grids collapsed to 1 column
+     on phones - the desktop sport-facts-column rule (repeat(2, 1fr)) lives
+     outside @media and matched with higher specificity than the generic
+     mobile fix below. */
+  body.category-page--sport .sport-facts-grid {
+    grid-template-columns: 1fr;
+  }
+  body.category-page--sport .sport-facts-column {
+    grid-template-columns: 1fr;
+  }
+
   body.category-page .category-shell.category-content-box {
     position: static;
     margin: 8px;
@@ -4731,6 +4742,15 @@ body.category-page .category-shell.category-content-box .category-parent-card p 
   body.category-page .category-shell.category-content-box .topics-section {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  /* Collapse the inner facts grids to a single readable column on phones
+     (they were 2-col + 2-col inside, ~67px per cell, unreadable). */
+  body.category-page .category-shell.category-content-box .sport-facts-grid {
+    grid-template-columns: 1fr;
+  }
+  body.category-page .category-shell.category-content-box .sport-facts-column {
+    grid-template-columns: 1fr;
   }
 
   body.category-page .category-shell.category-content-box .category-parent-card {
