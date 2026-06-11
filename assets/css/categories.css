@@ -4725,6 +4725,14 @@ body.category-page .category-shell.category-content-box .category-parent-card p 
     grid-template-columns: 1fr;
   }
 
+  /* Reset desktop explicit grid placement that left the two sections stacked
+     on top of each other in the single-column mobile layout. */
+  body.category-page .category-shell.category-content-box .sport-facts-grid,
+  body.category-page .category-shell.category-content-box .topics-section {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   body.category-page .category-shell.category-content-box .category-parent-card {
     display: none;
   }
