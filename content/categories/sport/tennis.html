@@ -27,7 +27,9 @@
     <meta name="content-id" content="categories-sport-tennis">
     <meta name="content-language" content="x-default">
     <meta name="available-languages" content="en">
-    <link rel="alternate" hreflang="x-default" href="https://one-sliders.com/content/categories/sport/tennis.html">
+    
+    <meta name="os-back-href" content="index.html">
+    <meta name="os-back-label" content="Sports"><link rel="alternate" hreflang="x-default" href="https://one-sliders.com/content/categories/sport/tennis.html">
     <link rel="alternate" hreflang="en" href="https://one-sliders.com/content/categories/sport/tennis.html">
 <title>Tennis Events 2026 — Schedule &amp; Calendar</title>
     <style>
@@ -44,7 +46,7 @@
       .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
 
       .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(20px,5vw,80px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 26%, var(--os-transparent)) 46%, var(--os-transparent) 72%), linear-gradient(180deg, color-mix(in srgb, var(--os-surface) 2%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
+      .topic-hero { display: grid; align-items: end; min-height: clamp(230px,31vh,360px); padding: clamp(20px,3.6vw,44px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
       .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       h1 { margin: 0; font-size: clamp(46px,7vw,92px); line-height: .92; letter-spacing: 0; }
       .intro { max-width: 740px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
@@ -52,11 +54,11 @@
       .left, .right { min-width: 0; display: grid; gap: 10px; align-content: start; }
       .fact-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
       .fact, .history-card, .focus-card, .event-card { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
-      .fact { min-height: 86px; padding: 12px 13px; border-left: 5px solid var(--accent); box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
+      .fact { min-height: 86px; padding: 12px 13px; box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
       .fact span, .history-title, .ranking-source { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
       .fact strong { display: block; margin-top: 6px; font-size: clamp(20px,2.3vw,30px); line-height: 1; }
       .fact p { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.25; }
-      .history-card, .focus-card { padding: 13px 14px; border-left: 5px solid var(--theme); box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
+      .history-card, .focus-card { padding: 13px 14px; border-left: 1px solid var(--line); box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent)); }
       .history-card h2, .focus-card h2 { margin: 0 0 9px; font-size: 20px; line-height: 1.1; }
       .timeline { display: grid; gap: 7px; }
       .timeline-item { display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 10px; padding-top: 7px; border-top: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); }
@@ -72,18 +74,10 @@
       .focus-item span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.25; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--os-surface); color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: var(--os-surface); }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: var(--os-surface); color: var(--muted); }
-      .carousel-button svg { width: 18px; height: 18px; display: block; }
-      .carousel { min-width: 0; overflow: hidden; }
       .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
-      .carousel-track.event-grid { display: flex; grid-template-columns: none; gap: 8px; overflow-x: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
-      .carousel-track .event-card { flex: 0 0 calc((100% - 16px) / 3); scroll-snap-align: start; }
-      .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
-      .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
-      .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
+      .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--os-card-accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
+      .event-card:hover { border-color: var(--theme); border-left-color: var(--os-card-accent); transform: translateY(-1px); }
+      .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 3px solid var(--os-card-accent); }
       .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
       .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
       .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
@@ -104,8 +98,8 @@
       .language-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
       @media (max-width: 1040px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } }
-      @media (max-width: 760px) { .topic-slide { padding: 12px; } .focus-grid { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: calc((100% - 8px) / 2); } }
-      @media (max-width: 620px) { .fact-grid, .event-grid { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
+      @media (max-width: 760px) { .topic-slide { padding: 12px; } .focus-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 620px) { .fact-grid, .event-grid { grid-template-columns: 1fr; } }
       @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/sport/tennis.html#webpage","url":"https://one-sliders.com/content/categories/sport/tennis.html","name":"Tennis Events 2026 — Schedule & Calendar","description":"Tennis events calendar for 2026: key dates, schedules and linked pages across Sport.","inLanguage":"en","image":"https://one-sliders.com/content/categories/sport/tennis/img/tennis-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/sport/tennis.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/sport/tennis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Sport","item":"https://one-sliders.com/content/categories/sport/index.html"},{"@type":"ListItem","position":4,"name":"Tennis Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/sport/tennis.html"}]}],"name":"Tennis Events 2026","description":"Tennis events calendar for 2026: key dates, schedules and linked pages across Sport."}</script>
@@ -116,8 +110,8 @@
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
       <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
-      <a href="index.html">Sports</a>
-      <a class="active" aria-current="page" href="tennis.html">Tennis</a>
+      <a class="nav-back" href="index.html" title="Back to Sports" aria-label="Back to Sports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Sports</span></a>
+      <span class="nav-current-topic" aria-current="page">Tennis</span>
       <details class="event-language-menu">
         <summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>EN</span></summary>
         <div class="event-language-list" aria-label="Language">
@@ -140,7 +134,8 @@
       </details>
     </nav>
 
-    <main class="topic-slide">
+    <main class="topic-slide category-content-box">
+    <a class="topic-parent-card" href="index.html" aria-label="Open Sports category"><img src="/content/categories/sport/img/sport-mini.png" alt="" width="400" height="300" loading="lazy"><span>More Sports</span><strong>Sports category</strong><p>More topics, events and calendar moments.</p></a>
       <header class="topic-hero" style="--hero: url('/content/categories/sport/tennis/img/tennis-hero.png');">
         <div>
           <p class="eyebrow">Sport · venues, seasons, travel</p>
@@ -184,32 +179,21 @@
           </section>
 
           <section>
-            <div class="section-heading">
-              <h2>Upcoming events</h2>
-              <div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls">
-                <button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
-              </div>
-            </div>
-            <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
-<!-- generated-topic-fill:start -->
-<a class="event-card" href="/content/categories/sport/tennis/events/atp-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/atp-finals-mini.png" alt="ATP Finals thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>ATP Finals</strong><p>Milan, Italy</p></a>
-<a class="event-card" href="/content/categories/sport/tennis/events/wta-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/wta-finals-mini.png" alt="WTA Finals thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>WTA Finals</strong><p>Riyadh, Saudi Arabia</p></a>
-<a class="event-card" href="/content/categories/sport/tennis/events/davis-cup-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/davis-cup-finals-mini.png" alt="Davis Cup Finals thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Davis Cup Finals</strong><p>Barcelona, Spain</p></a>
-<a class="event-card" href="/content/categories/sport/tennis/events/billie-jean-king-cup-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/billie-jean-king-cup-finals-mini.png" alt="Billie Jean King Cup Finals thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Billie Jean King Cup Finals</strong><p>Barcelona, Spain</p></a>
-<a class="event-card" href="/content/categories/sport/tennis/events/indian-wells-masters.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/indian-wells-masters-mini.png" alt="Indian Wells Masters thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Indian Wells Masters</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/sport/tennis/events/miami-open-tennis.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/miami-open-tennis-mini.png" alt="Miami Open Tennis thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Miami Open Tennis</strong><p>Los Angeles, United States</p></a>
-<!-- generated-topic-fill:end -->
-                <a class="event-card" data-end="2026-07-12" href="./tennis/events/wimbledon.html"><img class="event-thumb" src="./tennis/events/img/wimbledon-mini.png" alt="Wimbledon thumbnail" aria-hidden="true" width="400" height="250" loading="lazy"><time>Jun-Jul</time><strong>Wimbledon</strong><p>London, UK</p></a>
-                <a class="event-card" data-end="2026-09-13" href="./tennis/events/us-open-tennis.html"><img class="event-thumb" src="./tennis/events/img/us-open-tennis-mini.png" alt="Us Open Tennis thumbnail" aria-hidden="true" width="400" height="300" loading="lazy"><time>Aug-Sep</time><strong>US Open Tennis</strong><p>New York, USA</p></a>
+            <div class="section-heading"><h2>Upcoming events</h2></div>
+            <div class="event-grid">
+<a class="event-card" data-start="2026-06-29" data-end="2026-07-12" data-reach="global" href="/content/categories/sport/tennis/events/wimbledon.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/wimbledon-mini-400.webp" alt="Wimbledon thumbnail" loading="lazy" width="400" height="300"><time>29 Jun-12 Jul 2026</time><strong>Wimbledon</strong><p>London, UK</p></a>
+<a class="event-card" data-start="2026-08-24" data-end="2026-09-13" data-reach="global" href="/content/categories/sport/tennis/events/us-open-tennis.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/us-open-tennis-mini-400.webp" alt="US Open Tennis thumbnail" loading="lazy" width="400" height="300"><time>24 Aug-13 Sep 2026</time><strong>US Open Tennis</strong><p>New York, USA</p></a>
+<a class="event-card" data-start="2026-09-15" data-end="2026-09-20" data-date-status="estimated" data-official-date="false" data-reach="continent" href="/content/categories/sport/tennis/events/billie-jean-king-cup-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/billie-jean-king-cup-finals-mini-400.webp" alt="Billie Jean King Cup Finals thumbnail" loading="lazy" width="400" height="300"><time>15-20 Sep 2026</time><strong>Billie Jean King Cup Finals</strong><p>Barcelona, Spain</p></a>
+<a class="event-card" data-start="2026-11-01" data-end="2026-11-08" data-date-status="estimated" data-official-date="false" data-reach="continent" href="/content/categories/sport/tennis/events/wta-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/wta-finals-mini-400.webp" alt="WTA Finals thumbnail" loading="lazy" width="400" height="300"><time>1-8 Nov 2026</time><strong>WTA Finals</strong><p>Riyadh, Saudi Arabia</p></a>
+<a class="event-card" data-start="2026-11-24" data-end="2026-11-29" data-date-status="estimated" data-official-date="false" data-reach="continent" href="/content/categories/sport/tennis/events/davis-cup-finals.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/davis-cup-finals-mini-400.webp" alt="Davis Cup Finals thumbnail" loading="lazy" width="400" height="300"><time>24-29 Nov 2026</time><strong>Davis Cup Finals</strong><p>Barcelona, Spain</p></a>
+<a class="event-card" data-start="2027-01-11" data-end="2027-01-31" data-reach="global" href="/content/categories/sport/tennis/events/australian-open.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/australian-open-mini-400.webp" alt="Australian Open 2027 thumbnail" loading="lazy" width="400" height="300"><time>11-31 Jan 2027</time><strong>Australian Open 2027</strong><p>Melbourne, Australia</p></a>
+<a class="event-card" data-start="2027-02-28" data-end="2027-03-14" data-date-status="confirmed" data-reach="continent" href="/content/categories/sport/tennis/events/indian-wells-masters.html"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/indian-wells-masters-mini-400.webp" alt="Indian Wells Masters thumbnail" loading="lazy" width="400" height="300"><time>28 Feb-14 Mar 2027</time><strong>Indian Wells Masters</strong><p>Indian Wells, USA</p></a>
+<a class="event-card" data-start="2027-05-24" data-end="2027-06-07" data-date-status="estimated" data-official-date="false" data-reach="global" href="/content/categories/sport/tennis/events/roland-garros.html#year-2027"><img class="event-thumb" src="/content/categories/sport/tennis/events/img/roland-garros-mini-400.webp?v=20260601-real" alt="Roland-Garros 2026 thumbnail" loading="lazy" width="400" height="300"><time>24 May-7 Jun 2027</time><strong>Roland-Garros 2026</strong><p>Paris, France</p></a>
             </div></div>
           </section>
         </div>
       </section>
     </main>
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
-    <script>
-      (() => { const track = document.querySelector('[data-carousel-track]'); const prev = document.querySelector('[data-carousel-prev]'); const next = document.querySelector('[data-carousel-next]'); const controls = document.querySelector('[data-carousel-controls]'); if (!track || !prev || !next || !controls) return; const today = new Date(); today.setHours(0, 0, 0, 0); track.querySelectorAll('.event-card[data-end]').forEach((card) => { const end = new Date(card.dataset.end + 'T23:59:59'); if (end < today) card.hidden = true; }); const update = () => { const max = track.scrollWidth - track.clientWidth - 1; controls.hidden = max <= 1; prev.disabled = track.scrollLeft <= 1; next.disabled = track.scrollLeft >= max; }; const step = () => { const card = track.querySelector('.event-card:not([hidden])'); if (!card) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })); track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); })();
-    </script>
-  </body>
+    </body>
 </html>

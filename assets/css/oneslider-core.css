@@ -940,6 +940,57 @@ nav.event-nav .nav-divider {
   color: var(--os-card-ink) !important;
 }
 
+.event-card time,
+.topic-event-card time,
+.event-date {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 24px !important;
+  padding: 3px 9px !important;
+  color: var(--os-card-ink) !important;
+  background: var(--os-signal-bg) !important;
+  border: 1px solid var(--os-card-line) !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+  white-space: normal !important;
+}
+
+.event-card time:empty::before,
+.topic-event-card time:empty::before {
+  content: "Date TBC";
+}
+
+.event-card:not([data-start]):not([data-end]) time,
+.topic-event-card:not([data-start]):not([data-end]) time {
+  font-size: 0 !important;
+}
+
+.event-card:not([data-start]):not([data-end]) time::before,
+.topic-event-card:not([data-start]):not([data-end]) time::before {
+  content: "Date TBC";
+  color: var(--os-card-muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.event-card[data-date-status="estimated"] time::after,
+.topic-event-card[data-date-status="estimated"] time::after {
+  content: " est.";
+  color: var(--os-card-muted);
+  font-weight: 700;
+}
+
+.event-card[data-date-status="tbc"] time,
+.topic-event-card[data-date-status="tbc"] time {
+  color: var(--os-card-muted) !important;
+}
+
 .os-signal,
 .cat-pill,
 .event-meta,

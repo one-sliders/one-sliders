@@ -1653,12 +1653,7 @@
       ? ''
       : (edition.countryFact ? fact('Country', edition.countryFact) : countryFact(editionCountries));
 
-    if (edition.stageTabs && edition.stageTabs.length && !edition.editionTabs) {
-      renderEditionWithStages(data, edition, target);
-      return;
-    }
-
-    if (/\/categories\/sport\/golf\/events\//.test(location.pathname || '') || edition.editionTabs) {
+    if ((edition.currentModules && edition.status !== 'past') || /\/categories\/sport\/golf\/events\//.test(location.pathname || '') || edition.editionTabs) {
       renderRyderTabs(data, edition, target);
       updateEditionIdentity(data, edition);
       // Left side stays static across year switches — no dynamic snapshot.
@@ -1671,6 +1666,11 @@
       hydrateSessionScoreBars(target);
       hydrateRyderLiveResults(target);
       refreshCountdowns();
+      return;
+    }
+
+    if (edition.stageTabs && edition.stageTabs.length && !edition.editionTabs) {
+      renderEditionWithStages(data, edition, target);
       return;
     }
 

@@ -499,7 +499,7 @@ function statusLabel(item) {
 function displayDate(item) {
   if (item.startDate) return shortDateRange(item);
   const date = endDateObj(item);
-  return `Ends ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })}`;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 }
 
 function fullDate(item) {
@@ -1141,7 +1141,7 @@ function updateGolfPage() {
     const before = source.slice(0, start);
     let section = source.slice(start, articleEnd);
     const after = source.slice(articleEnd);
-    section = section.replace(/<h3>(?:Events|2026 schedule)<\/h3>\s*<ul class="league-events(?: league-events--calendar)?">[\s\S]*?<\/ul>/, `<h3>2026 schedule</h3>\n                  <ul class="league-events league-events--calendar">\n                    ${leagueList(key)}\n                  </ul>`);
+    section = section.replace(/<h3>(?:Events|Schedule|2026 schedule)<\/h3>\s*(?:<div class="league-events-header"[\s\S]*?<\/div>\s*)?<ul class="league-events(?: league-events--calendar)?">[\s\S]*?<\/ul>/, `<h3>Schedule</h3>\n                  <ul class="league-events league-events--calendar">\n                    ${leagueList(key)}\n                  </ul>`);
     source = before + section + after;
   }
 

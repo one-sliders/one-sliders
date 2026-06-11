@@ -44,15 +44,7 @@
       .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
       .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
       .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .carousel-controls { display: flex; gap: 6px; align-items: center; }
-      .carousel-button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--os-surface); color: var(--theme); cursor: pointer; }
-      .carousel-button:hover { background: var(--theme); color: var(--os-surface); }
-      .carousel-button:disabled { opacity: .35; cursor: default; background: var(--os-surface); color: var(--muted); }
-      .carousel-button svg { width: 18px; height: 18px; display: block; }
-      .carousel { min-width: 0; overflow: hidden; }
       .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
-      .carousel-track.event-grid { display: flex; grid-template-columns: none; gap: 8px; overflow-x: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; }
-      .carousel-track .event-card { flex: 0 0 calc((100% - 16px) / 3); scroll-snap-align: start; }
       .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
       .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
       .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
@@ -62,10 +54,12 @@
       .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
       .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
       .site-footer p { margin: 0; }
-      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } .carousel-track .event-card { flex-basis: 100%; } }
+      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } }
       @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
     </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/technology/tech-events.html#webpage","url":"https://one-sliders.com/content/categories/technology/tech-events.html","name":"Tech Events","description":"Tech Events: Tech Events brings together related events, pages and calendar moments inside Technology.","inLanguage":"en","image":"https://one-sliders.com/content/categories/technology/consumer-electronics/events/img/ces-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/technology/tech-events.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/technology/tech-events.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Technology","item":"https://one-sliders.com/content/categories/technology/index.html"},{"@type":"ListItem","position":4,"name":"Tech Events","item":"https://one-sliders.com/content/categories/technology/tech-events.html"}]}]}</script>
+  <meta name="os-back-href" content="index.html">
+  <meta name="os-back-label" content="Technology">
 </head>
   <body class="category-page category-page--technology topic-onepage topic-page--tech-events" data-os-category="technology" data-cat="technology">
     <nav class="top-menu" aria-label="Category navigation">
@@ -73,10 +67,10 @@
       <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
       <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
-      <a href="index.html">Technology</a>
-      <a class="active" aria-current="page" href="tech-events.html">Tech Events</a>
-    </nav>
+      <a class="nav-back" href="index.html" title="Back to Technology" aria-label="Back to Technology"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Technology</span></a>
+      <span class="nav-current-topic" aria-current="page">Tech Events</span></nav>
     <main class="topic-slide">
+    <a class="topic-parent-card" href="index.html" aria-label="Open Technology category"><img src="/content/categories/img/categories-topics-mini.png" alt="" width="400" height="300" loading="lazy"><span>More Technology</span><strong>Technology category</strong><p>More topics, events and calendar moments.</p></a>
       <header class="topic-hero" style="--hero: url('/content/categories/technology/consumer-electronics/events/img/ces-hero.png');">
         <div>
           <p class="eyebrow">Technology topic</p>
@@ -87,16 +81,12 @@
       <section class="topic-panel">
         <div class="left"><div class="note-card">Tech Events is part of the Technology category, with kommande event gathered for quick planning and discovery.</div></div>
         <div class="right">
-          <div class="section-heading"><h2>Upcoming events</h2><div class="carousel-controls" data-carousel-controls aria-label="Upcoming events carousel controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Previous events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button><button class="carousel-button" type="button" data-carousel-next aria-label="Next events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
-          <div class="carousel"><div class="event-grid carousel-track" data-carousel-track>
+          <div class="section-heading"><h2>Upcoming events</h2></div><div class="event-grid">
             <a class="event-card" data-end="2027-01-08" href="/content/categories/technology/consumer-electronics/events/ces.html"><img class="event-thumb" src="/content/categories/technology/consumer-electronics/events/img/ces-mini.png" alt="CES 2027 thumbnail" aria-hidden="true" width="400" height="300" loading="lazy"><time>January 2027</time><strong>CES 2027</strong><p>Las Vegas, USA</p></a>
           </div></div>
         </div>
       </section>
     </main>
     <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
-    <script>
-      (() => { const track = document.querySelector('[data-carousel-track]'); const prev = document.querySelector('[data-carousel-prev]'); const next = document.querySelector('[data-carousel-next]'); const controls = document.querySelector('[data-carousel-controls]'); if (!track || !prev || !next || !controls) return; const today = new Date(); today.setHours(0, 0, 0, 0); track.querySelectorAll('.event-card[data-end]').forEach((card) => { const end = new Date(card.dataset.end + 'T23:59:59'); if (end < today) card.hidden = true; }); const update = () => { const max = track.scrollWidth - track.clientWidth - 1; controls.hidden = max <= 1; prev.disabled = track.scrollLeft <= 1; next.disabled = track.scrollLeft >= max; }; const step = () => { const card = track.querySelector('.event-card:not([hidden])'); if (!card) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).gap) || 0; return card.getBoundingClientRect().width + gap; }; prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' })); next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' })); track.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update); update(); })();
-    </script>
-  </body>
+    </body>
 </html>
