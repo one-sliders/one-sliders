@@ -1262,6 +1262,68 @@ html:has(body.country-onepage) {
   margin-top: 16px;
 }
 
+.location-parent-card {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 14px;
+  align-items: center;
+  min-height: 112px;
+  padding: 10px 14px 10px 10px;
+  color: var(--location-ink);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+  border: 1px solid var(--location-line);
+  border-left: 5px solid var(--location-accent);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
+}
+
+.location-parent-card img {
+  grid-row: 1 / 4;
+  display: block;
+  width: 136px;
+  height: 94px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.location-parent-card span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.location-parent-card strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--location-ink);
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+.location-parent-card em {
+  display: block;
+  margin-top: 6px;
+  color: var(--location-muted);
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.location-parent-card:hover,
+.location-parent-card:focus-visible {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+  border-color: var(--location-theme);
+  border-left-color: var(--location-accent);
+  outline: none;
+}
+
 .country-hero-image {
   width: 100%;
   min-height: 0;
@@ -1721,6 +1783,12 @@ html:has(body.country-onepage) {
 #event-tab-trip:checked ~ .edition-tablist label[for="event-tab-trip"],
 #event-tab-watch:checked ~ .edition-tablist label[for="event-tab-watch"],
 #event-tab-history:checked ~ .edition-tablist label[for="event-tab-history"],
+#eurovision-tab-2027:checked ~ .edition-tablist label[for="eurovision-tab-2027"],
+#eurovision-tab-2026:checked ~ .edition-tablist label[for="eurovision-tab-2026"],
+#eurovision-tab-2025:checked ~ .edition-tablist label[for="eurovision-tab-2025"],
+#eurovision-tab-2024:checked ~ .edition-tablist label[for="eurovision-tab-2024"],
+#eurovision-tab-2023:checked ~ .edition-tablist label[for="eurovision-tab-2023"],
+#eurovision-tab-2022:checked ~ .edition-tablist label[for="eurovision-tab-2022"],
 .edition-tab:hover {
   color: var(--os-surface);
   background: var(--location-theme);
@@ -1850,8 +1918,21 @@ html:has(body.country-onepage) {
 #event-tab-week:checked ~ .edition-tab-panels [data-edition-tab-panel="event"],
 #event-tab-trip:checked ~ .edition-tab-panels [data-edition-tab-panel="trip"],
 #event-tab-watch:checked ~ .edition-tab-panels [data-edition-tab-panel="watch"],
-#event-tab-history:checked ~ .edition-tab-panels [data-edition-tab-panel="history"] {
+#event-tab-history:checked ~ .edition-tab-panels [data-edition-tab-panel="history"],
+#eurovision-tab-2027:checked ~ .edition-tab-panels [data-edition-tab-panel="2027"],
+#eurovision-tab-2026:checked ~ .edition-tab-panels [data-edition-tab-panel="2026"],
+#eurovision-tab-2025:checked ~ .edition-tab-panels [data-edition-tab-panel="2025"],
+#eurovision-tab-2024:checked ~ .edition-tab-panels [data-edition-tab-panel="2024"],
+#eurovision-tab-2023:checked ~ .edition-tab-panels [data-edition-tab-panel="2023"],
+#eurovision-tab-2022:checked ~ .edition-tab-panels [data-edition-tab-panel="2022"] {
   display: grid;
+}
+
+.eurovision-event-page .country-hero-image {
+  background-image: image-set(
+    url('/content/categories/music/song-contests/events/img/eurovision-song-contest-hero-1200.webp') type('image/webp'),
+    url('/content/categories/music/song-contests/events/img/eurovision-song-contest-hero.png') type('image/png')
+  );
 }
 
 .oscars-database-page {
@@ -2259,6 +2340,18 @@ html:has(body.country-onepage) {
   border-radius: 999px;
 }
 
+.persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.city-page--southampton .persona-tablist {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
 .persona-tablist label {
   display: grid;
   place-items: center;
@@ -2272,6 +2365,9 @@ html:has(body.country-onepage) {
 }
 
 #view-visit:checked ~ .persona-tablist label[for="view-visit"],
+#view-see:checked ~ .persona-tablist label[for="view-see"],
+#view-stay:checked ~ .persona-tablist label[for="view-stay"],
+#view-nearby:checked ~ .persona-tablist label[for="view-nearby"],
 #view-events:checked ~ .persona-tablist label[for="view-events"],
 #view-context:checked ~ .persona-tablist label[for="view-context"] {
   color: var(--os-surface);
@@ -2292,9 +2388,437 @@ html:has(body.country-onepage) {
 }
 
 #view-visit:checked ~ .view-panel--visit,
+#view-see:checked ~ .view-panel--see,
+#view-stay:checked ~ .view-panel--stay,
+#view-nearby:checked ~ .view-panel--nearby,
 #view-events:checked ~ .view-panel--events,
 #view-context:checked ~ .view-panel--context {
   display: grid;
+}
+
+.stay-overview-grid,
+.stay-area-grid,
+.stay-trip-grid,
+.stay-tip-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.country-brief__copy .stay-weather-card--strip {
+  margin: 0 0 4px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-days {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 28px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-tile {
+  gap: 16px;
+  padding: 12px 10px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-reading {
+  gap: 7px;
+}
+
+.country-brief__copy .stay-weather-card--strip .weather-icon {
+  transform: scale(0.82);
+  transform-origin: left center;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-temp {
+  font-size: 21px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-more {
+  min-width: 28px;
+  font-size: 20px;
+}
+
+.stay-overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stay-overview-grid--planning {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-overview-grid p,
+.stay-booking-card p {
+  margin: 0;
+  color: var(--location-muted);
+  line-height: 1.55;
+}
+
+.stay-overview-grid p {
+  grid-column: 1 / -1;
+}
+
+.stay-pill {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  background: var(--location-soft);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.stay-pill span,
+.stay-area span,
+.stay-trip span,
+.stay-tip span,
+.stay-airports li span {
+  color: var(--location-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.stay-pill strong,
+.stay-area strong,
+.stay-trip strong,
+.stay-tip strong,
+.stay-airports li strong {
+  color: var(--location-ink);
+}
+
+.stay-area-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-area,
+.stay-trip,
+.stay-tip,
+.stay-airports li {
+  display: grid;
+  gap: 5px;
+  padding: 11px 12px;
+  background: var(--location-soft);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.stay-area p,
+.stay-tip p,
+.stay-airports li p {
+  margin: 0;
+  color: var(--location-muted);
+  line-height: 1.45;
+}
+
+.stay-airports {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stay-trip-grid,
+.stay-tip-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-booking-card {
+  display: grid;
+  gap: 12px;
+}
+
+.stay-planner-layout {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.22fr) minmax(0, 1fr);
+  gap: 10px;
+  align-self: start;
+  align-items: start;
+  min-height: 0;
+}
+
+.stay-section-menu {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: grid;
+  align-content: start;
+  align-self: start;
+  gap: 7px;
+  min-width: 0;
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding-bottom: 2px;
+}
+
+.stay-section-menu a {
+  display: block;
+  padding: 10px 11px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(18, 36, 54, 0.06);
+}
+
+.stay-section-menu a:hover,
+.stay-section-menu a:focus-visible {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+  outline: none;
+}
+
+.stay-section-stack {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.stay-booking-button {
+  justify-self: start;
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+
+.stay-affiliate-note {
+  font-size: 12px;
+}
+
+.stay-card-link {
+  justify-self: start;
+  display: inline-grid;
+  place-items: center;
+  min-height: 28px;
+  margin-top: 3px;
+  padding: 0 10px;
+  color: var(--location-theme);
+  background: color-mix(in srgb, var(--location-theme) 8%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--location-theme) 22%, var(--os-border));
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.stay-card-link:hover,
+.stay-card-link:focus-visible {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  outline: none;
+}
+
+.city-page--southampton .country-kpis {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.city-page--southampton .country-brief__copy {
+  display: block;
+  overflow-x: hidden;
+}
+
+.city-page--southampton .country-brief__panel {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.city-page--southampton .country-brief__copy > * {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.city-page--southampton .country-brief .hero-text {
+  max-width: 100%;
+  font-size: clamp(16px, 1.45vw, 21px);
+}
+
+.city-page--southampton .country-brief .hero-title {
+  font-size: clamp(42px, 4.2vw, 54px);
+  line-height: 0.96;
+  overflow-wrap: normal;
+}
+
+.city-page--southampton .top-menu {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.destination-side-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.destination-side-fact {
+  min-width: 0;
+  padding: 10px 11px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--os-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px rgba(18, 36, 54, 0.07);
+}
+
+.destination-side-fact--wide {
+  grid-column: 1 / -1;
+}
+
+.destination-side-fact span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destination-side-fact strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--location-ink);
+  font-size: 17px;
+  line-height: 1.05;
+}
+
+.destination-experience-grid,
+.destination-attraction-grid,
+.destination-highlight-grid,
+.destination-nearby-grid,
+.stay-hotel-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.destination-experience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.destination-experience-card,
+.destination-attraction-card,
+.destination-highlight,
+.destination-nearby-card,
+.stay-hotel-card {
+  min-width: 0;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--os-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px rgba(18, 36, 54, 0.08);
+}
+
+.destination-experience-card,
+.destination-nearby-card {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.destination-experience-card:hover,
+.destination-experience-card:focus-visible,
+.destination-nearby-card:hover,
+.destination-nearby-card:focus-visible {
+  border-color: var(--location-theme);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.destination-experience-card span,
+.destination-highlight span,
+.destination-nearby-card span,
+.stay-hotel-card span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destination-experience-card strong,
+.destination-highlight strong,
+.destination-nearby-card strong,
+.stay-hotel-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-ink);
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.destination-experience-card p,
+.destination-attraction-card p,
+.destination-highlight p,
+.destination-nearby-card p,
+.stay-hotel-card p {
+  margin: 7px 0 0;
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.destination-attraction-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.destination-attraction-card {
+  overflow: hidden;
+}
+
+.destination-attraction-card img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+}
+
+.destination-attraction-card div {
+  padding: 11px 12px 12px;
+}
+
+.destination-attraction-card strong {
+  display: block;
+  color: var(--location-ink);
+  font-size: 15px;
+  line-height: 1.08;
+}
+
+.destination-attraction-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--location-theme);
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.destination-highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.destination-highlight,
+.stay-hotel-card {
+  padding: 12px;
+}
+
+.destination-nearby-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.stay-hotel-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .country-facts-tight {
@@ -3232,6 +3756,44 @@ html:has(body.country-onepage) {
   }
 }
 
+@media (max-width: 1120px) {
+  .city-page--southampton .country-content-box {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .city-page--southampton .country-brief {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .city-page--southampton .country-brief__copy,
+  .city-page--southampton .country-brief__panel,
+  .city-page--southampton .country-brief__panel .persona-tabs,
+  .city-page--southampton .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .city-page--southampton .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 16px;
+  }
+
+  .city-page--southampton .destination-experience-grid,
+  .city-page--southampton .destination-attraction-grid,
+  .city-page--southampton .destination-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-page--southampton .destination-nearby-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .continent-carousel {
     --continent-chip-min-width: clamp(96px, calc((100vw - 128px) / 2), 140px);
@@ -3335,10 +3897,34 @@ html:has(body.country-onepage) {
   .country-panel-card--split,
   .country-paths,
   .country-identity-grid,
+  .destination-side-facts,
+  .destination-experience-grid,
+  .destination-attraction-grid,
+  .destination-highlight-grid,
+  .destination-nearby-grid,
   .country-faq-grid,
   .country-faq-grid--inside,
   .persona-tablist {
     grid-template-columns: 1fr;
+  }
+
+  .persona-tabs:has(#view-stay) .persona-tablist,
+  .stay-overview-grid,
+  .stay-planner-layout,
+  .stay-area-grid,
+  .stay-trip-grid,
+  .stay-tip-grid,
+  .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-section-menu {
+    position: sticky;
+    top: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: none;
+    padding: 6px 0;
+    background: var(--os-surface);
   }
 
   .country-faq-card--wide {
@@ -3372,6 +3958,102 @@ html:has(body.country-onepage) {
   .country-paths--food .visual-topic-card img {
     width: 82px;
     height: 82px;
+  }
+}
+
+@media (max-width: 760px) {
+  .city-page--southampton .country-content-box {
+    top: calc(var(--country-nav-height) + 8px);
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    padding: 10px;
+  }
+
+  .city-page--southampton .country-brief__panel {
+    padding: 10px;
+  }
+
+  .city-page--southampton .persona-tablist,
+  .city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .city-page--southampton .persona-tablist label {
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .city-page--southampton .stay-section-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .city-page--southampton .stay-section-menu a,
+  .city-page--southampton .stay-card-link,
+  .city-page--southampton .stay-booking-button {
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .city-page--southampton .destination-side-facts,
+  .city-page--southampton .destination-experience-grid,
+  .city-page--southampton .destination-attraction-grid,
+  .city-page--southampton .destination-highlight-grid,
+  .city-page--southampton .destination-nearby-grid,
+  .city-page--southampton .stay-overview-grid,
+  .city-page--southampton .stay-area-grid,
+  .city-page--southampton .stay-tip-grid,
+  .city-page--southampton .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-page--southampton .destination-attraction-card img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 430px) {
+  .city-page--southampton .top-menu {
+    gap: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .city-page--southampton .nav-pill {
+    min-width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .city-page--southampton .country-brief .hero-title {
+    font-size: clamp(38px, 13vw, 48px);
+  }
+
+  .city-page--southampton .country-hero-image--clear {
+    min-height: 190px;
+  }
+
+  .city-page--southampton .country-brief__copy .stay-weather-card--strip .stay-weather-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-page--southampton .country-brief__copy .stay-weather-card--strip .stay-weather-more {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .city-page--southampton .stay-section-menu,
+  .city-page--southampton .persona-tablist,
+  .city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: 1fr 1fr;
   }
 }
 .bar-value-101 { --bar-value: 101%; }

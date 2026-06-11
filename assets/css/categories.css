@@ -2294,6 +2294,20 @@ body.drink-layout-page main.drink-page.drink-content-box {
   margin-top: 12px;
 }
 
+.drink-layout-page .content-grid .topic-parent-card {
+  position: static;
+  z-index: 1;
+  width: 100%;
+  margin-top: 0;
+  grid-template-columns: 118px minmax(0, 1fr);
+  color: inherit;
+}
+
+.drink-layout-page .content-grid .topic-parent-card img {
+  width: 118px;
+  height: 82px;
+}
+
 .drink-layout-page .panel {
   overflow: hidden;
   margin-bottom: 12px;
@@ -2301,6 +2315,19 @@ body.drink-layout-page main.drink-page.drink-content-box {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent));
+}
+
+.drink-layout-page .panel,
+.drink-layout-page .fact-card,
+.drink-layout-page .compare-card {
+  border-left-color: var(--line) !important;
+  border-left-width: 1px !important;
+}
+
+.drink-layout-page .panel:hover,
+.drink-layout-page .fact-card:hover,
+.drink-layout-page .compare-card:hover {
+  border-left-color: var(--line) !important;
 }
 
 .drink-layout-page .panel h2 {
@@ -2402,10 +2429,7 @@ body.drink-layout-page main.drink-page.drink-content-box {
 .drink-layout-page .compare-card {
   padding: 12px;
   background: var(--os-surface);
-  border-top: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  border-left: 5px solid var(--accent);
+  border: 1px solid var(--line);
   border-radius: 8px;
 }
 
@@ -2521,6 +2545,122 @@ body.drink-layout-page main.drink-page.drink-content-box {
   font-weight: 700;
 }
 
+body.drink-layout-page.drink-page-matcha main.drink-page.drink-content-box {
+  padding: 10px;
+  overflow-y: auto;
+}
+
+body.drink-layout-page.drink-page-matcha .drink-hero {
+  height: clamp(138px, 18vh, 158px);
+  padding: 14px 22px;
+  background-position: center 58%;
+}
+
+body.drink-layout-page.drink-page-matcha .hero-copy h1 {
+  font-size: clamp(42px, 5vw, 60px);
+}
+
+body.drink-layout-page.drink-page-matcha .intro {
+  max-width: 820px;
+  margin-top: 6px;
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.22;
+}
+
+body.drink-layout-page.drink-page-matcha .content-grid {
+  grid-template-columns: minmax(430px, 0.82fr) minmax(560px, 1.18fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+body.drink-layout-page.drink-page-matcha .panel {
+  margin-bottom: 8px;
+}
+
+body.drink-layout-page.drink-page-matcha .panel h2 {
+  padding: 8px 10px 5px;
+  font-size: 17px;
+  line-height: 1.08;
+}
+
+body.drink-layout-page.drink-page-matcha .panel p {
+  padding: 0 10px 8px;
+  font-size: 12px;
+  line-height: 1.22;
+}
+
+body.drink-layout-page.drink-page-matcha .fact-grid,
+body.drink-layout-page.drink-page-matcha .compare-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  padding: 8px;
+}
+
+body.drink-layout-page.drink-page-matcha .fact-card,
+body.drink-layout-page.drink-page-matcha .compare-card {
+  padding: 7px;
+}
+
+body.drink-layout-page.drink-page-matcha .fact-card span {
+  font-size: 10px;
+}
+
+body.drink-layout-page.drink-page-matcha .fact-card strong {
+  font-size: 11px;
+  line-height: 1.14;
+}
+
+body.drink-layout-page.drink-page-matcha .country-list {
+  gap: 6px;
+  padding: 0 12px 10px;
+}
+
+body.drink-layout-page.drink-page-matcha .drink-country {
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
+body.drink-layout-page.drink-page-matcha .data-table th,
+body.drink-layout-page.drink-page-matcha .data-table td {
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+body.drink-layout-page.drink-page-matcha .compare-card strong {
+  margin-bottom: 3px;
+  font-size: 12px;
+  line-height: 1.12;
+}
+
+body.drink-layout-page.drink-page-matcha .compare-card span {
+  font-size: 11px;
+  line-height: 1.16;
+}
+
+body.drink-layout-page.drink-page-matcha .topic-parent-card {
+  min-height: 74px;
+  padding: 7px 10px 7px 7px;
+  grid-template-columns: 96px minmax(0, 1fr);
+}
+
+body.drink-layout-page.drink-page-matcha .topic-parent-card img {
+  width: 96px;
+  height: 60px;
+}
+
+body.drink-layout-page.drink-page-matcha .topic-parent-card span {
+  font-size: 10px;
+}
+
+body.drink-layout-page.drink-page-matcha .topic-parent-card strong {
+  font-size: 18px;
+}
+
+body.drink-layout-page.drink-page-matcha .topic-parent-card p {
+  font-size: 12px;
+}
+
 body.drink-layout-page .site-footer {
   position: fixed;
   right: 0;
@@ -2550,6 +2690,32 @@ body.drink-layout-page .site-footer p {
 
   .drink-layout-page .drink-hero {
     min-height: 320px;
+  }
+
+  body.drink-layout-page.drink-page-matcha .content-grid,
+  body.drink-layout-page.drink-page-matcha .compare-grid,
+  body.drink-layout-page.drink-page-matcha .fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.drink-layout-page.drink-page-matcha .drink-hero {
+    min-height: 220px;
+    height: auto;
+    padding: 18px;
+    background-position: center;
+  }
+
+  body.drink-layout-page.drink-page-matcha .hero-copy h1 {
+    font-size: clamp(42px, 15vw, 58px);
+  }
+
+  body.drink-layout-page.drink-page-matcha .intro {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  body.drink-layout-page.drink-page-matcha .topic-parent-card {
+    display: none;
   }
 }
 
@@ -3048,6 +3214,7 @@ body.drink-layout-page .site-footer p {
 .drink-page-kinnie { --drink-hero-image: url('/content/categories/drinks/img/kinnie-hero.png'); }
 .drink-page-kvass { --drink-hero-image: url('/content/categories/drinks/img/kvass-hero.png'); }
 .drink-page-limoncello-spritz { --drink-hero-image: url('/content/categories/drinks/img/limoncello-spritz-hero.png'); }
+.drink-page-matcha { --drink-hero-image: url('/content/categories/drinks/img/matcha-hero.png'); }
 .drink-page-mojito { --drink-hero-image: url('/content/categories/drinks/img/mojito-hero.png'); }
 .drink-page-negroni { --drink-hero-image: url('/content/categories/drinks/img/negroni-hero.png'); }
 .drink-page-old-fashioned { --drink-hero-image: url('/content/categories/drinks/img/old-fashioned-hero.png'); }

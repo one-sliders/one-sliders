@@ -257,6 +257,7 @@
     var navs = document.querySelectorAll('nav.top-menu, nav.event-nav');
     for (var i = 0; i < navs.length; i++) {
       var nav = navs[i];
+      if (nav.classList.contains('event-nav') && document.body.classList.contains('event-page')) continue;
       if (nav.getAttribute('data-os-brand') === 'off') continue;
       if (nav.querySelector(':scope > .os-brand')) continue;  // already there
       nav.insertBefore(build(), nav.firstChild);
@@ -298,6 +299,7 @@
   // ====================================================================
   OneSlider.register('iosNav', function (App) {
     if (document.querySelector('.ios-nav')) return;  // already injected
+    if (document.body.classList.contains('event-page')) return;
     var opt = document.querySelector('meta[name="os-ios-nav"]');
     if ((opt && opt.content === 'off') ||
         document.body.getAttribute('data-os-ios-nav') === 'off') {
@@ -3067,6 +3069,119 @@
         if (!willBeActive && activeButtons.length <= 1) return;
         setCategory(category, willBeActive);
       });
+    });
+  });
+
+  // ====================================================================
+  // Module: weatherStrip
+  // Reusable compact weather carousel for city and event pages. Each
+  // widget owns its own pages, so multiple strips can coexist on one page.
+  // ====================================================================
+  OneSlider.register('weatherStrip', function () {
+    var strips = document.querySelectorAll('[data-weather-strip]');
+    if (!strips.length) return;
+
+    strips.forEach(function (strip) {
+      var pages = Array.prototype.slice.call(strip.querySelectorAll('[data-weather-page]'));
+      if (!pages.length) return;
+      var index = pages.findIndex(function (page) { return page.classList.contains('is-active'); });
+      if (index < 0) index = 0;
+
+      function show(nextIndex) {
+        if (!pages.length) return;
+        index = (nextIndex + pages.length) % pages.length;
+        pages.forEach(function (page, pageIndex) {
+          var active = pageIndex === index;
+          page.classList.toggle('is-active', active);
+          page.hidden = !active;
+        });
+        strip.querySelectorAll('[data-weather-page-button]').forEach(function (button) {
+          var active = Number(button.getAttribute('data-weather-page-button')) === index;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+      }
+
+      strip.addEventListener('click', function (event) {
+        var next = event.target.closest('[data-weather-next]');
+        var prev = event.target.closest('[data-weather-prev]');
+        var pageButton = event.target.closest('[data-weather-page-button]');
+        if (next && strip.contains(next)) {
+          event.preventDefault();
+          show(index + 1);
+          return;
+        }
+        if (prev && strip.contains(prev)) {
+          event.preventDefault();
+          show(index - 1);
+          return;
+        }
+        if (pageButton && strip.contains(pageButton)) {
+          event.preventDefault();
+          show(Number(pageButton.getAttribute('data-weather-page-button')) || 0);
+        }
+      });
+
+      show(index);
+    });
+  });
+
+  // ====================================================================
+  // Module: weatherUnits
+  // Displays weather temperatures in Fahrenheit or Celsius based on a
+  // saved preference first, then browser locale/timezone. Markup keeps
+  // Fahrenheit as the no-JS fallback because many forecast sources use it
+  // for US pages.
+  // ====================================================================
+  OneSlider.register('weatherUnits', function () {
+    var nodes = document.querySelectorAll('[data-temp-f]');
+    if (!nodes.length) return;
+
+    function storedUnit() {
+      try {
+        var value = String(localStorage.getItem('os_temperature_unit') || '').toLowerCase();
+        if (value === 'c' || value === 'celsius') return 'c';
+        if (value === 'f' || value === 'fahrenheit') return 'f';
+      } catch (e) { /* localStorage may be blocked */ }
+      return '';
+    }
+
+    function localeRegion() {
+      var language = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      var match = String(language).match(/[-_]([A-Z]{2})\b/i);
+      return match ? match[1].toUpperCase() : '';
+    }
+
+    function timezoneRegion() {
+      try {
+        var zone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^America\//i.test(zone)) return 'US';
+        if (/^Europe\//i.test(zone)) return 'EU';
+      } catch (e) { /* Intl may be unavailable */ }
+      return '';
+    }
+
+    function preferredUnit() {
+      var saved = storedUnit();
+      if (saved) return saved;
+      var fahrenheitRegions = { US: true, BS: true, BZ: true, KY: true, PW: true, FM: true, MH: true };
+      var region = localeRegion();
+      if (region) return fahrenheitRegions[region] ? 'f' : 'c';
+      return timezoneRegion() === 'US' ? 'f' : 'c';
+    }
+
+    function formatTemp(fahrenheit, unit) {
+      var f = Number(fahrenheit);
+      if (!Number.isFinite(f)) return '';
+      if (unit === 'c') return Math.round((f - 32) * 5 / 9) + ' C';
+      return Math.round(f) + ' F';
+    }
+
+    var unit = preferredUnit();
+    nodes.forEach(function (node) {
+      var text = formatTemp(node.getAttribute('data-temp-f'), unit);
+      if (text) node.textContent = text;
+      node.setAttribute('data-temp-unit', unit);
     });
   });
 

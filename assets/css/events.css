@@ -7561,3 +7561,7 @@ body.event-page--non-sport .event-slide {
   background: var(--os-surface) !important;
   box-shadow: 0 18px 48px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)) !important;
 }
+
+body.event-page--framed .event-frame__copy .topic-card {
+  display: grid;
+}

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-09T22:35:21+02:00",
+  "generatedAt": "2026-06-11T20:16:23+02:00",
   "purpose": "QA inventory for HTML files, image assets, and icon assets.",
-  "lastQaAtDefault": "2025-06-09T22:35:21+02:00",
+  "lastQaAtDefault": "2025-06-11T20:16:23+02:00",
   "counts": {
-    "html": 1229,
-    "images": 7883,
+    "html": 1227,
+    "images": 7948,
     "icons": 231,
-    "total": 9343
+    "total": 9406
   },
   "html": [
     {
@@ -1542,6 +1542,12 @@
     },
     {
       "type": "html",
+      "fileName": "matcha.html",
+      "path": "content/categories/drinks/matcha.html",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "html",
       "fileName": "mojito.html",
       "path": "content/categories/drinks/mojito.html",
       "lastQaAt": "2026-05-30T20:00:28+02:00"
@@ -2226,24 +2232,6 @@
     },
     {
       "type": "html",
-      "fileName": "eurovision-grand-final.html",
-      "path": "content/categories/music/song-contests/events/eurovision-grand-final.html",
-      "lastQaAt": "2025-06-09T22:08:52+02:00"
-    },
-    {
-      "type": "html",
-      "fileName": "eurovision-semi-final-1.html",
-      "path": "content/categories/music/song-contests/events/eurovision-semi-final-1.html",
-      "lastQaAt": "2025-06-09T22:08:52+02:00"
-    },
-    {
-      "type": "html",
-      "fileName": "eurovision-semi-final-2.html",
-      "path": "content/categories/music/song-contests/events/eurovision-semi-final-2.html",
-      "lastQaAt": "2025-06-09T22:08:52+02:00"
-    },
-    {
-      "type": "html",
       "fileName": "eurovision-song-contest.html",
       "path": "content/categories/music/song-contests/events/eurovision-song-contest.html",
       "lastQaAt": "2026-05-30T20:00:28+02:00"
@@ -2367,12 +2355,6 @@
       "fileName": "womad-charlton-park.html",
       "path": "content/categories/music/world-music/events/womad-charlton-park.html",
       "lastQaAt": "2025-06-09T22:08:52+02:00"
-    },
-    {
-      "type": "html",
-      "fileName": "index.html",
-      "path": "content/categories/nature/index.html",
-      "lastQaAt": "2026-05-30T20:00:28+02:00"
     },
     {
       "type": "html",
@@ -4521,6 +4503,12 @@
       "fileName": "international-day-of-yoga.html",
       "path": "content/categories/wellness/yoga/events/international-day-of-yoga.html",
       "lastQaAt": "2025-06-09T22:08:52+02:00"
+    },
+    {
+      "type": "html",
+      "fileName": "event-card-layouts.html",
+      "path": "content/events/event-card-layouts.html",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
     },
     {
       "type": "html",
@@ -10745,6 +10733,72 @@
       "fileName": "carnival-mini.png",
       "path": "content/categories/culture/img/carnival-mini.png",
       "lastQaAt": "2025-06-09T22:31:59+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-1200.webp",
+      "path": "content/categories/culture/img/culture-hero-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-400.webp",
+      "path": "content/categories/culture/img/culture-hero-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-768.webp",
+      "path": "content/categories/culture/img/culture-hero-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-wide-1200.webp",
+      "path": "content/categories/culture/img/culture-hero-wide-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-wide-1600.webp",
+      "path": "content/categories/culture/img/culture-hero-wide-1600.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-wide-768.webp",
+      "path": "content/categories/culture/img/culture-hero-wide-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero-wide.png",
+      "path": "content/categories/culture/img/culture-hero-wide.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-hero.png",
+      "path": "content/categories/culture/img/culture-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-mini-200.webp",
+      "path": "content/categories/culture/img/culture-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-mini-400.webp",
+      "path": "content/categories/culture/img/culture-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "culture-mini.png",
+      "path": "content/categories/culture/img/culture-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
     },
     {
       "type": "image",
@@ -17075,6 +17129,18 @@
       "fileName": "limoncello-spritz-mini.png",
       "path": "content/categories/drinks/img/limoncello-spritz-mini.png",
       "lastQaAt": "2026-05-30T20:00:28+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "matcha-hero.png",
+      "path": "content/categories/drinks/img/matcha-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "matcha-mini.png",
+      "path": "content/categories/drinks/img/matcha-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
     },
     {
       "type": "image",
@@ -27590,6 +27656,222 @@
     },
     {
       "type": "image",
+      "fileName": "alpine-skiing-mini-200.webp",
+      "path": "content/categories/sport/img/alpine-skiing-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "alpine-skiing-mini-400.webp",
+      "path": "content/categories/sport/img/alpine-skiing-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "alpine-skiing-mini.png",
+      "path": "content/categories/sport/img/alpine-skiing-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-hero-1200.webp",
+      "path": "content/categories/sport/img/baseball-hero-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-hero-400.webp",
+      "path": "content/categories/sport/img/baseball-hero-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-hero-768.webp",
+      "path": "content/categories/sport/img/baseball-hero-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-hero.png",
+      "path": "content/categories/sport/img/baseball-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-mini-200.webp",
+      "path": "content/categories/sport/img/baseball-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-mini-400.webp",
+      "path": "content/categories/sport/img/baseball-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "baseball-mini.png",
+      "path": "content/categories/sport/img/baseball-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "biathlon-mini-200.webp",
+      "path": "content/categories/sport/img/biathlon-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "biathlon-mini-400.webp",
+      "path": "content/categories/sport/img/biathlon-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "biathlon-mini.png",
+      "path": "content/categories/sport/img/biathlon-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "cross-country-skiing-mini-200.webp",
+      "path": "content/categories/sport/img/cross-country-skiing-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "cross-country-skiing-mini-400.webp",
+      "path": "content/categories/sport/img/cross-country-skiing-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "cross-country-skiing-mini.png",
+      "path": "content/categories/sport/img/cross-country-skiing-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "curling-mini-200.webp",
+      "path": "content/categories/sport/img/curling-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "curling-mini-400.webp",
+      "path": "content/categories/sport/img/curling-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "curling-mini.png",
+      "path": "content/categories/sport/img/curling-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "figure-skating-mini-200.webp",
+      "path": "content/categories/sport/img/figure-skating-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "figure-skating-mini-400.webp",
+      "path": "content/categories/sport/img/figure-skating-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "figure-skating-mini.png",
+      "path": "content/categories/sport/img/figure-skating-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-hero-1200.webp",
+      "path": "content/categories/sport/img/football-hero-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-hero-400.webp",
+      "path": "content/categories/sport/img/football-hero-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-hero-768.webp",
+      "path": "content/categories/sport/img/football-hero-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-hero.png",
+      "path": "content/categories/sport/img/football-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-mini-200.webp",
+      "path": "content/categories/sport/img/football-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-mini-400.webp",
+      "path": "content/categories/sport/img/football-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "football-mini.png",
+      "path": "content/categories/sport/img/football-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-hero-1200.webp",
+      "path": "content/categories/sport/img/formula-1-hero-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-hero-400.webp",
+      "path": "content/categories/sport/img/formula-1-hero-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-hero-768.webp",
+      "path": "content/categories/sport/img/formula-1-hero-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-hero.png",
+      "path": "content/categories/sport/img/formula-1-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-mini-200.webp",
+      "path": "content/categories/sport/img/formula-1-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-mini-400.webp",
+      "path": "content/categories/sport/img/formula-1-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "formula-1-mini.png",
+      "path": "content/categories/sport/img/formula-1-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
       "fileName": "golf-hero-wide.png",
       "path": "content/categories/sport/img/golf-hero-wide.png",
       "lastQaAt": "2026-05-30T20:00:28+02:00"
@@ -27605,6 +27887,60 @@
       "fileName": "golf-scotland-mini.png",
       "path": "content/categories/sport/img/golf-scotland-mini.png",
       "lastQaAt": "2026-05-30T20:00:28+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "ski-jumping-mini-200.webp",
+      "path": "content/categories/sport/img/ski-jumping-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "ski-jumping-mini-400.webp",
+      "path": "content/categories/sport/img/ski-jumping-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "ski-jumping-mini.png",
+      "path": "content/categories/sport/img/ski-jumping-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "snowboard-mini-200.webp",
+      "path": "content/categories/sport/img/snowboard-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "snowboard-mini-400.webp",
+      "path": "content/categories/sport/img/snowboard-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "snowboard-mini.png",
+      "path": "content/categories/sport/img/snowboard-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "speed-skating-mini-200.webp",
+      "path": "content/categories/sport/img/speed-skating-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "speed-skating-mini-400.webp",
+      "path": "content/categories/sport/img/speed-skating-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "speed-skating-mini.png",
+      "path": "content/categories/sport/img/speed-skating-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
     },
     {
       "type": "image",
@@ -31535,6 +31871,48 @@
       "fileName": "national-trails-day-mini.png",
       "path": "content/categories/wellness/active-wellness/events/img/national-trails-day-mini.png",
       "lastQaAt": "2025-06-09T22:08:52+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-hero-1200.webp",
+      "path": "content/categories/wellness/img/sauna-hero-1200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-hero-400.webp",
+      "path": "content/categories/wellness/img/sauna-hero-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-hero-768.webp",
+      "path": "content/categories/wellness/img/sauna-hero-768.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-hero.png",
+      "path": "content/categories/wellness/img/sauna-hero.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-mini-200.webp",
+      "path": "content/categories/wellness/img/sauna-mini-200.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-mini-400.webp",
+      "path": "content/categories/wellness/img/sauna-mini-400.webp",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
+    },
+    {
+      "type": "image",
+      "fileName": "sauna-mini.png",
+      "path": "content/categories/wellness/img/sauna-mini.png",
+      "lastQaAt": "2025-06-11T20:16:23+02:00"
     },
     {
       "type": "image",
