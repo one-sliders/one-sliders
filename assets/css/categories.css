@@ -3738,11 +3738,24 @@ html:has(body.topic-onepage) {
   }
 }
 
-/* Wellness category overview: one One-Slider screen. */
+/* Wellness category overview: one One-Slider screen on desktop. On mobile
+   the content doesn't fit a single viewport, so let it scroll natively. */
 html:has(body.category-page--wellness),
 body.category-page--wellness {
   height: 100vh;
   overflow: hidden;
+}
+@media (max-width: 760px) {
+  html:has(body.category-page--wellness),
+  body.category-page--wellness {
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+  .wellness-oneslider {
+    height: auto;
+    overflow: visible;
+  }
 }
 
 body.category-page--wellness {
