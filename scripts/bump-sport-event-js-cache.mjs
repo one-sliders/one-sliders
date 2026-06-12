@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const sportRoot = path.join(root, 'content/categories/sport');
-const version = 'sport-current-modules-20260611';
+const version = 'visit-tab-20260612';
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {

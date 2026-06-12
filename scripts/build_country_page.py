@@ -16,6 +16,15 @@ import os, sys, json, glob, html as H
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = 'https://one-sliders.com'
+COUNTRY_FINDER_SLUGS = {
+    ('north-america', 'usa'),
+    ('north-america', 'canada'),
+    ('north-america', 'greenland'),
+}
+
+
+def has_country_finder(cont, slug):
+    return cont == 'europe' or (cont, slug) in COUNTRY_FINDER_SLUGS
 
 # UI labels per language. These are the ONLY language-specific strings shared by
 # every country page — translate ~25 strings once and all 197 countries get it.
@@ -208,15 +217,58 @@ def render(data, lang='en'):
     worth = ''.join(
         f'<li><strong>{esc(w["title"])}</strong> {esc(w["text"])}</li>'
         for w in localized(data, lang, 'worthSeeing', data['worthSeeing']))
-    cities = ''.join(
-        f'<a class="visual-topic-card visual-topic-card--city" href="{esc(c["href"])}">'
-        f'{mini_img(c["img"], c["name"])}'
-        f'<strong>{L["open"].format(name=esc(c["name"]))}</strong><span>{L["city"]}</span></a>'
-        for c in data.get('cities', []))
+    city_items = data.get('cities', [])
+    def city_card(c):
+        tags_attr = (" data-city-tags=\"" + esc(" ".join(c.get("tags", []))) + "\"") if c.get("tags") else ""
+        img = mini_img(c["img"], c["name"]) if c.get("img") else ""
+        no_image_class = " visual-topic-card--no-image" if not c.get("img") else ""
+        label = L["open"].format(name=esc(c["name"])) if c.get("href") else esc(c["name"])
+        if c.get("href"):
+            return (
+                f'<a class="visual-topic-card visual-topic-card--city{no_image_class}" href="{esc(c["href"])}"{tags_attr}>'
+                f'{img}<strong>{label}</strong><span>{L["city"]}</span></a>'
+            )
+        return (
+            f'<span class="visual-topic-card visual-topic-card--city{no_image_class}"{tags_attr}>'
+            f'{img}<strong>{label}</strong><span>{L["city"]}</span></span>'
+        )
+
+    cities = ''.join(city_card(c) for c in city_items)
     plain_links = ''.join(
         f'<a class="country-path" href="{esc(l["href"])}"><span>{esc(l["kind"])}</span><strong>{esc(l["label"])}</strong></a>'
         for l in localized(data, lang, 'links', data.get('links', [])))
-    loc_links = cities + plain_links
+    has_city_finder = has_country_finder(cont, slug)
+    loc_links = cities if has_city_finder else cities + plain_links
+    city_finder = ''
+    city_grid_attrs = 'class="country-paths country-paths--location-links"'
+    if has_city_finder and city_items:
+        filters = [
+            ('all', 'All'),
+            ('beach', 'Beaches'),
+            ('theme-parks', 'Theme parks'),
+            ('mountains', 'Mountains'),
+            ('wildlife', 'Wildlife'),
+            ('music', 'Music'),
+            ('sports', 'Sports'),
+            ('outdoors', 'Outdoors'),
+            ('culture', 'Culture'),
+            ('food', 'Food'),
+            ('nightlife', 'Nightlife'),
+            ('city', 'Cities'),
+        ]
+        filter_buttons = ''.join(
+            f'<button class="usa-city-filter{" is-active" if value == "all" else ""}" type="button" data-city-filter="{value}" aria-pressed="{"true" if value == "all" else "false"}">{label}</button>'
+            for value, label in filters
+        )
+        finder_country = 'USA' if slug == 'usa' else data.get('name', 'Country')
+        city_finder = (
+            f'<div class="usa-city-finder" data-city-finder>'
+            f'<div class="usa-city-finder__header"><h2>Find a {esc(finder_country)} city</h2>'
+            f'<label>Search<input type="search" data-city-search placeholder="City, region or activity"></label></div>'
+            f'<div class="usa-city-filters" aria-label="Filter {esc(finder_country)} cities by activity">{filter_buttons}</div>'
+            f'<p class="usa-city-count" data-city-count>Showing all cities</p></div>'
+        )
+        city_grid_attrs = 'class="country-paths country-paths--location-links" data-city-grid'
     qa = ''.join(
         f'<div><strong>{esc(q["q"])}</strong><span>{esc(q["a"])}</span></div>'
         for q in localized(data, lang, 'planningQuestions', data['planningQuestions']))
@@ -246,22 +298,21 @@ def render(data, lang='en'):
             f'<thead><tr><th>State</th><th>Code</th><th>Capital</th><th>Region</th><th>Joined</th><th>2020 pop.</th><th>Nickname</th></tr></thead>'
             f'<tbody>{state_rows}</tbody></table></div></div>'
         )
+    states_markup = f'\n            {states_block}' if states_block else ''
     empty_text = localized(data, lang, 'eventsEmptyText', data['eventsEmptyText'])
 
-    # ---- hero background ----
-    # Hero uses high-quality WebP (q92, photographic) via image-set, with the
-    # original PNG as fallback for browsers without WebP. SINGLE quotes inside
-    # url()/image-set() so they don't collide with the style="..." attribute.
+    # ---- hero image ----
+    # Render as markup instead of inline CSS so maintained pages stay free of
+    # style attributes.
     hero_base = f"/content/locations/{cont}/{slug}/img/{slug}-hero"
     def _has(p): return os.path.isfile(os.path.join(ROOT, p.lstrip('/')))
     hero_1200 = f'{hero_base}-1200.webp'
     if _has(hero_1200):
-        hero_url = (f"image-set(url('{hero_1200}') type('image/webp'), "
-                    f"url('{hero}') type('image/png'))")
         hero_preload = hero_1200
+        hero_picture = f'<picture class="country-hero-image" aria-hidden="true"><source srcset="{hero_1200}" type="image/webp"><img src="{hero}" alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
     else:
-        hero_url = f"url('{hero}')"
         hero_preload = hero
+        hero_picture = f'<picture class="country-hero-image" aria-hidden="true"><img src="{hero}" alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
 
     return f'''<!doctype html>
 <html lang="{lang}">
@@ -286,20 +337,20 @@ def render(data, lang='en'):
   <link rel="icon" href="{up}assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{up}assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="{up}assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-20260602-langmenu">
+  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-no-inline-hero-fact-edge-20260612">
   <meta name="theme-color" content="#0d2137">
   <title>{esc(seo['title'])}</title>
   <script type="application/ld+json">{ldjson}</script>
 </head>
-<body class="country-onepage">
+<body class="country-onepage{' location-page--usa' if cont == 'north-america' and slug == 'usa' else ''}{' location-page--canada' if cont == 'north-america' and slug == 'canada' else ''}{' location-page--country-finder' if has_country_finder(cont, slug) else ''}">
   {nav}
   <main class="page-shell country-slide country-content-box">
     <section class="country-brief" aria-label="{esc(name)} one-slide overview">
       <div class="country-brief__copy">
-        <div class="country-hero-image" style="--country-hero-url: {hero_url}" aria-hidden="true"></div>
+        {hero_picture}
         <img class="flag-badge" src="img/flag.svg" alt="{esc(name)} flag" width="1600" height="1000" loading="lazy">
         <h1 class="hero-title">{esc(name)}</h1>
-        <div class="country-left-stack"><div class="country-panel-card country-history-card"><h2>{L["history"]}</h2><div class="country-history-list">{history}</div></div></div>
+        <div class="country-left-stack"><div class="country-panel-card country-history-card"><h2>{L["history"]}</h2><div class="country-history-list">{history}</div></div><a class="location-parent-card" href="../index.html" aria-label="Go up to {esc(cont_name)}"><img src="/content/locations/{cont}/img/{cont}-mini.png" srcset="/content/locations/{cont}/img/{cont}-mini-200.webp 200w, /content/locations/{cont}/img/{cont}-mini-400.webp 400w" sizes="136px" alt="{esc(cont_name)} thumbnail" loading="lazy" width="400" height="300"><span>Part of</span><strong>{esc(cont_name)}</strong><em>More countries, cities and routes.</em></a></div>
       </div>
       <div class="country-brief__panel">
         <div class="country-kpis">{kpis}</div>
@@ -317,15 +368,13 @@ def render(data, lang='en'):
               <div><h2>{L["shortFacts"]}</h2><div class="fact-table country-facts-tight">{short_facts}</div></div>
               <div><h2>{L["worthSeeing"]}</h2><ul class="country-points">{worth}</ul></div>
             </div>
-            <div class="country-paths country-paths--location-links">{loc_links}</div>
+            {city_finder}<div {city_grid_attrs}>{loc_links}</div>
             <div class="country-panel-card"><h2>{L["planningQuestions"]}</h2><div class="country-qa-list">{qa}</div></div>
           </div>
           <div class="persona-panel view-panel--events">
             <div class="country-panel-card"><h2>{L["upcomingEvents"]}</h2><div class="country-paths country-paths--events" data-expiring-events>{events}<p class="country-empty">{esc(empty_text)}</p></div></div>
           </div>
-          <div class="persona-panel view-panel--context">
-
-            {states_block}
+          <div class="persona-panel view-panel--context">{states_markup}
             <div class="country-panel-card country-panel-card--food"><h2>{L["foodDrink"]}</h2><div class="country-paths country-paths--topics country-paths--food">{food}</div></div>
             <div class="country-panel-card"><h2>{L["knownFor"]}</h2><div class="country-identity-grid">{known}</div></div>
             <div class="country-paths country-paths--topics">{topics}</div>

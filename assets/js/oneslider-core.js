@@ -3073,6 +3073,111 @@
   });
 
   // ====================================================================
+  // Module: dynamicWeatherForecast
+  // Fetches current forecasts for city pages. USA pages use National Weather
+  // Service; non-US pages can opt into Open-Meteo with data-weather-provider.
+  // ====================================================================
+  OneSlider.register('dynamicWeatherForecast', function (App) {
+    var strips = Array.prototype.slice.call(document.querySelectorAll('[data-weather-dynamic]'));
+    if (!strips.length || !window.fetch) return;
+
+    function iconFor(period) {
+      var text = String(period.shortForecast || '').toLowerCase();
+      if (/rain|shower|storm|thunder/.test(text)) return 'rain';
+      if (/snow|sleet|ice/.test(text)) return 'snow';
+      if (/cloud|overcast|fog/.test(text)) return 'cloud';
+      if (/partly|mostly sunny|mostly clear/.test(text)) return 'partly';
+      return period.isDaytime === false ? 'moon' : 'sun';
+    }
+
+    function shortName(name) {
+      return String(name || 'Forecast')
+        .replace(/^This\s+/i, '')
+        .replace(/\s+Night$/i, ' night')
+        .replace(/\bAfternoon\b/i, 'PM');
+    }
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function (ch) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
+      });
+    }
+
+    function renderPages(strip, periods) {
+      var pageSets = [periods.slice(0, 4), periods.slice(4, 8)].filter(function (page) { return page.length; });
+      var html = pageSets.map(function (page, index) {
+        var tiles = page.map(function (period) {
+          var temp = Number(period.temperature);
+          var unit = period.temperatureUnit || 'F';
+          var tempAttr = String(unit).toUpperCase() === 'C' ? 'data-temp-c' : 'data-temp-f';
+          return '<article class="stay-weather-tile"><strong>' + escapeHtml(shortName(period.name)) + '</strong><div class="stay-weather-reading"><span class="weather-icon weather-icon--' + iconFor(period) + '" aria-hidden="true"></span><span class="stay-weather-temp" ' + tempAttr + '="' + escapeHtml(temp) + '">' + escapeHtml(temp) + ' ' + escapeHtml(unit) + '</span></div></article>';
+        }).join('');
+        var button = pageSets.length > 1
+          ? '<button class="stay-weather-more" type="button" data-weather-' + (index === 0 ? 'next' : 'prev') + ' aria-label="' + (index === 0 ? 'Show next weather outlook' : 'Show this week weather') + '">...</button>'
+          : '';
+        return '<div class="stay-weather-page' + (index === 0 ? ' is-active' : '') + '" data-weather-page="' + index + '"><div class="stay-weather-days">' + tiles + button + '</div></div>';
+      }).join('');
+      strip.querySelectorAll('[data-weather-page]').forEach(function (page) { page.remove(); });
+      var source = strip.querySelector('.stay-weather-source');
+      if (source) source.insertAdjacentHTML('beforebegin', html);
+      if (window.OneSlider && window.OneSlider.applyWeatherUnits) window.OneSlider.applyWeatherUnits(strip);
+      if (App && App.emit) App.emit('weather:rendered', { strip: strip });
+    }
+
+    function setUnavailable(strip) {
+      var temp = strip.querySelector('.stay-weather-temp');
+      if (temp) temp.textContent = 'Unavailable';
+    }
+
+    function renderOpenMeteo(strip, forecast) {
+      var daily = forecast && forecast.daily;
+      if (!daily || !daily.time || !daily.time.length) throw new Error('Missing Open-Meteo daily forecast');
+      var periods = daily.time.slice(0, 8).map(function (date, index) {
+        return {
+          name: new Date(date + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short' }),
+          temperature: Number(daily.temperature_2m_max[index]),
+          temperatureUnit: 'C',
+          shortForecast: String(daily.weather_code ? daily.weather_code[index] : ''),
+          isDaytime: true
+        };
+      });
+      renderPages(strip, periods);
+    }
+
+    strips.forEach(function (strip) {
+      var lat = strip.getAttribute('data-weather-lat');
+      var lon = strip.getAttribute('data-weather-lon');
+      var provider = (strip.getAttribute('data-weather-provider') || 'nws').toLowerCase();
+      if (!lat || !lon) return;
+      if (provider === 'open-meteo') {
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=' + encodeURIComponent(lat) + '&longitude=' + encodeURIComponent(lon) + '&daily=weather_code,temperature_2m_max&temperature_unit=celsius&timezone=auto', {
+          headers: { Accept: 'application/json' }
+        })
+          .then(function (response) { return response.ok ? response.json() : Promise.reject(response); })
+          .then(function (forecast) { renderOpenMeteo(strip, forecast); })
+          .catch(function () { setUnavailable(strip); });
+        return;
+      }
+      fetch('https://api.weather.gov/points/' + encodeURIComponent(lat) + ',' + encodeURIComponent(lon), {
+        headers: { Accept: 'application/geo+json, application/json' }
+      })
+        .then(function (response) { return response.ok ? response.json() : Promise.reject(response); })
+        .then(function (point) {
+          var forecastUrl = point && point.properties && point.properties.forecast;
+          if (!forecastUrl) throw new Error('Missing forecast URL');
+          return fetch(forecastUrl, { headers: { Accept: 'application/geo+json, application/json' } });
+        })
+        .then(function (response) { return response.ok ? response.json() : Promise.reject(response); })
+        .then(function (forecast) {
+          var periods = forecast && forecast.properties && forecast.properties.periods;
+          if (!periods || !periods.length) throw new Error('Missing forecast periods');
+          renderPages(strip, periods.slice(0, 8));
+        })
+        .catch(function () { setUnavailable(strip); });
+    });
+  });
+
+  // ====================================================================
   // Module: weatherStrip
   // Reusable compact weather carousel for city and event pages. Each
   // widget owns its own pages, so multiple strips can coexist on one page.
@@ -3082,12 +3187,15 @@
     if (!strips.length) return;
 
     strips.forEach(function (strip) {
-      var pages = Array.prototype.slice.call(strip.querySelectorAll('[data-weather-page]'));
-      if (!pages.length) return;
+      function getPages() {
+        return Array.prototype.slice.call(strip.querySelectorAll('[data-weather-page]'));
+      }
+      var pages = getPages();
       var index = pages.findIndex(function (page) { return page.classList.contains('is-active'); });
       if (index < 0) index = 0;
 
       function show(nextIndex) {
+        pages = getPages();
         if (!pages.length) return;
         index = (nextIndex + pages.length) % pages.length;
         pages.forEach(function (page, pageIndex) {
@@ -3123,6 +3231,11 @@
       });
 
       show(index);
+      if (OneSlider && OneSlider.on) {
+        OneSlider.on('weather:rendered', function (payload) {
+          if (payload && payload.strip === strip) show(0);
+        });
+      }
     });
   });
 
@@ -3134,9 +3247,6 @@
   // for US pages.
   // ====================================================================
   OneSlider.register('weatherUnits', function () {
-    var nodes = document.querySelectorAll('[data-temp-f]');
-    if (!nodes.length) return;
-
     function storedUnit() {
       try {
         var value = String(localStorage.getItem('os_temperature_unit') || '').toLowerCase();
@@ -3177,11 +3287,103 @@
       return Math.round(f) + ' F';
     }
 
-    var unit = preferredUnit();
-    nodes.forEach(function (node) {
+    function formatTempC(celsius, unit) {
+      var c = Number(celsius);
+      if (!Number.isFinite(c)) return '';
+      if (unit === 'f') return Math.round((c * 9 / 5) + 32) + ' F';
+      return Math.round(c) + ' C';
+    }
+
+    function apply(root) {
+      var unit = preferredUnit();
+      Array.prototype.slice.call((root || document).querySelectorAll('[data-temp-f]')).forEach(function (node) {
       var text = formatTemp(node.getAttribute('data-temp-f'), unit);
       if (text) node.textContent = text;
       node.setAttribute('data-temp-unit', unit);
+      });
+      Array.prototype.slice.call((root || document).querySelectorAll('[data-temp-c]')).forEach(function (node) {
+      var text = formatTempC(node.getAttribute('data-temp-c'), unit);
+      if (text) node.textContent = text;
+      node.setAttribute('data-temp-unit', unit);
+      });
+    }
+
+    OneSlider.applyWeatherUnits = apply;
+    if (OneSlider.on) OneSlider.on('weather:rendered', function (payload) { apply(payload && payload.strip ? payload.strip : document); });
+    apply(document);
+  });
+
+  // ====================================================================
+  // Module: cityFinder
+  // Filters compact city grids by travel intent and search text.
+  // ====================================================================
+  OneSlider.register('cityFinder', function () {
+    var roots = Array.prototype.slice.call(document.querySelectorAll('[data-city-finder]'));
+    if (!roots.length) return;
+
+    roots.forEach(function (root) {
+      var grid = root.nextElementSibling;
+      if (!grid || !grid.matches('[data-city-grid]')) return;
+
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-city-tags]'));
+      var search = root.querySelector('[data-city-search]');
+      var buttons = Array.prototype.slice.call(root.querySelectorAll('[data-city-filter]'));
+      var count = root.querySelector('[data-city-count]');
+      var state = { filter: 'all', query: '' };
+
+      function tokens(value) {
+        return String(value || '').toLowerCase().split(/\s+/).filter(Boolean);
+      }
+
+      function cardText(card) {
+        return String(card.textContent || '').toLowerCase() + ' ' + String(card.getAttribute('data-city-tags') || '').toLowerCase();
+      }
+
+      function filterMatches(card, filter) {
+        if (!filter || filter === 'all') return true;
+        var tagMap = {};
+        tokens(card.getAttribute('data-city-tags')).forEach(function (tag) { tagMap[tag] = true; });
+        return tokens(filter).some(function (tag) { return tagMap[tag]; });
+      }
+
+      function apply() {
+        var visible = 0;
+        var query = state.query.trim().toLowerCase();
+
+        cards.forEach(function (card) {
+          var matches = filterMatches(card, state.filter) && (!query || cardText(card).indexOf(query) !== -1);
+          card.hidden = !matches;
+          if (matches) visible += 1;
+        });
+
+        buttons.forEach(function (button) {
+          var active = button.getAttribute('data-city-filter') === state.filter;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        if (count) {
+          count.textContent = visible === cards.length
+            ? 'Showing all cities'
+            : 'Showing ' + visible + ' of ' + cards.length + ' cities';
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.filter = button.getAttribute('data-city-filter') || 'all';
+          apply();
+        });
+      });
+
+      if (search) {
+        search.addEventListener('input', function () {
+          state.query = search.value || '';
+          apply();
+        });
+      }
+
+      apply();
     });
   });
 

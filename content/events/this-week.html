@@ -4,7 +4,7 @@
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="../../assets/css/oneslider-core.css?v=semantic-sport-20260610">
   <script defer src="../../assets/js/oneslider-core.js?v=semantic-sport-20260610"></script>
-  <script src="../../assets/js/event-view-shell.js"></script>
+  <script defer src="../../assets/js/event-view-shell.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="os-ios-nav" content="off">
@@ -365,6 +365,7 @@
       const compact = total >= 10;
       const isWide = !compact && index > 6;
       const isFeature = compact ? false : index < 3 || isWide;
+      const useHeroImage = isFeature && !matchMedia('(max-width: 620px)').matches;
       const tile = document.createElement('a');
       tile.className = 'event-tile' + (isFeature ? ' event-tile--feature' : '') + (isWide ? ' event-tile--wide' : '');
       tile.href = eventLink(event);
@@ -372,7 +373,7 @@
       const visualCat = currentCat === 'all' ? event.cat : rootCat;
       tile.dataset.cat = visualCat;
       const img = document.createElement('img');
-      img.src = isFeature ? heroImage(event.image) : event.image;
+      img.src = useHeroImage ? heroImage(event.image) : event.image;
       img.dataset.fallback = event.image;
       img.onerror = () => { if (img.src !== img.dataset.fallback) img.src = img.dataset.fallback; };
       img.alt = '';

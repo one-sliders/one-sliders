@@ -272,6 +272,10 @@ function eventPage({ rootPrefix, category, topic, title, slug, c }) {
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/icons/site.webmanifest">
   <link rel="stylesheet" href="/assets/css/events.css">
   <script defer src="/assets/js/events.js"></script>
   <link rel="preload" as="image" href="${imgPath}-hero.png">

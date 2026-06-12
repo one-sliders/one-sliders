@@ -270,7 +270,7 @@ a {
   min-height: clamp(430px, 64vh, 680px);
   padding: clamp(56px, 12vh, 130px) clamp(20px, 5vw, 80px) clamp(34px, 8vh, 78px);
   overflow: hidden;
-  background: var(--os-bg) url("/content/categories/img/categories-topics-hero.png") center 42% / cover no-repeat;
+  background: var(--os-bg) image-set(url("/content/categories/img/categories-topics-hero-768.webp") type("image/webp") 1x, url("/content/categories/img/categories-topics-hero-1200.webp") type("image/webp") 2x, url("/content/categories/img/categories-topics-hero.png") type("image/png") 2x) center 42% / cover no-repeat;
   color: var(--os-surface);
 }
 
@@ -563,7 +563,11 @@ a {
   --theme: var(--c-sport);
   --accent: color-mix(in srgb, var(--c-sport) 62%, var(--os-surface));
   --os-card-accent: var(--theme);
-  --category-hero: url("/content/categories/sport/img/sports-general-hero.png");
+  --category-hero: image-set(
+    url("/content/categories/sport/img/sports-general-hero-400.webp") 1x,
+    url("/content/categories/sport/img/sports-general-hero-768.webp") 2x,
+    url("/content/categories/sport/img/sports-general-hero-1200.webp") 3x
+  );
   color: var(--ink);
   background: var(--paper);
 }
@@ -574,7 +578,7 @@ a {
 }
 
 .category-page--root {
-  --category-hero: url("/content/categories/img/categories-topics-hero.png");
+  --category-hero: image-set(url("/content/categories/img/categories-topics-hero-768.webp") type("image/webp") 1x, url("/content/categories/img/categories-topics-hero-1200.webp") type("image/webp") 2x, url("/content/categories/img/categories-topics-hero.png") type("image/png") 2x);
 }
 
 .category-page--music {
@@ -586,7 +590,7 @@ a {
 .category-page--culture {
   --theme: var(--c-culture);
   --accent: color-mix(in srgb, var(--c-culture) 62%, var(--os-surface));
-  --category-hero: url("/content/categories/culture/img/culture-hero-wide.png?v=culture-hero-20260611b");
+  --category-hero: image-set(url("/content/categories/culture/img/culture-hero-wide-768.webp?v=culture-hero-20260611b") type("image/webp") 1x, url("/content/categories/culture/img/culture-hero-wide-1200.webp?v=culture-hero-20260611b") type("image/webp") 2x, url("/content/categories/culture/img/culture-hero-wide.png?v=culture-hero-20260611b") type("image/png") 2x);
 }
 
 .category-page--festival {
@@ -2756,6 +2760,245 @@ body.drink-layout-page .site-footer p {
   }
 }
 
+/* Legacy culture topic index pages generated as a direct topic-slide. */
+html:has(body.topic-onepage > main.topic-slide) {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.topic-onepage:has(> main.topic-slide) {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.topic-onepage:has(> main.topic-slide) .top-menu {
+  position: sticky;
+}
+
+body.topic-onepage > .topic-slide {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  padding: clamp(20px, 5vw, 80px);
+}
+
+body.topic-onepage > .topic-slide .topic-hero {
+  display: grid;
+  align-items: end;
+  min-height: clamp(220px, 28vh, 320px);
+  padding: clamp(20px, 3.6vw, 44px);
+  color: var(--os-surface);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
+    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+}
+
+body.topic-onepage > .topic-slide .topic-hero .eyebrow {
+  margin: 0 0 8px;
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+body.topic-onepage > .topic-slide .topic-hero h1 {
+  margin: 0;
+  color: var(--os-surface);
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: .96;
+}
+
+body.topic-onepage > .topic-slide .topic-hero .intro {
+  max-width: 740px;
+  margin: 12px 0 0;
+  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.45;
+}
+
+body.topic-onepage > .topic-slide .event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+body.topic-onepage > .topic-slide .event-card {
+  display: grid;
+  grid-template-rows: 130px auto auto auto;
+  gap: 6px;
+  min-width: 0;
+  padding: 0 14px 14px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background: var(--os-surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  transition: transform .12s, border-color .12s;
+}
+
+body.topic-onepage > .topic-slide .event-card:hover {
+  border-color: var(--theme);
+  transform: translateY(-2px);
+}
+
+body.topic-onepage > .topic-slide .event-thumb {
+  display: block;
+  width: calc(100% + 28px);
+  height: 130px;
+  margin: 0 -14px 6px;
+  object-fit: cover;
+  background: color-mix(in srgb, var(--os-scrim) 28%, var(--os-transparent));
+  border-bottom: 1px solid var(--line);
+}
+
+body.topic-onepage > .topic-slide .event-card time {
+  color: var(--theme);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+body.topic-onepage > .topic-slide .event-card strong {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+body.topic-onepage > .topic-slide .event-card p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+body.topic-onepage > .topic-slide .national-day-card .event-card__title {
+  color: inherit;
+  text-decoration: none;
+}
+
+body.topic-onepage > .topic-slide .national-day-card .event-card__title:hover strong,
+body.topic-onepage > .topic-slide .national-day-card .event-card__title:focus-visible strong {
+  color: var(--theme);
+}
+
+body.topic-onepage > .topic-slide .national-day-card .country {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 4px 8px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--os-compare-blue) 12%, var(--os-transparent));
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+body.topic-onepage > .topic-slide .national-day-card .country img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+body.topic-page--national-day {
+  --topic-hero-url: image-set(
+    url("/content/categories/culture/img/national-day-hero-768.webp") type("image/webp") 1x,
+    url("/content/categories/culture/img/national-day-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/culture/img/national-day-hero.png") type("image/png") 2x
+  );
+}
+
+body.topic-page--national-day > .topic-slide .topic-hero {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
+    image-set(
+      url("/content/categories/culture/img/national-day-hero-768.webp") type("image/webp") 1x,
+      url("/content/categories/culture/img/national-day-hero-1200.webp") type("image/webp") 2x,
+      url("/content/categories/culture/img/national-day-hero.png") type("image/png") 2x
+    ) center / cover no-repeat !important;
+}
+
+html.topic-page--slide-index-root,
+body.topic-page--slide-index {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.topic-page--slide-index {
+  min-height: 100vh;
+}
+
+body.topic-page--slide-index .top-menu {
+  position: sticky;
+}
+
+body.topic-page--slide-index > .topic-slide {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  padding: clamp(20px, 5vw, 80px);
+}
+
+body.topic-page--slide-index > .topic-slide .topic-hero {
+  display: grid;
+  align-items: end;
+  min-height: clamp(220px, 28vh, 320px);
+  padding: clamp(20px, 3.6vw, 44px);
+  color: var(--os-surface);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
+    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+}
+
+body.topic-page--slide-index > .topic-slide .topic-hero .eyebrow {
+  margin: 0 0 8px;
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+body.topic-page--slide-index > .topic-slide .topic-hero h1 {
+  margin: 0;
+  color: var(--os-surface);
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: .96;
+}
+
+body.topic-page--slide-index > .topic-slide .topic-hero .intro {
+  max-width: 740px;
+  margin: 12px 0 0;
+  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+  body.topic-onepage > .topic-slide {
+    padding: 12px;
+  }
+}
+
 @media (max-width: 760px) {
   .top-menu {
     overflow-x: auto !important;
@@ -3139,88 +3382,88 @@ body.drink-layout-page .site-footer p {
 }
 
 /* Generated topic hero images. */
-.food-page-bacalhau { --food-hero-image: url('/content/categories/food/img/bacalhau-hero.png'); }
-.food-page-baguette { --food-hero-image: url('/content/categories/food/img/baguette-hero.png'); }
-.food-page-banitsa { --food-hero-image: url('/content/categories/food/img/banitsa-hero.png'); }
-.food-page-barbagiuan { --food-hero-image: url('/content/categories/food/img/barbagiuan-hero.png'); }
-.food-page-borscht { --food-hero-image: url('/content/categories/food/img/borscht-hero.png'); }
-.food-page-bratwurst { --food-hero-image: url('/content/categories/food/img/bratwurst-hero.png'); }
-.food-page-bryndzove-halusky { --food-hero-image: url('/content/categories/food/img/bryndzove-halusky-hero.png'); }
-.food-page-byrek { --food-hero-image: url('/content/categories/food/img/byrek-hero.png'); }
-.food-page-cepelinai { --food-hero-image: url('/content/categories/food/img/cepelinai-hero.png'); }
-.food-page-cevapi { --food-hero-image: url('/content/categories/food/img/cevapi-hero.png'); }
-.food-page-draniki { --food-hero-image: url('/content/categories/food/img/draniki-hero.png'); }
-.food-page-farikal { --food-hero-image: url('/content/categories/food/img/farikal-hero.png'); }
-.food-page-fish-and-chips { --food-hero-image: url('/content/categories/food/img/fish-and-chips-hero.png'); }
-.food-page-flija { --food-hero-image: url('/content/categories/food/img/flija-hero.png'); }
-.food-page-fondue { --food-hero-image: url('/content/categories/food/img/fondue-hero.png'); }
-.food-page-goulash { --food-hero-image: url('/content/categories/food/img/goulash-hero.png'); }
-.food-page-grey-peas-with-bacon { --food-hero-image: url('/content/categories/food/img/grey-peas-with-bacon-hero.png'); }
-.food-page-graddtarta { --food-hero-image: url('/content/categories/food/img/graddtarta-hero.png'); }
-.food-page-halloumi { --food-hero-image: url('/content/categories/food/img/halloumi-hero.png'); }
-.food-page-irish-stew { --food-hero-image: url('/content/categories/food/img/irish-stew-hero.png'); }
-.food-page-judd-mat-gaardebounen { --food-hero-image: url('/content/categories/food/img/judd-mat-gaardebounen-hero.png'); }
-.food-page-karjalanpiirakka { --food-hero-image: url('/content/categories/food/img/karjalanpiirakka-hero.png'); }
-.food-page-kasknopfle { --food-hero-image: url('/content/categories/food/img/kasknopfle-hero.png'); }
-.food-page-kebab { --food-hero-image: url('/content/categories/food/img/kebab-hero.png'); }
-.food-page-khachapuri { --food-hero-image: url('/content/categories/food/img/khachapuri-hero.png'); }
-.food-page-khorovats { --food-hero-image: url('/content/categories/food/img/khorovats-hero.png'); }
-.food-page-kladdkaka { --food-hero-image: url('/content/categories/food/img/kladdkaka-hero.png'); }
-.food-page-lamb-soup { --food-hero-image: url('/content/categories/food/img/lamb-soup-hero.png'); }
-.food-page-mamaliga { --food-hero-image: url('/content/categories/food/img/mamaliga-hero.png'); }
-.food-page-meatballs { --food-hero-image: url('/content/categories/food/img/meatballs-hero.png'); }
-.food-page-moules-frites { --food-hero-image: url('/content/categories/food/img/moules-frites-hero.png'); }
-.food-page-moussaka { --food-hero-image: url('/content/categories/food/img/moussaka-hero.png'); }
-.food-page-njeguski-prsut { --food-hero-image: url('/content/categories/food/img/njeguski-prsut-hero.png'); }
-.food-page-paella { --food-hero-image: url('/content/categories/food/img/paella-hero.png'); }
-.food-page-pastizzi { --food-hero-image: url('/content/categories/food/img/pastizzi-hero.png'); }
-.food-page-peka { --food-hero-image: url('/content/categories/food/img/peka-hero.png'); }
-.food-page-pierogi { --food-hero-image: url('/content/categories/food/img/pierogi-hero.png'); }
-.food-page-pizza { --food-hero-image: url('/content/categories/food/img/pizza-hero.png'); }
-.food-page-pljeskavica { --food-hero-image: url('/content/categories/food/img/pljeskavica-hero.png'); }
-.food-page-plov { --food-hero-image: url('/content/categories/food/img/plov-hero.png'); }
-.food-page-potica { --food-hero-image: url('/content/categories/food/img/potica-hero.png'); }
-.food-page-rabarberpaj { --food-hero-image: url('/content/categories/food/img/rabarberpaj-hero.png'); }
-.food-page-roman-pasta { --food-hero-image: url('/content/categories/food/img/roman-pasta-hero.png'); }
-.food-page-sarmale { --food-hero-image: url('/content/categories/food/img/sarmale-hero.png'); }
-.food-page-scones { --food-hero-image: url('/content/categories/food/img/scones-hero.png'); }
-.food-page-slovak-onion-soup { --food-hero-image: url('/content/categories/food/img/slovak-onion-soup-hero.png'); }
-.food-page-sm-rrebr-d { --food-hero-image: url('/content/categories/food/img/sm-rrebr-d-hero.png'); }
-.food-page-street-food { --food-hero-image: url('/content/categories/food/img/street-food-hero.png'); }
-.food-page-stroopwafel { --food-hero-image: url('/content/categories/food/img/stroopwafel-hero.png'); }
-.food-page-svickova { --food-hero-image: url('/content/categories/food/img/svickova-hero.png'); }
-.food-page-tavce-gravce { --food-hero-image: url('/content/categories/food/img/tavce-gravce-hero.png'); }
-.food-page-torta-tre-monti { --food-hero-image: url('/content/categories/food/img/torta-tre-monti-hero.png'); }
-.food-page-trinxat { --food-hero-image: url('/content/categories/food/img/trinxat-hero.png'); }
-.food-page-verivorst { --food-hero-image: url('/content/categories/food/img/verivorst-hero.png'); }
-.food-page-wiener-schnitzel { --food-hero-image: url('/content/categories/food/img/wiener-schnitzel-hero.png'); }
-.drink-page-aquavit { --drink-hero-image: url('/content/categories/drinks/img/aquavit-hero.png'); }
-.drink-page-aperol-spritz { --drink-hero-image: url('/content/categories/drinks/img/aperol-spritz-hero.png'); }
-.drink-page-beer { --drink-hero-image: url('/content/categories/drinks/img/beer-hero.png'); }
-.drink-page-black-tea { --drink-hero-image: url('/content/categories/drinks/img/black-tea-hero.png'); }
-.drink-page-borovicka { --drink-hero-image: url('/content/categories/drinks/img/borovicka-hero.png'); }
-.drink-page-bosnian-coffee { --drink-hero-image: url('/content/categories/drinks/img/bosnian-coffee-hero.png'); }
-.drink-page-brandy { --drink-hero-image: url('/content/categories/drinks/img/brandy-hero.png'); }
-.drink-page-champagne { --drink-hero-image: url('/content/categories/drinks/img/champagne-hero.png'); }
-.drink-page-coffee { --drink-hero-image: url('/content/categories/drinks/img/coffee-hero.png'); }
-.drink-page-commandaria { --drink-hero-image: url('/content/categories/drinks/img/commandaria-hero.png'); }
-.drink-page-cremant { --drink-hero-image: url('/content/categories/drinks/img/cremant-hero.png'); }
-.drink-page-espresso { --drink-hero-image: url('/content/categories/drinks/img/espresso-hero.png'); }
-.drink-page-espresso-martini { --drink-hero-image: url('/content/categories/drinks/img/espresso-martini-hero.png'); }
-.drink-page-french-75 { --drink-hero-image: url('/content/categories/drinks/img/french-75-hero.png'); }
-.drink-page-irish-coffee { --drink-hero-image: url('/content/categories/drinks/img/irish-coffee-hero.png'); --food-hero-image: url('/content/categories/drinks/img/irish-coffee-hero.png'); }
-.drink-page-jenever { --drink-hero-image: url('/content/categories/drinks/img/jenever-hero.png'); }
-.drink-page-kali { --drink-hero-image: url('/content/categories/drinks/img/kali-hero.png'); }
-.drink-page-kinnie { --drink-hero-image: url('/content/categories/drinks/img/kinnie-hero.png'); }
-.drink-page-kvass { --drink-hero-image: url('/content/categories/drinks/img/kvass-hero.png'); }
-.drink-page-limoncello-spritz { --drink-hero-image: url('/content/categories/drinks/img/limoncello-spritz-hero.png'); }
-.drink-page-matcha { --drink-hero-image: url('/content/categories/drinks/img/matcha-hero.png'); }
-.drink-page-mojito { --drink-hero-image: url('/content/categories/drinks/img/mojito-hero.png'); }
-.drink-page-negroni { --drink-hero-image: url('/content/categories/drinks/img/negroni-hero.png'); }
-.drink-page-old-fashioned { --drink-hero-image: url('/content/categories/drinks/img/old-fashioned-hero.png'); }
-.drink-page-ouzo { --drink-hero-image: url('/content/categories/drinks/img/ouzo-hero.png'); }
-.drink-page-pina-colada { --drink-hero-image: url('/content/categories/drinks/img/pina-colada-hero.png'); }
-.drink-page-port-wine { --drink-hero-image: url('/content/categories/drinks/img/port-wine-hero.png'); }
+.food-page-bacalhau { --food-hero-image: image-set(url("/content/categories/food/img/bacalhau-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/bacalhau-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/bacalhau-hero.png") type("image/png") 2x); }
+.food-page-baguette { --food-hero-image: image-set(url("/content/categories/food/img/baguette-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/baguette-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/baguette-hero.png") type("image/png") 2x); }
+.food-page-banitsa { --food-hero-image: image-set(url("/content/categories/food/img/banitsa-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/banitsa-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/banitsa-hero.png") type("image/png") 2x); }
+.food-page-barbagiuan { --food-hero-image: image-set(url("/content/categories/food/img/barbagiuan-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/barbagiuan-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/barbagiuan-hero.png") type("image/png") 2x); }
+.food-page-borscht { --food-hero-image: image-set(url("/content/categories/food/img/borscht-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/borscht-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/borscht-hero.png") type("image/png") 2x); }
+.food-page-bratwurst { --food-hero-image: image-set(url("/content/categories/food/img/bratwurst-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/bratwurst-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/bratwurst-hero.png") type("image/png") 2x); }
+.food-page-bryndzove-halusky { --food-hero-image: image-set(url("/content/categories/food/img/bryndzove-halusky-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/bryndzove-halusky-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/bryndzove-halusky-hero.png") type("image/png") 2x); }
+.food-page-byrek { --food-hero-image: image-set(url("/content/categories/food/img/byrek-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/byrek-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/byrek-hero.png") type("image/png") 2x); }
+.food-page-cepelinai { --food-hero-image: image-set(url("/content/categories/food/img/cepelinai-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/cepelinai-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/cepelinai-hero.png") type("image/png") 2x); }
+.food-page-cevapi { --food-hero-image: image-set(url("/content/categories/food/img/cevapi-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/cevapi-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/cevapi-hero.png") type("image/png") 2x); }
+.food-page-draniki { --food-hero-image: image-set(url("/content/categories/food/img/draniki-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/draniki-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/draniki-hero.png") type("image/png") 2x); }
+.food-page-farikal { --food-hero-image: image-set(url("/content/categories/food/img/farikal-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/farikal-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/farikal-hero.png") type("image/png") 2x); }
+.food-page-fish-and-chips { --food-hero-image: image-set(url("/content/categories/food/img/fish-and-chips-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/fish-and-chips-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/fish-and-chips-hero.png") type("image/png") 2x); }
+.food-page-flija { --food-hero-image: image-set(url("/content/categories/food/img/flija-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/flija-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/flija-hero.png") type("image/png") 2x); }
+.food-page-fondue { --food-hero-image: image-set(url("/content/categories/food/img/fondue-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/fondue-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/fondue-hero.png") type("image/png") 2x); }
+.food-page-goulash { --food-hero-image: image-set(url("/content/categories/food/img/goulash-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/goulash-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/goulash-hero.png") type("image/png") 2x); }
+.food-page-grey-peas-with-bacon { --food-hero-image: image-set(url("/content/categories/food/img/grey-peas-with-bacon-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/grey-peas-with-bacon-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/grey-peas-with-bacon-hero.png") type("image/png") 2x); }
+.food-page-graddtarta { --food-hero-image: image-set(url("/content/categories/food/img/graddtarta-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/graddtarta-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/graddtarta-hero.png") type("image/png") 2x); }
+.food-page-halloumi { --food-hero-image: image-set(url("/content/categories/food/img/halloumi-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/halloumi-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/halloumi-hero.png") type("image/png") 2x); }
+.food-page-irish-stew { --food-hero-image: image-set(url("/content/categories/food/img/irish-stew-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/irish-stew-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/irish-stew-hero.png") type("image/png") 2x); }
+.food-page-judd-mat-gaardebounen { --food-hero-image: image-set(url("/content/categories/food/img/judd-mat-gaardebounen-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/judd-mat-gaardebounen-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/judd-mat-gaardebounen-hero.png") type("image/png") 2x); }
+.food-page-karjalanpiirakka { --food-hero-image: image-set(url("/content/categories/food/img/karjalanpiirakka-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/karjalanpiirakka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/karjalanpiirakka-hero.png") type("image/png") 2x); }
+.food-page-kasknopfle { --food-hero-image: image-set(url("/content/categories/food/img/kasknopfle-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/kasknopfle-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/kasknopfle-hero.png") type("image/png") 2x); }
+.food-page-kebab { --food-hero-image: image-set(url("/content/categories/food/img/kebab-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/kebab-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/kebab-hero.png") type("image/png") 2x); }
+.food-page-khachapuri { --food-hero-image: image-set(url("/content/categories/food/img/khachapuri-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/khachapuri-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/khachapuri-hero.png") type("image/png") 2x); }
+.food-page-khorovats { --food-hero-image: image-set(url("/content/categories/food/img/khorovats-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/khorovats-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/khorovats-hero.png") type("image/png") 2x); }
+.food-page-kladdkaka { --food-hero-image: image-set(url("/content/categories/food/img/kladdkaka-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/kladdkaka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/kladdkaka-hero.png") type("image/png") 2x); }
+.food-page-lamb-soup { --food-hero-image: image-set(url("/content/categories/food/img/lamb-soup-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/lamb-soup-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/lamb-soup-hero.png") type("image/png") 2x); }
+.food-page-mamaliga { --food-hero-image: image-set(url("/content/categories/food/img/mamaliga-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/mamaliga-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/mamaliga-hero.png") type("image/png") 2x); }
+.food-page-meatballs { --food-hero-image: image-set(url("/content/categories/food/img/meatballs-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/meatballs-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/meatballs-hero.png") type("image/png") 2x); }
+.food-page-moules-frites { --food-hero-image: image-set(url("/content/categories/food/img/moules-frites-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/moules-frites-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/moules-frites-hero.png") type("image/png") 2x); }
+.food-page-moussaka { --food-hero-image: image-set(url("/content/categories/food/img/moussaka-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/moussaka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/moussaka-hero.png") type("image/png") 2x); }
+.food-page-njeguski-prsut { --food-hero-image: image-set(url("/content/categories/food/img/njeguski-prsut-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/njeguski-prsut-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/njeguski-prsut-hero.png") type("image/png") 2x); }
+.food-page-paella { --food-hero-image: image-set(url("/content/categories/food/img/paella-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/paella-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/paella-hero.png") type("image/png") 2x); }
+.food-page-pastizzi { --food-hero-image: image-set(url("/content/categories/food/img/pastizzi-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/pastizzi-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/pastizzi-hero.png") type("image/png") 2x); }
+.food-page-peka { --food-hero-image: image-set(url("/content/categories/food/img/peka-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/peka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/peka-hero.png") type("image/png") 2x); }
+.food-page-pierogi { --food-hero-image: image-set(url("/content/categories/food/img/pierogi-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/pierogi-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/pierogi-hero.png") type("image/png") 2x); }
+.food-page-pizza { --food-hero-image: image-set(url("/content/categories/food/img/pizza-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/pizza-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/pizza-hero.png") type("image/png") 2x); }
+.food-page-pljeskavica { --food-hero-image: image-set(url("/content/categories/food/img/pljeskavica-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/pljeskavica-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/pljeskavica-hero.png") type("image/png") 2x); }
+.food-page-plov { --food-hero-image: image-set(url("/content/categories/food/img/plov-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/plov-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/plov-hero.png") type("image/png") 2x); }
+.food-page-potica { --food-hero-image: image-set(url("/content/categories/food/img/potica-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/potica-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/potica-hero.png") type("image/png") 2x); }
+.food-page-rabarberpaj { --food-hero-image: image-set(url("/content/categories/food/img/rabarberpaj-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/rabarberpaj-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/rabarberpaj-hero.png") type("image/png") 2x); }
+.food-page-roman-pasta { --food-hero-image: image-set(url("/content/categories/food/img/roman-pasta-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/roman-pasta-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/roman-pasta-hero.png") type("image/png") 2x); }
+.food-page-sarmale { --food-hero-image: image-set(url("/content/categories/food/img/sarmale-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/sarmale-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/sarmale-hero.png") type("image/png") 2x); }
+.food-page-scones { --food-hero-image: image-set(url("/content/categories/food/img/scones-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/scones-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/scones-hero.png") type("image/png") 2x); }
+.food-page-slovak-onion-soup { --food-hero-image: image-set(url("/content/categories/food/img/slovak-onion-soup-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/slovak-onion-soup-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/slovak-onion-soup-hero.png") type("image/png") 2x); }
+.food-page-sm-rrebr-d { --food-hero-image: image-set(url("/content/categories/food/img/sm-rrebr-d-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/sm-rrebr-d-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/sm-rrebr-d-hero.png") type("image/png") 2x); }
+.food-page-street-food { --food-hero-image: image-set(url("/content/categories/food/img/street-food-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/street-food-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/street-food-hero.png") type("image/png") 2x); }
+.food-page-stroopwafel { --food-hero-image: image-set(url("/content/categories/food/img/stroopwafel-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/stroopwafel-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/stroopwafel-hero.png") type("image/png") 2x); }
+.food-page-svickova { --food-hero-image: image-set(url("/content/categories/food/img/svickova-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/svickova-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/svickova-hero.png") type("image/png") 2x); }
+.food-page-tavce-gravce { --food-hero-image: image-set(url("/content/categories/food/img/tavce-gravce-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/tavce-gravce-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/tavce-gravce-hero.png") type("image/png") 2x); }
+.food-page-torta-tre-monti { --food-hero-image: image-set(url("/content/categories/food/img/torta-tre-monti-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/torta-tre-monti-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/torta-tre-monti-hero.png") type("image/png") 2x); }
+.food-page-trinxat { --food-hero-image: image-set(url("/content/categories/food/img/trinxat-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/trinxat-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/trinxat-hero.png") type("image/png") 2x); }
+.food-page-verivorst { --food-hero-image: image-set(url("/content/categories/food/img/verivorst-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/verivorst-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/verivorst-hero.png") type("image/png") 2x); }
+.food-page-wiener-schnitzel { --food-hero-image: image-set(url("/content/categories/food/img/wiener-schnitzel-hero-768.webp") type("image/webp") 1x, url("/content/categories/food/img/wiener-schnitzel-hero-1200.webp") type("image/webp") 2x, url("/content/categories/food/img/wiener-schnitzel-hero.png") type("image/png") 2x); }
+.drink-page-aquavit { --drink-hero-image: image-set(url("/content/categories/drinks/img/aquavit-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/aquavit-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/aquavit-hero.png") type("image/png") 2x); }
+.drink-page-aperol-spritz { --drink-hero-image: image-set(url("/content/categories/drinks/img/aperol-spritz-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/aperol-spritz-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/aperol-spritz-hero.png") type("image/png") 2x); }
+.drink-page-beer { --drink-hero-image: image-set(url("/content/categories/drinks/img/beer-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/beer-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/beer-hero.png") type("image/png") 2x); }
+.drink-page-black-tea { --drink-hero-image: image-set(url("/content/categories/drinks/img/black-tea-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/black-tea-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/black-tea-hero.png") type("image/png") 2x); }
+.drink-page-borovicka { --drink-hero-image: image-set(url("/content/categories/drinks/img/borovicka-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/borovicka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/borovicka-hero.png") type("image/png") 2x); }
+.drink-page-bosnian-coffee { --drink-hero-image: image-set(url("/content/categories/drinks/img/bosnian-coffee-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/bosnian-coffee-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/bosnian-coffee-hero.png") type("image/png") 2x); }
+.drink-page-brandy { --drink-hero-image: image-set(url("/content/categories/drinks/img/brandy-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/brandy-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/brandy-hero.png") type("image/png") 2x); }
+.drink-page-champagne { --drink-hero-image: image-set(url("/content/categories/drinks/img/champagne-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/champagne-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/champagne-hero.png") type("image/png") 2x); }
+.drink-page-coffee { --drink-hero-image: image-set(url("/content/categories/drinks/img/coffee-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/coffee-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/coffee-hero.png") type("image/png") 2x); }
+.drink-page-commandaria { --drink-hero-image: image-set(url("/content/categories/drinks/img/commandaria-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/commandaria-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/commandaria-hero.png") type("image/png") 2x); }
+.drink-page-cremant { --drink-hero-image: image-set(url("/content/categories/drinks/img/cremant-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/cremant-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/cremant-hero.png") type("image/png") 2x); }
+.drink-page-espresso { --drink-hero-image: image-set(url("/content/categories/drinks/img/espresso-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/espresso-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/espresso-hero.png") type("image/png") 2x); }
+.drink-page-espresso-martini { --drink-hero-image: image-set(url("/content/categories/drinks/img/espresso-martini-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/espresso-martini-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/espresso-martini-hero.png") type("image/png") 2x); }
+.drink-page-french-75 { --drink-hero-image: image-set(url("/content/categories/drinks/img/french-75-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/french-75-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/french-75-hero.png") type("image/png") 2x); }
+.drink-page-irish-coffee { --drink-hero-image: image-set(url("/content/categories/drinks/img/irish-coffee-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/irish-coffee-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/irish-coffee-hero.png") type("image/png") 2x); --food-hero-image: image-set(url("/content/categories/drinks/img/irish-coffee-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/irish-coffee-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/irish-coffee-hero.png") type("image/png") 2x); }
+.drink-page-jenever { --drink-hero-image: image-set(url("/content/categories/drinks/img/jenever-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/jenever-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/jenever-hero.png") type("image/png") 2x); }
+.drink-page-kali { --drink-hero-image: image-set(url("/content/categories/drinks/img/kali-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/kali-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/kali-hero.png") type("image/png") 2x); }
+.drink-page-kinnie { --drink-hero-image: image-set(url("/content/categories/drinks/img/kinnie-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/kinnie-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/kinnie-hero.png") type("image/png") 2x); }
+.drink-page-kvass { --drink-hero-image: image-set(url("/content/categories/drinks/img/kvass-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/kvass-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/kvass-hero.png") type("image/png") 2x); }
+.drink-page-limoncello-spritz { --drink-hero-image: image-set(url("/content/categories/drinks/img/limoncello-spritz-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/limoncello-spritz-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/limoncello-spritz-hero.png") type("image/png") 2x); }
+.drink-page-matcha { --drink-hero-image: image-set(url("/content/categories/drinks/img/matcha-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/matcha-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/matcha-hero.png") type("image/png") 2x); }
+.drink-page-mojito { --drink-hero-image: image-set(url("/content/categories/drinks/img/mojito-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/mojito-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/mojito-hero.png") type("image/png") 2x); }
+.drink-page-negroni { --drink-hero-image: image-set(url("/content/categories/drinks/img/negroni-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/negroni-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/negroni-hero.png") type("image/png") 2x); }
+.drink-page-old-fashioned { --drink-hero-image: image-set(url("/content/categories/drinks/img/old-fashioned-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/old-fashioned-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/old-fashioned-hero.png") type("image/png") 2x); }
+.drink-page-ouzo { --drink-hero-image: image-set(url("/content/categories/drinks/img/ouzo-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/ouzo-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/ouzo-hero.png") type("image/png") 2x); }
+.drink-page-pina-colada { --drink-hero-image: image-set(url("/content/categories/drinks/img/pina-colada-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/pina-colada-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/pina-colada-hero.png") type("image/png") 2x); }
+.drink-page-port-wine { --drink-hero-image: image-set(url("/content/categories/drinks/img/port-wine-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/port-wine-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/port-wine-hero.png") type("image/png") 2x); }
 body.drink-layout-page.drink-page-cremant .drink-hero,
 body.drink-layout-page.drink-page-port-wine .drink-hero {
   background-position: center 82%;
@@ -3228,23 +3471,23 @@ body.drink-layout-page.drink-page-port-wine .drink-hero {
 body.food-layout-page.drink-page-irish-coffee .food-topic__hero {
   background: var(--food-hero-image) center 72% / cover;
 }
-.drink-page-raki { --drink-hero-image: url('/content/categories/drinks/img/raki-hero.png'); }
-.drink-page-rakia { --drink-hero-image: url('/content/categories/drinks/img/rakia-hero.png'); }
-.drink-page-rakija { --drink-hero-image: url('/content/categories/drinks/img/rakija-hero.png'); }
-.drink-page-riga-black-balsam { --drink-hero-image: url('/content/categories/drinks/img/riga-black-balsam-hero.png'); }
-.drink-page-sangria { --drink-hero-image: url('/content/categories/drinks/img/sangria-hero.png'); }
-.drink-page-skyr-drink { --drink-hero-image: url('/content/categories/drinks/img/skyr-drink-hero.png'); }
-.drink-page-slivovitz { --drink-hero-image: url('/content/categories/drinks/img/slivovitz-hero.png'); }
-.drink-page-stout { --drink-hero-image: url('/content/categories/drinks/img/stout-hero.png'); }
-.drink-page-tea { --drink-hero-image: url('/content/categories/drinks/img/tea-hero.png'); }
-.drink-page-tokaji { --drink-hero-image: url('/content/categories/drinks/img/tokaji-hero.png'); }
-.drink-page-tuica { --drink-hero-image: url('/content/categories/drinks/img/tuica-hero.png'); }
-.drink-page-turkish-tea { --drink-hero-image: url('/content/categories/drinks/img/turkish-tea-hero.png'); }
-.drink-page-uzvar { --drink-hero-image: url('/content/categories/drinks/img/uzvar-hero.png'); }
-.drink-page-vodka { --drink-hero-image: url('/content/categories/drinks/img/vodka-hero.png'); }
-.drink-page-whiskey-sour { --drink-hero-image: url('/content/categories/drinks/img/whiskey-sour-hero.png'); }
-.drink-page-vranac { --drink-hero-image: url('/content/categories/drinks/img/vranac-hero.png'); }
-.drink-page-wine { --drink-hero-image: url('/content/categories/drinks/img/wine-hero.png'); }
+.drink-page-raki { --drink-hero-image: image-set(url("/content/categories/drinks/img/raki-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/raki-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/raki-hero.png") type("image/png") 2x); }
+.drink-page-rakia { --drink-hero-image: image-set(url("/content/categories/drinks/img/rakia-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/rakia-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/rakia-hero.png") type("image/png") 2x); }
+.drink-page-rakija { --drink-hero-image: image-set(url("/content/categories/drinks/img/rakija-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/rakija-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/rakija-hero.png") type("image/png") 2x); }
+.drink-page-riga-black-balsam { --drink-hero-image: image-set(url("/content/categories/drinks/img/riga-black-balsam-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/riga-black-balsam-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/riga-black-balsam-hero.png") type("image/png") 2x); }
+.drink-page-sangria { --drink-hero-image: image-set(url("/content/categories/drinks/img/sangria-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/sangria-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/sangria-hero.png") type("image/png") 2x); }
+.drink-page-skyr-drink { --drink-hero-image: image-set(url("/content/categories/drinks/img/skyr-drink-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/skyr-drink-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/skyr-drink-hero.png") type("image/png") 2x); }
+.drink-page-slivovitz { --drink-hero-image: image-set(url("/content/categories/drinks/img/slivovitz-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/slivovitz-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/slivovitz-hero.png") type("image/png") 2x); }
+.drink-page-stout { --drink-hero-image: image-set(url("/content/categories/drinks/img/stout-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/stout-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/stout-hero.png") type("image/png") 2x); }
+.drink-page-tea { --drink-hero-image: image-set(url("/content/categories/drinks/img/tea-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/tea-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/tea-hero.png") type("image/png") 2x); }
+.drink-page-tokaji { --drink-hero-image: image-set(url("/content/categories/drinks/img/tokaji-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/tokaji-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/tokaji-hero.png") type("image/png") 2x); }
+.drink-page-tuica { --drink-hero-image: image-set(url("/content/categories/drinks/img/tuica-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/tuica-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/tuica-hero.png") type("image/png") 2x); }
+.drink-page-turkish-tea { --drink-hero-image: image-set(url("/content/categories/drinks/img/turkish-tea-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/turkish-tea-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/turkish-tea-hero.png") type("image/png") 2x); }
+.drink-page-uzvar { --drink-hero-image: image-set(url("/content/categories/drinks/img/uzvar-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/uzvar-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/uzvar-hero.png") type("image/png") 2x); }
+.drink-page-vodka { --drink-hero-image: image-set(url("/content/categories/drinks/img/vodka-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/vodka-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/vodka-hero.png") type("image/png") 2x); }
+.drink-page-whiskey-sour { --drink-hero-image: image-set(url("/content/categories/drinks/img/whiskey-sour-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/whiskey-sour-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/whiskey-sour-hero.png") type("image/png") 2x); }
+.drink-page-vranac { --drink-hero-image: image-set(url("/content/categories/drinks/img/vranac-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/vranac-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/vranac-hero.png") type("image/png") 2x); }
+.drink-page-wine { --drink-hero-image: image-set(url("/content/categories/drinks/img/wine-hero-768.webp") type("image/webp") 1x, url("/content/categories/drinks/img/wine-hero-1200.webp") type("image/webp") 2x, url("/content/categories/drinks/img/wine-hero.png") type("image/png") 2x); }
 
 /* Compact one-page topic layout, aligned with location one-slide pages. */
 .topic-onepage {
@@ -3355,12 +3598,12 @@ html:has(body.topic-onepage) {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: var(--topic-hero-url, url("/content/categories/sport/img/sports-general-hero.png")) center / cover no-repeat;
+  background: var(--topic-hero-url, image-set(url("/content/categories/sport/img/sports-general-hero-768.webp") type("image/webp") 1x, url("/content/categories/sport/img/sports-general-hero-1200.webp") type("image/webp") 2x, url("/content/categories/sport/img/sports-general-hero.png") type("image/png") 2x)) center / cover no-repeat;
   box-shadow: 0 18px 38px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 .topic-page--ice-hockey {
-  --topic-hero-url: url("/content/categories/sport/ice-hockey/img/ice-hockey-hero.png");
+  --topic-hero-url: image-set(url("/content/categories/sport/ice-hockey/img/ice-hockey-hero-768.webp") type("image/webp") 1x, url("/content/categories/sport/ice-hockey/img/ice-hockey-hero-1200.webp") type("image/webp") 2x, url("/content/categories/sport/ice-hockey/img/ice-hockey-hero.png") type("image/png") 2x);
 }
 
 .topic-brief .kicker {
@@ -4876,6 +5119,77 @@ body.category-page .category-shell.category-content-box .category-parent-card p 
   display: block;
   font-size: 10px;
   line-height: 1.05;
+}
+
+/* Final override for legacy culture topic pages that still use main.topic-slide. */
+html:has(body.topic-onepage > main.topic-slide) {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.topic-onepage:has(> main.topic-slide) {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.topic-onepage:has(> main.topic-slide) .top-menu {
+  position: sticky;
+}
+
+body.topic-onepage > .topic-slide {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  padding: clamp(20px, 5vw, 80px);
+}
+
+body.topic-onepage > .topic-slide .topic-hero {
+  display: grid;
+  align-items: end;
+  min-height: clamp(220px, 28vh, 320px);
+  padding: clamp(20px, 3.6vw, 44px);
+  color: var(--os-surface);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
+    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+}
+
+body.topic-onepage > .topic-slide .topic-hero .eyebrow {
+  margin: 0 0 8px;
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+body.topic-onepage > .topic-slide .topic-hero h1 {
+  margin: 0;
+  color: var(--os-surface);
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: .96;
+}
+
+body.topic-onepage > .topic-slide .topic-hero .intro {
+  max-width: 740px;
+  margin: 12px 0 0;
+  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.45;
+}
+
+body.topic-page--national-day {
+  --topic-hero-url: image-set(
+    url("/content/categories/culture/img/national-day-hero-768.webp") type("image/webp") 1x,
+    url("/content/categories/culture/img/national-day-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/culture/img/national-day-hero.png") type("image/png") 2x
+  );
 }
 
 @media (max-width: 1050px) {

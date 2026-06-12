@@ -930,6 +930,75 @@ function jsonForScript(value) {
     .replace(/&/g, '\\u0026');
 }
 
+function offsetIsoDate(iso, days) {
+  if (!iso) return '';
+  const date = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return '';
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function usCanadaGolfModules(item, edition) {
+  if (!/^(United States|Canada)$/.test(item.host?.name || '')) return null;
+  const base = cityAreaLabel(item) || item.area || item.host.name;
+  const destination = base && base !== item.host.name ? `${base}, ${item.host.name}` : item.host.name;
+  const stayAreas = [
+    base,
+    `${base} downtown`,
+    `${base} airport area`,
+    'Venue-side hotels',
+    'Nearby suburbs'
+  ].filter((value, index, list) => value && list.indexOf(value) === index);
+  const start = item.startDate || item.endDate || edition.startDate || '';
+  return {
+    hotel: {
+      title: `Stay for ${item.name} ${edition.year}`,
+      destination,
+      checkIn: offsetIsoDate(start, -1),
+      checkOut: endExclusive(item),
+      adults: 2,
+      rooms: 1,
+      stayAreas,
+      cta: 'Check hotel prices',
+      campaign: `${item.slug}-${edition.year}-hotels`,
+      pageTopic: 'golf',
+      pageEvent: item.slug,
+      airportNote: {
+        title: 'Check the nearest major airport',
+        detail: 'Use the official tournament venue and local transport guidance before booking flights and hotels.'
+      }
+    },
+    golfTrip: {
+      tabLabel: 'Golf trip',
+      eyebrow: 'Golf trip',
+      title: `Plan the ${item.name} ${edition.year} trip`,
+      cardLabel: 'Trip',
+      cards: [
+        { title: 'Best base', detail: `${stayAreas[0]} is the first area to compare once the venue and transport plan are confirmed.` },
+        { title: 'Venue reality', detail: `${edition.venue || 'The venue'} shapes the trip; confirm gates, parking and shuttle details close to the event.` },
+        { title: 'Tournament rhythm', detail: 'Golf trips work best when hotel, course transfer and dinner base do not pull in three different directions.' },
+        { title: 'Booking detail', detail: 'Check total nightly price, parking, resort fees and cancellation terms before locking a room.' }
+      ],
+      links: [{
+        builder: 'product',
+        label: 'See travel essentials',
+        category: 'travel-essentials',
+        campaign: `${item.slug}-${edition.year}-travel-essentials`,
+        event: 'affiliate_click',
+        affiliateType: 'product',
+        pageTopic: 'golf',
+        pageEvent: item.slug
+      }]
+    },
+    faq: [
+      { q: `When is ${item.name} ${edition.year}?`, a: edition.dates || start || 'TBC' },
+      { q: `Where is ${item.name} ${edition.year}?`, a: destination },
+      { q: `Where should I stay for ${item.name} ${edition.year}?`, a: `${stayAreas.slice(0, 3).join(', ')} are the first areas to compare.` },
+      { q: 'What should I confirm before booking?', a: 'Venue access, parking, shuttle rules, total hotel fees and cancellation terms.' }
+    ]
+  };
+}
+
 function eventYearData(item) {
   const tour = tours[item.tour];
   const status = editionStatus(item);
@@ -1012,6 +1081,8 @@ function eventYearData(item) {
     hasEspnLeaderboard: currentLeaderboardHasPlayers,
     leaderboardSourceUrl: currentLeaderboard?.sourceUrl || ''
   };
+  const currentModules = usCanadaGolfModules(item, currentEdition);
+  if (currentModules) currentEdition.currentModules = currentModules;
   const editions = archiveEditions.concat([currentEdition]);
   return {
     eventName: item.name,
@@ -1080,7 +1151,7 @@ function eventPage(item) {
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:description" content="${html(description)}">
-  <meta property="og:url" content="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><link rel="icon" href="/assets/icons/favicon.ico" sizes="any"><link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/assets/icons/site.webmanifest"><link rel="stylesheet" href="/assets/css/events.css?v=event-frame-20260530-golf-pga-layout-3"><script defer src="/assets/js/events.js?v=event-frame-20260530-golf-pga-layout-3"></script><link rel="preload" as="image" href="${eventHeroAbs(item)}"><link rel="canonical" href="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><meta name="description" content="${html(description)}">
+  <meta property="og:url" content="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><link rel="icon" href="/assets/icons/favicon.ico" sizes="any"><link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/assets/icons/site.webmanifest"><link rel="stylesheet" href="/assets/css/events.css?v=event-frame-20260530-golf-pga-layout-3"><script defer src="/assets/js/events.js?v=visit-tab-20260612"></script><link rel="preload" as="image" href="${eventHeroAbs(item)}"><link rel="canonical" href="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><meta name="description" content="${html(description)}">
   <meta name="content-language" content="en">
   <meta name="keywords" content="${html(item.name.toLowerCase())}, golf, ${html(tour.name.toLowerCase())}, one sliders"><meta property="og:title" content="${html(title)}"><meta property="og:image" content="https://one-sliders.com/content/categories/sport/golf/events/img/${item.slug}-hero.png"><meta name="twitter:card" content="summary_large_image"><title>${html(title)}</title><script type="application/json" id="event-year-data">${jsonForScript(jsonData)}</script></head><body class="event-page event-page--framed" data-generated-golf-tour="true">${navHtml()}<main class="event-frame" id="general" aria-labelledby="event-title"><section class="event-frame__visual" aria-label="${html(item.name)} overview"><div class="event-frame__media"><img src="${eventHeroAbs(item)}" alt="" width="1200" height="630" fetchpriority="high"></div><div class="event-frame__copy"><div><h1 class="event-title" id="event-title">${html(item.name)}</h1></div><div class="facts-strip"><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div></div>${snapshotCard}<a class="topic-card topic-card--inline" href="/content/categories/sport/golf.html" aria-label="Open the Golf topic page"><img src="/content/categories/sport/img/golf-mini.png" alt="" width="400" height="300" loading="eager"><span>More golf</span><strong>Golf topic</strong><p>More majors, courses and calendar moments.</p></a></div></section><section class="event-frame__panel" id="year" aria-label="Edition details"><div class="event-frame__panel-header"><h2 class="event-section-title" data-year-heading>${html(item.name)} 2026 ${headingPlace}</h2></div><div class="year-switcher" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition><div class="facts-strip"><div class="fact"><span>Country</span><strong>${country}</strong></div><div class="fact"><span>City</span><strong>${cityArea || 'TBC'}</strong></div><div class="fact"><span>Venue</span><strong>${venue}</strong></div><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div><div class="fact"><span>Format</span><strong>${html(formatLabel)}</strong></div></div></div></section></main><footer class="event-footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>.</footer></body></html>
 `;

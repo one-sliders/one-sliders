@@ -1,0 +1,1712 @@
+{
+  "generatedAt": "2026-06-12",
+  "countries": {
+    "denmark": {
+      "slug": "denmark",
+      "name": "Denmark",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "Danish krone",
+      "language": "Danish",
+      "timeZone": "CET (UTC+1)",
+      "capital": "Copenhagen"
+    },
+    "sweden": {
+      "slug": "sweden",
+      "name": "Sweden",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "Swedish krona",
+      "language": "Swedish",
+      "timeZone": "CET (UTC+1)",
+      "capital": "Stockholm"
+    },
+    "norway": {
+      "slug": "norway",
+      "name": "Norway",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "Norwegian krone",
+      "language": "Norwegian",
+      "timeZone": "CET (UTC+1)",
+      "capital": "Oslo"
+    },
+    "finland": {
+      "slug": "finland",
+      "name": "Finland",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "euro",
+      "language": "Finnish, Swedish",
+      "timeZone": "EET (UTC+2)",
+      "capital": "Helsinki"
+    },
+    "iceland": {
+      "slug": "iceland",
+      "name": "Iceland",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "Icelandic krona",
+      "language": "Icelandic",
+      "timeZone": "GMT (UTC+0)",
+      "capital": "Reykjavík"
+    },
+    "faroe-islands": {
+      "slug": "faroe-islands",
+      "name": "Faroe Islands",
+      "continent": "europe",
+      "continentName": "Europe",
+      "currency": "Danish krone",
+      "language": "Faroese, Danish",
+      "timeZone": "WET (UTC+0)",
+      "capital": "Tórshavn"
+    },
+    "greenland": {
+      "slug": "greenland",
+      "name": "Greenland",
+      "continent": "north-america",
+      "continentName": "North America",
+      "currency": "Danish krone",
+      "language": "Greenlandic, Danish",
+      "timeZone": "UTC-1 to UTC-4",
+      "capital": "Nuuk"
+    }
+  },
+  "cities": [
+    {
+      "slug": "copenhagen",
+      "name": "Copenhagen",
+      "countrySlug": "denmark",
+      "kicker": "Capital city and design base on the Oresund",
+      "region": "Capital Region",
+      "population": "~660,000 city",
+      "distance": "Oresund gateway",
+      "known": "Design, canals & food",
+      "coordinates": {
+        "lat": 55.6761,
+        "lon": 12.5683
+      },
+      "areas": [
+        "Indre By",
+        "Nyhavn",
+        "Vesterbro",
+        "Norrebrogade / Norrebro",
+        "Frederiksberg",
+        "Orestad"
+      ],
+      "airports": [
+        "Copenhagen Airport (CPH)"
+      ],
+      "highlights": [
+        "Nyhavn",
+        "Tivoli Gardens",
+        "The Little Mermaid",
+        "Christiansborg Palace",
+        "Rosenborg Castle",
+        "Copenhagen harbour baths"
+      ]
+    },
+    {
+      "slug": "stockholm",
+      "name": "Stockholm",
+      "countrySlug": "sweden",
+      "kicker": "Island capital with museums, ferries and archipelago trips",
+      "region": "Stockholm County",
+      "population": "~990,000 city",
+      "distance": "Baltic capital hub",
+      "known": "Archipelago, old town & design",
+      "coordinates": {
+        "lat": 59.3293,
+        "lon": 18.0686
+      },
+      "areas": [
+        "Norrmalm",
+        "Gamla Stan",
+        "Sodermalm",
+        "Ostermalm",
+        "Djurgarden",
+        "Solna"
+      ],
+      "airports": [
+        "Stockholm Arlanda Airport (ARN)",
+        "Stockholm Bromma Airport (BMA)"
+      ],
+      "highlights": [
+        "Gamla Stan",
+        "Vasa Museum",
+        "Stockholm archipelago",
+        "ABBA The Museum",
+        "Royal Palace",
+        "Fotografiska"
+      ]
+    },
+    {
+      "slug": "oslo",
+      "name": "Oslo",
+      "countrySlug": "norway",
+      "kicker": "Fjord capital with museums, forest access and event venues",
+      "region": "Oslo region",
+      "population": "~720,000 city",
+      "distance": "Oslofjord base",
+      "known": "Fjord, culture & forest",
+      "coordinates": {
+        "lat": 59.9139,
+        "lon": 10.7522
+      },
+      "areas": [
+        "Sentrum",
+        "Aker Brygge",
+        "Grunerlokka",
+        "Majorstuen",
+        "Bjorvika",
+        "Gardermoen airport area"
+      ],
+      "airports": [
+        "Oslo Airport (OSL)"
+      ],
+      "highlights": [
+        "Oslo Opera House",
+        "Akershus Fortress",
+        "Vigeland Park",
+        "Munch Museum",
+        "Oslofjord",
+        "Holmenkollen"
+      ]
+    },
+    {
+      "slug": "helsinki",
+      "name": "Helsinki",
+      "countrySlug": "finland",
+      "kicker": "Seaside capital for design, islands, sauna and events",
+      "region": "Uusimaa",
+      "population": "~680,000 city",
+      "distance": "Gulf of Finland hub",
+      "known": "Design, sauna & islands",
+      "coordinates": {
+        "lat": 60.1699,
+        "lon": 24.9384
+      },
+      "areas": [
+        "Kluuvi",
+        "Kamppi",
+        "Punavuori",
+        "Kallio",
+        "Katajanokka",
+        "Pasila"
+      ],
+      "airports": [
+        "Helsinki Airport (HEL)"
+      ],
+      "highlights": [
+        "Helsinki Cathedral",
+        "Suomenlinna",
+        "Market Square",
+        "Design District",
+        "Oodi Library",
+        "Loyly sauna"
+      ]
+    },
+    {
+      "slug": "bergen",
+      "name": "Bergen",
+      "countrySlug": "norway",
+      "kicker": "West Norway fjord city between mountains and harbour",
+      "region": "Vestland",
+      "population": "~290,000 municipality",
+      "distance": "Fjord gateway",
+      "known": "Bryggen, mountains & rain",
+      "coordinates": {
+        "lat": 60.39299,
+        "lon": 5.32415
+      },
+      "areas": [
+        "Bryggen / Vagen",
+        "Sentrum",
+        "Nordnes",
+        "Sandviken",
+        "Minde",
+        "Flesland airport area"
+      ],
+      "airports": [
+        "Bergen Airport Flesland (BGO)"
+      ],
+      "highlights": [
+        "Bryggen",
+        "Floyen",
+        "Ulriken",
+        "Fish Market",
+        "Bergenhus Fortress",
+        "Fjord cruises"
+      ]
+    },
+    {
+      "slug": "reykjavik",
+      "name": "Reykjavík",
+      "countrySlug": "iceland",
+      "kicker": "Compact Iceland capital for culture, pools and road trips",
+      "region": "Capital Region",
+      "population": "~140,000 city",
+      "distance": "Iceland base",
+      "known": "Colourful streets & geothermal trips",
+      "coordinates": {
+        "lat": 64.1466,
+        "lon": -21.9426
+      },
+      "areas": [
+        "Midlborg",
+        "Laugavegur",
+        "Old Harbour",
+        "Vesturbaer",
+        "Hlidar",
+        "Keflavik airport area"
+      ],
+      "airports": [
+        "Keflavik International Airport (KEF)",
+        "Reykjavik Domestic Airport (RKV)"
+      ],
+      "highlights": [
+        "Hallgrimskirkja",
+        "Harpa",
+        "Sun Voyager",
+        "Old Harbour",
+        "Sky Lagoon",
+        "Golden Circle trips"
+      ]
+    },
+    {
+      "slug": "tromso",
+      "name": "Tromsø",
+      "countrySlug": "norway",
+      "kicker": "Arctic city for northern lights, mountains and polar culture",
+      "region": "Troms",
+      "population": "~78,000 municipality",
+      "distance": "Arctic Norway hub",
+      "known": "Aurora, fjords & cable car",
+      "coordinates": {
+        "lat": 69.6492,
+        "lon": 18.9553
+      },
+      "areas": [
+        "Tromsoya centre",
+        "Storgata",
+        "Tromsdalen",
+        "Telegrafbukta",
+        "Kvaloya",
+        "Airport area"
+      ],
+      "airports": [
+        "Tromso Airport (TOS)"
+      ],
+      "highlights": [
+        "Arctic Cathedral",
+        "Fjellheisen cable car",
+        "Polaria",
+        "Northern lights tours",
+        "Tromso Bridge",
+        "Whale season trips"
+      ]
+    },
+    {
+      "slug": "rovaniemi",
+      "name": "Rovaniemi",
+      "countrySlug": "finland",
+      "kicker": "Lapland capital on the Arctic Circle",
+      "region": "Lapland",
+      "population": "~65,000 municipality",
+      "distance": "Arctic Circle base",
+      "known": "Santa Village & winter trips",
+      "coordinates": {
+        "lat": 66.5039,
+        "lon": 25.7294
+      },
+      "areas": [
+        "City centre",
+        "Santa Claus Village",
+        "Ounasvaara",
+        "Riverside",
+        "Airport area"
+      ],
+      "airports": [
+        "Rovaniemi Airport (RVN)"
+      ],
+      "highlights": [
+        "Santa Claus Village",
+        "Arktikum",
+        "Arctic Circle",
+        "Ounasvaara",
+        "Kemijoki riverside",
+        "Northern lights tours"
+      ]
+    },
+    {
+      "slug": "aarhus",
+      "name": "Aarhus",
+      "countrySlug": "denmark",
+      "kicker": "Jutland city for museums, food and waterfront culture",
+      "region": "Central Denmark",
+      "population": "~370,000 municipality",
+      "distance": "Jutland city break",
+      "known": "Museums, Latin Quarter & harbour",
+      "coordinates": {
+        "lat": 56.1629,
+        "lon": 10.2039
+      },
+      "areas": [
+        "Latin Quarter",
+        "Aarhus C",
+        "Frederiksbjerg",
+        "Aarhus O",
+        "Marselisborg",
+        "Aarhus airport area"
+      ],
+      "airports": [
+        "Aarhus Airport (AAR)",
+        "Billund Airport (BLL)"
+      ],
+      "highlights": [
+        "ARoS",
+        "Den Gamle By",
+        "Moesgaard Museum",
+        "Dokk1",
+        "Aarhus O",
+        "Marselisborg Palace"
+      ]
+    },
+    {
+      "slug": "stavanger",
+      "name": "Stavanger",
+      "countrySlug": "norway",
+      "kicker": "Southwest Norway harbour city near Lysefjord",
+      "region": "Rogaland",
+      "population": "~150,000 municipality",
+      "distance": "Lysefjord base",
+      "known": "Old town, fjords & energy city",
+      "coordinates": {
+        "lat": 58.97,
+        "lon": 5.7331
+      },
+      "areas": [
+        "Stavanger centre",
+        "Gamle Stavanger",
+        "Ostre Bydel",
+        "Sola",
+        "Sandnes",
+        "Jorpeland"
+      ],
+      "airports": [
+        "Stavanger Airport Sola (SVG)"
+      ],
+      "highlights": [
+        "Gamle Stavanger",
+        "Norwegian Petroleum Museum",
+        "Lysefjord",
+        "Preikestolen trips",
+        "Ovre Holmegate",
+        "Sola beach"
+      ]
+    },
+    {
+      "slug": "gothenburg",
+      "name": "Gothenburg",
+      "countrySlug": "sweden",
+      "kicker": "West coast city with trams, seafood and islands",
+      "region": "Vastra Gotaland",
+      "population": "~600,000 city",
+      "distance": "West Sweden gateway",
+      "known": "Seafood, canals & archipelago",
+      "coordinates": {
+        "lat": 57.7089,
+        "lon": 11.9746
+      },
+      "areas": [
+        "Centrum",
+        "Haga",
+        "Linnestaden",
+        "Avenyn",
+        "Eriksberg",
+        "Landvetter airport area"
+      ],
+      "airports": [
+        "Goteborg Landvetter Airport (GOT)"
+      ],
+      "highlights": [
+        "Liseberg",
+        "Haga",
+        "Universeum",
+        "Gothenburg archipelago",
+        "Feskekorka",
+        "Avenyn"
+      ]
+    },
+    {
+      "slug": "malmo",
+      "name": "Malmö",
+      "countrySlug": "sweden",
+      "kicker": "Oresund city linked by bridge to Copenhagen",
+      "region": "Skane",
+      "population": "~360,000 city",
+      "distance": "Oresund rail hub",
+      "known": "Bridge, parks & food",
+      "coordinates": {
+        "lat": 55.605,
+        "lon": 13.0038
+      },
+      "areas": [
+        "Gamla Staden",
+        "Mollan",
+        "Vastra Hamnen",
+        "Triangeln",
+        "Hyllie",
+        "Limhamn"
+      ],
+      "airports": [
+        "Copenhagen Airport (CPH)",
+        "Malmo Airport (MMX)"
+      ],
+      "highlights": [
+        "Turning Torso",
+        "Oresund Bridge",
+        "Lilla Torg",
+        "Ribersborg beach",
+        "Malmo Castle",
+        "Folkets Park"
+      ]
+    },
+    {
+      "slug": "trondheim",
+      "name": "Trondheim",
+      "countrySlug": "norway",
+      "kicker": "Historic Norway city around Nidaros Cathedral and the river",
+      "region": "Trondelag",
+      "population": "~215,000 municipality",
+      "distance": "Central Norway base",
+      "known": "Cathedral, river & students",
+      "coordinates": {
+        "lat": 63.4305,
+        "lon": 10.3951
+      },
+      "areas": [
+        "Midtbyen",
+        "Bakklandet",
+        "Solsiden",
+        "Ila",
+        "Lade",
+        "Vaernes airport area"
+      ],
+      "airports": [
+        "Trondheim Airport Vaernes (TRD)"
+      ],
+      "highlights": [
+        "Nidaros Cathedral",
+        "Bakklandet",
+        "Old Town Bridge",
+        "Kristiansten Fortress",
+        "Solsiden",
+        "NTNU campus"
+      ]
+    },
+    {
+      "slug": "turku",
+      "name": "Turku",
+      "countrySlug": "finland",
+      "kicker": "Old Finnish capital with riverfront and archipelago ferries",
+      "region": "Southwest Finland",
+      "population": "~205,000 city",
+      "distance": "Archipelago Sea gateway",
+      "known": "Castle, river & ferries",
+      "coordinates": {
+        "lat": 60.4518,
+        "lon": 22.2666
+      },
+      "areas": [
+        "City centre",
+        "Aurajoki riverfront",
+        "Port of Turku",
+        "Kupittaa",
+        "Ruissalo"
+      ],
+      "airports": [
+        "Turku Airport (TKU)",
+        "Helsinki Airport (HEL)"
+      ],
+      "highlights": [
+        "Turku Castle",
+        "Turku Cathedral",
+        "Aura River",
+        "Forum Marinum",
+        "Ruissalo",
+        "Archipelago Trail"
+      ]
+    },
+    {
+      "slug": "flam",
+      "name": "Flåm",
+      "countrySlug": "norway",
+      "kicker": "Tiny fjord village on the Aurlandsfjord",
+      "region": "Vestland",
+      "population": "~350 village",
+      "distance": "Sognefjord rail stop",
+      "known": "Fjord railway & cruises",
+      "coordinates": {
+        "lat": 60.861,
+        "lon": 7.1139
+      },
+      "areas": [
+        "Flam village",
+        "Aurland",
+        "Gudvangen",
+        "Myrdal rail route",
+        "Undredal"
+      ],
+      "airports": [
+        "Bergen Airport Flesland (BGO)",
+        "Sogndal Airport (SOG)"
+      ],
+      "highlights": [
+        "Flam Railway",
+        "Aurlandsfjord",
+        "Naeroyfjord cruises",
+        "Stegastein viewpoint",
+        "Brekke waterfall",
+        "Fjord village"
+      ]
+    },
+    {
+      "slug": "alesund",
+      "name": "Ålesund",
+      "countrySlug": "norway",
+      "kicker": "Art Nouveau coastal town at the edge of fjord country",
+      "region": "More og Romsdal",
+      "population": "~59,000 municipality",
+      "distance": "Northwest coast base",
+      "known": "Art Nouveau, islands & fjords",
+      "coordinates": {
+        "lat": 62.4722,
+        "lon": 6.1495
+      },
+      "areas": [
+        "Alesund centre",
+        "Aspoya",
+        "Norroya",
+        "Hessa",
+        "Moatown",
+        "Vigra airport area"
+      ],
+      "airports": [
+        "Alesund Airport Vigra (AES)"
+      ],
+      "highlights": [
+        "Aksla viewpoint",
+        "Art Nouveau Centre",
+        "Brosundet",
+        "Atlantic Sea-Park",
+        "Geirangerfjord trips",
+        "Sunnmore Museum"
+      ]
+    },
+    {
+      "slug": "kristiansand",
+      "name": "Kristiansand",
+      "countrySlug": "norway",
+      "kicker": "South Norway coastal city with beaches and family trips",
+      "region": "Agder",
+      "population": "~116,000 municipality",
+      "distance": "South coast base",
+      "known": "Beaches, old town & zoo",
+      "coordinates": {
+        "lat": 58.1467,
+        "lon": 7.9956
+      },
+      "areas": [
+        "Kvadraturen",
+        "Bystranda",
+        "Posebyen",
+        "Fiskebrygga",
+        "Hamresanden",
+        "Dyreparken area"
+      ],
+      "airports": [
+        "Kristiansand Airport Kjevik (KRS)"
+      ],
+      "highlights": [
+        "Posebyen",
+        "Bystranda",
+        "Fiskebrygga",
+        "Kristiansand Zoo",
+        "Ravnedalen",
+        "Odderoya"
+      ]
+    },
+    {
+      "slug": "bodo",
+      "name": "Bodø",
+      "countrySlug": "norway",
+      "kicker": "Northern Norway city for Saltstraumen and Lofoten access",
+      "region": "Nordland",
+      "population": "~54,000 municipality",
+      "distance": "Lofoten gateway",
+      "known": "Coast, aviation & tidal current",
+      "coordinates": {
+        "lat": 67.2804,
+        "lon": 14.4049
+      },
+      "areas": [
+        "Bodo centre",
+        "Harbour area",
+        "Ronnasletta",
+        "Morkved",
+        "Saltstraumen"
+      ],
+      "airports": [
+        "Bodo Airport (BOO)"
+      ],
+      "highlights": [
+        "Saltstraumen",
+        "Norwegian Aviation Museum",
+        "Bodo harbour",
+        "Mount Ronvik",
+        "Kjerringoy",
+        "Lofoten ferry"
+      ]
+    },
+    {
+      "slug": "alta",
+      "name": "Alta",
+      "countrySlug": "norway",
+      "kicker": "Arctic town for rock art, aurora and Finnmark trips",
+      "region": "Finnmark",
+      "population": "~21,000 municipality",
+      "distance": "Finnmark base",
+      "known": "Rock art & northern lights",
+      "coordinates": {
+        "lat": 69.9689,
+        "lon": 23.2716
+      },
+      "areas": [
+        "Alta centre",
+        "Bossekop",
+        "Elvebakken",
+        "Komsa",
+        "Sorrisniva"
+      ],
+      "airports": [
+        "Alta Airport (ALF)"
+      ],
+      "highlights": [
+        "Alta Museum rock art",
+        "Northern Lights Cathedral",
+        "Sorrisniva",
+        "Alta Canyon",
+        "Komsa mountain",
+        "Finnmark Plateau trips"
+      ]
+    },
+    {
+      "slug": "narvik",
+      "name": "Narvik",
+      "countrySlug": "norway",
+      "kicker": "Ofoten fjord and mountain town on the iron ore railway",
+      "region": "Nordland",
+      "population": "~21,000 municipality",
+      "distance": "Ofoten rail base",
+      "known": "Fjord, railway & skiing",
+      "coordinates": {
+        "lat": 68.4385,
+        "lon": 17.4273
+      },
+      "areas": [
+        "Narvik centre",
+        "Fagernesfjellet",
+        "Ankenes",
+        "Ofotbanen route",
+        "Harbour area"
+      ],
+      "airports": [
+        "Harstad/Narvik Airport Evenes (EVE)"
+      ],
+      "highlights": [
+        "Narvikfjellet",
+        "Ofoten Railway",
+        "Narvik War Museum",
+        "Rombaksfjord",
+        "Polar Park trips",
+        "Iron ore harbour"
+      ]
+    },
+    {
+      "slug": "uppsala",
+      "name": "Uppsala",
+      "countrySlug": "sweden",
+      "kicker": "University city north of Stockholm with cathedral and history",
+      "region": "Uppsala County",
+      "population": "~245,000 municipality",
+      "distance": "University city",
+      "known": "Cathedral, university & gardens",
+      "coordinates": {
+        "lat": 59.8586,
+        "lon": 17.6389
+      },
+      "areas": [
+        "City centre",
+        "Fyrisan riverfront",
+        "University area",
+        "Gamla Uppsala",
+        "Kungsangen"
+      ],
+      "airports": [
+        "Stockholm Arlanda Airport (ARN)"
+      ],
+      "highlights": [
+        "Uppsala Cathedral",
+        "Uppsala University",
+        "Gamla Uppsala",
+        "Linnaeus Garden",
+        "Uppsala Castle",
+        "Fyrisan river"
+      ]
+    },
+    {
+      "slug": "visby",
+      "name": "Visby",
+      "countrySlug": "sweden",
+      "kicker": "Walled medieval town on Gotland",
+      "region": "Gotland",
+      "population": "~24,000 urban area",
+      "distance": "Baltic island base",
+      "known": "Medieval walls & summer festivals",
+      "coordinates": {
+        "lat": 57.6348,
+        "lon": 18.2948
+      },
+      "areas": [
+        "Inside the city wall",
+        "Ostercentrum",
+        "Harbour area",
+        "Snack",
+        "Kneippbyn"
+      ],
+      "airports": [
+        "Visby Airport (VBY)"
+      ],
+      "highlights": [
+        "Visby city wall",
+        "Stora Torget",
+        "Botanical Garden",
+        "Gotland Museum",
+        "Almedalen",
+        "Medieval Week"
+      ]
+    },
+    {
+      "slug": "helsingborg",
+      "name": "Helsingborg",
+      "countrySlug": "sweden",
+      "kicker": "Oresund coastal city facing Denmark",
+      "region": "Skane",
+      "population": "~150,000 municipality",
+      "distance": "Oresund ferry base",
+      "known": "Coast, castle tower & ferries",
+      "coordinates": {
+        "lat": 56.0465,
+        "lon": 12.6945
+      },
+      "areas": [
+        "Centrum",
+        "Norra Hamnen",
+        "Soder",
+        "Ramlosa",
+        "Sofiero area"
+      ],
+      "airports": [
+        "Copenhagen Airport (CPH)",
+        "Angelholm-Helsingborg Airport (AGH)"
+      ],
+      "highlights": [
+        "Karnan",
+        "Sofiero Palace",
+        "Dunkers kulturhus",
+        "Oresund ferries",
+        "Tropical Beach",
+        "Ramlosa spring park"
+      ]
+    },
+    {
+      "slug": "kiruna",
+      "name": "Kiruna",
+      "countrySlug": "sweden",
+      "kicker": "Arctic mining town being moved under northern lights",
+      "region": "Norrbotten",
+      "population": "~23,000 municipality",
+      "distance": "Swedish Lapland base",
+      "known": "Aurora, Icehotel & mountains",
+      "coordinates": {
+        "lat": 67.8558,
+        "lon": 20.2253
+      },
+      "areas": [
+        "Kiruna centre",
+        "New city centre",
+        "Luossavaara",
+        "Jukkasjarvi",
+        "Abisko route"
+      ],
+      "airports": [
+        "Kiruna Airport (KRN)"
+      ],
+      "highlights": [
+        "Kiruna Church",
+        "Icehotel Jukkasjarvi",
+        "LKAB mine tours",
+        "Abisko National Park trips",
+        "Northern lights",
+        "Esrange area"
+      ]
+    },
+    {
+      "slug": "orebro",
+      "name": "Örebro",
+      "countrySlug": "sweden",
+      "kicker": "Castle city between Stockholm and Gothenburg",
+      "region": "Orebro County",
+      "population": "~160,000 municipality",
+      "distance": "Central Sweden base",
+      "known": "Castle, lake & city parks",
+      "coordinates": {
+        "lat": 59.2753,
+        "lon": 15.2134
+      },
+      "areas": [
+        "Orebro centre",
+        "Wadkoping",
+        "Svartan river",
+        "Gustavsvik",
+        "Adolfsberg"
+      ],
+      "airports": [
+        "Orebro Airport (ORB)",
+        "Stockholm Arlanda Airport (ARN)"
+      ],
+      "highlights": [
+        "Orebro Castle",
+        "Wadkoping",
+        "Stadsparken",
+        "Gustavsvik",
+        "Svampen water tower",
+        "Hjalmaren lake"
+      ]
+    },
+    {
+      "slug": "linkoping",
+      "name": "Linköping",
+      "countrySlug": "sweden",
+      "kicker": "University and aviation city in Ostergotland",
+      "region": "Ostergotland",
+      "population": "~167,000 municipality",
+      "distance": "Southern Sweden rail stop",
+      "known": "Aviation, cathedral & old town",
+      "coordinates": {
+        "lat": 58.4108,
+        "lon": 15.6214
+      },
+      "areas": [
+        "City centre",
+        "Tannefors",
+        "Valla",
+        "Gamla Linkoping",
+        "Mjardevi"
+      ],
+      "airports": [
+        "Linkoping City Airport (LPI)",
+        "Stockholm Skavsta Airport (NYO)"
+      ],
+      "highlights": [
+        "Gamla Linkoping",
+        "Linkoping Cathedral",
+        "Air Force Museum",
+        "Tradgardsforeningen",
+        "Kinda Canal",
+        "University area"
+      ]
+    },
+    {
+      "slug": "jonkoping",
+      "name": "Jönköping",
+      "countrySlug": "sweden",
+      "kicker": "Lake Vattern city with fairs and matchstick history",
+      "region": "Jonkoping County",
+      "population": "~145,000 municipality",
+      "distance": "Lake Vattern base",
+      "known": "Lakefront, fairs & museums",
+      "coordinates": {
+        "lat": 57.7826,
+        "lon": 14.1618
+      },
+      "areas": [
+        "City centre",
+        "East centre",
+        "Huskvarna",
+        "Rosenlund",
+        "Elmia area"
+      ],
+      "airports": [
+        "Jonkoping Airport (JKG)",
+        "Gothenburg Landvetter Airport (GOT)"
+      ],
+      "highlights": [
+        "Lake Vattern",
+        "Match Museum",
+        "Sofiakyrkan",
+        "Elmia",
+        "Huskvarna Museum",
+        "Rosenlundsbadet"
+      ]
+    },
+    {
+      "slug": "odense",
+      "name": "Odense",
+      "countrySlug": "denmark",
+      "kicker": "Funen city known for Hans Christian Andersen",
+      "region": "Funen",
+      "population": "~183,000 city",
+      "distance": "Funen rail hub",
+      "known": "Fairy tales, old streets & zoo",
+      "coordinates": {
+        "lat": 55.4038,
+        "lon": 10.4024
+      },
+      "areas": [
+        "Odense C",
+        "Hans Christian Andersen quarter",
+        "Munke Mose",
+        "Skibhus",
+        "Fruens Boge"
+      ],
+      "airports": [
+        "Billund Airport (BLL)",
+        "Copenhagen Airport (CPH)"
+      ],
+      "highlights": [
+        "Hans Christian Andersen House",
+        "Odense Zoo",
+        "Brandts",
+        "Funen Village",
+        "Odense Cathedral",
+        "Munke Mose"
+      ]
+    },
+    {
+      "slug": "aalborg",
+      "name": "Aalborg",
+      "countrySlug": "denmark",
+      "kicker": "North Jutland city by the Limfjord",
+      "region": "North Jutland",
+      "population": "~120,000 city",
+      "distance": "Limfjord base",
+      "known": "Waterfront, street art & Viking history",
+      "coordinates": {
+        "lat": 57.0488,
+        "lon": 9.9217
+      },
+      "areas": [
+        "Aalborg centre",
+        "Waterfront",
+        "Vestbyen",
+        "Osterbro",
+        "Airport area"
+      ],
+      "airports": [
+        "Aalborg Airport (AAL)"
+      ],
+      "highlights": [
+        "Aalborg waterfront",
+        "Kunsten",
+        "Lindholm Hoje",
+        "Jomfru Ane Gade",
+        "Utzon Center",
+        "Aalborg Zoo"
+      ]
+    },
+    {
+      "slug": "roskilde",
+      "name": "Roskilde",
+      "countrySlug": "denmark",
+      "kicker": "Cathedral and Viking ship city west of Copenhagen",
+      "region": "Zealand",
+      "population": "~52,000 city",
+      "distance": "Copenhagen day-trip base",
+      "known": "Cathedral, fjord & festival",
+      "coordinates": {
+        "lat": 55.6415,
+        "lon": 12.0803
+      },
+      "areas": [
+        "Roskilde centre",
+        "Harbour area",
+        "Musicon",
+        "Trekroner",
+        "Roskilde Fjord"
+      ],
+      "airports": [
+        "Copenhagen Airport (CPH)"
+      ],
+      "highlights": [
+        "Roskilde Cathedral",
+        "Viking Ship Museum",
+        "Roskilde Festival site",
+        "Roskilde Fjord",
+        "Musicon",
+        "Ledreborg trips"
+      ]
+    },
+    {
+      "slug": "skagen",
+      "name": "Skagen",
+      "countrySlug": "denmark",
+      "kicker": "Northern tip town where two seas meet",
+      "region": "North Jutland",
+      "population": "~7,500 town",
+      "distance": "Top of Denmark base",
+      "known": "Light, beaches & artists",
+      "coordinates": {
+        "lat": 57.7209,
+        "lon": 10.5839
+      },
+      "areas": [
+        "Skagen town",
+        "Gl. Skagen",
+        "Harbour area",
+        "Grenen route",
+        "Kandestederne"
+      ],
+      "airports": [
+        "Aalborg Airport (AAL)"
+      ],
+      "highlights": [
+        "Grenen",
+        "Skagen Museum",
+        "Rabak Mile",
+        "Vippefyret",
+        "Skagen harbour",
+        "Old Skagen"
+      ]
+    },
+    {
+      "slug": "billund",
+      "name": "Billund",
+      "countrySlug": "denmark",
+      "kicker": "Family travel hub built around LEGO and airport access",
+      "region": "South Denmark",
+      "population": "~7,000 town",
+      "distance": "Family trip hub",
+      "known": "LEGOLAND & airport",
+      "coordinates": {
+        "lat": 55.7284,
+        "lon": 9.1124
+      },
+      "areas": [
+        "Billund centre",
+        "LEGOLAND area",
+        "Lalandia area",
+        "Airport area",
+        "Grindsted"
+      ],
+      "airports": [
+        "Billund Airport (BLL)"
+      ],
+      "highlights": [
+        "LEGOLAND Billund",
+        "LEGO House",
+        "Lalandia",
+        "WOW Park",
+        "Givskud Zoo trips",
+        "Airport gateway"
+      ]
+    },
+    {
+      "slug": "helsingor",
+      "name": "Helsingør",
+      "countrySlug": "denmark",
+      "kicker": "Oresund town with Kronborg Castle",
+      "region": "Zealand",
+      "population": "~47,000 city",
+      "distance": "North Zealand base",
+      "known": "Castle, ferries & Shakespeare",
+      "coordinates": {
+        "lat": 56.0361,
+        "lon": 12.6136
+      },
+      "areas": [
+        "Helsingor centre",
+        "Kronborg area",
+        "Harbour area",
+        "Snekkersten",
+        "Espergaerde"
+      ],
+      "airports": [
+        "Copenhagen Airport (CPH)"
+      ],
+      "highlights": [
+        "Kronborg Castle",
+        "M/S Maritime Museum",
+        "Oresund ferries",
+        "Culture Yard",
+        "Helsingor old town",
+        "Louisiana Museum trips"
+      ]
+    },
+    {
+      "slug": "tampere",
+      "name": "Tampere",
+      "countrySlug": "finland",
+      "kicker": "Finnish lake city famous for sauna culture",
+      "region": "Pirkanmaa",
+      "population": "~255,000 city",
+      "distance": "Inland Finland hub",
+      "known": "Sauna, rapids & museums",
+      "coordinates": {
+        "lat": 61.4978,
+        "lon": 23.761
+      },
+      "areas": [
+        "City centre",
+        "Tammela",
+        "Finlayson",
+        "Pyynikki",
+        "Kaleva",
+        "Hervanta"
+      ],
+      "airports": [
+        "Tampere-Pirkkala Airport (TMP)",
+        "Helsinki Airport (HEL)"
+      ],
+      "highlights": [
+        "Finlayson area",
+        "Pyynikki tower",
+        "Vapriikki",
+        "Nasinneula",
+        "Public saunas",
+        "Tammerkoski rapids"
+      ]
+    },
+    {
+      "slug": "oulu",
+      "name": "Oulu",
+      "countrySlug": "finland",
+      "kicker": "Northern Finland tech and seaside city",
+      "region": "North Ostrobothnia",
+      "population": "~215,000 city",
+      "distance": "Bothnian Bay base",
+      "known": "Tech, islands & winter cycling",
+      "coordinates": {
+        "lat": 65.0121,
+        "lon": 25.4651
+      },
+      "areas": [
+        "City centre",
+        "Rotuaari",
+        "Pikisaari",
+        "Nallikari",
+        "Tuira",
+        "Linnanmaa"
+      ],
+      "airports": [
+        "Oulu Airport (OUL)"
+      ],
+      "highlights": [
+        "Market Square Policeman",
+        "Nallikari beach",
+        "Pikisaari",
+        "Tietomaa",
+        "Hupisaaret Islands",
+        "Winter cycling"
+      ]
+    },
+    {
+      "slug": "vaasa",
+      "name": "Vaasa",
+      "countrySlug": "finland",
+      "kicker": "Bilingual coastal city near the Kvarken Archipelago",
+      "region": "Ostrobothnia",
+      "population": "~68,000 city",
+      "distance": "Kvarken base",
+      "known": "Archipelago, energy & coast",
+      "coordinates": {
+        "lat": 63.0951,
+        "lon": 21.6165
+      },
+      "areas": [
+        "City centre",
+        "Inner harbour",
+        "Palosaari",
+        "Vaskiluoto",
+        "Sundom"
+      ],
+      "airports": [
+        "Vaasa Airport (VAA)"
+      ],
+      "highlights": [
+        "Kvarken Archipelago",
+        "Tropiclandia",
+        "Old Vaasa",
+        "Ostrobothnian Museum",
+        "Inner harbour",
+        "Replot Bridge"
+      ]
+    },
+    {
+      "slug": "kuopio",
+      "name": "Kuopio",
+      "countrySlug": "finland",
+      "kicker": "Lakeland city known for Puijo tower and kalakukko",
+      "region": "North Savo",
+      "population": "~125,000 city",
+      "distance": "Finnish Lakeland base",
+      "known": "Lake views, tower & market hall",
+      "coordinates": {
+        "lat": 62.8924,
+        "lon": 27.677
+      },
+      "areas": [
+        "City centre",
+        "Harbour area",
+        "Puijo",
+        "Niirala",
+        "Saaristokaupunki"
+      ],
+      "airports": [
+        "Kuopio Airport (KUO)"
+      ],
+      "highlights": [
+        "Puijo Tower",
+        "Kuopio Market Hall",
+        "Lake Kallavesi",
+        "Harbour area",
+        "Rauhalahti",
+        "Tahko trips"
+      ]
+    },
+    {
+      "slug": "jyvaskyla",
+      "name": "Jyväskylä",
+      "countrySlug": "finland",
+      "kicker": "University city in Finnish Lakeland with Alvar Aalto design",
+      "region": "Central Finland",
+      "population": "~148,000 city",
+      "distance": "Lakeland event base",
+      "known": "Aalto, lakes & rallies",
+      "coordinates": {
+        "lat": 62.2426,
+        "lon": 25.7473
+      },
+      "areas": [
+        "City centre",
+        "Harju",
+        "Lutakko",
+        "Mattilanniemi",
+        "Kuokkala"
+      ],
+      "airports": [
+        "Jyvaskyla Airport (JYV)",
+        "Helsinki Airport (HEL)"
+      ],
+      "highlights": [
+        "Alvar Aalto Museum",
+        "Harju Ridge",
+        "Lutakko harbour",
+        "Lake Jyvasjarvi",
+        "Saynatsalo Town Hall",
+        "Rally Finland roads"
+      ]
+    },
+    {
+      "slug": "akureyri",
+      "name": "Akureyri",
+      "countrySlug": "iceland",
+      "kicker": "North Iceland town by Eyjafjordur",
+      "region": "North Iceland",
+      "population": "~20,000 town",
+      "distance": "North Iceland base",
+      "known": "Fjord, gardens & whale trips",
+      "coordinates": {
+        "lat": 65.6885,
+        "lon": -18.1262
+      },
+      "areas": [
+        "Akureyri centre",
+        "Harbour area",
+        "Oddeyri",
+        "Glerarhverfi",
+        "Hlidarfjall area"
+      ],
+      "airports": [
+        "Akureyri Airport (AEY)",
+        "Keflavik International Airport (KEF)"
+      ],
+      "highlights": [
+        "Akureyri Church",
+        "Botanical Garden",
+        "Eyjafjordur",
+        "Hlidarfjall",
+        "Christmas House",
+        "Godafoss trips"
+      ]
+    },
+    {
+      "slug": "selfoss",
+      "name": "Selfoss",
+      "countrySlug": "iceland",
+      "kicker": "South Iceland service town on the Ring Road",
+      "region": "South Iceland",
+      "population": "~10,000 town",
+      "distance": "Golden Circle road base",
+      "known": "Waterfalls, horses & road trips",
+      "coordinates": {
+        "lat": 63.9331,
+        "lon": -20.9971
+      },
+      "areas": [
+        "Selfoss centre",
+        "Old Dairy area",
+        "Olfusa riverfront",
+        "Eyrarbakki coast",
+        "Hveragerdi"
+      ],
+      "airports": [
+        "Keflavik International Airport (KEF)",
+        "Reykjavik Domestic Airport (RKV)"
+      ],
+      "highlights": [
+        "Olfusa river",
+        "Selfoss town centre",
+        "Golden Circle trips",
+        "Kerid crater",
+        "Eyrarbakki",
+        "Hveragerdi hot springs"
+      ]
+    },
+    {
+      "slug": "husavik",
+      "name": "Húsavík",
+      "countrySlug": "iceland",
+      "kicker": "North Iceland harbour town known for whale watching",
+      "region": "North Iceland",
+      "population": "~2,500 town",
+      "distance": "Skjalfandi Bay base",
+      "known": "Whales, harbour & geothermal baths",
+      "coordinates": {
+        "lat": 66.0449,
+        "lon": -17.3389
+      },
+      "areas": [
+        "Harbour area",
+        "Town centre",
+        "GeoSea area",
+        "Lake Myvatn route",
+        "Tjornes"
+      ],
+      "airports": [
+        "Akureyri Airport (AEY)",
+        "Husavik Airport (HZK)"
+      ],
+      "highlights": [
+        "Whale watching harbour",
+        "Husavik Whale Museum",
+        "GeoSea baths",
+        "Husavik church",
+        "Lake Myvatn trips",
+        "Asbyrgi canyon trips"
+      ]
+    },
+    {
+      "slug": "isafjordur",
+      "name": "Ísafjörður",
+      "countrySlug": "iceland",
+      "kicker": "Westfjords town between steep mountains and harbour",
+      "region": "Westfjords",
+      "population": "~2,700 town",
+      "distance": "Westfjords base",
+      "known": "Fjords, hikes & old timber houses",
+      "coordinates": {
+        "lat": 66.0748,
+        "lon": -23.1349
+      },
+      "areas": [
+        "Town centre",
+        "Harbour area",
+        "Hnifsdalur",
+        "Bolungarvik",
+        "Sudureyri"
+      ],
+      "airports": [
+        "Isafjordur Airport (IFJ)",
+        "Keflavik International Airport (KEF)"
+      ],
+      "highlights": [
+        "Old town",
+        "Westfjords Heritage Museum",
+        "Naustahvilft",
+        "Dynjandi trips",
+        "Hornstrandir tours",
+        "Isafjardardjup"
+      ]
+    },
+    {
+      "slug": "torshavn",
+      "name": "Tórshavn",
+      "countrySlug": "faroe-islands",
+      "kicker": "Small North Atlantic capital with turf roofs and harbour lanes",
+      "region": "Streymoy",
+      "population": "~23,000 municipality",
+      "distance": "Faroe Islands base",
+      "known": "Tinganes, harbour & island trips",
+      "coordinates": {
+        "lat": 62.0079,
+        "lon": -6.7909
+      },
+      "areas": [
+        "Tinganes",
+        "Vestaravag",
+        "City centre",
+        "Hoyvik",
+        "Argir",
+        "Airport route"
+      ],
+      "airports": [
+        "Vagar Airport (FAE)"
+      ],
+      "highlights": [
+        "Tinganes",
+        "Torshavn Cathedral",
+        "Nordic House",
+        "Skansin Fort",
+        "Harbour lanes",
+        "Kirkjubour trips"
+      ]
+    },
+    {
+      "slug": "klaksvik",
+      "name": "Klaksvík",
+      "countrySlug": "faroe-islands",
+      "kicker": "Northern Faroes fishing town between steep islands",
+      "region": "Bordoy",
+      "population": "~5,000 town",
+      "distance": "Northern Isles base",
+      "known": "Fishing harbour & mountain views",
+      "coordinates": {
+        "lat": 62.2266,
+        "lon": -6.589
+      },
+      "areas": [
+        "Klaksvik centre",
+        "Harbour area",
+        "Vidareidi route",
+        "Kunoy route",
+        "Nordoyri"
+      ],
+      "airports": [
+        "Vagar Airport (FAE)"
+      ],
+      "highlights": [
+        "Christianskirkjan",
+        "Klaksvik harbour",
+        "Kalsoy ferry",
+        "Kunoy views",
+        "Vidareidi trips",
+        "Northern Isles tunnels"
+      ]
+    },
+    {
+      "slug": "nuuk",
+      "name": "Nuuk",
+      "countrySlug": "greenland",
+      "kicker": "Greenland capital with fjords, culture and Arctic city life",
+      "region": "Sermersooq",
+      "population": "~20,000 city",
+      "distance": "Greenland capital hub",
+      "known": "Fjord, museums & colourful houses",
+      "coordinates": {
+        "lat": 64.1835,
+        "lon": -51.7216
+      },
+      "areas": [
+        "Nuuk centre",
+        "Old Nuuk",
+        "Nuussuaq",
+        "Qinngorput",
+        "Harbour area"
+      ],
+      "airports": [
+        "Nuuk Airport (GOH)"
+      ],
+      "highlights": [
+        "Nuuk fjord",
+        "Greenland National Museum",
+        "Katuaq",
+        "Colonial Harbour",
+        "Myggedalen",
+        "Qornok trips"
+      ]
+    },
+    {
+      "slug": "ilulissat",
+      "name": "Ilulissat",
+      "countrySlug": "greenland",
+      "kicker": "Disko Bay town beside the UNESCO icefjord",
+      "region": "Avannaata",
+      "population": "~4,700 town",
+      "distance": "Disko Bay base",
+      "known": "Icefjord, icebergs & sled dogs",
+      "coordinates": {
+        "lat": 69.2198,
+        "lon": -51.0986
+      },
+      "areas": [
+        "Town centre",
+        "Harbour area",
+        "Sermermiut route",
+        "Hotel Arctic area",
+        "Airport area"
+      ],
+      "airports": [
+        "Ilulissat Airport (JAV)"
+      ],
+      "highlights": [
+        "Ilulissat Icefjord",
+        "Sermermiut",
+        "Disko Bay",
+        "Iceberg boat tours",
+        "Knud Rasmussen Museum",
+        "Sled dog areas"
+      ]
+    },
+    {
+      "slug": "geiranger",
+      "name": "Geiranger",
+      "countrySlug": "norway",
+      "kicker": "Fjord village below waterfalls and hairpin roads",
+      "region": "More og Romsdal",
+      "population": "~250 village",
+      "distance": "Geirangerfjord base",
+      "known": "UNESCO fjord & waterfalls",
+      "coordinates": {
+        "lat": 62.1015,
+        "lon": 7.2057
+      },
+      "areas": [
+        "Geiranger village",
+        "Fjordside hotels",
+        "Flydalsjuvet route",
+        "Eagle Road",
+        "Hellesylt ferry route"
+      ],
+      "airports": [
+        "Alesund Airport Vigra (AES)"
+      ],
+      "highlights": [
+        "Geirangerfjord",
+        "Seven Sisters waterfall",
+        "Flydalsjuvet",
+        "Eagle Road",
+        "Dalsnibba",
+        "Fjord cruises"
+      ]
+    },
+    {
+      "slug": "longyearbyen",
+      "name": "Longyearbyen",
+      "countrySlug": "norway",
+      "kicker": "Svalbard settlement for Arctic wilderness and polar night",
+      "region": "Svalbard",
+      "population": "~2,500 settlement",
+      "distance": "High Arctic base",
+      "known": "Polar night, glaciers & mining history",
+      "coordinates": {
+        "lat": 78.2232,
+        "lon": 15.6267
+      },
+      "areas": [
+        "Longyearbyen centre",
+        "Nybyen",
+        "Haugen",
+        "Adventdalen",
+        "Airport area"
+      ],
+      "airports": [
+        "Svalbard Airport Longyear (LYR)"
+      ],
+      "highlights": [
+        "Svalbard Museum",
+        "Adventfjorden",
+        "Mine 3",
+        "Global Seed Vault exterior",
+        "Dog sledding routes",
+        "Northern lights season"
+      ]
+    },
+    {
+      "slug": "svolvaer",
+      "name": "Svolvær",
+      "countrySlug": "norway",
+      "kicker": "Lofoten harbour town below steep peaks",
+      "region": "Nordland",
+      "population": "~4,700 town",
+      "distance": "Lofoten base",
+      "known": "Harbour, peaks & fishing villages",
+      "coordinates": {
+        "lat": 68.2342,
+        "lon": 14.5683
+      },
+      "areas": [
+        "Svolvaer centre",
+        "Harbour area",
+        "Svinoya",
+        "Kabelvag",
+        "Henningsvaer route"
+      ],
+      "airports": [
+        "Svolvaer Airport (SVJ)",
+        "Harstad/Narvik Airport Evenes (EVE)"
+      ],
+      "highlights": [
+        "Svolvaer Goat",
+        "Lofoten War Museum",
+        "Svinoya",
+        "Trollfjord trips",
+        "Kabelvag",
+        "Henningsvaer trips"
+      ]
+    },
+    {
+      "slug": "abisko",
+      "name": "Abisko",
+      "countrySlug": "sweden",
+      "kicker": "Lapland village beside national park and aurora skies",
+      "region": "Norrbotten",
+      "population": "~100 village",
+      "distance": "Arctic trail base",
+      "known": "Aurora, national park & mountain station",
+      "coordinates": {
+        "lat": 68.3499,
+        "lon": 18.8315
+      },
+      "areas": [
+        "Abisko Turiststation",
+        "Abisko Ostra",
+        "Lake Tornetrask",
+        "Kungsleden trailhead",
+        "Bjrkliden route"
+      ],
+      "airports": [
+        "Kiruna Airport (KRN)"
+      ],
+      "highlights": [
+        "Abisko National Park",
+        "Aurora Sky Station",
+        "Kungsleden trail",
+        "Tornetrask",
+        "Lapporten",
+        "STF mountain station"
+      ]
+    }
+  ]
+}

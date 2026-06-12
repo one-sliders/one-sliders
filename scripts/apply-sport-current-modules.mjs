@@ -551,8 +551,15 @@ function defaultProfile(edition) {
   const countryNames = (edition.countries || []).map((country) => country.name).filter(Boolean);
   const city = cleanCityName(cityNames[0] || edition.venue || 'Host city');
   const country = countryNames.join(' / ') || '';
+  const genericBase = city && !/TBC|host city|venue|not listed/i.test(city) ? city : (country || 'Host area');
   return {
-    stayAreas: city && !/TBC/i.test(city) ? [city] : [],
+    stayAreas: [
+      genericBase,
+      `${genericBase} downtown`,
+      `${genericBase} airport area`,
+      'Venue-side hotels',
+      'Nearby suburbs'
+    ].filter((value, index, list) => value && list.indexOf(value) === index),
     airport: ['Check the nearest major airport', 'Use the official venue and local transport guidance before booking.'],
     interests: [
       `${edition.venue || 'The venue'} event days`,
@@ -667,18 +674,23 @@ function moduleFor(file, data, edition) {
   };
 }
 
+function isStrictUsCanadaEdition(edition) {
+  const countries = (edition?.countries || []).map((country) => country.name).filter(Boolean);
+  return countries.length > 0 && countries.every((name) => /^(United States|Canada)$/.test(name));
+}
+
 function shouldPatch(file, data, edition) {
+  if (!isStrictUsCanadaEdition(edition)) return false;
   if (!isFutureOrCurrent(edition)) return false;
   if (edition.currentModules) {
     const protectedSlugs = new Set(['ryder-cup', 'wimbledon', 'masters-tournament']);
     return !protectedSlugs.has(data.slug || '') && Boolean(edition.currentModules.hotel?.campaign);
   }
   if (slugOverrides[data.slug]) return true;
-  if (!isUsefulVenue(edition.venue)) return false;
   const cityNames = (edition.cities || []).map((city) => city.name).filter(Boolean).join('|');
-  if (!cityNames || /\bTBC\b|Host city TBC|USA \/ Canada/i.test(cityNames)) return false;
+  if (/\bTBC\b|Host city TBC/i.test(cityNames)) return false;
   const key = firstCityKey(edition);
-  return Boolean(key);
+  return Boolean(key || cityNames || isUsefulVenue(edition.venue) || isStrictUsCanadaEdition(edition));
 }
 
 const files = walk(sportRoot).filter((file) => file.endsWith('.html') && file.includes(`${path.sep}events${path.sep}`));

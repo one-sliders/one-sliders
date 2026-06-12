@@ -69,38 +69,284 @@
   ],
   "cities": [
     {
-      "name": "Calgary",
-      "href": "calgary.html",
-      "img": "/content/locations/north-america/canada/img/calgary-mini.png"
+      "name": "Toronto",
+      "href": "toronto.html",
+      "tags": [
+        "city",
+        "sports",
+        "culture",
+        "food",
+        "nightlife"
+      ],
+      "img": "/content/locations/north-america/canada/img/toronto-mini.png"
+    },
+    {
+      "name": "Vancouver",
+      "href": "vancouver.html",
+      "tags": [
+        "city",
+        "beach",
+        "mountains",
+        "outdoors",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/vancouver-mini.png"
     },
     {
       "name": "Montreal",
       "href": "montreal.html",
+      "tags": [
+        "city",
+        "sports",
+        "culture",
+        "food",
+        "nightlife"
+      ],
       "img": "/content/locations/north-america/canada/img/montreal-mini.png"
+    },
+    {
+      "name": "Quebec City",
+      "href": "quebec-city.html",
+      "tags": [
+        "city",
+        "culture",
+        "food",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/quebec-city-mini.png"
+    },
+    {
+      "name": "Calgary",
+      "href": "calgary.html",
+      "tags": [
+        "city",
+        "mountains",
+        "sports",
+        "outdoors",
+        "culture"
+      ],
+      "img": "/content/locations/north-america/canada/img/calgary-mini.png"
     },
     {
       "name": "Ottawa",
       "href": "ottawa.html",
+      "tags": [
+        "city",
+        "outdoors",
+        "culture"
+      ],
       "img": "/content/locations/north-america/canada/img/ottawa-mini.png"
     },
     {
-      "name": "Toronto",
-      "href": "toronto.html",
-      "img": "/content/locations/north-america/canada/img/toronto-mini.png"
-    }
-  ],
-  "links": [
-    {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
+      "name": "Banff",
+      "href": "banff.html",
+      "tags": [
+        "city",
+        "mountains",
+        "wildlife",
+        "sports",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/banff-mini.png"
     },
     {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Whistler",
+      "href": "whistler.html",
+      "tags": [
+        "city",
+        "mountains",
+        "sports",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/whistler-mini.png"
+    },
+    {
+      "name": "Niagara Falls",
+      "href": "niagara-falls.html",
+      "tags": [
+        "city",
+        "outdoors",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/niagara-falls-mini.png"
+    },
+    {
+      "name": "Victoria",
+      "href": "victoria.html",
+      "tags": [
+        "city",
+        "beach",
+        "outdoors",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/victoria-mini.png"
+    },
+    {
+      "name": "Jasper",
+      "href": "jasper.html",
+      "tags": [
+        "city",
+        "mountains",
+        "wildlife",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/jasper-mini.png"
+    },
+    {
+      "name": "Kelowna",
+      "href": "kelowna.html",
+      "tags": [
+        "city",
+        "beach",
+        "outdoors",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/kelowna-mini.png"
+    },
+    {
+      "name": "Halifax",
+      "href": "halifax.html",
+      "tags": [
+        "city",
+        "beach",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/halifax-mini.png"
+    },
+    {
+      "name": "Edmonton",
+      "href": "edmonton.html",
+      "tags": [
+        "city",
+        "sports",
+        "outdoors",
+        "culture"
+      ],
+      "img": "/content/locations/north-america/canada/img/edmonton-mini.png"
+    },
+    {
+      "name": "Winnipeg",
+      "href": "winnipeg.html",
+      "tags": [
+        "city",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/winnipeg-mini.png"
+    },
+    {
+      "name": "St. John's",
+      "href": "st-johns.html",
+      "tags": [
+        "city",
+        "beach",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/st-johns-mini.png"
+    },
+    {
+      "name": "Canmore",
+      "href": "canmore.html",
+      "tags": [
+        "city",
+        "mountains",
+        "sports",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/canmore-mini.png"
+    },
+    {
+      "name": "Tofino",
+      "href": "tofino.html",
+      "tags": [
+        "city",
+        "beach",
+        "wildlife",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/tofino-mini.png"
+    },
+    {
+      "name": "Mont-Tremblant",
+      "href": "mont-tremblant.html",
+      "tags": [
+        "city",
+        "mountains",
+        "sports",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/mont-tremblant-mini.png"
+    },
+    {
+      "name": "Lake Louise",
+      "href": "lake-louise.html",
+      "tags": [
+        "city",
+        "mountains",
+        "wildlife",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/lake-louise-mini.png"
+    },
+    {
+      "name": "Charlottetown",
+      "href": "charlottetown.html",
+      "tags": [
+        "city",
+        "beach",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/charlottetown-mini.png"
+    },
+    {
+      "name": "Whitehorse",
+      "href": "whitehorse.html",
+      "tags": [
+        "city",
+        "wildlife",
+        "outdoors",
+        "culture"
+      ],
+      "img": "/content/locations/north-america/canada/img/whitehorse-mini.png"
+    },
+    {
+      "name": "Churchill",
+      "href": "churchill.html",
+      "tags": [
+        "city",
+        "wildlife",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/churchill-mini.png"
+    },
+    {
+      "name": "Saskatoon",
+      "href": "saskatoon.html",
+      "tags": [
+        "city",
+        "outdoors",
+        "culture",
+        "food"
+      ],
+      "img": "/content/locations/north-america/canada/img/saskatoon-mini.png"
+    },
+    {
+      "name": "Prince Edward County",
+      "href": "prince-edward-county.html",
+      "tags": [
+        "city",
+        "beach",
+        "food",
+        "outdoors"
+      ],
+      "img": "/content/locations/north-america/canada/img/prince-edward-county-mini.png"
     }
   ],
+  "links": [],
   "planningQuestions": [
     {
       "q": "What is Canada known for?",

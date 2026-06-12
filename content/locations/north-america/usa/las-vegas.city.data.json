@@ -5,163 +5,49 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4,
+  "depth": 5,
   "seo": {
-    "title": "Sports Events in Las Vegas 2026",
-    "description": "Find sports events in Las Vegas in 2026: calendars, nearby pages and linked event views for planning around North America / USA.",
-    "twitterDescription": "Find sports events in Las Vegas in 2026: calendars, nearby pages and linked event views for planning around North America / USA.",
-    "webpageDescription": "Find sports events in Las Vegas in 2026: calendars, nearby pages and linked event views for planning around North America / USA."
+    "title": "Las Vegas Travel Guide - Where to Stay, Airports & Events",
+    "description": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links.",
+    "twitterDescription": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links.",
+    "webpageDescription": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "kicker": "Key city in USA",
-  "heroText": "Las Vegas is a major event and entertainment city in USA, built around venues, hotels, nightlife and high-demand weekends.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Las Vegas connects local landmarks, visitor routes and event planning in USA."
-    },
-    {
-      "label": "Landmark",
-      "text": "Main landmark is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "USA gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
-  "kpis": [
-    {
-      "label": "Country",
-      "value": "USA",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Main landmark"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "USA",
-      "href": "index.html"
-    },
-    {
-      "label": "Region",
-      "value": "USA"
-    },
-    {
-      "label": "Time zone",
-      "value": "Local time"
-    }
-  ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/north-america/usa/img/usa-mini.png",
-    "name": "USA"
+  "state": "Nevada",
+  "region": "Southern Nevada",
+  "population": "~660,000 city",
+  "coordinates": {
+    "lat": 36.1672,
+    "lon": -115.1486
   },
-  "cityCards": [
+  "weather": {
+    "source": "National Weather Service",
+    "dynamic": true
+  },
+  "areas": [
+    "The Strip",
+    "Downtown Las Vegas",
+    "Convention Center area",
+    "Summerlin",
+    "Henderson"
+  ],
+  "airports": [
     {
-      "href": "augusta.html",
-      "img": "/content/locations/north-america/usa/img/augusta-mini.png",
-      "name": "Augusta"
-    },
-    {
-      "href": "austin.html",
-      "img": "/content/locations/north-america/usa/img/austin-mini.png",
-      "name": "Austin"
-    },
-    {
-      "href": "black-rock-city.html",
-      "img": "/content/locations/north-america/usa/img/black-rock-city-mini.png",
-      "name": "Black Rock City"
+      "name": "Harry Reid International Airport (LAS)",
+      "search": "Las Vegas, Nevada, United States"
     }
   ],
-  "links": [
+  "bookingDestination": "The Strip, Las Vegas, Nevada, United States",
+  "sources": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
+      "label": "Wikipedia: Las Vegas",
+      "url": "https://en.wikipedia.org/wiki/Las_Vegas",
+      "usedFor": "city description, coordinates and population context"
     },
     {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "label": "Las_Vegas_from_above_(40064746644).jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Las_Vegas_from_above_%2840064746644%29.jpg/1280px-Las_Vegas_from_above_%2840064746644%29.jpg",
+      "usedFor": "hero and mini image crop"
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Las Vegas known for?",
-      "a": "Main landmark, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, arctic to tropical, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/sport/formula-1/events/las-vegas-grand-prix.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "title": "Las Vegas Grand Prix",
-      "meta": "Nov 2026 · Las Vegas"
-    }
-  ],
-  "knownFor": [
-    "Main landmark",
-    "USA",
-    "Varied, arctic to tropical",
-    "City transit",
-    "Events",
-    "USA"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "North America outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ]
+  "sourceFetchedAt": "2026-06-12T07:39:54.580Z"
 }

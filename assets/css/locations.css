@@ -94,7 +94,7 @@ a {
   background:
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-medium) 44%, var(--os-transparent) 78%),
     linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%),
-    url("/content/locations/img/world-hero-small.jpg") center / cover no-repeat;
+    image-set(url("/content/locations/img/world-hero-small-768.webp") type("image/webp") 1x, url("/content/locations/img/world-hero-small-1200.webp") type("image/webp") 2x, url("/content/locations/img/world-hero-small.jpg") type("image/jpeg") 2x) center / cover no-repeat;
   box-shadow: 0 18px 48px color-mix(in srgb, var(--os-scrim) 22%, var(--os-transparent));
 }
 
@@ -456,49 +456,49 @@ a {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/europe/img/europe-hero.jpg");
+    image-set(url("/content/locations/europe/img/europe-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/img/europe-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/img/europe-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--africa {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/africa/img/africa-hero.jpg");
+    image-set(url("/content/locations/africa/img/africa-hero-768.webp") type("image/webp") 1x, url("/content/locations/africa/img/africa-hero-1200.webp") type("image/webp") 2x, url("/content/locations/africa/img/africa-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--antarctica {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/antarctica/img/antarctica-hero.jpg");
+    image-set(url("/content/locations/antarctica/img/antarctica-hero-768.webp") type("image/webp") 1x, url("/content/locations/antarctica/img/antarctica-hero-1200.webp") type("image/webp") 2x, url("/content/locations/antarctica/img/antarctica-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--asia {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/asia/img/asia-hero.jpg");
+    image-set(url("/content/locations/asia/img/asia-hero-768.webp") type("image/webp") 1x, url("/content/locations/asia/img/asia-hero-1200.webp") type("image/webp") 2x, url("/content/locations/asia/img/asia-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--north-america {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/north-america/img/north-america-hero.jpg");
+    image-set(url("/content/locations/north-america/img/north-america-hero-768.webp") type("image/webp") 1x, url("/content/locations/north-america/img/north-america-hero-1200.webp") type("image/webp") 2x, url("/content/locations/north-america/img/north-america-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--oceania {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/oceania/img/oceania-hero.jpg");
+    image-set(url("/content/locations/oceania/img/oceania-hero-768.webp") type("image/webp") 1x, url("/content/locations/oceania/img/oceania-hero-1200.webp") type("image/webp") 2x, url("/content/locations/oceania/img/oceania-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-card--south-america {
   background-image:
     linear-gradient(180deg, var(--os-image-overlay-soft), var(--os-image-overlay-medium)),
     linear-gradient(90deg, var(--os-image-overlay-strong), var(--os-image-overlay-soft) 66%),
-    url("/content/locations/south-america/img/south-america-hero.jpg");
+    image-set(url("/content/locations/south-america/img/south-america-hero-768.webp") type("image/webp") 1x, url("/content/locations/south-america/img/south-america-hero-1200.webp") type("image/webp") 2x, url("/content/locations/south-america/img/south-america-hero.jpg") type("image/jpeg") 2x);
 }
 
 .hero-inner {
@@ -1325,6 +1325,7 @@ html:has(body.country-onepage) {
 }
 
 .country-hero-image {
+  display: block;
   width: 100%;
   min-height: 0;
   height: 100%;
@@ -1334,8 +1335,16 @@ html:has(body.country-onepage) {
   border-radius: 18px;
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--os-surface) 8%, var(--os-transparent)), var(--os-transparent)),
-    var(--country-hero-url, url("/content/locations/europe/austria/img/austria-hero.png")) center / cover no-repeat;
+    var(--country-hero-url, image-set(url("/content/locations/europe/austria/img/austria-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/austria/img/austria-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/austria/img/austria-hero.png") type("image/png") 2x)) center / cover no-repeat;
   box-shadow: 0 20px 52px color-mix(in srgb, var(--os-scrim) 13%, var(--os-transparent));
+}
+
+.country-hero-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
 }
 
 .country-hero-image--clear {
@@ -1345,13 +1354,13 @@ html:has(body.country-onepage) {
   height: auto;
   min-height: clamp(200px, 26vw, 300px);
   background:
-    var(--country-hero-url, url("/content/locations/europe/austria/img/austria-hero.png")) center / cover no-repeat;
+    var(--country-hero-url, image-set(url("/content/locations/europe/austria/img/austria-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/austria/img/austria-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/austria/img/austria-hero.png") type("image/png") 2x)) center / cover no-repeat;
 }
 
 .country-hero-image--switzerland {
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--os-surface) 8%, var(--os-transparent)), var(--os-transparent)),
-    url("/content/locations/europe/switzerland/img/switzerland-hero.png") center / cover no-repeat;
+    image-set(url("/content/locations/europe/switzerland/img/switzerland-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/switzerland/img/switzerland-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/switzerland/img/switzerland-hero.png") type("image/png") 2x) center / cover no-repeat;
 }
 
 .country-hero-image--generated {
@@ -1579,6 +1588,145 @@ html:has(body.country-onepage) {
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 10px;
+  padding: 10px;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-ink) 5%, var(--os-transparent));
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 0.72fr);
+  gap: 10px;
+  align-items: end;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder h2 {
+  margin: 0;
+  color: var(--location-ink);
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder label {
+  display: grid;
+  gap: 4px;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder input {
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 11px;
+  color: var(--location-ink);
+  background: color-mix(in srgb, var(--os-surface) 92%, var(--location-muted) 8%);
+  border: 1px solid var(--location-line);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter {
+  min-height: 36px;
+  padding: 0 10px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter.is-active,
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter:hover,
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter:focus-visible {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-count {
+  margin: 0;
+  color: var(--location-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city {
+  grid-template-rows: 42px minmax(0, 1fr);
+  gap: 3px;
+  flex: 0 0 118px;
+  width: 118px;
+  height: 92px;
+  min-height: 0;
+  padding: 0 8px 7px;
+  border-left-width: 4px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-ink) 5%, var(--os-transparent));
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city img {
+  width: calc(100% + 16px);
+  height: 42px;
+  margin-inline: -8px;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city.visual-topic-card--no-image {
+  grid-template-rows: minmax(0, 1fr);
+  align-content: center;
+  padding-block: 9px;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city strong {
+  display: block;
+  min-width: 0;
+  padding: 0;
+  overflow-wrap: anywhere;
+  color: var(--location-ink);
+  font-size: 12px;
+  line-height: 1.05;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city span {
+  display: none;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city[hidden] {
+  display: none;
+}
+
+:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .country-path {
+  flex: 0 0 118px;
+  width: 118px;
+  min-height: 92px;
 }
 
 .country-path {
@@ -2582,13 +2730,14 @@ html:has(body.country-onepage) {
   place-items: center;
   min-height: 40px;
   padding: 0 16px;
-  color: var(--os-surface);
-  background: var(--location-theme);
+  color: color-mix(in srgb, var(--os-accent) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-accent) 12%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-accent) 34%, var(--os-line));
   border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
   text-decoration: none;
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-accent) 10%, var(--os-transparent));
 }
 
 .stay-affiliate-note {
@@ -2602,19 +2751,29 @@ html:has(body.country-onepage) {
   min-height: 28px;
   margin-top: 3px;
   padding: 0 10px;
-  color: var(--location-theme);
-  background: color-mix(in srgb, var(--location-theme) 8%, var(--os-surface));
-  border: 1px solid color-mix(in srgb, var(--location-theme) 22%, var(--os-border));
+  color: color-mix(in srgb, var(--os-accent) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-accent) 10%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-accent) 28%, var(--os-line));
   border-radius: 999px;
   font-size: 11px;
   font-weight: 900;
   text-decoration: none;
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent));
 }
 
 .stay-card-link:hover,
 .stay-card-link:focus-visible {
   color: var(--os-surface);
-  background: var(--location-theme);
+  background: color-mix(in srgb, var(--os-accent) 84%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-accent) 84%, var(--os-primary));
+  outline: none;
+}
+
+.stay-booking-button:hover,
+.stay-booking-button:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 76%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-accent) 76%, var(--os-primary));
   outline: none;
 }
 
@@ -2646,6 +2805,18 @@ html:has(body.country-onepage) {
   font-size: clamp(42px, 4.2vw, 54px);
   line-height: 0.96;
   overflow-wrap: normal;
+}
+
+.city-page--southampton .country-brief .flag-badge {
+  display: block;
+  width: 118px;
+  max-width: 42%;
+  height: auto;
+  aspect-ratio: 1235 / 650;
+  margin: 0 0 22px;
+  object-fit: contain;
+  background: var(--os-surface);
+  border-radius: 8px;
 }
 
 .city-page--southampton .top-menu {
@@ -2823,6 +2994,13 @@ html:has(body.country-onepage) {
 
 .country-facts-tight {
   gap: 7px;
+}
+
+.country-onepage .country-facts-tight,
+.city-page--southampton .country-facts-tight {
+  overflow: visible;
+  border-left: 0 !important;
+  border-radius: 0;
 }
 
 .country-event-list {
@@ -3757,6 +3935,27 @@ html:has(body.country-onepage) {
 }
 
 @media (max-width: 1120px) {
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-content-box {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__copy,
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__panel,
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__panel .persona-tabs,
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
   .city-page--southampton .country-content-box {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -3791,6 +3990,16 @@ html:has(body.country-onepage) {
 
   .city-page--southampton .destination-nearby-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder__header {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder input {
+    width: 100%;
   }
 }
 

@@ -731,7 +731,7 @@ function renderPage(event) {
             <button class="edition-tab" type="button" role="tab" aria-selected="true" ${tabAttr(event, 'history')}>Historik</button>
             <button class="edition-tab" type="button" role="tab" aria-selected="false" ${tabAttr(event, 'top')}>Top</button>
             <button class="edition-tab" type="button" role="tab" aria-selected="false" ${tabAttr(event, 'facts')}>Fun facts</button>
-            <button class="edition-tab" type="button" role="tab" aria-selected="false" ${tabAttr(event, 'stay')}>Stay</button>
+            <button class="edition-tab" type="button" role="tab" aria-selected="false" ${tabAttr(event, 'stay')}>Visit</button>
           </div>
           <div class="edition-tab-panels">
             <section class="edition-tab-panel" ${panelAttr(event, 'history')}>
@@ -782,7 +782,7 @@ function awardsTabbedPanel(event) {
             <button class="edition-tab" type="button" role="tab" aria-selected="true" data-awards-tab="history">Historik</button>
             <button class="edition-tab" type="button" role="tab" aria-selected="false" data-awards-tab="top">Top</button>
             <button class="edition-tab" type="button" role="tab" aria-selected="false" data-awards-tab="facts">Fun facts</button>
-            <button class="edition-tab" type="button" role="tab" aria-selected="false" data-awards-tab="stay">Stay</button>
+            <button class="edition-tab" type="button" role="tab" aria-selected="false" data-awards-tab="stay">Visit</button>
           </div>
           <div class="edition-tab-panels">
             <section class="edition-tab-panel" data-awards-panel="history">

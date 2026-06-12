@@ -4719,6 +4719,198 @@ body.event-page--framed .event-frame__panel .year-button[aria-pressed="true"] {
   border: 0;
 }
 
+.event-stay-planner {
+  display: grid;
+  gap: 12px;
+}
+
+.event-stay-planner > .commercial-module__header {
+  margin-bottom: 0;
+}
+
+.event-stay-planner .stay-planner-layout {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.22fr) minmax(0, 1fr);
+  gap: 10px;
+  align-self: start;
+  align-items: start;
+  min-height: 0;
+}
+
+.event-stay-planner .stay-section-menu {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: grid;
+  align-content: start;
+  align-self: start;
+  gap: 7px;
+  min-width: 0;
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding-bottom: 2px;
+}
+
+.event-stay-planner .stay-section-menu a {
+  display: block;
+  padding: 10px 11px;
+  color: var(--event-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--event-line);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(18, 36, 54, 0.06);
+}
+
+.event-stay-planner .stay-section-menu a:hover,
+.event-stay-planner .stay-section-menu a:focus-visible {
+  color: var(--os-surface);
+  background: var(--event-theme);
+  border-color: var(--event-theme);
+  outline: none;
+}
+
+.event-stay-planner .stay-section-stack {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.event-stay-planner .country-panel-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--event-line);
+  border-radius: 8px;
+  background: var(--os-surface);
+}
+
+.event-stay-planner .stay-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.event-stay-planner .stay-area-grid legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.event-stay-planner .stay-area {
+  display: grid;
+  align-items: start;
+  gap: 10px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--event-line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--os-compare-blue) 8%, var(--os-surface));
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.event-stay-planner .stay-area.hotel-search__area:has(input:checked) {
+  border-color: var(--event-line);
+  background: color-mix(in srgb, var(--os-compare-blue) 8%, var(--os-surface));
+  color: var(--event-ink);
+}
+
+.event-stay-planner .stay-area input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.event-stay-planner .stay-area strong,
+.event-stay-planner .stay-area p,
+.event-stay-planner .stay-area span {
+  color: inherit;
+}
+
+.event-stay-planner .stay-area p {
+  margin: 0;
+  color: var(--event-muted);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.42;
+}
+
+.event-stay-planner .stay-area span {
+  color: var(--event-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.event-stay-planner .stay-card-link {
+  justify-self: start;
+  padding: 7px 13px;
+  border: 1px solid color-mix(in srgb, var(--event-theme) 40%, var(--event-line));
+  border-radius: 999px;
+  color: var(--event-theme);
+  background: color-mix(in srgb, var(--event-theme) 8%, var(--os-surface));
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.event-stay-planner .stay-overview-grid,
+.event-stay-planner .stay-tip-grid,
+.event-stay-planner .stay-hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.event-stay-planner .stay-tip,
+.event-stay-planner .stay-pill,
+.event-stay-planner .stay-hotel-card,
+.event-stay-planner .stay-airports li {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--event-line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--os-compare-blue) 6%, var(--os-surface));
+}
+
+.event-stay-planner .stay-airports {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 760px) {
+  .event-stay-planner .stay-planner-layout,
+  .event-stay-planner .stay-overview-grid,
+  .event-stay-planner .stay-area-grid,
+  .event-stay-planner .stay-tip-grid,
+  .event-stay-planner .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-stay-planner .stay-section-menu {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: none;
+    padding: 6px 0;
+    background: var(--os-surface);
+  }
+}
+
 .lead-form {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(160px, 0.8fr) auto;
