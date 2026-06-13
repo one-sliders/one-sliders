@@ -3078,7 +3078,7 @@
   // Service; non-US pages can opt into Open-Meteo with data-weather-provider.
   // ====================================================================
   OneSlider.register('dynamicWeatherForecast', function (App) {
-    var strips = Array.prototype.slice.call(document.querySelectorAll('[data-weather-dynamic]'));
+    var strips = Array.prototype.slice.call(document.querySelectorAll('[data-weather-dynamic], [data-weather-strip][data-weather-lat][data-weather-lon]'));
     if (!strips.length || !window.fetch) return;
 
     function iconFor(period) {
@@ -3095,6 +3095,46 @@
         .replace(/^This\s+/i, '')
         .replace(/\s+Night$/i, ' night')
         .replace(/\bAfternoon\b/i, 'PM');
+    }
+
+    function openMeteoSummary(code) {
+      var map = {
+        0: 'Sunny',
+        1: 'Mostly sunny',
+        2: 'Partly cloudy',
+        3: 'Cloudy',
+        45: 'Fog',
+        48: 'Fog',
+        51: 'Drizzle',
+        53: 'Drizzle',
+        55: 'Drizzle',
+        56: 'Freezing drizzle',
+        57: 'Freezing drizzle',
+        61: 'Rain',
+        63: 'Rain',
+        65: 'Heavy rain',
+        66: 'Freezing rain',
+        67: 'Freezing rain',
+        71: 'Snow',
+        73: 'Snow',
+        75: 'Heavy snow',
+        77: 'Snow grains',
+        80: 'Rain showers',
+        81: 'Rain showers',
+        82: 'Heavy showers',
+        85: 'Snow showers',
+        86: 'Snow showers',
+        95: 'Thunderstorm',
+        96: 'Thunderstorm',
+        99: 'Thunderstorm'
+      };
+      return map[Number(code)] || 'Forecast';
+    }
+
+    function weatherProvider(strip) {
+      var provider = (strip.getAttribute('data-weather-provider') || '').toLowerCase();
+      if (provider) return provider;
+      return /\/content\/locations\/north-america\/usa\//i.test(window.location.pathname || '') ? 'nws' : 'open-meteo';
     }
 
     function escapeHtml(value) {
@@ -3137,7 +3177,7 @@
           name: new Date(date + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short' }),
           temperature: Number(daily.temperature_2m_max[index]),
           temperatureUnit: 'C',
-          shortForecast: String(daily.weather_code ? daily.weather_code[index] : ''),
+          shortForecast: openMeteoSummary(daily.weather_code ? daily.weather_code[index] : ''),
           isDaytime: true
         };
       });
@@ -3147,7 +3187,7 @@
     strips.forEach(function (strip) {
       var lat = strip.getAttribute('data-weather-lat');
       var lon = strip.getAttribute('data-weather-lon');
-      var provider = (strip.getAttribute('data-weather-provider') || 'nws').toLowerCase();
+      var provider = weatherProvider(strip);
       if (!lat || !lon) return;
       if (provider === 'open-meteo') {
         fetch('https://api.open-meteo.com/v1/forecast?latitude=' + encodeURIComponent(lat) + '&longitude=' + encodeURIComponent(lon) + '&daily=weather_code,temperature_2m_max&temperature_unit=celsius&timezone=auto', {
