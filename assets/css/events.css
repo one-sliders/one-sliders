@@ -4766,7 +4766,8 @@ body.event-page--framed .event-frame__panel .year-button[aria-pressed="true"] {
 }
 
 .event-stay-planner .stay-section-menu a:hover,
-.event-stay-planner .stay-section-menu a:focus-visible {
+.event-stay-planner .stay-section-menu a:focus-visible,
+.event-stay-planner .stay-section-menu a[aria-current="true"] {
   color: var(--os-surface);
   background: var(--event-theme);
   border-color: var(--event-theme);
@@ -4777,6 +4778,16 @@ body.event-page--framed .event-frame__panel .year-button[aria-pressed="true"] {
   display: grid;
   gap: 10px;
   min-width: 0;
+}
+
+.event-stay-planner .stay-section {
+  display: grid;
+  min-width: 0;
+  scroll-margin-top: 10px;
+}
+
+.event-stay-planner .stay-section[hidden] {
+  display: none;
 }
 
 .event-stay-planner .country-panel-card {

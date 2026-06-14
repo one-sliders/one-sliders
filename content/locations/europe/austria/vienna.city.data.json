@@ -7,29 +7,29 @@
   "countryName": "Austria",
   "depth": 4,
   "seo": {
-    "title": "Sports Events in Vienna 2026",
-    "description": "Find sports events in Vienna in 2026: calendars, nearby pages and linked event views for planning around Europe / Austria.",
-    "twitterDescription": "Find sports events in Vienna in 2026: calendars, nearby pages and linked event views for planning around Europe / Austria.",
-    "webpageDescription": "Find sports events in Vienna in 2026: calendars, nearby pages and linked event views for planning around Europe / Austria."
+    "title": "Vienna, Austria City Guide - Weather, Hotels, Flights & Events",
+    "description": "Plan a Vienna, Austria trip with city history, weather, hotel areas, airport access, sights, nearby places and events.",
+    "twitterDescription": "Plan a Vienna, Austria trip with city history, weather, hotel areas, airport access, sights, nearby places and events.",
+    "webpageDescription": "Plan a Vienna, Austria trip with city history, weather, hotel areas, airport access, sights, nearby places and events."
   },
   "kicker": "Capital city of Austria",
-  "heroText": "Vienna is a key city in Austria, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Vienna is Austria's capital on the Danube, known for imperial architecture, concert halls, museums, coffeehouse culture and efficient rail links across Central Europe.",
   "snapshot": [
     {
-      "label": "Place",
-      "text": "Vienna connects local landmarks, visitor routes and event planning in Austria."
+      "label": "City role",
+      "text": "Vienna is Austria's capital, largest city and main political, cultural and transport hub."
     },
     {
-      "label": "Landmark",
-      "text": "Schonbrunn Palace is the clearest quick-reference sight for this city page."
+      "label": "Historic core",
+      "text": "The Innere Stadt, Ringstrasse and former Habsburg palaces define the classic first-visit route."
     },
     {
-      "label": "Region",
-      "text": "Austria gives the page its wider route and destination context."
+      "label": "Access",
+      "text": "Vienna International Airport, Wien Hauptbahnhof and Westbahnhof make the city easy to combine with Prague, Budapest, Bratislava and Salzburg."
     },
     {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
+      "label": "Best planning angle",
+      "text": "Choose your stay around the inner city, a U-Bahn line or the venue district you will repeat most."
     }
   ],
   "kpis": [
@@ -40,30 +40,100 @@
     },
     {
       "label": "Population",
-      "value": "City population"
+      "value": "About 2.0M city",
+      "note": "municipal population"
     },
     {
       "label": "Metro",
-      "value": "Metro region"
+      "value": "About 2.9M metro",
+      "note": "Vienna metropolitan area"
     },
     {
       "label": "Known for",
-      "value": "Schonbrunn Palace"
+      "value": "Imperial palaces, music & museums"
     }
   ],
-  "shortFacts": [],
+  "shortFacts": [
+    {
+      "label": "Language",
+      "value": "German"
+    },
+    {
+      "label": "Currency",
+      "value": "Euro"
+    },
+    {
+      "label": "Main station",
+      "value": "Wien Hauptbahnhof"
+    },
+    {
+      "label": "Airport",
+      "value": "Vienna International Airport (VIE)"
+    }
+  ],
   "worthSeeing": [
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Schonbrunn Palace",
+      "text": "Former Habsburg summer palace with grand state rooms, formal gardens and a long park axis west of the centre."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "St. Stephen's Cathedral",
+      "text": "Vienna's Gothic landmark in the Innere Stadt, useful as a central meeting point, skyline marker, tower climb and first-orientation stop for the old town."
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "title": "Hofburg",
+      "text": "The imperial palace complex anchors central Vienna with museums, courtyards, the Spanish Riding School, state buildings and easy walks toward the Ringstrasse."
+    },
+    {
+      "title": "Belvedere",
+      "text": "Baroque palace and museum complex near the main station, known for Austrian art collections, formal gardens and a route that pairs well with Wieden."
+    },
+    {
+      "title": "Prater",
+      "text": "Large public park with the Riesenrad ferris wheel, amusement rides and broad paths for an easier outdoor break."
+    },
+    {
+      "title": "MuseumsQuartier",
+      "text": "Dense museum and culture district near the Ringstrasse, practical when weather, contemporary art, cafes or short transfer times matter during a city stay."
+    }
+  ],
+  "areas": [
+    {
+      "name": "Innere Stadt",
+      "bestFor": "first visits, walking, classic sights",
+      "text": "Best for a short Vienna stay when you want St. Stephen's Cathedral, Hofburg, cafes, museums and evening walks close by."
+    },
+    {
+      "name": "Leopoldstadt",
+      "bestFor": "Prater, Danube Canal, value",
+      "text": "Useful for Prater access, canal-side evenings and slightly easier hotel prices while staying close to the centre by U-Bahn."
+    },
+    {
+      "name": "Landstrasse",
+      "bestFor": "Belvedere, airport train, rail access",
+      "text": "A practical base for Belvedere, Wien Mitte, airport train connections and trips that mix sightseeing with quick transfers."
+    },
+    {
+      "name": "Neubau",
+      "bestFor": "MuseumsQuartier, shops, restaurants",
+      "text": "Good for MuseumsQuartier, Mariahilfer Strasse, smaller hotels and a more local evening feel west of the old town."
+    },
+    {
+      "name": "Wieden",
+      "bestFor": "main station, Belvedere, quiet access",
+      "text": "Works well when Wien Hauptbahnhof, Belvedere, trams and a calmer residential base matter more than sleeping inside the old town."
+    },
+    {
+      "name": "Rudolfsheim-Funfhaus",
+      "bestFor": "Schonbrunn, Westbahnhof, budget stays",
+      "text": "Compare this area for Schonbrunn access, Westbahnhof connections and lower-priced stays on the western side of the city."
+    }
+  ],
+  "airports": [
+    {
+      "name": "Vienna International Airport (VIE)",
+      "search": "Vienna International Airport, Schwechat, Austria",
+      "text": "Main airport east of Vienna with City Airport Train, S-Bahn, Railjet, buses, taxis and rental car desks."
     }
   ],
   "countryCard": {
@@ -87,15 +157,15 @@
   "planningQuestions": [
     {
       "q": "What is Vienna known for?",
-      "a": "Schonbrunn Palace, local culture, visitor planning and events."
+      "a": "Imperial palaces, classical music, museums, coffeehouses, Ringstrasse architecture, efficient transit and Danube-side city breaks."
     },
     {
       "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
+      "a": "Fly into Vienna International Airport or arrive by train at Wien Hauptbahnhof. The airport rail links are usually the simplest first check."
     },
     {
       "q": "What should I check before going?",
-      "a": "Temperate to boreal, transport access and the current event calendar."
+      "a": "Check museum closing days, concert dates, hotel prices around major events and whether your stay is closer to U-Bahn or tram routes."
     }
   ],
   "landmarks": [],
@@ -105,16 +175,31 @@
       "href": "../../../categories/music/song-contests/events/eurovision-song-contest.html",
       "img": "/content/locations/europe/img/europe-mini.png",
       "title": "Eurovision Song Contest",
-      "meta": "May 2026 · Vienna"
+      "meta": "May 2026 - Vienna",
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-16",
+      "status": "past"
     }
   ],
   "knownFor": [
     "Schonbrunn Palace",
-    "Austria",
-    "Temperate to boreal",
-    "City transit",
-    "Events",
-    "Austria"
+    "St. Stephen's Cathedral",
+    "Hofburg",
+    "classical music",
+    "coffeehouses",
+    "Ringstrasse"
+  ],
+  "nearbyCities": [
+    {
+      "name": "Bratislava",
+      "href": "#",
+      "text": "Close Danube-region city to compare when day trips, rail timing or hotel prices point beyond Vienna."
+    },
+    {
+      "name": "Salzburg",
+      "href": "#",
+      "text": "Use Salzburg as a second Austrian base for old-town sights, music history and Alpine onward routes."
+    }
   ],
   "topicCards": [
     {
@@ -133,5 +218,66 @@
       "title": "Europe outdoors",
       "text": "Routes, seasons and nearby places."
     }
-  ]
+  ],
+  "history": [
+    {
+      "label": "100-200",
+      "text": "The Roman military settlement of Vindobona stood on the site of today's central Vienna."
+    },
+    {
+      "label": "1155",
+      "text": "The Babenberg rulers made Vienna their residence, helping the settlement grow into a regional political centre."
+    },
+    {
+      "label": "1278",
+      "text": "Habsburg rule began to shape Vienna's long role as an imperial residence and administrative capital."
+    },
+    {
+      "label": "1683",
+      "text": "The failed Ottoman siege of Vienna became a decisive moment in the city's early modern history."
+    },
+    {
+      "label": "1804",
+      "text": "Vienna became capital of the Austrian Empire, reinforcing its role as a centre of court culture, administration and music."
+    },
+    {
+      "label": "1867",
+      "text": "After the Austro-Hungarian Compromise, Vienna remained capital of the Austro-Hungarian Empire."
+    },
+    {
+      "label": "1918",
+      "text": "After World War I, Vienna became capital of the new Austrian republic."
+    },
+    {
+      "label": "1920-1934",
+      "text": "The Red Vienna period expanded municipal housing and social infrastructure, leaving major housing estates across the city."
+    },
+    {
+      "label": "1938",
+      "text": "Nazi Germany annexed Austria; Vienna's Jewish community was persecuted and much of its cultural life was destroyed."
+    },
+    {
+      "label": "1945",
+      "text": "Vienna was heavily damaged near the end of World War II and then divided into Allied occupation sectors."
+    },
+    {
+      "label": "1955",
+      "text": "The Austrian State Treaty restored full sovereignty, and Vienna continued as Austria's federal capital."
+    },
+    {
+      "label": "1979",
+      "text": "The Vienna International Centre opened, strengthening the city's role as a base for international organizations."
+    }
+  ],
+  "historySource": "https://en.wikipedia.org/wiki/Vienna",
+  "coordinates": {
+    "lat": 48.20849,
+    "lon": 16.37208
+  },
+  "timezone": "Europe/Vienna",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Vienna",
+    "matchedCountry": "Austria"
+  }
 }

@@ -11,13 +11,20 @@ Generates full static HTML (SEO-safe) + responsive WebP (image-set/srcset).
 
 Usage:
   python scripts/build_city_page.py <country_dir>/<city>.html      # one city
+  python scripts/build_city_page.py --template-preview             # tmp preview from renderer
+  python scripts/build_city_page.py --all                          # all city data files
   python scripts/build_city_page.py --continent europe            # all cities
+  python scripts/build_city_page.py --country north-america usa    # one country
+  python scripts/build_city_page.py --booking-markets              # europe + usa + canada
 """
 
-import os, sys, json, glob, html as H
+import os, sys, json, glob, html as H, re
+from datetime import date
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = 'https://one-sliders.com'
+TODAY = date(2026, 6, 14)
 
 
 def esc(s):
@@ -27,6 +34,744 @@ def esc(s):
 
 def rel_prefix(depth):
     return '../' * depth
+
+
+def root_href(href):
+    if not href:
+        return '#'
+    if href.startswith(('http://', 'https://', '/', '#')):
+        return href
+    while href.startswith('../'):
+        href = href[3:]
+    return f'/content/{href}'
+
+
+def asset_path(src):
+    return str(src or '').split('?', 1)[0].split('#', 1)[0]
+
+
+def img_srcset(src, sizes='(max-width:620px) 220px, 400px'):
+    clean = asset_path(src)
+    base = clean[:-4] if clean.endswith('.png') else clean
+    parts = []
+    for w in (200, 400, 768, 1200):
+        p = f'{base}-{w}.webp'
+        if os.path.isfile(os.path.join(ROOT, p.lstrip('/'))):
+            parts.append(f'{p} {w}w')
+    return f' srcset="{", ".join(parts)}" sizes="{esc(sizes)}"' if parts else ''
+
+
+def asset_exists(src):
+    clean = asset_path(src)
+    if not clean or clean.startswith(('http://', 'https://')):
+        return bool(clean)
+    return os.path.isfile(os.path.join(ROOT, clean.lstrip('/')))
+
+
+def optional_img(src, alt='', class_name='', width=400, height=300, sizes='(max-width:620px) 220px, 400px'):
+    if not asset_exists(src):
+        return ''
+    cls = f' class="{esc(class_name)}"' if class_name else ''
+    return (f'<img{cls} src="{esc(src)}"{img_srcset(src, sizes)} alt="{esc(alt)}" '
+            f'loading="lazy" width="{width}" height="{height}">')
+
+
+def parse_iso_date(value):
+    value = str(value or '').strip()
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return None
+    try:
+        return date.fromisoformat(value)
+    except ValueError:
+        return None
+
+
+BOOKING_LINKS = {
+    'north-america-usa-canada': 'https://www.jdoqocy.com/click-101771061-17293132',
+    'central-eastern-europe': 'https://www.kqzyfj.com/click-101771061-15735418',
+}
+
+
+def booking_base_url(d):
+    if d.get('bookingAffiliateBase'):
+        return d['bookingAffiliateBase']
+    if d.get('continent') == 'europe':
+        return BOOKING_LINKS['central-eastern-europe']
+    if d.get('continent') == 'north-america' and d.get('countrySlug') in ('usa', 'canada'):
+        return BOOKING_LINKS['north-america-usa-canada']
+    return BOOKING_LINKS['north-america-usa-canada']
+
+
+def booking_market_class(d):
+    if d.get('continent') == 'europe':
+        return ' affiliate-market--europe'
+    if d.get('continent') == 'north-america' and d.get('countrySlug') in ('usa', 'canada'):
+        return ' affiliate-market--usa-canada'
+    return ' affiliate-market--usa-canada'
+
+
+def booking_search_url(search, d):
+    return (booking_base_url(d) + '?url='
+            + quote(f'https://www.booking.com/searchresults.html?ss={search}', safe=''))
+
+
+ATTRACTION_AFFILIATES = {
+    'oslo': {
+        'sustainable cruise in oslofjord with audioguiding': 'https://www.booking.com/attractions/no/prxz2arpfoaw-sustainable-cruise-in-oslofjord-with-audioguiding.en-gb.html?source=searchresults-product-card&aid=304142&label=mkt123sc-10d3376d-8023-4cad-9ee1-b0f1584633cd&ufi=-251754&date=2026-06-14&timeslot=ATS-PRxz2aRPfOaW-202606141000-nullnull&ticket_type=OF204cBwlU0I',
+        'oslofjord': 'https://www.booking.com/attractions/no/prxz2arpfoaw-sustainable-cruise-in-oslofjord-with-audioguiding.en-gb.html?source=searchresults-product-card&aid=304142&label=mkt123sc-10d3376d-8023-4cad-9ee1-b0f1584633cd&ufi=-251754&date=2026-06-14&timeslot=ATS-PRxz2aRPfOaW-202606141000-nullnull&ticket_type=OF204cBwlU0I',
+        'munch museum': 'https://www.booking.com/attractions/no/prafmabqdig0-oslo-munch-museum-admission-ticket.en-gb.html?source=searchresults-product-card&date=2026-06-14&aid=304142&label=mkt123sc-10d3376d-8023-4cad-9ee1-b0f1584633cd&ufi=-251754&timeslot=ATS-PRAFmaBqDiG0-202606141000-nullnull&ticket_type=OFLakgnYdj8U',
+        'nobel peace center': 'https://www.booking.com/attractions/no/prfurtc1q8is-nobel-peace-centre-museum-tickets.en-gb.html?source=searchresults-product-card&date=2026-06-14&timeslot=ATS-PRAFmaBqDiG0-202606141000-nullnull&aid=304142&label=mkt123sc-10d3376d-8023-4cad-9ee1-b0f1584633cd&ufi=-251754',
+        'nobel peace centre': 'https://www.booking.com/attractions/no/prfurtc1q8is-nobel-peace-centre-museum-tickets.en-gb.html?source=searchresults-product-card&date=2026-06-14&timeslot=ATS-PRAFmaBqDiG0-202606141000-nullnull&aid=304142&label=mkt123sc-10d3376d-8023-4cad-9ee1-b0f1584633cd&ufi=-251754',
+    }
+}
+
+
+TIMEZONES = {
+    'norway': 'Europe/Oslo',
+    'sweden': 'Europe/Stockholm',
+    'denmark': 'Europe/Copenhagen',
+    'finland': 'Europe/Helsinki',
+    'iceland': 'Atlantic/Reykjavik',
+    'usa': 'America/New_York',
+    'canada': 'America/Toronto',
+    'zimbabwe': 'Africa/Harare',
+}
+
+
+CONTENT_RULES = {
+    'see_min_cards': 6,
+    'history_min_rows': 6,
+    'history_max_rows': 14,
+    'see_text_words': (18, 32),
+    'stay_overview_words': (32, 58),
+    'hotel_intro_words': (32, 52),
+    'area_text_words': (18, 30),
+    'airport_text_words': (18, 30),
+    'nearby_text_words': (14, 24),
+    'tip_text_words': (16, 28),
+    'city_intro_words': (44, 72),
+}
+
+
+def words(text):
+    return re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)?", str(text or ''))
+
+
+def clamp_words(text, max_words):
+    parts = words(text)
+    if len(parts) <= max_words:
+        return str(text or '')
+    return ' '.join(parts[:max_words]).rstrip(' ,;:') + '.'
+
+
+def bounded_text(text, fallback, rule):
+    min_words, max_words = CONTENT_RULES[rule]
+    source = str(text or '').strip()
+    if len(words(source)) < min_words:
+        source = fallback
+    return clamp_words(source, max_words)
+
+
+MONTHS = {
+    'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
+    'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
+    'sept': 9,
+}
+
+
+def parse_iso_day(value):
+    try:
+        return date.fromisoformat(str(value or '').strip())
+    except ValueError:
+        return None
+
+
+def future_or_current_year_day(month, day):
+    value = date(TODAY.year, month, day)
+    return value if value >= TODAY else date(TODAY.year + 1, month, day)
+
+
+def parse_event_day(event):
+    start = parse_iso_day(event.get('start'))
+    if start:
+        return start
+
+    meta = str(event.get('meta') or '')
+    m = re.search(r'\b(\d{1,2})\s+([A-Z][a-z]{2,3})\s+-\s+\d{1,2}\s+[A-Z][a-z]{2,3}\s+(\d{4})\b', meta)
+    if m and m.group(2).lower() in MONTHS:
+        return date(int(m.group(3)), MONTHS[m.group(2).lower()], int(m.group(1)))
+
+    m = re.search(r'\b([A-Z][a-z]{2,3})\s+(\d{1,2}),\s*(\d{4})\b', meta)
+    if m and m.group(1).lower() in MONTHS:
+        return date(int(m.group(3)), MONTHS[m.group(1).lower()], int(m.group(2)))
+
+    m = re.search(r'\b(\d{1,2})(?:-\d{1,2})?\s+([A-Z][a-z]{2,3})\s+(\d{4})\b', meta)
+    if m and m.group(2).lower() in MONTHS:
+        return date(int(m.group(3)), MONTHS[m.group(2).lower()], int(m.group(1)))
+
+    m = re.search(r'\b([A-Z][a-z]{2,3})\s+(\d{1,2})(?:-\d{1,2})\b', meta)
+    if m and m.group(1).lower() in MONTHS:
+        return future_or_current_year_day(MONTHS[m.group(1).lower()], int(m.group(2)))
+
+    m = re.search(r'\bEnds\s+([A-Z][a-z]{2,3})\s+(\d{1,2})\b', meta)
+    if m and m.group(1).lower() in MONTHS:
+        return future_or_current_year_day(MONTHS[m.group(1).lower()], int(m.group(2)))
+
+    m = re.search(r'\b(\d{4}) date TBC\b', meta)
+    if m:
+        return date(int(m.group(1)), 12, 31)
+
+    return None
+
+
+def parse_event_end_day(event, start_day=None):
+    end = parse_iso_day(event.get('end'))
+    if end:
+        return end
+
+    meta = str(event.get('meta') or '')
+    m = re.search(r'\b(\d{1,2})-(\d{1,2})\s+([A-Z][a-z]{2,3})\s+(\d{4})\b', meta)
+    if m and m.group(3).lower() in MONTHS:
+        return date(int(m.group(4)), MONTHS[m.group(3).lower()], int(m.group(2)))
+
+    m = re.search(r'\b([A-Z][a-z]{2,3})\s+(\d{1,2})-(\d{1,2})\b', meta)
+    if m and m.group(1).lower() in MONTHS:
+        return future_or_current_year_day(MONTHS[m.group(1).lower()], int(m.group(3)))
+
+    m = re.search(r'\bEnds\s+([A-Z][a-z]{2,3})\s+(\d{1,2})\b', meta)
+    if m and m.group(1).lower() in MONTHS:
+        return future_or_current_year_day(MONTHS[m.group(1).lower()], int(m.group(2)))
+
+    return start_day
+
+
+def event_sort_key(event):
+    day = parse_event_day(event)
+    end_day = parse_event_end_day(event, day)
+    score = event.get('score', 0)
+    if day:
+        is_past = day < TODAY and (not end_day or end_day < TODAY)
+        return (1 if is_past else 0, day.isoformat(), -score)
+    return (2, '9999-99-99', -score)
+
+
+def event_image_for(event):
+    image = root_href(event.get('image', ''))
+    if image != '#' and asset_exists(image):
+        return image
+
+    href = root_href(event.get('href', ''))
+    if href.endswith('.html'):
+        folder = href.rsplit('/', 1)[0]
+        slug = event.get('slug') or os.path.splitext(os.path.basename(href))[0]
+        for candidate in (
+            f'{folder}/img/{slug}-mini-400.webp',
+            f'{folder}/img/{slug}-mini.png',
+            f'{folder}/img/{slug}-mini-200.webp',
+        ):
+            if asset_exists(candidate):
+                return candidate
+
+    return image if image != '#' else ''
+
+
+def place_matches(hay, place):
+    if not place:
+        return False
+    return re.search(r'(?<![a-z0-9])' + re.escape(place) + r'(?![a-z0-9])', hay) is not None
+
+
+def event_has_finished(event):
+    start_day = parse_event_day(event)
+    end_day = parse_event_end_day(event, start_day)
+    return bool(end_day and end_day < TODAY)
+
+
+def is_placeholder_event(event, city_name=''):
+    title = str(event.get('title') or event.get('name') or '').strip().lower()
+    href = root_href(event.get('href') or '')
+    meta = str(event.get('meta') or '').lower()
+    if href in ('/content/events/index.html', '/content/events/'):
+        return True
+    if href.endswith('/events/index.html'):
+        return True
+    if city_name and title == f'{city_name.lower()} events':
+        return True
+    if 'calendar' in meta and not (event.get('start') or event.get('end') or event.get('date')):
+        return True
+    return False
+
+
+def load_city_events(d, limit=8):
+    path = os.path.join(ROOT, 'content/events/events-compact.json')
+    if not os.path.isfile(path):
+        return []
+    city = d['name'].lower()
+    city_slug = d.get('slug', '').replace('-', ' ').lower()
+    out, seen = [], set()
+    try:
+        rows = json.load(open(path, encoding='utf-8'))
+    except Exception:
+        return []
+    for e in rows:
+        hay = ' '.join(str(e.get(k, '')) for k in ('title', 'meta', 'href', 'slug')).lower()
+        is_city_match = place_matches(hay, city) or place_matches(hay, city_slug)
+        if not is_city_match:
+            continue
+        if event_has_finished(e):
+            continue
+        key = e.get('slug') or e.get('title') or e.get('href')
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            'score': 2 if is_city_match else 1,
+            'title': e.get('title', 'Event'),
+            'meta': e.get('meta', ''),
+            'start': e.get('start') or '',
+            'end': e.get('end') or '',
+            'href': root_href(e.get('href', '#')),
+            'img': event_image_for(e),
+            'modifier': e.get('cat') or e.get('topic') or 'event',
+        })
+    out.sort(key=event_sort_key)
+    return out[:limit]
+
+
+def local_city_events(d, limit=6):
+    out = []
+    for item in d.get('events') or []:
+        if isinstance(item, dict):
+            if is_placeholder_event(item, d.get('name', '')):
+                continue
+            event = {
+                'title': item.get('title') or item.get('name') or 'Local event',
+                'meta': item.get('meta') or f"{d['name']}, {d['countryName']}",
+                'start': item.get('startDate') or item.get('start') or item.get('date') or '',
+                'end': item.get('endDate') or item.get('end') or '',
+                'status': item.get('status') or '',
+                'href': root_href(item.get('href') or '/content/events/index.html'),
+                'img': root_href(item.get('img') or ''),
+                'modifier': item.get('modifier') or item.get('cat') or 'event',
+            }
+            out.append(event)
+        else:
+            continue
+        if len(out) >= limit:
+            break
+    out.sort(key=event_sort_key)
+    return out
+
+
+def normalize_city_data(data, city_path):
+    p = os.path.relpath(city_path, ROOT).replace('\\', '/').split('/')
+    if len(p) >= 5 and p[0] == 'content' and p[1] == 'locations':
+        data.setdefault('continent', p[2])
+        data.setdefault('countrySlug', p[3])
+    CONT_NAME = {'europe': 'Europe', 'asia': 'Asia', 'africa': 'Africa',
+                 'north-america': 'North America', 'south-america': 'South America', 'oceania': 'Oceania'}
+    data.setdefault('continentName', CONT_NAME.get(data.get('continent', ''), str(data.get('continent', '')).title()))
+    if not data.get('countryName') and data.get('countrySlug'):
+        data['countryName'] = str(data['countrySlug']).replace('-', ' ').title()
+    if not data.get('slug'):
+        data['slug'] = os.path.splitext(os.path.basename(city_path))[0]
+    data.setdefault('name', str(data['slug']).replace('-', ' ').title())
+    if 'coordinates' not in data and isinstance(data.get('coords'), list) and len(data['coords']) >= 2:
+        data['coordinates'] = {'lat': data['coords'][0], 'lon': data['coords'][1]}
+    if 'heroText' not in data and data.get('intro'):
+        data['heroText'] = data['intro']
+    if 'airports' not in data and data.get('airport'):
+        data['airports'] = [{'name': data['airport'], 'search': f"{data['airport']}, {data['name']}, {data['countryName']}"}]
+    if 'bookingDestination' not in data:
+        data['bookingDestination'] = f"{data['name']}, {data['countryName']}"
+    return data
+
+
+def infer_city_profile(d):
+    explicit = d.get('cityProfile')
+    if isinstance(explicit, list) and explicit:
+        profile = []
+        for item in explicit:
+            if isinstance(item, dict):
+                label = item.get('label') or item.get('name')
+                value = item.get('pct') or item.get('percent') or item.get('value')
+            else:
+                continue
+            try:
+                value = int(value)
+            except (TypeError, ValueError):
+                continue
+            if label and value > 0:
+                profile.append((str(label), value))
+        total = sum(value for _, value in profile)
+        if total > 0:
+            return [(label, max(1, round(value * 100 / total))) for label, value in profile[:4]]
+    return []
+
+
+def legacy_infer_city_profile(d):
+    words = ' '.join(city_item_label(x) for x in d.get('highlights', [])).lower()
+    culture = 30 + (10 if any(x in words for x in ('museum', 'opera', 'gallery', 'fortress')) else 0)
+    waterfront = 20 + (10 if any(x in words for x in ('fjord', 'harbour', 'harbor', 'archipelago', 'waterfront')) else 0)
+    parks = 20 + (10 if any(x in words for x in ('park', 'forest', 'garden', 'mountain')) else 0)
+    events = max(10, 100 - culture - waterfront - parks)
+    total = culture + waterfront + parks + events
+    return [
+        ('Culture', round(culture * 100 / total)),
+        ('Water', round(waterfront * 100 / total)),
+        ('Parks', round(parks * 100 / total)),
+        ('Events', max(1, 100 - round(culture * 100 / total) - round(waterfront * 100 / total) - round(parks * 100 / total))),
+    ]
+
+
+def city_item_label(item):
+    if isinstance(item, dict):
+        return str(item.get('title') or item.get('name') or item.get('label') or '')
+    return str(item)
+
+
+def city_item_text(item):
+    if isinstance(item, dict):
+        return str(item.get('text') or item.get('description') or item.get('detail') or '')
+    return ''
+
+
+def place_labels(items):
+    out = []
+    for item in items or []:
+        label = city_item_label(item)
+        if label:
+            out.append(label)
+    return out
+
+
+def ensure_highlights(d, areas):
+    highlights = d.get('highlights') or d.get('worthSeeing') or []
+    if len(highlights) >= CONTENT_RULES['see_min_cards']:
+        return highlights[:CONTENT_RULES['see_min_cards']]
+    labels = place_labels(highlights)
+    known = d.get('knownFor')
+    if isinstance(known, str):
+        labels.extend([x.strip() for x in re.split(r',|&| and ', known) if x.strip()])
+    labels.extend(place_labels(areas))
+    labels.extend([d.get('region'), d.get('state'), d.get('province')])
+    labels = [x for x in labels if x]
+    seen = set()
+    unique = []
+    for label in labels:
+        key = label.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(label)
+        if len(unique) >= CONTENT_RULES['see_min_cards']:
+            break
+    while len(unique) < CONTENT_RULES['see_min_cards']:
+        unique.append(f"{d['name']} planning base {len(unique) + 1}")
+    return unique[:CONTENT_RULES['see_min_cards']]
+
+
+def ensure_city_history(d):
+    def clean_history_text(value):
+        text = str(value or '')
+        if 'Ã' in text:
+            try:
+                text = text.encode('latin1').decode('utf-8')
+            except UnicodeError:
+                pass
+        text = re.sub(r'=+', '', text)
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text.strip(' -;:')
+
+    def clean_history_label(label, text):
+        label = clean_history_text(label)
+        if label in ('000', '0', 'TBC', 'TBD'):
+            return ''
+        if re.fullmatch(r'\d{3,4}', label) and re.search(r'\bBCE\b', text, re.I):
+            return f'{label} BCE'
+        return label
+
+    def history_order(row):
+        label = str(row.get('label') or '')
+        text = str(row.get('text') or '')
+        source = f'{label} {text}'
+        m = re.search(r'\b(\d{3,4})\s*BCE\b', source, re.I)
+        if m:
+            return (-int(m.group(1)), 0)
+        m = re.search(r'\b(\d{3,4})\b', label)
+        if m:
+            return (int(m.group(1)), 0)
+        m = re.search(r'\b(\d{3,4})\b', text)
+        if m:
+            return (int(m.group(1)), 1)
+        return (999999, 2)
+
+    rows = []
+    seen = set()
+    for item in d.get('history') or []:
+        if not isinstance(item, dict):
+            continue
+        text = clean_history_text(item.get('text'))
+        if not text or len(words(text)) < 8:
+            continue
+        if text.lower().startswith(('add ', 'replace ', 'template ')):
+            continue
+        if re.search(r'\b(TBC|TBD)\b', text, re.I):
+            continue
+        if text.count('(') > text.count(')') or text.count('"') % 2:
+            continue
+        label = clean_history_label(item.get('label'), text)
+        if not label:
+            continue
+        if re.fullmatch(r'\d{1,2}', label):
+            continue
+        key = re.sub(r'[^a-z0-9]+', ' ', f'{label} {text}'.lower()).strip()
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append({
+            'label': label,
+            'text': text,
+        })
+    return sorted(rows, key=history_order)[:CONTENT_RULES['history_max_rows']]
+
+
+def render_template_city(d):
+    slug, name = d['slug'], d['name']
+    cont, country_slug, country_name = d['continent'], d['countrySlug'], d['countryName']
+    cont_name = d.get('continentName') or cont.replace('-', ' ').title()
+    page_url = f"{DOMAIN}/content/locations/{cont}/{country_slug}/{slug}.html"
+    img_base = f"/content/locations/{cont}/{country_slug}/img"
+    hero = f"{img_base}/{slug}-hero.png"
+    hero_1200 = f"{img_base}/{slug}-hero-1200.webp"
+    hero_preload = hero_1200 if os.path.isfile(os.path.join(ROOT, hero_1200.lstrip('/'))) else hero
+    country_mini = f"{img_base}/{country_slug}-mini.png"
+    country_mini_alt = f"{country_name} thumbnail"
+    coords = d.get('coordinates') or {}
+    lat = coords.get('lat')
+    lon = coords.get('lon')
+    tz = d.get('timezone') or TIMEZONES.get(country_slug, 'UTC')
+    region = d.get('region') or f'{country_name} region'
+    population = d.get('population') or 'TBC'
+    areas = d.get('areas') or []
+    highlights = ensure_highlights(d, areas)
+    airports = d.get('airports') or []
+    booking_destination = d.get('bookingDestination') or f'{name}, {country_name}'
+    booking_market = booking_market_class(d)
+    events = local_city_events(d) or load_city_events(d)
+    seo = d.get('seo') or {}
+    title = f'{name}, {country_name} City Guide - Weather, Hotels, Flights & Events'
+    description = (
+        f'Plan a {name}, {country_name} trip with city history, local weather, sights, '
+        f'hotel areas, flights, nearby places and events.'
+    )
+    intro = bounded_text(
+        d.get('heroText'),
+        f'{name} is a city in {country_name} shaped by its region, population, local economy, landmarks, climate and civic history. This overview summarizes the city itself: where it sits, what defines it, which places anchor its identity and why it matters within the wider country.',
+        'city_intro_words'
+    )
+    intro_title = d.get('introTitle') or f'{name} city overview'
+
+    def picture(base_name, alt='', sizes='(max-width: 720px) 100vw, 42vw'):
+        src = f'{img_base}/{base_name}.png'
+        ss = img_srcset(src, sizes)
+        return f'<img src="{src}"{ss} alt="{esc(alt)}" loading="lazy" width="400" height="300">'
+
+    hero_sources = img_srcset(hero, '(max-width: 720px) 100vw, 42vw')
+    weather_attrs = ''
+    if lat is not None and lon is not None:
+        weather_attrs = f' data-weather-strip data-weather-dynamic data-weather-lat="{esc(lat)}" data-weather-lon="{esc(lon)}"'
+
+    profile = infer_city_profile(d)
+    pie_legend = ''.join(
+        f'<div><i class="city-pie-key city-pie-key--{cls}"></i><span>{esc(label)}</span><strong>{pct}%</strong></div>'
+        for (cls, (label, pct)) in zip(('culture', 'food', 'green', 'events'), profile)
+    )
+    pie_html = (
+        f'<div class="city-pie-mini" aria-label="{esc(name)} city profile split">'
+        f'<div class="city-pie-chart" role="img" aria-label="{esc(name)} city profile split"></div>'
+        f'<div class="city-pie-legend city-pie-legend--compact">{pie_legend}</div></div>'
+        if pie_legend else ''
+    )
+    history = ensure_city_history(d)
+    history_html = ''.join(f'<div><time>{esc(x["label"])}</time><span>{esc(x["text"])}</span></div>' for x in history)
+    history_card = (
+        f'<div class="country-panel-card city-history-facts"><h2>City history</h2>'
+        f'<div class="country-history-list">{history_html}</div></div>'
+        if history_html else ''
+    )
+    airport_label = airports[0]['name'] if airports else 'Main airport TBC'
+    known_for = ', '.join(city_item_label(x) for x in highlights[:4]) if highlights else 'culture, local areas and events'
+    founded_year = next((x.get('label') for x in history if re.fullmatch(r'\d{3,4}', str(x.get('label', '')))), None)
+    raw_kpis = d.get('kpis') or [
+        {'label': 'Population', 'value': population, 'note': 'city context'},
+        {'label': 'Region', 'value': region, 'note': country_name},
+        {'label': 'Time zone', 'value': tz, 'note': 'local time'},
+        {'label': 'Known for', 'value': known_for, 'note': 'city identity'},
+    ]
+    if founded_year and not any(str(k.get('label', '')).lower() == 'founded' for k in raw_kpis):
+        raw_kpis.insert(2, {'label': 'Founded', 'value': founded_year, 'note': 'historic origin'})
+    kpi_cards = ''.join(
+        f'<div class="city-kpi-card"><span>{esc(k.get("label", ""))}</span><strong>'
+        + (f'<a class="value-link" href="{esc(k.get("href"))}">{esc(k.get("value", ""))}</a>' if k.get('href') else esc(k.get('value', '')))
+        + f'</strong><em>{esc(k.get("note") or k.get("text") or "")}</em></div>'
+        for k in raw_kpis[:4]
+    )
+
+    see_cards = []
+    for i, item in enumerate(highlights[:6], start=1):
+        label = city_item_label(item)
+        fallback_text = (
+            f'{label} is a practical {name} planning anchor: compare its location, transfer time, '
+            f'nearby hotel bases and event timing before you lock the day plan.'
+        )
+        text = bounded_text(city_item_text(item), fallback_text, 'see_text_words')
+        img = f'{img_base}/{slug}-see-{i}-mini.png'
+        img_html = optional_img(img)
+        aff = ATTRACTION_AFFILIATES.get(slug, {}).get(label.lower())
+        inner = f'{img_html}<div><strong>{esc(label)}</strong><p>{esc(text)}</p></div>'
+        media_class = '' if img_html else ' destination-attraction-card--text-only'
+        if aff:
+            see_cards.append(f'<a class="destination-attraction-card{media_class}" href="{esc(aff)}" target="_blank" rel="nofollow sponsored noopener">{inner}</a>')
+        else:
+            see_cards.append(f'<div class="destination-attraction-card{media_class}" data-attraction-name="{esc(label)}">{inner}</div>')
+    if not see_cards:
+        see_cards.append(f'<p class="country-empty is-visible">Add confirmed sights for {esc(name)} in the city data file.</p>')
+
+    def stay_area(area, idx):
+        if isinstance(area, dict):
+            label = area.get('name', 'Area')
+            fallback = (f'{label} works best when hotel price, local transfers, evening plans and repeat routes '
+                        f'matter more than staying beside one single attraction.')
+            text = bounded_text(area.get('text'), fallback, 'area_text_words')
+            best = area.get('bestFor', 'first visits, access, availability')
+        else:
+            label = str(area)
+            fallback = (
+                f'{label} is the first area to compare for short transfers, simple arrivals, restaurants '
+                f'and a practical first-night base.' if idx == 0 else
+                f'{label} is useful when price, transit, parking, quieter nights or a specific event route '
+                f'changes the best hotel choice.'
+            )
+            text = bounded_text('', fallback, 'area_text_words')
+            best = 'first visits, dining, sightseeing' if idx == 0 else 'availability, access, alternate bases'
+        href = booking_search_url(f'{label}, {name}, {country_name}', d)
+        return f'<div class="stay-area"><strong>{esc(label)}</strong><p>{esc(text)}</p><span>Best for: {esc(best)}</span><a class="stay-card-link{booking_market}" href="{esc(href)}" target="_blank" rel="nofollow sponsored noopener">Compare stays</a></div>'
+
+    areas_html = ''.join(stay_area(a, i) for i, a in enumerate(areas[:8]))
+    airports_html = ''.join(
+        f'<li><strong>{esc(a.get("name", "Airport"))}</strong><span>{esc(a.get("search", a.get("name", "")))}</span><p>{esc(bounded_text(a.get("text"), "Compare airport access against hotel location, arrival time, rental car pickup, late flights and onward driving before choosing the first night base.", "airport_text_words"))}</p></li>'
+        for a in airports
+    ) or f'<li><strong>{esc(name)} airport access</strong><span>Main gateway TBC.</span><p>{esc(bounded_text("", "Compare airport access against hotel location, arrival time, rental car pickup, late flights and onward driving before choosing the first night base.", "airport_text_words"))}</p></li>'
+
+    nearby = []
+    for i, area in enumerate(areas[:6]):
+        label = area.get('name') if isinstance(area, dict) else str(area)
+        text = bounded_text('', f'Compare {label} for hotel fit, transfer time, evening plans and the routes you will repeat most.', 'nearby_text_words')
+        nearby.append(f'<a class="destination-nearby-card" href="#stay-hotels-areas"><span>{"Core" if i == 0 else "Area"}</span><strong>{esc(label)}</strong><p>{esc(text)}</p></a>')
+    for city in d.get('nearbyCities') or []:
+        if len(nearby) >= 8:
+            break
+        if isinstance(city, dict):
+            href = city.get('href') or '#'
+            cname = city.get('name') or city.get('title') or 'Nearby city'
+            text = bounded_text(city.get('text'), f'Use {cname} as another nearby base when routes, hotel prices or event timing point away from {name}.', 'nearby_text_words')
+        else:
+            href = '#'
+            cname = str(city)
+            text = bounded_text('', f'Use {cname} as another nearby base when routes, hotel prices or event timing point away from {name}.', 'nearby_text_words')
+        nearby.append(f'<a class="destination-nearby-card" href="{esc(href)}"><span>City</span><strong>{esc(cname)}</strong><p>{esc(text)}</p></a>')
+    nearby_html = ''.join(nearby) or f'<p class="country-empty is-visible">Nearby ideas can be added in {esc(slug)}.city.data.json.</p>'
+
+    upcoming_event_items = []
+    past_event_items = []
+    for e in events:
+        img = optional_img(e.get('img', ''))
+        media_class = '' if img else ' visual-topic-card--no-image'
+        start = str(e.get('startDate') or e.get('start') or '').strip()
+        end = str(e.get('endDate') or e.get('end') or start).strip()
+        status = str(e.get('status') or '').strip().lower()
+        end_date = parse_iso_date(end)
+        is_past = status in ('past', 'ended', 'complete') or (end_date is not None and end_date < TODAY)
+        attrs = []
+        if start:
+            attrs.append(f'data-start="{esc(start)}"')
+        if end:
+            attrs.append(f'data-end="{esc(end)}"')
+        if status:
+            attrs.append(f'data-status="{esc(status)}"')
+        attr_html = (' ' + ' '.join(attrs)) if attrs else ''
+        card = (
+            f'<a class="visual-topic-card visual-topic-card--{esc(e.get("modifier", "event"))}{media_class}" '
+            f'href="{esc(e["href"])}"{attr_html}>{img}<strong>{esc(e["title"])}</strong><span>{esc(e.get("meta", ""))}</span></a>'
+        )
+        (past_event_items if is_past else upcoming_event_items).append(card)
+    event_cards = ''.join(upcoming_event_items) or f'<p class="country-empty is-visible">No upcoming {esc(name)} events in the shared event index yet.</p>'
+    past_event_cards = ''.join(past_event_items)
+    past_events_html = (
+        f'<details class="city-past-events"><summary>Past events</summary><div class="country-paths country-paths--events">{past_event_cards}</div></details>'
+        if past_event_cards else ''
+    )
+
+    ldjson = json.dumps({"@context": "https://schema.org", "@type": "WebPage", "url": page_url,
+                         "name": title, "description": description, "inLanguage": "en",
+                         "image": f"{DOMAIN}{hero}"}, ensure_ascii=False, separators=(',', ':'))
+
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+  <!-- OneSlider generic city page -->
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css?v=city-weather-dark-20260614">
+  <link rel="preload" as="image" href="{hero_preload}">
+  <script defer src="/assets/js/oneslider-core.js?v=city-generic-20260613"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:description" content="{esc(description)}">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="robots" content="index,follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{esc(description)}">
+  <meta property="og:title" content="{esc(title)}"><meta property="og:image" content="{DOMAIN}{hero}">
+  <meta name="description" content="{esc(description)}">
+  <meta property="og:url" content="{page_url}">
+  <link rel="canonical" href="{page_url}"><meta name="content-language" content="en">
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/locations.css?v=city-weather-dark-20260614">
+  <meta name="theme-color" content="#0d2137">
+  <title>{esc(title)}</title>
+  <script type="application/ld+json">{ldjson}</script>
+</head>
+<body class="country-onepage city-page--stay-template city-page--template">
+  <nav class="top-menu" aria-label="Location navigation">
+    <a class="nav-icon" href="/content/events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+    <a class="nav-icon active" href="/content/locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+    <a class="nav-icon" href="/content/categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+    <span class="nav-divider"></span><a class="nav-back" href="/content/locations/{cont}/{country_slug}/index.html" title="Back to {esc(country_name)}" aria-label="Back to {esc(country_name)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>{esc(country_name)}</span></a>
+    <span class="nav-spacer"></span><details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"><a href="/content/locations/{cont}/{country_slug}/{slug}.html" aria-current="page">EN</a><a href="#">SV</a><a href="#">NO</a><a href="#">DK</a><a href="#">FI</a></div></details>
+  </nav>
+  <main class="page-shell country-slide country-content-box">
+    <section class="country-brief" aria-label="{esc(name)} one-slide overview">
+      <div class="country-brief__copy">
+        <div class="city-left-fixed-head"><picture class="country-hero-image country-hero-image--clear" aria-hidden="true"><source srcset="{esc(hero_1200)} 1200w" sizes="(max-width: 720px) 100vw, 42vw" type="image/webp"><img src="{hero}"{hero_sources} alt="" width="1200" height="630" loading="eager" decoding="async"></picture><div class="city-title-row"><h1 class="hero-title">{esc(name)}</h1><div class="city-local-time-card" data-local-time data-time-zone="{esc(tz)}"><div><span>Local time</span><strong data-local-time-value>--:--</strong></div><em data-local-time-zone>{esc(name)} time</em></div></div></div>
+        <div class="city-left-scroll"><div class="stay-weather-card stay-weather-card--strip"{weather_attrs}><div class="stay-weather-title-row"><h2>Weather Forecast</h2><span>{esc(name)}, {esc(country_name)}</span></div><div class="stay-weather-page is-active" data-weather-page="0"><div class="stay-weather-days"><article class="stay-weather-tile"><strong>Loading</strong><div class="stay-weather-reading"><span class="weather-icon weather-icon--partly" aria-hidden="true"></span><span class="stay-weather-temp">Forecast</span></div></article></div></div><p class="stay-weather-source">Open-Meteo forecast.</p></div><section class="city-intro-block" aria-labelledby="{slug}-city-overview"><h2 id="{slug}-city-overview">{esc(intro_title)}</h2><p class="hero-text">{esc(intro)}</p></section></div>
+        <div class="city-left-fixed-foot"><a class="location-parent-card city-country-card" href="/content/locations/{cont}/{country_slug}/index.html" aria-label="Explore {esc(country_name)}"><img src="{country_mini}"{img_srcset(country_mini, "136px")} alt="{esc(country_mini_alt)}" loading="lazy" width="400" height="300"><span>Part of {esc(country_name)}</span><strong>Explore more {esc(country_name)}</strong><em>More cities, stays and event bases across {esc(country_name)}.</em></a></div>
+      </div>
+      <div class="country-brief__panel"><section class="persona-tabs" aria-label="Choose {esc(name)} view"><input type="radio" name="{slug}-view" id="view-visit" checked><input type="radio" name="{slug}-view" id="view-see"><input type="radio" name="{slug}-view" id="view-stay"><input type="radio" name="{slug}-view" id="view-nearby"><input type="radio" name="{slug}-view" id="view-events"><div class="persona-tablist" role="tablist" aria-label="Choose {esc(name)} outcome"><label for="view-visit" role="tab">Fact</label><label for="view-see" role="tab">See</label><label for="view-stay" role="tab">Visit</label><label for="view-nearby" role="tab">Nearby</label><label for="view-events" role="tab">Events</label></div>
+        <div class="persona-panel view-panel--visit"><div class="country-panel-card city-facts-hero"><div class="city-facts-header"><h2>City facts</h2>{pie_html}</div><div class="city-fact-chip-grid" aria-label="City quick facts"><div><span>Region</span><strong>{esc(region)}</strong></div><div><span>Airport base</span><strong>{esc(airport_label)}</strong></div><div><span>Known for</span><strong>{esc(known_for)}</strong></div></div><div class="city-kpi-grid">{kpi_cards}</div></div>{history_card}</div>
+        <div class="persona-panel view-panel--see"><div class="country-panel-card"><h2>Worth seeing</h2><div class="destination-attraction-grid">{''.join(see_cards)}</div></div></div>
+        <div class="persona-panel view-panel--stay"><div class="stay-planner-layout"><nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#stay-overview">Overview</a><a href="#stay-hotels-areas">Hotels &amp; Areas</a><a href="#stay-flights-airports">Flights &amp; Airports</a><a href="#stay-rental-cars">Rental cars</a><a href="#stay-tips">Tips</a></nav><div class="stay-section-stack"><div class="country-panel-card stay-overview-card stay-section-panel" id="stay-overview"><h2>Stay Overview</h2><p>{esc(bounded_text("", f"Compare {', '.join([str(a.get('name') if isinstance(a, dict) else a) for a in areas[:3]]) or name} before booking {name} hotels. Start with the places you will repeat most, then check airport timing, parking, nightly price and event demand before choosing the final base.", "stay_overview_words"))}</p></div><div class="country-panel-card stay-booking-card stay-section-panel" id="stay-hotels-areas"><h2>Hotels &amp; Areas</h2><p>{esc(bounded_text("", f"Compare accommodation options in and around {name} by area, not only by nightly price. A cheaper room can become expensive when airport transfers, parking, attraction routes, late arrivals or event-week demand add time and cost.", "hotel_intro_words"))}</p><div class="stay-area-grid">{areas_html}</div><a class="stay-booking-button{booking_market}" href="{esc(booking_search_url(booking_destination, d))}" target="_blank" rel="nofollow sponsored noopener">Check hotels on Booking.com</a></div><div class="country-panel-card stay-section-panel" id="stay-flights-airports"><h2>Flights &amp; Airports</h2><ul class="stay-airports">{airports_html}</ul><a class="flight-affiliate-card" href="https://www.tkqlhce.com/click-101771061-17061696" target="_top" rel="nofollow sponsored noopener"><img src="https://www.lduhtrp.net/image-101771061-17061696" width="480" height="260" alt="" loading="lazy"></a></div><div class="country-panel-card stay-section-panel" id="stay-rental-cars"><h2>Rental cars</h2><p>{esc(bounded_text("", "Compare rental cars when airport arrival, day trips, parking, luggage, theme parks, coastal routes or nearby regions matter more than staying fully on transit.", "tip_text_words"))}</p><a class="rental-car-affiliate-card" href="https://www.jdoqocy.com/click-101771061-17122706" target="_top" rel="nofollow sponsored noopener"><img src="https://www.tqlkg.com/image-101771061-17122706" width="336" height="280" alt="" loading="lazy"></a></div><div class="country-panel-card stay-section-panel" id="stay-tips"><h2>Travel Tips</h2><div class="stay-tip-grid"><div class="stay-tip"><strong>Best time to visit</strong><p>{esc(bounded_text("", "Check weather, school holidays, daylight, local festivals and major event calendars before locking in hotel rates or non-refundable tickets.", "tip_text_words"))}</p></div><div class="stay-tip"><strong>Transport notes</strong><p>{esc(bounded_text("", "Choose a base around the trips you will repeat most: airport, station, old town, waterfront, venue district or day-trip route.", "tip_text_words"))}</p></div><div class="stay-tip"><strong>Crowds</strong><p>{esc(bounded_text("", "Prices can jump around festivals, conventions, school holidays, cruise days, ski weeks, race weekends and large sports events.", "tip_text_words"))}</p></div><div class="stay-tip"><strong>Booking detail</strong><p>{esc(bounded_text("", "Compare total cost with taxes, breakfast, parking, resort fees, transfer timing and cancellation terms before choosing the cheapest room.", "tip_text_words"))}</p></div></div></div></div></div></div>
+        <div class="persona-panel view-panel--nearby"><div class="country-panel-card"><h2>Nearby ideas</h2><div class="destination-nearby-grid">{nearby_html}</div></div></div>
+        <div class="persona-panel view-panel--events"><div class="country-panel-card"><h2>Upcoming events</h2><div class="country-paths country-paths--events" data-expiring-events>{event_cards}</div>{past_events_html}</div></div>
+      </section></div>
+    </section>
+  </main>
+</body>
+</html>
+'''
 
 
 # ===================================================================== render
@@ -144,9 +889,33 @@ def render(d):
                        if landmarks else '')
 
     qa = ''.join(f'<div><strong>{esc(q["q"])}</strong><span>{esc(q["a"])}</span></div>' for q in d['planningQuestions'])
-    events = ''.join(
-        f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" href="{esc(e["href"])}">{mini_img(e["img"], e["title"])}<strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
-        for e in d['events'])
+    upcoming_event_items = []
+    past_event_items = []
+    for e in d['events']:
+        start = str(e.get('startDate') or e.get('start') or '').strip()
+        end = str(e.get('endDate') or e.get('end') or start).strip()
+        status = str(e.get('status') or '').strip().lower()
+        end_date = parse_iso_date(end)
+        is_past = status in ('past', 'ended', 'complete') or (end_date is not None and end_date < TODAY)
+        attrs = []
+        if start:
+            attrs.append(f'data-start="{esc(start)}"')
+        if end:
+            attrs.append(f'data-end="{esc(end)}"')
+        if status:
+            attrs.append(f'data-status="{esc(status)}"')
+        attr_html = (' ' + ' '.join(attrs)) if attrs else ''
+        card = (
+            f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" href="{esc(e["href"])}"{attr_html}>'
+            f'{mini_img(e["img"], e["title"])}<strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
+        )
+        (past_event_items if is_past else upcoming_event_items).append(card)
+    events = ''.join(upcoming_event_items) or f'<p class="country-empty is-visible">No upcoming {esc(name)} events in the shared event index yet.</p>'
+    past_events = ''.join(past_event_items)
+    past_events_block = (
+        f'<details class="city-past-events"><summary>Past events</summary><div class="country-paths country-paths--events">{past_events}</div></details>'
+        if past_events else ''
+    )
     known = ''.join(f'<span>{esc(k)}</span>' for k in d['knownFor'])
     topics = ''.join(
         f'<a class="visual-topic-card visual-topic-card--{esc(t["modifier"])}" href="{esc(t["href"])}">{mini_img(t["img"], t["alt"])}<strong>{esc(t["title"])}</strong><span>{esc(t["text"])}</span></a>'
@@ -213,7 +982,7 @@ def render(d):
             <div class="country-panel-card"><h2>Planning questions</h2><div class="country-qa-list">{qa}</div></div>
           </div>
           <div class="persona-panel view-panel--events">
-            <div class="country-panel-card"><h2>Upcoming events</h2><div class="country-paths country-paths--events" data-expiring-events>{events}</div></div>
+            <div class="country-panel-card"><h2>Upcoming events</h2><div class="country-paths country-paths--events" data-expiring-events>{events}</div>{past_events_block}</div>
           </div>
           <div class="persona-panel view-panel--context">
             <div class="country-panel-card"><h2>Known for</h2><div class="country-identity-grid">{known}</div></div>
@@ -391,7 +1160,7 @@ def write(path, text):
     return False
 
 
-def build_city(city_path, extract_first=True):
+def build_city(city_path, extract_first=False):
     # Use .city.data.json so it never collides with the country's <slug>.data.json
     # (matters for city-states like monaco/monaco.html + monaco/index.html).
     data_path = os.path.splitext(city_path)[0] + '.city.data.json'
@@ -400,20 +1169,162 @@ def build_city(city_path, extract_first=True):
         write(data_path, json.dumps(data, ensure_ascii=False, indent=2))
     else:
         data = json.load(open(data_path, encoding='utf-8'))
-    html = render(data)
+    data = normalize_city_data(data, city_path)
+    html = render_template_city(data)
     write(os.path.normpath(city_path), html)
     return data
 
 
+def template_preview_data():
+    return {
+        'slug': 'oslo',
+        'name': 'Template City',
+        'continent': 'europe',
+        'continentName': 'Europe',
+        'countrySlug': 'norway',
+        'countryName': 'Country',
+        'region': 'Region / metro area',
+        'population': 'Population',
+        'timezone': 'Europe/Oslo',
+        'coordinates': {'lat': 59.91, 'lon': 10.75},
+        'seo': {
+            'title': 'City Page Template Preview',
+            'description': 'Generated preview for the generic OneSliders city page template.',
+        },
+        'introTitle': 'City overview',
+        'heroText': (
+            'This is the main city overview slot. The generator replaces this text with city-specific facts '
+            'about the place itself, while the page frame, navigation, weather, parent card and shared CSS remain stable.'
+        ),
+        'areas': [
+            {'name': 'Central base', 'text': 'Area comparison slot for the main first-visit base near repeat routes and transport.'},
+            {'name': 'Second area', 'text': 'Area comparison slot for a quieter or better-value base when price and timing matter.'},
+        ],
+        'airports': [
+            {'name': 'Main airport', 'search': 'Template City, Country'},
+            {'name': 'Secondary airport', 'search': 'Template City, Country'},
+        ],
+        'highlights': [
+            {'title': 'Attraction one', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction two', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction three', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction four', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction five', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction six', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+        ],
+        'history': [
+            {'label': '1624', 'text': 'Early settlement, harbor, river, fort or market activity shape the first city identity.'},
+            {'label': '1700s', 'text': 'Growth period slot for verified trade, civic, industrial, religious or regional development.'},
+            {'label': '1898', 'text': 'Modern municipal structure, rail links, roads or new districts reshape the city.'},
+            {'label': '1920s', 'text': 'Public buildings, planning, migration, economy or culture change how the city works.'},
+            {'label': '1970s', 'text': 'Modern industry, visitor economy, university, airport or event growth changes the city role.'},
+            {'label': 'Today', 'text': 'Current population, economy, culture, transport and regional role define the city profile now.'},
+        ],
+        'kpis': [
+            {'label': 'Population', 'value': '8.3M', 'note': 'city proper'},
+            {'label': 'Metro', 'value': '19.5M', 'note': 'urban region'},
+            {'label': 'Founded', 'value': '1624', 'note': 'historic origin'},
+            {'label': 'Airports', 'value': '2', 'note': 'main gateways'},
+        ],
+        'cityProfile': [
+            {'label': 'Culture', 'pct': 35},
+            {'label': 'Water', 'pct': 20},
+            {'label': 'Parks', 'pct': 15},
+            {'label': 'Events', 'pct': 30},
+        ],
+        'bookingDestination': 'Template City, Country',
+    }
+
+
+def make_tmp_preview_html(html):
+    html = html.replace(
+        '<body class="country-onepage city-page--stay-template city-page--template">',
+        '<body class="country-onepage city-page--stay-template city-page--template city-page--template-preview">'
+    )
+    replacements = (
+        ('href="/', 'href="../../'),
+        ('src="/', 'src="../../'),
+        ('srcset="/', 'srcset="../../'),
+        (', /', ', ../../'),
+        ('urlTemplate": "/', 'urlTemplate": "../../'),
+    )
+    for old, new in replacements:
+        html = html.replace(old, new)
+    return html
+
+
+def build_template_preview():
+    data = template_preview_data()
+    html = render_template_city(data)
+    template_path = os.path.join(ROOT, 'scripts', 'templates', 'city-page-template.html')
+    preview_path = os.path.join(ROOT, 'tmp', 'city-template-preview', 'index.html')
+    write(template_path, html)
+    write(preview_path, make_tmp_preview_html(html))
+    return template_path, preview_path
+
+
+def city_paths_from_data(pattern, exclude_prefixes=()):
+    paths = []
+    for data_path in glob.glob(os.path.join(ROOT, pattern), recursive=True):
+        rel_data = os.path.relpath(data_path, ROOT).replace('\\', '/')
+        if exclude_prefixes and rel_data.startswith(exclude_prefixes):
+            continue
+        city_path = data_path[:-len('.city.data.json')] + '.html'
+        paths.append(city_path)
+    return sorted(paths)
+
+
+def build_city_paths(paths):
+    count = 0
+    for c in paths:
+        d = build_city(c)
+        print(f"  {d['continent']}/{d['countrySlug']}/{d['slug']}: {booking_base_url(d)}")
+        count += 1
+    return count
+
+
 def main(argv):
+    exclude_prefixes = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == '--exclude-prefix' and i + 1 < len(argv):
+            exclude_prefixes.append(argv[i + 1].replace('\\', '/').strip('/'))
+            del argv[i:i + 2]
+            continue
+        i += 1
+    exclude_prefixes = tuple(exclude_prefixes)
+
+    if '--template-preview' in argv:
+        template_path, preview_path = build_template_preview()
+        print(f"Built city template: {template_path}")
+        print(f"Built city template preview: {preview_path}")
+        return 0
+    if '--all' in argv:
+        cities = city_paths_from_data('content/locations/**/*.city.data.json', exclude_prefixes)
+        count = build_city_paths(cities)
+        print(f"Built {count} city pages from all city data files.")
+        return 0
+    if '--booking-markets' in argv:
+        cities = []
+        cities.extend(city_paths_from_data('content/locations/europe/*/*.city.data.json', exclude_prefixes))
+        cities.extend(city_paths_from_data('content/locations/north-america/usa/*.city.data.json', exclude_prefixes))
+        cities.extend(city_paths_from_data('content/locations/north-america/canada/*.city.data.json', exclude_prefixes))
+        count = build_city_paths(cities)
+        print(f"Built {count} city pages for Europe, USA and Canada.")
+        return 0
+    if '--country' in argv:
+        i = argv.index('--country')
+        cont = argv[i + 1]
+        country = argv[i + 2]
+        cities = city_paths_from_data(f'content/locations/{cont}/{country}/*.city.data.json', exclude_prefixes)
+        count = build_city_paths(cities)
+        print(f"Built {count} city pages in {cont}/{country}.")
+        return 0
     if '--continent' in argv:
         cont = argv[argv.index('--continent') + 1]
-        cities = [f for f in glob.glob(os.path.join(ROOT, f'content/locations/{cont}/*/*.html'))
-                  if os.path.basename(f) != 'index.html']
-        for c in cities:
-            d = build_city(c)
-            print(f"  {d['countrySlug']}/{d['slug']}: {len(d['snapshot'])}snap {len(d['events'])}ev {len(d['topicCards'])}topics")
-        print(f"Built {len(cities)} city pages in {cont}.")
+        cities = city_paths_from_data(f'content/locations/{cont}/*/*.city.data.json', exclude_prefixes)
+        count = build_city_paths(cities)
+        print(f"Built {count} city pages in {cont}.")
         return 0
     if not argv:
         print('Usage: build_city_page.py <city.html> | --continent <name>'); return 1

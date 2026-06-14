@@ -9,6 +9,7 @@ Proof-of-concept for the country-page template model:
 
 Usage:
   python scripts/build_country_page.py content/locations/europe/sweden
+  python scripts/build_country_page.py --template-preview
   python scripts/build_country_page.py --all          # every */<country> with a *.data.json
 """
 
@@ -16,15 +17,6 @@ import os, sys, json, glob, html as H
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = 'https://one-sliders.com'
-COUNTRY_FINDER_SLUGS = {
-    ('north-america', 'usa'),
-    ('north-america', 'canada'),
-    ('north-america', 'greenland'),
-}
-
-
-def has_country_finder(cont, slug):
-    return cont == 'europe' or (cont, slug) in COUNTRY_FINDER_SLUGS
 
 # UI labels per language. These are the ONLY language-specific strings shared by
 # every country page — translate ~25 strings once and all 197 countries get it.
@@ -81,6 +73,22 @@ def rel_prefix(depth):
     return '../' * depth
 
 
+def normalize_country_seo(seo, name):
+    seo = dict(seo)
+    stale_title = str(seo.get('title', '')).startswith('Sports Events in ')
+    stale_description = 'sports events' in str(seo.get('webpageDescription', '')).lower()
+    default_description = f"Explore {name} with key facts, linked cities, events, food and travel context."
+    if stale_title or not seo.get('title'):
+        seo['title'] = f"{name} travel, cities and events"
+    if stale_description or not seo.get('description'):
+        seo['description'] = f"{name} historical timeline, capital, population, events and travel context."
+    if stale_description or not seo.get('twitterDescription'):
+        seo['twitterDescription'] = default_description
+    if stale_description or not seo.get('webpageDescription'):
+        seo['webpageDescription'] = default_description
+    return seo
+
+
 def render(data, lang='en'):
     L = LABELS[lang]
     slug = data['slug']
@@ -99,6 +107,7 @@ def render(data, lang='en'):
     seo = data['seo']
     # SEO strings can be localized via data['i18n'][lang]['seo']
     seo = data.get('i18n', {}).get(lang, {}).get('seo', seo)
+    seo = normalize_country_seo(seo, name)
     hero = f"/content/locations/{cont}/{slug}/img/{slug}-hero.png"
 
     def mini_img(src, alt, w=400, h=300, eager=False):
@@ -184,18 +193,13 @@ def render(data, lang='en'):
             f'</details>'
         )
 
-    back_to = L['backTo'].format(cont=esc(cont_name))
-
     # ---- nav ----
     nav = (
         f'<nav class="top-menu" aria-label="Location navigation">'
         f'<a class="nav-icon" href="{inc}events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>'
         f'<a class="nav-icon active" href="{inc}locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>'
         f'<a class="nav-icon" href="{inc}categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>'
-        f'<span class="nav-divider"></span>'
-        f'<a class="nav-back" href="../index.html" title="{back_to}" aria-label="{back_to}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>{esc(cont_name)}</span></a>'
-        f'<a class="nav-pill" href="../index.html">{esc(cont_name)}</a>'
-        f'<a class="nav-pill active" aria-current="page" href="index.html">{esc(name)}</a>'
+        f'<span class="nav-spacer"></span>'
         f'{lang_switcher}'
         f'</nav>'
     )
@@ -219,7 +223,8 @@ def render(data, lang='en'):
         for w in localized(data, lang, 'worthSeeing', data['worthSeeing']))
     city_items = data.get('cities', [])
     def city_card(c):
-        tags_attr = (" data-city-tags=\"" + esc(" ".join(c.get("tags", []))) + "\"") if c.get("tags") else ""
+        tags = c.get("tags") or ["city"]
+        tags_attr = " data-city-tags=\"" + esc(" ".join(tags)) + "\""
         img = mini_img(c["img"], c["name"]) if c.get("img") else ""
         no_image_class = " visual-topic-card--no-image" if not c.get("img") else ""
         label = L["open"].format(name=esc(c["name"])) if c.get("href") else esc(c["name"])
@@ -237,12 +242,12 @@ def render(data, lang='en'):
     plain_links = ''.join(
         f'<a class="country-path" href="{esc(l["href"])}"><span>{esc(l["kind"])}</span><strong>{esc(l["label"])}</strong></a>'
         for l in localized(data, lang, 'links', data.get('links', [])))
-    has_city_finder = has_country_finder(cont, slug)
+    has_city_finder = bool(city_items)
     loc_links = cities if has_city_finder else cities + plain_links
     city_finder = ''
     city_grid_attrs = 'class="country-paths country-paths--location-links"'
     if has_city_finder and city_items:
-        filters = [
+        all_filters = [
             ('all', 'All'),
             ('beach', 'Beaches'),
             ('theme-parks', 'Theme parks'),
@@ -254,19 +259,26 @@ def render(data, lang='en'):
             ('culture', 'Culture'),
             ('food', 'Food'),
             ('nightlife', 'Nightlife'),
-            ('city', 'Cities'),
+        ]
+        available_tags = set()
+        for c in city_items:
+            for tag in c.get('tags', ['city']):
+                available_tags.add(str(tag))
+        filters = [
+            (value, label) for value, label in all_filters
+            if value == 'all' or value in available_tags
         ]
         filter_buttons = ''.join(
-            f'<button class="usa-city-filter{" is-active" if value == "all" else ""}" type="button" data-city-filter="{value}" aria-pressed="{"true" if value == "all" else "false"}">{label}</button>'
+            f'<button class="country-city-filter{" is-active" if value == "all" else ""}" type="button" data-city-filter="{value}" aria-pressed="{"true" if value == "all" else "false"}">{label}</button>'
             for value, label in filters
         )
         finder_country = 'USA' if slug == 'usa' else data.get('name', 'Country')
         city_finder = (
-            f'<div class="usa-city-finder" data-city-finder>'
-            f'<div class="usa-city-finder__header"><h2>Find a {esc(finder_country)} city</h2>'
+            f'<div class="country-city-finder" data-city-finder>'
+            f'<div class="country-city-finder__header"><h2>Find a city in {esc(finder_country)}</h2>'
             f'<label>Search<input type="search" data-city-search placeholder="City, region or activity"></label></div>'
-            f'<div class="usa-city-filters" aria-label="Filter {esc(finder_country)} cities by activity">{filter_buttons}</div>'
-            f'<p class="usa-city-count" data-city-count>Showing all cities</p></div>'
+            f'<div class="country-city-filters" aria-label="Filter {esc(finder_country)} cities by activity">{filter_buttons}</div>'
+            f'<p class="country-city-count" data-city-count>Showing all cities</p></div>'
         )
         city_grid_attrs = 'class="country-paths country-paths--location-links" data-city-grid'
     qa = ''.join(
@@ -307,9 +319,17 @@ def render(data, lang='en'):
     hero_base = f"/content/locations/{cont}/{slug}/img/{slug}-hero"
     def _has(p): return os.path.isfile(os.path.join(ROOT, p.lstrip('/')))
     hero_1200 = f'{hero_base}-1200.webp'
+    hero_srcset = []
+    for ww in (400, 768, 1200):
+        cand = f'{hero_base}-{ww}.webp'
+        if _has(cand):
+            hero_srcset.append(f'{cand} {ww}w')
+    hero_sizes = '(max-width: 720px) 100vw, 44vw'
     if _has(hero_1200):
         hero_preload = hero_1200
-        hero_picture = f'<picture class="country-hero-image" aria-hidden="true"><source srcset="{hero_1200}" type="image/webp"><img src="{hero}" alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
+        source_srcset = ', '.join(hero_srcset) if hero_srcset else hero_1200
+        img_srcset = f' srcset="{source_srcset}" sizes="{hero_sizes}"' if hero_srcset else ''
+        hero_picture = f'<picture class="country-hero-image" aria-hidden="true"><source srcset="{source_srcset}" sizes="{hero_sizes}" type="image/webp"><img src="{hero}"{img_srcset} alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
     else:
         hero_preload = hero
         hero_picture = f'<picture class="country-hero-image" aria-hidden="true"><img src="{hero}" alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
@@ -319,7 +339,7 @@ def render(data, lang='en'):
 <head>
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="{up}assets/css/oneslider-core.css">
-  <link rel="preload" as="image" href="{hero_preload}">
+  <link rel="preload" as="image" href="{hero_preload}"{f' imagesrcset="{", ".join(hero_srcset)}" imagesizes="{hero_sizes}"' if hero_srcset else ''}>
 <script defer src="{up}assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -337,12 +357,11 @@ def render(data, lang='en'):
   <link rel="icon" href="{up}assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{up}assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="{up}assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-no-inline-hero-fact-edge-20260612">
+  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-title-fix-20260614">
   <meta name="theme-color" content="#0d2137">
   <title>{esc(seo['title'])}</title>
-  <script type="application/ld+json">{ldjson}</script>
 </head>
-<body class="country-onepage{' location-page--usa' if cont == 'north-america' and slug == 'usa' else ''}{' location-page--canada' if cont == 'north-america' and slug == 'canada' else ''}{' location-page--country-finder' if has_country_finder(cont, slug) else ''}">
+<body class="country-onepage{' location-page--country-finder' if has_city_finder else ''}">
   {nav}
   <main class="page-shell country-slide country-content-box">
     <section class="country-brief" aria-label="{esc(name)} one-slide overview">
@@ -398,6 +417,98 @@ def output_path(data, lang):
         ROOT, base + os.path.join('content', 'locations', cont, slug, 'index.html')))
 
 
+def write(path, text):
+    import time
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    for _ in range(5):
+        try:
+            with open(path, 'w', encoding='utf-8', newline='') as fh:
+                fh.write(text)
+            return True
+        except OSError:
+            time.sleep(0.3)
+    return False
+
+
+def template_preview_data():
+    data_path = os.path.join(
+        ROOT, 'content', 'locations', 'north-america', 'usa', 'usa.data.json')
+    data = json.load(open(data_path, encoding='utf-8'))
+    data = json.loads(json.dumps(data))
+    data['depth'] = 2
+    data['seo'] = {
+        'title': 'Country Page Template Preview',
+        'description': 'Generated preview for the generic OneSliders country page template, based on the USA layout.',
+        'twitterDescription': 'Generated preview for the generic OneSliders country page template.',
+        'webpageDescription': 'Generated preview for the generic OneSliders country page template.',
+    }
+    return data
+
+
+def make_tmp_preview_html(html):
+    html = html.replace(
+        '<body class="country-onepage location-page--country-finder">',
+        '<body class="country-onepage location-page--country-finder country-page--template-preview">'
+    )
+    html = html.replace(
+        '<body class="country-onepage">',
+        '<body class="country-onepage country-page--template-preview">'
+    )
+    replacements = (
+        ('href="/', 'href="../../'),
+        ('src="/', 'src="../../'),
+        ('srcset="/', 'srcset="../../'),
+        (', /', ', ../../'),
+        ('href="../events/index.html"', 'href="../../content/events/index.html"'),
+        ('href="../locations/index.html"', 'href="../../content/locations/index.html"'),
+        ('href="../categories/index.html"', 'href="../../content/categories/index.html"'),
+        ('href="../index.html"', 'href="../../content/locations/north-america/index.html"'),
+        ('href="washington-dc.html"', 'href="../../content/locations/north-america/usa/washington-dc.html"'),
+        ('href="new-york.html"', 'href="../../content/locations/north-america/usa/new-york.html"'),
+        ('href="las-vegas.html"', 'href="../../content/locations/north-america/usa/las-vegas.html"'),
+        ('href="orlando.html"', 'href="../../content/locations/north-america/usa/orlando.html"'),
+        ('href="miami.html"', 'href="../../content/locations/north-america/usa/miami.html"'),
+        ('href="los-angeles.html"', 'href="../../content/locations/north-america/usa/los-angeles.html"'),
+        ('href="san-francisco.html"', 'href="../../content/locations/north-america/usa/san-francisco.html"'),
+        ('href="honolulu.html"', 'href="../../content/locations/north-america/usa/honolulu.html"'),
+        ('href="new-orleans.html"', 'href="../../content/locations/north-america/usa/new-orleans.html"'),
+        ('href="nashville.html"', 'href="../../content/locations/north-america/usa/nashville.html"'),
+        ('href="chicago.html"', 'href="../../content/locations/north-america/usa/chicago.html"'),
+        ('href="boston.html"', 'href="../../content/locations/north-america/usa/boston.html"'),
+        ('href="seattle.html"', 'href="../../content/locations/north-america/usa/seattle.html"'),
+        ('href="austin.html"', 'href="../../content/locations/north-america/usa/austin.html"'),
+        ('href="augusta.html"', 'href="../../content/locations/north-america/usa/augusta.html"'),
+        ('href="black-rock-city.html"', 'href="../../content/locations/north-america/usa/black-rock-city.html"'),
+        ('href="charleston.html"', 'href="../../content/locations/north-america/usa/charleston.html"'),
+        ('href="savannah.html"', 'href="../../content/locations/north-america/usa/savannah.html"'),
+        ('href="santa-fe.html"', 'href="../../content/locations/north-america/usa/santa-fe.html"'),
+        ('href="aspen.html"', 'href="../../content/locations/north-america/usa/aspen.html"'),
+        ('href="key-west.html"', 'href="../../content/locations/north-america/usa/key-west.html"'),
+        ('href="sedona.html"', 'href="../../content/locations/north-america/usa/sedona.html"'),
+        ('href="jackson.html"', 'href="../../content/locations/north-america/usa/jackson.html"'),
+        ('href="portland-maine.html"', 'href="../../content/locations/north-america/usa/portland-maine.html"'),
+        ('href="newport.html"', 'href="../../content/locations/north-america/usa/newport.html"'),
+        ('href="east-hampton.html"', 'href="../../content/locations/north-america/usa/east-hampton.html"'),
+        ('href="southampton.html"', 'href="../../content/locations/north-america/usa/southampton.html"'),
+        ('href="montauk.html"', 'href="../../content/locations/north-america/usa/montauk.html"'),
+        ('src="img/flag.svg"', 'src="../../content/locations/north-america/usa/img/flag.svg"'),
+        ('urlTemplate":"https://one-sliders.com/', 'urlTemplate":"../../'),
+    )
+    for old, new in replacements:
+        html = html.replace(old, new)
+    return html
+
+
+def build_template_preview():
+    data = template_preview_data()
+    html = render(data, 'en')
+    template_path = os.path.join(ROOT, 'scripts', 'templates', 'country-page-template.html')
+    preview_path = os.path.join(ROOT, 'tmp', 'country-template-preview', 'index.html')
+    write(template_path, html)
+    write(preview_path, make_tmp_preview_html(html))
+    return template_path, preview_path
+
+
 def build_one(country_dir):
     slug = os.path.basename(country_dir.rstrip('/\\'))
     # Country data is <slug>.data.json; exclude city files (*.city.data.json).
@@ -432,6 +543,11 @@ def build_one(country_dir):
 
 
 def main(argv):
+    if '--template-preview' in argv:
+        template_path, preview_path = build_template_preview()
+        print(f"Built country template: {template_path}")
+        print(f"Built country template preview: {preview_path}")
+        return 0
     if '--continent' in argv:
         cont = argv[argv.index('--continent') + 1]
         dirs = sorted({os.path.dirname(f) for f in

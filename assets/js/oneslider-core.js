@@ -3074,8 +3074,8 @@
 
   // ====================================================================
   // Module: dynamicWeatherForecast
-  // Fetches current forecasts for city pages. USA pages use National Weather
-  // Service; non-US pages can opt into Open-Meteo with data-weather-provider.
+  // Fetches current forecasts for city pages. USA coordinates use National
+  // Weather Service; other coordinates use Open-Meteo unless explicitly set.
   // ====================================================================
   OneSlider.register('dynamicWeatherForecast', function (App) {
     var strips = Array.prototype.slice.call(document.querySelectorAll('[data-weather-dynamic]'));
@@ -3129,15 +3129,37 @@
       if (temp) temp.textContent = 'Unavailable';
     }
 
+    function isLikelyUsCoordinates(lat, lon) {
+      var latitude = Number(lat);
+      var longitude = Number(lon);
+      if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return false;
+      var contiguous = latitude >= 24 && latitude <= 50 && longitude >= -125 && longitude <= -66;
+      var alaska = latitude >= 51 && latitude <= 72 && longitude >= -170 && longitude <= -129;
+      var hawaii = latitude >= 18 && latitude <= 23 && longitude >= -161 && longitude <= -154;
+      return contiguous || alaska || hawaii;
+    }
+
+    function openMeteoForecastText(code) {
+      var value = Number(code);
+      if ([0].indexOf(value) >= 0) return 'sunny';
+      if ([1, 2, 3].indexOf(value) >= 0) return 'cloudy';
+      if ([45, 48].indexOf(value) >= 0) return 'cloudy';
+      if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].indexOf(value) >= 0) return 'rain';
+      if ([71, 73, 75, 77, 85, 86].indexOf(value) >= 0) return 'snow';
+      if ([95, 96, 99].indexOf(value) >= 0) return 'storm';
+      return 'cloudy';
+    }
+
     function renderOpenMeteo(strip, forecast) {
       var daily = forecast && forecast.daily;
       if (!daily || !daily.time || !daily.time.length) throw new Error('Missing Open-Meteo daily forecast');
+      strip.setAttribute('data-weather-default-unit', 'c');
       var periods = daily.time.slice(0, 8).map(function (date, index) {
         return {
           name: new Date(date + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short' }),
           temperature: Number(daily.temperature_2m_max[index]),
           temperatureUnit: 'C',
-          shortForecast: String(daily.weather_code ? daily.weather_code[index] : ''),
+          shortForecast: openMeteoForecastText(daily.weather_code ? daily.weather_code[index] : ''),
           isDaytime: true
         };
       });
@@ -3147,8 +3169,9 @@
     strips.forEach(function (strip) {
       var lat = strip.getAttribute('data-weather-lat');
       var lon = strip.getAttribute('data-weather-lon');
-      var provider = (strip.getAttribute('data-weather-provider') || 'nws').toLowerCase();
+      var provider = (strip.getAttribute('data-weather-provider') || 'auto').toLowerCase();
       if (!lat || !lon) return;
+      if (provider === 'auto') provider = isLikelyUsCoordinates(lat, lon) ? 'nws' : 'open-meteo';
       if (provider === 'open-meteo') {
         fetch('https://api.open-meteo.com/v1/forecast?latitude=' + encodeURIComponent(lat) + '&longitude=' + encodeURIComponent(lon) + '&daily=weather_code,temperature_2m_max&temperature_unit=celsius&timezone=auto', {
           headers: { Accept: 'application/json' }
@@ -3271,9 +3294,11 @@
       return '';
     }
 
-    function preferredUnit() {
+    function preferredUnit(root) {
       var saved = storedUnit();
       if (saved) return saved;
+      var defaultUnit = root && root.getAttribute ? String(root.getAttribute('data-weather-default-unit') || '').toLowerCase() : '';
+      if (defaultUnit === 'c' || defaultUnit === 'f') return defaultUnit;
       var fahrenheitRegions = { US: true, BS: true, BZ: true, KY: true, PW: true, FM: true, MH: true };
       var region = localeRegion();
       if (region) return fahrenheitRegions[region] ? 'f' : 'c';
@@ -3295,13 +3320,14 @@
     }
 
     function apply(root) {
-      var unit = preferredUnit();
       Array.prototype.slice.call((root || document).querySelectorAll('[data-temp-f]')).forEach(function (node) {
+      var unit = preferredUnit(node.closest('[data-weather-default-unit]') || root);
       var text = formatTemp(node.getAttribute('data-temp-f'), unit);
       if (text) node.textContent = text;
       node.setAttribute('data-temp-unit', unit);
       });
       Array.prototype.slice.call((root || document).querySelectorAll('[data-temp-c]')).forEach(function (node) {
+      var unit = preferredUnit(node.closest('[data-weather-default-unit]') || root);
       var text = formatTempC(node.getAttribute('data-temp-c'), unit);
       if (text) node.textContent = text;
       node.setAttribute('data-temp-unit', unit);
@@ -3385,6 +3411,108 @@
 
       apply();
     });
+  });
+
+  // ====================================================================
+  // Module: localTime
+  // Updates local time cards from a page-provided IANA timezone.
+  // ====================================================================
+  OneSlider.register('localTime', function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-local-time]'));
+    if (!cards.length || typeof Intl === 'undefined') return;
+
+    function formatZoneLabel(zone) {
+      return String(zone || '')
+        .replace(/_/g, ' ')
+        .replace(/^[^/]+\//, '');
+    }
+
+    cards.forEach(function (card) {
+      var zone = card.getAttribute('data-time-zone') || '';
+      var value = card.querySelector('[data-local-time-value]');
+      var zoneLabel = card.querySelector('[data-local-time-zone]');
+      if (!zone || !value) return;
+
+      var formatter;
+      try {
+        formatter = new Intl.DateTimeFormat([], {
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZone: zone
+        });
+      } catch (error) {
+        return;
+      }
+
+      function render() {
+        value.textContent = formatter.format(new Date());
+        if (zoneLabel) zoneLabel.textContent = formatZoneLabel(zone);
+      }
+
+      render();
+      window.setInterval(render, 30000);
+    });
+  });
+
+  // ====================================================================
+  // Module: cityStayViews
+  // Keeps hash-addressable Visit subviews from trapping the primary tabs.
+  // ====================================================================
+  OneSlider.register('cityStayViews', function () {
+    var stayHashes = {
+      '#stay-overview': true,
+      '#stay-areas': true,
+      '#stay-airports': true,
+      '#stay-hotels': true,
+      '#stay-hotels-areas': true,
+      '#stay-flights-airports': true,
+      '#stay-rental-cars': true,
+      '#stay-tips': true
+    };
+    var primaryHashes = {
+      '#fact': 'view-visit',
+      '#see': 'view-see',
+      '#visit': 'view-stay',
+      '#nearby': 'view-nearby',
+      '#events': 'view-events'
+    };
+
+    function isStayHash() {
+      return !!stayHashes[window.location.hash];
+    }
+
+    function syncHashClass() {
+      document.documentElement.classList.toggle('os-stay-hash-active', isStayHash());
+    }
+
+    function clearStayHash() {
+      if (!isStayHash() || !window.history || !window.history.replaceState) return;
+      window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      syncHashClass();
+    }
+
+    function activateStayTabForHash() {
+      syncHashClass();
+      var primaryInput = document.getElementById(primaryHashes[window.location.hash]);
+      if (primaryInput) {
+        primaryInput.checked = true;
+        return;
+      }
+      if (!isStayHash()) return;
+      var stayInput = document.getElementById('view-stay');
+      if (stayInput) stayInput.checked = true;
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll('.persona-tablist label[for]')).forEach(function (label) {
+      label.addEventListener('click', function () {
+        if (label.getAttribute('for') !== 'view-stay') {
+          clearStayHash();
+        }
+      });
+    });
+
+    activateStayTabForHash();
+    window.addEventListener('hashchange', activateStayTabForHash);
   });
 
 })();  // end IIFE

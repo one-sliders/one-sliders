@@ -15,8 +15,8 @@
   "region": "Finnmark",
   "population": "~21,000 municipality",
   "coordinates": {
-    "lat": 69.9689,
-    "lon": 23.2716
+    "lat": 69.96887,
+    "lon": 23.27165
   },
   "weather": {
     "source": "OneSlider shared weather module",
@@ -44,6 +44,33 @@
     "Komsa mountain",
     "Finnmark Plateau trips"
   ],
+  "history": [
+    {
+      "label": "c. 4200 BC",
+      "text": "The oldest phases of Alta's rock carvings date to the Stone Age, showing deep human activity around the Altafjord."
+    },
+    {
+      "label": "1973",
+      "text": "The first rock carvings at Jiepmaluokta near Alta were discovered, leading to wider documentation of the site."
+    },
+    {
+      "label": "1985",
+      "text": "The rock art of Alta was placed on the UNESCO World Heritage List as Norway's only prehistoric World Heritage Site."
+    },
+    {
+      "label": "1991",
+      "text": "Alta Museum moved to the rock carving area and became the main visitor centre for the World Heritage site."
+    },
+    {
+      "label": "1993",
+      "text": "Alta Museum received the European Museum of the Year Award after developing the rock art visitor centre."
+    },
+    {
+      "label": "Today",
+      "text": "Modern Alta is a Finnmark hub for rock art, Sami culture, northern lights travel, airport access and Arctic routes."
+    }
+  ],
+  "historySource": "https://en.wikipedia.org/wiki/Alta_Municipality",
   "sources": [
     {
       "label": "Wikipedia: Alta",
@@ -56,5 +83,11 @@
       "usedFor": "hero, mini and See-card generated assets"
     }
   ],
-  "sourceFetchedAt": "2026-06-12"
+  "sourceFetchedAt": "2026-06-12",
+  "timezone": "Europe/Oslo",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Alta",
+    "matchedCountry": "Norway"
+  }
 }

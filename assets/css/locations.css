@@ -382,6 +382,10 @@ a {
   background: var(--location-line);
 }
 
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
 .nav-back {
   flex: 0 0 auto;
   display: none;
@@ -421,6 +425,69 @@ a {
 
 .nav-pill:hover,
 .nav-pill.active {
+  color: var(--os-surface);
+  background: var(--location-theme);
+}
+
+.top-menu .nav-language {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.top-menu .nav-language summary {
+  display: grid;
+  min-width: 48px;
+  min-height: 36px;
+  place-items: center;
+  padding: 0 12px;
+  color: var(--location-ink);
+  font-weight: 900;
+  list-style: none;
+  cursor: pointer;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+}
+
+.top-menu .nav-language summary::-webkit-details-marker {
+  display: none;
+}
+
+.top-menu .nav-language[open] summary,
+.top-menu .nav-language summary:hover {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.top-menu .nav-language__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: 4px;
+  min-width: 72px;
+  padding: 6px;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
+}
+
+.top-menu .nav-language__list a {
+  display: block;
+  padding: 7px 10px;
+  color: var(--location-ink);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.top-menu .nav-language__list a:hover,
+.top-menu .nav-language__list a[aria-current="page"] {
   color: var(--os-surface);
   background: var(--location-theme);
 }
@@ -1247,7 +1314,8 @@ html:has(body.country-onepage) {
 
 .country-brief__copy {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1fr);
+  grid-template-rows: clamp(130px, 21vh, 230px) auto auto minmax(0, 1fr);
+  gap: 8px;
   align-content: stretch;
   min-width: 0;
   max-width: none;
@@ -1257,9 +1325,10 @@ html:has(body.country-onepage) {
 
 .country-left-stack {
   display: grid;
+  min-height: 0;
   align-self: end;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .location-parent-card {
@@ -1329,7 +1398,7 @@ html:has(body.country-onepage) {
   width: 100%;
   min-height: 0;
   height: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 0;
   overflow: hidden;
   border: 1px solid var(--location-line);
   border-radius: 18px;
@@ -1372,7 +1441,7 @@ html:has(body.country-onepage) {
 .country-brief .flag-badge {
   width: 92px;
   height: 62px;
-  margin-bottom: 18px;
+  margin-bottom: 0;
   border: 1px solid color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
   box-shadow: 0 16px 34px color-mix(in srgb, var(--os-scrim) 13%, var(--os-transparent));
 }
@@ -1383,7 +1452,11 @@ html:has(body.country-onepage) {
 
 .country-brief .hero-title {
   color: var(--location-ink);
+  font-size: clamp(46px, 5.4vw, 72px);
+  line-height: 1;
   text-shadow: none;
+  position: relative;
+  z-index: 1;
 }
 
 .country-brief .hero-text {
@@ -1590,7 +1663,7 @@ html:has(body.country-onepage) {
   text-transform: uppercase;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder {
+.country-onepage .country-city-finder {
   display: grid;
   gap: 8px;
   margin: 8px 0 10px;
@@ -1601,21 +1674,21 @@ html:has(body.country-onepage) {
   box-shadow: 0 8px 18px color-mix(in srgb, var(--os-ink) 5%, var(--os-transparent));
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder__header {
+.country-onepage .country-city-finder__header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(160px, 0.72fr);
   gap: 10px;
   align-items: end;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder h2 {
+.country-onepage .country-city-finder h2 {
   margin: 0;
   color: var(--location-ink);
   font-size: 15px;
   line-height: 1.1;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder label {
+.country-onepage .country-city-finder label {
   display: grid;
   gap: 4px;
   color: var(--location-muted);
@@ -1625,7 +1698,7 @@ html:has(body.country-onepage) {
   text-transform: uppercase;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder input {
+.country-onepage .country-city-finder input {
   min-width: 0;
   min-height: 34px;
   padding: 0 11px;
@@ -1640,13 +1713,13 @@ html:has(body.country-onepage) {
   text-transform: none;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filters {
+.country-onepage .country-city-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter {
+.country-onepage .country-city-filter {
   min-height: 36px;
   padding: 0 10px;
   color: var(--location-ink);
@@ -1658,29 +1731,29 @@ html:has(body.country-onepage) {
   cursor: pointer;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter.is-active,
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter:hover,
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-filter:focus-visible {
+.country-onepage .country-city-filter.is-active,
+.country-onepage .country-city-filter:hover,
+.country-onepage .country-city-filter:focus-visible {
   color: var(--os-surface);
   background: var(--location-theme);
   border-color: var(--location-theme);
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-count {
+.country-onepage .country-city-count {
   margin: 0;
   color: var(--location-muted);
   font-size: 12px;
   font-weight: 800;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links {
+.country-onepage .country-paths--location-links {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   align-items: flex-start;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city {
+.country-onepage .country-paths--location-links .visual-topic-card--city {
   grid-template-rows: 42px minmax(0, 1fr);
   gap: 3px;
   flex: 0 0 118px;
@@ -1693,19 +1766,19 @@ html:has(body.country-onepage) {
   box-shadow: 0 6px 14px color-mix(in srgb, var(--os-ink) 5%, var(--os-transparent));
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city img {
+.country-onepage .country-paths--location-links .visual-topic-card--city img {
   width: calc(100% + 16px);
   height: 42px;
   margin-inline: -8px;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city.visual-topic-card--no-image {
+.country-onepage .country-paths--location-links .visual-topic-card--city.visual-topic-card--no-image {
   grid-template-rows: minmax(0, 1fr);
   align-content: center;
   padding-block: 9px;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city strong {
+.country-onepage .country-paths--location-links .visual-topic-card--city strong {
   display: block;
   min-width: 0;
   padding: 0;
@@ -1715,15 +1788,15 @@ html:has(body.country-onepage) {
   line-height: 1.05;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city span {
+.country-onepage .country-paths--location-links .visual-topic-card--city span {
   display: none;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .visual-topic-card--city[hidden] {
+.country-onepage .country-paths--location-links .visual-topic-card--city[hidden] {
   display: none;
 }
 
-:is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-paths--location-links .country-path {
+.country-onepage .country-paths--location-links .country-path {
   flex: 0 0 118px;
   width: 118px;
   min-height: 92px;
@@ -2492,11 +2565,11 @@ html:has(body.country-onepage) {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.city-page--southampton .persona-tablist {
+.city-page--template .persona-tablist {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
@@ -2554,10 +2627,14 @@ html:has(body.country-onepage) {
 
 .country-brief__copy .stay-weather-card--strip {
   margin: 0 0 4px;
+  background: var(--location-soft);
+  border-color: var(--location-line);
 }
 
 .country-brief__copy .stay-weather-card--strip .stay-weather-days {
   grid-template-columns: repeat(4, minmax(0, 1fr)) 28px;
+  background: var(--os-surface);
+  border-color: var(--location-line);
 }
 
 .country-brief__copy .stay-weather-card--strip .stay-weather-tile {
@@ -2575,10 +2652,12 @@ html:has(body.country-onepage) {
 }
 
 .country-brief__copy .stay-weather-card--strip .stay-weather-temp {
+  color: var(--os-red);
   font-size: 21px;
 }
 
 .country-brief__copy .stay-weather-card--strip .stay-weather-more {
+  color: var(--location-muted);
   min-width: 28px;
   font-size: 20px;
 }
@@ -2663,6 +2742,40 @@ html:has(body.country-onepage) {
   list-style: none;
 }
 
+.flight-affiliate-card {
+  display: block;
+  width: min(100%, 480px);
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.flight-affiliate-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rental-car-affiliate-card {
+  display: block;
+  width: min(100%, 336px);
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.rental-car-affiliate-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .stay-trip-grid,
 .stay-tip-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2707,7 +2820,7 @@ html:has(body.country-onepage) {
   font-weight: 900;
   line-height: 1.1;
   text-decoration: none;
-  box-shadow: 0 8px 18px rgba(18, 36, 54, 0.06);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
 }
 
 .stay-section-menu a:hover,
@@ -2722,6 +2835,78 @@ html:has(body.country-onepage) {
   display: grid;
   gap: 10px;
   min-width: 0;
+}
+
+.city-page--template .stay-section-panel {
+  display: none;
+}
+
+.city-page--template #stay-overview,
+.city-page--template #stay-areas,
+.city-page--template #stay-airports,
+.city-page--template #stay-hotels,
+.city-page--template #stay-hotels-areas,
+.city-page--template #stay-flights-airports,
+.city-page--template #stay-rental-cars,
+.city-page--template #stay-tips {
+  display: none;
+}
+
+.city-page--template #stay-overview {
+  display: block;
+}
+
+.os-stay-hash-active .city-page--template #stay-overview {
+  display: none;
+}
+
+.os-stay-hash-active .city-page--template :is(#stay-overview, #stay-areas, #stay-airports, #stay-hotels, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target {
+  display: block;
+}
+
+.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-areas, #stay-airports, #stay-hotels, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-panel {
+  display: none;
+}
+
+.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-areas, #stay-airports, #stay-hotels, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .view-panel--stay {
+  display: grid;
+}
+
+.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-areas, #stay-airports, #stay-hotels, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-tablist label[for="view-visit"] {
+  color: var(--location-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-areas, #stay-airports, #stay-hotels, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-tablist label[for="view-stay"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+
+.city-page--template .stay-planner-layout:has(#stay-overview:target) .stay-section-menu a[href="#stay-overview"],
+.city-page--template .stay-planner-layout:has(#stay-areas:target) .stay-section-menu a[href="#stay-areas"],
+.city-page--template .stay-planner-layout:has(#stay-airports:target) .stay-section-menu a[href="#stay-airports"],
+.city-page--template .stay-planner-layout:has(#stay-hotels:target) .stay-section-menu a[href="#stay-hotels"],
+.city-page--template .stay-planner-layout:has(#stay-hotels-areas:target) .stay-section-menu a[href="#stay-hotels-areas"],
+.city-page--template .stay-planner-layout:has(#stay-flights-airports:target) .stay-section-menu a[href="#stay-flights-airports"],
+.city-page--template .stay-planner-layout:has(#stay-rental-cars:target) .stay-section-menu a[href="#stay-rental-cars"],
+.city-page--template .stay-planner-layout:has(#stay-tips:target) .stay-section-menu a[href="#stay-tips"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.city-page--template .stay-section-menu a[href="#stay-overview"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.os-stay-hash-active .city-page--template .stay-section-menu a[href="#stay-overview"] {
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border-color: var(--location-line);
 }
 
 .stay-booking-button {
@@ -2777,37 +2962,71 @@ html:has(body.country-onepage) {
   outline: none;
 }
 
-.city-page--southampton .country-kpis {
+.stay-card-link.affiliate-market--usa-canada,
+.stay-booking-button.affiliate-market--usa-canada {
+  color: #7a3a00;
+  background: #fff3d8;
+  border-color: #f2b24d;
+  box-shadow: 0 6px 14px rgba(242, 178, 77, 0.18);
+}
+
+.stay-card-link.affiliate-market--europe,
+.stay-booking-button.affiliate-market--europe {
+  color: #07504b;
+  background: #dff7f1;
+  border-color: #55c7b4;
+  box-shadow: 0 6px 14px rgba(85, 199, 180, 0.18);
+}
+
+.stay-card-link.affiliate-market--usa-canada:hover,
+.stay-card-link.affiliate-market--usa-canada:focus-visible,
+.stay-booking-button.affiliate-market--usa-canada:hover,
+.stay-booking-button.affiliate-market--usa-canada:focus-visible {
+  color: #ffffff;
+  background: #b65d00;
+  border-color: #b65d00;
+}
+
+.stay-card-link.affiliate-market--europe:hover,
+.stay-card-link.affiliate-market--europe:focus-visible,
+.stay-booking-button.affiliate-market--europe:hover,
+.stay-booking-button.affiliate-market--europe:focus-visible {
+  color: #ffffff;
+  background: #08756d;
+  border-color: #08756d;
+}
+
+.city-page--template .country-kpis {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.city-page--southampton .country-brief__copy {
+.city-page--template .country-brief__copy {
   display: block;
   overflow-x: hidden;
 }
 
-.city-page--southampton .country-brief__panel {
+.city-page--template .country-brief__panel {
   grid-template-rows: minmax(0, 1fr);
 }
 
-.city-page--southampton .country-brief__copy > * {
+.city-page--template .country-brief__copy > * {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
 }
 
-.city-page--southampton .country-brief .hero-text {
+.city-page--template .country-brief .hero-text {
   max-width: 100%;
   font-size: clamp(16px, 1.45vw, 21px);
 }
 
-.city-page--southampton .country-brief .hero-title {
+.city-page--template .country-brief .hero-title {
   font-size: clamp(42px, 4.2vw, 54px);
   line-height: 0.96;
   overflow-wrap: normal;
 }
 
-.city-page--southampton .country-brief .flag-badge {
+.city-page--template .country-brief .flag-badge {
   display: block;
   width: 118px;
   max-width: 42%;
@@ -2819,7 +3038,137 @@ html:has(body.country-onepage) {
   border-radius: 8px;
 }
 
-.city-page--southampton .top-menu {
+.city-page--template .top-menu {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.city-page--template .country-brief__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.city-page--template .country-brief__panel {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.city-page--template .country-brief__copy > *,
+.city-page--template .city-left-fixed-head > *,
+.city-page--template .city-left-scroll > *,
+.city-page--template .city-left-fixed-foot > * {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.city-page--template .city-left-fixed-head,
+.city-page--template .city-left-fixed-foot {
+  flex: 0 0 auto;
+}
+
+.city-page--template .city-left-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 0;
+  scrollbar-gutter: auto;
+  scrollbar-width: none;
+}
+
+.city-page--template .city-left-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.city-page--template .city-left-fixed-head .country-hero-image--clear {
+  height: clamp(190px, 30vh, 300px);
+  aspect-ratio: auto;
+}
+
+.city-page--template .city-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.city-page--template .city-local-time-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  width: auto;
+  padding: 8px 10px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.city-page--template .city-local-time-card span,
+.city-page--template .city-local-time-card em {
+  display: block;
+  color: var(--location-muted);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.city-page--template .city-local-time-card strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--location-ink);
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 0.95;
+}
+
+.city-page--template .city-local-time-card em {
+  max-width: 72px;
+  font-style: normal;
+  text-align: right;
+}
+
+.city-page--template .country-brief .hero-text {
+  max-width: 100%;
+  font-size: clamp(16px, 1.45vw, 21px);
+}
+
+.city-page--template .city-intro-block {
+  max-width: 100%;
+}
+
+.city-page--template .city-intro-block h2 {
+  margin: 0 0 7px;
+  color: var(--location-ink);
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.08;
+}
+
+.city-page--template .city-intro-block .hero-text {
+  margin: 0;
+}
+
+.city-page--template .country-brief .hero-title {
+  font-size: clamp(42px, 4.2vw, 54px);
+  line-height: 0.96;
+  overflow-wrap: normal;
+}
+
+.city-page--template .top-menu {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -2837,9 +3186,9 @@ html:has(body.country-onepage) {
   padding: 10px 11px;
   color: var(--location-ink);
   background: var(--os-surface);
-  border: 1px solid var(--os-border);
+  border: 1px solid var(--location-line);
   border-radius: 8px;
-  box-shadow: 0 10px 22px rgba(18, 36, 54, 0.07);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
 }
 
 .destination-side-fact--wide {
@@ -2885,9 +3234,9 @@ html:has(body.country-onepage) {
   min-width: 0;
   color: var(--location-ink);
   background: var(--os-surface);
-  border: 1px solid var(--os-border);
+  border: 1px solid var(--location-line);
   border-radius: 8px;
-  box-shadow: 0 10px 22px rgba(18, 36, 54, 0.08);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
 }
 
 .destination-experience-card,
@@ -2930,6 +3279,231 @@ html:has(body.country-onepage) {
   line-height: 1.05;
 }
 
+.city-page--template .view-panel--visit {
+  gap: 6px;
+}
+
+.city-page--template .view-panel--visit .country-panel-card {
+  padding: 12px;
+}
+
+.city-page--template .view-panel--visit .destination-side-facts {
+  gap: 7px;
+  margin: 8px 0 0;
+}
+
+.city-page--template .view-panel--visit .destination-side-fact {
+  padding: 8px 10px;
+}
+
+.city-page--template .city-facts-hero,
+.city-page--template .city-history-facts {
+  display: grid;
+  gap: 6px;
+}
+
+.city-page--template .city-fact-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.city-page--template .city-fact-chip-grid div {
+  min-width: 0;
+  padding: 8px 10px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.city-page--template .city-fact-chip-grid span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.city-page--template .city-fact-chip-grid strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--location-ink);
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.city-page--template .city-facts-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  align-items: start;
+  gap: 14px;
+}
+
+.city-page--template .city-facts-header h2 {
+  align-self: center;
+}
+
+.city-page--template .city-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.city-page--template .city-kpi-card {
+  min-width: 0;
+  padding: 10px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--location-line) 82%, var(--location-ink));
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.city-page--template .city-kpi-card span,
+.city-page--template .city-stat-strip span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.city-page--template .city-kpi-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-ink);
+  font-size: clamp(21px, 2vw, 29px);
+  line-height: 0.95;
+}
+
+.city-page--template .city-kpi-card em {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.city-page--template .city-pie-mini {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.city-page--template .city-pie-chart {
+  width: 82px;
+  aspect-ratio: 1;
+  justify-self: center;
+  background: conic-gradient(
+    var(--location-theme) 0 35%,
+    var(--os-gold) 35% 60%,
+    var(--os-red) 60% 80%,
+    var(--location-accent) 80% 100%
+  );
+  border: 1px solid var(--location-line);
+  border-radius: 50%;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.city-page--template .city-pie-legend {
+  display: grid;
+  gap: 5px;
+}
+
+.city-page--template .city-pie-legend div {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 7px;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.city-page--template .city-pie-key {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.city-page--template .city-pie-key--culture {
+  background: var(--location-theme);
+}
+
+.city-page--template .city-pie-key--food {
+  background: var(--os-gold);
+}
+
+.city-page--template .city-pie-key--events {
+  background: var(--os-red);
+}
+
+.city-page--template .city-pie-key--green {
+  background: var(--location-accent);
+}
+
+.city-page--template .city-pie-legend span {
+  color: var(--location-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.city-page--template .city-pie-legend strong {
+  color: var(--location-ink);
+  font-size: 13px;
+}
+
+.city-page--template .city-history-facts .country-history-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.city-page--template .city-history-facts .country-history-list div {
+  display: grid;
+  grid-template-columns: minmax(72px, max-content) minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: start;
+  padding: 4px 8px;
+}
+
+.city-page--template .city-history-facts .country-history-list time {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.city-page--template .city-history-facts .country-history-list span {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.city-page--template .city-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.city-page--template .city-stat-strip div {
+  min-width: 0;
+  padding: 11px;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.city-page--template .city-stat-strip strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-ink);
+  font-size: 17px;
+}
+
 .destination-experience-card p,
 .destination-attraction-card p,
 .destination-highlight p,
@@ -2953,6 +3527,15 @@ html:has(body.country-onepage) {
   width: 100%;
   height: 92px;
   object-fit: cover;
+}
+
+.destination-attraction-card--text-only {
+  display: flex;
+  min-height: 132px;
+}
+
+.destination-attraction-card--text-only div {
+  align-self: center;
 }
 
 .destination-attraction-card div {
@@ -2997,7 +3580,7 @@ html:has(body.country-onepage) {
 }
 
 .country-onepage .country-facts-tight,
-.city-page--southampton .country-facts-tight {
+.city-page--template .country-facts-tight {
   overflow: visible;
   border-left: 0 !important;
   border-radius: 0;
@@ -3935,70 +4518,70 @@ html:has(body.country-onepage) {
 }
 
 @media (max-width: 1120px) {
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-content-box {
+  .country-onepage.location-page--country-finder .country-content-box {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief {
+  .country-onepage.location-page--country-finder .country-brief {
     grid-template-columns: 1fr;
     height: auto;
     min-height: 0;
     overflow: visible;
   }
 
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__copy,
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__panel,
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .country-brief__panel .persona-tabs,
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .persona-panel {
+  .country-onepage.location-page--country-finder .country-brief__copy,
+  .country-onepage.location-page--country-finder .country-brief__panel,
+  .country-onepage.location-page--country-finder .country-brief__panel .persona-tabs,
+  .country-onepage.location-page--country-finder .persona-panel {
     height: auto;
     max-height: none;
     overflow: visible;
   }
 
-  .city-page--southampton .country-content-box {
+  .city-page--template .country-content-box {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .city-page--southampton .country-brief {
+  .city-page--template .country-brief {
     grid-template-columns: 1fr;
     height: auto;
     min-height: 0;
     overflow: visible;
   }
 
-  .city-page--southampton .country-brief__copy,
-  .city-page--southampton .country-brief__panel,
-  .city-page--southampton .country-brief__panel .persona-tabs,
-  .city-page--southampton .persona-panel {
+  .city-page--template .country-brief__copy,
+  .city-page--template .country-brief__panel,
+  .city-page--template .country-brief__panel .persona-tabs,
+  .city-page--template .persona-panel {
     height: auto;
     max-height: none;
     overflow: visible;
   }
 
-  .city-page--southampton .persona-tablist {
+  .city-page--template .persona-tablist {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-radius: 16px;
   }
 
-  .city-page--southampton .destination-experience-grid,
-  .city-page--southampton .destination-attraction-grid,
-  .city-page--southampton .destination-highlight-grid {
+  .city-page--template .destination-experience-grid,
+  .city-page--template .destination-attraction-grid,
+  .city-page--template .destination-highlight-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .city-page--southampton .destination-nearby-grid {
+  .city-page--template .destination-nearby-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 560px) {
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder__header {
+  .country-onepage .country-city-finder__header {
     grid-template-columns: 1fr;
   }
 
-  :is(.location-page--usa, .location-page--canada, .location-page--country-finder) .usa-city-finder input {
+  .country-onepage .country-city-finder input {
     width: 100%;
   }
 }
@@ -4171,7 +4754,7 @@ html:has(body.country-onepage) {
 }
 
 @media (max-width: 760px) {
-  .city-page--southampton .country-content-box {
+  .city-page--template .country-content-box {
     top: calc(var(--country-nav-height) + 8px);
     right: 8px;
     bottom: 8px;
@@ -4179,31 +4762,31 @@ html:has(body.country-onepage) {
     padding: 10px;
   }
 
-  .city-page--southampton .country-brief__panel {
+  .city-page--template .country-brief__panel {
     padding: 10px;
   }
 
-  .city-page--southampton .persona-tablist,
-  .city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+  .city-page--template .persona-tablist,
+  .city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     padding: 5px;
   }
 
-  .city-page--southampton .persona-tablist label {
+  .city-page--template .persona-tablist label {
     min-height: 34px;
     padding: 0 8px;
     font-size: 12px;
   }
 
-  .city-page--southampton .stay-section-menu {
+  .city-page--template .stay-section-menu {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
   }
 
-  .city-page--southampton .stay-section-menu a,
-  .city-page--southampton .stay-card-link,
-  .city-page--southampton .stay-booking-button {
+  .city-page--template .stay-section-menu a,
+  .city-page--template .stay-card-link,
+  .city-page--template .stay-booking-button {
     width: 100%;
     min-width: 0;
     justify-self: stretch;
@@ -4211,57 +4794,122 @@ html:has(body.country-onepage) {
     white-space: normal;
   }
 
-  .city-page--southampton .destination-side-facts,
-  .city-page--southampton .destination-experience-grid,
-  .city-page--southampton .destination-attraction-grid,
-  .city-page--southampton .destination-highlight-grid,
-  .city-page--southampton .destination-nearby-grid,
-  .city-page--southampton .stay-overview-grid,
-  .city-page--southampton .stay-area-grid,
-  .city-page--southampton .stay-tip-grid,
-  .city-page--southampton .stay-hotel-grid {
+  .city-page--template .destination-side-facts,
+  .city-page--template .destination-experience-grid,
+  .city-page--template .destination-attraction-grid,
+  .city-page--template .destination-highlight-grid,
+  .city-page--template .destination-nearby-grid,
+  .city-page--template .stay-overview-grid,
+  .city-page--template .stay-area-grid,
+  .city-page--template .stay-tip-grid,
+  .city-page--template .stay-hotel-grid {
     grid-template-columns: 1fr;
   }
 
-  .city-page--southampton .destination-attraction-card img {
+  .city-page--template .destination-attraction-card img {
     height: 130px;
   }
 }
 
+@media (max-width: 760px) {
+  .city-page--template .country-content-box {
+    top: calc(var(--country-nav-height) + 8px);
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    overflow-y: auto;
+  }
+
+  .city-page--template .country-brief {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .city-page--template .country-brief__copy,
+  .city-page--template .country-brief__panel,
+  .city-page--template .country-brief__panel .persona-tabs,
+  .city-page--template .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .city-page--template .persona-tablist,
+  .city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .city-page--template .destination-side-facts,
+  .city-page--template .destination-experience-grid,
+  .city-page--template .destination-attraction-grid,
+  .city-page--template .destination-highlight-grid,
+  .city-page--template .destination-nearby-grid,
+  .city-page--template .city-fact-chip-grid,
+  .city-page--template .city-kpi-grid,
+  .city-page--template .city-stat-strip,
+  .city-page--template .stay-overview-grid,
+  .city-page--template .stay-area-grid,
+  .city-page--template .stay-tip-grid,
+  .city-page--template .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-page--template .city-facts-header,
+  .city-page--template .city-pie-mini {
+    grid-template-columns: 1fr;
+  }
+
+  .city-page--template .city-title-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .city-page--template .city-local-time-card {
+    justify-self: start;
+  }
+
+  .city-page--template .city-history-facts .country-history-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 430px) {
-  .city-page--southampton .top-menu {
+  .city-page--template .top-menu {
     gap: 6px;
     padding-right: 8px;
     padding-left: 8px;
   }
 
-  .city-page--southampton .nav-pill {
+  .city-page--template .nav-pill {
     min-width: auto;
     padding-right: 10px;
     padding-left: 10px;
   }
 
-  .city-page--southampton .country-brief .hero-title {
+  .city-page--template .country-brief .hero-title {
     font-size: clamp(38px, 13vw, 48px);
   }
 
-  .city-page--southampton .country-hero-image--clear {
+  .city-page--template .country-hero-image--clear {
     min-height: 190px;
   }
 
-  .city-page--southampton .country-brief__copy .stay-weather-card--strip .stay-weather-days {
+  .city-page--template .country-brief__copy .stay-weather-card--strip .stay-weather-days {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .city-page--southampton .country-brief__copy .stay-weather-card--strip .stay-weather-more {
+  .city-page--template .country-brief__copy .stay-weather-card--strip .stay-weather-more {
     grid-column: 1 / -1;
     width: 100%;
     min-width: 0;
   }
 
-  .city-page--southampton .stay-section-menu,
-  .city-page--southampton .persona-tablist,
-  .city-page--southampton .persona-tabs:has(#view-stay) .persona-tablist {
+  .city-page--template .stay-section-menu,
+  .city-page--template .persona-tablist,
+  .city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
     grid-template-columns: 1fr 1fr;
   }
 }

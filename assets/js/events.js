@@ -936,24 +936,34 @@
       ' data-page-event="' + escapeAttribute(module.pageEvent || '') + '">' +
       '<div class="commercial-module__header"><span>Stay</span><strong>' + (module.title || 'Stay near the event') + '</strong></div>' +
       '<div class="stay-planner-layout">' +
-        '<nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#event-stay-overview">Overview</a><a href="#event-stay-areas">Areas</a><a href="#event-stay-airports">Airports</a><a href="#event-stay-tips">Tips</a><a href="#event-stay-booking">Booking</a></nav>' +
+        '<nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#event-stay-overview" aria-current="true">Overview</a><a href="#event-stay-areas">Areas</a><a href="#event-stay-airports">Airports</a><a href="#event-stay-tips">Tips</a><a href="#event-stay-booking">Booking</a></nav>' +
         '<div class="stay-section-stack">' +
-          '<div class="country-panel-card stay-overview-card" id="event-stay-overview"><h2>Stay Overview</h2><div class="stay-overview-grid stay-overview-grid--planning"><div class="stay-pill"><span>Planning focus</span><strong>Neighborhood fit, airport access, event timing and total nightly fees.</strong></div><div class="stay-pill"><span>Best first move</span><strong>Compare the closest base with one lower-price or easier-transfer area.</strong></div><p>Planning a trip to ' + eventName + '? Start with the event venue, then compare nearby areas against airport access, parking, minimum stays and cancellation rules.</p></div></div>' +
-          '<div class="country-panel-card" id="event-stay-areas"><h2>Best Areas to Stay</h2>' +
-            (areas.length ? '<fieldset class="hotel-search__areas stay-area-grid"><legend>Stay areas</legend>' + areas.map(function (area, i) { return renderStayAreaCard(area, i, enriched); }).join('') + '</fieldset>' : '<p class="commercial-module__note">Stay areas are TBC.</p>') +
+          '<div class="stay-section stay-section--overview is-active" id="event-stay-overview" data-stay-section="overview">' +
+            '<div class="country-panel-card stay-overview-card"><h2>Stay Overview</h2><div class="stay-overview-grid stay-overview-grid--planning"><div class="stay-pill"><span>Planning focus</span><strong>Neighborhood fit, airport access, event timing and total nightly fees.</strong></div><div class="stay-pill"><span>Best first move</span><strong>Compare the closest base with one lower-price or easier-transfer area.</strong></div><p>Planning a trip to ' + eventName + '? Start with the event venue, then compare nearby areas against airport access, parking, minimum stays and cancellation rules.</p></div></div>' +
           '</div>' +
-          '<div class="country-panel-card" id="event-stay-airports"><h2>Airports</h2><ul class="stay-airports"><li><strong>' + airportTitle + '</strong><span>Primary or useful airport for this trip.</span><p>' + airportDetail + '</p></li></ul></div>' +
-          '<div class="country-panel-card" id="event-stay-tips"><h2>Travel Tips</h2><div class="stay-tip-grid">' +
-            '<div class="stay-tip"><strong>Best time to book</strong><p>Prices can jump once tee times, fixtures, race schedules or ticket windows become clearer.</p></div>' +
-            '<div class="stay-tip"><strong>Transport notes</strong><p>Choose a base around the transfer you will repeat most: airport, venue, downtown or dining district.</p></div>' +
-            '<div class="stay-tip"><strong>Booking detail</strong><p>Compare total cost with taxes, resort fees, parking and cancellation terms.</p></div>' +
-          '</div></div>' +
-          '<div class="country-panel-card stay-booking-card" id="event-stay-booking"><h2>Check Hotel Prices</h2><div class="hotel-search__fields">' +
-            '<label>Check-in<input type="date" name="checkin" value="' + escapeAttribute(module.checkIn || '') + '"></label>' +
-            '<label>Check-out<input type="date" name="checkout" value="' + escapeAttribute(module.checkOut || '') + '"></label>' +
-            '<label>Guests<input type="number" name="adults" min="1" max="12" value="' + (module.adults || 2) + '"></label>' +
-            '<label>Rooms<input type="number" name="rooms" min="1" max="8" value="' + (module.rooms || 1) + '"></label>' +
-          '</div>' + hotelSearchButton(module.cta) + '<p class="commercial-module__note">One-Sliders may earn a commission if you make a booking through Booking.com.</p></div>' +
+          '<div class="stay-section stay-section--areas" id="event-stay-areas" data-stay-section="areas" hidden>' +
+            '<div class="country-panel-card"><h2>Best Areas to Stay</h2>' +
+              (areas.length ? '<fieldset class="hotel-search__areas stay-area-grid"><legend>Stay areas</legend>' + areas.map(function (area, i) { return renderStayAreaCard(area, i, enriched); }).join('') + '</fieldset>' : '<p class="commercial-module__note">Stay areas are TBC.</p>') +
+            '</div>' +
+          '</div>' +
+          '<div class="stay-section stay-section--airports" id="event-stay-airports" data-stay-section="airports" hidden>' +
+            '<div class="country-panel-card"><h2>Airports</h2><ul class="stay-airports"><li><strong>' + airportTitle + '</strong><span>Primary or useful airport for this trip.</span><p>' + airportDetail + '</p></li></ul></div>' +
+          '</div>' +
+          '<div class="stay-section stay-section--tips" id="event-stay-tips" data-stay-section="tips" hidden>' +
+            '<div class="country-panel-card"><h2>Travel Tips</h2><div class="stay-tip-grid">' +
+              '<div class="stay-tip"><strong>Best time to book</strong><p>Prices can jump once tee times, fixtures, race schedules or ticket windows become clearer.</p></div>' +
+              '<div class="stay-tip"><strong>Transport notes</strong><p>Choose a base around the transfer you will repeat most: airport, venue, downtown or dining district.</p></div>' +
+              '<div class="stay-tip"><strong>Booking detail</strong><p>Compare total cost with taxes, resort fees, parking and cancellation terms.</p></div>' +
+            '</div></div>' +
+          '</div>' +
+          '<div class="stay-section stay-section--booking" id="event-stay-booking" data-stay-section="booking" hidden>' +
+            '<div class="country-panel-card stay-booking-card"><h2>Check Hotel Prices</h2><div class="hotel-search__fields">' +
+              '<label>Check-in<input type="date" name="checkin" value="' + escapeAttribute(module.checkIn || '') + '"></label>' +
+              '<label>Check-out<input type="date" name="checkout" value="' + escapeAttribute(module.checkOut || '') + '"></label>' +
+              '<label>Guests<input type="number" name="adults" min="1" max="12" value="' + (module.adults || 2) + '"></label>' +
+              '<label>Rooms<input type="number" name="rooms" min="1" max="8" value="' + (module.rooms || 1) + '"></label>' +
+            '</div>' + hotelSearchButton(module.cta) + '<p class="commercial-module__note">One-Sliders may earn a commission if you make a booking through Booking.com.</p></div>' +
+          '</div>' +
         '</div>' +
       '</div>' +
     '</section>';
@@ -994,22 +1004,56 @@
     });
   }
 
+  function activateStaySectionLink(link, updateHash) {
+    if (!link) return false;
+    var menu = link.closest('.stay-section-menu');
+    var planner = link.closest('.event-stay-planner');
+    var id = (link.getAttribute('href') || '').replace(/^#/, '');
+    if (!menu || !planner || !id) return false;
+    var target = planner.querySelector('#' + id);
+    if (!target) return false;
+    planner.querySelectorAll('.stay-section').forEach(function (section) {
+      var isActive = section === target;
+      section.classList.toggle('is-active', isActive);
+      section.hidden = !isActive;
+    });
+    menu.querySelectorAll('a[href^="#"]').forEach(function (item) {
+      var isActive = item.getAttribute('href') === '#' + id;
+      if (isActive) item.setAttribute('aria-current', 'true');
+      else item.removeAttribute('aria-current');
+    });
+    if (updateHash && history && history.replaceState) {
+      history.replaceState(null, '', '#' + id);
+    }
+    return true;
+  }
+
   function bindEventStayMenu(root) {
+    if (typeof document !== 'undefined' && !document.__eventStayMenuDelegated) {
+      document.__eventStayMenuDelegated = true;
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest('.stay-section-menu a[href^="#"]');
+        if (!link) return;
+        if (!activateStaySectionLink(link, true)) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+    }
     (root || document).querySelectorAll('.stay-section-menu').forEach(function (menu) {
       if (menu.__stayMenuBound) return;
       menu.__stayMenuBound = true;
+      var links = Array.prototype.slice.call(menu.querySelectorAll('a[href^="#"]'));
+      if (window.location.hash) {
+        var activeLink = links.find(function (item) {
+          return item.getAttribute('href') === window.location.hash;
+        });
+        activateStaySectionLink(activeLink, false);
+      }
       menu.addEventListener('click', function (event) {
         var link = event.target.closest('a[href^="#"]');
         if (!link) return;
-        var planner = link.closest('.event-stay-planner');
-        var id = link.getAttribute('href').slice(1);
-        var target = planner && planner.querySelector('#' + id);
-        if (!target) return;
+        if (!activateStaySectionLink(link, true)) return;
         event.preventDefault();
-        target.scrollIntoView({ block: 'start', behavior: 'smooth' });
-        if (history && history.replaceState) {
-          history.replaceState(null, '', '#' + id);
-        }
       });
     });
   }
@@ -1773,6 +1817,7 @@
       bindSaveButtons();
       bindLeadForms();
       bindHotelSearch(target);
+      bindEventStayMenu(target);
       bindEditionTabTargetLinks();
       hydrateSessionScoreBars(target);
       hydrateRyderLiveResults(target);

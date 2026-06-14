@@ -15,20 +15,128 @@
   "state": "Florida",
   "region": "Central Florida",
   "population": "307,573 (2020 census)",
+  "kpis": [
+    {
+      "label": "Population",
+      "value": "307,573",
+      "note": "2020 census"
+    },
+    {
+      "label": "Founded",
+      "value": "1875",
+      "note": "incorporated"
+    },
+    {
+      "label": "State",
+      "value": "Florida",
+      "note": "Central Florida"
+    },
+    {
+      "label": "Time zone",
+      "value": "ET",
+      "note": "UTC-5 / UTC-4"
+    }
+  ],
   "coordinates": {
-    "lat": 28.54,
-    "lon": -81.38
+    "lat": 28.53834,
+    "lon": -81.37924
   },
   "weather": {
     "source": "National Weather Service",
     "dynamic": true
   },
+  "introTitle": "Orlando city overview",
+  "heroText": "Orlando is a Central Florida city in Orange County, known for a service economy built around tourism, conventions, entertainment and regional growth. Beyond the theme parks, the city has a downtown core around Lake Eola, nearby historic Winter Park, major airport access and a large metro area that shapes Central Florida.",
+  "history": [
+    {
+      "label": "Origins",
+      "text": "Fort Gatlin, as the Orlando area was once known, was established at what is now just south of the city limits by the 4th U.S."
+    },
+    {
+      "label": "250",
+      "text": "The site of construction for Fort Gatlin, a defensible position with fresh water between three small lakes, was likely chosen because the location was on a main trail and is less than 250 yards."
+    },
+    {
+      "label": "417",
+      "text": "This property is still owned by the Ward family, and can be seen from southbound flights out of Orlando International Airport immediately on the south side of SR 417. Post-Industrial Revolution Orlando became a."
+    },
+    {
+      "label": "19th century",
+      "text": "Also, just south of the Orlando International Airport in the Boggy Creek area are 150 acres (0.61 km2) of property homesteaded in the late 19th century by the Ward family."
+    },
+    {
+      "label": "1838",
+      "text": "Fanning on November 9, 1838, during the construction of a series of fortified encampments across Florida during the Second Seminole War."
+    },
+    {
+      "label": "1839",
+      "text": "When the U.S. military abandoned the fort in 1839, the surrounding community was built up by settlers."
+    },
+    {
+      "label": "1849",
+      "text": "Fort Gatlin was briefly reoccupied by the military for a few weeks during October and November 1849, and subsequently a volunteer militia was left to defend the settlement."
+    },
+    {
+      "label": "1857",
+      "text": "In 1857, the post office was removed from Jernigan, and opened under the name of Orlando at a new location in present-day downtown Orlando."
+    },
+    {
+      "label": "1879",
+      "text": "For a short time in 1879, the town revoked its charter, and was subsequently reincorporated."
+    },
+    {
+      "label": "1947",
+      "text": "Orlando AAB and Pinecastle AAF were transferred to the United States Air Force in 1947 when it became a separate service and were redesignated as air force bases (AFB)."
+    },
+    {
+      "label": "1960s",
+      "text": "In the 1960s, the base subsequently became home to the 306th Bombardment Wing of the Strategic Air Command, operating B-52 Stratofortress and KC-135 Stratotanker aircraft, in addition to detachment operations by EC-121 and U-2."
+    },
+    {
+      "label": "1962",
+      "text": "A major factor in Orlando's growth occurred in 1962, when the new Orlando Jetport, the precursor of the present-day Orlando International Airport, was built from a portion of the McCoy Air Force Base."
+    },
+    {
+      "label": "1975",
+      "text": "McCoy Air Force Base officially closed in 1975, and most of it is now part of the airport."
+    },
+    {
+      "label": "1976",
+      "text": "When McCoy AFB closed in 1976, its runways and territory to its south and east were transferred to the city to become Orlando International Airport, while a small portion to the northwest was transferred."
+    }
+  ],
   "areas": [
     "International Drive",
     "Lake Buena Vista",
     "Downtown Orlando",
     "Winter Park",
     "Kissimmee"
+  ],
+  "highlights": [
+    {
+      "title": "Walt Disney World Resort",
+      "text": "Use Walt Disney World as a full-day planning anchor: hotel area, early entry, park transfers and evening returns can change the best Orlando base."
+    },
+    {
+      "title": "Universal Orlando Resort",
+      "text": "Universal works best when you compare park days with International Drive, airport timing, dining plans and whether you need a car."
+    },
+    {
+      "title": "International Drive",
+      "text": "International Drive is a practical hotel corridor for first visits, restaurants, attractions, shuttles and easier comparison shopping between Orlando bases."
+    },
+    {
+      "title": "Lake Eola Park",
+      "text": "Lake Eola gives Downtown Orlando a lighter local stop, useful when you want a break from theme-park schedules and resort transfers."
+    },
+    {
+      "title": "Winter Park",
+      "text": "Winter Park adds museums, lakes, restaurants and a calmer local base when the trip needs more than the major theme parks."
+    },
+    {
+      "title": "Kennedy Space Center day trip",
+      "text": "Kennedy Space Center is not in Orlando, but it is a common day-trip decision that can affect rental car and hotel planning."
+    }
   ],
   "airports": [
     {
@@ -53,5 +161,12 @@
       "usedFor": "hero and mini image crop"
     }
   ],
-  "sourceFetchedAt": "2026-06-12T07:39:54.580Z"
+  "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
+  "timezone": "America/New_York",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Orlando",
+    "matchedCountry": "United States"
+  },
+  "historySource": "https://en.wikipedia.org/wiki/Orlando%2C_Florida"
 }

@@ -15,8 +15,8 @@
   "region": "South Denmark",
   "population": "~7,000 town",
   "coordinates": {
-    "lat": 55.7284,
-    "lon": 9.1124
+    "lat": 55.73349,
+    "lon": 9.10785
   },
   "weather": {
     "source": "OneSlider shared weather module",
@@ -44,6 +44,33 @@
     "Givskud Zoo trips",
     "Airport gateway"
   ],
+  "history": [
+    {
+      "label": "17th century",
+      "text": "Billund is recorded as a settlement with origins in the 17th century in central Jutland."
+    },
+    {
+      "label": "1895",
+      "text": "The carpentry business later bought by Ole Kirk Christiansen was founded in Billund."
+    },
+    {
+      "label": "1916",
+      "text": "Ole Kirk Christiansen bought Billund Machine Joinery and Carpentry Business, the workshop that later led to Lego."
+    },
+    {
+      "label": "1934",
+      "text": "Christiansen named his toy business Lego, anchoring the company identity that would reshape the town."
+    },
+    {
+      "label": "1964",
+      "text": "Billund Airport opened to the public after growing from a private runway linked to the Lego company."
+    },
+    {
+      "label": "1968",
+      "text": "Legoland Billund opened as the first Legoland park, turning the town into a major family tourism base."
+    }
+  ],
+  "historySource": "https://en.wikipedia.org/wiki/Billund,_Denmark",
   "sources": [
     {
       "label": "Wikipedia: Billund",
@@ -56,5 +83,11 @@
       "usedFor": "hero, mini and See-card generated assets"
     }
   ],
-  "sourceFetchedAt": "2026-06-12"
+  "sourceFetchedAt": "2026-06-12",
+  "timezone": "Europe/Copenhagen",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Billund",
+    "matchedCountry": "Denmark"
+  }
 }

@@ -1056,10 +1056,10 @@ nav.event-nav .nav-divider {
   gap: 10px;
   max-width: 760px;
   padding: 14px;
-  background: #eaf3ff;
-  border: 1px solid color-mix(in srgb, #bcd5f1 70%, var(--os-card-line, var(--os-line)));
+  background: color-mix(in srgb, var(--location-soft, var(--os-soft)) 78%, var(--os-surface));
+  border: 1px solid var(--location-line, var(--os-card-line, var(--os-line)));
   border-radius: 8px;
-  box-shadow: 0 14px 30px color-mix(in srgb, #6a8fb8 18%, transparent);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .stay-weather-title-row {
@@ -1089,7 +1089,7 @@ nav.event-nav .nav-divider {
   gap: 0;
   overflow: hidden;
   background: var(--os-surface);
-  border: 1px solid color-mix(in srgb, #d8e6f5 80%, var(--os-card-line, var(--os-line)));
+  border: 1px solid var(--location-line, var(--os-card-line, var(--os-line)));
   border-radius: 8px;
 }
 
@@ -1114,7 +1114,7 @@ nav.event-nav .nav-divider {
 }
 
 .stay-weather-temp {
-  color: #b30000;
+  color: var(--os-red);
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 0;
@@ -1127,7 +1127,7 @@ nav.event-nav .nav-divider {
   place-items: center;
   align-self: stretch;
   min-width: 34px;
-  color: #4d5c6b;
+  color: var(--location-muted, var(--os-card-muted));
   background: transparent;
   cursor: pointer;
   font-family: inherit;
