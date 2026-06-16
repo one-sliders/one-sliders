@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Alta, Norway trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Finnmark",
-  "population": "~21,000 municipality",
+  "population": "tba",
   "coordinates": {
     "lat": 69.96887,
     "lon": 23.27165
@@ -22,20 +22,42 @@
     "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Alta centre",
-    "Bossekop",
-    "Elvebakken",
-    "Komsa",
-    "Sorrisniva"
-  ],
-  "airports": [
+  "h1": "Alta travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Alta Airport (ALF)",
-      "search": "Alta Airport (ALF), Alta, Norway"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Finnmark",
+      "note": "Norway"
+    },
+    {
+      "label": "Founded",
+      "value": "c. 4200 BC",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Oslo",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Alta centre, Alta, Norway",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Alta, Norway",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Alta Museum rock art",
     "Northern Lights Cathedral",
@@ -44,6 +66,22 @@
     "Komsa mountain",
     "Finnmark Plateau trips"
   ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Alta",
+      "url": "https://en.wikipedia.org/wiki/Alta",
+      "usedFor": "city description, coordinates and population context"
+    },
+    {
+      "label": "OneSliders generated city image set",
+      "url": "https://one-sliders.com/content/locations/europe/norway/img/alta-hero.png",
+      "usedFor": "hero, mini and See-card generated assets"
+    }
+  ],
+  "sourceFetchedAt": "2026-06-12",
   "history": [
     {
       "label": "c. 4200 BC",
@@ -71,19 +109,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Alta_Municipality",
-  "sources": [
-    {
-      "label": "Wikipedia: Alta",
-      "url": "https://en.wikipedia.org/wiki/Alta",
-      "usedFor": "city description, coordinates and population context"
-    },
-    {
-      "label": "OneSliders generated city image set",
-      "url": "https://one-sliders.com/content/locations/europe/norway/img/alta-hero.png",
-      "usedFor": "hero, mini and See-card generated assets"
-    }
-  ],
-  "sourceFetchedAt": "2026-06-12",
   "timezone": "Europe/Oslo",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
