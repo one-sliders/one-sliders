@@ -881,12 +881,13 @@ def render_template_city(d):
                 text = bounded_text('', f'Use {label} as a nearby Oslo idea when the route or season fits the trip.', 'nearby_text_words')
             card_inner = f'{node_mini_image(href, label)}<div><span>{esc(tag)}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
             nearby.append(linked_or_plain('div', href, 'class="destination-nearby-card"', card_inner))
-    else:
-        for i, area in enumerate(areas[:6]):
-            label = area.get('name') if isinstance(area, dict) else str(area)
-            text = bounded_text('', f'Compare {label} for hotel fit, transfer time, evening plans and the routes you will repeat most.', 'nearby_text_words')
-            nearby_inner = f'{node_mini_image("#stay-hotels-areas", label)}<div><span>{"Core" if i == 0 else "Area"}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
-            nearby.append(f'<a class="destination-nearby-card" href="#stay-hotels-areas">{nearby_inner}</a>')
+    # Auto-generate nearby from areas only if explicit nearby data exists
+    # else:
+    #     for i, area in enumerate(areas[:6]):
+    #         label = area.get('name') if isinstance(area, dict) else str(area)
+    #         text = bounded_text('', f'Compare {label} for hotel fit, transfer time, evening plans and the routes you will repeat most.', 'nearby_text_words')
+    #         nearby_inner = f'{node_mini_image("#stay-hotels-areas", label)}<div><span>{"Core" if i == 0 else "Area"}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
+    #         nearby.append(f'<a class="destination-nearby-card" href="#stay-hotels-areas">{nearby_inner}</a>')
     for city in d.get('nearbyCities') or []:
         if len(nearby) >= 8:
             break
