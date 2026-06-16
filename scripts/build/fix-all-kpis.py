@@ -54,15 +54,8 @@ for json_file in sorted(glob.glob(str(ROOT / 'content/locations/**/*.city.data.j
         if founded:
             kpis.append({'label': 'Founded', 'value': founded, 'note': 'historical origin'})
 
-        # Only update if current KPIs are wrong/empty
-        current_kpis = data.get('kpis') or []
-        needs_update = (
-            len(current_kpis) == 0 or
-            any(k.get('value') in ('tba', 'City population', 'Metro region', '')
-                for k in current_kpis if isinstance(k, dict))
-        )
-
-        if needs_update:
+        # Always update KPIs - build proper structure from available data
+        if kpis:
             data['kpis'] = kpis
             with open(json_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
