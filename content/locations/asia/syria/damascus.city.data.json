@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Damascus in 2026: calendars, nearby pages and linked event views for planning around Asia / Syria.",
     "webpageDescription": "Find sports events in Damascus in 2026: calendars, nearby pages and linked event views for planning around Asia / Syria."
   },
-  "kicker": "Capital city in Syria",
+  "region": "Capital city in Syria",
+  "population": "tba",
+  "coordinates": {
+    "lat": 33.5102,
+    "lon": 36.29128
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Damascus travel, stays & events guide",
   "heroText": "Damascus is a capital city in Syria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Damascus connects local landmarks, visitor routes and event planning in Syria."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Syria gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Syria",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Syria",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Syria"
+      "value": "Capital city in Syria",
+      "note": "Syria"
+    },
+    {
+      "label": "Founded",
+      "value": "14th century",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Damascus",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/syria/img/syria-mini.png",
-    "name": "Syria"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Damascus, Syria",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Damascus",
+      "text": "Damascus is a capital city in Syria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Damascus known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
+      "label": "Wikipedia: Damascus",
+      "url": "https://en.wikipedia.org/wiki/Damascus",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Damascus events",
-      "meta": "2026 calendar · Damascus"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Syria",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Syria"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "14th century",
@@ -203,10 +130,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Damascus",
-  "coordinates": {
-    "lat": 33.5102,
-    "lon": 36.29128
-  },
   "timezone": "Asia/Damascus",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
