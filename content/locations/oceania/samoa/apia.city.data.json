@@ -1,149 +1,73 @@
 {
-  "slug": "apia",
-  "name": "Apia",
-  "continent": "oceania",
-  "continentName": "Oceania",
-  "countrySlug": "samoa",
-  "countryName": "Samoa",
-  "depth": 4,
   "seo": {
     "title": "Sports Events in Apia 2026",
     "description": "Find sports events in Apia in 2026: calendars, nearby pages and linked event views for planning around Oceania / Samoa.",
     "twitterDescription": "Find sports events in Apia in 2026: calendars, nearby pages and linked event views for planning around Oceania / Samoa.",
     "webpageDescription": "Find sports events in Apia in 2026: calendars, nearby pages and linked event views for planning around Oceania / Samoa."
   },
-  "kicker": "Capital city in Samoa",
+  "region": "Capital city in Samoa",
+  "population": "tba",
+  "coordinates": {
+    "lat": -13.83333,
+    "lon": -171.76666
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Apia travel, stays & events guide",
   "heroText": "Apia is a capital city in Samoa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Apia connects local landmarks, visitor routes and event planning in Samoa."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Samoa gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Samoa",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Samoa",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Samoa"
-    }
-  ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "value": "Capital city in Samoa",
+      "note": "Samoa"
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "label": "Founded",
+      "value": "1800",
+      "note": "historical reference"
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "label": "Time zone",
+      "value": "Pacific/Apia",
+      "note": "local time"
     }
   ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/oceania/samoa/img/samoa-mini.png",
-    "name": "Samoa"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Apia, Samoa",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Apia",
+      "text": "Apia is a capital city in Samoa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Apia known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to temperate, transport access and the current event calendar."
+      "label": "Wikipedia: Apia",
+      "url": "https://en.wikipedia.org/wiki/Apia",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/oceania/img/oceania-mini.png",
-      "title": "Apia events",
-      "meta": "2026 calendar · Apia"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Samoa",
-    "Tropical to temperate",
-    "City transit",
-    "Events",
-    "Samoa"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/oceania/img/oceania-mini.png",
-      "alt": "Oceania",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/oceania/img/oceania-mini.png",
-      "alt": "Oceania",
-      "title": "Oceania outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1800",
@@ -203,14 +127,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Apia",
-  "coordinates": {
-    "lat": -13.83333,
-    "lon": -171.76666
-  },
   "timezone": "Pacific/Apia",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Apia",
     "matchedCountry": "Samoa"
-  }
+  },
+  "slug": "apia",
+  "name": "Apia",
+  "continent": "oceania",
+  "continentName": "Oceania",
+  "countrySlug": "samoa",
+  "countryName": "Samoa",
+  "depth": 4
 }
