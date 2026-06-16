@@ -12,107 +12,59 @@
     "twitterDescription": "Find sports events in Cairo in 2026: calendars, nearby pages and linked event views for planning around Africa / Egypt.",
     "webpageDescription": "Find sports events in Cairo in 2026: calendars, nearby pages and linked event views for planning around Africa / Egypt."
   },
-  "kicker": "Capital city in Egypt",
+  "region": "Capital city in Egypt",
+  "population": "tba",
+  "coordinates": {
+    "lat": 30.06263,
+    "lon": 31.24967
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Cairo travel, stays & events guide",
   "heroText": "Cairo is a historic megacity in Egypt, linking ancient landmarks, Nile routes and dense urban travel planning.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Cairo connects local landmarks, visitor routes and event planning in Egypt."
-    },
-    {
-      "label": "Landmark",
-      "text": "Egyptian Museum is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Egypt gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Egypt",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Egyptian Museum"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Egypt",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Egypt"
+      "value": "Capital city in Egypt",
+      "note": "Egypt"
+    },
+    {
+      "label": "Founded",
+      "value": "285",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Cairo",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/egypt/img/egypt-mini.png",
-    "name": "Egypt"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Cairo, Egypt",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Cairo",
+      "text": "Cairo is a historic megacity in Egypt, linking ancient landmarks, Nile routes and dense urban travel planning."
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Cairo known for?",
-      "a": "Egyptian Museum, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -122,32 +74,15 @@
       "meta": "Nov 2026 · Cairo"
     }
   ],
-  "knownFor": [
-    "Egyptian Museum",
-    "Egypt",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "Egypt"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Cairo",
+      "url": "https://en.wikipedia.org/wiki/Cairo",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "285",
@@ -207,10 +142,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Cairo",
-  "coordinates": {
-    "lat": 30.06263,
-    "lon": 31.24967
-  },
   "timezone": "Africa/Cairo",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
