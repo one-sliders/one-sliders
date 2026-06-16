@@ -1,50 +1,65 @@
 {
-  "slug": "southampton",
-  "name": "Southampton",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Southampton Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Southampton, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Southampton, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Southampton, New York trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "New York",
   "region": "The Hamptons",
-  "population": "~69,000 town",
+  "population": "tba",
   "coordinates": {
     "lat": 40.8843,
     "lon": -72.3895
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Southampton Village",
-    "North Sea",
-    "Hampton Bays",
-    "Bridgehampton",
-    "Riverhead"
-  ],
-  "airports": [
+  "h1": "Southampton travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Long Island MacArthur Airport (ISP)",
-      "search": "Hampton Bays, Southampton, New York, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "John F. Kennedy International Airport (JFK)",
-      "search": "New York City, New York, United States"
+      "label": "Region",
+      "value": "The Hamptons",
+      "note": "USA"
     },
     {
-      "name": "LaGuardia Airport (LGA)",
-      "search": "New York City, New York, United States"
+      "label": "Founded",
+      "value": "500",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Southampton Village, Southampton, New York, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Southampton, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Southampton",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Southampton, New York",
@@ -110,5 +125,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Southampton",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "southampton",
+  "name": "Southampton",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

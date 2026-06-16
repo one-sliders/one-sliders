@@ -1,46 +1,65 @@
 {
-  "slug": "santa-fe",
-  "name": "Santa Fe",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Santa Fe Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Santa Fe, New Mexico trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Santa Fe, New Mexico trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Santa Fe, New Mexico trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "New Mexico",
   "region": "Northern New Mexico",
-  "population": "87,505 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 35.68698,
     "lon": -105.9378
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown Plaza",
-    "Railyard District",
-    "Canyon Road",
-    "Museum Hill",
-    "Tesuque"
-  ],
-  "airports": [
+  "h1": "Santa Fe travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Santa Fe Regional Airport (SAF)",
-      "search": "Santa Fe, New Mexico, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Albuquerque International Sunport (ABQ)",
-      "search": "Albuquerque, New Mexico, United States"
+      "label": "Region",
+      "value": "Northern New Mexico",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "900",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Denver",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown Plaza, Santa Fe, New Mexico, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Santa Fe, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Santa Fe",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Santa Fe, New Mexico",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Santa Fe",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "santa-fe",
+  "name": "Santa Fe",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

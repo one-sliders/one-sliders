@@ -1,47 +1,65 @@
 {
-  "slug": "san-francisco",
-  "name": "San Francisco",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "San Francisco Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a San Francisco, California trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a San Francisco, California trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a San Francisco, California trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "California",
   "region": "Bay Area",
-  "population": "~810,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 37.77493,
     "lon": -122.41942
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Union Square",
-    "Fisherman's Wharf",
-    "Embarcadero",
-    "Nob Hill",
-    "Mission District",
-    "Marina District"
-  ],
-  "airports": [
+  "h1": "San Francisco travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "San Francisco International Airport (SFO)",
-      "search": "San Francisco, California, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Oakland International Airport (OAK)",
-      "search": "Oakland, California, United States"
+      "label": "Region",
+      "value": "Bay Area",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1776",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Los_Angeles",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Union Square, San Francisco, California, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "San Francisco, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "San Francisco",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: San Francisco",
@@ -119,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "San Francisco",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "san-francisco",
+  "name": "San Francisco",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

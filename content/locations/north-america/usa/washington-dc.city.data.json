@@ -1,51 +1,65 @@
 {
-  "slug": "washington-dc",
-  "name": "Washington DC",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Washington DC Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Washington DC, District of Columbia trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Washington DC, District of Columbia trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Washington DC, District of Columbia trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "District of Columbia",
   "region": "District of Columbia",
-  "population": "~690,000 federal district",
+  "population": "tba",
   "coordinates": {
     "lat": 38.9072,
     "lon": -77.0369
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown DC",
-    "National Mall area",
-    "Capitol Hill",
-    "Dupont Circle",
-    "Georgetown",
-    "Navy Yard"
-  ],
-  "airports": [
+  "h1": "Washington DC travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Ronald Reagan Washington National Airport (DCA)",
-      "search": "Washington DC, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Washington Dulles International Airport (IAD)",
-      "search": "Washington DC, United States"
+      "label": "Region",
+      "value": "District of Columbia",
+      "note": "USA"
     },
     {
-      "name": "Baltimore/Washington International Airport (BWI)",
-      "search": "Baltimore, Maryland, United States"
+      "label": "Founded",
+      "value": "17th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "tba",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown DC, Washington DC, District of Columbia, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Washington DC, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Washington DC",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Washington, D.C.",
@@ -118,9 +132,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Washington%2C_D.C.",
+  "timezone": "tba",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Washington, D.C.",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "washington-dc",
+  "name": "Washington DC",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

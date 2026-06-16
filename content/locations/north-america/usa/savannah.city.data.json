@@ -1,42 +1,65 @@
 {
-  "slug": "savannah",
-  "name": "Savannah",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Savannah Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Savannah, Georgia trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Savannah, Georgia trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Savannah, Georgia trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Georgia",
   "region": "Coastal Georgia",
-  "population": "147,780 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 32.08354,
     "lon": -81.09983
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Historic District",
-    "River Street",
-    "Forsyth Park",
-    "Starland District",
-    "Tybee Island"
-  ],
-  "airports": [
+  "h1": "Savannah travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Savannah/Hilton Head International Airport (SAV)",
-      "search": "Savannah, Georgia, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Coastal Georgia",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1680s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Historic District, Savannah, Georgia, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Savannah, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Savannah",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Savannah, Georgia",
@@ -106,5 +129,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Savannah",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "savannah",
+  "name": "Savannah",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

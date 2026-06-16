@@ -1,43 +1,65 @@
 {
-  "slug": "seattle",
-  "name": "Seattle",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Seattle Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Seattle, Washington trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Seattle, Washington trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Seattle, Washington trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Washington",
   "region": "Pacific Northwest",
-  "population": "~755,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 47.60621,
     "lon": -122.33207
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown Seattle",
-    "Belltown",
-    "South Lake Union",
-    "Capitol Hill",
-    "Queen Anne",
-    "Ballard"
-  ],
-  "airports": [
+  "h1": "Seattle travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Seattle-Tacoma International Airport (SEA)",
-      "search": "Seattle, Washington, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Pacific Northwest",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1851",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Los_Angeles",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown Seattle, Seattle, Washington, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Seattle, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Seattle",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Seattle",
@@ -115,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Seattle",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "seattle",
+  "name": "Seattle",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

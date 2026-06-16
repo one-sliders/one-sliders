@@ -1,46 +1,65 @@
 {
-  "slug": "sedona",
-  "name": "Sedona",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Sedona Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Sedona, Arizona trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Sedona, Arizona trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Sedona, Arizona trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Arizona",
   "region": "Northern Arizona",
-  "population": "~10,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 34.86974,
     "lon": -111.76099
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Uptown Sedona",
-    "West Sedona",
-    "Village of Oak Creek",
-    "Oak Creek Canyon",
-    "Tlaquepaque area"
-  ],
-  "airports": [
+  "h1": "Sedona travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Flagstaff Pulliam Airport (FLG)",
-      "search": "Flagstaff, Arizona, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Phoenix Sky Harbor International Airport (PHX)",
-      "search": "Phoenix, Arizona, United States"
+      "label": "Region",
+      "value": "Northern Arizona",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "227",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Phoenix",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Uptown Sedona, Sedona, Arizona, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Sedona, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Sedona",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Sedona, Arizona",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Sedona",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "sedona",
+  "name": "Sedona",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }
