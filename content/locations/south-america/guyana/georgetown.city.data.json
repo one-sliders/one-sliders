@@ -1,153 +1,73 @@
 {
-  "slug": "georgetown",
-  "name": "Georgetown",
-  "continent": "south-america",
-  "continentName": "South America",
-  "countrySlug": "guyana",
-  "countryName": "Guyana",
-  "depth": 4,
   "seo": {
     "title": "Sports Events in Georgetown 2026",
     "description": "Find sports events in Georgetown in 2026: calendars, nearby pages and linked event views for planning around South America / Guyana.",
     "twitterDescription": "Find sports events in Georgetown in 2026: calendars, nearby pages and linked event views for planning around South America / Guyana.",
     "webpageDescription": "Find sports events in Georgetown in 2026: calendars, nearby pages and linked event views for planning around South America / Guyana."
   },
-  "kicker": "Capital city in Guyana",
+  "region": "Capital city in Guyana",
+  "population": "tba",
+  "coordinates": {
+    "lat": 6.80448,
+    "lon": -58.15527
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Georgetown travel, stays & events guide",
   "heroText": "Georgetown is a capital city in Guyana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Georgetown connects local landmarks, visitor routes and event planning in Guyana."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Guyana gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Guyana",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Guyana",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Guyana"
+      "value": "Capital city in Guyana",
+      "note": "Guyana"
+    },
+    {
+      "label": "Founded",
+      "value": "1748",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "America/Guyana",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/south-america/guyana/img/guyana-mini.png",
-    "name": "Guyana"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Georgetown, Guyana",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Georgetown",
+      "text": "Georgetown is a capital city in Guyana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Georgetown known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to temperate, transport access and the current event calendar."
+      "label": "Wikipedia: Georgetown",
+      "url": "https://en.wikipedia.org/wiki/Georgetown%2C_Guyana",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
-      "title": "Georgetown events",
-      "meta": "2026 calendar · Georgetown"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Guyana",
-    "Tropical to temperate",
-    "City transit",
-    "Events",
-    "Guyana"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
-      "alt": "South America",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
-      "alt": "South America",
-      "title": "South America outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1748",
@@ -183,14 +103,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Georgetown%2C_Guyana",
-  "coordinates": {
-    "lat": 6.80448,
-    "lon": -58.15527
-  },
   "timezone": "America/Guyana",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Georgetown",
     "matchedCountry": "Guyana"
-  }
+  },
+  "slug": "georgetown",
+  "name": "Georgetown",
+  "continent": "south-america",
+  "continentName": "South America",
+  "countrySlug": "guyana",
+  "countryName": "Guyana",
+  "depth": 4
 }
