@@ -1,27 +1,56 @@
 {
-  "slug": "charlottetown",
-  "name": "Charlottetown",
-  "province": "Prince Edward Island",
-  "state": "Prince Edward Island",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Charlottetown travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Prince Edward Island",
-  "population": "38,809 city (2021 census)",
-  "role": "PEI capital and island base",
-  "knownFor": "Harbour walks, food & island drives",
-  "intro": "Small capital for harbour walks, food and island drives",
-  "airport": "Charlottetown Airport (YYG)",
-  "coords": [
-    46.2382,
-    -63.1311
+  "population": "tba",
+  "coordinates": {
+    "lat": 46.23459,
+    "lon": -63.1256
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Charlottetown travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Prince Edward Island",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "500",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Halifax",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Charlottetown",
-    "Waterfront",
-    "Brighton",
-    "University area",
-    "Cavendish day-trip base"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Charlottetown, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Confederation Centre",
     "Charlottetown waterfront",
@@ -30,19 +59,17 @@
     "PEI beaches",
     "Seafood"
   ],
-  "events": [
-    "Charlottetown Festival",
-    "Old Home Week",
-    "PEI International Shellfish Festival",
-    "Canada Day in Charlottetown"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Charlottetown",
+      "url": "https://en.wikipedia.org/wiki/Charlottetown",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "prince-edward-island",
-    "pei",
-    "stay"
-  ],
-  "href": "charlottetown.html",
-  "img": "img/charlottetown-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "500",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Charlottetown",
-  "coordinates": {
-    "lat": 46.23459,
-    "lon": -63.1256
-  },
   "timezone": "America/Halifax",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Charlottetown",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "charlottetown",
+  "name": "Charlottetown",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

@@ -1,27 +1,56 @@
 {
-  "slug": "banff",
-  "name": "Banff",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Banff travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Banff National Park",
-  "population": "8,305 town (2021 census)",
-  "role": "Rocky Mountain park town",
-  "knownFor": "Lakes, hikes & hot springs",
-  "intro": "Rocky Mountain town for lakes, hikes, skiing and hot springs",
-  "airport": "Calgary International Airport (YYC)",
-  "coords": [
-    51.1784,
-    -115.5708
+  "population": "tba",
+  "coordinates": {
+    "lat": 51.17622,
+    "lon": -115.56982
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Banff travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Banff National Park",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "19th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Edmonton",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Banff Avenue",
-    "Tunnel Mountain",
-    "Banff Springs area",
-    "Lake Minnewanka road",
-    "Canmore overflow"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Banff, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Banff Avenue",
     "Sulphur Mountain",
@@ -30,19 +59,17 @@
     "Banff Upper Hot Springs",
     "Ski season"
   ],
-  "events": [
-    "Banff Mountain Film and Book Festival",
-    "SnowDays",
-    "Banff Marathon",
-    "Banff Centre events"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Banff",
+      "url": "https://en.wikipedia.org/wiki/Banff%2C_Alberta",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "rocky",
-    "stay"
-  ],
-  "href": "banff.html",
-  "img": "img/banff-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Early settlement",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Banff%2C_Alberta",
-  "coordinates": {
-    "lat": 51.17622,
-    "lon": -115.56982
-  },
   "timezone": "America/Edmonton",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Banff",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "banff",
+  "name": "Banff",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

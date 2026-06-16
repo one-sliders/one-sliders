@@ -1,27 +1,56 @@
 {
-  "slug": "canmore",
-  "name": "Canmore",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Canmore travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Bow Valley",
-  "population": "15,990 town (2021 census)",
-  "role": "Banff access and hiking base",
-  "knownFor": "Three Sisters, trails & value stays",
-  "intro": "Rockies town for hikes, value stays and Banff access",
-  "airport": "Calgary International Airport (YYC)",
-  "coords": [
-    51.089,
-    -115.359
+  "population": "tba",
+  "coordinates": {
+    "lat": 51.08335,
+    "lon": -115.35206
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Canmore travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Bow Valley",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1884",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Edmonton",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Canmore",
-    "Spring Creek",
-    "Three Sisters",
-    "Dead Man's Flats",
-    "Banff overflow"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Canmore, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Three Sisters",
     "Grassi Lakes",
@@ -30,19 +59,17 @@
     "Bow River",
     "Kananaskis access"
   ],
-  "events": [
-    "Canmore Folk Music Festival",
-    "Canmore Highland Games",
-    "Rocky Mountain Soap Women's Run",
-    "Canmore winter events"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Canmore",
+      "url": "https://en.wikipedia.org/wiki/Canmore%2C_Alberta",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "banff",
-    "stay"
-  ],
-  "href": "canmore.html",
-  "img": "img/canmore-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1884",
@@ -98,14 +125,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Canmore%2C_Alberta",
-  "coordinates": {
-    "lat": 51.08335,
-    "lon": -115.35206
-  },
   "timezone": "America/Edmonton",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Canmore",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "canmore",
+  "name": "Canmore",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

@@ -1,28 +1,56 @@
 {
-  "slug": "calgary",
-  "name": "Calgary",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Calgary travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Southern Alberta",
-  "population": "1,306,784 city (2021 census)",
-  "role": "Rockies gateway",
-  "knownFor": "Stampede, skyline & mountain access",
-  "intro": "Prairie city for rodeo culture, skyline views and Rocky Mountain access",
-  "airport": "Calgary International Airport (YYC)",
-  "coords": [
-    51.0447,
-    -114.0719
+  "population": "tba",
+  "coordinates": {
+    "lat": 51.05011,
+    "lon": -114.08529
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Calgary travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Southern Alberta",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1876",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Edmonton",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Calgary",
-    "Beltline",
-    "East Village",
-    "Kensington",
-    "Inglewood",
-    "Airport area"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Calgary, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Calgary Tower",
     "Calgary Stampede",
@@ -31,19 +59,17 @@
     "Inglewood",
     "Banff day trips"
   ],
-  "events": [
-    "Calgary Stampede",
-    "Calgary Folk Music Festival",
-    "Sled Island",
-    "GlobalFest"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Calgary",
+      "url": "https://en.wikipedia.org/wiki/Calgary",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "rockies",
-    "stay"
-  ],
-  "href": "calgary.html",
-  "img": "img/calgary-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1876",
@@ -103,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Calgary",
-  "coordinates": {
-    "lat": 51.05011,
-    "lon": -114.08529
-  },
   "timezone": "America/Edmonton",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Calgary",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "calgary",
+  "name": "Calgary",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }
