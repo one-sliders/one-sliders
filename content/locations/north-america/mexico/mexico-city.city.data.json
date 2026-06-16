@@ -1,118 +1,63 @@
 {
-  "slug": "mexico-city",
-  "name": "Mexico City",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "mexico",
-  "countryName": "Mexico",
-  "depth": 4,
   "seo": {
     "title": "Sports Events in Mexico City 2026",
     "description": "Find sports events in Mexico City in 2026: calendars, nearby pages and linked event views for planning around North America / Mexico.",
     "twitterDescription": "Find sports events in Mexico City in 2026: calendars, nearby pages and linked event views for planning around North America / Mexico.",
     "webpageDescription": "Find sports events in Mexico City in 2026: calendars, nearby pages and linked event views for planning around North America / Mexico."
   },
-  "kicker": "Capital city in Mexico",
+  "region": "Capital city in Mexico",
+  "population": "tba",
+  "coordinates": {
+    "lat": 19.42847,
+    "lon": -99.12766
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Mexico City travel, stays & events guide",
   "heroText": "Mexico City is a major urban anchor in Mexico, combining events, culture, transit and regional travel links.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Mexico City connects local landmarks, visitor routes and event planning in Mexico."
-    },
-    {
-      "label": "Landmark",
-      "text": "Zocalo is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Mexico gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Mexico",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Zocalo"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Mexico",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Mexico"
+      "value": "Capital city in Mexico",
+      "note": "Mexico"
+    },
+    {
+      "label": "Founded",
+      "value": "14th century",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "America/Mexico_City",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/north-america/mexico/img/mexico-mini.png",
-    "name": "Mexico"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Mexico City, Mexico",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Mexico City",
+      "text": "Mexico City is a major urban anchor in Mexico, combining events, culture, transit and regional travel links."
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Mexico City known for?",
-      "a": "Zocalo, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, arctic to tropical, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -136,32 +81,15 @@
       "meta": "Oct-Nov 2026 · Mexico City"
     }
   ],
-  "knownFor": [
-    "Zocalo",
-    "Mexico",
-    "Varied, arctic to tropical",
-    "City transit",
-    "Events",
-    "Mexico"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "North America outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Mexico City",
+      "url": "https://en.wikipedia.org/wiki/Mexico_City",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "14th century",
@@ -221,14 +149,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Mexico_City",
-  "coordinates": {
-    "lat": 19.42847,
-    "lon": -99.12766
-  },
   "timezone": "America/Mexico_City",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Mexico City",
     "matchedCountry": "Mexico"
-  }
+  },
+  "slug": "mexico-city",
+  "name": "Mexico City",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "mexico",
+  "countryName": "Mexico",
+  "depth": 4
 }

@@ -1,46 +1,65 @@
 {
-  "slug": "aspen",
-  "name": "Aspen",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Aspen Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Aspen, Colorado trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Aspen, Colorado trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Aspen, Colorado trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Colorado",
   "region": "Colorado Rockies",
-  "population": "~7,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 39.1911,
     "lon": -106.81754
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown Aspen",
-    "Aspen Mountain base",
-    "West End",
-    "Snowmass Village",
-    "Buttermilk area"
-  ],
-  "airports": [
+  "h1": "Aspen travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Aspen/Pitkin County Airport (ASE)",
-      "search": "Aspen, Colorado, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Denver International Airport (DEN)",
-      "search": "Denver, Colorado, United States"
+      "label": "Region",
+      "value": "Colorado Rockies",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1879",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Denver",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown Aspen, Aspen, Colorado, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Aspen, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Aspen",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Aspen, Colorado",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Aspen",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "aspen",
+  "name": "Aspen",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }
