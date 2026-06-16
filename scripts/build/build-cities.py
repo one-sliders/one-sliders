@@ -900,7 +900,7 @@ def render_template_city(d):
             text = bounded_text('', f'Use {cname} as another nearby base when routes, hotel prices or event timing point away from {name}.', 'nearby_text_words')
         city_inner = f'{node_mini_image(href, cname)}<div><span>City</span><h3>{esc(cname)}</h3><p>{esc(text)}</p></div>'
         nearby.append(f'<a class="destination-nearby-card" href="{esc(href)}">{city_inner}</a>')
-    nearby_html = ''.join(nearby) or f'<p class="country-empty is-visible">Nearby ideas can be added in {esc(slug)}.city.data.json.</p>'
+    nearby_html = ''.join(nearby)
 
     upcoming_event_items = []
     past_event_items = []
@@ -1087,7 +1087,7 @@ def render_template_city(d):
         <div class="persona-panel view-panel--visit" id="fact"><div class="country-panel-card city-facts-hero"><div class="city-facts-header"><h2>City facts</h2>{pie_html}</div>{city_fact_chip_grid}<div class="city-kpi-grid">{kpi_cards}</div></div>{history_card}{fact_event_teaser}</div>
         <div class="persona-panel view-panel--see" id="see"><div class="country-panel-card"><h2>Worth seeing</h2><div class="destination-attraction-grid">{''.join(see_cards)}</div></div></div>
         <div class="persona-panel view-panel--stay" id="visit"><div class="stay-planner-layout"><nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#stay-overview">Overview</a><a href="#stay-hotels-areas">Hotels &amp; Areas</a><a href="#stay-flights-airports">Flights &amp; Airports</a><a href="#stay-rental-cars">Rental cars</a><a href="#stay-tips">Tips</a></nav><div class="stay-section-stack"><div class="country-panel-card stay-overview-card stay-section-panel" id="stay-overview"><h2>Stay overview</h2><p>{esc(stay_overview_text)}</p></div><div class="country-panel-card stay-booking-card stay-section-panel" id="stay-hotels-areas"><h2>Hotels &amp; areas</h2><p>{esc(hotel_intro_text)}</p><div class="stay-area-grid">{areas_html}</div><a class="stay-booking-button{booking_market}" href="{esc(booking_search_url(booking_destination, d))}" target="_blank" rel="nofollow sponsored noopener">Compare stays in {esc(booking_destination)}</a></div><div class="country-panel-card stay-section-panel" id="stay-flights-airports"><h2>Flights &amp; airports</h2>{flight_cta}</div><div class="country-panel-card stay-section-panel" id="stay-rental-cars"><h2>Rental cars</h2>{rental_cta}</div><div class="country-panel-card stay-section-panel" id="stay-tips"><h2>Travel tips</h2><div class="stay-tip-grid">{''.join(tip_cards)}</div></div></div></div></div>
-        <div class="persona-panel view-panel--nearby" id="nearby"><div class="country-panel-card"><h2>Nearby ideas</h2><div class="destination-nearby-grid">{nearby_html}</div></div></div>
+        {f'<div class="persona-panel view-panel--nearby" id="nearby"><div class="country-panel-card"><h2>Nearby ideas</h2><div class="destination-nearby-grid">{nearby_html}</div></div></div>' if nearby_html else ''}
         <div class="persona-panel view-panel--events" id="events"><div class="country-panel-card"><h2>Upcoming events</h2><div class="country-paths country-paths--events" data-expiring-events>{event_cards}</div>{past_events_html}</div></div>
         {f'<div class="persona-panel view-panel--big" id="big-in">{topics_html}</div>' if topics_html else ''}
       </section></div>
