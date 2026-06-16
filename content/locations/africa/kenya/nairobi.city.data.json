@@ -12,107 +12,59 @@
     "twitterDescription": "Find sports events in Nairobi in 2026: calendars, nearby pages and linked event views for planning around Africa / Kenya.",
     "webpageDescription": "Find sports events in Nairobi in 2026: calendars, nearby pages and linked event views for planning around Africa / Kenya."
   },
-  "kicker": "Capital city in Kenya",
+  "region": "Capital city in Kenya",
+  "population": "tba",
+  "coordinates": {
+    "lat": -1.28333,
+    "lon": 36.81667
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Nairobi travel, stays & events guide",
   "heroText": "Nairobi is a capital city in Kenya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Nairobi connects local landmarks, visitor routes and event planning in Kenya."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Kenya gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Kenya",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Kenya",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Kenya"
+      "value": "Capital city in Kenya",
+      "note": "Kenya"
+    },
+    {
+      "label": "Founded",
+      "value": "1898",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Nairobi",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/kenya/img/kenya-mini.png",
-    "name": "Kenya"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Nairobi, Kenya",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Nairobi",
+      "text": "Nairobi is a capital city in Kenya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Nairobi known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -122,32 +74,15 @@
       "meta": "Jul-Oct 2026 · Nairobi"
     }
   ],
-  "knownFor": [
-    "Central district",
-    "Kenya",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "Kenya"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Nairobi",
+      "url": "https://en.wikipedia.org/wiki/Nairobi",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1898",
@@ -207,10 +142,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Nairobi",
-  "coordinates": {
-    "lat": -1.28333,
-    "lon": 36.81667
-  },
   "timezone": "Africa/Nairobi",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
