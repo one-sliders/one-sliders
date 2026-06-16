@@ -12,118 +12,59 @@
     "twitterDescription": "Find sports events in Fes in 2026: calendars, nearby pages and linked event views for planning around Africa / Morocco.",
     "webpageDescription": "Find sports events in Fes in 2026: calendars, nearby pages and linked event views for planning around Africa / Morocco."
   },
-  "kicker": "Key city in Morocco",
+  "region": "Key city in Morocco",
+  "population": "tba",
+  "coordinates": {
+    "lat": 34.03313,
+    "lon": -5.00028
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Fes travel, stays & events guide",
   "heroText": "Fes is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Fes connects local landmarks, visitor routes and event planning in Morocco."
-    },
-    {
-      "label": "Landmark",
-      "text": "Main landmark is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Morocco gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Morocco",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Main landmark"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Morocco",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Morocco"
+      "value": "Key city in Morocco",
+      "note": "Morocco"
+    },
+    {
+      "label": "Founded",
+      "value": "788",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Casablanca",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/morocco/img/morocco-mini.png",
-    "name": "Morocco"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [
+  "bookingDestination": "Fes, Morocco",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "href": "marrakech.html",
-      "img": "/content/locations/africa/morocco/img/marrakech-mini.png",
-      "name": "Marrakech"
-    },
-    {
-      "href": "rabat.html",
-      "img": "/content/locations/africa/morocco/img/rabat-mini.png",
-      "name": "Rabat"
+      "name": "Fes",
+      "text": "Fes is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand."
     }
   ],
-  "links": [
-    {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
-    }
-  ],
-  "planningQuestions": [
-    {
-      "q": "What is Fes known for?",
-      "a": "Main landmark, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -133,32 +74,15 @@
       "meta": "May-Jun 2026 · Fes"
     }
   ],
-  "knownFor": [
-    "Main landmark",
-    "Morocco",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "Morocco"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Fes",
+      "url": "https://en.wikipedia.org/wiki/Fez%2C_Morocco",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "788",
@@ -218,10 +142,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Fez%2C_Morocco",
-  "coordinates": {
-    "lat": 34.03313,
-    "lon": -5.00028
-  },
   "timezone": "Africa/Casablanca",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
