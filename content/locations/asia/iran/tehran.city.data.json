@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Tehran in 2026: calendars, nearby pages and linked event views for planning around Asia / Iran.",
     "webpageDescription": "Find sports events in Tehran in 2026: calendars, nearby pages and linked event views for planning around Asia / Iran."
   },
-  "kicker": "Capital city in Iran",
+  "region": "Capital city in Iran",
+  "population": "tba",
+  "coordinates": {
+    "lat": 35.69439,
+    "lon": 51.42151
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Tehran travel, stays & events guide",
   "heroText": "Tehran is a capital city in Iran, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Tehran connects local landmarks, visitor routes and event planning in Iran."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Iran gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Iran",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Iran",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Iran"
+      "value": "Capital city in Iran",
+      "note": "Iran"
+    },
+    {
+      "label": "Founded",
+      "value": "816",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Tehran",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/iran/img/iran-mini.png",
-    "name": "Iran"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Tehran, Iran",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Tehran",
+      "text": "Tehran is a capital city in Iran, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Tehran known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
+      "label": "Wikipedia: Tehran",
+      "url": "https://en.wikipedia.org/wiki/Tehran",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Tehran events",
-      "meta": "2026 calendar · Tehran"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Iran",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Iran"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Early settlement",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Tehran",
-  "coordinates": {
-    "lat": 35.69439,
-    "lon": 51.42151
-  },
   "timezone": "Asia/Tehran",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
