@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Helsingborg, Sweden trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Skane",
-  "population": "~150,000 municipality",
+  "population": "tba",
   "coordinates": {
     "lat": 56.04673,
     "lon": 12.69437
@@ -22,8 +22,66 @@
     "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "introTitle": "Helsingborg city overview",
-  "heroText": "Helsingborg is one of Skane's key Oresund cities, facing Helsingor across the narrowest part of the strait. The city is shaped by medieval fortifications, ferry traffic, port industry, Danish-Swedish border history, coastal parks and a compact centre around Karnan, Norra Hamnen and the waterfront.",
+  "h1": "Helsingborg travel, stays & events guide",
+  "heroText": "Helsingborg is one of Skane's key Oresund cities, facing Helsingor across the narrowest part of the strait.  The city is shaped by medieval fortifications, ferry traffic, port industry, Danish-Swedish border history, coastal parks and a compact centre around Karnan, Norra Hamnen and the waterfront.",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Skane",
+      "note": "Sweden"
+    },
+    {
+      "label": "Founded",
+      "value": "1085",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Stockholm",
+      "note": "local time"
+    }
+  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Helsingborg, Sweden",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    "Karnan",
+    "Sofiero Palace",
+    "Dunkers kulturhus",
+    "Oresund ferries",
+    "Tropical Beach",
+    "Ramlosa spring park"
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Helsingborg",
+      "url": "https://en.wikipedia.org/wiki/Helsingborg",
+      "usedFor": "city description, coordinates and population context"
+    },
+    {
+      "label": "OneSliders generated city image set",
+      "url": "https://one-sliders.com/content/locations/europe/sweden/img/helsingborg-hero.png",
+      "usedFor": "hero, mini and See-card generated assets"
+    }
+  ],
+  "sourceFetchedAt": "2026-06-12",
   "history": [
     {
       "label": "1085",
@@ -82,72 +140,11 @@
       "text": "In World War II, Helsingborg was among the most important drop-off points for the rescue of Denmark's Jewish population during the Holocaust."
     }
   ],
-  "kpis": [
-    {
-      "label": "Population",
-      "value": "~150,000",
-      "note": "municipality"
-    },
-    {
-      "label": "Founded",
-      "value": "1085",
-      "note": "early record"
-    },
-    {
-      "label": "Region",
-      "value": "Skane",
-      "note": "Oresund coast"
-    },
-    {
-      "label": "Time zone",
-      "value": "CET / CEST",
-      "note": "Sweden"
-    }
-  ],
-  "areas": [
-    "Centrum",
-    "Norra Hamnen",
-    "Soder",
-    "Ramlosa",
-    "Sofiero area"
-  ],
-  "airports": [
-    {
-      "name": "Copenhagen Airport (CPH)",
-      "search": "Copenhagen Airport (CPH), Helsingborg, Sweden"
-    },
-    {
-      "name": "Angelholm-Helsingborg Airport (AGH)",
-      "search": "Angelholm-Helsingborg Airport (AGH), Helsingborg, Sweden"
-    }
-  ],
-  "bookingDestination": "Centrum, Helsingborg, Sweden",
-  "highlights": [
-    "Karnan",
-    "Sofiero Palace",
-    "Dunkers kulturhus",
-    "Oresund ferries",
-    "Tropical Beach",
-    "Ramlosa spring park"
-  ],
-  "sources": [
-    {
-      "label": "Wikipedia: Helsingborg",
-      "url": "https://en.wikipedia.org/wiki/Helsingborg",
-      "usedFor": "city description, coordinates and population context"
-    },
-    {
-      "label": "OneSliders generated city image set",
-      "url": "https://one-sliders.com/content/locations/europe/sweden/img/helsingborg-hero.png",
-      "usedFor": "hero, mini and See-card generated assets"
-    }
-  ],
-  "sourceFetchedAt": "2026-06-12",
+  "historySource": "https://en.wikipedia.org/wiki/Helsingborg",
   "timezone": "Europe/Stockholm",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Helsingborg",
     "matchedCountry": "Sweden"
-  },
-  "historySource": "https://en.wikipedia.org/wiki/Helsingborg"
+  }
 }
