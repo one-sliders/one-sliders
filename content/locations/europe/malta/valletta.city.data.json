@@ -12,128 +12,69 @@
     "twitterDescription": "Find sports events in Valletta in 2026: calendars, nearby pages and linked event views for planning around Europe / Malta.",
     "webpageDescription": "Find sports events in Valletta in 2026: calendars, nearby pages and linked event views for planning around Europe / Malta."
   },
-  "kicker": "Capital city of Malta",
+  "region": "Capital city of Malta",
+  "population": "tba",
+  "coordinates": {
+    "lat": 35.89968,
+    "lon": 14.5148
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Valletta travel, stays & events guide",
   "heroText": "Valletta is a key city in Malta, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
+  "kpis": [
     {
-      "label": "Place",
-      "text": "Valletta connects local landmarks, visitor routes and event planning in Malta."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "text": "Malta gives the page its wider route and destination context."
+      "value": "Capital city of Malta",
+      "note": "Malta"
     },
     {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
+      "label": "Founded",
+      "value": "154",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Malta",
+      "note": "local time"
     }
   ],
-  "kpis": [
-    {
-      "label": "Country",
-      "value": "Malta",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/europe/malta/img/malta-mini.png",
-    "name": "Malta"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Valletta, Malta",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Valletta",
+      "text": "Valletta is a key city in Malta, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Valletta known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Temperate to boreal, transport access and the current event calendar."
+      "label": "Wikipedia: Valletta",
+      "url": "https://en.wikipedia.org/wiki/Valletta",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "title": "Valletta events",
-      "meta": "2026 calendar · Valletta"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Malta",
-    "Temperate to boreal",
-    "City transit",
-    "Events",
-    "Malta"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
-      "alt": "Europe",
-      "title": "Europe outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "154",
@@ -193,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Valletta",
-  "coordinates": {
-    "lat": 35.89968,
-    "lon": 14.5148
-  },
   "timezone": "Europe/Malta",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
