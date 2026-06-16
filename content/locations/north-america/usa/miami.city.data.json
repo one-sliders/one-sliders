@@ -1,47 +1,65 @@
 {
-  "slug": "miami",
-  "name": "Miami",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Miami Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Miami, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Miami, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Miami, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Florida",
   "region": "South Florida",
-  "population": "442,241 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 25.77427,
     "lon": -80.19366
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "South Beach",
-    "Brickell",
-    "Downtown Miami",
-    "Wynwood",
-    "Coconut Grove",
-    "Coral Gables"
-  ],
-  "airports": [
+  "h1": "Miami travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Miami International Airport (MIA)",
-      "search": "Miami, Florida, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Fort Lauderdale-Hollywood International Airport (FLL)",
-      "search": "Fort Lauderdale, Florida, United States"
+      "label": "Region",
+      "value": "South Florida",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "c. 1 BCE",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "South Beach, Miami, Florida, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Miami, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Miami",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Miami",
@@ -119,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Miami",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "miami",
+  "name": "Miami",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

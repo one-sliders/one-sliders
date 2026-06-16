@@ -1,46 +1,65 @@
 {
-  "slug": "newport",
-  "name": "Newport",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Newport Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Newport, Rhode Island trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Newport, Rhode Island trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Newport, Rhode Island trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Rhode Island",
   "region": "Rhode Island coast",
-  "population": "~25,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 41.4901,
     "lon": -71.3128
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown Newport",
-    "Waterfront",
-    "Bellevue Avenue",
-    "Easton's Beach",
-    "Middletown"
-  ],
-  "airports": [
+  "h1": "Newport travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "T. F. Green International Airport (PVD)",
-      "search": "Providence, Rhode Island, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Boston Logan International Airport (BOS)",
-      "search": "Boston, Massachusetts, United States"
+      "label": "Region",
+      "value": "Rhode Island coast",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1639",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown Newport, Newport, Rhode Island, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Newport, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Newport",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Newport, Rhode Island",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Newport",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "newport",
+  "name": "Newport",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

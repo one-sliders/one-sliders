@@ -1,46 +1,65 @@
 {
-  "slug": "montauk",
-  "name": "Montauk",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Montauk Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Montauk, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Montauk, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Montauk, New York trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "New York",
   "region": "The Hamptons",
-  "population": "~4,000 hamlet",
+  "population": "tba",
   "coordinates": {
     "lat": 41.03594,
     "lon": -71.95451
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Montauk Village",
-    "Ditch Plains",
-    "Montauk Harbor",
-    "Hither Hills",
-    "Amagansett overflow"
-  ],
-  "airports": [
+  "h1": "Montauk travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Long Island MacArthur Airport (ISP)",
-      "search": "Montauk, New York, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "John F. Kennedy International Airport (JFK)",
-      "search": "New York City, New York, United States"
+      "label": "Region",
+      "value": "The Hamptons",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1661",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Montauk Village, Montauk, New York, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Montauk, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Montauk",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Montauk, New York",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Montauk",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "montauk",
+  "name": "Montauk",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

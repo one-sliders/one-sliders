@@ -1,43 +1,65 @@
 {
-  "slug": "new-orleans",
-  "name": "New Orleans",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "New Orleans Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a New Orleans, Louisiana trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a New Orleans, Louisiana trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a New Orleans, Louisiana trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Louisiana",
   "region": "Louisiana Gulf Coast",
-  "population": "383,997 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 29.95465,
     "lon": -90.07507
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "French Quarter",
-    "Central Business District",
-    "Warehouse District",
-    "Garden District",
-    "Marigny",
-    "Uptown"
-  ],
-  "airports": [
+  "h1": "New Orleans travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Louis Armstrong New Orleans International Airport (MSY)",
-      "search": "New Orleans, Louisiana, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Louisiana Gulf Coast",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1718",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Chicago",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "French Quarter, New Orleans, Louisiana, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "New Orleans, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "New Orleans",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: New Orleans",
@@ -115,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "New Orleans",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "new-orleans",
+  "name": "New Orleans",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

@@ -1,51 +1,65 @@
 {
-  "slug": "new-york",
-  "name": "New York City",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "New York City Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a New York City, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a New York City, New York trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a New York City, New York trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "New York",
   "region": "New York City",
-  "population": "~8.3M city",
+  "population": "tba",
   "coordinates": {
     "lat": 40.71427,
     "lon": -74.00597
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Midtown Manhattan",
-    "Lower Manhattan",
-    "Upper West Side",
-    "Williamsburg",
-    "Long Island City",
-    "Flushing"
-  ],
-  "airports": [
+  "h1": "New York City travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "John F. Kennedy International Airport (JFK)",
-      "search": "New York City, New York, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "LaGuardia Airport (LGA)",
-      "search": "New York City, New York, United States"
+      "label": "Region",
+      "value": "New York City",
+      "note": "USA"
     },
     {
-      "name": "Newark Liberty International Airport (EWR)",
-      "search": "Newark, New Jersey, United States"
+      "label": "Founded",
+      "value": "1525",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Midtown Manhattan, New York City, New York, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "New York City, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "New York City",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: New York City",
@@ -123,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "New York",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "new-york",
+  "name": "New York City",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

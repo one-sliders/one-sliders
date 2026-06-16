@@ -1,52 +1,98 @@
 {
-  "slug": "orlando",
-  "name": "Orlando",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Orlando Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Orlando, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Orlando, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Orlando, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Florida",
   "region": "Central Florida",
-  "population": "307,573 (2020 census)",
-  "kpis": [
-    {
-      "label": "Population",
-      "value": "307,573",
-      "note": "2020 census"
-    },
-    {
-      "label": "Founded",
-      "value": "1875",
-      "note": "incorporated"
-    },
-    {
-      "label": "State",
-      "value": "Florida",
-      "note": "Central Florida"
-    },
-    {
-      "label": "Time zone",
-      "value": "ET",
-      "note": "UTC-5 / UTC-4"
-    }
-  ],
+  "population": "tba",
   "coordinates": {
     "lat": 28.53834,
     "lon": -81.37924
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "introTitle": "Orlando city overview",
-  "heroText": "Orlando is a Central Florida city in Orange County, known for a service economy built around tourism, conventions, entertainment and regional growth. Beyond the theme parks, the city has a downtown core around Lake Eola, nearby historic Winter Park, major airport access and a large metro area that shapes Central Florida.",
+  "h1": "Orlando travel, stays & events guide",
+  "heroText": "Orlando is a Central Florida city in Orange County, known for a service economy built around tourism, conventions, entertainment and regional growth.  Beyond the theme parks, the city has a downtown core around Lake Eola, nearby historic Winter Park, major airport access and a large metro area that shapes Central Florida.",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Central Florida",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "250",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
+    }
+  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Orlando, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "title": "Walt Disney World Resort",
+      "text": "Use Walt Disney World as a full-day planning anchor: hotel area, early entry, park transfers and evening returns can change the best Orlando base."
+    },
+    {
+      "title": "Universal Orlando Resort",
+      "text": "Universal works best when you compare park days with International Drive, airport timing, dining plans and whether you need a car."
+    },
+    {
+      "title": "International Drive",
+      "text": "International Drive is a practical hotel corridor for first visits, restaurants, attractions, shuttles and easier comparison shopping between Orlando bases."
+    },
+    {
+      "title": "Lake Eola Park",
+      "text": "Lake Eola gives Downtown Orlando a lighter local stop, useful when you want a break from theme-park schedules and resort transfers."
+    },
+    {
+      "title": "Winter Park",
+      "text": "Winter Park adds museums, lakes, restaurants and a calmer local base when the trip needs more than the major theme parks."
+    },
+    {
+      "title": "Kennedy Space Center day trip",
+      "text": "Kennedy Space Center is not in Orlando, but it is a common day-trip decision that can affect rental car and hotel planning."
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Orlando, Florida",
+      "url": "https://en.wikipedia.org/wiki/Orlando%2C_Florida",
+      "usedFor": "city description, coordinates and population context"
+    },
+    {
+      "label": "Orlando,_Florida_(cropped).jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Orlando%2C_Florida_%28cropped%29.jpg/1280px-Orlando%2C_Florida_%28cropped%29.jpg",
+      "usedFor": "hero and mini image crop"
+    }
+  ],
+  "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
   "history": [
     {
       "label": "Origins",
@@ -105,68 +151,18 @@
       "text": "When McCoy AFB closed in 1976, its runways and territory to its south and east were transferred to the city to become Orlando International Airport, while a small portion to the northwest was transferred."
     }
   ],
-  "areas": [
-    "International Drive",
-    "Lake Buena Vista",
-    "Downtown Orlando",
-    "Winter Park",
-    "Kissimmee"
-  ],
-  "highlights": [
-    {
-      "title": "Walt Disney World Resort",
-      "text": "Use Walt Disney World as a full-day planning anchor: hotel area, early entry, park transfers and evening returns can change the best Orlando base."
-    },
-    {
-      "title": "Universal Orlando Resort",
-      "text": "Universal works best when you compare park days with International Drive, airport timing, dining plans and whether you need a car."
-    },
-    {
-      "title": "International Drive",
-      "text": "International Drive is a practical hotel corridor for first visits, restaurants, attractions, shuttles and easier comparison shopping between Orlando bases."
-    },
-    {
-      "title": "Lake Eola Park",
-      "text": "Lake Eola gives Downtown Orlando a lighter local stop, useful when you want a break from theme-park schedules and resort transfers."
-    },
-    {
-      "title": "Winter Park",
-      "text": "Winter Park adds museums, lakes, restaurants and a calmer local base when the trip needs more than the major theme parks."
-    },
-    {
-      "title": "Kennedy Space Center day trip",
-      "text": "Kennedy Space Center is not in Orlando, but it is a common day-trip decision that can affect rental car and hotel planning."
-    }
-  ],
-  "airports": [
-    {
-      "name": "Orlando International Airport (MCO)",
-      "search": "Orlando, Florida, United States"
-    },
-    {
-      "name": "Orlando Sanford International Airport (SFB)",
-      "search": "Sanford, Florida, United States"
-    }
-  ],
-  "bookingDestination": "International Drive, Orlando, Florida, United States",
-  "sources": [
-    {
-      "label": "Wikipedia: Orlando, Florida",
-      "url": "https://en.wikipedia.org/wiki/Orlando%2C_Florida",
-      "usedFor": "city description, coordinates and population context"
-    },
-    {
-      "label": "Orlando,_Florida_(cropped).jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Orlando%2C_Florida_%28cropped%29.jpg/1280px-Orlando%2C_Florida_%28cropped%29.jpg",
-      "usedFor": "hero and mini image crop"
-    }
-  ],
-  "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
+  "historySource": "https://en.wikipedia.org/wiki/Orlando%2C_Florida",
   "timezone": "America/New_York",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Orlando",
     "matchedCountry": "United States"
   },
-  "historySource": "https://en.wikipedia.org/wiki/Orlando%2C_Florida"
+  "slug": "orlando",
+  "name": "Orlando",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

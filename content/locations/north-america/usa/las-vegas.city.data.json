@@ -1,42 +1,65 @@
 {
-  "slug": "las-vegas",
-  "name": "Las Vegas",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Las Vegas Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Las Vegas, Nevada trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Nevada",
   "region": "Southern Nevada",
-  "population": "~660,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 36.17497,
     "lon": -115.13722
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "The Strip",
-    "Downtown Las Vegas",
-    "Convention Center area",
-    "Summerlin",
-    "Henderson"
-  ],
-  "airports": [
+  "h1": "Las Vegas travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Harry Reid International Airport (LAS)",
-      "search": "Las Vegas, Nevada, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Southern Nevada",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "550",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Los_Angeles",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "The Strip, Las Vegas, Nevada, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Las Vegas, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Las Vegas",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Las Vegas",
@@ -114,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Las Vegas",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "las-vegas",
+  "name": "Las Vegas",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }
