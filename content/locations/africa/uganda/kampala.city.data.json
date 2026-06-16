@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Kampala in 2026: calendars, nearby pages and linked event views for planning around Africa / Uganda.",
     "webpageDescription": "Find sports events in Kampala in 2026: calendars, nearby pages and linked event views for planning around Africa / Uganda."
   },
-  "kicker": "Capital city in Uganda",
+  "region": "Capital city in Uganda",
+  "population": "tba",
+  "coordinates": {
+    "lat": 0.31628,
+    "lon": 32.58219
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Kampala travel, stays & events guide",
   "heroText": "Kampala is a capital city in Uganda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Kampala connects local landmarks, visitor routes and event planning in Uganda."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Uganda gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Uganda",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Uganda",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Uganda"
+      "value": "Capital city in Uganda",
+      "note": "Uganda"
+    },
+    {
+      "label": "Founded",
+      "value": "1862",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Kampala",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/uganda/img/uganda-mini.png",
-    "name": "Uganda"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Kampala, Uganda",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Kampala",
+      "text": "Kampala is a capital city in Uganda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Kampala known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
+      "label": "Wikipedia: Kampala",
+      "url": "https://en.wikipedia.org/wiki/Kampala",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "title": "Kampala events",
-      "meta": "2026 calendar · Kampala"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Uganda",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "Uganda"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Origins",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Kampala",
-  "coordinates": {
-    "lat": 0.31628,
-    "lon": 32.58219
-  },
   "timezone": "Africa/Kampala",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
