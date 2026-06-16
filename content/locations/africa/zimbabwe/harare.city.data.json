@@ -6,7 +6,6 @@
   "countrySlug": "zimbabwe",
   "countryName": "Zimbabwe",
   "depth": 4,
-  "timezone": "Africa/Harare",
   "seo": {
     "title": "Harare Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Harare, Zimbabwe trip with neighborhoods, airports, weather, local time, sights, events and hotel planning links.",
@@ -14,29 +13,7 @@
     "webpageDescription": "Plan a Harare, Zimbabwe trip with neighborhoods, airports, weather, local time, sights, events and hotel planning links."
   },
   "region": "Harare Province",
-  "population": "~1.5M city",
-  "kpis": [
-    {
-      "label": "Population",
-      "value": "~1.5M",
-      "note": "city"
-    },
-    {
-      "label": "Founded",
-      "value": "1890",
-      "note": "as Salisbury"
-    },
-    {
-      "label": "Province",
-      "value": "Harare Province",
-      "note": "capital area"
-    },
-    {
-      "label": "Time zone",
-      "value": "CAT",
-      "note": "UTC+2"
-    }
-  ],
+  "population": "tba",
   "coordinates": {
     "lat": -17.82772,
     "lon": 31.05337
@@ -45,24 +22,42 @@
     "source": "OneSlider shared weather module",
     "dynamic": true
   },
+  "h1": "Harare travel, stays & events guide",
   "heroText": "Harare is Zimbabwe's capital base for galleries, markets, jacaranda-lined avenues, airport access and wider country travel planning.",
-  "areas": [
-    "CBD",
-    "The Avenues",
-    "Avondale",
-    "Borrowdale",
-    "Eastlea",
-    "Belgravia",
-    "Mount Pleasant",
-    "Airport area"
-  ],
-  "airports": [
+  "kpis": [
     {
-      "name": "Robert Gabriel Mugabe International Airport (HRE)",
-      "search": "Robert Gabriel Mugabe International Airport (HRE), Harare, Zimbabwe"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Harare Province",
+      "note": "Zimbabwe"
+    },
+    {
+      "label": "Founded",
+      "value": "1890",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "Africa/Harare",
+      "note": "local time"
     }
   ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
   "bookingDestination": "Harare, Zimbabwe",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "National Gallery of Zimbabwe",
     "Harare Gardens",
@@ -71,6 +66,22 @@
     "National Heroes Acre",
     "The Kopje"
   ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Harare",
+      "url": "https://en.wikipedia.org/wiki/Harare",
+      "usedFor": "city description, coordinates and population context"
+    },
+    {
+      "label": "OneSliders generated city image set",
+      "url": "https://one-sliders.com/content/locations/africa/zimbabwe/img/harare-hero.png",
+      "usedFor": "hero, mini and See-card generated assets"
+    }
+  ],
+  "sourceFetchedAt": "2026-06-13",
   "history": [
     {
       "label": "1890",
@@ -129,23 +140,11 @@
       "text": "Causeway is now the site of many important government buildings, including the Senate House and the Office of the Prime Minister."
     }
   ],
-  "sources": [
-    {
-      "label": "Wikipedia: Harare",
-      "url": "https://en.wikipedia.org/wiki/Harare",
-      "usedFor": "city description, coordinates and population context"
-    },
-    {
-      "label": "OneSliders generated city image set",
-      "url": "https://one-sliders.com/content/locations/africa/zimbabwe/img/harare-hero.png",
-      "usedFor": "hero, mini and See-card generated assets"
-    }
-  ],
-  "sourceFetchedAt": "2026-06-13",
+  "historySource": "https://en.wikipedia.org/wiki/Harare",
+  "timezone": "Africa/Harare",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Harare",
     "matchedCountry": "Zimbabwe"
-  },
-  "historySource": "https://en.wikipedia.org/wiki/Harare"
+  }
 }

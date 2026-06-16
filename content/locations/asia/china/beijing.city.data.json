@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Beijing in 2026: calendars, nearby pages and linked event views for planning around Asia / China.",
     "webpageDescription": "Find sports events in Beijing in 2026: calendars, nearby pages and linked event views for planning around Asia / China."
   },
-  "kicker": "Capital city in China",
+  "region": "Capital city in China",
+  "population": "tba",
+  "coordinates": {
+    "lat": 39.9075,
+    "lon": 116.39723
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Beijing travel, stays & events guide",
   "heroText": "Beijing is a capital city in China, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Beijing connects local landmarks, visitor routes and event planning in China."
-    },
-    {
-      "label": "Landmark",
-      "text": "Forbidden City is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "China gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "China",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Forbidden City"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "China",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "China"
+      "value": "Capital city in China",
+      "note": "China"
+    },
+    {
+      "label": "Founded",
+      "value": "475",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Shanghai",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/china/img/china-mini.png",
-    "name": "China"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Beijing, China",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Beijing",
+      "text": "Beijing is a capital city in China, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Beijing known for?",
-      "a": "Forbidden City, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
+      "label": "Wikipedia: Beijing",
+      "url": "https://en.wikipedia.org/wiki/Beijing",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Beijing events",
-      "meta": "2026 calendar · Beijing"
-    }
-  ],
-  "knownFor": [
-    "Forbidden City",
-    "China",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "China"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "475",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Beijing",
-  "coordinates": {
-    "lat": 39.9075,
-    "lon": 116.39723
-  },
   "timezone": "Asia/Shanghai",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",

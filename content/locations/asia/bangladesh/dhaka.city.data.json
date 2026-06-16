@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Dhaka in 2026: calendars, nearby pages and linked event views for planning around Asia / Bangladesh.",
     "webpageDescription": "Find sports events in Dhaka in 2026: calendars, nearby pages and linked event views for planning around Asia / Bangladesh."
   },
-  "kicker": "Capital city in Bangladesh",
+  "region": "Capital city in Bangladesh",
+  "population": "tba",
+  "coordinates": {
+    "lat": 23.7104,
+    "lon": 90.40744
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Dhaka travel, stays & events guide",
   "heroText": "Dhaka is a capital city in Bangladesh, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Dhaka connects local landmarks, visitor routes and event planning in Bangladesh."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Bangladesh gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Bangladesh",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Bangladesh",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Bangladesh"
+      "value": "Capital city in Bangladesh",
+      "note": "Bangladesh"
+    },
+    {
+      "label": "Founded",
+      "value": "1610",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Dhaka",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/bangladesh/img/bangladesh-mini.png",
-    "name": "Bangladesh"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Dhaka, Bangladesh",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Dhaka",
+      "text": "Dhaka is a capital city in Bangladesh, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Dhaka known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
+      "label": "Wikipedia: Dhaka",
+      "url": "https://en.wikipedia.org/wiki/Dhaka",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Dhaka events",
-      "meta": "2026 calendar · Dhaka"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Bangladesh",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Bangladesh"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1610",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Dhaka",
-  "coordinates": {
-    "lat": 23.7104,
-    "lon": 90.40744
-  },
   "timezone": "Asia/Dhaka",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
