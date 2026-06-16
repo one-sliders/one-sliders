@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Freetown in 2026: calendars, nearby pages and linked event views for planning around Africa / Sierra Leone.",
     "webpageDescription": "Find sports events in Freetown in 2026: calendars, nearby pages and linked event views for planning around Africa / Sierra Leone."
   },
-  "kicker": "Capital city in Sierra Leone",
+  "region": "Capital city in Sierra Leone",
+  "population": "tba",
+  "coordinates": {
+    "lat": 8.48714,
+    "lon": -13.2356
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Freetown travel, stays & events guide",
   "heroText": "Freetown is a capital city in Sierra Leone, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Freetown connects local landmarks, visitor routes and event planning in Sierra Leone."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Sierra Leone gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Sierra Leone",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Sierra Leone",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Sierra Leone"
+      "value": "Capital city in Sierra Leone",
+      "note": "Sierra Leone"
+    },
+    {
+      "label": "Founded",
+      "value": "1540s",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Freetown",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/sierra-leone/img/sierra-leone-mini.png",
-    "name": "Sierra Leone"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Freetown, Sierra Leone",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Freetown",
+      "text": "Freetown is a capital city in Sierra Leone, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Freetown known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
+      "label": "Wikipedia: Freetown",
+      "url": "https://en.wikipedia.org/wiki/Freetown",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "title": "Freetown events",
-      "meta": "2026 calendar · Freetown"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Sierra Leone",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "Sierra Leone"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1540s",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Freetown",
-  "coordinates": {
-    "lat": 8.48714,
-    "lon": -13.2356
-  },
   "timezone": "Africa/Freetown",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",

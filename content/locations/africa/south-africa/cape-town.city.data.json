@@ -12,123 +12,59 @@
     "twitterDescription": "Find sports events in Cape Town in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa.",
     "webpageDescription": "Find sports events in Cape Town in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa."
   },
-  "kicker": "Key city in South Africa",
+  "region": "Key city in South Africa",
+  "population": "tba",
+  "coordinates": {
+    "lat": -33.92584,
+    "lon": 18.42322
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Cape Town travel, stays & events guide",
   "heroText": "Cape Town is a coastal mountain city in South Africa, combining Table Mountain, waterfront travel, wine routes and major outdoor events.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Cape Town connects local landmarks, visitor routes and event planning in South Africa."
-    },
-    {
-      "label": "Landmark",
-      "text": "Main landmark is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "South Africa gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "South Africa",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Main landmark"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "South Africa",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "South Africa"
+      "value": "Key city in South Africa",
+      "note": "South Africa"
+    },
+    {
+      "label": "Founded",
+      "value": "1497",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Africa/Johannesburg",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/africa/south-africa/img/south-africa-mini.png",
-    "name": "South Africa"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [
+  "bookingDestination": "Cape Town, South Africa",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "href": "durban.html",
-      "img": "/content/locations/africa/south-africa/img/durban-mini.png",
-      "name": "Durban"
-    },
-    {
-      "href": "hermanus.html",
-      "img": "/content/locations/africa/south-africa/img/hermanus-mini.png",
-      "name": "Hermanus"
-    },
-    {
-      "href": "pretoria.html",
-      "img": "/content/locations/africa/south-africa/img/pretoria-mini.png",
-      "name": "Pretoria"
+      "name": "Cape Town",
+      "text": "Cape Town is a coastal mountain city in South Africa, combining Table Mountain, waterfront travel, wine routes and major outdoor events."
     }
   ],
-  "links": [
-    {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
-    }
-  ],
-  "planningQuestions": [
-    {
-      "q": "What is Cape Town known for?",
-      "a": "Main landmark, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to arid, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -138,32 +74,15 @@
       "meta": "Oct 2026 · Cape Town"
     }
   ],
-  "knownFor": [
-    "Main landmark",
-    "South Africa",
-    "Tropical to arid",
-    "City transit",
-    "Events",
-    "South Africa"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/africa/img/africa-mini.png",
-      "alt": "Africa",
-      "title": "Africa outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Cape Town",
+      "url": "https://en.wikipedia.org/wiki/Cape_Town",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1497",
@@ -223,10 +142,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Cape_Town",
-  "coordinates": {
-    "lat": -33.92584,
-    "lon": 18.42322
-  },
   "timezone": "Africa/Johannesburg",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
