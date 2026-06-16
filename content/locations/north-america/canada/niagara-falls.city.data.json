@@ -1,27 +1,56 @@
 {
-  "slug": "niagara-falls",
-  "name": "Niagara Falls",
-  "province": "Ontario",
-  "state": "Ontario",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Niagara Falls travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Niagara Region",
-  "population": "94,415 city (2021 census)",
-  "role": "Waterfall and wine-region base",
-  "knownFor": "Horseshoe Falls & viewpoints",
-  "intro": "Waterfall city for viewpoints, family trips and wine-region add-ons",
-  "airport": "Toronto Pearson International Airport (YYZ)",
-  "coords": [
-    43.0896,
-    -79.0849
+  "population": "tba",
+  "coordinates": {
+    "lat": 43.10012,
+    "lon": -79.06627
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Niagara Falls travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Niagara Region",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1898",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Toronto",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Fallsview",
-    "Clifton Hill",
-    "Downtown Niagara Falls",
-    "Lundy's Lane",
-    "Niagara-on-the-Lake"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Niagara Falls, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Horseshoe Falls",
     "Journey Behind the Falls",
@@ -30,19 +59,17 @@
     "Skylon Tower",
     "Wine country"
   ],
-  "events": [
-    "Winter Festival of Lights",
-    "Niagara Falls fireworks",
-    "Niagara Grape and Wine Festival",
-    "New Year's Eve in Niagara Falls"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Niagara Falls",
+      "url": "https://en.wikipedia.org/wiki/Oak_Hall_%28Niagara_Falls%2C_Ontario%29",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "ontario",
-    "waterfall",
-    "stay"
-  ],
-  "href": "niagara-falls.html",
-  "img": "img/niagara-falls-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1898",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Oak_Hall_%28Niagara_Falls%2C_Ontario%29",
-  "coordinates": {
-    "lat": 43.10012,
-    "lon": -79.06627
-  },
   "timezone": "America/Toronto",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Niagara Falls",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "niagara-falls",
+  "name": "Niagara Falls",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

@@ -1,27 +1,56 @@
 {
-  "slug": "edmonton",
-  "name": "Edmonton",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Edmonton travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Central Alberta",
-  "population": "1,010,899 city (2021 census)",
-  "role": "Northern Alberta capital",
-  "knownFor": "River valley, festivals & hockey",
-  "intro": "River valley capital for festivals, hockey and northern routes",
-  "airport": "Edmonton International Airport (YEG)",
-  "coords": [
-    53.5461,
-    -113.4938
+  "population": "tba",
+  "coordinates": {
+    "lat": 53.55014,
+    "lon": -113.46871
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Edmonton travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Central Alberta",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1915",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Edmonton",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Edmonton",
-    "Ice District",
-    "Old Strathcona",
-    "Whyte Avenue",
-    "West Edmonton"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Edmonton, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "North Saskatchewan River Valley",
     "West Edmonton Mall",
@@ -30,19 +59,17 @@
     "Royal Alberta Museum",
     "Festival season"
   ],
-  "events": [
-    "Edmonton International Fringe Theatre Festival",
-    "K-Days",
-    "Edmonton Folk Music Festival",
-    "Silver Skate Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Edmonton",
+      "url": "https://en.wikipedia.org/wiki/Alberta_Hospital_Edmonton",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "northern",
-    "stay"
-  ],
-  "href": "edmonton.html",
-  "img": "img/edmonton-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1915",
@@ -90,14 +117,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Alberta_Hospital_Edmonton",
-  "coordinates": {
-    "lat": 53.55014,
-    "lon": -113.46871
-  },
   "timezone": "America/Edmonton",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Edmonton",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "edmonton",
+  "name": "Edmonton",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

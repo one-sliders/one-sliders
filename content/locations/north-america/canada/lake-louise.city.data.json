@@ -1,27 +1,56 @@
 {
-  "slug": "lake-louise",
-  "name": "Lake Louise",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Lake Louise travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Banff National Park",
-  "population": "691 hamlet (2021 census)",
-  "role": "Alpine lake and shuttle base",
-  "knownFor": "Lake Louise, Moraine Lake & skiing",
-  "intro": "Rockies lake base for alpine scenery, skiing and park shuttles",
-  "airport": "Calgary International Airport (YYC)",
-  "coords": [
-    51.4254,
-    -116.1773
+  "population": "tba",
+  "coordinates": {
+    "lat": 51.42544,
+    "lon": -116.17887
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Lake Louise travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Banff National Park",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1870s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Edmonton",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Lake Louise village",
-    "Lake Louise lakeshore",
-    "Ski resort area",
-    "Moraine Lake shuttle base",
-    "Banff overflow"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Lake Louise, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Lake Louise lakeshore",
     "Moraine Lake access",
@@ -30,19 +59,17 @@
     "Plain of Six Glaciers",
     "Ice skating season"
   ],
-  "events": [
-    "Lake Louise Alpine Ski World Cup",
-    "Ice Magic Festival",
-    "Banff National Park events",
-    "Summer hiking season"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Lake Louise",
+      "url": "https://en.wikipedia.org/wiki/Lake_Louise%2C_Alberta",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "alpine",
-    "stay"
-  ],
-  "href": "lake-louise.html",
-  "img": "img/lake-louise-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1870s",
@@ -78,14 +105,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Lake_Louise%2C_Alberta",
-  "coordinates": {
-    "lat": 51.42544,
-    "lon": -116.17887
-  },
   "timezone": "America/Edmonton",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Lake Louise",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "lake-louise",
+  "name": "Lake Louise",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

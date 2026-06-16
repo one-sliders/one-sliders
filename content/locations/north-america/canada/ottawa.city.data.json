@@ -1,28 +1,56 @@
 {
-  "slug": "ottawa",
-  "name": "Ottawa",
-  "province": "Ontario",
-  "state": "Ontario",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Ottawa travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "National Capital Region",
-  "population": "1,017,449 city (2021 census)",
-  "role": "Capital city base",
-  "knownFor": "Parliament, museums & Rideau Canal",
-  "intro": "Capital city for Parliament, national museums and Rideau Canal trips",
-  "airport": "Ottawa International Airport (YOW)",
-  "coords": [
-    45.4215,
-    -75.6972
+  "population": "tba",
+  "coordinates": {
+    "lat": 45.41117,
+    "lon": -75.69812
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Ottawa travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "National Capital Region",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "15th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Toronto",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Ottawa",
-    "ByWard Market",
-    "Centretown",
-    "The Glebe",
-    "Westboro",
-    "Gatineau"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Ottawa, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Parliament Hill",
     "Rideau Canal",
@@ -31,19 +59,17 @@
     "Canadian Museum of History",
     "Gatineau Park"
   ],
-  "events": [
-    "Winterlude",
-    "Canada Day in Ottawa",
-    "Canadian Tulip Festival",
-    "Ottawa Bluesfest"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Ottawa",
+      "url": "https://en.wikipedia.org/wiki/Ottawa",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "ontario",
-    "capital",
-    "stay"
-  ],
-  "href": "ottawa.html",
-  "img": "img/ottawa-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "15th century",
@@ -103,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Ottawa",
-  "coordinates": {
-    "lat": 45.41117,
-    "lon": -75.69812
-  },
   "timezone": "America/Toronto",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Ottawa",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "ottawa",
+  "name": "Ottawa",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

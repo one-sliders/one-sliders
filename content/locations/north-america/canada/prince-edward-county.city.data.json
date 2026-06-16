@@ -1,27 +1,56 @@
 {
-  "slug": "prince-edward-county",
-  "name": "Prince Edward County",
-  "province": "Ontario",
-  "state": "Ontario",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Prince Edward County travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Lake Ontario",
-  "population": "25,704 municipality (2021 census)",
-  "role": "Lake Ontario wine and beach base",
-  "knownFor": "Sandbanks, wineries & small towns",
-  "intro": "Lake Ontario county for wineries, beaches and small-town stays",
-  "airport": "Toronto Pearson International Airport (YYZ)",
-  "coords": [
-    44.0007,
-    -77.25
+  "population": "tba",
+  "coordinates": {
+    "lat": 44.0008,
+    "lon": -77.2474
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Prince Edward County travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Lake Ontario",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1785",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "tba",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Picton",
-    "Wellington",
-    "Bloomfield",
-    "Sandbanks area",
-    "Consecon"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Prince Edward County, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Sandbanks Provincial Park",
     "Picton",
@@ -30,19 +59,17 @@
     "Lake Ontario beaches",
     "Farm-to-table food"
   ],
-  "events": [
-    "Countylicious",
-    "PEC Jazz Festival",
-    "Pumpkinfest",
-    "Terroir wine festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Prince Edward County",
+      "url": "https://en.wikipedia.org/wiki/Prince_Edward_County%2C_Ontario",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "ontario",
-    "lake",
-    "stay"
-  ],
-  "href": "prince-edward-county.html",
-  "img": "img/prince-edward-county-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Origins",
@@ -94,13 +121,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Prince_Edward_County%2C_Ontario",
-  "coordinates": {
-    "lat": 44.0008,
-    "lon": -77.2474
-  },
+  "timezone": "tba",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Prince Edward County",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "prince-edward-county",
+  "name": "Prince Edward County",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

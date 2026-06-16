@@ -1,27 +1,56 @@
 {
-  "slug": "jasper",
-  "name": "Jasper",
-  "province": "Alberta",
-  "state": "Alberta",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Jasper travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Jasper National Park",
-  "population": "4,113 municipality (2021 census)",
-  "role": "Wild Rockies base",
-  "knownFor": "Wildlife, dark skies & Icefields Parkway",
-  "intro": "Mountain town for wildlife, dark skies and Icefields Parkway trips",
-  "airport": "Edmonton International Airport (YEG)",
-  "coords": [
-    52.8734,
-    -118.0814
+  "population": "tba",
+  "coordinates": {
+    "lat": 52.8737,
+    "lon": -118.0814
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Jasper travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Jasper National Park",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "170",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "tba",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Jasper townsite",
-    "Patricia Lake area",
-    "Pyramid Lake road",
-    "Highway 93A",
-    "Hinton overflow"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Jasper, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Maligne Lake",
     "Jasper SkyTram",
@@ -30,19 +59,17 @@
     "Icefields Parkway",
     "Dark Sky Preserve"
   ],
-  "events": [
-    "Jasper Dark Sky Festival",
-    "Jasper in January",
-    "Jasper Canadian Rockies Half Marathon",
-    "Symphony Under the Stars"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Jasper",
+      "url": "https://en.wikipedia.org/wiki/Jasper%2C_Alberta",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "alberta",
-    "wild",
-    "stay"
-  ],
-  "href": "jasper.html",
-  "img": "img/jasper-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "170",
@@ -102,13 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Jasper%2C_Alberta",
-  "coordinates": {
-    "lat": 52.8737,
-    "lon": -118.0814
-  },
+  "timezone": "tba",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Jasper",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "jasper",
+  "name": "Jasper",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

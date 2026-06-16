@@ -1,27 +1,56 @@
 {
-  "slug": "halifax",
-  "name": "Halifax",
-  "province": "Nova Scotia",
-  "state": "Nova Scotia",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Halifax travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Atlantic Canada",
-  "population": "439,819 municipality (2021 census)",
-  "role": "Atlantic harbour city",
-  "knownFor": "Waterfront, seafood & coastal trips",
-  "intro": "Atlantic harbour city for history, seafood and coastal trips",
-  "airport": "Halifax Stanfield International Airport (YHZ)",
-  "coords": [
-    44.6488,
-    -63.5752
+  "population": "tba",
+  "coordinates": {
+    "lat": 44.64269,
+    "lon": -63.57688
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Halifax travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Atlantic Canada",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1700s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Halifax",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Halifax",
-    "Waterfront",
-    "North End",
-    "Dartmouth",
-    "Spring Garden"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Halifax, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Halifax Waterfront",
     "Citadel Hill",
@@ -30,19 +59,17 @@
     "Dartmouth ferry",
     "Peggy's Cove trips"
   ],
-  "events": [
-    "Halifax Busker Festival",
-    "Royal Nova Scotia International Tattoo",
-    "Halifax Jazz Festival",
-    "Nocturne Halifax"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Halifax",
+      "url": "https://en.wikipedia.org/wiki/Halifax%2C_Nova_Scotia",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "nova-scotia",
-    "atlantic",
-    "stay"
-  ],
-  "href": "halifax.html",
-  "img": "img/halifax-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1700s",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Halifax%2C_Nova_Scotia",
-  "coordinates": {
-    "lat": 44.64269,
-    "lon": -63.57688
-  },
   "timezone": "America/Halifax",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Halifax",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "halifax",
+  "name": "Halifax",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

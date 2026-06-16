@@ -1,27 +1,56 @@
 {
-  "slug": "kelowna",
-  "name": "Kelowna",
-  "province": "British Columbia",
-  "state": "British Columbia",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Kelowna travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Okanagan Valley",
-  "population": "144,576 city (2021 census)",
-  "role": "Okanagan lake and wine base",
-  "knownFor": "Lake stays, wineries & summer trips",
-  "intro": "Okanagan city for lake stays, wineries and summer trips",
-  "airport": "Kelowna International Airport (YLW)",
-  "coords": [
-    49.888,
-    -119.496
+  "population": "tba",
+  "coordinates": {
+    "lat": 49.88307,
+    "lon": -119.48568
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Kelowna travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Okanagan Valley",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1859",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Vancouver",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Kelowna",
-    "Waterfront",
-    "Pandosy",
-    "Mission",
-    "West Kelowna"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Kelowna, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Okanagan Lake",
     "Downtown waterfront",
@@ -30,19 +59,17 @@
     "Knox Mountain",
     "Summer beaches"
   ],
-  "events": [
-    "Okanagan Wine Festivals",
-    "Center of Gravity",
-    "Kelowna Pride",
-    "Parks Alive"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Kelowna",
+      "url": "https://en.wikipedia.org/wiki/Kelowna",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "british-columbia",
-    "okanagan",
-    "stay"
-  ],
-  "href": "kelowna.html",
-  "img": "img/kelowna-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Early settlement",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Kelowna",
-  "coordinates": {
-    "lat": 49.88307,
-    "lon": -119.48568
-  },
   "timezone": "America/Vancouver",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Kelowna",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "kelowna",
+  "name": "Kelowna",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

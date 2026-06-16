@@ -1,28 +1,56 @@
 {
-  "slug": "montreal",
-  "name": "Montreal",
-  "province": "Quebec",
-  "state": "Quebec",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Montreal travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "St. Lawrence corridor",
-  "population": "1,762,949 city (2021 census)",
-  "role": "Quebec urban hub",
-  "knownFor": "Old Montreal, festivals & food",
-  "intro": "Francophone city for festivals, old-town streets, food and nightlife",
-  "airport": "Montreal-Trudeau International Airport (YUL)",
-  "coords": [
-    45.5017,
-    -73.5673
+  "population": "tba",
+  "coordinates": {
+    "lat": 45.50884,
+    "lon": -73.58781
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Montreal travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "St. Lawrence corridor",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1611",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Toronto",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Old Montreal",
-    "Downtown Montreal",
-    "Plateau Mont-Royal",
-    "Quartier des Spectacles",
-    "Mile End",
-    "Griffintown"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Montreal, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Old Montreal",
     "Mount Royal",
@@ -31,19 +59,17 @@
     "Mile End",
     "Formula 1 weekend"
   ],
-  "events": [
-    "Montreal International Jazz Festival",
-    "Canadian Grand Prix",
-    "Just for Laughs",
-    "Igloofest"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Montreal",
+      "url": "https://en.wikipedia.org/wiki/Montreal",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "quebec",
-    "quebec",
-    "stay"
-  ],
-  "href": "montreal.html",
-  "img": "img/montreal-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Origins",
@@ -103,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Montreal",
-  "coordinates": {
-    "lat": 45.50884,
-    "lon": -73.58781
-  },
   "timezone": "America/Toronto",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Montreal",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "montreal",
+  "name": "Montreal",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }
