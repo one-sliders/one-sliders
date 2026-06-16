@@ -14,7 +14,7 @@ Usage:
 
 import os, sys, json, glob, re, html as H
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAIN = 'https://one-sliders.com'
 CONT_NAME = {'europe': 'Europe', 'asia': 'Asia', 'africa': 'Africa',
              'north-america': 'North America', 'south-america': 'South America', 'oceania': 'Oceania'}

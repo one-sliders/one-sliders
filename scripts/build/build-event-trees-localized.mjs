@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { languages, profiles, codeLabel } from './event-language-profiles.mjs';
-import { translateEventTitle } from './event-title-translations.mjs';
+import { languages, profiles, codeLabel } from '../lib/event-language-profiles.mjs';
+import { translateEventTitle } from '../lib/event-title-translations.mjs';
 
 const sourceRoot = 'content/events';
 const siteBase = 'https://one-sliders.com';

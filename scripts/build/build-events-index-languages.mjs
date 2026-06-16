@@ -1,6 +1,6 @@
 ﻿import fs from 'node:fs';
 import path from 'node:path';
-import { languages as languageCodes, languageNames, codeLabel } from './event-language-profiles.mjs';
+import { languages as languageCodes, languageNames, codeLabel } from '../lib/event-language-profiles.mjs';
 
 const slug = 'events-index';
 const contentId = 'events-index';

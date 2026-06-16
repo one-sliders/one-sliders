@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { languages } from './event-language-profiles.mjs';
+import { languages } from '../lib/event-language-profiles.mjs';
 
 const root = process.cwd();
 const text = {

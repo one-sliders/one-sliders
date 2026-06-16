@@ -15,7 +15,7 @@ Usage:
 
 import os, sys, json, glob, html as H
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAIN = 'https://one-sliders.com'
 
 # UI labels per language. These are the ONLY language-specific strings shared by

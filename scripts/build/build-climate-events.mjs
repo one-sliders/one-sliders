@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { languages, profiles, codeLabel } from './event-language-profiles.mjs';
+import { languages, profiles, codeLabel } from '../lib/event-language-profiles.mjs';
 
 const root = process.cwd();
 const languageNames = {

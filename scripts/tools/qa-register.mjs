@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { localIsoDateTime } from './qa-register.mjs';
+import { localIsoDateTime } from './qa-helpers.mjs';
 
 const root = process.cwd();
 const outputFile = path.join(root, 'qa-register.json');

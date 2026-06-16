@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { languages, codeLabel } from './event-language-profiles.mjs';
+import { languages, codeLabel } from '../lib/event-language-profiles.mjs';
 
 const sourceRoot = 'content/events';
 const targetRoot = 'ru/content/events';

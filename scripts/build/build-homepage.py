@@ -18,7 +18,7 @@ Run:  python scripts/build_homepage.py            # writes index.html
 import os, re, sys, glob
 from collections import Counter
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 INDEX = os.path.join(ROOT, 'index.html')
 
 
