@@ -1,153 +1,73 @@
 {
-  "slug": "san-salvador",
-  "name": "San Salvador",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "el-salvador",
-  "countryName": "El Salvador",
-  "depth": 4,
   "seo": {
     "title": "Sports Events in San Salvador 2026",
     "description": "Find sports events in San Salvador in 2026: calendars, nearby pages and linked event views for planning around North America / El Salvador.",
     "twitterDescription": "Find sports events in San Salvador in 2026: calendars, nearby pages and linked event views for planning around North America / El Salvador.",
     "webpageDescription": "Find sports events in San Salvador in 2026: calendars, nearby pages and linked event views for planning around North America / El Salvador."
   },
-  "kicker": "Capital city in El Salvador",
+  "region": "Capital city in El Salvador",
+  "population": "tba",
+  "coordinates": {
+    "lat": 13.68935,
+    "lon": -89.18718
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "San Salvador travel, stays & events guide",
   "heroText": "San Salvador is a capital city in El Salvador, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "San Salvador connects local landmarks, visitor routes and event planning in El Salvador."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "El Salvador gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "El Salvador",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "El Salvador",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "El Salvador"
+      "value": "Capital city in El Salvador",
+      "note": "El Salvador"
+    },
+    {
+      "label": "Founded",
+      "value": "1456",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "America/El_Salvador",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/north-america/el-salvador/img/el-salvador-mini.png",
-    "name": "El Salvador"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "San Salvador, El Salvador",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "San Salvador",
+      "text": "San Salvador is a capital city in El Salvador, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is San Salvador known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, arctic to tropical, transport access and the current event calendar."
+      "label": "Wikipedia: San Salvador",
+      "url": "https://en.wikipedia.org/wiki/San_Salvador",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "title": "San Salvador events",
-      "meta": "2026 calendar · San Salvador"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "El Salvador",
-    "Varied, arctic to tropical",
-    "City transit",
-    "Events",
-    "El Salvador"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/north-america/img/north-america-mini.png",
-      "alt": "North America",
-      "title": "North America outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1456",
@@ -207,14 +127,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/San_Salvador",
-  "coordinates": {
-    "lat": 13.68935,
-    "lon": -89.18718
-  },
   "timezone": "America/El_Salvador",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "San Salvador",
     "matchedCountry": "El Salvador"
-  }
+  },
+  "slug": "san-salvador",
+  "name": "San Salvador",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "el-salvador",
+  "countryName": "El Salvador",
+  "depth": 4
 }
