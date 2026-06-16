@@ -1,125 +1,63 @@
 {
-  "slug": "auckland",
-  "name": "Auckland",
-  "continent": "oceania",
-  "continentName": "Oceania",
-  "countrySlug": "new-zealand",
-  "countryName": "New Zealand",
-  "depth": 4,
   "seo": {
     "title": "Sports Events in Auckland 2026",
     "description": "Find sports events in Auckland in 2026: calendars, nearby pages and linked event views for planning around Oceania / New Zealand.",
     "twitterDescription": "Find sports events in Auckland in 2026: calendars, nearby pages and linked event views for planning around Oceania / New Zealand.",
     "webpageDescription": "Find sports events in Auckland in 2026: calendars, nearby pages and linked event views for planning around Oceania / New Zealand."
   },
-  "kicker": "Key city in New Zealand",
+  "region": "Key city in New Zealand",
+  "population": "tba",
+  "coordinates": {
+    "lat": -36.84853,
+    "lon": 174.76349
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Auckland travel, stays & events guide",
   "heroText": "Auckland is a key city in New Zealand, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Auckland connects local landmarks, visitor routes and event planning in New Zealand."
-    },
-    {
-      "label": "Landmark",
-      "text": "Main landmark is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "New Zealand gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "New Zealand",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Main landmark"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "New Zealand",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "New Zealand"
-    }
-  ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "value": "Key city in New Zealand",
+      "note": "New Zealand"
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "label": "Founded",
+      "value": "500",
+      "note": "historical reference"
     },
     {
-      "title": "City centre:",
-      "text": "Visitor highlight."
+      "label": "Time zone",
+      "value": "Pacific/Auckland",
+      "note": "local time"
     }
   ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/oceania/new-zealand/img/new-zealand-mini.png",
-    "name": "New Zealand"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [
+  "bookingDestination": "Auckland, New Zealand",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "href": "queenstown.html",
-      "img": "/content/locations/oceania/new-zealand/img/queenstown-mini.png",
-      "name": "Queenstown"
-    },
-    {
-      "href": "wellington.html",
-      "img": "/content/locations/oceania/new-zealand/img/wellington-mini.png",
-      "name": "Wellington"
+      "name": "Auckland",
+      "text": "Auckland is a key city in New Zealand, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "links": [
-    {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
-    }
-  ],
-  "planningQuestions": [
-    {
-      "q": "What is Auckland known for?",
-      "a": "Main landmark, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Tropical to temperate, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -129,32 +67,15 @@
       "meta": "Aug-Sep 2026 · Auckland"
     }
   ],
-  "knownFor": [
-    "Main landmark",
-    "New Zealand",
-    "Tropical to temperate",
-    "City transit",
-    "Events",
-    "New Zealand"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/oceania/img/oceania-mini.png",
-      "alt": "Oceania",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/oceania/img/oceania-mini.png",
-      "alt": "Oceania",
-      "title": "Oceania outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Auckland",
+      "url": "https://en.wikipedia.org/wiki/Auckland",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "500",
@@ -214,14 +135,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Auckland",
-  "coordinates": {
-    "lat": -36.84853,
-    "lon": 174.76349
-  },
   "timezone": "Pacific/Auckland",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Auckland",
     "matchedCountry": "New Zealand"
-  }
+  },
+  "slug": "auckland",
+  "name": "Auckland",
+  "continent": "oceania",
+  "continentName": "Oceania",
+  "countrySlug": "new-zealand",
+  "countryName": "New Zealand",
+  "depth": 4
 }
