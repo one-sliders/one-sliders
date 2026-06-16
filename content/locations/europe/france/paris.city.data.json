@@ -24,7 +24,13 @@
   "kicker": "",
   "heroText": "Paris is a city in France shaped by its region, population, local economy, landmarks, climate and civic history. This overview summarizes the city itself: where it sits, what defines it, which places anchor its identity and why it matters within the wider country.",
   "snapshot": [],
-  "kpis": [],
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "France",
+      "note": "France"
+    }
+  ],
   "shortFacts": [],
   "worthSeeing": [],
   "countryCard": null,
@@ -40,10 +46,22 @@
     "Art and culture"
   ],
   "highlights": [
-    {"name": "Eiffel Tower", "text": "Iconic iron lattice monument offering panoramic city views"},
-    {"name": "Notre-Dame Cathedral", "text": "Historic Gothic cathedral on Île de la Cité"},
-    {"name": "Louvre Museum", "text": "World's largest art museum housing the Mona Lisa"},
-    {"name": "Champs-Élysées", "text": "Famous avenue with shops, theaters and cafés"}
+    {
+      "name": "Eiffel Tower",
+      "text": "Iconic iron lattice monument offering panoramic city views"
+    },
+    {
+      "name": "Notre-Dame Cathedral",
+      "text": "Historic Gothic cathedral on Île de la Cité"
+    },
+    {
+      "name": "Louvre Museum",
+      "text": "World's largest art museum housing the Mona Lisa"
+    },
+    {
+      "name": "Champs-Élysées",
+      "text": "Famous avenue with shops, theaters and cafés"
+    }
   ],
   "topicLinks": [
     {
