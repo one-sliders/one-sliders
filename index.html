@@ -1,509 +1,1008 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="./assets/css/oneslider-core.css">
-  
-  <link rel="preload" as="image" href="/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png">
-<script defer src="./assets/js/oneslider-core.js"></script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="os-ios-nav" content="off">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://one-sliders.com/"><meta name="content-language" content="en">
-  <title>OneSliders - Events, topics and places at a glance</title>
-  <meta name="description" content="OneSliders turns events, topics and places into compact visual guides with the facts, context and links people need.">
+  <meta name="content-language" content="en">
+  <link rel="canonical" href="https://one-sliders.com/">
+  <title>OneSliders - Simple Visual Guides to Events, Places & Topics</title>
+  <meta name="description" content="Explore simple visual OneSliders for events, destinations and topics. Find dates, context, places and travel planning in an easy-to-understand format.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OneSliders - Events, topics and places at a glance">
-  <meta property="og:description" content="OneSliders turns events, topics and places into compact visual guides with the facts, context and links people need.">
+  <meta property="og:title" content="OneSliders - Simple Visual Guides to Events, Places & Topics">
+  <meta property="og:description" content="Explore simple visual OneSliders for events, destinations and topics. Find dates, context, places and travel planning in an easy-to-understand format.">
   <meta property="og:url" content="https://one-sliders.com/">
-  <meta property="og:image" content="https://one-sliders.com//content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png">
+  <meta property="og:image" content="https://one-sliders.com/content/categories/sport/tennis/events/img/wimbledon-hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://one-sliders.com//content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png">
-
+  <meta name="twitter:image" content="https://one-sliders.com/content/categories/sport/tennis/events/img/wimbledon-hero.png">
   <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="./assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="./assets/icons/site.webmanifest">
+  <link rel="stylesheet" href="./assets/css/oneslider-core.css">
+  <script defer src="./assets/js/oneslider-core.js"></script>
   <style>
     :root {
-      --ink: var(--os-ink);
-      --muted: var(--os-muted);
-      --navy: var(--os-primary);
-      --green: var(--os-accent);
-      --gold: var(--os-gold);
-      --line: var(--os-line);
-      --home-surface: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
-      --home-surface-strong: color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent));
-      --home-shadow: color-mix(in srgb, var(--os-ink) 18%, var(--os-transparent));
-      --home-glow: color-mix(in srgb, var(--os-accent) 13%, var(--os-transparent));
-      --home-image-overlay-a: color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
-      --home-image-overlay-b: color-mix(in srgb, var(--os-scrim) 82%, var(--os-transparent));
-      --chart-1: var(--os-accent);
-      --chart-2: var(--os-compare-blue);
-      --chart-3: var(--os-gold);
-      --chart-4: var(--os-red);
-      --chart-5: var(--os-purple);
-      --chart-6: var(--os-compare-green);
+      --home-bg: var(--os-bg);
+      --home-surface: var(--os-surface);
+      --home-soft: var(--os-soft);
+      --home-ink: var(--os-ink);
+      --home-muted: var(--os-muted);
+      --home-line: var(--os-line);
+      --home-primary: var(--os-primary);
+      --home-blue: var(--os-accent);
+      --home-green: #16a34a;
+      --home-purple: var(--os-purple);
+      --home-orange: var(--os-gold);
+      --home-shadow: 0 18px 44px rgba(15, 23, 42, .1);
+      --home-radius: 18px;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      color: var(--ink);
-      background: var(--os-bg);
-      font-family: var(--os-font-system-full);
+    html, body { margin: 0; min-height: 100%; }
+    body.home-page {
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--home-ink);
+      background: var(--home-bg);
+      font-family: var(--os-font-system-full, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
     }
-    .home {
-      position: relative;
-      min-height: 100vh;
-      overflow: visible;
-      padding: clamp(18px, 2.6vw, 34px) clamp(18px, 4vw, 56px) 18px;
-      background:
-        radial-gradient(circle at 78% 16%, var(--home-glow), var(--os-transparent) 30%),
-        linear-gradient(180deg, var(--os-bg) 0%, var(--os-soft) 100%);
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .home-app {
+      display: grid;
+      grid-template-rows: 64px minmax(0, 1fr);
+      height: 100svh;
+      padding: 12px;
+      gap: 0;
     }
-    .brand-bar {
-      position: relative;
-      top: 0;
-      right: 0;
-      left: 0;
-      display: flex;
+    .home-topbar {
+      display: grid;
+      grid-template-columns: auto auto 1fr auto;
+      align-items: center;
+      gap: 22px;
+      min-height: 64px;
+      padding: 0 18px;
+      border: 1px solid var(--home-line);
+      border-radius: 16px 16px 0 0;
+      background: var(--home-surface);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .04);
+    }
+    .brand {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      height: auto;
-      padding: 14px clamp(16px, 3vw, 32px);
-      background: color-mix(in srgb, var(--os-chrome-bg) 94%, var(--os-transparent));
-      color: var(--os-chrome-ink);
-      backdrop-filter: blur(14px);
+      min-width: 0;
+      color: var(--home-primary);
+      font-size: 1.2rem;
+      font-weight: 950;
+      letter-spacing: -.02em;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .brand-bar img { width: 28px; height: 28px; display: block; }
-    .brand-bar strong { font-size: 15px; letter-spacing: .02em; font-weight: 700; }
-    .brand-bar span { color: var(--os-chrome-muted); font-size: 13px; margin-left: 6px; }
-    .home-menu {
-      position: sticky;
-      top: 0;
-      z-index: 30;
+    .brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .top-nav {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px clamp(14px, 3vw, 36px);
-      background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
     }
-    .home-menu .nav-icon {
+    .nav-icon {
       display: grid;
       place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      color: var(--muted);
+      width: 40px;
+      height: 40px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: var(--home-muted);
       text-decoration: none;
-      transition: background .12s, color .12s;
     }
-    .home-menu .nav-icon:hover {
-      background: var(--navy);
-      color: var(--os-surface);
+    .nav-icon:hover,
+    .nav-icon:focus-visible {
+      color: var(--home-primary);
+      border-color: var(--home-line);
+      background: var(--home-soft);
+      outline: 0;
     }
-    .home-menu .nav-icon svg {
+    .nav-icon svg {
       width: 22px;
       height: 22px;
       display: block;
     }
-    .home-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(440px, 1.08fr);
-      gap: clamp(18px, 3.2vw, 42px);
+    .rail-search {
+      display: flex;
       align-items: center;
-      max-width: 1360px;
+      gap: 9px;
+      border: 1px solid var(--home-line);
+      background: var(--home-surface);
+    }
+    .rail-search svg {
+      flex: 0 0 auto;
+      color: var(--home-muted);
+    }
+    .rail-search input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      color: var(--home-ink);
+      background: transparent;
+      font: inherit;
+    }
+    .language-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--home-ink);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 900;
+      justify-self: end;
+    }
+    .home-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid var(--home-line);
+      border-top: 0;
+      border-radius: 0 0 16px 16px;
+      background: color-mix(in srgb, var(--home-surface) 78%, var(--home-bg));
+    }
+    .left-rail {
+      display: grid;
+      grid-template-rows: auto auto minmax(0, 1fr) auto;
+      gap: 14px;
+      min-height: 0;
+      overflow: auto;
+      padding: 22px 20px;
+      border-right: 1px solid var(--home-line);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    }
+    .rail-copy {
+      display: grid;
+      gap: 10px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 24px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: var(--home-blue);
+      background: #eaf1ff;
+      font-size: .68rem;
+      font-weight: 950;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .rail-copy h1 {
+      margin: 0;
+      color: var(--home-ink);
+      font-size: clamp(1.85rem, 2.05vw, 2.38rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+    .rail-copy p {
+      margin: 0;
+      color: var(--home-ink);
+      font-size: .82rem;
+      line-height: 1.38;
+    }
+    .kpi-list {
+      display: grid;
+      gap: 8px;
+    }
+    .kpi-card {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+    }
+    .kpi-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      font-size: .9rem;
+      font-weight: 950;
+    }
+    .kpi-icon--events { color: var(--home-purple); background: #efe9ff; }
+    .kpi-icon--places { color: var(--home-green); background: #e7f8ee; }
+    .kpi-icon--topics { color: var(--home-orange); background: #fff3d8; }
+    .kpi-card strong {
+      display: block;
+      color: var(--home-ink);
+      font-size: 1.35rem;
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+    .kpi-card b {
+      display: block;
+      margin-top: 2px;
+      color: var(--home-ink);
+      font-size: .78rem;
+      line-height: 1.05;
+    }
+    .kpi-card span {
+      display: block;
+      margin-top: 3px;
+      color: var(--home-muted);
+      font-size: .66rem;
+      line-height: 1.25;
+    }
+    .rail-tools {
+      display: grid;
+      gap: 12px;
+      min-height: 0;
+      align-content: start;
+      padding: 14px;
+      border: 1px solid color-mix(in srgb, var(--home-line) 72%, transparent);
+      border-radius: var(--home-radius);
+      background: var(--home-surface);
+    }
+    .rail-tools h2 {
+      margin: 0;
+      color: var(--home-ink);
+      font-size: .86rem;
+      line-height: 1.1;
+    }
+    .rail-search {
+      min-height: 38px;
+      padding: 0 10px;
+      border-radius: 12px;
+      font-size: .78rem;
+    }
+    .trending {
+      display: grid;
+      gap: 7px;
+      min-height: 0;
+    }
+    .trend-row {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 6px;
+      border: 1px solid var(--home-line);
+      border-radius: 12px;
+      color: var(--home-ink);
+      background: var(--home-surface);
+      text-decoration: none;
+    }
+    .trend-row img {
+      width: 44px;
+      height: 36px;
+      border-radius: 9px;
+      object-fit: cover;
+    }
+    .trend-row strong {
+      display: block;
+      overflow: hidden;
+      color: var(--home-ink);
+      font-size: .78rem;
+      line-height: 1.1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .trend-row span {
+      display: block;
+      overflow: hidden;
+      margin-top: 2px;
+      color: var(--home-muted);
+      font-size: .65rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .trend-row .country-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      overflow: visible;
+      margin-top: 0;
+      color: var(--home-muted);
+      vertical-align: text-bottom;
+    }
+    .trend-row .country-chip img {
+      width: 18px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+      transform: none;
+    }
+    .rail-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 12px;
+      color: var(--home-surface);
+      background: var(--home-primary);
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .main-content {
+      min-width: 0;
+      min-height: 0;
+      overflow: auto;
+      padding: 22px 24px 24px;
+    }
+    .main-stack {
+      display: grid;
+      gap: 20px;
+      max-width: 1260px;
       margin: 0 auto;
     }
-    .copy { color: var(--ink); }
-    .kicker {
+    .main-stack > section,
+    .featured-card,
+    .featured-content,
+    .featured-copy,
+    .popular-row,
+    .category-grid {
+      min-width: 0;
+    }
+    .featured-card,
+    .popular-row,
+    .category-grid {
+      width: 100%;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      margin: 0;
+      color: var(--home-ink);
+      font-size: 1.35rem;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+    .view-all {
+      color: var(--home-blue);
+      font-size: .84rem;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .featured-card {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--home-surface);
+      box-shadow: var(--home-shadow);
+    }
+    .carousel-slide > img {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 28vw, 330px);
+      object-fit: cover;
+    }
+    .featured-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 270px);
+      gap: 20px;
+      min-height: 0;
+      align-items: start;
+      padding: 20px 22px 22px;
+      color: var(--home-ink);
+      background: var(--home-surface);
+    }
+    .featured-copy {
+      display: grid;
+      gap: 14px;
+      max-width: 660px;
+    }
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 26px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(22, 101, 52, .9);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .tag--place { background: rgba(30, 64, 175, .9); }
+    .tag--topic { background: rgba(88, 28, 135, .9); }
+    .tag--category { background: rgba(15, 23, 42, .82); }
+    .featured-copy h2 {
+      margin: 0;
+      color: var(--home-ink);
+      font-size: clamp(2.1rem, 4vw, 3.55rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+    }
+    .featured-copy p {
+      max-width: 470px;
+      margin: 0;
+      color: var(--home-muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .fact-rows {
+      display: grid;
+      gap: 8px;
+      color: var(--home-ink);
+      font-size: .88rem;
+      font-weight: 850;
+    }
+    .fact-rows span {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 0 14px;
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 850;
-      letter-spacing: .08em;
-      text-transform: uppercase;
     }
-    .kicker::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 22px currentColor;
-    }
-    .home-title {
-      max-width: 10ch;
-      margin: 0;
-      color: var(--navy);
-      display: block;
-      font-size: clamp(48px, 7.2vw, 86px);
-      font-weight: 850;
-      line-height: .98;
-      letter-spacing: 0;
-    }
-    .lede {
-      max-width: 660px;
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: clamp(16px, 1.7vw, 20px);
-      line-height: 1.45;
-    }
-    .purpose {
-      max-width: 640px;
-      margin-top: 22px;
-      padding: 16px 18px;
-      border-radius: 16px;
-      color: var(--ink);
-      background: var(--home-surface);
-      box-shadow: inset 0 0 0 1px var(--line);
-    }
-    .purpose span {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 850;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-    }
-    .purpose p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.45;
-    }
-    .panel {
-      display: grid;
-      gap: 8px;
-      padding: clamp(12px, 1.6vw, 16px);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: var(--home-surface);
-      box-shadow: 0 22px 60px var(--home-shadow);
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-    }
-    .stat {
-      padding: 9px 12px;
-      border-radius: 14px;
-      background: var(--home-surface-strong);
-      box-shadow: inset 0 0 0 1px var(--line);
-    }
-    .stat strong {
-      display: block;
-      color: var(--ink);
-      font-size: clamp(24px, 2.8vw, 34px);
-      line-height: 1;
-    }
-    .stat span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-    .one-slider-card {
-      padding: 11px 14px 12px;
-      border-radius: 16px;
-      background: var(--home-surface-strong);
-    }
-    .one-slider-card h2 {
-      margin: 0 0 5px;
-      color: var(--ink);
-      font-size: 18px;
-      line-height: 1.1;
-    }
-    .one-slider-intro {
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.32;
-    }
-    .steps {
-      display: grid;
-      gap: 5px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .coverage {
-      display: grid;
-      gap: 8px;
-      padding: 13px 16px;
-      border-radius: 16px;
-      background: var(--home-surface-strong);
-    }
-    .coverage h2 {
-      margin: 0;
-      color: var(--ink);
-      font-size: 19px;
-      line-height: 1.1;
-    }
-    .bar-row {
-      display: grid;
-      grid-template-columns: 74px 1fr 42px;
-      gap: 8px;
+    .country-link,
+    .country-chip {
+      display: inline-flex;
       align-items: center;
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 850;
+      gap: 6px;
+      color: inherit;
+      text-decoration: none;
     }
-    .bar {
-      height: 12px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: var(--os-primary-soft);
-    }
-    .bar i {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--green), var(--os-compare-green));
-    }
-    .charts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-    }
-    .chart-card {
-      display: grid;
-      gap: 8px;
-      padding: 11px 12px 12px;
-      border-radius: 16px;
-      background: var(--home-surface-strong);
-    }
-    .chart-card h2 {
-      margin: 0;
-      color: var(--ink);
-      font-size: 14px;
-      line-height: 1.15;
-    }
-    .chart-body {
-      display: grid;
-      grid-template-columns: 84px 1fr;
-      gap: 12px;
-      align-items: center;
-    }
-    .pie {
-      aspect-ratio: 1;
-      width: min(100%, 84px);
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 12px color-mix(in srgb, var(--os-surface) 46%, var(--os-transparent)), 0 8px 18px var(--home-shadow);
-    }
-    .pie--events {
-      background: conic-gradient(var(--chart-1) 0.00% 47.74%, var(--chart-2) 47.74% 84.27%, var(--chart-3) 84.27% 90.42%, var(--chart-4) 90.42% 95.12%, var(--chart-5) 95.12% 98.73%, var(--chart-6) 98.73% 100.00%);
-    }
-    .pie--countries {
-      background: conic-gradient(var(--chart-1) 0.00% 27.41%, var(--chart-2) 27.41% 52.79%, var(--chart-3) 52.79% 75.13%, var(--chart-4) 75.13% 86.80%, var(--chart-5) 86.80% 93.91%, var(--chart-6) 93.91% 100.00%);
-    }
-    .legend {
-      display: grid;
-      gap: 5px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .legend li {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-    .legend i {
-      width: 10px;
-      height: 10px;
+    .country-link img,
+    .country-chip img {
+      width: 20px;
+      height: 14px;
       border-radius: 3px;
-      flex: 0 0 auto;
+      object-fit: cover;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, .12);
     }
-    .legend .legend-dot-1 { background: var(--chart-1); }
-    .legend .legend-dot-2 { background: var(--chart-2); }
-    .legend .legend-dot-3 { background: var(--chart-3); }
-    .legend .legend-dot-4 { background: var(--chart-4); }
-    .legend .legend-dot-5 { background: var(--chart-5); }
-    .legend .legend-dot-6 { background: var(--chart-6); }
-    .legend .legend-val {
-      margin-left: auto;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    @media (max-width: 620px) {
-      .charts { grid-template-columns: 1fr; }
-    }
-    .steps li {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 8px;
+    .status {
+      display: inline-flex;
+      min-height: 20px;
       align-items: center;
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.3;
+      padding: 0 8px;
+      border-radius: 999px;
+      color: #082f49;
+      background: rgba(240, 249, 255, .95);
+      font-size: .66rem;
+      font-weight: 950;
+      text-transform: uppercase;
     }
-    .steps b {
+    .edition-card {
+      align-self: end;
+      display: grid;
+      gap: 8px;
+      padding: 18px;
+      border-radius: 16px;
+      color: var(--home-ink);
+      background: var(--home-soft);
+      box-shadow: inset 0 0 0 1px var(--home-line);
+    }
+    .edition-card small {
+      color: var(--home-muted);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .edition-card strong {
+      color: var(--home-ink);
+      font-size: 1.18rem;
+      line-height: 1.1;
+    }
+    .edition-card span {
+      color: var(--home-muted);
+      font-size: .8rem;
+      line-height: 1.35;
+    }
+    .edition-card a {
+      color: var(--home-blue);
+      font-size: .82rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    .carousel-slide { display: none; }
+    .carousel-slide.active { display: block; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dots .dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .5);
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .carousel-dots .dot.active { background: #fff; }
+    .carousel-controls {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-controls button {
       display: grid;
       place-items: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 9px;
-      color: var(--os-chrome-ink);
-      background: var(--green);
-      font-size: 13px;
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--home-ink);
+      background: rgba(255, 255, 255, .88);
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
     }
-    .paths {
+    .popular-row {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+      gap: 12px;
     }
-    .path {
+    .node-card,
+    .category-tile {
       position: relative;
-      min-height: 84px;
       overflow: hidden;
-      border-radius: 16px;
-      color: var(--os-chrome-ink);
+      border: 1px solid var(--home-line);
+      border-radius: 14px;
+      color: var(--home-ink);
+      background: var(--home-surface);
       text-decoration: none;
-      background: var(--os-chrome-bg);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, .08);
     }
-    .path img {
-      position: absolute;
-      inset: 0;
+    .node-card {
+      display: grid;
+      grid-template-rows: 118px auto;
+      min-height: 206px;
+    }
+    .node-card__media,
+    .category-tile__media {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      background: #dbeafe;
+    }
+    .node-card__media img,
+    .category-tile__media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .35s ease;
+      transition: transform .25s ease;
     }
-    .path:hover img { transform: scale(1.04); }
-    .path::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, var(--home-image-overlay-a), var(--home-image-overlay-b));
+    .node-card:hover img,
+    .category-tile:hover img,
+    .trend-row:hover img {
+      transform: scale(1.04);
     }
-    .path span {
+    .trend-row:hover .country-chip img {
+      transform: none;
+    }
+    .node-card__media img.flag {
       position: absolute;
-      right: 12px;
-      bottom: 10px;
-      left: 12px;
+      right: 9px;
+      bottom: 9px;
+      z-index: 2;
+      width: 24px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.75);
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(15,23,42,.16);
+      transform: none;
+    }
+    .node-card:hover img.flag {
+      transform: none;
+    }
+    .card-tag {
+      position: absolute;
+      top: 9px;
+      left: 9px;
       z-index: 1;
-      color: var(--os-chrome-ink);
-      font-size: 15px;
-      font-weight: 850;
+      display: inline-flex;
+      min-height: 24px;
+      align-items: center;
+      padding: 0 8px;
+      border-radius: 999px;
+      color: var(--home-ink);
+      background: rgba(255, 255, 255, .92);
+      font-size: .58rem;
+      font-weight: 950;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .flag {
+      position: absolute;
+      right: 9px;
+      bottom: 9px;
+      z-index: 1;
+      width: 24px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.75);
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(15,23,42,.16);
+    }
+    .node-card__body {
+      display: grid;
+      gap: 5px;
+      padding: 12px;
+      background: var(--home-surface);
+    }
+    .node-card__body strong {
+      overflow: hidden;
+      color: var(--home-ink);
+      font-size: 1.02rem;
+      line-height: 1.05;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .node-card__body span {
+      overflow: hidden;
+      color: var(--home-muted);
+      font-size: .78rem;
+      line-height: 1.3;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .node-card__body .country-chip {
+      display: inline-flex;
+      color: var(--home-muted);
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(105px, 1fr));
+      gap: 12px;
+    }
+    .category-tile {
+      display: grid;
+      grid-template-rows: 92px auto;
+      min-height: 142px;
+    }
+    .category-tile__media::after {
+      content: none;
+    }
+    .category-tile strong {
+      display: block;
+      padding: 11px 12px 13px;
+      color: var(--home-ink);
+      font-size: .95rem;
       line-height: 1.05;
     }
-    .content-note {
-      max-width: 1360px;
-      margin: 14px auto 0;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
-    .content-note h2 {
-      margin: 0 0 6px;
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.2;
-    }
-    .content-note p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    @media (max-width: 960px) {
-      .home { min-height: auto; overflow: visible; }
-      .home-grid {
-        display: block;
-        min-height: 0;
+    @media (max-width: 1120px) {
+      body.home-page { overflow: auto; }
+      .home-app {
+        height: auto;
+        min-height: 100svh;
+        grid-template-rows: auto auto;
       }
-      .panel { margin-top: 28px; }
+      .home-topbar {
+        grid-template-columns: auto auto 1fr auto;
+      }
+      .top-nav {
+        justify-content: end;
+      }
+      .home-layout {
+        grid-template-columns: 1fr;
+        overflow: visible;
+      }
+      .left-rail {
+        grid-template-columns: minmax(0, 1fr) minmax(280px, .7fr);
+        grid-template-rows: auto auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--home-line);
+      }
+      .rail-copy,
+      .kpi-list {
+        align-content: start;
+      }
+      .rail-tools {
+        grid-row: 1 / span 2;
+        grid-column: 2;
+      }
+      .popular-row {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+      }
+      .category-grid {
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+      }
     }
-    @media (max-width: 620px) {
-      .home { padding: 76px 16px 24px; }
-      .brand-bar span { display: none; }
-      .home-title { font-size: clamp(46px, 15vw, 68px); }
-      .stats,
-      .paths { grid-template-columns: 1fr; }
-      .path { min-height: 118px; }
+    @media (max-width: 760px) {
+      .home-app { padding: 8px; }
+      .home-topbar {
+        grid-template-columns: auto auto 1fr auto;
+        gap: 10px;
+        padding: 12px;
+      }
+      .brand { font-size: 1rem; }
+      .top-nav {
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .nav-icon {
+        width: 36px;
+        height: 36px;
+      }
+      .left-rail {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+      }
+      .rail-tools {
+        grid-row: auto;
+        grid-column: auto;
+      }
+      .main-content {
+        padding: 18px 14px 20px;
+      }
+      .featured-content {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        width: 100%;
+        padding: 26px 18px 18px;
+      }
+      .featured-copy,
+      .edition-card {
+        max-width: 100%;
+        min-width: 0;
+      }
+      .featured-copy h2 {
+        font-size: clamp(2.6rem, 16vw, 4rem);
+      }
+      .edition-card {
+        max-width: none;
+      }
+      .popular-row {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scroll-snap-type: x mandatory;
+      }
+      .node-card {
+        flex: 0 0 220px;
+        scroll-snap-align: start;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/#webpage","url":"https://one-sliders.com/","name":"OneSliders - Events, topics and places at a glance","description":"OneSliders turns events, topics and places into compact visual guides with the facts, context and links people need.","inLanguage":"en","image":"https://one-sliders.com//content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png","breadcrumb":{"@id":"https://one-sliders.com/#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"One-Sliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"One-Sliders","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/#webpage","url":"https://one-sliders.com/","name":"OneSliders - Simple Visual Guides to Events, Places & Topics","description":"Explore simple visual OneSliders for events, destinations and topics. Find dates, context, places and travel planning in an easy-to-understand format.","inLanguage":"en","image":"https://one-sliders.com/content/categories/sport/tennis/events/img/wimbledon-hero.png","isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}}]}</script>
 </head>
-<body>
-  <nav class="home-menu" aria-label="Site navigation">
-    <a class="nav-icon" href="/content/events/index.html" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
-    <a class="nav-icon" href="/content/locations/index.html" aria-label="Locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>
-    <a class="nav-icon" href="/content/categories/index.html" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg></a>
-  </nav>
-  <header class="brand-bar">
-    <img src="./assets/icons/one-sliders-icon.svg" alt="OneSliders icon" aria-hidden="true" width="512" height="512" loading="lazy">
-    <strong>OneSliders</strong>
-    <span>Events, topics and places at a glance</span>
-  </header>
+<body class="home-page">
+  <div class="home-app">
+    <header class="home-topbar" aria-label="One-Sliders header">
+      <a class="brand" href="/" aria-label="One-Sliders home">
+        <img src="./assets/icons/one-sliders-icon.svg" alt="" width="32" height="32">
+        <span>ONE-SLIDERS</span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a class="nav-icon" href="/content/events/index.html" aria-label="Events">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v11.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </a>
+        <a class="nav-icon" href="/content/locations/index.html" aria-label="Places">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9S14.4 18.4 12 21c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+        </a>
+        <a class="nav-icon" href="/content/categories/index.html" aria-label="Topics">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h5v5H5V5Zm9 0h5v5h-5V5ZM5 14h5v5H5v-5Zm9 0h5v5h-5v-5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+        </a>
+      </nav>
+      <span></span>
+      <span class="language-pill" aria-label="Language English">EN</span>
+    </header>
 
-  <main class="home">
-    <div class="home-grid">
-      <section class="copy" aria-labelledby="home-title">
-        <p class="kicker">One page. Clear context. Easy browsing.</p>
-        <div class="home-title" id="home-title" role="heading" aria-level="1">The world, explained in slides.</div>
-        <p class="lede">OneSliders gives people compact visual guides to events, topics and locations: the facts, the context, the timing and the next useful link.</p>
-        <div class="purpose">
-          <span>Purpose</span>
-          <p>Help people browse and understand quickly with visual summaries, images, short facts, KPI cards and simple charts.</p>
+    <div class="home-layout">
+      <aside class="left-rail" aria-label="One-Sliders overview">
+        <div class="rail-copy">
+          <span class="eyebrow">The power of One-Sliders</span>
+          <h1>Everything you need. On one beautiful page.</h1>
+          <p>One-Sliders are compact visual guides that bring the most important information into one place.</p>
         </div>
-      </section>
+        <div class="kpi-list" aria-label="Guide counts generated from the local site tree">
+          <div class="kpi-card" data-count-source="content/categories/**/events/*.html">
+            <span class="kpi-icon kpi-icon--events">E</span>
+            <span><strong>550</strong><b>Event Guides</b><span>Concerts, sports, festivals &amp; more</span></span>
+          </div>
+          <div class="kpi-card" data-count-source="content/locations/**/*.html">
+            <span class="kpi-icon kpi-icon--places">P</span>
+            <span><strong>540</strong><b>Place Guides</b><span>Cities, countries, islands &amp; regions</span></span>
+          </div>
+          <div class="kpi-card" data-count-source="content/categories/**/*.html minus event/affiliate pages">
+            <span class="kpi-icon kpi-icon--topics">T</span>
+            <span><strong>197</strong><b>Topic Guides</b><span>Culture, lifestyle, history &amp; more</span></span>
+          </div>
+        </div>
+        <div class="rail-tools">
+          <h2>Find your One-Slider</h2>
+          <form class="rail-search" action="/content/events/index.html" method="get" role="search">
+            <label class="sr-only" for="rail-search">Search events, places and topics</label>
+            <input id="rail-search" name="search" type="search" placeholder="Search events, places, topics...">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </form>
+          <div class="trending" aria-label="Trending right now">
+            <h2>Trending right now</h2>
+            <a class="trend-row" href="/content/categories/sport/golf/events/ryder-cup.html#year-2027">
+              <img src="/content/categories/sport/golf/events/img/ryder-cup-mini-200.webp" alt="Ryder Cup event thumbnail" width="200" height="150" loading="lazy" decoding="async">
+              <span><strong>Ryder Cup 2027</strong><span>17-19 Sep 2027 &middot; <span class="country-chip"><img src="/content/locations/europe/ireland/img/flag.svg" alt="" width="20" height="14">Ireland</span></span></span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="trend-row" href="/content/locations/europe/iceland/index.html">
+              <img src="/content/locations/europe/iceland/img/iceland-mini-200.webp" alt="Iceland place guide thumbnail" width="200" height="150" loading="lazy" decoding="async">
+              <span><strong>Iceland</strong><span>Nature, culture &amp; adventure &middot; <span class="country-chip"><img src="/content/locations/europe/iceland/img/flag.svg" alt="" width="18" height="12">Iceland</span></span></span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="trend-row" href="/content/categories/music/song-contests/events/eurovision-song-contest.html">
+              <img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini-200.webp" alt="Eurovision Song Contest thumbnail" width="200" height="150" loading="lazy" decoding="async">
+              <span><strong>Eurovision 2027</strong><span>Host country known; date TBC &middot; <span class="country-chip"><img src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="18" height="12">Bulgaria</span></span></span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="trend-row" href="/content/categories/wellness/sauna.html">
+              <img src="/content/categories/wellness/img/sauna-mini-200.webp" alt="Sauna topic guide thumbnail" width="200" height="150" loading="lazy" decoding="async">
+              <span><strong>Sauna Culture</strong><span>History, health &amp; tradition &middot; <span class="country-chip"><img src="/content/locations/europe/finland/img/flag.svg" alt="" width="18" height="12">Finland</span></span></span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
+          <a class="rail-button" href="/content/categories/index.html">Explore all guides</a>
+        </div>
+      </aside>
 
-      <section class="panel" aria-label="OneSliders overview">
-        <div class="stats">
-          <div class="stat"><strong>553</strong><span>event pages</span></div>
-          <div class="stat"><strong>185</strong><span>topic pages</span></div>
-          <div class="stat"><strong>449</strong><span>place pages</span></div>
-        </div>
+      <main class="main-content" aria-label="Featured One-Sliders">
+        <div class="main-stack">
+          <section aria-labelledby="featured-title">
+            <div class="section-head">
+              <h2 id="featured-title">Featured One-Slider</h2>
+            </div>
+            <article class="featured-card">
+              <div class="carousel-controls" aria-label="Featured guide controls">
+                <button type="button" aria-label="Previous featured guide">&lt;</button>
+                <button type="button" aria-label="Next featured guide">&gt;</button>
+              </div>
+              <div class="carousel-dots" aria-hidden="true">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+              </div>
 
-        <div class="charts" aria-label="OneSliders breakdown charts" data-home-charts>
-          <!--CHARTS:START-->
-          <div class="chart-card"><h2>Events by category</h2><div class="chart-body"><div class="pie pie--events" role="img" aria-label="Events by category: 553 total"></div><ul class="legend"><li><i class="legend-dot-1"></i>Sport<span class="legend-val">264 &middot; 48%</span></li><li><i class="legend-dot-2"></i>Culture<span class="legend-val">202 &middot; 37%</span></li><li><i class="legend-dot-3"></i>Music<span class="legend-val">34 &middot; 6%</span></li><li><i class="legend-dot-4"></i>Wellness<span class="legend-val">26 &middot; 5%</span></li><li><i class="legend-dot-5"></i>Technology<span class="legend-val">20 &middot; 4%</span></li><li><i class="legend-dot-6"></i>Climate<span class="legend-val">7 &middot; 1%</span></li></ul></div></div>
-          <div class="chart-card"><h2>Countries by continent</h2><div class="chart-body"><div class="pie pie--countries" role="img" aria-label="Countries by continent: 197 total"></div><ul class="legend"><li><i class="legend-dot-1"></i>Africa<span class="legend-val">54 &middot; 27%</span></li><li><i class="legend-dot-2"></i>Europe<span class="legend-val">50 &middot; 25%</span></li><li><i class="legend-dot-3"></i>Asia<span class="legend-val">44 &middot; 22%</span></li><li><i class="legend-dot-4"></i>North America<span class="legend-val">23 &middot; 12%</span></li><li><i class="legend-dot-5"></i>Oceania<span class="legend-val">14 &middot; 7%</span></li><li><i class="legend-dot-6"></i>South America<span class="legend-val">12 &middot; 6%</span></li></ul></div></div>
-          <!--CHARTS:END-->
-        </div>
+              <div class="carousel-slide active">
+                <img src="/content/categories/sport/tennis/events/img/wimbledon-hero-768.webp" alt="Wimbledon Centre Court during the tournament" width="768" height="403" fetchpriority="high">
+                <div class="featured-content">
+                  <div class="featured-copy">
+                    <h2>Wimbledon</h2>
+                    <p>The world's most compact tennis tournament guide: history, stars, tickets, travel and the next edition in London.</p>
+                    <div class="fact-rows">
+                      <span><span aria-hidden="true">Date</span> 29 Jun - 12 Jul 2026 <b class="status">Confirmed</b></span>
+                      <span><span aria-hidden="true">Place</span> London, <a class="country-link" href="/content/locations/europe/united-kingdom/"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14">United Kingdom</a></span>
+                    </div>
+                  </div>
+                  <div class="edition-card">
+                    <small>Next edition</small>
+                    <strong>29 Jun - 12 Jul 2026</strong>
+                    <span>12 days of world class tennis at the All England Club.</span>
+                    <a href="/content/categories/sport/tennis/events/wimbledon.html#year">View full One-Slider -&gt;</a>
+                  </div>
+                </div>
+              </div>
 
-        <div class="one-slider-card">
-          <h2>What is a OneSlider?</h2>
-          <p class="one-slider-intro">It is not a long article or a dashboard. It is a visual snapshot with images, short facts and charts that can change as the page moves from preview to results.</p>
-          <ol class="steps">
-            <li><b>1</b><span>General: the evergreen story, format, records and context.</span></li>
-            <li><b>2</b><span>Year: dates, place, countdown and practical planning answers.</span></li>
-            <li><b>3</b><span>Parts: schedule, live status, results and the pieces that change.</span></li>
-          </ol>
-        </div>
+              <div class="carousel-slide">
+                <img src="/content/categories/sport/golf/events/img/ryder-cup-hero-768.webp" alt="Ryder Cup golf tournament" width="768" height="403" loading="lazy">
+                <div class="featured-content">
+                  <div class="featured-copy">
+                    <h2>Ryder Cup 2027</h2>
+                    <p>Europe vs USA — the ultimate team showdown in golf. Tickets, format, history and everything for the 2027 edition at Adare Manor.</p>
+                    <div class="fact-rows">
+                      <span><span aria-hidden="true">Date</span> 17–19 Sep 2027 <b class="status">Confirmed</b></span>
+                      <span><span aria-hidden="true">Place</span> Adare Manor, <a class="country-link" href="/content/locations/europe/ireland/"><img src="/content/locations/europe/ireland/img/flag.svg" alt="" width="20" height="14">Ireland</a></span>
+                    </div>
+                  </div>
+                  <div class="edition-card">
+                    <small>Next edition</small>
+                    <strong>17–19 Sep 2027</strong>
+                    <span>3 days of match play drama at Adare Manor.</span>
+                    <a href="/content/categories/sport/golf/events/ryder-cup.html#year-2027">View full One-Slider -&gt;</a>
+                  </div>
+                </div>
+              </div>
 
-        <div class="paths">
-          <a class="path" href="content/events/this-week.html">
-            <img  srcset="/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero-200.webp 200w, /content/categories/culture/tradition/events/img/sydney-new-years-eve-hero-400.webp 400w" sizes="(max-width: 720px) 100vw, 720px" src="/content/categories/culture/tradition/events/img/sydney-new-years-eve-hero.png" alt="Sydney New Years Eve hero image" width="1200" height="675" fetchpriority="high">
-            <span>Events</span>
-          </a>
-          <a class="path" href="content/categories/index.html">
-            <img  srcset="content/categories/img/categories-topics-hero-200.webp 200w, content/categories/img/categories-topics-hero-400.webp 400w" sizes="(max-width: 720px) 100vw, 720px" src="content/categories/img/categories-topics-hero.png" alt="Categories Topics hero image" loading="lazy" width="1200" height="658">
-            <span>Topics</span>
-          </a>
-          <a class="path" href="content/locations/index.html">
-            <img  srcset="content/locations/img/world-hero-small-200.webp 200w, content/locations/img/world-hero-small-400.webp 400w" sizes="(max-width: 720px) 100vw, 720px" src="content/locations/img/world-hero-small.jpg" alt="World Hero Small hero image" loading="lazy" width="1200" height="630">
-            <span>Locations</span>
-          </a>
+              <div class="carousel-slide">
+                <img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-hero-768.webp" alt="Eurovision Song Contest stage" width="768" height="403" loading="lazy">
+                <div class="featured-content">
+                  <div class="featured-copy">
+                    <h2>Eurovision 2027</h2>
+                    <p>The world's biggest live music competition heads to Bulgaria in 2027. Songs, shows, voting rules and how to follow along.</p>
+                    <div class="fact-rows">
+                      <span><span aria-hidden="true">Date</span> 2027 TBC</span>
+                      <span><span aria-hidden="true">Place</span> <a class="country-link" href="/content/locations/europe/bulgaria/"><img src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="20" height="14">Bulgaria</a></span>
+                    </div>
+                  </div>
+                  <div class="edition-card">
+                    <small>Next edition</small>
+                    <strong>2027 TBC</strong>
+                    <span>The world's biggest music competition.</span>
+                    <a href="/content/categories/music/song-contests/events/eurovision-song-contest.html">View full One-Slider -&gt;</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section aria-labelledby="popular-title">
+            <div class="section-head">
+              <h2 id="popular-title">Popular One-Sliders</h2>
+              <a class="view-all" href="/content/categories/index.html">View all -&gt;</a>
+            </div>
+            <div class="popular-row">
+              <a class="node-card" href="/content/categories/sport/golf/events/ryder-cup.html#year-2027">
+                <span class="node-card__media"><img src="/content/categories/sport/golf/events/img/ryder-cup-mini-400.webp" alt="Ryder Cup 2027 event thumbnail" width="400" height="300" loading="lazy" decoding="async"><span class="card-tag">Sports event</span><img class="flag" src="/content/locations/europe/ireland/img/flag.svg" alt="" width="36" height="24"></span>
+                <span class="node-card__body"><strong>Ryder Cup 2027</strong><span>17-19 Sep 2027</span><span>Adare Manor, <span class="country-chip"><img src="/content/locations/europe/ireland/img/flag.svg" alt="" width="20" height="14">Ireland</span></span></span>
+              </a>
+              <a class="node-card" href="/content/locations/europe/france/paris.html">
+                <span class="node-card__media"><img src="/content/locations/europe/france/img/paris-mini-400.webp" alt="Paris place guide thumbnail" width="400" height="300" loading="lazy" decoding="async"><span class="card-tag">Place guide</span><img class="flag" src="/content/locations/europe/france/img/flag.svg" alt="" width="36" height="24"></span>
+                <span class="node-card__body"><strong>Paris</strong><span>The ultimate guide</span><span class="country-chip"><img src="/content/locations/europe/france/img/flag.svg" alt="" width="20" height="14">France</span></span>
+              </a>
+              <a class="node-card" href="/content/categories/music/song-contests/events/eurovision-song-contest.html">
+                <span class="node-card__media"><img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini-400.webp" alt="Eurovision Song Contest thumbnail" width="400" height="300" loading="lazy" decoding="async"><span class="card-tag">Music event</span><img class="flag" src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="36" height="24"></span>
+                <span class="node-card__body"><strong>Eurovision 2027</strong><span>2027 date TBC</span><span class="country-chip"><img src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="20" height="14">Bulgaria</span></span>
+              </a>
+              <a class="node-card" href="/content/locations/europe/iceland/index.html">
+                <span class="node-card__media"><img src="/content/locations/europe/iceland/img/iceland-mini-400.webp" alt="Iceland place guide thumbnail" width="400" height="300" loading="lazy" decoding="async"><span class="card-tag">Place guide</span><img class="flag" src="/content/locations/europe/iceland/img/flag.svg" alt="" width="36" height="24"></span>
+                <span class="node-card__body"><strong>Iceland</strong><span>Land of fire &amp; ice</span><span class="country-chip"><img src="/content/locations/europe/iceland/img/flag.svg" alt="" width="20" height="14">Iceland</span></span>
+              </a>
+              <a class="node-card" href="/content/categories/wellness/sauna.html">
+                <span class="node-card__media"><img src="/content/categories/wellness/img/sauna-mini-400.webp" alt="Sauna topic guide thumbnail" width="400" height="300" loading="lazy" decoding="async"><span class="card-tag">Topic guide</span><img class="flag" src="/content/locations/europe/finland/img/flag.svg" alt="" width="36" height="24"></span>
+                <span class="node-card__body"><strong>Sauna Culture</strong><span>History, health &amp; tradition</span><span class="country-chip"><img src="/content/locations/europe/finland/img/flag.svg" alt="" width="20" height="14">Finland</span></span>
+              </a>
+            </div>
+          </section>
+
+          <section aria-labelledby="category-title">
+            <div class="section-head">
+              <h2 id="category-title">Explore by category</h2>
+            </div>
+            <div class="category-grid">
+              <a class="category-tile" href="/content/categories/sport/index.html"><span class="category-tile__media"><img src="/content/categories/sport/img/sports-general-hero-400.webp" alt="Sport category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Sports</strong></a>
+              <a class="category-tile" href="/content/categories/music/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/music-hero-400.webp" alt="Music category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Music</strong></a>
+              <a class="category-tile" href="/content/categories/culture/music-festivals.html"><span class="category-tile__media"><img src="/content/categories/culture/art/events/img/bali-arts-festival-mini-400.webp" alt="Festivals category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Festivals</strong></a>
+              <a class="category-tile" href="/content/categories/culture/national-day.html"><span class="category-tile__media"><img src="/content/categories/culture/national-day/events/img/iceland-national-day-mini-400.webp" alt="National Days category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>National Days</strong></a>
+              <a class="category-tile" href="/content/categories/climate/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/wildlife-hero-400.webp" alt="Nature category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Nature</strong></a>
+              <a class="category-tile" href="/content/categories/culture/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/culture-hero-400.webp" alt="Culture category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Culture</strong></a>
+              <a class="category-tile" href="/content/categories/culture/food-drink.html"><span class="category-tile__media"><img src="/content/categories/culture/img/food-drink-hero-400.webp" alt="Food and drink category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Food &amp; Drink</strong></a>
+              <a class="category-tile" href="/content/categories/technology/index.html"><span class="category-tile__media"><img src="/content/categories/technology/consumer-electronics/events/img/ces-hero-400.webp" alt="Technology category thumbnail" width="400" height="300" loading="lazy" decoding="async"></span><strong>Technology</strong></a>
+            </div>
+          </section>
         </div>
-      </section>
+      </main>
     </div>
-  <section class="content-note" aria-label="OneSliders - Events, topics and places at a glance summary"><h2>OneSliders - Events, topics and places at a glance on OneSliders</h2><p>OneSliders - Events, topics and places at a glance is the browsing page for index. It groups related OneSliders entries so visitors can move from a broad theme to specific events, places and practical planning details without opening a long article. The focus is quick orientation: what belongs in this topic, which nearby pages are worth comparing, and where the calendar or location structure gives the next useful step.</p></section></main>
+  </div>
 </body>
 </html>

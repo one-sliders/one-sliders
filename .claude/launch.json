@@ -12,6 +12,13 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "4188", "--bind", "127.0.0.1"],
       "port": 4188
+    },
+    {
+      "name": "serve4173",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "Write-Host 'Existing server on 4173'"],
+      "port": 4173,
+      "autoPort": false
     }
   ]
 }

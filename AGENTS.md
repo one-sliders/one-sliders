@@ -2,6 +2,22 @@
 
 This document specifies how event pages on OneSliders are built. **Follow it literally.** Do not improvise layouts, components, or features that are not described here. If something is unclear, ask before implementing.
 
+## 0.4 Location And City Image Preservation
+
+Existing real location images under `content/locations/**/img` are protected assets. Do not overwrite country, region, or city images with generated replacements, placeholders, fallback images, or scripted bulk output unless the user explicitly asks to replace that exact asset.
+
+City pages are not complete until all seven visible city images show the correct city or attraction:
+- one city hero/mini image for the city page
+- six smaller `See` tab images, one for each listed attraction
+
+Do not use another city, a nearby city, a country hero, or a generic regional image as a fallback for city hero or `See` thumbnails. Example: Uppsala must never show Stockholm imagery. If a correct image is missing, leave the task unfinished and create the correct city-specific asset instead of reusing the wrong image.
+
+## 0.5 Image Presentation And Mosaic Rules
+
+Never place dark filters, dark gradients, black overlays, opacity scrims, or brightness-reducing CSS filters over images. Images must remain visually clear. If text needs readability on an image card, put the text on its own solid or semi-opaque light surface; do not darken the image.
+
+Never hardcode a mosaic layout for one specific page or one fixed item count. Use a reusable count-aware mosaic pattern so the grid adapts automatically to the number of nodes available, including 1, 2, 3, 5, or more topics, cities, events, or related nodes.
+
 ## 1. Purpose
 
 OneSliders is built for people who want to know about events. The site is visual, fast, and inviting. Each event page is a short, scrollable presentation with one or more full-screen panels — not a long article and not a dashboard.
@@ -156,8 +172,8 @@ Each slide is a full-screen visual presentation, not a document. Keep content ti
 
 ### Visual rules per slide
 
-- **Background:** the hero image fills the slide as a background (cover, centered). A dark overlay (linear gradient or solid 40–60% black) sits on top of the image so text is readable.
-- **Text on dark backgrounds is white or near-white.** Text on white cards is dark. Never white text on white card.
+- **Background:** the hero image fills the slide as a background (cover, centered). Do not darken the image with filters, scrims or overlays; place text on its own readable surface.
+- **Text on image backgrounds must sit on its own readable surface.** Text on white cards is dark. Never white text on white card.
 - **Cards on top of the hero must have a solid or semi-opaque background** (white, white-with-blur, or dark-with-blur) so they are clearly readable. Card content uses the card's contrasting text color.
 - **Generous padding inside cards.** Headings inside cards are bold and clearly larger than body text.
 - **Typography hierarchy:** H1 = event name (very large on slide 1), H2 = section titles within a slide, body text comfortable to read.
@@ -166,7 +182,7 @@ Each slide is a full-screen visual presentation, not a document. Keep content ti
 ### Contrast rule (mandatory)
 
 Before rendering any element, check the text color against its actual background:
-- Light text only on dark or image background with overlay.
+- Light text only on genuinely dark surfaces that are not created by filtering an image.
 - Dark text only on light card background.
 - If a card has a white background, all text and labels inside it are dark gray or black. **No white-on-white. No light-gray-on-white.**
 
@@ -178,8 +194,8 @@ The event as a concept, independent of any year. Updated rarely.
 
 ### Required content (in this order)
 
-1. **Hero background** — `{slug}-hero.png` as full-bleed background with overlay. Event H1 sits centered or left-aligned over the image.
-2. **Intro paragraph** — 1–3 sentences over the hero overlay.
+1. **Hero background** — `{slug}-hero.png` as full-bleed background with readable text surface. Event H1 sits centered or left-aligned over the image area.
+2. **Intro paragraph** — 1–3 sentences near the hero on a readable surface.
 3. **Key facts strip** — 4 cards in a row: founding year, frequency, current edition, format size. Solid card background, dark text inside.
 4. **History card** — 1 paragraph or short timeline.
 5. **Format / rules card**.
