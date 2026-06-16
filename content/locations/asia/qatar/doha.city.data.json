@@ -12,148 +12,69 @@
     "twitterDescription": "Find sports events in Doha in 2026: calendars, nearby pages and linked event views for planning around Asia / Qatar.",
     "webpageDescription": "Find sports events in Doha in 2026: calendars, nearby pages and linked event views for planning around Asia / Qatar."
   },
-  "kicker": "Capital city in Qatar",
+  "region": "Capital city in Qatar",
+  "population": "tba",
+  "coordinates": {
+    "lat": 25.28545,
+    "lon": 51.53096
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Doha travel, stays & events guide",
   "heroText": "Doha is a Gulf event destination in Qatar, shaped by venues, waterfront districts, hotels and high-demand sport weekends.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Doha connects local landmarks, visitor routes and event planning in Qatar."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Qatar gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Qatar",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Qatar",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Qatar"
+      "value": "Capital city in Qatar",
+      "note": "Qatar"
+    },
+    {
+      "label": "Founded",
+      "value": "300",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Qatar",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/qatar/img/qatar-mini.png",
-    "name": "Qatar"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [
+  "bookingDestination": "Doha, Qatar",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "href": "lusail.html",
-      "img": "/content/locations/asia/qatar/img/lusail-mini.png",
-      "name": "Lusail"
+      "name": "Doha",
+      "text": "Doha is a Gulf event destination in Qatar, shaped by venues, waterfront districts, hotels and high-demand sport weekends."
     }
   ],
-  "links": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "label": "Wikipedia: Doha",
+      "url": "https://en.wikipedia.org/wiki/Doha",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Doha known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Doha events",
-      "meta": "2026 calendar · Doha"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Qatar",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Qatar"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "300",
@@ -213,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Doha",
-  "coordinates": {
-    "lat": 25.28545,
-    "lon": 51.53096
-  },
   "timezone": "Asia/Qatar",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",

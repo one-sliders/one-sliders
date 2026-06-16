@@ -12,107 +12,59 @@
     "twitterDescription": "Find sports events in Singapore in 2026: calendars, nearby pages and linked event views for planning around Asia / Singapore. Page 2.",
     "webpageDescription": "Find sports events in Singapore in 2026: calendars, nearby pages and linked event views for planning around Asia / Singapore. Page 2."
   },
-  "kicker": "Capital city in Singapore",
+  "region": "Capital city in Singapore",
+  "population": "tba",
+  "coordinates": {
+    "lat": 1.28967,
+    "lon": 103.85007
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Singapore travel, stays & events guide",
   "heroText": "Singapore is a compact city-state travel hub, useful for events, airport links, food districts and regional stopovers.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Singapore connects local landmarks, visitor routes and event planning in Singapore."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Singapore gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Singapore",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Singapore",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Singapore"
+      "value": "Capital city in Singapore",
+      "note": "Singapore"
+    },
+    {
+      "label": "Founded",
+      "value": "1299",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Singapore",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/singapore/img/singapore-mini.png",
-    "name": "Singapore"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Singapore, Singapore",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Singapore",
+      "text": "Singapore is a compact city-state travel hub, useful for events, airport links, food districts and regional stopovers."
     }
   ],
-  "planningQuestions": [
-    {
-      "q": "What is Singapore known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
-    }
-  ],
-  "landmarks": [],
+  "nearbyIdeas": [],
   "events": [
     {
       "modifier": "music",
@@ -122,32 +74,15 @@
       "meta": "Oct 2026 · Singapore"
     }
   ],
-  "knownFor": [
-    "Central district",
-    "Singapore",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Singapore"
-  ],
-  "topicCards": [
+  "topicLinks": [],
+  "sources": [
     {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
+      "label": "Wikipedia: Singapore",
+      "url": "https://en.wikipedia.org/wiki/Singapore",
+      "usedFor": "city history and coordinates"
     }
   ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1299",
@@ -207,10 +142,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Singapore",
-  "coordinates": {
-    "lat": 1.28967,
-    "lon": 103.85007
-  },
   "timezone": "Asia/Singapore",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",

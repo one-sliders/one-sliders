@@ -12,142 +12,69 @@
     "twitterDescription": "Find sports events in Islamabad in 2026: calendars, nearby pages and linked event views for planning around Asia / Pakistan.",
     "webpageDescription": "Find sports events in Islamabad in 2026: calendars, nearby pages and linked event views for planning around Asia / Pakistan."
   },
-  "kicker": "Capital city in Pakistan",
+  "region": "Capital city in Pakistan",
+  "population": "tba",
+  "coordinates": {
+    "lat": 33.72148,
+    "lon": 73.04329
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Islamabad travel, stays & events guide",
   "heroText": "Islamabad is a capital city in Pakistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
-  "snapshot": [
-    {
-      "label": "Place",
-      "text": "Islamabad connects local landmarks, visitor routes and event planning in Pakistan."
-    },
-    {
-      "label": "Landmark",
-      "text": "Central district is the clearest quick-reference sight for this city page."
-    },
-    {
-      "label": "Region",
-      "text": "Pakistan gives the page its wider route and destination context."
-    },
-    {
-      "label": "Events",
-      "text": "The events tab connects city context with dated event views."
-    }
-  ],
   "kpis": [
     {
-      "label": "Country",
-      "value": "Pakistan",
-      "href": "index.html"
-    },
-    {
-      "label": "Population",
-      "value": "City population"
-    },
-    {
-      "label": "Metro",
-      "value": "Metro region"
-    },
-    {
-      "label": "Known for",
-      "value": "Central district"
-    }
-  ],
-  "shortFacts": [
-    {
-      "label": "Country",
-      "value": "Pakistan",
-      "href": "index.html"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
       "label": "Region",
-      "value": "Pakistan"
+      "value": "Capital city in Pakistan",
+      "note": "Pakistan"
+    },
+    {
+      "label": "Founded",
+      "value": "5000 BCE",
+      "note": "historical reference"
     },
     {
       "label": "Time zone",
-      "value": "Local time"
+      "value": "Asia/Karachi",
+      "note": "local time"
     }
   ],
-  "worthSeeing": [
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    },
-    {
-      "title": "City centre:",
-      "text": "Visitor highlight."
-    }
-  ],
-  "countryCard": {
-    "href": "index.html",
-    "img": "/content/locations/asia/pakistan/img/pakistan-mini.png",
-    "name": "Pakistan"
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
   },
-  "cityCards": [],
-  "links": [
+  "bookingDestination": "Islamabad, Pakistan",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
     {
-      "kind": "Browse",
-      "label": "More locations",
-      "href": "../../../locations/index.html"
-    },
-    {
-      "kind": "Topics",
-      "label": "Travel interests",
-      "href": "../../../categories/index.html"
+      "name": "Islamabad",
+      "text": "Islamabad is a capital city in Pakistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
     }
   ],
-  "planningQuestions": [
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
     {
-      "q": "What is Islamabad known for?",
-      "a": "Central district, local culture, visitor planning and events."
-    },
-    {
-      "q": "What is the fastest way in?",
-      "a": "City facts, linked events and nearby locations are grouped together here."
-    },
-    {
-      "q": "What should I check before going?",
-      "a": "Varied, monsoon to desert, transport access and the current event calendar."
+      "label": "Wikipedia: Islamabad",
+      "url": "https://en.wikipedia.org/wiki/Islamabad",
+      "usedFor": "city history and coordinates"
     }
   ],
-  "landmarks": [],
-  "events": [
-    {
-      "modifier": "music",
-      "href": "../../../events/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Islamabad events",
-      "meta": "2026 calendar · Islamabad"
-    }
-  ],
-  "knownFor": [
-    "Central district",
-    "Pakistan",
-    "Varied, monsoon to desert",
-    "City transit",
-    "Events",
-    "Pakistan"
-  ],
-  "topicCards": [
-    {
-      "modifier": "music",
-      "href": "../../../categories/index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Categories",
-      "text": "Events, themes and practical planning."
-    },
-    {
-      "modifier": "national",
-      "href": "../index.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "alt": "Asia",
-      "title": "Asia outdoors",
-      "text": "Routes, seasons and nearby places."
-    }
-  ],
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Origins",
@@ -207,10 +134,6 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Islamabad",
-  "coordinates": {
-    "lat": 33.72148,
-    "lon": 73.04329
-  },
   "timezone": "Asia/Karachi",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
