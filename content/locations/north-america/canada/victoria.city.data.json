@@ -1,27 +1,56 @@
 {
-  "slug": "victoria",
-  "name": "Victoria",
-  "province": "British Columbia",
-  "state": "British Columbia",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Victoria travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Vancouver Island",
-  "population": "91,867 city (2021 census)",
-  "role": "Vancouver Island harbour base",
-  "knownFor": "Harbour, gardens & ferries",
-  "intro": "Harbour city for gardens, ferries and Vancouver Island trips",
-  "airport": "Victoria International Airport (YYJ)",
-  "coords": [
-    48.4284,
-    -123.3656
+  "population": "tba",
+  "coordinates": {
+    "lat": 48.4359,
+    "lon": -123.35155
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Victoria travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Vancouver Island",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1790",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Vancouver",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Inner Harbour",
-    "Downtown Victoria",
-    "James Bay",
-    "Fairfield",
-    "Oak Bay"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Victoria, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Inner Harbour",
     "Butchart Gardens",
@@ -30,19 +59,17 @@
     "Beacon Hill Park",
     "Whale watching"
   ],
-  "events": [
-    "Victoria Day Parade",
-    "Rifflandia",
-    "Victoria Film Festival",
-    "Canada Day in Victoria"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Victoria",
+      "url": "https://en.wikipedia.org/wiki/Victoria%2C_British_Columbia",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "british-columbia",
-    "vancouver",
-    "stay"
-  ],
-  "href": "victoria.html",
-  "img": "img/victoria-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1790",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Victoria%2C_British_Columbia",
-  "coordinates": {
-    "lat": 48.4359,
-    "lon": -123.35155
-  },
   "timezone": "America/Vancouver",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Victoria",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "victoria",
+  "name": "Victoria",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

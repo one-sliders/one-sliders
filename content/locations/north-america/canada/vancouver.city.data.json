@@ -1,27 +1,56 @@
 {
-  "slug": "vancouver",
-  "name": "Vancouver",
-  "province": "British Columbia",
-  "state": "British Columbia",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Vancouver travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Lower Mainland",
-  "population": "662,248 city (2021 census)",
-  "role": "Pacific Coast hub",
-  "knownFor": "Stanley Park, seawall & mountains",
-  "intro": "Pacific city for mountains, ocean, food and cruise trips",
-  "airport": "Vancouver International Airport (YVR)",
-  "coords": [
-    49.2827,
-    -123.1207
+  "population": "tba",
+  "coordinates": {
+    "lat": 49.24966,
+    "lon": -123.11934
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Vancouver travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Lower Mainland",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1791",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Vancouver",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Vancouver",
-    "Yaletown",
-    "Coal Harbour",
-    "Gastown",
-    "Kitsilano"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Vancouver, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Stanley Park",
     "Granville Island",
@@ -30,19 +59,17 @@
     "Kitsilano Beach",
     "North Shore mountains"
   ],
-  "events": [
-    "Celebration of Light",
-    "Vancouver International Film Festival",
-    "Vancouver Pride",
-    "Dine Out Vancouver Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Vancouver",
+      "url": "https://en.wikipedia.org/wiki/Vancouver",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "british-columbia",
-    "pacific",
-    "stay"
-  ],
-  "href": "vancouver.html",
-  "img": "img/vancouver-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1791",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Vancouver",
-  "coordinates": {
-    "lat": 49.24966,
-    "lon": -123.11934
-  },
   "timezone": "America/Vancouver",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Vancouver",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "vancouver",
+  "name": "Vancouver",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

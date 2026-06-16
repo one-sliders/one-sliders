@@ -1,27 +1,56 @@
 {
-  "slug": "st-johns",
-  "name": "St. John's",
-  "province": "Newfoundland and Labrador",
-  "state": "Newfoundland and Labrador",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "St. John's travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Avalon Peninsula",
-  "population": "110,525 city (2021 census)",
-  "role": "Eastern Newfoundland base",
-  "knownFor": "Signal Hill, music & colourful streets",
-  "intro": "Colourful Atlantic city for cliffs, music and easternmost trips",
-  "airport": "St. John's International Airport (YYT)",
-  "coords": [
-    47.5615,
-    -52.7126
+  "population": "tba",
+  "coordinates": {
+    "lat": 47.56494,
+    "lon": -52.70931
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "St. John's travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Avalon Peninsula",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "16th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/St_Johns",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown St. John's",
-    "Harbourfront",
-    "Georgestown",
-    "Quidi Vidi",
-    "Airport area"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "St. John's, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Signal Hill",
     "George Street",
@@ -30,19 +59,17 @@
     "Cape Spear",
     "Jellybean Row"
   ],
-  "events": [
-    "George Street Festival",
-    "Royal St. John's Regatta",
-    "Newfoundland and Labrador Folk Festival",
-    "Mummers Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: St. John's",
+      "url": "https://en.wikipedia.org/wiki/St._John%27s%2C_Newfoundland_and_Labrador",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "newfoundland-and-labrador",
-    "eastern",
-    "stay"
-  ],
-  "href": "st-johns.html",
-  "img": "img/st-johns-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "16th century",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/St._John%27s%2C_Newfoundland_and_Labrador",
-  "coordinates": {
-    "lat": 47.56494,
-    "lon": -52.70931
-  },
   "timezone": "America/St_Johns",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "St. John's",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "st-johns",
+  "name": "St. John's",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

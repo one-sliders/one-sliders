@@ -1,27 +1,56 @@
 {
-  "slug": "whitehorse",
-  "name": "Whitehorse",
-  "province": "Yukon",
-  "state": "Yukon",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Whitehorse travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Yukon River valley",
-  "population": "28,201 city (2021 census)",
-  "role": "Yukon wilderness gateway",
-  "knownFor": "Aurora, Yukon River & Alaska Highway",
-  "intro": "Northern city for wilderness, aurora trips and Yukon routes",
-  "airport": "Erik Nielsen Whitehorse International Airport (YXY)",
-  "coords": [
-    60.7212,
-    -135.0568
+  "population": "tba",
+  "coordinates": {
+    "lat": 60.71611,
+    "lon": -135.05376
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Whitehorse travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Yukon River valley",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1883",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Whitehorse",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Whitehorse",
-    "Riverfront",
-    "Hillcrest",
-    "Takhini",
-    "Airport area"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Whitehorse, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Yukon River",
     "SS Klondike",
@@ -30,19 +59,17 @@
     "Aurora viewing",
     "Alaska Highway"
   ],
-  "events": [
-    "Yukon Quest",
-    "Adaka Cultural Festival",
-    "Available Light Film Festival",
-    "Yukon Riverside Arts Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Whitehorse",
+      "url": "https://en.wikipedia.org/wiki/Whitehorse",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "yukon",
-    "yukon",
-    "stay"
-  ],
-  "href": "whitehorse.html",
-  "img": "img/whitehorse-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1883",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Whitehorse",
-  "coordinates": {
-    "lat": 60.71611,
-    "lon": -135.05376
-  },
   "timezone": "America/Whitehorse",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Whitehorse",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "whitehorse",
+  "name": "Whitehorse",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

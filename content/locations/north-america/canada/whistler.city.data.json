@@ -1,27 +1,56 @@
 {
-  "slug": "whistler",
-  "name": "Whistler",
-  "province": "British Columbia",
-  "state": "British Columbia",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Whistler travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Sea to Sky Country",
-  "population": "13,982 municipality (2021 census)",
-  "role": "Mountain resort base",
-  "knownFor": "Skiing, biking & village stays",
-  "intro": "Mountain resort for skiing, biking and village stays",
-  "airport": "Vancouver International Airport (YVR)",
-  "coords": [
-    50.1163,
-    -122.9574
+  "population": "tba",
+  "coordinates": {
+    "lat": 50.11817,
+    "lon": -122.95396
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Whistler travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Sea to Sky Country",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1800s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Vancouver",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Whistler Village",
-    "Upper Village",
-    "Creekside",
-    "Function Junction",
-    "Pemberton overflow"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Whistler, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Whistler Blackcomb",
     "Peak 2 Peak Gondola",
@@ -30,19 +59,17 @@
     "Creekside",
     "Bike park"
   ],
-  "events": [
-    "Crankworx Whistler",
-    "World Ski and Snowboard Festival",
-    "Whistler Film Festival",
-    "Whistler Pride and Ski Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Whistler",
+      "url": "https://en.wikipedia.org/wiki/Whistler%2C_British_Columbia",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "british-columbia",
-    "mountain",
-    "stay"
-  ],
-  "href": "whistler.html",
-  "img": "img/whistler-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1800s",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Whistler%2C_British_Columbia",
-  "coordinates": {
-    "lat": 50.11817,
-    "lon": -122.95396
-  },
   "timezone": "America/Vancouver",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Whistler",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "whistler",
+  "name": "Whistler",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

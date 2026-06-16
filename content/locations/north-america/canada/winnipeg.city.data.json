@@ -1,27 +1,56 @@
 {
-  "slug": "winnipeg",
-  "name": "Winnipeg",
-  "province": "Manitoba",
-  "state": "Manitoba",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Winnipeg travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Prairies",
-  "population": "749,607 city (2021 census)",
-  "role": "Prairie culture and rail-history base",
-  "knownFor": "The Forks, museums & festivals",
-  "intro": "Prairie city for museums, festivals and rail-history trips",
-  "airport": "Winnipeg Richardson International Airport (YWG)",
-  "coords": [
-    49.8951,
-    -97.1384
+  "population": "tba",
+  "coordinates": {
+    "lat": 49.8844,
+    "lon": -97.14704
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Winnipeg travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Prairies",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1730s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Winnipeg",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Winnipeg",
-    "The Forks",
-    "Exchange District",
-    "Osborne Village",
-    "St. Boniface"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Winnipeg, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "The Forks",
     "Canadian Museum for Human Rights",
@@ -30,19 +59,17 @@
     "St. Boniface",
     "Festival du Voyageur"
   ],
-  "events": [
-    "Festival du Voyageur",
-    "Winnipeg Folk Festival",
-    "Folklorama",
-    "Winnipeg Fringe Theatre Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Winnipeg",
+      "url": "https://en.wikipedia.org/wiki/Winnipeg",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "manitoba",
-    "prairie",
-    "stay"
-  ],
-  "href": "winnipeg.html",
-  "img": "img/winnipeg-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "Early settlement",
@@ -102,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Winnipeg",
-  "coordinates": {
-    "lat": 49.8844,
-    "lon": -97.14704
-  },
   "timezone": "America/Winnipeg",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Winnipeg",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "winnipeg",
+  "name": "Winnipeg",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

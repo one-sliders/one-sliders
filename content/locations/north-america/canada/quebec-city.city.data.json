@@ -1,27 +1,56 @@
 {
-  "slug": "quebec-city",
-  "name": "Quebec City",
-  "province": "Quebec",
-  "state": "Quebec",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Quebec City travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Capitale-Nationale",
-  "population": "549,459 city (2021 census)",
-  "role": "Historic St. Lawrence base",
-  "knownFor": "Old Quebec & Winter Carnival",
-  "intro": "Walled old-town base for history, winter trips and St. Lawrence views",
-  "airport": "Quebec City Jean Lesage International Airport (YQB)",
-  "coords": [
-    46.8139,
-    -71.208
+  "population": "tba",
+  "coordinates": {
+    "lat": 46.8139,
+    "lon": -71.208
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Quebec City travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Capitale-Nationale",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "1500s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "tba",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Old Quebec",
-    "Saint-Roch",
-    "Montcalm",
-    "Sainte-Foy",
-    "Beauport"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Quebec City, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "Old Quebec",
     "Chateau Frontenac",
@@ -30,19 +59,17 @@
     "Montmorency Falls",
     "Winter Carnival"
   ],
-  "events": [
-    "Quebec Winter Carnival",
-    "Festival d'ete de Quebec",
-    "New France Festival",
-    "Quebec City Film Festival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Quebec City",
+      "url": "https://en.wikipedia.org/wiki/Quebec_City",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "quebec",
-    "historic",
-    "stay"
-  ],
-  "href": "quebec-city.html",
-  "img": "img/quebec-city-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "1500s",
@@ -102,13 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Quebec_City",
-  "coordinates": {
-    "lat": 46.8139,
-    "lon": -71.208
-  },
+  "timezone": "tba",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Quebec City",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "quebec-city",
+  "name": "Quebec City",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }

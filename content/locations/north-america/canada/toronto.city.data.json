@@ -1,28 +1,56 @@
 {
-  "slug": "toronto",
-  "name": "Toronto",
-  "province": "Ontario",
-  "state": "Ontario",
-  "countrySlug": "canada",
-  "countryName": "Canada",
+  "seo": {
+    "title": "Toronto travel guide",
+    "description": "tba",
+    "twitterDescription": "tba",
+    "webpageDescription": "tba"
+  },
   "region": "Greater Toronto Area",
-  "population": "2,794,356 city (2021 census)",
-  "role": "Canada urban hub",
-  "knownFor": "CN Tower, museums & sport",
-  "intro": "Canada city base for skyline views, museums, sport and food",
-  "airport": "Toronto Pearson International Airport (YYZ)",
-  "coords": [
-    43.6532,
-    -79.3832
+  "population": "tba",
+  "coordinates": {
+    "lat": 43.70643,
+    "lon": -79.39864
+  },
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "h1": "Toronto travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
+    {
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Greater Toronto Area",
+      "note": "Canada"
+    },
+    {
+      "label": "Founded",
+      "value": "450",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Toronto",
+      "note": "local time"
+    }
   ],
-  "areas": [
-    "Downtown Toronto",
-    "Entertainment District",
-    "Yorkville",
-    "Waterfront",
-    "West Queen West",
-    "The Annex"
-  ],
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Toronto, Canada",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
   "highlights": [
     "CN Tower",
     "Royal Ontario Museum",
@@ -31,19 +59,17 @@
     "Kensington Market",
     "Scotiabank Arena"
   ],
-  "events": [
-    "Toronto International Film Festival",
-    "Canadian National Exhibition",
-    "Pride Toronto",
-    "Toronto Caribbean Carnival"
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
+  "sources": [
+    {
+      "label": "Wikipedia: Toronto",
+      "url": "https://en.wikipedia.org/wiki/Toronto",
+      "usedFor": "city history and coordinates"
+    }
   ],
-  "tags": [
-    "ontario",
-    "canada",
-    "stay"
-  ],
-  "href": "toronto.html",
-  "img": "img/toronto-mini.png",
+  "sourceFetchedAt": "2026-06-16",
   "history": [
     {
       "label": "450",
@@ -103,14 +129,17 @@
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Toronto",
-  "coordinates": {
-    "lat": 43.70643,
-    "lon": -79.39864
-  },
   "timezone": "America/Toronto",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Toronto",
     "matchedCountry": "Canada"
-  }
+  },
+  "slug": "toronto",
+  "name": "Toronto",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "canada",
+  "countryName": "Canada",
+  "depth": 4
 }
