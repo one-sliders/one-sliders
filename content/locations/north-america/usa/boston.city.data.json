@@ -1,43 +1,65 @@
 {
-  "slug": "boston",
-  "name": "Boston",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Boston Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Boston, Massachusetts trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Boston, Massachusetts trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Boston, Massachusetts trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Massachusetts",
   "region": "New England",
-  "population": "675,647 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 42.35843,
     "lon": -71.05977
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Back Bay",
-    "Downtown Boston",
-    "Seaport",
-    "North End",
-    "Cambridge",
-    "Fenway"
-  ],
-  "airports": [
+  "h1": "Boston travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Boston Logan International Airport (BOS)",
-      "search": "Boston, Massachusetts, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "New England",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1629",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Back Bay, Boston, Massachusetts, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Boston, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Boston",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Boston",
@@ -115,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Boston",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "boston",
+  "name": "Boston",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

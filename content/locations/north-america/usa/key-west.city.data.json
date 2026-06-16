@@ -1,46 +1,65 @@
 {
-  "slug": "key-west",
-  "name": "Key West",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Key West Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Key West, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Key West, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Key West, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Florida",
   "region": "Florida Keys",
-  "population": "~26,000 city",
+  "population": "tba",
   "coordinates": {
     "lat": 24.55524,
     "lon": -81.78163
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Old Town Key West",
-    "Duval Street area",
-    "Historic Seaport",
-    "Casa Marina",
-    "New Town"
-  ],
-  "airports": [
+  "h1": "Key West travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Key West International Airport (EYW)",
-      "search": "Key West, Florida, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Miami International Airport (MIA)",
-      "search": "Miami, Florida, United States"
+      "label": "Region",
+      "value": "Florida Keys",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "19th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Old Town Key West, Key West, Florida, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Key West, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Key West",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Key West",
@@ -118,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Key West",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "key-west",
+  "name": "Key West",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

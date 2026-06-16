@@ -1,43 +1,65 @@
 {
-  "slug": "austin",
-  "name": "Austin",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Austin Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Austin, Texas trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Austin, Texas trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Austin, Texas trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Texas",
   "region": "Central Texas",
-  "population": "961,855 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 30.26715,
     "lon": -97.74306
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Downtown Austin",
-    "South Congress",
-    "East Austin",
-    "The Domain",
-    "Zilker",
-    "Circuit of the Americas area"
-  ],
-  "airports": [
+  "h1": "Austin travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Austin-Bergstrom International Airport (AUS)",
-      "search": "Austin, Texas, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Central Texas",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1730",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Chicago",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Downtown Austin, Austin, Texas, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Austin, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Austin",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Austin, Texas",
@@ -115,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Austin",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "austin",
+  "name": "Austin",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

@@ -1,42 +1,65 @@
 {
-  "slug": "honolulu",
-  "name": "Honolulu",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Honolulu Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Honolulu, Hawaii trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Honolulu, Hawaii trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Honolulu, Hawaii trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Hawaii",
   "region": "Oahu",
-  "population": "~350,000 urban core",
+  "population": "tba",
   "coordinates": {
     "lat": 21.30694,
     "lon": -157.85834
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Waikiki",
-    "Ala Moana",
-    "Downtown Honolulu",
-    "Kahala",
-    "Kapolei"
-  ],
-  "airports": [
+  "h1": "Honolulu travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Daniel K. Inouye International Airport (HNL)",
-      "search": "Honolulu, Hawaii, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Oahu",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "11th century",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "Pacific/Honolulu",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Waikiki, Honolulu, Hawaii, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Honolulu, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Honolulu",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Honolulu",
@@ -114,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Honolulu",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "honolulu",
+  "name": "Honolulu",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

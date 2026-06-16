@@ -1,42 +1,65 @@
 {
-  "slug": "jackson",
-  "name": "Jackson",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Jackson Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Jackson, Wyoming trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Jackson, Wyoming trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Jackson, Wyoming trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Wyoming",
   "region": "Jackson Hole",
-  "population": "~10,000 town",
+  "population": "tba",
   "coordinates": {
     "lat": 32.29876,
     "lon": -90.18481
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Town of Jackson",
-    "Teton Village",
-    "Wilson",
-    "South Jackson",
-    "Grand Teton gateway"
-  ],
-  "airports": [
+  "h1": "Jackson travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Jackson Hole Airport (JAC)",
-      "search": "Jackson, Wyoming, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "Jackson Hole",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "697",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Chicago",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Town of Jackson, Jackson, Wyoming, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Jackson, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Jackson",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Jackson, Wyoming",
@@ -114,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Jackson",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "jackson",
+  "name": "Jackson",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

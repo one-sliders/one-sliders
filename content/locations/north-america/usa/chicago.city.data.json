@@ -1,47 +1,65 @@
 {
-  "slug": "chicago",
-  "name": "Chicago",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Chicago Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Chicago, Illinois trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Chicago, Illinois trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Chicago, Illinois trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "Illinois",
   "region": "Great Lakes",
-  "population": "~2.7M city",
+  "population": "tba",
   "coordinates": {
     "lat": 41.85003,
     "lon": -87.65005
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Loop",
-    "River North",
-    "Magnificent Mile",
-    "West Loop",
-    "Lincoln Park",
-    "Wicker Park"
-  ],
-  "airports": [
+  "h1": "Chicago travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "O'Hare International Airport (ORD)",
-      "search": "Chicago, Illinois, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
     },
     {
-      "name": "Midway International Airport (MDW)",
-      "search": "Chicago, Illinois, United States"
+      "label": "Region",
+      "value": "Great Lakes",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1780s",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Chicago",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Loop, Chicago, Illinois, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Chicago, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Chicago",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Chicago",
@@ -119,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Chicago",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "chicago",
+  "name": "Chicago",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }

@@ -1,43 +1,65 @@
 {
-  "slug": "charleston",
-  "name": "Charleston",
-  "continent": "north-america",
-  "continentName": "North America",
-  "countrySlug": "usa",
-  "countryName": "USA",
-  "depth": 5,
   "seo": {
     "title": "Charleston Travel Guide - Where to Stay, Airports & Events",
     "description": "Plan a Charleston, South Carolina trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "twitterDescription": "Plan a Charleston, South Carolina trip with neighborhoods, airports, travel tips, events and hotel planning links.",
     "webpageDescription": "Plan a Charleston, South Carolina trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
-  "state": "South Carolina",
   "region": "South Carolina Lowcountry",
-  "population": "150,227 (2020 census)",
+  "population": "tba",
   "coordinates": {
     "lat": 32.77632,
     "lon": -79.93275
   },
   "weather": {
-    "source": "National Weather Service",
+    "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "areas": [
-    "Historic District",
-    "French Quarter",
-    "Cannonborough",
-    "Mount Pleasant",
-    "Folly Beach",
-    "Isle of Palms"
-  ],
-  "airports": [
+  "h1": "Charleston travel, stays & events guide",
+  "heroText": "tba",
+  "kpis": [
     {
-      "name": "Charleston International Airport (CHS)",
-      "search": "Charleston, South Carolina, United States"
+      "label": "City population",
+      "value": "tba",
+      "note": "verify before publishing"
+    },
+    {
+      "label": "Region",
+      "value": "South Carolina Lowcountry",
+      "note": "USA"
+    },
+    {
+      "label": "Founded",
+      "value": "1663",
+      "note": "historical reference"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/New_York",
+      "note": "local time"
     }
   ],
-  "bookingDestination": "Historic District, Charleston, South Carolina, United States",
+  "areas": [],
+  "airports": [],
+  "airportTransfer": {
+    "value": "tba",
+    "note": "verify airport transfer before publishing",
+    "distance": "tba"
+  },
+  "bookingDestination": "Charleston, USA",
+  "stayOverview": "tba",
+  "hotelIntro": "tba",
+  "rentalCars": "tba",
+  "travelTips": [],
+  "highlights": [
+    {
+      "name": "Charleston",
+      "text": "tba"
+    }
+  ],
+  "nearbyIdeas": [],
+  "events": [],
+  "topicLinks": [],
   "sources": [
     {
       "label": "Wikipedia: Charleston, South Carolina",
@@ -115,5 +137,12 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Charleston",
     "matchedCountry": "United States"
-  }
+  },
+  "slug": "charleston",
+  "name": "Charleston",
+  "continent": "north-america",
+  "continentName": "North America",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "depth": 4
 }
