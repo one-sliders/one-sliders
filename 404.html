@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Page not found – OneSliders</title>
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      box-sizing: border-box;
+      background: var(--os-bg, #0f0f0f);
+      color: var(--os-ink, #f0f0f0);
+      font-family: system-ui, sans-serif;
+      text-align: center;
+    }
+    .error-code {
+      font-size: clamp(4rem, 15vw, 8rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--os-muted, #888);
+      margin: 0 0 8px;
+    }
+    h1 {
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+    p {
+      font-size: 1rem;
+      color: var(--os-muted, #888);
+      margin: 0 0 8px;
+      max-width: 400px;
+    }
+    .countdown {
+      font-size: 0.9rem;
+      color: var(--os-muted, #888);
+      margin: 0 0 32px;
+    }
+    .links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+    a:hover { opacity: 0.8; }
+    .btn-primary {
+      background: var(--os-accent, #4a90e2);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: var(--os-surface, #1c1c1c);
+      color: var(--os-ink, #f0f0f0);
+      border: 1px solid var(--os-line, #333);
+    }
+  </style>
+</head>
+<body>
+  <p class="error-code">404</p>
+  <h1>Page not found</h1>
+  <p>This page doesn't exist or has been moved.</p>
+  <p class="countdown">Redirecting to home in <span id="n">3</span>…</p>
+  <div class="links">
+    <a href="/" class="btn-primary">Go now</a>
+    <a href="/content/events/index.html" class="btn-secondary">Events</a>
+    <a href="/content/locations/index.html" class="btn-secondary">Places</a>
+  </div>
+  <script>
+    var n = 3;
+    var el = document.getElementById('n');
+    var t = setInterval(function() {
+      n--;
+      el.textContent = n;
+      if (n <= 0) { clearInterval(t); window.location.replace('/'); }
+    }, 1000);
+  </script>
+</body>
+</html>
