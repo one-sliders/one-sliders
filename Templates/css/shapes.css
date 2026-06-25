@@ -1,0 +1,325 @@
+/* ── Base reset ────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--page-ink);
+  background: var(--page-bg);
+}
+
+a { text-decoration: none; color: inherit; }
+
+svg { display: block; }
+
+.ios-nav,
+.ios-sheet { display: none; }
+
+/* ── Viewport lock ─────────────────────────────────────────── */
+
+html:has(body.onepage) {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.onepage {
+  --nav-height:    53px;
+  --content-gap:   12px;
+  --footer-height: 36px;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--page-accent) 14%, var(--os-transparent)), var(--os-transparent) 32%),
+    linear-gradient(180deg, var(--page-bg) 0%, var(--page-soft) 100%);
+}
+
+/* ── Nav ───────────────────────────────────────────────────── */
+
+.top-menu {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 8px clamp(14px, 3vw, 36px);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--os-surface) 98%, var(--os-transparent)),
+    color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent))
+  );
+  border-bottom: 1px solid var(--page-line);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent)) inset,
+    0 8px 22px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
+  backdrop-filter: blur(14px);
+}
+
+.nav-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+}
+
+.nav-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-divider {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 22px;
+  margin: 0 6px;
+  background: var(--page-line);
+}
+
+.nav-spacer { flex: 1 1 auto; }
+
+.nav-back {
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 8px 13px;
+  color: var(--page-theme);
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid color-mix(in srgb, var(--page-accent) 22%, var(--os-transparent));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--page-accent) 7%, var(--os-transparent));
+}
+
+.nav-back:hover {
+  color: var(--os-surface);
+  border-color: var(--page-theme);
+  background: var(--page-theme);
+}
+
+.nav-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+.top-menu .nav-language {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.top-menu .nav-language summary {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 32px;
+  padding: 0 11px;
+  color: var(--page-ink);
+  font-size: 12px;
+  font-weight: 900;
+  list-style: none;
+  cursor: pointer;
+  background: var(--os-surface);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+}
+
+.top-menu .nav-language summary::-webkit-details-marker { display: none; }
+
+.top-menu .nav-language[open] summary,
+.top-menu .nav-language summary:hover {
+  color: var(--os-surface);
+  background: var(--page-theme);
+  border-color: var(--page-theme);
+}
+
+.top-menu .nav-language__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: 4px;
+  min-width: 72px;
+  padding: 6px;
+  background: var(--os-surface);
+  border: 1px solid var(--page-line);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
+}
+
+.top-menu .nav-language__list a {
+  display: block;
+  padding: 7px 10px;
+  color: var(--page-ink);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.top-menu .nav-language__list a:hover,
+.top-menu .nav-language__list a[aria-current="page"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+}
+
+/* ── Content frame ─────────────────────────────────────────── */
+
+.onepage .page-shell {
+  max-width: none;
+  width: 100%;
+  padding: calc(52px + clamp(22px, 3vh, 34px)) clamp(24px, 3.2vw, 56px) 72px;
+}
+
+.onepage .page-frame {
+  position: fixed;
+  top:    calc(var(--nav-height) + var(--content-gap));
+  right:  clamp(12px, 2vw, 36px);
+  bottom: calc(var(--footer-height) + var(--content-gap));
+  left:   clamp(12px, 2vw, 36px);
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: clamp(12px, 1.6vw, 24px);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
+  border: 1px solid var(--page-line);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+}
+
+.page-content {
+  min-height: 0;
+  display: grid;
+  gap: clamp(18px, 3vw, 34px);
+  align-items: stretch;
+}
+
+/* ── Layouts ───────────────────────────────────────────────── */
+
+.layout-columns {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: clamp(16px, 2vw, 32px);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.layout-rows {
+  display: grid;
+  grid-template-rows: 3fr 7fr;
+  gap: clamp(12px, 1.5vw, 24px);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.layout__a,
+.layout__b {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+
+.layout__a {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.hero__image {
+  display: block;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__title {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: clamp(16px, 1.8vw, 26px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--page-ink);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+
+.onepage > footer.os-footer.site-footer {
+  position: fixed !important;
+  top: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 60;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: var(--footer-height);
+  padding: 0 clamp(24px, 3.2vw, 56px);
+  color: var(--page-muted);
+  font-size: 11px;
+  background: var(--page-bg);
+  border-top: 1px solid var(--page-line);
+}
+
+/* ── Nav overrides — suppress category theme on event pages ── */
+/* oneslider-core.js sets data-os-category on body from URL,
+   which makes nav icons inherit the category color (!important).
+   These higher-specificity rules reset the nav to the light chrome
+   style defined by --os-chrome-* in colors.css. */
+
+body[data-os-category].onepage nav.top-menu a.active,
+body[data-os-category].onepage nav.top-menu .nav-icon.active {
+  background: transparent !important;
+  color: var(--page-ink) !important;
+}
+
+body[data-os-category].onepage nav.top-menu .nav-icon:hover {
+  background: color-mix(in srgb, var(--page-line) 50%, transparent) !important;
+  color: var(--page-ink) !important;
+}
+
+body[data-os-category].onepage nav.top-menu .nav-language summary:hover,
+body[data-os-category].onepage nav.top-menu .nav-language[open] summary {
+  background: var(--page-theme) !important;
+  color: var(--os-surface) !important;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .nav-back { display: inline-flex; }
+}
+
+@media (max-width: 620px) {
+  .top-menu {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

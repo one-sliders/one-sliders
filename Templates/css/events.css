@@ -1,0 +1,924 @@
+/* ── Event tabs (CSS-only radio tab system) ─────────────────── */
+
+input[name="event-tab"] { display: none; }
+
+.event-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.event-tablist {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 5px;
+  margin-bottom: 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.event-tablist::-webkit-scrollbar { display: none; }
+
+.event-tab-label {
+  flex: 0 0 auto;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.event-tab-label:hover { color: var(--page-ink); }
+
+.event-tab-panels {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.event-tab-panel { display: none; }
+
+/* Active panel — every tab ID used across all event types */
+#tab-edition:checked ~ .event-tab-panels #panel-edition,
+#tab-history:checked ~ .event-tab-panels #panel-history,
+#tab-when:checked    ~ .event-tab-panels #panel-when,
+#tab-about:checked   ~ .event-tab-panels #panel-about,
+#tab-awards:checked  ~ .event-tab-panels #panel-awards,
+#tab-why:checked     ~ .event-tab-panels #panel-why,
+#tab-food:checked    ~ .event-tab-panels #panel-food,
+#tab-culture:checked ~ .event-tab-panels #panel-culture,
+#tab-stay:checked    ~ .event-tab-panels #panel-stay {
+  display: block;
+}
+
+/* Active label — filled pill */
+#tab-edition:checked ~ .event-tablist label[for="tab-edition"],
+#tab-history:checked ~ .event-tablist label[for="tab-history"],
+#tab-when:checked    ~ .event-tablist label[for="tab-when"],
+#tab-about:checked   ~ .event-tablist label[for="tab-about"],
+#tab-awards:checked  ~ .event-tablist label[for="tab-awards"],
+#tab-why:checked     ~ .event-tablist label[for="tab-why"],
+#tab-food:checked    ~ .event-tablist label[for="tab-food"],
+#tab-culture:checked ~ .event-tablist label[for="tab-culture"],
+#tab-stay:checked    ~ .event-tablist label[for="tab-stay"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+}
+
+.event-panel-inner { padding-bottom: 24px; }
+
+.event-panel-inner h2 {
+  margin: 0 0 14px;
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 800;
+  color: var(--page-ink);
+}
+
+/* ── Year nav ───────────────────────────────────────────────── */
+
+.event-year-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.year-nav-link {
+  display: inline-block;
+  padding: 5px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid var(--page-line);
+  color: var(--page-muted);
+  background: color-mix(in srgb, var(--page-soft) 60%, transparent);
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.year-nav-link:hover {
+  color: var(--page-theme);
+  border-color: var(--page-theme);
+}
+
+.year-nav-link.current {
+  background: var(--page-theme);
+  border-color: var(--page-theme);
+  color: var(--os-surface);
+}
+
+/* ── Key facts ──────────────────────────────────────────────── */
+
+.event-key-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.event-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--page-muted);
+}
+
+.event-fact strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+/* ── Edition content ────────────────────────────────────────── */
+
+.event-edition-winner {
+  margin: 0;
+  font-size: 14px;
+  color: var(--page-muted);
+  line-height: 1.5;
+}
+
+.event-edition-winner strong {
+  color: var(--page-ink);
+  font-weight: 700;
+}
+
+/* ── History table ──────────────────────────────────────────── */
+
+.event-history-table-wrap { overflow-x: auto; }
+
+.event-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.event-history-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--page-muted);
+  border-bottom: 2px solid var(--page-line);
+  white-space: nowrap;
+}
+
+.event-history-table td {
+  padding: 9px 12px;
+  color: var(--page-ink);
+  border-bottom: 1px solid var(--page-line);
+  vertical-align: middle;
+}
+
+.event-history-table tbody tr:last-child td { border-bottom: none; }
+
+.event-history-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--page-soft) 70%, transparent);
+}
+
+.event-history-table td:first-child {
+  font-weight: 700;
+  color: var(--page-muted);
+  white-space: nowrap;
+}
+
+.event-history-table td:nth-child(2) { font-weight: 600; }
+
+.winner-with-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.country-flag {
+  width: 22px;
+  height: 15px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--page-line) 80%, transparent);
+}
+
+/* ── When tab (recurring events) ───────────────────────────── */
+
+.event-next-date-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 24px;
+  background: var(--page-theme);
+  border-radius: 14px;
+  color: var(--os-surface);
+  margin-bottom: 20px;
+}
+
+.event-next-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+
+.event-next-date {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.event-next-location {
+  font-size: 14px;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+.event-when-details p,
+.event-about-body p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--page-muted);
+}
+
+.event-when-details p:last-child,
+.event-about-body p:last-child { margin-bottom: 0; }
+
+/* ── Awards ─────────────────────────────────────────────────── */
+
+.event-awards-filter {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.awards-category-pill {
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--page-muted);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.awards-category-pill.active,
+.awards-category-pill:hover {
+  color: var(--page-theme);
+  border-color: var(--page-theme);
+  background: color-mix(in srgb, var(--page-theme) 8%, var(--os-transparent));
+}
+
+.event-awards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.awards-year-block {
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.awards-year-heading {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--page-muted);
+  background: var(--page-soft);
+  border-bottom: 1px solid var(--page-line);
+}
+
+.awards-winner-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid color-mix(in srgb, var(--page-line) 50%, var(--os-transparent));
+}
+
+.awards-winner-row:last-child { border-bottom: none; }
+
+.awards-winner-category {
+  font-weight: 700;
+  color: var(--page-muted);
+  font-size: 11px;
+  min-width: 110px;
+}
+
+.event-records {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+/* ── Date badge in hero ─────────────────────────────────────── */
+
+.event-date-badge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+}
+
+.event-date-badge img {
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--page-line) 80%, transparent);
+}
+
+.event-date-icon {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  color: var(--page-theme);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.event-date-badge div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.event-date-badge strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--page-ink);
+}
+
+.event-date-badge span {
+  font-size: 11px;
+  color: var(--page-muted);
+}
+
+/* ── Flag row ───────────────────────────────────────────────── */
+
+.event-flag-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--page-muted);
+}
+
+.event-flag-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.event-flag-row strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.event-flag-row p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.event-country-flag {
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--page-line) 80%, transparent);
+}
+
+/* ── Food grid ──────────────────────────────────────────────── */
+
+.event-food-grid,
+.event-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.event-food-card,
+.event-culture-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+}
+
+.event-food-card img,
+.event-culture-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 400 / 260;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--page-line) 72%, transparent);
+  background: var(--os-surface);
+}
+
+.event-food-card strong,
+.event-culture-card strong {
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.event-food-card span,
+.event-culture-card span {
+  padding: 0 4px 3px;
+  font-size: 12px;
+  color: var(--page-muted);
+  line-height: 1.4;
+}
+
+.event-drink-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: -4px 0 16px;
+}
+
+.event-drink-list div {
+  display: grid;
+  gap: 6px;
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--page-soft) 72%, var(--os-surface));
+}
+
+.event-drink-list img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 400 / 260;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--page-line) 72%, transparent);
+  background: var(--os-surface);
+}
+
+.event-drink-list strong {
+  padding: 0 3px;
+  color: var(--page-ink);
+  font-size: 13px;
+}
+
+.event-drink-list span {
+  padding: 0 3px 2px;
+  color: var(--page-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.event-category-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-theme);
+}
+
+.event-category-link:hover { text-decoration: underline; }
+
+/* ── Stay tab ───────────────────────────────────────────────── */
+
+.event-stay-intro {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--page-muted);
+}
+
+.stay-area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stay-area-grid--regions {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.stay-area-card {
+  padding: 14px 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--page-ink);
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.stay-area-card:hover {
+  border-color: var(--page-accent);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--os-scrim) 8%, transparent);
+}
+
+.stay-area-card strong { display: block; font-weight: 700; }
+
+.stay-area-card .stay-area-note {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--page-muted);
+  margin-top: 3px;
+}
+
+.stay-booking-button {
+  display: inline-block;
+  padding: 11px 22px;
+  background: var(--page-theme);
+  color: var(--os-surface);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 999px;
+  transition: opacity 0.15s;
+}
+
+.stay-booking-button:hover { opacity: 0.88; }
+
+/* ── Stay hotel form ────────────────────────────────────────── */
+
+.stay-section-label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--page-theme);
+}
+
+.stay-section-title {
+  margin: 0 0 16px;
+  font-size: clamp(15px, 1.6vw, 20px);
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.stay-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stay-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stay-field-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+
+.stay-area-label { margin: 4px 0 8px; }
+
+.stay-field-input {
+  width: 100%;
+  padding: 9px 11px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--page-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--page-line);
+  border-radius: 8px;
+  outline: none;
+}
+
+.stay-field-input:focus {
+  border-color: var(--page-theme);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--page-theme) 14%, transparent);
+}
+
+.stay-area-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stay-area-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--page-ink);
+  background: var(--os-surface);
+  border: 1.5px solid var(--page-line);
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.stay-area-pill input[type="radio"] { display: none; }
+
+.stay-area-pill:has(input:checked) {
+  color: var(--os-surface);
+  background: var(--page-theme);
+  border-color: var(--page-theme);
+}
+
+.stay-check-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--page-ink);
+  cursor: pointer;
+}
+
+.stay-check-btn:hover { color: var(--page-theme); }
+
+.nd-flag-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.nd-flag-panel {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+}
+
+.nd-flag-row {
+  display: grid;
+  grid-template-columns: minmax(128px, 0.3fr) minmax(240px, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.nd-flag-panel p {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.38;
+}
+
+.nd-flag-panel--timeline,
+.nd-flag-panel--mood {
+  grid-column: span 1;
+}
+
+@media (max-width: 980px) {
+  .nd-flag-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── National Day pages — shared layout (all countries) ────────── */
+
+.national-day .layout-columns {
+  grid-template-columns: minmax(280px, 0.9fr) minmax(500px, 1.55fr);
+  gap: clamp(16px, 2.2vw, 40px);
+}
+
+.national-day .layout__a {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.national-day .layout__a::-webkit-scrollbar {
+  display: none;
+}
+
+.national-day .hero {
+  flex: none;
+  gap: 14px;
+  padding: 0 0 2px;
+}
+
+.national-day .hero__image {
+  flex: none;
+  aspect-ratio: 1200 / 630;
+  width: 100%;
+  border: 1px solid var(--page-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, transparent);
+}
+
+.national-day .hero__image::after {
+  content: none;
+}
+
+.national-day .hero__title {
+  font-size: clamp(26px, 3.4vw, 56px);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.national-day .event-tabs {
+  padding: clamp(10px, 1.4vw, 18px);
+  border: 1px solid var(--page-line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--os-surface) 88%, transparent);
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--os-scrim) 7%, transparent);
+}
+
+.national-day .event-tab-panels {
+  padding-right: 4px;
+}
+
+.national-day .event-panel-inner {
+  padding: 0 0 18px;
+}
+
+.national-day .event-tablist {
+  padding: 6px;
+  background: var(--page-soft);
+}
+
+.national-day .event-tab-label {
+  color: var(--page-muted);
+}
+
+.national-day #tab-why:checked ~ .event-tablist label[for="tab-why"],
+.national-day #tab-food:checked ~ .event-tablist label[for="tab-food"],
+.national-day #tab-culture:checked ~ .event-tablist label[for="tab-culture"],
+.national-day #tab-stay:checked ~ .event-tablist label[for="tab-stay"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+}
+
+.national-day .event-about-body {
+  max-width: 980px;
+  padding: 14px 16px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-surface) 96%, transparent);
+}
+
+.national-day .event-about-body p {
+  font-size: clamp(13px, 1.1vw, 17px);
+  line-height: 1.6;
+  color: var(--page-muted);
+}
+
+.national-day .event-key-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.national-day .event-timeline {
+  position: relative;
+  gap: 0;
+  margin: 0 0 8px;
+  padding: 10px 0 0;
+  list-style: none;
+}
+
+.national-day .event-timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 14%;
+  left: 14%;
+  height: 2px;
+  background: var(--page-line);
+}
+
+.national-day .event-fact {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 12px;
+  border-radius: 16px;
+}
+
+.national-day .event-timeline .event-fact {
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.national-day .event-timeline .event-fact::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin-bottom: 8px;
+  border: 3px solid var(--os-surface);
+  border-radius: 50%;
+  background: var(--page-theme);
+  box-shadow: 0 0 0 1px var(--page-line);
+}
+
+.national-day .event-fact::after {
+  content: none;
+}
+
+.national-day .event-fact strong {
+  color: var(--page-ink);
+  font-size: 23px;
+}
+
+.national-day .event-timeline .event-fact strong {
+  display: block;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 0.95;
+}
+
+.national-day .event-timeline .event-fact span {
+  display: block;
+  max-width: 150px;
+  margin-top: 5px;
+  color: var(--page-muted);
+  font-size: clamp(11px, 0.88vw, 13px);
+  line-height: 1.25;
+}
+
+.national-day .event-date-badge {
+  border-radius: 16px;
+}
+
+.national-day .event-date-badge strong {
+  font-size: 20px;
+}
+
+.national-day .event-category-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--page-accent);
+  text-decoration: none;
+}
+
+.national-day .event-category-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .national-day .layout-columns {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .national-day .layout__a,
+  .national-day .layout__b {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 620px) {
+  .national-day .event-key-facts {
+    grid-template-columns: 1fr;
+  }
+}
