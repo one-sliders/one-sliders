@@ -3,7 +3,7 @@
 
 $base = (Resolve-Path ".").Path
 $domain = "https://one-sliders.com"
-$excludedDirs = "\\(\.git|tmp|ar|de|es|fr|ha|hi|mi|no|pt|qu|ru|sw|tpi|zh)\\"
+$excludedDirs = "\\(\.git|tmp|Templates|node_modules|ar|de|es|fr|ha|hi|mi|no|pt|qu|ru|sw|tpi|zh)\\"
 
 function Convert-ToUrlPath($file) {
   $rel = $file.FullName.Substring($base.Length + 1).Replace('\', '/')
