@@ -148,6 +148,25 @@ def check(path, h):
     if not re.search(r'application/ld\+json', h, re.I):
         fails.append('MISSING json-ld')
 
+    # nav logo: every page with a top-menu nav must have os-brand
+    if re.search(r'<nav[^>]*class="[^"]*top-menu', h, re.I):
+        if not re.search(r'class="[^"]*os-brand', h, re.I):
+            fails.append('nav top-menu missing os-brand logo')
+
+    # nearby tab: if the nearby radio exists, the panel must contain text
+    if re.search(r'id="view-nearby"', h, re.I):
+        nearby_m = re.search(
+            r'id="nearby"(.*?)(?=<div class="persona-panel|</section>|</main>)',
+            h, re.S | re.I
+        )
+        if not nearby_m:
+            fails.append('nearby tab exists but nearby panel is missing')
+        else:
+            panel_text = re.sub(r'<[^>]+>', ' ', nearby_m.group(1))
+            panel_text = re.sub(r'\s+', ' ', panel_text).strip()
+            if len(panel_text) < 20:
+                fails.append('nearby panel exists but has no text content')
+
     # no placeholder content (TBD/TBC are OK — they mean "unconfirmed" in real data)
     txt = body_text(h)
     for pattern, label in [
