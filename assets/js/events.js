@@ -1184,6 +1184,23 @@
     return url ? '<a class="country" href="' + escapeAttribute(url) + '">' + inner + '</a>' : '<span class="country">' + inner + '</span>';
   }
 
+  function renderGolfRecentResults(data) {
+    var rows = (data.editions || [])
+      .filter(function (e) { return e.status === 'past' && e.winner && e.winner.name; })
+      .sort(function (a, b) { return (b.year || 0) - (a.year || 0); })
+      .slice(0, 5);
+    if (!rows.length) return '';
+    return '<section class="commercial-module commercial-module--results">' +
+      '<div class="commercial-module__header"><span>Results</span><strong>Last 5 editions</strong></div>' +
+      '<div class="edition-overview__cards edition-overview__cards--three">' +
+        rows.map(function (e) {
+          var detail = e.resultLabel || e.result || '';
+          return '<div class="edition-compact-card"><span>' + e.year + '</span><strong>' +
+            golfChampLink(e.winner) + '</strong>' + (detail ? '<p>' + detail + '</p>' : '') + '</div>';
+        }).join('') +
+      '</div></section>';
+  }
+
   // Replace the left "event facts" snapshot with useful, real data.
   function renderEventSnapshot(data, edition) {
     var card = document.querySelector('.card--event-snapshot');
@@ -1251,9 +1268,12 @@
     var airportNote = (modules.hotel && modules.hotel.airportNote)
       ? '<div class="edition-compact-card"><span>Airport note</span><strong>' + modules.hotel.airportNote.title + '</strong><p>' + (modules.hotel.airportNote.detail || '') + '</p></div>'
       : (data.slug === 'ryder-cup' ? '<div class="edition-compact-card"><span>Airport note</span><strong>Shannon is closest</strong><p>Cork and Dublin may also work depending on routes.</p></div>' : '');
+    var hasScorePlayers = edition.scoreProgression && (edition.scoreProgression.players || []).length;
     var resultsHtml = isTeam
       ? renderRyderLiveModule(edition.liveResults)
-      : (renderScoreProgression(edition.scoreProgression) || '<div class="edition-compact-card"><span>Results</span><strong>Results appear here once play begins</strong></div>');
+      : ((hasScorePlayers ? renderScoreProgression(edition.scoreProgression) : '') ||
+        renderGolfRecentResults(data) ||
+        '<div class="edition-compact-card"><span>Results</span><strong>Results appear here once play begins</strong></div>');
     var overviewTeam = isTeam
       ? compactFacts([
           { label: 'Match days', value: edition.matchDays || edition.dates || 'TBC' },
