@@ -1,0 +1,59 @@
+/* OneSliders shared typography tokens and heading scale. */
+
+:root {
+  --os-font-sans: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --os-text-xs: 10px;
+  --os-text-sm: 12px;
+  --os-text-md: 14px;
+  --os-text-lg: 16px;
+  --os-text-xl: 20px;
+  --os-h1-size: clamp(24px, 3.1vw, 56px);
+  --os-h2-size: clamp(20px, 2.2vw, 30px);
+  --os-h3-size: clamp(16px, 1.8vw, 22px);
+}
+
+body {
+  font-family: var(--os-font-sans);
+}
+
+h1 {
+  margin: 0;
+  color: var(--page-ink, var(--os-ink, #111820));
+  font-size: var(--os-h1-size);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 0;
+  color: var(--page-ink, var(--os-ink, #111820));
+  font-size: var(--os-h2-size);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin: 0;
+  color: var(--page-ink, var(--os-ink, #111820));
+  font-size: var(--os-h3-size);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--page-muted, var(--os-muted, #5b6673));
+  font-size: var(--os-text-md);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.hero__title {
+  flex-shrink: 0;
+  max-width: 100%;
+}

@@ -48,28 +48,34 @@ input[name="event-tab"] { display: none; }
 .event-tab-panel { display: none; }
 
 /* Active panel — every tab ID used across all event types */
-#tab-edition:checked ~ .event-tab-panels #panel-edition,
-#tab-history:checked ~ .event-tab-panels #panel-history,
-#tab-when:checked    ~ .event-tab-panels #panel-when,
-#tab-about:checked   ~ .event-tab-panels #panel-about,
-#tab-awards:checked  ~ .event-tab-panels #panel-awards,
-#tab-why:checked     ~ .event-tab-panels #panel-why,
-#tab-food:checked    ~ .event-tab-panels #panel-food,
-#tab-culture:checked ~ .event-tab-panels #panel-culture,
-#tab-stay:checked    ~ .event-tab-panels #panel-stay {
+#tab-edition:checked  ~ .event-tab-panels #panel-edition,
+#tab-history:checked  ~ .event-tab-panels #panel-history,
+#tab-when:checked     ~ .event-tab-panels #panel-when,
+#tab-about:checked    ~ .event-tab-panels #panel-about,
+#tab-awards:checked   ~ .event-tab-panels #panel-awards,
+#tab-why:checked      ~ .event-tab-panels #panel-why,
+#tab-food:checked     ~ .event-tab-panels #panel-food,
+#tab-culture:checked  ~ .event-tab-panels #panel-culture,
+#tab-stay:checked     ~ .event-tab-panels #panel-stay,
+#tab-visit:checked    ~ .event-tab-panels #panel-visit,
+#tab-matches:checked  ~ .event-tab-panels #panel-matches,
+#tab-teams:checked    ~ .event-tab-panels #panel-teams {
   display: block;
 }
 
 /* Active label — filled pill */
-#tab-edition:checked ~ .event-tablist label[for="tab-edition"],
-#tab-history:checked ~ .event-tablist label[for="tab-history"],
-#tab-when:checked    ~ .event-tablist label[for="tab-when"],
-#tab-about:checked   ~ .event-tablist label[for="tab-about"],
-#tab-awards:checked  ~ .event-tablist label[for="tab-awards"],
-#tab-why:checked     ~ .event-tablist label[for="tab-why"],
-#tab-food:checked    ~ .event-tablist label[for="tab-food"],
-#tab-culture:checked ~ .event-tablist label[for="tab-culture"],
-#tab-stay:checked    ~ .event-tablist label[for="tab-stay"] {
+#tab-edition:checked  ~ .event-tablist label[for="tab-edition"],
+#tab-history:checked  ~ .event-tablist label[for="tab-history"],
+#tab-when:checked     ~ .event-tablist label[for="tab-when"],
+#tab-about:checked    ~ .event-tablist label[for="tab-about"],
+#tab-awards:checked   ~ .event-tablist label[for="tab-awards"],
+#tab-why:checked      ~ .event-tablist label[for="tab-why"],
+#tab-food:checked     ~ .event-tablist label[for="tab-food"],
+#tab-culture:checked  ~ .event-tablist label[for="tab-culture"],
+#tab-stay:checked     ~ .event-tablist label[for="tab-stay"],
+#tab-visit:checked    ~ .event-tablist label[for="tab-visit"],
+#tab-matches:checked  ~ .event-tablist label[for="tab-matches"],
+#tab-teams:checked    ~ .event-tablist label[for="tab-teams"] {
   color: var(--os-surface);
   background: var(--page-theme);
 }
@@ -577,6 +583,9 @@ input[name="event-tab"] { display: none; }
 /* ── Stay hotel form ────────────────────────────────────────── */
 
 .stay-section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 0 0 4px;
   font-size: 11px;
   font-weight: 700;
@@ -584,11 +593,62 @@ input[name="event-tab"] { display: none; }
   color: var(--page-theme);
 }
 
+.booking-symbols {
+  --booking-hotel: #d6a84a;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex: 0 0 auto;
+}
+
+.booking-symbols svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.booking-symbols svg:first-child {
+  color: var(--booking-hotel);
+  stroke-width: 2.4;
+}
+
+.booking-symbols--small {
+  gap: 3px;
+}
+
+.booking-symbols--small svg {
+  width: 15px;
+  height: 15px;
+}
+
 .stay-section-title {
   margin: 0 0 16px;
   font-size: clamp(15px, 1.6vw, 20px);
   font-weight: 700;
   color: var(--page-ink);
+}
+
+.stay-booking-panel {
+  padding: clamp(18px, 2vw, 28px);
+  border: 1px solid var(--page-line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--page-soft) 86%, var(--os-surface)), var(--os-surface));
+  box-shadow: 0 16px 38px color-mix(in srgb, var(--os-scrim) 9%, transparent);
+}
+
+.stay-booking-panel__header {
+  margin-bottom: 18px;
+}
+
+.stay-booking-panel__header p:last-child {
+  margin: -6px 0 0;
+  color: var(--page-muted);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .stay-form-row {
@@ -666,15 +726,32 @@ input[name="event-tab"] { display: none; }
 .stay-check-btn {
   display: block;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 18px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--page-ink);
+  color: var(--os-surface);
+  background: var(--booking-cta, #6b4f7a);
+  border-radius: 12px;
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--booking-cta, #6b4f7a) 30%, transparent);
   cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.12s;
 }
 
-.stay-check-btn:hover { color: var(--page-theme); }
+.stay-check-btn:hover {
+  color: var(--os-surface);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--booking-cta, #6b4f7a) 38%, transparent);
+}
+
+.stay-booking-note {
+  margin: 10px 0 0;
+  color: var(--page-muted);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+}
 
 .nd-flag-section {
   display: grid;
@@ -720,6 +797,7 @@ input[name="event-tab"] { display: none; }
 /* ── National Day pages — shared layout (all countries) ────────── */
 
 .national-day .layout-columns {
+  --booking-cta: var(--os-purple, #6b4f7a);
   grid-template-columns: minmax(280px, 0.9fr) minmax(500px, 1.55fr);
   gap: clamp(16px, 2.2vw, 40px);
 }
@@ -784,12 +862,37 @@ input[name="event-tab"] { display: none; }
   color: var(--page-muted);
 }
 
+.national-day .event-tab-label--booking {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--page-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+.national-day .event-tab-label--booking .booking-symbols svg {
+  color: var(--booking-cta, #6b4f7a);
+}
+
+.national-day .stay-section-label .booking-symbols svg {
+  color: var(--booking-cta, #6b4f7a);
+}
+
 .national-day #tab-why:checked ~ .event-tablist label[for="tab-why"],
 .national-day #tab-food:checked ~ .event-tablist label[for="tab-food"],
-.national-day #tab-culture:checked ~ .event-tablist label[for="tab-culture"],
+.national-day #tab-culture:checked ~ .event-tablist label[for="tab-culture"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+}
+
 .national-day #tab-stay:checked ~ .event-tablist label[for="tab-stay"] {
   color: var(--os-surface);
   background: var(--page-theme);
+}
+
+.national-day #tab-stay:checked ~ .event-tablist label[for="tab-stay"] .booking-symbols svg {
+  color: var(--booking-cta, #6b4f7a);
 }
 
 .national-day .event-about-body {
@@ -892,6 +995,55 @@ input[name="event-tab"] { display: none; }
   font-size: 20px;
 }
 
+.national-day .hero-stay-booking {
+  margin-top: 6px;
+  padding: clamp(14px, 1.6vw, 18px);
+}
+
+.national-day .hero-stay-booking .stay-booking-panel__header {
+  margin-bottom: 12px;
+}
+
+.national-day .hero-stay-booking .stay-section-title {
+  margin-bottom: 0;
+  font-size: clamp(16px, 1.6vw, 22px);
+}
+
+.national-day .hero-stay-booking .stay-area-pills {
+  margin-bottom: 14px;
+}
+
+.national-day .hero-stay-booking .stay-check-btn {
+  padding: 13px 16px;
+}
+
+.national-day .hero-booking-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px 18px;
+  color: var(--os-surface);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--booking-cta, #6b4f7a);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--booking-cta, #6b4f7a) 30%, transparent);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.national-day .hero-booking-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px color-mix(in srgb, var(--booking-cta, #6b4f7a) 38%, transparent);
+}
+
+.national-day .hero-booking-cta .booking-symbols svg {
+  color: currentColor;
+}
+
 .national-day .event-category-link {
   display: inline-block;
   margin-top: 10px;
@@ -917,8 +1069,29 @@ input[name="event-tab"] { display: none; }
   }
 }
 
+/* ── Mobile: release tab panel flex constraints ──────────────
+   On desktop .event-tab-panels scrolls internally inside the
+   viewport-locked column. On mobile the page itself scrolls,
+   so remove the flex-shrink / overflow-y that collapses the
+   panel to zero height.                                      */
+@media (max-width: 820px) {
+  .event-tabs {
+    height: auto;
+  }
+  .event-tab-panels {
+    flex: none;
+    min-height: unset;
+    overflow-y: visible;
+  }
+}
+
 @media (max-width: 620px) {
   .national-day .event-key-facts {
     grid-template-columns: 1fr;
   }
+
+  .national-day .hero-stay-booking .stay-form-row {
+    grid-template-columns: 1fr;
+  }
 }
+

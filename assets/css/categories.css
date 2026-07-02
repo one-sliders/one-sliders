@@ -275,13 +275,7 @@ a {
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)) 48%, color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent)) 100%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%);
+  content: none;
 }
 
 .hero-copy {
@@ -395,6 +389,22 @@ a {
   font-size: 13px;
   border-top: 1px solid var(--line);
   background: var(--os-surface);
+}
+
+body.category-page > .site-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  min-height: var(--category-footer-height, 36px);
+  padding: 6px clamp(20px, 5vw, 80px);
+}
+
+body.category-page > .site-footer p {
+  margin: 0 0 0 118px;
 }
 
 .event-language-menu {
@@ -584,7 +594,11 @@ a {
 .category-page--music {
   --theme: var(--c-music);
   --accent: color-mix(in srgb, var(--c-music) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/music/img/music-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/music/img/music-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/music/img/music-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page--culture {
@@ -596,74 +610,145 @@ a {
 .category-page--festival {
   --theme: var(--c-festival);
   --accent: color-mix(in srgb, var(--c-festival) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1600&q=80");
 }
 
 .category-page--food,
 .category-page--food-and-drinks {
   --theme: var(--c-food);
   --accent: color-mix(in srgb, var(--c-food) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/food/img/street-food-hero-768.webp") type("image/webp") 1x,
+    url("/content/categories/food/img/street-food-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/food/img/street-food-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page--drinks {
   --theme: var(--c-drinks);
   --accent: color-mix(in srgb, var(--c-drinks) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/drinks/img/wine-hero-768.webp") type("image/webp") 1x,
+    url("/content/categories/drinks/img/wine-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/drinks/img/wine-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page--technology {
   --theme: var(--c-tech);
   --accent: color-mix(in srgb, var(--c-tech) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/technology-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/technology-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/technology-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--product-launches {
-  --category-hero: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/product-launches-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/product-launches-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/product-launches-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--hardware {
-  --category-hero: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/hardware-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/hardware-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/hardware-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--developer-conferences {
-  --category-hero: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/developer-conferences-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/developer-conferences-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/developer-conferences-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--ai {
-  --category-hero: url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/ai-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/ai-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/ai-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--cybersecurity {
-  --category-hero: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/cybersecurity-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/cybersecurity-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/cybersecurity-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--startups {
-  --category-hero: url("https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/startups-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/startups-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/startups-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--consumer-electronics {
-  --category-hero: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/consumer-electronics-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/consumer-electronics-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/consumer-electronics-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--mobile-telecom {
-  --category-hero: url("https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/mobile-telecom-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/mobile-telecom-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/mobile-telecom-hero.png") type("image/png") 2x
+  );
 }
 
 .topic-page--space-tech {
-  --category-hero: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/technology/img/space-tech-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/space-tech-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/space-tech-hero.png") type("image/png") 2x
+  );
+}
+
+.topic-page--gaming {
+  --category-hero: image-set(
+    url("/content/categories/technology/img/gaming-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/gaming-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/gaming-hero.png") type("image/png") 2x
+  );
+}
+
+.topic-page--tech-events {
+  --category-hero: image-set(
+    url("/content/categories/technology/img/tech-events-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/technology/img/tech-events-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/technology/img/tech-events-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page--wellness {
   --theme: var(--c-wellness);
   --accent: color-mix(in srgb, var(--c-wellness) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/wellness/img/wellness-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/wellness/img/wellness-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/wellness/img/wellness-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page--climate {
   --theme: var(--c-climate);
   --accent: color-mix(in srgb, var(--c-climate) 62%, var(--os-surface));
-  --category-hero: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80");
+  --category-hero: image-set(
+    url("/content/categories/climate/img/climate-hero-400.webp") type("image/webp") 1x,
+    url("/content/categories/climate/img/climate-hero-1200.webp") type("image/webp") 2x,
+    url("/content/categories/climate/img/climate-hero.png") type("image/png") 2x
+  );
 }
 
 .category-page .top-menu a:hover,
@@ -705,22 +790,21 @@ a {
 
 .category-back {
   position: fixed;
-  left: 14px;
-  top: 50%;
+  left: clamp(20px, 3.5vw, 52px);
+  bottom: 5px;
   z-index: 1200;
-  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 42px;
-  padding: 0 14px 0 11px;
+  min-height: 26px;
+  padding: 0 13px 0 10px;
   border: 1px solid color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
   border-radius: 999px;
   background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent));
   color: var(--theme);
   box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent));
   backdrop-filter: blur(10px);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
   text-decoration: none;
 }
@@ -736,6 +820,11 @@ a {
   background: var(--theme);
   color: var(--os-surface);
   outline: 0;
+}
+
+.category-back::before {
+  content: "<";
+  font-size: 14px;
 }
 
 .category-switch {
@@ -792,12 +881,7 @@ a {
 }
 
 .category-hero__image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 52%, var(--os-transparent)) 44%, var(--os-transparent) 78%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%);
+  content: none;
 }
 
 .category-page--drinks .category-hero__image::after {
@@ -813,6 +897,11 @@ a {
   min-width: 0;
   max-width: 720px;
   padding: clamp(16px, 2.5vw, 28px);
+  margin: clamp(14px, 2vw, 24px);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent));
+  color: var(--os-ink);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
 }
 
 .category-hero__copy .eyebrow {
@@ -1425,6 +1514,147 @@ a {
   line-height: 1.2;
 }
 
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .topic-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card {
+  display: grid;
+  grid-template-rows: 130px auto auto auto;
+  gap: 6px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 14px 14px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background: var(--os-surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--os-card-accent);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
+  transition: transform .12s, border-color .12s;
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card:hover,
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card:focus-visible {
+  border-color: var(--theme);
+  border-left-color: var(--os-card-accent);
+  transform: translateY(-2px);
+  outline: 0;
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-thumb {
+  display: block;
+  width: calc(100% + 28px);
+  height: 130px;
+  margin: 0 -14px 6px;
+  object-fit: cover;
+  background: color-mix(in srgb, var(--os-scrim) 28%, var(--os-transparent));
+  border-bottom: 1px solid var(--line);
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card time {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  color: var(--theme);
+  background: color-mix(in srgb, var(--theme) 10%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--theme) 26%, var(--os-transparent));
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card strong {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+body.topic-onepage .category-panel--standard .topics-section[aria-label$="Events"] .event-card p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero {
+  min-height: clamp(150px, 19vh, 210px);
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy {
+  max-width: 760px;
+  margin: clamp(10px, 1.4vw, 16px);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy .eyebrow,
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy h1,
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy .intro {
+  color: var(--os-surface);
+  text-shadow: 0 2px 14px color-mix(in srgb, var(--os-scrim) 72%, var(--os-transparent));
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy h1 {
+  font-size: clamp(34px, 4.8vw, 62px);
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-hero__copy .intro {
+  font-size: clamp(13px, 1vw, 15px);
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard {
+  padding: clamp(10px, 1.2vw, 16px);
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .topic-grid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 9px;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .event-card {
+  grid-template-rows: 74px auto auto auto;
+  gap: 4px;
+  padding: 0 10px 10px;
+  border-radius: 8px;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .event-thumb {
+  width: calc(100% + 20px);
+  height: 74px;
+  margin: 0 -10px 4px;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .event-card time {
+  color: var(--os-ink);
+  background: color-mix(in srgb, var(--theme) 12%, var(--os-surface));
+  border-color: color-mix(in srgb, var(--theme) 30%, var(--os-transparent));
+  font-size: 11px;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .event-card strong {
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 1.08;
+}
+
+body.category-page--technology.topic-onepage[class*="topic-page--"] .category-panel--standard .topics-section[aria-label$="Events"] .event-card p {
+  margin-top: 0;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
 .food-layout-page {
   --food-nav-height: 55px;
   --food-content-gap: 12px;
@@ -1446,8 +1676,8 @@ html:has(body.food-layout-page) {
   display: grid;
   align-content: end;
   padding: 28px;
-  color: var(--os-surface);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), var(--os-image-overlay-medium)), var(--food-hero-image) center / cover;
+  color: var(--os-ink);
+  background: var(--food-hero-image) center / cover;
   border-radius: 8px;
 }
 
@@ -2791,18 +3021,16 @@ body.topic-onepage > .topic-slide .topic-hero {
   align-items: end;
   min-height: clamp(220px, 28vh, 320px);
   padding: clamp(20px, 3.6vw, 44px);
-  color: var(--os-surface);
+  color: var(--os-ink);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
-    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  background: var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
   border-radius: 12px;
   box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 body.topic-onepage > .topic-slide .topic-hero .eyebrow {
   margin: 0 0 8px;
-  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  color: var(--os-primary);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -2810,7 +3038,7 @@ body.topic-onepage > .topic-slide .topic-hero .eyebrow {
 
 body.topic-onepage > .topic-slide .topic-hero h1 {
   margin: 0;
-  color: var(--os-surface);
+  color: var(--os-ink);
   font-size: clamp(40px, 6vw, 72px);
   line-height: .96;
 }
@@ -2818,7 +3046,7 @@ body.topic-onepage > .topic-slide .topic-hero h1 {
 body.topic-onepage > .topic-slide .topic-hero .intro {
   max-width: 740px;
   margin: 12px 0 0;
-  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  color: var(--os-muted);
   font-size: clamp(15px, 1.4vw, 17px);
   line-height: 1.45;
 }
@@ -2961,18 +3189,16 @@ body.topic-page--slide-index > .topic-slide .topic-hero {
   align-items: end;
   min-height: clamp(220px, 28vh, 320px);
   padding: clamp(20px, 3.6vw, 44px);
-  color: var(--os-surface);
+  color: var(--os-ink);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
-    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  background: var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
   border-radius: 12px;
   box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 body.topic-page--slide-index > .topic-slide .topic-hero .eyebrow {
   margin: 0 0 8px;
-  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  color: var(--os-primary);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -2980,7 +3206,7 @@ body.topic-page--slide-index > .topic-slide .topic-hero .eyebrow {
 
 body.topic-page--slide-index > .topic-slide .topic-hero h1 {
   margin: 0;
-  color: var(--os-surface);
+  color: var(--os-ink);
   font-size: clamp(40px, 6vw, 72px);
   line-height: .96;
 }
@@ -2988,7 +3214,7 @@ body.topic-page--slide-index > .topic-slide .topic-hero h1 {
 body.topic-page--slide-index > .topic-slide .topic-hero .intro {
   max-width: 740px;
   margin: 12px 0 0;
-  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  color: var(--os-muted);
   font-size: clamp(15px, 1.4vw, 17px);
   line-height: 1.45;
 }
@@ -3127,9 +3353,8 @@ body.topic-page--slide-index > .topic-slide .topic-hero .intro {
   }
 
   .category-hero__image::after {
-    background:
-      linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 42%, var(--os-transparent)) 54%, color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent))),
-      linear-gradient(0deg, var(--os-image-overlay-medium), color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)) 58%);
+    content: none;
+    background: none;
   }
 
   .category-hero__copy {
@@ -4195,13 +4420,7 @@ body.category-page--wellness {
 }
 
 .wellness-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong), color-mix(in srgb, var(--os-scrim) 70%, var(--os-transparent)) 42%, color-mix(in srgb, var(--os-scrim) 42%, var(--os-transparent))),
-    linear-gradient(0deg, color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)) 48%);
+  content: none;
 }
 
 .wellness-slide__copy {
@@ -4442,97 +4661,95 @@ body.category-page--wellness {
 
 /* Palette-safe food category hero. */
 body.category-page--food .category-hero__image::after {
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 44%, var(--os-transparent) 78%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%);
+  content: none;
+  background: none;
 }
 
 body.category-page--food .category-hero__copy .eyebrow {
-  color: var(--os-gold);
+  color: var(--os-primary);
 }
 
 body.category-page--food .category-hero__copy h1 {
-  color: var(--os-on-image);
+  color: var(--os-ink);
 }
 
 body.category-page--food .category-hero__copy .intro {
-  color: var(--os-on-image-muted);
+  color: var(--os-muted);
 }
 
 /* Palette-safe recipe heroes. */
 .food-topic-page .food-topic__hero {
-  color: var(--os-on-image);
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-image-overlay-soft) 100%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%),
-    var(--food-hero-image) center / cover;
+  color: var(--os-ink);
+  background: var(--food-hero-image) center / cover;
 }
 
 .food-topic-page .food-topic__hero .eyebrow {
-  color: var(--os-gold);
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+  color: var(--os-primary);
+  text-shadow: none;
 }
 
 .food-topic-page .food-topic__hero h1 {
-  color: var(--os-on-image);
-  text-shadow: 0 2px 18px var(--os-image-overlay-strong);
+  color: var(--os-ink);
+  text-shadow: none;
 }
 
 .food-topic-page .food-topic__hero p:not(.eyebrow) {
-  color: var(--os-on-image-muted);
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+  color: var(--os-muted);
+  text-shadow: none;
 }
 
 /* Palette-safe music topic heroes. */
 .music-topic__hero {
-  color: var(--os-on-image);
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 48%, var(--os-image-overlay-soft) 100%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 48%),
-    var(--music-hero-image, var(--category-hero)) center / cover;
+  color: var(--os-ink);
+  background: var(--music-hero-image, var(--category-hero)) center / cover;
 }
 
 .music-topic__hero .eyebrow {
-  color: var(--os-gold);
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+  color: var(--os-primary);
+  text-shadow: none;
 }
 
 .music-topic__hero h1 {
-  color: var(--os-on-image);
-  text-shadow: 0 2px 18px var(--os-image-overlay-strong);
+  color: var(--os-ink);
+  text-shadow: none;
 }
 
 .music-topic__hero p:last-child {
-  color: var(--os-on-image-muted);
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong);
+  color: var(--os-muted);
+  text-shadow: none;
 }
 
 /* Palette-safe category overview heroes. */
 .category-page .category-hero__image::after {
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-transparent) 78%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%) !important;
+  content: none;
+  background: none !important;
 }
 
 body.category-page--culture .category-hero__image::after {
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--os-scrim) 46%, var(--os-transparent)) 0%, color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent)) 42%, var(--os-transparent) 76%),
-    linear-gradient(0deg, color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent)), var(--os-transparent) 48%) !important;
+  content: none;
+  background: none !important;
 }
 
 .category-page .category-hero__copy .eyebrow {
-  color: var(--os-gold) !important;
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+  color: var(--os-primary) !important;
+  text-shadow: none !important;
 }
 
 .category-page .category-hero__copy h1 {
-  color: var(--os-on-image) !important;
-  text-shadow: 0 2px 18px var(--os-image-overlay-strong) !important;
+  color: var(--os-ink) !important;
+  text-shadow: none !important;
 }
 
 .category-page .category-hero__copy .intro {
-  color: var(--os-on-image-muted) !important;
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+  color: var(--os-muted) !important;
+  text-shadow: none !important;
+}
+
+body.category-page--technology.topic-onepage .category-hero__copy .eyebrow,
+body.category-page--technology.topic-onepage .category-hero__copy h1,
+body.category-page--technology.topic-onepage .category-hero__copy .intro {
+  color: var(--os-surface) !important;
+  text-shadow: 0 2px 18px var(--os-image-overlay-strong), 0 0 2px color-mix(in srgb, var(--os-scrim) 88%, var(--os-transparent)) !important;
 }
 
 /* Sport pages show hero imagery without dark image overlays. */
@@ -5121,6 +5338,793 @@ body.category-page .category-shell.category-content-box .category-parent-card p 
   line-height: 1.05;
 }
 
+body.category-page--technology .category-shell.category-content-box .category-panel {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+body.category-page--technology .category-shell.category-content-box .topics-section {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.category-page--technology .category-shell.category-content-box .sport-facts-grid {
+  grid-column: 1;
+  grid-row: 2;
+  grid-template-columns: minmax(360px, .9fr) minmax(520px, 1.1fr);
+  align-items: start;
+  height: auto;
+}
+
+body.category-page--technology .category-shell.category-content-box .topic-grid {
+  grid-template-columns: repeat(2, minmax(240px, 320px));
+  justify-content: start;
+  gap: 12px;
+}
+
+body.category-page--technology .category-shell.category-content-box .topic-card {
+  grid-template-rows: 82px auto auto;
+  min-height: 150px;
+  height: auto;
+  padding: 0 16px 12px;
+}
+
+body.category-page--technology .category-shell.category-content-box .topic-thumb {
+  width: calc(100% + 32px);
+  height: 82px;
+  margin: 0 -16px;
+}
+
+body.category-page--technology .category-shell.category-content-box .topic-card strong {
+  font-size: 20px;
+  line-height: 1.02;
+}
+
+body.category-page--technology .category-shell.category-content-box .topic-card p {
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+body.category-page--technology .category-shell.category-content-box .sport-facts-column {
+  grid-template-columns: 1fr;
+}
+
+body.category-page--technology .category-shell.category-content-box .kpi-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+body.category-page--technology .category-shell.category-content-box .kpi {
+  padding: 10px 11px;
+}
+
+body.category-page--technology .category-shell.category-content-box .kpi strong {
+  font-size: 18px;
+}
+
+body.category-page--technology .category-shell.category-content-box .kpi span {
+  font-size: 10px;
+}
+
+body.category-page--technology .category-shell.category-content-box .category-chart {
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+body.category-page--technology .category-shell.category-content-box .bar-row {
+  grid-template-columns: minmax(90px, .24fr) minmax(120px, 1fr) minmax(62px, auto);
+  gap: 10px;
+  min-height: 20px;
+}
+
+body.category-page--technology .category-shell.category-content-box .bar-row span,
+body.category-page--technology .category-shell.category-content-box .bar-row strong {
+  font-size: 12px;
+}
+
+body.category-page--technology .category-shell.category-content-box .history-card .continent-list {
+  margin-top: 8px;
+}
+
+body.category-page--technology .category-shell.category-content-box .continent-row {
+  grid-template-columns: minmax(120px, .34fr) minmax(0, 1fr);
+  gap: 12px;
+  padding: 5px 0;
+}
+
+body.category-page--technology .category-shell.category-content-box .continent-link {
+  font-size: 14px;
+}
+
+body.category-page--technology .category-shell.category-content-box .continent-sports {
+  grid-template-columns: repeat(2, minmax(130px, 1fr));
+  gap: 6px;
+}
+
+body.category-page--technology .category-shell.category-content-box .continent-sport {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  height: auto;
+  padding: 0 10px;
+}
+
+body.category-page--technology .category-shell.category-content-box .continent-sport span {
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.08;
+}
+
+body.category-page--technology .category-shell.category-content-box .category-parent-card {
+  grid-column: 1 / -1;
+  max-width: 520px;
+}
+
+body.category-page--music .category-shell.category-content-box {
+  gap: 10px;
+  padding: 12px clamp(18px, 1.6vw, 24px);
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .78fr);
+  min-height: clamp(170px, 22vh, 220px);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-radius: 14px;
+  background: var(--os-surface);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero__media {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(170px, 22vh, 220px);
+  object-fit: cover;
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero__copy {
+  align-content: center;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(16px, 1.7vw, 24px);
+  border: 0;
+  border-left: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-radius: 0;
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-bg) 4%);
+  box-shadow: none;
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero__copy h1 {
+  font-size: clamp(44px, 4.6vw, 72px);
+  line-height: .9;
+}
+
+body.category-page--music .category-shell.category-content-box .category-hero__copy .intro {
+  max-width: 720px;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.25;
+}
+
+body.category-page--music .category-shell.category-content-box .category-panel {
+  grid-template-columns: minmax(340px, .42fr) minmax(600px, 1fr);
+  gap: 14px;
+}
+
+body.category-page--music .category-shell.category-content-box .topic-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+body.category-page--music .category-shell.category-content-box .topic-card {
+  grid-template-rows: auto auto;
+  min-height: 70px;
+  height: auto;
+  padding: 10px 12px;
+  border-left: 5px solid var(--os-card-accent);
+}
+
+body.category-page--music .category-shell.category-content-box .topic-card strong {
+  font-size: 14px;
+  line-height: 1.05;
+}
+
+body.category-page--music .category-shell.category-content-box .topic-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.15;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+body.music-topic-v2 {
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--os-ink);
+  background: linear-gradient(180deg, var(--os-surface) 0%, var(--os-bg) 100%);
+}
+
+body.music-topic-v2 .top-menu {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 56px;
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+  border-bottom: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  backdrop-filter: blur(10px);
+}
+
+.music-topic-v2-shell {
+  display: grid;
+  grid-template-rows: minmax(150px, 24vh) minmax(0, 1fr);
+  gap: 12px;
+  height: calc(100vh - 56px);
+  padding: 14px clamp(14px, 2vw, 28px) 16px;
+  overflow: hidden;
+}
+
+.music-topic-v2-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .78fr);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-radius: 14px;
+  background: var(--os-surface);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
+}
+
+.music-topic-v2-hero__media {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.music-topic-v2-hero__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.music-topic-v2-hero__copy {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(14px, 1.6vw, 22px);
+  background: color-mix(in srgb, var(--os-surface) 96%, var(--os-bg) 4%);
+  border-left: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+}
+
+.music-topic-v2-hero__copy .eyebrow {
+  margin: 0 0 6px;
+  color: var(--os-primary);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.music-topic-v2-hero__copy h1 {
+  margin: 0;
+  color: var(--os-ink);
+  font-size: clamp(34px, 4.4vw, 66px);
+  line-height: .9;
+  letter-spacing: 0;
+}
+
+.music-topic-v2-hero__copy p:last-child {
+  max-width: 640px;
+  margin: 9px 0 0;
+  color: var(--os-muted);
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.28;
+}
+
+.music-topic-v2-grid {
+  display: grid;
+  grid-template-columns: minmax(160px, .82fr) minmax(160px, .82fr) minmax(320px, 1.55fr);
+  grid-template-rows: minmax(128px, .64fr) minmax(132px, .68fr) minmax(118px, .5fr);
+  gap: 10px;
+  min-height: 0;
+}
+
+.music-topic-card {
+  min-height: 0;
+  overflow: hidden;
+  padding: 11px 13px;
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-radius: 10px;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.music-topic-card > span,
+.music-topic-card__head > span {
+  display: block;
+  margin: 0 0 6px;
+  color: var(--os-primary);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.music-topic-card h2,
+.music-topic-card__head h2 {
+  margin: 0 0 6px;
+  color: var(--os-ink);
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.music-topic-card p {
+  margin: 0;
+  color: var(--os-muted);
+  font-size: clamp(12px, .86vw, 14px);
+  line-height: 1.24;
+}
+
+.music-topic-facts dl {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.music-topic-facts div {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 9px;
+  align-items: baseline;
+  padding-bottom: 5px;
+  border-bottom: 1px solid color-mix(in srgb, var(--os-scrim) 9%, var(--os-transparent));
+}
+
+.music-topic-facts div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.music-topic-facts dt {
+  color: var(--os-primary);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.music-topic-facts dd {
+  margin: 0;
+  color: var(--os-ink);
+  font-size: 12px;
+  line-height: 1.12;
+  font-weight: 750;
+}
+
+.music-topic-card--meters {
+  display: grid;
+  align-content: start;
+}
+
+.music-topic-meter {
+  display: grid;
+  grid-template-columns: minmax(95px, .8fr) minmax(90px, 1fr) 30px;
+  gap: 8px;
+  align-items: center;
+  min-height: 23px;
+}
+
+.music-topic-meter span {
+  color: var(--os-muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.music-topic-meter meter {
+  width: 100%;
+  height: 9px;
+}
+
+.music-topic-meter meter::-webkit-meter-bar {
+  background: color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
+  border: 0;
+  border-radius: 999px;
+}
+
+.music-topic-meter meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, var(--os-primary), var(--os-purple));
+  border-radius: 999px;
+}
+
+.music-topic-meter meter::-moz-meter-bar {
+  background: linear-gradient(90deg, var(--os-primary), var(--os-purple));
+  border-radius: 999px;
+}
+
+.music-topic-meter strong {
+  color: var(--os-ink);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.music-topic-card--artists ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.music-topic-card--artists li {
+  min-height: 28px;
+  padding: 7px 9px;
+  color: var(--os-ink);
+  background: color-mix(in srgb, var(--os-bg) 70%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 9%, var(--os-transparent));
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.music-topic-card--artists {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.music-topic-category-card {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  gap: 3px 12px;
+  min-height: 0;
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-left: 5px solid var(--os-card-accent);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+  overflow: hidden;
+}
+
+.music-topic-category-card:hover,
+.music-topic-category-card:focus-visible {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--os-primary) 35%, var(--os-scrim) 12%);
+}
+
+.music-topic-category-card img {
+  grid-row: 1 / span 3;
+  width: 104px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.music-topic-category-card span {
+  color: var(--os-primary);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.music-topic-category-card strong {
+  color: var(--os-ink);
+  font-size: 18px;
+  line-height: 1.04;
+}
+
+.music-topic-category-card p {
+  margin: 0;
+  color: var(--os-muted);
+  font-size: 12px;
+  line-height: 1.18;
+}
+
+.music-topic-card--events {
+  grid-column: 3;
+  grid-row: 1 / 4;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+}
+
+.music-event-filter {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 8px;
+  padding: 8px;
+  background: color-mix(in srgb, var(--os-bg) 72%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-radius: 10px;
+}
+
+.music-event-filter__top,
+.music-event-filter__group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+}
+
+.music-event-filter__top {
+  justify-content: space-between;
+}
+
+.music-event-filter__group {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.music-event-filter__group > span,
+.music-event-filter__top output {
+  flex: 0 0 auto;
+  color: var(--os-muted);
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.music-event-filter__reset,
+.music-event-filter__chip {
+  flex: 0 0 auto;
+  min-height: 26px;
+  padding: 5px 9px;
+  color: var(--os-ink);
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
+  border-radius: 999px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.music-event-filter__reset.is-active,
+.music-event-filter__chip.is-active {
+  color: var(--os-surface);
+  background: var(--os-primary);
+  border-color: var(--os-primary);
+}
+
+.music-event-filter__empty {
+  margin: 8px 0 0;
+  padding: 12px;
+  color: var(--os-muted);
+  background: color-mix(in srgb, var(--os-bg) 70%, var(--os-surface));
+  border: 1px dashed color-mix(in srgb, var(--os-scrim) 18%, var(--os-transparent));
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.music-topic-event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+  grid-auto-rows: 150px;
+  align-content: start;
+  justify-content: start;
+  gap: 8px;
+  min-height: 0;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.music-topic-event-grid .event-card {
+  display: grid;
+  grid-template-rows: 56px auto auto auto;
+  width: 220px;
+  height: 150px;
+  min-height: 150px;
+  padding: 0 10px 10px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--os-surface);
+  border: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  border-left: 5px solid var(--os-card-accent);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.music-topic-event-grid .event-card[hidden] {
+  display: none;
+}
+
+.music-topic-event-grid .event-card--compact {
+  grid-template-rows: auto auto auto auto;
+  align-content: start;
+  height: 112px;
+  min-height: 112px;
+  padding: 10px;
+}
+
+.music-topic-event-grid .event-card__source {
+  margin-top: 4px;
+  color: var(--os-primary);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.music-topic-event-grid .event-thumb {
+  display: block;
+  width: calc(100% + 20px);
+  height: 56px;
+  margin: 0 -10px 7px;
+  object-fit: cover;
+  border-bottom: 1px solid color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent));
+}
+
+.music-topic-event-grid .event-card time {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  min-height: 22px;
+  margin-bottom: 5px;
+  padding: 3px 8px;
+  color: var(--os-primary);
+  background: color-mix(in srgb, var(--os-primary) 9%, var(--os-surface));
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.music-topic-event-grid .event-card strong {
+  display: block;
+  color: var(--os-ink);
+  font-size: 15px;
+  line-height: 1.05;
+}
+
+.music-topic-event-grid .event-card p {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+  color: var(--os-muted);
+  font-size: 12px;
+  line-height: 1.18;
+}
+
+.music-topic-event-grid .event-card p img {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.music-topic-empty {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  padding: 18px;
+  background: color-mix(in srgb, var(--os-bg) 70%, var(--os-surface));
+  border: 1px dashed color-mix(in srgb, var(--os-scrim) 20%, var(--os-transparent));
+  border-radius: 10px;
+}
+
+.music-topic-empty strong {
+  color: var(--os-ink);
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.music-topic-empty p {
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  body.category-page--music .category-shell.category-content-box .category-hero,
+  .music-topic-v2-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.category-page--music .category-shell.category-content-box .category-hero__media img,
+  .music-topic-v2-hero__media img {
+    height: clamp(150px, 25vh, 220px);
+  }
+
+  body.category-page--music .category-shell.category-content-box .category-hero__copy,
+  .music-topic-v2-hero__copy {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
+  }
+
+  body.music-topic-v2 {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .music-topic-v2-shell {
+    height: auto;
+    overflow: visible;
+  }
+
+  .music-topic-v2-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .music-topic-v2-grid > * {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .music-topic-card--events {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .music-topic-event-grid {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .music-event-filter__group {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .music-topic-v2-hero__copy {
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .music-topic-v2-shell {
+    padding: 10px;
+  }
+
+  .music-topic-v2-hero {
+    min-height: 0;
+  }
+
+  .music-topic-card--artists ul,
+  .music-topic-event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .music-topic-event-grid .event-card,
+  .music-topic-event-grid .event-card--compact {
+    width: 100%;
+  }
+
+  .music-topic-facts div,
+  .music-topic-meter {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Final override for legacy culture topic pages that still use main.topic-slide. */
 html:has(body.topic-onepage > main.topic-slide) {
   height: auto;
@@ -5152,18 +6156,16 @@ body.topic-onepage > .topic-slide .topic-hero {
   align-items: end;
   min-height: clamp(220px, 28vh, 320px);
   padding: clamp(20px, 3.6vw, 44px);
-  color: var(--os-surface);
+  color: var(--os-ink);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))),
-    var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
+  background: var(--topic-hero-url, var(--category-hero)) center / cover no-repeat;
   border-radius: 12px;
   box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
 }
 
 body.topic-onepage > .topic-slide .topic-hero .eyebrow {
   margin: 0 0 8px;
-  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-transparent));
+  color: var(--os-primary);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -5171,7 +6173,7 @@ body.topic-onepage > .topic-slide .topic-hero .eyebrow {
 
 body.topic-onepage > .topic-slide .topic-hero h1 {
   margin: 0;
-  color: var(--os-surface);
+  color: var(--os-ink);
   font-size: clamp(40px, 6vw, 72px);
   line-height: .96;
 }
@@ -5179,7 +6181,7 @@ body.topic-onepage > .topic-slide .topic-hero h1 {
 body.topic-onepage > .topic-slide .topic-hero .intro {
   max-width: 740px;
   margin: 12px 0 0;
-  color: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  color: var(--os-muted);
   font-size: clamp(15px, 1.4vw, 17px);
   line-height: 1.45;
 }

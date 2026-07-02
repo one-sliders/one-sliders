@@ -7768,3 +7768,420 @@ body.event-page--non-sport .event-slide {
 body.event-page--framed .event-frame__copy .topic-card {
   display: grid;
 }
+
+/* National day template pages generated from Templates/events/event_national_day.template.html */
+body.onepage.national-day {
+  color: var(--page-ink, #101923);
+  background: var(--page-bg, #eef5f7);
+}
+
+body.onepage.national-day .layout__b {
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--os-surface, #fff) 82%, transparent);
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--os-scrim, #000) 8%, transparent);
+}
+
+body.onepage.national-day .event-date-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 10px 14px;
+  color: var(--page-ink, #101923);
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 14px;
+}
+
+body.onepage.national-day .event-date-icon {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+body.onepage.national-day .event-tabs {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  padding: clamp(12px, 1.5vw, 22px);
+}
+
+body.onepage.national-day .event-tabs > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.onepage.national-day .event-tablist {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(14px, 2vw, 24px);
+  padding: 6px;
+  overflow-x: auto;
+  background: color-mix(in srgb, var(--page-bg, #eef5f7) 86%, var(--os-surface, #fff));
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 999px;
+}
+
+body.onepage.national-day .event-tab-label {
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  color: var(--page-muted, #5b6875);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 800;
+  line-height: 1;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+body.onepage.national-day #tab-why:checked ~ .event-tablist label[for="tab-why"],
+body.onepage.national-day #tab-food:checked ~ .event-tablist label[for="tab-food"],
+body.onepage.national-day #tab-culture:checked ~ .event-tablist label[for="tab-culture"],
+body.onepage.national-day #tab-stay:checked ~ .event-tablist label[for="tab-stay"] {
+  color: #fff;
+  background: var(--page-ink, #101923);
+}
+
+body.onepage.national-day .event-tab-panels {
+  min-height: 0;
+  overflow: hidden;
+}
+
+body.onepage.national-day .event-tab-panel {
+  display: none;
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+}
+
+body.onepage.national-day #tab-why:checked ~ .event-tab-panels #panel-why,
+body.onepage.national-day #tab-food:checked ~ .event-tab-panels #panel-food,
+body.onepage.national-day #tab-culture:checked ~ .event-tab-panels #panel-culture,
+body.onepage.national-day #tab-stay:checked ~ .event-tab-panels #panel-stay {
+  display: block;
+}
+
+body.onepage.national-day .event-panel-inner {
+  display: grid;
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+body.onepage.national-day .event-key-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.onepage.national-day .event-fact {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--page-bg, #eef5f7) 78%, var(--os-surface, #fff));
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 12px;
+}
+
+body.onepage.national-day .event-fact strong {
+  font-size: clamp(24px, 2.5vw, 38px);
+  line-height: 1;
+}
+
+body.onepage.national-day .event-fact span {
+  color: var(--page-muted, #5b6875);
+  font-size: clamp(12px, .95vw, 15px);
+  line-height: 1.25;
+}
+
+body.onepage.national-day .event-about-body {
+  padding: clamp(14px, 1.6vw, 22px);
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 14px;
+}
+
+body.onepage.national-day .event-about-body h2 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2vw, 32px);
+  line-height: 1.1;
+}
+
+body.onepage.national-day .event-about-body p {
+  margin: 0;
+  color: var(--page-text, #2f3a45);
+  font-size: clamp(15px, 1.08vw, 18px);
+  line-height: 1.55;
+}
+
+body.onepage.national-day .event-about-body p + p {
+  margin-top: 12px;
+}
+
+body.onepage.national-day .sweden-poster-panel {
+  padding: clamp(14px, 1.6vw, 20px);
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 14px;
+}
+
+body.onepage.national-day .sweden-poster-panel > strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: clamp(18px, 1.4vw, 24px);
+  line-height: 1.15;
+}
+
+body.onepage.national-day .sweden-flag-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+body.onepage.national-day .sweden-flag-row p {
+  margin: 0;
+  color: var(--page-text, #2f3a45);
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.45;
+}
+
+body.onepage.national-day .sweden-flag-diagram {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #006aa7;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 12%, transparent);
+}
+
+body.onepage.national-day .sweden-flag-diagram::before,
+body.onepage.national-day .sweden-flag-diagram::after {
+  content: "";
+  position: absolute;
+  background: #fecc02;
+}
+
+body.onepage.national-day .sweden-flag-diagram::before {
+  top: 0;
+  bottom: 0;
+  left: 31%;
+  width: 12%;
+}
+
+body.onepage.national-day .sweden-flag-diagram::after {
+  top: 43%;
+  right: 0;
+  left: 0;
+  height: 14%;
+}
+
+body.onepage.national-day .event-food-grid,
+body.onepage.national-day .event-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.onepage.national-day .event-food-card,
+body.onepage.national-day .event-culture-card,
+body.onepage.national-day .event-drink-list > div {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 12px;
+}
+
+body.onepage.national-day .event-food-card img,
+body.onepage.national-day .event-culture-card img,
+body.onepage.national-day .event-drink-list img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+body.onepage.national-day .event-food-card strong,
+body.onepage.national-day .event-culture-card strong,
+body.onepage.national-day .event-drink-list strong {
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+body.onepage.national-day .event-food-card span,
+body.onepage.national-day .event-culture-card span,
+body.onepage.national-day .event-drink-list span {
+  color: var(--page-muted, #5b6875);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+body.onepage.national-day .event-drink-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.onepage.national-day #panel-stay .event-panel-inner {
+  max-width: 760px;
+  align-content: start;
+  gap: clamp(14px, 1.8vw, 22px);
+}
+
+body.onepage.national-day .stay-section-label {
+  width: fit-content;
+  margin: 0;
+  padding: 7px 12px;
+  color: var(--page-muted, #5b6875);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1;
+  background: color-mix(in srgb, var(--page-bg, #eef5f7) 86%, var(--os-surface, #fff));
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 999px;
+}
+
+body.onepage.national-day .stay-section-title {
+  margin: 0;
+  color: var(--page-ink, #101923);
+  font-size: clamp(26px, 2.8vw, 42px);
+  line-height: 1.05;
+}
+
+body.onepage.national-day .stay-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.onepage.national-day .stay-form-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 14px;
+}
+
+body.onepage.national-day .stay-field-label {
+  margin: 0;
+  color: var(--page-muted, #5b6875);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+body.onepage.national-day .stay-field-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 10px;
+  color: var(--page-ink, #101923);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  background: color-mix(in srgb, var(--page-bg, #eef5f7) 70%, var(--os-surface, #fff));
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 10px;
+}
+
+body.onepage.national-day .stay-area-label {
+  margin-top: 4px;
+}
+
+body.onepage.national-day .stay-area-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+body.onepage.national-day .stay-area-pill {
+  cursor: pointer;
+}
+
+body.onepage.national-day .stay-area-pill input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.onepage.national-day .stay-area-pill span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  color: var(--page-ink, #101923);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--os-surface, #fff);
+  border: 1px solid var(--page-line, #d7e4ea);
+  border-radius: 999px;
+}
+
+body.onepage.national-day .stay-area-pill input:checked + span {
+  color: #fff;
+  background: var(--page-ink, #101923);
+  border-color: var(--page-ink, #101923);
+}
+
+body.onepage.national-day .stay-check-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 48px;
+  padding: 0 20px;
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  background: var(--page-ink, #101923);
+  border-radius: 999px;
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--os-scrim, #000) 14%, transparent);
+}
+
+body.onepage.national-day .stay-check-btn:hover,
+body.onepage.national-day .stay-check-btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  body.onepage.national-day .layout-columns {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+
+  body.onepage.national-day .event-key-facts,
+  body.onepage.national-day .event-food-grid,
+  body.onepage.national-day .event-culture-grid,
+  body.onepage.national-day .event-drink-list,
+  body.onepage.national-day .sweden-flag-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.onepage.national-day .stay-form-row {
+    grid-template-columns: 1fr;
+  }
+}

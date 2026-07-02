@@ -1,0 +1,86 @@
+/* National Day food and drink tab. */
+
+.event-food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.event-food-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+}
+
+.event-food-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 400 / 260;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--page-line) 72%, transparent);
+  background: var(--os-surface);
+}
+
+.event-food-card strong {
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.event-food-card span {
+  padding: 0 4px 3px;
+  font-size: 12px;
+  color: var(--page-muted);
+  line-height: 1.4;
+}
+
+.event-drink-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: -4px 0 16px;
+}
+
+.event-drink-list div {
+  display: grid;
+  gap: 6px;
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--page-soft) 72%, var(--os-surface));
+}
+
+.event-drink-list img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 400 / 260;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--page-line) 72%, transparent);
+  background: var(--os-surface);
+}
+
+.event-drink-list strong {
+  padding: 0 3px;
+  color: var(--page-ink);
+  font-size: 13px;
+}
+
+.event-drink-list span {
+  padding: 0 3px 2px;
+  color: var(--page-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}

@@ -18,10 +18,10 @@ body.topic-page a { color: inherit; }
 .topic-page .topic-slide { min-height: 0; display: grid; grid-template-rows: auto 1fr; gap: 10px; padding: 0; }
 
 /* hero */
-.topic-page .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-on-image); border-radius: 8px; overflow: hidden; background: linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-image-overlay-soft) 100%), linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
-.topic-page .eyebrow { margin: 0 0 8px; color: var(--os-gold); font-size: 13px; font-weight: 700; text-shadow: 0 2px 12px var(--os-image-overlay-strong); text-transform: uppercase; }
-.topic-page h1 { margin: 0; color: var(--os-on-image); font-size: clamp(40px,6vw,80px); line-height: .95; text-shadow: 0 2px 18px var(--os-image-overlay-strong); }
-.topic-page .intro { max-width: 760px; margin: 12px 0 0; color: var(--os-on-image-muted); font-size: clamp(15px,1.5vw,18px); line-height: 1.34; text-shadow: 0 2px 12px var(--os-image-overlay-strong); }
+.topic-page .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-ink); border-radius: 8px; overflow: hidden; background: var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-scrim) 16%, var(--os-transparent)); }
+.topic-page .eyebrow { margin: 0 0 8px; color: var(--os-primary); font-size: 13px; font-weight: 700; text-shadow: none; text-transform: uppercase; }
+.topic-page h1 { margin: 0; color: var(--os-ink); font-size: clamp(40px,6vw,80px); line-height: .95; text-shadow: none; }
+.topic-page .intro { max-width: 760px; margin: 12px 0 0; color: var(--os-muted); font-size: clamp(15px,1.5vw,18px); line-height: 1.34; text-shadow: none; }
 
 /* dashboard grid: KPIs full-width on top, then 3 columns */
 .topic-page .dash { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; align-content: start; }

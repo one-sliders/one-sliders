@@ -52,9 +52,9 @@
   --os-image-overlay-soft: color-mix(in srgb, var(--os-scrim) 12%, var(--os-transparent));
   --os-image-overlay-medium: color-mix(in srgb, var(--os-scrim) 52%, var(--os-transparent));
   --os-image-overlay-strong: color-mix(in srgb, var(--os-scrim) 78%, var(--os-transparent));
-  --os-chrome-bg: var(--os-primary);
-  --os-chrome-ink: var(--os-surface);
-  --os-chrome-muted: var(--os-line);
+  --os-chrome-bg: color-mix(in srgb, var(--os-surface) 96%, var(--os-transparent));
+  --os-chrome-ink: var(--os-ink);
+  --os-chrome-muted: var(--os-muted);
 
   --navy: var(--os-navy);
   --ink: var(--os-ink);

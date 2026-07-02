@@ -642,26 +642,23 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 
 /* Palette-safe legacy topic heroes, including older pages with local <style> blocks. */
 .topic-hero {
-  color: var(--os-on-image) !important;
-  background:
-    linear-gradient(90deg, var(--os-image-overlay-strong) 0%, var(--os-image-overlay-medium) 46%, var(--os-image-overlay-soft) 100%),
-    linear-gradient(0deg, var(--os-image-overlay-medium), var(--os-transparent) 52%),
-    var(--hero) center / cover !important;
+  color: var(--os-ink) !important;
+  background: var(--hero) center / cover !important;
 }
 
 .topic-hero .eyebrow {
-  color: var(--os-gold) !important;
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+  color: var(--os-primary) !important;
+  text-shadow: none !important;
 }
 
 .topic-hero h1 {
-  color: var(--os-on-image) !important;
-  text-shadow: 0 2px 18px var(--os-image-overlay-strong) !important;
+  color: var(--os-ink) !important;
+  text-shadow: none !important;
 }
 
 .topic-hero .intro {
-  color: var(--os-on-image-muted) !important;
-  text-shadow: 0 2px 12px var(--os-image-overlay-strong) !important;
+  color: var(--os-muted) !important;
+  text-shadow: none !important;
 }
 
 /* ---------------------------------------------------------------------

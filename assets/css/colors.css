@@ -1,0 +1,42 @@
+/* Base color tokens — light mode */
+:root {
+  --os-ink:         #101820;
+  --os-muted:       #5a6672;
+  --os-bg:          #f5f8fa;
+  --os-surface:     #ffffff;
+  --os-soft:        #edf5f8;
+  --os-line:        #dce6ea;
+  --os-primary:     #0d2137;
+  --os-accent:      #2f6f92;
+  --os-scrim:       #06111c;
+  --os-transparent: transparent;
+
+  /* Nav chrome tokens — match harmonized palette (light/white nav) */
+  --os-chrome-bg:    color-mix(in srgb, var(--os-surface) 96%, transparent);
+  --os-chrome-ink:   var(--os-ink);
+  --os-chrome-muted: var(--os-muted);
+
+  /* Page semantic aliases */
+  --page-bg:      var(--os-bg);
+  --page-ink:     var(--os-ink);
+  --page-muted:   var(--os-muted);
+  --page-line:    var(--os-line);
+  --page-theme:   var(--os-primary);
+  --page-accent:  var(--os-accent);
+  --page-soft:    var(--os-soft);
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --os-ink:     #edf5f8;
+    --os-muted:   #a8b7c1;
+    --os-bg:      #0b1118;
+    --os-surface: #111b24;
+    --os-soft:    #172635;
+    --os-line:    #2b3d4c;
+    --os-primary: #dcebf5;
+    --os-accent:  #6fb39a;
+    --os-scrim:   #06111c;
+  }
+}
