@@ -1,105 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
   <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
-  
-    <link rel="stylesheet" href="../../../assets/css/categories.css">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80">
-<script defer src="../../../assets/js/oneslider-core.js"></script>
-      <script defer src="../../../assets/js/categories.js"></script>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:description" content="Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.">
-  <meta name="twitter:title" content="Music Festivals Events 2026 — Schedule &amp; Calendar">
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
+  <link rel="stylesheet" href="/assets/css/categories.css">
+  <script defer src="/assets/js/oneslider-core.js?v=music-filter-4"></script>
+  <script defer src="/assets/js/categories.js?v=music-filter-4"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:image" content="https://one-sliders.com/content/categories/music/img/music-festivals-hero.png">
   <meta name="robots" content="index,follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.">
-  <meta property="og:title" content="Music Festivals Events 2026 — Schedule &amp; Calendar"><meta property="og:image" content="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
-  <meta name="description" content="Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.">
+  <meta property="og:title" content="Music Festivals | Music">
+  <meta property="og:description" content="Music Festivals: Music festivals are built around concentrated time: several days, many stages and a location that becomes part of the memory. People searc">
+  <meta name="description" content="Music Festivals: Music festivals are built around concentrated time: several days, many stages and a location that becomes part of the memory. People searc">
   <meta property="og:url" content="https://one-sliders.com/content/categories/music/music-festivals.html">
-  <link rel="canonical" href="https://one-sliders.com/content/categories/music/music-festivals.html"><meta name="content-language" content="en">
-    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-<title>Music Festivals Events 2026 — Schedule &amp; Calendar</title>
-    <style>
-      :root { --theme: var(--os-purple); --accent: var(--os-line); --ink: color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent)); --paper: color-mix(in srgb, var(--os-surface) 80%, var(--os-transparent)); --muted: var(--os-accent); --line: var(--os-red); }
-      * { box-sizing: border-box; }
-      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
-      a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: var(--os-accent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: var(--os-surface); }
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
-      .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
-      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
-      .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
-      .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
-      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
-      .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
-      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-      .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
-      .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
-      .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
-      .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
-      .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-      .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
-      .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
-      .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: var(--os-scrim); }
-      .site-footer p { margin: 0; }
-      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } }
-      @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
-    </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#webpage","url":"https://one-sliders.com/content/categories/music/music-festivals.html","name":"Music Festivals Events 2026 — Schedule & Calendar","description":"Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music.","inLanguage":"en","image":"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80","breadcrumb":{"@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Music","item":"https://one-sliders.com/content/categories/music/index.html"},{"@type":"ListItem","position":4,"name":"Music Festivals Events 2026 — Schedule & Calendar","item":"https://one-sliders.com/content/categories/music/music-festivals.html"}]}],"name":"Music Festivals Events 2026","description":"Music Festivals events calendar for 2026: key dates, schedules and linked pages across Music."}</script>
-  <meta name="os-back-href" content="index.html">
-  <meta name="os-back-label" content="Music">
+  <meta property="og:image" content="https://one-sliders.com/content/categories/music/img/music-festivals-hero.png">
+  <link rel="canonical" href="https://one-sliders.com/content/categories/music/music-festivals.html">
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/icons/site.webmanifest">
+  <title>Music Festivals | Music</title><meta name="content-language" content="en">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#collection","url":"https://one-sliders.com/content/categories/music/music-festivals.html","name":"Music Festivals | Music","description":"Music Festivals: Music festivals are built around concentrated time: several days, many stages and a location that becomes part of the memory. People searc","inLanguage":"en","isPartOf":{"@id":"https://one-sliders.com/#website"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#webpage","url":"https://one-sliders.com/content/categories/music/music-festivals.html","name":"Music Festivals | Music","description":"Music Festivals: Music festivals are built around concentrated time: several days, many stages and a location that becomes part of the memory. People searc","inLanguage":"en","image":"https://one-sliders.com/content/categories/music/img/music-festivals-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/music/music-festivals.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Music","item":"https://one-sliders.com/content/categories/music/index.html"},{"@type":"ListItem","position":4,"name":"Music Festivals","item":"https://one-sliders.com/content/categories/music/music-festivals.html"}]}]}</script>
 </head>
-  <body class="category-page category-page--music topic-onepage topic-page--music-festivals" data-os-category="music" data-cat="music">
-    <nav class="top-menu" aria-label="Category navigation">
-      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+<body class="category-page category-page--music topic-onepage music-topic-v2 topic-page--music-festivals" data-os-category="music" data-cat="music">
+  <nav class="top-menu" aria-label="Category navigation">
+      <a class="os-brand" href="/" aria-label="Home"><img class="os-brand__logo" src="/assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>
+      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
       <a class="nav-back" href="index.html" title="Back to Music" aria-label="Back to Music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Music</span></a>
-      <span class="nav-current-topic" aria-current="page">Music Festivals</span></nav>
-    <main class="topic-slide">
-    <a class="topic-parent-card" href="index.html" aria-label="Open Music category"><img  srcset="/content/categories/img/categories-topics-mini-200.webp 200w, /content/categories/img/categories-topics-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/img/categories-topics-mini.png" alt="" width="400" height="300" loading="lazy"><span>More Music</span><strong>Music category</strong><p>More topics, events and calendar moments.</p></a>
-      <header class="topic-hero" style="--hero: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80');">
-        <div>
-          <p class="eyebrow">Music topic</p>
-          <h1>Music Festivals</h1>
-          <p class="intro">Music Festivals brings together related events, pages and calendar moments inside Music.</p>
+      <span class="nav-spacer"></span>
+      <details class="event-language-menu"><summary aria-label="Language"><span>EN</span></summary><div class="event-language-list"><a href="./index.html" aria-current="true">English</a></div></details>
+    </nav>
+  <main class="music-topic-v2-shell" aria-labelledby="topic-title">
+    <header class="music-topic-v2-hero">
+      <picture class="music-topic-v2-hero__media">
+        <source srcset="/content/categories/music/img/music-festivals-hero-400.webp 400w, /content/categories/music/img/music-festivals-hero-768.webp 768w, /content/categories/music/img/music-festivals-hero-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 64vw" type="image/webp">
+        <img src="/content/categories/music/img/music-festivals-hero.png" alt="" width="1200" height="630" loading="eager">
+      </picture>
+      <div class="music-topic-v2-hero__copy">
+        <p class="eyebrow">Music topic</p>
+        <h1 id="topic-title">Music Festivals</h1>
+        <p>Destination lineups, fields, stages and summer travel plans.</p>
+      </div>
+    </header>
+    <section class="music-topic-v2-grid" aria-label="Music Festivals overview">
+      <article class="music-topic-card music-topic-card--intro">
+        <span>Topic</span>
+        <h2>What it is</h2>
+        <p>Music festivals are built around concentrated time: several days, many stages and a location that becomes part of the memory. People search them for dates, lineups, tickets, camping, transport and weather.</p>
+      </article>
+      <article class="music-topic-card">
+        <span>History</span>
+        <h2>Where it comes from</h2>
+        <p>Modern festivals grew from folk, jazz and counterculture gatherings into global destination brands. The strongest ones now mix headline acts, local identity, food areas, broadcast clips and travel infrastructure.</p>
+      </article>
+      <article class="music-topic-card music-topic-facts">
+        <span>Quick facts</span>
+        <dl>
+          <div><dt>Origin</dt><dd>Outdoor gatherings and touring circuits</dd></div>
+          <div><dt>Era</dt><dd>1960s to today</dd></div>
+          <div><dt>Core sound</dt><dd>Multi-stage live music</dd></div>
+          <div><dt>Best for</dt><dd>Weekend trips, camping, lineups and headline sets</dd></div>
+        </dl>
+      </article>
+      <article class="music-topic-card music-topic-card--meters">
+        <span>Signals</span>
+        <h2>How the topic reads</h2>
+        <div class="music-topic-meter"><span>Travel pull</span><meter min="0" max="100" value="95">95</meter><strong>95</strong></div><div class="music-topic-meter"><span>Lineup focus</span><meter min="0" max="100" value="94">94</meter><strong>94</strong></div><div class="music-topic-meter"><span>Camping culture</span><meter min="0" max="100" value="72">72</meter><strong>72</strong></div><div class="music-topic-meter"><span>Broadcast clips</span><meter min="0" max="100" value="80">80</meter><strong>80</strong></div>
+      </article>
+      <article class="music-topic-card music-topic-card--artists">
+        <span>Key artists</span>
+        <h2>Names people recognise</h2>
+        <ul><li>Beyonce</li><li>Radiohead</li><li>Daft Punk</li><li>Kendrick Lamar</li><li>Billie Eilish</li><li>Coldplay</li></ul>
+      </article>
+      <a class="music-topic-category-card" href="index.html" aria-label="Open Music category">
+        <img src="/content/categories/music/img/music-mini.png" srcset="/content/categories/music/img/music-mini-200.webp 200w, /content/categories/music/img/music-mini-400.webp 400w" sizes="180px" alt="" width="400" height="300" loading="lazy">
+        <span>More Music</span>
+        <strong>Music category</strong>
+        <p>More topics, events and calendar moments.</p>
+      </a>
+      <article class="music-topic-card music-topic-card--events">
+        <div class="music-topic-card__head"><span>Events</span><h2>Upcoming events</h2></div>
+        <div class="music-event-filter" data-event-filter-panel>
+          <div class="music-event-filter__top">
+            <button type="button" class="music-event-filter__reset is-active" data-event-filter-reset>All events</button>
+            <output data-event-filter-count>10 events</output>
+          </div>
+          
+          <div class="music-event-filter__group" aria-label="Filter by country"><span>Countries</span><button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="belgium">Belgium</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="denmark">Denmark</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="japan">Japan</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="netherlands">Netherlands</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="spain">Spain</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="switzerland">Switzerland</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="uk">United Kingdom</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="usa">United States</button></div>
         </div>
-      </header>
-      <section class="topic-panel">
-        <div class="left"><div class="note-card">Music Festivals is part of the Music category, with kommande event gathered for quick planning and discovery.</div></div>
-        <div class="right">
-          <div class="section-heading"><h2>Upcoming events</h2></div><div class="event-grid">
-<a data-end="2026-07-18" data-start="2026-07-03" class="event-card" href="/content/categories/music/music-festivals/events/montreux-jazz-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini.png" alt="Montreux Jazz Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Montreux Jazz Festival</strong><p>Basel, Switzerland</p></a>
-<a data-start="2026-07-04" class="event-card" href="../culture/music-festivals/events/white-sensation-amsterdam.html" data-end="2026-07-05"><img class="event-thumb"  srcset="../culture/music-festivals/events/img/white-sensation-amsterdam-mini-200.webp 200w, ../culture/music-festivals/events/img/white-sensation-amsterdam-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="../culture/music-festivals/events/img/white-sensation-amsterdam-mini.png" alt="White Sensation Amsterdam thumbnail" loading="lazy" width="400" height="300"><time>4 Jul 2026 expected</time><strong>White Sensation Amsterdam</strong><p>All-white arena dance event profile for Amsterdam; official date TBC.</p></a>
-<a data-end="2026-07-26" data-start="2026-07-17" class="event-card" href="/content/categories/music/music-festivals/events/tomorrowland.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/tomorrowland-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/tomorrowland-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/tomorrowland-mini.png" alt="Tomorrowland thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Tomorrowland</strong><p>Brussels, Belgium</p></a>
-<a data-end="2027-03-28" data-start="2027-03-26" class="event-card" href="/content/categories/music/music-festivals/events/ultra-music-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/ultra-music-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/ultra-music-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/ultra-music-festival-mini.png" alt="Ultra Music Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Ultra Music Festival</strong><p>Los Angeles, United States</p></a>
-<a data-end="2027-04-18" data-start="2027-04-11" class="event-card" href="/content/categories/music/music-festivals/events/coachella.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/coachella-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/coachella-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/coachella-mini.png" alt="Coachella thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Coachella</strong><p>Los Angeles, United States</p></a>
-<a data-end="2027-04-18" data-start="2027-04-11" class="event-card" href="/content/categories/music/music-festivals/events/coachella.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/coachella-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/coachella-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/coachella-mini.png" alt="Coachella thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Coachella</strong><p>Open the event view</p></a>
-<a data-end="2027-06-27" data-start="2027-06-23" class="event-card" href="/content/categories/music/music-festivals/events/glastonbury-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/glastonbury-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/glastonbury-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/glastonbury-festival-mini.png" alt="Glastonbury Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Glastonbury Festival</strong><p>Open the event view</p></a>
-<a class="event-card" href="/content/categories/music/music-festivals/events/fuji-rock-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/fuji-rock-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/fuji-rock-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/fuji-rock-festival-mini.png" alt="Fuji Rock Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Fuji Rock Festival</strong><p>Tokyo, Japan</p></a>
-<a class="event-card" href="/content/categories/music/music-festivals/events/lollapalooza-brazil.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini.png" alt="Lollapalooza Brazil thumbnail" loading="lazy" width="400" height="300"><time>2027 watchlist</time><strong>Lollapalooza Brazil</strong><p>Sao Paulo, Brazil</p></a>
-<a class="event-card" href="/content/categories/music/music-festivals/events/primavera-sound.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/primavera-sound-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/primavera-sound-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/primavera-sound-mini.png" alt="Primavera Sound thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Primavera Sound</strong><p>Barcelona, Spain</p></a>
-<a class="event-card" href="/content/categories/music/music-festivals/events/roskilde-festival.html"><img class="event-thumb" src="/content/categories/music/music-festivals/events/img/roskilde-festival-mini.png" alt="Roskilde Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Roskilde Festival</strong><p>Copenhagen, Denmark</p></a>
-            </div></div>
+        <div class="music-topic-event-grid" data-event-filter-grid>
+          <a data-artist="festivals" data-artist-label="Festivals" data-country="denmark" data-country-label="Denmark" data-start="2026-06-27" data-end="2026-07-04" class="event-card" href="/content/categories/music/music-festivals/events/roskilde-festival.html"><img class="event-thumb" src="/content/categories/music/music-festivals/events/img/roskilde-festival-mini.png" alt="Roskilde Festival thumbnail" loading="lazy" width="400" height="300"><time>27 Jun-4 Jul 2026</time><strong>Roskilde Festival</strong><p class="event-place"><img src="/content/locations/europe/denmark/img/flag.svg" alt="" width="20" height="14" loading="lazy">Roskilde, Denmark</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="switzerland" data-country-label="Switzerland" data-end="2026-07-18" data-start="2026-07-03" class="event-card" href="/content/categories/music/music-festivals/events/montreux-jazz-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/montreux-jazz-festival-mini.png" alt="Montreux Jazz Festival thumbnail" loading="lazy" width="400" height="300"><time>3-18 Jul 2026</time><strong>Montreux Jazz Festival</strong><p class="event-place"><img src="/content/locations/europe/switzerland/img/flag.svg" alt="" width="20" height="14" loading="lazy">Montreux, Switzerland</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="netherlands" data-country-label="Netherlands" data-start="2026-07-04" class="event-card" href="/content/categories/culture/music-festivals/events/white-sensation-amsterdam.html" data-end="2026-07-05"><img class="event-thumb"  srcset="/content/categories/culture/music-festivals/events/img/white-sensation-amsterdam-mini-200.webp 200w, /content/categories/culture/music-festivals/events/img/white-sensation-amsterdam-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/culture/music-festivals/events/img/white-sensation-amsterdam-mini.png" alt="White Sensation Amsterdam thumbnail" loading="lazy" width="400" height="300"><time>4 Jul 2026 expected</time><strong>White Sensation Amsterdam</strong><p class="event-place"><img src="/content/locations/europe/netherlands/img/flag.svg" alt="" width="20" height="14" loading="lazy">Amsterdam, Netherlands</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="belgium" data-country-label="Belgium" data-end="2026-07-26" data-start="2026-07-17" class="event-card" href="/content/categories/music/music-festivals/events/tomorrowland.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/tomorrowland-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/tomorrowland-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/tomorrowland-mini.png" alt="Tomorrowland thumbnail" loading="lazy" width="400" height="300"><time>17-26 Jul 2026</time><strong>Tomorrowland</strong><p class="event-place"><img src="/content/locations/europe/belgium/img/flag.svg" alt="" width="20" height="14" loading="lazy">Boom, Belgium</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="japan" data-country-label="Japan" data-start="2026-07-24" data-end="2026-07-26" class="event-card" href="/content/categories/music/music-festivals/events/fuji-rock-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/fuji-rock-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/fuji-rock-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/fuji-rock-festival-mini.png" alt="Fuji Rock Festival thumbnail" loading="lazy" width="400" height="300"><time>24-26 Jul 2026</time><strong>Fuji Rock Festival</strong><p class="event-place"><img src="/content/locations/asia/japan/img/flag.svg" alt="" width="20" height="14" loading="lazy">Naeba, Japan</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="usa" data-country-label="United States" data-end="2027-03-28" data-start="2027-03-26" class="event-card" href="/content/categories/music/music-festivals/events/ultra-music-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/ultra-music-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/ultra-music-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/ultra-music-festival-mini.png" alt="Ultra Music Festival thumbnail" loading="lazy" width="400" height="300"><time>26-28 Mar 2027</time><strong>Ultra Music Festival</strong><p class="event-place"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14" loading="lazy">Miami, United States</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="usa" data-country-label="United States" data-start="2027-04-09" data-end="2027-04-18" class="event-card" href="/content/categories/music/music-festivals/events/coachella.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/coachella-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/coachella-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/coachella-mini.png" alt="Coachella thumbnail" loading="lazy" width="400" height="300"><time>9-18 Apr 2027</time><strong>Coachella</strong><p class="event-place"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14" loading="lazy">Indio, United States</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="spain" data-country-label="Spain" data-start="2027-06-03" data-end="2027-06-05" class="event-card" href="/content/categories/music/music-festivals/events/primavera-sound.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/primavera-sound-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/primavera-sound-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/primavera-sound-mini.png" alt="Primavera Sound thumbnail" loading="lazy" width="400" height="300"><time>3-5 Jun 2027</time><strong>Primavera Sound</strong><p class="event-place"><img src="/content/locations/europe/spain/img/flag.svg" alt="" width="20" height="14" loading="lazy">Parc del Forum, Spain</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="uk" data-country-label="United Kingdom" data-start="2027-06-23" data-end="2027-06-27" class="event-card" href="/content/categories/music/music-festivals/events/glastonbury-festival.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/glastonbury-festival-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/glastonbury-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/glastonbury-festival-mini.png" alt="Glastonbury Festival thumbnail" loading="lazy" width="400" height="300"><time>23-27 Jun 2027</time><strong>Glastonbury Festival</strong><p class="event-place"><img src="/content/locations/europe/united-kingdom/img/flag.svg" alt="" width="20" height="14" loading="lazy">Worthy Farm, United Kingdom</p></a><a data-artist="festivals" data-artist-label="Festivals" class="event-card" href="/content/categories/music/music-festivals/events/lollapalooza-brazil.html"><img class="event-thumb"  srcset="/content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini-200.webp 200w, /content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/music-festivals/events/img/lollapalooza-brazil-mini.png" alt="Lollapalooza Brazil thumbnail" loading="lazy" width="400" height="300"><time>2027 dates pending</time><strong>Lollapalooza Brazil</strong><p class="event-place"><img src="/content/locations/south-america/brazil/img/flag.svg" alt="" width="20" height="14" loading="lazy">Sao Paulo, Brazil</p></a>
         </div>
-      </section>
-    <section class="content-note" aria-label="Music Festivals summary"><h2>Music Festivals</h2><p>Music Festivals is the browsing page for music, music festivals. It groups related entries as event cards, location links, calendars and comparison blocks. The focus is visual orientation: event cards, calendars, location links, rankings and comparison blocks.</p></section></main>
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
-    </body>
+        <p class="music-event-filter__empty" data-event-filter-empty hidden>No events match this filter.</p>
+      </article>
+    </section>
+  </main>
+</body>
 </html>

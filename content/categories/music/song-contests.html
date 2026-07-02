@@ -1,101 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
   <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="../../../assets/css/oneslider-core.css">
-  
-    <link rel="stylesheet" href="../../../assets/css/categories.css">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80">
-<script defer src="../../../assets/js/oneslider-core.js"></script>
-      <script defer src="../../../assets/js/categories.js"></script>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
+  <link rel="stylesheet" href="/assets/css/categories.css">
+  <script defer src="/assets/js/oneslider-core.js?v=music-filter-4"></script>
+  <script defer src="/assets/js/categories.js?v=music-filter-4"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:image" content="https://one-sliders.com/content/categories/music/img/song-contests-hero.png">
+  <meta name="robots" content="index,follow">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Song Contests: Song Contests brings together related events, pages and calendar moments inside Music.">
-  <meta property="og:title" content="Song Contests">
-  <meta name="description" content="Song Contests: Song Contests brings together related events, pages and calendar moments inside Music.">
+  <meta property="og:title" content="Song Contests | Music">
+  <meta property="og:description" content="Song Contests: Song contests sit between music, television and national identity. The format turns a three-minute song into a live voting moment, with rehe">
+  <meta name="description" content="Song Contests: Song contests sit between music, television and national identity. The format turns a three-minute song into a live voting moment, with rehe">
   <meta property="og:url" content="https://one-sliders.com/content/categories/music/song-contests.html">
+  <meta property="og:image" content="https://one-sliders.com/content/categories/music/img/song-contests-hero.png">
   <link rel="canonical" href="https://one-sliders.com/content/categories/music/song-contests.html">
-    <link rel="icon" href="../../../assets/icons/favicon.ico" sizes="any">
-    <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-<title>Song Contests</title><meta property="og:image" content="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"><meta name="content-language" content="en">
-    <style>
-      :root { --theme: var(--os-purple); --accent: var(--os-line); --ink: color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent)); --paper: color-mix(in srgb, var(--os-surface) 80%, var(--os-transparent)); --muted: var(--os-accent); --line: var(--os-red); }
-      * { box-sizing: border-box; }
-      body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); overflow-x: hidden; }
-      a { color: inherit; }
-      .top-menu { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 8px clamp(14px,3vw,36px); background: var(--os-accent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-      .top-menu a { flex: 0 0 auto; padding: 8px 11px; border-radius: 999px; text-decoration: none; font-size: 13px; }
-      .top-menu a:hover, .top-menu a.active { background: var(--theme); color: var(--os-surface); }
-      .nav-icon{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:var(--muted);text-decoration:none;transition:background .12s,color .12s}
-      .nav-icon:hover{background:var(--theme);color:var(--os-surface)}
-      .nav-icon svg{width:22px;height:22px;display:block}
-      .nav-divider{width:1px;height:18px;background:var(--line);flex:0 0 auto;align-self:center}
-      .topic-slide { min-height: calc(100vh - 42px); display: grid; grid-template-rows: auto 1fr; gap: 12px; padding: clamp(12px,2.4vw,30px); }
-      .topic-hero { display: grid; align-items: end; min-height: clamp(180px,22vw,260px); padding: clamp(18px,3vw,34px); color: var(--os-surface); border-radius: 8px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent)), color-mix(in srgb, var(--os-scrim) 62%, var(--os-transparent))), var(--hero) center / cover; box-shadow: 0 18px 44px color-mix(in srgb, var(--os-surface) 92%, var(--os-transparent)); }
-      .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
-      h1 { margin: 0; font-size: clamp(44px,7vw,88px); line-height: .95; letter-spacing: 0; }
-      .intro { max-width: 760px; margin: 12px 0 0; font-size: clamp(15px,1.5vw,18px); line-height: 1.34; }
-      .topic-panel { display: grid; grid-template-columns: minmax(260px,.75fr) minmax(460px,1.25fr); gap: 10px; min-width: 0; }
-      .note-card, .event-card, .empty { border: 1px solid var(--line); border-radius: 8px; background: var(--os-surface); }
-      .note-card { padding: 13px 14px; border-left: 5px solid var(--theme); font-size: 15px; line-height: 1.35; }
-      .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-      .section-heading h2 { margin: 0; font-size: 22px; line-height: 1.1; }
-      .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
-      .event-card { display: grid; gap: 7px; min-height: 132px; padding: 0 15px 14px; overflow: hidden; border-left: 5px solid var(--accent); color: inherit; text-decoration: none; grid-template-rows: 54px auto auto auto; }
-      .event-card:hover { border-color: var(--theme); transform: translateY(-1px); }
-      .event-thumb { display: block; width: calc(100% + 30px); height: 54px; margin: 0 -15px 1px; object-fit: cover; border-bottom: 1px solid var(--line); }
-      .event-card time { color: var(--theme); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-      .event-card strong { display: block; font-size: 20px; line-height: 1.1; }
-      .event-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.28; }
-      .empty { padding: 15px; border-left: 5px solid var(--accent); color: var(--muted); font-size: 15px; }
-      .site-footer { padding: 14px clamp(14px,3vw,36px); color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); background: var(--os-scrim); }
-      .site-footer p { margin: 0; }
-      @media (max-width: 900px) { .topic-slide { min-height: auto; } .topic-panel { grid-template-columns: 1fr; } }
-      @media (max-width: 620px) { .event-grid { grid-template-columns: 1fr; } }
-    </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"Events calendar","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"Events calendar","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/music/song-contests.html#webpage","url":"https://one-sliders.com/content/categories/music/song-contests.html","name":"Song Contests","description":"Song Contests: Song Contests brings together related events, pages and calendar moments inside Music.","inLanguage":"en","image":"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80","breadcrumb":{"@id":"https://one-sliders.com/content/categories/music/song-contests.html#breadcrumb"},"isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/music/song-contests.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Music","item":"https://one-sliders.com/content/categories/music/index.html"},{"@type":"ListItem","position":4,"name":"Song Contests","item":"https://one-sliders.com/content/categories/music/song-contests.html"}]}]}</script>
-  <meta name="os-back-href" content="index.html">
-  <meta name="os-back-label" content="Music">
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/icons/site.webmanifest">
+  <title>Song Contests | Music</title><meta name="content-language" content="en">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://one-sliders.com/content/categories/music/song-contests.html#collection","url":"https://one-sliders.com/content/categories/music/song-contests.html","name":"Song Contests | Music","description":"Song Contests: Song contests sit between music, television and national identity. The format turns a three-minute song into a live voting moment, with rehe","inLanguage":"en","isPartOf":{"@id":"https://one-sliders.com/#website"}},{"@type":"WebPage","@id":"https://one-sliders.com/content/categories/music/song-contests.html#webpage","url":"https://one-sliders.com/content/categories/music/song-contests.html","name":"Song Contests | Music","description":"Song Contests: Song contests sit between music, television and national identity. The format turns a three-minute song into a live voting moment, with rehe","inLanguage":"en","image":"https://one-sliders.com/content/categories/music/img/song-contests-hero.png","breadcrumb":{"@id":"https://one-sliders.com/content/categories/music/song-contests.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://one-sliders.com/content/categories/music/song-contests.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://one-sliders.com/"},{"@type":"ListItem","position":2,"name":"Categories","item":"https://one-sliders.com/content/categories/index.html"},{"@type":"ListItem","position":3,"name":"Music","item":"https://one-sliders.com/content/categories/music/index.html"},{"@type":"ListItem","position":4,"name":"Song Contests","item":"https://one-sliders.com/content/categories/music/song-contests.html"}]}]}</script>
 </head>
-  <body class="category-page category-page--music topic-onepage topic-page--song-contests" data-os-category="music" data-cat="music">
-    <nav class="top-menu" aria-label="Category navigation">
-      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+<body class="category-page category-page--music topic-onepage music-topic-v2 topic-page--song-contests" data-os-category="music" data-cat="music">
+  <nav class="top-menu" aria-label="Category navigation">
+      <a class="os-brand" href="/" aria-label="Home"><img class="os-brand__logo" src="/assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>
+      <a class="nav-icon" href="../../events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      <a class="nav-icon" href="../../locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="../index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-divider"></span>
       <a class="nav-back" href="index.html" title="Back to Music" aria-label="Back to Music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span>Music</span></a>
-      <span class="nav-current-topic" aria-current="page">Song Contests</span></nav>
-    <main class="topic-slide">
-    <a class="topic-parent-card" href="index.html" aria-label="Open Music category"><img  srcset="/content/categories/img/categories-topics-mini-200.webp 200w, /content/categories/img/categories-topics-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/img/categories-topics-mini.png" alt="" width="400" height="300" loading="lazy"><span>More Music</span><strong>Music category</strong><p>More topics, events and calendar moments.</p></a>
-      <header class="topic-hero" style="--hero: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80');">
-        <div>
-          <p class="eyebrow">Music topic</p>
-          <h1>Song Contests</h1>
-          <p class="intro">Song Contests brings together related events, pages and calendar moments inside Music.</p>
+      <span class="nav-spacer"></span>
+      <details class="event-language-menu"><summary aria-label="Language"><span>EN</span></summary><div class="event-language-list"><a href="./index.html" aria-current="true">English</a></div></details>
+    </nav>
+  <main class="music-topic-v2-shell" aria-labelledby="topic-title">
+    <header class="music-topic-v2-hero">
+      <picture class="music-topic-v2-hero__media">
+        <source srcset="/content/categories/music/img/song-contests-hero-400.webp 400w, /content/categories/music/img/song-contests-hero-768.webp 768w, /content/categories/music/img/song-contests-hero-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 64vw" type="image/webp">
+        <img src="/content/categories/music/img/song-contests-hero.png" alt="" width="1200" height="630" loading="eager">
+      </picture>
+      <div class="music-topic-v2-hero__copy">
+        <p class="eyebrow">Music topic</p>
+        <h1 id="topic-title">Song Contests</h1>
+        <p>Televised competitions where songs become national stories.</p>
+      </div>
+    </header>
+    <section class="music-topic-v2-grid" aria-label="Song Contests overview">
+      <article class="music-topic-card music-topic-card--intro">
+        <span>Topic</span>
+        <h2>What it is</h2>
+        <p>Song contests sit between music, television and national identity. The format turns a three-minute song into a live voting moment, with rehearsals, fan zones, qualifiers and final-night watch parties shaping the calendar.</p>
+      </article>
+      <article class="music-topic-card">
+        <span>History</span>
+        <h2>Where it comes from</h2>
+        <p>The modern template comes from post-war European broadcasting: live orchestras, juries, national broadcasters and later televoting. Eurovision made the format global enough that national finals now behave like events in their own right.</p>
+      </article>
+      <article class="music-topic-card music-topic-facts">
+        <span>Quick facts</span>
+        <dl>
+          <div><dt>Origin</dt><dd>Europe and broadcast television</dd></div>
+          <div><dt>Era</dt><dd>1950s to today</dd></div>
+          <div><dt>Core sound</dt><dd>Pop, staging and national selection</dd></div>
+          <div><dt>Best for</dt><dd>Eurovision weeks, national finals and fan travel</dd></div>
+        </dl>
+      </article>
+      <article class="music-topic-card music-topic-card--meters">
+        <span>Signals</span>
+        <h2>How the topic reads</h2>
+        <div class="music-topic-meter"><span>TV spectacle</span><meter min="0" max="100" value="96">96</meter><strong>96</strong></div><div class="music-topic-meter"><span>Fan travel</span><meter min="0" max="100" value="88">88</meter><strong>88</strong></div><div class="music-topic-meter"><span>National identity</span><meter min="0" max="100" value="90">90</meter><strong>90</strong></div><div class="music-topic-meter"><span>Song discovery</span><meter min="0" max="100" value="78">78</meter><strong>78</strong></div>
+      </article>
+      <article class="music-topic-card music-topic-card--artists">
+        <span>Key artists</span>
+        <h2>Names people recognise</h2>
+        <ul><li>ABBA</li><li>Celine Dion</li><li>Loreen</li><li>Måneskin</li><li>Johnny Logan</li><li>Conchita Wurst</li></ul>
+      </article>
+      <a class="music-topic-category-card" href="index.html" aria-label="Open Music category">
+        <img src="/content/categories/music/img/music-mini.png" srcset="/content/categories/music/img/music-mini-200.webp 200w, /content/categories/music/img/music-mini-400.webp 400w" sizes="180px" alt="" width="400" height="300" loading="lazy">
+        <span>More Music</span>
+        <strong>Music category</strong>
+        <p>More topics, events and calendar moments.</p>
+      </a>
+      <article class="music-topic-card music-topic-card--events">
+        <div class="music-topic-card__head"><span>Events</span><h2>Upcoming events</h2></div>
+        <div class="music-event-filter" data-event-filter-panel>
+          <div class="music-event-filter__top">
+            <button type="button" class="music-event-filter__reset is-active" data-event-filter-reset>All events</button>
+            <output data-event-filter-count>10 events</output>
+          </div>
+          
+          <div class="music-event-filter__group" aria-label="Filter by country"><span>Countries</span><button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="italy">Italy</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="norway">Norway</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="portugal">Portugal</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="spain">Spain</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="sweden">Sweden</button>
+<button type="button" class="music-event-filter__chip" data-event-filter="country" data-event-filter-value="usa">United States</button></div>
         </div>
-      </header>
-      <section class="topic-panel">
-        <div class="left"><div class="note-card">Song Contests is part of the Music category, with kommande event gathered for quick planning and discovery.</div></div>
-        <div class="right">
-          <div class="section-heading"><h2>Upcoming events</h2></div><div class="event-grid">
-<a data-end="2026-12-06" data-start="2026-12-06" class="event-card" href="/content/categories/music/song-contests/events/junior-eurovision-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini.png" alt="Junior Eurovision Song Contest thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Junior Eurovision Song Contest</strong><p>Paris, France</p></a>
-<a data-end="2027-02-28" data-start="2027-01-24" class="event-card" href="/content/categories/music/song-contests/events/mgp-norway.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/mgp-norway-mini-200.webp 200w, /content/categories/music/song-contests/events/img/mgp-norway-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/mgp-norway-mini.png" alt="MGP Norway thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>MGP Norway</strong><p>Oslo, Norway</p></a>
-<a data-end="2027-02-28" data-start="2027-02-01" class="event-card" href="/content/categories/music/song-contests/events/sanremo-music-festival.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/sanremo-music-festival-mini-200.webp 200w, /content/categories/music/song-contests/events/img/sanremo-music-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/sanremo-music-festival-mini.png" alt="Sanremo Music Festival thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Sanremo Music Festival</strong><p>Milan, Italy</p></a>
-<a data-end="2027-03-07" data-start="2027-02-21" class="event-card" href="/content/categories/music/song-contests/events/festival-da-cancao.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/festival-da-cancao-mini-200.webp 200w, /content/categories/music/song-contests/events/img/festival-da-cancao-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/festival-da-cancao-mini.png" alt="Festival da Cancao thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Festival da Cancao</strong><p>Barcelona, Spain</p></a>
-<a data-end="2027-02-21" data-start="2027-02-21" class="event-card" href="/content/categories/music/song-contests/events/una-voce-per-san-marino.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini-200.webp 200w, /content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini.png" alt="Una Voce per San Marino thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Una Voce per San Marino</strong><p>Milan, Italy</p></a>
-<a data-end="2027-05-31" data-start="2027-05-01" class="event-card" href="./song-contests/events/eurovision-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/eurovision-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="Eurovision Song Contest thumbnail" loading="lazy" width="400" height="300"><time>2027 date TBC</time><strong>Eurovision Song Contest</strong><p>Bulgaria host watchlist, with year tabs for hosts, venues, dates and winners.</p></a>
-<a class="event-card" href="/content/categories/music/song-contests/events/american-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/american-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/american-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/american-song-contest-mini.png" alt="American Song Contest thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>American Song Contest</strong><p>Los Angeles, United States</p></a>
-<a class="event-card" href="/content/categories/music/song-contests/events/benidorm-fest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/benidorm-fest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/benidorm-fest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/benidorm-fest-mini.png" alt="Benidorm Fest thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Benidorm Fest</strong><p>Barcelona, Spain</p></a>
-<a class="event-card" href="/content/categories/music/song-contests/events/melodifestivalen.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/melodifestivalen-mini-200.webp 200w, /content/categories/music/song-contests/events/img/melodifestivalen-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/melodifestivalen-mini.png" alt="Melodifestivalen thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>Melodifestivalen</strong><p>Stockholm, Sweden</p></a>
-<a class="event-card" href="/content/categories/music/song-contests/events/the-voice-finale.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/the-voice-finale-mini-200.webp 200w, /content/categories/music/song-contests/events/img/the-voice-finale-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/the-voice-finale-mini.png" alt="The Voice Finale thumbnail" loading="lazy" width="400" height="300"><time>2026 watchlist</time><strong>The Voice Finale</strong><p>Los Angeles, United States</p></a>
-            </div></div>
+        <div class="music-topic-event-grid" data-event-filter-grid>
+          <a data-artist="festivals" data-artist-label="Festivals" class="event-card" href="./song-contests/events/junior-eurovision-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/junior-eurovision-song-contest-mini.png" alt="Junior Eurovision Song Contest thumbnail" loading="lazy" width="400" height="300"><time>2026 date TBC</time><strong>Junior Eurovision Song Contest</strong><p>Host city TBC</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="usa" data-country-label="United States" class="event-card" href="./song-contests/events/the-voice-finale.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/the-voice-finale-mini-200.webp 200w, /content/categories/music/song-contests/events/img/the-voice-finale-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/the-voice-finale-mini.png" alt="The Voice Finale thumbnail" loading="lazy" width="400" height="300"><time>Dec 2026 expected</time><strong>The Voice Finale</strong><p class="event-place"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14" loading="lazy">Los Angeles, United States</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="norway" data-country-label="Norway" class="event-card" href="./song-contests/events/mgp-norway.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/mgp-norway-mini-200.webp 200w, /content/categories/music/song-contests/events/img/mgp-norway-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/mgp-norway-mini.png" alt="MGP Norway thumbnail" loading="lazy" width="400" height="300"><time>Feb 2027 expected</time><strong>MGP Norway</strong><p class="event-place"><img src="/content/locations/europe/norway/img/flag.svg" alt="" width="20" height="14" loading="lazy">Norway</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="italy" data-country-label="Italy" class="event-card" href="./song-contests/events/sanremo-music-festival.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/sanremo-music-festival-mini-200.webp 200w, /content/categories/music/song-contests/events/img/sanremo-music-festival-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/sanremo-music-festival-mini.png" alt="Sanremo Music Festival thumbnail" loading="lazy" width="400" height="300"><time>Feb 2027 expected</time><strong>Sanremo Music Festival</strong><p class="event-place"><img src="/content/locations/europe/italy/img/flag.svg" alt="" width="20" height="14" loading="lazy">Sanremo, Italy</p></a><a data-artist="festivals" data-artist-label="Festivals" class="event-card" href="./song-contests/events/una-voce-per-san-marino.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini-200.webp 200w, /content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/una-voce-per-san-marino-mini.png" alt="Una Voce per San Marino thumbnail" loading="lazy" width="400" height="300"><time>Feb 2027 expected</time><strong>Una Voce per San Marino</strong><p class="event-place"><img src="/content/locations/europe/san-marino/img/flag.svg" alt="" width="20" height="14" loading="lazy">San Marino</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="portugal" data-country-label="Portugal" class="event-card" href="./song-contests/events/festival-da-cancao.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/festival-da-cancao-mini-200.webp 200w, /content/categories/music/song-contests/events/img/festival-da-cancao-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/festival-da-cancao-mini.png" alt="Festival da Cancao thumbnail" loading="lazy" width="400" height="300"><time>Feb-Mar 2027 expected</time><strong>Festival da Cancao</strong><p class="event-place"><img src="/content/locations/europe/portugal/img/flag.svg" alt="" width="20" height="14" loading="lazy">Portugal</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="sweden" data-country-label="Sweden" class="event-card" href="./song-contests/events/melodifestivalen.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/melodifestivalen-mini-200.webp 200w, /content/categories/music/song-contests/events/img/melodifestivalen-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/melodifestivalen-mini.png" alt="Melodifestivalen thumbnail" loading="lazy" width="400" height="300"><time>Feb-Mar 2027 expected</time><strong>Melodifestivalen</strong><p class="event-place"><img src="/content/locations/europe/sweden/img/flag.svg" alt="" width="20" height="14" loading="lazy">Sweden</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="spain" data-country-label="Spain" class="event-card" href="./song-contests/events/benidorm-fest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/benidorm-fest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/benidorm-fest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/benidorm-fest-mini.png" alt="Benidorm Fest thumbnail" loading="lazy" width="400" height="300"><time>Jan-Feb 2027 expected</time><strong>Benidorm Fest</strong><p class="event-place"><img src="/content/locations/europe/spain/img/flag.svg" alt="" width="20" height="14" loading="lazy">Benidorm, Spain</p></a><a data-artist="festivals" data-artist-label="Festivals" class="event-card" href="./song-contests/events/eurovision-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/eurovision-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png" alt="Eurovision Song Contest thumbnail" loading="lazy" width="400" height="300"><time>May 2027 date TBC</time><strong>Eurovision Song Contest</strong><p>Host country TBC</p></a><a data-artist="festivals" data-artist-label="Festivals" data-country="usa" data-country-label="United States" class="event-card" href="./song-contests/events/american-song-contest.html"><img class="event-thumb"  srcset="/content/categories/music/song-contests/events/img/american-song-contest-mini-200.webp 200w, /content/categories/music/song-contests/events/img/american-song-contest-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="/content/categories/music/song-contests/events/img/american-song-contest-mini.png" alt="American Song Contest thumbnail" loading="lazy" width="400" height="300"><time>No scheduled edition</time><strong>American Song Contest</strong><p class="event-place"><img src="/content/locations/north-america/usa/img/flag.svg" alt="" width="20" height="14" loading="lazy">United States</p></a>
         </div>
-      </section>
-    </main>
-    <footer class="site-footer"><p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p></footer>
-    </body>
+        <p class="music-event-filter__empty" data-event-filter-empty hidden>No events match this filter.</p>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
