@@ -1,5 +1,14 @@
 # build-sitemap.ps1
 # Generates sitemap.xml for canonical, indexable OneSliders pages only.
+#
+# Flags:
+#   --git-only   Only include files committed to git HEAD (safe for prod).
+#                Used automatically by the pre-push hook so uncommitted QA
+#                content never leaks into the live sitemap.
+#   (no flag)    Scan the filesystem — includes uncommitted QA content.
+#                Use this for a full local preview of what will eventually ship.
+
+param([switch]$GitOnly)
 
 $base = (Resolve-Path ".").Path
 $domain = "https://one-sliders.com"
@@ -59,12 +68,27 @@ function Get-Changefreq($urlPath) {
   return "monthly"
 }
 
-$files = Get-ChildItem -Path $base -Recurse -Filter "*.html" |
-  Where-Object {
+if ($GitOnly) {
+  # Only files committed to HEAD — safe for prod, ignores uncommitted QA content
+  $gitFiles = & git -C $base ls-files HEAD -- "*.html" 2>$null
+  $files = $gitFiles | ForEach-Object {
+    $full = Join-Path $base $_
+    if (Test-Path $full) { Get-Item $full }
+  } | Where-Object {
+    $_ -ne $null -and
     $_.FullName -notmatch $excludedDirs -and
     $_.FullName -notmatch '\\docs\\' -and
     $_.FullName -notmatch '\\shopping-list\\'
   }
+  Write-Host "pre-push: sitemap scanning committed files only (--git-only)"
+} else {
+  $files = Get-ChildItem -Path $base -Recurse -Filter "*.html" |
+    Where-Object {
+      $_.FullName -notmatch $excludedDirs -and
+      $_.FullName -notmatch '\\docs\\' -and
+      $_.FullName -notmatch '\\shopping-list\\'
+    }
+}
 
 $urls = @()
 foreach ($file in ($files | Sort-Object FullName)) {
