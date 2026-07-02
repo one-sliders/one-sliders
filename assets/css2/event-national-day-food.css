@@ -2,9 +2,9 @@
 
 .event-food-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
-  margin: 14px 0 18px;
+  margin: 10px 0 18px;
 }
 
 .event-food-card {
@@ -46,9 +46,9 @@
 
 .event-drink-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
-  margin: -4px 0 16px;
+  margin: 10px 0 16px;
 }
 
 .event-drink-list div {
@@ -83,4 +83,52 @@
   color: var(--page-muted);
   font-size: 12px;
   line-height: 1.35;
+}
+
+#panel-food .event-panel-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(230px, 0.85fr);
+  gap: 0 14px;
+  align-items: start;
+}
+
+#panel-food .event-food-column {
+  grid-column: 1;
+}
+
+#panel-food .event-drink-column {
+  grid-column: 2;
+}
+
+#panel-food .event-food-column-title {
+  margin-top: 12px;
+}
+
+#panel-food .event-about-body,
+#panel-food .event-category-link {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 980px) {
+  #panel-food .event-panel-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .event-food-grid,
+  .event-drink-list,
+  #panel-food .event-food-column,
+  #panel-food .event-drink-column {
+    grid-column: 1;
+  }
+
+  .event-drink-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .event-food-grid,
+  .event-drink-list {
+    grid-template-columns: 1fr;
+  }
 }

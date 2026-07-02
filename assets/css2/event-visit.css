@@ -1,0 +1,29 @@
+.visit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 14px;
+}
+
+.visit-answers {
+  display: grid;
+  gap: 10px;
+}
+
+.visit-answers .event-card {
+  background: var(--os-soft);
+}
+
+.visit-checklist {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.visit-checklist li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 860px) {
+  .visit-layout {
+    grid-template-columns: 1fr;
+  }
+}

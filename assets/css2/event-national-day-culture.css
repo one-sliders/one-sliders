@@ -2,15 +2,15 @@
 
 .event-culture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   margin: 14px 0 18px;
 }
 
 .event-culture-card {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
   min-width: 0;
   overflow: hidden;
   padding: 10px;
@@ -22,7 +22,7 @@
 .event-culture-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 400 / 260;
+  aspect-ratio: 16 / 9;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
@@ -32,14 +32,20 @@
 
 .event-culture-card strong {
   padding: 0 4px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--page-ink);
 }
 
 .event-culture-card span {
   padding: 0 4px 3px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--page-muted);
   line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .event-culture-grid {
+    grid-template-columns: 1fr;
+  }
 }
