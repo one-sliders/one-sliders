@@ -769,14 +769,14 @@
         height: 36px;
       }
       .left-rail {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
         overflow: visible;
         padding: 20px 16px;
       }
       .rail-tools {
-        grid-row: auto;
-        grid-column: auto;
+        grid-row: unset;
+        grid-column: unset;
       }
       .main-content {
         padding: 18px 14px 20px;
