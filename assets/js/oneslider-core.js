@@ -378,7 +378,6 @@
   // ====================================================================
   OneSlider.register('iosNav', function (App) {
     if (document.querySelector('.ios-nav')) return;  // already injected
-    if (document.body.classList.contains('event-page')) return;
     var opt = document.querySelector('meta[name="os-ios-nav"]');
     if ((opt && opt.content === 'off') ||
         document.body.getAttribute('data-os-ios-nav') === 'off') {
