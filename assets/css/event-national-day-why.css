@@ -1,0 +1,286 @@
+/* National Day tab system and Why tab. */
+
+input[name="event-tab"] { display: none; }
+
+.event-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.event-tablist {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 5px;
+  margin-bottom: 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.event-tablist::-webkit-scrollbar { display: none; }
+
+.event-tab-label {
+  flex: 0 0 auto;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.event-tab-label:hover { color: var(--page-ink); }
+
+.event-tab-panels {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.event-tab-panel { display: none; }
+
+#tab-why:checked ~ .event-tab-panels #panel-why,
+#tab-food:checked ~ .event-tab-panels #panel-food,
+#tab-culture:checked ~ .event-tab-panels #panel-culture {
+  display: block;
+}
+
+#tab-why:checked ~ .event-tablist label[for="tab-why"],
+#tab-food:checked ~ .event-tablist label[for="tab-food"],
+#tab-culture:checked ~ .event-tablist label[for="tab-culture"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+}
+
+.event-panel-inner { padding-bottom: 24px; }
+
+.event-key-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.event-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--page-muted);
+}
+
+.event-fact strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.event-about-body > * {
+  margin: 0 0 12px;
+  line-height: 1.65;
+  color: var(--page-muted);
+}
+
+.event-about-body > :last-child { margin-bottom: 0; }
+
+.event-category-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--page-theme);
+}
+
+.event-category-link:hover { text-decoration: underline; }
+
+.nd-flag-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.nd-flag-panel {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+}
+
+.nd-flag-row {
+  display: grid;
+  grid-template-columns: minmax(128px, 0.3fr) minmax(240px, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.nd-flag-panel > * {
+  margin: 0;
+  color: var(--page-muted);
+  line-height: 1.38;
+}
+
+.national-day .event-tabs {
+  padding: clamp(10px, 1.4vw, 18px);
+  border: 1px solid var(--page-line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--os-surface) 88%, transparent);
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--os-scrim) 7%, transparent);
+}
+
+.national-day .event-tab-panels {
+  padding-right: 4px;
+}
+
+.national-day .event-panel-inner {
+  padding: 0 0 18px;
+}
+
+.national-day .event-tablist {
+  padding: 6px;
+  background: var(--page-soft);
+}
+
+.national-day .event-tab-label {
+  color: var(--page-muted);
+}
+
+.national-day .event-about-body {
+  max-width: 980px;
+  padding: 14px 16px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-surface) 96%, transparent);
+}
+
+.national-day .event-about-body > * {
+  line-height: 1.6;
+  color: var(--page-muted);
+}
+
+.national-day .event-key-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.national-day .event-timeline {
+  position: relative;
+  gap: 0;
+  margin: 0 0 8px;
+  padding: 10px 0 0;
+  list-style: none;
+}
+
+.national-day .event-timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 14%;
+  left: 14%;
+  height: 2px;
+  background: var(--page-line);
+}
+
+.national-day .event-fact {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 12px;
+  border-radius: 16px;
+}
+
+.national-day .event-timeline .event-fact {
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.national-day .event-timeline .event-fact::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin-bottom: 8px;
+  border: 3px solid var(--os-surface);
+  border-radius: 50%;
+  background: var(--page-theme);
+  box-shadow: 0 0 0 1px var(--page-line);
+}
+
+.national-day .event-fact::after {
+  content: none;
+}
+
+.national-day .event-fact strong {
+  color: var(--page-ink);
+  font-size: 23px;
+}
+
+.national-day .event-timeline .event-fact strong {
+  display: block;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 0.95;
+}
+
+.national-day .event-timeline .event-fact span {
+  display: block;
+  max-width: 150px;
+  margin-top: 5px;
+  color: var(--page-muted);
+  font-size: clamp(11px, 0.88vw, 13px);
+  line-height: 1.25;
+}
+
+.national-day .event-category-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--page-accent);
+  text-decoration: none;
+}
+
+.national-day .event-category-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .nd-flag-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .event-tabs {
+    height: auto;
+  }
+
+  .event-tab-panels {
+    flex: none;
+    min-height: unset;
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 620px) {
+  .national-day .event-key-facts {
+    grid-template-columns: 1fr;
+  }
+}

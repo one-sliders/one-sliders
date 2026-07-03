@@ -1,0 +1,31 @@
+.results-layout {
+  display: grid;
+  gap: 14px;
+}
+
+.results-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.results-list .event-card {
+  background: var(--os-soft);
+}
+
+.results-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--os-line);
+  border-radius: 8px;
+}
+
+.results-table-wrap .event-table th,
+.results-table-wrap .event-table td {
+  background: var(--os-surface);
+}
+
+@media (max-width: 760px) {
+  .results-list {
+    grid-template-columns: 1fr;
+  }
+}

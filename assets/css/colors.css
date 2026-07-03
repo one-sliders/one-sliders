@@ -7,9 +7,35 @@
   --os-soft:        #edf5f8;
   --os-line:        #dce6ea;
   --os-primary:     #0d2137;
+  --os-primary-soft:#e9f2ee;
   --os-accent:      #2f6f92;
+  --os-gold:        #d6a84a;
+  --os-red:         #9f3545;
+  --os-purple:      #6b4f7a;
+  --os-compare-blue:#2f6f92;
+  --os-compare-green:#4f7a56;
+  --os-compare-orange:#b46b3c;
   --os-scrim:       #06111c;
   --os-transparent: transparent;
+  --os-font-sans:   Inter, Arial, Helvetica, sans-serif;
+  --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --c-sport:        #3b8fb6;
+  --c-music:        #9f3545;
+  --c-climate:      #1f7a6d;
+  --c-food:         #b46b3c;
+  --c-drinks:       #d6a84a;
+  --c-tech:         #0d2137;
+  --c-wellness:     #4f7a56;
+  --c-culture:      #6b4f7a;
+  --os-sport-colour: var(--c-sport);
+  --os-music-colour: var(--c-music);
+  --os-climate-colour: var(--c-climate);
+  --os-food-colour: var(--c-food);
+  --os-drinks-colour: var(--c-drinks);
+  --os-technology-colour: var(--c-tech);
+  --os-wellness-colour: var(--c-wellness);
+  --os-culture-colour: var(--c-culture);
 
   /* Nav chrome tokens — match harmonized palette (light/white nav) */
   --os-chrome-bg:    color-mix(in srgb, var(--os-surface) 96%, transparent);
@@ -36,6 +62,7 @@
     --os-soft:    #172635;
     --os-line:    #2b3d4c;
     --os-primary: #dcebf5;
+    --os-primary-soft: #172635;
     --os-accent:  #6fb39a;
     --os-scrim:   #06111c;
   }

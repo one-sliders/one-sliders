@@ -1,0 +1,51 @@
+/* National Day culture tab. */
+
+.event-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 18px;
+}
+
+.event-culture-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+}
+
+.event-culture-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--page-line) 72%, transparent);
+  background: var(--os-surface);
+}
+
+.event-culture-card strong {
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--page-ink);
+}
+
+.event-culture-card span {
+  padding: 0 4px 3px;
+  font-size: 14px;
+  color: var(--page-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .event-culture-grid {
+    grid-template-columns: 1fr;
+  }
+}
