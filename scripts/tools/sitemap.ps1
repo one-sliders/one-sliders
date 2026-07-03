@@ -68,6 +68,18 @@ function Get-Changefreq($urlPath) {
   return "monthly"
 }
 
+# Build a git commit-date index (one pass): path → last-commit-date (yyyy-MM-dd)
+# Falls back to filesystem LastWriteTime for any file not found in git log.
+$gitDates = @{}
+$currentDate = $null
+& git -C $base log --name-only --format="%cs" HEAD -- "*.html" 2>$null | ForEach-Object {
+  if ($_ -match '^\d{4}-\d{2}-\d{2}$') {
+    $currentDate = $_
+  } elseif ($_ -ne '' -and $currentDate -and -not $gitDates.ContainsKey($_)) {
+    $gitDates[$_] = $currentDate
+  }
+}
+
 if ($GitOnly) {
   # Only files committed to HEAD — safe for prod, ignores uncommitted QA content
   $gitFiles = & git -C $base ls-files HEAD -- "*.html" 2>$null
@@ -99,9 +111,12 @@ foreach ($file in ($files | Sort-Object FullName)) {
   $canonical = Get-Canonical $html
   if ($canonical -and ($canonical -ne $loc.TrimEnd('/'))) { continue }
 
+  $relPath = $file.FullName.Substring($base.Length + 1).Replace('\', '/')
+  $lastMod = if ($gitDates.ContainsKey($relPath)) { $gitDates[$relPath] } else { $file.LastWriteTime.ToString("yyyy-MM-dd") }
+
   $urls += [pscustomobject]@{
     Loc = $loc
-    LastMod = $file.LastWriteTime.ToString("yyyy-MM-dd")
+    LastMod = $lastMod
     Changefreq = Get-Changefreq $urlPath
     Priority = Get-Priority $urlPath
   }
