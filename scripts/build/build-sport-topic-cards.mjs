@@ -3,12 +3,37 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const root = process.cwd();
-const today = Date.parse('2026-06-11T00:00:00Z');
+const today = Date.now();
 const maxCards = 8;
 
 const registryPath = path.join(root, 'content', 'events', 'events-compact.json');
 const sportDir = path.join(root, 'content', 'categories', 'sport');
 const events = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+
+// events.register.json is the authoritative source for sport events (see
+// build-register-v3-events.mjs). events-compact.json is only refreshed for a
+// subset of sport topics (golf), so any event with real register dates
+// overrides whatever events-compact.json has, keeping topic-page "Find
+// events" cards in sync with the real event pages instead of stale scans.
+const registerPath = path.join(root, 'events.register.json');
+const registerBySlug = new Map();
+if (fs.existsSync(registerPath)) {
+  const register = JSON.parse(fs.readFileSync(registerPath, 'utf8'));
+  for (const entry of register.events || []) {
+    if (entry.category === 'sport' && entry.startDate && entry.endDate) {
+      registerBySlug.set(entry.slug, entry);
+    }
+  }
+}
+for (const event of events) {
+  const slug = event.slug || String(event.href || '').replace(/\.html$/, '').split('/').pop();
+  const fresh = registerBySlug.get(slug);
+  if (!fresh) continue;
+  event.start = fresh.startDate;
+  event.end = fresh.endDate;
+  // Keep the original meta string for location extraction (cardLocation reads
+  // the trailing segment) - formatCardDate already prefers start/end when set.
+}
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
