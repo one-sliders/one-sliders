@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Banjul in 2026: calendars, nearby pages and linked event views for planning around Africa / Gambia."
   },
   "region": "Capital city in Gambia",
-  "population": "tba",
+  "population": "~31K",
   "coordinates": {
     "lat": 13.45274,
     "lon": -16.57803
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Banjul travel, stays & events guide",
-  "heroText": "Banjul is a capital city in Gambia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Banjul is the Gambia's small island capital, sitting where the Gambia River meets the Atlantic, though most visitors base themselves in the wider Greater Banjul Area. First-time visitors should climb Arch 22 for panoramic views, browse Albert Market for textiles and crafts, and head to the beach resorts of Kotu and Kololi nearby. Banjul International Airport lies south of the city, connecting the Gambia to Europe and West Africa.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Banjul, Gambia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Banjul",
-      "text": "Banjul is a capital city in Gambia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Banjul Island (city centre)",
+      "text": "Banjul Island itself holds government buildings, Albert Market and Arch 22, worth a day visit though most hotels are elsewhere in Greater Banjul.",
+      "bestFor": "day visits, sightseeing, markets"
+    },
+    {
+      "name": "Kanifing / Serekunda",
+      "text": "Kanifing, anchored by Serekunda, is the Gambia's real economic hub, with shops, restaurants and transport links across Greater Banjul.",
+      "bestFor": "local life, shops, transport links"
+    },
+    {
+      "name": "Kotu",
+      "text": "Kotu is a quieter beach resort area with a wide, clean beach and birdwatching along its ponds and cycle path.",
+      "bestFor": "beach resorts, relaxation, birdwatching"
+    },
+    {
+      "name": "Kololi",
+      "text": "Kololi is the Gambia's liveliest beach resort strip, with hotels, restaurants and nightlife along the Senegambia stretch.",
+      "bestFor": "nightlife, beach resorts, dining"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Banjul International Airport (BJL)",
+      "search": "Banjul International Airport, Banjul, The Gambia",
+      "text": "Banjul International Airport lies south of the city near Yundum; most beach hotels in Kotu and Kololi are a 20-30 minute transfer away."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Banjul International Airport (BJL) and central Banjul before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Banjul, Gambia",
+  "stayOverview": "Most visitors base themselves in the beach resort areas of Kotu or Kololi rather than on Banjul Island itself, treating the historic centre as a day trip. Kanifing and Serekunda offer a livelier, more local alternative closer to everyday Gambian life.",
+  "hotelIntro": "Almost all beach and resort hotels sit in Kotu and Kololi rather than on Banjul Island, so choose Kotu for a quieter stay or Kololi for nightlife and dining, and treat central Banjul as a sightseeing day trip.",
+  "rentalCars": "A rental car isn't essential since taxis and shared 'bush taxis' cover Greater Banjul well, though one helps for exploring further upriver.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Kotu or Kololi for beach resorts, and treat Banjul Island's centre as a half-day sightseeing trip."
+    },
+    {
+      "title": "Getting around",
+      "text": "Agree taxi fares before riding, since meters are uncommon, and expect a 20 to 30 minute transfer between the beach resorts and the airport."
+    },
+    {
+      "title": "Market visits",
+      "text": "Visit Albert Market on Banjul Island for textiles and crafts, and the Senegambia Craft Market near Kololi for souvenirs."
+    },
+    {
+      "title": "Birdwatching",
+      "text": "Set aside a morning for the Kotu Ponds and Kotu Stream, both well-known local spots for birdwatching close to the resorts."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Arch 22",
+      "text": "Arch 22 is a clear heritage marker in Banjul, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Albert Market",
+      "text": "Albert Market gives Banjul a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "National Museum of The Gambia",
+      "text": "National Museum of The Gambia is a key Banjul culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "King Fahad Mosque",
+      "text": "King Fahad Mosque anchors the historic and ceremonial side of Banjul, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Banjul Beach",
+      "text": "Banjul Beach adds outdoor time to a Banjul stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Kachikally Crocodile Pool",
+      "text": "Kachikally Crocodile Pool is a named stop in Banjul worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kololi",
+      "label": "Beach",
+      "text": "Kololi is the Gambia's liveliest beach resort strip, a short drive from Banjul with restaurants, nightlife and the Senegambia craft market."
+    },
+    {
+      "name": "Makasutu Culture Forest",
+      "label": "Nature",
+      "text": "Makasutu Culture Forest, a mangrove and forest reserve upriver from Banjul, offers boat trips and cultural performances on a rewarding day trip."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan Silverstone with city facts, weather, sights, stays and events in England."
   },
   "region": "Key city of England",
-  "population": "tba",
+  "population": "~2K",
   "coordinates": {
     "lat": 52.09216,
     "lon": -1.02602
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Silverstone travel, stays & events guide",
-  "heroText": "Silverstone is a motorsport destination in England, shaped by race weekends, countryside travel and a clear event calendar.",
+  "heroText": "Silverstone is a small Northamptonshire village known worldwide for Silverstone Circuit and race-weekend travel planning. Base plans around Silverstone Circuit, the Silverstone Museum and nearby Towcester, then use Whittlebury Park for hotel, spa or golf downtime. Luton and Birmingham are the most practical airports, but road transfers matter.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Silverstone, England",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Silverstone",
-      "text": "Silverstone is a motorsport destination in England, shaped by race weekends, countryside travel and a clear event calendar."
+      "name": "Towcester",
+      "text": "Towcester is the closest market town to the circuit, with the widest range of race-weekend hotels, pubs and easy access to the A43 into Silverstone.",
+      "bestFor": "race weekends, market-town hotels, closest access"
+    },
+    {
+      "name": "Brackley",
+      "text": "Brackley sits a few miles north-east of the circuit, a quieter Northamptonshire town with chain hotels handy for early sessions or late finishes.",
+      "bestFor": "quieter stays, chain hotels, early sessions"
+    },
+    {
+      "name": "Milton Keynes",
+      "text": "Milton Keynes is the nearest larger city, useful for wider hotel choice, shopping and a straightforward drive to race weekends.",
+      "bestFor": "hotel choice, shopping, day-trip base"
+    },
+    {
+      "name": "Northampton",
+      "text": "Northampton offers a county-town base with rail links and a broader range of accommodation than the villages around the circuit.",
+      "bestFor": "rail links, broader hotel range, county town"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "London Luton Airport (LTN)",
+      "search": "London Luton Airport, Luton, England",
+      "text": "London Luton Airport is the closest major airport to Silverstone, useful for short-notice race-weekend flights before the drive north."
+    },
+    {
+      "name": "Birmingham Airport (BHX)",
+      "search": "Birmingham Airport, Birmingham, England",
+      "text": "Birmingham Airport is the larger regional option for Silverstone, roughly an hour's drive and well linked for race-weekend charter and scheduled flights."
+    }
+  ],
+  "bookingDestination": "Silverstone, England",
+  "stayOverview": "Stay at Whittlebury Park for the closest resort-style base, Towcester for pubs and more services, Milton Keynes for rail and hotel capacity, or Northampton when race-weekend prices around the circuit climb too high.",
+  "hotelIntro": "Silverstone accommodation is event-led. Trackside and Whittlebury stays are best for convenience, Towcester gives nearby village services, and larger towns like Milton Keynes or Northampton help when race-weekend rooms are scarce.",
+  "rentalCars": "A car is useful for Silverstone unless using official race shuttles, because local public transport is limited.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Book near the circuit for race weekends only if walking routes or official transfers are clear before arrival."
+    },
+    {
+      "title": "Race traffic",
+      "text": "British Grand Prix traffic changes normal journey times dramatically, so follow event parking and shuttle instructions."
+    },
+    {
+      "title": "Airport choice",
+      "text": "Luton is often closest, while Birmingham can be easier depending on flight routes and hotel location."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Silverstone, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Silverstone Circuit",
+      "title": "Silverstone Circuit",
+      "text": "Silverstone Circuit is the home of the British Grand Prix, with historic corners, grandstands and tours outside major race weekends."
+    },
+    {
+      "name": "Silverstone Museum",
+      "title": "Silverstone Museum",
+      "text": "Silverstone Museum gives Silverstone a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Whittlebury Park",
+      "title": "Whittlebury Park",
+      "text": "Whittlebury Park is a hotel, spa and golf resort next to the circuit, useful between practice sessions and race day."
+    },
+    {
+      "name": "Towcester",
+      "title": "Towcester",
+      "text": "Towcester is a named stop in Silverstone worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Stowe Gardens",
+      "title": "Stowe Gardens",
+      "text": "Stowe Gardens gives Silverstone a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "name": "Milton Keynes",
+      "title": "Milton Keynes",
+      "text": "Milton Keynes is a practical rail and hotel base for Silverstone when race-weekend rooms closer to the circuit are full."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Stowe Gardens",
+      "label": "Garden",
+      "text": "Stowe Gardens works as a nature-focused side trip from Silverstone, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Towcester",
+      "label": "Town",
+      "text": "Towcester is a nearby side trip from Silverstone; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Bletchley Park",
+      "label": "History",
+      "text": "Bletchley Park near Milton Keynes is a strong codebreaking-history stop within reach by car."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -122,5 +208,11 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Silverstone",
     "matchedCountry": "England"
+  },
+  "transitOperator": "Stagecoach Midlands",
+  "airportTransfer": {
+    "value": "50-75 min by car from Luton or Birmingham depending on traffic",
+    "note": "race weekends need much larger buffers",
+    "distance": "about 55 km from Luton Airport"
   }
 }

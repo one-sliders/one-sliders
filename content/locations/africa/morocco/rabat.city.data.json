@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Rabat in 2026: calendars, nearby pages and linked event views for planning around Africa / Morocco."
   },
   "region": "Capital city in Morocco",
-  "population": "tba",
+  "population": "~510K",
   "coordinates": {
     "lat": 34.01325,
     "lon": -6.83255
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Rabat travel, stays & events guide",
-  "heroText": "Rabat is a capital city in Morocco, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Rabat is Morocco's coastal capital, a calmer counterpart to Marrakech and Fes with royal palaces set among wide boulevards and gardens. First-time visitors should climb the unfinished Hassan Tower beside its mausoleum, wander the blue-and-white lanes of the Kasbah of the Udayas, and explore the Roman and Merinid ruins at Chellah. Rabat-Sale Airport sits just across the river, making the capital an easy, low-key base.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Rabat, Morocco",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Rabat",
-      "text": "Rabat is a capital city in Morocco, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Kasbah of the Udayas",
+      "text": "The Kasbah of the Udayas is a fortified blue-and-white quarter overlooking the river mouth, with narrow lanes, a museum and Andalusian gardens.",
+      "bestFor": "history, views, walking"
+    },
+    {
+      "name": "Medina",
+      "text": "Rabat's Medina is smaller and calmer than Fes or Marrakech, with souks, guesthouses and easy access to the train station.",
+      "bestFor": "souks, budget stays, convenience"
+    },
+    {
+      "name": "Agdal",
+      "text": "Agdal is a modern residential and business district with shops, cafes and government offices, popular with longer-stay visitors.",
+      "bestFor": "business stays, dining"
+    },
+    {
+      "name": "Hassan",
+      "text": "Hassan is the central district around the Hassan Tower and its mausoleum, walkable to the Medina and train station.",
+      "bestFor": "sightseeing, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Rabat-Sale Airport (RBA)",
+      "search": "Rabat-Sale Airport, Rabat, Morocco",
+      "text": "Rabat-Sale Airport lies just north of the city across the Bou Regreg river, a short taxi ride from central Rabat hotels."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Rabat-Sale Airport (RBA) and central Rabat before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Rabat, Morocco",
+  "stayOverview": "Stay in the Medina or Hassan district for walkable access to the Kasbah of the Udayas, Hassan Tower and the train station, or choose Agdal for a quieter, more residential base with modern cafes and shops. Rabat's compact size makes most areas easy to combine.",
+  "hotelIntro": "Rabat's Medina and Hassan district hold guesthouses and mid-range hotels close to the main sights, while Agdal offers newer business hotels suited to longer stays or government-related visits.",
+  "rentalCars": "A rental car is useful for day trips along the coast or to nearby Meknes, but unnecessary for getting around compact central Rabat.",
+  "travelTips": [
+    {
+      "title": "Combine with Sale",
+      "text": "Cross the Bou Regreg river by tram or boat to the sister city of Sale for a quieter medina and fewer crowds."
+    },
+    {
+      "title": "Visit Chellah for the storks",
+      "text": "Time a Chellah visit for late afternoon to see storks nesting on the ruined minaret alongside the Merinid tombs."
+    },
+    {
+      "title": "Dress respectfully at the mausoleum",
+      "text": "Dress modestly when visiting the Mohammed V Mausoleum, an active royal site with guards in traditional dress."
+    },
+    {
+      "title": "Use the tram",
+      "text": "Rabat's tram line is an easy, inexpensive way to move between the Medina, Agdal and Sale without needing a taxi."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Hassan Tower",
+      "text": "Hassan Tower is a clear heritage marker in Rabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Mausoleum of Mohammed V",
+      "text": "Mausoleum of Mohammed V is a named stop in Rabat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kasbah of the Udayas",
+      "text": "Kasbah of the Udayas is a named stop in Rabat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Chellah",
+      "text": "Chellah is a named stop in Rabat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mohammed VI Museum of Modern and Contemporary Art",
+      "text": "Mohammed VI Museum of Modern and Contemporary Art is a key Rabat culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Rabat Medina",
+      "text": "Rabat Medina is a clear heritage marker in Rabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Sale",
+      "label": "History",
+      "text": "Sale, just across the Bou Regreg river, offers a quieter medina and historic corsair-era walls a short tram ride from Rabat."
+    },
+    {
+      "name": "Meknes",
+      "label": "Heritage",
+      "text": "Meknes, an imperial city about an hour away, pairs well with a Rabat stay for its monumental gates and nearby Volubilis ruins."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

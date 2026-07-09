@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Abu Dhabi travel, stays & events guide",
-  "heroText": "Abu Dhabi is a capital city in United Arab Emirates, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Abu Dhabi is a United Arab Emirates base best planned around named sights rather than a generic stopover. Start with Sheikh Zayed Grand Mosque, add Louvre Abu Dhabi, and use Qasr Al Watan to understand the city's history, street life and visitor rhythm. Abu Dhabi International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Abu Dhabi, United Arab Emirates",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Abu Dhabi",
-      "text": "Abu Dhabi is a capital city in United Arab Emirates, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Abu Dhabi, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Abu Dhabi, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Abu Dhabi reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Abu Dhabi sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Abu Dhabi International (AUH)",
+      "search": "Abu Dhabi International (AUH), Abu Dhabi, United Arab Emirates",
+      "text": "Abu Dhabi International (AUH) is the main air gateway for Abu Dhabi; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Abu Dhabi International (AUH) and central Abu Dhabi before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Abu Dhabi, United Arab Emirates",
+  "stayOverview": "Start with City centre for the easiest first Abu Dhabi stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Abu Dhabi hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Abu Dhabi unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Abu Dhabi International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Sheikh Zayed Grand Mosque and Louvre Abu Dhabi so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Abu Dhabi, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Sheikh Zayed Grand Mosque",
+      "text": "Sheikh Zayed Grand Mosque anchors the historic and ceremonial side of Abu Dhabi, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Louvre Abu Dhabi",
+      "text": "Louvre Abu Dhabi is a named stop in Abu Dhabi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Qasr Al Watan",
+      "text": "Qasr Al Watan is a named stop in Abu Dhabi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Corniche Beach",
+      "text": "Corniche Beach adds outdoor time to a Abu Dhabi stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Qasr Al Hosn",
+      "text": "Qasr Al Hosn is a named stop in Abu Dhabi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Yas Island",
+      "text": "Yas Island adds the water-facing side of Abu Dhabi, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Louvre Abu Dhabi",
+      "label": "Heritage",
+      "text": "Louvre Abu Dhabi is a heritage-focused side trip from Abu Dhabi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Qasr Al Watan",
+      "label": "Heritage",
+      "text": "Qasr Al Watan is a heritage-focused side trip from Abu Dhabi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Corniche Beach",
+      "label": "Nature",
+      "text": "Corniche Beach works as a nature-focused side trip from Abu Dhabi, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

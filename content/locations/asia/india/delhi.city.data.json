@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Delhi in 2026: calendars, nearby pages and linked event views for planning around Asia / India."
   },
   "region": "Key city in India",
-  "population": "tba",
+  "population": "~26.5M",
   "coordinates": {
     "lat": 28.65195,
     "lon": 77.23149
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Delhi travel, stays & events guide",
-  "heroText": "Delhi is a key city in India, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Delhi is a India base best planned around named sights rather than a generic stopover. Start with Red Fort, add India Gate, and use Qutub Minar to understand the city's history, street life and visitor rhythm. Delhi Indira Gandhi handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,34 +46,106 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Delhi, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Delhi, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Delhi reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Delhi sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Delhi Indira Gandhi (DEL)",
+      "search": "Delhi Indira Gandhi (DEL), Delhi, India",
+      "text": "Delhi Indira Gandhi (DEL) is the main air gateway for Delhi; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Delhi Indira Gandhi (DEL) and central Delhi before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Delhi, India",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
+  "stayOverview": "Start with City centre for the easiest first Delhi stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Delhi hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Delhi unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Delhi Indira Gandhi, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Red Fort and India Gate so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Delhi, checking weather, transport and opening hours before committing."
+    }
+  ],
   "highlights": [
     {
-      "name": "Delhi",
-      "text": "Delhi is a key city in India, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
-    }
-  ],
-  "nearbyIdeas": [],
-  "events": [
+      "title": "Red Fort",
+      "text": "Red Fort is a clear heritage marker in Delhi, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
     {
-      "modifier": "music",
-      "href": "../../../events/2026/10/diwali-2026.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Diwali 2026",
-      "meta": "Oct-Nov 2026 · Delhi"
+      "title": "India Gate",
+      "text": "India Gate is a clear heritage marker in Delhi, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Qutub Minar",
+      "text": "Qutub Minar is a named stop in Delhi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Humayun's Tomb",
+      "text": "Humayun's Tomb is a named stop in Delhi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lotus Temple",
+      "text": "Lotus Temple anchors the historic and ceremonial side of Delhi, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Chandni Chowk",
+      "text": "Chandni Chowk is a named stop in Delhi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
+  "nearbyIdeas": [
+    {
+      "name": "Red Fort",
+      "label": "Heritage",
+      "text": "Red Fort is a heritage-focused side trip from Delhi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "India Gate",
+      "label": "Heritage",
+      "text": "India Gate is a heritage-focused side trip from Delhi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Qutub Minar",
+      "label": "Heritage",
+      "text": "Qutub Minar is a heritage-focused side trip from Delhi; check the route and opening hours before setting aside the day."
+    }
+  ],
+  "events": [],
   "topicLinks": [],
   "sources": [
     {

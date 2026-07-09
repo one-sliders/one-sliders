@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Nicosia in 2026: calendars, nearby pages and linked event views for planning around Europe / Cyprus."
   },
   "region": "Capital city of Cyprus",
-  "population": "tba",
+  "population": "~200K",
   "coordinates": {
     "lat": 35.17284,
     "lon": 33.35397
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Nicosia travel, stays & events guide",
-  "heroText": "Nicosia is a key city in Cyprus, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Nicosia is Cyprus's inland capital, a walled city where Venetian fortifications, museums and divided-city history shape the visit. Walk Ledra Street, explore the Cyprus Museum, then follow the old walls toward Famagusta Gate. Most visitors arrive through Larnaca International Airport, with road transfers into the capital.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Nicosia, Cyprus",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Nicosia",
-      "text": "Nicosia is a key city in Cyprus, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Old City",
+      "text": "The Old City inside the Venetian walls is best for history, museums, cafes and walking between heritage sights.",
+      "bestFor": "history, walking, cafes"
+    },
+    {
+      "name": "Ledra Street",
+      "text": "Ledra Street is the most central pedestrian base, close to shops, restaurants and the crossing point.",
+      "bestFor": "first visits, shops, restaurants"
+    },
+    {
+      "name": "Engomi",
+      "text": "Engomi is practical for business, embassies, the university and quieter hotels west of the centre.",
+      "bestFor": "business, university, quiet stays"
+    },
+    {
+      "name": "Strovolos",
+      "text": "Strovolos offers residential apartment stays and easier road access for travellers using a car around Cyprus.",
+      "bestFor": "apartments, drivers, longer stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Larnaca International Airport (LCA)",
+      "search": "Larnaca International Airport, Larnaca, Cyprus",
+      "text": "Larnaca International Airport is the main gateway for Nicosia, with intercity buses, taxis and private transfers to the capital."
+    },
+    {
+      "name": "Paphos International Airport (PFO)",
+      "search": "Paphos International Airport, Paphos, Cyprus",
+      "text": "Paphos Airport is farther west and works mainly if flight times or fares are better for a Cyprus-wide trip."
+    }
+  ],
+  "airportTransfer": {
+    "value": "45-60 min by taxi or shuttle from Larnaca Airport to Nicosia",
+    "note": "Nicosia has no commercial airport",
+    "distance": "about 50 km from Larnaca International Airport"
+  },
+  "bookingDestination": "Nicosia, Cyprus",
+  "stayOverview": "Stay in the Old City or around Ledra Street for a first Nicosia visit, Engomi for business and university access, or Strovolos for apartment stays and easier driving around the island.",
+  "hotelIntro": "Nicosia is less resort-focused than coastal Cyprus. Central boutique hotels work best for heritage walks, while Engomi and Strovolos are more practical for business, parking and longer stays.",
+  "rentalCars": "A car is useful for Cyprus-wide travel, but not needed for walking the compact old city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Old City if your visit is about museums, walls, cafes and walking rather than beaches."
+    },
+    {
+      "title": "Crossing point",
+      "text": "Carry your passport if you plan to use the Ledra Street crossing between the two parts of the city."
+    },
+    {
+      "title": "Heat",
+      "text": "Keep the Nicosia plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Larnaca is the easiest coast day trip for sea air, the old quarter and airport logistics."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Ledra Street",
+      "text": "Ledra Street is a named stop in Nicosia worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Ledra Street"
+    },
+    {
+      "title": "Cyprus Museum",
+      "text": "Cyprus Museum gives Nicosia a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Cyprus Museum"
+    },
+    {
+      "title": "Famagusta Gate",
+      "text": "Famagusta Gate is a clear heritage marker in Nicosia, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Famagusta Gate"
+    },
+    {
+      "title": "Venetian walls",
+      "text": "Venetian walls is a named stop in Nicosia worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Venetian walls"
+    },
+    {
+      "title": "Leventis Municipal Museum",
+      "text": "Leventis Municipal Museum gives Nicosia a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Leventis Municipal Museum"
+    },
+    {
+      "title": "Buyuk Han",
+      "text": "Buyuk Han is a named stop in Nicosia worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Buyuk Han"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Larnaca",
+      "label": "Coast",
+      "text": "Larnaca combines the seafront, old town and airport access within an easy road trip from Nicosia."
+    },
+    {
+      "name": "Kyrenia",
+      "label": "Harbour",
+      "text": "Kyrenia offers a castle and harbour north of the mountains; check crossing and insurance rules before driving."
+    },
+    {
+      "name": "Troodos Mountains",
+      "label": "Mountain",
+      "text": "The Troodos Mountains bring cooler villages, painted churches and wine routes for a full day away."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Nicosia",
     "matchedCountry": "Cyprus"
-  }
+  },
+  "transitOperator": "Cyprus Public Transport"
 }

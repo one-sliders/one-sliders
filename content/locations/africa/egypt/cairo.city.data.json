@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Cairo in 2026: calendars, nearby pages and linked event views for planning around Africa / Egypt."
   },
   "region": "Capital city in Egypt",
-  "population": "tba",
+  "population": "~9.8M",
   "coordinates": {
     "lat": 30.06263,
     "lon": 31.24967
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Cairo travel, stays & events guide",
-  "heroText": "Cairo is a historic megacity in Egypt, linking ancient landmarks, Nile routes and dense urban travel planning.",
+  "heroText": "Cairo is Egypt's ancient-meets-modern megacity, sprawling along the Nile beside the Giza Pyramids and Sphinx just across the river. First-time visitors should explore the Egyptian Museum for pharaonic treasures, wander the historic lanes of Khan el-Khalili bazaar, and walk the Islamic Cairo district around the Citadel of Saladin. Cairo International Airport connects the city to destinations across the world.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Cairo, Egypt",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Cairo",
-      "text": "Cairo is a historic megacity in Egypt, linking ancient landmarks, Nile routes and dense urban travel planning."
+      "name": "Zamalek",
+      "text": "Zamalek is a leafy island district on the Nile known for embassies, galleries and cafes, a calm, walkable base close to central Cairo.",
+      "bestFor": "quiet stays, cafes, walkability"
+    },
+    {
+      "name": "Downtown Cairo",
+      "text": "Downtown Cairo centres on early 20th-century boulevards near Tahrir Square, close to the Egyptian Museum and many budget-to-mid-range hotels.",
+      "bestFor": "first visits, museums, budget stays"
+    },
+    {
+      "name": "Giza",
+      "text": "Giza sits beside the Pyramids and Sphinx on the Nile's west bank, the practical base for pyramid views and early morning visits.",
+      "bestFor": "pyramid views, sightseeing"
+    },
+    {
+      "name": "New Cairo",
+      "text": "New Cairo is a modern, spread-out suburb east of the centre with newer hotels, malls and easy airport access.",
+      "bestFor": "business trips, modern amenities, airport access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Cairo International Airport (CAI)",
+      "search": "Cairo International Airport, Cairo, Egypt",
+      "text": "Cairo International Airport lies northeast of downtown; traffic can be heavy, so budget 45 minutes to over an hour depending on time of day."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Cairo International Airport (CAI) and central Cairo before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Cairo, Egypt",
+  "stayOverview": "Base in Zamalek for a calm, leafy stay near central sights, or Downtown Cairo for budget-friendly access to the Egyptian Museum and Tahrir Square. Giza suits travellers prioritizing the Pyramids, while New Cairo offers modern hotels near the airport.",
+  "hotelIntro": "Cairo hotel choice depends on priorities: Zamalek and Downtown put museums and central sights within reach, Giza keeps the Pyramids and Sphinx just minutes away, and New Cairo suits business travellers wanting modern amenities and easier airport access.",
+  "rentalCars": "A rental car isn't recommended in Cairo's dense traffic; use the Cairo Metro, ride-hailing apps or a hired driver instead.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Zamalek or Downtown Cairo for central sightseeing, or Giza if the Pyramids are the priority for your stay."
+    },
+    {
+      "title": "Getting around",
+      "text": "Use the Cairo Metro for fast cross-city trips and ride-hailing apps for door-to-door journeys, since traffic can be unpredictable."
+    },
+    {
+      "title": "Pyramid visits",
+      "text": "Visit the Giza Pyramids early in the morning to avoid both the heat and the largest crowds later in the day."
+    },
+    {
+      "title": "Bazaar bargaining",
+      "text": "Expect to negotiate prices at Khan el-Khalili and other markets, where initial asking prices are usually well above the expected sale price."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Pyramids of Giza",
+      "text": "Pyramids of Giza is a named stop in Cairo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Egyptian Museum",
+      "text": "Egyptian Museum is a key Cairo culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Khan el-Khalili",
+      "text": "Khan el-Khalili is a named stop in Cairo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Cairo Citadel",
+      "text": "Cairo Citadel is a clear heritage marker in Cairo, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Al-Azhar Mosque",
+      "text": "Al-Azhar Mosque anchors the historic and ceremonial side of Cairo, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Coptic Cairo",
+      "text": "Coptic Cairo is a named stop in Cairo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Saqqara",
+      "label": "Heritage",
+      "text": "Saqqara is a heritage-focused side trip from Cairo; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Alexandria",
+      "label": "City",
+      "text": "Alexandria, Egypt's Mediterranean second city, is a comfortable day trip by train from Cairo, known for its library, corniche and ancient history."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
@@ -147,5 +222,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Cairo",
     "matchedCountry": "Egypt"
-  }
+  },
+  "transitOperator": "Cairo Metro"
 }

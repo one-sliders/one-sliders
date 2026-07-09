@@ -13,7 +13,7 @@
     "webpageDescription": "Plan Southport with city facts, weather, sights, stays and events in England."
   },
   "region": "Key city of England",
-  "population": "tba",
+  "population": "~95K",
   "coordinates": {
     "lat": 53.64581,
     "lon": -3.01008
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Southport travel, stays & events guide",
-  "heroText": "Southport is a coastal destination in England, useful for event-led trips, seaside stays and regional travel planning.",
+  "heroText": "Southport is a classic Sefton coast resort with a long pier, Victorian shopping streets and golf links nearby. Start at Southport Pier, walk Lord Street, then use the Marine Lake area or nearby Royal Birkdale for event-led trips. Manchester and Liverpool airports both work, with rail links through Liverpool or Manchester.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Southport, England",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Southport",
-      "text": "Southport is a coastal destination in England, useful for event-led trips, seaside stays and regional travel planning."
+      "name": "Lord Street",
+      "text": "Lord Street is the main shopping and hotel spine, best for first stays, restaurants and classic resort architecture.",
+      "bestFor": "first visits, restaurants, shopping"
+    },
+    {
+      "name": "Promenade",
+      "text": "The Promenade area suits seafront walks, Marine Lake, family attractions and easy access to the pier.",
+      "bestFor": "families, seafront, pier"
+    },
+    {
+      "name": "Birkdale",
+      "text": "Birkdale is quieter and residential, useful for golf trips, local restaurants and access to Royal Birkdale.",
+      "bestFor": "golf, quiet stays, local dining"
+    },
+    {
+      "name": "Ainsdale",
+      "text": "Ainsdale is a beach and nature-focused base south of Southport, better for dunes and slower coastal stays.",
+      "bestFor": "beach, dunes, nature"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Liverpool John Lennon Airport (LPL)",
+      "search": "Liverpool John Lennon Airport, Liverpool, England",
+      "text": "Liverpool John Lennon Airport is the closest major airport for Southport, with rail and road links via Liverpool."
+    },
+    {
+      "name": "Manchester Airport (MAN)",
+      "search": "Manchester Airport, Manchester, England",
+      "text": "Manchester Airport has more long-haul and European routes, with rail options toward Southport via Manchester or Liverpool."
+    }
+  ],
+  "airportTransfer": {
+    "value": "60-90 min by car or rail connections from Liverpool or Manchester airports",
+    "note": "check rail changes before late arrivals",
+    "distance": "about 50 km from Liverpool John Lennon Airport"
+  },
+  "bookingDestination": "Southport, England",
+  "stayOverview": "Stay on Lord Street for the easiest classic Southport base, the Promenade for pier and family attractions, Birkdale for golf access and quieter restaurants, or Ainsdale for beach and dune-focused stays.",
+  "hotelIntro": "Southport works best when the hotel matches the trip: Lord Street for short breaks, Promenade for seafront routines, Birkdale for golf weeks, and Ainsdale for visitors prioritising coast and nature.",
+  "rentalCars": "A car helps for golf courses and coastal nature reserves, but central Southport and Merseyrail trips do not require one.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Lord Street for restaurants and transport, or Birkdale if golf access is the main purpose."
+    },
+    {
+      "title": "Tides",
+      "text": "Keep the Southport plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Rail",
+      "text": "Keep the Southport plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Formby is an easy coastal trip for dunes, beach walks and pine woods south of Southport."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Southport Pier",
+      "title": "Southport Pier",
+      "text": "Southport Pier is one of the town's signature landmarks, stretching across the wide foreshore with big coastal views."
+    },
+    {
+      "name": "Lord Street",
+      "title": "Lord Street",
+      "text": "Lord Street is a named stop in Southport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Marine Lake",
+      "title": "Marine Lake",
+      "text": "Marine Lake adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Royal Birkdale",
+      "title": "Royal Birkdale",
+      "text": "Royal Birkdale is one of Britain's great links golf courses, drawing championship crowds and shaping many event-led stays in Southport."
+    },
+    {
+      "name": "Ainsdale Beach",
+      "title": "Ainsdale Beach",
+      "text": "Ainsdale Beach adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Botanic Gardens Southport",
+      "title": "Botanic Gardens Southport",
+      "text": "Botanic Gardens Southport adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Formby",
+      "label": "Coast",
+      "text": "Formby offers dunes, beach walks and pine woods with red squirrel habitat south of Southport."
+    },
+    {
+      "name": "Liverpool",
+      "label": "City",
+      "text": "Liverpool is a nearby side trip from Southport; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Martin Mere",
+      "label": "Nature",
+      "text": "Martin Mere wetland centre gives birdlife, family trails and seasonal wildlife east of Southport."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Southport",
     "matchedCountry": "England"
-  }
+  },
+  "transitOperator": "Merseyrail"
 }

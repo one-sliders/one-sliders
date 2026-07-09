@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Húsavík travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Húsavík is a Iceland base best planned around named sights rather than a generic stopover. Start with Whale watching harbour, add Husavik Whale Museum, and use GeoSea baths to understand the city's history, street life and visitor rhythm. Húsavík International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Húsavík, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Húsavík, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Húsavík reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Húsavík sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Húsavík International Airport",
+      "search": "Húsavík International Airport, Húsavík, Iceland",
+      "text": "Húsavík International Airport is the main air gateway for Húsavík; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Húsavík International Airport and central Húsavík before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Húsavík, Iceland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Whale watching harbour",
-    "Husavik Whale Museum",
-    "GeoSea baths",
-    "Husavik church",
-    "Lake Myvatn trips",
-    "Asbyrgi canyon trips"
+  "stayOverview": "Start with City centre for the easiest first Húsavík stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Húsavík hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Húsavík unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Húsavík International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Whale watching harbour and Husavik Whale Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Húsavík, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Whale watching harbour",
+      "text": "Whale watching harbour adds the water-facing side of Húsavík, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Husavik Whale Museum",
+      "text": "Husavik Whale Museum is a key Húsavík culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "GeoSea baths",
+      "text": "GeoSea baths is a named stop in Húsavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Husavik church",
+      "text": "Husavik church anchors the historic and ceremonial side of Húsavík, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Lake Myvatn trips",
+      "text": "Lake Myvatn trips adds outdoor time to a Húsavík stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Asbyrgi canyon trips",
+      "text": "Asbyrgi canyon trips is a named stop in Húsavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Whale watching harbour",
+      "label": "Heritage",
+      "text": "Whale watching harbour is a heritage-focused side trip from Húsavík; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "GeoSea baths",
+      "label": "Heritage",
+      "text": "GeoSea baths is a heritage-focused side trip from Húsavík; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Lake Myvatn trips",
+      "label": "Nature",
+      "text": "Lake Myvatn trips works as a nature-focused side trip from Húsavík, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

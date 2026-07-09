@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Nairobi in 2026: calendars, nearby pages and linked event views for planning around Africa / Kenya."
   },
   "region": "Capital city in Kenya",
-  "population": "tba",
+  "population": "~4.4M",
   "coordinates": {
     "lat": -1.28333,
     "lon": 36.81667
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Nairobi travel, stays & events guide",
-  "heroText": "Nairobi is a capital city in Kenya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Nairobi is Kenya's capital and East Africa's business hub, uniquely paired with a working safari park inside the city limits. First-time visitors should spot lions and giraffes at Nairobi National Park, meet rescued calves at the David Sheldrick Wildlife Trust, and browse Maasai crafts at the Maasai Market. Jomo Kenyatta International Airport connects easily onward to the Maasai Mara and Kenya's coast.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Nairobi, Kenya",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Nairobi",
-      "text": "Nairobi is a capital city in Kenya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Westlands",
+      "text": "Westlands is Nairobi's lively business and dining district, with malls, restaurants and nightlife a short drive from the CBD.",
+      "bestFor": "business trips, restaurants, nightlife"
+    },
+    {
+      "name": "Karen",
+      "text": "Karen is a leafy southwestern suburb near the Karen Blixen Museum and Giraffe Centre, suited to a slower, garden-set stay.",
+      "bestFor": "wildlife visits, quiet stays, gardens"
+    },
+    {
+      "name": "Gigiri",
+      "text": "Gigiri hosts the UN offices and many embassies, with secure compounds and hotels favoured by diplomatic and NGO travelers.",
+      "bestFor": "diplomatic visits, UN business"
+    },
+    {
+      "name": "Kilimani",
+      "text": "Kilimani is a central residential district of serviced apartments and cafes, convenient for both the CBD and Westlands.",
+      "bestFor": "longer stays, apartments, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jomo Kenyatta International Airport (NBO)",
+      "search": "Jomo Kenyatta International Airport, Nairobi, Kenya",
+      "text": "Jomo Kenyatta International Airport sits southeast of the city; allow extra time for Mombasa Road traffic, especially during rush hour."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Jomo Kenyatta International Airport (NBO) and central Nairobi before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Nairobi, Kenya",
+  "stayOverview": "Base in Westlands for restaurants and business convenience, or Karen for a quieter stay near the Giraffe Centre and Nairobi National Park gate. Gigiri suits diplomatic and NGO travelers, while Kilimani offers a practical, central middle ground.",
+  "hotelIntro": "Nairobi hotel choice depends on purpose: Westlands suits business trips and dining, Karen suits wildlife-focused, garden-set stays, Gigiri suits UN and embassy visits, and Kilimani offers central apartments within easy reach of everywhere.",
+  "rentalCars": "A rental car with a driver helps for safari transfers and day trips beyond the city, but ride-hailing apps are easier and safer for getting around Nairobi itself.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Westlands or Kilimani for restaurants and central access, or Karen if wildlife sights are the main priority."
+    },
+    {
+      "title": "Traffic",
+      "text": "Nairobi traffic is notoriously heavy at rush hour, so build in extra time for airport transfers and cross-town trips."
+    },
+    {
+      "title": "Safari planning",
+      "text": "Book Maasai Mara flights or transfers a few days ahead from Nairobi, since seats fill quickly in peak migration season."
+    },
+    {
+      "title": "Cash and safety",
+      "text": "Carry Kenyan shillings for markets and use registered taxis or ride-hailing apps rather than hailing cars on the street after dark."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Nairobi National Park",
+      "text": "Nairobi National Park adds outdoor time to a Nairobi stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Karen Blixen Museum",
+      "text": "Karen Blixen Museum is a key Nairobi culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Giraffe Centre",
+      "text": "Giraffe Centre gives Nairobi a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "David Sheldrick Wildlife Trust",
+      "text": "David Sheldrick Wildlife Trust is a named stop in Nairobi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Nairobi National Museum",
+      "text": "Nairobi National Museum is a key Nairobi culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Kenyatta International Convention Centre",
+      "text": "Kenyatta International Convention Centre gives Nairobi a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Maasai Mara",
+      "label": "Safari",
+      "text": "The Maasai Mara, reachable by short flight or a half-day drive, is Kenya's premier safari reserve and home of the Great Migration."
+    },
+    {
+      "name": "Lake Naivasha",
+      "label": "Nature",
+      "text": "Lake Naivasha, about two hours northwest, offers boat rides among hippos and birdlife, plus nearby Hell's Gate National Park for cycling."
+    },
+    {
+      "name": "Amboseli National Park",
+      "label": "Safari",
+      "text": "Amboseli National Park, a few hours south, pairs elephant herds with classic views of Mount Kilimanjaro across the border."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Turku, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Southwest Finland",
-  "population": "tba",
+  "population": "~202K",
   "coordinates": {
     "lat": 60.45148,
     "lon": 22.26869
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Turku travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Turku is Finland's old capital, a river city with medieval history, ferries and archipelago access. Start at Turku Castle, follow the Aura River to Turku Cathedral, then add Forum Marinum or a summer trip toward Ruissalo. Turku Airport is close, while trains and ferries make the city a practical southwest Finland base.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Turku centre",
+      "text": "The centre is best for first stays, restaurants, shops, the market square and river walks.",
+      "bestFor": "first visits, restaurants, walking"
+    },
+    {
+      "name": "Aura riverside",
+      "text": "Aura riverside suits summer terraces, museums, walking routes and easy access between cathedral and castle.",
+      "bestFor": "river walks, summer, museums"
+    },
+    {
+      "name": "Port area",
+      "text": "The port area is practical for ferry departures, Turku Castle and maritime museum visits.",
+      "bestFor": "ferries, castle, maritime history"
+    },
+    {
+      "name": "Ruissalo",
+      "text": "Ruissalo is greener and quieter, useful for villas, beaches, nature and summer events.",
+      "bestFor": "nature, beaches, quiet stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Turku Airport (TKU)",
+      "search": "Turku Airport, Turku, Finland",
+      "text": "Turku Airport is north of the centre, with bus and taxi links into the city."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "15-25 min by bus or taxi to central Turku",
+    "note": "from Turku Airport",
+    "distance": "about 8 km north of the centre"
   },
   "bookingDestination": "Turku, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Turku Castle",
-    "Turku Cathedral",
-    "Aura River",
-    "Forum Marinum",
-    "Ruissalo",
-    "Archipelago Trail"
+  "stayOverview": "Stay in Turku centre for restaurants and transport, along the Aura riverside for summer atmosphere, near the port for ferries and the castle, or Ruissalo for nature-focused slower stays.",
+  "hotelIntro": "Turku is easiest around the river and centre. Port hotels suit ferry logistics, riverside stays are best in summer, and Ruissalo works when beaches, villas and green space matter more than nightlife.",
+  "rentalCars": "A car helps for the Archipelago Trail, but central Turku, ferries and buses cover most short visits.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the centre or Aura riverside if you want restaurants, museums and evening walks close together."
+    },
+    {
+      "title": "Ferries",
+      "text": "Keep the Turku plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Summer",
+      "text": "Keep the Turku plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Turku, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Turku Castle",
+      "title": "Turku Castle",
+      "text": "Turku Castle is a clear heritage marker in Turku, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Turku Cathedral",
+      "title": "Turku Cathedral",
+      "text": "Turku Cathedral is one of Turku's religious landmarks; check visiting hours and dress expectations before building the route around it."
+    },
+    {
+      "name": "Aura River",
+      "title": "Aura River",
+      "text": "Aura River adds the water-facing side of Turku, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Forum Marinum",
+      "title": "Forum Marinum",
+      "text": "Forum Marinum is a named stop in Turku worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Ruissalo",
+      "title": "Ruissalo",
+      "text": "Ruissalo is a named stop in Turku worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Archipelago Trail",
+      "title": "Archipelago Trail",
+      "text": "Archipelago Trail is a clear heritage marker in Turku, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Naantali",
+      "label": "Town",
+      "text": "Naantali is a nearby side trip from Turku; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Archipelago Trail",
+      "label": "Islands",
+      "text": "The Archipelago Trail links ferries, bridges and island villages for a longer coastal circuit."
+    },
+    {
+      "name": "Pargas",
+      "label": "Coast",
+      "text": "Pargas is an easy first archipelago stop with limestone history and small-town harbour life."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Turku",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Föli"
 }

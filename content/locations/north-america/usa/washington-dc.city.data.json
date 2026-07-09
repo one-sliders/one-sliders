@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Washington DC, District of Columbia trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "District of Columbia",
-  "population": "tba",
+  "population": "~690K",
   "coordinates": {
     "lat": 38.9072,
     "lon": -77.0369
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Washington DC, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Washington DC",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Washington DC, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Washington DC, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Washington DC reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Washington DC sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Washington DC International Airport",
+      "search": "Washington DC International Airport, Washington DC, USA",
+      "text": "Washington DC International Airport is the main air gateway for Washington DC; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Washington DC International Airport and central Washington DC before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Washington DC, USA",
+  "stayOverview": "Start with City centre for the easiest first Washington DC stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Washington DC hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Washington DC unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Washington DC International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Washington DC and Washington DC so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Washington DC, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Mall",
+      "text": "National Mall is useful for reading Washington DC's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "title": "U.S. Capitol",
+      "text": "U.S. Capitol is a named stop in Washington DC worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "White House",
+      "text": "White House is a named stop in Washington DC worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Smithsonian Museums",
+      "text": "Smithsonian Museums is a key Washington DC culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Lincoln Memorial",
+      "text": "Lincoln Memorial is a clear heritage marker in Washington DC, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Georgetown",
+      "text": "Georgetown is a named stop in Washington DC worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "National Mall",
+      "label": "Heritage",
+      "text": "National Mall is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "U.S. Capitol",
+      "label": "Heritage",
+      "text": "U.S. Capitol is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "White House",
+      "label": "Heritage",
+      "text": "White House is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

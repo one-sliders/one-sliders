@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Helsinki, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Uusimaa",
-  "population": "tba",
+  "population": "~675K",
   "coordinates": {
     "lat": 60.16952,
     "lon": 24.93545
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Helsinki travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Helsinki is Finland's sea-facing capital, built around design, ferries, saunas and easy public transport. Start at Helsinki Cathedral and Market Square, take the ferry to Suomenlinna, then use the Design District or Oodi Library for a modern city day. Helsinki Airport connects smoothly by train to the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Kluuvi",
+      "text": "Kluuvi is the central station and shopping core, best for first stays, rail arrivals and short walks to landmarks.",
+      "bestFor": "first visits, station, shopping"
+    },
+    {
+      "name": "Kamppi",
+      "text": "Kamppi has hotels, malls, restaurants and transport links, making it practical for short urban stays.",
+      "bestFor": "transport, restaurants, short stays"
+    },
+    {
+      "name": "Punavuori",
+      "text": "Punavuori anchors the Design District with cafes, boutiques and a more local evening feel.",
+      "bestFor": "design, cafes, local feel"
+    },
+    {
+      "name": "Katajanokka",
+      "text": "Katajanokka is a quieter harbour district near ferries, Art Nouveau streets and Market Square.",
+      "bestFor": "harbour, quiet stays, ferries"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Helsinki Airport (HEL)",
+      "search": "Helsinki Airport, Helsinki, Finland",
+      "text": "Helsinki Airport is north of the city and links to central Helsinki by frequent commuter trains and buses."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "30-35 min by train to Helsinki Central Station",
+    "note": "from Helsinki Airport",
+    "distance": "about 18 km north of the centre"
   },
   "bookingDestination": "Helsinki, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Helsinki Cathedral",
-    "Suomenlinna",
-    "Market Square",
-    "Design District",
-    "Oodi Library",
-    "Loyly sauna"
+  "stayOverview": "Choose Kluuvi for the central station and classic first walks, Kamppi for transport and restaurants, Punavuori for design-led local evenings, or Katajanokka for harbour atmosphere and quieter streets.",
+  "hotelIntro": "Helsinki is easy by tram, metro and train. Central hotels are convenient, but Punavuori and Katajanokka often give more neighbourhood character while staying close to major sights and ferry routes.",
+  "rentalCars": "Do not rent for Helsinki; trains, trams and ferries work better unless leaving for rural Finland.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Kluuvi or Kamppi for a first short visit, especially if arriving by train from the airport."
+    },
+    {
+      "title": "Ferries",
+      "text": "Suomenlinna ferries run from Market Square, but weather and ice can affect the feel of the trip."
+    },
+    {
+      "title": "Sauna",
+      "text": "For sauna time in Helsinki, confirm booking rules, swim access and the route back to your hotel before committing."
+    },
+    {
+      "title": "Day trip",
+      "text": "Porvoo is the classic old-town day trip, with wooden houses and riverside cafes east of Helsinki."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Helsinki Cathedral",
+      "title": "Helsinki Cathedral",
+      "text": "Helsinki Cathedral is one of Helsinki's religious landmarks; check visiting hours and dress expectations before building the route around it."
+    },
+    {
+      "name": "Suomenlinna",
+      "title": "Suomenlinna",
+      "text": "Suomenlinna is a named stop in Helsinki worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Market Square",
+      "title": "Market Square",
+      "text": "Market Square is useful for reading Helsinki's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "name": "Design District",
+      "title": "Design District",
+      "text": "Design District is a named stop in Helsinki worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Oodi Library",
+      "title": "Oodi Library",
+      "text": "Oodi Library gives Helsinki a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Loyly sauna",
+      "title": "Loyly sauna",
+      "text": "Loyly sauna is a named stop in Helsinki worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Porvoo",
+      "label": "Town",
+      "text": "Porvoo is a classic wooden old-town and riverside cafe day trip east of Helsinki."
+    },
+    {
+      "name": "Nuuksio National Park",
+      "label": "Nature",
+      "text": "Nuuksio gives forest lakes and marked trails within reach of Helsinki by public transport and taxi."
+    },
+    {
+      "name": "Tallinn",
+      "label": "Ferry",
+      "text": "Tallinn is possible by ferry for a long day, though an overnight gives a better visit."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Helsinki",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "HSL"
 }

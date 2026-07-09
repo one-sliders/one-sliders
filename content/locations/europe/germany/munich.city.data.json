@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Munich in 2026: calendars, nearby pages and linked event views for planning around Europe / Germany."
   },
   "region": "Key city of Germany",
-  "population": "tba",
+  "population": "~1.5M",
   "coordinates": {
     "lat": 48.13743,
     "lon": 11.57549
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Munich travel, stays & events guide",
-  "heroText": "Munich is a key city in Germany, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Munich is Bavaria's polished capital, balancing beer halls, art museums, royal squares and Alpine access. Start at Marienplatz, visit the Residenz or English Garden, then plan Oktoberfest around Theresienwiese if your dates match. Munich Airport is northeast of the city, with S-Bahn and airport buses into town.",
   "kpis": [
     {
       "label": "Population",
@@ -46,30 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Munich, Germany",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Munich",
-      "text": "Munich is a key city in Germany, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Altstadt",
+      "text": "Altstadt is best for first stays, with Marienplatz, beer halls, shopping and major sights close together.",
+      "bestFor": "first visits, landmarks, beer halls"
+    },
+    {
+      "name": "Maxvorstadt",
+      "text": "Maxvorstadt suits museum trips, university energy, cafes and access to the Pinakothek art galleries.",
+      "bestFor": "museums, cafes, culture"
+    },
+    {
+      "name": "Ludwigsvorstadt",
+      "text": "Ludwigsvorstadt is practical for the main station and Oktoberfest access, but choose streets carefully.",
+      "bestFor": "station, Oktoberfest, transport"
+    },
+    {
+      "name": "Schwabing",
+      "text": "Schwabing has restaurants, nightlife and easy access to the English Garden north of the centre.",
+      "bestFor": "nightlife, parks, restaurants"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Munich Airport (MUC)",
+      "search": "Munich Airport, Munich, Germany",
+      "text": "Munich Airport is northeast of the city and connects to central Munich by S-Bahn, Lufthansa Express Bus and taxis."
+    }
+  ],
+  "airportTransfer": {
+    "value": "40-50 min by S-Bahn or airport bus to central Munich",
+    "note": "from Munich Airport",
+    "distance": "about 35 km northeast of the centre"
+  },
+  "bookingDestination": "Munich, Germany",
+  "stayOverview": "Altstadt is easiest for a first visit, Maxvorstadt works for museums, Ludwigsvorstadt is practical for the station and Oktoberfest, and Schwabing suits restaurants, nightlife and English Garden access.",
+  "hotelIntro": "Munich hotels get expensive during Oktoberfest and trade fairs. Book early, check U-Bahn access, and choose Ludwigsvorstadt only when station or Theresienwiese convenience outweighs atmosphere.",
+  "rentalCars": "Do not rent for Munich itself; trains are better for Salzburg, Nuremberg and many Alpine day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Altstadt or Maxvorstadt for a first visit, unless Oktoberfest access is the main purpose."
+    },
+    {
+      "title": "Oktoberfest",
+      "text": "Book accommodation months ahead for Oktoberfest, and check tent reservation rules before assuming seats are available."
+    },
+    {
+      "title": "Airport",
+      "text": "Check the route from Munich Airport (MUC) before choosing between a central hotel and an airport-area first night in Munich."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Munich, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Marienplatz",
+      "title": "Marienplatz",
+      "text": "Marienplatz is a named stop in Munich worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "English Garden",
+      "title": "English Garden",
+      "text": "English Garden gives Munich a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "name": "Munich Residenz",
+      "title": "Munich Residenz",
+      "text": "Munich Residenz is a named stop in Munich worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Theresienwiese",
+      "title": "Theresienwiese",
+      "text": "Theresienwiese is a named stop in Munich worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Nymphenburg Palace",
+      "title": "Nymphenburg Palace",
+      "text": "Nymphenburg Palace is a clear heritage marker in Munich, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Deutsches Museum",
+      "title": "Deutsches Museum",
+      "text": "Deutsches Museum gives Munich a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Dachau Memorial",
+      "label": "Memorial",
+      "text": "Dachau Memorial is a heritage-focused side trip from Munich; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Salzburg",
+      "label": "City",
+      "text": "Salzburg is a nearby side trip from Munich; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Neuschwanstein",
+      "label": "Castle",
+      "text": "Neuschwanstein is a nearby side trip from Munich; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/food-drink/events/oktoberfest.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
+      "img": "/content/categories/culture/food-drink/events/img/oktoberfest-mini.png",
       "title": "Oktoberfest",
       "meta": "Sep-Oct 2026 · Munich"
     }
@@ -147,5 +233,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Munich",
     "matchedCountry": "Germany"
-  }
+  },
+  "transitOperator": "MVV"
 }

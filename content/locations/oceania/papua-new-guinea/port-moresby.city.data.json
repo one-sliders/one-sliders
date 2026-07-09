@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Port Moresby travel, stays & events guide",
-  "heroText": "Port Moresby is a capital city in Papua New Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Port Moresby is a Papua New Guinea base best planned around named sights rather than a generic stopover. Start with Port Moresby Nature Park, add National Museum and Art Gallery Papua New Guinea, and use Ela Beach to understand the city's history, street life and visitor rhythm. Jacksons International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Port Moresby, Papua New Guinea",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Port Moresby",
-      "text": "Port Moresby is a capital city in Papua New Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Port Moresby, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Port Moresby, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Port Moresby reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Port Moresby sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jacksons International Airport (POM)",
+      "search": "Jacksons International Airport (POM), Port Moresby, Papua New Guinea",
+      "text": "Jacksons International Airport (POM) is the main air gateway for Port Moresby; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Jacksons International Airport (POM) and central Port Moresby before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Port Moresby, Papua New Guinea",
+  "stayOverview": "Start with City centre for the easiest first Port Moresby stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Port Moresby hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Port Moresby unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Jacksons International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Port Moresby Nature Park and National Museum and Art Gallery Papua New Guinea so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Port Moresby, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Port Moresby Nature Park",
+      "text": "Port Moresby Nature Park adds outdoor time to a Port Moresby stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Museum and Art Gallery Papua New Guinea",
+      "text": "National Museum and Art Gallery Papua New Guinea is a key Port Moresby culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Ela Beach",
+      "text": "Ela Beach adds outdoor time to a Port Moresby stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Parliament House Port Moresby",
+      "text": "Parliament House Port Moresby adds the water-facing side of Port Moresby, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Bomana War Cemetery",
+      "text": "Bomana War Cemetery is a named stop in Port Moresby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Adventure Park PNG",
+      "text": "Adventure Park PNG adds outdoor time to a Port Moresby stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Port Moresby Nature Park",
+      "label": "Nature",
+      "text": "Port Moresby Nature Park works as a nature-focused side trip from Port Moresby, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Ela Beach",
+      "label": "Nature",
+      "text": "Ela Beach works as a nature-focused side trip from Port Moresby, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Parliament House Port Moresby",
+      "label": "Heritage",
+      "text": "Parliament House Port Moresby is a heritage-focused side trip from Port Moresby; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

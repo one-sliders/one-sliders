@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tashkent travel, stays & events guide",
-  "heroText": "Tashkent is a capital city in Uzbekistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tashkent is a Uzbekistan base best planned around named sights rather than a generic stopover. Start with Khast Imam Complex, add Chorsu Bazaar, and use Amir Timur Square to understand the city's history, street life and visitor rhythm. Tashkent International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tashkent, Uzbekistan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tashkent",
-      "text": "Tashkent is a capital city in Uzbekistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City Centre",
+      "text": "City Centre is the most practical first base in Tashkent, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Chorsu",
+      "text": "Chorsu is useful when a Tashkent stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Amir Timur Square",
+      "text": "Amir Timur Square is useful when a Tashkent stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Yunusabad",
+      "text": "Yunusabad is useful when a Tashkent stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tashkent International (TAS)",
+      "search": "Tashkent International (TAS), Tashkent, Uzbekistan",
+      "text": "Tashkent International (TAS) is the main air gateway for Tashkent; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Tashkent International (TAS) and central Tashkent before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Tashkent, Uzbekistan",
+  "stayOverview": "Start with City Centre for the easiest first Tashkent stay, then compare Chorsu and Amir Timur Square when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Tashkent hotel choice is mostly about repeat journeys: use City Centre for sightseeing, Chorsu for a different local base, and Amir Timur Square or Yunusabad when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Tashkent unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City Centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Tashkent International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Khast Imam Complex and Chorsu Bazaar so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Tashkent, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Khast Imam Complex",
+      "text": "Khast Imam Complex is a named stop in Tashkent worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Chorsu Bazaar",
+      "text": "Chorsu Bazaar gives Tashkent a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Amir Timur Square",
+      "text": "Amir Timur Square is a clear heritage marker in Tashkent, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Tashkent Metro",
+      "text": "Tashkent Metro is a named stop in Tashkent worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Museum of Applied Arts",
+      "text": "Museum of Applied Arts is a key Tashkent culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Independence Square Tashkent",
+      "text": "Independence Square Tashkent is a clear heritage marker in Tashkent, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Khast Imam Complex",
+      "label": "Heritage",
+      "text": "Khast Imam Complex is a heritage-focused side trip from Tashkent; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Chorsu Bazaar",
+      "label": "Heritage",
+      "text": "Chorsu Bazaar is a heritage-focused side trip from Tashkent; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Tashkent Metro",
+      "label": "Heritage",
+      "text": "Tashkent Metro is a heritage-focused side trip from Tashkent; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Kampala in 2026: calendars, nearby pages and linked event views for planning around Africa / Uganda."
   },
   "region": "Capital city in Uganda",
-  "population": "tba",
+  "population": "~1.5M",
   "coordinates": {
     "lat": 0.31628,
     "lon": 32.58219
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kampala travel, stays & events guide",
-  "heroText": "Kampala is a capital city in Uganda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kampala is Uganda's hilly capital, spread across seven hills above the shores of Lake Victoria. First-time visitors should tour the UNESCO-listed Kasubi Tombs of the Buganda kings, browse crafts and produce at Owino Market, and photograph the lotus-shaped Bahá'í Temple. Entebbe International Airport sits about 40 kilometres south on the lakeshore, and Kampala's markets, music and traffic-filled energy make it a lively East African base.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kampala, Uganda",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kampala",
-      "text": "Kampala is a capital city in Uganda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Kololo",
+      "text": "Kololo is an upscale hillside district of embassies and leafy streets, home to many of Kampala's higher-end hotels.",
+      "bestFor": "business trips, embassies, upscale stays"
+    },
+    {
+      "name": "Nakasero",
+      "text": "Nakasero is Kampala's central business hill, packed with banks, offices and one of the city's busiest fresh-produce markets.",
+      "bestFor": "first visits, business, markets"
+    },
+    {
+      "name": "Ntinda",
+      "text": "Ntinda is a growing residential and restaurant hub northeast of the centre, useful for longer stays away from downtown traffic.",
+      "bestFor": "longer stays, restaurants"
+    },
+    {
+      "name": "Kabalagala",
+      "text": "Kabalagala is Kampala's best-known nightlife strip, packed with bars and clubs that stay lively into the early hours.",
+      "bestFor": "nightlife, budget stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Entebbe International Airport (EBB)",
+      "search": "Entebbe International Airport, Entebbe, Uganda",
+      "text": "Entebbe International Airport sits about 40 kilometres south of Kampala on Lake Victoria's shore, roughly an hour's drive depending on traffic."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Entebbe International Airport (EBB) and central Kampala before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kampala, Uganda",
+  "stayOverview": "Base in Nakasero for an easy first stay near banks, markets and downtown offices, or choose Kololo for embassy-district calm and upscale hotels. Ntinda suits longer, quieter stays, while Kabalagala works for travelers prioritising nightlife.",
+  "hotelIntro": "Kampala hotel choice depends on priorities: Nakasero suits first-time visitors wanting central sights and markets, Kololo suits business and diplomatic travelers, and Ntinda or Kabalagala suit those wanting quieter residential streets or lively nightlife respectively.",
+  "rentalCars": "A rental car with driver helps for reaching Entebbe, Lake Victoria's shoreline or national parks further afield, though downtown Kampala is dense enough to navigate by taxi or boda-boda.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Kampala base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Traffic planning",
+      "text": "Build in extra time for Kampala's notorious traffic, especially during weekday rush hours around the city centre."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Book a hotel transfer or taxi for the roughly hour-long drive from Entebbe International Airport, allowing extra time for traffic."
+    },
+    {
+      "title": "Boda-boda safety",
+      "text": "Keep the Kampala plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kasubi Tombs",
+      "text": "Kasubi Tombs is a named stop in Kampala worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Uganda Museum",
+      "text": "Uganda Museum is a key Kampala culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Gaddafi National Mosque",
+      "text": "Gaddafi National Mosque anchors the historic and ceremonial side of Kampala, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Kabaka's Palace",
+      "text": "Kabaka's Palace anchors the historic and ceremonial side of Kampala, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Bahai Temple Kampala",
+      "text": "Bahai Temple Kampala anchors the historic and ceremonial side of Kampala, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Ndere Cultural Centre",
+      "text": "Ndere Cultural Centre gives Kampala a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lake Victoria",
+      "label": "Nature",
+      "text": "Lake Victoria's shoreline and islands are a short drive from Kampala, popular for boat trips and lakeside relaxation."
+    },
+    {
+      "name": "Entebbe Botanical Gardens",
+      "label": "Nature",
+      "text": "Entebbe Botanical Gardens sit near the airport on Lake Victoria, good for a relaxed walk among tropical plants and birdlife."
+    },
+    {
+      "name": "Mabamba Swamp",
+      "label": "Wildlife",
+      "text": "Mabamba Swamp is a renowned birding site near Entebbe, best known for sightings of the rare shoebill stork."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

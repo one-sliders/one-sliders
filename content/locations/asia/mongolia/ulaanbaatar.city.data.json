@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Ulaanbaatar in 2026: calendars, nearby pages and linked event views for planning around Asia / Mongolia."
   },
   "region": "Capital city in Mongolia",
-  "population": "tba",
+  "population": "~1.7M",
   "coordinates": {
     "lat": 47.90771,
     "lon": 106.88324
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ulaanbaatar travel, stays & events guide",
-  "heroText": "Ulaanbaatar is a capital city in Mongolia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Ulaanbaatar is Mongolia's high-altitude capital, a fast-growing city between the Tuul River, Bogd Khan Mountain and the open steppe. First-time visitors should start at Sukhbaatar Square, hear morning chanting at Gandan Monastery, then use the National Museum of Mongolia and Zaisan Memorial to understand the city's Buddhist, Soviet and nomadic layers. Chinggis Khaan International Airport links the city with regional flights and steppe day trips.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Ulaanbaatar, Mongolia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Ulaanbaatar",
-      "text": "Ulaanbaatar is a capital city in Mongolia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Sukhbaatar District",
+      "text": "Sukhbaatar District is the central hotel base around the square, government buildings, museums, restaurants and most first-time sightseeing routes.",
+      "bestFor": "first visits, museums, central walks"
+    },
+    {
+      "name": "Chingeltei",
+      "text": "Chingeltei sits north and west of the centre, useful for older streets, markets and cheaper stays within taxi distance of the main square.",
+      "bestFor": "budget stays, markets, local streets"
+    },
+    {
+      "name": "Khan-Uul",
+      "text": "Khan-Uul covers the south side toward Zaisan, newer apartments, malls and roads leading toward the airport and Bogd Khan Mountain.",
+      "bestFor": "new hotels, airport road, Zaisan"
+    },
+    {
+      "name": "Bayanzurkh",
+      "text": "Bayanzurkh is a large eastern district with practical apartment stays, road access to Terelj trips and quieter options away from the core.",
+      "bestFor": "longer stays, Terelj access, apartments"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Chinggis Khaan International Airport (UBN)",
+      "search": "Chinggis Khaan International Airport, Ulaanbaatar, Mongolia",
+      "text": "Chinggis Khaan International Airport is the main airport for Ulaanbaatar, in the Khushig Valley south of the city; allow generous transfer time."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Plan for about 60-90 minutes by road between Chinggis Khaan International Airport and central Ulaanbaatar, depending on traffic and weather.",
+    "note": "Khushig Valley airport transfer",
+    "distance": "~52 km"
+  },
+  "bookingDestination": "Ulaanbaatar, Mongolia",
+  "stayOverview": "Stay around Sukhbaatar District for the simplest first Ulaanbaatar base near the square, museums and restaurants. Compare Chingeltei for cheaper central stays, Khan-Uul for newer hotels near Zaisan and the airport road, or Bayanzurkh for longer apartment-style stays.",
+  "hotelIntro": "Ulaanbaatar hotel choice is mostly about traffic and trip style: Sukhbaatar District keeps sightseeing close, Chingeltei can lower costs, Khan-Uul suits newer hotels and south-side transfers, while Bayanzurkh works for longer stays and eastern day-trip departures.",
+  "rentalCars": "Do not rent a car for central Ulaanbaatar traffic; hire a driver or tour vehicle for Terelj, Hustai or steppe routes outside the city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Sukhbaatar District for a first stay, since the square, museums, restaurants and many tour pickups cluster around the centre."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Build in a wide transfer buffer to Chinggis Khaan International Airport, especially in winter weather or evening traffic."
+    },
+    {
+      "title": "Winter planning",
+      "text": "Pack serious cold-weather layers from late autumn through spring; Ulaanbaatar is one of the world's coldest national capitals."
+    },
+    {
+      "title": "Day trips",
+      "text": "Book Terelj, the Chinggis Khaan Statue Complex or Hustai with transport included unless you are comfortable with long rural drives."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Sukhbaatar Square",
+      "text": "Sukhbaatar Square is the civic centre of Ulaanbaatar, framed by government buildings, monuments and the easiest starting point for downtown walks."
+    },
+    {
+      "title": "Gandan Monastery",
+      "text": "Gandan Monastery is Ulaanbaatar's main active Buddhist monastery, known for morning chanting, prayer wheels and the tall Migjid Janraisig statue."
+    },
+    {
+      "title": "National Museum of Mongolia",
+      "text": "The National Museum of Mongolia explains the country's nomadic empires, clothing, archaeology and twentieth-century history in a central, practical first-visit stop."
+    },
+    {
+      "title": "Zaisan Memorial",
+      "text": "Zaisan Memorial stands on a hill south of the centre, giving wide views over Ulaanbaatar, the Tuul River and surrounding mountains."
+    },
+    {
+      "title": "Choijin Lama Temple Museum",
+      "text": "Choijin Lama Temple Museum preserves a former Buddhist temple complex in the city centre, with carved gateways, ritual objects and quiet courtyards."
+    },
+    {
+      "title": "Bogd Khan Palace Museum",
+      "text": "Bogd Khan Palace Museum shows the winter palace of Mongolia's last theocratic ruler, with temples, royal rooms and Buddhist art."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Gorkhi-Terelj National Park",
+      "label": "Nature",
+      "text": "Terelj is the classic day trip from Ulaanbaatar, with granite hills, ger camps, horse rides and Turtle Rock scenery."
+    },
+    {
+      "name": "Chinggis Khaan Statue Complex",
+      "label": "Landmark",
+      "text": "The giant equestrian statue east of the city pairs well with Terelj on a full-day guided route."
+    },
+    {
+      "name": "Hustai National Park",
+      "label": "Wildlife",
+      "text": "Hustai protects reintroduced Przewalski's horses, best visited with a driver and enough daylight for wildlife viewing."
+    },
+    {
+      "name": "Bogd Khan Mountain",
+      "label": "Nature",
+      "text": "Bogd Khan Mountain rises directly south of Ulaanbaatar, offering hikes and forested slopes close to Zaisan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

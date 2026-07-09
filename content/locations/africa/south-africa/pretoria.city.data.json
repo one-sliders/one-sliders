@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Pretoria in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa."
   },
   "region": "Capital city in South Africa",
-  "population": "tba",
+  "population": "~742K",
   "coordinates": {
     "lat": -25.74486,
     "lon": 28.18783
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Pretoria travel, stays & events guide",
-  "heroText": "Pretoria is a capital city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Pretoria is South Africa's administrative capital, known for its jacaranda-lined streets and the grand sandstone Union Buildings overlooking the city. First-time visitors should photograph the Union Buildings' terraced gardens, climb the Voortrekker Monument for panoramic views, and browse cafes around historic Church Square. OR Tambo International Airport near Johannesburg is the main gateway, about an hour's drive away, and Pretoria pairs easily with a Johannesburg stay.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Pretoria, South Africa",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Pretoria",
-      "text": "Pretoria is a capital city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Hatfield",
+      "text": "Hatfield is Pretoria's student and nightlife hub near the University of Pretoria, packed with bars, cafes and budget-friendly guesthouses.",
+      "bestFor": "nightlife, budget stays, students"
+    },
+    {
+      "name": "Brooklyn",
+      "text": "Brooklyn is an upscale district of embassies, malls and restaurants, a quiet and convenient base for business and diplomatic visits.",
+      "bestFor": "business trips, embassies, dining"
+    },
+    {
+      "name": "Sunnyside",
+      "text": "Sunnyside is a busy, affordable neighborhood close to the CBD, popular for its lively street life and easy access to Church Square.",
+      "bestFor": "budget stays, local life"
+    },
+    {
+      "name": "Menlyn",
+      "text": "Menlyn centres on one of South Africa's largest shopping malls, useful for travelers wanting modern hotels and retail close by.",
+      "bestFor": "shopping, modern hotels"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "OR Tambo International Airport (JNB)",
+      "search": "OR Tambo International Airport, Johannesburg, South Africa",
+      "text": "OR Tambo International Airport near Johannesburg is Pretoria's main gateway, roughly an hour's drive south via the Gautrain or highway."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between OR Tambo International Airport (JNB) and central Pretoria before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Pretoria, South Africa",
+  "stayOverview": "Base in Hatfield or Sunnyside for an easy, affordable first stay near the university and Church Square, or choose Brooklyn for embassy-district calm and upscale dining. Menlyn suits travelers wanting shopping and modern hotels close to the eastern suburbs.",
+  "hotelIntro": "Pretoria hotel choice depends on priorities: Hatfield and Sunnyside suit budget-conscious travelers wanting nightlife and central sights, Brooklyn suits business and diplomatic visits, and Menlyn suits those wanting shopping malls and newer hotel stock.",
+  "rentalCars": "A rental car or the Gautrain helps for trips between Pretoria and Johannesburg, though Hatfield, Brooklyn and Menlyn are each walkable once you're based there.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Hatfield or Brooklyn for an easy first stay close to the Union Buildings, restaurants and university life."
+    },
+    {
+      "title": "Jacaranda season",
+      "text": "Visit in October for Pretoria's famous jacaranda bloom, when purple-flowering trees line entire avenues across the city."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Use the Gautrain plus a connecting shuttle, or a pre-booked taxi, for the roughly hour-long trip from OR Tambo International Airport."
+    },
+    {
+      "title": "Pairing with Johannesburg",
+      "text": "Combine a Pretoria stay with Johannesburg using the Gautrain, which links the two cities in well under an hour."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Union Buildings",
+      "text": "Union Buildings is a named stop in Pretoria worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Voortrekker Monument",
+      "text": "Voortrekker Monument is a clear heritage marker in Pretoria, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Zoological Garden of South Africa",
+      "text": "National Zoological Garden of South Africa adds outdoor time to a Pretoria stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Freedom Park",
+      "text": "Freedom Park adds outdoor time to a Pretoria stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Church Square Pretoria",
+      "text": "Church Square Pretoria anchors the historic and ceremonial side of Pretoria, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Pretoria National Botanical Garden",
+      "text": "Pretoria National Botanical Garden adds outdoor time to a Pretoria stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Johannesburg",
+      "label": "City",
+      "text": "Johannesburg is under an hour away by Gautrain, worth combining with Pretoria for its museums, markets and Soweto tours."
+    },
+    {
+      "name": "Cullinan",
+      "label": "Heritage",
+      "text": "Cullinan is a small mining town east of Pretoria, home to the diamond mine that produced the Cullinan Diamond, open for guided tours."
+    },
+    {
+      "name": "Rietvlei Nature Reserve",
+      "label": "Nature",
+      "text": "Rietvlei Nature Reserve offers an easy game drive on Pretoria's southern edge, with zebra, antelope and birdlife close to the city."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

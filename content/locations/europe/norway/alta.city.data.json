@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Alta travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Alta is a Norway base best planned around named sights rather than a generic stopover. Start with Alta Museum rock art, add Northern Lights Cathedral, and use Sorrisniva to understand the city's history, street life and visitor rhythm. Alta International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Alta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Alta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Alta reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Alta sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Alta International Airport",
+      "search": "Alta International Airport, Alta, Norway",
+      "text": "Alta International Airport is the main air gateway for Alta; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Alta International Airport and central Alta before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Alta, Norway",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Alta Museum rock art",
-    "Northern Lights Cathedral",
-    "Sorrisniva",
-    "Alta Canyon",
-    "Komsa mountain",
-    "Finnmark Plateau trips"
+  "stayOverview": "Start with City centre for the easiest first Alta stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Alta hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Alta unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Alta International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Alta Museum rock art and Northern Lights Cathedral so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Alta, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Alta Museum rock art",
+      "text": "Alta Museum rock art is a key Alta culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Northern Lights Cathedral",
+      "text": "Northern Lights Cathedral anchors the historic and ceremonial side of Alta, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Sorrisniva",
+      "text": "Sorrisniva is a named stop in Alta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Alta Canyon",
+      "text": "Alta Canyon is a named stop in Alta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Komsa mountain",
+      "text": "Komsa mountain adds outdoor time to a Alta stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Finnmark Plateau trips",
+      "text": "Finnmark Plateau trips is a named stop in Alta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Sorrisniva",
+      "label": "Heritage",
+      "text": "Sorrisniva is a heritage-focused side trip from Alta; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Alta Canyon",
+      "label": "Nature",
+      "text": "Alta Canyon works as a nature-focused side trip from Alta, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Komsa mountain",
+      "label": "Nature",
+      "text": "Komsa mountain works as a nature-focused side trip from Alta, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

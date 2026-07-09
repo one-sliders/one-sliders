@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Helsingør, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Zealand",
-  "population": "tba",
+  "population": "~63K",
   "coordinates": {
     "lat": 56.03606,
     "lon": 12.6136
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Helsingør travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Helsingor is a compact Øresund town where ferries, maritime history and Shakespearean castle walls meet on Denmark's north coast. Start at Kronborg Castle, step into the M/S Maritime Museum, then wander Helsingor old town before a ferry view across to Sweden. Most international arrivals use Copenhagen Airport and continue north by train.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Helsingor old town",
+      "text": "The old town is best for first stays, with cobbled streets, restaurants, shops and short walks to Kronborg.",
+      "bestFor": "first visits, walking, restaurants"
+    },
+    {
+      "name": "Harbour area",
+      "text": "The harbour area suits ferry views, maritime museums and easy movement between station, castle and waterfront.",
+      "bestFor": "waterfront, museums, station"
+    },
+    {
+      "name": "Marienlyst",
+      "text": "Marienlyst is a seaside hotel area north of the centre, useful for spa stays and Øresund views.",
+      "bestFor": "spa, sea views, quieter stays"
+    },
+    {
+      "name": "Snekkersten",
+      "text": "Snekkersten is a quieter coastal base south of Helsingor with rail access and local harbour atmosphere.",
+      "bestFor": "coast, quiet stays, rail"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Copenhagen Airport (CPH)",
+      "search": "Copenhagen Airport, Copenhagen, Denmark",
+      "text": "Copenhagen Airport is the main international gateway for Helsingor, with rail connections north through Copenhagen."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "60-80 min by train from Copenhagen Airport via central Copenhagen",
+    "note": "from Copenhagen Airport",
+    "distance": "about 70 km south of Helsingor"
   },
   "bookingDestination": "Helsingør, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Kronborg Castle",
-    "M/S Maritime Museum",
-    "Oresund ferries",
-    "Culture Yard",
-    "Helsingor old town",
-    "Louisiana Museum trips"
+  "stayOverview": "Stay in Helsingor old town for the easiest walks, the harbour area for castle and museum access, Marienlyst for spa and sea views, or Snekkersten for a quieter coastal rail base.",
+  "hotelIntro": "Helsingor is small enough that exact location matters more than transport. Old town and harbour hotels suit short cultural visits, while Marienlyst and Snekkersten are better for sea-facing, slower stays.",
+  "rentalCars": "A car is not needed in Helsingor, but helps for North Zealand castles, beaches and countryside stops.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the old town or harbour area if Kronborg, ferries and restaurants are your main reasons to stay."
+    },
+    {
+      "title": "Train arrival",
+      "text": "Check the route from Copenhagen Airport (CPH) before choosing between a central hotel and an airport-area first night in Helsingør."
+    },
+    {
+      "title": "Ferry option",
+      "text": "Keep the Helsingør plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Helsingør, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Kronborg Castle",
+      "title": "Kronborg Castle",
+      "text": "Kronborg Castle is a clear heritage marker in Helsingør, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "M/S Maritime Museum",
+      "title": "M/S Maritime Museum",
+      "text": "M/S Maritime Museum is built into a former dry dock and gives Helsingor a strong modern architecture stop."
+    },
+    {
+      "name": "Oresund ferries",
+      "title": "Oresund ferries",
+      "text": "Oresund ferries is a named stop in Helsingør worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Culture Yard",
+      "title": "Culture Yard",
+      "text": "Culture Yard is a named stop in Helsingør worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Helsingor old town",
+      "title": "Helsingor old town",
+      "text": "Helsingor old town is a named stop in Helsingør worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Louisiana Museum trips",
+      "title": "Louisiana Museum trips",
+      "text": "Louisiana Museum trips gives Helsingør a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Louisiana Museum of Modern Art",
+      "label": "Art",
+      "text": "Louisiana is one of Denmark's best art outings, set in gardens above the Øresund coast."
+    },
+    {
+      "name": "Frederiksborg Castle",
+      "label": "Castle",
+      "text": "Frederiksborg Castle is a heritage-focused side trip from Helsingør; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Helsingborg",
+      "label": "City",
+      "text": "Helsingborg is a quick ferry hop away for Swedish cafes, harbour walks and Kärnan tower."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Elsinore",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Movia"
 }

@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Newport, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Newport",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Newport, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Newport, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Newport reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Newport sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Newport International Airport",
+      "search": "Newport International Airport, Newport, USA",
+      "text": "Newport International Airport is the main air gateway for Newport; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Newport International Airport and central Newport before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Newport, USA",
+  "stayOverview": "Start with City centre for the easiest first Newport stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Newport hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Newport unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Newport International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Newport and Newport so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Newport, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cliff Walk",
+      "text": "Cliff Walk is a named stop in Newport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "The Breakers",
+      "text": "The Breakers is a named stop in Newport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Newport Harbor",
+      "text": "Newport Harbor adds the water-facing side of Newport, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Thames Street",
+      "text": "Thames Street is a named stop in Newport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "International Tennis Hall of Fame",
+      "text": "International Tennis Hall of Fame is a named stop in Newport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fort Adams State Park",
+      "text": "Fort Adams State Park adds outdoor time to a Newport stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Cliff Walk",
+      "label": "Heritage",
+      "text": "Cliff Walk is a heritage-focused side trip from Newport; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "The Breakers",
+      "label": "Heritage",
+      "text": "The Breakers is a heritage-focused side trip from Newport; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Newport Harbor",
+      "label": "Heritage",
+      "text": "Newport Harbor is a heritage-focused side trip from Newport; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

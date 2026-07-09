@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Kuopio, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "North Savo",
-  "population": "tba",
+  "population": "~124K",
   "coordinates": {
     "lat": 62.89238,
     "lon": 27.67703
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kuopio travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Kuopio is a lake-country city in Finnish Lakeland, known for Puijo views, market food and easy access to Kallavesi. Start at Puijo Tower, eat at Kuopio Market Hall, then use the harbour area for lake cruises or summer terraces. Kuopio Airport is north of town, while trains connect the city with Helsinki and eastern Finland.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Kuopio centre",
+      "text": "The centre is best for first stays, with market hall, shops, restaurants and the station close together.",
+      "bestFor": "first visits, restaurants, station"
+    },
+    {
+      "name": "Harbour area",
+      "text": "The harbour area suits lake views, summer terraces and boat departures on Lake Kallavesi.",
+      "bestFor": "lake views, cruises, summer"
+    },
+    {
+      "name": "Puijo",
+      "text": "Puijo is a greener base near trails, winter sports and the tower viewpoint above the city.",
+      "bestFor": "nature, views, skiing"
+    },
+    {
+      "name": "Rauhalahti",
+      "text": "Rauhalahti is a resort and spa area south of the centre, useful for families and longer stays.",
+      "bestFor": "spa, families, longer stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Kuopio Airport (KUO)",
+      "search": "Kuopio Airport, Kuopio, Finland",
+      "text": "Kuopio Airport is north of the city near Siilinjärvi; taxis and buses connect it with central Kuopio."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "20-30 min by taxi or bus to central Kuopio",
+    "note": "from Kuopio Airport",
+    "distance": "about 17 km north of the centre"
   },
   "bookingDestination": "Kuopio, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Puijo Tower",
-    "Kuopio Market Hall",
-    "Lake Kallavesi",
-    "Harbour area",
-    "Rauhalahti",
-    "Tahko trips"
+  "stayOverview": "Use Kuopio centre for restaurants and transport, the harbour area for summer lake views, Puijo for trails and viewpoints, or Rauhalahti for spa-style family stays outside the urban core.",
+  "hotelIntro": "Kuopio hotels are easiest near the centre and market square, while harbour and Rauhalahti stays suit visitors prioritising lake time, and Puijo works better for outdoor-focused trips.",
+  "rentalCars": "A car helps for Lakeland drives, Tahko and smaller villages, but central Kuopio is easy without one.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay near the market square for the simplest first visit and easy walks to food, shops and the station."
+    },
+    {
+      "title": "Local food",
+      "text": "Use markets and food streets in Kuopio between larger sights, when stalls are active and the next transfer is short."
+    },
+    {
+      "title": "Lake season",
+      "text": "Summer brings lake cruises and terraces, while winter changes the visit toward snow, saunas and Puijo trails."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Kuopio, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Puijo Tower",
+      "title": "Puijo Tower",
+      "text": "Puijo Tower is a clear heritage marker in Kuopio, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Kuopio Market Hall",
+      "title": "Kuopio Market Hall",
+      "text": "Kuopio Market Hall is useful for reading Kuopio's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "name": "Lake Kallavesi",
+      "title": "Lake Kallavesi",
+      "text": "Lake Kallavesi adds the water-facing side of Kuopio, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Harbour area",
+      "title": "Harbour area",
+      "text": "Harbour area adds the water-facing side of Kuopio, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Rauhalahti",
+      "title": "Rauhalahti",
+      "text": "Rauhalahti is a spa and resort area south of the centre, useful for families and longer relaxed stays."
+    },
+    {
+      "name": "Tahko trips",
+      "title": "Tahko trips",
+      "text": "Tahko trips is a named stop in Kuopio worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tahko",
+      "label": "Outdoor",
+      "text": "Tahko is a nearby side trip from Kuopio; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Leppävirta",
+      "label": "Lake",
+      "text": "Leppävirta is a nearby side trip from Kuopio; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Orinoro Gorge",
+      "label": "Nature",
+      "text": "Orinoro Gorge works as a nature-focused side trip from Kuopio, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -142,5 +226,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Kuopio",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Vilkku"
 }

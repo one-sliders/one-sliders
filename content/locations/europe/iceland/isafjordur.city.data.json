@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ísafjörður travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Ísafjörður is a Iceland base best planned around named sights rather than a generic stopover. Start with Old town, add Westfjords Heritage Museum, and use Naustahvilft to understand the city's history, street life and visitor rhythm. Ísafjörður International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ísafjörður, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ísafjörður, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ísafjörður reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ísafjörður sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Ísafjörður International Airport",
+      "search": "Ísafjörður International Airport, Ísafjörður, Iceland",
+      "text": "Ísafjörður International Airport is the main air gateway for Ísafjörður; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Ísafjörður International Airport and central Ísafjörður before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Ísafjörður, Iceland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Old town",
-    "Westfjords Heritage Museum",
-    "Naustahvilft",
-    "Dynjandi trips",
-    "Hornstrandir tours",
-    "Isafjardardjup"
+  "stayOverview": "Start with City centre for the easiest first Ísafjörður stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ísafjörður hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ísafjörður unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ísafjörður International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Old town and Westfjords Heritage Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ísafjörður, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Old town",
+      "text": "Old town is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Westfjords Heritage Museum",
+      "text": "Westfjords Heritage Museum is a key Ísafjörður culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Naustahvilft",
+      "text": "Naustahvilft is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Dynjandi trips",
+      "text": "Dynjandi trips is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Hornstrandir tours",
+      "text": "Hornstrandir tours is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Isafjardardjup",
+      "text": "Isafjardardjup is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Old town",
+      "label": "Heritage",
+      "text": "Old town is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Naustahvilft",
+      "label": "Heritage",
+      "text": "Naustahvilft is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Dynjandi trips",
+      "label": "Heritage",
+      "text": "Dynjandi trips is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Vienna, Austria trip with city history, weather, hotel areas, airport access, sights, nearby places and events."
   },
   "region": "Capital city of Austria",
-  "population": "tba",
+  "population": "~2.0M",
   "coordinates": {
     "lat": 48.20849,
     "lon": 16.37208
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Vienna travel, stays & events guide",
-  "heroText": "Vienna is Austria's capital on the Danube, known for imperial architecture, concert halls, museums, coffeehouse culture and efficient rail links across Central Europe.",
+  "heroText": "Vienna is a grand but easy city of imperial palaces, coffeehouses and efficient trams. Start with St. Stephen's Cathedral in the Innere Stadt, spend half a day at Schonbrunn Palace, then pair the Hofburg with MuseumsQuartier or Belvedere. Vienna International Airport links smoothly to the centre, making the city simple for rail and flight arrivals.",
   "kpis": [
     {
       "label": "Population",
@@ -46,50 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Vienna, Austria",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Schonbrunn Palace",
-      "text": "Former Habsburg summer palace with grand state rooms, formal gardens and a long park axis west of the centre."
+      "name": "Innere Stadt",
+      "text": "The first district keeps St. Stephen's Cathedral, the Hofburg and major museums within short walks, but hotel prices run high.",
+      "bestFor": "first visits, luxury, walking"
     },
     {
-      "name": "St. Stephen's Cathedral",
-      "text": "Vienna's Gothic landmark in the Innere Stadt, useful as a central meeting point, skyline marker, tower climb and first-orientation stop for the old town."
+      "name": "Leopoldstadt",
+      "text": "Leopoldstadt sits across the Danube Canal with Prater access, good transit and calmer prices than the old centre.",
+      "bestFor": "families, value, Prater"
     },
     {
-      "name": "Hofburg",
-      "text": "The imperial palace complex anchors central Vienna with museums, courtyards, the Spanish Riding School, state buildings and easy walks toward the Ringstrasse."
+      "name": "Wieden",
+      "text": "Wieden is close to Belvedere, the main station and cafes, useful for rail arrivals and longer city stays.",
+      "bestFor": "rail trips, cafes, Belvedere"
     },
     {
-      "name": "Belvedere",
-      "text": "Baroque palace and museum complex near the main station, known for Austrian art collections, formal gardens and a route that pairs well with Wieden."
-    },
-    {
-      "name": "Prater",
-      "text": "Large public park with the Riesenrad ferris wheel, amusement rides and broad paths for an easier outdoor break."
-    },
-    {
-      "name": "MuseumsQuartier",
-      "text": "Dense museum and culture district near the Ringstrasse, practical when weather, contemporary art, cafes or short transfer times matter during a city stay."
+      "name": "Neubau",
+      "text": "Neubau borders MuseumsQuartier with independent shops, restaurants and nightlife west of the Ringstrasse.",
+      "bestFor": "culture, nightlife, shopping"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Vienna International Airport (VIE)",
+      "search": "Vienna International Airport, Vienna, Austria",
+      "text": "Vienna International Airport is southeast of the city; rail links and airport buses make transfers straightforward for most central stays."
+    }
+  ],
+  "airportTransfer": {
+    "value": "16-30 min by airport rail or 25-40 min by taxi to central Vienna",
+    "note": "from Vienna International Airport",
+    "distance": "about 18 km southeast of the centre"
+  },
+  "bookingDestination": "Vienna, Austria",
+  "stayOverview": "Stay in the Innere Stadt for classic sightseeing, Leopoldstadt for better value and Prater access, Wieden for the main station and Belvedere, or Neubau for MuseumsQuartier, restaurants and a less formal evening base.",
+  "hotelIntro": "Vienna's U-Bahn and tram network make hotel choice forgiving. Pay more for the Innere Stadt, look to Leopoldstadt for family value, Wieden for rail convenience, and Neubau for culture-led city breaks.",
+  "rentalCars": "Avoid renting a car in Vienna; public transport is excellent and parking is a nuisance unless leaving for countryside drives.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Innere Stadt for a first short visit, or Neubau if restaurants and MuseumsQuartier matter more."
+    },
+    {
+      "title": "Airport train",
+      "text": "Check the route from Vienna International Airport (VIE) before choosing between a central hotel and an airport-area first night in Vienna."
+    },
+    {
+      "title": "Museum timing",
+      "text": "Keep one indoor culture stop in the Vienna plan so rain, heat or short winter daylight do not break the day."
+    },
+    {
+      "title": "Day trip",
+      "text": "Bratislava is close enough for a rail or boat day trip if Vienna is your longer base."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Schonbrunn Palace",
+      "text": "Schonbrunn Palace is the former Habsburg summer residence, with state rooms, gardens and a long park axis west of the centre.",
+      "name": "Schonbrunn Palace"
+    },
+    {
+      "title": "St. Stephen's Cathedral",
+      "text": "St. Stephen's Cathedral is one of Vienna's religious landmarks; check visiting hours and dress expectations before building the route around it.",
+      "name": "St. Stephen's Cathedral"
+    },
+    {
+      "title": "Hofburg",
+      "text": "The Hofburg anchors imperial Vienna with museums, courtyards, the Spanish Riding School and state buildings inside the Ringstrasse.",
+      "name": "Hofburg"
+    },
+    {
+      "title": "Belvedere",
+      "text": "Belvedere is a named stop in Vienna worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Belvedere"
+    },
+    {
+      "title": "Prater",
+      "text": "Prater is a named stop in Vienna worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Prater"
+    },
+    {
+      "title": "MuseumsQuartier",
+      "text": "MuseumsQuartier gives Vienna a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "MuseumsQuartier"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Bratislava",
+      "label": "City",
+      "text": "Bratislava is close by train or boat, giving a compact old town and Danube contrast to Vienna."
+    },
+    {
+      "name": "Wachau Valley",
+      "label": "Wine",
+      "text": "The Wachau Valley is a classic day trip for Danube scenery, vineyards, Melk Abbey and small towns."
+    },
+    {
+      "name": "Klosterneuburg",
+      "label": "Heritage",
+      "text": "Klosterneuburg Abbey is a quick outing north of Vienna with wine cellars, art and river views."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/music/song-contests/events/eurovision-song-contest.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
+      "img": "/content/categories/music/song-contests/events/img/eurovision-song-contest-mini.png",
       "title": "Eurovision Song Contest",
       "meta": "May 2026 - Vienna",
       "startDate": "2026-05-12",
@@ -162,5 +228,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Vienna",
     "matchedCountry": "Austria"
-  }
+  },
+  "transitOperator": "Wiener Linien"
 }

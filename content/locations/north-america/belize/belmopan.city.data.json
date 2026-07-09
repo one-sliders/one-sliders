@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Belmopan travel, stays & events guide",
-  "heroText": "Belmopan is a capital city in Belize, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Belmopan is a Belize base best planned around named sights rather than a generic stopover. Start with National Assembly Building, add Guanacaste National Park, and use St. Herman's Blue Hole National Park to understand the city's history, street life and visitor rhythm. Philip S. W. Goldson International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Belmopan, Belize",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Belmopan",
-      "text": "Belmopan is a capital city in Belize, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Belmopan, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Belmopan, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Belmopan reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Belmopan sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Philip S. W. Goldson International Airport (BZE)",
+      "search": "Philip S. W. Goldson International Airport (BZE), Belmopan, Belize",
+      "text": "Philip S. W. Goldson International Airport (BZE) is the main air gateway for Belmopan; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Philip S. W. Goldson International Airport (BZE) and central Belmopan before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Belmopan, Belize",
+  "stayOverview": "Start with City centre for the easiest first Belmopan stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Belmopan hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Belmopan unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Philip S. W. Goldson International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around National Assembly Building and Guanacaste National Park so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Belmopan, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Assembly Building",
+      "text": "National Assembly Building is a named stop in Belmopan worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Guanacaste National Park",
+      "text": "Guanacaste National Park adds outdoor time to a Belmopan stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "St. Herman's Blue Hole National Park",
+      "text": "St. Herman's Blue Hole National Park adds outdoor time to a Belmopan stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Belmopan Market Square",
+      "text": "Belmopan Market Square gives Belmopan a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "George Price Centre",
+      "text": "George Price Centre gives Belmopan a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Belize Archives",
+      "text": "Belize Archives gives Belmopan a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "National Assembly Building",
+      "label": "Heritage",
+      "text": "National Assembly Building is a heritage-focused side trip from Belmopan; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Guanacaste National Park",
+      "label": "Nature",
+      "text": "Guanacaste National Park works as a nature-focused side trip from Belmopan, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "St. Herman's Blue Hole National Park",
+      "label": "Nature",
+      "text": "St. Herman's Blue Hole National Park works as a nature-focused side trip from Belmopan, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

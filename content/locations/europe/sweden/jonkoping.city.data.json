@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Jönköping travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Jönköping is a Sweden base best planned around named sights rather than a generic stopover. Start with Lake Vattern, add Match Museum, and use Sofiakyrkan to understand the city's history, street life and visitor rhythm. Jönköping International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Jönköping, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Jönköping, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Jönköping reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Jönköping sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Jönköping International Airport",
+      "search": "Jönköping International Airport, Jönköping, Sweden",
+      "text": "Jönköping International Airport is the main air gateway for Jönköping; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Jönköping International Airport and central Jönköping before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Jönköping, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Lake Vattern",
-    "Match Museum",
-    "Sofiakyrkan",
-    "Elmia",
-    "Huskvarna Museum",
-    "Rosenlundsbadet"
+  "stayOverview": "Start with City centre for the easiest first Jönköping stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Jönköping hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Jönköping unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Jönköping International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Lake Vattern and Match Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Jönköping, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Lake Vattern",
+      "text": "Lake Vattern adds outdoor time to a Jönköping stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Match Museum",
+      "text": "Match Museum is a key Jönköping culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Sofiakyrkan",
+      "text": "Sofiakyrkan is a named stop in Jönköping worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Elmia",
+      "text": "Elmia is a named stop in Jönköping worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Huskvarna Museum",
+      "text": "Huskvarna Museum is a key Jönköping culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Rosenlundsbadet",
+      "text": "Rosenlundsbadet is a named stop in Jönköping worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lake Vattern",
+      "label": "Nature",
+      "text": "Lake Vattern works as a nature-focused side trip from Jönköping, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Sofiakyrkan",
+      "label": "Heritage",
+      "text": "Sofiakyrkan is a heritage-focused side trip from Jönköping; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Elmia",
+      "label": "Heritage",
+      "text": "Elmia is a heritage-focused side trip from Jönköping; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

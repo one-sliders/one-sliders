@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Malabo in 2026: calendars, nearby pages and linked event views for planning around Africa / Equatorial Guinea."
   },
   "region": "Capital city in Equatorial Guinea",
-  "population": "tba",
+  "population": "~300K",
   "coordinates": {
     "lat": 3.75578,
     "lon": 8.78166
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Malabo travel, stays & events guide",
-  "heroText": "Malabo is a capital city in Equatorial Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Malabo is Equatorial Guinea's capital, a compact colonial-era port city on Bioko Island in the Gulf of Guinea. First-time visitors should see the Catedral de Santa Isabel anchoring the old quarter, browse the Mercado Central for fish, produce and carved wood, and wander the pastel-painted streets of Casco Antiguo. Malabo International Airport sits a short drive from the centre, connecting the island to the mainland and beyond.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Malabo, Equatorial Guinea",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Malabo",
-      "text": "Malabo is a capital city in Equatorial Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Casco Antiguo (Old Town)",
+      "text": "Casco Antiguo is Malabo's historic colonial quarter, with narrow streets and brightly painted Spanish-era houses near the cathedral.",
+      "bestFor": "first visits, history, walking"
+    },
+    {
+      "name": "Malabo II",
+      "text": "Malabo II is a newer development area with modern hotels and restaurants, a comfortable if pricier option outside the old centre.",
+      "bestFor": "modern hotels, business trips"
+    },
+    {
+      "name": "Punta Europa",
+      "text": "Punta Europa, near the airport, is an industrial and residential area convenient for early flights or business tied to the island's energy sector.",
+      "bestFor": "airport access, business trips"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Malabo International Airport (SSG)",
+      "search": "Malabo International Airport, Malabo, Equatorial Guinea",
+      "text": "Malabo International Airport sits at Punta Europa a short drive from the centre; confirm hotel transfers in advance since public transport options are limited."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Malabo International Airport (SSG) and central Malabo before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Malabo, Equatorial Guinea",
+  "stayOverview": "Stay in Casco Antiguo for walking access to the cathedral and old quarter, or choose Malabo II for newer hotels and restaurants. Punta Europa suits travellers wanting to be close to the airport and energy-sector offices.",
+  "hotelIntro": "Malabo hotel choice mostly comes down to setting: Casco Antiguo puts the cathedral and historic streets within walking distance, Malabo II offers newer, pricier hotels, and Punta Europa suits airport convenience over central sightseeing.",
+  "rentalCars": "A rental car helps for exploring Bioko Island beyond Malabo, including the beaches and rainforest of the island's south.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Casco Antiguo for walking access to the cathedral and old quarter, or Malabo II for newer hotels."
+    },
+    {
+      "title": "Visa and paperwork",
+      "text": "Confirm visa requirements well in advance, since entry rules for Equatorial Guinea can be strict and change without much notice."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry Central African CFA francs, since card acceptance is limited outside the larger hotels and international restaurants."
+    },
+    {
+      "title": "Island trips",
+      "text": "Set aside time for Bioko Island's southern beaches and rainforest, reached by a scenic but bumpy drive from Malabo."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Santa Isabel Cathedral",
+      "text": "Santa Isabel Cathedral anchors the historic and ceremonial side of Malabo, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Malabo National Park",
+      "text": "Malabo National Park adds outdoor time to a Malabo stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Pico Basilé",
+      "text": "Pico Basilé is a named stop in Malabo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Malabo Cultural Centre",
+      "text": "Malabo Cultural Centre gives Malabo a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Independence Square Malabo",
+      "text": "Independence Square Malabo is a clear heritage marker in Malabo, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Port of Malabo",
+      "text": "Port of Malabo adds the water-facing side of Malabo, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Moka",
+      "label": "Nature",
+      "text": "Moka, in Bioko Island's southern highlands, offers cool-climate hiking and rainforest scenery, a rewarding day trip from Malabo."
+    },
+    {
+      "name": "Ureka",
+      "label": "Beach",
+      "text": "Ureka on Bioko's southern coast has a striking black-sand beach, reachable on a longer day trip for those wanting the island's wilder side."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Mogadishu travel, stays & events guide",
-  "heroText": "Mogadishu is a capital city in Somalia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Mogadishu is Somalia's Indian Ocean capital, a historic Swahili and Arab trading port whose old stone quarters sit beside the wide sands of Lido Beach. First-time visitors should walk the narrow lanes of Hamar Weyne's old town, see the coral-stone ruins of Mogadishu Cathedral, and shop for spices and fabric at Bakara Market. Aden Adde International Airport anchors a secured coastal zone, and travel here requires careful planning given the current security situation.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Mogadishu, Somalia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Mogadishu",
-      "text": "Mogadishu is a capital city in Somalia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Hamar Weyne",
+      "text": "Hamar Weyne is Mogadishu's oldest quarter, a maze of coral-stone buildings and narrow lanes near the historic port and fish market.",
+      "bestFor": "history, old town, markets"
+    },
+    {
+      "name": "Shangani",
+      "text": "Shangani is a coastal district near the old Italian quarter, home to the cathedral ruins and some of the city's oldest architecture.",
+      "bestFor": "history, architecture"
+    },
+    {
+      "name": "Wardhiigley",
+      "text": "Wardhiigley is a central district housing government offices and some of the city's more secure commercial areas.",
+      "bestFor": "business, official visits"
+    },
+    {
+      "name": "Airport zone (Aden Adde / Halane)",
+      "text": "The Aden Adde airport zone is a heavily secured coastal compound housing the airport, embassies and international organisations.",
+      "bestFor": "secure stays, official visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Aden Adde International Airport (MGQ)",
+      "search": "Aden Adde International Airport, Mogadishu, Somalia",
+      "text": "Aden Adde International Airport sits inside a secured coastal compound, and most visitors arrange transfers and accommodation through the same protected zone."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Aden Adde International Airport (MGQ) and central Mogadishu before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Mogadishu, Somalia",
+  "stayOverview": "Most visits to Mogadishu are arranged around the secured airport zone, where hotels, embassies and international offices cluster together. Hamar Weyne and Shangani reward a guided daytime visit for their old-town architecture, while Wardhiigley suits official and business trips needing central government access.",
+  "hotelIntro": "Mogadishu hotel choice is largely dictated by security: most visitors base themselves in the protected airport zone with vetted transport, while day visits to Hamar Weyne or Shangani are typically arranged with local guides and advance planning.",
+  "rentalCars": "Independent car rental is not advisable; visitors typically arrange vetted drivers and security escorts through their hotel or a local fixer for any movement around the city.",
+  "travelTips": [
+    {
+      "title": "Security planning",
+      "text": "Arrange any Mogadishu visit well ahead through a trusted local contact, hotel or security provider, and confirm current travel advisories before booking."
+    },
+    {
+      "title": "Best base",
+      "text": "Base in the secured airport zone, where most international hotels, embassies and aid offices operate behind controlled access."
+    },
+    {
+      "title": "Old town visits",
+      "text": "Visit Hamar Weyne and the cathedral ruins during daylight hours with a local guide rather than independently."
+    },
+    {
+      "title": "Cash and connectivity",
+      "text": "Carry US dollars for most transactions, since Somali shillings are used mainly for small everyday purchases."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Mogadishu Cathedral",
+      "text": "Mogadishu Cathedral anchors the historic and ceremonial side of Mogadishu, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Bakara Market",
+      "text": "Bakara Market gives Mogadishu a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Lido Beach Mogadishu",
+      "text": "Lido Beach Mogadishu adds outdoor time to a Mogadishu stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Arba'a Rukun Mosque",
+      "text": "Arba'a Rukun Mosque anchors the historic and ceremonial side of Mogadishu, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Villa Somalia",
+      "text": "Villa Somalia is a named stop in Mogadishu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mogadishu Lighthouse",
+      "text": "Mogadishu Lighthouse is a named stop in Mogadishu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Jazeera Beach",
+      "label": "Beach",
+      "text": "Jazeera Beach lies south of the city along the same Indian Ocean coastline, a quieter stretch of sand popular for weekend outings."
+    },
+    {
+      "name": "Mogadishu Old Port",
+      "label": "Heritage",
+      "text": "The historic Mogadishu Old Port sits beside Hamar Weyne, still used by traditional fishing dhows much as it has been for centuries."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Durban in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa."
   },
   "region": "Key city in South Africa",
-  "population": "tba",
+  "population": "~595K",
   "coordinates": {
     "lat": -29.8579,
     "lon": 31.0292
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Durban travel, stays & events guide",
-  "heroText": "Durban is a key city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Durban is South Africa's subtropical Indian Ocean city, famous for its warm surf beaches and the country's largest Indian community outside India. First-time visitors should walk the Golden Mile promenade, ride the SkyCar up Moses Mabhida Stadium's arch, and shop for spices and fabric at Victoria Street Market. King Shaka International Airport connects Durban nationally and regionally, and its beaches and bunny chow make it a laid-back contrast to South Africa's other big cities.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Durban, South Africa",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Durban",
-      "text": "Durban is a key city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Golden Mile / Beachfront",
+      "text": "The Golden Mile beachfront runs along Durban's main promenade, lined with hotels, surf schools and the uShaka Marine World aquarium.",
+      "bestFor": "first visits, beaches, families"
+    },
+    {
+      "name": "Umhlanga",
+      "text": "Umhlanga is an upscale beach suburb north of the centre, known for its lighthouse, malls and calmer stretches of sand.",
+      "bestFor": "beaches, shopping, upscale stays"
+    },
+    {
+      "name": "Berea",
+      "text": "Berea is a leafy hillside district above downtown, offering guesthouses and views back over the city and harbour.",
+      "bestFor": "quiet stays, views"
+    },
+    {
+      "name": "Morningside",
+      "text": "Morningside is a central residential area near restaurants and offices, convenient for business travelers wanting a quieter base.",
+      "bestFor": "business trips, longer stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "King Shaka International Airport (DUR)",
+      "search": "King Shaka International Airport, Durban, South Africa",
+      "text": "King Shaka International Airport sits around 35 kilometres north of the city near Umhlanga, connected by the Airport Shuttle bus and metered taxis."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between King Shaka International Airport (DUR) and central Durban before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Durban, South Africa",
+  "stayOverview": "Base along the Golden Mile for an easy first Durban stay near the beach, uShaka Marine World and Moses Mabhida Stadium, or choose Umhlanga for calmer beaches and shopping malls. Berea and Morningside suit travelers wanting quieter, hillside stays with easy access to the centre.",
+  "hotelIntro": "Durban hotel choice depends on priorities: the Golden Mile suits first-time visitors wanting beach access and central sights, Umhlanga suits upscale beach stays near the airport, and Berea or Morningside suit business travelers and longer, quieter stays.",
+  "rentalCars": "A rental car helps for day trips along the KwaZulu-Natal coast or into the Midlands, though the Golden Mile and Umhlanga are easily covered on foot or by taxi.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Golden Mile for beach access and central sights, or Umhlanga for a calmer beach base near the airport."
+    },
+    {
+      "title": "Bunny chow",
+      "text": "Try bunny chow, Durban's signature curry-filled bread loaf, at one of the city's long-running Indian restaurants."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Take the Airport Shuttle bus or a metered taxi from King Shaka International Airport for the roughly 40-minute ride into town."
+    },
+    {
+      "title": "Beach safety",
+      "text": "Swim at lifeguard-patrolled beaches along the Golden Mile and check flag warnings, since currents can be strong."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Durban Golden Mile",
+      "text": "Durban Golden Mile is a named stop in Durban worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "uShaka Marine World",
+      "text": "uShaka Marine World is a named stop in Durban worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Moses Mabhida Stadium",
+      "text": "Moses Mabhida Stadium is a practical event or leisure landmark in Durban; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "Durban Botanic Gardens",
+      "text": "Durban Botanic Gardens adds outdoor time to a Durban stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Victoria Street Market",
+      "text": "Victoria Street Market gives Durban a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Umhlanga Rocks",
+      "text": "Umhlanga Rocks gives Durban a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Drakensberg Mountains",
+      "label": "Nature",
+      "text": "The Drakensberg Mountains rise a few hours inland, offering dramatic hiking and views for travelers extending beyond the coast."
+    },
+    {
+      "name": "Hluhluwe-iMfolozi Park",
+      "label": "Wildlife",
+      "text": "Hluhluwe-iMfolozi Park is a Big Five game reserve north of Durban, one of the best places in South Africa to see rhino."
+    },
+    {
+      "name": "Valley of a Thousand Hills",
+      "label": "Nature",
+      "text": "The Valley of a Thousand Hills offers scenic Zulu cultural villages and viewpoints on a half-day trip inland from the city."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

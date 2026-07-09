@@ -13,7 +13,7 @@
     "webpageDescription": "Yaoundé is the capital city of Cameroon."
   },
   "region": "Capital of Cameroon",
-  "population": "tba",
+  "population": "~4.1M",
   "coordinates": {
     "lat": 3.86667,
     "lon": 11.51667
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Yaounde travel, stays & events guide",
-  "heroText": "Yaoundé is the capital city of Cameroon.  It has a population of more than 2.",
+  "heroText": "Yaoundé is Cameroon's hilly, tree-lined capital, built across seven hills and known for calmer streets than the busier port city of Douala. First-time visitors should tour the Musée National du Cameroun for Fang and Bamileke art, browse the Marché Central for crafts and produce, and see the Cathédrale Notre-Dame des Victoires in the city centre. Yaoundé Nsimalen International Airport connects the capital to the wider region.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Yaounde, Cameroon",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Yaoundé",
-      "text": "Yaoundé is the capital city of Cameroon."
+      "name": "Bastos",
+      "text": "Bastos is Yaoundé's diplomatic and upscale district, home to embassies, international restaurants and the capital's higher-end hotels.",
+      "bestFor": "business trips, diplomatic visits, dining"
+    },
+    {
+      "name": "Centre-ville",
+      "text": "Centre-ville holds government buildings, banks and the Marché Central, the most convenient base for first-time visitors and city sightseeing.",
+      "bestFor": "first visits, sightseeing, shopping"
+    },
+    {
+      "name": "Hippodrome",
+      "text": "Hippodrome is a central business district with hotels, offices and restaurants, popular with travellers wanting a walkable, central base.",
+      "bestFor": "business trips, walkable centre"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Yaoundé Nsimalen International Airport (NSI)",
+      "search": "Yaounde Nsimalen International Airport, Yaounde, Cameroon",
+      "text": "Yaoundé Nsimalen International Airport lies about 20 kilometres south of the city centre; allow 30-45 minutes for the taxi transfer into town."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Yaoundé Nsimalen International Airport (NSI) and central Yaounde before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Yaounde, Cameroon",
+  "stayOverview": "Base in Bastos for upscale, diplomatic-quarter stays near restaurants and embassies, or choose Centre-ville for walking access to the Marché Central and main sights. Hippodrome offers a central, business-friendly alternative close to both areas.",
+  "hotelIntro": "Hotel choice in Yaoundé often follows purpose: Bastos suits business travellers and diplomats wanting upscale surroundings, Centre-ville keeps sightseeing and shopping within walking distance, and Hippodrome offers a convenient middle ground close to offices and restaurants.",
+  "rentalCars": "A rental car or hired driver helps for the 20-kilometre airport transfer and day trips outside the city, though taxis cover downtown well.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Bastos for upscale stays near embassies and restaurants, or Centre-ville for walking access to the Marché Central and main sights."
+    },
+    {
+      "title": "Getting around",
+      "text": "Use registered taxis or arrange hotel transfers, since traffic can be heavy and unmetered cabs require fare negotiation in advance."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Budget 30 to 45 minutes for the drive from Nsimalen International Airport, longer during peak traffic hours into the city."
+    },
+    {
+      "title": "Language",
+      "text": "French is the dominant language in Yaoundé, so a few basic French phrases go a long way with taxis and vendors."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Museum of Cameroon",
+      "text": "National Museum of Cameroon is a key Yaounde culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Basilique Marie-Reine-des-Apotres",
+      "text": "Basilique Marie-Reine-des-Apotres is a named stop in Yaounde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mvog-Betsi Zoo",
+      "text": "Mvog-Betsi Zoo gives Yaounde a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Reunification Monument",
+      "text": "Reunification Monument is a clear heritage marker in Yaounde, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Mount Febe",
+      "text": "Mount Febe adds outdoor time to a Yaounde stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Blackitude Museum",
+      "text": "Blackitude Museum is a key Yaounde culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mefou National Park",
+      "label": "Wildlife",
+      "text": "Mefou National Park, south of Yaoundé, protects rescued primates including gorillas and chimpanzees, a rewarding half-day wildlife trip from the capital."
+    },
+    {
+      "name": "Douala",
+      "label": "City",
+      "text": "Douala is a nearby side trip from Yaounde; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

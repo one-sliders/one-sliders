@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Rio de Janeiro in 2026: calendars, nearby pages and linked event views for planning around South America / Brazil."
   },
   "region": "Key city in Brazil",
-  "population": "tba",
+  "population": "~6.7M",
   "coordinates": {
     "lat": -22.90642,
     "lon": -43.18223
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Rio de Janeiro travel, stays & events guide",
-  "heroText": "Rio de Janeiro is a coastal event city in Brazil, shaped by beaches, mountains, festivals and high-demand travel moments.",
+  "heroText": "Rio de Janeiro is Brazil's beach-and-mountain icon, where city life wraps around Guanabara Bay, forested peaks and long Atlantic beaches. Ride up to Christ the Redeemer, take the cable car to Sugarloaf Mountain, then choose between Copacabana Beach and Ipanema Beach for daily rhythm. Galeao handles long-haul flights, while Santos Dumont is handy for domestic hops.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,120 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Rio de Janeiro, Brazil",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Rio de Janeiro",
-      "text": "Rio de Janeiro is a coastal event city in Brazil, shaped by beaches, mountains, festivals and high-demand travel moments."
+      "name": "Ipanema",
+      "text": "Ipanema is the best all-round first base, with beach life, restaurants, metro access and safer evening movement than many central areas.",
+      "bestFor": "first visits, beach, restaurants"
+    },
+    {
+      "name": "Copacabana",
+      "text": "Copacabana has the deepest hotel supply and famous beachfront, useful for value, tours and classic Rio atmosphere.",
+      "bestFor": "beach hotels, value, tours"
+    },
+    {
+      "name": "Leblon",
+      "text": "Leblon is upscale and calmer, with excellent restaurants, beach access and a polished base beside Ipanema.",
+      "bestFor": "upscale stays, dining, quiet beach"
+    },
+    {
+      "name": "Botafogo",
+      "text": "Botafogo gives easier access to Sugarloaf, metro routes and bay views, often at better prices than the beach districts.",
+      "bestFor": "value, Sugarloaf, metro"
+    },
+    {
+      "name": "Santa Teresa",
+      "text": "Santa Teresa is atmospheric and hillside, best for boutique stays, art, views and travelers comfortable using taxis at night.",
+      "bestFor": "boutique hotels, views, culture"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Rio de Janeiro Galeao International Airport (GIG)",
+      "search": "Rio de Janeiro Galeao International Airport, Rio de Janeiro, Brazil",
+      "text": "Galeao is Rio's main international airport on Ilha do Governador; allow extra time between the airport and South Zone beaches."
+    },
+    {
+      "name": "Santos Dumont Airport (SDU)",
+      "search": "Santos Dumont Airport, Rio de Janeiro, Brazil",
+      "text": "Santos Dumont is close to downtown and the bay, convenient for many domestic flights and short transfers."
+    }
+  ],
+  "airportTransfer": {
+    "value": "30-60 min by taxi or ride-hail to Centro, longer to the beach zones in traffic",
+    "note": "from Rio de Janeiro Galeao International Airport",
+    "distance": "about 20 km north of central Rio"
+  },
+  "bookingDestination": "Rio de Janeiro, Brazil",
+  "stayOverview": "Choose Ipanema for the easiest first Rio stay, Copacabana for hotel choice and classic beachfront value, or Leblon for a calmer upscale base. Botafogo is practical for metro and Sugarloaf, while Santa Teresa suits boutique stays with taxi use.",
+  "hotelIntro": "Rio hotel choice should balance beach access, evening safety and airport transfers: Ipanema is the strongest default, Copacabana gives range, Leblon is polished, Botafogo is practical, and Santa Teresa is scenic but less simple late at night.",
+  "rentalCars": "Skip a rental car in Rio; traffic, parking and security make metro, taxis, rideshare and tours easier.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Ipanema or Leblon for a first visit if beach days, restaurants and easier evening movement matter most."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave generous time for Galeao transfers, especially before international flights or when crossing town in weekday traffic."
+    },
+    {
+      "title": "Safety basics",
+      "text": "Keep phones discreet on beaches and busy streets, use taxis or rideshare late, and avoid isolated viewpoints after dark."
+    },
+    {
+      "title": "Weather buffer",
+      "text": "Book Christ the Redeemer and Sugarloaf with some flexibility because cloud can hide the views even on warm days."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Christ the Redeemer",
+      "text": "Christ the Redeemer is a named Rio de Janeiro landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Sugarloaf Mountain",
+      "text": "Sugarloaf Mountain adds outdoor time to a Rio de Janeiro stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Copacabana Beach",
+      "text": "Copacabana Beach adds outdoor time to a Rio de Janeiro stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ipanema Beach",
+      "text": "Ipanema Beach adds outdoor time to a Rio de Janeiro stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Selaron Steps",
+      "text": "Selaron Steps is a named Rio de Janeiro landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Museum of Tomorrow",
+      "text": "Museum of Tomorrow is a key Rio de Janeiro culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Niteroi",
+      "label": "Bay",
+      "text": "Niteroi is a quick bay crossing for Oscar Niemeyer architecture, beaches and views back toward Rio's skyline."
+    },
+    {
+      "name": "Petropolis",
+      "label": "Heritage",
+      "text": "Petropolis offers imperial history and cooler mountain air, making it one of Rio's classic day trips."
+    },
+    {
+      "name": "Ilha Grande",
+      "label": "Island",
+      "text": "Ilha Grande is better as an overnight beach escape, with boat transfers, trails and car-free village stays."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/tradition/events/new-years-eve-copacabana.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/tradition/events/img/new-years-eve-copacabana-mini.png",
       "title": "New Years Eve Copacabana",
       "meta": "Dec 2026 · Rio de Janeiro"
     }
@@ -147,5 +237,6 @@
   "continentName": "South America",
   "countrySlug": "brazil",
   "countryName": "Brazil",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "MetroRio"
 }

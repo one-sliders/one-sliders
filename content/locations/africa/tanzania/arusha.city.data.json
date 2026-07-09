@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Arusha in 2026: calendars, nearby pages and linked event views for planning around Africa / Tanzania."
   },
   "region": "Key city in Tanzania",
-  "population": "tba",
+  "population": "~485K",
   "coordinates": {
     "lat": -3.36667,
     "lon": 36.68333
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Arusha travel, stays & events guide",
-  "heroText": "Arusha is a key city in Tanzania, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Arusha is Tanzania's northern safari hub, ringed by Mount Meru and serving as the launch point for trips to the Serengeti and Ngorongoro Crater. First-time visitors should photograph the Clock Tower marking the symbolic midpoint between Cairo and Cape Town, browse curios at the Cultural Heritage Centre, and learn about the country's founding at the Arusha Declaration Museum. Kilimanjaro International Airport sits between Arusha and Moshi, making this the natural first and last stop on a northern-circuit safari.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Arusha, Tanzania",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Arusha",
-      "text": "Arusha is a key city in Tanzania, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Clock Tower / City Centre",
+      "text": "The Clock Tower area is Arusha's compact centre, packed with safari operator offices, banks and casual restaurants within walking distance.",
+      "bestFor": "first visits, safari planning, walking"
+    },
+    {
+      "name": "Njiro",
+      "text": "Njiro is an upscale residential hill south of the centre, home to some of Arusha's better guesthouses and lodges.",
+      "bestFor": "quiet stays, longer visits"
+    },
+    {
+      "name": "Sakina",
+      "text": "Sakina lies along the road toward Kilimanjaro International Airport, convenient for early safari departures or late arrivals.",
+      "bestFor": "airport access, early departures"
+    },
+    {
+      "name": "Kaloleni",
+      "text": "Kaloleni is a lively local neighborhood near the market and bus stands, useful for travelers wanting an authentic, budget-friendly base.",
+      "bestFor": "budget stays, local life"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kilimanjaro International Airport (JRO)",
+      "search": "Kilimanjaro International Airport, Arusha, Tanzania",
+      "text": "Kilimanjaro International Airport sits roughly midway between Arusha and Moshi, about 45 minutes from central Arusha by road."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kilimanjaro International Airport (JRO) and central Arusha before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Arusha, Tanzania",
+  "stayOverview": "Base near the Clock Tower for an easy first stay close to safari operators, restaurants and the market, or choose Njiro for quieter lodges on the hillside. Sakina suits travelers wanting quick airport access, while Kaloleni offers a lower-cost, more local base.",
+  "hotelIntro": "Arusha hotel choice depends on priorities: the Clock Tower area suits first-time visitors organising safaris and wanting central restaurants, Njiro suits longer, quieter stays, and Sakina suits those prioritising quick access to Kilimanjaro International Airport.",
+  "rentalCars": "A rental car with driver-guide is standard for safari trips into the Serengeti and Ngorongoro Crater, though central Arusha itself is easily covered on foot or by taxi.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose a hotel near the Clock Tower for safari planning and restaurants, or Njiro for a quieter, hillside stay."
+    },
+    {
+      "title": "Safari logistics",
+      "text": "Book your safari operator and vehicle in Arusha a day or two before departure, since most northern-circuit trips start here."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Allow about 45 minutes for the transfer from Kilimanjaro International Airport, which sits roughly midway between Arusha and Moshi."
+    },
+    {
+      "title": "Altitude and layering",
+      "text": "Pack layers for Arusha's cooler highland evenings, especially if continuing on to the Ngorongoro Crater rim."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Arusha Clock Tower",
+      "text": "Arusha Clock Tower is a clear heritage marker in Arusha, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Cultural Heritage Centre",
+      "text": "Cultural Heritage Centre gives Arusha a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Arusha Declaration Museum",
+      "text": "Arusha Declaration Museum is a key Arusha culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Central Market Arusha",
+      "text": "Central Market Arusha gives Arusha a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Mount Meru",
+      "text": "Mount Meru adds outdoor time to a Arusha stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Arusha National Park",
+      "text": "Arusha National Park adds outdoor time to a Arusha stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ngorongoro Crater",
+      "label": "Wildlife",
+      "text": "Ngorongoro Crater is a few hours' drive west, its crater floor packed with dense wildlife including the Big Five."
+    },
+    {
+      "name": "Serengeti National Park",
+      "label": "Wildlife",
+      "text": "Serengeti National Park extends further west, world-famous for the Great Migration and vast open plains."
+    },
+    {
+      "name": "Arusha National Park",
+      "label": "Nature",
+      "text": "Arusha National Park sits just outside the city, good for a shorter safari with giraffes, flamingos and Mount Meru's lower slopes."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Ilulissat travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Ilulissat is a Greenland base best planned around named sights rather than a generic stopover. Start with Ilulissat Icefjord, add Sermermiut, and use Disko Bay to understand the city's history, street life and visitor rhythm. Ilulissat International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,27 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ilulissat, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ilulissat, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ilulissat reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ilulissat sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Ilulissat International Airport",
+      "search": "Ilulissat International Airport, Ilulissat, Greenland",
+      "text": "Ilulissat International Airport is the main air gateway for Ilulissat; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Ilulissat International Airport and central Ilulissat before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Ilulissat, Greenland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Ilulissat Icefjord",
-    "Sermermiut",
-    "Disko Bay",
-    "Iceberg boat tours",
-    "Knud Rasmussen Museum",
-    "Sled dog areas"
+  "stayOverview": "Start with City centre for the easiest first Ilulissat stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ilulissat hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ilulissat unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ilulissat International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Ilulissat Icefjord and Sermermiut so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ilulissat, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Ilulissat Icefjord",
+      "text": "Ilulissat Icefjord is a named stop in Ilulissat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sermermiut",
+      "text": "Sermermiut is a named stop in Ilulissat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Disko Bay",
+      "text": "Disko Bay adds the water-facing side of Ilulissat, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Iceberg boat tours",
+      "text": "Iceberg boat tours is a named stop in Ilulissat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Knud Rasmussen Museum",
+      "text": "Knud Rasmussen Museum is a key Ilulissat culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Sled dog areas",
+      "text": "Sled dog areas is a named stop in Ilulissat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ilulissat Icefjord",
+      "label": "Heritage",
+      "text": "Ilulissat Icefjord is a heritage-focused side trip from Ilulissat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Sermermiut",
+      "label": "Heritage",
+      "text": "Sermermiut is a heritage-focused side trip from Ilulissat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Disko Bay",
+      "label": "Heritage",
+      "text": "Disko Bay is a heritage-focused side trip from Ilulissat; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

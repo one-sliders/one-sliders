@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Kristiansand, Norway trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Agder",
-  "population": "tba",
+  "population": "~119K",
   "coordinates": {
     "lat": 58.14671,
     "lon": 7.9956
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kristiansand travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Kristiansand is a Norway base best planned around named sights rather than a generic stopover. Start with Posebyen, add Bystranda, and use Fiskebrygga to understand the city's history, street life and visitor rhythm. Kristiansand International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Kristiansand, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Kristiansand, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Kristiansand reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Kristiansand sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Kristiansand International Airport",
+      "search": "Kristiansand International Airport, Kristiansand, Norway",
+      "text": "Kristiansand International Airport is the main air gateway for Kristiansand; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Kristiansand International Airport and central Kristiansand before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Kristiansand, Norway",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Posebyen",
-    "Bystranda",
-    "Fiskebrygga",
-    "Kristiansand Zoo",
-    "Ravnedalen",
-    "Odderoya"
+  "stayOverview": "Start with City centre for the easiest first Kristiansand stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Kristiansand hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Kristiansand unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Kristiansand International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Posebyen and Bystranda so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Kristiansand, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Posebyen",
+      "text": "Posebyen is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Bystranda",
+      "text": "Bystranda is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fiskebrygga",
+      "text": "Fiskebrygga is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kristiansand Zoo",
+      "text": "Kristiansand Zoo gives Kristiansand a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Ravnedalen",
+      "text": "Ravnedalen is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Odderoya",
+      "text": "Odderoya is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Posebyen",
+      "label": "Heritage",
+      "text": "Posebyen is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Bystranda",
+      "label": "Heritage",
+      "text": "Bystranda is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fiskebrygga",
+      "label": "Heritage",
+      "text": "Fiskebrygga is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

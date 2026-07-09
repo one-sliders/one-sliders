@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Prince Edward County travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Prince Edward County is a Canada base best planned around named sights rather than a generic stopover. Start with Sandbanks Provincial Park, add Picton, and use Wellington to understand the city's history, street life and visitor rhythm. Prince Edward County International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,27 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Prince Edward County, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Prince Edward County, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Prince Edward County reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Prince Edward County sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Prince Edward County International Airport",
+      "search": "Prince Edward County International Airport, Prince Edward County, Canada",
+      "text": "Prince Edward County International Airport is the main air gateway for Prince Edward County; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Prince Edward County International Airport and central Prince Edward County before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Prince Edward County, Canada",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Sandbanks Provincial Park",
-    "Picton",
-    "Wellington",
-    "Wine country",
-    "Lake Ontario beaches",
-    "Farm-to-table food"
+  "stayOverview": "Start with City centre for the easiest first Prince Edward County stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Prince Edward County hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Prince Edward County unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Prince Edward County International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Sandbanks Provincial Park and Picton so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Prince Edward County, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Sandbanks Provincial Park",
+      "text": "Sandbanks Provincial Park adds outdoor time to a Prince Edward County stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Picton",
+      "text": "Picton is a named stop in Prince Edward County worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Wellington",
+      "text": "Wellington is a named stop in Prince Edward County worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Wine country",
+      "text": "Wine country is a named stop in Prince Edward County worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lake Ontario beaches",
+      "text": "Lake Ontario beaches adds outdoor time to a Prince Edward County stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Farm-to-table food",
+      "text": "Farm-to-table food is a named stop in Prince Edward County worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Sandbanks Provincial Park",
+      "label": "Nature",
+      "text": "Sandbanks Provincial Park works as a nature-focused side trip from Prince Edward County, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Picton",
+      "label": "Heritage",
+      "text": "Picton is a heritage-focused side trip from Prince Edward County; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Wellington",
+      "label": "Heritage",
+      "text": "Wellington is a heritage-focused side trip from Prince Edward County; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

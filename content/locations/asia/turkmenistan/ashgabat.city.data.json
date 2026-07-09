@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ashgabat travel, stays & events guide",
-  "heroText": "Ashgabat is a capital city in Turkmenistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Ashgabat is a Turkmenistan base best planned around named sights rather than a generic stopover. Start with Independence Monument, add Neutrality Monument, and use Turkmen Carpet Museum to understand the city's history, street life and visitor rhythm. Ashgabat International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Ashgabat, Turkmenistan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Ashgabat",
-      "text": "Ashgabat is a capital city in Turkmenistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ashgabat, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ashgabat, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ashgabat reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ashgabat sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ashgabat International (ASG)",
+      "search": "Ashgabat International (ASG), Ashgabat, Turkmenistan",
+      "text": "Ashgabat International (ASG) is the main air gateway for Ashgabat; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Ashgabat International (ASG) and central Ashgabat before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Ashgabat, Turkmenistan",
+  "stayOverview": "Start with City centre for the easiest first Ashgabat stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ashgabat hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ashgabat unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ashgabat International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Independence Monument and Neutrality Monument so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ashgabat, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Independence Monument",
+      "text": "Independence Monument is a clear heritage marker in Ashgabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Neutrality Monument",
+      "text": "Neutrality Monument is a clear heritage marker in Ashgabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Turkmen Carpet Museum",
+      "text": "Turkmen Carpet Museum is a key Ashgabat culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Ertugrul Gazi Mosque",
+      "text": "Ertugrul Gazi Mosque anchors the historic and ceremonial side of Ashgabat, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Alem Cultural and Entertainment Center",
+      "text": "Alem Cultural and Entertainment Center gives Ashgabat a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Nisa Fortress",
+      "text": "Nisa Fortress is a clear heritage marker in Ashgabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Independence Monument",
+      "label": "Heritage",
+      "text": "Independence Monument is a heritage-focused side trip from Ashgabat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Neutrality Monument",
+      "label": "Heritage",
+      "text": "Neutrality Monument is a heritage-focused side trip from Ashgabat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Alem Cultural and Entertainment Center",
+      "label": "Heritage",
+      "text": "Alem Cultural and Entertainment Center is a heritage-focused side trip from Ashgabat; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

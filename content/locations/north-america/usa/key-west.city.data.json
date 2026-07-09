@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Key West, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Key West",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Key West, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Key West, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Key West reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Key West sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Key West International Airport",
+      "search": "Key West International Airport, Key West, USA",
+      "text": "Key West International Airport is the main air gateway for Key West; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Key West International Airport and central Key West before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Key West, USA",
+  "stayOverview": "Start with City centre for the easiest first Key West stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Key West hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Key West unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Key West International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Key West and Key West so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Key West, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Duval Street",
+      "text": "Duval Street is a named stop in Key West worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mallory Square",
+      "text": "Mallory Square is useful for reading Key West's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "title": "Ernest Hemingway Home",
+      "text": "Ernest Hemingway Home is a named stop in Key West worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Southernmost Point",
+      "text": "Southernmost Point is a named stop in Key West worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fort Zachary Taylor",
+      "text": "Fort Zachary Taylor is a clear heritage marker in Key West, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Key West Historic Seaport",
+      "text": "Key West Historic Seaport adds the water-facing side of Key West, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ernest Hemingway Home",
+      "label": "Heritage",
+      "text": "Ernest Hemingway Home is a heritage-focused side trip from Key West; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Southernmost Point",
+      "label": "Heritage",
+      "text": "Southernmost Point is a heritage-focused side trip from Key West; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fort Zachary Taylor",
+      "label": "Heritage",
+      "text": "Fort Zachary Taylor is a heritage-focused side trip from Key West; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

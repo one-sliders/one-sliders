@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a New York City, New York trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "New York City",
-  "population": "tba",
+  "population": "~8.8M",
   "coordinates": {
     "lat": 40.71427,
     "lon": -74.00597
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "New York City, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "New York City",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in New York City, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in New York City, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central New York City reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first New York City sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "New York JFK (JFK)",
+      "search": "New York JFK (JFK), New York City, USA",
+      "text": "New York JFK (JFK) is the main air gateway for New York City; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between New York JFK (JFK) and central New York City before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "New York City, USA",
+  "stayOverview": "Start with City centre for the easiest first New York City stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "New York City hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central New York City unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for New York JFK, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around New York City and New York City so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from New York City, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Central Park",
+      "text": "Central Park adds outdoor time to a New York City stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Times Square",
+      "text": "Times Square is a clear heritage marker in New York City, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Metropolitan Museum of Art",
+      "text": "Metropolitan Museum of Art is a key New York City culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Statue of Liberty",
+      "text": "Statue of Liberty is a named stop in New York City worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Brooklyn Bridge",
+      "text": "Brooklyn Bridge is a clear heritage marker in New York City, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "High Line",
+      "text": "High Line is a named stop in New York City worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Central Park",
+      "label": "Nature",
+      "text": "Central Park works as a nature-focused side trip from New York City, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Statue of Liberty",
+      "label": "Heritage",
+      "text": "Statue of Liberty is a heritage-focused side trip from New York City; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "High Line",
+      "label": "Heritage",
+      "text": "High Line is a heritage-focused side trip from New York City; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

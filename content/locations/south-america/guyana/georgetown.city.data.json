@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Georgetown in 2026: calendars, nearby pages and linked event views for planning around South America / Guyana."
   },
   "region": "Capital city in Guyana",
-  "population": "tba",
+  "population": "~120K",
   "coordinates": {
     "lat": 6.80448,
     "lon": -58.15527
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Georgetown travel, stays & events guide",
-  "heroText": "Georgetown is a capital city in Guyana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Georgetown is Guyana's low-rise coastal capital, built around canals, wooden colonial architecture and a busy market-and-seawall rhythm. Start at St George's Cathedral, walk the Stabroek Market area in daylight, then use the Seawall or Promenade Gardens for a slower break. Cheddi Jagan airport handles international arrivals well outside the city, while Ogle is useful for domestic flights.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Georgetown, Guyana",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Georgetown",
-      "text": "Georgetown is a capital city in Guyana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Kingston",
+      "text": "Kingston is practical for business, embassies, waterfront access and established hotels north of the central market area.",
+      "bestFor": "business, embassies, waterfront"
+    },
+    {
+      "name": "Stabroek",
+      "text": "Stabroek is central for markets, ferries and downtown errands, but it is busiest by day and needs more caution.",
+      "bestFor": "markets, transit, daytime access"
+    },
+    {
+      "name": "Bourda",
+      "text": "Bourda is useful for local food, shopping and cricket-ground access, with a more everyday city feel.",
+      "bestFor": "food, cricket, local stays"
+    },
+    {
+      "name": "Queenstown",
+      "text": "Queenstown is a quieter residential base near central Georgetown, suitable for guesthouses and short taxi rides.",
+      "bestFor": "quiet stays, guesthouses, short rides"
+    },
+    {
+      "name": "Kitty",
+      "text": "Kitty sits toward the seawall and airport road, useful for local restaurants, guesthouses and easier coastal movement.",
+      "bestFor": "seawall access, local food, guesthouses"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Cheddi Jagan International Airport (GEO)",
+      "search": "Cheddi Jagan International Airport, Georgetown, Guyana",
+      "text": "Cheddi Jagan airport is south of Georgetown near Timehri; arrange transfers ahead because the road trip is substantial."
+    },
+    {
+      "name": "Eugene F. Correia International Airport (OGL)",
+      "search": "Eugene F. Correia International Airport, Ogle, Guyana",
+      "text": "Ogle airport is closer to the city and is important for domestic flights, interior lodges and some regional services."
+    }
+  ],
+  "airportTransfer": {
+    "value": "50-75 min by pre-arranged transfer from Timehri to central Georgetown",
+    "note": "from Cheddi Jagan International Airport",
+    "distance": "about 40 km south of Georgetown"
+  },
+  "bookingDestination": "Georgetown, Guyana",
+  "stayOverview": "Use Kingston or Queenstown for the simplest Georgetown stay, especially for business, embassies or guesthouses. Stabroek is central but hectic, Bourda is practical for food and cricket, and Kitty helps with seawall access and coastal movement.",
+  "hotelIntro": "Georgetown hotel choice is about transfers and comfort rather than walking everywhere: Kingston is the safest default, Queenstown is quieter, Stabroek is central by day, Bourda feels local, and Kitty works for seawall-side plans.",
+  "rentalCars": "Most visitors should use taxis or arranged transfers in Georgetown; rent only for planned coastal or interior logistics.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Kingston or Queenstown for a first stay because they balance hotel comfort, taxis and access to central Georgetown."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Pre-book Cheddi Jagan transfers, especially for late arrivals, because the airport is well outside the city."
+    },
+    {
+      "title": "Safety",
+      "text": "Visit markets and downtown streets in daylight, use taxis at night and keep phones and valuables discreet."
+    },
+    {
+      "title": "Interior trips",
+      "text": "Kaieteur Falls and rainforest lodges usually require flights or specialist operators, not casual same-day road planning."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "St George's Cathedral",
+      "text": "St George's Cathedral anchors the historic and ceremonial side of Georgetown, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Stabroek Market",
+      "text": "Stabroek Market is the city's busy commercial heart, best visited in daylight for food, movement and local color."
+    },
+    {
+      "title": "Promenade Gardens",
+      "text": "Promenade Gardens adds outdoor time to a Georgetown stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Museum of Guyana",
+      "text": "National Museum of Guyana is a key Georgetown culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Georgetown Seawall",
+      "text": "Georgetown Seawall is a named Georgetown landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Botanical Gardens",
+      "text": "Botanical Gardens adds outdoor time to a Georgetown stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kaieteur Falls",
+      "label": "Nature",
+      "text": "Kaieteur Falls is Guyana's signature natural wonder, normally reached by scenic flight rather than road."
+    },
+    {
+      "name": "Essequibo River",
+      "label": "River",
+      "text": "The Essequibo River offers islands, forts and lodge stays, best planned with a tour operator or driver."
+    },
+    {
+      "name": "Parika",
+      "label": "River",
+      "text": "Parika is a river-port day trip west of Georgetown, useful for seeing ferry movement and market life."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

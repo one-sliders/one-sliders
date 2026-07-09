@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Amman travel, stays & events guide",
-  "heroText": "Amman is a capital city in Jordan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Amman is a Jordan base best planned around named sights rather than a generic stopover. Start with Amman Citadel, add Roman Theater Amman, and use Rainbow Street to understand the city's history, street life and visitor rhythm. Amman Queen Alia handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Amman, Jordan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Amman",
-      "text": "Amman is a capital city in Jordan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Downtown Amman",
+      "text": "Downtown Amman is the most practical first base in Amman, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Jabal Al Weibdeh",
+      "text": "Jabal Al Weibdeh is useful when a Amman stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Rainbow Street",
+      "text": "Rainbow Street is useful when a Amman stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Sweifieh",
+      "text": "Sweifieh is useful when a Amman stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Amman Queen Alia (AMM)",
+      "search": "Amman Queen Alia (AMM), Amman, Jordan",
+      "text": "Amman Queen Alia (AMM) is the main air gateway for Amman; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Amman Queen Alia (AMM) and central Amman before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Amman, Jordan",
+  "stayOverview": "Start with Downtown Amman for the easiest first Amman stay, then compare Jabal Al Weibdeh and Rainbow Street when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Amman hotel choice is mostly about repeat journeys: use Downtown Amman for sightseeing, Jabal Al Weibdeh for a different local base, and Rainbow Street or Sweifieh when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Amman unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Downtown Amman for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Amman Queen Alia, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Amman Citadel and Roman Theater Amman so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Amman, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Amman Citadel",
+      "text": "Amman Citadel is a clear heritage marker in Amman, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Roman Theater Amman",
+      "text": "Roman Theater Amman is a named stop in Amman worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Rainbow Street",
+      "text": "Rainbow Street is a named stop in Amman worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "King Abdullah I Mosque",
+      "text": "King Abdullah I Mosque anchors the historic and ceremonial side of Amman, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Jordan Museum",
+      "text": "Jordan Museum is a key Amman culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Jabal Al Weibdeh",
+      "text": "Jabal Al Weibdeh is a named stop in Amman worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Amman Citadel",
+      "label": "Heritage",
+      "text": "Amman Citadel is a heritage-focused side trip from Amman; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Roman Theater Amman",
+      "label": "Heritage",
+      "text": "Roman Theater Amman is a heritage-focused side trip from Amman; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Jabal Al Weibdeh",
+      "label": "Heritage",
+      "text": "Jabal Al Weibdeh is a heritage-focused side trip from Amman; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

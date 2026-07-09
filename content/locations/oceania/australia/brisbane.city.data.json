@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Brisbane in 2026: calendars, nearby pages and linked event views for planning around Oceania / Australia."
   },
   "region": "Key city in Australia",
-  "population": "tba",
+  "population": "~2.7M",
   "coordinates": {
     "lat": -27.46794,
     "lon": 153.02809
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Brisbane travel, stays & events guide",
-  "heroText": "Brisbane is Queensland's river city: a warm-weather base for sport, culture, waterfront walks and trips deeper into eastern Australia.",
+  "heroText": "Brisbane is a Australia base best planned around named sights rather than a generic stopover. Start with South Bank Parklands, add Story Bridge, and use Lone Pine Koala Sanctuary to understand the city's history, street life and visitor rhythm. Brisbane International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Brisbane, Australia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Routes",
-      "text": "Transit, day trips and event access."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Brisbane, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Brisbane, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Brisbane reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Brisbane sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Brisbane International Airport",
+      "search": "Brisbane International Airport, Brisbane, Australia",
+      "text": "Brisbane International Airport is the main air gateway for Brisbane; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Brisbane International Airport and central Brisbane before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Brisbane, Australia",
+  "stayOverview": "Start with City centre for the easiest first Brisbane stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Brisbane hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Brisbane unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Brisbane International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around South Bank Parklands and Story Bridge so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Brisbane, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "South Bank Parklands",
+      "text": "South Bank Parklands adds outdoor time to a Brisbane stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Story Bridge",
+      "text": "Story Bridge is a clear heritage marker in Brisbane, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Lone Pine Koala Sanctuary",
+      "text": "Lone Pine Koala Sanctuary is a named stop in Brisbane worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Gallery of Modern Art Brisbane",
+      "text": "Gallery of Modern Art Brisbane is a key Brisbane culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Roma Street Parkland",
+      "text": "Roma Street Parkland adds outdoor time to a Brisbane stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Mount Coot-tha Lookout",
+      "text": "Mount Coot-tha Lookout adds outdoor time to a Brisbane stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "South Bank Parklands",
+      "label": "Nature",
+      "text": "South Bank Parklands works as a nature-focused side trip from Brisbane, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Lone Pine Koala Sanctuary",
+      "label": "Heritage",
+      "text": "Lone Pine Koala Sanctuary is a heritage-focused side trip from Brisbane; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Gallery of Modern Art Brisbane",
+      "label": "Heritage",
+      "text": "Gallery of Modern Art Brisbane is a heritage-focused side trip from Brisbane; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Sofia in 2026: calendars, nearby pages and linked event views for planning around Europe / Bulgaria."
   },
   "region": "Capital city of Bulgaria",
-  "population": "tba",
+  "population": "~1.3M",
   "coordinates": {
     "lat": 42.69751,
     "lon": 23.32415
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Sofia travel, stays & events guide",
-  "heroText": "Sofia is a key city in Bulgaria, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sofia is a layered Balkan capital where Roman ruins, Orthodox churches and mountain views sit inside a working city. Start at Alexander Nevsky Cathedral, follow the Serdica ruins through the centre, then plan a half-day to Boyana Church or Vitosha Mountain. Sofia Airport is metro-linked, making arrivals unusually easy.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sofia, Bulgaria",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sofia",
-      "text": "Sofia is a key city in Bulgaria, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City Centre",
+      "text": "The central area around Serdica and Vitosha Boulevard is best for first stays, museums, restaurants and metro access.",
+      "bestFor": "first visits, metro, restaurants"
+    },
+    {
+      "name": "Oborishte",
+      "text": "Oborishte is leafy and central, close to Alexander Nevsky Cathedral, embassies and quieter boutique hotels.",
+      "bestFor": "quiet stays, culture, walking"
+    },
+    {
+      "name": "Lozenets",
+      "text": "Lozenets offers residential streets, business hotels and quick access toward South Park and Vitosha routes.",
+      "bestFor": "business, parks, longer stays"
+    },
+    {
+      "name": "Studentski Grad",
+      "text": "Studentski Grad is farther out but useful for budget stays, nightlife and access to university areas.",
+      "bestFor": "budget, nightlife, students"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sofia Airport (SOF)",
+      "search": "Sofia Airport, Sofia, Bulgaria",
+      "text": "Sofia Airport is east of the city and connects to the centre by metro, taxis and airport buses."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20-35 min by metro or taxi to central Sofia",
+    "note": "from Sofia Airport",
+    "distance": "about 10 km east of the centre"
+  },
+  "bookingDestination": "Sofia, Bulgaria",
+  "stayOverview": "Use the City Centre for the easiest first Sofia stay, Oborishte for quieter culture-focused hotels, Lozenets for business and park access, or Studentski Grad for lower prices and nightlife outside the core.",
+  "hotelIntro": "Sofia is practical by metro, so central hotels are not the only option. Still, first-time visitors usually do best near Serdica, Vitosha Boulevard or Oborishte for walkable food and sights.",
+  "rentalCars": "Skip a car in Sofia; rent only for Rila Monastery, Plovdiv or mountain routes beyond the city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay near Serdica or Vitosha Boulevard if you want restaurants, Roman ruins and metro lines close together."
+    },
+    {
+      "title": "Airport metro",
+      "text": "The airport metro is straightforward, but taxis are useful for late arrivals or hotels away from stations."
+    },
+    {
+      "title": "Mountain weather",
+      "text": "Vitosha can be much cooler than central Sofia, so take a layer even on warm city days."
+    },
+    {
+      "title": "Day trip",
+      "text": "Rila Monastery is the classic long day trip, while Boyana Church is easier for a shorter outing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Alexander Nevsky Cathedral",
+      "text": "Alexander Nevsky Cathedral is one of Sofia's religious landmarks; check visiting hours and dress expectations before building the route around it.",
+      "name": "Alexander Nevsky Cathedral"
+    },
+    {
+      "title": "Serdica ruins",
+      "text": "Serdica ruins is a named stop in Sofia worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Serdica ruins"
+    },
+    {
+      "title": "Vitosha Boulevard",
+      "text": "Vitosha Boulevard is a named stop in Sofia worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Vitosha Boulevard"
+    },
+    {
+      "title": "Boyana Church",
+      "text": "Boyana Church is one of Sofia's religious landmarks; check visiting hours and dress expectations before building the route around it.",
+      "name": "Boyana Church"
+    },
+    {
+      "title": "Vitosha Mountain",
+      "text": "Vitosha Mountain gives Sofia a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour.",
+      "name": "Vitosha Mountain"
+    },
+    {
+      "title": "National Palace of Culture",
+      "text": "The National Palace of Culture anchors a large park and event area south of the central shopping streets.",
+      "name": "National Palace of Culture"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Rila Monastery",
+      "label": "Heritage",
+      "text": "Rila Monastery is Bulgaria's signature monastery day trip, set in mountain scenery south of Sofia."
+    },
+    {
+      "name": "Plovdiv",
+      "label": "City",
+      "text": "Plovdiv adds Roman theatre ruins, colourful old houses and a strong cafe scene east of Sofia."
+    },
+    {
+      "name": "Vitosha Mountain",
+      "label": "Nature",
+      "text": "Vitosha is close enough for hikes, viewpoints and winter snow without leaving the Sofia region."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Sofia",
     "matchedCountry": "Bulgaria"
-  }
+  },
+  "transitOperator": "Sofia Urban Mobility Centre"
 }

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Uppsala, Sweden trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Uppsala County",
-  "population": "tba",
+  "population": "~175K",
   "coordinates": {
     "lat": 59.85882,
     "lon": 17.63889
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Uppsala travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Uppsala is a Sweden base best planned around named sights rather than a generic stopover. Start with Uppsala Cathedral, add Uppsala University, and use Gamla Uppsala to understand the city's history, street life and visitor rhythm. Uppsala International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Uppsala, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Uppsala, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Uppsala reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Uppsala sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Uppsala International Airport",
+      "search": "Uppsala International Airport, Uppsala, Sweden",
+      "text": "Uppsala International Airport is the main air gateway for Uppsala; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Uppsala International Airport and central Uppsala before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Uppsala, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Uppsala Cathedral",
-    "Uppsala University",
-    "Gamla Uppsala",
-    "Linnaeus Garden",
-    "Uppsala Castle",
-    "Fyrisan river"
+  "stayOverview": "Start with City centre for the easiest first Uppsala stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Uppsala hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Uppsala unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Uppsala International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Uppsala Cathedral and Uppsala University so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Uppsala, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Uppsala Cathedral",
+      "text": "Uppsala Cathedral anchors the historic and ceremonial side of Uppsala, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Uppsala University",
+      "text": "Uppsala University is a named stop in Uppsala worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Gamla Uppsala",
+      "text": "Gamla Uppsala is a named stop in Uppsala worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Linnaeus Garden",
+      "text": "Linnaeus Garden adds outdoor time to a Uppsala stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Uppsala Castle",
+      "text": "Uppsala Castle is a clear heritage marker in Uppsala, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Fyrisan river",
+      "text": "Fyrisan river adds outdoor time to a Uppsala stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Uppsala University",
+      "label": "Heritage",
+      "text": "Uppsala University is a heritage-focused side trip from Uppsala; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Gamla Uppsala",
+      "label": "Heritage",
+      "text": "Gamla Uppsala is a heritage-focused side trip from Uppsala; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Linnaeus Garden",
+      "label": "Heritage",
+      "text": "Linnaeus Garden works as a nature-focused side trip from Uppsala, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Cape Town in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa."
   },
   "region": "Key city in South Africa",
-  "population": "tba",
+  "population": "~3.8M",
   "coordinates": {
     "lat": -33.92584,
     "lon": 18.42322
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Cape Town travel, stays & events guide",
-  "heroText": "Cape Town is a coastal mountain city in South Africa, combining Table Mountain, waterfront travel, wine routes and major outdoor events.",
+  "heroText": "Cape Town is South Africa's coastal jewel, wrapped around Table Mountain where a cable car lifts visitors above the city and the Atlantic. First-time visitors should stroll the V&A Waterfront for shops and harbour views, take the ferry to Robben Island for its Nelson Mandela history, and photograph the colourful houses of Bo-Kaap. Cape Town International Airport connects the city to the world, and its mix of mountains, beaches and Cape Winelands makes it one of Africa's top destinations.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Cape Town, South Africa",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Cape Town",
-      "text": "Cape Town is a coastal mountain city in South Africa, combining Table Mountain, waterfront travel, wine routes and major outdoor events."
+      "name": "City Bowl",
+      "text": "City Bowl is Cape Town's central district beneath Table Mountain, mixing historic architecture, restaurants and the colourful Bo-Kaap quarter.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "V&A Waterfront",
+      "text": "The V&A Waterfront combines shopping, harbour-front dining and ferry departures for Robben Island, a convenient base right on the water.",
+      "bestFor": "shopping, dining, families"
+    },
+    {
+      "name": "Camps Bay",
+      "text": "Camps Bay lines a palm-fringed Atlantic beach beneath the Twelve Apostles, popular for sundowners and upscale beachfront stays.",
+      "bestFor": "beaches, nightlife, views"
+    },
+    {
+      "name": "Sea Point",
+      "text": "Sea Point's long promenade links the Waterfront to Camps Bay, offering mid-range hotels and easy walking or cycling along the coast.",
+      "bestFor": "promenade walks, mid-range stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Cape Town International Airport (CPT)",
+      "search": "Cape Town International Airport, Cape Town, South Africa",
+      "text": "Cape Town International Airport sits about 20 minutes from the city centre, with buses, shuttles and taxis running regularly to the main hotel districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Cape Town International Airport (CPT) and central Cape Town before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Cape Town, South Africa",
+  "stayOverview": "Base in City Bowl or the V&A Waterfront for an easy first stay near Table Mountain, museums and harbour dining, then compare Camps Bay for beach glamour or Sea Point for promenade walks between the two. Each area sits within a short drive of Cape Town's main sights.",
+  "hotelIntro": "Cape Town hotel choice depends on priorities: City Bowl and the Waterfront suit first-time visitors wanting sights and dining within reach, Camps Bay suits beach-focused stays, and Sea Point suits travelers wanting promenade access at a lower price point.",
+  "rentalCars": "A rental car is worth having for the Cape Winelands, Cape Point and the Garden Route, though the city centre, Waterfront and Atlantic Seaboard are easily covered by taxi or ride-hailing.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City Bowl or the V&A Waterfront for an easy first stay close to Table Mountain, museums and harbour restaurants."
+    },
+    {
+      "title": "Table Mountain timing",
+      "text": "Book Table Mountain cableway tickets online and go early, since cloud cover and high winds regularly close the cable car."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Use the MyCiTi bus or a pre-booked shuttle from Cape Town International Airport for an easy, affordable ride into the centre."
+    },
+    {
+      "title": "Safety awareness",
+      "text": "Keep valuables out of sight in busy areas and use licensed taxis or ride-hailing after dark, as with any major city."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Table Mountain",
+      "text": "Table Mountain adds outdoor time to a Cape Town stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "V&A Waterfront",
+      "text": "V&A Waterfront adds the water-facing side of Cape Town, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Robben Island",
+      "text": "Robben Island adds the water-facing side of Cape Town, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Kirstenbosch National Botanical Garden",
+      "text": "Kirstenbosch National Botanical Garden adds outdoor time to a Cape Town stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Bo-Kaap",
+      "text": "Bo-Kaap is a named stop in Cape Town worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Cape Point",
+      "text": "Cape Point is a named stop in Cape Town worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Cape Winelands",
+      "label": "Wine",
+      "text": "The Cape Winelands towns of Stellenbosch and Franschhoek are under an hour's drive away, ideal for a day of tastings among vineyard-covered valleys."
+    },
+    {
+      "name": "Cape Point",
+      "label": "Nature",
+      "text": "Cape Point and the Cape of Good Hope anchor a scenic nature reserve at the peninsula's tip, roughly an hour south of the city."
+    },
+    {
+      "name": "Boulders Beach",
+      "label": "Wildlife",
+      "text": "Boulders Beach near Simon's Town is home to a colony of African penguins, a popular half-day trip along the False Bay coast."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

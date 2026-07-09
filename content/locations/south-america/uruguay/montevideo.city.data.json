@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Montevideo in 2026: calendars, nearby pages and linked event views for planning around South America / Uruguay."
   },
   "region": "Capital city in Uruguay",
-  "population": "tba",
+  "population": "~1.3M",
   "coordinates": {
     "lat": -34.90328,
     "lon": -56.18816
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Montevideo travel, stays & events guide",
-  "heroText": "Montevideo is a capital city in Uruguay, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Montevideo is Uruguay's calm coastal capital, built around the Rambla, old port streets, football culture and relaxed neighborhoods facing the Rio de la Plata. Start in Ciudad Vieja, eat at Mercado del Puerto, then follow the Rambla of Montevideo toward Pocitos Beach. Carrasco airport is straightforward, and the city works well before or after Colonia and Punta del Este.",
   "kpis": [
     {
       "label": "Region",
@@ -34,30 +34,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Montevideo, Uruguay",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Montevideo",
-      "text": "Montevideo is a capital city in Uruguay, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Ciudad Vieja",
+      "text": "Ciudad Vieja is best for history, port restaurants, museums and daytime walking, though nights are quieter outside key streets.",
+      "bestFor": "history, markets, short stays"
+    },
+    {
+      "name": "Centro",
+      "text": "Centro is practical for Avenida 18 de Julio, theatres, transport and better value than the waterfront neighborhoods.",
+      "bestFor": "value, theatres, transit"
+    },
+    {
+      "name": "Pocitos",
+      "text": "Pocitos is the easiest first base for beach walks, restaurants, safer evenings and modern apartment-style stays.",
+      "bestFor": "first visits, beach, restaurants"
+    },
+    {
+      "name": "Punta Carretas",
+      "text": "Punta Carretas is upscale and walkable, with malls, dining, Rambla access and a quieter feel than Centro.",
+      "bestFor": "upscale stays, dining, Rambla"
+    },
+    {
+      "name": "Carrasco",
+      "text": "Carrasco is elegant and residential, close to the airport and beach but farther from old-city sights.",
+      "bestFor": "airport access, quiet stays, beach"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Carrasco International Airport (MVD)",
+      "search": "Carrasco International Airport, Montevideo, Uruguay",
+      "text": "Carrasco airport is east of central Montevideo; transfers are usually manageable, especially for Carrasco, Pocitos and Punta Carretas stays."
+    }
+  ],
+  "airportTransfer": {
+    "value": "30-45 min by taxi, airport shuttle or ride-hail to central Montevideo",
+    "note": "from Carrasco International Airport",
+    "distance": "about 20 km east of the city centre"
+  },
+  "bookingDestination": "Montevideo, Uruguay",
+  "stayOverview": "Pocitos is the easiest first Montevideo base for beach walks, restaurants and safer evenings, while Punta Carretas is polished and walkable. Ciudad Vieja and Centro suit history and value, and Carrasco works for quiet airport-side stays.",
+  "hotelIntro": "Montevideo hotel choice is pleasantly simple: use Pocitos or Punta Carretas for most leisure stays, Ciudad Vieja for history, Centro for value and theatres, or Carrasco when airport access and quiet beach streets matter.",
+  "rentalCars": "A rental car is unnecessary inside Montevideo, but useful for Punta del Este, wineries or coastal road trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Pocitos or Punta Carretas for a first stay because the Rambla, restaurants and evening walks are easy."
+    },
+    {
+      "title": "Rambla time",
+      "text": "Keep the Montevideo plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Weekend pace",
+      "text": "Ciudad Vieja can be quiet on weekends and evenings, so check restaurant hours before planning dinner there."
+    },
+    {
+      "title": "Day trips",
+      "text": "Colonia is easy by bus or car, while Punta del Este needs a longer beach-focused day or overnight."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Ciudad Vieja",
+      "text": "Ciudad Vieja is a named Montevideo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Mercado del Puerto",
+      "text": "Mercado del Puerto is a named Montevideo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Rambla of Montevideo",
+      "text": "Rambla of Montevideo is a named Montevideo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Plaza Independencia",
+      "text": "Plaza Independencia is a named Montevideo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Teatro Solis",
+      "text": "Teatro Solis is a named Montevideo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Pocitos Beach",
+      "text": "Pocitos Beach adds outdoor time to a Montevideo stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Colonia del Sacramento",
+      "label": "Heritage",
+      "text": "Colonia del Sacramento is a UNESCO-listed riverside town, easy as a day trip or ferry link to Buenos Aires."
+    },
+    {
+      "name": "Punta del Este",
+      "label": "Beach",
+      "text": "Punta del Este is Uruguay's famous resort city, best for beaches, nightlife and a longer coastal day."
+    },
+    {
+      "name": "Piriapolis",
+      "label": "Coast",
+      "text": "Piriapolis is a nearby side trip from Montevideo; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/sport/football/events/copa-libertadores-final.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/sport/football/events/img/copa-libertadores-final-mini.png",
       "title": "Copa Libertadores Final",
       "meta": "Nov 2026 · Montevideo"
     }
@@ -142,5 +227,6 @@
   "continentName": "South America",
   "countrySlug": "uruguay",
   "countryName": "Uruguay",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "STM"
 }

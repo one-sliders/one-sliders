@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Canberra in 2026: calendars, nearby pages and linked event views for planning around Oceania / Australia."
   },
   "region": "Capital city in Australia",
-  "population": "tba",
+  "population": "~474K",
   "coordinates": {
     "lat": -35.28346,
     "lon": 149.12807
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Canberra travel, stays & events guide",
-  "heroText": "Canberra is a capital city in Australia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Canberra is a Australia base best planned around named sights rather than a generic stopover. Start with Australian Parliament House, add Australian War Memorial, and use National Gallery of Australia to understand the city's history, street life and visitor rhythm. Canberra International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Canberra, Australia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Canberra",
-      "text": "Canberra is a capital city in Australia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Canberra, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Canberra, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Canberra reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Canberra sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Canberra International Airport",
+      "search": "Canberra International Airport, Canberra, Australia",
+      "text": "Canberra International Airport is the main air gateway for Canberra; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Canberra International Airport and central Canberra before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Canberra, Australia",
+  "stayOverview": "Start with City centre for the easiest first Canberra stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Canberra hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Canberra unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Canberra International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Australian Parliament House and Australian War Memorial so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Canberra, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Australian Parliament House",
+      "text": "Australian Parliament House is a named stop in Canberra worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Australian War Memorial",
+      "text": "Australian War Memorial is a clear heritage marker in Canberra, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Gallery of Australia",
+      "text": "National Gallery of Australia is a key Canberra culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Lake Burley Griffin",
+      "text": "Lake Burley Griffin adds outdoor time to a Canberra stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Museum of Australia",
+      "text": "National Museum of Australia is a key Canberra culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Mount Ainslie Lookout",
+      "text": "Mount Ainslie Lookout adds outdoor time to a Canberra stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Australian Parliament House",
+      "label": "Heritage",
+      "text": "Australian Parliament House is a heritage-focused side trip from Canberra; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Australian War Memorial",
+      "label": "Heritage",
+      "text": "Australian War Memorial is a heritage-focused side trip from Canberra; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "National Gallery of Australia",
+      "label": "Heritage",
+      "text": "National Gallery of Australia is a heritage-focused side trip from Canberra; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

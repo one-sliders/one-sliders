@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Hanoi in 2026: calendars, nearby pages and linked event views for planning around Asia / Vietnam."
   },
   "region": "Capital city in Vietnam",
-  "population": "tba",
+  "population": "~8.7M",
   "coordinates": {
     "lat": 21.0245,
     "lon": 105.84117
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Hanoi travel, stays & events guide",
-  "heroText": "Hanoi is a capital city in Vietnam, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Hanoi is a Vietnam base best planned around named sights rather than a generic stopover. Start with Hoan Kiem Lake, add Old Quarter Hanoi, and use Temple of Literature to understand the city's history, street life and visitor rhythm. Hanoi Noi Bai handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Hanoi, Vietnam",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Hanoi",
-      "text": "Hanoi is a capital city in Vietnam, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Old Quarter",
+      "text": "Old Quarter is the most practical first base in Hanoi, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Hoan Kiem",
+      "text": "Hoan Kiem is useful when a Hanoi stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "French Quarter",
+      "text": "French Quarter is useful when a Hanoi stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Tay Ho",
+      "text": "Tay Ho is useful when a Hanoi stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Hanoi Noi Bai (HAN)",
+      "search": "Hanoi Noi Bai (HAN), Hanoi, Vietnam",
+      "text": "Hanoi Noi Bai (HAN) is the main air gateway for Hanoi; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Hanoi Noi Bai (HAN) and central Hanoi before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Hanoi, Vietnam",
+  "stayOverview": "Start with Old Quarter for the easiest first Hanoi stay, then compare Hoan Kiem and French Quarter when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Hanoi hotel choice is mostly about repeat journeys: use Old Quarter for sightseeing, Hoan Kiem for a different local base, and French Quarter or Tay Ho when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Hanoi unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Old Quarter for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Hanoi Noi Bai, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Hoan Kiem Lake and Old Quarter Hanoi so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Hanoi, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Hoan Kiem Lake",
+      "text": "Hoan Kiem Lake adds outdoor time to a Hanoi stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Old Quarter Hanoi",
+      "text": "Old Quarter Hanoi gives Hanoi a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Temple of Literature",
+      "text": "Temple of Literature anchors the historic and ceremonial side of Hanoi, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Ho Chi Minh Mausoleum",
+      "text": "Ho Chi Minh Mausoleum is a named stop in Hanoi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Imperial Citadel of Thang Long",
+      "text": "Imperial Citadel of Thang Long is a clear heritage marker in Hanoi, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Train Street Hanoi",
+      "text": "Train Street Hanoi is a named stop in Hanoi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Hoan Kiem Lake",
+      "label": "Nature",
+      "text": "Hoan Kiem Lake works as a nature-focused side trip from Hanoi, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Old Quarter Hanoi",
+      "label": "Heritage",
+      "text": "Old Quarter Hanoi is a heritage-focused side trip from Hanoi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ho Chi Minh Mausoleum",
+      "label": "Heritage",
+      "text": "Ho Chi Minh Mausoleum is a heritage-focused side trip from Hanoi; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

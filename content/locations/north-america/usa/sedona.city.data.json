@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sedona, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sedona",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Sedona, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Sedona, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Sedona reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Sedona sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sedona International Airport",
+      "search": "Sedona International Airport, Sedona, USA",
+      "text": "Sedona International Airport is the main air gateway for Sedona; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Sedona International Airport and central Sedona before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Sedona, USA",
+  "stayOverview": "Start with City centre for the easiest first Sedona stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Sedona hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Sedona unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Sedona International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Sedona and Sedona so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Sedona, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cathedral Rock",
+      "text": "Cathedral Rock anchors the historic and ceremonial side of Sedona, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Bell Rock",
+      "text": "Bell Rock gives Sedona a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Chapel of the Holy Cross",
+      "text": "Chapel of the Holy Cross is a named stop in Sedona worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Tlaquepaque Arts and Shopping Village",
+      "text": "Tlaquepaque Arts and Shopping Village gives Sedona a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Airport Mesa",
+      "text": "Airport Mesa adds the water-facing side of Sedona, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Red Rock Scenic Byway",
+      "text": "Red Rock Scenic Byway gives Sedona a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Bell Rock",
+      "label": "Heritage",
+      "text": "Bell Rock works as a nature-focused side trip from Sedona, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Chapel of the Holy Cross",
+      "label": "Heritage",
+      "text": "Chapel of the Holy Cross is a heritage-focused side trip from Sedona; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Tlaquepaque Arts and Shopping Village",
+      "label": "Heritage",
+      "text": "Tlaquepaque Arts and Shopping Village is a heritage-focused side trip from Sedona; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

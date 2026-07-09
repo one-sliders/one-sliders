@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Tunis in 2026: calendars, nearby pages and linked event views for planning around Africa / Tunisia."
   },
   "region": "Capital city in Tunisia",
-  "population": "tba",
+  "population": "~638K",
   "coordinates": {
     "lat": 36.81897,
     "lon": 10.16579
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tunis travel, stays & events guide",
-  "heroText": "Tunis is a capital city in Tunisia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tunis is Tunisia's Mediterranean capital, where a UNESCO-listed medina meets French-colonial boulevards and ancient Carthage just along the coast. First-time visitors should get lost in the Medina of Tunis's covered souks, admire the Roman mosaics at the Bardo National Museum, and stroll palm-lined Avenue Habib Bourguiba. Tunis–Carthage International Airport sits just minutes from downtown, making Tunis an easy gateway to both city sights and Mediterranean beach towns.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tunis, Tunisia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tunis",
-      "text": "Tunis is a capital city in Tunisia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Medina",
+      "text": "The Medina of Tunis is the historic walled old town, a UNESCO-listed maze of souks, mosques and artisan workshops best explored on foot.",
+      "bestFor": "first visits, history, shopping"
+    },
+    {
+      "name": "Ville Nouvelle",
+      "text": "Ville Nouvelle centres on Avenue Habib Bourguiba, Tunis's French-colonial boulevard lined with cafes, theatres and hotels.",
+      "bestFor": "walking, cafes, central hotels"
+    },
+    {
+      "name": "Les Berges du Lac",
+      "text": "Les Berges du Lac is a modern business district by the lake, home to newer hotels, malls and international offices.",
+      "bestFor": "business trips, modern hotels"
+    },
+    {
+      "name": "La Marsa",
+      "text": "La Marsa is an upscale coastal suburb near Carthage and Sidi Bou Said, popular for beach cafes and a relaxed seaside pace.",
+      "bestFor": "beaches, day trips, relaxed stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tunis–Carthage International Airport (TUN)",
+      "search": "Tunis–Carthage International Airport, Tunis, Tunisia",
+      "text": "Tunis–Carthage International Airport sits just northeast of downtown, a short taxi or metro-light-rail ride from the city centre."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Tunis–Carthage International Airport (TUN) and central Tunis before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Tunis, Tunisia",
+  "stayOverview": "Base in the Medina or Ville Nouvelle for an easy first stay near souks, museums and Avenue Habib Bourguiba, or choose Les Berges du Lac for modern business hotels. La Marsa suits travelers wanting easy access to Carthage, Sidi Bou Said and the coast.",
+  "hotelIntro": "Tunis hotel choice depends on priorities: the Medina and Ville Nouvelle suit first-time visitors wanting sights within walking distance, Les Berges du Lac suits business travelers, and La Marsa suits those prioritising beaches and day trips to Carthage.",
+  "rentalCars": "A rental car helps for exploring Carthage, Sidi Bou Said and the northern coast, though downtown Tunis is easily covered on foot, by taxi or the TGM light rail.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Medina or Ville Nouvelle for an easy first stay close to souks, museums and Avenue Habib Bourguiba."
+    },
+    {
+      "title": "Medina navigation",
+      "text": "Expect to get pleasantly lost in the Medina's narrow lanes, and use landmark gates like Bab el Bhar to reorient."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Take a metered taxi or the TGM connection from Tunis–Carthage International Airport for the short ride into the centre."
+    },
+    {
+      "title": "Carthage day trip",
+      "text": "Take the TGM light rail directly from downtown to Carthage and Sidi Bou Said for an easy half-day coastal excursion."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Medina of Tunis",
+      "text": "Medina of Tunis is a clear heritage marker in Tunis, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Bardo National Museum",
+      "text": "Bardo National Museum is a key Tunis culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Zitouna Mosque",
+      "text": "Zitouna Mosque anchors the historic and ceremonial side of Tunis, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Cathedral of St. Vincent de Paul",
+      "text": "Cathedral of St. Vincent de Paul anchors the historic and ceremonial side of Tunis, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Sidi Bou Said",
+      "text": "Sidi Bou Said is a named stop in Tunis worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Carthage",
+      "text": "Carthage gives Tunis a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Carthage",
+      "label": "Heritage",
+      "text": "The ruins of ancient Carthage sit along the coast northeast of Tunis, reachable by light rail for Roman and Punic archaeological sites."
+    },
+    {
+      "name": "Sidi Bou Said",
+      "label": "Village",
+      "text": "Sidi Bou Said is a postcard-perfect blue-and-white clifftop village near Carthage, popular for its cafes and Mediterranean views."
+    },
+    {
+      "name": "Hammamet",
+      "label": "Beach",
+      "text": "Hammamet is a beach resort town south of Tunis, a popular day or overnight trip for its medina and sandy coastline."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

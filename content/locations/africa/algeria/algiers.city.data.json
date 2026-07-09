@@ -13,7 +13,7 @@
     "webpageDescription": "Algiers, officially Capital City of Algiers, is the capital city of Algeria, located on the Mediterranean Sea in the north-central portion of the country."
   },
   "region": "Capital and largest city of Algeria",
-  "population": "tba",
+  "population": "~3.4M",
   "coordinates": {
     "lat": 36.73225,
     "lon": 3.08746
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Algiers travel, stays & events guide",
-  "heroText": "Algiers, officially Capital City of Algiers, is the capital city of Algeria, located on the Mediterranean Sea in the north-central portion of the country.  In 2025, an estimated 4.",
+  "heroText": "Algiers is Algeria's Mediterranean capital, its whitewashed hillside blending French colonial boulevards with the UNESCO-listed Casbah of Algiers, a maze of narrow lanes and Ottoman-era houses above the harbour. First-time visitors should also see Notre-Dame d'Afrique overlooking the bay and stroll the Jardin d'Essai du Hamma, a lush botanical garden by the sea. Houari Boumediene Airport connects Algiers to Europe and the wider Maghreb.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Algiers, Algeria",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Algiers",
-      "text": "Algiers, officially Capital City of Algiers, is the capital city of Algeria, located on the Mediterranean Sea in the north-central portion of the country."
+      "name": "Alger Centre",
+      "text": "Alger Centre holds the Casbah and colonial-era boulevards, the best base for walking to the old town, port and central museums.",
+      "bestFor": "first visits, sightseeing, the Casbah"
+    },
+    {
+      "name": "Hydra",
+      "text": "Hydra is Algiers' upscale hillside district of embassies and modern apartments, popular with business travellers for its cafes and easy taxi access downtown.",
+      "bestFor": "business trips, upscale stays"
+    },
+    {
+      "name": "El Biar",
+      "text": "El Biar sits high above the bay near Hydra, a quiet residential area of villas and gardens within easy reach of the city centre.",
+      "bestFor": "quiet stays, views"
+    },
+    {
+      "name": "Kouba",
+      "text": "Kouba is a prosperous residential neighbourhood east of the centre, close to the diplomatic quarter and convenient for airport transfers.",
+      "bestFor": "airport access, diplomatic visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Houari Boumediene Airport (ALG)",
+      "search": "Houari Boumediene Airport, Algiers, Algeria",
+      "text": "Houari Boumediene Airport lies east of the city centre; a tramway and taxis link it to downtown, so confirm transfer times for late arrivals."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Houari Boumediene Airport (ALG) and central Algiers before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Algiers, Algeria",
+  "stayOverview": "Base in Alger Centre for easy walks to the Casbah and waterfront, or choose Hydra or El Biar for quieter, upscale stays with taxi access to the sights. Kouba suits travellers who want to stay close to the diplomatic quarter and the airport.",
+  "hotelIntro": "Hotel choice in Algiers depends on priorities: Alger Centre puts the Casbah, port and museums within walking distance, Hydra and El Biar offer leafier, quieter upscale stays near embassies, and Kouba suits travellers prioritizing airport convenience over central sightseeing.",
+  "rentalCars": "A rental car isn't needed for central Algiers, since taxis and the tramway cover downtown well, but one helps for day trips to Tipaza.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Alger Centre for walking access to the Casbah and waterfront, or Hydra and El Biar for quieter, leafier stays with easy taxi rides downtown."
+    },
+    {
+      "title": "Getting around",
+      "text": "Use the Algiers tramway and metro for central trips, and agree taxi fares in advance since many cabs run without working meters."
+    },
+    {
+      "title": "Casbah visits",
+      "text": "Visit the Casbah of Algiers during daylight with a local guide, since the narrow lanes are easy to get lost in and some areas need local knowledge."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside a day for the Roman ruins at Tipaza, a scenic coastal drive west of the city and one of Algeria's UNESCO World Heritage sites."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kasbah of Algiers",
+      "text": "Kasbah of Algiers is a named stop in Algiers worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Martyrs Memorial",
+      "text": "Martyrs Memorial gives Algiers a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Notre Dame d'Afrique",
+      "text": "Notre Dame d'Afrique is a named stop in Algiers worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Bardo National Museum",
+      "text": "Bardo National Museum is a key Algiers culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Botanical Garden of Hamma",
+      "text": "Botanical Garden of Hamma adds outdoor time to a Algiers stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ketchaoua Mosque",
+      "text": "Ketchaoua Mosque anchors the historic and ceremonial side of Algiers, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tipaza",
+      "label": "Heritage",
+      "text": "Tipaza is a coastal town west of Algiers with well-preserved Roman ruins overlooking the Mediterranean, a popular half-day trip from the capital."
+    },
+    {
+      "name": "Kabylie Mountains",
+      "label": "Nature",
+      "text": "The Kabylie Mountains east of Algiers offer hiking, Berber villages and mountain scenery, best reached with a full day or overnight stay."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

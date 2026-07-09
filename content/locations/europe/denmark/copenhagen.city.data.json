@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Copenhagen, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Capital Region",
-  "population": "tba",
+  "population": "~660K",
   "coordinates": {
     "lat": 55.67594,
     "lon": 12.56553
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Copenhagen travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Copenhagen is Denmark's harbour capital, known for bikes, design, food and easy water-level sightseeing. Start at Nyhavn, spend an evening in Tivoli Gardens, then link Christiansborg Palace, Rosenborg Castle and the harbour baths by metro or bike. Copenhagen Airport is directly connected by metro and rail, making arrivals fast.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Indre By",
+      "text": "Indre By is the historic centre, best for first visits near Nyhavn, shopping streets and major royal sights.",
+      "bestFor": "first visits, landmarks, shopping"
+    },
+    {
+      "name": "Vesterbro",
+      "text": "Vesterbro has restaurants, nightlife, the central station and meatpacking-district energy close to Tivoli.",
+      "bestFor": "nightlife, food, station"
+    },
+    {
+      "name": "Nørrebro",
+      "text": "Nørrebro is diverse and lively, with casual food, bars, parks and better value than the old centre.",
+      "bestFor": "food, nightlife, value"
+    },
+    {
+      "name": "Christianshavn",
+      "text": "Christianshavn offers canals, harbour walks and easy access to Christiania and the opera side of the city.",
+      "bestFor": "canals, waterfront, atmosphere"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Copenhagen Airport (CPH)",
+      "search": "Copenhagen Airport, Copenhagen, Denmark",
+      "text": "Copenhagen Airport sits on Amager and has direct metro and rail links to the city centre and Sweden."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "13-20 min by metro or train to central Copenhagen",
+    "note": "from Copenhagen Airport",
+    "distance": "about 8 km southeast of the centre"
   },
   "bookingDestination": "Copenhagen, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Nyhavn",
-    "Tivoli Gardens",
-    "The Little Mermaid",
-    "Christiansborg Palace",
-    "Rosenborg Castle",
-    "Copenhagen harbour baths"
+  "stayOverview": "Indre By is the classic first base, Vesterbro suits food and nightlife near the station, Nørrebro gives a more local and better-value stay, and Christianshavn is ideal for canals and harbour walks.",
+  "hotelIntro": "Copenhagen is easy by metro, bike and harbour routes. Central hotels are convenient but pricey, while Vesterbro, Nørrebro and Christianshavn often give stronger neighbourhood character and better evenings.",
+  "rentalCars": "Do not rent for Copenhagen; bikes, metro, trains and walking are much easier than parking.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Indre By for a first short stay, or Vesterbro if food, nightlife and station access matter more."
+    },
+    {
+      "title": "Airport metro",
+      "text": "The airport metro runs directly into central areas, so taxis are rarely necessary unless carrying heavy luggage."
+    },
+    {
+      "title": "Cycling",
+      "text": "Rent a bike only if you are confident in busy cycle lanes; otherwise use metro and harbour buses."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Copenhagen, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Nyhavn",
+      "text": "Nyhavn is a named stop in Copenhagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Nyhavn"
+    },
+    {
+      "title": "Tivoli Gardens",
+      "text": "Tivoli Gardens is the classic amusement park beside the central station, strongest after dark when lights come on.",
+      "name": "Tivoli Gardens"
+    },
+    {
+      "title": "The Little Mermaid",
+      "text": "The Little Mermaid is a named stop in Copenhagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "The Little Mermaid"
+    },
+    {
+      "title": "Christiansborg Palace",
+      "text": "Christiansborg Palace is a clear heritage marker in Copenhagen, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Christiansborg Palace"
+    },
+    {
+      "title": "Rosenborg Castle",
+      "text": "Rosenborg Castle is a clear heritage marker in Copenhagen, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Rosenborg Castle"
+    },
+    {
+      "title": "Copenhagen harbour baths",
+      "text": "Copenhagen harbour baths adds the water-facing side of Copenhagen, making it a good break from museums, traffic and dense historic streets.",
+      "name": "Copenhagen harbour baths"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Louisiana Museum of Modern Art",
+      "label": "Art",
+      "text": "Louisiana Museum of Modern Art is a heritage-focused side trip from Copenhagen; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Helsingor",
+      "label": "Castle",
+      "text": "Helsingor is a nearby side trip from Copenhagen; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Malmö",
+      "label": "City",
+      "text": "Malmö is a nearby side trip from Copenhagen; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Copenhagen",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "DOT"
 }

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Kingston travel, stays & events guide",
-  "heroText": "Kingston is a capital city in Jamaica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kingston is a Jamaica base best planned around named sights rather than a generic stopover. Start with Bob Marley Museum, add Devon House, and use Emancipation Park to understand the city's history, street life and visitor rhythm. Norman Manley International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kingston, Jamaica",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kingston",
-      "text": "Kingston is a capital city in Jamaica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Kingston, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Kingston, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Kingston reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Kingston sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Norman Manley International Airport (KIN)",
+      "search": "Norman Manley International Airport (KIN), Kingston, Jamaica",
+      "text": "Norman Manley International Airport (KIN) is the main air gateway for Kingston; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Norman Manley International Airport (KIN) and central Kingston before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kingston, Jamaica",
+  "stayOverview": "Start with City centre for the easiest first Kingston stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Kingston hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Kingston unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Norman Manley International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Bob Marley Museum and Devon House so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Kingston, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Bob Marley Museum",
+      "text": "Bob Marley Museum is a key Kingston culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Devon House",
+      "text": "Devon House is a named stop in Kingston worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Emancipation Park",
+      "text": "Emancipation Park adds outdoor time to a Kingston stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Gallery of Jamaica",
+      "text": "National Gallery of Jamaica is a key Kingston culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Port Royal",
+      "text": "Port Royal adds the water-facing side of Kingston, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Blue Mountains",
+      "text": "Blue Mountains adds outdoor time to a Kingston stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Devon House",
+      "label": "Heritage",
+      "text": "Devon House is a heritage-focused side trip from Kingston; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Emancipation Park",
+      "label": "Nature",
+      "text": "Emancipation Park works as a nature-focused side trip from Kingston, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "National Gallery of Jamaica",
+      "label": "Heritage",
+      "text": "National Gallery of Jamaica is a heritage-focused side trip from Kingston; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

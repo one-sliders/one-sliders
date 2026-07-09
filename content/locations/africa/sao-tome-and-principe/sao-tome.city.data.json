@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Sao Tome in 2026: calendars, nearby pages and linked event views for planning around Africa / Sao Tome And Principe."
   },
   "region": "Capital city in Sao Tome and Principe",
-  "population": "tba",
+  "population": "~80K",
   "coordinates": {
     "lat": 0.33756,
     "lon": 6.7299
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Sao Tome travel, stays & events guide",
-  "heroText": "Sao Tome is a capital city in Sao Tome and Principe, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sao Tome is the compact seafront capital of Sao Tome and Principe, a Portuguese-colonial town wrapped in cocoa plantations and equatorial rainforest. First-time visitors should explore Fort São Sebastião's National Museum, admire the towers of the Sé Cathedral, and relax on the in-town sands of Praia Lagarto. São Tomé International Airport sits minutes from the centre, making this one of Africa's easiest island capitals to reach and explore on foot.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sao Tome, Sao Tome and Principe",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sao Tome",
-      "text": "Sao Tome is a capital city in Sao Tome and Principe, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Baixa (Historic Centre)",
+      "text": "Baixa is Sao Tome's colonial-era centre, packed with pastel administrative buildings, the fort, cathedral and central market, ideal for walking.",
+      "bestFor": "first visits, history, walking"
+    },
+    {
+      "name": "Praia Lagarto",
+      "text": "Praia Lagarto is the city's in-town beach strip, lined with hotels and restaurants a short walk from the historic centre.",
+      "bestFor": "beach access, hotels"
+    },
+    {
+      "name": "Riboque",
+      "text": "Riboque is a quieter residential district east of the centre, home to embassies and guesthouses away from downtown traffic.",
+      "bestFor": "quiet stays, embassies"
+    },
+    {
+      "name": "Pantufo",
+      "text": "Pantufo is a fishing village on the coast just outside the city, good for fresh seafood and a slower pace by the water.",
+      "bestFor": "seafood, relaxed stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "São Tomé International Airport (TMS)",
+      "search": "São Tomé International Airport, São Tomé, Sao Tome and Principe",
+      "text": "São Tomé International Airport sits at the edge of the capital, a short taxi ride from downtown hotels and the Praia Lagarto beachfront."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between São Tomé International Airport (TMS) and central Sao Tome before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Sao Tome, Sao Tome and Principe",
+  "stayOverview": "Base in Baixa for an easy first stay near the fort, cathedral and market, or choose Praia Lagarto for beachfront hotels a short walk from downtown. Riboque suits quieter stays near embassies, while Pantufo offers a slower, seafood-focused base by the water.",
+  "hotelIntro": "Sao Tome hotel choice depends on priorities: Baixa suits first-time visitors wanting colonial architecture and museums within walking distance, Praia Lagarto suits beach-focused stays, and Riboque or Pantufo suit travelers wanting a quieter, more local base.",
+  "rentalCars": "A rental car or driver is useful for reaching cocoa plantations and beaches around the island, since the small capital itself is easily walked.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Baixa or Praia Lagarto for an easy first stay within walking distance of the fort, cathedral and beachfront restaurants."
+    },
+    {
+      "title": "Cocoa plantation trips",
+      "text": "Set aside a day to visit a roça such as Água Izé or Monte Café, the historic cocoa plantations that shaped the islands' economy."
+    },
+    {
+      "title": "Airport convenience",
+      "text": "Take advantage of São Tomé International Airport's short distance from downtown, making even late arrivals straightforward."
+    },
+    {
+      "title": "Currency and cash",
+      "text": "Carry Sao Tome and Principe dobras or euros for small purchases, since card acceptance is limited outside larger hotels."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Sao Sebastiao Fort",
+      "text": "Sao Sebastiao Fort is a clear heritage marker in Sao Tome, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Sao Tome Cathedral",
+      "text": "Sao Tome Cathedral anchors the historic and ceremonial side of Sao Tome, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Independence Square Sao Tome",
+      "text": "Independence Square Sao Tome is a clear heritage marker in Sao Tome, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Museum of Sao Tome",
+      "text": "National Museum of Sao Tome is a key Sao Tome culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Ana Chaves Bay",
+      "text": "Ana Chaves Bay adds the water-facing side of Sao Tome, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Obo National Park",
+      "text": "Obo National Park adds outdoor time to a Sao Tome stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Roça Água Izé",
+      "label": "Heritage",
+      "text": "Roça Água Izé is a historic cocoa plantation east of the capital, with colonial-era buildings and a working rail line worth a guided visit."
+    },
+    {
+      "name": "Ilhéu das Rolas",
+      "label": "Nature",
+      "text": "Ilhéu das Rolas marks the equator line off the island's southern tip, a popular day trip for beaches and the symbolic crossing."
+    },
+    {
+      "name": "Praia Jalé",
+      "label": "Beach",
+      "text": "Praia Jalé is a wide, dark-sand beach on the south coast, a scenic drive from the capital for swimming and turtle-nesting season."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

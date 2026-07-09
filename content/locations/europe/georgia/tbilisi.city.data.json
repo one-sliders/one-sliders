@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Tbilisi in 2026: calendars, nearby pages and linked event views for planning around Europe / Georgia."
   },
   "region": "Capital city of Georgia",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": 41.69143,
     "lon": 44.83412
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tbilisi travel, stays & events guide",
-  "heroText": "Tbilisi is a key city in Georgia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tbilisi is a dramatic capital of balconies, sulphur baths, hilltop forts and a fast-changing food scene. Start in Old Tbilisi, climb or ride to Narikala Fortress, then cross the Bridge of Peace toward Rike Park and modern river views. Tbilisi International Airport is the main gateway, with transfers east of the centre.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tbilisi, Georgia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tbilisi",
-      "text": "Tbilisi is a key city in Georgia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Old Tbilisi",
+      "text": "Old Tbilisi is best for first stays, sulphur baths, balcony streets, restaurants and walks to Narikala.",
+      "bestFor": "first visits, baths, restaurants"
+    },
+    {
+      "name": "Sololaki",
+      "text": "Sololaki has historic houses, wine bars and boutique hotels close to Freedom Square and the old town.",
+      "bestFor": "boutique stays, wine bars, walking"
+    },
+    {
+      "name": "Vera",
+      "text": "Vera is a leafy central district with cafes, small hotels and a calmer local rhythm.",
+      "bestFor": "cafes, quiet stays, local feel"
+    },
+    {
+      "name": "Vake",
+      "text": "Vake is upscale and residential, useful for longer stays, parks and restaurants away from the tourist core.",
+      "bestFor": "longer stays, parks, restaurants"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tbilisi International Airport (TBS)",
+      "search": "Tbilisi International Airport, Tbilisi, Georgia",
+      "text": "Tbilisi International Airport is southeast of the city; taxis, buses and hotel transfers connect it with central districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-40 min by taxi or transfer to Old Tbilisi",
+    "note": "from Tbilisi International Airport",
+    "distance": "about 17 km southeast of the centre"
+  },
+  "bookingDestination": "Tbilisi, Georgia",
+  "stayOverview": "Old Tbilisi is the easiest first base, Sololaki adds boutique character, Vera is calmer and cafe-led, and Vake works for longer upscale stays with park access and less tourist traffic.",
+  "hotelIntro": "Tbilisi rewards staying central because hills and traffic affect short distances. Old Tbilisi and Sololaki suit sightseeing, while Vera and Vake are better for quieter evenings and longer stays.",
+  "rentalCars": "Do not rent for central Tbilisi; hire a driver or car only for wine regions, mountains and monastery trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Tbilisi base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Hills",
+      "text": "Keep the Tbilisi plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Wine",
+      "text": "Use taxis after wine bars and tastings, since Georgia's wine culture is central to evenings out."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Tbilisi, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Old Tbilisi",
+      "title": "Old Tbilisi",
+      "text": "Old Tbilisi is a named stop in Tbilisi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Narikala Fortress",
+      "title": "Narikala Fortress",
+      "text": "Narikala Fortress is a clear heritage marker in Tbilisi, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Sulphur baths",
+      "title": "Sulphur baths",
+      "text": "Sulphur baths is a named stop in Tbilisi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Bridge of Peace",
+      "title": "Bridge of Peace",
+      "text": "Bridge of Peace links Old Tbilisi to Rike Park with a modern glass-and-steel crossing over the Mtkvari River."
+    },
+    {
+      "name": "Rustaveli Avenue",
+      "title": "Rustaveli Avenue",
+      "text": "Rustaveli Avenue is a named stop in Tbilisi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Mtatsminda Park",
+      "title": "Mtatsminda Park",
+      "text": "Mtatsminda Park gives Tbilisi a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mtskheta",
+      "label": "Heritage",
+      "text": "Mtskheta is a heritage-focused side trip from Tbilisi; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Kakheti",
+      "label": "Wine",
+      "text": "Kakheti is Georgia's main wine region and works best as a long day or overnight trip."
+    },
+    {
+      "name": "David Gareja",
+      "label": "Monastery",
+      "text": "David Gareja is a nearby side trip from Tbilisi; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +220,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tbilisi",
     "matchedCountry": "Georgia"
-  }
+  },
+  "transitOperator": "Tbilisi Transport Company"
 }

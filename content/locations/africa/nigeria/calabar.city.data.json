@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Calabar in 2026: calendars, nearby pages and linked event views for planning around Africa / Nigeria."
   },
   "region": "Key city in Nigeria",
-  "population": "tba",
+  "population": "~540K",
   "coordinates": {
     "lat": 4.95893,
     "lon": 8.32695
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Calabar travel, stays & events guide",
-  "heroText": "Calabar is a key city in Nigeria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Calabar is a laid-back riverside city in southeastern Nigeria, best known across Africa as host of the Calabar Carnival, the continent's biggest December street festival. First-time visitors should explore the National Museum inside the old colonial Residency, walk the riverside Marina Resort, and learn the region's history at the Slave History Museum. Margaret Ekpo International Airport connects the city to Lagos and Abuja, and Calabar's clean, walkable streets make it an easy first stop in Nigeria.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Calabar, Nigeria",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Calabar",
-      "text": "Calabar is a key city in Nigeria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Marina / Calabar Municipal",
+      "text": "The Marina district lines the Calabar River in the old town, home to the Marina Resort, National Museum and colonial-era streets, ideal for a first visit on foot.",
+      "bestFor": "first visits, museums, waterfront"
+    },
+    {
+      "name": "State Housing Estate",
+      "text": "State Housing Estate is Calabar's modern government and hotel quarter, with wide roads and easy access to restaurants, banks and conference venues.",
+      "bestFor": "business trips, hotels"
+    },
+    {
+      "name": "Diamond Hill",
+      "text": "Diamond Hill is a quiet residential area near the University of Calabar, useful for longer stays close to campus life and local eateries.",
+      "bestFor": "longer stays, university area"
+    },
+    {
+      "name": "8 Miles / Parliamentary Extension",
+      "text": "The 8 Miles area along Parliamentary Extension holds newer malls, fast-food chains and mid-range hotels, handy for shopping and airport access.",
+      "bestFor": "shopping, airport access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Margaret Ekpo International Airport (CBQ)",
+      "search": "Margaret Ekpo International Airport, Calabar, Nigeria",
+      "text": "Margaret Ekpo International Airport sits a short drive north of the city centre, with domestic flights to Lagos and Abuja and taxis available outside arrivals."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Margaret Ekpo International Airport (CBQ) and central Calabar before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Calabar, Nigeria",
+  "stayOverview": "Base in the Marina district for an easy first Calabar stay near the museums and riverside resort, or choose State Housing Estate for business trips close to hotels and offices. Diamond Hill suits longer stays near the university, while 8 Miles offers newer malls and quick airport access.",
+  "hotelIntro": "Calabar hotel choice depends on purpose: the Marina area suits first-time visitors wanting museums and riverside walks within reach, State Housing Estate suits business travelers needing conference hotels, and 8 Miles suits shoppers wanting quick airport access without staying downtown.",
+  "rentalCars": "A rental car is useful for day trips to Obudu Mountain Resort or Cross River National Park, though taxis and ride-hailing cover the compact city centre fine.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Marina district for an easy first stay close to museums, the riverside resort and central restaurants without needing a car."
+    },
+    {
+      "title": "Carnival season",
+      "text": "Book hotels well ahead for December, when the Calabar Carnival fills the city and rooms sell out across every price range."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Arrange a taxi or hotel pickup at Margaret Ekpo International Airport, since ride-hailing coverage can be patchy for late-night arrivals."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside a full day for Obudu Mountain Resort or Cross River National Park, both a multi-hour drive from the city centre."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Slave History Museum Calabar",
+      "text": "Slave History Museum Calabar is a key Calabar culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Duke Town Church",
+      "text": "Duke Town Church anchors the historic and ceremonial side of Calabar, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Tinapa Resort",
+      "text": "Tinapa Resort is a practical event or leisure landmark in Calabar; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "Marina Resort Calabar",
+      "text": "Marina Resort Calabar adds the water-facing side of Calabar, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Drill Ranch Calabar",
+      "text": "Drill Ranch Calabar is a named stop in Calabar worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kwa Falls",
+      "text": "Kwa Falls gives Calabar a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Obudu Mountain Resort",
+      "label": "Nature",
+      "text": "Obudu Mountain Resort sits high in the Sankwala hills with cool weather, hiking trails and a cable car, a popular multi-day escape from Calabar."
+    },
+    {
+      "name": "Cross River National Park",
+      "label": "Nature",
+      "text": "Cross River National Park protects rainforest and rare primates including gorillas, reached by a long drive northeast of the city."
+    },
+    {
+      "name": "Kwa Falls",
+      "label": "Nature",
+      "text": "Kwa Falls is a forest waterfall a short drive from Calabar, good for a half-day swim and walk through surrounding rainforest."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Port-au-Prince travel, stays & events guide",
-  "heroText": "Port-au-Prince is a capital city in Haiti, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Port-au-Prince is a Haiti base best planned around named sights rather than a generic stopover. Start with Musee du Pantheon National Haitien, add Iron Market Port-au-Prince, and use Champ de Mars Port-au-Prince to understand the city's history, street life and visitor rhythm. Toussaint Louverture International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Port-au-Prince, Haiti",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Port-au-Prince",
-      "text": "Port-au-Prince is a capital city in Haiti, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Port-au-Prince, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Port-au-Prince, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Port-au-Prince reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Port-au-Prince sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Toussaint Louverture International Airport (PAP)",
+      "search": "Toussaint Louverture International Airport (PAP), Port-au-Prince, Haiti",
+      "text": "Toussaint Louverture International Airport (PAP) is the main air gateway for Port-au-Prince; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Toussaint Louverture International Airport (PAP) and central Port-au-Prince before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Port-au-Prince, Haiti",
+  "stayOverview": "Start with City centre for the easiest first Port-au-Prince stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Port-au-Prince hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Port-au-Prince unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Toussaint Louverture International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Musee du Pantheon National Haitien and Iron Market Port-au-Prince so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Port-au-Prince, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Musee du Pantheon National Haitien",
+      "text": "Musee du Pantheon National Haitien is a named stop in Port-au-Prince worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Iron Market Port-au-Prince",
+      "text": "Iron Market Port-au-Prince gives Port-au-Prince a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Champ de Mars Port-au-Prince",
+      "text": "Champ de Mars Port-au-Prince adds the water-facing side of Port-au-Prince, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Cathedral of Our Lady of the Assumption",
+      "text": "Cathedral of Our Lady of the Assumption anchors the historic and ceremonial side of Port-au-Prince, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Fort Jacques",
+      "text": "Fort Jacques is a clear heritage marker in Port-au-Prince, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Petion-Ville",
+      "text": "Petion-Ville is a named stop in Port-au-Prince worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Musee du Pantheon National Haitien",
+      "label": "Heritage",
+      "text": "Musee du Pantheon National Haitien is a heritage-focused side trip from Port-au-Prince; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Champ de Mars Port-au-Prince",
+      "label": "Heritage",
+      "text": "Champ de Mars Port-au-Prince is a heritage-focused side trip from Port-au-Prince; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fort Jacques",
+      "label": "Heritage",
+      "text": "Fort Jacques is a heritage-focused side trip from Port-au-Prince; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan London with city facts, weather, sights, stays and events in England."
   },
   "region": "Capital city of England",
-  "population": "tba",
+  "population": "~8.9M",
   "coordinates": {
     "lat": 51.50853,
     "lon": -0.12574
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "London travel, stays & events guide",
-  "heroText": "London is a key city in England, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "London is a vast but readable capital when you plan around the Tube, river and neighbourhoods. Start with Westminster and the Houses of Parliament, cross to the South Bank, then save time for the British Museum or Tower of London. Heathrow is the main long-haul airport, while Gatwick, Stansted, Luton and City shape route choices.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,126 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "London, England",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "London",
-      "text": "London is a key city in England, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Westminster",
+      "text": "Westminster is best for first-time landmark walks, Parliament views, royal parks and easy Underground access.",
+      "bestFor": "first visits, landmarks, royal parks"
+    },
+    {
+      "name": "Covent Garden",
+      "text": "Covent Garden puts theatres, restaurants, shops and Soho within easy walking distance, but hotels cost more.",
+      "bestFor": "theatre, restaurants, nightlife"
+    },
+    {
+      "name": "South Bank",
+      "text": "South Bank gives river views, cultural venues and walkable routes between Waterloo, Tate Modern and Westminster.",
+      "bestFor": "river walks, culture, families"
+    },
+    {
+      "name": "Kensington",
+      "text": "Kensington works for museums, Hyde Park, polished hotels and easier access toward Heathrow routes.",
+      "bestFor": "museums, parks, Heathrow"
+    },
+    {
+      "name": "Shoreditch",
+      "text": "Shoreditch suits restaurants, bars, street art and repeat visitors who want East London energy.",
+      "bestFor": "nightlife, food, repeat visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "London Heathrow Airport (LHR)",
+      "search": "London Heathrow Airport, London, England",
+      "text": "Heathrow is London's main long-haul airport, with Elizabeth line, Tube and rail connections into central districts."
+    },
+    {
+      "name": "London Gatwick Airport (LGW)",
+      "search": "London Gatwick Airport, London, England",
+      "text": "Gatwick is south of London and works well for rail links to Victoria, London Bridge and Thameslink stations."
+    },
+    {
+      "name": "London City Airport (LCY)",
+      "search": "London City Airport, London, England",
+      "text": "London City Airport is closest to Canary Wharf and the City, useful for business trips and short European routes."
+    }
+  ],
+  "airportTransfer": {
+    "value": "15-60 min depending on airport and rail route",
+    "note": "Heathrow has Elizabeth line and Tube links",
+    "distance": "about 24 km west of central London from Heathrow"
+  },
+  "bookingDestination": "London, England",
+  "stayOverview": "Choose Westminster for landmarks, Covent Garden for theatre and restaurants, South Bank for river culture, Kensington for museums and Heathrow convenience, or Shoreditch for nightlife and a more local East London base.",
+  "hotelIntro": "London hotel choice is about transport as much as neighbourhood feel. Stay near a useful Tube or Elizabeth line station, then choose between landmark-heavy Westminster, theatre-led Covent Garden, museum-focused Kensington or food-led Shoreditch.",
+  "rentalCars": "Do not rent a car for London; congestion, parking and public transport make it unnecessary until leaving the city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Pick a hotel near a Tube or Elizabeth line station rather than chasing the absolute geographic centre."
+    },
+    {
+      "title": "Airport choice",
+      "text": "Check the airport before booking flights, because Heathrow, Gatwick, Stansted, Luton and City have very different transfer routes."
+    },
+    {
+      "title": "Payments",
+      "text": "Use contactless cards or mobile wallets on Tube, buses and many rail services instead of buying paper tickets."
+    },
+    {
+      "title": "Day trip",
+      "text": "Windsor, Oxford and Hampton Court are straightforward rail day trips when you want a break from central London."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Houses of Parliament",
+      "title": "Houses of Parliament",
+      "text": "Houses of Parliament is a named stop in London worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Tower of London",
+      "title": "Tower of London",
+      "text": "Tower of London is a clear heritage marker in London, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "British Museum",
+      "title": "British Museum",
+      "text": "The British Museum is one of London's major free museums, strongest when you choose a few galleries rather than rushing everything."
+    },
+    {
+      "name": "South Bank",
+      "title": "South Bank",
+      "text": "South Bank is a named stop in London worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Hyde Park",
+      "title": "Hyde Park",
+      "text": "Hyde Park gives central London a large green pause, useful between Kensington museums, shopping streets and royal parks."
+    },
+    {
+      "name": "Shoreditch",
+      "title": "Shoreditch",
+      "text": "Shoreditch is a named stop in London worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Windsor",
+      "label": "Castle",
+      "text": "Windsor is a nearby side trip from London; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Oxford",
+      "label": "City",
+      "text": "Oxford is a nearby side trip from London; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Hampton Court Palace",
+      "label": "Palace",
+      "text": "Hampton Court Palace gives Tudor history, gardens and river scenery southwest of central London."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +235,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "London",
     "matchedCountry": "England"
-  }
+  },
+  "transitOperator": "Transport for London"
 }

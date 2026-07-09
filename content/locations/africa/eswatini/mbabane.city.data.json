@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Mbabane in 2026: calendars, nearby pages and linked event views for planning around Africa / Eswatini."
   },
   "region": "Capital city in Eswatini",
-  "population": "tba",
+  "population": "~95K",
   "coordinates": {
     "lat": -26.31667,
     "lon": 31.13333
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Mbabane travel, stays & events guide",
-  "heroText": "Mbabane is a capital city in Eswatini, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Mbabane is Eswatini's administrative capital, a small hillside town in the Highveld overshadowed in size by nearby Manzini and the Ezulwini Valley resorts. First-time visitors should hike Sibebe Rock, one of the world's largest granite monoliths, browse the market and shops along Gwamile Street, and day-trip into the Ezulwini Valley for craft markets and hot springs. King Mswati III International Airport, over an hour away, is the country's main gateway.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Mbabane, Eswatini",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Mbabane",
-      "text": "Mbabane is a capital city in Eswatini, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Mbabane CBD",
+      "text": "The Mbabane CBD centres on Gwamile Street and Swazi Plaza, walkable in under an hour and convenient for shops, banks and the market.",
+      "bestFor": "first visits, shops, business"
+    },
+    {
+      "name": "Ezulwini Valley",
+      "text": "The Ezulwini Valley, just southeast of Mbabane, is Eswatini's main resort area with hotels, hot springs and craft markets close to Lobamba.",
+      "bestFor": "resorts, hot springs, longer stays"
+    },
+    {
+      "name": "Mbabane West",
+      "text": "Mbabane West is a residential suburb on the edge of town, a quieter option for longer stays within easy reach of the CBD.",
+      "bestFor": "quiet stays, longer visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "King Mswati III International Airport (SHO)",
+      "search": "King Mswati III International Airport, Eswatini",
+      "text": "King Mswati III International Airport lies over an hour's drive from Mbabane; confirm transfer arrangements in advance since public transport options are limited."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between King Mswati III International Airport (SHO) and central Mbabane before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Mbabane, Eswatini",
+  "stayOverview": "Base in the Mbabane CBD for walking access to Gwamile Street and the market, or choose the Ezulwini Valley for resorts, hot springs and easier access to craft markets. Mbabane West suits quieter, longer stays close to the centre.",
+  "hotelIntro": "Mbabane hotel choice often comes down to pace: the CBD keeps shops and banks within walking distance, the Ezulwini Valley offers Eswatini's main resort hotels and hot springs, and Mbabane West provides a calmer residential alternative.",
+  "rentalCars": "A rental car is useful for reaching the Ezulwini Valley, Sibebe Rock and other sights spread beyond the compact CBD.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in the Mbabane CBD for walking access to shops and the market, or the Ezulwini Valley for resort hotels and hot springs."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Budget over an hour for the drive from King Mswati III International Airport, and arrange transport in advance for late arrivals."
+    },
+    {
+      "title": "Sibebe Rock hike",
+      "text": "Set aside a morning to hike Sibebe Rock, wearing sturdy shoes and carrying water, since there's little shade on the exposed granite dome."
+    },
+    {
+      "title": "Craft shopping",
+      "text": "Combine a visit to the Ezulwini Valley with stops at Ngwenya Glass and Swazi Candles, both well-known local craft workshops."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Mbabane Market",
+      "text": "Mbabane Market gives Mbabane a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Sibebe Rock",
+      "text": "Sibebe Rock gives Mbabane a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Mlilwane Wildlife Sanctuary",
+      "text": "Mlilwane Wildlife Sanctuary is a named stop in Mbabane worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mantenga Cultural Village",
+      "text": "Mantenga Cultural Village gives Mbabane a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Swazi Candles Centre",
+      "text": "Swazi Candles Centre gives Mbabane a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "King Sobhuza II Memorial Park",
+      "text": "King Sobhuza II Memorial Park adds outdoor time to a Mbabane stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mlilwane Wildlife Sanctuary",
+      "label": "Wildlife",
+      "text": "Mlilwane Wildlife Sanctuary near the Ezulwini Valley offers walking and biking trails among zebra, antelope and warthog, a relaxed half-day trip from Mbabane."
+    },
+    {
+      "name": "Ngwenya Glass",
+      "label": "Craft",
+      "text": "Ngwenya Glass, near the border with South Africa, is a well-known recycled-glass workshop and a popular stop for handmade souvenirs."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

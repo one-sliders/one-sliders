@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Selfoss travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Selfoss is a Iceland base best planned around named sights rather than a generic stopover. Start with Olfusa river, add Selfoss town centre, and use Golden Circle trips to understand the city's history, street life and visitor rhythm. Selfoss International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Selfoss, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Selfoss, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Selfoss reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Selfoss sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Selfoss International Airport",
+      "search": "Selfoss International Airport, Selfoss, Iceland",
+      "text": "Selfoss International Airport is the main air gateway for Selfoss; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Selfoss International Airport and central Selfoss before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Selfoss, Iceland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Olfusa river",
-    "Selfoss town centre",
-    "Golden Circle trips",
-    "Kerid crater",
-    "Eyrarbakki",
-    "Hveragerdi hot springs"
+  "stayOverview": "Start with City centre for the easiest first Selfoss stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Selfoss hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Selfoss unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Selfoss International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Olfusa river and Selfoss town centre so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Selfoss, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Olfusa river",
+      "text": "Olfusa river adds outdoor time to a Selfoss stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Selfoss town centre",
+      "text": "Selfoss town centre gives Selfoss a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Golden Circle trips",
+      "text": "Golden Circle trips is a named stop in Selfoss worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kerid crater",
+      "text": "Kerid crater is a named stop in Selfoss worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Eyrarbakki",
+      "text": "Eyrarbakki is a named stop in Selfoss worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Hveragerdi hot springs",
+      "text": "Hveragerdi hot springs is a named stop in Selfoss worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Olfusa river",
+      "label": "Nature",
+      "text": "Olfusa river works as a nature-focused side trip from Selfoss, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Selfoss town centre",
+      "label": "Heritage",
+      "text": "Selfoss town centre is a heritage-focused side trip from Selfoss; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Golden Circle trips",
+      "label": "Heritage",
+      "text": "Golden Circle trips is a heritage-focused side trip from Selfoss; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

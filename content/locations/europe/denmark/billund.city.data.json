@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Billund, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "South Denmark",
-  "population": "tba",
+  "population": "~7K",
   "coordinates": {
     "lat": 55.73349,
     "lon": 9.10785
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Billund travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Billund is a small Jutland town built around LEGO, family attractions and one of Denmark's busiest airports. Most visitors come for LEGOLAND Billund, LEGO House and Lalandia, with WOW Park and Givskud Zoo trips nearby. Billund Airport sits right beside town, so transfers are short and family logistics are unusually simple.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Billund town centre",
+      "text": "The small centre has practical hotels, restaurants and bus stops within a short ride or walk of the main attractions.",
+      "bestFor": "families, short stays, restaurants"
+    },
+    {
+      "name": "LEGOLAND area",
+      "text": "The LEGOLAND area is best for themed hotels, early park starts and minimizing walking with children.",
+      "bestFor": "theme parks, children, convenience"
+    },
+    {
+      "name": "Lalandia area",
+      "text": "The Lalandia area suits resort-style family stays with waterpark access, holiday homes and easy attraction shuttles.",
+      "bestFor": "resorts, waterpark, longer stays"
+    },
+    {
+      "name": "Grindsted",
+      "text": "Grindsted offers cheaper accommodation and local services a short drive or bus ride west of Billund.",
+      "bestFor": "value, drivers, longer stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Billund Airport (BLL)",
+      "search": "Billund Airport, Billund, Denmark",
+      "text": "Billund Airport is immediately north of town and serves LEGO visitors, Jutland trips and many international routes."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "5-10 min by taxi, shuttle or bus to central Billund attractions",
+    "note": "from Billund Airport",
+    "distance": "about 3 km from LEGOLAND Billund"
   },
   "bookingDestination": "Billund, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "LEGOLAND Billund",
-    "LEGO House",
-    "Lalandia",
-    "WOW Park",
-    "Givskud Zoo trips",
-    "Airport gateway"
+  "stayOverview": "Stay near LEGOLAND for the easiest park mornings, around Lalandia for resort facilities, in Billund town centre for restaurants and buses, or in Grindsted for better-value accommodation with a car or bus plan.",
+  "hotelIntro": "Billund hotel choice is mostly family logistics. Pay for attraction-side convenience if travelling with young children, choose Lalandia for longer resort stays, or compare Grindsted when value matters more than walking distance.",
+  "rentalCars": "A car is helpful for Givskud Zoo and rural Jutland, but not necessary for airport-to-LEGOLAND stays.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Billund base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Airport ease",
+      "text": "Check the route from Billund Airport (BLL) before choosing between a central hotel and an airport-area first night in Billund."
+    },
+    {
+      "title": "Tickets",
+      "text": "Book LEGOLAND and LEGO House ahead in school holidays, when popular entry times and nearby hotels fill."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Billund, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "LEGOLAND Billund",
+      "text": "LEGOLAND Billund is a named stop in Billund worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "LEGOLAND Billund"
+    },
+    {
+      "title": "LEGO House",
+      "text": "LEGO House is a named stop in Billund worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "LEGO House"
+    },
+    {
+      "title": "Lalandia",
+      "text": "Lalandia is a named stop in Billund worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Lalandia"
+    },
+    {
+      "title": "WOW Park",
+      "text": "WOW Park gives Billund a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour.",
+      "name": "WOW Park"
+    },
+    {
+      "title": "Givskud Zoo trips",
+      "text": "Givskud Zoo trips gives Billund a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour.",
+      "name": "Givskud Zoo trips"
+    },
+    {
+      "title": "Airport gateway",
+      "text": "Airport gateway adds the water-facing side of Billund, making it a good break from museums, traffic and dense historic streets.",
+      "name": "Airport gateway"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Givskud Zoo",
+      "label": "Family",
+      "text": "Givskud Zoo combines safari-style driving areas, walking zones and dinosaur exhibits north of Billund."
+    },
+    {
+      "name": "Jelling",
+      "label": "Heritage",
+      "text": "Jelling has UNESCO-listed Viking monuments and a strong visitor centre within an easy outing."
+    },
+    {
+      "name": "Vejle",
+      "label": "Town",
+      "text": "Vejle is a nearby side trip from Billund; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -109,5 +193,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Billund",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Sydtrafik"
 }

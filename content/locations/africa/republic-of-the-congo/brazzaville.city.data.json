@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Brazzaville in 2026: calendars, nearby pages and linked event views for planning around Africa / Republic Of The Congo."
   },
   "region": "Capital city in Republic of the Congo",
-  "population": "tba",
+  "population": "~2.1M",
   "coordinates": {
     "lat": -4.26613,
     "lon": 15.28318
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Brazzaville travel, stays & events guide",
-  "heroText": "Brazzaville is a capital city in Republic of the Congo, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Brazzaville is the Republic of the Congo's capital, spread along the north bank of the Congo River directly across from Kinshasa. First-time visitors should see the Basilique Sainte-Anne du Congo for its striking green-tiled roof, browse artists' studios in Poto-Poto, and pay respects at the Pierre Savorgnan de Brazza Memorial on the riverside Corniche. Maya-Maya Airport keeps the city connected to Paris and the region, and a river ferry links Brazzaville directly to Kinshasa.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Brazzaville, Republic of the Congo",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Brazzaville",
-      "text": "Brazzaville is a capital city in Republic of the Congo, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Poto-Poto",
+      "text": "Poto-Poto is Brazzaville's historic arts quarter, home to the famous Poto-Poto School of Painting and lively markets, ideal for culture-focused stays.",
+      "bestFor": "art, culture, markets"
+    },
+    {
+      "name": "Bacongo",
+      "text": "Bacongo is a traditional neighborhood known as the home of La Sape, Congo's flamboyant dandy fashion movement, with tailors and lively street life.",
+      "bestFor": "culture, nightlife, fashion"
+    },
+    {
+      "name": "Centre-Ville / Plateau",
+      "text": "The Centre-Ville and Plateau area holds government buildings, banks and the main hotels, the most convenient base for business travel.",
+      "bestFor": "business trips, hotels"
+    },
+    {
+      "name": "Moungali",
+      "text": "Moungali is a busy residential and commercial district north of the centre, useful for longer stays close to local markets and transport links.",
+      "bestFor": "longer stays, local life"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Maya-Maya Airport (BZV)",
+      "search": "Maya-Maya Airport, Brazzaville, Republic of the Congo",
+      "text": "Maya-Maya Airport sits just west of downtown Brazzaville, with flights to Paris, Kinshasa and regional cities and taxis available outside arrivals."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Maya-Maya Airport (BZV) and central Brazzaville before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Brazzaville, Republic of the Congo",
+  "stayOverview": "Stay in Centre-Ville or Plateau for an easy first visit close to hotels, banks and government offices, then explore Poto-Poto for art studios and markets or Bacongo for La Sape culture and nightlife. Moungali suits longer stays wanting a quieter, more local base.",
+  "hotelIntro": "Brazzaville hotel choice depends on purpose: Centre-Ville and Plateau suit business travelers needing central hotels near government offices, Poto-Poto and Bacongo suit visitors wanting art, markets and nightlife, and Moungali suits longer, quieter stays near local transport.",
+  "rentalCars": "A rental car with driver helps for trips beyond the centre, such as reaching the river ferry terminal or nearby nature reserves, though taxis cover downtown Brazzaville well.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centre-Ville or Plateau for an easy first stay close to hotels, banks and the riverside Corniche without needing a car."
+    },
+    {
+      "title": "Kinshasa ferry",
+      "text": "Consider a day trip across the Congo River to Kinshasa by ferry, but carry passports and visas since it counts as international travel."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Arrange a hotel pickup at Maya-Maya Airport in advance, since taxis outside arrivals can be limited late at night."
+    },
+    {
+      "title": "Cash and language",
+      "text": "Carry Central African CFA francs for everyday purchases and expect French as the main working language across hotels and markets."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Basilique Sainte-Anne du Congo",
+      "text": "Basilique Sainte-Anne du Congo is a named stop in Brazzaville worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pierre Savorgnan de Brazza Memorial",
+      "text": "Pierre Savorgnan de Brazza Memorial is a clear heritage marker in Brazzaville, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Nabemba Tower",
+      "text": "Nabemba Tower is a clear heritage marker in Brazzaville, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Poto-Poto Painting School",
+      "text": "Poto-Poto Painting School is a named stop in Brazzaville worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Congo River Rapids",
+      "text": "Congo River Rapids adds outdoor time to a Brazzaville stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Cathedral of the Sacred Heart Brazzaville",
+      "text": "Cathedral of the Sacred Heart Brazzaville anchors the historic and ceremonial side of Brazzaville, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kinshasa",
+      "label": "Day trip",
+      "text": "Kinshasa sits directly across the Congo River, reachable by a short ferry ride for a day trip into the Democratic Republic of the Congo."
+    },
+    {
+      "name": "Lefini Faunal Reserve",
+      "label": "Nature",
+      "text": "The Lefini Faunal Reserve protects savanna and forest wildlife north of Brazzaville, a worthwhile stop for a longer overland trip."
+    },
+    {
+      "name": "Djoué Falls",
+      "label": "Nature",
+      "text": "Djoué Falls is a set of rapids on the Congo River just south of Brazzaville, a quick escape for picnics and river views."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

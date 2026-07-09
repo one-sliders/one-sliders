@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Lusaka in 2026: calendars, nearby pages and linked event views for planning around Africa / Zambia."
   },
   "region": "Capital city in Zambia",
-  "population": "tba",
+  "population": "~1.7M",
   "coordinates": {
     "lat": -15.40669,
     "lon": 28.28713
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lusaka travel, stays & events guide",
-  "heroText": "Lusaka is a capital city in Zambia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Lusaka is Zambia's plateau capital, a fast-growing commercial hub centred on the long, shop-lined Cairo Road. First-time visitors should browse crafts at Kabwata Cultural Village, learn Zambian history at the Lusaka National Museum, and pay respects at the Freedom Statue downtown. Kenneth Kaunda International Airport connects the city nationally and regionally, and Lusaka works well as a stopover before heading to Victoria Falls or South Luangwa's safari lodges.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lusaka, Zambia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lusaka",
-      "text": "Lusaka is a capital city in Zambia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Cairo Road / City Centre",
+      "text": "Cairo Road and the surrounding city centre form Lusaka's main commercial strip, with shops, banks and markets within walking distance.",
+      "bestFor": "first visits, shopping, business"
+    },
+    {
+      "name": "Kabulonga",
+      "text": "Kabulonga is an upscale residential suburb of leafy streets, restaurants and some of Lusaka's better guesthouses.",
+      "bestFor": "quiet stays, dining"
+    },
+    {
+      "name": "Woodlands",
+      "text": "Woodlands is a central residential area near malls and embassies, convenient for longer business stays.",
+      "bestFor": "business trips, longer stays"
+    },
+    {
+      "name": "Rhodes Park",
+      "text": "Rhodes Park sits close to downtown offices and diplomatic missions, a practical base for short official visits.",
+      "bestFor": "official visits, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kenneth Kaunda International Airport (LUN)",
+      "search": "Kenneth Kaunda International Airport, Lusaka, Zambia",
+      "text": "Kenneth Kaunda International Airport sits about 25 kilometres northeast of the city centre, with taxis and hotel shuttles covering the drive in."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kenneth Kaunda International Airport (LUN) and central Lusaka before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Lusaka, Zambia",
+  "stayOverview": "Base along Cairo Road for an easy first stay near shops, banks and the National Museum, or choose Kabulonga for quieter, upscale streets and dining. Woodlands and Rhodes Park suit business travelers wanting central offices and embassies within reach.",
+  "hotelIntro": "Lusaka hotel choice depends on priorities: Cairo Road suits first-time visitors wanting central sights and shopping, Kabulonga suits longer, quieter stays with good restaurants, and Woodlands or Rhodes Park suit business and diplomatic visitors.",
+  "rentalCars": "A rental car helps for day trips to nearby parks or onward travel toward Livingstone, though central Lusaka is easily covered by taxi or ride-hailing.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Lusaka base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Onward travel",
+      "text": "Use Lusaka as a stopover when connecting to Victoria Falls, South Luangwa or Lower Zambezi National Park."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Book a hotel shuttle or taxi from Kenneth Kaunda International Airport for the roughly 30-minute ride into the city."
+    },
+    {
+      "title": "Craft shopping",
+      "text": "Visit Kabwata Cultural Village for Zambian wood carvings and baskets at fairer prices than tourist-area shops."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lusaka National Museum",
+      "text": "Lusaka National Museum is a key Lusaka culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Kabwata Cultural Village",
+      "text": "Kabwata Cultural Village gives Lusaka a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Munda Wanga Environmental Park",
+      "text": "Munda Wanga Environmental Park adds outdoor time to a Lusaka stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Freedom Statue",
+      "text": "Freedom Statue is a named stop in Lusaka worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Arcades Shopping Centre",
+      "text": "Arcades Shopping Centre gives Lusaka a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Sunday Crafts Market",
+      "text": "Sunday Crafts Market gives Lusaka a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lower Zambezi National Park",
+      "label": "Wildlife",
+      "text": "Lower Zambezi National Park offers riverside safaris a few hours from Lusaka, known for elephants, hippos and canoe trips."
+    },
+    {
+      "name": "Kalimba Reptile Park",
+      "label": "Wildlife",
+      "text": "Kalimba Reptile Park just outside Lusaka lets visitors see crocodiles and snakes up close, an easy half-day family outing."
+    },
+    {
+      "name": "Victoria Falls",
+      "label": "Nature",
+      "text": "Victoria Falls lies a flight or long drive southwest in Livingstone, one of Africa's most spectacular natural landmarks."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

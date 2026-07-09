@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Nouakchott in 2026: calendars, nearby pages and linked event views for planning around Africa / Mauritania."
   },
   "region": "Capital city in Mauritania",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": 18.08581,
     "lon": -15.9785
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Nouakchott travel, stays & events guide",
-  "heroText": "Nouakchott is a capital city in Mauritania, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Nouakchott is Mauritania's Atlantic-coast capital, a planned city of wide boulevards built up rapidly since the 1960s around fishing and trade. First-time visitors should watch the colourful pirogues unload at Port de Peche, browse the stalls of Marche Capitale, and admire the twin minarets of the Grand Mosque of Nouakchott. Nouakchott-Oumtounsy International Airport connects the city to the Sahara interior and the coastal Banc d'Arguin further north.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Nouakchott, Mauritania",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Nouakchott",
-      "text": "Nouakchott is a capital city in Mauritania, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Tevragh-Zeina",
+      "text": "Tevragh-Zeina is Nouakchott's upscale district, home to embassies, international hotels and the city's best restaurants.",
+      "bestFor": "hotels, embassies, dining"
+    },
+    {
+      "name": "Ksar",
+      "text": "Ksar is the original town centre, a dense grid of shops and markets near Marche Capitale, good for a first orientation.",
+      "bestFor": "markets, first visits, walking"
+    },
+    {
+      "name": "Sebkha",
+      "text": "Sebkha is a dense, working-class district west of the centre, known for its lively daily market and craft workshops.",
+      "bestFor": "markets, local life"
+    },
+    {
+      "name": "Arafat",
+      "text": "Arafat is a residential district south of the centre, a quieter, more affordable base within reach of downtown.",
+      "bestFor": "budget stays, quiet streets"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Nouakchott-Oumtounsy International Airport (NKC)",
+      "search": "Nouakchott-Oumtounsy International Airport, Nouakchott, Mauritania",
+      "text": "Nouakchott-Oumtounsy International Airport sits about 25 kilometres north-east of the centre; pre-arrange a hotel transfer since taxis are limited outside the terminal."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Nouakchott-Oumtounsy International Airport (NKC) and central Nouakchott before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Nouakchott, Mauritania",
+  "stayOverview": "Tevragh-Zeina offers the easiest first stay, close to embassies, hotels and good restaurants, while Ksar suits visitors wanting to be near Marche Capitale and the original town centre. Sebkha and Arafat provide quieter, more affordable alternatives further from the coast.",
+  "hotelIntro": "Nouakchott's better hotels concentrate in Tevragh-Zeina, close to embassies and restaurants, while Ksar offers simpler options nearer the markets. Sebkha and Arafat suit longer, budget-conscious stays away from the main tourist areas.",
+  "rentalCars": "A rental car with a driver helps for trips to Banc d'Arguin or the desert interior, but is unnecessary for the compact, walkable city centre.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Tevragh-Zeina for an easy first stay near embassies, hotels and restaurants close to the coast."
+    },
+    {
+      "title": "Visit the fishing port at dawn",
+      "text": "Arrive at Port de Peche early morning to watch hundreds of wooden pirogues bring in the day's catch."
+    },
+    {
+      "title": "Cash and dress",
+      "text": "Carry Mauritanian ouguiya in cash for markets, and dress modestly given the country's conservative Islamic customs."
+    },
+    {
+      "title": "Plan desert side trips",
+      "text": "Arrange a guide in advance for any trip toward Banc d'Arguin or the Sahara interior, since infrastructure outside the city is limited."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Port de Peche",
+      "text": "Port de Peche adds the water-facing side of Nouakchott, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Saudi Mosque Nouakchott",
+      "text": "Saudi Mosque Nouakchott anchors the historic and ceremonial side of Nouakchott, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Museum of Mauritania",
+      "text": "National Museum of Mauritania is a key Nouakchott culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Nouakchott Beach",
+      "text": "Nouakchott Beach adds outdoor time to a Nouakchott stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Camel Market",
+      "text": "Camel Market gives Nouakchott a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Galerie Zeinart",
+      "text": "Galerie Zeinart gives Nouakchott a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Banc d'Arguin National Park",
+      "label": "Nature",
+      "text": "Banc d'Arguin National Park, a UNESCO-listed wetland north of the city, is one of the world's most important bird migration stopovers."
+    },
+    {
+      "name": "Chinguetti",
+      "label": "Heritage",
+      "text": "Chinguetti, a historic desert town with ancient manuscript libraries, makes a longer overland trip for travelers heading into the Sahara."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

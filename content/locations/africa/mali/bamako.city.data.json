@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Bamako in 2026: calendars, nearby pages and linked event views for planning around Africa / Mali."
   },
   "region": "Capital city in Mali",
-  "population": "tba",
+  "population": "~2.7M",
   "coordinates": {
     "lat": 12.60915,
     "lon": -7.97522
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bamako travel, stays & events guide",
-  "heroText": "Bamako is a capital city in Mali, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Bamako is Mali's capital on the Niger River, a sprawling, music-loving city known for its riverside markets and vibrant live venues. First-time visitors should explore the National Museum of Mali for Malian art and history, browse the Grand Marche's stalls, and take in views from Point G above the city. Bamako-Senou International Airport is the main gateway; check current travel advisories closely before planning a visit.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Bamako, Mali",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Bamako",
-      "text": "Bamako is a capital city in Mali, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Hippodrome",
+      "text": "Hippodrome is Bamako's central district, packed with hotels, restaurants and live-music venues within easy reach of downtown.",
+      "bestFor": "nightlife, hotels, central access"
+    },
+    {
+      "name": "Badalabougou",
+      "text": "Badalabougou sits on the Niger's south bank, a quieter residential area favoured by embassies and longer-stay visitors.",
+      "bestFor": "embassies, quiet stays"
+    },
+    {
+      "name": "ACI 2000",
+      "text": "ACI 2000 is Bamako's modern business district, home to newer offices, banks and international hotel chains.",
+      "bestFor": "business trips, modern hotels"
+    },
+    {
+      "name": "Niarela",
+      "text": "Niarela is a central, walkable neighborhood near the Grand Mosque and Grand Marche, useful for a first orientation to the city.",
+      "bestFor": "markets, walking, first visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Bamako-Senou International Airport (BKO)",
+      "search": "Bamako-Senou International Airport, Bamako, Mali",
+      "text": "Bamako-Senou International Airport lies about 15 kilometres south of the city centre; arrange a pre-booked transfer given evolving security conditions."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Bamako-Senou International Airport (BKO) and central Bamako before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Bamako, Mali",
+  "stayOverview": "Hippodrome offers the easiest first stay, close to restaurants and live-music venues, while Badalabougou suits quieter, embassy-district stays across the river. ACI 2000 works best for business trips needing modern offices and hotels. Confirm current safety guidance before booking any district.",
+  "hotelIntro": "Bamako hotel choice depends on purpose: Hippodrome suits short stays near nightlife and restaurants, ACI 2000 suits business travelers wanting modern facilities, and Badalabougou offers quieter, leafier streets across the Niger River.",
+  "rentalCars": "Self-driving is not recommended given security conditions and unpredictable checkpoints; arrange a trusted local driver or pre-booked transfer instead.",
+  "travelTips": [
+    {
+      "title": "Check advisories first",
+      "text": "Confirm current government travel advisories before booking a Bamako trip, since security conditions across Mali can change with little warning."
+    },
+    {
+      "title": "Arrange transfers in advance",
+      "text": "Book airport and hotel transfers ahead of arrival rather than relying on street taxis, especially for late-night flights."
+    },
+    {
+      "title": "Enjoy the music scene",
+      "text": "Catch a live show at one of Hippodrome's music venues, since Bamako's guitar and Wassoulou traditions are among West Africa's richest."
+    },
+    {
+      "title": "Cash and bargaining",
+      "text": "Carry small West African CFA franc notes for the Grand Marche, where bargaining is expected and cards are rarely accepted."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Museum of Mali",
+      "text": "National Museum of Mali is a key Bamako culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Bamako Grand Mosque",
+      "text": "Bamako Grand Mosque anchors the historic and ceremonial side of Bamako, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Point G Hill",
+      "text": "Point G Hill adds outdoor time to a Bamako stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Bamako Artisan Market",
+      "text": "Bamako Artisan Market gives Bamako a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Niger River waterfront",
+      "text": "Niger River waterfront adds outdoor time to a Bamako stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Mali National Park",
+      "text": "Mali National Park adds outdoor time to a Bamako stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Niger River boat trips",
+      "label": "River",
+      "text": "Short pirogue trips along the Niger River give a different view of Bamako's riverside markets and fishing communities."
+    },
+    {
+      "name": "Siby",
+      "label": "Nature",
+      "text": "Siby, roughly an hour southwest, offers sandstone cliffs and the Siby Arch for a half-day escape from the city."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

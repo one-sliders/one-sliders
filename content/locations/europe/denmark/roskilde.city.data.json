@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Roskilde, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Zealand",
-  "population": "tba",
+  "population": "~53K",
   "coordinates": {
     "lat": 55.64152,
     "lon": 12.08035
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Roskilde travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Roskilde is a historic Zealand city known for royal burials, Viking ships and one of Europe's major music festivals. Start at Roskilde Cathedral, walk down to the Viking Ship Museum, then use Roskilde Fjord or Musicon to see the city's newer side. Copenhagen Airport is the main international gateway, with easy rail onward.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Roskilde centre",
+      "text": "The centre is best for first stays, with the cathedral, station, shops and restaurants within easy walking distance.",
+      "bestFor": "first visits, station, restaurants"
+    },
+    {
+      "name": "Harbour area",
+      "text": "The harbour area suits fjord views, Viking Ship Museum visits and quieter walks below the old centre.",
+      "bestFor": "fjord, museum, quiet walks"
+    },
+    {
+      "name": "Musicon",
+      "text": "Musicon is Roskilde's creative district, useful for festival energy, events and a less traditional stay.",
+      "bestFor": "events, music, creative scene"
+    },
+    {
+      "name": "Trekroner",
+      "text": "Trekroner is a newer residential and university area with rail access east of the historic centre.",
+      "bestFor": "university, apartments, rail"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Copenhagen Airport (CPH)",
+      "search": "Copenhagen Airport, Copenhagen, Denmark",
+      "text": "Copenhagen Airport is the main international airport for Roskilde, connected by rail through Copenhagen."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "45-60 min by train from Copenhagen Airport via Copenhagen",
+    "note": "from Copenhagen Airport",
+    "distance": "about 45 km east of Roskilde"
   },
   "bookingDestination": "Roskilde, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Roskilde Cathedral",
-    "Viking Ship Museum",
-    "Roskilde Festival site",
-    "Roskilde Fjord",
-    "Musicon",
-    "Ledreborg trips"
+  "stayOverview": "Stay in Roskilde centre for the station, cathedral and restaurants, the harbour area for fjord walks, Musicon for events and festival atmosphere, or Trekroner for university access and newer apartment stays.",
+  "hotelIntro": "Roskilde is easy to cover on foot from the station and centre. Harbour stays feel quieter and scenic, while Musicon is more event-led and Trekroner works when rail access or university visits matter.",
+  "rentalCars": "A car is not needed in Roskilde, but helps for fjord villages, Ledreborg and countryside stops.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the centre if you want the cathedral, station and restaurants close together without relying on buses."
+    },
+    {
+      "title": "Festival dates",
+      "text": "Keep the Roskilde plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Fjord walks",
+      "text": "Leave time to walk between the cathedral area and the Viking Ship Museum by the fjord."
+    },
+    {
+      "title": "Day trip",
+      "text": "Roskilde also works as a day trip from Copenhagen if you only need the cathedral and Viking ships."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Roskilde Cathedral",
+      "title": "Roskilde Cathedral",
+      "text": "Roskilde Cathedral is one of Roskilde's religious landmarks; check visiting hours and dress expectations before building the route around it."
+    },
+    {
+      "name": "Viking Ship Museum",
+      "title": "Viking Ship Museum",
+      "text": "Viking Ship Museum gives Roskilde a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Roskilde Festival site",
+      "title": "Roskilde Festival site",
+      "text": "Roskilde Festival site is a named stop in Roskilde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Roskilde Fjord",
+      "title": "Roskilde Fjord",
+      "text": "Roskilde Fjord is a named stop in Roskilde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Musicon",
+      "title": "Musicon",
+      "text": "Musicon is a named stop in Roskilde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Ledreborg trips",
+      "title": "Ledreborg trips",
+      "text": "Ledreborg trips is a named stop in Roskilde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lejre Land of Legends",
+      "label": "Heritage",
+      "text": "Lejre Land of Legends is an open-air history centre with reconstructed houses and family-friendly activities."
+    },
+    {
+      "name": "Ledreborg Palace",
+      "label": "Estate",
+      "text": "Ledreborg Palace is a heritage-focused side trip from Roskilde; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Copenhagen",
+      "label": "City",
+      "text": "Copenhagen is close enough by train for museums, food and airport connections from a Roskilde base."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Roskilde",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Movia"
 }

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Andorra la Vella in 2026: calendars, nearby pages and linked event views for planning around Europe / Andorra."
   },
   "region": "Capital city of Andorra",
-  "population": "tba",
+  "population": "~23K",
   "coordinates": {
     "lat": 42.50779,
     "lon": 1.52109
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Andorra la Vella travel, stays & events guide",
-  "heroText": "Andorra la Vella is a key city in Andorra, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Andorra la Vella is a compact Pyrenean capital built around shopping streets, mountain roads and thermal water. Base yourself near Avinguda Meritxell for restaurants, walk to Casa de la Vall for old Andorran politics, then book Caldea for an easy spa evening. Most arrivals use Barcelona-El Prat or Toulouse-Blagnac, with road transfers over the mountains.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Andorra la Vella, Andorra",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Andorra la Vella",
-      "text": "Andorra la Vella is a key city in Andorra, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Avinguda Meritxell",
+      "text": "Avinguda Meritxell is the main shopping spine, close to hotels, restaurants and bus stops for a first Andorra stay.",
+      "bestFor": "shopping, first visits, restaurants"
+    },
+    {
+      "name": "Barri Antic",
+      "text": "Barri Antic is the small old quarter around Casa de la Vall, better for atmosphere than large hotel choice.",
+      "bestFor": "history, atmosphere, short walks"
+    },
+    {
+      "name": "Escaldes-Engordany",
+      "text": "Escaldes-Engordany sits beside the capital with Caldea, spa hotels and quick walks back into the centre.",
+      "bestFor": "spa stays, couples, easy walks"
+    },
+    {
+      "name": "La Massana",
+      "text": "La Massana is outside the capital but useful for ski access, mountain biking and quieter apartment stays.",
+      "bestFor": "skiing, apartments, mountain access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Andorra-La Seu d'Urgell Airport (LEU)",
+      "search": "Andorra-La Seu d'Urgell Airport, La Seu d'Urgell, Spain",
+      "text": "Andorra-La Seu is the closest airport, mainly useful for limited regional services and private aviation near the Spanish border."
+    },
+    {
+      "name": "Barcelona-El Prat Airport (BCN)",
+      "search": "Barcelona-El Prat Airport, Barcelona, Spain",
+      "text": "Barcelona-El Prat is the main international gateway for Andorra, with regular bus and private transfers through the Pyrenees."
+    }
+  ],
+  "airportTransfer": {
+    "value": "3-4 hours by bus or private transfer from Barcelona-El Prat",
+    "note": "Andorra has no major commercial airport",
+    "distance": "about 200 km from Barcelona-El Prat"
+  },
+  "bookingDestination": "Andorra la Vella, Andorra",
+  "stayOverview": "Stay around Avinguda Meritxell for shops and restaurants, Barri Antic for a small historic feel, Escaldes-Engordany for Caldea and spa hotels, or La Massana when skiing and mountain access matter more than city-centre walks.",
+  "hotelIntro": "Andorra hotel choice is mostly about trip purpose: central Andorra la Vella suits shopping weekends, Escaldes-Engordany suits spa stays, and La Massana or other valley towns suit ski lifts and summer trails.",
+  "rentalCars": "A car helps for ski villages and viewpoints, but central Andorra la Vella is walkable once you arrive.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Avinguda Meritxell for the easiest first stay, especially if you arrive by bus from Barcelona or Toulouse."
+    },
+    {
+      "title": "Transfer planning",
+      "text": "Mountain roads make airport transfers long, so avoid tight same-day flight connections from Barcelona or Toulouse."
+    },
+    {
+      "title": "Spa timing",
+      "text": "Book Caldea ahead on weekends and winter holidays, when spa sessions and nearby hotels fill quickly."
+    },
+    {
+      "title": "Season",
+      "text": "Winter is ski-focused, while summer and early autumn are better for hiking, cycling and clear mountain views."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Avinguda Meritxell",
+      "text": "Avinguda Meritxell is the capital's main shopping street, lined with hotels, restaurants and duty-free stores. Pair it with nearby streets and cafes rather than treating it as a quick photo stop.",
+      "name": "Avinguda Meritxell"
+    },
+    {
+      "title": "Casa de la Vall",
+      "text": "Casa de la Vall is Andorra's historic parliament building, a small but important stop in the old quarter.",
+      "name": "Casa de la Vall"
+    },
+    {
+      "title": "Caldea",
+      "text": "Caldea is a named Andorra la Vella landmark that helps structure a real visit, adding orientation, local context and a clear route anchor.",
+      "name": "Caldea"
+    },
+    {
+      "title": "Barri Antic",
+      "text": "Barri Antic preserves Andorra la Vella's old stone streets around civic buildings and quieter restaurant corners. Pair it with nearby streets and cafes rather than treating it as a quick photo stop.",
+      "name": "Barri Antic"
+    },
+    {
+      "title": "Parc Central",
+      "text": "Parc Central is a named stop in Andorra la Vella worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Parc Central"
+    },
+    {
+      "title": "La Massana",
+      "text": "La Massana is a nearby mountain town with lift access, apartment stays and better access to outdoor activities.",
+      "name": "La Massana"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ordino",
+      "label": "Village",
+      "text": "Ordino is a scenic stone village with museums and mountain access north of the capital."
+    },
+    {
+      "name": "Vallnord Pal Arinsal",
+      "label": "Mountain",
+      "text": "Vallnord Pal Arinsal is the practical ski and bike area for visitors staying near La Massana."
+    },
+    {
+      "name": "La Seu d'Urgell",
+      "label": "Town",
+      "text": "La Seu d'Urgell in Spain adds a cathedral town, airport access and a lower-valley contrast to Andorra."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

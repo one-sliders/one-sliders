@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Yerevan in 2026: calendars, nearby pages and linked event views for planning around Europe / Armenia."
   },
   "region": "Capital city of Armenia",
-  "population": "tba",
+  "population": "~1.1M",
   "coordinates": {
     "lat": 40.17765,
     "lon": 44.5126
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Yerevan travel, stays & events guide",
-  "heroText": "Yerevan is a key city in Armenia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Yerevan is Armenia's pink-stone capital, a cafe city with deep history and Mount Ararat views on clear days. Start at Republic Square, climb the Cascade Complex for sculpture and skyline views, then visit the Matenadaran for manuscripts. Zvartnots International Airport keeps arrivals simple and makes Yerevan the base for day trips to Garni and Geghard.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Yerevan, Armenia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Yerevan",
-      "text": "Yerevan is a key city in Armenia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Kentron",
+      "text": "Kentron is the central district around Republic Square, Opera and museums, best for first-time sightseeing without long taxi rides.",
+      "bestFor": "first visits, museums, restaurants"
+    },
+    {
+      "name": "Cascade",
+      "text": "The Cascade area has cafes, galleries and hillside views, with a calmer evening feel than the main square.",
+      "bestFor": "cafes, views, couples"
+    },
+    {
+      "name": "Arabkir",
+      "text": "Arabkir is a residential district with apartment stays, local restaurants and easier access toward northern roads.",
+      "bestFor": "apartments, longer stays, local dining"
+    },
+    {
+      "name": "Kond",
+      "text": "Kond is an old hillside neighbourhood near the centre, atmospheric for walks but better for boutique stays than big hotels.",
+      "bestFor": "atmosphere, photography, boutique stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Zvartnots International Airport (EVN)",
+      "search": "Zvartnots International Airport, Yerevan, Armenia",
+      "text": "Zvartnots International Airport is west of Yerevan; taxis and pre-booked transfers are the usual route into Kentron."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20-35 min by taxi or pre-booked transfer to Kentron",
+    "note": "from Zvartnots International Airport",
+    "distance": "about 12 km west of central Yerevan"
+  },
+  "bookingDestination": "Yerevan, Armenia",
+  "stayOverview": "Kentron is the easiest Yerevan base for museums, restaurants and walks. Choose Cascade for views and cafes, Arabkir for apartments and longer stays, or Kond if you want older hillside streets close to the centre.",
+  "hotelIntro": "Most visitors should compare hotels in Kentron and around Cascade first. Arabkir gives better apartment value and quieter nights, while Kond adds character but needs more attention to exact street access and luggage logistics.",
+  "rentalCars": "Do not rent for central Yerevan; hire a driver or car only for monasteries, Lake Sevan and countryside routes.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Kentron if you want Republic Square, Opera, museums and most restaurants within a compact taxi-free radius."
+    },
+    {
+      "title": "Views",
+      "text": "Go to the Cascade Complex on a clear morning or near sunset for the best chance of Mount Ararat views."
+    },
+    {
+      "title": "Transport",
+      "text": "The metro is useful for a few routes, but taxis and ride-hailing handle most visitor journeys cheaply."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one side-trip day flexible from Yerevan, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Republic Square",
+      "text": "Republic Square is a clear heritage marker in Yerevan, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Republic Square"
+    },
+    {
+      "title": "Cascade Complex",
+      "text": "Cascade Complex is a named stop in Yerevan worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Cascade Complex"
+    },
+    {
+      "title": "Matenadaran",
+      "text": "Matenadaran is a named stop in Yerevan worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Matenadaran"
+    },
+    {
+      "title": "Vernissage Market",
+      "text": "Vernissage Market is useful for reading Yerevan's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights.",
+      "name": "Vernissage Market"
+    },
+    {
+      "title": "Tsitsernakaberd",
+      "text": "Tsitsernakaberd is a named stop in Yerevan worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Tsitsernakaberd"
+    },
+    {
+      "title": "Kond",
+      "text": "Kond is one of Yerevan's oldest neighbourhoods, with narrow lanes and a very different feel from the planned avenues below.",
+      "name": "Kond"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Garni Temple",
+      "label": "Heritage",
+      "text": "Garni Temple is Armenia's classical colonnaded temple, usually paired with nearby Geghard on a day trip."
+    },
+    {
+      "name": "Geghard Monastery",
+      "label": "Heritage",
+      "text": "Geghard Monastery is partly carved into rock and sits in a dramatic gorge east of Yerevan."
+    },
+    {
+      "name": "Lake Sevan",
+      "label": "Lake",
+      "text": "Lake Sevan offers monasteries, fish restaurants and cooler air within reach of a longer day trip."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Yerevan",
     "matchedCountry": "Armenia"
-  }
+  },
+  "transitOperator": "Yerevan Metro"
 }

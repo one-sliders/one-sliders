@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Tegucigalpa travel, stays & events guide",
-  "heroText": "Tegucigalpa is a capital city in Honduras, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tegucigalpa is a Honduras base best planned around named sights rather than a generic stopover. Start with Parque Central Tegucigalpa, add Basilica de Suyapa, and use Cristo del Picacho to understand the city's history, street life and visitor rhythm. Tegucigalpa International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tegucigalpa, Honduras",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tegucigalpa",
-      "text": "Tegucigalpa is a capital city in Honduras, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Tegucigalpa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Tegucigalpa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Tegucigalpa reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Tegucigalpa sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tegucigalpa International Airport",
+      "search": "Tegucigalpa International Airport, Tegucigalpa, Honduras",
+      "text": "Tegucigalpa International Airport is the main air gateway for Tegucigalpa; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Tegucigalpa International Airport and central Tegucigalpa before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Tegucigalpa, Honduras",
+  "stayOverview": "Start with City centre for the easiest first Tegucigalpa stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Tegucigalpa hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Tegucigalpa unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Tegucigalpa International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Parque Central Tegucigalpa and Basilica de Suyapa so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Tegucigalpa, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Parque Central Tegucigalpa",
+      "text": "Parque Central Tegucigalpa is a named stop in Tegucigalpa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Basilica de Suyapa",
+      "text": "Basilica de Suyapa anchors the historic and ceremonial side of Tegucigalpa, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Cristo del Picacho",
+      "text": "Cristo del Picacho is a named stop in Tegucigalpa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Museum for National Identity",
+      "text": "Museum for National Identity is a key Tegucigalpa culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "La Tigra National Park",
+      "text": "La Tigra National Park adds outdoor time to a Tegucigalpa stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Los Dolores Church",
+      "text": "Los Dolores Church anchors the historic and ceremonial side of Tegucigalpa, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Parque Central Tegucigalpa",
+      "label": "Heritage",
+      "text": "Parque Central Tegucigalpa is a heritage-focused side trip from Tegucigalpa; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Basilica de Suyapa",
+      "label": "Heritage",
+      "text": "Basilica de Suyapa is a heritage-focused side trip from Tegucigalpa; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Cristo del Picacho",
+      "label": "Heritage",
+      "text": "Cristo del Picacho is a heritage-focused side trip from Tegucigalpa; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

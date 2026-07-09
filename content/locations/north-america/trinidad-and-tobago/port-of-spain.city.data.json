@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Port of Spain travel, stays & events guide",
-  "heroText": "Port of Spain is a capital city in Trinidad and Tobago, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Port of Spain is a Trinidad and Tobago base best planned around named sights rather than a generic stopover. Start with Queen's Park Savannah, add National Museum and Art Gallery Trinidad, and use Royal Botanic Gardens Trinidad to understand the city's history, street life and visitor rhythm. Piarco International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Port of Spain, Trinidad and Tobago",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Port of Spain",
-      "text": "Port of Spain is a capital city in Trinidad and Tobago, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Port of Spain, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Port of Spain, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Port of Spain reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Port of Spain sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Piarco International Airport (POS)",
+      "search": "Piarco International Airport (POS), Port of Spain, Trinidad and Tobago",
+      "text": "Piarco International Airport (POS) is the main air gateway for Port of Spain; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Piarco International Airport (POS) and central Port of Spain before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Port of Spain, Trinidad and Tobago",
+  "stayOverview": "Start with City centre for the easiest first Port of Spain stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Port of Spain hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Port of Spain unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Piarco International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Queen's Park Savannah and National Museum and Art Gallery Trinidad so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Port of Spain, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Queen's Park Savannah",
+      "text": "Queen's Park Savannah adds outdoor time to a Port of Spain stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Museum and Art Gallery Trinidad",
+      "text": "National Museum and Art Gallery Trinidad is a key Port of Spain culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Royal Botanic Gardens Trinidad",
+      "text": "Royal Botanic Gardens Trinidad adds outdoor time to a Port of Spain stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Magnificent Seven Port of Spain",
+      "text": "Magnificent Seven Port of Spain adds the water-facing side of Port of Spain, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Fort George Trinidad",
+      "text": "Fort George Trinidad is a clear heritage marker in Port of Spain, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Maracas Bay",
+      "text": "Maracas Bay adds the water-facing side of Port of Spain, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Queen's Park Savannah",
+      "label": "Nature",
+      "text": "Queen's Park Savannah works as a nature-focused side trip from Port of Spain, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Royal Botanic Gardens Trinidad",
+      "label": "Heritage",
+      "text": "Royal Botanic Gardens Trinidad works as a nature-focused side trip from Port of Spain, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Magnificent Seven Port of Spain",
+      "label": "Heritage",
+      "text": "Magnificent Seven Port of Spain is a heritage-focused side trip from Port of Spain; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

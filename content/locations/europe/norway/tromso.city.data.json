@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tromsø travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Tromsø is a Norway base best planned around named sights rather than a generic stopover. Start with Arctic Cathedral, add Fjellheisen cable car, and use Polaria to understand the city's history, street life and visitor rhythm. Tromsø International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Tromsø, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Tromsø, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Tromsø reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Tromsø sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Tromsø International Airport",
+      "search": "Tromsø International Airport, Tromsø, Norway",
+      "text": "Tromsø International Airport is the main air gateway for Tromsø; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Tromsø International Airport and central Tromsø before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Tromsø, Norway",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Arctic Cathedral",
-    "Fjellheisen cable car",
-    "Polaria",
-    "Northern lights tours",
-    "Tromso Bridge",
-    "Whale season trips"
+  "stayOverview": "Start with City centre for the easiest first Tromsø stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Tromsø hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Tromsø unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Tromsø International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Arctic Cathedral and Fjellheisen cable car so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Tromsø, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Arctic Cathedral",
+      "text": "Arctic Cathedral anchors the historic and ceremonial side of Tromsø, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Fjellheisen cable car",
+      "text": "Fjellheisen cable car is a named stop in Tromsø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Polaria",
+      "text": "Polaria is a named stop in Tromsø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Northern lights tours",
+      "text": "Northern lights tours is a named stop in Tromsø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Tromso Bridge",
+      "text": "Tromso Bridge is a clear heritage marker in Tromsø, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Whale season trips",
+      "text": "Whale season trips is a named stop in Tromsø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Fjellheisen cable car",
+      "label": "Heritage",
+      "text": "Fjellheisen cable car is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Polaria",
+      "label": "Heritage",
+      "text": "Polaria is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Northern lights tours",
+      "label": "Heritage",
+      "text": "Northern lights tours is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

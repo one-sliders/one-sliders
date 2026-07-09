@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Klaksvík, Faroe Islands trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Bordoy",
-  "population": "tba",
+  "population": "~5K",
   "coordinates": {
     "lat": 62.22655,
     "lon": -6.58901
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Klaksvík travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Klaksvik is the northern hub of the Faroe Islands, set between steep mountains, tunnels and fishing harbour life. Visit Christianskirkjan, walk the Klaksvik harbour, then use the Kalsoy ferry or Northern Isles tunnels for big-view day trips. Vagar Airport is the island flight gateway, with a long but scenic road transfer.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Klaksvik centre",
+      "text": "The centre is best for first stays, with shops, harbour access, restaurants and buses close together.",
+      "bestFor": "first visits, harbour, buses"
+    },
+    {
+      "name": "Harbour area",
+      "text": "The harbour area suits fishing-town atmosphere, ferry access and short walks to central services.",
+      "bestFor": "ferries, harbour, local feel"
+    },
+    {
+      "name": "Uti i Grøv",
+      "text": "Uti i Grøv offers quieter residential stays with mountain views above the main town.",
+      "bestFor": "quiet stays, views, apartments"
+    },
+    {
+      "name": "Nordoyri",
+      "text": "Nordoyri sits just south of Klaksvik, useful for drivers wanting calmer surroundings and quick road access.",
+      "bestFor": "drivers, quiet stays, scenery"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Vagar Airport (FAE)",
+      "search": "Vagar Airport, Faroe Islands",
+      "text": "Vagar Airport is the Faroe Islands' only commercial airport; Klaksvik requires a road transfer through tunnels and islands."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "75-100 min by car from Vagar Airport, longer by bus connections",
+    "note": "allow extra time in poor weather",
+    "distance": "about 80 km from Vagar Airport"
   },
   "bookingDestination": "Klaksvík, Faroe Islands",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Christianskirkjan",
-    "Klaksvik harbour",
-    "Kalsoy ferry",
-    "Kunoy views",
-    "Vidareidi trips",
-    "Northern Isles tunnels"
+  "stayOverview": "Use Klaksvik centre for services and buses, the harbour area for ferry atmosphere, Uti i Grøv for quiet mountain views, or Nordoyri for calmer stays with a car and quick road access.",
+  "hotelIntro": "Klaksvik accommodation is limited, so book early and match the stay to transport. Central and harbour locations are easiest without a car, while outer residential areas suit drivers exploring the Northern Isles.",
+  "rentalCars": "A rental car is strongly recommended for Klaksvik unless your plan is tightly built around buses and ferries.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Klaksvík base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Weather",
+      "text": "Keep Kalsoy and mountain plans flexible because wind, fog and ferry changes can reshape the day."
+    },
+    {
+      "title": "Roads",
+      "text": "Keep the Klaksvík plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Klaksvík, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Christianskirkjan",
+      "title": "Christianskirkjan",
+      "text": "Christianskirkjan is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Klaksvik harbour",
+      "title": "Klaksvik harbour",
+      "text": "Klaksvik harbour adds the water-facing side of Klaksvík, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Kalsoy ferry",
+      "title": "Kalsoy ferry",
+      "text": "Kalsoy ferry is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Kunoy views",
+      "title": "Kunoy views",
+      "text": "Kunoy views is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Vidareidi trips",
+      "title": "Vidareidi trips",
+      "text": "Vidareidi trips is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Northern Isles tunnels",
+      "title": "Northern Isles tunnels",
+      "text": "Northern Isles tunnels is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kalsoy",
+      "label": "Island",
+      "text": "Kalsoy is the signature ferry day trip for lighthouse walks, villages and steep island scenery."
+    },
+    {
+      "name": "Vidareidi",
+      "label": "Village",
+      "text": "Vidareidi is a nearby side trip from Klaksvík; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Kunoy",
+      "label": "Scenery",
+      "text": "Kunoy is close to Klaksvik and adds mountain roads, small settlements and fjord viewpoints."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -133,5 +217,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Klaksvík",
     "matchedCountry": null
-  }
+  },
+  "transitOperator": "Strandfaraskip Landsins"
 }

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Fes in 2026: calendars, nearby pages and linked event views for planning around Africa / Morocco."
   },
   "region": "Key city in Morocco",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": 34.03313,
     "lon": -5.00028
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Fes travel, stays & events guide",
-  "heroText": "Fes is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand.",
+  "heroText": "Fes is Morocco's spiritual and intellectual capital, home to Fes el-Bali, the world's largest car-free urban medina and a UNESCO World Heritage site. First-time visitors should enter through Bab Boujloud, watch hides being dyed at the Chouara Tannery, and admire the carved cedar of the Bou Inania Madrasa. Fes-Saiss Airport sits a short drive away, and the Fes Festival of World Sacred Music draws visitors each spring.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Fes, Morocco",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Fes",
-      "text": "Fes is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand."
+      "name": "Fes el-Bali",
+      "text": "Fes el-Bali is the ancient walled medina, a UNESCO-listed maze of souks, mosques and workshops best explored on foot or with a guide.",
+      "bestFor": "history, souks, walking"
+    },
+    {
+      "name": "Fes el-Jdid",
+      "text": "Fes el-Jdid is the 13th-century royal quarter next to the old medina, home to the Royal Palace gates and the historic Jewish Mellah.",
+      "bestFor": "history, palace views"
+    },
+    {
+      "name": "Ville Nouvelle",
+      "text": "Ville Nouvelle is the French-built new town, with modern hotels, restaurants and wider streets away from the medina's crowds.",
+      "bestFor": "modern hotels, dining, easy parking"
+    },
+    {
+      "name": "Batha",
+      "text": "Batha sits at the medina's edge near the Dar Batha museum and Jnan Sbil Gardens, a convenient base close to both old and new town.",
+      "bestFor": "convenience, gardens, museums"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Fes-Saiss Airport (FEZ)",
+      "search": "Fes-Saiss Airport, Fes, Morocco",
+      "text": "Fes-Saiss Airport lies about 15 kilometres south of the city; taxis and hotel transfers cover the short ride into the medina or Ville Nouvelle."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Fes-Saiss Airport (FEZ) and central Fes before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Fes, Morocco",
+  "stayOverview": "Stay inside Fes el-Bali in a converted riad for the most atmospheric first visit, close to Bab Boujloud and the Chouara Tannery, or choose Ville Nouvelle for modern hotels and easier road access. Batha offers a useful middle ground near the gardens and museums.",
+  "hotelIntro": "Riads inside Fes el-Bali offer the most memorable stays, steps from the tannery and madrasas, while Ville Nouvelle's hotels suit travelers wanting modern comforts, parking and a wider dining scene beyond the medina walls.",
+  "rentalCars": "A rental car is unnecessary and impractical inside the medina's narrow lanes, though useful for day trips into the Middle Atlas once parked outside the old city.",
+  "travelTips": [
+    {
+      "title": "Hire a medina guide",
+      "text": "Fes el-Bali's medina has thousands of winding lanes, so a licensed guide saves time and helps avoid unofficial 'guides' near the gates."
+    },
+    {
+      "title": "Visit the tannery mid-morning",
+      "text": "See the Chouara Tannery from a surrounding leather shop's terrace mid-morning, when the dye pits are most active and the light is best."
+    },
+    {
+      "title": "Book a riad early",
+      "text": "Reserve a riad inside the medina well ahead during the Fes Festival of World Sacred Music, when accommodation fills quickly."
+    },
+    {
+      "title": "Comfortable shoes matter",
+      "text": "Keep the Fes plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Fes el-Bali",
+      "text": "Fes el-Bali is a named stop in Fes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Al Quaraouiyine",
+      "text": "Al Quaraouiyine is a named stop in Fes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Bou Inania Madrasa",
+      "text": "Bou Inania Madrasa is a named stop in Fes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Chouara Tannery",
+      "text": "Chouara Tannery is a named stop in Fes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Bab Bou Jeloud",
+      "text": "Bab Bou Jeloud is a named stop in Fes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Nejjarine Museum",
+      "text": "Nejjarine Museum is a key Fes culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Volubilis",
+      "label": "Ruins",
+      "text": "Volubilis, a well-preserved Roman archaeological site, makes a rewarding half-day trip from Fes through the surrounding countryside."
+    },
+    {
+      "name": "Ifrane",
+      "label": "Nature",
+      "text": "Ifrane, a cedar-forested Middle Atlas town nicknamed 'Morocco's Switzerland', is a cool-climate day trip from Fes."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

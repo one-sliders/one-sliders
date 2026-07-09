@@ -23,7 +23,8 @@
     "dynamic": true
   },
   "h1": "Harare travel, stays & events guide",
-  "heroText": "Harare is Zimbabwe's capital base for galleries, markets, jacaranda-lined avenues, airport access and wider country travel planning.",
+  "heroText": "Harare is Zimbabwe's capital, a jacaranda-lined highveld city built around wide colonial-era avenues and a compact business core. First-time visitors should walk the National Gallery of Zimbabwe for Shona stone sculpture, browse the produce and curios at Mbare Musika market, and cool off under trees at Harare Gardens. Robert Gabriel Mugabe International Airport connects the city to Victoria Falls and the wider region, making Harare a practical first-night base.",
+  "transitOperator": "ZUPCO",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +42,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Avondale",
+      "text": "Avondale is a central shopping and cafe hub close to the CBD, useful for a first Harare stay with easy access to restaurants and everyday errands.",
+      "bestFor": "first visits, shops, cafes"
+    },
+    {
+      "name": "Milton Park",
+      "text": "Milton Park sits just west of the CBD, a quiet residential base within walking distance of offices, embassies and the Harare Gardens.",
+      "bestFor": "business trips, walkable CBD access"
+    },
+    {
+      "name": "Borrowdale",
+      "text": "Borrowdale is Harare's newer suburb for shopping malls, golf courses and modern hotels, best for longer stays or business trips needing more space.",
+      "bestFor": "longer stays, malls, golf"
+    },
+    {
+      "name": "Belgravia",
+      "text": "Belgravia is a leafy, embassy-lined district near the National Gallery, suited to quieter stays close to government and diplomatic offices.",
+      "bestFor": "quiet stays, diplomatic visits"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Robert Gabriel Mugabe International Airport (HRE)",
+      "search": "Robert Gabriel Mugabe International Airport, Harare, Zimbabwe",
+      "text": "Robert Gabriel Mugabe International Airport sits southeast of the city centre; allow extra time for immigration and customs, and confirm transfers before late arrivals."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Robert Gabriel Mugabe International Airport (HRE) and central Harare before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Harare, Zimbabwe",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "National Gallery of Zimbabwe",
-    "Harare Gardens",
-    "Mbare Musika",
-    "Mukuvisi Woodlands",
-    "National Heroes Acre",
-    "The Kopje"
+  "stayOverview": "Start in Avondale or Milton Park for an easy first Harare stay near shops, cafes and the CBD, then compare Borrowdale for newer hotels and shopping malls, or Belgravia for quiet, embassy-lined streets close to the National Gallery and Harare Gardens.",
+  "hotelIntro": "Harare hotel choice depends mostly on purpose: Avondale and Milton Park suit business trips and shopping close to the centre, Borrowdale suits longer stays near malls and golf courses, and Belgravia suits diplomats and quieter, leafy streets near the National Gallery.",
+  "rentalCars": "A rental car helps for day trips beyond Harare, such as Chinhoyi Caves or Lake Chivero, but is not needed for getting around the compact city centre.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Avondale or Milton Park for a first stay close to shops, cafes and the CBD without needing a car for everyday errands."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Confirm hotel transfers in advance, since ride-hailing apps are limited and late-night arrivals are easier with a pre-booked pickup."
+    },
+    {
+      "title": "Cash and safety",
+      "text": "Carry small US dollar notes for everyday purchases and keep valuables out of sight, especially around busy markets like Mbare Musika."
+    },
+    {
+      "title": "Day trips",
+      "text": "Build in extra time for a day trip to Lake Chivero or the Chinhoyi Caves if the stay allows a full day outside the city."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "National Gallery of Zimbabwe",
+      "text": "National Gallery of Zimbabwe is a key Harare culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Harare Gardens",
+      "text": "Harare Gardens adds outdoor time to a Harare stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Mbare Musika",
+      "text": "Mbare Musika is a named stop in Harare worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mukuvisi Woodlands",
+      "text": "Mukuvisi Woodlands is a named stop in Harare worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "National Heroes Acre",
+      "text": "National Heroes Acre is a named stop in Harare worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "The Kopje",
+      "text": "The Kopje is a named stop in Harare worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lake Chivero",
+      "label": "Nature",
+      "text": "Lake Chivero is Harare's nearest game park and reservoir, good for a half-day safari or picnic without a long drive from the city."
+    },
+    {
+      "name": "Chinhoyi Caves",
+      "label": "Nature",
+      "text": "The Chinhoyi Caves are a striking sinkhole and cave system north-west of Harare, worth the drive for the deep blue pool inside."
+    },
+    {
+      "name": "Domboshava",
+      "label": "Heritage",
+      "text": "Domboshava has rock paintings and granite hills close to Harare, a quick escape for hiking and views over the surrounding farmland."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

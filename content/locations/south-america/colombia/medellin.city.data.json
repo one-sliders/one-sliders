@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Medellin in 2026: calendars, nearby pages and linked event views for planning around South America / Colombia."
   },
   "region": "Key city in Colombia",
-  "population": "tba",
+  "population": "~2.5M",
   "coordinates": {
     "lat": 6.245,
     "lon": -75.57151
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Medellin travel, stays & events guide",
-  "heroText": "Medellin is a key city in Colombia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Medellin fills a green Andean valley with springlike weather, public transit landmarks and a confident food-and-nightlife scene. Start in El Poblado or Laureles, ride the Metrocable toward Parque Arvi, and visit Comuna 13 for murals and hillside history. Jose Maria Cordova airport sits outside the valley, so transfer timing matters more than distance on the map.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,120 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Medellin, Colombia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Medellin",
-      "text": "Medellin is a key city in Colombia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "El Poblado",
+      "text": "El Poblado is the easiest first base, with hotels, restaurants, nightlife and strong taxi access to the airport road.",
+      "bestFor": "first visits, nightlife, restaurants"
+    },
+    {
+      "name": "Laureles",
+      "text": "Laureles is flatter and more residential, with cafes, local nightlife and a calmer feel than El Poblado.",
+      "bestFor": "longer stays, cafes, local feel"
+    },
+    {
+      "name": "Envigado",
+      "text": "Envigado is quieter and local, useful for longer stays with restaurants, metro access and a slower pace.",
+      "bestFor": "quiet stays, longer visits, restaurants"
+    },
+    {
+      "name": "Ciudad del Rio",
+      "text": "Ciudad del Rio works for modern apartments, museums, offices and quick routes between El Poblado and the centre.",
+      "bestFor": "apartments, business, museums"
+    },
+    {
+      "name": "Centro",
+      "text": "Centro is best for daytime museums and Plaza Botero, but most visitors prefer to sleep in El Poblado or Laureles.",
+      "bestFor": "daytime sights, museums, budget"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jose Maria Cordova International Airport (MDE)",
+      "search": "Jose Maria Cordova International Airport, Medellin, Colombia",
+      "text": "Jose Maria Cordova airport is in Rionegro outside the valley; allow time for tunnel traffic and mountain weather."
+    },
+    {
+      "name": "Olaya Herrera Airport (EOH)",
+      "search": "Olaya Herrera Airport, Medellin, Colombia",
+      "text": "Olaya Herrera handles some domestic and regional flights from within Medellin, close to El Poblado and central districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-60 min from Rionegro airport to El Poblado via the tunnel route",
+    "note": "from Jose Maria Cordova International Airport",
+    "distance": "about 25 km southeast of Medellin"
+  },
+  "bookingDestination": "Medellin, Colombia",
+  "stayOverview": "El Poblado is the simplest first Medellin base for hotels, restaurants and airport transfers, while Laureles feels calmer and more local. Envigado suits longer stays, Ciudad del Rio is practical and modern, and Centro is mainly a daytime sightseeing area.",
+  "hotelIntro": "Medellin hotel choice is about evenings and valley logistics: El Poblado is convenient and international, Laureles is relaxed, Envigado is local, Ciudad del Rio is practical, and Centro is better visited than used as a first base.",
+  "rentalCars": "Skip a rental car in Medellin; metro, Metrocable, taxis and tours are easier for valley movement and hillside visits.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose El Poblado for a first stay if nightlife, restaurants and straightforward airport transfers are priorities."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Jose Maria Cordova is outside the valley, so leave extra time for tunnels, rain and weekend traffic."
+    },
+    {
+      "title": "Transit",
+      "text": "Use the Metro and Metrocable for orientation; they are part of the city's story, not only transport."
+    },
+    {
+      "title": "Day trips",
+      "text": "Guatape is the classic full-day trip, but start early if you want both the rock and the town."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Comuna 13",
+      "text": "Comuna 13 is known for murals, outdoor escalators and neighborhood history, best visited with a responsible local guide."
+    },
+    {
+      "title": "Plaza Botero",
+      "text": "Plaza Botero is a named Medellin landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Museum of Antioquia",
+      "text": "Museum of Antioquia is a key Medellin culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Parque Arvi",
+      "text": "Parque Arvi is a named Medellin landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Metrocable",
+      "text": "Metrocable is a named Medellin landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Jardin Botanico",
+      "text": "Jardin Botanico is a calm botanical garden near Universidad station, useful for a slower morning in the city."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Guatape",
+      "label": "Lake",
+      "text": "Guatape combines colorful streets, reservoir views and El Penol rock, making it Medellin's signature day trip."
+    },
+    {
+      "name": "Santa Fe de Antioquia",
+      "label": "Heritage",
+      "text": "Santa Fe de Antioquia offers colonial streets and warmer weather west of Medellin, usually as a full-day outing."
+    },
+    {
+      "name": "Jardin",
+      "label": "Town",
+      "text": "Jardin is a coffee-region town with mountain scenery, better as an overnight than a rushed day trip."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/art/events/medellin-flower-festival.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/art/events/img/medellin-flower-festival-mini.png",
       "title": "Medellin Flower Festival",
       "meta": "Aug 2026 · Medellin"
     }
@@ -147,5 +237,6 @@
   "continentName": "South America",
   "countrySlug": "colombia",
   "countryName": "Colombia",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "Metro de Medellin"
 }

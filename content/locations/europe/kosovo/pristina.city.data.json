@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Pristina travel, stays & events guide",
-  "heroText": "Pristina is a key city in Kosovo, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Pristina is a Kosovo base best planned around named sights rather than a generic stopover. Start with Newborn Monument, add National Library of Kosovo, and use Mother Teresa Square Pristina to understand the city's history, street life and visitor rhythm. Pristina International Airport Adem Jashari handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Pristina, Kosovo",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Pristina",
-      "text": "Pristina is a key city in Kosovo, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Pristina, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Pristina, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Pristina reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Pristina sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Pristina International Airport Adem Jashari (PRN)",
+      "search": "Pristina International Airport Adem Jashari (PRN), Pristina, Kosovo",
+      "text": "Pristina International Airport Adem Jashari (PRN) is the main air gateway for Pristina; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Pristina International Airport Adem Jashari (PRN) and central Pristina before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Pristina, Kosovo",
+  "stayOverview": "Start with City centre for the easiest first Pristina stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Pristina hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Pristina unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Pristina International Airport Adem Jashari, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Newborn Monument and National Library of Kosovo so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Pristina, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Newborn Monument",
+      "text": "Newborn Monument is a clear heritage marker in Pristina, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Library of Kosovo",
+      "text": "National Library of Kosovo gives Pristina a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Mother Teresa Square Pristina",
+      "text": "Mother Teresa Square Pristina is a clear heritage marker in Pristina, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Imperial Mosque Pristina",
+      "text": "Imperial Mosque Pristina anchors the historic and ceremonial side of Pristina, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Ethnological Museum Pristina",
+      "text": "Ethnological Museum Pristina is a key Pristina culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Germia Park",
+      "text": "Germia Park adds outdoor time to a Pristina stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Newborn Monument",
+      "label": "Heritage",
+      "text": "Newborn Monument is a heritage-focused side trip from Pristina; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "National Library of Kosovo",
+      "label": "Heritage",
+      "text": "National Library of Kosovo is a heritage-focused side trip from Pristina; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Germia Park",
+      "label": "Nature",
+      "text": "Germia Park works as a nature-focused side trip from Pristina, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

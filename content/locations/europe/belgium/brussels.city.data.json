@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Brussels in 2026: calendars, nearby pages and linked event views for planning around Europe / Belgium."
   },
   "region": "Capital city of Belgium",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": 50.85045,
     "lon": 4.34878
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Brussels travel, stays & events guide",
-  "heroText": "Brussels is a key city in Belgium, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Brussels is Belgium's multilingual capital, mixing guildhall grandeur, comic-strip walls, EU offices and serious food stops. Start at Grand Place, detour through the Galeries Royales Saint-Hubert, then visit the Atomium or Magritte Museum depending on your mood. Brussels Airport is the main gateway, with fast rail into the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Brussels, Belgium",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Brussels",
-      "text": "Brussels is a key city in Belgium, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Grand Place",
+      "text": "The Grand Place area is best for first-time sightseeing, restaurants and short walks to museums and covered galleries.",
+      "bestFor": "first visits, landmarks, restaurants"
+    },
+    {
+      "name": "Sablon",
+      "text": "Sablon is elegant and central, with antique shops, chocolate houses and easy access to museums and the palace area.",
+      "bestFor": "chocolate, museums, couples"
+    },
+    {
+      "name": "Ixelles",
+      "text": "Ixelles has restaurants, bars and local neighbourhood energy, useful for longer stays beyond the tourist core.",
+      "bestFor": "nightlife, longer stays, local food"
+    },
+    {
+      "name": "European Quarter",
+      "text": "The European Quarter is practical for EU institutions, business hotels and Parc du Cinquantenaire access.",
+      "bestFor": "business, EU visits, parks"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Brussels Airport (BRU)",
+      "search": "Brussels Airport, Brussels, Belgium",
+      "text": "Brussels Airport is northeast of the city and has direct rail links to Brussels Central, Midi and North stations."
+    },
+    {
+      "name": "Brussels South Charleroi Airport (CRL)",
+      "search": "Brussels South Charleroi Airport, Charleroi, Belgium",
+      "text": "Charleroi is used by low-cost airlines and sits much farther south, so allow longer coach or transfer time."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20 min by train from Brussels Airport to central stations",
+    "note": "Charleroi transfers take much longer by coach",
+    "distance": "about 12 km from BRU to central Brussels"
+  },
+  "bookingDestination": "Brussels, Belgium",
+  "stayOverview": "Stay near Grand Place for a classic first visit, Sablon for museums and chocolate shops, Ixelles for food and nightlife, or the European Quarter for EU meetings and a quieter business-focused base.",
+  "hotelIntro": "Brussels is easy by tram, metro and rail. The centre suits short sightseeing trips, Sablon feels polished, Ixelles is better for evenings, and the European Quarter is practical when meetings drive the schedule.",
+  "rentalCars": "Do not rent for Brussels itself; trains are better for Bruges, Ghent, Antwerp and airport connections.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Grand Place for a first short stay, or Sablon if museums, chocolate shops and quieter evenings matter."
+    },
+    {
+      "title": "Airport choice",
+      "text": "Check the route from Brussels Airport (BRU) before choosing between a central hotel and an airport-area first night in Brussels."
+    },
+    {
+      "title": "Transit",
+      "text": "Use contactless payment or transit passes on STIB-MIVB services rather than buying separate single tickets repeatedly."
+    },
+    {
+      "title": "Day trips",
+      "text": "Bruges, Ghent and Antwerp are all easy rail day trips from Brussels Midi, Central or North."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Grand Place",
+      "text": "Grand Place is a named stop in Brussels worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Grand Place"
+    },
+    {
+      "title": "Galeries Royales Saint-Hubert",
+      "text": "Galeries Royales Saint-Hubert is a named Brussels landmark that helps structure a real visit, adding orientation, local context and a clear route anchor.",
+      "name": "Galeries Royales Saint-Hubert"
+    },
+    {
+      "title": "Atomium",
+      "text": "Atomium is a named stop in Brussels worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Atomium"
+    },
+    {
+      "title": "Magritte Museum",
+      "text": "Magritte Museum gives Brussels a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Magritte Museum"
+    },
+    {
+      "title": "Sablon",
+      "text": "Sablon is a named stop in Brussels worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Sablon"
+    },
+    {
+      "title": "Parc du Cinquantenaire",
+      "text": "Parc du Cinquantenaire is a named stop in Brussels worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Parc du Cinquantenaire"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ghent",
+      "label": "City",
+      "text": "Ghent offers canals, medieval towers and a lively university atmosphere within an easy rail trip."
+    },
+    {
+      "name": "Bruges",
+      "label": "Heritage",
+      "text": "Bruges is the classic canal-and-gables day trip, busiest midday but beautiful early or late."
+    },
+    {
+      "name": "Antwerp",
+      "label": "Design",
+      "text": "Antwerp adds fashion, diamonds, a major port city feel and strong museums north of Brussels."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Brussels",
     "matchedCountry": "Belgium"
-  }
+  },
+  "transitOperator": "STIB-MIVB"
 }

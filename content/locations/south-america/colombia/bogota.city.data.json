@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Bogota in 2026: calendars, nearby pages and linked event views for planning around South America / Colombia."
   },
   "region": "Capital city in Colombia",
-  "population": "tba",
+  "population": "~8.0M",
   "coordinates": {
     "lat": 4.60971,
     "lon": -74.08175
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Bogota travel, stays & events guide",
-  "heroText": "Bogota is a capital city in Colombia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Bogota is Colombia's high-altitude capital, a city of museums, mountain views and distinct neighborhoods spread across a broad plateau. Begin in La Candelaria for Plaza de Bolivar, the Gold Museum and Botero Museum, then ride up Monserrate when the weather is clear. El Dorado airport is the main gateway, with traffic making hotel location especially important.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Bogota, Colombia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Bogota",
-      "text": "Bogota is a capital city in Colombia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "La Candelaria",
+      "text": "La Candelaria is best for museums, colonial streets and first-time sightseeing, though evenings need more caution and taxi use.",
+      "bestFor": "history, museums, short stays"
+    },
+    {
+      "name": "Chapinero",
+      "text": "Chapinero is central and lively, with restaurants, bars, universities and good access north or south by taxi.",
+      "bestFor": "restaurants, nightlife, central access"
+    },
+    {
+      "name": "Zona Rosa",
+      "text": "Zona Rosa and Zona T suit travelers wanting nightlife, shopping, safer evening movement and upscale hotel options.",
+      "bestFor": "nightlife, shopping, upscale stays"
+    },
+    {
+      "name": "Usaquen",
+      "text": "Usaquen is calmer and village-like, with restaurants and a popular Sunday market in the north of the city.",
+      "bestFor": "quiet stays, dining, Sunday market"
+    },
+    {
+      "name": "Teusaquillo",
+      "text": "Teusaquillo works for business, universities, embassies and access to parks, with a more residential feel.",
+      "bestFor": "business, parks, longer stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "El Dorado International Airport (BOG)",
+      "search": "El Dorado International Airport, Bogota, Colombia",
+      "text": "El Dorado is Bogota's main airport west of the city; traffic can make transfers slow even when distances look short."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-60 min by taxi or ride-hail, with large swings in peak traffic",
+    "note": "from El Dorado International Airport",
+    "distance": "about 15 km west of central Bogota"
+  },
+  "bookingDestination": "Bogota, Colombia",
+  "stayOverview": "Pick La Candelaria for museums and short sightseeing stays, Chapinero for restaurants and central movement, Zona Rosa for nightlife and shopping, Usaquen for quieter dining, or Teusaquillo for parks, embassies and longer business stays.",
+  "hotelIntro": "Bogota hotel choice should account for altitude, traffic and evening plans. La Candelaria is best by day, Chapinero and Zona Rosa work better at night, Usaquen is calmer, and Teusaquillo suits practical longer stays.",
+  "rentalCars": "Do not rent a car for central Bogota; traffic and parking make taxis, rideshare and organized day trips easier.",
+  "travelTips": [
+    {
+      "title": "Altitude",
+      "text": "Bogota sits high, so take the first day slowly and hydrate before climbing Monserrate or walking long routes."
+    },
+    {
+      "title": "Best base",
+      "text": "Use Chapinero or Zona Rosa if restaurants and safer evenings matter more than waking up beside the museums."
+    },
+    {
+      "title": "Traffic",
+      "text": "Keep the Bogota plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trips",
+      "text": "Zipaquira's Salt Cathedral is the simplest famous day trip, while Villa de Leyva is better as an overnight."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Gold Museum",
+      "text": "The Gold Museum is Bogota's essential museum, with extraordinary pre-Hispanic goldwork and clear context for Colombia's Indigenous cultures."
+    },
+    {
+      "title": "Monserrate",
+      "text": "Monserrate rises above the city with sweeping views, reached by funicular, cable car or a steep pilgrimage path."
+    },
+    {
+      "title": "La Candelaria",
+      "text": "La Candelaria is a named Bogota landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Plaza de Bolivar",
+      "text": "Plaza de Bolivar is Bogota's civic centre, surrounded by the cathedral, Congress, Palace of Justice and city hall."
+    },
+    {
+      "title": "Botero Museum",
+      "text": "Botero Museum is a key Bogota culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Simon Bolivar Metropolitan Park",
+      "text": "Simon Bolivar Metropolitan Park is Bogota's major urban park, useful for concerts, walking and a break from traffic."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Zipaquira Salt Cathedral",
+      "label": "Heritage",
+      "text": "Zipaquira's underground Salt Cathedral is Bogota's easiest famous day trip, usually reached by car, tour or train."
+    },
+    {
+      "name": "Guatavita",
+      "label": "Nature",
+      "text": "Guatavita works as a nature-focused side trip from Bogota, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Villa de Leyva",
+      "label": "Town",
+      "text": "Villa de Leyva is a beautiful colonial town, better as an overnight because the road trip is long."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +224,6 @@
   "continentName": "South America",
   "countrySlug": "colombia",
   "countryName": "Colombia",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "TransMilenio"
 }

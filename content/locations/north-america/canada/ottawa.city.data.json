@@ -6,7 +6,7 @@
     "webpageDescription": "tba"
   },
   "region": "National Capital Region",
-  "population": "tba",
+  "population": "~1M",
   "coordinates": {
     "lat": 45.41117,
     "lon": -75.69812
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Ottawa travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Ottawa is a Canada base best planned around named sights rather than a generic stopover. Start with Parliament Hill, add Rideau Canal, and use ByWard Market to understand the city's history, street life and visitor rhythm. Ottawa International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,27 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ottawa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ottawa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ottawa reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ottawa sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Ottawa International Airport",
+      "search": "Ottawa International Airport, Ottawa, Canada",
+      "text": "Ottawa International Airport is the main air gateway for Ottawa; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Ottawa International Airport and central Ottawa before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Ottawa, Canada",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Parliament Hill",
-    "Rideau Canal",
-    "ByWard Market",
-    "National Gallery",
-    "Canadian Museum of History",
-    "Gatineau Park"
+  "stayOverview": "Start with City centre for the easiest first Ottawa stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ottawa hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ottawa unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ottawa International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Parliament Hill and Rideau Canal so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ottawa, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Parliament Hill",
+      "text": "Parliament Hill adds outdoor time to a Ottawa stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Rideau Canal",
+      "text": "Rideau Canal adds the water-facing side of Ottawa, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "ByWard Market",
+      "text": "ByWard Market gives Ottawa a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "National Gallery",
+      "text": "National Gallery is a key Ottawa culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Canadian Museum of History",
+      "text": "Canadian Museum of History is a key Ottawa culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Gatineau Park",
+      "text": "Gatineau Park adds outdoor time to a Ottawa stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Parliament Hill",
+      "label": "Heritage",
+      "text": "Parliament Hill works as a nature-focused side trip from Ottawa, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Rideau Canal",
+      "label": "Heritage",
+      "text": "Rideau Canal is a heritage-focused side trip from Ottawa; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "National Gallery",
+      "label": "Heritage",
+      "text": "National Gallery is a heritage-focused side trip from Ottawa; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Rovaniemi, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Lapland",
-  "population": "tba",
+  "population": "~65K",
   "coordinates": {
     "lat": 66.49897,
     "lon": 25.68867
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Rovaniemi travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Rovaniemi is Lapland's Arctic Circle capital, built around winter travel, river landscapes and Santa Claus Village. Start at Santa Claus Village, visit Arktikum for northern history, then use Ounasvaara or Kemijoki riverside for outdoor time. Rovaniemi Airport is close, but winter arrivals need realistic transfer and clothing plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Rovaniemi centre",
+      "text": "The centre is best for restaurants, shopping, tour pickups, the station and easy riverside walks.",
+      "bestFor": "first visits, tours, restaurants"
+    },
+    {
+      "name": "Santa Claus Village",
+      "text": "Santa Claus Village is best for family-focused stays, Arctic Circle photos and early access to themed attractions.",
+      "bestFor": "families, Christmas, Arctic Circle"
+    },
+    {
+      "name": "Ounasvaara",
+      "text": "Ounasvaara suits outdoor stays with forest trails, winter sports and quieter hotels above the centre.",
+      "bestFor": "nature, skiing, quiet stays"
+    },
+    {
+      "name": "Korkalovaara",
+      "text": "Korkalovaara is a residential area useful for apartments, longer stays and travellers with a car.",
+      "bestFor": "apartments, drivers, longer stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Rovaniemi Airport (RVN)",
+      "search": "Rovaniemi Airport, Rovaniemi, Finland",
+      "text": "Rovaniemi Airport is north of the centre near Santa Claus Village, with taxis, buses and hotel transfers."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "10-20 min by taxi or transfer to Santa Claus Village or the centre",
+    "note": "from Rovaniemi Airport",
+    "distance": "about 8 km north of central Rovaniemi"
   },
   "bookingDestination": "Rovaniemi, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Santa Claus Village",
-    "Arktikum",
-    "Arctic Circle",
-    "Ounasvaara",
-    "Kemijoki riverside",
-    "Northern lights tours"
+  "stayOverview": "Stay in Rovaniemi centre for restaurants and tour pickups, Santa Claus Village for family Christmas travel, Ounasvaara for nature and winter sports, or Korkalovaara for apartments and car-based stays.",
+  "hotelIntro": "Rovaniemi is very seasonal. Centre hotels are most practical, Santa Claus Village is themed and family-focused, Ounasvaara is calmer and outdoorsy, and apartments work well when tours include pickups.",
+  "rentalCars": "A car helps for cabins and independent aurora chasing, but many winter tours include transfers from central hotels.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Rovaniemi base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Winter clothing",
+      "text": "Keep the Rovaniemi plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Aurora",
+      "text": "Keep the Rovaniemi plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Rovaniemi, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Santa Claus Village",
+      "title": "Santa Claus Village",
+      "text": "Santa Claus Village is a named stop in Rovaniemi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Arktikum",
+      "title": "Arktikum",
+      "text": "Arktikum is a named stop in Rovaniemi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Arctic Circle",
+      "title": "Arctic Circle",
+      "text": "Arctic Circle is a named stop in Rovaniemi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Ounasvaara",
+      "title": "Ounasvaara",
+      "text": "Ounasvaara is a named stop in Rovaniemi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Kemijoki riverside",
+      "title": "Kemijoki riverside",
+      "text": "Kemijoki riverside adds the water-facing side of Rovaniemi, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Northern lights tours",
+      "title": "Northern lights tours",
+      "text": "Northern lights tours are a major reason to stay several nights, with weather and cloud cover shaping success."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ranua Wildlife Park",
+      "label": "Family",
+      "text": "Ranua Wildlife Park is a popular day trip for Arctic animals and family-friendly winter touring."
+    },
+    {
+      "name": "Korouoma Canyon",
+      "label": "Nature",
+      "text": "Korouoma Canyon is known for frozen waterfalls in winter and forested hiking in other seasons."
+    },
+    {
+      "name": "Pyhä-Luosto",
+      "label": "National park",
+      "text": "Pyhä-Luosto is a nearby side trip from Rovaniemi; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -121,5 +205,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Rovaniemi",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Linkkari"
 }

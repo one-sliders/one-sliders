@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Zagreb in 2026: calendars, nearby pages and linked event views for planning around Europe / Croatia."
   },
   "region": "Capital city of Croatia",
-  "population": "tba",
+  "population": "~770K",
   "coordinates": {
     "lat": 45.81444,
     "lon": 15.97798
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Zagreb travel, stays & events guide",
-  "heroText": "Zagreb is a key city in Croatia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Zagreb is Croatia's inland capital, a city of trams, cafe terraces and hilltop old-town streets. Start on Ban Jelacic Square, climb to Gradec and St. Mark's Church, then browse Dolac Market before an afternoon in Maksimir Park. Zagreb Airport is southeast of the city, with shuttle and taxi links to the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Zagreb, Croatia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Zagreb",
-      "text": "Zagreb is a key city in Croatia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Lower Town",
+      "text": "Lower Town is the best first base, close to parks, museums, tram lines, shops and Ban Jelacic Square.",
+      "bestFor": "first visits, museums, trams"
+    },
+    {
+      "name": "Upper Town",
+      "text": "Upper Town is atmospheric and historic, with smaller stays near St. Mark's Church and viewpoint lanes.",
+      "bestFor": "history, views, atmosphere"
+    },
+    {
+      "name": "British Square",
+      "text": "British Square is a quieter residential base with cafes, markets and easy tram access into the centre.",
+      "bestFor": "cafes, local stays, quiet nights"
+    },
+    {
+      "name": "Maksimir",
+      "text": "Maksimir suits park access, the zoo and calmer apartment stays east of the central core.",
+      "bestFor": "families, parks, apartments"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Zagreb Airport Franjo Tudman (ZAG)",
+      "search": "Zagreb Airport Franjo Tudman, Zagreb, Croatia",
+      "text": "Zagreb Airport is southeast of the city; airport buses, taxis and transfers connect it with the bus station and centre."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-40 min by airport bus, taxi or transfer to central Zagreb",
+    "note": "from Zagreb Airport Franjo Tudman",
+    "distance": "about 15 km southeast of the centre"
+  },
+  "bookingDestination": "Zagreb, Croatia",
+  "stayOverview": "Lower Town is the easiest base for a first Zagreb stay, Upper Town is more atmospheric, British Square works for quieter cafe-led visits, and Maksimir suits families or longer stays near green space.",
+  "hotelIntro": "Zagreb's centre is compact and tram-friendly. Lower Town gives the best balance of hotels and transport, while Upper Town and British Square are better for charm if luggage and slopes are manageable.",
+  "rentalCars": "Do not rent for Zagreb itself; pick up a car when leaving for Plitvice, Istria or the coast.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Lower Town for the simplest mix of hotels, trams, museums and restaurants within walking distance."
+    },
+    {
+      "title": "Markets",
+      "text": "Visit Dolac Market in the morning, when produce, flowers and local shopping are at their liveliest."
+    },
+    {
+      "title": "Transit",
+      "text": "Trams are useful and frequent, but many central sights are close enough to link on foot."
+    },
+    {
+      "title": "Day trip",
+      "text": "Plitvice Lakes is possible as a long day trip, though an overnight nearby gives a better visit."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Ban Jelacic Square",
+      "text": "Ban Jelacic Square is a clear heritage marker in Zagreb, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Ban Jelacic Square"
+    },
+    {
+      "title": "Gradec",
+      "text": "Gradec is a named stop in Zagreb worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Gradec"
+    },
+    {
+      "title": "St. Mark's Church",
+      "text": "St. Mark's Church is one of Zagreb's religious landmarks; check visiting hours and dress expectations before building the route around it.",
+      "name": "St. Mark's Church"
+    },
+    {
+      "title": "Dolac Market",
+      "text": "Dolac Market gives Zagreb a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city.",
+      "name": "Dolac Market"
+    },
+    {
+      "title": "Maksimir Park",
+      "text": "Maksimir Park gives Zagreb a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour.",
+      "name": "Maksimir Park"
+    },
+    {
+      "title": "Museum of Broken Relationships",
+      "text": "Museum of Broken Relationships gives Zagreb a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Museum of Broken Relationships"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Plitvice Lakes",
+      "label": "Nature",
+      "text": "Plitvice Lakes is Croatia's famous waterfall national park and the classic long day trip from Zagreb."
+    },
+    {
+      "name": "Samobor",
+      "label": "Town",
+      "text": "Samobor is a small town known for cakes, old streets and an easy escape west of Zagreb."
+    },
+    {
+      "name": "Varazdin",
+      "label": "Heritage",
+      "text": "Varazdin adds baroque streets, a castle and a gentler historic-town rhythm north of Zagreb."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Zagreb",
     "matchedCountry": "Croatia"
-  }
+  },
+  "transitOperator": "ZET"
 }

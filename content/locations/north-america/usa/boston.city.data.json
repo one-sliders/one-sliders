@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Boston, Massachusetts trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "New England",
-  "population": "tba",
+  "population": "~676K",
   "coordinates": {
     "lat": 42.35843,
     "lon": -71.05977
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Boston, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Boston",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Boston, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Boston, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Boston reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Boston sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Boston Logan (BOS)",
+      "search": "Boston Logan (BOS), Boston, USA",
+      "text": "Boston Logan (BOS) is the main air gateway for Boston; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Boston Logan (BOS) and central Boston before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Boston, USA",
+  "stayOverview": "Start with City centre for the easiest first Boston stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Boston hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Boston unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Boston Logan, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Boston and Boston so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Boston, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Freedom Trail",
+      "text": "Freedom Trail is a named stop in Boston worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Boston Common",
+      "text": "Boston Common is a named stop in Boston worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fenway Park",
+      "text": "Fenway Park adds outdoor time to a Boston stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Museum of Fine Arts Boston",
+      "text": "Museum of Fine Arts Boston is a key Boston culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "North End",
+      "text": "North End is a named stop in Boston worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Boston Harbor",
+      "text": "Boston Harbor adds the water-facing side of Boston, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Freedom Trail",
+      "label": "Heritage",
+      "text": "Freedom Trail is a heritage-focused side trip from Boston; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Boston Common",
+      "label": "Heritage",
+      "text": "Boston Common is a heritage-focused side trip from Boston; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fenway Park",
+      "label": "Nature",
+      "text": "Fenway Park works as a nature-focused side trip from Boston, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

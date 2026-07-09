@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Buenos Aires in 2026: calendars, nearby pages and linked event views for planning around South America / Argentina."
   },
   "region": "Capital city in Argentina",
-  "population": "tba",
+  "population": "~3.1M",
   "coordinates": {
     "lat": -34.61315,
     "lon": -58.37723
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Buenos Aires travel, stays & events guide",
-  "heroText": "Buenos Aires is a major cultural capital in Argentina, known for neighbourhood life, tango, food and event-led city breaks.",
+  "heroText": "Buenos Aires mixes grand European-style avenues with late-night neighbourhood life, tango halls and serious food culture. Start at Plaza de Mayo for national history, book Teatro Colon if opera or architecture matters, then spend an afternoon between Recoleta Cemetery and Palermo's parks and restaurants. Ezeiza handles most long-haul arrivals, while Aeroparque is often easier for domestic hops.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,121 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Buenos Aires, Argentina",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "transitOperator": "SBASE",
+  "areas": [
     {
-      "name": "Buenos Aires",
-      "text": "Buenos Aires is a major cultural capital in Argentina, known for neighbourhood life, tango, food and event-led city breaks."
+      "name": "Palermo",
+      "text": "Palermo is the easiest first base for restaurants, bars, parks, boutique hotels and late evenings around Soho and Hollywood.",
+      "bestFor": "first visits, nightlife, restaurants"
+    },
+    {
+      "name": "Recoleta",
+      "text": "Recoleta suits quieter upscale stays near museums, embassies, leafy avenues and the famous cemetery, with good taxi access across the city.",
+      "bestFor": "classic hotels, museums, quiet nights"
+    },
+    {
+      "name": "San Telmo",
+      "text": "San Telmo works for historic streets, tango venues, antique markets and a more atmospheric base south of the central business district.",
+      "bestFor": "tango, history, weekend markets"
+    },
+    {
+      "name": "Microcentro",
+      "text": "Microcentro is practical for business, Plaza de Mayo, theatres and Subte links, though evenings are quieter than Palermo or San Telmo.",
+      "bestFor": "business trips, transit, central sights"
+    },
+    {
+      "name": "Puerto Madero",
+      "text": "Puerto Madero offers modern waterfront hotels, restaurants and safer late-night walks, but feels less local than older neighbourhoods.",
+      "bestFor": "waterfront hotels, business, late arrivals"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ezeiza International Airport (EZE)",
+      "search": "Ministro Pistarini International Airport, Buenos Aires, Argentina",
+      "text": "Ezeiza is the main long-haul airport southwest of Buenos Aires; allow generous transfer time, especially during weekday traffic."
+    },
+    {
+      "name": "Jorge Newbery Airfield (AEP)",
+      "search": "Jorge Newbery Airfield, Buenos Aires, Argentina",
+      "text": "Aeroparque sits by the river close to Palermo and Recoleta, making it convenient for many domestic and regional flights."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-60 min by taxi or private transfer to central Buenos Aires",
+    "note": "from Ezeiza International Airport",
+    "distance": "about 32 km southwest of the city centre"
+  },
+  "bookingDestination": "Buenos Aires, Argentina",
+  "stayOverview": "Start in Palermo for the broadest first-trip comfort, then compare Recoleta for classic hotels, San Telmo for tango and historic streets, Microcentro for business and Subte access, or Puerto Madero for modern waterfront stays and easier late-night walks.",
+  "hotelIntro": "Buenos Aires hotel choice is mostly about evenings and transfers: Palermo has the deepest restaurant scene, Recoleta feels polished and calm, San Telmo is atmospheric, Microcentro is central for offices and theatres, and Puerto Madero is modern but less neighbourhood-like.",
+  "rentalCars": "Skip a rental car inside Buenos Aires; taxis, ride-hailing and the Subte are easier, while parking and traffic add friction.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Palermo for a first stay if restaurants, bars, parks and safer late-evening movement matter more than being beside historic sights."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Use pre-booked transfers or official taxis from Ezeiza after long-haul arrivals, and leave extra time for cross-city traffic."
+    },
+    {
+      "title": "Cash and cards",
+      "text": "Cards work widely in hotels and restaurants, but carry some pesos for taxis, small cafes, markets and everyday tips."
+    },
+    {
+      "title": "Weekend timing",
+      "text": "Plan San Telmo on Sunday for the street market, then keep Monday flexible because some museums and venues close."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Plaza de Mayo",
+      "text": "Plaza de Mayo is the city's political heart, framed by the Casa Rosada, cathedral and historic buildings tied to Argentina's national story."
+    },
+    {
+      "title": "Teatro Colon",
+      "text": "Teatro Colon is one of the world's great opera houses, worth booking for a performance or guided visit to see the auditorium."
+    },
+    {
+      "title": "Recoleta Cemetery",
+      "text": "Recoleta Cemetery is a maze of mausoleums and sculpture, best paired with the surrounding museums, cafes and leafy avenues."
+    },
+    {
+      "title": "San Telmo Market",
+      "text": "San Telmo Market anchors the old neighbourhood's food stalls, antiques and Sunday street life, with tango venues nearby."
+    },
+    {
+      "title": "La Boca",
+      "text": "La Boca is known for Caminito's painted houses and football culture; visit in daylight and use taxis for easier access."
+    },
+    {
+      "title": "Palermo Parks",
+      "text": "Palermo Parks give Buenos Aires its green escape, with gardens, lakes and museum stops close to the city's main nightlife districts."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tigre Delta",
+      "label": "Water",
+      "text": "Tigre is the classic river-delta day trip, with boat rides, markets and a cooler break from the city grid."
+    },
+    {
+      "name": "Colonia del Sacramento",
+      "label": "Heritage",
+      "text": "Colonia in Uruguay is reachable by ferry, offering cobbled streets and a compact historic centre for a long day trip."
+    },
+    {
+      "name": "San Antonio de Areco",
+      "label": "Town",
+      "text": "San Antonio de Areco is a gaucho-country town northwest of Buenos Aires, useful for estancia visits and rural history."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/music/events/buenos-aires-tango-festival.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/music/events/img/buenos-aires-tango-festival-mini.png",
       "title": "Buenos Aires Tango Festival",
       "meta": "Aug 2026 · Buenos Aires"
     }

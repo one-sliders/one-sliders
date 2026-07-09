@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Miami, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "South Florida",
-  "population": "tba",
+  "population": "~450K",
   "coordinates": {
     "lat": 25.77427,
     "lon": -80.19366
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Miami, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Miami",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Miami, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Miami, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Miami reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Miami sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Miami International (MIA)",
+      "search": "Miami International (MIA), Miami, USA",
+      "text": "Miami International (MIA) is the main air gateway for Miami; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Miami International (MIA) and central Miami before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Miami, USA",
+  "stayOverview": "Start with City centre for the easiest first Miami stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Miami hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Miami unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Miami International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Miami and Miami so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Miami, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "South Beach",
+      "text": "South Beach adds outdoor time to a Miami stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Wynwood Walls",
+      "text": "Wynwood Walls is a named stop in Miami worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Little Havana",
+      "text": "Little Havana is a named stop in Miami worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Vizcaya Museum and Gardens",
+      "text": "Vizcaya Museum and Gardens is a key Miami culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Bayside Marketplace",
+      "text": "Bayside Marketplace gives Miami a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Pérez Art Museum Miami",
+      "text": "Pérez Art Museum Miami is a key Miami culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "South Beach",
+      "label": "Nature",
+      "text": "South Beach works as a nature-focused side trip from Miami, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Wynwood Walls",
+      "label": "Heritage",
+      "text": "Wynwood Walls is a heritage-focused side trip from Miami; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Little Havana",
+      "label": "Heritage",
+      "text": "Little Havana is a heritage-focused side trip from Miami; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Tórshavn, Faroe Islands trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Streymoy",
-  "population": "tba",
+  "population": "~14K",
   "coordinates": {
     "lat": 62.00973,
     "lon": -6.77164
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tórshavn travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Torshavn is one of the world's smallest capitals, a harbour town of turf roofs, ferries and weather-shaped island life. Start at Tinganes, visit Torshavn Cathedral and the Nordic House, then use the harbour lanes as a base for trips to Kirkjubour or northern viewpoints. Vagar Airport is the Faroe Islands' flight gateway.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Torshavn harbour",
+      "text": "The harbour area is best for first stays, restaurants, ferry atmosphere and walks into Tinganes.",
+      "bestFor": "first visits, harbour, restaurants"
+    },
+    {
+      "name": "Tinganes",
+      "text": "Tinganes is atmospheric and historic, with turf-roofed government buildings and lanes close to central hotels.",
+      "bestFor": "history, atmosphere, walking"
+    },
+    {
+      "name": "Hoyvik",
+      "text": "Hoyvik is a quieter residential base north of the centre, useful for apartments and car-based island trips.",
+      "bestFor": "apartments, drivers, quiet stays"
+    },
+    {
+      "name": "Argir",
+      "text": "Argir sits across the water from central Torshavn, offering calmer stays and quick road access south.",
+      "bestFor": "quiet stays, views, drivers"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Vagar Airport (FAE)",
+      "search": "Vagar Airport, Faroe Islands",
+      "text": "Vagar Airport is the Faroe Islands' only commercial airport, connected to Torshavn by road tunnel, buses and transfers."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "40-50 min by car or airport bus from Vagar Airport",
+    "note": "weather can affect schedules",
+    "distance": "about 45 km west of Torshavn"
   },
   "bookingDestination": "Tórshavn, Faroe Islands",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Tinganes",
-    "Torshavn Cathedral",
-    "Nordic House",
-    "Skansin Fort",
-    "Harbour lanes",
-    "Kirkjubour trips"
+  "stayOverview": "Stay by Torshavn harbour for restaurants and ferry atmosphere, Tinganes for old-town character, Hoyvik for apartments and drivers, or Argir for quieter views and easier southern road access.",
+  "hotelIntro": "Torshavn is compact, but weather and island routes make logistics important. Harbour stays are easiest without a car, while Hoyvik and Argir suit travellers driving to villages, tunnels and ferry connections.",
+  "rentalCars": "A rental car is very useful in the Faroe Islands, though central Torshavn itself is walkable.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay near the harbour if you want restaurants, ferries and central walks without needing the car every evening."
+    },
+    {
+      "title": "Weather",
+      "text": "Keep the Tórshavn plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Driving",
+      "text": "Keep the Tórshavn plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Kirkjubour is the easiest heritage outing from Torshavn and works even on a shorter weather window."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Tinganes",
+      "title": "Tinganes",
+      "text": "Tinganes is a named stop in Tórshavn worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Torshavn Cathedral",
+      "title": "Torshavn Cathedral",
+      "text": "Torshavn Cathedral is a small central church near the harbour and one of the city's key historic landmarks."
+    },
+    {
+      "name": "Nordic House",
+      "title": "Nordic House",
+      "text": "Nordic House is the Faroe Islands' main cultural venue, hosting concerts, exhibitions and events in a grass-roofed building."
+    },
+    {
+      "name": "Skansin Fort",
+      "title": "Skansin Fort",
+      "text": "Skansin Fort is a clear heritage marker in Tórshavn, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Harbour lanes",
+      "title": "Harbour lanes",
+      "text": "Harbour lanes adds the water-facing side of Tórshavn, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Kirkjubour trips",
+      "title": "Kirkjubour trips",
+      "text": "Kirkjubour trips is a named stop in Tórshavn worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kirkjubour",
+      "label": "Heritage",
+      "text": "Kirkjubour is the closest major heritage trip, with ruins, turf-roofed farms and coastal views."
+    },
+    {
+      "name": "Saksun",
+      "label": "Village",
+      "text": "Saksun is a nearby side trip from Tórshavn; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Vestmanna",
+      "label": "Cliffs",
+      "text": "Vestmanna is a nearby side trip from Tórshavn; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tórshavn",
     "matchedCountry": null
-  }
+  },
+  "transitOperator": "Strandfaraskip Landsins"
 }

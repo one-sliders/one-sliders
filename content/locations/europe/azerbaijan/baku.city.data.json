@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Baku in 2026: calendars, nearby pages and linked event views for planning around Europe / Azerbaijan."
   },
   "region": "Capital city of Azerbaijan",
-  "population": "tba",
+  "population": "~2.3M",
   "coordinates": {
     "lat": 40.37767,
     "lon": 49.89201
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Baku travel, stays & events guide",
-  "heroText": "Baku is a key city in Azerbaijan, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Baku mixes a walled Silk Road core with Caspian promenades and bold modern towers. Walk Icherisheher for the Maiden Tower and Palace of the Shirvanshahs, then use Baku Boulevard for sea views and the Flame Towers skyline. Heydar Aliyev International Airport is the main gateway, with road transfers into the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Baku, Azerbaijan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Baku",
-      "text": "Baku is a key city in Azerbaijan, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Icherisheher",
+      "text": "The walled Old City is atmospheric and walkable, best for boutique hotels near historic sights and evening strolls.",
+      "bestFor": "history, boutique stays, walking"
+    },
+    {
+      "name": "Fountain Square",
+      "text": "Fountain Square is central for restaurants, shopping streets and nightlife, with easy walks to the Boulevard and Old City.",
+      "bestFor": "restaurants, nightlife, first visits"
+    },
+    {
+      "name": "Baku Boulevard",
+      "text": "The seafront Boulevard area suits modern hotels, Caspian walks and quick access to malls and cultural venues.",
+      "bestFor": "sea views, modern hotels, families"
+    },
+    {
+      "name": "Nasimi",
+      "text": "Nasimi offers business hotels, metro access and a more practical base between the station, offices and central sights.",
+      "bestFor": "business, transit, value"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Heydar Aliyev International Airport (GYD)",
+      "search": "Heydar Aliyev International Airport, Baku, Azerbaijan",
+      "text": "Heydar Aliyev International Airport is northeast of Baku; taxis, buses and hotel transfers connect it with the central districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-45 min by taxi or airport bus to central Baku",
+    "note": "from Heydar Aliyev International Airport",
+    "distance": "about 25 km northeast of the centre"
+  },
+  "bookingDestination": "Baku, Azerbaijan",
+  "stayOverview": "Choose Icherisheher for historic atmosphere, Fountain Square for the easiest first stay, Baku Boulevard for seafront hotels and family walks, or Nasimi for business trips and better value near metro routes.",
+  "hotelIntro": "Baku hotels split between heritage stays in the Old City, central restaurant access around Fountain Square, modern Caspian-facing properties on the Boulevard, and practical business hotels in Nasimi.",
+  "rentalCars": "Do not rent for central Baku; use taxis and tours unless driving to mud volcanoes or the Absheron Peninsula.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Fountain Square is the safest first choice if you want restaurants, shops and the Old City close together."
+    },
+    {
+      "title": "Wind",
+      "text": "Keep the Baku plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Check the route from Heydar Aliyev International Airport (GYD) before choosing between a central hotel and an airport-area first night in Baku."
+    },
+    {
+      "title": "Day trip",
+      "text": "Plan Gobustan and the mud volcanoes as a guided day trip because public transport is awkward."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Icherisheher",
+      "text": "Icherisheher is a named stop in Baku worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Icherisheher"
+    },
+    {
+      "title": "Maiden Tower",
+      "text": "Maiden Tower is a clear heritage marker in Baku, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Maiden Tower"
+    },
+    {
+      "title": "Palace of the Shirvanshahs",
+      "text": "Palace of the Shirvanshahs is a clear heritage marker in Baku, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Palace of the Shirvanshahs"
+    },
+    {
+      "title": "Baku Boulevard",
+      "text": "Baku Boulevard is a named stop in Baku worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Baku Boulevard"
+    },
+    {
+      "title": "Flame Towers",
+      "text": "Flame Towers is a clear heritage marker in Baku, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Flame Towers"
+    },
+    {
+      "title": "Heydar Aliyev Center",
+      "text": "Heydar Aliyev Center gives Baku a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Heydar Aliyev Center"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Gobustan",
+      "label": "Heritage",
+      "text": "Gobustan is a heritage-focused side trip from Baku; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ateshgah Fire Temple",
+      "label": "Heritage",
+      "text": "Ateshgah Fire Temple on the Absheron Peninsula adds Zoroastrian and fire-worship history near the city."
+    },
+    {
+      "name": "Yanar Dag",
+      "label": "Nature",
+      "text": "Yanar Dag works as a nature-focused side trip from Baku, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Baku",
     "matchedCountry": "Azerbaijan"
-  }
+  },
+  "transitOperator": "Baku Metro"
 }

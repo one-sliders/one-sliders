@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Tripoli in 2026: calendars, nearby pages and linked event views for planning around Africa / Libya."
   },
   "region": "Capital city in Libya",
-  "population": "tba",
+  "population": "~1.1M",
   "coordinates": {
     "lat": 32.88743,
     "lon": 13.18733
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tripoli travel, stays & events guide",
-  "heroText": "Tripoli is a capital city in Libya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tripoli is Libya's Mediterranean capital, layered with Phoenician, Roman, Ottoman and Italian-era history around its old walled medina. Visitors should walk the Arch of Marcus Aurelius, explore the Red Castle housing the Libya National Museum, and browse the covered souks near Martyrs' Square. Mitiga International Airport currently handles the city's flights; check current travel advisories closely before planning any visit.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tripoli, Libya",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tripoli",
-      "text": "Tripoli is a capital city in Libya, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Medina (Old City)",
+      "text": "The Medina is Tripoli's historic walled quarter, packed with souks, Ottoman-era mosques and the Red Castle, best explored by day with a guide.",
+      "bestFor": "history, souks, walking"
+    },
+    {
+      "name": "Martyrs' Square",
+      "text": "Martyrs' Square, also called Green Square, borders the medina and is a central landmark for orientation and evening gatherings.",
+      "bestFor": "sightseeing, central access"
+    },
+    {
+      "name": "Gargaresh",
+      "text": "Gargaresh is a coastal district west of the centre with hotels, restaurants and embassies, a common base for business travelers.",
+      "bestFor": "business stays, restaurants"
+    },
+    {
+      "name": "Hay Andalus",
+      "text": "Hay Andalus is a modern residential and diplomatic district east of the centre, offering a quieter alternative to downtown.",
+      "bestFor": "quiet stays, diplomatic visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Mitiga International Airport (MJI)",
+      "search": "Mitiga International Airport, Tripoli, Libya",
+      "text": "Mitiga International Airport is Tripoli's operating gateway east of the city centre; check current flight schedules and security advisories closely before booking."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Mitiga International Airport (MJI) and central Tripoli before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Tripoli, Libya",
+  "stayOverview": "Most visitors base themselves near the Medina or Martyrs' Square for walking access to the Arch of Marcus Aurelius and the Red Castle, while Gargaresh offers coastal hotels and restaurants further from the old city. Confirm current safety guidance for any district before booking.",
+  "hotelIntro": "Hotel choice in Tripoli depends heavily on current security conditions: central options near Martyrs' Square suit short stays close to the medina's landmarks, while Gargaresh's coastal hotels suit longer business trips. Always check the latest advisories before confirming a booking.",
+  "rentalCars": "Self-driving is not advisable in Tripoli given checkpoints and unpredictable security conditions; arrange a trusted local driver or pre-booked transfer instead.",
+  "travelTips": [
+    {
+      "title": "Check advisories first",
+      "text": "Confirm current government travel advisories before booking any Tripoli trip, since security conditions can change quickly and affect which districts are safe."
+    },
+    {
+      "title": "Arrange transfers in advance",
+      "text": "Book airport and hotel transfers with a trusted local contact ahead of arrival, since ride-hailing options are limited and self-driving is not recommended."
+    },
+    {
+      "title": "Explore the medina by day",
+      "text": "Visit the Arch of Marcus Aurelius, Red Castle and covered souks during daylight hours with a local guide for the easiest, safest orientation."
+    },
+    {
+      "title": "Carry cash",
+      "text": "Bring cash in small denominations, as card payments are unreliable outside major hotels and currency exchange can be limited."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Arch of Marcus Aurelius",
+      "text": "Arch of Marcus Aurelius is a clear heritage marker in Tripoli, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Martyrs' Square Tripoli",
+      "text": "Martyrs' Square Tripoli gives Tripoli a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Red Castle Museum",
+      "text": "Red Castle Museum is a key Tripoli culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Gurgi Mosque",
+      "text": "Gurgi Mosque anchors the historic and ceremonial side of Tripoli, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Tripoli Medina",
+      "text": "Tripoli Medina is a clear heritage marker in Tripoli, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Karamanli Mosque",
+      "text": "Karamanli Mosque anchors the historic and ceremonial side of Tripoli, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Leptis Magna",
+      "label": "Ruins",
+      "text": "Leptis Magna, one of the best-preserved Roman cities in the Mediterranean, lies east along the coast and rewards a full day trip from Tripoli."
+    },
+    {
+      "name": "Sabratha",
+      "label": "Ruins",
+      "text": "Sabratha's Roman theatre and coastal ruins sit west of Tripoli, a quieter alternative day trip to Leptis Magna."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

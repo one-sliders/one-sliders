@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Dhaka in 2026: calendars, nearby pages and linked event views for planning around Asia / Bangladesh."
   },
   "region": "Capital city in Bangladesh",
-  "population": "tba",
+  "population": "~16.8M",
   "coordinates": {
     "lat": 23.7104,
     "lon": 90.40744
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Dhaka travel, stays & events guide",
-  "heroText": "Dhaka is a capital city in Bangladesh, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Dhaka is a Bangladesh base best planned around named sights rather than a generic stopover. Start with Lalbagh Fort, add Ahsan Manzil, and use Dhakeshwari Temple to understand the city's history, street life and visitor rhythm. Dhaka Hazrat Shahjalal handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Dhaka, Bangladesh",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Dhaka",
-      "text": "Dhaka is a capital city in Bangladesh, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Gulshan",
+      "text": "Gulshan is useful when a Dhaka stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Banani",
+      "text": "Banani is useful when a Dhaka stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Dhanmondi",
+      "text": "Dhanmondi is useful when a Dhaka stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Old Dhaka",
+      "text": "Old Dhaka is the most practical first base in Dhaka, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Dhaka Hazrat Shahjalal (DAC)",
+      "search": "Dhaka Hazrat Shahjalal (DAC), Dhaka, Bangladesh",
+      "text": "Dhaka Hazrat Shahjalal (DAC) is the main air gateway for Dhaka; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Dhaka Hazrat Shahjalal (DAC) and central Dhaka before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Dhaka, Bangladesh",
+  "stayOverview": "Start with Gulshan for the easiest first Dhaka stay, then compare Banani and Dhanmondi when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Dhaka hotel choice is mostly about repeat journeys: use Gulshan for sightseeing, Banani for a different local base, and Dhanmondi or Old Dhaka when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Dhaka unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Gulshan for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Dhaka Hazrat Shahjalal, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Lalbagh Fort and Ahsan Manzil so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Dhaka, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lalbagh Fort",
+      "text": "Lalbagh Fort is a clear heritage marker in Dhaka, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Ahsan Manzil",
+      "text": "Ahsan Manzil is a named stop in Dhaka worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Dhakeshwari Temple",
+      "text": "Dhakeshwari Temple anchors the historic and ceremonial side of Dhaka, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Sadarghat River Port",
+      "text": "Sadarghat River Port adds outdoor time to a Dhaka stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Parliament House",
+      "text": "National Parliament House is a named stop in Dhaka worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Star Mosque",
+      "text": "Star Mosque anchors the historic and ceremonial side of Dhaka, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lalbagh Fort",
+      "label": "Heritage",
+      "text": "Lalbagh Fort is a heritage-focused side trip from Dhaka; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ahsan Manzil",
+      "label": "Heritage",
+      "text": "Ahsan Manzil is a heritage-focused side trip from Dhaka; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Sadarghat River Port",
+      "label": "Nature",
+      "text": "Sadarghat River Port works as a nature-focused side trip from Dhaka, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

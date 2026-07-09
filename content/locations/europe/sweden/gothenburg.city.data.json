@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Gothenburg, Sweden trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Vastra Gotaland",
-  "population": "tba",
+  "population": "~613K",
   "coordinates": {
     "lat": 57.70716,
     "lon": 11.96679
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Gothenburg travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Gothenburg is Sweden's second-largest city, a west-coast port shaped by Dutch-designed canals and shipping history. First-time visitors should ride the trams to Liseberg, Scandinavia's biggest amusement park, wander the cafe streets of Haga, and catch the fish market at Feskekôrka. Home to Volvo, the city links via Landvetter airport to ferries reaching the archipelago's fishing villages and beaches - a half-day trip worth building into any stay.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Gothenburg, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Liseberg",
-    "Haga",
-    "Universeum",
-    "Gothenburg archipelago",
-    "Feskekorka",
-    "Avenyn"
+  "areas": [
+    {
+      "name": "Centrum",
+      "text": "Centrum is the most practical first base for tram links, the central station, canals, shopping streets and short transfers across the city core.",
+      "bestFor": "first visits, rail arrivals, central tram access"
+    },
+    {
+      "name": "Haga",
+      "text": "Haga works well for older streets, cafes, small shops and a slower stay close to both central Gothenburg and Linnestaden.",
+      "bestFor": "cafes, historic streets, walkable weekends"
+    },
+    {
+      "name": "Linnestaden",
+      "text": "Linnestaden is useful when restaurants, bars and access toward Slottsskogen matter more than being beside the central station.",
+      "bestFor": "restaurants, nightlife, Slottsskogen access"
+    },
+    {
+      "name": "Avenyn",
+      "text": "Avenyn is the main boulevard choice for nightlife, culture stops and quick movement between central Gothenburg and Gotaplatsen.",
+      "bestFor": "nightlife, culture, boulevard hotels"
+    },
+    {
+      "name": "Eriksberg",
+      "text": "Eriksberg puts the stay on the north-bank waterfront, with river views and ferry links back toward the centre.",
+      "bestFor": "waterfront hotels, river ferries, quieter evenings"
+    },
+    {
+      "name": "Landvetter airport area",
+      "text": "The Landvetter airport area is mainly useful for early departures, late arrivals or car-based onward travel outside the city.",
+      "bestFor": "early flights, late arrivals, rental car pickup"
+    }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Gothenburg Landvetter (GOT)",
+      "search": "Gothenburg Landvetter (GOT), Sweden",
+      "text": "Gothenburg Landvetter is the main airport for the city; compare an airport-area stay only for late arrivals, early departures or car pickup."
+    }
+  ],
+  "bookingDestination": "Gothenburg, Sweden",
+  "transitOperator": "Västtrafik",
+  "stayOverview": "Start with Centrum if this is a first Gothenburg stay, then compare Haga, Linnestaden, Avenyn, Eriksberg and Landvetter airport depending on tram routes, nightlife, waterfront preference and flight timing.",
+  "hotelIntro": "Gothenburg hotel choice is mostly about tram convenience and evening base: Centrum is easiest for arrivals, Haga and Linnestaden suit cafes and restaurants, Avenyn suits nightlife, Eriksberg suits waterfront stays, and Landvetter is for airport timing.",
+  "rentalCars": "A rental car is useful for airport-based travel, coastal stops and wider West Sweden routes, but it is not the simplest way to move between central Gothenburg, Haga, Avenyn and Liseberg.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centrum for the simplest first stay; it keeps the central station, trams, canals and most cross-city routes close."
+    },
+    {
+      "title": "Late evenings",
+      "text": "Avenyn and Linnestaden are better than the airport area when restaurants, bars and short late-night trips matter."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Use a Landvetter-area hotel only when early flights, late arrivals or rental car pickup outweigh city-centre convenience."
+    },
+    {
+      "title": "Island trips",
+      "text": "For the Gothenburg archipelago, check ferry timing before booking a hotel far from the tram or ferry route you need."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Liseberg",
+      "text": "Liseberg is Gothenburg's central amusement park and concert draw, useful to plan around when evening crowds or family trips shape the hotel choice."
+    },
+    {
+      "title": "Haga",
+      "text": "Haga is the older cafe-and-shop district west of the centre, a good slow stop when the trip needs streets, fika and short walks rather than only big sights."
+    },
+    {
+      "title": "Universeum",
+      "text": "Universeum is the science centre beside Korsvagen, close to Liseberg and useful for family trips or rainy-day planning."
+    },
+    {
+      "title": "Gothenburg archipelago",
+      "text": "The Gothenburg archipelago is the island day-trip angle of the city; ferry timing matters more than distance when choosing a base."
+    },
+    {
+      "title": "Feskekôrka",
+      "text": "Feskekôrka is the fish-market landmark near the canal, a clear seafood stop for visitors staying around Centrum, Haga or Linnestaden."
+    },
+    {
+      "title": "Avenyn",
+      "text": "Avenyn is Gothenburg's main boulevard for nightlife, hotels and the route toward Gotaplatsen, making it a practical base for late evenings."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Marstrand",
+      "type": "Coast",
+      "text": "Marstrand is the classic island-and-fortress day trip north of Gothenburg, useful when the city stay needs a sharper west-coast stop."
+    },
+    {
+      "name": "Alingsas",
+      "type": "Town",
+      "text": "Alingsas works as a slower cafe town east of Gothenburg, especially when the trip needs a small-city break from the harbour and tram network."
+    },
+    {
+      "name": "Boras",
+      "type": "City",
+      "text": "Boras is the inland city option from Gothenburg, best known for textiles, public art and zoo trips rather than the archipelago feel."
+    },
+    {
+      "name": "Tjorn",
+      "type": "Island",
+      "text": "Tjorn gives the nearby coast a more open island route, with sculpture, small harbours and car-friendly west-coast stops."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

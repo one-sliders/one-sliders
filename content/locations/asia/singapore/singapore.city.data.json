@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Singapore travel, stays & events guide",
-  "heroText": "Singapore is a compact city-state travel hub, useful for events, airport links, food districts and regional stopovers.",
+  "heroText": "Singapore is a Singapore base best planned around named sights rather than a generic stopover. Start with Marina Bay Sands, add Gardens by the Bay, and use Merlion Park to understand the city's history, street life and visitor rhythm. Singapore Changi handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Singapore, Singapore",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Singapore",
-      "text": "Singapore is a compact city-state travel hub, useful for events, airport links, food districts and regional stopovers."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Singapore, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Singapore, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Singapore reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Singapore sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Singapore Changi (SIN)",
+      "search": "Singapore Changi (SIN), Singapore, Singapore",
+      "text": "Singapore Changi (SIN) is the main air gateway for Singapore; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Singapore Changi (SIN) and central Singapore before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Singapore, Singapore",
+  "stayOverview": "Start with City centre for the easiest first Singapore stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Singapore hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Singapore unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Singapore Changi, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Marina Bay Sands and Gardens by the Bay so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Singapore, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Marina Bay Sands",
+      "text": "Marina Bay Sands adds the water-facing side of Singapore, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Gardens by the Bay",
+      "text": "Gardens by the Bay adds outdoor time to a Singapore stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Merlion Park",
+      "text": "Merlion Park adds outdoor time to a Singapore stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Singapore Botanic Gardens",
+      "text": "Singapore Botanic Gardens adds outdoor time to a Singapore stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Chinatown Singapore",
+      "text": "Chinatown Singapore is a named stop in Singapore worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sentosa Island",
+      "text": "Sentosa Island adds the water-facing side of Singapore, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Marina Bay Sands",
+      "label": "Heritage",
+      "text": "Marina Bay Sands is a heritage-focused side trip from Singapore; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Gardens by the Bay",
+      "label": "Heritage",
+      "text": "Gardens by the Bay is a heritage-focused side trip from Singapore; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Merlion Park",
+      "label": "Nature",
+      "text": "Merlion Park works as a nature-focused side trip from Singapore, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

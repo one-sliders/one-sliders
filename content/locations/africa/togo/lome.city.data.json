@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Lome in 2026: calendars, nearby pages and linked event views for planning around Africa / Togo."
   },
   "region": "Capital city in Togo",
-  "population": "tba",
+  "population": "~1.0M",
   "coordinates": {
     "lat": 6.12874,
     "lon": 1.22154
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lome travel, stays & events guide",
-  "heroText": "Lome is a capital city in Togo, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Lome is Togo's breezy Atlantic capital, hugging the coast right up to the Ghanaian border. First-time visitors should browse fabrics and beads at the Grand Marché, learn about traditional medicine at the Akodessewa Fetish Market, and admire the twin-spired Lomé Cathedral downtown. Lomé–Tokoin International Airport sits inside the city, and Lome's beaches and West African crafts scene make it an easy, walkable capital to explore.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lome, Togo",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lome",
-      "text": "Lome is a capital city in Togo, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centre-ville",
+      "text": "Centre-ville holds the Grand Marché, cathedral and government buildings, Lome's most walkable district for a first visit.",
+      "bestFor": "first visits, markets, sightseeing"
+    },
+    {
+      "name": "Kodjoviakopé",
+      "text": "Kodjoviakopé sits along the beach near the Ghanaian border, known for its nightlife, restaurants and seafront hotels.",
+      "bestFor": "beaches, nightlife, border access"
+    },
+    {
+      "name": "Tokoin",
+      "text": "Tokoin is a central residential district near the university, useful for longer stays close to everyday amenities.",
+      "bestFor": "longer stays, local life"
+    },
+    {
+      "name": "Bè",
+      "text": "Bè is a traditional neighborhood associated with Togo's Ewe heritage and voodoo culture, worth exploring with a local guide.",
+      "bestFor": "culture, traditional heritage"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Lomé–Tokoin International Airport (LFW)",
+      "search": "Lomé–Tokoin International Airport, Lomé, Togo",
+      "text": "Lomé–Tokoin International Airport sits within the city itself, just a short taxi ride from downtown hotels and the beachfront."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Lomé–Tokoin International Airport (LFW) and central Lome before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Lome, Togo",
+  "stayOverview": "Base in Centre-ville for an easy first stay near the Grand Marché, cathedral and government offices, or choose Kodjoviakopé for beachfront hotels and nightlife near the border. Tokoin suits longer, more local stays, while Bè rewards a guided visit for its traditional culture.",
+  "hotelIntro": "Lome hotel choice depends on priorities: Centre-ville suits first-time visitors wanting markets and sights within reach, Kodjoviakopé suits beach and nightlife stays, and Tokoin suits longer, quieter visits near the university.",
+  "rentalCars": "A rental car with driver helps for day trips to Lake Togo and Togoville, though central Lome and Kodjoviakopé are easily covered by taxi.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centre-ville for markets and sightseeing, or Kodjoviakopé for beachfront hotels and nightlife near the border."
+    },
+    {
+      "title": "Fetish market etiquette",
+      "text": "Hire a local guide for the Akodessewa Fetish Market, since context helps make sense of the traditional remedies on display."
+    },
+    {
+      "title": "Airport convenience",
+      "text": "Take advantage of Lomé–Tokoin International Airport's in-city location, keeping transfer times short even for late flights."
+    },
+    {
+      "title": "Border day trips",
+      "text": "Consider a short crossing into Ghana via the nearby border post if extending a trip, but carry proper visas and documentation."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lome Grand Market",
+      "text": "Lome Grand Market gives Lome a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Independence Monument Lome",
+      "text": "Independence Monument Lome is a clear heritage marker in Lome, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Museum of Togo",
+      "text": "National Museum of Togo is a key Lome culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Lome Cathedral",
+      "text": "Lome Cathedral anchors the historic and ceremonial side of Lome, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Aneho Lagoon",
+      "text": "Aneho Lagoon is a named stop in Lome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Togo National Library",
+      "text": "Togo National Library gives Lome a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lake Togo",
+      "label": "Nature",
+      "text": "Lake Togo is a coastal lagoon east of the city, popular for boat trips and waterside relaxation away from downtown."
+    },
+    {
+      "name": "Togoville",
+      "label": "Heritage",
+      "text": "Togoville, reached by boat across Lake Togo, is the spiritual home of Togolese voodoo and the site of the country's founding treaty."
+    },
+    {
+      "name": "Coco Beach",
+      "label": "Beach",
+      "text": "Coco Beach stretches along the coast near Lome, a relaxed spot for swimming and beachside bars outside the busiest districts."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

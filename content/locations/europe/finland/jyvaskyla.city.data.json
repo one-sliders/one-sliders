@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Jyväskylä, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Central Finland",
-  "population": "tba",
+  "population": "~149K",
   "coordinates": {
     "lat": 62.24147,
     "lon": 25.72088
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Jyväskylä travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Jyväskylä is a lake city in Central Finland, known for Alvar Aalto architecture, university life and Rally Finland roads. Start at the Alvar Aalto Museum, climb Harju Ridge for views, then walk Lutakko harbour and Lake Jyväsjärvi. Jyväskylä Airport is small, so rail connections from Helsinki are often practical.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "The centre is best for first stays, restaurants, shops, the station and easy walks to Harju Ridge.",
+      "bestFor": "first visits, station, restaurants"
+    },
+    {
+      "name": "Lutakko",
+      "text": "Lutakko is the lakeside harbour district, good for events, waterfront walks and modern apartment stays.",
+      "bestFor": "waterfront, events, apartments"
+    },
+    {
+      "name": "Kuokkala",
+      "text": "Kuokkala sits across the lake with residential calm, bridge views and access to local services.",
+      "bestFor": "quiet stays, lake views, longer visits"
+    },
+    {
+      "name": "Kortepohja",
+      "text": "Kortepohja is useful for university-related stays, budget apartments and access toward the Aalto campus.",
+      "bestFor": "university, budget, longer stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Jyväskylä Airport (JYV)",
+      "search": "Jyväskylä Airport, Jyväskylä, Finland",
+      "text": "Jyväskylä Airport is north of the city near Tikkakoski; flight schedules are limited, so check rail alternatives."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "20-30 min by taxi or arranged transfer from Jyväskylä Airport",
+    "note": "rail from Helsinki is often more practical",
+    "distance": "about 22 km north of the centre"
   },
   "bookingDestination": "Jyväskylä, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Alvar Aalto Museum",
-    "Harju Ridge",
-    "Lutakko harbour",
-    "Lake Jyvasjarvi",
-    "Saynatsalo Town Hall",
-    "Rally Finland roads"
+  "stayOverview": "Stay in the city centre for restaurants and station access, Lutakko for lakefront events, Kuokkala for calmer waterside stays, or Kortepohja for university visits and apartment value.",
+  "hotelIntro": "Jyväskylä is compact around the lake and ridge. Central hotels are easiest, Lutakko suits events and harbour walks, and university-side districts make more sense for longer or purpose-led stays.",
+  "rentalCars": "A car helps for Rally Finland roads, Säynätsalo and lake-country trips, but not for the compact centre.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the city centre if you want the station, restaurants and Harju Ridge within easy walking distance."
+    },
+    {
+      "title": "Architecture",
+      "text": "Keep the Jyväskylä plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Events",
+      "text": "Keep the Jyväskylä plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Säynätsalo Town Hall is the key architecture outing and works best with a car or planned bus."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Alvar Aalto Museum",
+      "title": "Alvar Aalto Museum",
+      "text": "Alvar Aalto Museum gives Jyväskylä a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Harju Ridge",
+      "title": "Harju Ridge",
+      "text": "Harju Ridge is a named stop in Jyväskylä worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Lutakko harbour",
+      "title": "Lutakko harbour",
+      "text": "Lutakko harbour adds the water-facing side of Jyväskylä, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Lake Jyvasjarvi",
+      "title": "Lake Jyvasjarvi",
+      "text": "Lake Jyvasjarvi adds the water-facing side of Jyväskylä, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Saynatsalo Town Hall",
+      "title": "Saynatsalo Town Hall",
+      "text": "Säynätsalo Town Hall is one of Alvar Aalto's major works and a meaningful architecture trip from the centre."
+    },
+    {
+      "name": "Rally Finland roads",
+      "title": "Rally Finland roads",
+      "text": "Rally Finland roads is a named stop in Jyväskylä worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Säynätsalo",
+      "label": "Architecture",
+      "text": "Säynätsalo is a nearby side trip from Jyväskylä; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Petäjävesi Old Church",
+      "label": "Heritage",
+      "text": "Petäjävesi Old Church is a heritage-focused side trip from Jyväskylä; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Laajavuori",
+      "label": "Nature",
+      "text": "Laajavuori works as a nature-focused side trip from Jyväskylä, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Jyväskylä",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Linkki"
 }

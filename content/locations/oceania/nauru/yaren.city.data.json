@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Yaren travel, stays & events guide",
-  "heroText": "Yaren is a capital city in Nauru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Yaren is a Nauru base best planned around named sights rather than a generic stopover. Start with Nauru Parliament House, add Moqua Well, and use Buada Lagoon to understand the city's history, street life and visitor rhythm. Nauru International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Yaren, Nauru",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Yaren",
-      "text": "Yaren is a capital city in Nauru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Yaren, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Yaren, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Yaren reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Yaren sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Nauru International Airport (INU)",
+      "search": "Nauru International Airport (INU), Yaren, Nauru",
+      "text": "Nauru International Airport (INU) is the main air gateway for Yaren; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Nauru International Airport (INU) and central Yaren before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Yaren, Nauru",
+  "stayOverview": "Start with City centre for the easiest first Yaren stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Yaren hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Yaren unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Nauru International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Nauru Parliament House and Moqua Well so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Yaren, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Nauru Parliament House",
+      "text": "Nauru Parliament House is a named stop in Yaren worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Moqua Well",
+      "text": "Moqua Well is a named stop in Yaren worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Buada Lagoon",
+      "text": "Buada Lagoon is a named stop in Yaren worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Command Ridge",
+      "text": "Command Ridge is a named stop in Yaren worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Anibare Bay",
+      "text": "Anibare Bay adds the water-facing side of Yaren, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Japanese Guns Yaren",
+      "text": "Japanese Guns Yaren is a named stop in Yaren worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Nauru Parliament House",
+      "label": "Heritage",
+      "text": "Nauru Parliament House is a heritage-focused side trip from Yaren; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Moqua Well",
+      "label": "Heritage",
+      "text": "Moqua Well is a heritage-focused side trip from Yaren; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Buada Lagoon",
+      "label": "Nature",
+      "text": "Buada Lagoon works as a nature-focused side trip from Yaren, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

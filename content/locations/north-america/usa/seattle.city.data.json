@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Seattle, Washington trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Pacific Northwest",
-  "population": "tba",
+  "population": "~737K",
   "coordinates": {
     "lat": 47.60621,
     "lon": -122.33207
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Seattle, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Seattle",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Seattle, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Seattle, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Seattle reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Seattle sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Seattle-Tacoma (SEA)",
+      "search": "Seattle-Tacoma (SEA), Seattle, USA",
+      "text": "Seattle-Tacoma (SEA) is the main air gateway for Seattle; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Seattle-Tacoma (SEA) and central Seattle before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Seattle, USA",
+  "stayOverview": "Start with City centre for the easiest first Seattle stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Seattle hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Seattle unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Seattle-Tacoma, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Seattle and Seattle so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Seattle, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Space Needle",
+      "text": "Space Needle is a named stop in Seattle worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pike Place Market",
+      "text": "Pike Place Market gives Seattle a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Seattle Waterfront",
+      "text": "Seattle Waterfront adds the water-facing side of Seattle, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Chihuly Garden and Glass",
+      "text": "Chihuly Garden and Glass adds outdoor time to a Seattle stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Museum of Pop Culture",
+      "text": "Museum of Pop Culture is a key Seattle culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Kerry Park",
+      "text": "Kerry Park adds outdoor time to a Seattle stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Space Needle",
+      "label": "Heritage",
+      "text": "Space Needle is a heritage-focused side trip from Seattle; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Seattle Waterfront",
+      "label": "Heritage",
+      "text": "Seattle Waterfront is a heritage-focused side trip from Seattle; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Chihuly Garden and Glass",
+      "label": "Heritage",
+      "text": "Chihuly Garden and Glass works as a nature-focused side trip from Seattle, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Prague in 2026: calendars, nearby pages and linked event views for planning around Europe / Czechia."
   },
   "region": "Capital city of Czechia",
-  "population": "tba",
+  "population": "~1.4M",
   "coordinates": {
     "lat": 50.08804,
     "lon": 14.42076
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Prague travel, stays & events guide",
-  "heroText": "Prague is a key city in Czechia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Prague is a walkable capital of bridges, castle views, beer halls and layered Central European history. Start before the crowds on Charles Bridge, climb through Mala Strana to Prague Castle, then return to Old Town Square for the astronomical clock and lanes. Vaclav Havel Airport Prague connects by bus and metro links to the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Prague, Czechia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Prague",
-      "text": "Prague is a key city in Czechia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Old Town",
+      "text": "Old Town is the most central base for first visits, close to the square, Charles Bridge and major walking routes.",
+      "bestFor": "first visits, landmarks, walking"
+    },
+    {
+      "name": "Mala Strana",
+      "text": "Mala Strana sits below Prague Castle with baroque streets, gardens and quieter evenings than Old Town.",
+      "bestFor": "romance, castle access, atmosphere"
+    },
+    {
+      "name": "Vinohrady",
+      "text": "Vinohrady has restaurants, parks and elegant residential streets, good for repeat visits and longer stays.",
+      "bestFor": "restaurants, longer stays, local feel"
+    },
+    {
+      "name": "Karlin",
+      "text": "Karlin is a revived district with cafes, offices and metro access, useful for value and modern hotels.",
+      "bestFor": "value, cafes, business"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Vaclav Havel Airport Prague (PRG)",
+      "search": "Vaclav Havel Airport Prague, Prague, Czechia",
+      "text": "Vaclav Havel Airport is northwest of Prague; airport buses connect to metro and rail routes into the centre."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-55 min by airport bus plus metro, or taxi to central Prague",
+    "note": "from Vaclav Havel Airport Prague",
+    "distance": "about 17 km northwest of the centre"
+  },
+  "bookingDestination": "Prague, Czechia",
+  "stayOverview": "Old Town is simplest for a first Prague stay, Mala Strana adds castle-side atmosphere, Vinohrady is better for restaurants and longer visits, and Karlin gives modern hotels and value with quick metro access.",
+  "hotelIntro": "Prague rewards staying just outside the busiest lanes. Old Town is convenient but crowded, Mala Strana feels historic, Vinohrady is more local, and Karlin works well for value and transit.",
+  "rentalCars": "Do not rent for Prague; trams, metro and walking cover the city, while trains suit many Czech day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Mala Strana or Vinohrady if you want character without sleeping in the busiest Old Town streets."
+    },
+    {
+      "title": "Crowds",
+      "text": "Visit Charles Bridge early morning or late evening if you want the view without the largest tour groups."
+    },
+    {
+      "title": "Transit",
+      "text": "Keep the Prague plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Prague, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Charles Bridge",
+      "text": "Charles Bridge is Prague's famous stone bridge, best early or late for views between Old Town and Mala Strana.",
+      "name": "Charles Bridge"
+    },
+    {
+      "title": "Prague Castle",
+      "text": "Prague Castle is a clear heritage marker in Prague, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Prague Castle"
+    },
+    {
+      "title": "Old Town Square",
+      "text": "Old Town Square is a clear heritage marker in Prague, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Old Town Square"
+    },
+    {
+      "title": "Mala Strana",
+      "text": "Mala Strana is a named stop in Prague worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Mala Strana"
+    },
+    {
+      "title": "Vysehrad",
+      "text": "Vysehrad is a named stop in Prague worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Vysehrad"
+    },
+    {
+      "title": "Letna Park",
+      "text": "Letna Park adds outdoor time to a Prague stay, with open space, views or waterfront breathing room between denser city sights.",
+      "name": "Letna Park"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kutna Hora",
+      "label": "Heritage",
+      "text": "Kutna Hora is a classic rail day trip for St Barbara's Cathedral and the Sedlec Ossuary."
+    },
+    {
+      "name": "Karlstejn Castle",
+      "label": "Castle",
+      "text": "Karlstejn Castle is a popular countryside castle trip southwest of Prague by train and walk."
+    },
+    {
+      "name": "Cesky Krumlov",
+      "label": "Town",
+      "text": "Cesky Krumlov is beautiful but long as a day trip, better with an overnight if possible."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Prague",
     "matchedCountry": "Czechia"
-  }
+  },
+  "transitOperator": "PID"
 }

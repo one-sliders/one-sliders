@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Riyadh travel, stays & events guide",
-  "heroText": "Riyadh is a capital city in Saudi Arabia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Riyadh is a Saudi Arabia base best planned around named sights rather than a generic stopover. Start with Masmak Fortress, add Kingdom Centre Tower, and use National Museum of Saudi Arabia to understand the city's history, street life and visitor rhythm. Riyadh King Fahd handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Riyadh, Saudi Arabia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Riyadh",
-      "text": "Riyadh is a capital city in Saudi Arabia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Riyadh, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Riyadh, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Riyadh reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Riyadh sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Riyadh King Fahd (RUH)",
+      "search": "Riyadh King Fahd (RUH), Riyadh, Saudi Arabia",
+      "text": "Riyadh King Fahd (RUH) is the main air gateway for Riyadh; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Riyadh King Fahd (RUH) and central Riyadh before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Riyadh, Saudi Arabia",
+  "stayOverview": "Start with City centre for the easiest first Riyadh stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Riyadh hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Riyadh unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Riyadh King Fahd, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Masmak Fortress and Kingdom Centre Tower so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Riyadh, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Masmak Fortress",
+      "text": "Masmak Fortress is a clear heritage marker in Riyadh, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Kingdom Centre Tower",
+      "text": "Kingdom Centre Tower gives Riyadh a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "National Museum of Saudi Arabia",
+      "text": "National Museum of Saudi Arabia is a key Riyadh culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Al Murabba Palace",
+      "text": "Al Murabba Palace anchors the historic and ceremonial side of Riyadh, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Diriyah",
+      "text": "Diriyah is a named stop in Riyadh worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Al Bujairi Terrace",
+      "text": "Al Bujairi Terrace is a named stop in Riyadh worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Masmak Fortress",
+      "label": "Heritage",
+      "text": "Masmak Fortress is a heritage-focused side trip from Riyadh; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Diriyah",
+      "label": "Heritage",
+      "text": "Diriyah is a heritage-focused side trip from Riyadh; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Al Bujairi Terrace",
+      "label": "Heritage",
+      "text": "Al Bujairi Terrace is a heritage-focused side trip from Riyadh; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

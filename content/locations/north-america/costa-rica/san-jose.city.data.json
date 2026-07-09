@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in San Jose in 2026: calendars, nearby pages and linked event views for planning around North America / Costa Rica."
   },
   "region": "Capital city in Costa Rica",
-  "population": "tba",
+  "population": "~1M",
   "coordinates": {
     "lat": 9.93388,
     "lon": -84.08489
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "San Jose travel, stays & events guide",
-  "heroText": "San Jose is a capital city in Costa Rica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "San Jose is a Costa Rica base best planned around named sights rather than a generic stopover. Start with National Theatre of Costa Rica, add Pre-Columbian Gold Museum, and use Central Market San Jose to understand the city's history, street life and visitor rhythm. San Jose International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "San Jose, Costa Rica",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "San Jose",
-      "text": "San Jose is a capital city in Costa Rica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in San Jose, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in San Jose, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central San Jose reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first San Jose sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "San Jose International Airport",
+      "search": "San Jose International Airport, San Jose, Costa Rica",
+      "text": "San Jose International Airport is the main air gateway for San Jose; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between San Jose International Airport and central San Jose before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "San Jose, Costa Rica",
+  "stayOverview": "Start with City centre for the easiest first San Jose stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "San Jose hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central San Jose unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for San Jose International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around National Theatre of Costa Rica and Pre-Columbian Gold Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from San Jose, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Theatre of Costa Rica",
+      "text": "National Theatre of Costa Rica is a named stop in San Jose worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pre-Columbian Gold Museum",
+      "text": "Pre-Columbian Gold Museum is a key San Jose culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Central Market San Jose",
+      "text": "Central Market San Jose gives San Jose a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Metropolitan Cathedral San Jose",
+      "text": "Metropolitan Cathedral San Jose anchors the historic and ceremonial side of San Jose, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "La Sabana Metropolitan Park",
+      "text": "La Sabana Metropolitan Park adds outdoor time to a San Jose stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Jade Museum",
+      "text": "Jade Museum is a key San Jose culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "National Theatre of Costa Rica",
+      "label": "Heritage",
+      "text": "National Theatre of Costa Rica is a heritage-focused side trip from San Jose; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "La Sabana Metropolitan Park",
+      "label": "Nature",
+      "text": "La Sabana Metropolitan Park works as a nature-focused side trip from San Jose, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

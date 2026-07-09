@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Auckland in 2026: calendars, nearby pages and linked event views for planning around Oceania / New Zealand."
   },
   "region": "Key city in New Zealand",
-  "population": "tba",
+  "population": "~1.5M",
   "coordinates": {
     "lat": -36.84853,
     "lon": 174.76349
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Auckland travel, stays & events guide",
-  "heroText": "Auckland is a key city in New Zealand, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Auckland is a New Zealand base best planned around named sights rather than a generic stopover. Start with Sky Tower Auckland, add Auckland War Memorial Museum, and use Auckland Harbour Bridge to understand the city's history, street life and visitor rhythm. Auckland International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Auckland, New Zealand",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Auckland",
-      "text": "Auckland is a key city in New Zealand, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Auckland, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Auckland, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Auckland reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Auckland sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Auckland International Airport",
+      "search": "Auckland International Airport, Auckland, New Zealand",
+      "text": "Auckland International Airport is the main air gateway for Auckland; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Auckland International Airport and central Auckland before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Auckland, New Zealand",
+  "stayOverview": "Start with City centre for the easiest first Auckland stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Auckland hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Auckland unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Auckland International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Sky Tower Auckland and Auckland War Memorial Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Auckland, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Sky Tower Auckland",
+      "text": "Sky Tower Auckland is a clear heritage marker in Auckland, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Auckland War Memorial Museum",
+      "text": "Auckland War Memorial Museum is a key Auckland culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Auckland Harbour Bridge",
+      "text": "Auckland Harbour Bridge adds the water-facing side of Auckland, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Waiheke Island",
+      "text": "Waiheke Island adds the water-facing side of Auckland, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Mount Eden",
+      "text": "Mount Eden adds outdoor time to a Auckland stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Viaduct Harbour",
+      "text": "Viaduct Harbour adds the water-facing side of Auckland, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Waiheke Island",
+      "label": "Nature",
+      "text": "Waiheke Island works as a nature-focused side trip from Auckland, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Mount Eden",
+      "label": "Nature",
+      "text": "Mount Eden works as a nature-focused side trip from Auckland, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Viaduct Harbour",
+      "label": "Heritage",
+      "text": "Viaduct Harbour is a heritage-focused side trip from Auckland; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Addis Ababa in 2026: calendars, nearby pages and linked event views for planning around Africa / Ethiopia."
   },
   "region": "Capital city in Ethiopia",
-  "population": "tba",
+  "population": "~5.7M",
   "coordinates": {
     "lat": 9.02497,
     "lon": 38.74689
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Addis Ababa travel, stays & events guide",
-  "heroText": "Addis Ababa is a capital city in Ethiopia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Addis Ababa is Ethiopia's high-altitude capital and a diplomatic hub for Africa, home to the African Union headquarters and a fast-growing skyline. First-time visitors should explore the National Museum of Ethiopia to see the Lucy hominid fossil, browse the vast Mercato market, and walk the grounds of Holy Trinity Cathedral. Addis Ababa Bole International Airport is Ethiopian Airlines' main hub, connecting the city across Africa and beyond.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Addis Ababa, Ethiopia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Addis Ababa",
-      "text": "Addis Ababa is a capital city in Ethiopia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Bole",
+      "text": "Bole is Addis Ababa's modern district near the airport, packed with international hotels, restaurants and the city's business towers.",
+      "bestFor": "business trips, airport access, dining"
+    },
+    {
+      "name": "Kazanchis",
+      "text": "Kazanchis is a central business district close to the African Union headquarters and United Nations offices, popular with diplomats and conference visitors.",
+      "bestFor": "business trips, conferences, diplomacy"
+    },
+    {
+      "name": "Piazza",
+      "text": "Piazza is Addis Ababa's historic Italian-era district, with older architecture, markets and some of the city's oldest hotels.",
+      "bestFor": "history, budget stays"
+    },
+    {
+      "name": "Old Airport / CMC",
+      "text": "The Old Airport and CMC areas offer quieter, more residential surroundings within a reasonable drive of the centre.",
+      "bestFor": "quiet stays, longer visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Addis Ababa Bole International Airport (ADD)",
+      "search": "Addis Ababa Bole International Airport, Addis Ababa, Ethiopia",
+      "text": "Addis Ababa Bole International Airport sits within the Bole district itself, keeping transfers to nearby hotels short even at peak traffic times."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Addis Ababa Bole International Airport (ADD) and central Addis Ababa before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Addis Ababa, Ethiopia",
+  "stayOverview": "Base in Bole for easy airport access and a wide choice of international hotels, or Kazanchis for proximity to the African Union and conference venues. Piazza suits history-focused stays, while CMC offers a quieter, more residential alternative.",
+  "hotelIntro": "Addis Ababa hotel choice usually follows purpose: Bole keeps the airport and business towers close, Kazanchis suits diplomats and conference travellers, Piazza appeals to history-minded visitors on a budget, and CMC offers calmer residential surroundings.",
+  "rentalCars": "A rental car isn't essential given ride-hailing apps and taxis, though a hired driver helps for day trips outside the capital.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Bole for airport convenience and international hotels, or Kazanchis for proximity to the African Union and conference venues."
+    },
+    {
+      "title": "Altitude",
+      "text": "Addis Ababa sits above 2,300 metres, so pace the first day or two and stay hydrated while adjusting to the altitude."
+    },
+    {
+      "title": "Getting around",
+      "text": "Use ride-hailing apps for reliable fares and easy communication, since traffic can be heavy and street addresses are inconsistent."
+    },
+    {
+      "title": "Museum visits",
+      "text": "Visit the National Museum of Ethiopia early to see the Lucy fossil replica before tour groups arrive later in the morning."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Museum of Ethiopia",
+      "text": "National Museum of Ethiopia is a key Addis Ababa culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Holy Trinity Cathedral",
+      "text": "Holy Trinity Cathedral anchors the historic and ceremonial side of Addis Ababa, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Mount Entoto",
+      "text": "Mount Entoto adds outdoor time to a Addis Ababa stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Merkato",
+      "text": "Merkato is a named stop in Addis Ababa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Unity Park",
+      "text": "Unity Park adds outdoor time to a Addis Ababa stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ethnological Museum Addis Ababa",
+      "text": "Ethnological Museum Addis Ababa is a key Addis Ababa culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Debre Libanos",
+      "label": "Heritage",
+      "text": "Debre Libanos is a historic monastery north of Addis Ababa, set above the dramatic Portuguese Bridge gorge and a popular full-day trip."
+    },
+    {
+      "name": "Lake Ziway",
+      "label": "Nature",
+      "text": "Lake Ziway, south of the capital along the Rift Valley, offers birdwatching and hippo sightings on an easy day trip from Addis Ababa."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

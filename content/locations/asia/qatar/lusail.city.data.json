@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lusail travel, stays & events guide",
-  "heroText": "Lusail is a Gulf event destination in Qatar, shaped by venues, waterfront districts, hotels and high-demand sport weekends.",
+  "heroText": "Lusail is a Qatar base best planned around named sights rather than a generic stopover. Start with Lusail Boulevard, add Lusail Stadium, and use Place Vendome Qatar to understand the city's history, street life and visitor rhythm. Lusail International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lusail, Qatar",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lusail",
-      "text": "Lusail is a Gulf event destination in Qatar, shaped by venues, waterfront districts, hotels and high-demand sport weekends."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Lusail, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Lusail, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Lusail reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Lusail sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Lusail International Airport",
+      "search": "Lusail International Airport, Lusail, Qatar",
+      "text": "Lusail International Airport is the main air gateway for Lusail; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Lusail International Airport and central Lusail before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Lusail, Qatar",
+  "stayOverview": "Start with City centre for the easiest first Lusail stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Lusail hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Lusail unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Lusail International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Lusail Boulevard and Lusail Stadium so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Lusail, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lusail Boulevard",
+      "text": "Lusail Boulevard is a named stop in Lusail worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lusail Stadium",
+      "text": "Lusail Stadium is a practical event or leisure landmark in Lusail; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "Place Vendome Qatar",
+      "text": "Place Vendome Qatar is a named stop in Lusail worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Marina Promenade Lusail",
+      "text": "Marina Promenade Lusail adds the water-facing side of Lusail, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Crescent Park Lusail",
+      "text": "Crescent Park Lusail adds outdoor time to a Lusail stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Lusail Marina",
+      "text": "Lusail Marina adds the water-facing side of Lusail, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lusail Boulevard",
+      "label": "Heritage",
+      "text": "Lusail Boulevard is a heritage-focused side trip from Lusail; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Lusail Stadium",
+      "label": "Heritage",
+      "text": "Lusail Stadium is a heritage-focused side trip from Lusail; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Place Vendome Qatar",
+      "label": "Heritage",
+      "text": "Place Vendome Qatar is a heritage-focused side trip from Lusail; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

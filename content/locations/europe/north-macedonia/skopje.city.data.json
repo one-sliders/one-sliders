@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Skopje in 2026: calendars, nearby pages and linked event views for planning around Europe / North Macedonia."
   },
   "region": "Capital city of North Macedonia",
-  "population": "tba",
+  "population": "~423K",
   "coordinates": {
     "lat": 41.99646,
     "lon": 21.43141
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Skopje travel, stays & events guide",
-  "heroText": "Skopje is a key city in North Macedonia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Skopje is a North Macedonia base best planned around named sights rather than a generic stopover. Start with Stone Bridge Skopje, add Skopje Fortress, and use Old Bazaar Skopje to understand the city's history, street life and visitor rhythm. Skopje International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Skopje, North Macedonia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Skopje",
-      "text": "Skopje is a key city in North Macedonia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Centar",
+      "text": "Centar is useful when a Skopje stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Old Bazaar",
+      "text": "Old Bazaar is the most practical first base in Skopje, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Debar Maalo",
+      "text": "Debar Maalo is useful when a Skopje stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Karpos",
+      "text": "Karpos is useful when a Skopje stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Skopje International Airport",
+      "search": "Skopje International Airport, Skopje, North Macedonia",
+      "text": "Skopje International Airport is the main air gateway for Skopje; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Skopje International Airport and central Skopje before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Skopje, North Macedonia",
+  "stayOverview": "Start with Centar for the easiest first Skopje stay, then compare Old Bazaar and Debar Maalo when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Skopje hotel choice is mostly about repeat journeys: use Centar for sightseeing, Old Bazaar for a different local base, and Debar Maalo or Karpos when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Skopje unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centar for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Skopje International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Stone Bridge Skopje and Skopje Fortress so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Skopje, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Stone Bridge Skopje",
+      "text": "Stone Bridge Skopje is a clear heritage marker in Skopje, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Skopje Fortress",
+      "text": "Skopje Fortress is a clear heritage marker in Skopje, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Old Bazaar Skopje",
+      "text": "Old Bazaar Skopje gives Skopje a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Mother Teresa Memorial House",
+      "text": "Mother Teresa Memorial House is a clear heritage marker in Skopje, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Macedonia Square",
+      "text": "Macedonia Square is a clear heritage marker in Skopje, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Matka Canyon",
+      "text": "Matka Canyon is a named stop in Skopje worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Skopje Fortress",
+      "label": "Heritage",
+      "text": "Skopje Fortress is a heritage-focused side trip from Skopje; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Old Bazaar Skopje",
+      "label": "Heritage",
+      "text": "Old Bazaar Skopje is a heritage-focused side trip from Skopje; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Mother Teresa Memorial House",
+      "label": "Heritage",
+      "text": "Mother Teresa Memorial House is a heritage-focused side trip from Skopje; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

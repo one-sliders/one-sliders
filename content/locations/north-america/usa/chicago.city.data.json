@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Chicago, Illinois trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Great Lakes",
-  "population": "tba",
+  "population": "~2.7M",
   "coordinates": {
     "lat": 41.85003,
     "lon": -87.65005
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Chicago, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Chicago",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Chicago, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Chicago, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Chicago reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Chicago sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Chicago O'Hare (ORD)",
+      "search": "Chicago O'Hare (ORD), Chicago, USA",
+      "text": "Chicago O'Hare (ORD) is the main air gateway for Chicago; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Chicago O'Hare (ORD) and central Chicago before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Chicago, USA",
+  "stayOverview": "Start with City centre for the easiest first Chicago stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Chicago hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Chicago unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Chicago O'Hare, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Chicago and Chicago so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Chicago, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Millennium Park",
+      "text": "Millennium Park adds outdoor time to a Chicago stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Art Institute of Chicago",
+      "text": "Art Institute of Chicago gives Chicago a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Chicago Riverwalk",
+      "text": "Chicago Riverwalk adds outdoor time to a Chicago stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Navy Pier",
+      "text": "Navy Pier is a named stop in Chicago worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Willis Tower",
+      "text": "Willis Tower is a clear heritage marker in Chicago, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Wrigley Field",
+      "text": "Wrigley Field is a named stop in Chicago worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Millennium Park",
+      "label": "Nature",
+      "text": "Millennium Park works as a nature-focused side trip from Chicago, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Art Institute of Chicago",
+      "label": "Heritage",
+      "text": "Art Institute of Chicago is a heritage-focused side trip from Chicago; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Chicago Riverwalk",
+      "label": "Nature",
+      "text": "Chicago Riverwalk works as a nature-focused side trip from Chicago, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -22,7 +22,7 @@
   },
   "h1": "Paris — travel, stays & events guide",
   "kicker": "",
-  "heroText": "Paris is a city in France shaped by its region, population, local economy, landmarks, climate and civic history. This overview summarizes the city itself: where it sits, what defines it, which places anchor its identity and why it matters within the wider country.",
+  "heroText": "Paris is a dense capital of river walks, museums, neighbourhood cafes and landmark views. Start with the Eiffel Tower and the Seine, give the Louvre Museum a focused visit, then use Le Marais, Saint-Germain or Montmartre for a slower neighbourhood day. Charles de Gaulle and Orly airports both connect by rail and road.",
   "snapshot": [],
   "kpis": [
     {
@@ -53,19 +53,33 @@
   "highlights": [
     {
       "name": "Eiffel Tower",
-      "text": "Iconic iron lattice monument offering panoramic city views"
+      "title": "Eiffel Tower",
+      "text": "The Eiffel Tower is Paris's most recognisable landmark, best planned with timed tickets or viewpoints from across the Seine."
     },
     {
       "name": "Notre-Dame Cathedral",
-      "text": "Historic Gothic cathedral on Île de la Cité"
+      "title": "Notre-Dame Cathedral",
+      "text": "Notre-Dame Cathedral anchors the Île de la Cité and remains central to Paris river walks and Gothic history."
     },
     {
       "name": "Louvre Museum",
-      "text": "World's largest art museum housing the Mona Lisa"
+      "title": "Louvre Museum",
+      "text": "The Louvre Museum is vast, so a focused visit around selected galleries works better than rushing every wing."
     },
     {
       "name": "Champs-Élysées",
-      "text": "Famous avenue with shops, theaters and cafés"
+      "title": "Champs-Élysées",
+      "text": "Champs-Élysées is a named stop in Paris worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Montmartre",
+      "title": "Montmartre",
+      "text": "Montmartre gives Paris a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Seine riverbanks",
+      "title": "Seine riverbanks",
+      "text": "Seine riverbanks adds the water-facing side of Paris, making it a good break from museums, traffic and dense historic streets."
     }
   ],
   "topicLinks": [
@@ -79,7 +93,91 @@
     },
     {
       "label": "Music",
-      "href": "/content/categories/culture/music.html"
+      "href": "/content/categories/music/index.html"
+    }
+  ],
+  "population": "~2.1M",
+  "transitOperator": "RATP",
+  "areas": [
+    {
+      "name": "Le Marais",
+      "text": "Le Marais is central and lively, with museums, boutiques, cafes and easy walks toward the Seine.",
+      "bestFor": "first visits, cafes, boutiques"
+    },
+    {
+      "name": "Saint-Germain-des-Prés",
+      "text": "Saint-Germain-des-Prés suits polished hotels, galleries, classic cafes and Left Bank walks.",
+      "bestFor": "cafes, galleries, couples"
+    },
+    {
+      "name": "Latin Quarter",
+      "text": "The Latin Quarter is practical for students, bookshops, budget stays and access to Notre-Dame and the Pantheon.",
+      "bestFor": "budget, history, students"
+    },
+    {
+      "name": "Opéra",
+      "text": "Opéra works for shopping, larger hotels, airport bus routes and quick metro access across the city.",
+      "bestFor": "shopping, transport, business"
+    },
+    {
+      "name": "Montmartre",
+      "text": "Montmartre is hillier and atmospheric, best for views, smaller hotels and repeat visits.",
+      "bestFor": "views, atmosphere, repeat visits"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Paris Charles de Gaulle Airport (CDG)",
+      "search": "Paris Charles de Gaulle Airport, Paris, France",
+      "text": "Charles de Gaulle is Paris's main long-haul airport, connected by RER B, taxis and airport transfers."
+    },
+    {
+      "name": "Paris Orly Airport (ORY)",
+      "search": "Paris Orly Airport, Paris, France",
+      "text": "Orly serves many domestic, European and long-haul routes south of Paris, with rail and metro-linked transfers."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-60 min by rail or taxi depending on airport and district",
+    "note": "from CDG or Orly",
+    "distance": "about 25 km from CDG to central Paris"
+  },
+  "stayOverview": "Le Marais is a strong first base, Saint-Germain is polished and walkable, the Latin Quarter is practical, Opéra suits shopping and transport, and Montmartre works for atmosphere if hills are acceptable.",
+  "hotelIntro": "Paris hotel choice should follow metro lines and neighbourhood mood. Stay central for short trips, choose Opéra for transport convenience, or pick Montmartre and the Left Bank when atmosphere matters more than speed.",
+  "rentalCars": "Do not rent for Paris; metro, RER, walking and trains are far easier than driving or parking.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Le Marais or Saint-Germain for a first visit if you want cafes, river walks and museums close together."
+    },
+    {
+      "title": "Museum timing",
+      "text": "Book Louvre and Eiffel Tower tickets ahead, then keep museum plans focused rather than trying to see everything."
+    },
+    {
+      "title": "Airport routes",
+      "text": "Check whether CDG or Orly is better for your hotel, because cross-city transfers can be slow."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Paris, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Versailles",
+      "label": "Palace",
+      "text": "Versailles is a nearby side trip from Paris; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Giverny",
+      "label": "Art",
+      "text": "Giverny is a nearby side trip from Paris; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Chartres",
+      "label": "Cathedral",
+      "text": "Chartres is a heritage-focused side trip from Paris; check the route and opening hours before setting aside the day."
     }
   ]
 }

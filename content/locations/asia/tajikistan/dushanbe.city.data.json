@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Dushanbe travel, stays & events guide",
-  "heroText": "Dushanbe is a capital city in Tajikistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Dushanbe is a Tajikistan base best planned around named sights rather than a generic stopover. Start with Rudaki Park, add National Museum of Tajikistan, and use Dushanbe Flagpole to understand the city's history, street life and visitor rhythm. Dushanbe International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Dushanbe, Tajikistan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Dushanbe",
-      "text": "Dushanbe is a capital city in Tajikistan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Dushanbe, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Dushanbe, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Dushanbe reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Dushanbe sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Dushanbe International (DYU)",
+      "search": "Dushanbe International (DYU), Dushanbe, Tajikistan",
+      "text": "Dushanbe International (DYU) is the main air gateway for Dushanbe; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Dushanbe International (DYU) and central Dushanbe before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Dushanbe, Tajikistan",
+  "stayOverview": "Start with City centre for the easiest first Dushanbe stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Dushanbe hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Dushanbe unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Dushanbe International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Rudaki Park and National Museum of Tajikistan so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Dushanbe, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Rudaki Park",
+      "text": "Rudaki Park adds outdoor time to a Dushanbe stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "National Museum of Tajikistan",
+      "text": "National Museum of Tajikistan is a key Dushanbe culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Dushanbe Flagpole",
+      "text": "Dushanbe Flagpole is a named stop in Dushanbe worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Haji Yaqub Mosque",
+      "text": "Haji Yaqub Mosque anchors the historic and ceremonial side of Dushanbe, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Navruz Palace",
+      "text": "Navruz Palace anchors the historic and ceremonial side of Dushanbe, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Victory Park Dushanbe",
+      "text": "Victory Park Dushanbe adds outdoor time to a Dushanbe stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Rudaki Park",
+      "label": "Nature",
+      "text": "Rudaki Park works as a nature-focused side trip from Dushanbe, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Dushanbe Flagpole",
+      "label": "Heritage",
+      "text": "Dushanbe Flagpole is a heritage-focused side trip from Dushanbe; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Victory Park Dushanbe",
+      "label": "Nature",
+      "text": "Victory Park Dushanbe works as a nature-focused side trip from Dushanbe, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Örebro travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Örebro is a Sweden base best planned around named sights rather than a generic stopover. Start with Orebro Castle, add Wadkoping, and use Stadsparken to understand the city's history, street life and visitor rhythm. Örebro International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Örebro, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Örebro, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Örebro reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Örebro sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Örebro International Airport",
+      "search": "Örebro International Airport, Örebro, Sweden",
+      "text": "Örebro International Airport is the main air gateway for Örebro; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Örebro International Airport and central Örebro before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Örebro, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Orebro Castle",
-    "Wadkoping",
-    "Stadsparken",
-    "Gustavsvik",
-    "Svampen water tower",
-    "Hjalmaren lake"
+  "stayOverview": "Start with City centre for the easiest first Örebro stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Örebro hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Örebro unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Örebro International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Orebro Castle and Wadkoping so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Örebro, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Orebro Castle",
+      "text": "Orebro Castle is a clear heritage marker in Örebro, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Wadkoping",
+      "text": "Wadkoping is a named stop in Örebro worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Stadsparken",
+      "text": "Stadsparken adds outdoor time to a Örebro stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Gustavsvik",
+      "text": "Gustavsvik is a named stop in Örebro worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Svampen water tower",
+      "text": "Svampen water tower is a clear heritage marker in Örebro, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Hjalmaren lake",
+      "text": "Hjalmaren lake adds outdoor time to a Örebro stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Orebro Castle",
+      "label": "Heritage",
+      "text": "Orebro Castle is a heritage-focused side trip from Örebro; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Wadkoping",
+      "label": "Heritage",
+      "text": "Wadkoping is a heritage-focused side trip from Örebro; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Stadsparken",
+      "label": "Nature",
+      "text": "Stadsparken works as a nature-focused side trip from Örebro, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

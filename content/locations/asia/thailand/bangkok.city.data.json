@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Bangkok in 2026: calendars, nearby pages and linked event views for planning around Asia / Thailand."
   },
   "region": "Capital city in Thailand",
-  "population": "tba",
+  "population": "~5.7M",
   "coordinates": {
     "lat": 13.75398,
     "lon": 100.50144
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bangkok travel, stays & events guide",
-  "heroText": "Bangkok is a major visitor hub in Thailand, combining temples, food, markets, nightlife and regional travel links.",
+  "heroText": "Bangkok is a Thailand base best planned around named sights rather than a generic stopover. Start with Grand Palace Bangkok, add Wat Pho, and use Wat Arun to understand the city's history, street life and visitor rhythm. Bangkok Suvarnabhumi handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Bangkok, Thailand",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Bangkok",
-      "text": "Bangkok is a major visitor hub in Thailand, combining temples, food, markets, nightlife and regional travel links."
+      "name": "Sukhumvit",
+      "text": "Sukhumvit is useful when a Bangkok stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Silom",
+      "text": "Silom is useful when a Bangkok stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Siam",
+      "text": "Siam is useful when a Bangkok stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Rattanakosin",
+      "text": "Rattanakosin is useful when a Bangkok stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Bangkok Suvarnabhumi (BKK)",
+      "search": "Bangkok Suvarnabhumi (BKK), Bangkok, Thailand",
+      "text": "Bangkok Suvarnabhumi (BKK) is the main air gateway for Bangkok; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Bangkok Suvarnabhumi (BKK) and central Bangkok before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Bangkok, Thailand",
+  "stayOverview": "Start with Sukhumvit for the easiest first Bangkok stay, then compare Silom and Siam when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Bangkok hotel choice is mostly about repeat journeys: use Sukhumvit for sightseeing, Silom for a different local base, and Siam or Rattanakosin when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Bangkok unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Sukhumvit for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Bangkok Suvarnabhumi, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Grand Palace Bangkok and Wat Pho so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Bangkok, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Grand Palace Bangkok",
+      "text": "Grand Palace Bangkok anchors the historic and ceremonial side of Bangkok, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Wat Pho",
+      "text": "Wat Pho is a named stop in Bangkok worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Wat Arun",
+      "text": "Wat Arun is a named stop in Bangkok worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Chatuchak Weekend Market",
+      "text": "Chatuchak Weekend Market gives Bangkok a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Jim Thompson House",
+      "text": "Jim Thompson House is a named stop in Bangkok worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lumphini Park",
+      "text": "Lumphini Park adds outdoor time to a Bangkok stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Wat Pho",
+      "label": "Heritage",
+      "text": "Wat Pho is a heritage-focused side trip from Bangkok; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Wat Arun",
+      "label": "Heritage",
+      "text": "Wat Arun is a heritage-focused side trip from Bangkok; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Jim Thompson House",
+      "label": "Heritage",
+      "text": "Jim Thompson House is a heritage-focused side trip from Bangkok; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

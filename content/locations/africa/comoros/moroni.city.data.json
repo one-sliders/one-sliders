@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Moroni in 2026: calendars, nearby pages and linked event views for planning around Africa / Comoros."
   },
   "region": "Capital city in Comoros",
-  "population": "tba",
+  "population": "~110K",
   "coordinates": {
     "lat": -11.70216,
     "lon": 43.25506
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Moroni travel, stays & events guide",
-  "heroText": "Moroni is a capital city in Comoros, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Moroni is the small, laid-back capital of Comoros, spread along Grande Comore's coast around a working harbour. First-time visitors should browse the Volo Volo Market for spices and vanilla, wander the old Medina's narrow lanes near the Grand Mosque of Moroni, and relax on the beaches of Itsandra Beach just north of town. Prince Said Ibrahim International Airport connects Moroni to mainland Africa and the wider Indian Ocean.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Moroni, Comoros",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Moroni",
-      "text": "Moroni is a capital city in Comoros, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Medina (old town)",
+      "text": "The Medina is Moroni's historic old town, a maze of narrow lanes around the Grand Mosque, best for walking and soaking up Swahili-era architecture.",
+      "bestFor": "first visits, history, walking"
+    },
+    {
+      "name": "Itsandra",
+      "text": "Itsandra, a short drive north of the centre, is the best area for beach resorts and calmer, more relaxed stays with ocean views.",
+      "bestFor": "beaches, resorts, relaxation"
+    },
+    {
+      "name": "Volo Volo",
+      "text": "The Volo Volo district centres on the archipelago's largest market, useful for travellers wanting to be close to shopping and everyday local life.",
+      "bestFor": "markets, local life"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Prince Said Ibrahim International Airport (HAH)",
+      "search": "Prince Said Ibrahim International Airport, Moroni, Comoros",
+      "text": "Prince Said Ibrahim International Airport lies a short drive north of central Moroni; confirm hotel transfers in advance since scheduled flights are limited."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Prince Said Ibrahim International Airport (HAH) and central Moroni before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Moroni, Comoros",
+  "stayOverview": "Stay in the Medina for walking access to the Grand Mosque and old town, or choose Itsandra for beach resorts just north of the centre. Volo Volo suits travellers wanting to be close to the main market and local life.",
+  "hotelIntro": "Moroni's hotel choice is mostly about pace: the Medina keeps history and the harbour within walking distance, Itsandra offers beach resorts and quieter surroundings, and Volo Volo puts you closest to markets and daily local activity.",
+  "rentalCars": "A rental car or hired driver helps for exploring Grande Comore beyond Moroni, including Itsandra's beaches and the island's volcanic interior.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Medina for walking access to the Grand Mosque and old town, or Itsandra for a quieter beach-resort stay."
+    },
+    {
+      "title": "Flight schedules",
+      "text": "Confirm flight schedules well in advance, since international connections to Moroni are limited and subject to change."
+    },
+    {
+      "title": "Market visits",
+      "text": "Visit Volo Volo Market in the morning for the best selection of vanilla, spices and chiromani fabrics before the heat sets in."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry Comorian francs for markets and small vendors, since card payments are rare outside a few larger hotels."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Volo Volo Market",
+      "text": "Volo Volo Market gives Moroni a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Old Friday Mosque",
+      "text": "Old Friday Mosque anchors the historic and ceremonial side of Moroni, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Iconi Mosque",
+      "text": "Iconi Mosque anchors the historic and ceremonial side of Moroni, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Mount Karthala",
+      "text": "Mount Karthala adds outdoor time to a Moroni stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Moroni Medina",
+      "text": "Moroni Medina is a clear heritage marker in Moroni, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Itsandra Beach",
+      "text": "Itsandra Beach adds outdoor time to a Moroni stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mount Karthala",
+      "label": "Nature",
+      "text": "Mount Karthala is one of the world's largest active volcanoes, dominating Grande Comore and offering a demanding but rewarding hike from the interior."
+    },
+    {
+      "name": "Itsandra ruins",
+      "label": "Heritage",
+      "text": "The ruins near Itsandra recall the historic sultanate era, an easy stop to combine with an afternoon at the beach."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Quito in 2026: calendars, nearby pages and linked event views for planning around South America / Ecuador."
   },
   "region": "Capital city in Ecuador",
-  "population": "tba",
+  "population": "~2.0M",
   "coordinates": {
     "lat": -0.22985,
     "lon": -78.52495
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Quito travel, stays & events guide",
-  "heroText": "Quito is a capital city in Ecuador, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Quito stretches along an Andean valley under the Pichincha volcano, with one of South America's finest colonial centres and quick access to mountain viewpoints. Start in Quito Old Town, climb or taxi to El Panecillo, then ride TeleferiQo if the weather is clear. Mariscal Sucre airport is far outside the city, so transfer timing should shape your first and last night.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Quito, Ecuador",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Quito",
-      "text": "Quito is a capital city in Ecuador, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centro Historico",
+      "text": "Centro Historico is best for churches, plazas and museums, though evenings are quieter and taxis are sensible after dark.",
+      "bestFor": "history, churches, short stays"
+    },
+    {
+      "name": "La Mariscal",
+      "text": "La Mariscal has hotels, hostels, restaurants and nightlife, useful for social stays and tour pickups.",
+      "bestFor": "nightlife, hostels, tours"
+    },
+    {
+      "name": "La Floresta",
+      "text": "La Floresta is a creative dining and cafe district, calmer than La Mariscal and good for longer stays.",
+      "bestFor": "cafes, dining, longer stays"
+    },
+    {
+      "name": "La Carolina",
+      "text": "La Carolina works for business hotels, shopping, park access and a more modern north-city base.",
+      "bestFor": "business, shopping, parks"
+    },
+    {
+      "name": "Guapulo",
+      "text": "Guapulo is scenic and hillside, best for boutique stays with taxis rather than heavy walking at altitude.",
+      "bestFor": "views, boutique stays, quiet nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Mariscal Sucre International Airport (UIO)",
+      "search": "Mariscal Sucre International Airport, Quito, Ecuador",
+      "text": "Mariscal Sucre airport is east of Quito near Tababela; transfers are long enough to affect early flights and late arrivals."
+    }
+  ],
+  "airportTransfer": {
+    "value": "45-75 min by taxi, shuttle or private transfer to Quito's hotel districts",
+    "note": "from Mariscal Sucre International Airport",
+    "distance": "about 40 km east of central Quito"
+  },
+  "bookingDestination": "Quito, Ecuador",
+  "stayOverview": "Centro Historico is the best base for Quito's churches and plazas, while La Mariscal is easier for nightlife and tours. La Floresta suits cafes, La Carolina works for business, and Guapulo is scenic but less walkable.",
+  "hotelIntro": "Quito hotel choice should account for altitude and transfers: Centro Historico is atmospheric, La Mariscal is practical, La Floresta is calmer and food-focused, La Carolina is modern, and Guapulo is scenic with taxi dependence.",
+  "rentalCars": "Do not rent for central Quito; consider a car or driver only for onward highland, Cotopaxi or cloud-forest routes.",
+  "travelTips": [
+    {
+      "title": "Altitude",
+      "text": "Quito is very high, so avoid overpacking the first day and take TeleferiQo only if you feel well."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Book early flights carefully because Mariscal Sucre is far from the city and morning transfers start before dawn."
+    },
+    {
+      "title": "Best base",
+      "text": "Choose Centro Historico for culture, La Floresta for cafes, or La Carolina for a modern and practical stay."
+    },
+    {
+      "title": "Weather",
+      "text": "Viewpoints are best in clear morning windows; clouds can close in quickly around Pichincha and the old town."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Quito Old Town",
+      "text": "Quito Old Town is a named Quito landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Basilica del Voto Nacional",
+      "text": "Basilica del Voto Nacional anchors the historic and ceremonial side of Quito, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "TeleferiQo",
+      "text": "TeleferiQo is a named Quito landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Mitad del Mundo",
+      "text": "Mitad del Mundo is a named Quito landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "La Compania de Jesus",
+      "text": "La Compania de Jesus is famous for its lavish gold interior, one of the old town's essential church stops."
+    },
+    {
+      "title": "El Panecillo",
+      "text": "El Panecillo is the hilltop statue viewpoint above the old town, best reached by taxi rather than walking."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Otavalo",
+      "label": "Market",
+      "text": "Otavalo is known for its Indigenous market, textiles and lakeside highland scenery north of Quito."
+    },
+    {
+      "name": "Cotopaxi National Park",
+      "label": "Nature",
+      "text": "Cotopaxi National Park offers volcano views and high-altitude landscapes, best with weather flexibility and warm layers."
+    },
+    {
+      "name": "Mindo",
+      "label": "Cloud forest",
+      "text": "Mindo is a cloud-forest escape for birds, waterfalls and chocolate tours, usually a full-day or overnight trip."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +219,6 @@
   "continentName": "South America",
   "countrySlug": "ecuador",
   "countryName": "Ecuador",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "Metro de Quito"
 }

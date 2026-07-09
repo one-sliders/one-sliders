@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Manila travel, stays & events guide",
-  "heroText": "Manila is a capital city in Philippines, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Manila is a Philippines base best planned around named sights rather than a generic stopover. Start with Intramuros, add Rizal Park, and use Fort Santiago to understand the city's history, street life and visitor rhythm. Manila Ninoy Aquino handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Manila, Philippines",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Manila",
-      "text": "Manila is a capital city in Philippines, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Manila, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Manila, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Manila reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Manila sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Manila Ninoy Aquino (MNL)",
+      "search": "Manila Ninoy Aquino (MNL), Manila, Philippines",
+      "text": "Manila Ninoy Aquino (MNL) is the main air gateway for Manila; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Manila Ninoy Aquino (MNL) and central Manila before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Manila, Philippines",
+  "stayOverview": "Start with City centre for the easiest first Manila stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Manila hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Manila unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Manila Ninoy Aquino, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Intramuros and Rizal Park so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Manila, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Intramuros",
+      "text": "Intramuros is a named stop in Manila worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Rizal Park",
+      "text": "Rizal Park adds outdoor time to a Manila stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Fort Santiago",
+      "text": "Fort Santiago is a clear heritage marker in Manila, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "San Agustin Church",
+      "text": "San Agustin Church anchors the historic and ceremonial side of Manila, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Museum of Fine Arts",
+      "text": "National Museum of Fine Arts is a key Manila culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Binondo",
+      "text": "Binondo is a named stop in Manila worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Intramuros",
+      "label": "Heritage",
+      "text": "Intramuros is a heritage-focused side trip from Manila; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Rizal Park",
+      "label": "Nature",
+      "text": "Rizal Park works as a nature-focused side trip from Manila, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Fort Santiago",
+      "label": "Heritage",
+      "text": "Fort Santiago is a heritage-focused side trip from Manila; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

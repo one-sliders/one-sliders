@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Saint Johns in 2026: calendars, nearby pages and linked event views for planning around North America / Antigua And Barbuda."
   },
   "region": "Capital city in Antigua and Barbuda",
-  "population": "tba",
+  "population": "~22K",
   "coordinates": {
     "lat": 17.1274,
     "lon": -61.8468
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Saint Johns travel, stays & events guide",
-  "heroText": "Saint Johns is a capital city in Antigua and Barbuda, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "St. John's is the compact capital of Antigua and Barbuda, built around a working harbour where cruise ships dock beside 18th-century warehouses. First-time visitors should climb the twin towers of the Cathedral of St John the Divine, browse restored buildings at Redcliffe Quay, and shop the waterfront stalls of Heritage Quay. V.C. Bird International Airport sits just northeast of the centre, making St. John's an easy gateway to Antigua's beaches and nearby English Harbour.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Saint Johns, Antigua and Barbuda",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Saint Johns",
-      "text": "Saint Johns is a capital city in Antigua and Barbuda, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Redcliffe Quay",
+      "text": "Redcliffe Quay is a restored 18th-century warehouse district turned dining and shopping strip, steps from the cruise port and cathedral.",
+      "bestFor": "dining, shopping, walkability"
+    },
+    {
+      "name": "Heritage Quay",
+      "text": "Heritage Quay is St. John's main cruise terminal and duty-free shopping area, a busy base for short stays close to the harbour.",
+      "bestFor": "cruise visits, shopping"
+    },
+    {
+      "name": "Dickenson Bay",
+      "text": "Dickenson Bay is a beach hotel strip a short drive north of the centre, popular for calm water and sunset restaurants away from the harbour.",
+      "bestFor": "beach stays, resorts"
+    },
+    {
+      "name": "Jolly Harbour",
+      "text": "Jolly Harbour is a marina community south of St. John's with villas, a golf course and a beach, suited to longer self-catering stays.",
+      "bestFor": "marina stays, families, longer visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "V.C. Bird International Airport (ANU)",
+      "search": "V.C. Bird International Airport, St. John's, Antigua and Barbuda",
+      "text": "V.C. Bird International Airport sits about 8km northeast of St. John's; taxis meet every flight and the drive into town takes roughly 15-20 minutes."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Taxi, ~15-20 min",
+    "note": "verify airport transfer before publishing",
+    "distance": "~8km"
+  },
+  "bookingDestination": "Saint Johns, Antigua and Barbuda",
+  "stayOverview": "Base in Redcliffe Quay or Heritage Quay for an easy first St. John's stay near the harbour, restaurants and cruise terminal, then compare Dickenson Bay for a beach hotel strip or Jolly Harbour for a marina setting with villas and golf a short drive from the centre.",
+  "hotelIntro": "St. John's hotel choice comes down to setting: Redcliffe Quay and Heritage Quay suit short cruise stopovers and harbour-side dining, while Dickenson Bay offers a classic beach strip and Jolly Harbour suits families or longer stays wanting a marina and golf course nearby.",
+  "rentalCars": "A rental car helps for reaching beaches like Dickenson Bay or day trips to English Harbour, though taxis cover the compact St. John's centre easily.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Redcliffe Quay or Heritage Quay for an easy first visit within walking distance of the harbour, cathedral and cruise terminal."
+    },
+    {
+      "title": "Getting around",
+      "text": "Taxis and shared buses run between St. John's and the beaches; agree taxi fares before departure since meters are not standard."
+    },
+    {
+      "title": "Cruise days",
+      "text": "Heritage Quay gets crowded when several cruise ships dock, so visit the cathedral and market early before the day-trip crowds arrive."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside half a day for Nelson's Dockyard and English Harbour on the south coast, one of the Caribbean's best-preserved Georgian naval sites."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cathedral of St John the Divine",
+      "text": "The Cathedral of St John the Divine's twin baroque towers dominate the skyline, rebuilt in stone after earthquakes destroyed earlier wooden churches."
+    },
+    {
+      "title": "Redcliffe Quay",
+      "text": "Redcliffe Quay's restored 18th-century warehouses now hold boutiques, cafes and galleries, a pleasant walk from the cruise terminal at Heritage Quay."
+    },
+    {
+      "title": "Heritage Quay",
+      "text": "Heritage Quay is the main cruise dock and duty-free shopping strip, busiest when ships are in port and quieter for an evening stroll."
+    },
+    {
+      "title": "Museum of Antigua and Barbuda",
+      "text": "The Museum of Antigua and Barbuda, housed in the old courthouse, traces the island's Arawak, colonial and independence history in one compact gallery."
+    },
+    {
+      "title": "Fort James",
+      "text": "Fort James guards the harbour entrance with 18th-century cannons and views over the water, a short taxi ride from the city centre."
+    },
+    {
+      "title": "Dickenson Bay",
+      "text": "Dickenson Bay is the closest resort beach to St. John's, a calm stretch of sand lined with waterfront restaurants and watersports operators."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Nelson's Dockyard",
+      "label": "Heritage",
+      "text": "Nelson's Dockyard is a restored Georgian naval dockyard on the south coast, a UNESCO World Heritage Site worth a half-day trip from St. John's."
+    },
+    {
+      "name": "Betty's Hope",
+      "label": "Heritage",
+      "text": "Betty's Hope is a former sugar plantation with restored windmills, giving context on Antigua's colonial and enslaved history."
+    },
+    {
+      "name": "Devil's Bridge",
+      "label": "Nature",
+      "text": "Devil's Bridge is a natural limestone arch on the rugged east coast, carved by Atlantic waves crashing over the rock."
+    },
+    {
+      "name": "Stingray City",
+      "label": "Island",
+      "text": "Stingray City is a shallow sandbar reef where boat trips let visitors wade among friendly southern stingrays."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

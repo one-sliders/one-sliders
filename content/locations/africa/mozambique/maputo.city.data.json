@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Maputo in 2026: calendars, nearby pages and linked event views for planning around Africa / Mozambique."
   },
   "region": "Capital city in Mozambique",
-  "population": "tba",
+  "population": "~1.1M",
   "coordinates": {
     "lat": -25.96553,
     "lon": 32.58322
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Maputo travel, stays & events guide",
-  "heroText": "Maputo is a capital city in Mozambique, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Maputo is Mozambique's Indian Ocean capital, known for jacaranda-lined avenues, Portuguese colonial architecture and a lively live-music scene. First-time visitors should admire the ironwork of Maputo Central Railway Station, browse crafts at FEIMA, and wander the stalls of the Municipal Market. Maputo International Airport sits close to the centre, and the nearby beaches of Costa do Sol offer an easy afternoon escape.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Maputo, Mozambique",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Maputo",
-      "text": "Maputo is a capital city in Mozambique, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Baixa",
+      "text": "Baixa is downtown Maputo, home to the railway station, Municipal Market and many of the city's historic colonial buildings.",
+      "bestFor": "history, walking, central access"
+    },
+    {
+      "name": "Polana",
+      "text": "Polana is Maputo's upscale district of leafy streets, the city's best restaurants and its long-standing grand hotel.",
+      "bestFor": "hotels, dining, safety"
+    },
+    {
+      "name": "Sommerschield",
+      "text": "Sommerschield is a quiet, embassy-lined residential district favoured by diplomats and longer-stay business visitors.",
+      "bestFor": "embassies, quiet stays"
+    },
+    {
+      "name": "Costa do Sol",
+      "text": "Costa do Sol is Maputo's beachfront district, known for seafood restaurants and a relaxed waterfront promenade.",
+      "bestFor": "seafood, beach walks"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Maputo International Airport (MPM)",
+      "search": "Maputo International Airport, Maputo, Mozambique",
+      "text": "Maputo International Airport sits about 5 kilometres from downtown, making it one of the shortest airport transfers of any African capital."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Maputo International Airport (MPM) and central Maputo before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Maputo, Mozambique",
+  "stayOverview": "Polana offers the easiest first stay, close to good restaurants and the city's landmark hotel, while Baixa suits visitors wanting to walk to the railway station and Municipal Market. Sommerschield and Costa do Sol provide quieter or beach-facing alternatives nearby.",
+  "hotelIntro": "Polana holds Maputo's best-known hotels and restaurants, Baixa offers more budget-friendly options near the historic centre, and Sommerschield suits business and diplomatic visitors wanting a quieter residential setting.",
+  "rentalCars": "A rental car helps for day trips to nearby beaches or Maputo Special Reserve, though taxis and ride-hailing apps cover the compact city centre well.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Polana for an easy first stay near restaurants and the city's landmark hotel, within reach of Baixa's historic sights."
+    },
+    {
+      "title": "See the railway station",
+      "text": "Visit Maputo Central Railway Station, a grand domed building often linked to Gustave Eiffel's workshop, even if just to admire the exterior and cafe."
+    },
+    {
+      "title": "Catch live music",
+      "text": "Look for live marrabenta or jazz performances in Polana or Baixa, since Maputo's music scene is one of the liveliest on the coast."
+    },
+    {
+      "title": "Sunset at Costa do Sol",
+      "text": "Head to Costa do Sol in the late afternoon for grilled seafood and a relaxed beachfront sunset."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Maputo Railway Station",
+      "text": "Maputo Railway Station is a named stop in Maputo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Maputo Central Market",
+      "text": "Maputo Central Market gives Maputo a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Fortress of Maputo",
+      "text": "Fortress of Maputo is a clear heritage marker in Maputo, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "FEIMA Arts Market",
+      "text": "FEIMA Arts Market gives Maputo a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Maputo Cathedral",
+      "text": "Maputo Cathedral anchors the historic and ceremonial side of Maputo, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Tunduru Botanical Gardens",
+      "text": "Tunduru Botanical Gardens adds outdoor time to a Maputo stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Maputo Special Reserve",
+      "label": "Nature",
+      "text": "Maputo Special Reserve, about two hours south, protects coastal wetlands, elephants and pristine dune beaches."
+    },
+    {
+      "name": "Inhaca Island",
+      "label": "Beach",
+      "text": "Inhaca Island, a short ferry or boat ride from Maputo, offers coral reefs, beaches and a relaxed day-trip escape."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

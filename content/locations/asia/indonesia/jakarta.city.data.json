@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Jakarta in 2026: calendars, nearby pages and linked event views for planning around Asia / Indonesia."
   },
   "region": "Capital city in Indonesia",
-  "population": "tba",
+  "population": "~11.1M",
   "coordinates": {
     "lat": -6.21462,
     "lon": 106.84513
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Jakarta travel, stays & events guide",
-  "heroText": "Jakarta is a capital city in Indonesia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Jakarta is a Indonesia base best planned around named sights rather than a generic stopover. Start with National Monument, add Old Batavia, and use Istiqlal Mosque to understand the city's history, street life and visitor rhythm. Jakarta Soekarno-Hatta handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Jakarta, Indonesia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Jakarta",
-      "text": "Jakarta is a capital city in Indonesia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Jakarta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Jakarta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Jakarta reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Jakarta sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jakarta Soekarno-Hatta (CGK)",
+      "search": "Jakarta Soekarno-Hatta (CGK), Jakarta, Indonesia",
+      "text": "Jakarta Soekarno-Hatta (CGK) is the main air gateway for Jakarta; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Jakarta Soekarno-Hatta (CGK) and central Jakarta before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Jakarta, Indonesia",
+  "stayOverview": "Start with City centre for the easiest first Jakarta stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Jakarta hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Jakarta unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Jakarta Soekarno-Hatta, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around National Monument and Old Batavia so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Jakarta, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Monument",
+      "text": "National Monument is a clear heritage marker in Jakarta, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Old Batavia",
+      "text": "Old Batavia is a named stop in Jakarta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Istiqlal Mosque",
+      "text": "Istiqlal Mosque anchors the historic and ceremonial side of Jakarta, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Jakarta Cathedral",
+      "text": "Jakarta Cathedral anchors the historic and ceremonial side of Jakarta, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Ancol Dreamland",
+      "text": "Ancol Dreamland is a named stop in Jakarta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "National Museum of Indonesia",
+      "text": "National Museum of Indonesia is a key Jakarta culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "National Monument",
+      "label": "Heritage",
+      "text": "National Monument is a heritage-focused side trip from Jakarta; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Old Batavia",
+      "label": "Heritage",
+      "text": "Old Batavia is a heritage-focused side trip from Jakarta; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ancol Dreamland",
+      "label": "Heritage",
+      "text": "Ancol Dreamland is a heritage-focused side trip from Jakarta; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

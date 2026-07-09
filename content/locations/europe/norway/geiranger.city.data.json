@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Geiranger travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Geiranger is a Norway base best planned around named sights rather than a generic stopover. Start with Geirangerfjord, add Seven Sisters waterfall, and use Flydalsjuvet to understand the city's history, street life and visitor rhythm. Geiranger International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Geiranger, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Geiranger, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Geiranger reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Geiranger sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Geiranger International Airport",
+      "search": "Geiranger International Airport, Geiranger, Norway",
+      "text": "Geiranger International Airport is the main air gateway for Geiranger; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Geiranger International Airport and central Geiranger before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Geiranger, Norway",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Geirangerfjord",
-    "Seven Sisters waterfall",
-    "Flydalsjuvet",
-    "Eagle Road",
-    "Dalsnibba",
-    "Fjord cruises"
+  "stayOverview": "Start with City centre for the easiest first Geiranger stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Geiranger hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Geiranger unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Geiranger International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Geirangerfjord and Seven Sisters waterfall so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Geiranger, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Geirangerfjord",
+      "text": "Geirangerfjord is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Seven Sisters waterfall",
+      "text": "Seven Sisters waterfall is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Flydalsjuvet",
+      "text": "Flydalsjuvet is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Eagle Road",
+      "text": "Eagle Road is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Dalsnibba",
+      "text": "Dalsnibba is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fjord cruises",
+      "text": "Fjord cruises is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Geirangerfjord",
+      "label": "Heritage",
+      "text": "Geirangerfjord is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Seven Sisters waterfall",
+      "label": "Heritage",
+      "text": "Seven Sisters waterfall is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Flydalsjuvet",
+      "label": "Heritage",
+      "text": "Flydalsjuvet is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

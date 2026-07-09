@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Sanaa travel, stays & events guide",
-  "heroText": "Sanaa is a capital city in Yemen, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sanaa is a Yemen base best planned around named sights rather than a generic stopover. Start with Old City of Sanaa, add Bab al-Yemen, and use Great Mosque of Sanaa to understand the city's history, street life and visitor rhythm. Sanaa International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sanaa, Yemen",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sanaa",
-      "text": "Sanaa is a capital city in Yemen, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Sanaa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Sanaa, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Sanaa reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Sanaa sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sanaa International Airport (SAH)",
+      "search": "Sanaa International Airport (SAH), Sanaa, Yemen",
+      "text": "Sanaa International Airport (SAH) is the main air gateway for Sanaa; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Sanaa International Airport (SAH) and central Sanaa before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Sanaa, Yemen",
+  "stayOverview": "Start with City centre for the easiest first Sanaa stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Sanaa hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Sanaa unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Sanaa International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Old City of Sanaa and Bab al-Yemen so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Sanaa, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Old City of Sanaa",
+      "text": "Old City of Sanaa is a clear heritage marker in Sanaa, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Bab al-Yemen",
+      "text": "Bab al-Yemen is a named stop in Sanaa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Great Mosque of Sanaa",
+      "text": "Great Mosque of Sanaa anchors the historic and ceremonial side of Sanaa, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Al Saleh Mosque",
+      "text": "Al Saleh Mosque anchors the historic and ceremonial side of Sanaa, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Souq al-Milh",
+      "text": "Souq al-Milh gives Sanaa a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Dar al-Hajar",
+      "text": "Dar al-Hajar is a named stop in Sanaa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Old City of Sanaa",
+      "label": "Heritage",
+      "text": "Old City of Sanaa is a heritage-focused side trip from Sanaa; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Bab al-Yemen",
+      "label": "Heritage",
+      "text": "Bab al-Yemen is a heritage-focused side trip from Sanaa; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Souq al-Milh",
+      "label": "Heritage",
+      "text": "Souq al-Milh is a heritage-focused side trip from Sanaa; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

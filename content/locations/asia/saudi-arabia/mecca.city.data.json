@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Mecca travel, stays & events guide",
-  "heroText": "Mecca is a key city in Saudi Arabia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Mecca is a Saudi Arabia base best planned around named sights rather than a generic stopover. Start with Masjid al-Haram, add Kaaba, and use Abraj Al Bait to understand the city's history, street life and visitor rhythm. Mecca International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,34 +41,106 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Mecca, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Mecca, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Mecca reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Mecca sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Mecca International Airport",
+      "search": "Mecca International Airport, Mecca, Saudi Arabia",
+      "text": "Mecca International Airport is the main air gateway for Mecca; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Mecca International Airport and central Mecca before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Mecca, Saudi Arabia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
+  "stayOverview": "Start with City centre for the easiest first Mecca stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Mecca hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Mecca unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Mecca International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Masjid al-Haram and Kaaba so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Mecca, checking weather, transport and opening hours before committing."
+    }
+  ],
   "highlights": [
     {
-      "name": "Mecca",
-      "text": "Mecca is a key city in Saudi Arabia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
-    }
-  ],
-  "nearbyIdeas": [],
-  "events": [
+      "title": "Masjid al-Haram",
+      "text": "Masjid al-Haram is a named stop in Mecca worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
     {
-      "modifier": "music",
-      "href": "../../../events/2026/05/hajj-2026.html",
-      "img": "/content/locations/asia/img/asia-mini.png",
-      "title": "Hajj 2026",
-      "meta": "May-Jun 2026 · Mecca"
+      "title": "Kaaba",
+      "text": "Kaaba is a named stop in Mecca worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Abraj Al Bait",
+      "text": "Abraj Al Bait is a named stop in Mecca worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Jabal al-Nour",
+      "text": "Jabal al-Nour is a named stop in Mecca worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Makkah Museum",
+      "text": "Makkah Museum is a key Mecca culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Jabal Thawr",
+      "text": "Jabal Thawr is a named stop in Mecca worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
+  "nearbyIdeas": [
+    {
+      "name": "Masjid al-Haram",
+      "label": "Heritage",
+      "text": "Masjid al-Haram is a heritage-focused side trip from Mecca; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Kaaba",
+      "label": "Heritage",
+      "text": "Kaaba is a heritage-focused side trip from Mecca; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Abraj Al Bait",
+      "label": "Heritage",
+      "text": "Abraj Al Bait is a heritage-focused side trip from Mecca; check the route and opening hours before setting aside the day."
+    }
+  ],
+  "events": [],
   "topicLinks": [],
   "sources": [
     {

@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Honolulu, Hawaii trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Oahu",
-  "population": "tba",
+  "population": "~351K",
   "coordinates": {
     "lat": 21.30694,
     "lon": -157.85834
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Honolulu, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Honolulu",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Honolulu, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Honolulu, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Honolulu reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Honolulu sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Honolulu International Airport",
+      "search": "Honolulu International Airport, Honolulu, USA",
+      "text": "Honolulu International Airport is the main air gateway for Honolulu; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Honolulu International Airport and central Honolulu before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Honolulu, USA",
+  "stayOverview": "Start with City centre for the easiest first Honolulu stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Honolulu hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Honolulu unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Honolulu International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Honolulu and Honolulu so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Honolulu, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Waikiki Beach",
+      "text": "Waikiki Beach adds outdoor time to a Honolulu stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Diamond Head",
+      "text": "Diamond Head is a named stop in Honolulu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Iolani Palace",
+      "text": "Iolani Palace anchors the historic and ceremonial side of Honolulu, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Pearl Harbor National Memorial",
+      "text": "Pearl Harbor National Memorial adds the water-facing side of Honolulu, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Ala Moana Center",
+      "text": "Ala Moana Center gives Honolulu a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Bishop Museum",
+      "text": "Bishop Museum is a key Honolulu culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Waikiki Beach",
+      "label": "Nature",
+      "text": "Waikiki Beach works as a nature-focused side trip from Honolulu, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Diamond Head",
+      "label": "Heritage",
+      "text": "Diamond Head is a heritage-focused side trip from Honolulu; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Pearl Harbor National Memorial",
+      "label": "Heritage",
+      "text": "Pearl Harbor National Memorial is a heritage-focused side trip from Honolulu; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

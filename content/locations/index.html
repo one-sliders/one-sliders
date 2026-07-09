@@ -3,8 +3,8 @@
   <head>
   <!-- OneSlider core v4 -->
   <link rel="stylesheet" href="../../assets/css/oneslider-core.css">
-  <script defer src="../../assets/js/oneslider-core.js"></script>
-  <link rel="stylesheet" href="../../assets/css/locations.css?v=country-onepage-europe-20260526">
+  <script defer src="../../assets/js/oneslider-core.js?v=no-palette-overlay-20260708"></script>
+  <link rel="stylesheet" href="../../assets/css/locations.css?v=locations-root-iphone-20260709">
   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +55,10 @@
     <main class="location-shell" aria-labelledby="world-title">
       <header class="location-hero">
         <div class="location-hero__image">
+          <picture class="location-hero__main" aria-hidden="true">
+            <source srcset="/content/locations/img/world-hero-768.webp 768w, /content/locations/img/world-hero-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 38vw" type="image/webp">
+            <img src="/content/locations/img/world-hero.png" alt="" width="1200" height="630" loading="eager" decoding="async">
+          </picture>
           <div class="location-hero__copy">
           <h1 id="world-title">World</h1>
           <p class="intro">A living planet shaped by oceans, continents, climates, cultures and cities. Earth connects deserts and rainforests, ice sheets and coral seas, mountain ranges and river deltas into one shared system.</p>
@@ -62,37 +66,68 @@
         </div>
       </header>
 
-      <section class="location-grid" aria-label="Continents">
-        <a class="location-card" href="africa/index.html">
-          <img class="location-thumb" src="africa/img/africa-mini.jpg" alt="Africa thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>Africa</strong><span>54 countries, savannas, deserts, rainforests, coasts and fast-growing city regions.</span></div>
-        </a>
-        <a class="location-card" href="antarctica/index.html">
-          <img class="location-thumb" src="antarctica/img/antarctica-mini.jpg" alt="Antarctica thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>Antarctica</strong><span>Research stations, polar winds, ice sheets and the largest desert on the planet.</span></div>
-        </a>
-        <a class="location-card" href="asia/index.html">
-          <img class="location-thumb" src="asia/img/asia-mini.jpg" alt="Asia thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>Asia</strong><span>44 countries, megacities, monsoon plains, high mountains and island chains.</span></div>
-        </a>
-        <a class="location-card" href="europe/index.html">
-          <img class="location-thumb" src="europe/img/europe-mini.jpg" alt="Europe thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>Europe</strong><span>50 countries, historic capitals, dense rail links, alpine regions and northern coasts.</span></div>
-        </a>
-        <a class="location-card" href="north-america/index.html">
-          <img class="location-thumb" src="north-america/img/north-america-mini.jpg" alt="North America thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>North America</strong><span>23 countries, large landscapes, global cities, island states and freshwater regions.</span></div>
-        </a>
-        <a class="location-card" href="oceania/index.html">
-          <img class="location-thumb" src="oceania/img/oceania-mini.jpg" alt="Oceania thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>Oceania</strong><span>14 countries, Pacific islands, ocean routes, coral reefs, Australia and New Zealand.</span></div>
-        </a>
-        <a class="location-card" href="south-america/index.html">
-          <img class="location-thumb"  srcset="south-america/img/south-america-mini-200.webp 200w, south-america/img/south-america-mini-400.webp 400w" sizes="(max-width: 720px) 45vw, 220px" src="south-america/img/south-america-mini.jpg" alt="South America thumbnail" aria-hidden="true" loading="lazy" width="400" height="300">
-          <div class="location-card__text"><strong>South America</strong><span>12 countries, Andes routes, Amazon basin, Atlantic cities, deserts and fjords.</span></div>
-        </a>
+      <section class="continent-directory" aria-labelledby="continents-title">
+        <div class="continent-directory__head">
+          <h2 id="continents-title">Continents</h2>
+        </div>
+        <div class="continent-country-table-wrap continent-summary-table-wrap">
+          <table class="continent-country-table continent-summary-table" data-continent-country-table>
+            <thead>
+              <tr>
+                <th><button type="button" data-sort-key="continent">Continent</button></th>
+                <th><button type="button" data-sort-key="countries" data-sort-type="number">Countries</button></th>
+                <th><button type="button" data-sort-key="population" data-sort-type="number">Population</button></th>
+                <th><button type="button" data-sort-key="area" data-sort-type="number">Area</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-country-row data-country="africa">
+                <th scope="row"><a class="continent-summary-link" href="africa/index.html"><img src="africa/img/africa-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>Africa</span></a></th>
+                <td class="number" data-sort="54">54</td>
+                <td class="number" data-sort="1460874000">1.46B</td>
+                <td class="number" data-sort="29985416">30.0M km2</td>
+              </tr>
+              <tr data-country-row data-country="antarctica">
+                <th scope="row"><a class="continent-summary-link" href="antarctica/index.html"><img src="antarctica/img/antarctica-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>Antarctica</span></a></th>
+                <td class="number" data-sort="0">0</td>
+                <td class="number" data-sort="0">0</td>
+                <td class="number" data-sort="14200000">14.2M km2</td>
+              </tr>
+              <tr data-country-row data-country="asia">
+                <th scope="row"><a class="continent-summary-link" href="asia/index.html"><img src="asia/img/asia-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>Asia</span></a></th>
+                <td class="number" data-sort="44">44</td>
+                <td class="number" data-sort="4587655000">4.59B</td>
+                <td class="number" data-sort="31015246">31.0M km2</td>
+              </tr>
+              <tr data-country-row data-country="europe">
+                <th scope="row"><a class="continent-summary-link" href="europe/index.html"><img src="europe/img/europe-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>Europe</span></a></th>
+                <td class="number" data-sort="53">53</td>
+                <td class="number" data-sort="744000000">744M</td>
+                <td class="number" data-sort="10400000">10.4M km2</td>
+              </tr>
+              <tr data-country-row data-country="north america">
+                <th scope="row"><a class="continent-summary-link" href="north-america/index.html"><img src="north-america/img/north-america-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>North America</span></a></th>
+                <td class="number" data-sort="24">24</td>
+                <td class="number" data-sort="600910000">601M</td>
+                <td class="number" data-sort="22524448">22.5M km2</td>
+              </tr>
+              <tr data-country-row data-country="oceania">
+                <th scope="row"><a class="continent-summary-link" href="oceania/index.html"><img src="oceania/img/oceania-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>Oceania</span></a></th>
+                <td class="number" data-sort="14">14</td>
+                <td class="number" data-sort="47187000">47M</td>
+                <td class="number" data-sort="8488033">8.5M km2</td>
+              </tr>
+              <tr data-country-row data-country="south america">
+                <th scope="row"><a class="continent-summary-link" href="south-america/index.html"><img src="south-america/img/south-america-hero-768.webp" alt="" width="84" height="44" loading="lazy"><span>South America</span></a></th>
+                <td class="number" data-sort="12">12</td>
+                <td class="number" data-sort="436790000">437M</td>
+                <td class="number" data-sort="17739576">17.7M km2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
-    <section class="content-note" aria-label="World summary"><h2>World</h2><p>World is the browsing page for events and places. It groups related entries as event cards, location links, calendars and comparison blocks. The focus is visual orientation: event cards, calendars, location links, rankings and comparison blocks.</p></section></main>
+    </main>
     <footer class="site-footer">
       <p>&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a></p>
     </footer>

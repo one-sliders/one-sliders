@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Sao Paulo in 2026: calendars, nearby pages and linked event views for planning around South America / Brazil."
   },
   "region": "Key city in Brazil",
-  "population": "tba",
+  "population": "~11.9M",
   "coordinates": {
     "lat": -23.5475,
     "lon": -46.63611
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Sao Paulo travel, stays & events guide",
-  "heroText": "Sao Paulo is a key city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sao Paulo is Brazil's giant cultural and business capital, a city of food, museums, immigrant districts and nonstop events rather than postcard viewpoints. Start on Paulista Avenue, spend time in Ibirapuera Park, and visit the Sao Paulo Museum of Art before eating through Liberdade or Pinheiros. Guarulhos is the main international airport, while Congonhas is useful for domestic flights.",
   "kpis": [
     {
       "label": "Population",
@@ -39,37 +39,127 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sao Paulo, Brazil",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sao Paulo",
-      "text": "Sao Paulo is a key city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Jardins",
+      "text": "Jardins is the safest all-round first base, close to Paulista Avenue, restaurants, shops and easy taxi or metro access.",
+      "bestFor": "first visits, dining, safety"
+    },
+    {
+      "name": "Bela Vista",
+      "text": "Bela Vista works for Paulista Avenue, theatres, Italian restaurants and metro access at generally better prices than Jardins.",
+      "bestFor": "Paulista, theatres, value"
+    },
+    {
+      "name": "Pinheiros",
+      "text": "Pinheiros is strong for restaurants, bars, galleries and nightlife, with good metro links and a more local feel.",
+      "bestFor": "nightlife, restaurants, local stays"
+    },
+    {
+      "name": "Vila Madalena",
+      "text": "Vila Madalena is a hilly creative district known for bars, street art and guesthouses, best for social stays.",
+      "bestFor": "bars, street art, weekends"
+    },
+    {
+      "name": "Itaim Bibi",
+      "text": "Itaim Bibi suits business travelers, upscale restaurants and quick car access to Faria Lima and Vila Olimpia offices.",
+      "bestFor": "business, dining, upscale stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sao Paulo Guarulhos International Airport (GRU)",
+      "search": "Sao Paulo Guarulhos International Airport, Sao Paulo, Brazil",
+      "text": "Guarulhos is Sao Paulo's main international airport; transfers to central districts can vary widely with traffic."
+    },
+    {
+      "name": "Sao Paulo Congonhas Airport (CGH)",
+      "search": "Sao Paulo Congonhas Airport, Sao Paulo, Brazil",
+      "text": "Congonhas is close to central business districts and is useful for many domestic flights, but road traffic still matters."
+    }
+  ],
+  "airportTransfer": {
+    "value": "45-90 min from Guarulhos to central districts; Congonhas is closer for domestic flights",
+    "note": "from GRU or CGH depending on route",
+    "distance": "about 25 km from Guarulhos to central Sao Paulo"
+  },
+  "bookingDestination": "Sao Paulo, Brazil",
+  "stayOverview": "Use Jardins for the safest first Sao Paulo base, Bela Vista for Paulista access and value, Pinheiros or Vila Madalena for restaurants and nightlife, and Itaim Bibi when business meetings around Faria Lima shape the trip.",
+  "hotelIntro": "Sao Paulo hotel choice is about scale: stay near the districts you will repeat. Jardins and Bela Vista suit first visits, Pinheiros and Vila Madalena suit evenings, and Itaim Bibi is practical for business-heavy schedules.",
+  "rentalCars": "Avoid renting a car for central Sao Paulo; metro, taxis and rideshare are easier than parking and traffic.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Jardins or Bela Vista for a first stay because Paulista Avenue, museums and metro links stay close."
+    },
+    {
+      "title": "Traffic planning",
+      "text": "Build generous buffers for airport transfers and cross-town meetings; distance on the map rarely predicts Sao Paulo travel time."
+    },
+    {
+      "title": "Food focus",
+      "text": "Reserve key restaurants ahead, especially in Jardins, Pinheiros and Itaim Bibi on weekends or event nights."
+    },
+    {
+      "title": "Safety basics",
+      "text": "Use normal big-city caution with phones and bags, especially downtown and around crowded transit or nightlife exits."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Paulista Avenue",
+      "text": "Paulista Avenue is a named Sao Paulo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Ibirapuera Park",
+      "text": "Ibirapuera Park adds outdoor time to a Sao Paulo stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Sao Paulo Museum of Art",
+      "text": "The Sao Paulo Museum of Art, or MASP, is an architectural landmark with one of Latin America's key art collections."
+    },
+    {
+      "title": "Pinacoteca",
+      "text": "Pinacoteca is a named Sao Paulo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Mercado Municipal",
+      "text": "Mercado Municipal is a named Sao Paulo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Liberdade",
+      "text": "Liberdade is a named Sao Paulo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Santos",
+      "label": "Coast",
+      "text": "Santos adds port history, beaches and coffee heritage, reachable from Sao Paulo by road through the Serra do Mar."
+    },
+    {
+      "name": "Embu das Artes",
+      "label": "Art",
+      "text": "Embu das Artes is a craft-and-gallery town southwest of the city, popular for slower weekend browsing."
+    },
+    {
+      "name": "Campos do Jordao",
+      "label": "Mountains",
+      "text": "Campos do Jordao is a cooler mountain resort, better for an overnight trip than a rushed day out."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/music/music-festivals/events/festa-junina.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/music/music-festivals/events/img/festa-junina-mini.png",
       "title": "Festa Junina",
       "meta": "Jun 2026 · Sao Paulo"
     },
     {
       "modifier": "music",
       "href": "../../../categories/sport/formula-1/events/sao-paulo-grand-prix.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/sport/formula-1/events/img/sao-paulo-grand-prix-mini.png",
       "title": "Sao Paulo Grand Prix",
       "meta": "Nov 2026 · Sao Paulo"
     }
@@ -154,5 +244,6 @@
   "continentName": "South America",
   "countrySlug": "brazil",
   "countryName": "Brazil",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "SPTrans"
 }

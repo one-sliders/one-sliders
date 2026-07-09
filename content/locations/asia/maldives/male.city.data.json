@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Male travel, stays & events guide",
-  "heroText": "Male is a capital city in Maldives, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Male is a Maldives base best planned around named sights rather than a generic stopover. Start with Grand Friday Mosque, add Male Fish Market, and use National Museum Maldives to understand the city's history, street life and visitor rhythm. Male Ibrahim Nasir handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Male, Maldives",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Male",
-      "text": "Male is a capital city in Maldives, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Male, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Male, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Male reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Male sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Male Ibrahim Nasir (MLE)",
+      "search": "Male Ibrahim Nasir (MLE), Male, Maldives",
+      "text": "Male Ibrahim Nasir (MLE) is the main air gateway for Male; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Male Ibrahim Nasir (MLE) and central Male before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Male, Maldives",
+  "stayOverview": "Start with City centre for the easiest first Male stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Male hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Male unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Male Ibrahim Nasir, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Grand Friday Mosque and Male Fish Market so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Male, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Grand Friday Mosque",
+      "text": "Grand Friday Mosque anchors the historic and ceremonial side of Male, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Male Fish Market",
+      "text": "Male Fish Market gives Male a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "National Museum Maldives",
+      "text": "National Museum Maldives is a key Male culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Sultan Park",
+      "text": "Sultan Park adds outdoor time to a Male stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Artificial Beach Male",
+      "text": "Artificial Beach Male adds outdoor time to a Male stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Hukuru Miskiy",
+      "text": "Hukuru Miskiy is a named stop in Male worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Sultan Park",
+      "label": "Nature",
+      "text": "Sultan Park works as a nature-focused side trip from Male, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Artificial Beach Male",
+      "label": "Nature",
+      "text": "Artificial Beach Male works as a nature-focused side trip from Male, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Hukuru Miskiy",
+      "label": "Heritage",
+      "text": "Hukuru Miskiy is a heritage-focused side trip from Male; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Freetown in 2026: calendars, nearby pages and linked event views for planning around Africa / Sierra Leone."
   },
   "region": "Capital city in Sierra Leone",
-  "population": "tba",
+  "population": "~1.05M",
   "coordinates": {
     "lat": 8.48714,
     "lon": -13.2356
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Freetown travel, stays & events guide",
-  "heroText": "Freetown is a capital city in Sierra Leone, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Freetown is Sierra Leone's hillside capital, spilling down toward a natural harbour lined with beaches and rainforest-covered peninsula hills. First-time visitors should stand beneath the historic Cotton Tree in the city centre, relax on Lumley Beach in Aberdeen, and browse crafts at Big Market. Lungi International Airport sits across the estuary, reached by water taxi or ferry, and Freetown's beaches make it one of West Africa's most scenic capitals.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Freetown, Sierra Leone",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Freetown",
-      "text": "Freetown is a capital city in Sierra Leone, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Central Freetown",
+      "text": "Central Freetown holds the historic Cotton Tree, Big Market and government buildings, the practical base for sightseeing and errands.",
+      "bestFor": "first visits, sightseeing, markets"
+    },
+    {
+      "name": "Aberdeen",
+      "text": "Aberdeen is Freetown's beach and nightlife district, built around Lumley Beach with hotels, restaurants and bars facing the Atlantic.",
+      "bestFor": "beaches, nightlife, restaurants"
+    },
+    {
+      "name": "Hill Station",
+      "text": "Hill Station is a leafy hillside suburb above the city, historically built for colonial officials and now home to quieter guesthouses.",
+      "bestFor": "quiet stays, views"
+    },
+    {
+      "name": "Murray Town",
+      "text": "Murray Town is a busy residential area between downtown and Aberdeen, convenient for travelers wanting a mid-point base.",
+      "bestFor": "longer stays, convenience"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Lungi International Airport (FNA)",
+      "search": "Lungi International Airport, Freetown, Sierra Leone",
+      "text": "Lungi International Airport sits across the estuary from Freetown, so allow time for the water taxi or ferry transfer into the city."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Lungi International Airport (FNA) and central Freetown before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Freetown, Sierra Leone",
+  "stayOverview": "Base in Central Freetown for an easy first stay near the Cotton Tree, markets and government offices, or choose Aberdeen for beach hotels along Lumley Beach. Hill Station suits quieter, view-focused stays, while Murray Town offers a convenient mid-point base.",
+  "hotelIntro": "Freetown hotel choice depends on priorities: Central Freetown suits sightseeing and errands close to downtown landmarks, Aberdeen suits beach and nightlife stays, and Hill Station or Murray Town suit travelers wanting a quieter or more central residential base.",
+  "rentalCars": "A rental car with driver helps for peninsula beach trips and reaching Tacugama Chimpanzee Sanctuary, though taxis cover downtown Freetown and Aberdeen well.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Aberdeen for beach access and nightlife, or Central Freetown for sightseeing near the Cotton Tree and markets."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Book a water taxi or helicopter transfer from Lungi International Airport in advance, since the estuary crossing takes over an hour by road."
+    },
+    {
+      "title": "Peninsula beaches",
+      "text": "Set aside a day to explore River No. 2 Beach and other Freetown Peninsula beaches, a scenic drive south of the city."
+    },
+    {
+      "title": "Cash and connectivity",
+      "text": "Keep the Freetown plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cotton Tree",
+      "text": "Cotton Tree is a named stop in Freetown worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sierra Leone National Museum",
+      "text": "Sierra Leone National Museum is a key Freetown culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Lumley Beach",
+      "text": "Lumley Beach adds outdoor time to a Freetown stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "King's Yard Gate",
+      "text": "King's Yard Gate is a clear heritage marker in Freetown, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Tacugama Chimpanzee Sanctuary",
+      "text": "Tacugama Chimpanzee Sanctuary is a named stop in Freetown worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Freetown Peninsula",
+      "text": "Freetown Peninsula is a named stop in Freetown worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tacugama Chimpanzee Sanctuary",
+      "label": "Wildlife",
+      "text": "Tacugama Chimpanzee Sanctuary rehabilitates orphaned chimpanzees in forest above the city, a worthwhile half-day trip from Freetown."
+    },
+    {
+      "name": "River No. 2 Beach",
+      "label": "Beach",
+      "text": "River No. 2 Beach is a postcard-perfect stretch of sand on the Freetown Peninsula, popular for swimming and beachside grilled fish."
+    },
+    {
+      "name": "Bunce Island",
+      "label": "Heritage",
+      "text": "Bunce Island's ruined slave-trading fort lies upriver from Freetown, reachable by boat for a sobering look at the region's history."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

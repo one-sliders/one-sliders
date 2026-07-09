@@ -23,27 +23,60 @@
     "dynamic": true
   },
   "areas": [
-    "Sentrum",
-    "Aker Brygge",
-    "Grunerlokka",
-    "Majorstuen",
-    "Bjorvika",
-    "Gardermoen airport area"
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Oslo, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Oslo, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Oslo reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Oslo sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
   ],
   "airports": [
     {
-      "name": "Oslo Airport (OSL)",
-      "search": "Oslo Airport (OSL), Oslo, Norway"
+      "name": "Oslo Gardermoen (OSL)",
+      "search": "Oslo Gardermoen (OSL), Oslo, Norway",
+      "text": "Oslo Gardermoen (OSL) is the main air gateway for Oslo; compare transfer time with your hotel base before locking the first night."
     }
   ],
   "bookingDestination": "Sentrum, Oslo, Norway",
   "highlights": [
-    "Oslo Opera House",
-    "Akershus Fortress",
-    "Vigeland Park",
-    "Munch Museum",
-    "Oslofjord",
-    "Holmenkollen"
+    {
+      "title": "Oslo Opera House",
+      "text": "Oslo Opera House is a named stop in Oslo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Akershus Fortress",
+      "text": "Akershus Fortress is a clear heritage marker in Oslo, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Vigeland Park",
+      "text": "Vigeland Park adds outdoor time to a Oslo stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Munch Museum",
+      "text": "Munch Museum is a key Oslo culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Oslofjord",
+      "text": "Oslofjord is a named stop in Oslo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Holmenkollen",
+      "text": "Holmenkollen is a named stop in Oslo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
   ],
   "sources": [
     {
@@ -143,6 +176,50 @@
       "label": "Founded",
       "value": "1000",
       "note": "historical origin"
+    }
+  ],
+  "heroText": "Oslo is a Norway base best planned around named sights rather than a generic stopover. Start with Oslo Opera House, add Akershus Fortress, and use Vigeland Park to understand the city's history, street life and visitor rhythm. Oslo Gardermoen handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "airportTransfer": {
+    "value": "Compare road transfer time between Oslo Gardermoen (OSL) and central Oslo before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "stayOverview": "Start with City centre for the easiest first Oslo stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Oslo hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Oslo unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Oslo Gardermoen, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Oslo Opera House and Akershus Fortress so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Oslo, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Oslo Opera House",
+      "label": "Heritage",
+      "text": "Oslo Opera House is a heritage-focused side trip from Oslo; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Akershus Fortress",
+      "label": "Heritage",
+      "text": "Akershus Fortress is a heritage-focused side trip from Oslo; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Vigeland Park",
+      "label": "Nature",
+      "text": "Vigeland Park works as a nature-focused side trip from Oslo, especially when the day has enough daylight and a clear return plan."
     }
   ]
 }

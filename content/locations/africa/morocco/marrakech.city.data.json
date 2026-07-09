@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Marrakech in 2026: calendars, nearby pages and linked event views for planning around Africa / Morocco."
   },
   "region": "Key city in Morocco",
-  "population": "tba",
+  "population": "~1M",
   "coordinates": {
     "lat": 31.63416,
     "lon": -7.99994
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Marrakech travel, stays & events guide",
-  "heroText": "Marrakech is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand.",
+  "heroText": "Marrakech is Morocco's red-walled imperial city, where the medina's Jemaa el-Fnaa square turns from a daytime market into a nightly spectacle of food stalls and performers. First-time visitors should look up at the Koutoubia Mosque's minaret, wander the tiled courtyards of Bahia Palace, and cool off among the cacti of Majorelle Garden. Marrakech Menara Airport sits minutes from the medina, making the city an easy first or last stop in Morocco.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Marrakech, Morocco",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Marrakech",
-      "text": "Marrakech is a cultural travel anchor in Morocco, with medina routes, festivals, food and strong visitor demand."
+      "name": "Medina",
+      "text": "The Medina is Marrakech's walled old city, centred on Jemaa el-Fnaa square and packed with souks, riads and historic monuments.",
+      "bestFor": "history, souks, riads"
+    },
+    {
+      "name": "Gueliz",
+      "text": "Gueliz is the modern new town west of the medina, with contemporary restaurants, boutiques and Majorelle Garden nearby.",
+      "bestFor": "dining, shopping, modern hotels"
+    },
+    {
+      "name": "Hivernage",
+      "text": "Hivernage is a leafy district of resort-style hotels and nightclubs between the medina and Gueliz, popular for longer stays.",
+      "bestFor": "resort hotels, nightlife"
+    },
+    {
+      "name": "Palmeraie",
+      "text": "Palmeraie is Marrakech's palm-grove suburb of villas and luxury resorts, a quieter, spread-out option outside the city walls.",
+      "bestFor": "luxury resorts, golf, quiet stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Marrakech Menara Airport (RAK)",
+      "search": "Marrakech Menara Airport, Marrakech, Morocco",
+      "text": "Marrakech Menara Airport is just a few kilometres from the medina, making it one of Morocco's most convenient city airports for a short taxi transfer."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Marrakech Menara Airport (RAK) and central Marrakech before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Marrakech, Morocco",
+  "stayOverview": "Stay inside the Medina for a classic riad experience close to Jemaa el-Fnaa and Bahia Palace, or choose Gueliz for modern restaurants near Majorelle Garden. Hivernage and Palmeraie suit travelers wanting resort-style hotels and pools outside the old city walls.",
+  "hotelIntro": "Riads inside the Medina offer the most atmospheric stays near the souks and Koutoubia Mosque, while Gueliz and Hivernage suit visitors wanting swimming pools, modern dining and easier vehicle access than the old city allows.",
+  "rentalCars": "A rental car is unnecessary inside the Medina's pedestrian lanes, but useful for day trips to the Atlas Mountains or Essaouira on the coast.",
+  "travelTips": [
+    {
+      "title": "Visit Jemaa el-Fnaa at dusk",
+      "text": "Arrive at Jemaa el-Fnaa around sunset to see the square fill with food stalls, musicians and storytellers as the day cools."
+    },
+    {
+      "title": "Book Majorelle Garden ahead",
+      "text": "Reserve a timed ticket for Majorelle Garden in advance, since the small garden regularly sells out during peak season."
+    },
+    {
+      "title": "Negotiate in the souks",
+      "text": "Expect to bargain for carpets, lamps and leather goods in the Medina's souks, where first-quoted prices are rarely final."
+    },
+    {
+      "title": "Plan an Atlas day trip",
+      "text": "Set aside a full day for the nearby Atlas Mountains or Ourika Valley if the itinerary allows time beyond the city."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Jemaa el-Fnaa",
+      "text": "Jemaa el-Fnaa is a named stop in Marrakech worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Koutoubia Mosque",
+      "text": "Koutoubia Mosque anchors the historic and ceremonial side of Marrakech, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Bahia Palace",
+      "text": "Bahia Palace anchors the historic and ceremonial side of Marrakech, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Majorelle Garden",
+      "text": "Majorelle Garden adds outdoor time to a Marrakech stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ben Youssef Madrasa",
+      "text": "Ben Youssef Madrasa is a named stop in Marrakech worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Saadian Tombs",
+      "text": "Saadian Tombs is a named stop in Marrakech worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Atlas Mountains",
+      "label": "Nature",
+      "text": "The High Atlas Mountains, under an hour's drive south, offer Berber villages and valley trekking as a day trip from Marrakech."
+    },
+    {
+      "name": "Essaouira",
+      "label": "Coast",
+      "text": "Essaouira, a windswept Atlantic port town about two and a half hours away, makes a popular overnight or day trip from Marrakech."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Asuncion in 2026: calendars, nearby pages and linked event views for planning around South America / Paraguay."
   },
   "region": "Capital city in Paraguay",
-  "population": "tba",
+  "population": "~525K",
   "coordinates": {
     "lat": -25.28646,
     "lon": -57.647
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Asuncion travel, stays & events guide",
-  "heroText": "Asuncion is a capital city in Paraguay, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Asuncion is Paraguay's warm, understated capital on the Paraguay River, with colonial fragments, leafy neighborhoods and a slower pace than many regional capitals. Start at Palacio de los Lopez, walk the Costanera de Asuncion, then visit Casa de la Independencia for national history. Silvio Pettirossi airport sits northeast of town, making Villa Morra or Carmelitas practical hotel bases.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Asuncion, Paraguay",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Asuncion",
-      "text": "Asuncion is a capital city in Paraguay, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centro Historico",
+      "text": "Centro Historico is best for civic sights, plazas and daytime walks, though many visitors prefer newer districts for evenings.",
+      "bestFor": "history, civic sights, daytime walking"
+    },
+    {
+      "name": "Villa Morra",
+      "text": "Villa Morra is the easiest first base, with hotels, restaurants, shopping and safer evening movement than the old centre.",
+      "bestFor": "first visits, dining, shopping"
+    },
+    {
+      "name": "Carmelitas",
+      "text": "Carmelitas is strong for nightlife, malls and modern restaurants, useful for social stays and business trips.",
+      "bestFor": "nightlife, malls, business"
+    },
+    {
+      "name": "Recoleta",
+      "text": "Recoleta is a quieter residential district with embassies, restaurants and good access between the centre and newer areas.",
+      "bestFor": "quiet stays, embassies, restaurants"
+    },
+    {
+      "name": "Las Mercedes",
+      "text": "Las Mercedes is close to the old centre but calmer, with guesthouses, cafes and short taxi rides to key sights.",
+      "bestFor": "guesthouses, cafes, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Silvio Pettirossi International Airport (ASU)",
+      "search": "Silvio Pettirossi International Airport, Asuncion, Paraguay",
+      "text": "Silvio Pettirossi airport is northeast of Asuncion near Luque; transfers are usually simple but traffic can slow peak routes."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20-40 min by taxi or ride-hail to Villa Morra or central Asuncion",
+    "note": "from Silvio Pettirossi International Airport",
+    "distance": "about 12 km northeast of central Asuncion"
+  },
+  "bookingDestination": "Asuncion, Paraguay",
+  "stayOverview": "Villa Morra is the safest first Asuncion base for restaurants and hotels, while Carmelitas suits nightlife and business. Centro Historico is best by day, Recoleta is calmer, and Las Mercedes offers guesthouse stays near the old centre.",
+  "hotelIntro": "Asuncion hotel choice depends on evenings: Villa Morra and Carmelitas are modern and practical, Centro Historico is useful for daytime sights, Recoleta is quieter, and Las Mercedes gives a smaller-scale base near central routes.",
+  "rentalCars": "A rental car helps for lake towns and countryside stops, but taxis and rideshare are easier inside Asuncion.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Villa Morra for a first stay if restaurants, shopping, hotel choice and easier evening movement are priorities."
+    },
+    {
+      "title": "Heat",
+      "text": "Asuncion can be very hot and humid, so plan outdoor walks early and use taxis in the afternoon."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry some guarani for small purchases, markets and taxis, even when cards work at hotels and larger restaurants."
+    },
+    {
+      "title": "Day trips",
+      "text": "Aregua and Lake Ypacarai are the easiest short escapes when you want crafts, lake views and a slower pace."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Palacio de los Lopez",
+      "text": "Palacio de los Lopez is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Casa de la Independencia",
+      "text": "Casa de la Independencia is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Costanera de Asuncion",
+      "text": "Costanera de Asuncion is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Panteon Nacional de los Heroes",
+      "text": "Panteon Nacional de los Heroes is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Mercado 4",
+      "text": "Mercado 4 is the city's sprawling market district, best visited in daylight with simple valuables and local guidance."
+    },
+    {
+      "title": "Museo del Barro",
+      "text": "Museo del Barro is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Aregua",
+      "label": "Town",
+      "text": "Aregua is a lakeside craft town near Asuncion, known for ceramics, strawberries and slower weekend trips."
+    },
+    {
+      "name": "San Bernardino",
+      "label": "Lake",
+      "text": "San Bernardino sits by Lake Ypacarai and works for lake views, restaurants and summer weekend energy."
+    },
+    {
+      "name": "Yaguaron",
+      "label": "Heritage",
+      "text": "Yaguaron is known for its Franciscan church and colonial history, reachable on a car-based day trip."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

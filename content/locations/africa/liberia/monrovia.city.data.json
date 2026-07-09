@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Monrovia in 2026: calendars, nearby pages and linked event views for planning around Africa / Liberia."
   },
   "region": "Capital city in Liberia",
-  "population": "tba",
+  "population": "~1.5M",
   "coordinates": {
     "lat": 6.30054,
     "lon": -10.7969
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Monrovia travel, stays & events guide",
-  "heroText": "Monrovia is a capital city in Liberia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Monrovia is Liberia's capital, named for US President James Monroe and set on a peninsula between the Atlantic and the Mesurado River. First-time visitors should learn the country's founding story at the National Museum of Liberia, walk historic Providence Island where freed settlers first landed, and photograph the abandoned Ducor Palace Hotel on its clifftop. Roberts International Airport connects the city to the rest of West Africa.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Monrovia, Liberia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Monrovia",
-      "text": "Monrovia is a capital city in Liberia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Mamba Point",
+      "text": "Mamba Point is Monrovia's embassy and hotel district on the coast, close to government buildings and popular with business travelers.",
+      "bestFor": "business trips, embassies, coastal views"
+    },
+    {
+      "name": "Sinkor",
+      "text": "Sinkor stretches along the beachfront with hotels, restaurants and residential streets, a comfortable base for longer stays.",
+      "bestFor": "longer stays, beach access, restaurants"
+    },
+    {
+      "name": "Central Monrovia",
+      "text": "Central Monrovia around Broad Street holds the main shops, banks and the National Museum, useful for a first, walkable stay.",
+      "bestFor": "first visits, shopping, museums"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Roberts International Airport (ROB)",
+      "search": "Roberts International Airport, Monrovia, Liberia",
+      "text": "Roberts International Airport lies about 60km southeast of central Monrovia, so confirm a pre-arranged transfer given the distance and limited late-night options."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Roberts International Airport (ROB) and central Monrovia before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Monrovia, Liberia",
+  "stayOverview": "Base in Mamba Point for embassies and coastal hotels, or Sinkor for beachfront restaurants and a relaxed longer stay. Central Monrovia suits a first visit wanting easy walking access to Broad Street's shops and the National Museum.",
+  "hotelIntro": "Monrovia hotel choice depends on purpose: Mamba Point suits business and diplomatic travelers, Sinkor suits longer beachfront stays with restaurants, and Central Monrovia keeps you closest to Broad Street's shops and museums.",
+  "rentalCars": "A rental car with a driver is the practical option for the long transfer from Roberts International Airport and any trips beyond the city; self-drive is uncommon for visitors.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Monrovia base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Arrange a hotel transfer in advance for the roughly 60km drive from Roberts International Airport, which can take over an hour."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry both US dollars and Liberian dollars in small denominations, since both currencies circulate for everyday purchases."
+    },
+    {
+      "title": "Rainy season",
+      "text": "Plan around the heavy rainy season from May to October, when flooding can slow roads and shorten sightseeing time."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Providence Island",
+      "text": "Providence Island adds the water-facing side of Monrovia, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Centennial Pavilion",
+      "text": "Centennial Pavilion is a named stop in Monrovia worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Waterside Market",
+      "text": "Waterside Market gives Monrovia a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Ducor Hotel",
+      "text": "Ducor Hotel is a named stop in Monrovia worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Ce Ce Beach",
+      "text": "Ce Ce Beach adds outdoor time to a Monrovia stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Liberian National Museum",
+      "text": "Liberian National Museum is a key Monrovia culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Robertsport",
+      "label": "Beach",
+      "text": "Robertsport, a few hours west, is West Africa's best-known surf town, with long point breaks and a laid-back beach village feel."
+    },
+    {
+      "name": "Kakata",
+      "label": "Nature",
+      "text": "Kakata, an hour inland, offers cooler forested scenery and a look at rural Liberian life away from the capital."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

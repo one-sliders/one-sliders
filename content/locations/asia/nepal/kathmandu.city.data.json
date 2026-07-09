@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kathmandu travel, stays & events guide",
-  "heroText": "Kathmandu is a capital city in Nepal, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kathmandu is a Nepal base best planned around named sights rather than a generic stopover. Start with Kathmandu Durbar Square, add Swayambhunath, and use Boudhanath to understand the city's history, street life and visitor rhythm. Kathmandu Tribhuvan handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kathmandu, Nepal",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kathmandu",
-      "text": "Kathmandu is a capital city in Nepal, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Kathmandu, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Kathmandu, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Kathmandu reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Kathmandu sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kathmandu Tribhuvan (KTM)",
+      "search": "Kathmandu Tribhuvan (KTM), Kathmandu, Nepal",
+      "text": "Kathmandu Tribhuvan (KTM) is the main air gateway for Kathmandu; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kathmandu Tribhuvan (KTM) and central Kathmandu before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kathmandu, Nepal",
+  "stayOverview": "Start with City centre for the easiest first Kathmandu stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Kathmandu hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Kathmandu unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Kathmandu Tribhuvan, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Kathmandu Durbar Square and Swayambhunath so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Kathmandu, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kathmandu Durbar Square",
+      "text": "Kathmandu Durbar Square is a clear heritage marker in Kathmandu, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Swayambhunath",
+      "text": "Swayambhunath is a named stop in Kathmandu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Boudhanath",
+      "text": "Boudhanath is a named stop in Kathmandu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pashupatinath Temple",
+      "text": "Pashupatinath Temple anchors the historic and ceremonial side of Kathmandu, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Thamel",
+      "text": "Thamel is a named stop in Kathmandu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Garden of Dreams",
+      "text": "Garden of Dreams adds outdoor time to a Kathmandu stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Swayambhunath",
+      "label": "Heritage",
+      "text": "Swayambhunath is a heritage-focused side trip from Kathmandu; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Boudhanath",
+      "label": "Heritage",
+      "text": "Boudhanath is a heritage-focused side trip from Kathmandu; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Thamel",
+      "label": "Heritage",
+      "text": "Thamel is a heritage-focused side trip from Kathmandu; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -21,7 +21,7 @@
     "webpageDescription": "Find sports events in Southport in 2026: calendars, nearby pages and linked event views for planning around Europe / United Kingdom."
   },
   "kicker": "Capital city of United Kingdom",
-  "heroText": "Southport is a coastal destination in United Kingdom, useful for event-led trips, seaside stays and regional travel planning.",
+  "heroText": "Southport is a United Kingdom base best planned around named sights rather than a generic stopover. Start with Southport Pier, add Lord Street Southport, and use Marine Lake Southport to understand the city's history, street life and visitor rhythm. Southport International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "snapshot": [
     {
       "label": "Place",
@@ -220,5 +220,103 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Southport",
     "matchedCountry": "United Kingdom"
-  }
+  },
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Southport, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Southport, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Southport reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Southport sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Southport International Airport",
+      "search": "Southport International Airport, Southport, United Kingdom",
+      "text": "Southport International Airport is the main air gateway for Southport; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Southport International Airport and central Southport before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "stayOverview": "Start with City centre for the easiest first Southport stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Southport hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Southport unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Southport International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Southport Pier and Lord Street Southport so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Southport, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Southport Pier",
+      "text": "Southport Pier adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Lord Street Southport",
+      "text": "Lord Street Southport adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Marine Lake Southport",
+      "text": "Marine Lake Southport adds outdoor time to a Southport stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "The Atkinson",
+      "text": "The Atkinson is a named stop in Southport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Hesketh Park",
+      "text": "Hesketh Park adds outdoor time to a Southport stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Royal Birkdale Golf Club",
+      "text": "Royal Birkdale Golf Club is a named stop in Southport worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Southport Pier",
+      "label": "Heritage",
+      "text": "Southport Pier is a heritage-focused side trip from Southport; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Marine Lake Southport",
+      "label": "Nature",
+      "text": "Marine Lake Southport works as a nature-focused side trip from Southport, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "The Atkinson",
+      "label": "Heritage",
+      "text": "The Atkinson is a heritage-focused side trip from Southport; check the route and opening hours before setting aside the day."
+    }
+  ]
 }

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Accra in 2026: calendars, nearby pages and linked event views for planning around Africa / Ghana."
   },
   "region": "Capital city in Ghana",
-  "population": "tba",
+  "population": "~2.3M",
   "coordinates": {
     "lat": 5.55602,
     "lon": -0.1969
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Accra travel, stays & events guide",
-  "heroText": "Accra is a capital city in Ghana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Accra is Ghana's capital and West Africa's laid-back beach-city gateway, mixing colonial-era forts with a fast-growing skyline along the Gulf of Guinea. First-time visitors should stand at Independence Square, wander the fishing lanes and murals of Jamestown, and pay respects at the Kwame Nkrumah Memorial Park. Kotoka International Airport puts Cape Coast's slave-fort history and Aburi's hills within easy day-trip range.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Accra, Ghana",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Accra",
-      "text": "Accra is a capital city in Ghana, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Osu",
+      "text": "Osu is Accra's liveliest strip, packed with restaurants, bars and shops along Oxford Street, and a short walk from Labadi Beach.",
+      "bestFor": "nightlife, restaurants, beach access"
+    },
+    {
+      "name": "Airport Residential Area",
+      "text": "Airport Residential Area surrounds Kotoka International Airport with leafy streets, embassies and business hotels, convenient for short stays and early flights.",
+      "bestFor": "business trips, airport convenience"
+    },
+    {
+      "name": "East Legon",
+      "text": "East Legon is Accra's upscale suburb of malls, restaurants and gated homes, popular with longer-stay visitors wanting more space.",
+      "bestFor": "longer stays, malls, quiet residential"
+    },
+    {
+      "name": "Cantonments",
+      "text": "Cantonments is a quiet, embassy-lined district near Osu, offering calm streets with easy access to restaurants and the airport.",
+      "bestFor": "diplomatic visits, quiet stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kotoka International Airport (ACC)",
+      "search": "Kotoka International Airport, Accra, Ghana",
+      "text": "Kotoka International Airport sits a few kilometres from central Accra; traffic can be heavy, so allow extra time for transfers at peak hours."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kotoka International Airport (ACC) and central Accra before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Accra, Ghana",
+  "stayOverview": "Base in Osu for nightlife, restaurants and beach access, or choose Airport Residential Area and Cantonments for embassies and easy airport transfers. East Legon suits longer stays needing malls, space and a quieter residential feel away from the coastal bustle.",
+  "hotelIntro": "Accra hotel choice depends on purpose: Osu suits first-time visitors wanting restaurants and beach nightlife, Airport Residential Area and Cantonments suit business travelers near embassies and the airport, while East Legon offers newer hotels and malls for longer stays.",
+  "rentalCars": "A rental car helps for day trips to Cape Coast or Aburi, but Accra's traffic makes ride-hailing apps the easier choice around the city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Osu or Airport Residential Area for an easy first stay near restaurants, embassies and quick airport transfers."
+    },
+    {
+      "title": "Traffic",
+      "text": "Accra traffic is heavy at rush hour, so build extra time into airport transfers and cross-city trips, especially on the N1 highway."
+    },
+    {
+      "title": "Cash and cards",
+      "text": "Carry Ghanaian cedi in small notes for markets and taxis, since card acceptance is inconsistent outside hotels and malls."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside a full day for Cape Coast's slave-fort history or a cooler half-day at the Aburi Botanical Gardens in the hills."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kwame Nkrumah Memorial Park",
+      "text": "Kwame Nkrumah Memorial Park adds outdoor time to a Accra stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Independence Square Accra",
+      "text": "Independence Square Accra is a clear heritage marker in Accra, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Jamestown Lighthouse",
+      "text": "Jamestown Lighthouse is a named stop in Accra worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Makola Market",
+      "text": "Makola Market gives Accra a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "National Museum of Ghana",
+      "text": "National Museum of Ghana is a key Accra culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Labadi Beach",
+      "text": "Labadi Beach adds outdoor time to a Accra stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Cape Coast",
+      "label": "Heritage",
+      "text": "Cape Coast Castle and Elmina Castle are UNESCO-listed slave forts about 2.5 hours west, essential stops for Ghana's Atlantic history."
+    },
+    {
+      "name": "Aburi Botanical Gardens",
+      "label": "Nature",
+      "text": "The Aburi Botanical Gardens sit in cooler hills under an hour from Accra, good for a relaxed half-day away from the coast."
+    },
+    {
+      "name": "Akosombo",
+      "label": "Nature",
+      "text": "Akosombo, home to the Volta River dam and Lake Volta, makes a good day trip for boat rides and hydroelectric history."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

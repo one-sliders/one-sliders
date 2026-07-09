@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Niamey in 2026: calendars, nearby pages and linked event views for planning around Africa / Niger."
   },
   "region": "Capital city in Niger",
-  "population": "tba",
+  "population": "~1.3M",
   "coordinates": {
     "lat": 13.51366,
     "lon": 2.1098
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Niamey travel, stays & events guide",
-  "heroText": "Niamey is a capital city in Niger, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Niamey is Niger's capital on the banks of the Niger River, a low-rise Sahelian city known for its riverside sunsets and lively markets. First-time visitors should browse the stalls of the Grand Marche, learn regional history and crafts at the National Museum of Niger, and watch pirogues cross the river at dusk. Diori Hamani International Airport connects the city to the region; check current travel advisories closely before planning any visit.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Niamey, Niger",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Niamey",
-      "text": "Niamey is a capital city in Niger, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Plateau",
+      "text": "Plateau is Niamey's central administrative district, home to government buildings, banks and many of the city's hotels.",
+      "bestFor": "hotels, central access"
+    },
+    {
+      "name": "Grand Marche area",
+      "text": "The area around the Grand Marche is the city's commercial heart, packed with stalls, tailors and everyday shops.",
+      "bestFor": "markets, shopping"
+    },
+    {
+      "name": "Riverside (Kalley)",
+      "text": "The riverside district along the Niger River offers restaurants and views popular for an evening walk or meal.",
+      "bestFor": "dining, river views"
+    },
+    {
+      "name": "Yantala",
+      "text": "Yantala is a quieter residential district favoured by diplomats and longer-stay visitors, north of the centre.",
+      "bestFor": "embassies, quiet stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Diori Hamani International Airport (NIM)",
+      "search": "Diori Hamani International Airport, Niamey, Niger",
+      "text": "Diori Hamani International Airport lies a few kilometres from the city centre; arrange transfers in advance given evolving security conditions."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Diori Hamani International Airport (NIM) and central Niamey before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Niamey, Niger",
+  "stayOverview": "Plateau offers the easiest first stay, close to hotels, banks and government offices, while the riverside area is best for an evening meal with Niger River views. Yantala provides a quieter, embassy-district alternative. Confirm current safety guidance before booking any Niamey trip.",
+  "hotelIntro": "Plateau holds most of Niamey's established hotels within reach of the Grand Marche and National Museum, while Yantala suits diplomats and longer-stay visitors wanting a quieter residential setting.",
+  "rentalCars": "Self-driving is not recommended given current security conditions; arrange a trusted local driver or pre-booked transfer instead.",
+  "travelTips": [
+    {
+      "title": "Check advisories first",
+      "text": "Confirm current government travel advisories before booking any Niamey trip, since security conditions in Niger can change quickly."
+    },
+    {
+      "title": "Arrange transfers in advance",
+      "text": "Keep the Niamey plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Visit the museum for context",
+      "text": "Start at the National Museum of Niger for background on regional history and crafts before exploring the Grand Marche."
+    },
+    {
+      "title": "Watch the river at dusk",
+      "text": "Head to the riverside in the late afternoon to see pirogues crossing the Niger River as the light softens."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "National Museum of Niger",
+      "text": "National Museum of Niger is a key Niamey culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Grand Mosque of Niamey",
+      "text": "Grand Mosque of Niamey anchors the historic and ceremonial side of Niamey, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Niger River waterfront",
+      "text": "Niger River waterfront adds outdoor time to a Niamey stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Kennedy Bridge",
+      "text": "Kennedy Bridge is a clear heritage marker in Niamey, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Niamey Grand Market",
+      "text": "Niamey Grand Market gives Niamey a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "W National Park",
+      "text": "W National Park adds outdoor time to a Niamey stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "W National Park",
+      "label": "Nature",
+      "text": "W National Park, a multi-country reserve east of the city, protects savanna wildlife including elephants and hippos, security permitting."
+    },
+    {
+      "name": "Boubon",
+      "label": "River",
+      "text": "Boubon, a riverside village a short drive from Niamey, is known for its Sunday market and pottery."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

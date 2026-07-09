@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Visby travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Visby is a Sweden base best planned around named sights rather than a generic stopover. Start with Visby city wall, add Stora Torget, and use Botanical Garden to understand the city's history, street life and visitor rhythm. Visby International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Visby, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Visby, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Visby reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Visby sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Visby International Airport",
+      "search": "Visby International Airport, Visby, Sweden",
+      "text": "Visby International Airport is the main air gateway for Visby; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Visby International Airport and central Visby before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Visby, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Visby city wall",
-    "Stora Torget",
-    "Botanical Garden",
-    "Gotland Museum",
-    "Almedalen",
-    "Medieval Week"
+  "stayOverview": "Start with City centre for the easiest first Visby stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Visby hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Visby unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Visby International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Visby city wall and Stora Torget so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Visby, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Visby city wall",
+      "text": "Visby city wall is a named stop in Visby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Stora Torget",
+      "text": "Stora Torget is a named stop in Visby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Botanical Garden",
+      "text": "Botanical Garden adds outdoor time to a Visby stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Gotland Museum",
+      "text": "Gotland Museum is a key Visby culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Almedalen",
+      "text": "Almedalen is a named stop in Visby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Medieval Week",
+      "text": "Medieval Week is a named stop in Visby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Visby city wall",
+      "label": "Heritage",
+      "text": "Visby city wall is a heritage-focused side trip from Visby; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Stora Torget",
+      "label": "Heritage",
+      "text": "Stora Torget is a heritage-focused side trip from Visby; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Botanical Garden",
+      "label": "Heritage",
+      "text": "Botanical Garden works as a nature-focused side trip from Visby, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

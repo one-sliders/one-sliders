@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Skagen, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "North Jutland",
-  "population": "tba",
+  "population": "~8K",
   "coordinates": {
     "lat": 57.72093,
     "lon": 10.58394
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Skagen travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Skagen sits at Denmark's northern tip, where painters, dunes, fishing harbours and two seas shape a bright coastal escape. Walk to Grenen, visit Skagen Museum for the artists' colony, then eat by Skagen harbour or continue to Old Skagen for sunset. Aalborg Airport is the main flight gateway, with rail or road onward.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Skagen town centre",
+      "text": "The town centre is best for restaurants, shops, the station, Skagen Museum and easy walks to the harbour.",
+      "bestFor": "first visits, restaurants, station"
+    },
+    {
+      "name": "Skagen harbour",
+      "text": "The harbour area suits seafood, boat atmosphere and short walks between restaurants and central hotels.",
+      "bestFor": "seafood, harbour, short stays"
+    },
+    {
+      "name": "Old Skagen",
+      "text": "Old Skagen is a quieter west-coast base known for sunset views, beaches and classic seaside hotels.",
+      "bestFor": "sunsets, beach, quiet stays"
+    },
+    {
+      "name": "Højen",
+      "text": "Højen gives a coastal village feel near Old Skagen, useful for slower stays and beach access.",
+      "bestFor": "coast, couples, slower stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Aalborg Airport (AAL)",
+      "search": "Aalborg Airport, Aalborg, Denmark",
+      "text": "Aalborg Airport is the main airport for Skagen visitors, followed by a long rail or road transfer north."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "1.5-2 hours by car from Aalborg Airport, longer by train with connections",
+    "note": "from Aalborg Airport",
+    "distance": "about 105 km south of Skagen"
   },
   "bookingDestination": "Skagen, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Grenen",
-    "Skagen Museum",
-    "Rabak Mile",
-    "Vippefyret",
-    "Skagen harbour",
-    "Old Skagen"
+  "stayOverview": "Stay in Skagen town centre for museums and restaurants, the harbour for seafood and boat atmosphere, Old Skagen for sunsets and beach hotels, or Højen for a quieter coastal village base.",
+  "hotelIntro": "Skagen is seasonal, so book early for summer. Central stays are easiest without a car, while Old Skagen and Højen reward travellers who want beach time, sunsets and quieter evenings.",
+  "rentalCars": "A car helps around Skagen, especially for dunes, beaches and the long transfer from Aalborg Airport.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Skagen town centre if you want museums, restaurants and the station without relying on a car."
+    },
+    {
+      "title": "Season",
+      "text": "Summer is busy and bright; shoulder seasons are quieter but can be windy and cool by the coast."
+    },
+    {
+      "title": "Grenen",
+      "text": "Allow time for the walk or Sandormen tractor ride to Grenen, where the two seas meet."
+    },
+    {
+      "title": "Day trip",
+      "text": "Råbjerg Mile is the classic dune outing and works best with a car or planned transport."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Grenen",
+      "title": "Grenen",
+      "text": "Grenen is a named stop in Skagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Skagen Museum",
+      "title": "Skagen Museum",
+      "text": "Skagen Museum gives Skagen a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Rabak Mile",
+      "title": "Rabak Mile",
+      "text": "Rabak Mile is a named stop in Skagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Vippefyret",
+      "title": "Vippefyret",
+      "text": "Vippefyret is a named stop in Skagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Skagen harbour",
+      "title": "Skagen harbour",
+      "text": "Skagen harbour adds the water-facing side of Skagen, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Old Skagen",
+      "title": "Old Skagen",
+      "text": "Old Skagen is a named stop in Skagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Råbjerg Mile",
+      "label": "Dune",
+      "text": "Råbjerg Mile is the dramatic migrating dune south of Skagen, best with time for walking."
+    },
+    {
+      "name": "Hirtshals",
+      "label": "Coast",
+      "text": "Hirtshals adds a lighthouse, ferry harbour and the North Sea Oceanarium west of Skagen."
+    },
+    {
+      "name": "Aalborg",
+      "label": "City",
+      "text": "Aalborg is the main city gateway for Skagen, useful for flights, rail links and a city stop."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Skagen",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Nordjyllands Trafikselskab"
 }

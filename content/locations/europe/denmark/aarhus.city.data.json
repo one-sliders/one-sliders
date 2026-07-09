@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Aarhus, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Central Denmark",
-  "population": "tba",
+  "population": "~367K",
   "coordinates": {
     "lat": 56.15674,
     "lon": 10.21076
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Aarhus travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Aarhus is Denmark's second city, balancing harbour architecture, university life and strong museums on the east Jutland coast. Start at ARoS for the rainbow panorama, step into Den Gamle By for urban history, then visit Moesgaard Museum south of town. Aarhus Airport and Billund Airport both serve the region, depending on route.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Indre By",
+      "text": "Indre By is the central base for shops, restaurants, ARoS, the Latin Quarter and easy station access.",
+      "bestFor": "first visits, restaurants, station"
+    },
+    {
+      "name": "Latin Quarter",
+      "text": "The Latin Quarter has older streets, cafes and boutiques, suited to atmospheric stays close to the centre.",
+      "bestFor": "cafes, boutiques, atmosphere"
+    },
+    {
+      "name": "Aarhus Ø",
+      "text": "Aarhus Ø is the modern harbour district, good for waterfront apartments, architecture and sea-bath access.",
+      "bestFor": "waterfront, architecture, apartments"
+    },
+    {
+      "name": "Frederiksbjerg",
+      "text": "Frederiksbjerg sits south of the station with food shops, local restaurants and a calmer residential feel.",
+      "bestFor": "food, longer stays, local base"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Aarhus Airport (AAR)",
+      "search": "Aarhus Airport, Aarhus, Denmark",
+      "text": "Aarhus Airport is northeast of the city near Tirstrup; check bus times carefully because services follow flight schedules."
+    },
+    {
+      "name": "Billund Airport (BLL)",
+      "search": "Billund Airport, Billund, Denmark",
+      "text": "Billund Airport is farther away but often has more international routes for Aarhus and wider Jutland trips."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "45-60 min from Aarhus Airport, longer from Billund",
+    "note": "check route before booking flights",
+    "distance": "about 40 km from Aarhus Airport to the centre"
   },
   "bookingDestination": "Aarhus, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "ARoS",
-    "Den Gamle By",
-    "Moesgaard Museum",
-    "Dokk1",
-    "Aarhus O",
-    "Marselisborg Palace"
+  "stayOverview": "Indre By is the safest first base, the Latin Quarter adds charm, Aarhus Ø suits waterfront architecture stays, and Frederiksbjerg works well for food-focused and longer visits near the station.",
+  "hotelIntro": "Aarhus hotel choice is pleasantly compact. Central and Latin Quarter stays are easiest for museums, Aarhus Ø gives modern harbour views, and Frederiksbjerg balances local food streets with station convenience.",
+  "rentalCars": "Skip a car inside Aarhus; rent one only for Moesgaard, Djursland or wider Jutland exploring.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Indre By or the Latin Quarter if you want ARoS, restaurants and the station close together."
+    },
+    {
+      "title": "Airport choice",
+      "text": "Compare Aarhus and Billund airports before booking; the better flight may involve a longer ground transfer."
+    },
+    {
+      "title": "Museum timing",
+      "text": "Give Moesgaard Museum enough time, as it sits outside the centre and deserves more than a quick stop."
+    },
+    {
+      "title": "Waterfront",
+      "text": "Bring swimwear in warm months if you plan to use the harbour baths around Aarhus Ø."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "ARoS",
+      "text": "ARoS is a named stop in Aarhus worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "ARoS"
+    },
+    {
+      "title": "Den Gamle By",
+      "text": "Den Gamle By is a named stop in Aarhus worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Den Gamle By"
+    },
+    {
+      "title": "Moesgaard Museum",
+      "text": "Moesgaard Museum gives Aarhus a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Moesgaard Museum"
+    },
+    {
+      "title": "Dokk1",
+      "text": "Dokk1 is a named stop in Aarhus worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Dokk1"
+    },
+    {
+      "title": "Aarhus O",
+      "text": "Aarhus O is a named stop in Aarhus worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Aarhus O"
+    },
+    {
+      "title": "Marselisborg Palace",
+      "text": "Marselisborg Palace is a clear heritage marker in Aarhus, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Marselisborg Palace"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mols Bjerge",
+      "label": "Nature",
+      "text": "Mols Bjerge National Park offers hills, coast and villages for a full day east of Aarhus."
+    },
+    {
+      "name": "Ebeltoft",
+      "label": "Town",
+      "text": "Ebeltoft is a nearby side trip from Aarhus; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Silkeborg Lakes",
+      "label": "Lake",
+      "text": "Silkeborg Lakes works as a water-facing side trip from Aarhus, useful for a slower day outside the densest central route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +235,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Aarhus",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Midttrafik"
 }

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Conakry in 2026: calendars, nearby pages and linked event views for planning around Africa / Guinea."
   },
   "region": "Capital city in Guinea",
-  "population": "tba",
+  "population": "~2.0M",
   "coordinates": {
     "lat": 9.53795,
     "lon": -13.67729
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Conakry travel, stays & events guide",
-  "heroText": "Conakry is a capital city in Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Conakry is Guinea's capital, stretched along the narrow Kaloum peninsula into the Atlantic with a humid, tropical feel. First-time visitors should tour the Grand Mosque of Conakry, one of West Africa's largest, browse the National Museum of Guinea for masks and instruments, and take a short boat ride to the Iles de Los. Ahmed Sekou Toure International Airport connects the city to the wider region and coastal getaways.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Conakry, Guinea",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Conakry",
-      "text": "Conakry is a capital city in Guinea, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Kaloum",
+      "text": "Kaloum is the peninsula tip forming Conakry's historic centre, with government buildings, the port and the National Museum within walking distance.",
+      "bestFor": "first visits, government district, museums"
+    },
+    {
+      "name": "Dixinn",
+      "text": "Dixinn is a leafy residential and university district east of Kaloum, offering a quieter base with easy access into the centre.",
+      "bestFor": "quiet stays, university area"
+    },
+    {
+      "name": "Ratoma",
+      "text": "Ratoma is Conakry's embassy and business hotel district, popular for its newer hotels, restaurants and proximity to the airport road.",
+      "bestFor": "business trips, embassies, hotels"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ahmed Sekou Toure International Airport (CKY)",
+      "search": "Ahmed Sekou Toure International Airport, Conakry, Guinea",
+      "text": "Ahmed Sekou Toure International Airport sits in Ratoma, north of the city centre; traffic on the coastal road can slow transfers into Kaloum."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Ahmed Sekou Toure International Airport (CKY) and central Conakry before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Conakry, Guinea",
+  "stayOverview": "Base in Ratoma for newer hotels close to the airport and embassies, or Dixinn for a quieter, leafy stay near the university. Kaloum suits visitors who want to be within walking distance of the port, museum and government district.",
+  "hotelIntro": "Conakry hotel choice depends mostly on purpose: Ratoma offers the newest business hotels near the airport, Dixinn suits quieter longer stays, and Kaloum keeps you closest to the port, museum and historic centre.",
+  "rentalCars": "A rental car with a driver helps for trips to the Iles de Los or Kindia, but taxis are the easier way to get around central Conakry itself.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Ratoma for airport convenience and newer hotels, or Kaloum for walking distance to the museum, port and government district."
+    },
+    {
+      "title": "Traffic",
+      "text": "The coastal road linking the airport, Ratoma and Kaloum can be slow at peak hours, so build extra time into transfers."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry Guinean francs in cash for markets and taxis, since card acceptance is limited outside the larger hotels."
+    },
+    {
+      "title": "Boat trips",
+      "text": "Book a boat to the Iles de Los a day ahead, since departures depend on tides and available fishing boats."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Iles de Los",
+      "text": "Iles de Los is a named stop in Conakry worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Conakry Grand Mosque",
+      "text": "Conakry Grand Mosque anchors the historic and ceremonial side of Conakry, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Museum of Guinea",
+      "text": "National Museum of Guinea is a key Conakry culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Conakry Botanical Garden",
+      "text": "Conakry Botanical Garden adds outdoor time to a Conakry stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Kaloum Peninsula",
+      "text": "Kaloum Peninsula is a named stop in Conakry worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Palais du Peuple",
+      "text": "Palais du Peuple is a named stop in Conakry worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Iles de Los",
+      "label": "Beach",
+      "text": "The Iles de Los island group sits just offshore from Conakry, reachable by boat for a beach day or overnight escape."
+    },
+    {
+      "name": "Kindia",
+      "label": "Nature",
+      "text": "Kindia, a few hours inland, is known for waterfalls and cooler hill scenery, a popular weekend trip from the capital."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

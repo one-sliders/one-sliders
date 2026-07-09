@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Castries travel, stays & events guide",
-  "heroText": "Castries is a capital city in Saint Lucia, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Castries is a Saint Lucia base best planned around named sights rather than a generic stopover. Start with Castries Market, add Derek Walcott Square, and use Cathedral Basilica of the Immaculate Conception to understand the city's history, street life and visitor rhythm. Hewanorra International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Castries, Saint Lucia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Castries",
-      "text": "Castries is a capital city in Saint Lucia, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Castries, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Castries, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Castries reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Castries sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Hewanorra International Airport (UVF)",
+      "search": "Hewanorra International Airport (UVF), Castries, Saint Lucia",
+      "text": "Hewanorra International Airport (UVF) is the main air gateway for Castries; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Hewanorra International Airport (UVF) and central Castries before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Castries, Saint Lucia",
+  "stayOverview": "Start with City centre for the easiest first Castries stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Castries hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Castries unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Hewanorra International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Castries Market and Derek Walcott Square so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Castries, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Castries Market",
+      "text": "Castries Market gives Castries a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Derek Walcott Square",
+      "text": "Derek Walcott Square is a clear heritage marker in Castries, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Cathedral Basilica of the Immaculate Conception",
+      "text": "Cathedral Basilica of the Immaculate Conception anchors the historic and ceremonial side of Castries, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Morne Fortune",
+      "text": "Morne Fortune is a clear heritage marker in Castries, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Vigie Beach",
+      "text": "Vigie Beach adds outdoor time to a Castries stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "La Toc Battery",
+      "text": "La Toc Battery is a named stop in Castries worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Morne Fortune",
+      "label": "Heritage",
+      "text": "Morne Fortune is a heritage-focused side trip from Castries; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Vigie Beach",
+      "label": "Nature",
+      "text": "Vigie Beach works as a nature-focused side trip from Castries, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "La Toc Battery",
+      "label": "Heritage",
+      "text": "La Toc Battery is a heritage-focused side trip from Castries; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

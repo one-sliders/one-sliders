@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "San Marino travel, stays & events guide",
-  "heroText": "San Marino is a key city in San Marino, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "San Marino is a San Marino base best planned around named sights rather than a generic stopover. Start with Guaita Tower, add Cesta Tower, and use Piazza della Liberta to understand the city's history, street life and visitor rhythm. San Marino International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "San Marino, San Marino",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "San Marino",
-      "text": "San Marino is a key city in San Marino, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in San Marino, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in San Marino, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central San Marino reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first San Marino sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "San Marino International Airport",
+      "search": "San Marino International Airport, San Marino, San Marino",
+      "text": "San Marino International Airport is the main air gateway for San Marino; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between San Marino International Airport and central San Marino before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "San Marino, San Marino",
+  "stayOverview": "Start with City centre for the easiest first San Marino stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "San Marino hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central San Marino unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for San Marino International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Guaita Tower and Cesta Tower so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from San Marino, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Guaita Tower",
+      "text": "Guaita Tower is a clear heritage marker in San Marino, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Cesta Tower",
+      "text": "Cesta Tower is a clear heritage marker in San Marino, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Piazza della Liberta",
+      "text": "Piazza della Liberta is a named stop in San Marino worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Palazzo Pubblico",
+      "text": "Palazzo Pubblico is a named stop in San Marino worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Basilica di San Marino",
+      "text": "Basilica di San Marino anchors the historic and ceremonial side of San Marino, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "State Museum of San Marino",
+      "text": "State Museum of San Marino is a key San Marino culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Piazza della Liberta",
+      "label": "Heritage",
+      "text": "Piazza della Liberta is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Palazzo Pubblico",
+      "label": "Heritage",
+      "text": "Palazzo Pubblico is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Basilica di San Marino",
+      "label": "Heritage",
+      "text": "Basilica di San Marino is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

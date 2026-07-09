@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Augusta, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Augusta",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Augusta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Augusta, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Augusta reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Augusta sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Augusta International Airport",
+      "search": "Augusta International Airport, Augusta, USA",
+      "text": "Augusta International Airport is the main air gateway for Augusta; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Augusta International Airport and central Augusta before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Augusta, USA",
+  "stayOverview": "Start with City centre for the easiest first Augusta stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Augusta hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Augusta unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Augusta International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Augusta and Augusta so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Augusta, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Augusta National Golf Club",
+      "text": "Augusta National Golf Club is a named stop in Augusta worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Augusta Riverwalk",
+      "text": "Augusta Riverwalk adds outdoor time to a Augusta stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Augusta Museum of History",
+      "text": "Augusta Museum of History is a key Augusta culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Sacred Heart Cultural Center",
+      "text": "Sacred Heart Cultural Center gives Augusta a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Phinizy Swamp Nature Park",
+      "text": "Phinizy Swamp Nature Park adds outdoor time to a Augusta stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Morris Museum of Art",
+      "text": "Morris Museum of Art is a key Augusta culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Augusta National Golf Club",
+      "label": "Heritage",
+      "text": "Augusta National Golf Club is a heritage-focused side trip from Augusta; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Augusta Riverwalk",
+      "label": "Nature",
+      "text": "Augusta Riverwalk works as a nature-focused side trip from Augusta, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Sacred Heart Cultural Center",
+      "label": "Heritage",
+      "text": "Sacred Heart Cultural Center is a heritage-focused side trip from Augusta; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

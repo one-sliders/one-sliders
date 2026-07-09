@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Hermanus in 2026: calendars, nearby pages and linked event views for planning around Africa / South Africa."
   },
   "region": "Key city in South Africa",
-  "population": "tba",
+  "population": "~45K",
   "coordinates": {
     "lat": -34.4187,
     "lon": 19.23446
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Hermanus travel, stays & events guide",
-  "heroText": "Hermanus is a key city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Hermanus is a Western Cape coastal town on Walker Bay, world-famous for having some of the best land-based whale watching anywhere on Earth. First-time visitors should walk the clifftop Cliff Path scanning for whales, browse maritime history at the Old Harbour Museum, and taste Pinot Noir in the nearby Hemel-en-Aarde Valley. Cape Town International Airport is about two hours away by road, making Hermanus an easy add-on to a Cape Town or Garden Route trip.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Hermanus, South Africa",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Hermanus",
-      "text": "Hermanus is a key city in South Africa, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Central Hermanus / Marine Drive",
+      "text": "Central Hermanus along Marine Drive holds the Old Harbour Museum, shops and restaurants, all within walking distance of the Cliff Path.",
+      "bestFor": "first visits, whale watching, restaurants"
+    },
+    {
+      "name": "Voëlklip / Grotto Beach",
+      "text": "Voëlklip and Grotto Beach are Hermanus's main swimming beaches, backed by grassy picnic lawns a short drive from the centre.",
+      "bestFor": "beaches, families"
+    },
+    {
+      "name": "Hemel-en-Aarde Valley",
+      "text": "The Hemel-en-Aarde Valley is Hermanus's wine region, dotted with boutique Pinot Noir estates just inland from the coast.",
+      "bestFor": "wine tasting, scenic drives"
+    },
+    {
+      "name": "Sandbaai",
+      "text": "Sandbaai is a quieter residential suburb west of the centre, offering self-catering stays close to the highway into town.",
+      "bestFor": "quiet stays, self-catering"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Cape Town International Airport (CPT)",
+      "search": "Cape Town International Airport, Cape Town, South Africa",
+      "text": "Cape Town International Airport is Hermanus's nearest major airport, roughly a two-hour drive away, so most visitors arrive by rental car or shuttle."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Cape Town International Airport (CPT) and central Hermanus before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Hermanus, South Africa",
+  "stayOverview": "Base in Central Hermanus for an easy first stay near the Cliff Path, Old Harbour Museum and restaurants, or choose Voëlklip and Grotto Beach for a family-friendly beach stay. The Hemel-en-Aarde Valley suits wine-focused visits, while Sandbaai offers quieter, self-catering options.",
+  "hotelIntro": "Hermanus hotel choice depends on priorities: Central Hermanus suits first-time visitors wanting whale watching and restaurants within reach, Voëlklip and Grotto Beach suit families, and the Hemel-en-Aarde Valley suits travelers prioritising wine estates over town amenities.",
+  "rentalCars": "A rental car is genuinely useful in Hermanus, since the town, wine valley and surrounding coastal viewpoints are spread out along the R43 and R44 roads.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Central Hermanus for whale-watching access along the Cliff Path and easy walks to restaurants and the harbour."
+    },
+    {
+      "title": "Whale season",
+      "text": "Visit between June and November for the best chance of spotting Southern Right Whales close to shore from the cliffs."
+    },
+    {
+      "title": "Getting here",
+      "text": "Rent a car or book a shuttle for the roughly two-hour drive from Cape Town International Airport, since there is no local airport."
+    },
+    {
+      "title": "Wine route timing",
+      "text": "Book Hemel-en-Aarde Valley tastings ahead on weekends, when the small boutique estates can fill up quickly."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Hermanus Cliff Path",
+      "text": "Hermanus Cliff Path is a named stop in Hermanus worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Old Harbour Museum",
+      "text": "Old Harbour Museum is a key Hermanus culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Grotto Beach",
+      "text": "Grotto Beach adds outdoor time to a Hermanus stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Fernkloof Nature Reserve",
+      "text": "Fernkloof Nature Reserve gives Hermanus a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Hemel-en-Aarde Valley",
+      "text": "Hemel-en-Aarde Valley gives Hermanus a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Walker Bay",
+      "text": "Walker Bay adds the water-facing side of Hermanus, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Fernkloof Nature Reserve",
+      "label": "Nature",
+      "text": "Fernkloof Nature Reserve covers fynbos-covered mountains above the town, with hiking trails and views over Walker Bay."
+    },
+    {
+      "name": "De Hoop Nature Reserve",
+      "label": "Nature",
+      "text": "De Hoop Nature Reserve protects a dramatic stretch of coastline further east, popular for whale watching and coastal hiking."
+    },
+    {
+      "name": "Stony Point Penguin Colony",
+      "label": "Wildlife",
+      "text": "Stony Point Penguin Colony in nearby Betty's Bay is home to African penguins, an easy detour on the coastal drive from Hermanus."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

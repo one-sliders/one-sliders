@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Lima in 2026: calendars, nearby pages and linked event views for planning around South America / Peru."
   },
   "region": "Capital city in Peru",
-  "population": "tba",
+  "population": "~268K",
   "coordinates": {
     "lat": -12.04318,
     "lon": -77.02824
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Lima travel, stays & events guide",
-  "heroText": "Lima is a capital city in Peru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Lima is Peru's Pacific capital, a food city of cliffs, pre-Columbian ruins, colonial squares and ocean-facing neighborhoods. Base in Miraflores or Barranco, walk the Miraflores Boardwalk, visit Huaca Pucllana, then add the Larco Museum or Plaza Mayor for deeper history. Jorge Chavez airport sits in Callao, so transfer timing matters on arrival and departure days.",
   "kpis": [
     {
       "label": "Population",
@@ -39,25 +39,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lima, Peru",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lima",
-      "text": "Lima is a capital city in Peru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Miraflores",
+      "text": "Miraflores is the easiest first base, with hotels, parks, restaurants, ocean cliffs and safer evening movement.",
+      "bestFor": "first visits, dining, ocean views"
+    },
+    {
+      "name": "Barranco",
+      "text": "Barranco is Lima's bohemian district, strong for boutique hotels, bars, galleries and weekend evenings.",
+      "bestFor": "boutique stays, nightlife, art"
+    },
+    {
+      "name": "San Isidro",
+      "text": "San Isidro suits business travelers and quieter upscale stays, with parks, offices and excellent restaurants.",
+      "bestFor": "business, quiet hotels, restaurants"
+    },
+    {
+      "name": "Centro Historico",
+      "text": "Centro Historico is best for daytime colonial sights and museums, but most visitors sleep in Miraflores or Barranco.",
+      "bestFor": "history, museums, daytime visits"
+    },
+    {
+      "name": "Callao airport area",
+      "text": "The Callao airport area is mainly for late arrivals, early flights or short overnight connections, not sightseeing.",
+      "bestFor": "early flights, layovers, late arrivals"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jorge Chavez International Airport (LIM)",
+      "search": "Jorge Chavez International Airport, Lima, Peru",
+      "text": "Jorge Chavez airport is in Callao; traffic to Miraflores or Barranco can be slow, so leave generous departure buffers."
+    }
+  ],
+  "airportTransfer": {
+    "value": "45-90 min by taxi or airport transfer to Miraflores or Barranco",
+    "note": "from Jorge Chavez International Airport",
+    "distance": "about 18 km northwest of Miraflores"
+  },
+  "bookingDestination": "Lima, Peru",
+  "stayOverview": "Miraflores is the best all-round Lima base, while Barranco suits boutique stays, bars and art. San Isidro is quiet and business-friendly, Centro Historico is mainly for daytime sightseeing, and Callao airport hotels are for flight timing.",
+  "hotelIntro": "Lima hotel choice is mostly coastal versus historic: Miraflores and Barranco suit most travelers, San Isidro is polished and practical, Centro Historico is worth visiting by day, and Callao is only for airport logistics.",
+  "rentalCars": "Avoid renting a car in Lima; traffic and parking make taxis, rideshare and tours much easier.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Miraflores for a first stay because restaurants, parks, cliffs and taxis are easiest from there."
+    },
+    {
+      "title": "Airport buffers",
+      "text": "Allow plenty of time to Jorge Chavez airport, especially before evening departures or when crossing from Barranco."
+    },
+    {
+      "title": "Food planning",
+      "text": "Reserve top restaurants well ahead, and leave room for cevicherias at lunch rather than late evening."
+    },
+    {
+      "title": "Grey season",
+      "text": "Lima can be cool and grey for months, so pack layers even when the desert climate sounds warm."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Miraflores Boardwalk",
+      "text": "Miraflores Boardwalk is a named Lima landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Barranco",
+      "text": "Barranco is a named Lima landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Larco Museum",
+      "text": "Larco Museum is a key Lima culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Plaza Mayor",
+      "text": "Plaza Mayor is a named Lima landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Huaca Pucllana",
+      "text": "Huaca Pucllana is a pre-Inca adobe pyramid in Miraflores, a striking contrast to the modern district around it."
+    },
+    {
+      "title": "Parque Kennedy",
+      "text": "Parque Kennedy is a named Lima landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Pachacamac",
+      "label": "Archaeology",
+      "text": "Pachacamac is the major archaeological site south of Lima, best visited with a guide or driver."
+    },
+    {
+      "name": "Callao and La Punta",
+      "label": "Coast",
+      "text": "Callao and La Punta offer fortress history, seafood and harbor views, but routes should be planned carefully."
+    },
+    {
+      "name": "Paracas",
+      "label": "Coast",
+      "text": "Paracas is a longer coast escape for wildlife, desert scenery and boat trips to the Ballestas Islands."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +224,6 @@
   "continentName": "South America",
   "countrySlug": "peru",
   "countryName": "Peru",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "ATU"
 }

@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Blumenau in 2026: calendars, nearby pages and linked event views for planning around South America / Brazil."
   },
   "region": "Key city in Brazil",
-  "population": "tba",
+  "population": "~386K",
   "coordinates": {
     "lat": -26.91944,
     "lon": -49.06611
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Blumenau travel, stays & events guide",
-  "heroText": "Blumenau is a key city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Blumenau is a German-influenced city in southern Brazil, known for timbered facades, breweries and Brazil's biggest Oktoberfest. Base near Vila Germanica Park for events, walk Rua XV de Novembro for the historic centre, and stop at Museu da Cerveja for beer culture. Navegantes airport is the main flight gateway, with road transfers linking the city to the Santa Catarina coast.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Blumenau, Brazil",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Blumenau",
-      "text": "Blumenau is a key city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centro",
+      "text": "Centro is the most useful first base for Rua XV de Novembro, restaurants, shops and short taxi rides to Vila Germanica.",
+      "bestFor": "first visits, historic streets, dining"
+    },
+    {
+      "name": "Vila Germanica",
+      "text": "The Vila Germanica area is best during Oktoberfest or trade events, keeping the main pavilions and evening crowds close.",
+      "bestFor": "Oktoberfest, events, nightlife"
+    },
+    {
+      "name": "Ponta Aguda",
+      "text": "Ponta Aguda sits across the river from Centro, quieter and residential, with easy access by car or rideshare.",
+      "bestFor": "quiet stays, river access, families"
+    },
+    {
+      "name": "Victor Konder",
+      "text": "Victor Konder is practical for business trips and city services, close to the university side and central roads.",
+      "bestFor": "business, practical stays, car access"
+    },
+    {
+      "name": "Garcia",
+      "text": "Garcia works for visitors needing the southern side of Blumenau, with local hotels and routes toward parks and factories.",
+      "bestFor": "local visits, car trips, longer stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ministro Victor Konder International Airport (NVT)",
+      "search": "Ministro Victor Konder International Airport, Navegantes, Brazil",
+      "text": "Navegantes airport is the main commercial gateway for Blumenau; road transfers can take around an hour or more depending on traffic."
+    }
+  ],
+  "airportTransfer": {
+    "value": "60-90 min by road transfer from Navegantes to Blumenau",
+    "note": "from Ministro Victor Konder International Airport",
+    "distance": "about 55 km east of Blumenau"
+  },
+  "bookingDestination": "Blumenau, Brazil",
+  "stayOverview": "Choose Centro for the easiest general Blumenau stay, or Vila Germanica when Oktoberfest, concerts or trade events drive the trip. Ponta Aguda is quieter, Victor Konder suits business errands, and Garcia is better for car-based local visits.",
+  "hotelIntro": "Blumenau hotels split between central convenience and event access: Centro keeps restaurants and Rua XV de Novembro close, Vila Germanica is strongest for festival dates, while Ponta Aguda, Victor Konder and Garcia work better with a car.",
+  "rentalCars": "A rental car helps for coastal trips, wineries and Navegantes transfers, but is not essential between Centro and Vila Germanica.",
+  "travelTips": [
+    {
+      "title": "Event dates",
+      "text": "Book well ahead for Oktoberfest, when Vila Germanica rooms and central hotels rise sharply and traffic changes around the pavilions."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Confirm Navegantes transfers in advance, especially for late arrivals, because Blumenau is inland and not beside the airport."
+    },
+    {
+      "title": "Best base",
+      "text": "Stay in Centro outside festival periods; it keeps historic streets, restaurants and taxi access to Vila Germanica simple."
+    },
+    {
+      "title": "Coast add-on",
+      "text": "Add Balneario Camboriu or Itajai if the trip needs beach time after the city and festival stops."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Vila Germanica Park",
+      "text": "Vila Germanica Park is Blumenau's festival complex, the main stage for Oktoberfest and many of the city's largest events."
+    },
+    {
+      "title": "Rua XV de Novembro",
+      "text": "Rua XV de Novembro is the central historic street, useful for architecture, shopping and a first walk through Blumenau."
+    },
+    {
+      "title": "Museu da Cerveja",
+      "text": "Museu da Cerveja is a named Blumenau landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Catedral Sao Paulo Apostolo",
+      "text": "Catedral Sao Paulo Apostolo is a modern landmark in the centre, easy to combine with Rua XV de Novembro."
+    },
+    {
+      "title": "Museu Hering",
+      "text": "Museu Hering is a named Blumenau landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Parque Ramiro Ruediger",
+      "text": "Parque Ramiro Ruediger is a practical green space near Vila Germanica, good for a walk between event sessions."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Pomerode",
+      "label": "Town",
+      "text": "Pomerode is a nearby German-Brazilian town with half-timbered buildings, family attractions and an easy short drive from Blumenau."
+    },
+    {
+      "name": "Balneario Camboriu",
+      "label": "Coast",
+      "text": "Balneario Camboriu adds beaches, high-rises and nightlife to a Blumenau trip, usually as a full-day coastal detour."
+    },
+    {
+      "name": "Itajai",
+      "label": "Port",
+      "text": "Itajai is the nearest port-city option, useful for seafood, beaches nearby and airport-linked coastal logistics."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/food-drink/events/oktoberfest-blumenau.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/food-drink/events/img/oktoberfest-blumenau-mini.png",
       "title": "Oktoberfest Blumenau",
       "meta": "Oct 2026 · Blumenau"
     }

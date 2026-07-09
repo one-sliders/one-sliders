@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Ankara in 2026: calendars, nearby pages and linked event views for planning around Europe / Turkey."
   },
   "region": "Capital city of Turkey",
-  "population": "tba",
+  "population": "~5.8M",
   "coordinates": {
     "lat": 39.9334,
     "lon": 32.8597
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ankara travel, stays & events guide",
-  "heroText": "Ankara is a key city in Turkey, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Ankara is a Turkey base best planned around named sights rather than a generic stopover. Start with Anitkabir, add Museum of Anatolian Civilizations, and use Ankara Castle to understand the city's history, street life and visitor rhythm. Ankara International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Ankara, Turkey",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Ankara",
-      "text": "Ankara is a key city in Turkey, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ankara, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ankara, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ankara reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ankara sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ankara International Airport",
+      "search": "Ankara International Airport, Ankara, Turkey",
+      "text": "Ankara International Airport is the main air gateway for Ankara; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Ankara International Airport and central Ankara before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Ankara, Turkey",
+  "stayOverview": "Start with City centre for the easiest first Ankara stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ankara hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ankara unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ankara International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Anitkabir and Museum of Anatolian Civilizations so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ankara, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Anitkabir",
+      "text": "Anitkabir is a named stop in Ankara worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Museum of Anatolian Civilizations",
+      "text": "Museum of Anatolian Civilizations is a key Ankara culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Ankara Castle",
+      "text": "Ankara Castle is a clear heritage marker in Ankara, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Kocatepe Mosque",
+      "text": "Kocatepe Mosque anchors the historic and ceremonial side of Ankara, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Atakule",
+      "text": "Atakule is a named stop in Ankara worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Genclik Park",
+      "text": "Genclik Park adds outdoor time to a Ankara stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Anitkabir",
+      "label": "Heritage",
+      "text": "Anitkabir is a heritage-focused side trip from Ankara; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ankara Castle",
+      "label": "Heritage",
+      "text": "Ankara Castle is a heritage-focused side trip from Ankara; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Atakule",
+      "label": "Heritage",
+      "text": "Atakule is a heritage-focused side trip from Ankara; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

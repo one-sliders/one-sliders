@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Managua travel, stays & events guide",
-  "heroText": "Managua is a capital city in Nicaragua, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Managua is a Nicaragua base best planned around named sights rather than a generic stopover. Start with Puerto Salvador Allende, add Old Cathedral of Managua, and use Tiscapa Lagoon to understand the city's history, street life and visitor rhythm. Augusto C. Sandino International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Managua, Nicaragua",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Managua",
-      "text": "Managua is a capital city in Nicaragua, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Managua, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Managua, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Managua reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Managua sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Augusto C. Sandino International Airport (MGA)",
+      "search": "Augusto C. Sandino International Airport (MGA), Managua, Nicaragua",
+      "text": "Augusto C. Sandino International Airport (MGA) is the main air gateway for Managua; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Augusto C. Sandino International Airport (MGA) and central Managua before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Managua, Nicaragua",
+  "stayOverview": "Start with City centre for the easiest first Managua stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Managua hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Managua unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Augusto C. Sandino International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Puerto Salvador Allende and Old Cathedral of Managua so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Managua, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Puerto Salvador Allende",
+      "text": "Puerto Salvador Allende is a named stop in Managua worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Old Cathedral of Managua",
+      "text": "Old Cathedral of Managua anchors the historic and ceremonial side of Managua, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Tiscapa Lagoon",
+      "text": "Tiscapa Lagoon is a named stop in Managua worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "National Palace of Culture",
+      "text": "National Palace of Culture anchors the historic and ceremonial side of Managua, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Roberto Huembes Market",
+      "text": "Roberto Huembes Market gives Managua a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Loma de Tiscapa",
+      "text": "Loma de Tiscapa is a named stop in Managua worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Puerto Salvador Allende",
+      "label": "Heritage",
+      "text": "Puerto Salvador Allende is a heritage-focused side trip from Managua; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Tiscapa Lagoon",
+      "label": "Nature",
+      "text": "Tiscapa Lagoon works as a nature-focused side trip from Managua, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Loma de Tiscapa",
+      "label": "Heritage",
+      "text": "Loma de Tiscapa is a heritage-focused side trip from Managua; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

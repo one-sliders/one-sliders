@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Helsingborg, Sweden trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Skane",
-  "population": "tba",
+  "population": "~116K",
   "coordinates": {
     "lat": 56.04673,
     "lon": 12.69437
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Helsingborg travel, stays & events guide",
-  "heroText": "Helsingborg is one of Skane's key Oresund cities, facing Helsingor across the narrowest part of the strait.  The city is shaped by medieval fortifications, ferry traffic, port industry, Danish-Swedish border history, coastal parks and a compact centre around Karnan, Norra Hamnen and the waterfront.",
+  "heroText": "Helsingborg is a Sweden base best planned around named sights rather than a generic stopover. Start with Karnan, add Sofiero Palace, and use Dunkers kulturhus to understand the city's history, street life and visitor rhythm. Helsingborg International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Helsingborg, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Helsingborg, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Helsingborg reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Helsingborg sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Helsingborg International Airport",
+      "search": "Helsingborg International Airport, Helsingborg, Sweden",
+      "text": "Helsingborg International Airport is the main air gateway for Helsingborg; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Helsingborg International Airport and central Helsingborg before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Helsingborg, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Karnan",
-    "Sofiero Palace",
-    "Dunkers kulturhus",
-    "Oresund ferries",
-    "Tropical Beach",
-    "Ramlosa spring park"
+  "stayOverview": "Start with City centre for the easiest first Helsingborg stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Helsingborg hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Helsingborg unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Helsingborg International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Karnan and Sofiero Palace so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Helsingborg, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Karnan",
+      "text": "Karnan is a named stop in Helsingborg worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sofiero Palace",
+      "text": "Sofiero Palace anchors the historic and ceremonial side of Helsingborg, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Dunkers kulturhus",
+      "text": "Dunkers kulturhus is a named stop in Helsingborg worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Oresund ferries",
+      "text": "Oresund ferries is a named stop in Helsingborg worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Tropical Beach",
+      "text": "Tropical Beach adds outdoor time to a Helsingborg stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ramlosa spring park",
+      "text": "Ramlosa spring park adds outdoor time to a Helsingborg stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Karnan",
+      "label": "Heritage",
+      "text": "Karnan is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Dunkers kulturhus",
+      "label": "Heritage",
+      "text": "Dunkers kulturhus is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Oresund ferries",
+      "label": "Heritage",
+      "text": "Oresund ferries is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

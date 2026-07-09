@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Minsk in 2026: calendars, nearby pages and linked event views for planning around Europe / Belarus."
   },
   "region": "Capital city of Belarus",
-  "population": "tba",
+  "population": "~2.0M",
   "coordinates": {
     "lat": 53.90019,
     "lon": 27.56653
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Minsk travel, stays & events guide",
-  "heroText": "Minsk is a key city in Belarus, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Minsk is a spacious capital of Soviet avenues, parks and post-war architecture, with a calmer rhythm than many European capitals. Start on Independence Avenue, visit the National Library of Belarus for views, then walk Trinity Suburb beside the Svislach River. Minsk National Airport is well outside the city, so transfer planning matters.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Minsk, Belarus",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Minsk",
-      "text": "Minsk is a key city in Belarus, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Upper Town",
+      "text": "Upper Town is the most atmospheric central base, close to churches, museums, the river and evening walks.",
+      "bestFor": "history, first visits, walking"
+    },
+    {
+      "name": "Independence Avenue",
+      "text": "Independence Avenue suits business and sightseeing stays with metro access, large hotels and monumental architecture.",
+      "bestFor": "business, metro, landmarks"
+    },
+    {
+      "name": "Trinity Suburb",
+      "text": "Trinity Suburb is a small restored riverside quarter, good for quieter central stays near cafes and museums.",
+      "bestFor": "riverside walks, cafes, quiet stays"
+    },
+    {
+      "name": "Nemiga",
+      "text": "Nemiga is practical for shopping centres, nightlife and fast access between Upper Town and the river.",
+      "bestFor": "shopping, nightlife, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Minsk National Airport (MSQ)",
+      "search": "Minsk National Airport, Minsk, Belarus",
+      "text": "Minsk National Airport is east of the city; transfers are long enough that taxis or planned buses should be checked before arrival."
+    }
+  ],
+  "airportTransfer": {
+    "value": "40-60 min by taxi or airport bus to central Minsk",
+    "note": "from Minsk National Airport",
+    "distance": "about 42 km east of the centre"
+  },
+  "bookingDestination": "Minsk, Belarus",
+  "stayOverview": "Upper Town and Nemiga are best for a first central stay, Independence Avenue works for business and metro convenience, and Trinity Suburb gives a quieter riverside base close to museums and old-town walks.",
+  "hotelIntro": "Minsk hotels are spread along broad central axes. Choose Upper Town for atmosphere, Independence Avenue for transport and larger hotels, Trinity Suburb for a slower riverside feel, or Nemiga for nightlife and shopping.",
+  "rentalCars": "Use metro and taxis in Minsk; rent only for countryside trips or routes beyond the capital.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay near Upper Town or Nemiga if you want central walks without relying on taxis all day."
+    },
+    {
+      "title": "Distances",
+      "text": "Minsk looks spacious on the map because avenues are wide; use the metro for longer cross-centre moves."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Check current airport bus schedules before arrival, because Minsk National Airport is far from the centre."
+    },
+    {
+      "title": "Day trip",
+      "text": "Mir Castle and Nesvizh Palace can be combined as a full heritage day trip from Minsk."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Independence Avenue",
+      "text": "Independence Avenue is a named stop in Minsk worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Independence Avenue"
+    },
+    {
+      "title": "Upper Town",
+      "text": "Upper Town is a named stop in Minsk worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Upper Town"
+    },
+    {
+      "title": "Trinity Suburb",
+      "text": "Trinity Suburb is a named stop in Minsk worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Trinity Suburb"
+    },
+    {
+      "title": "National Library of Belarus",
+      "text": "National Library of Belarus gives Minsk a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "National Library of Belarus"
+    },
+    {
+      "title": "Victory Square",
+      "text": "Victory Square is a clear heritage marker in Minsk, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Victory Square"
+    },
+    {
+      "title": "Gorky Park",
+      "text": "Gorky Park gives central Minsk a green break with paths, rides and easy access from nearby metro stops.",
+      "name": "Gorky Park"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mir Castle",
+      "label": "Heritage",
+      "text": "Mir Castle is a UNESCO-listed fortress and palace complex west of Minsk, often paired with Nesvizh."
+    },
+    {
+      "name": "Nesvizh Palace",
+      "label": "Heritage",
+      "text": "Nesvizh Palace adds grand interiors, gardens and Radziwill family history on a longer day out."
+    },
+    {
+      "name": "Dudutki",
+      "label": "Culture",
+      "text": "Dudutki is an open-air museum of Belarusian crafts, food and rural traditions south of the capital."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Minsk",
     "matchedCountry": "Belarus"
-  }
+  },
+  "transitOperator": "Minsk Metro"
 }

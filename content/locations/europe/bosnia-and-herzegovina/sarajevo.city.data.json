@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Sarajevo in 2026: calendars, nearby pages and linked event views for planning around Europe / Bosnia And Herzegovina."
   },
   "region": "Capital city of Bosnia and Herzegovina",
-  "population": "tba",
+  "population": "~275K",
   "coordinates": {
     "lat": 43.84864,
     "lon": 18.35644
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Sarajevo travel, stays & events guide",
-  "heroText": "Sarajevo is a key city in Bosnia and Herzegovina, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sarajevo is a mountain-ringed capital where Ottoman lanes, Austro-Hungarian facades and 20th-century history meet in a compact valley. Begin in Bascarsija, cross the Latin Bridge, then ride up to the Yellow Fortress for sunset over the city. Sarajevo International Airport is close, but valley traffic can still shape transfer times.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sarajevo, Bosnia and Herzegovina",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sarajevo",
-      "text": "Sarajevo is a key city in Bosnia and Herzegovina, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Bascarsija",
+      "text": "Bascarsija is the old bazaar core, best for first stays focused on cafes, mosques, craft lanes and short walks.",
+      "bestFor": "history, first visits, food"
+    },
+    {
+      "name": "Ferhadija",
+      "text": "Ferhadija keeps you on the pedestrian spine between Ottoman and Austro-Hungarian Sarajevo, with shops and central hotels.",
+      "bestFor": "walking, shopping, central hotels"
+    },
+    {
+      "name": "Marijin Dvor",
+      "text": "Marijin Dvor is practical for business hotels, museums, malls and access toward the airport side of the city.",
+      "bestFor": "business, museums, airport access"
+    },
+    {
+      "name": "Ilidza",
+      "text": "Ilidza sits near the airport and Vrelo Bosne, useful for spa hotels, green space and early flights.",
+      "bestFor": "airport, parks, quieter stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sarajevo International Airport (SJJ)",
+      "search": "Sarajevo International Airport, Sarajevo, Bosnia and Herzegovina",
+      "text": "Sarajevo International Airport is southwest of the centre near Ilidza; taxis and transfers are the most common visitor options."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20-35 min by taxi or transfer to the old town",
+    "note": "from Sarajevo International Airport",
+    "distance": "about 10 km southwest of Bascarsija"
+  },
+  "bookingDestination": "Sarajevo, Bosnia and Herzegovina",
+  "stayOverview": "Bascarsija is the atmospheric first-choice base, Ferhadija works for central walks, Marijin Dvor suits business and museums, and Ilidza is better for airport access, spa hotels and Vrelo Bosne.",
+  "hotelIntro": "Sarajevo's valley shape makes location matter. Old-town hotels are best for sightseeing, Ferhadija keeps everything walkable, Marijin Dvor is practical, and Ilidza is quieter but farther from evening old-town life.",
+  "rentalCars": "Avoid driving in the old centre; rent only for mountain villages, Mostar or longer Bosnia road trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Bascarsija for a first visit, especially if you want cafes, cevapi and historic lanes close by."
+    },
+    {
+      "title": "Terrain",
+      "text": "Sarajevo rises quickly from the valley floor, so check slopes before booking hillside accommodation with luggage."
+    },
+    {
+      "title": "History",
+      "text": "Balance old-town wandering with a museum or guided tour to understand the 1990s siege context respectfully."
+    },
+    {
+      "title": "Day trip",
+      "text": "Mostar is possible as a long day trip, but it deserves an overnight if your schedule allows."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Bascarsija",
+      "text": "Bascarsija is a named stop in Sarajevo worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Bascarsija"
+    },
+    {
+      "title": "Latin Bridge",
+      "text": "Latin Bridge is a clear heritage marker in Sarajevo, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Latin Bridge"
+    },
+    {
+      "title": "Yellow Fortress",
+      "text": "Yellow Fortress is a clear heritage marker in Sarajevo, best used as a fixed point when grouping nearby streets, monuments and viewpoints.",
+      "name": "Yellow Fortress"
+    },
+    {
+      "title": "Gazi Husrev-beg Mosque",
+      "text": "Gazi Husrev-beg Mosque is one of Sarajevo's religious landmarks; check visiting hours and dress expectations before building the route around it.",
+      "name": "Gazi Husrev-beg Mosque"
+    },
+    {
+      "title": "Sarajevo City Hall",
+      "text": "Sarajevo City Hall is a named Sarajevo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor.",
+      "name": "Sarajevo City Hall"
+    },
+    {
+      "title": "Vrelo Bosne",
+      "text": "Vrelo Bosne is a spring and park area near Ilidza, good for a green break from the city centre.",
+      "name": "Vrelo Bosne"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mostar",
+      "label": "Heritage",
+      "text": "Mostar is famous for Stari Most, Ottoman lanes and a warmer Herzegovina atmosphere south of Sarajevo."
+    },
+    {
+      "name": "Bjelasnica",
+      "label": "Mountain",
+      "text": "Bjelasnica offers Olympic mountain scenery, skiing in winter and cooler hiking routes in summer."
+    },
+    {
+      "name": "Travnik",
+      "label": "Town",
+      "text": "Travnik adds Ottoman fort views, painted mosque interiors and a strong food stop in central Bosnia."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -107,5 +193,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Sarajevo",
     "matchedCountry": "Bosnia and Herzegovina"
-  }
+  },
+  "transitOperator": "GRAS Sarajevo"
 }

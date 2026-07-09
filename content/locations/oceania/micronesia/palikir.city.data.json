@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Palikir travel, stays & events guide",
-  "heroText": "Palikir is a capital city in Micronesia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Palikir is a Micronesia base best planned around named sights rather than a generic stopover. Start with Palikir National Government Complex, add Pohnpei Island, and use Nan Madol to understand the city's history, street life and visitor rhythm. Pohnpei International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Palikir, Micronesia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Palikir",
-      "text": "Palikir is a capital city in Micronesia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Palikir, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Palikir, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Palikir reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Palikir sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Pohnpei International Airport (PNI)",
+      "search": "Pohnpei International Airport (PNI), Palikir, Micronesia",
+      "text": "Pohnpei International Airport (PNI) is the main air gateway for Palikir; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Pohnpei International Airport (PNI) and central Palikir before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Palikir, Micronesia",
+  "stayOverview": "Start with City centre for the easiest first Palikir stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Palikir hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Palikir unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Pohnpei International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Palikir National Government Complex and Pohnpei Island so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Palikir, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Palikir National Government Complex",
+      "text": "Palikir National Government Complex is a named stop in Palikir worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pohnpei Island",
+      "text": "Pohnpei Island adds the water-facing side of Palikir, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Nan Madol",
+      "text": "Nan Madol is a named stop in Palikir worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kepirohi Waterfall",
+      "text": "Kepirohi Waterfall is a named stop in Palikir worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sokehs Rock",
+      "text": "Sokehs Rock gives Palikir a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Kolonia Town",
+      "text": "Kolonia Town is a named stop in Palikir worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Palikir National Government Complex",
+      "label": "Heritage",
+      "text": "Palikir National Government Complex is a heritage-focused side trip from Palikir; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Pohnpei Island",
+      "label": "Nature",
+      "text": "Pohnpei Island works as a nature-focused side trip from Palikir, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Nan Madol",
+      "label": "Heritage",
+      "text": "Nan Madol is a heritage-focused side trip from Palikir; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

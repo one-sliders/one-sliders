@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Stockholm, Sweden trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Stockholm County",
-  "population": "tba",
+  "population": "~985K",
   "coordinates": {
     "lat": 59.32938,
     "lon": 18.06871
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Stockholm travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Stockholm is a Sweden base best planned around named sights rather than a generic stopover. Start with Gamla Stan, add Vasa Museum, and use Stockholm archipelago to understand the city's history, street life and visitor rhythm. Stockholm Arlanda handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Stockholm, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Stockholm, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Stockholm reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Stockholm sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Stockholm Arlanda (ARN)",
+      "search": "Stockholm Arlanda (ARN), Stockholm, Sweden",
+      "text": "Stockholm Arlanda (ARN) is the main air gateway for Stockholm; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Stockholm Arlanda (ARN) and central Stockholm before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Stockholm, Sweden",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Gamla Stan",
-    "Vasa Museum",
-    "Stockholm archipelago",
-    "ABBA The Museum",
-    "Royal Palace",
-    "Fotografiska"
+  "stayOverview": "Start with City centre for the easiest first Stockholm stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Stockholm hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Stockholm unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Stockholm Arlanda, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Gamla Stan and Vasa Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Stockholm, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Gamla Stan",
+      "text": "Gamla Stan is a named stop in Stockholm worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Vasa Museum",
+      "text": "Vasa Museum is a key Stockholm culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Stockholm archipelago",
+      "text": "Stockholm archipelago is a clear heritage marker in Stockholm, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "ABBA The Museum",
+      "text": "ABBA The Museum is a key Stockholm culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Royal Palace",
+      "text": "Royal Palace anchors the historic and ceremonial side of Stockholm, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Fotografiska",
+      "text": "Fotografiska is a named stop in Stockholm worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Gamla Stan",
+      "label": "Heritage",
+      "text": "Gamla Stan is a heritage-focused side trip from Stockholm; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Stockholm archipelago",
+      "label": "Heritage",
+      "text": "Stockholm archipelago is a heritage-focused side trip from Stockholm; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fotografiska",
+      "label": "Heritage",
+      "text": "Fotografiska is a heritage-focused side trip from Stockholm; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

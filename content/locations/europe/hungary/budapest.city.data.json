@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Budapest in 2026: calendars, nearby pages and linked event views for planning around Europe / Hungary."
   },
   "region": "Capital city of Hungary",
-  "population": "tba",
+  "population": "~1.7M",
   "coordinates": {
     "lat": 47.49835,
     "lon": 19.04045
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Budapest travel, stays & events guide",
-  "heroText": "Budapest is a key city in Hungary, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Budapest is a Danube capital of thermal baths, grand cafes, ruin bars and hilltop views. Start at Buda Castle, cross the Chain Bridge area, then plan Parliament, the Jewish Quarter and Széchenyi Thermal Bath across different parts of the city. Budapest Airport is southeast of town, with bus and taxi transfers into the centre.",
   "kpis": [
     {
       "label": "Population",
@@ -46,30 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Budapest, Hungary",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Budapest",
-      "text": "Budapest is a key city in Hungary, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "District V",
+      "text": "District V is the central Pest base for Parliament, river walks, shopping streets and classic first visits.",
+      "bestFor": "first visits, river walks, shopping"
+    },
+    {
+      "name": "Jewish Quarter",
+      "text": "The Jewish Quarter is lively, with ruin bars, restaurants, synagogues and strong nightlife access.",
+      "bestFor": "nightlife, food, bars"
+    },
+    {
+      "name": "Buda Castle District",
+      "text": "Buda Castle District is quieter and historic, with views and atmosphere but fewer late-night options.",
+      "bestFor": "views, history, quiet stays"
+    },
+    {
+      "name": "Terézváros",
+      "text": "Terézváros suits Opera, Andrassy Avenue, transport and a balance of hotels and local streets.",
+      "bestFor": "transport, culture, hotels"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Budapest Ferenc Liszt International Airport (BUD)",
+      "search": "Budapest Ferenc Liszt International Airport, Budapest, Hungary",
+      "text": "Budapest Airport is southeast of the city, with airport buses, taxis and transfers into central Pest."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-50 min by airport bus or taxi to central Pest",
+    "note": "from Budapest Ferenc Liszt International Airport",
+    "distance": "about 20 km southeast of the centre"
+  },
+  "bookingDestination": "Budapest, Hungary",
+  "stayOverview": "District V is the easiest first base, the Jewish Quarter is best for nightlife, Buda Castle District is quieter and scenic, and Terézváros balances culture, transport and hotel choice.",
+  "hotelIntro": "Budapest is split by the Danube. Pest is usually better for restaurants and nightlife, while Buda suits views and calmer historic stays if you accept more climbing or transit.",
+  "rentalCars": "Do not rent for Budapest; public transport, walking and trains are better for the city and common day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose District V for a first visit, or the Jewish Quarter if ruin bars and restaurants are the focus."
+    },
+    {
+      "title": "Baths",
+      "text": "Keep the Budapest plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Transit",
+      "text": "Use BKK passes for metro, trams and buses; tram rides along the Danube are especially useful."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Budapest, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Buda Castle",
+      "title": "Buda Castle",
+      "text": "Buda Castle is a clear heritage marker in Budapest, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Hungarian Parliament Building",
+      "title": "Hungarian Parliament Building",
+      "text": "Hungarian Parliament Building is a named stop in Budapest worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Széchenyi Thermal Bath",
+      "title": "Széchenyi Thermal Bath",
+      "text": "Széchenyi Thermal Bath is a named stop in Budapest worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Jewish Quarter",
+      "title": "Jewish Quarter",
+      "text": "Jewish Quarter gives Budapest a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Chain Bridge",
+      "title": "Chain Bridge",
+      "text": "Chain Bridge is a clear heritage marker in Budapest, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Great Market Hall",
+      "title": "Great Market Hall",
+      "text": "Great Market Hall is the main historic food market, useful for paprika, produce and a quick local-food stop."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Szentendre",
+      "label": "Town",
+      "text": "Szentendre is a colourful Danube Bend town and the easiest cultural day trip from Budapest."
+    },
+    {
+      "name": "Visegrád",
+      "label": "Castle",
+      "text": "Visegrád is a nearby side trip from Budapest; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Lake Balaton",
+      "label": "Lake",
+      "text": "Lake Balaton is possible as a long day, though it works better as an overnight summer trip."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/sport/football/events/champions-league-final.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
+      "img": "/content/categories/sport/football/events/img/champions-league-final-mini.png",
       "title": "Champions League Final",
       "meta": "May 2026 · Budapest"
     }
@@ -147,5 +233,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Budapest",
     "matchedCountry": "Hungary"
-  }
+  },
+  "transitOperator": "BKK"
 }

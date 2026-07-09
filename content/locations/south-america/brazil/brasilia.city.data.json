@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Brasilia in 2026: calendars, nearby pages and linked event views for planning around South America / Brazil."
   },
   "region": "Capital city in Brazil",
-  "population": "tba",
+  "population": "~3.0M",
   "coordinates": {
     "lat": -15.77972,
     "lon": -47.92972
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Brasilia travel, stays & events guide",
-  "heroText": "Brasilia is a capital city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Brasilia is Brazil's planned capital, built around sweeping avenues, monumental government buildings and Oscar Niemeyer's modernist architecture. Follow the Eixo Monumental from the Cathedral of Brasilia to the National Congress and Praca dos Tres Poderes, then cross to Pontao do Lago Sul for lake views. Brasilia airport sits close enough for straightforward transfers.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Brasilia, Brazil",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Brasilia",
-      "text": "Brasilia is a capital city in Brazil, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Setor Hoteleiro Sul",
+      "text": "Setor Hoteleiro Sul is the classic hotel base, close to ministries, malls and the Eixo Monumental by taxi or rideshare.",
+      "bestFor": "business, first visits, monuments"
+    },
+    {
+      "name": "Setor Hoteleiro Norte",
+      "text": "Setor Hoteleiro Norte has many business hotels and quick access to shopping, convention venues and central government districts.",
+      "bestFor": "business hotels, meetings, central access"
+    },
+    {
+      "name": "Asa Sul",
+      "text": "Asa Sul feels more local and residential, with restaurants, cafes and easier evenings than the formal hotel sectors.",
+      "bestFor": "restaurants, longer stays, local feel"
+    },
+    {
+      "name": "Asa Norte",
+      "text": "Asa Norte is useful for university visits, casual bars and a less formal stay while remaining close to central roads.",
+      "bestFor": "university, nightlife, longer stays"
+    },
+    {
+      "name": "Lago Sul",
+      "text": "Lago Sul is quieter and upscale, best for lake restaurants, embassies and car-based stays outside the monumental core.",
+      "bestFor": "quiet stays, embassies, lake views"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Brasilia International Airport (BSB)",
+      "search": "Brasilia International Airport, Brasilia, Brazil",
+      "text": "Brasilia International Airport sits south of the Plano Piloto; transfers are usually straightforward, but government traffic can slow central routes."
+    }
+  ],
+  "airportTransfer": {
+    "value": "20-35 min by taxi or ride-hail to the Plano Piloto hotel sectors",
+    "note": "from Brasilia International Airport",
+    "distance": "about 12 km south of the central axis"
+  },
+  "bookingDestination": "Brasilia, Brazil",
+  "stayOverview": "Use Setor Hoteleiro Sul or Norte for the easiest monument and business access, then compare Asa Sul or Asa Norte for more restaurants and local evenings. Lago Sul suits quieter, car-based stays near lake dining and embassies.",
+  "hotelIntro": "Brasilia hotel choice depends on purpose: the hotel sectors are practical but formal, Asa Sul and Asa Norte feel more lived-in, and Lago Sul works when lake views, embassies or quieter nights matter more than walking.",
+  "rentalCars": "A rental car helps in Brasilia because distances are wide and many sights sit along car-oriented avenues.",
+  "travelTips": [
+    {
+      "title": "Distances",
+      "text": "Do not judge Brasilia by map distance alone; roads are broad, crossings are limited and many routes work better by car."
+    },
+    {
+      "title": "Best base",
+      "text": "Choose the hotel sectors for business or short stays, then use Asa Sul for restaurants and a more local evening routine."
+    },
+    {
+      "title": "Architecture route",
+      "text": "Plan the Cathedral, National Congress and Praca dos Tres Poderes as one axis rather than scattered stops."
+    },
+    {
+      "title": "Dry season",
+      "text": "The dry months can feel very dusty and bright, so carry water, sunglasses and sun protection for monument walks."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Cathedral of Brasilia",
+      "text": "The Cathedral of Brasilia is one of Niemeyer's defining works, with sculptural concrete ribs and a striking stained-glass interior."
+    },
+    {
+      "title": "National Congress",
+      "text": "The National Congress anchors the Eixo Monumental with twin towers and bowl-shaped chambers that define the capital's skyline."
+    },
+    {
+      "title": "Praca dos Tres Poderes",
+      "text": "Praca dos Tres Poderes brings the presidential palace, Supreme Court and Congress together in Brasilia's symbolic civic space."
+    },
+    {
+      "title": "Juscelino Kubitschek Memorial",
+      "text": "Juscelino Kubitschek Memorial is a named Brasilia landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Santuario Dom Bosco",
+      "text": "Santuario Dom Bosco is famous for its blue stained glass, a calm and memorable stop away from the main axis."
+    },
+    {
+      "title": "Pontao do Lago Sul",
+      "text": "Pontao do Lago Sul is the easy lakefront dining and sunset stop, especially useful after a day of monuments."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Chapada dos Veadeiros",
+      "label": "Nature",
+      "text": "Chapada dos Veadeiros is a major cerrado and waterfall escape, better as a weekend than a quick day trip."
+    },
+    {
+      "name": "Pirenopolis",
+      "label": "Heritage",
+      "text": "Pirenopolis is a heritage-focused side trip from Brasilia; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Cristalina",
+      "label": "Nature",
+      "text": "Cristalina is known for quartz, rural scenery and outdoor stops southeast of Brasilia, easiest with a car."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/national-day/events/brazil-independence-day.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/national-day/events/img/brazil-independence-day-mini.png",
       "title": "Brazil Independence Day",
       "meta": "Sep 2026 · Brasilia"
     }
@@ -147,5 +232,6 @@
   "continentName": "South America",
   "countrySlug": "brazil",
   "countryName": "Brazil",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "Metro-DF"
 }

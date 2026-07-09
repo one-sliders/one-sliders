@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Port Louis in 2026: calendars, nearby pages and linked event views for planning around Africa / Mauritius."
   },
   "region": "Capital city in Mauritius",
-  "population": "tba",
+  "population": "~150K",
   "coordinates": {
     "lat": -20.16194,
     "lon": 57.49889
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Port Louis travel, stays & events guide",
-  "heroText": "Port Louis is a capital city in Mauritius, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Port Louis is Mauritius's compact capital, wedged between the harbour and the green Moka Range, mixing colonial architecture with a modern waterfront. First-time visitors should browse the stalls of Port Louis Central Market, walk the shops and restaurants of Caudan Waterfront, and climb to Fort Adelaide for skyline views. Sir Seewoosagur Ramgoolam International Airport sits well south of the city, so most travelers stay along the coast and visit for the day.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Port Louis, Mauritius",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Port Louis",
-      "text": "Port Louis is a capital city in Mauritius, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Caudan Waterfront",
+      "text": "Caudan Waterfront is Port Louis's redeveloped harbourfront, home to shops, restaurants, a casino and the city's main hotels.",
+      "bestFor": "hotels, dining, shopping"
+    },
+    {
+      "name": "Chinatown",
+      "text": "Chinatown is a compact historic district near the Central Market, known for its temples, herbalists and street food.",
+      "bestFor": "markets, street food, history"
+    },
+    {
+      "name": "Plaine Verte",
+      "text": "Plaine Verte is a multicultural residential district north of downtown, known for its mosques and lively daily bazaar.",
+      "bestFor": "local life, budget stays"
+    },
+    {
+      "name": "Moka",
+      "text": "Moka, just outside the capital, is a green, cooler suburb near the university, useful for longer or quieter stays.",
+      "bestFor": "quiet stays, cooler climate"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sir Seewoosagur Ramgoolam International Airport (MRU)",
+      "search": "Sir Seewoosagur Ramgoolam International Airport, Mauritius",
+      "text": "Sir Seewoosagur Ramgoolam International Airport lies about 48 kilometres southeast of Port Louis, closer to the island's south-east resort belt than the capital."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Sir Seewoosagur Ramgoolam International Airport (MRU) and central Port Louis before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Port Louis, Mauritius",
+  "stayOverview": "Most visitors base themselves at Caudan Waterfront for hotels, restaurants and easy access to the Central Market and Fort Adelaide, while Moka offers a cooler, quieter alternative just outside the city. Many travelers instead stay on the south-east coast and visit Port Louis as a day trip.",
+  "hotelIntro": "Port Louis itself has fewer resort-style hotels than the coast, so Caudan Waterfront's business and boutique hotels suit those wanting to stay in the capital, while Moka offers quieter, greener alternatives just outside town.",
+  "rentalCars": "A rental car is useful for exploring beyond Port Louis, since the island's main sights and beaches are spread along the coast well away from the capital.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay at Caudan Waterfront for the easiest access to the Central Market, Fort Adelaide and the capital's restaurants and shops."
+    },
+    {
+      "title": "Visit the market early",
+      "text": "Arrive at Port Louis Central Market in the morning for the freshest produce, spices and the liveliest atmosphere."
+    },
+    {
+      "title": "Beat the heat midday",
+      "text": "Plan sightseeing for morning or late afternoon, since Port Louis can be hot and humid at midday, especially away from the coast."
+    },
+    {
+      "title": "Day trip from the coast",
+      "text": "If staying at a beach resort, budget half a day for a Port Louis visit, since most sights cluster within walking distance of the waterfront."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Caudan Waterfront",
+      "text": "Caudan Waterfront adds the water-facing side of Port Louis, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Central Market Port Louis",
+      "text": "Central Market Port Louis gives Port Louis a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Aapravasi Ghat",
+      "text": "Aapravasi Ghat is a named stop in Port Louis worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Blue Penny Museum",
+      "text": "Blue Penny Museum is a key Port Louis culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Fort Adelaide",
+      "text": "Fort Adelaide is a clear heritage marker in Port Louis, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Jummah Mosque",
+      "text": "Jummah Mosque anchors the historic and ceremonial side of Port Louis, making it a practical stop for architecture, local memory and orientation."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Aapravasi Ghat",
+      "label": "Heritage",
+      "text": "Aapravasi Ghat, a UNESCO World Heritage site near the harbour, marks the arrival point for thousands of indentured labourers brought to Mauritius."
+    },
+    {
+      "name": "Pamplemousses Botanical Garden",
+      "label": "Nature",
+      "text": "Pamplemousses Botanical Garden, a short drive north, is famous for its giant water lilies and centuries-old trees."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

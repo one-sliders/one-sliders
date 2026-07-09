@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Caracas in 2026: calendars, nearby pages and linked event views for planning around South America / Venezuela."
   },
   "region": "Capital city in Venezuela",
-  "population": "tba",
+  "population": "~2.1M",
   "coordinates": {
     "lat": 10.48801,
     "lon": -66.87919
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Caracas travel, stays & events guide",
-  "heroText": "Caracas is a capital city in Venezuela, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Caracas is Venezuela's mountain-framed capital, set below Avila National Park with grand civic spaces, museums and sharp contrasts between neighborhoods. Use Chacao or Altamira as a practical base, visit Plaza Bolivar and the Museo de Bellas Artes by day, then plan Waraira Repano or Galipan with local advice. Maiquetia airport is on the coast, so transfers require care and timing.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Caracas, Venezuela",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Caracas",
-      "text": "Caracas is a capital city in Venezuela, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Chacao",
+      "text": "Chacao is one of the most practical visitor bases, with restaurants, hotels, offices and better evening logistics than central areas.",
+      "bestFor": "first visits, dining, business"
+    },
+    {
+      "name": "Altamira",
+      "text": "Altamira is an upscale eastern district with hotels, plazas, restaurants and access toward Avila routes.",
+      "bestFor": "upscale stays, restaurants, mountain access"
+    },
+    {
+      "name": "Las Mercedes",
+      "text": "Las Mercedes is known for restaurants, nightlife and business hotels, best used with taxis or private transfers.",
+      "bestFor": "dining, nightlife, business"
+    },
+    {
+      "name": "La Castellana",
+      "text": "La Castellana is a polished business and embassy district, useful for quieter high-end stays in eastern Caracas.",
+      "bestFor": "business, embassies, quiet stays"
+    },
+    {
+      "name": "Sabana Grande",
+      "text": "Sabana Grande is central and transit-linked, but visitors should use extra caution and prefer daytime movement.",
+      "bestFor": "transit, budget, daytime access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Simon Bolivar International Airport (CCS)",
+      "search": "Simon Bolivar International Airport, Maiquetia, Venezuela",
+      "text": "Maiquetia airport sits on the Caribbean coast; use arranged transfers to Caracas because the mountain road and security context matter."
+    }
+  ],
+  "airportTransfer": {
+    "value": "40-75 min by arranged airport transfer to eastern or central Caracas",
+    "note": "from Simon Bolivar International Airport in Maiquetia",
+    "distance": "about 25 km north of Caracas over the coastal range"
+  },
+  "bookingDestination": "Caracas, Venezuela",
+  "stayOverview": "Chacao and Altamira are the strongest Caracas bases for most visitors, with restaurants, hotels and better logistics. Las Mercedes suits dining and business, La Castellana is quieter and upscale, while Sabana Grande is central but needs more caution.",
+  "hotelIntro": "Caracas hotel choice should prioritize safety, transfers and purpose: Chacao and Altamira are the easiest defaults, Las Mercedes is restaurant-focused, La Castellana suits business, and Sabana Grande is mostly for daytime transit convenience.",
+  "rentalCars": "Do not self-drive in Caracas unless hosted locally; arranged transfers, taxis and trusted drivers are safer and easier.",
+  "travelTips": [
+    {
+      "title": "Safety first",
+      "text": "Use current local advice, arranged transfers and trusted taxis; avoid displaying phones, jewelry or cameras in public."
+    },
+    {
+      "title": "Best base",
+      "text": "Choose Chacao or Altamira for a first stay because hotels, restaurants and transport logistics are more manageable."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Pre-arrange Maiquetia transfers through a hotel or trusted operator, especially for late arrivals or early departures."
+    },
+    {
+      "title": "Mountain plans",
+      "text": "Visit Avila or Galipan with clear weather, local guidance and enough daylight for the return journey."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Avila National Park",
+      "text": "Avila National Park, also called Waraira Repano, rises above Caracas and gives the city its defining mountain backdrop."
+    },
+    {
+      "title": "Plaza Bolivar",
+      "text": "Plaza Bolivar is a named Caracas landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Panteon Nacional",
+      "text": "Panteon Nacional is a named Caracas landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Teresa Carreno Theater",
+      "text": "Teresa Carreno Theater is a named Caracas landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Museo de Bellas Artes",
+      "text": "Museo de Bellas Artes is a key art museum in the cultural district, strongest as part of a daytime route."
+    },
+    {
+      "title": "Paseo de Los Proceres",
+      "text": "Paseo de Los Proceres is a named Caracas landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Galipan",
+      "label": "Mountain",
+      "text": "Galipan is a mountain village above Caracas, usually reached with local drivers and clear-weather planning."
+    },
+    {
+      "name": "El Hatillo",
+      "label": "Town",
+      "text": "El Hatillo offers colonial-style streets, restaurants and crafts on the southeastern edge of Caracas."
+    },
+    {
+      "name": "Colonia Tovar",
+      "label": "Mountain",
+      "text": "Colonia Tovar is a German-influenced mountain town, better as a planned full-day trip with a trusted driver."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -134,5 +219,6 @@
   "continentName": "South America",
   "countrySlug": "venezuela",
   "countryName": "Venezuela",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "Metro de Caracas"
 }

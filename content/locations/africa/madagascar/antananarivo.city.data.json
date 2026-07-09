@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Antananarivo in 2026: calendars, nearby pages and linked event views for planning around Africa / Madagascar."
   },
   "region": "Capital city in Madagascar",
-  "population": "tba",
+  "population": "~1.4M",
   "coordinates": {
     "lat": -18.91368,
     "lon": 47.53613
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Antananarivo travel, stays & events guide",
-  "heroText": "Antananarivo is a capital city in Madagascar, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Antananarivo, known locally as Tana, is Madagascar's hillside capital, its skyline dominated by the Rova royal palace complex above winding colonial-era streets. First-time visitors should climb to the Rova of Antananarivo, browse the stalls of Analakely Market, and relax beside Lake Anosy in the late afternoon. Ivato International Airport connects the highlands to the coast, and a day trip to the nearby hill town of Ambohimanga rounds out a stay.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Antananarivo, Madagascar",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Antananarivo",
-      "text": "Antananarivo is a capital city in Madagascar, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Analakely",
+      "text": "Analakely is Antananarivo's bustling lower-town market district, packed with vendors and street food, useful for a first taste of city life on foot.",
+      "bestFor": "markets, street food, budget stays"
+    },
+    {
+      "name": "Antaninarenina",
+      "text": "Antaninarenina is the upper-town business and hotel district, home to colonial-era buildings, banks and the city's best hotel options.",
+      "bestFor": "business stays, hotels, walkability"
+    },
+    {
+      "name": "Isoraka",
+      "text": "Isoraka is a quiet, leafy neighborhood near the university with guesthouses, art galleries and cafes, popular with longer-stay visitors.",
+      "bestFor": "guesthouses, cafes, quiet stays"
+    },
+    {
+      "name": "Ivandry",
+      "text": "Ivandry is a newer business district north of the centre with modern offices, malls and international hotel chains.",
+      "bestFor": "business trips, shopping, modern hotels"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ivato International Airport (TNR)",
+      "search": "Ivato International Airport, Antananarivo, Madagascar",
+      "text": "Ivato International Airport sits about 15 kilometres north of the city centre; allow extra time for the drive in, since traffic can be heavy."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Ivato International Airport (TNR) and central Antananarivo before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Antananarivo, Madagascar",
+  "stayOverview": "Base in Antaninarenina for an easy first stay near hotels, banks and the Rova, or choose Isoraka for a quieter, guesthouse-lined alternative close to the university. Ivandry suits business travelers wanting modern offices and malls away from the historic core.",
+  "hotelIntro": "Antaninarenina offers the widest choice of established hotels within walking distance of the old town, while Isoraka suits smaller guesthouses and longer stays. Ivandry's newer towers work best for business trips needing modern facilities close to conference venues.",
+  "rentalCars": "Self-driving is difficult given Tana's steep, congested streets; most visitors rely on hired drivers or taxis instead.",
+  "travelTips": [
+    {
+      "title": "Climb early",
+      "text": "Visit the Rova of Antananarivo in the morning for cooler weather and clearer views over the city's hills and lakes."
+    },
+    {
+      "title": "Bargain at markets",
+      "text": "Expect to negotiate prices at Analakely Market and other street stalls, where quoted prices for tourists often start high."
+    },
+    {
+      "title": "Plan for traffic",
+      "text": "Allow extra time for journeys across the city, since Antananarivo's narrow, hilly streets suffer frequent congestion at peak hours."
+    },
+    {
+      "title": "Day trip to Ambohimanga",
+      "text": "Set aside half a day for the UNESCO-listed hill town of Ambohimanga, a short drive northeast of the capital."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Rova of Antananarivo",
+      "text": "Rova of Antananarivo is a named stop in Antananarivo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Andafiavaratra Palace",
+      "text": "Andafiavaratra Palace anchors the historic and ceremonial side of Antananarivo, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Analakely Market",
+      "text": "Analakely Market adds outdoor time to a Antananarivo stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Tsimbazaza Zoo",
+      "text": "Tsimbazaza Zoo gives Antananarivo a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Lake Anosy",
+      "text": "Lake Anosy adds outdoor time to a Antananarivo stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Ambohimanga",
+      "text": "Ambohimanga is a named stop in Antananarivo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ambohimanga",
+      "label": "Heritage",
+      "text": "Ambohimanga is a UNESCO World Heritage hill settlement and former royal compound, roughly 45 minutes northeast of the capital."
+    },
+    {
+      "name": "Andasibe-Mantadia National Park",
+      "label": "Nature",
+      "text": "Andasibe-Mantadia National Park, about three hours east, is the easiest place to see indri lemurs in the wild from Antananarivo."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

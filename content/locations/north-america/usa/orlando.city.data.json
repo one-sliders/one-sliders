@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Orlando, Florida trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Central Florida",
-  "population": "tba",
+  "population": "~335K",
   "coordinates": {
     "lat": 28.53834,
     "lon": -81.37924
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Orlando travel, stays & events guide",
-  "heroText": "Orlando is a Central Florida city in Orange County, known for a service economy built around tourism, conventions, entertainment and regional growth.  Beyond the theme parks, the city has a downtown core around Lake Eola, nearby historic Winter Park, major airport access and a large metro area that shapes Central Florida.",
+  "heroText": "Orlando is a USA base best planned around named sights rather than a generic stopover. Start with Walt Disney World Resort, add Universal Orlando Resort, and use International Drive to understand the city's history, street life and visitor rhythm. Orlando International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -39,45 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Orlando, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Orlando, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Orlando reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Orlando sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Orlando International Airport",
+      "search": "Orlando International Airport, Orlando, USA",
+      "text": "Orlando International Airport is the main air gateway for Orlando; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Orlando International Airport and central Orlando before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Orlando, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
+  "stayOverview": "Start with City centre for the easiest first Orlando stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Orlando hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Orlando unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Orlando International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Walt Disney World Resort and Universal Orlando Resort so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Orlando, checking weather, transport and opening hours before committing."
+    }
+  ],
   "highlights": [
     {
       "title": "Walt Disney World Resort",
-      "text": "Use Walt Disney World as a full-day planning anchor: hotel area, early entry, park transfers and evening returns can change the best Orlando base."
+      "text": "Walt Disney World Resort is a practical event or leisure landmark in Orlando; check schedules and access before pairing it with the rest of the day."
     },
     {
       "title": "Universal Orlando Resort",
-      "text": "Universal works best when you compare park days with International Drive, airport timing, dining plans and whether you need a car."
+      "text": "Universal Orlando Resort is a practical event or leisure landmark in Orlando; check schedules and access before pairing it with the rest of the day."
     },
     {
       "title": "International Drive",
-      "text": "International Drive is a practical hotel corridor for first visits, restaurants, attractions, shuttles and easier comparison shopping between Orlando bases."
+      "text": "International Drive is a named stop in Orlando worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     },
     {
       "title": "Lake Eola Park",
-      "text": "Lake Eola gives Downtown Orlando a lighter local stop, useful when you want a break from theme-park schedules and resort transfers."
+      "text": "Lake Eola Park adds outdoor time to a Orlando stay, with open space, views or waterfront breathing room between denser city sights."
     },
     {
       "title": "Winter Park",
-      "text": "Winter Park adds museums, lakes, restaurants and a calmer local base when the trip needs more than the major theme parks."
+      "text": "Winter Park adds outdoor time to a Orlando stay, with open space, views or waterfront breathing room between denser city sights."
     },
     {
       "title": "Kennedy Space Center day trip",
-      "text": "Kennedy Space Center is not in Orlando, but it is a common day-trip decision that can affect rental car and hotel planning."
+      "text": "Kennedy Space Center day trip gives Orlando a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [],
+  "nearbyIdeas": [
+    {
+      "name": "Walt Disney World Resort",
+      "label": "Heritage",
+      "text": "Walt Disney World Resort is a heritage-focused side trip from Orlando; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Universal Orlando Resort",
+      "label": "Heritage",
+      "text": "Universal Orlando Resort is a heritage-focused side trip from Orlando; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "International Drive",
+      "label": "Heritage",
+      "text": "International Drive is a heritage-focused side trip from Orlando; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

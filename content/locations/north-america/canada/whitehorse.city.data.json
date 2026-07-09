@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Whitehorse travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Whitehorse is a Canada base best planned around named sights rather than a generic stopover. Start with Yukon River, add SS Klondike, and use Miles Canyon to understand the city's history, street life and visitor rhythm. Whitehorse International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,27 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Whitehorse, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Whitehorse, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Whitehorse reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Whitehorse sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Whitehorse International Airport",
+      "search": "Whitehorse International Airport, Whitehorse, Canada",
+      "text": "Whitehorse International Airport is the main air gateway for Whitehorse; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Whitehorse International Airport and central Whitehorse before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Whitehorse, Canada",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Yukon River",
-    "SS Klondike",
-    "Miles Canyon",
-    "Kwanlin Dun Cultural Centre",
-    "Aurora viewing",
-    "Alaska Highway"
+  "stayOverview": "Start with City centre for the easiest first Whitehorse stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Whitehorse hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Whitehorse unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Whitehorse International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Yukon River and SS Klondike so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Whitehorse, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Yukon River",
+      "text": "Yukon River adds outdoor time to a Whitehorse stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "SS Klondike",
+      "text": "SS Klondike is a named stop in Whitehorse worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Miles Canyon",
+      "text": "Miles Canyon is a named stop in Whitehorse worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kwanlin Dun Cultural Centre",
+      "text": "Kwanlin Dun Cultural Centre gives Whitehorse a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Aurora viewing",
+      "text": "Aurora viewing is a named stop in Whitehorse worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Alaska Highway",
+      "text": "Alaska Highway is a named stop in Whitehorse worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Yukon River",
+      "label": "Nature",
+      "text": "Yukon River works as a nature-focused side trip from Whitehorse, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "SS Klondike",
+      "label": "Heritage",
+      "text": "SS Klondike is a heritage-focused side trip from Whitehorse; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Miles Canyon",
+      "label": "Nature",
+      "text": "Miles Canyon works as a nature-focused side trip from Whitehorse, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

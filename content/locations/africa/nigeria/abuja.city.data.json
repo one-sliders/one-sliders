@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Abuja in 2026: calendars, nearby pages and linked event views for planning around Africa / Nigeria."
   },
   "region": "Capital city in Nigeria",
-  "population": "tba",
+  "population": "~1.7M",
   "coordinates": {
     "lat": 9.05785,
     "lon": 7.49508
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Abuja travel, stays & events guide",
-  "heroText": "Abuja is a capital city in Nigeria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Abuja is Nigeria's purpose-built capital, planned in the 1980s around the dramatic granite outcrop of Aso Rock. First-time visitors should photograph Aso Rock from the Presidential Villa area, compare the Abuja National Mosque and National Christian Centre standing near each other, and stroll through Millennium Park's landscaped grounds. Nnamdi Azikiwe International Airport sits southeast of the city, and the striking Zuma Rock monolith makes an easy day trip north.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Abuja, Nigeria",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Abuja",
-      "text": "Abuja is a capital city in Nigeria, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Maitama",
+      "text": "Maitama is Abuja's most affluent district, home to upscale hotels, embassies and views toward Aso Rock.",
+      "bestFor": "luxury hotels, embassies"
+    },
+    {
+      "name": "Asokoro",
+      "text": "Asokoro is the diplomatic quarter, home to foreign embassies and the Presidential Villa, close to Aso Rock.",
+      "bestFor": "diplomatic visits, security"
+    },
+    {
+      "name": "Wuse",
+      "text": "Wuse is Abuja's commercial hub, packed with shopping malls, restaurants and mid-range hotels.",
+      "bestFor": "shopping, dining, mid-range hotels"
+    },
+    {
+      "name": "Garki",
+      "text": "Garki is the city's original central business district, home to government offices, banks and Area 1 shopping.",
+      "bestFor": "business trips, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Nnamdi Azikiwe International Airport (ABV)",
+      "search": "Nnamdi Azikiwe International Airport, Abuja, Nigeria",
+      "text": "Nnamdi Azikiwe International Airport lies about 20 kilometres southeast of the city centre; pre-booked transfers are recommended, especially for late arrivals."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Nnamdi Azikiwe International Airport (ABV) and central Abuja before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Abuja, Nigeria",
+  "stayOverview": "Maitama and Asokoro suit visitors wanting upscale hotels close to embassies and Aso Rock, while Wuse and Garki offer more central, mid-range options near shopping and business districts. Most of Abuja's main sights sit within a short drive of each other.",
+  "hotelIntro": "Maitama holds Abuja's most upscale hotels near embassies and Aso Rock, Asokoro suits diplomatic visits, and Wuse or Garki offer better value with easy access to malls, restaurants and government offices.",
+  "rentalCars": "A rental car or hired driver helps for reaching Zuma Rock and other sights outside the city, though taxis and ride-hailing apps cover central Abuja well.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Maitama or Asokoro for upscale hotels near embassies and Aso Rock, or Wuse for more central, better-value options."
+    },
+    {
+      "title": "See both faiths side by side",
+      "text": "Visit the Abuja National Mosque and National Christian Centre together, since the two landmarks stand within sight of each other."
+    },
+    {
+      "title": "Day trip to Zuma Rock",
+      "text": "Budget half a day for Zuma Rock, the giant granite monolith visible on the drive north from the city."
+    },
+    {
+      "title": "Traffic planning",
+      "text": "Allow extra time for journeys during rush hour, since Abuja's wide roads can still see heavy congestion at peak times."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Aso Rock",
+      "text": "Aso Rock gives Abuja a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "National Mosque Abuja",
+      "text": "National Mosque Abuja anchors the historic and ceremonial side of Abuja, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Christian Centre",
+      "text": "National Christian Centre gives Abuja a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Jabi Lake",
+      "text": "Jabi Lake adds outdoor time to a Abuja stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Millennium Park Abuja",
+      "text": "Millennium Park Abuja adds outdoor time to a Abuja stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Zuma Rock",
+      "text": "Zuma Rock gives Abuja a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Zuma Rock",
+      "label": "Nature",
+      "text": "Zuma Rock, a dramatic 725-metre granite monolith, rises beside the highway roughly an hour north of Abuja."
+    },
+    {
+      "name": "Gurara Falls",
+      "label": "Nature",
+      "text": "Gurara Falls, about two hours from Abuja, offers a scenic waterfall and picnic spot popular for weekend day trips."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

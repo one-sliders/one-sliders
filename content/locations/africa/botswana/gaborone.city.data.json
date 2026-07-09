@@ -13,7 +13,7 @@
     "webpageDescription": "Gaborone is the capital and largest city of Botswana."
   },
   "region": "Capital and largest city of Botswana",
-  "population": "tba",
+  "population": "~250K",
   "coordinates": {
     "lat": -24.65451,
     "lon": 25.90859
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Gaborone travel, stays & events guide",
-  "heroText": "Gaborone is the capital and largest city of Botswana.  It was formerly spelled as Gaberones during the colonial era, a name still occasionally used in older English texts and maps.",
+  "heroText": "Gaborone is Botswana's low-rise, orderly capital, built up quickly after independence around Main Mall and the government enclave near the Notwane River. First-time visitors should explore the National Museum and Art Gallery for Tswana history and art, hike Kgale Hill for skyline views, and day-trip to the nearby Mokolodi Nature Reserve for rhino and giraffe sightings. Sir Seretse Khama International Airport connects Gaborone to the rest of southern Africa.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Gaborone, Botswana",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Gaborone",
-      "text": "Gaborone is the capital and largest city of Botswana."
+      "name": "CBD / Main Mall",
+      "text": "The Central Business District around Main Mall holds government offices, banks and business hotels, the most convenient base for a short stay.",
+      "bestFor": "business trips, first visits"
+    },
+    {
+      "name": "Broadhurst",
+      "text": "Broadhurst is a large residential suburb with a strong line-up of mid-range hotels along Independence Avenue, popular with longer-stay visitors.",
+      "bestFor": "mid-range stays, longer visits"
+    },
+    {
+      "name": "Phakalane",
+      "text": "Phakalane is an upscale, leafy suburb north of the centre known for golf estates and quiet gated housing, best for travellers wanting space and calm.",
+      "bestFor": "quiet stays, golf, families"
+    },
+    {
+      "name": "Tlokweng",
+      "text": "Tlokweng is a quieter suburb just outside the centre, close to the airport and border post, useful for early flights or road trips into South Africa.",
+      "bestFor": "airport access, road trips"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Sir Seretse Khama International Airport (GBE)",
+      "search": "Sir Seretse Khama International Airport, Gaborone, Botswana",
+      "text": "Sir Seretse Khama International Airport lies north of the city centre; taxis and hotel transfers are the easiest way into town."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Sir Seretse Khama International Airport (GBE) and central Gaborone before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Gaborone, Botswana",
+  "stayOverview": "Base in the CBD near Main Mall for a short business stay, or choose Broadhurst for good-value hotels along Independence Avenue. Phakalane suits travellers wanting quiet, upscale surroundings, while Tlokweng works well for early flights or onward road trips.",
+  "hotelIntro": "Gaborone hotel choice mostly comes down to purpose: the CBD keeps government and business travellers close to offices and Main Mall, Broadhurst offers reliable mid-range options, Phakalane suits longer, quieter stays, and Tlokweng is practical for airport or border access.",
+  "rentalCars": "A rental car is useful in spread-out Gaborone and essential for day trips to Mokolodi Nature Reserve or further into the Kalahari.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the CBD near Main Mall for a short business stay, or Broadhurst for good-value hotels within easy reach of the centre."
+    },
+    {
+      "title": "Getting around",
+      "text": "Combined taxis and minibuses cover the city, but a rental car makes it easier to reach Phakalane, the airport and out-of-town reserves."
+    },
+    {
+      "title": "Weekday city",
+      "text": "Gaborone is quiet at night and on weekends outside the malls, so plan dinners and errands around weekday business hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside half a day for Mokolodi Nature Reserve just south of the city, an easy wildlife outing without a long drive."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Three Dikgosi Monument",
+      "text": "Three Dikgosi Monument is a clear heritage marker in Gaborone, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Gaborone Game Reserve",
+      "text": "Gaborone Game Reserve gives Gaborone a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "National Museum and Art Gallery",
+      "text": "National Museum and Art Gallery is a key Gaborone culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Kgale Hill",
+      "text": "Kgale Hill adds outdoor time to a Gaborone stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Mokolodi Nature Reserve",
+      "text": "Mokolodi Nature Reserve gives Gaborone a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Gaborone Dam",
+      "text": "Gaborone Dam is a named stop in Gaborone worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mokolodi Nature Reserve",
+      "label": "Wildlife",
+      "text": "Mokolodi Nature Reserve is a private wildlife sanctuary just south of Gaborone, good for a half-day safari with rhino, giraffe and antelope."
+    },
+    {
+      "name": "Tsodilo Hills",
+      "label": "Heritage",
+      "text": "Tsodilo Hills works as a nature-focused side trip from Gaborone, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

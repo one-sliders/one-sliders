@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Phnom Penh travel, stays & events guide",
-  "heroText": "Phnom Penh is a capital city in Cambodia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Phnom Penh is a Cambodia base best planned around named sights rather than a generic stopover. Start with Royal Palace Phnom Penh, add Silver Pagoda, and use Tuol Sleng Genocide Museum to understand the city's history, street life and visitor rhythm. Phnom Penh International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Phnom Penh, Cambodia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Phnom Penh",
-      "text": "Phnom Penh is a capital city in Cambodia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Riverside",
+      "text": "Riverside suits travellers who want views, evening walks and a calmer base while still keeping central Phnom Penh reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "BKK1",
+      "text": "BKK1 is useful when a Phnom Penh stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Daun Penh",
+      "text": "Daun Penh is useful when a Phnom Penh stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Toul Tom Poung",
+      "text": "Toul Tom Poung is useful when a Phnom Penh stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Phnom Penh International (PNH)",
+      "search": "Phnom Penh International (PNH), Phnom Penh, Cambodia",
+      "text": "Phnom Penh International (PNH) is the main air gateway for Phnom Penh; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Phnom Penh International (PNH) and central Phnom Penh before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Phnom Penh, Cambodia",
+  "stayOverview": "Start with Riverside for the easiest first Phnom Penh stay, then compare BKK1 and Daun Penh when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Phnom Penh hotel choice is mostly about repeat journeys: use Riverside for sightseeing, BKK1 for a different local base, and Daun Penh or Toul Tom Poung when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Phnom Penh unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Riverside for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Phnom Penh International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Royal Palace Phnom Penh and Silver Pagoda so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Phnom Penh, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Royal Palace Phnom Penh",
+      "text": "Royal Palace Phnom Penh anchors the historic and ceremonial side of Phnom Penh, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Silver Pagoda",
+      "text": "Silver Pagoda anchors the historic and ceremonial side of Phnom Penh, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Tuol Sleng Genocide Museum",
+      "text": "Tuol Sleng Genocide Museum is a key Phnom Penh culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Central Market Phnom Penh",
+      "text": "Central Market Phnom Penh gives Phnom Penh a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Wat Phnom",
+      "text": "Wat Phnom is a named stop in Phnom Penh worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "National Museum of Cambodia",
+      "text": "National Museum of Cambodia is a key Phnom Penh culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Silver Pagoda",
+      "label": "Heritage",
+      "text": "Silver Pagoda is a heritage-focused side trip from Phnom Penh; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Wat Phnom",
+      "label": "Heritage",
+      "text": "Wat Phnom is a heritage-focused side trip from Phnom Penh; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

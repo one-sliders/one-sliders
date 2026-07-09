@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Havana travel, stays & events guide",
-  "heroText": "Havana is a capital city in Cuba, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Havana is a Cuba base best planned around named sights rather than a generic stopover. Start with Old Havana, add Malecon Havana, and use El Capitolio to understand the city's history, street life and visitor rhythm. Jose Marti International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Havana, Cuba",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Havana",
-      "text": "Havana is a capital city in Cuba, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Havana, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Havana, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Havana reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Havana sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Jose Marti International Airport (HAV)",
+      "search": "Jose Marti International Airport (HAV), Havana, Cuba",
+      "text": "Jose Marti International Airport (HAV) is the main air gateway for Havana; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Jose Marti International Airport (HAV) and central Havana before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Havana, Cuba",
+  "stayOverview": "Start with City centre for the easiest first Havana stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Havana hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Havana unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Jose Marti International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Old Havana and Malecon Havana so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Havana, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Old Havana",
+      "text": "Old Havana is a named stop in Havana worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Malecon Havana",
+      "text": "Malecon Havana is a named stop in Havana worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "El Capitolio",
+      "text": "El Capitolio is a named stop in Havana worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Morro Castle Havana",
+      "text": "Morro Castle Havana is a clear heritage marker in Havana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Plaza de la Catedral",
+      "text": "Plaza de la Catedral is a clear heritage marker in Havana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Fusterlandia",
+      "text": "Fusterlandia is a named stop in Havana worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Old Havana",
+      "label": "Heritage",
+      "text": "Old Havana is a heritage-focused side trip from Havana; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Malecon Havana",
+      "label": "Heritage",
+      "text": "Malecon Havana is a heritage-focused side trip from Havana; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "El Capitolio",
+      "label": "Heritage",
+      "text": "El Capitolio is a heritage-focused side trip from Havana; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

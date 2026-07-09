@@ -13,7 +13,7 @@
     "webpageDescription": "Luanda is the capital and largest city of Angola."
   },
   "region": "Capital and largest city of Angola",
-  "population": "tba",
+  "population": "~2.8M",
   "coordinates": {
     "lat": -8.83682,
     "lon": 13.23432
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Luanda travel, stays & events guide",
-  "heroText": "Luanda is the capital and largest city of Angola.  It is Angola's primary port, and its major industrial, cultural and urban centre.",
+  "heroText": "Luanda is Angola's Atlantic capital and main port, an industrial and cultural hub built around a curving bay lined with the Marginal waterfront promenade. First-time visitors should walk the Fortaleza de São Miguel for city and harbour views, cross to Ilha de Luanda for its beaches and seafood shacks, and browse the National Slavery Museum for context on the country's Portuguese-era history. Dr. António Agostinho Neto International Airport links Luanda to Europe, the Americas and the wider region.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Luanda, Angola",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Luanda",
-      "text": "Luanda is the capital and largest city of Angola."
+      "name": "Ingombota",
+      "text": "Ingombota is the central business district holding government offices, banks and many of the capital's top hotels, a practical first-time base.",
+      "bestFor": "first visits, business, central sights"
+    },
+    {
+      "name": "Miramar",
+      "text": "Miramar is Luanda's upscale seafront district of gated condominiums and international hotels, popular with business travellers for its safety and waterfront access.",
+      "bestFor": "business trips, waterfront views, safety"
+    },
+    {
+      "name": "Maianga",
+      "text": "Maianga is a quieter, more residential district next to the centre, offering better value stays within easy reach of downtown Luanda.",
+      "bestFor": "budget stays, longer visits"
+    },
+    {
+      "name": "Ilha de Luanda",
+      "text": "Ilha de Luanda is a narrow sandbar peninsula lined with beach bars and seafood restaurants, best for an evening out rather than an overnight base.",
+      "bestFor": "beaches, dining, nightlife"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Dr. António Agostinho Neto International Airport (NBJ)",
+      "search": "Dr. Antonio Agostinho Neto International Airport, Luanda, Angola",
+      "text": "Dr. António Agostinho Neto International Airport sits around 40 kilometres southeast of central Luanda; allow extra time for the transfer and confirm hotel pickup in advance."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Dr. António Agostinho Neto International Airport (NBJ) and central Luanda before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Luanda, Angola",
+  "stayOverview": "Base in Ingombota for a central first stay near government offices, banks and hotels, or choose Miramar for gated, upscale waterfront living close to the Marginal. Maianga offers better value for longer stays, while Ilha de Luanda suits an evening of beach bars rather than an overnight base.",
+  "hotelIntro": "Luanda hotel choice usually comes down to budget and security: Ingombota and Miramar hold the capital's international hotel brands and safest streets, Maianga offers more affordable options close to downtown, and Ilha de Luanda works best as a dinner or nightlife outing rather than a place to sleep.",
+  "rentalCars": "A rental car is not recommended for visitors, since traffic is heavy and unpredictable; arrange a hotel driver or trusted taxi service instead.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Ingombota or Miramar for a secure first stay close to hotels, restaurants and the Marginal waterfront promenade."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Book a hotel transfer in advance for the 40-kilometre drive from Agostinho Neto International Airport, since taxis are scarce outside arrivals."
+    },
+    {
+      "title": "Costs and cash",
+      "text": "Luanda is one of Africa's most expensive cities for visitors, so confirm hotel and taxi prices upfront and carry local kwanza for small purchases."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside a full day for the Kalandula Falls or the Miradouro da Lua rock formations if the itinerary allows time outside the capital."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Fortress of Sao Miguel",
+      "text": "Fortress of Sao Miguel is a clear heritage marker in Luanda, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Museum of Slavery",
+      "text": "National Museum of Slavery is a key Luanda culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Marginal de Luanda",
+      "text": "Marginal de Luanda is a named stop in Luanda worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Ilha do Cabo",
+      "text": "Ilha do Cabo is a named stop in Luanda worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mausoleum of Agostinho Neto",
+      "text": "Mausoleum of Agostinho Neto is a named stop in Luanda worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Palacio de Ferro",
+      "text": "Palacio de Ferro is a named stop in Luanda worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kalandula Falls",
+      "label": "Nature",
+      "text": "Kalandula Falls is one of Africa's largest waterfalls, a long but rewarding day trip inland from Luanda through Angola's rural highlands."
+    },
+    {
+      "name": "Miradouro da Lua",
+      "label": "Nature",
+      "text": "Miradouro da Lua is a striking lunar-like landscape of eroded cliffs south of Luanda, a popular half-day trip along the coast."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

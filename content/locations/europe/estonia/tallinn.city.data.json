@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Tallinn in 2026: calendars, nearby pages and linked event views for planning around Europe / Estonia."
   },
   "region": "Capital city of Estonia",
-  "population": "tba",
+  "population": "~461K",
   "coordinates": {
     "lat": 59.43696,
     "lon": 24.75353
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tallinn travel, stays & events guide",
-  "heroText": "Tallinn is a key city in Estonia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tallinn is Estonia's compact capital, where medieval walls, Baltic ferries and digital-era energy sit close together. Start in Tallinn Old Town, climb to Toompea Hill for viewpoints, then walk Telliskivi Creative City or the Seaplane Harbour for a newer side of town. Tallinn Airport is close, making short city breaks unusually easy.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tallinn, Estonia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tallinn",
-      "text": "Tallinn is a key city in Estonia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Tallinn Old Town",
+      "text": "Old Town is the classic first base, with medieval lanes, restaurants, viewpoints and most sights within walking distance.",
+      "bestFor": "first visits, history, walking"
+    },
+    {
+      "name": "Rotermann Quarter",
+      "text": "Rotermann Quarter has modern hotels, restaurants and design shops between Old Town, the harbour and business areas.",
+      "bestFor": "restaurants, design, harbour access"
+    },
+    {
+      "name": "Telliskivi",
+      "text": "Telliskivi is the creative district for cafes, bars, street art and a more local evening base.",
+      "bestFor": "nightlife, cafes, repeat visits"
+    },
+    {
+      "name": "Kadriorg",
+      "text": "Kadriorg is quieter and greener, close to the palace, art museums and seaside walking routes.",
+      "bestFor": "parks, museums, quiet stays"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tallinn Airport (TLL)",
+      "search": "Tallinn Airport, Tallinn, Estonia",
+      "text": "Tallinn Airport is southeast of the centre and connects quickly by tram, taxi and bus."
+    }
+  ],
+  "airportTransfer": {
+    "value": "15-25 min by tram, taxi or bus to central Tallinn",
+    "note": "from Tallinn Airport",
+    "distance": "about 4 km southeast of the centre"
+  },
+  "bookingDestination": "Tallinn, Estonia",
+  "stayOverview": "Stay in Tallinn Old Town for the classic first visit, Rotermann Quarter for modern hotels and harbour access, Telliskivi for cafes and nightlife, or Kadriorg for green space and museum-focused days.",
+  "hotelIntro": "Tallinn is small enough that walking works well, but the mood changes by district. Old Town is atmospheric, Rotermann is practical and polished, Telliskivi is social, and Kadriorg is calmer and greener.",
+  "rentalCars": "Do not rent for central Tallinn; use a car only for Lahemaa, bog walks or wider Estonia trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Old Town for a first short stay, or Rotermann if you want newer hotels near the harbour."
+    },
+    {
+      "title": "Airport tram",
+      "text": "Tallinn Airport is close enough that tram and taxi transfers are both simple for most central hotels."
+    },
+    {
+      "title": "Winter",
+      "text": "Winter streets can be icy and dark, so pack warm footwear and plan indoor museum breaks."
+    },
+    {
+      "title": "Day trip",
+      "text": "Lahemaa National Park is the classic nature day trip for bogs, manor houses and Baltic coast scenery."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Tallinn Old Town",
+      "title": "Tallinn Old Town",
+      "text": "Tallinn Old Town preserves medieval walls, lanes, churches and squares in one of the Baltic region's strongest historic cores."
+    },
+    {
+      "name": "Toompea Hill",
+      "title": "Toompea Hill",
+      "text": "Toompea Hill adds outdoor time to a Tallinn stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "name": "Telliskivi Creative City",
+      "title": "Telliskivi Creative City",
+      "text": "Telliskivi Creative City is a named stop in Tallinn worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Seaplane Harbour",
+      "title": "Seaplane Harbour",
+      "text": "Seaplane Harbour adds the water-facing side of Tallinn, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Kadriorg Palace",
+      "title": "Kadriorg Palace",
+      "text": "Kadriorg Palace anchors a green museum district and park east of the centre, built for Peter the Great."
+    },
+    {
+      "name": "Balti Jaam Market",
+      "title": "Balti Jaam Market",
+      "text": "Balti Jaam Market is useful for reading Tallinn's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lahemaa National Park",
+      "label": "Nature",
+      "text": "Lahemaa National Park offers bog trails, manor houses and Baltic coastline east of Tallinn."
+    },
+    {
+      "name": "Helsinki",
+      "label": "Ferry",
+      "text": "Helsinki is possible as a ferry day trip, though it works better with an overnight."
+    },
+    {
+      "name": "Paldiski",
+      "label": "Coast",
+      "text": "Paldiski is a nearby side trip from Tallinn; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tallinn",
     "matchedCountry": "Estonia"
-  }
+  },
+  "transitOperator": "Tallinna Linnatransport"
 }

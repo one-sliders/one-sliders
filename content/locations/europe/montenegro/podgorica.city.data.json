@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Podgorica in 2026: calendars, nearby pages and linked event views for planning around Europe / Montenegro."
   },
   "region": "Capital city of Montenegro",
-  "population": "tba",
+  "population": "~151K",
   "coordinates": {
     "lat": 42.44124,
     "lon": 19.26309
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Podgorica travel, stays & events guide",
-  "heroText": "Podgorica is a key city in Montenegro, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Podgorica is a Montenegro base best planned around named sights rather than a generic stopover. Start with Millennium Bridge Podgorica, add Old Ribnica River Bridge, and use Cathedral of the Resurrection of Christ to understand the city's history, street life and visitor rhythm. Podgorica International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Podgorica, Montenegro",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Podgorica",
-      "text": "Podgorica is a key city in Montenegro, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City Centre",
+      "text": "City Centre is the most practical first base in Podgorica, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Stara Varos",
+      "text": "Stara Varos is useful when a Podgorica stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Preko Morace",
+      "text": "Preko Morace is useful when a Podgorica stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Zabjelo",
+      "text": "Zabjelo is useful when a Podgorica stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Podgorica International Airport",
+      "search": "Podgorica International Airport, Podgorica, Montenegro",
+      "text": "Podgorica International Airport is the main air gateway for Podgorica; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Podgorica International Airport and central Podgorica before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Podgorica, Montenegro",
+  "stayOverview": "Start with City Centre for the easiest first Podgorica stay, then compare Stara Varos and Preko Morace when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Podgorica hotel choice is mostly about repeat journeys: use City Centre for sightseeing, Stara Varos for a different local base, and Preko Morace or Zabjelo when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Podgorica unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City Centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Podgorica International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Millennium Bridge Podgorica and Old Ribnica River Bridge so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Podgorica, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Millennium Bridge Podgorica",
+      "text": "Millennium Bridge Podgorica is a clear heritage marker in Podgorica, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Old Ribnica River Bridge",
+      "text": "Old Ribnica River Bridge adds outdoor time to a Podgorica stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Cathedral of the Resurrection of Christ",
+      "text": "Cathedral of the Resurrection of Christ anchors the historic and ceremonial side of Podgorica, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Gorica Hill",
+      "text": "Gorica Hill adds outdoor time to a Podgorica stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "King Nikola Monument",
+      "text": "King Nikola Monument is a clear heritage marker in Podgorica, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Lake Skadar",
+      "text": "Lake Skadar adds outdoor time to a Podgorica stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Gorica Hill",
+      "label": "Heritage",
+      "text": "Gorica Hill works as a nature-focused side trip from Podgorica, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "King Nikola Monument",
+      "label": "Heritage",
+      "text": "King Nikola Monument is a heritage-focused side trip from Podgorica; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Lake Skadar",
+      "label": "Nature",
+      "text": "Lake Skadar works as a nature-focused side trip from Podgorica, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

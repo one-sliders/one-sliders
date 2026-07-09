@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Chisinau travel, stays & events guide",
-  "heroText": "Chisinau is a key city in Moldova, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Chisinau is a Moldova base best planned around named sights rather than a generic stopover. Start with Stefan cel Mare Central Park, add Nativity Cathedral Chisinau, and use Triumphal Arch Chisinau to understand the city's history, street life and visitor rhythm. Chisinau International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Chisinau, Moldova",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Chisinau",
-      "text": "Chisinau is a key city in Moldova, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Chisinau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Chisinau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Chisinau reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Chisinau sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Chisinau International Airport",
+      "search": "Chisinau International Airport, Chisinau, Moldova",
+      "text": "Chisinau International Airport is the main air gateway for Chisinau; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Chisinau International Airport and central Chisinau before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Chisinau, Moldova",
+  "stayOverview": "Start with City centre for the easiest first Chisinau stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Chisinau hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Chisinau unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Chisinau International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Stefan cel Mare Central Park and Nativity Cathedral Chisinau so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Chisinau, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Stefan cel Mare Central Park",
+      "text": "Stefan cel Mare Central Park adds outdoor time to a Chisinau stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Nativity Cathedral Chisinau",
+      "text": "Nativity Cathedral Chisinau anchors the historic and ceremonial side of Chisinau, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Triumphal Arch Chisinau",
+      "text": "Triumphal Arch Chisinau is a clear heritage marker in Chisinau, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "National Museum of History of Moldova",
+      "text": "National Museum of History of Moldova is a key Chisinau culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Valea Morilor Park",
+      "text": "Valea Morilor Park adds outdoor time to a Chisinau stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Central Market Chisinau",
+      "text": "Central Market Chisinau gives Chisinau a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Stefan cel Mare Central Park",
+      "label": "Nature",
+      "text": "Stefan cel Mare Central Park works as a nature-focused side trip from Chisinau, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Triumphal Arch Chisinau",
+      "label": "Heritage",
+      "text": "Triumphal Arch Chisinau is a heritage-focused side trip from Chisinau; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Valea Morilor Park",
+      "label": "Nature",
+      "text": "Valea Morilor Park works as a nature-focused side trip from Chisinau, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

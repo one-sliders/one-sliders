@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Aalborg, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "North Jutland",
-  "population": "tba",
+  "population": "~120K",
   "coordinates": {
     "lat": 57.048,
     "lon": 9.9187
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Aalborg travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Aalborg is North Jutland's compact waterfront city, with industrial heritage, university energy and easy access to fjord country. Walk the Aalborg waterfront, visit Kunsten for modern art, then cross to Lindholm Hoje for Viking burial mounds and views. Aalborg Airport is close to town, making short city breaks and North Jutland trips simple.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Aalborg Centrum",
+      "text": "The centre keeps the waterfront, shops, restaurants and nightlife close together, making it the easiest first base.",
+      "bestFor": "first visits, nightlife, walking"
+    },
+    {
+      "name": "Aalborg Vestby",
+      "text": "Vestby is a revived district near culture venues, the harbour and useful transit links west of the centre.",
+      "bestFor": "culture, waterfront, value"
+    },
+    {
+      "name": "Nørresundby",
+      "text": "Nørresundby sits across the Limfjord with quieter hotels, local streets and quick bridge access back to Aalborg.",
+      "bestFor": "quiet stays, value, drivers"
+    },
+    {
+      "name": "Vejgaard",
+      "text": "Vejgaard is residential and practical for longer stays, apartments and access toward Aalborg University areas.",
+      "bestFor": "apartments, longer stays, local base"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Aalborg Airport (AAL)",
+      "search": "Aalborg Airport, Aalborg, Denmark",
+      "text": "Aalborg Airport is northwest of the centre and is one of Denmark's easiest city airports for quick transfers."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "15-25 min by bus, taxi or car to central Aalborg",
+    "note": "from Aalborg Airport",
+    "distance": "about 7 km northwest of the centre"
   },
   "bookingDestination": "Aalborg, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Aalborg waterfront",
-    "Kunsten",
-    "Lindholm Hoje",
-    "Jomfru Ane Gade",
-    "Utzon Center",
-    "Aalborg Zoo"
+  "stayOverview": "Stay in Aalborg Centrum for the easiest walks, Vestby for culture and waterfront access, Nørresundby for quieter value across the fjord, or Vejgaard for apartments and longer stays.",
+  "hotelIntro": "Aalborg is compact, so central hotels work for most visitors. Vestby adds a more contemporary harbour feel, Nørresundby suits drivers and quieter nights, and Vejgaard is better for longer residential stays.",
+  "rentalCars": "You do not need a car in Aalborg, but one helps for Skagen, beaches and wider North Jutland trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Aalborg Centrum if you want the waterfront, restaurants and Jomfru Ane Gade within easy walking distance."
+    },
+    {
+      "title": "Airport ease",
+      "text": "Aalborg Airport is close enough that taxis and buses usually make transfers simple, even for short stays."
+    },
+    {
+      "title": "Wind",
+      "text": "Keep the Aalborg plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Lindholm Hoje is the quickest heritage outing; Skagen needs a fuller day with a car or train planning."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Aalborg waterfront",
+      "text": "Aalborg waterfront adds the water-facing side of Aalborg, making it a good break from museums, traffic and dense historic streets.",
+      "name": "Aalborg waterfront"
+    },
+    {
+      "title": "Kunsten",
+      "text": "Kunsten is a named stop in Aalborg worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Kunsten"
+    },
+    {
+      "title": "Lindholm Hoje",
+      "text": "Lindholm Hoje is a Viking burial site north of the fjord, with ship-shaped stone settings and museum context.",
+      "name": "Lindholm Hoje"
+    },
+    {
+      "title": "Jomfru Ane Gade",
+      "text": "Jomfru Ane Gade is a named stop in Aalborg worth keeping on the route when it fits the day's transport, timing and neighborhood plan.",
+      "name": "Jomfru Ane Gade"
+    },
+    {
+      "title": "Utzon Center",
+      "text": "Utzon Center gives Aalborg a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route.",
+      "name": "Utzon Center"
+    },
+    {
+      "title": "Aalborg Zoo",
+      "text": "Aalborg Zoo is a family-friendly stop south of the centre, easy to combine with a relaxed city day.",
+      "name": "Aalborg Zoo"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Skagen",
+      "label": "Coast",
+      "text": "Skagen is North Jutland's classic coast trip for Grenen, art museums and bright seaside light."
+    },
+    {
+      "name": "Rebild Bakker",
+      "label": "Nature",
+      "text": "Rebild Bakker works as a nature-focused side trip from Aalborg, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Løkken",
+      "label": "Beach",
+      "text": "Løkken is a nearby side trip from Aalborg; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Aalborg",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "Nordjyllands Trafikselskab"
 }

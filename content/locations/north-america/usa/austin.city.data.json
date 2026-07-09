@@ -6,7 +6,7 @@
     "webpageDescription": "Plan a Austin, Texas trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Central Texas",
-  "population": "tba",
+  "population": "~962K",
   "coordinates": {
     "lat": 30.26715,
     "lon": -97.74306
@@ -39,25 +39,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Austin, USA",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Austin",
-      "text": "tba"
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Austin, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Austin, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Austin reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Austin sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Austin International Airport",
+      "search": "Austin International Airport, Austin, USA",
+      "text": "Austin International Airport is the main air gateway for Austin; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Austin International Airport and central Austin before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Austin, USA",
+  "stayOverview": "Start with City centre for the easiest first Austin stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Austin hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Austin unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Austin International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Austin and Austin so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Austin, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Texas State Capitol",
+      "text": "Texas State Capitol is a named stop in Austin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lady Bird Lake",
+      "text": "Lady Bird Lake adds outdoor time to a Austin stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "South Congress Avenue",
+      "text": "South Congress Avenue is a named stop in Austin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Barton Springs Pool",
+      "text": "Barton Springs Pool gives Austin a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Zilker Park",
+      "text": "Zilker Park adds outdoor time to a Austin stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Rainey Street",
+      "text": "Rainey Street is a named stop in Austin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Texas State Capitol",
+      "label": "Heritage",
+      "text": "Texas State Capitol is a heritage-focused side trip from Austin; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Lady Bird Lake",
+      "label": "Nature",
+      "text": "Lady Bird Lake works as a nature-focused side trip from Austin, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "South Congress Avenue",
+      "label": "Heritage",
+      "text": "South Congress Avenue is a heritage-focused side trip from Austin; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

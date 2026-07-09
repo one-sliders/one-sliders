@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Oulu, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "North Ostrobothnia",
-  "population": "tba",
+  "population": "~216K",
   "coordinates": {
     "lat": 65.01236,
     "lon": 25.46816
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Oulu travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Oulu is a northern Finnish tech and cycling city on the Gulf of Bothnia, with beaches, islands and winter routines built into daily life. Start at the Market Square Policeman, visit Pikisaari, then head to Nallikari beach or Hupisaaret Islands. Oulu Airport is close and connects the city with Helsinki and northern routes.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Oulu centre",
+      "text": "The centre is best for first stays, with restaurants, shops, the market square and station access close together.",
+      "bestFor": "first visits, restaurants, station"
+    },
+    {
+      "name": "Pikisaari",
+      "text": "Pikisaari is an island district with old wooden buildings, studios and a quieter waterside feel.",
+      "bestFor": "atmosphere, walking, waterside"
+    },
+    {
+      "name": "Nallikari",
+      "text": "Nallikari is the beach and resort area, best for summer stays, families and sea views.",
+      "bestFor": "beach, families, summer"
+    },
+    {
+      "name": "Tuira",
+      "text": "Tuira sits north of the centre with local services, river access and practical apartment stays.",
+      "bestFor": "apartments, local base, river"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Oulu Airport (OUL)",
+      "search": "Oulu Airport, Oulu, Finland",
+      "text": "Oulu Airport is southwest of the city in Oulunsalo; buses, taxis and transfers connect it with the centre."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "20-30 min by taxi or airport bus to central Oulu",
+    "note": "from Oulu Airport",
+    "distance": "about 15 km southwest of the centre"
   },
   "bookingDestination": "Oulu, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Market Square Policeman",
-    "Nallikari beach",
-    "Pikisaari",
-    "Tietomaa",
-    "Hupisaaret Islands",
-    "Winter cycling"
+  "stayOverview": "Choose Oulu centre for restaurants and transport, Pikisaari for atmosphere and water, Nallikari for beach and resort stays, or Tuira for apartments and a more local base north of the river.",
+  "hotelIntro": "Oulu is practical and spread around waterways. Central hotels work for most visits, while Nallikari is seasonal and family-focused, Pikisaari is more atmospheric, and Tuira suits longer stays.",
+  "rentalCars": "A car helps for Bothnian coast and nature trips, but Oulu's centre and cycle network are easy without one.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay centrally for winter visits, when short walks to restaurants and transport matter more than beach access."
+    },
+    {
+      "title": "Cycling",
+      "text": "Oulu is serious about year-round cycling, but winter visitors should dress for cold wind and icy surfaces."
+    },
+    {
+      "title": "Beach season",
+      "text": "Nallikari is best in summer; outside warm months it is more about walks and sea air."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Oulu, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Market Square Policeman",
+      "title": "Market Square Policeman",
+      "text": "Market Square Policeman is useful for reading Oulu's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "name": "Nallikari beach",
+      "title": "Nallikari beach",
+      "text": "Nallikari beach adds the water-facing side of Oulu, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Pikisaari",
+      "title": "Pikisaari",
+      "text": "Pikisaari is a named stop in Oulu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Tietomaa",
+      "title": "Tietomaa",
+      "text": "Tietomaa is a named stop in Oulu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Hupisaaret Islands",
+      "title": "Hupisaaret Islands",
+      "text": "Hupisaaret Islands adds the water-facing side of Oulu, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Winter cycling",
+      "title": "Winter cycling",
+      "text": "Winter cycling is a named stop in Oulu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Hailuoto",
+      "label": "Island",
+      "text": "Hailuoto is the classic Oulu coast trip for dunes, lighthouses and open Bothnian scenery."
+    },
+    {
+      "name": "Liminka Bay",
+      "label": "Nature",
+      "text": "Liminka Bay is a major birding wetland south of Oulu, especially strong during migration."
+    },
+    {
+      "name": "Rokua Geopark",
+      "label": "Nature",
+      "text": "Rokua adds eskers, lakes and forest trails inland from Oulu for a longer day outside."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Oulu",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Oulu Public Transport"
 }

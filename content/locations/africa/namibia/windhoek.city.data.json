@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Windhoek in 2026: calendars, nearby pages and linked event views for planning around Africa / Namibia."
   },
   "region": "Capital city in Namibia",
-  "population": "tba",
+  "population": "~480K",
   "coordinates": {
     "lat": -22.55941,
     "lon": 17.08323
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Windhoek travel, stays & events guide",
-  "heroText": "Windhoek is a capital city in Namibia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Windhoek is Namibia's high-altitude capital, a tidy, German-influenced city ringed by the Khomas Hochland hills. First-time visitors should photograph the twin-spired Christuskirche, learn the country's history at the Independence Memorial Museum, and browse the stalls of Post Street Mall. Hosea Kutako International Airport sits east of the city, and Windhoek makes a natural staging point before heading into the Namib Desert or Etosha.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Windhoek, Namibia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Windhoek",
-      "text": "Windhoek is a capital city in Namibia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City Centre",
+      "text": "City Centre holds Windhoek's main sights, banks and shops around Independence Avenue, easy to explore on foot in a day.",
+      "bestFor": "sightseeing, walking, shopping"
+    },
+    {
+      "name": "Klein Windhoek",
+      "text": "Klein Windhoek is a leafy suburb east of downtown, home to guesthouses, restaurants and craft shops in a quieter setting.",
+      "bestFor": "guesthouses, dining, quiet stays"
+    },
+    {
+      "name": "Ludwigsdorf",
+      "text": "Ludwigsdorf is an upmarket residential district with lodges and B&Bs, popular with travelers arranging Namibia-wide safari itineraries.",
+      "bestFor": "lodges, safari planning"
+    },
+    {
+      "name": "Katutura",
+      "text": "Katutura is Windhoek's largest township, best visited with a local guide for its markets, murals and living history.",
+      "bestFor": "guided tours, local culture"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Hosea Kutako International Airport (WDH)",
+      "search": "Hosea Kutako International Airport, Windhoek, Namibia",
+      "text": "Hosea Kutako International Airport lies about 45 kilometres east of the city; shuttle buses and pre-booked transfers are the easiest way into town."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Hosea Kutako International Airport (WDH) and central Windhoek before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Windhoek, Namibia",
+  "stayOverview": "Most first-time visitors base themselves in City Centre or Klein Windhoek for walkable access to the Christuskirche and Independence Memorial Museum, while Ludwigsdorf suits travelers organising onward safari trips. Windhoek works best as a one or two-night stop before heading further into Namibia.",
+  "hotelIntro": "City Centre and Klein Windhoek hold most of Windhoek's guesthouses and mid-range hotels within easy reach of the main sights, while Ludwigsdorf's lodges suit travelers assembling gear or tours before a longer Namibia itinerary.",
+  "rentalCars": "A rental car, often a 4x4, is standard for onward travel to Etosha, Sossusvlei or the Namib Desert, and most visitors collect one in Windhoek before departing the city.",
+  "travelTips": [
+    {
+      "title": "Use Windhoek as a staging point",
+      "text": "Plan one or two nights in Windhoek to collect a rental vehicle and supplies before heading into the Namib Desert or Etosha National Park."
+    },
+    {
+      "title": "Visit Katutura with a guide",
+      "text": "Book a local guide for a Katutura township tour to see its markets and murals safely and with proper context."
+    },
+    {
+      "title": "Layer for altitude",
+      "text": "Pack layers, since Windhoek sits over 1,600 metres above sea level and evenings can turn cool even in summer."
+    },
+    {
+      "title": "Book safaris ahead",
+      "text": "Reserve onward safari lodges and park permits before arriving, since Etosha and other reserves can fill up in peak season."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Christuskirche",
+      "text": "Christuskirche is a named stop in Windhoek worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Independence Memorial Museum",
+      "text": "Independence Memorial Museum is a key Windhoek culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Tintenpalast",
+      "text": "Tintenpalast is a named stop in Windhoek worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Namibia Craft Centre",
+      "text": "Namibia Craft Centre gives Windhoek a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Daan Viljoen Game Reserve",
+      "text": "Daan Viljoen Game Reserve gives Windhoek a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Zoo Park Windhoek",
+      "text": "Zoo Park Windhoek adds outdoor time to a Windhoek stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Daan Viljoen Game Reserve",
+      "label": "Nature",
+      "text": "Daan Viljoen Game Reserve, about 20 minutes west, offers easy game walks and drives close to the capital."
+    },
+    {
+      "name": "Okapuka Ranch",
+      "label": "Wildlife",
+      "text": "Okapuka Ranch, north of the city, offers a convenient half-day safari experience without leaving the Windhoek area."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

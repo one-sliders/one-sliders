@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Vaasa, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Ostrobothnia",
-  "population": "tba",
+  "population": "~69K",
   "coordinates": {
     "lat": 63.096,
     "lon": 21.61577
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Vaasa travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Vaasa is a bilingual Ostrobothnian coast city facing the UNESCO-listed Kvarken Archipelago. Start at the Ostrobothnian Museum, walk the inner harbour, then plan time for Replot Bridge and Kvarken island scenery. Vaasa Airport is close, while ferries and roads connect the city with Umeå and the Finnish west coast.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Vaasa centre",
+      "text": "The centre is best for first stays, restaurants, shops, museums, the station and short walks to the harbour.",
+      "bestFor": "first visits, restaurants, station"
+    },
+    {
+      "name": "Inner harbour",
+      "text": "The inner harbour area suits waterfront walks, summer terraces and access to museum and ferry routes.",
+      "bestFor": "waterfront, summer, walks"
+    },
+    {
+      "name": "Palosaari",
+      "text": "Palosaari is a university and residential district with sea edges, local services and calmer apartment stays.",
+      "bestFor": "university, apartments, quiet stays"
+    },
+    {
+      "name": "Vaskiluoto",
+      "text": "Vaskiluoto is useful for ferry access, Tropiclandia and family-focused stays by the water.",
+      "bestFor": "ferries, families, waterpark"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Vaasa Airport (VAA)",
+      "search": "Vaasa Airport, Vaasa, Finland",
+      "text": "Vaasa Airport is southeast of the city and connects by taxi, bus and transfers with the centre."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "10-20 min by taxi or bus to central Vaasa",
+    "note": "from Vaasa Airport",
+    "distance": "about 9 km southeast of the centre"
   },
   "bookingDestination": "Vaasa, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Kvarken Archipelago",
-    "Tropiclandia",
-    "Old Vaasa",
-    "Ostrobothnian Museum",
-    "Inner harbour",
-    "Replot Bridge"
+  "stayOverview": "Stay in Vaasa centre for restaurants and transport, the inner harbour for summer waterfront walks, Palosaari for university and apartment stays, or Vaskiluoto for ferries, Tropiclandia and family logistics.",
+  "hotelIntro": "Vaasa's compact centre works for most visitors, but harbour and Vaskiluoto stays help with ferry or family plans, while Palosaari is better for university-linked or longer residential trips.",
+  "rentalCars": "A car is useful for the Kvarken Archipelago, Replot Bridge and coastal villages beyond Vaasa.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the centre for restaurants and transport, or Vaskiluoto if ferry timing or family attractions matter most."
+    },
+    {
+      "title": "Kvarken",
+      "text": "Keep the Vaasa plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Bilingual city",
+      "text": "Vaasa is strongly bilingual, so Finnish and Swedish place names may both appear on signs and timetables."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Vaasa, then choose it only after checking transport frequency and opening hours."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Kvarken Archipelago",
+      "title": "Kvarken Archipelago",
+      "text": "Kvarken Archipelago is a clear heritage marker in Vaasa, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Tropiclandia",
+      "title": "Tropiclandia",
+      "text": "Tropiclandia is a named stop in Vaasa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Old Vaasa",
+      "title": "Old Vaasa",
+      "text": "Old Vaasa is a named stop in Vaasa worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Ostrobothnian Museum",
+      "title": "Ostrobothnian Museum",
+      "text": "Ostrobothnian Museum gives Vaasa a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Inner harbour",
+      "title": "Inner harbour",
+      "text": "Inner harbour adds the water-facing side of Vaasa, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Replot Bridge",
+      "title": "Replot Bridge",
+      "text": "Replot Bridge is a clear heritage marker in Vaasa, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Replot",
+      "label": "Island",
+      "text": "Replot is the gateway island beyond the bridge, with coastal villages and Kvarken access."
+    },
+    {
+      "name": "Söderfjärden",
+      "label": "Nature",
+      "text": "Söderfjärden works as a nature-focused side trip from Vaasa, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Umeå",
+      "label": "Ferry",
+      "text": "Umeå is a nearby side trip from Vaasa; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -141,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Vaasa",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Vaasa Public Transport"
 }

@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Muscat travel, stays & events guide",
-  "heroText": "Muscat is a capital city in Oman, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Muscat is a Oman base best planned around named sights rather than a generic stopover. Start with Sultan Qaboos Grand Mosque, add Mutrah Souq, and use Al Alam Palace to understand the city's history, street life and visitor rhythm. Muscat International handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Muscat, Oman",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Muscat",
-      "text": "Muscat is a capital city in Oman, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Mutrah",
+      "text": "Mutrah is useful when a Muscat stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Qurum",
+      "text": "Qurum is useful when a Muscat stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Al Khuwair",
+      "text": "Al Khuwair is useful when a Muscat stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Ruwi",
+      "text": "Ruwi is useful when a Muscat stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Muscat International (MCT)",
+      "search": "Muscat International (MCT), Muscat, Oman",
+      "text": "Muscat International (MCT) is the main air gateway for Muscat; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Muscat International (MCT) and central Muscat before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Muscat, Oman",
+  "stayOverview": "Start with Mutrah for the easiest first Muscat stay, then compare Qurum and Al Khuwair when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Muscat hotel choice is mostly about repeat journeys: use Mutrah for sightseeing, Qurum for a different local base, and Al Khuwair or Ruwi when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Muscat unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Mutrah for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Muscat International, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Sultan Qaboos Grand Mosque and Mutrah Souq so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Muscat, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Sultan Qaboos Grand Mosque",
+      "text": "Sultan Qaboos Grand Mosque anchors the historic and ceremonial side of Muscat, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Mutrah Souq",
+      "text": "Mutrah Souq gives Muscat a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Al Alam Palace",
+      "text": "Al Alam Palace anchors the historic and ceremonial side of Muscat, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Royal Opera House Muscat",
+      "text": "Royal Opera House Muscat is a named stop in Muscat worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mutrah Corniche",
+      "text": "Mutrah Corniche adds the water-facing side of Muscat, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Al Jalali Fort",
+      "text": "Al Jalali Fort is a clear heritage marker in Muscat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Mutrah Souq",
+      "label": "Heritage",
+      "text": "Mutrah Souq is a heritage-focused side trip from Muscat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Royal Opera House Muscat",
+      "label": "Heritage",
+      "text": "Royal Opera House Muscat is a heritage-focused side trip from Muscat; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Mutrah Corniche",
+      "label": "Heritage",
+      "text": "Mutrah Corniche is a heritage-focused side trip from Muscat; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

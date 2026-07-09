@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Tirana in 2026: calendars, nearby pages and linked event views for planning around Europe / Albania."
   },
   "region": "Capital city of Albania",
-  "population": "tba",
+  "population": "~496K",
   "coordinates": {
     "lat": 41.32744,
     "lon": 19.81866
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tirana travel, stays & events guide",
-  "heroText": "Tirana is a key city in Albania, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Tirana is Albania's energetic capital, where Ottoman lanes, Italian-era boulevards and post-communist color meet around Skanderbeg Square. First-timers should start at Skanderbeg Square, visit Bunk'Art 2 for recent history, then ride the Dajti Ekspres cable car for mountain views. Tirana International Airport makes the city the natural first base for Albanian trips.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Tirana, Albania",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Tirana",
-      "text": "Tirana is a key city in Albania, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Blloku",
+      "text": "Blloku is the lively restaurant and nightlife district, close to cafes, boutiques and many mid-range hotels for first visits.",
+      "bestFor": "nightlife, restaurants, first visits"
+    },
+    {
+      "name": "Skanderbeg Square",
+      "text": "The central square area keeps museums, bus links and main sights within easy walking distance, useful for short stays.",
+      "bestFor": "sightseeing, short stays, museums"
+    },
+    {
+      "name": "Pazari i Ri",
+      "text": "Pazari i Ri has a market-led food scene and guesthouses near older streets east of the main square.",
+      "bestFor": "food, markets, local stays"
+    },
+    {
+      "name": "Komuna e Parisit",
+      "text": "Komuna e Parisit is a practical residential base with apartments, local restaurants and fast access toward the lake park.",
+      "bestFor": "apartments, longer stays, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tirana International Airport Nene Tereza (TIA)",
+      "search": "Tirana International Airport Nene Tereza, Tirana, Albania",
+      "text": "Tirana International Airport sits northwest of the city near Rinas; buses, taxis and hotel transfers connect it with central districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-45 min by taxi or airport bus to central Tirana",
+    "note": "from Tirana International Airport",
+    "distance": "about 17 km northwest of the centre"
+  },
+  "bookingDestination": "Tirana, Albania",
+  "stayOverview": "Choose Blloku for restaurants and nightlife, Skanderbeg Square for a short sightseeing stay, Pazari i Ri for food-market atmosphere, or Komuna e Parisit for apartments and easier access toward the Grand Park of Tirana.",
+  "hotelIntro": "Tirana hotels are most convenient around Blloku and Skanderbeg Square, while Pazari i Ri gives more local evenings and Komuna e Parisit works better for apartment stays, drivers and trips toward the lake.",
+  "rentalCars": "Skip a car inside Tirana; rent one only for onward Albanian road trips to Berat, the coast or mountain areas.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Blloku for evenings out, or near Skanderbeg Square if museum visits and airport buses matter more."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Traffic on the Rinas road can slow at peak times, so leave extra time for departures."
+    },
+    {
+      "title": "Cash and cards",
+      "text": "Cards work in many hotels and restaurants, but carry lek for markets, taxis and smaller cafes."
+    },
+    {
+      "title": "Day trip",
+      "text": "Kruje is an easy heritage day trip for the castle, bazaar and mountain views north of Tirana."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Skanderbeg Square",
+      "text": "Skanderbeg Square is Tirana's main orientation point, bordered by museums, civic buildings and broad pedestrian space in the city centre.",
+      "name": "Skanderbeg Square"
+    },
+    {
+      "title": "Bunk'Art 2",
+      "text": "Bunk'Art 2 turns a Cold War bunker near the centre into a compact museum on surveillance, policing and communist-era Albania.",
+      "name": "Bunk'Art 2"
+    },
+    {
+      "title": "Dajti Ekspres",
+      "text": "Dajti Ekspres climbs from the edge of Tirana to Mount Dajti, giving wide views and an easy break from the city.",
+      "name": "Dajti Ekspres"
+    },
+    {
+      "title": "Pazari i Ri",
+      "text": "Pazari i Ri is the renovated New Bazaar area, good for produce stalls, casual meals and evening streets close to the centre.",
+      "name": "Pazari i Ri"
+    },
+    {
+      "title": "Grand Park of Tirana",
+      "text": "Grand Park of Tirana wraps around the artificial lake, useful for walks, running and a quieter afternoon outside the traffic.",
+      "name": "Grand Park of Tirana"
+    },
+    {
+      "title": "National Historical Museum",
+      "text": "The National Historical Museum on Skanderbeg Square gives a broad introduction to Albanian history before travelling elsewhere in the country.",
+      "name": "National Historical Museum"
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kruje",
+      "label": "Heritage",
+      "text": "Kruje combines a hilltop castle, old bazaar and Skanderbeg history within an easy drive north of Tirana."
+    },
+    {
+      "name": "Durres",
+      "label": "Coast",
+      "text": "Durres adds Adriatic beaches, Roman remains and seafood restaurants west of Tirana for a simple coastal day."
+    },
+    {
+      "name": "Mount Dajti",
+      "label": "Nature",
+      "text": "Mount Dajti works as Tirana's quickest mountain escape, reached by road or the Dajti Ekspres cable car."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tirana",
     "matchedCountry": "Albania"
-  }
+  },
+  "transitOperator": "Tirana Public Transport"
 }

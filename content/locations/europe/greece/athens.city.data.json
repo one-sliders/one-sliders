@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Athens in 2026: calendars, nearby pages and linked event views for planning around Europe / Greece."
   },
   "region": "Capital city of Greece",
-  "population": "tba",
+  "population": "~664K",
   "coordinates": {
     "lat": 37.98376,
     "lon": 23.72784
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Athens travel, stays & events guide",
-  "heroText": "Athens is a key city in Greece, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Athens is a layered capital where ancient ruins, dense neighbourhoods and rooftop views sit under the Acropolis. Start at the Acropolis and Plaka, visit the Acropolis Museum, then use Monastiraki or Syntagma as anchors for food and transport. Athens International Airport connects by metro, suburban rail, buses and taxis.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Athens, Greece",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Athens",
-      "text": "Athens is a key city in Greece, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Plaka",
+      "text": "Plaka is the classic first base, with old lanes, restaurants and easy walks to the Acropolis.",
+      "bestFor": "first visits, history, restaurants"
+    },
+    {
+      "name": "Syntagma",
+      "text": "Syntagma is practical for metro, airport links, shopping and quick access to central sights.",
+      "bestFor": "transport, shopping, short stays"
+    },
+    {
+      "name": "Monastiraki",
+      "text": "Monastiraki is lively and central, with markets, rooftop bars and strong metro connections.",
+      "bestFor": "nightlife, markets, metro"
+    },
+    {
+      "name": "Koukaki",
+      "text": "Koukaki is calmer, close to the Acropolis Museum and good for apartment stays.",
+      "bestFor": "apartments, museums, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Athens International Airport (ATH)",
+      "search": "Athens International Airport, Athens, Greece",
+      "text": "Athens International Airport is east of the city, connected by metro, suburban rail, express buses and taxis."
+    }
+  ],
+  "airportTransfer": {
+    "value": "40-60 min by metro, bus or taxi to central Athens",
+    "note": "from Athens International Airport",
+    "distance": "about 33 km east of the centre"
+  },
+  "bookingDestination": "Athens, Greece",
+  "stayOverview": "Plaka is best for a first historic stay, Syntagma for transport, Monastiraki for markets and nightlife, and Koukaki for calmer apartment stays near the Acropolis Museum.",
+  "hotelIntro": "Athens is hot and hilly, so location matters. Stay near metro and the sights you care about most, then use taxis or transit for longer cross-city moves.",
+  "rentalCars": "Do not rent for Athens; use a car only when leaving for mainland archaeology sites or beaches.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Athens base by repeat journeys: sights, evening food, station access and the airport transfer should all still work."
+    },
+    {
+      "title": "Heat",
+      "text": "Keep the Athens plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Airport",
+      "text": "Check the route from Athens International Airport (ATH) before choosing between a central hotel and an airport-area first night in Athens."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Athens, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Acropolis",
+      "title": "Acropolis",
+      "text": "Acropolis is a named stop in Athens worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Acropolis Museum",
+      "title": "Acropolis Museum",
+      "text": "Acropolis Museum gives Athens a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Plaka",
+      "title": "Plaka",
+      "text": "Plaka is a named stop in Athens worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Monastiraki",
+      "title": "Monastiraki",
+      "text": "Monastiraki is a named stop in Athens worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Syntagma Square",
+      "title": "Syntagma Square",
+      "text": "Syntagma Square is a clear heritage marker in Athens, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "National Archaeological Museum",
+      "title": "National Archaeological Museum",
+      "text": "National Archaeological Museum gives Athens a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Cape Sounion",
+      "label": "Coast",
+      "text": "Cape Sounion is a nearby side trip from Athens; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Delphi",
+      "label": "Heritage",
+      "text": "Delphi is a heritage-focused side trip from Athens; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Aegina",
+      "label": "Island",
+      "text": "Aegina is a nearby side trip from Athens; keep it for a day when travel time, weather and opening hours fit the route."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Athens",
     "matchedCountry": "Greece"
-  }
+  },
+  "transitOperator": "OASA"
 }

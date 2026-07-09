@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Juba travel, stays & events guide",
-  "heroText": "Juba is a capital city in South Sudan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Juba is South Sudan's capital, spread along the White Nile's west bank at the country's southern crossroads. First-time visitors should pay respects at the John Garang Mausoleum, cross the Nile at Juba Bridge for river views, and browse produce and crafts at Konyo Konyo Market. Juba International Airport sits close to the city centre, and travel here calls for careful planning given the country's ongoing security and infrastructure challenges.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Juba, South Sudan",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Juba",
-      "text": "Juba is a capital city in South Sudan, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Juba Town",
+      "text": "Juba Town is the compact central district holding government offices, banks and the main market, the natural base for a short stay.",
+      "bestFor": "first visits, business, markets"
+    },
+    {
+      "name": "Tongping",
+      "text": "Tongping sits near the airport and river, home to UN offices, NGOs and many of the city's international hotels.",
+      "bestFor": "official visits, NGO stays, airport access"
+    },
+    {
+      "name": "Munuki",
+      "text": "Munuki is a busy residential suburb west of the centre, useful for longer stays needing more local, lower-cost accommodation.",
+      "bestFor": "longer stays, budget options"
+    },
+    {
+      "name": "Hai Malakal",
+      "text": "Hai Malakal is a central neighborhood close to the Nile riverside, convenient for river views and short walks to downtown offices.",
+      "bestFor": "river views, central access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Juba International Airport (JUB)",
+      "search": "Juba International Airport, Juba, South Sudan",
+      "text": "Juba International Airport sits at the edge of the city centre, with hotel transfers and vetted taxis arranged in advance for most visitors."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Juba International Airport (JUB) and central Juba before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Juba, South Sudan",
+  "stayOverview": "Most visits to Juba centre on Tongping or Juba Town, where international hotels, NGO offices and government buildings cluster close to the airport and river. Munuki and Hai Malakal suit longer, lower-key stays for those with local contacts and confirmed transport.",
+  "hotelIntro": "Juba hotel choice is shaped by logistics and security: Tongping suits NGO and official visitors wanting airport proximity, Juba Town suits business trips needing central offices and banks, and Munuki or Hai Malakal suit longer, more local stays arranged through trusted contacts.",
+  "rentalCars": "Independent car rental is uncommon; most visitors arrange a vetted driver through their hotel, employer or a local fixer for any movement around the city.",
+  "travelTips": [
+    {
+      "title": "Security planning",
+      "text": "Arrange travel and accommodation in advance through a trusted employer, NGO or hotel, and check current advisories before booking."
+    },
+    {
+      "title": "Best base",
+      "text": "Base in Tongping or Juba Town, where most international hotels and organisations operate with established transport arrangements."
+    },
+    {
+      "title": "River views",
+      "text": "Take a short boat trip or riverside walk near Juba Bridge for views over the White Nile at sunset."
+    },
+    {
+      "title": "Cash and connectivity",
+      "text": "Carry US dollars for most payments, since South Sudanese pounds are used mainly for small local purchases."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "John Garang Mausoleum",
+      "text": "John Garang Mausoleum is a named stop in Juba worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Juba Nile Bridge",
+      "text": "Juba Nile Bridge is a clear heritage marker in Juba, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "St. Theresa Cathedral",
+      "text": "St. Theresa Cathedral anchors the historic and ceremonial side of Juba, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Konyo Konyo Market",
+      "text": "Konyo Konyo Market gives Juba a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Juba Stadium",
+      "text": "Juba Stadium is a practical event or leisure landmark in Juba; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "White Nile waterfront",
+      "text": "White Nile waterfront adds the water-facing side of Juba, making it a good break from museums, traffic and dense historic streets."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "White Nile boat trip",
+      "label": "Nature",
+      "text": "A short boat trip on the White Nile offers a different perspective on Juba, with river life and birdlife visible from the water."
+    },
+    {
+      "name": "Jebel Kujur",
+      "label": "Nature",
+      "text": "Jebel Kujur is a rocky hill on the city's western edge, offering a viewpoint over Juba for those with a trusted local guide."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

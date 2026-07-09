@@ -21,7 +21,7 @@
     "webpageDescription": "Find sports events in Silverstone in 2026: calendars, nearby pages and linked event views for planning around Europe / United Kingdom."
   },
   "kicker": "Key city of United Kingdom",
-  "heroText": "Silverstone is a motorsport destination in United Kingdom, shaped by race weekends, countryside travel and a clear event calendar.",
+  "heroText": "Silverstone is a United Kingdom base best planned around named sights rather than a generic stopover. Start with Silverstone Circuit, add Silverstone Museum, and use Stowe House to understand the city's history, street life and visitor rhythm. Silverstone International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "snapshot": [
     {
       "label": "Place",
@@ -208,5 +208,103 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Silverstone",
     "matchedCountry": "United Kingdom"
-  }
+  },
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Silverstone, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Silverstone, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Silverstone reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Silverstone sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Silverstone International Airport",
+      "search": "Silverstone International Airport, Silverstone, United Kingdom",
+      "text": "Silverstone International Airport is the main air gateway for Silverstone; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Silverstone International Airport and central Silverstone before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "stayOverview": "Start with City centre for the easiest first Silverstone stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Silverstone hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Silverstone unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Silverstone International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Silverstone Circuit and Silverstone Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Silverstone, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Silverstone Circuit",
+      "text": "Silverstone Circuit is a practical event or leisure landmark in Silverstone; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "Silverstone Museum",
+      "text": "Silverstone Museum is a key Silverstone culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Stowe House",
+      "text": "Stowe House is a named stop in Silverstone worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Towcester Racecourse",
+      "text": "Towcester Racecourse is a practical event or leisure landmark in Silverstone; check schedules and access before pairing it with the rest of the day."
+    },
+    {
+      "title": "Whittlebury Park",
+      "text": "Whittlebury Park adds outdoor time to a Silverstone stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Bletchley Park",
+      "text": "Bletchley Park adds outdoor time to a Silverstone stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Silverstone Circuit",
+      "label": "Heritage",
+      "text": "Silverstone Circuit is a heritage-focused side trip from Silverstone; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Stowe House",
+      "label": "Heritage",
+      "text": "Stowe House is a heritage-focused side trip from Silverstone; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Towcester Racecourse",
+      "label": "Heritage",
+      "text": "Towcester Racecourse is a heritage-focused side trip from Silverstone; check the route and opening hours before setting aside the day."
+    }
+  ]
 }

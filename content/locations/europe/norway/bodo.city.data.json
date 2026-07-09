@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bodø travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Bodø is a Norway base best planned around named sights rather than a generic stopover. Start with Saltstraumen, add Norwegian Aviation Museum, and use Bodo harbour to understand the city's history, street life and visitor rhythm. Bodø International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Bodø, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Bodø, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Bodø reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Bodø sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Bodø International Airport",
+      "search": "Bodø International Airport, Bodø, Norway",
+      "text": "Bodø International Airport is the main air gateway for Bodø; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Bodø International Airport and central Bodø before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Bodø, Norway",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Saltstraumen",
-    "Norwegian Aviation Museum",
-    "Bodo harbour",
-    "Mount Ronvik",
-    "Kjerringoy",
-    "Lofoten ferry"
+  "stayOverview": "Start with City centre for the easiest first Bodø stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Bodø hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Bodø unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Bodø International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Saltstraumen and Norwegian Aviation Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Bodø, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Saltstraumen",
+      "text": "Saltstraumen is a named stop in Bodø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Norwegian Aviation Museum",
+      "text": "Norwegian Aviation Museum is a key Bodø culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Bodo harbour",
+      "text": "Bodo harbour adds the water-facing side of Bodø, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Mount Ronvik",
+      "text": "Mount Ronvik adds outdoor time to a Bodø stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Kjerringoy",
+      "text": "Kjerringoy is a named stop in Bodø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Lofoten ferry",
+      "text": "Lofoten ferry is a named stop in Bodø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Saltstraumen",
+      "label": "Heritage",
+      "text": "Saltstraumen is a heritage-focused side trip from Bodø; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Bodo harbour",
+      "label": "Heritage",
+      "text": "Bodo harbour is a heritage-focused side trip from Bodø; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Mount Ronvik",
+      "label": "Nature",
+      "text": "Mount Ronvik works as a nature-focused side trip from Bodø, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

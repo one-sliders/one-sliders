@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Kyiv in 2026: calendars, nearby pages and linked event views for planning around Europe / Ukraine."
   },
   "region": "Capital city of Ukraine",
-  "population": "tba",
+  "population": "~3M",
   "coordinates": {
     "lat": 50.45466,
     "lon": 30.5238
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kyiv travel, stays & events guide",
-  "heroText": "Kyiv is a key city in Ukraine, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kyiv is a Ukraine base best planned around named sights rather than a generic stopover. Start with Saint Sophia Cathedral, add Kyiv Pechersk Lavra, and use Maidan Nezalezhnosti to understand the city's history, street life and visitor rhythm. Kyiv Boryspil handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kyiv, Ukraine",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kyiv",
-      "text": "Kyiv is a key city in Ukraine, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Shevchenkivskyi",
+      "text": "Shevchenkivskyi is useful when a Kyiv stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Podil",
+      "text": "Podil is useful when a Kyiv stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Pechersk",
+      "text": "Pechersk is useful when a Kyiv stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Lypky",
+      "text": "Lypky is useful when a Kyiv stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kyiv Boryspil (KBP)",
+      "search": "Kyiv Boryspil (KBP), Kyiv, Ukraine",
+      "text": "Kyiv Boryspil (KBP) is the main air gateway for Kyiv; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kyiv Boryspil (KBP) and central Kyiv before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kyiv, Ukraine",
+  "stayOverview": "Start with Shevchenkivskyi for the easiest first Kyiv stay, then compare Podil and Pechersk when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Kyiv hotel choice is mostly about repeat journeys: use Shevchenkivskyi for sightseeing, Podil for a different local base, and Pechersk or Lypky when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Kyiv unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Shevchenkivskyi for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Kyiv Boryspil, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Saint Sophia Cathedral and Kyiv Pechersk Lavra so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Kyiv, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Saint Sophia Cathedral",
+      "text": "Saint Sophia Cathedral anchors the historic and ceremonial side of Kyiv, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Kyiv Pechersk Lavra",
+      "text": "Kyiv Pechersk Lavra is a named stop in Kyiv worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Maidan Nezalezhnosti",
+      "text": "Maidan Nezalezhnosti is a named stop in Kyiv worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Andriyivskyy Descent",
+      "text": "Andriyivskyy Descent is a named stop in Kyiv worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Motherland Monument Kyiv",
+      "text": "Motherland Monument Kyiv is a clear heritage marker in Kyiv, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Golden Gate Kyiv",
+      "text": "Golden Gate Kyiv is a clear heritage marker in Kyiv, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Kyiv Pechersk Lavra",
+      "label": "Heritage",
+      "text": "Kyiv Pechersk Lavra is a heritage-focused side trip from Kyiv; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Maidan Nezalezhnosti",
+      "label": "Heritage",
+      "text": "Maidan Nezalezhnosti is a heritage-focused side trip from Kyiv; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Andriyivskyy Descent",
+      "label": "Heritage",
+      "text": "Andriyivskyy Descent is a heritage-focused side trip from Kyiv; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

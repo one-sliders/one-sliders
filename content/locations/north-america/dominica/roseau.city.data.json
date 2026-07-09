@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Roseau travel, stays & events guide",
-  "heroText": "Roseau is a capital city in Dominica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Roseau is a Dominica base best planned around named sights rather than a generic stopover. Start with Roseau Market, add Dominica Museum, and use Morne Bruce to understand the city's history, street life and visitor rhythm. Douglas-Charles Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Roseau, Dominica",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Roseau",
-      "text": "Roseau is a capital city in Dominica, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Roseau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Roseau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Roseau reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Roseau sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Douglas-Charles Airport (DOM)",
+      "search": "Douglas-Charles Airport (DOM), Roseau, Dominica",
+      "text": "Douglas-Charles Airport (DOM) is the main air gateway for Roseau; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Douglas-Charles Airport (DOM) and central Roseau before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Roseau, Dominica",
+  "stayOverview": "Start with City centre for the easiest first Roseau stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Roseau hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Roseau unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Douglas-Charles Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Roseau Market and Dominica Museum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Roseau, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Roseau Market",
+      "text": "Roseau Market gives Roseau a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Dominica Museum",
+      "text": "Dominica Museum is a key Roseau culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Morne Bruce",
+      "text": "Morne Bruce is a named stop in Roseau worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Trafalgar Falls",
+      "text": "Trafalgar Falls gives Roseau a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Botanical Gardens Roseau",
+      "text": "Botanical Gardens Roseau adds outdoor time to a Roseau stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Boiling Lake",
+      "text": "Boiling Lake adds outdoor time to a Roseau stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Morne Bruce",
+      "label": "Heritage",
+      "text": "Morne Bruce is a heritage-focused side trip from Roseau; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Trafalgar Falls",
+      "label": "Nature",
+      "text": "Trafalgar Falls works as a nature-focused side trip from Roseau, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Botanical Gardens Roseau",
+      "label": "Heritage",
+      "text": "Botanical Gardens Roseau works as a nature-focused side trip from Roseau, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

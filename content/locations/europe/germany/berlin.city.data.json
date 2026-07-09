@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Berlin in 2026: calendars, nearby pages and linked event views for planning around Europe / Germany."
   },
   "region": "Capital city of Germany",
-  "population": "tba",
+  "population": "~3.9M",
   "coordinates": {
     "lat": 52.52437,
     "lon": 13.41053
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Berlin travel, stays & events guide",
-  "heroText": "Berlin is a key city in Germany, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Berlin is a sprawling capital of museums, memorials, nightlife and neighbourhood contrasts. Start at Brandenburg Gate, walk the Berlin Wall Memorial, then choose Museum Island, Kreuzberg or Prenzlauer Berg depending on the day. Berlin Brandenburg Airport is the single main airport, connected by rail to the city.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Berlin, Germany",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Berlin",
-      "text": "Berlin is a key city in Germany, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Mitte",
+      "text": "Mitte is best for first stays, with museums, memorials, government sights and strong transit links.",
+      "bestFor": "first visits, museums, landmarks"
+    },
+    {
+      "name": "Kreuzberg",
+      "text": "Kreuzberg suits nightlife, casual food, canal walks and visitors wanting less polished Berlin energy.",
+      "bestFor": "nightlife, food, canals"
+    },
+    {
+      "name": "Prenzlauer Berg",
+      "text": "Prenzlauer Berg is calmer, with cafes, apartments, parks and family-friendly streets north of Mitte.",
+      "bestFor": "cafes, families, longer stays"
+    },
+    {
+      "name": "Charlottenburg",
+      "text": "Charlottenburg offers classic hotels, shopping, museums and easier access to western Berlin sights.",
+      "bestFor": "shopping, classic hotels, museums"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Berlin Brandenburg Airport (BER)",
+      "search": "Berlin Brandenburg Airport, Berlin, Germany",
+      "text": "Berlin Brandenburg Airport is southeast of the city and links to central Berlin by regional rail, S-Bahn and airport express trains."
+    }
+  ],
+  "airportTransfer": {
+    "value": "30-45 min by rail to central Berlin stations",
+    "note": "from Berlin Brandenburg Airport",
+    "distance": "about 27 km southeast of the centre"
+  },
+  "bookingDestination": "Berlin, Germany",
+  "stayOverview": "Mitte is the easiest first base, Kreuzberg works for nightlife and food, Prenzlauer Berg suits longer cafe-led stays, and Charlottenburg is practical for classic hotels, shopping and western museums.",
+  "hotelIntro": "Berlin is large, so transit matters. Pick a district that matches your evenings, then check U-Bahn, S-Bahn and tram links rather than assuming all central addresses feel close.",
+  "rentalCars": "Do not rent for Berlin; public transport and trains are better unless leaving for rural Brandenburg.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Mitte for a first visit, or Kreuzberg if food, nightlife and canal walks matter more."
+    },
+    {
+      "title": "Transit",
+      "text": "Use BVG and VBB tickets correctly across U-Bahn, S-Bahn, trams and buses; zones matter for the airport."
+    },
+    {
+      "title": "Museums",
+      "text": "Keep one indoor culture stop in the Berlin plan so rain, heat or short winter daylight do not break the day."
+    },
+    {
+      "title": "Day trip",
+      "text": "Keep one side-trip day flexible from Berlin, then choose it only after checking transport frequency and opening hours."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Brandenburg Gate",
+      "title": "Brandenburg Gate",
+      "text": "Brandenburg Gate is a clear heritage marker in Berlin, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Berlin Wall Memorial",
+      "title": "Berlin Wall Memorial",
+      "text": "Berlin Wall Memorial is a clear heritage marker in Berlin, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Museum Island",
+      "title": "Museum Island",
+      "text": "Museum Island gives Berlin a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "name": "Reichstag",
+      "title": "Reichstag",
+      "text": "Reichstag is a named stop in Berlin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Kreuzberg",
+      "title": "Kreuzberg",
+      "text": "Kreuzberg is a named stop in Berlin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Tempelhofer Feld",
+      "title": "Tempelhofer Feld",
+      "text": "Tempelhofer Feld is a named stop in Berlin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Potsdam",
+      "label": "Palace",
+      "text": "Potsdam is a nearby side trip from Berlin; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Sachsenhausen",
+      "label": "Memorial",
+      "text": "Sachsenhausen is a nearby side trip from Berlin; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Spreewald",
+      "label": "Nature",
+      "text": "Spreewald works as a nature-focused side trip from Berlin, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -139,5 +225,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Berlin",
     "matchedCountry": "Germany"
-  }
+  },
+  "transitOperator": "BVG"
 }

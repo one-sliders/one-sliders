@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Bissau in 2026: calendars, nearby pages and linked event views for planning around Africa / Guinea Bissau."
   },
   "region": "Capital city in Guinea-Bissau",
-  "population": "tba",
+  "population": "~500K",
   "coordinates": {
     "lat": 11.86357,
     "lon": -15.59767
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bissau travel, stays & events guide",
-  "heroText": "Bissau is a capital city in Guinea-Bissau, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Bissau is Guinea-Bissau's low-rise coastal capital, built around a Portuguese colonial core on the Geba River estuary. First-time visitors should walk the fading colonnades of Praca, browse produce and cloth at Bandim Market, and see the star-shaped ramparts of the Fortaleza d'Amura. Osvaldo Vieira International Airport is the practical starting point for exploring the wider Bijagos Archipelago just offshore.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,95 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Bissau, Guinea-Bissau",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Bissau",
-      "text": "Bissau is a capital city in Guinea-Bissau, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Praca",
+      "text": "Praca is Bissau's colonial centre, with the Presidential Palace, cathedral and faded Portuguese buildings, best for a first stay near government offices.",
+      "bestFor": "first visits, colonial architecture"
+    },
+    {
+      "name": "Bissau Velho",
+      "text": "Bissau Velho, the old town by the port, holds the Fortaleza d'Amura and narrow colonial streets, good for walking and history.",
+      "bestFor": "history, walking, port views"
+    },
+    {
+      "name": "Bandim",
+      "text": "Bandim is home to the city's largest and busiest market, useful for produce, textiles and everyday city life rather than lodging.",
+      "bestFor": "markets, local life"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Osvaldo Vieira International Airport (OXB)",
+      "search": "Osvaldo Vieira International Airport, Bissau, Guinea-Bissau",
+      "text": "Osvaldo Vieira International Airport sits just north of central Bissau; flight schedules are limited, so confirm connections and hotel transfers in advance."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Osvaldo Vieira International Airport (OXB) and central Bissau before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Bissau, Guinea-Bissau",
+  "stayOverview": "Base in Praca for an easy first stay near the Presidential Palace and cathedral, or Bissau Velho for colonial streets and port views close to the Fortaleza d'Amura. Keep Bandim for daytime market visits rather than an overnight base.",
+  "hotelIntro": "Bissau's small hotel scene centres on Praca and Bissau Velho, both close to the port, cathedral and colonial landmarks, with a handful of business-style hotels serving visitors heading onward to the Bijagos Archipelago.",
+  "rentalCars": "A rental car is rarely useful in compact central Bissau; taxis cover the city, while trips to the Bijagos Archipelago require a boat rather than a car.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Praca or Bissau Velho for an easy first stay close to the cathedral, port and colonial-era landmarks."
+    },
+    {
+      "title": "Flight planning",
+      "text": "Confirm international flight schedules well ahead, since Osvaldo Vieira International Airport has limited weekly connections to regional hubs."
+    },
+    {
+      "title": "Cash",
+      "text": "Carry West African CFA francs in cash, since card acceptance is rare outside the largest hotels and offices."
+    },
+    {
+      "title": "Bijagos planning",
+      "text": "Book Bijagos Archipelago boat transfers or lodges in advance from Bissau, since onward transport is infrequent and fills up quickly."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Bissau Velho",
+      "text": "Bissau Velho is a named stop in Bissau worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Presidential Palace Bissau",
+      "text": "Presidential Palace Bissau anchors the historic and ceremonial side of Bissau, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Fortaleza de Sao Jose da Amura",
+      "text": "Fortaleza de Sao Jose da Amura is a clear heritage marker in Bissau, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Bandim Market",
+      "text": "Bandim Market gives Bissau a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Bissau Cathedral",
+      "text": "Bissau Cathedral anchors the historic and ceremonial side of Bissau, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Ethnographic Museum",
+      "text": "National Ethnographic Museum is a key Bissau culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Bijagos Archipelago",
+      "label": "Nature",
+      "text": "The Bijagos Archipelago, a UNESCO biosphere reserve of islands off the coast, is Guinea-Bissau's top draw for wildlife, beaches and traditional island life."
+    },
+    {
+      "name": "Varela",
+      "label": "Beach",
+      "text": "Varela, in the far northwest near the Senegal border, offers quiet beaches and mangrove coastline for a slower-paced coastal trip."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Cannes in 2026: calendars, nearby pages and linked event views for planning around Europe / France."
   },
   "region": "Key city of France",
-  "population": "tba",
+  "population": "~74K",
   "coordinates": {
     "lat": 43.55135,
     "lon": 7.01275
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Cannes travel, stays & events guide",
-  "heroText": "Cannes is a key city in France, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Cannes is a compact Riviera city where film-festival glamour, beaches and old-town viewpoints sit close together. Start on La Croisette, climb Le Suquet for harbour views, then use the Palais des Festivals area for event planning. Nice Cote d'Azur Airport is the main gateway, with rail and road links along the coast.",
   "kpis": [
     {
       "label": "Region",
@@ -41,30 +41,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Cannes, France",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Cannes",
-      "text": "Cannes is a key city in France, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "La Croisette",
+      "text": "La Croisette is best for beach hotels, sea views, luxury shopping and quick access to festival venues.",
+      "bestFor": "beaches, luxury, festival access"
+    },
+    {
+      "name": "Le Suquet",
+      "text": "Le Suquet is the old-town hill, better for atmosphere, restaurants and harbour views than large resort hotels.",
+      "bestFor": "old town, restaurants, views"
+    },
+    {
+      "name": "Cannes Centre",
+      "text": "Cannes Centre is practical for the station, shops, restaurants and walking between beaches and event venues.",
+      "bestFor": "station, first visits, restaurants"
+    },
+    {
+      "name": "Palm Beach",
+      "text": "Palm Beach is quieter and more residential, useful for beach access and stays away from the festival core.",
+      "bestFor": "quiet stays, beaches, longer visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Nice Cote d'Azur Airport (NCE)",
+      "search": "Nice Cote d'Azur Airport, Nice, France",
+      "text": "Nice Cote d'Azur Airport is the main international gateway for Cannes, with rail, bus and private transfers along the Riviera."
+    }
+  ],
+  "airportTransfer": {
+    "value": "35-60 min by car or 60-80 min by rail and local transfer",
+    "note": "from Nice Cote d'Azur Airport",
+    "distance": "about 27 km northeast of Cannes"
+  },
+  "bookingDestination": "Cannes, France",
+  "stayOverview": "Stay on La Croisette for beaches and festival access, Le Suquet for old-town atmosphere, Cannes Centre for station convenience, or Palm Beach for quieter seaside stays away from the busiest event core.",
+  "hotelIntro": "Cannes hotel choice changes sharply around festival dates. La Croisette and the centre are most convenient, Le Suquet has more character, and Palm Beach works when calmer nights and beach time matter more.",
+  "rentalCars": "Skip a car inside Cannes; rent only for hill villages, countryside routes or a wider Riviera trip.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Cannes Centre or La Croisette if festival venues, restaurants and the station need to stay walkable."
+    },
+    {
+      "title": "Festival timing",
+      "text": "Book very early during Cannes Film Festival, when prices and access change across the whole Riviera."
+    },
+    {
+      "title": "Beach choice",
+      "text": "Check whether a hotel uses private beach clubs or public beaches before assuming easy sea access."
+    },
+    {
+      "title": "Day trip",
+      "text": "Antibes is an easy rail trip for old-town streets, Picasso Museum and a calmer Riviera harbour."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "La Croisette",
+      "title": "La Croisette",
+      "text": "La Croisette is a named stop in Cannes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Palais des Festivals",
+      "title": "Palais des Festivals",
+      "text": "Palais des Festivals is a named stop in Cannes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Le Suquet",
+      "title": "Le Suquet",
+      "text": "Le Suquet is a named stop in Cannes worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Vieux Port",
+      "title": "Vieux Port",
+      "text": "Vieux Port adds the water-facing side of Cannes, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "name": "Marché Forville",
+      "title": "Marché Forville",
+      "text": "Marché Forville is a clear heritage marker in Cannes, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Îles de Lérins",
+      "title": "Îles de Lérins",
+      "text": "Îles de Lérins are the offshore islands reached by boat, useful for beaches, walks and a quieter Riviera break."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Antibes",
+      "label": "Coast",
+      "text": "Antibes adds old-town lanes, Picasso Museum and harbour walks a short train ride from Cannes."
+    },
+    {
+      "name": "Grasse",
+      "label": "Town",
+      "text": "Grasse is the perfume capital in the hills behind Cannes, good for workshops and views."
+    },
+    {
+      "name": "Nice",
+      "label": "City",
+      "text": "Nice gives a larger Riviera city day with old-town streets, museums and airport logistics."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/film/events/cannes-film-festival.html",
-      "img": "/content/locations/europe/img/europe-mini.png",
+      "img": "/content/categories/culture/film/events/img/cannes-film-festival-mini.png",
       "title": "Cannes Film Festival",
       "meta": "May 2026 · Cannes"
     }
@@ -142,5 +228,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Cannes",
     "matchedCountry": "France"
-  }
+  },
+  "transitOperator": "Palm Bus"
 }

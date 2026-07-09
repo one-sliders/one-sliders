@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Dakar in 2026: calendars, nearby pages and linked event views for planning around Africa / Senegal."
   },
   "region": "Capital city in Senegal",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": 14.6937,
     "lon": -17.44406
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Dakar travel, stays & events guide",
-  "heroText": "Dakar is a capital city in Senegal, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Dakar is Senegal's vibrant Atlantic capital, built on a peninsula where colonial-era streets meet surf beaches and bustling markets. First-time visitors should take the ferry to Île de Gorée and its House of Slaves memorial, photograph the towering African Renaissance Monument, and browse fabrics and crafts at Marché Sandaga. Blaise Diagne International Airport sits outside the city at Diass, and Dakar's mix of nightlife, seafood and coastline makes it a natural hub for West African travel.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Dakar, Senegal",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Dakar",
-      "text": "Dakar is a capital city in Senegal, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Plateau",
+      "text": "Plateau is Dakar's colonial-era downtown, home to government buildings, banks and the ferry terminal for Île de Gorée, ideal for first-time visitors.",
+      "bestFor": "first visits, business, ferry access"
+    },
+    {
+      "name": "Almadies",
+      "text": "Almadies is Dakar's upscale coastal district, lined with beach clubs, restaurants and nightlife near the continent's westernmost point.",
+      "bestFor": "beaches, nightlife, dining"
+    },
+    {
+      "name": "Ngor",
+      "text": "Ngor is a laid-back fishing village turned surf hangout, with a short pirogue ride to car-free Ngor Island just offshore.",
+      "bestFor": "surfing, relaxed stays"
+    },
+    {
+      "name": "Yoff",
+      "text": "Yoff is a traditional Lebou fishing village along a long sandy beach, offering an authentic, lower-key base close to the airport road.",
+      "bestFor": "local life, beach walks"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Blaise Diagne International Airport (DSS)",
+      "search": "Blaise Diagne International Airport, Diass, Senegal",
+      "text": "Blaise Diagne International Airport sits about 45 kilometres southeast of central Dakar, so budget an hour or more for the transfer into the city."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Blaise Diagne International Airport (DSS) and central Dakar before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Dakar, Senegal",
+  "stayOverview": "Base in Plateau for an easy first stay near ministries, markets and the Gorée ferry, or choose Almadies for beach clubs and Dakar's best restaurants. Ngor suits surfers and relaxed island-hopping, while Yoff offers an authentic fishing-village base near the airport road.",
+  "hotelIntro": "Dakar hotel choice depends on priorities: Plateau suits first-time visitors wanting downtown sights and the Gorée ferry within reach, Almadies suits beach and nightlife stays, and Ngor or Yoff suit travelers wanting a quieter, more local coastal base.",
+  "rentalCars": "A rental car helps for day trips to Lac Rose or the airport at Diass, though taxis and ride-hailing cover Dakar's city centre and beaches easily.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Plateau for downtown sights and the Gorée ferry, or Almadies for beach clubs and Dakar's liveliest restaurant scene."
+    },
+    {
+      "title": "Airport distance",
+      "text": "Allow extra time for the roughly hour-long transfer from Blaise Diagne International Airport, which sits well outside the city centre."
+    },
+    {
+      "title": "Gorée ferry",
+      "text": "Book the Île de Gorée ferry a day ahead in high season and arrive early, since queues build quickly at the Plateau terminal."
+    },
+    {
+      "title": "Bargaining and cash",
+      "text": "Carry West African CFA francs for markets and negotiate prices at Marché Sandaga and Kermel, where bargaining is expected."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "African Renaissance Monument",
+      "text": "African Renaissance Monument is a clear heritage marker in Dakar, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Goree Island",
+      "text": "Goree Island adds the water-facing side of Dakar, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "IFAN Museum of African Arts",
+      "text": "IFAN Museum of African Arts is a key Dakar culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Dakar Grand Mosque",
+      "text": "Dakar Grand Mosque anchors the historic and ceremonial side of Dakar, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Ngor Island",
+      "text": "Ngor Island adds the water-facing side of Dakar, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Place de l'Independance Dakar",
+      "text": "Place de l'Independance Dakar is a named stop in Dakar worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lac Rose",
+      "label": "Nature",
+      "text": "Lac Rose, also called Lake Retba, turns a striking pink from algae and salt, a popular half-day trip northeast of Dakar."
+    },
+    {
+      "name": "Île de Ngor",
+      "label": "Beach",
+      "text": "Île de Ngor is a tiny car-free island reached by pirogue from Ngor village, good for a relaxed beach afternoon and surf breaks."
+    },
+    {
+      "name": "Saly",
+      "label": "Beach",
+      "text": "Saly is Senegal's main beach resort strip south of Dakar, worth a longer stay for golf, watersports and all-inclusive hotels."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

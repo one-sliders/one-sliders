@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Niagara Falls travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Niagara Falls is a Canada base best planned around named sights rather than a generic stopover. Start with Horseshoe Falls, add Journey Behind the Falls, and use Clifton Hill to understand the city's history, street life and visitor rhythm. Niagara Falls International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,27 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Niagara Falls, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Niagara Falls, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Niagara Falls reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Niagara Falls sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Niagara Falls International Airport",
+      "search": "Niagara Falls International Airport, Niagara Falls, Canada",
+      "text": "Niagara Falls International Airport is the main air gateway for Niagara Falls; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Niagara Falls International Airport and central Niagara Falls before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Niagara Falls, Canada",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Horseshoe Falls",
-    "Journey Behind the Falls",
-    "Clifton Hill",
-    "Niagara Parkway",
-    "Skylon Tower",
-    "Wine country"
+  "stayOverview": "Start with City centre for the easiest first Niagara Falls stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Niagara Falls hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Niagara Falls unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Niagara Falls International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Horseshoe Falls and Journey Behind the Falls so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Niagara Falls, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Horseshoe Falls",
+      "text": "Horseshoe Falls gives Niagara Falls a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Journey Behind the Falls",
+      "text": "Journey Behind the Falls gives Niagara Falls a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Clifton Hill",
+      "text": "Clifton Hill adds outdoor time to a Niagara Falls stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Niagara Parkway",
+      "text": "Niagara Parkway adds outdoor time to a Niagara Falls stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Skylon Tower",
+      "text": "Skylon Tower is a clear heritage marker in Niagara Falls, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Wine country",
+      "text": "Wine country is a named stop in Niagara Falls worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Horseshoe Falls",
+      "label": "Nature",
+      "text": "Horseshoe Falls works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Journey Behind the Falls",
+      "label": "Nature",
+      "text": "Journey Behind the Falls works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Clifton Hill",
+      "label": "Heritage",
+      "text": "Clifton Hill works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

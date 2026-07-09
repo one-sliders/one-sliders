@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Kingstown travel, stays & events guide",
-  "heroText": "Kingstown is a capital city in Saint Vincent and the Grenadines, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kingstown is a Saint Vincent and the Grenadines base best planned around named sights rather than a generic stopover. Start with Kingstown Market, add St. George's Cathedral Kingstown, and use Botanical Gardens Saint Vincent to understand the city's history, street life and visitor rhythm. Argyle International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kingstown, Saint Vincent and the Grenadines",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kingstown",
-      "text": "Kingstown is a capital city in Saint Vincent and the Grenadines, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Kingstown, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Kingstown, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Kingstown reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Kingstown sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Argyle International Airport (SVD)",
+      "search": "Argyle International Airport (SVD), Kingstown, Saint Vincent and the Grenadines",
+      "text": "Argyle International Airport (SVD) is the main air gateway for Kingstown; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Argyle International Airport (SVD) and central Kingstown before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kingstown, Saint Vincent and the Grenadines",
+  "stayOverview": "Start with City centre for the easiest first Kingstown stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Kingstown hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Kingstown unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Argyle International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Kingstown Market and St. George's Cathedral Kingstown so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Kingstown, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kingstown Market",
+      "text": "Kingstown Market gives Kingstown a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "St. George's Cathedral Kingstown",
+      "text": "St. George's Cathedral Kingstown anchors the historic and ceremonial side of Kingstown, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Botanical Gardens Saint Vincent",
+      "text": "Botanical Gardens Saint Vincent adds outdoor time to a Kingstown stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Fort Charlotte Saint Vincent",
+      "text": "Fort Charlotte Saint Vincent is a clear heritage marker in Kingstown, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Vermont Nature Trail",
+      "text": "Vermont Nature Trail is a named stop in Kingstown worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Indian Bay Beach",
+      "text": "Indian Bay Beach adds outdoor time to a Kingstown stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Botanical Gardens Saint Vincent",
+      "label": "Heritage",
+      "text": "Botanical Gardens Saint Vincent works as a nature-focused side trip from Kingstown, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Fort Charlotte Saint Vincent",
+      "label": "Heritage",
+      "text": "Fort Charlotte Saint Vincent is a heritage-focused side trip from Kingstown; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Vermont Nature Trail",
+      "label": "Heritage",
+      "text": "Vermont Nature Trail is a heritage-focused side trip from Kingstown; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

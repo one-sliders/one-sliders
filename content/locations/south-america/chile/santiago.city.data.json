@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Santiago in 2026: calendars, nearby pages and linked event views for planning around South America / Chile."
   },
   "region": "Capital city in Chile",
-  "population": "tba",
+  "population": "~6.3M",
   "coordinates": {
     "lat": -33.45694,
     "lon": -70.64827
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Santiago travel, stays & events guide",
-  "heroText": "Santiago is a capital city in Chile, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Santiago sits between the Andes and Chile's central valley, mixing government squares, wine-country access and a fast-growing restaurant scene. Start at Plaza de Armas, ride up Cerro San Cristobal for scale, then spend an evening in Barrio Lastarria or Bellavista. Arturo Merino Benitez airport is the main gateway, with easy onward routes toward Valparaiso and the Maipo Valley.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,120 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Santiago, Chile",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Santiago",
-      "text": "Santiago is a capital city in Chile, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Lastarria",
+      "text": "Lastarria is the best first base for cafes, museums, walkable streets and easy access to downtown sights.",
+      "bestFor": "first visits, culture, restaurants"
+    },
+    {
+      "name": "Providencia",
+      "text": "Providencia is practical and well connected, with metro stops, hotels, shops and safer evening movement than the historic core.",
+      "bestFor": "metro access, business, value"
+    },
+    {
+      "name": "Bellavista",
+      "text": "Bellavista is nightlife-focused and close to Cerro San Cristobal, best for social stays rather than quiet nights.",
+      "bestFor": "nightlife, restaurants, Cerro San Cristobal"
+    },
+    {
+      "name": "Las Condes",
+      "text": "Las Condes suits business travelers and upscale hotels, with malls, offices and easier access toward the Andes.",
+      "bestFor": "business, upscale hotels, Andes access"
+    },
+    {
+      "name": "Centro",
+      "text": "Centro is closest to civic sights and museums, but evenings are quieter and require more street awareness.",
+      "bestFor": "history, museums, daytime walking"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Arturo Merino Benitez International Airport (SCL)",
+      "search": "Arturo Merino Benitez International Airport, Santiago, Chile",
+      "text": "Santiago's main airport sits northwest of the city; buses, taxis and pre-booked transfers connect it with Providencia and central districts."
+    }
+  ],
+  "airportTransfer": {
+    "value": "25-45 min by taxi, shuttle or airport bus to central Santiago",
+    "note": "from Arturo Merino Benitez International Airport",
+    "distance": "about 17 km northwest of the centre"
+  },
+  "bookingDestination": "Santiago, Chile",
+  "stayOverview": "Lastarria is the easiest first Santiago base for culture and restaurants, while Providencia is the practical metro-connected choice. Bellavista suits nightlife, Las Condes works for business and Andes access, and Centro is best for daytime history walks.",
+  "hotelIntro": "Santiago hotel choice depends on the trip rhythm: Lastarria and Providencia balance sightseeing and evenings, Bellavista is social, Las Condes is business-oriented and polished, and Centro is convenient for civic sights but less relaxed late.",
+  "rentalCars": "Skip a rental car inside Santiago; rent only for wineries, ski areas, Cajon del Maipo or longer road trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Lastarria or Providencia for a first stay because both balance restaurants, metro access and major sights."
+    },
+    {
+      "title": "Air quality",
+      "text": "Winter smog can hide mountain views, so plan viewpoints flexibly and check visibility before going up Cerro San Cristobal."
+    },
+    {
+      "title": "Metro use",
+      "text": "Use the metro for cross-city movement, but watch bags closely at busy stations and during rush hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Valparaiso, Maipo Valley and Cajon del Maipo each need a different kind of day, so avoid combining them."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Plaza de Armas",
+      "text": "Plaza de Armas is a named Santiago landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Cerro San Cristobal",
+      "text": "Cerro San Cristobal gives the best sense of Santiago's scale, with city views backed by the Andes on clear days."
+    },
+    {
+      "title": "La Moneda Palace",
+      "text": "La Moneda Palace anchors the historic and ceremonial side of Santiago, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Sky Costanera",
+      "text": "Sky Costanera is a named Santiago landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Barrio Lastarria",
+      "text": "Barrio Lastarria is a named Santiago landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Museo Chileno de Arte Precolombino",
+      "text": "Museo Chileno de Arte Precolombino is a named Santiago landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Valparaiso",
+      "label": "Coast",
+      "text": "Valparaiso is the classic port-city day trip, known for hills, murals, funiculars and Pacific views."
+    },
+    {
+      "name": "Vina del Mar",
+      "label": "Coast",
+      "text": "Vina del Mar adds beaches, gardens and resort-town energy beside Valparaiso, often paired on a long day."
+    },
+    {
+      "name": "Cajon del Maipo",
+      "label": "Nature",
+      "text": "Cajon del Maipo is Santiago's mountain escape for rivers, viewpoints and outdoor trips into the Andes."
+    },
+    {
+      "name": "Maipo Valley",
+      "label": "Wine",
+      "text": "Maipo Valley wineries are close to Santiago, making wine tastings one of the easiest half-day plans."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/national-day/events/chile-independence-day-and-fiestas-patrias.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/national-day/events/img/chile-independence-day-and-fiestas-patrias-mini.png",
       "title": "Chile Independence Day and Fiestas Patrias",
       "meta": "Sep 2026 · Santiago"
     }
@@ -147,5 +237,6 @@
   "continentName": "South America",
   "countrySlug": "chile",
   "countryName": "Chile",
-  "depth": 4
+  "depth": 4,
+  "transitOperator": "Metro de Santiago"
 }

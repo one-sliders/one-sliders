@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Maseru in 2026: calendars, nearby pages and linked event views for planning around Africa / Lesotho."
   },
   "region": "Capital city in Lesotho",
-  "population": "tba",
+  "population": "~330K",
   "coordinates": {
     "lat": -29.31667,
     "lon": 27.48333
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Maseru travel, stays & events guide",
-  "heroText": "Maseru is a capital city in Lesotho, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Maseru is Lesotho's capital, a compact riverside city on the border with South Africa and the gateway to the mountain kingdom's highlands. First-time visitors should browse the Basotho Hat souvenir stalls, visit the Thaba-Bosiu heritage site of King Moshoeshoe I, and shop for crafts at the Maseru Sun and Alliance Francaise galleries. Moshoeshoe I International Airport keeps onward trips into the Maloti Mountains within easy reach.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Maseru, Lesotho",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Maseru",
-      "text": "Maseru is a capital city in Lesotho, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Maseru city centre",
+      "text": "Maseru's city centre holds government offices, banks and the main shopping streets, a practical base for a short first stay.",
+      "bestFor": "first visits, shops, government offices"
+    },
+    {
+      "name": "Old Europa",
+      "text": "Old Europa is a quieter, historic district near the border post, with older colonial-era buildings and easy access to South Africa.",
+      "bestFor": "quiet stays, border crossings"
+    },
+    {
+      "name": "Maseru West",
+      "text": "Maseru West is a newer residential and hotel area, useful for business travelers wanting more space than the compact centre.",
+      "bestFor": "business trips, newer hotels"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Moshoeshoe I International Airport (MSU)",
+      "search": "Moshoeshoe I International Airport, Maseru, Lesotho",
+      "text": "Moshoeshoe I International Airport lies about 18km south of central Maseru; confirm hotel transfers in advance since taxis are limited after dark."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Moshoeshoe I International Airport (MSU) and central Maseru before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Maseru, Lesotho",
+  "stayOverview": "Base in Maseru city centre for shops, banks and an easy first stay, or Maseru West for newer hotels with more space. Old Europa suits travelers crossing the nearby South African border or wanting a quieter, historic setting.",
+  "hotelIntro": "Maseru's hotel choice is straightforward: the city centre suits short business stays near shops and offices, Maseru West offers newer hotels with more room, and Old Europa suits quieter stays close to the border crossing.",
+  "rentalCars": "A rental car is useful for reaching Thaba-Bosiu or the Maloti Mountains, since public transport beyond Maseru is limited and taxis are best kept for in-town trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Maseru city centre for an easy first stay near shops, banks and government offices within walking distance."
+    },
+    {
+      "title": "Border crossing",
+      "text": "Maseru sits right on the South African border, so keep passports handy if combining the trip with a visit to Bloemfontein."
+    },
+    {
+      "title": "Altitude and weather",
+      "text": "Pack layers even in summer, since Maseru's highland setting brings cool evenings and the surrounding mountains can turn cold quickly."
+    },
+    {
+      "title": "Day trips",
+      "text": "Set aside a half-day for Thaba-Bosiu, the fortress mountain of Lesotho's founding king, just outside the city."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Maseru Market",
+      "text": "Maseru Market gives Maseru a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Our Lady of Victories Cathedral",
+      "text": "Our Lady of Victories Cathedral anchors the historic and ceremonial side of Maseru, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Royal Palace of Lesotho",
+      "text": "Royal Palace of Lesotho anchors the historic and ceremonial side of Maseru, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Thaba Bosiu",
+      "text": "Thaba Bosiu is a named stop in Maseru worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pioneer Mall",
+      "text": "Pioneer Mall is useful for reading Maseru's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "title": "Maletsunyane Falls",
+      "text": "Maletsunyane Falls gives Maseru a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Thaba-Bosiu",
+      "label": "Heritage",
+      "text": "Thaba-Bosiu, Lesotho's founding mountain stronghold, is a short drive from Maseru and the country's most important heritage site."
+    },
+    {
+      "name": "Maletsunyane Falls",
+      "label": "Nature",
+      "text": "Maletsunyane Falls near Semonkong, one of southern Africa's tallest single-drop waterfalls, makes a rewarding full-day or overnight trip."
+    },
+    {
+      "name": "Afriski Mountain Resort",
+      "label": "Nature",
+      "text": "Afriski Mountain Resort in the northern highlands offers hiking, skiing in winter and dramatic mountain scenery a few hours from the capital."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

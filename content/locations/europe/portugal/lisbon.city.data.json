@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Lisbon in 2026: calendars, nearby pages and linked event views for planning around Europe / Portugal."
   },
   "region": "Capital city of Portugal",
-  "population": "tba",
+  "population": "~546K",
   "coordinates": {
     "lat": 38.72509,
     "lon": -9.1498
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lisbon travel, stays & events guide",
-  "heroText": "Lisbon is a key city in Portugal, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Lisbon is a Portugal base best planned around named sights rather than a generic stopover. Start with Belem Tower, add Jerónimos Monastery, and use Alfama to understand the city's history, street life and visitor rhythm. Lisbon Portela handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lisbon, Portugal",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lisbon",
-      "text": "Lisbon is a key city in Portugal, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Baixa",
+      "text": "Baixa is useful when a Lisbon stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Chiado",
+      "text": "Chiado is useful when a Lisbon stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Alfama",
+      "text": "Alfama is useful when a Lisbon stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Avenida da Liberdade",
+      "text": "Avenida da Liberdade is useful when a Lisbon stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Lisbon Portela (LIS)",
+      "search": "Lisbon Portela (LIS), Lisbon, Portugal",
+      "text": "Lisbon Portela (LIS) is the main air gateway for Lisbon; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Lisbon Portela (LIS) and central Lisbon before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Lisbon, Portugal",
+  "stayOverview": "Start with Baixa for the easiest first Lisbon stay, then compare Chiado and Alfama when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Lisbon hotel choice is mostly about repeat journeys: use Baixa for sightseeing, Chiado for a different local base, and Alfama or Avenida da Liberdade when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Lisbon unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Baixa for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Lisbon Portela, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Belem Tower and Jerónimos Monastery so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Lisbon, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Belem Tower",
+      "text": "Belem Tower is a clear heritage marker in Lisbon, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Jerónimos Monastery",
+      "text": "Jerónimos Monastery is one of Lisbon's religious landmarks; check visiting hours and dress expectations before building the route around it."
+    },
+    {
+      "title": "Alfama",
+      "text": "Alfama is a named stop in Lisbon worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Praca do Comercio",
+      "text": "Praca do Comercio is a named stop in Lisbon worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sao Jorge Castle",
+      "text": "Sao Jorge Castle is a clear heritage marker in Lisbon, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Santa Justa Lift",
+      "text": "Santa Justa Lift is a named stop in Lisbon worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Sintra",
+      "label": "Heritage",
+      "text": "Sintra is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Cascais",
+      "label": "Heritage",
+      "text": "Cascais is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Belem",
+      "label": "Heritage",
+      "text": "Belem is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

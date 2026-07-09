@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Honiara travel, stays & events guide",
-  "heroText": "Honiara is a capital city in Solomon Islands, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Honiara is a Solomon Islands base best planned around named sights rather than a generic stopover. Start with Central Market Honiara, add Guadalcanal American Memorial, and use Vilu War Museum to understand the city's history, street life and visitor rhythm. Honiara International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Honiara, Solomon Islands",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Honiara",
-      "text": "Honiara is a capital city in Solomon Islands, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Honiara, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Honiara, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Honiara reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Honiara sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Honiara International Airport (HIR)",
+      "search": "Honiara International Airport (HIR), Honiara, Solomon Islands",
+      "text": "Honiara International Airport (HIR) is the main air gateway for Honiara; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Honiara International Airport (HIR) and central Honiara before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Honiara, Solomon Islands",
+  "stayOverview": "Start with City centre for the easiest first Honiara stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Honiara hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Honiara unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Honiara International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Central Market Honiara and Guadalcanal American Memorial so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Honiara, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Central Market Honiara",
+      "text": "Central Market Honiara gives Honiara a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Guadalcanal American Memorial",
+      "text": "Guadalcanal American Memorial adds the water-facing side of Honiara, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Vilu War Museum",
+      "text": "Vilu War Museum is a key Honiara culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "National Museum of the Solomon Islands",
+      "text": "National Museum of the Solomon Islands is a key Honiara culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Tenaru Falls",
+      "text": "Tenaru Falls gives Honiara a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Mbonege Beach",
+      "text": "Mbonege Beach adds outdoor time to a Honiara stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Guadalcanal American Memorial",
+      "label": "Heritage",
+      "text": "Guadalcanal American Memorial is a heritage-focused side trip from Honiara; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Tenaru Falls",
+      "label": "Nature",
+      "text": "Tenaru Falls works as a nature-focused side trip from Honiara, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Mbonege Beach",
+      "label": "Nature",
+      "text": "Mbonege Beach works as a nature-focused side trip from Honiara, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

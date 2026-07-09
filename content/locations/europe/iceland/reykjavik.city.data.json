@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Reykjavík, Iceland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Capital Region",
-  "population": "tba",
+  "population": "~140K",
   "coordinates": {
     "lat": 64.13548,
     "lon": -21.89541
@@ -23,7 +23,8 @@
     "dynamic": true
   },
   "h1": "Reykjavík travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Reykjavík is Iceland's compact capital, where colourful rooftops climb toward the twin spire of Hallgrímskirkja above the North Atlantic. First-time visitors should climb the church tower for rooftop views, catch a concert inside Harpa's glass facade, and stroll the waterfront past the Sun Voyager sculpture and Old Harbour fishing boats. Keflavík Airport sits under an hour away, making Reykjavík an easy base for Golden Circle day trips.",
+  "transitOperator": "Strætó",
   "kpis": [
     {
       "label": "Region",
@@ -41,27 +42,110 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "101 Reykjavík",
+      "text": "101 Reykjavík is the downtown postcode covering the old city centre, Laugavegur's shops and bars, and most museums, ideal for a first stay without a car.",
+      "bestFor": "first visits, nightlife, shops"
+    },
+    {
+      "name": "Vesturbær",
+      "text": "Vesturbær is a quiet residential quarter west of downtown, home to the university, the Grandi harbour food scene and the Vesturbæjarlaug thermal pool.",
+      "bestFor": "university area, local feel, quiet stays"
+    },
+    {
+      "name": "Skuggahverfi",
+      "text": "Skuggahverfi is a modern waterfront district around Harpa concert hall, with newer apartment hotels and an easy walk to the Old Harbour.",
+      "bestFor": "harbour views, new hotels, Harpa events"
+    },
+    {
+      "name": "Laugardalur",
+      "text": "Laugardalur is a green valley east of the centre with Iceland's largest thermal pool, a small zoo and a botanical garden, good for families.",
+      "bestFor": "families, pools, parks"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Keflavík International Airport (KEF)",
+      "search": "Keflavík International Airport, Reykjavík, Iceland",
+      "text": "Keflavík International Airport handles nearly all international flights and sits about 45 minutes southwest of the city on the Reykjanes peninsula."
+    },
+    {
+      "name": "Reykjavík Airport (RKV)",
+      "search": "Reykjavík Airport, Reykjavík, Iceland",
+      "text": "Reykjavík Airport sits inside the city centre and handles domestic flights plus routes to Greenland and the Faroe Islands, useful for onward travel."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Keflavík International Airport (KEF) and central Reykjavík before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Reykjavík, Iceland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Hallgrimskirkja",
-    "Harpa",
-    "Sun Voyager",
-    "Old Harbour",
-    "Sky Lagoon",
-    "Golden Circle trips"
+  "stayOverview": "Base in 101 Reykjavík for an easy first stay near Laugavegur's shops, bars and museums, then consider Vesturbær for a quieter university-area stay, Skuggahverfi for newer hotels near Harpa, or Laugardalur for pools and parks with families.",
+  "hotelIntro": "Reykjavík hotel choice depends on priorities: 101 Reykjavík suits first-time visitors wanting downtown nightlife and museums within walking distance, Vesturbær and Laugardalur suit quieter family stays near pools and parks, while Skuggahverfi offers newer waterfront hotels close to Harpa and the Old Harbour.",
+  "rentalCars": "A rental car is optional for downtown Reykjavík but useful for Golden Circle day trips, South Coast waterfalls, or exploring beyond the capital region.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in 101 Reykjavík for walkable access to Laugavegur's shops, restaurants and museums without needing a car for evenings out."
+    },
+    {
+      "title": "Airport transfer",
+      "text": "Book a Flybus or private transfer from Keflavík in advance, since the airport sits about 45 minutes from downtown with limited taxi availability."
+    },
+    {
+      "title": "Weather layers",
+      "text": "Pack windproof layers year-round, as Reykjavík's weather changes quickly; check forecasts before Golden Circle trips or whale-watching tours from the harbour."
+    },
+    {
+      "title": "Day trips",
+      "text": "Build in a full day for the Golden Circle route or a Sky Lagoon soak, both easy additions to a Reykjavík stay without an overnight."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Hallgrímskirkja",
+      "text": "Hallgrímskirkja is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Harpa",
+      "text": "Harpa is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Sun Voyager",
+      "text": "Sun Voyager is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Old Harbour",
+      "text": "Old Harbour adds the water-facing side of Reykjavík, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Sky Lagoon",
+      "text": "Sky Lagoon is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Golden Circle trips",
+      "text": "Golden Circle trips is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Þingvellir National Park",
+      "label": "Nature",
+      "text": "Þingvellir sits on the Golden Circle route where the North American and Eurasian plates meet, with walking trails through the rift valley."
+    },
+    {
+      "name": "Snæfellsnes Peninsula",
+      "label": "Nature",
+      "text": "Snæfellsnes is a compact peninsula north of Reykjavík nicknamed 'Iceland in miniature', with the Snæfellsjökull glacier, black beaches and fishing villages."
+    },
+    {
+      "name": "Blue Lagoon",
+      "label": "Spa",
+      "text": "The Blue Lagoon geothermal spa lies near Keflavík Airport, a convenient soak on the way to or from an international flight."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

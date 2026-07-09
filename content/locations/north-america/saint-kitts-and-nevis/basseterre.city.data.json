@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Basseterre travel, stays & events guide",
-  "heroText": "Basseterre is a capital city in Saint Kitts and Nevis, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Basseterre is a Saint Kitts and Nevis base best planned around named sights rather than a generic stopover. Start with Independence Square, add The Circus, and use St. George's Anglican Church to understand the city's history, street life and visitor rhythm. Basseterre International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Basseterre, Saint Kitts and Nevis",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Basseterre",
-      "text": "Basseterre is a capital city in Saint Kitts and Nevis, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Basseterre, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Basseterre, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Basseterre reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Basseterre sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Basseterre International Airport",
+      "search": "Basseterre International Airport, Basseterre, Saint Kitts and Nevis",
+      "text": "Basseterre International Airport is the main air gateway for Basseterre; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Basseterre International Airport and central Basseterre before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Basseterre, Saint Kitts and Nevis",
+  "stayOverview": "Start with City centre for the easiest first Basseterre stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Basseterre hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Basseterre unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Basseterre International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Independence Square and The Circus so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Basseterre, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Independence Square",
+      "text": "Independence Square is a clear heritage marker in Basseterre, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "The Circus",
+      "text": "The Circus is a named stop in Basseterre worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "St. George's Anglican Church",
+      "text": "St. George's Anglican Church anchors the historic and ceremonial side of Basseterre, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Berkeley Memorial",
+      "text": "Berkeley Memorial is a clear heritage marker in Basseterre, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Port Zante",
+      "text": "Port Zante adds the water-facing side of Basseterre, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "National Museum of Saint Kitts",
+      "text": "National Museum of Saint Kitts is a key Basseterre culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "The Circus",
+      "label": "Heritage",
+      "text": "The Circus is a heritage-focused side trip from Basseterre; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Berkeley Memorial",
+      "label": "Heritage",
+      "text": "Berkeley Memorial is a heritage-focused side trip from Basseterre; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Port Zante",
+      "label": "Heritage",
+      "text": "Port Zante is a heritage-focused side trip from Basseterre; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

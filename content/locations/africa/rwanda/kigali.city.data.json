@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Kigali in 2026: calendars, nearby pages and linked event views for planning around Africa / Rwanda."
   },
   "region": "Capital city in Rwanda",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": -1.94995,
     "lon": 30.05885
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kigali travel, stays & events guide",
-  "heroText": "Kigali is a capital city in Rwanda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Kigali is Rwanda's hilltop capital, widely regarded as one of Africa's cleanest and safest cities. First-time visitors should reflect at the Kigali Genocide Memorial, browse the murals and bars of Nyamirambo, and photograph the glass dome of the Kigali Convention Centre lit up at night. Kigali International Airport connects the city to gorilla-trekking bases in Volcanoes National Park, making Kigali a natural first and last stop on a Rwanda trip.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Kigali, Rwanda",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Kigali",
-      "text": "Kigali is a capital city in Rwanda, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Kiyovu",
+      "text": "Kiyovu is Kigali's central business hub, packed with hotels, banks and restaurants within easy walking distance of downtown offices.",
+      "bestFor": "first visits, business, hotels"
+    },
+    {
+      "name": "Kimihurura",
+      "text": "Kimihurura is an upscale hillside district of embassies, galleries and rooftop restaurants, popular with expats and longer-stay visitors.",
+      "bestFor": "dining, nightlife, longer stays"
+    },
+    {
+      "name": "Nyamirambo",
+      "text": "Nyamirambo is Kigali's oldest and liveliest neighborhood, known for its mosque, cinema and colourful guided walking tours of local life.",
+      "bestFor": "culture, local life, walking tours"
+    },
+    {
+      "name": "Kacyiru",
+      "text": "Kacyiru is a hillside government district near the Kigali Convention Centre, convenient for conference visitors and business travel.",
+      "bestFor": "conferences, business trips"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kigali International Airport (KGL)",
+      "search": "Kigali International Airport, Kigali, Rwanda",
+      "text": "Kigali International Airport sits east of the city centre, with taxis and hotel transfers readily available for the short ride into town."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kigali International Airport (KGL) and central Kigali before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Kigali, Rwanda",
+  "stayOverview": "Base in Kiyovu for an easy first Kigali stay near hotels, banks and the Genocide Memorial, or choose Kimihurura for upscale dining and embassy-district calm. Nyamirambo suits travelers wanting local culture and walking tours, while Kacyiru works well for conference visitors.",
+  "hotelIntro": "Kigali hotel choice depends on purpose: Kiyovu suits first-time visitors wanting central hotels near the memorial and CBD, Kimihurura suits longer stays with upscale restaurants, and Kacyiru suits conference-goers close to the Kigali Convention Centre.",
+  "rentalCars": "A rental car with driver is useful for reaching Volcanoes National Park or Lake Kivu, but Kigali's hilly city centre is easily covered by taxi or ride-hailing.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Kiyovu or Kimihurura for an easy first stay close to hotels, restaurants and the Kigali Genocide Memorial."
+    },
+    {
+      "title": "Cleanliness rules",
+      "text": "Note that plastic bags are banned nationwide and littering is taken seriously, part of why Kigali stays remarkably clean."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Arrange a hotel pickup at Kigali International Airport in advance, since it keeps arrivals simple after long connecting flights."
+    },
+    {
+      "title": "Gorilla trekking",
+      "text": "Book Volcanoes National Park gorilla permits well ahead if combining Kigali with a trek, since daily permit numbers are strictly limited."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Kigali Genocide Memorial",
+      "text": "Kigali Genocide Memorial is a clear heritage marker in Kigali, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Kimironko Market",
+      "text": "Kimironko Market gives Kigali a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Inema Arts Center",
+      "text": "Inema Arts Center gives Kigali a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Kigali Convention Centre",
+      "text": "Kigali Convention Centre gives Kigali a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Nyamirambo",
+      "text": "Nyamirambo is a named stop in Kigali worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mount Kigali",
+      "text": "Mount Kigali adds outdoor time to a Kigali stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Volcanoes National Park",
+      "label": "Wildlife",
+      "text": "Volcanoes National Park is Rwanda's base for mountain gorilla trekking, roughly a two-and-a-half-hour drive northwest of Kigali."
+    },
+    {
+      "name": "Lake Kivu",
+      "label": "Nature",
+      "text": "Lake Kivu's lakeside towns of Gisenyi and Kibuye offer a relaxed contrast to Kigali, reached by a scenic drive west through the hills."
+    },
+    {
+      "name": "Nyungwe Forest",
+      "label": "Nature",
+      "text": "Nyungwe Forest National Park protects rainforest and chimpanzee troops in the southwest, a longer drive best combined with a multi-day itinerary."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

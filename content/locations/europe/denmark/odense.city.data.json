@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Odense, Denmark trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Funen",
-  "population": "tba",
+  "population": "~183K",
   "coordinates": {
     "lat": 55.39594,
     "lon": 10.38831
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Odense travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Odense is Funen's main city and the birthplace of Hans Christian Andersen, with museums, parks and an easy-going university-town centre. Begin at Hans Christian Andersen House, add Brandts for art and culture, then use Munke Mose or the Funen Village for a slower afternoon. Most arrivals come by train or through Copenhagen, Billund or nearby Hans Christian Andersen Airport.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,116 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Odense city centre",
+      "text": "The centre is best for first stays, with Andersen sights, restaurants, shops and the station close together.",
+      "bestFor": "first visits, museums, restaurants"
+    },
+    {
+      "name": "Brandts area",
+      "text": "The Brandts area has culture venues, cafes and nightlife on the western side of the central core.",
+      "bestFor": "culture, cafes, nightlife"
+    },
+    {
+      "name": "Munke Mose",
+      "text": "Munke Mose is a green riverside base for quieter walks, families and easy access back into town.",
+      "bestFor": "parks, families, quiet stays"
+    },
+    {
+      "name": "Skibhuskvarteret",
+      "text": "Skibhuskvarteret offers local streets, apartment stays and good access north of the station.",
+      "bestFor": "apartments, local feel, longer stays"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Hans Christian Andersen Airport (ODE)",
+      "search": "Hans Christian Andersen Airport, Odense, Denmark",
+      "text": "Hans Christian Andersen Airport is north of Odense and mainly useful for limited services and private aviation."
+    },
+    {
+      "name": "Billund Airport (BLL)",
+      "search": "Billund Airport, Billund, Denmark",
+      "text": "Billund Airport often has more international routes for Odense visitors using road or rail connections across Jutland and Funen."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "15-25 min from Hans Christian Andersen Airport, longer from Billund or Copenhagen",
+    "note": "many visitors arrive by train",
+    "distance": "about 12 km north of central Odense"
   },
   "bookingDestination": "Odense, Denmark",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Hans Christian Andersen House",
-    "Odense Zoo",
-    "Brandts",
-    "Funen Village",
-    "Odense Cathedral",
-    "Munke Mose"
+  "stayOverview": "Odense city centre is the easiest base for Andersen sights and restaurants, Brandts suits culture-led stays, Munke Mose is calmer and greener, and Skibhuskvarteret works for apartments and longer visits.",
+  "hotelIntro": "Odense is compact and rail-friendly. Central hotels keep the museums simple, Brandts adds nightlife and culture, Munke Mose suits slower family stays, and Skibhuskvarteret gives a more residential base.",
+  "rentalCars": "You do not need a car in Odense, but one helps for Funen villages, castles and coastal detours.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in the city centre if Hans Christian Andersen House and restaurant walks are the main plan."
+    },
+    {
+      "title": "Arrival",
+      "text": "Odense is often easiest by train, so compare rail routes before choosing a distant airport transfer."
+    },
+    {
+      "title": "Museums",
+      "text": "Keep one indoor culture stop in the Odense plan so rain, heat or short winter daylight do not break the day."
+    },
+    {
+      "title": "Day trip",
+      "text": "Egeskov Castle is the classic Funen outing, best with a car or carefully planned public transport."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Hans Christian Andersen House",
+      "title": "Hans Christian Andersen House",
+      "text": "Hans Christian Andersen House is Odense's signature museum, presenting the writer's life through architecture, storytelling and immersive displays."
+    },
+    {
+      "name": "Odense Zoo",
+      "title": "Odense Zoo",
+      "text": "Odense Zoo is a major family attraction beside the river, easy to combine with a relaxed city stay."
+    },
+    {
+      "name": "Brandts",
+      "title": "Brandts",
+      "text": "Brandts is a named stop in Odense worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Funen Village",
+      "title": "Funen Village",
+      "text": "Funen Village is a named stop in Odense worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Odense Cathedral",
+      "title": "Odense Cathedral",
+      "text": "Odense Cathedral is one of Odense's religious landmarks; check visiting hours and dress expectations before building the route around it."
+    },
+    {
+      "name": "Munke Mose",
+      "title": "Munke Mose",
+      "text": "Munke Mose is a named stop in Odense worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Egeskov Castle",
+      "label": "Castle",
+      "text": "Egeskov Castle is a heritage-focused side trip from Odense; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Kerteminde",
+      "label": "Coast",
+      "text": "Kerteminde adds harbour streets, beaches and Fjord & Bælt marine centre northeast of Odense."
+    },
+    {
+      "name": "Nyborg",
+      "label": "Town",
+      "text": "Nyborg offers castle history, Great Belt views and a compact old-town stop east of Odense."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +235,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Odense",
     "matchedCountry": "Denmark"
-  }
+  },
+  "transitOperator": "FynBus"
 }

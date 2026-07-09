@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Rome in 2026: calendars, nearby pages and linked event views for planning around Europe / Italy."
   },
   "region": "Capital city of Italy",
-  "population": "tba",
+  "population": "~2.7M",
   "coordinates": {
     "lat": 41.89193,
     "lon": 12.51133
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Rome travel, stays & events guide",
-  "heroText": "Rome is a key city in Italy, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Rome is a Italy base best planned around named sights rather than a generic stopover. Start with Colosseum, add Roman Forum, and use Pantheon to understand the city's history, street life and visitor rhythm. Rome Fiumicino handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Rome, Italy",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Rome",
-      "text": "Rome is a key city in Italy, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "Centro Storico",
+      "text": "Centro Storico is the most practical first base in Rome, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Monti",
+      "text": "Monti is useful when a Rome stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Trastevere",
+      "text": "Trastevere is useful when a Rome stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
+    },
+    {
+      "name": "Prati",
+      "text": "Prati is useful when a Rome stay needs more local restaurants, apartment options or quieter nights outside the busiest core.",
+      "bestFor": "local stays, restaurants, quieter nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Rome Fiumicino (FCO)",
+      "search": "Rome Fiumicino (FCO), Rome, Italy",
+      "text": "Rome Fiumicino (FCO) is the main air gateway for Rome; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Rome Fiumicino (FCO) and central Rome before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Rome, Italy",
+  "stayOverview": "Start with Centro Storico for the easiest first Rome stay, then compare Monti and Trastevere when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Rome hotel choice is mostly about repeat journeys: use Centro Storico for sightseeing, Monti for a different local base, and Trastevere or Prati when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Rome unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centro Storico for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Rome Fiumicino, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Colosseum and Roman Forum so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Rome, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Colosseum",
+      "text": "Colosseum is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Roman Forum",
+      "text": "Roman Forum is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pantheon",
+      "text": "Pantheon is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Trevi Fountain",
+      "text": "Trevi Fountain is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Piazza Navona",
+      "text": "Piazza Navona is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Spanish Steps",
+      "text": "Spanish Steps is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tivoli",
+      "label": "Heritage",
+      "text": "Tivoli is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Ostia Antica",
+      "label": "Heritage",
+      "text": "Ostia Antica is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Frascati",
+      "label": "Heritage",
+      "text": "Frascati is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

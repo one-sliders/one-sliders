@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Jasper travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Jasper is a Canada base best planned around named sights rather than a generic stopover. Start with Maligne Lake, add Jasper SkyTram, and use Pyramid Lake to understand the city's history, street life and visitor rhythm. Jasper International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,27 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Jasper, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Jasper, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Jasper reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Jasper sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Jasper International Airport",
+      "search": "Jasper International Airport, Jasper, Canada",
+      "text": "Jasper International Airport is the main air gateway for Jasper; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "Compare road transfer time between Jasper International Airport and central Jasper before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
   },
   "bookingDestination": "Jasper, Canada",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Maligne Lake",
-    "Jasper SkyTram",
-    "Pyramid Lake",
-    "Miette Hot Springs",
-    "Icefields Parkway",
-    "Dark Sky Preserve"
+  "stayOverview": "Start with City centre for the easiest first Jasper stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Jasper hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Jasper unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Jasper International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Maligne Lake and Jasper SkyTram so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Jasper, checking weather, transport and opening hours before committing."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "title": "Maligne Lake",
+      "text": "Maligne Lake adds outdoor time to a Jasper stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Jasper SkyTram",
+      "text": "Jasper SkyTram is a named stop in Jasper worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Pyramid Lake",
+      "text": "Pyramid Lake adds outdoor time to a Jasper stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Miette Hot Springs",
+      "text": "Miette Hot Springs is a named stop in Jasper worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Icefields Parkway",
+      "text": "Icefields Parkway adds outdoor time to a Jasper stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Dark Sky Preserve",
+      "text": "Dark Sky Preserve gives Jasper a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Maligne Lake",
+      "label": "Nature",
+      "text": "Maligne Lake works as a nature-focused side trip from Jasper, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Jasper SkyTram",
+      "label": "Heritage",
+      "text": "Jasper SkyTram is a heritage-focused side trip from Jasper; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Pyramid Lake",
+      "label": "Nature",
+      "text": "Pyramid Lake works as a nature-focused side trip from Jasper, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

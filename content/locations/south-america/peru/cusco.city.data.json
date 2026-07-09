@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Cusco in 2026: calendars, nearby pages and linked event views for planning around South America / Peru."
   },
   "region": "Key city in Peru",
-  "population": "tba",
+  "population": "~430K",
   "coordinates": {
     "lat": -13.53188,
     "lon": -71.96701
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Cusco travel, stays & events guide",
-  "heroText": "Cusco is a key city in Peru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Cusco is the former Inca capital and Peru's main gateway to the Sacred Valley and Machu Picchu, with steep stone streets, churches and high-altitude plazas. Start at Plaza de Armas, walk up to San Blas, then visit Sacsayhuaman and Qorikancha for the Inca-Spanish layers. Alejandro Velasco Astete airport is close to town, but altitude makes the first day slower.",
   "kpis": [
     {
       "label": "Population",
@@ -39,30 +39,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Cusco, Peru",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Cusco",
-      "text": "Cusco is a key city in Peru, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centro Historico",
+      "text": "Centro Historico is the easiest first base, with Plaza de Armas, restaurants, museums and tour pickups within short walks.",
+      "bestFor": "first visits, tours, restaurants"
+    },
+    {
+      "name": "San Blas",
+      "text": "San Blas is steep, atmospheric and creative, with boutique stays, galleries and views above the main plaza.",
+      "bestFor": "boutique hotels, views, cafes"
+    },
+    {
+      "name": "San Pedro",
+      "text": "San Pedro is practical for the market, train logistics and budget stays west of the historic core.",
+      "bestFor": "market, budget stays, train access"
+    },
+    {
+      "name": "Wanchaq",
+      "text": "Wanchaq is flatter and more local, useful for business, longer stays and easier airport-side transfers.",
+      "bestFor": "longer stays, airport access, local feel"
+    },
+    {
+      "name": "Poroy road",
+      "text": "The Poroy road area is useful only for specific rail or car logistics, not for a classic first Cusco stay.",
+      "bestFor": "rail logistics, car trips, quiet nights"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Alejandro Velasco Astete International Airport (CUZ)",
+      "search": "Alejandro Velasco Astete International Airport, Cusco, Peru",
+      "text": "Cusco airport is close to the city, but traffic, altitude and early departures still make transfer timing important."
+    }
+  ],
+  "airportTransfer": {
+    "value": "15-30 min by taxi to Centro Historico or San Blas",
+    "note": "from Alejandro Velasco Astete International Airport",
+    "distance": "about 5 km southeast of central Cusco"
+  },
+  "bookingDestination": "Cusco, Peru",
+  "stayOverview": "Centro Historico is the strongest first Cusco base for Plaza de Armas, restaurants and tour pickups. San Blas is scenic but steep, San Pedro is practical and cheaper, Wanchaq helps with airport access, and Poroy only suits rail logistics.",
+  "hotelIntro": "Cusco hotel choice should account for altitude and hills: Centro Historico is easiest, San Blas is charming but steep, San Pedro is budget-friendly, Wanchaq is practical, and Poroy is mainly for specific train or car plans.",
+  "rentalCars": "Do not rent a car for Cusco itself; use tours, taxis or drivers for Sacred Valley and highland routes.",
+  "travelTips": [
+    {
+      "title": "Altitude",
+      "text": "Take the first day slowly, drink water and avoid heavy hiking immediately after arriving at Cusco airport."
+    },
+    {
+      "title": "Best base",
+      "text": "Stay near Plaza de Armas for a first visit unless steep streets or late-night noise are a concern."
+    },
+    {
+      "title": "Rail timing",
+      "text": "Keep the Cusco plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Season",
+      "text": "Keep the Cusco plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Plaza de Armas",
+      "text": "Plaza de Armas is a named Cusco landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Sacsayhuaman",
+      "text": "Sacsayhuaman is the monumental Inca site above Cusco, with huge stone walls and broad views over the city."
+    },
+    {
+      "title": "San Blas",
+      "text": "San Blas is Cusco's steep artisan quarter, known for galleries, cafes, guesthouses and views back to the centre."
+    },
+    {
+      "title": "Qorikancha",
+      "text": "Qorikancha shows Cusco's Inca and colonial layers, with Santo Domingo built over the former Temple of the Sun."
+    },
+    {
+      "title": "San Pedro Market",
+      "text": "San Pedro Market is the main food and produce hall, useful for juices, simple meals and local shopping."
+    },
+    {
+      "title": "Twelve-Angled Stone",
+      "text": "The Twelve-Angled Stone is a famous example of Inca masonry on a narrow street near the main plaza."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Machu Picchu",
+      "label": "Heritage",
+      "text": "Machu Picchu is the essential Cusco-linked trip, requiring advance tickets, train planning and usually a full day or overnight."
+    },
+    {
+      "name": "Sacred Valley",
+      "label": "Valley",
+      "text": "The Sacred Valley connects Pisac, Urubamba and Ollantaytambo, often better with one or two nights."
+    },
+    {
+      "name": "Rainbow Mountain",
+      "label": "Nature",
+      "text": "Rainbow Mountain is a high-altitude day trip that needs acclimatization, warm layers and realistic fitness expectations."
+    }
+  ],
   "events": [
     {
       "modifier": "music",
       "href": "../../../categories/culture/tradition/events/inti-raymi.html",
-      "img": "/content/locations/south-america/img/south-america-mini.png",
+      "img": "/content/categories/culture/tradition/events/img/inti-raymi-mini.png",
       "title": "Inti Raymi",
       "meta": "Jun 2026 · Cusco"
     }

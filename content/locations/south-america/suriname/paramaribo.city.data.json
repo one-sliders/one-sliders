@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Paramaribo in 2026: calendars, nearby pages and linked event views for planning around South America / Suriname."
   },
   "region": "Capital city in Suriname",
-  "population": "tba",
+  "population": "~240K",
   "coordinates": {
     "lat": 5.86638,
     "lon": -55.16682
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Paramaribo travel, stays & events guide",
-  "heroText": "Paramaribo is a capital city in Suriname, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Paramaribo is Suriname's riverside capital, where wooden Dutch colonial buildings, mosques, synagogues, markets and Creole food sit close together. Start in the Historic Inner City of Paramaribo, visit Fort Zeelandia, then walk the Waterkant and Palmentuin for shade and river air. Johan Adolf Pengel airport is far south of town, so arrange transfers before arrival.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,115 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Paramaribo, Suriname",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Paramaribo",
-      "text": "Paramaribo is a capital city in Suriname, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Historic Inner City",
+      "text": "The Historic Inner City is best for architecture, Fort Zeelandia, Waterkant and short walks between central sights.",
+      "bestFor": "history, walking, first visits"
+    },
+    {
+      "name": "Waterkant",
+      "text": "Waterkant is useful for river views, food stalls, central hotels and evening atmosphere near the Suriname River.",
+      "bestFor": "river views, food, central access"
+    },
+    {
+      "name": "Rainville",
+      "text": "Rainville is a quieter northern base with guesthouses, restaurants and easier taxi access to central Paramaribo.",
+      "bestFor": "quiet stays, restaurants, guesthouses"
+    },
+    {
+      "name": "Zorg en Hoop",
+      "text": "Zorg en Hoop works for domestic flights, practical guesthouses and trips using the smaller city airport.",
+      "bestFor": "domestic flights, practical stays, transfers"
+    },
+    {
+      "name": "Blauwgrond",
+      "text": "Blauwgrond is known for Javanese food and local restaurants, best for visitors comfortable using taxis.",
+      "bestFor": "food, local stays, longer visits"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Johan Adolf Pengel International Airport (PBM)",
+      "search": "Johan Adolf Pengel International Airport, Paramaribo, Suriname",
+      "text": "Johan Adolf Pengel airport is far south of Paramaribo; pre-arranged transfers are strongly recommended for late arrivals."
+    },
+    {
+      "name": "Zorg en Hoop Airport (ORG)",
+      "search": "Zorg en Hoop Airport, Paramaribo, Suriname",
+      "text": "Zorg en Hoop airport is the smaller city airport, important for domestic flights and interior lodge connections."
+    }
+  ],
+  "airportTransfer": {
+    "value": "60-90 min by pre-arranged transfer to central Paramaribo",
+    "note": "from Johan Adolf Pengel International Airport",
+    "distance": "about 45 km south of Paramaribo"
+  },
+  "bookingDestination": "Paramaribo, Suriname",
+  "stayOverview": "Stay in the Historic Inner City or near Waterkant for the easiest first Paramaribo visit. Rainville is quieter, Zorg en Hoop suits domestic-flight logistics, and Blauwgrond is useful for food-focused stays with taxi movement.",
+  "hotelIntro": "Paramaribo hotel choice should account for heat, transfers and walking: the historic centre and Waterkant are most convenient, Rainville is calmer, Zorg en Hoop is practical, and Blauwgrond works for local restaurants.",
+  "rentalCars": "A rental car can help for plantations and nature trips, but taxis are easier for central Paramaribo.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose the Historic Inner City for a first stay if architecture, Fort Zeelandia and Waterkant are priorities."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Check the route from Johan Adolf Pengel International Airport (PBM) before choosing between a central hotel and an airport-area first night in Paramaribo."
+    },
+    {
+      "title": "Heat and rain",
+      "text": "Keep the Paramaribo plan compact: group nearby sights together and leave enough time for transfers, meals and weather changes."
+    },
+    {
+      "title": "Food",
+      "text": "Make time for Javanese, Creole and Hindustani food; Blauwgrond is especially useful for a casual dinner route."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Historic Inner City of Paramaribo",
+      "text": "Historic Inner City of Paramaribo is a named Paramaribo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Fort Zeelandia",
+      "text": "Fort Zeelandia is a named Paramaribo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Waterkant",
+      "text": "Waterkant is a named Paramaribo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    },
+    {
+      "title": "Saint Peter and Paul Cathedral",
+      "text": "Saint Peter and Paul Cathedral anchors the historic and ceremonial side of Paramaribo, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Central Market",
+      "text": "Central Market gives Paramaribo a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Palmentuin",
+      "text": "Palmentuin is a named Paramaribo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Commewijne",
+      "label": "Plantations",
+      "text": "Commewijne is the easiest plantation and river district trip from Paramaribo, often done with a guide or boat."
+    },
+    {
+      "name": "Peperpot Nature Park",
+      "label": "Nature",
+      "text": "Peperpot Nature Park combines plantation history, forest trails and wildlife close enough for a half-day escape."
+    },
+    {
+      "name": "Brownsberg Nature Park",
+      "label": "Nature",
+      "text": "Brownsberg Nature Park is a longer rainforest and viewpoint trip, best with a driver and early start."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

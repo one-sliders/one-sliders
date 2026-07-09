@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Lilongwe in 2026: calendars, nearby pages and linked event views for planning around Africa / Malawi."
   },
   "region": "Capital city in Malawi",
-  "population": "tba",
+  "population": "~1.2M",
   "coordinates": {
     "lat": -13.96692,
     "lon": 33.78725
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lilongwe travel, stays & events guide",
-  "heroText": "Lilongwe is a capital city in Malawi, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Lilongwe is Malawi's capital and administrative hub, split between the compact Old Town's markets and the leafy government district of Capital Hill. First-time visitors should walk the Lilongwe Wildlife Centre for rescued primates, browse Old Town Mall's curio stalls, and stroll along the Lilongwe River. Kamuzu International Airport connects the city to Blantyre, and Lake Malawi makes a rewarding day or overnight trip.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Lilongwe, Malawi",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Lilongwe",
-      "text": "Lilongwe is a capital city in Malawi, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Old Town",
+      "text": "Old Town is Lilongwe's original commercial core, home to markets, curio stalls and budget guesthouses within walking distance of the river.",
+      "bestFor": "markets, budget stays, shopping"
+    },
+    {
+      "name": "City Centre (Capital Hill)",
+      "text": "City Centre, also called Capital Hill, holds government buildings, embassies and the city's main hotels, a practical base for business visits.",
+      "bestFor": "business trips, hotels, embassies"
+    },
+    {
+      "name": "Area 47",
+      "text": "Area 47 is a leafy, upscale residential district popular with expatriates, offering guesthouses and restaurants away from downtown traffic.",
+      "bestFor": "quiet stays, restaurants"
+    },
+    {
+      "name": "Area 3",
+      "text": "Area 3 sits between Old Town and City Centre, a convenient middle-ground base close to shops and transport links.",
+      "bestFor": "convenience, shopping access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Kamuzu International Airport (LLW)",
+      "search": "Kamuzu International Airport, Lilongwe, Malawi",
+      "text": "Kamuzu International Airport lies about 20 kilometres north of the city centre; pre-arranged hotel transfers are the easiest way to reach downtown."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Kamuzu International Airport (LLW) and central Lilongwe before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Lilongwe, Malawi",
+  "stayOverview": "Old Town suits a first stay close to markets and curio shops, while City Centre's Capital Hill works better for business visits near government offices and embassies. Area 47 offers a quieter, leafy alternative for longer stays away from downtown traffic.",
+  "hotelIntro": "Lilongwe's hotel choice splits mainly between Old Town's budget guesthouses near the markets, City Centre's business hotels close to Capital Hill, and Area 47's quieter expatriate-favoured guesthouses and lodges.",
+  "rentalCars": "A rental car helps for day trips to Lake Malawi or nearby wildlife areas, though taxis are usually sufficient for getting around the city itself.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Old Town for markets and budget stays, or City Centre if your trip involves government offices, embassies or business meetings."
+    },
+    {
+      "title": "Plan for Lake Malawi",
+      "text": "Set aside at least a full day, or better an overnight, for the drive to Lake Malawi's beaches east of the city."
+    },
+    {
+      "title": "Cash for markets",
+      "text": "Carry small kwacha notes for Old Town Mall and other markets, where card payment is rarely accepted."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Arrange hotel transfers ahead of arrival at Kamuzu International Airport, since on-the-spot taxis can be limited outside peak flight times."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lilongwe Wildlife Centre",
+      "text": "Lilongwe Wildlife Centre gives Lilongwe a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "Old Town Mall",
+      "text": "Old Town Mall is useful for reading Lilongwe's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
+    },
+    {
+      "title": "Kumbali Cultural Village",
+      "text": "Kumbali Cultural Village gives Lilongwe a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
+    },
+    {
+      "title": "World War I Memorial Lilongwe",
+      "text": "World War I Memorial Lilongwe is a clear heritage marker in Lilongwe, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Lilongwe Nature Sanctuary",
+      "text": "Lilongwe Nature Sanctuary is a named stop in Lilongwe worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Kamuzu Mausoleum",
+      "text": "Kamuzu Mausoleum is a named stop in Lilongwe worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Lake Malawi",
+      "label": "Nature",
+      "text": "Lake Malawi's beaches, roughly three hours east, are the classic overnight or weekend trip from the capital."
+    },
+    {
+      "name": "Dedza",
+      "label": "Crafts",
+      "text": "Dedza, about an hour south, is known for its pottery workshops and rock art sites in the surrounding hills."
+    }
+  ],
   "events": [
     {
       "modifier": "music",

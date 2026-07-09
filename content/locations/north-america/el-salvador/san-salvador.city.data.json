@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "San Salvador travel, stays & events guide",
-  "heroText": "San Salvador is a capital city in El Salvador, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "San Salvador is a El Salvador base best planned around named sights rather than a generic stopover. Start with Metropolitan Cathedral of San Salvador, add National Palace of El Salvador, and use El Rosario Church to understand the city's history, street life and visitor rhythm. El Salvador International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "San Salvador, El Salvador",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "San Salvador",
-      "text": "San Salvador is a capital city in El Salvador, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in San Salvador, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in San Salvador, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central San Salvador reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first San Salvador sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "El Salvador International Airport (SAL)",
+      "search": "El Salvador International Airport (SAL), San Salvador, El Salvador",
+      "text": "El Salvador International Airport (SAL) is the main air gateway for San Salvador; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between El Salvador International Airport (SAL) and central San Salvador before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "San Salvador, El Salvador",
+  "stayOverview": "Start with City centre for the easiest first San Salvador stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "San Salvador hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central San Salvador unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for El Salvador International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Metropolitan Cathedral of San Salvador and National Palace of El Salvador so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from San Salvador, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Metropolitan Cathedral of San Salvador",
+      "text": "Metropolitan Cathedral of San Salvador anchors the historic and ceremonial side of San Salvador, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "National Palace of El Salvador",
+      "text": "National Palace of El Salvador anchors the historic and ceremonial side of San Salvador, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "El Rosario Church",
+      "text": "El Rosario Church anchors the historic and ceremonial side of San Salvador, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Monumento al Divino Salvador del Mundo",
+      "text": "Monumento al Divino Salvador del Mundo is a clear heritage marker in San Salvador, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Museum of Art of El Salvador",
+      "text": "Museum of Art of El Salvador is a key San Salvador culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    },
+    {
+      "title": "Boqueron National Park",
+      "text": "Boqueron National Park adds outdoor time to a San Salvador stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Monumento al Divino Salvador del Mundo",
+      "label": "Heritage",
+      "text": "Monumento al Divino Salvador del Mundo is a heritage-focused side trip from San Salvador; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Boqueron National Park",
+      "label": "Nature",
+      "text": "Boqueron National Park works as a nature-focused side trip from San Salvador, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

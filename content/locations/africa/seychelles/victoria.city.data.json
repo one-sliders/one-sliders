@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Victoria in 2026: calendars, nearby pages and linked event views for planning around Africa / Seychelles."
   },
   "region": "Capital city in Seychelles",
-  "population": "tba",
+  "population": "~26K",
   "coordinates": {
     "lat": -4.62001,
     "lon": 55.45501
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Victoria travel, stays & events guide",
-  "heroText": "Victoria is a capital city in Seychelles, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Victoria is Seychelles' compact capital on Mahé, often noted as one of the world's smallest capital cities, mixing colonial architecture with Creole markets. First-time visitors should browse fresh spices and fish at Sir Selwyn Selwyn-Clarke Market, photograph the miniature Victoria Clock Tower, and wander the Botanical Gardens' giant tortoises. Seychelles International Airport lies a short drive south, and Victoria makes an easy base before heading to Mahé's beaches.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Victoria, Seychelles",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Victoria",
-      "text": "Victoria is a capital city in Seychelles, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Town Centre",
+      "text": "Town Centre holds Victoria's market, clock tower and government buildings, walkable in an hour and the natural base for a first visit.",
+      "bestFor": "first visits, sightseeing, walking"
+    },
+    {
+      "name": "Beau Vallon",
+      "text": "Beau Vallon is Mahé's most popular beach, a short drive north of Victoria with beachfront hotels, restaurants and watersports.",
+      "bestFor": "beaches, resorts, nightlife"
+    },
+    {
+      "name": "Eden Island",
+      "text": "Eden Island is a man-made marina district south of Victoria, offering modern villas, yacht moorings and waterfront dining.",
+      "bestFor": "marina views, upscale stays"
+    },
+    {
+      "name": "Bel Ombre",
+      "text": "Bel Ombre is a quiet coastal stretch just north of the capital, mixing small guesthouses with easy access to Beau Vallon's beach.",
+      "bestFor": "quiet stays, beach access"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Seychelles International Airport (SEZ)",
+      "search": "Seychelles International Airport, Mahé, Seychelles",
+      "text": "Seychelles International Airport sits about 15 minutes south of Victoria, with taxis and hotel transfers covering the short coastal drive."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Seychelles International Airport (SEZ) and central Victoria before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Victoria, Seychelles",
+  "stayOverview": "Base in Town Centre for an easy first stay near the market, clock tower and museums, then move to Beau Vallon for Mahé's best beach or Eden Island for marina views. Bel Ombre suits travelers wanting a quiet, beach-adjacent stay close to the capital.",
+  "hotelIntro": "Victoria hotel choice depends on priorities: Town Centre suits short stays focused on sightseeing and the market, Beau Vallon suits beach-first travelers, and Eden Island or Bel Ombre suit those wanting quieter, resort-style bases nearby.",
+  "rentalCars": "A rental car is worth having to explore Mahé's beaches and viewpoints beyond Victoria, since taxis are pricier and buses run on limited schedules.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay in Town Centre for a night or two of sightseeing, then move to Beau Vallon or another beach for the rest of a Mahé stay."
+    },
+    {
+      "title": "Sunday closures",
+      "text": "Plan market visits and shopping for weekdays or Saturday morning, since much of Victoria closes on Sundays."
+    },
+    {
+      "title": "Airport transfers",
+      "text": "Book a hotel transfer from Seychelles International Airport in advance, as the drive is short but taxis can be limited late at night."
+    },
+    {
+      "title": "Cash and pace",
+      "text": "Carry Seychelles rupees for markets and small vendors, and expect a slow, relaxed pace typical of island life."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Victoria Clocktower",
+      "text": "Victoria Clocktower is a clear heritage marker in Victoria, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Sir Selwyn Selwyn-Clarke Market",
+      "text": "Sir Selwyn Selwyn-Clarke Market gives Victoria a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Seychelles National Botanical Gardens",
+      "text": "Seychelles National Botanical Gardens adds outdoor time to a Victoria stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Arul Mihu Navasakthi Vinayagar Temple",
+      "text": "Arul Mihu Navasakthi Vinayagar Temple anchors the historic and ceremonial side of Victoria, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Cathedral of Our Lady of Immaculate Conception",
+      "text": "Cathedral of Our Lady of Immaculate Conception anchors the historic and ceremonial side of Victoria, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Morne Seychellois National Park",
+      "text": "Morne Seychellois National Park adds outdoor time to a Victoria stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Beau Vallon Beach",
+      "label": "Beach",
+      "text": "Beau Vallon Beach is Mahé's liveliest stretch of sand, a short drive from Victoria with watersports, sunset bars and dive centres."
+    },
+    {
+      "name": "Morne Seychellois National Park",
+      "label": "Nature",
+      "text": "Morne Seychellois National Park covers most of Mahé's forested interior, with hiking trails and viewpoints above Victoria."
+    },
+    {
+      "name": "Sainte Anne Marine Park",
+      "label": "Nature",
+      "text": "Sainte Anne Marine Park protects a cluster of islands offshore, reachable by boat for snorkelling and glass-bottom-boat trips."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

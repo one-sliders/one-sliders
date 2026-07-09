@@ -13,7 +13,7 @@
     "webpageDescription": "Find sports events in Ljubljana in 2026: calendars, nearby pages and linked event views for planning around Europe / Slovenia."
   },
   "region": "Capital city of Slovenia",
-  "population": "tba",
+  "population": "~284K",
   "coordinates": {
     "lat": 46.05108,
     "lon": 14.50513
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ljubljana travel, stays & events guide",
-  "heroText": "Ljubljana is a key city in Slovenia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Ljubljana is a Slovenia base best planned around named sights rather than a generic stopover. Start with Ljubljana Castle, add Triple Bridge, and use Prešeren Square to understand the city's history, street life and visitor rhythm. Ljubljana International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -46,25 +46,100 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Ljubljana, Slovenia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Ljubljana",
-      "text": "Ljubljana is a key city in Slovenia, combining landmarks, local culture, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Ljubljana, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Ljubljana, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Ljubljana reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Ljubljana sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Ljubljana International Airport",
+      "search": "Ljubljana International Airport, Ljubljana, Slovenia",
+      "text": "Ljubljana International Airport is the main air gateway for Ljubljana; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Ljubljana International Airport and central Ljubljana before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Ljubljana, Slovenia",
+  "stayOverview": "Start with City centre for the easiest first Ljubljana stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Ljubljana hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Ljubljana unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Ljubljana International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Ljubljana Castle and Triple Bridge so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Ljubljana, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Ljubljana Castle",
+      "text": "Ljubljana Castle is a clear heritage marker in Ljubljana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Triple Bridge",
+      "text": "Triple Bridge is a clear heritage marker in Ljubljana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Prešeren Square",
+      "text": "Prešeren Square is a clear heritage marker in Ljubljana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Dragon Bridge",
+      "text": "Dragon Bridge is a clear heritage marker in Ljubljana, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Central Market",
+      "text": "Central Market gives Ljubljana a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Tivoli Park",
+      "text": "Tivoli Park adds outdoor time to a Ljubljana stay, with open space, views or waterfront breathing room between denser city sights."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Ljubljana Castle",
+      "label": "Heritage",
+      "text": "Ljubljana Castle is a heritage-focused side trip from Ljubljana; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Tivoli Park",
+      "label": "Nature",
+      "text": "Tivoli Park works as a nature-focused side trip from Ljubljana, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

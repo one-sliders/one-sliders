@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Jerusalem travel, stays & events guide",
-  "heroText": "Jerusalem is a capital city in Israel, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Jerusalem is a Israel base best planned around named sights rather than a generic stopover. Start with Western Wall, add Church of the Holy Sepulchre, and use Dome of the Rock to understand the city's history, street life and visitor rhythm. Tel Aviv Ben Gurion handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Jerusalem, Israel",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Jerusalem",
-      "text": "Jerusalem is a capital city in Israel, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Jerusalem, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Jerusalem, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Jerusalem reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Jerusalem sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Tel Aviv Ben Gurion (TLV)",
+      "search": "Tel Aviv Ben Gurion (TLV), Jerusalem, Israel",
+      "text": "Tel Aviv Ben Gurion (TLV) is the main air gateway for Jerusalem; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Tel Aviv Ben Gurion (TLV) and central Jerusalem before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Jerusalem, Israel",
+  "stayOverview": "Start with City centre for the easiest first Jerusalem stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Jerusalem hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Jerusalem unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Tel Aviv Ben Gurion, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Western Wall and Church of the Holy Sepulchre so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Jerusalem, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Western Wall",
+      "text": "Western Wall is a named stop in Jerusalem worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Church of the Holy Sepulchre",
+      "text": "Church of the Holy Sepulchre anchors the historic and ceremonial side of Jerusalem, making it a practical stop for architecture, local memory and orientation."
+    },
+    {
+      "title": "Dome of the Rock",
+      "text": "Dome of the Rock gives Jerusalem a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
+    },
+    {
+      "title": "Yad Vashem",
+      "text": "Yad Vashem is a named stop in Jerusalem worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Mount of Olives",
+      "text": "Mount of Olives adds outdoor time to a Jerusalem stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Mahane Yehuda Market",
+      "text": "Mahane Yehuda Market gives Jerusalem a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Western Wall",
+      "label": "Heritage",
+      "text": "Western Wall is a heritage-focused side trip from Jerusalem; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Dome of the Rock",
+      "label": "Heritage",
+      "text": "Dome of the Rock works as a nature-focused side trip from Jerusalem, especially when the day has enough daylight and a clear return plan."
+    },
+    {
+      "name": "Yad Vashem",
+      "label": "Heritage",
+      "text": "Yad Vashem is a heritage-focused side trip from Jerusalem; check the route and opening hours before setting aside the day."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

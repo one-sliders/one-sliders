@@ -6,7 +6,7 @@
     "webpageDescription": "Find sports events in Sucre in 2026: calendars, nearby pages and linked event views for planning around South America / Bolivia."
   },
   "region": "Capital city in Bolivia",
-  "population": "tba",
+  "population": "~300K",
   "coordinates": {
     "lat": -19.03332,
     "lon": -65.26274
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Sucre travel, stays & events guide",
-  "heroText": "Sucre is a capital city in Bolivia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Sucre is Bolivia's whitewashed constitutional capital, a relaxed highland city where colonial streets, university life and independence history sit close together. Start at Plaza 25 de Mayo, visit Casa de la Libertad for the republic's founding story, then climb to Convento de la Recoleta for city views. Alcantari airport handles arrivals outside town, and Parque Cretacico adds a very different half-day stop.",
   "kpis": [
     {
       "label": "Region",
@@ -34,25 +34,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Sucre, Bolivia",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Sucre",
-      "text": "Sucre is a capital city in Bolivia, connecting local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "Centro Historico",
+      "text": "Centro Historico is the best first base, putting Plaza 25 de Mayo, museums, cafes and most colonial streets within easy walking distance.",
+      "bestFor": "first visits, museums, walking"
+    },
+    {
+      "name": "Recoleta",
+      "text": "Recoleta sits uphill from the centre, quieter and scenic, with guesthouses near viewpoints and short taxi rides back to the main plazas.",
+      "bestFor": "views, quiet stays, longer visits"
+    },
+    {
+      "name": "Mercado Central area",
+      "text": "The Mercado Central area is practical for budget stays, local food and quick walks to the cathedral, though streets are busier by day.",
+      "bestFor": "budget stays, food, central errands"
+    },
+    {
+      "name": "La Glorieta road",
+      "text": "The La Glorieta side suits travelers with a car or tour pickup, useful for quieter nights and access toward the castle route.",
+      "bestFor": "car trips, quiet hotels, outskirts"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Alcantari International Airport (SRE)",
+      "search": "Alcantari International Airport, Sucre, Bolivia",
+      "text": "Alcantari airport is outside Sucre on the road toward Yamparaez; pre-arrange transfers because the drive is longer than old city-airport distances suggest."
+    }
+  ],
+  "airportTransfer": {
+    "value": "40-55 min by taxi or pre-arranged transfer to central Sucre",
+    "note": "from Alcantari International Airport",
+    "distance": "about 30 km southeast of Sucre"
+  },
+  "bookingDestination": "Sucre, Bolivia",
+  "stayOverview": "Stay in Centro Historico for the easiest first Sucre visit, especially if Plaza 25 de Mayo, museums and restaurants matter. Recoleta is calmer and scenic, the Mercado Central area is practical and cheaper, while La Glorieta works best with car-based plans.",
+  "hotelIntro": "Sucre hotel choice is mostly about walking versus quiet: Centro Historico keeps the core sights close, Recoleta trades convenience for views, Mercado Central helps budget travelers stay central, and La Glorieta is better for drivers or tour pickups.",
+  "rentalCars": "A rental car is not needed in central Sucre, but it helps for independent trips toward Tarabuco, Maragua or Potosi.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose Centro Historico for a first stay; most museums, cafes and evening walks cluster around Plaza 25 de Mayo."
+    },
+    {
+      "title": "Altitude pacing",
+      "text": "Sucre is high enough to slow some arrivals, so keep the first afternoon light before longer walks or day trips."
+    },
+    {
+      "title": "Market timing",
+      "text": "Visit Mercado Central earlier in the day for food stalls and local produce, then move uphill to Recoleta for sunset."
+    },
+    {
+      "title": "Day trips",
+      "text": "Tarabuco works well on market days, while Maragua needs more planning, better footwear and usually a guided route."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Plaza 25 de Mayo",
+      "text": "Plaza 25 de Mayo is Sucre's central square, framed by civic buildings, cafes and the easiest orientation point for a first walk."
+    },
+    {
+      "title": "Casa de la Libertad",
+      "text": "Casa de la Libertad is the key independence-history museum, where Bolivia's declaration was signed and national memory is presented."
+    },
+    {
+      "title": "Convento de la Recoleta",
+      "text": "Convento de la Recoleta sits above the centre with arcades, a quiet plaza and one of Sucre's best city views."
+    },
+    {
+      "title": "Parque Cretacico",
+      "text": "Parque Cretacico protects dinosaur footprints on a cliff outside Sucre, a useful half-day contrast to the colonial centre."
+    },
+    {
+      "title": "Castillo de la Glorieta",
+      "text": "Castillo de la Glorieta is a fanciful former princely residence outside town, best visited by taxi or on a short tour."
+    },
+    {
+      "title": "Mercado Central",
+      "text": "Mercado Central is a named Sucre landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Tarabuco",
+      "label": "Market",
+      "text": "Tarabuco is known for its Sunday market and Yampara textiles, best planned as a guided or early-start day trip."
+    },
+    {
+      "name": "Maragua Crater",
+      "label": "Nature",
+      "text": "Maragua Crater offers hiking, villages and unusual geology outside Sucre, usually better with a guide and full day."
+    },
+    {
+      "name": "Potosi",
+      "label": "Heritage",
+      "text": "Potosi is a longer high-altitude trip from Sucre, built around mining history, colonial architecture and Cerro Rico."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [

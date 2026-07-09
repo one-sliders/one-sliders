@@ -13,7 +13,7 @@
     "webpageDescription": "Plan a Tampere, Finland trip with neighborhoods, airports, travel tips, events and hotel planning links."
   },
   "region": "Pirkanmaa",
-  "population": "tba",
+  "population": "~255K",
   "coordinates": {
     "lat": 61.49911,
     "lon": 23.78712
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tampere travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Tampere is Finland's lakeside industrial city turned culture and sauna capital, set between Näsijärvi and Pyhäjärvi. Start in the Finlayson area, climb Pyynikki tower for doughnuts and views, then visit Vapriikki or a public sauna by the water. Tampere-Pirkkala Airport is close, with rail links also strong from Helsinki.",
   "kpis": [
     {
       "label": "Population",
@@ -46,27 +46,111 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
+  "areas": [
+    {
+      "name": "Tampere centre",
+      "text": "The centre is best for first stays, restaurants, shops, the station and quick access to Tammerkoski.",
+      "bestFor": "first visits, station, restaurants"
+    },
+    {
+      "name": "Finlayson",
+      "text": "Finlayson offers industrial heritage, museums, cinemas and restaurants close to the rapids.",
+      "bestFor": "culture, history, food"
+    },
+    {
+      "name": "Pyynikki",
+      "text": "Pyynikki is greener and quieter, with ridge walks, lake views and the famous observation tower.",
+      "bestFor": "nature, views, quiet stays"
+    },
+    {
+      "name": "Ratina",
+      "text": "Ratina is practical for arena events, shopping, hotels and road access south of the centre.",
+      "bestFor": "events, shopping, business"
+    }
+  ],
+  "airports": [
+    {
+      "name": "Tampere-Pirkkala Airport (TMP)",
+      "search": "Tampere-Pirkkala Airport, Tampere, Finland",
+      "text": "Tampere-Pirkkala Airport is southwest of the city; buses, taxis and transfers connect it with central Tampere."
+    }
+  ],
   "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
+    "value": "20-30 min by taxi or bus to central Tampere",
+    "note": "from Tampere-Pirkkala Airport",
+    "distance": "about 17 km southwest of the centre"
   },
   "bookingDestination": "Tampere, Finland",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
-    "Finlayson area",
-    "Pyynikki tower",
-    "Vapriikki",
-    "Nasinneula",
-    "Public saunas",
-    "Tammerkoski rapids"
+  "stayOverview": "Stay in Tampere centre for transport and restaurants, Finlayson for museums and industrial character, Pyynikki for ridge walks and views, or Ratina for arena events and modern hotel convenience.",
+  "hotelIntro": "Tampere is easy to navigate around the rapids and station. Central and Finlayson stays work for culture trips, while Pyynikki is calmer and Ratina is useful for events and business travel.",
+  "rentalCars": "You do not need a car in Tampere; rent only for lake cottages, national parks or wider Pirkanmaa trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Stay near the centre or Finlayson if you want museums, restaurants, rail and sauna visits close together."
+    },
+    {
+      "title": "Sauna",
+      "text": "For sauna time in Tampere, confirm booking rules, swim access and the route back to your hotel before committing."
+    },
+    {
+      "title": "Views",
+      "text": "Use view stops in Tampere early or late in the day when light is better and the route can stay flexible."
+    },
+    {
+      "title": "Day trip",
+      "text": "Hämeenlinna or Helvetinjärvi National Park are strong day trips depending on whether you want history or nature."
+    }
   ],
-  "nearbyIdeas": [],
+  "highlights": [
+    {
+      "name": "Finlayson area",
+      "title": "Finlayson area",
+      "text": "Finlayson area is a named stop in Tampere worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Pyynikki tower",
+      "title": "Pyynikki tower",
+      "text": "Pyynikki tower is a clear heritage marker in Tampere, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "name": "Vapriikki",
+      "title": "Vapriikki",
+      "text": "Vapriikki is a major museum centre in a former factory, covering history, games, natural history and local culture."
+    },
+    {
+      "name": "Nasinneula",
+      "title": "Nasinneula",
+      "text": "Nasinneula is a named stop in Tampere worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Public saunas",
+      "title": "Public saunas",
+      "text": "Public saunas is a named stop in Tampere worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "name": "Tammerkoski rapids",
+      "title": "Tammerkoski rapids",
+      "text": "Tammerkoski rapids is a named stop in Tampere worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Hämeenlinna",
+      "label": "Castle",
+      "text": "Hämeenlinna is a nearby side trip from Tampere; keep it for a day when travel time, weather and opening hours fit the route."
+    },
+    {
+      "name": "Helvetinjärvi National Park",
+      "label": "Nature",
+      "text": "Helvetinjärvi offers rugged forest, cliffs and lake trails for a nature day from Tampere."
+    },
+    {
+      "name": "Nokia",
+      "label": "Town",
+      "text": "Nokia is a nearby town with spa facilities and local industrial history west of Tampere."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -146,5 +230,6 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tampere",
     "matchedCountry": "Finland"
-  }
+  },
+  "transitOperator": "Nysse"
 }

@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Nassau travel, stays & events guide",
-  "heroText": "Nassau is a capital city in Bahamas, combining local landmarks, event context, transport access and seasonal reasons to plan a visit.",
+  "heroText": "Nassau is a Bahamas base best planned around named sights rather than a generic stopover. Start with Queen's Staircase, add Fort Fincastle, and use Nassau Straw Market to understand the city's history, street life and visitor rhythm. Nassau International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -41,25 +41,105 @@
       "note": "historical origin"
     }
   ],
-  "areas": [],
-  "airports": [],
-  "airportTransfer": {
-    "value": "tba",
-    "note": "verify airport transfer before publishing",
-    "distance": "tba"
-  },
-  "bookingDestination": "Nassau, Bahamas",
-  "stayOverview": "tba",
-  "hotelIntro": "tba",
-  "rentalCars": "tba",
-  "travelTips": [],
-  "highlights": [
+  "areas": [
     {
-      "name": "Nassau",
-      "text": "Nassau is a capital city in Bahamas, combining local landmarks, event context, transport access and seasonal reasons to plan a visit."
+      "name": "City centre",
+      "text": "City centre is the most practical first base in Nassau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Old Town",
+      "text": "Old Town is the most practical first base in Nassau, keeping main sights, restaurants and short local transfers close.",
+      "bestFor": "first visits, sightseeing, restaurants"
+    },
+    {
+      "name": "Waterfront",
+      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Nassau reachable.",
+      "bestFor": "views, quieter evenings, walks"
+    },
+    {
+      "name": "Airport area",
+      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Nassau sightseeing base.",
+      "bestFor": "early flights, late arrivals, car pickup"
     }
   ],
-  "nearbyIdeas": [],
+  "airports": [
+    {
+      "name": "Nassau International Airport",
+      "search": "Nassau International Airport, Nassau, Bahamas",
+      "text": "Nassau International Airport is the main air gateway for Nassau; compare transfer time with your hotel base before locking the first night."
+    }
+  ],
+  "airportTransfer": {
+    "value": "Compare road transfer time between Nassau International Airport and central Nassau before choosing an airport-area or city-centre hotel.",
+    "note": "main airport transfer planning",
+    "distance": "confirm by route"
+  },
+  "bookingDestination": "Nassau, Bahamas",
+  "stayOverview": "Start with City centre for the easiest first Nassau stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
+  "hotelIntro": "Nassau hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
+  "rentalCars": "Do not rent a car for central Nassau unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+    },
+    {
+      "title": "Airport timing",
+      "text": "Leave extra time for Nassau International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+    },
+    {
+      "title": "Local movement",
+      "text": "Plan each day in clusters around Queen's Staircase and Fort Fincastle so transfers do not consume the best sightseeing hours."
+    },
+    {
+      "title": "Day trips",
+      "text": "Keep one flexible slot for nearby routes from Nassau, checking weather, transport and opening hours before committing."
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Queen's Staircase",
+      "text": "Queen's Staircase is a named stop in Nassau worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+    },
+    {
+      "title": "Fort Fincastle",
+      "text": "Fort Fincastle is a clear heritage marker in Nassau, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
+    },
+    {
+      "title": "Nassau Straw Market",
+      "text": "Nassau Straw Market gives Nassau a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
+    },
+    {
+      "title": "Atlantis Paradise Island",
+      "text": "Atlantis Paradise Island adds the water-facing side of Nassau, making it a good break from museums, traffic and dense historic streets."
+    },
+    {
+      "title": "Junkanoo Beach",
+      "text": "Junkanoo Beach adds outdoor time to a Nassau stay, with open space, views or waterfront breathing room between denser city sights."
+    },
+    {
+      "title": "Pirates of Nassau Museum",
+      "text": "Pirates of Nassau Museum is a key Nassau culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
+    }
+  ],
+  "nearbyIdeas": [
+    {
+      "name": "Queen's Staircase",
+      "label": "Heritage",
+      "text": "Queen's Staircase is a heritage-focused side trip from Nassau; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Fort Fincastle",
+      "label": "Heritage",
+      "text": "Fort Fincastle is a heritage-focused side trip from Nassau; check the route and opening hours before setting aside the day."
+    },
+    {
+      "name": "Atlantis Paradise Island",
+      "label": "Nature",
+      "text": "Atlantis Paradise Island works as a nature-focused side trip from Nassau, especially when the day has enough daylight and a clear return plan."
+    }
+  ],
   "events": [],
   "topicLinks": [],
   "sources": [
