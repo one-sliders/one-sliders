@@ -1,21 +1,25 @@
 /* National Day left column: hero, title and booking panel. */
 
-.national-day .layout-columns {
+.national-day .layout-columns,
+.event-standard .layout-columns {
   --booking-cta: var(--os-purple, #6b4f7a);
   grid-template-columns: minmax(280px, 0.9fr) minmax(500px, 1.55fr);
   gap: clamp(16px, 2.2vw, 40px);
 }
 
-.national-day .page-frame {
+.national-day .page-frame,
+.event-standard .page-frame {
   bottom: clamp(4px, 0.8vw, 14px);
 }
 
-.national-day .layout__a {
+.national-day .layout__a,
+.event-standard .layout__a {
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.national-day .hero {
+.national-day .hero,
+.event-standard .hero {
   flex: none;
   display: flex;
   flex-direction: column;
@@ -23,7 +27,8 @@
   padding: 0 0 2px;
 }
 
-.national-day .hero__image {
+.national-day .hero__image,
+.event-standard .hero__image {
   flex: none;
   aspect-ratio: 1200 / 630;
   width: 100%;
@@ -33,31 +38,37 @@
   box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, transparent);
 }
 
-.national-day .hero__image img {
+.national-day .hero__image img,
+.event-standard .hero__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.national-day .hero__image::after {
+.national-day .hero__image::after,
+.event-standard .hero__image::after {
   content: none;
 }
 
-.national-day .hero__title-row {
+.national-day .hero__title-row,
+.event-standard .hero__title-row {
   flex: 0 0 auto;
   display: grid;
   gap: 0;
 }
 
-.national-day .hero__title:where(:not(:only-child)) {
+.national-day .hero__title:where(:not(:only-child)),
+.event-standard .hero__title:where(:not(:only-child)) {
   margin-bottom: 0;
 }
 
-.national-day .event-date-badge {
+.national-day .event-date-badge,
+.event-standard .event-date-badge {
   display: none;
 }
 
-.national-day .hero:has(.hero__title:nth-last-child(n)) .hero__title {
+.national-day .hero:has(.hero__title:nth-last-child(n)) .hero__title,
+.event-standard .hero:has(.hero__title:nth-last-child(n)) .hero__title {
   overflow-wrap: normal;
 }
 
@@ -231,55 +242,66 @@
   text-align: center;
 }
 
-.national-day .hero-stay-booking {
+.national-day .hero-stay-booking,
+.event-standard .hero-stay-booking {
   flex: 0 0 auto;
   margin-top: clamp(2px, 0.5vw, 6px);
   padding: clamp(11px, 1.25vw, 16px);
 }
 
-.national-day .hero-stay-booking .stay-booking-panel__header {
+.national-day .hero-stay-booking .stay-booking-panel__header,
+.event-standard .hero-stay-booking .stay-booking-panel__header {
   margin-bottom: 9px;
 }
 
-.national-day .hero-stay-booking .stay-section-title {
+.national-day .hero-stay-booking .stay-section-title,
+.event-standard .hero-stay-booking .stay-section-title {
   margin-bottom: 0;
   font-size: clamp(15px, 1.45vw, 20px);
 }
 
-.national-day .hero-stay-booking .stay-section-label {
+.national-day .hero-stay-booking .stay-section-label,
+.event-standard .hero-stay-booking .stay-section-label {
   margin-bottom: 3px;
   font-size: 10px;
 }
 
-.national-day .hero-stay-booking .stay-form-row {
+.national-day .hero-stay-booking .stay-form-row,
+.event-standard .hero-stay-booking .stay-form-row {
   gap: 8px;
   margin-bottom: 9px;
 }
 
-.national-day .hero-stay-booking .stay-field-input {
+.national-day .hero-stay-booking .stay-field-input,
+.event-standard .hero-stay-booking .stay-field-input {
   padding: 7px 9px;
   font-size: 13px;
 }
 
-.national-day .hero-stay-booking .stay-area-label {
+.national-day .hero-stay-booking .stay-area-label,
+.event-standard .hero-stay-booking .stay-area-label {
   margin: 2px 0 6px;
 }
 
-.national-day .hero-stay-booking .stay-area-pills {
+.national-day .hero-stay-booking .stay-area-pills,
+.event-standard .hero-stay-booking .stay-area-pills {
   gap: 6px;
   margin-bottom: 11px;
 }
 
-.national-day .hero-stay-booking .stay-area-pill {
+.national-day .hero-stay-booking .stay-area-pill,
+.event-standard .hero-stay-booking .stay-area-pill {
   padding: 5px 12px;
   font-size: 12px;
 }
 
-.national-day .hero-stay-booking .stay-check-btn {
+.national-day .hero-stay-booking .stay-check-btn,
+.event-standard .hero-stay-booking .stay-check-btn {
   padding: 11px 14px;
 }
 
-.national-day .stay-section-label .booking-symbols svg {
+.national-day .stay-section-label .booking-symbols svg,
+.event-standard .stay-section-label .booking-symbols svg {
   color: var(--booking-cta, #6b4f7a);
 }
 
@@ -389,20 +411,28 @@
 }
 
 @media (max-width: 980px) {
-  .national-day .layout-columns {
+  .national-day .layout-columns,
+  .event-standard .layout-columns {
     grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    align-content: start;
+    align-items: start;
     overflow-y: auto;
   }
 
   .national-day .layout__a,
-  .national-day .layout__b {
+  .national-day .layout__b,
+  .event-standard .layout__a,
+  .event-standard .layout__b {
+    align-self: start;
     height: auto;
     overflow: visible;
   }
 }
 
 @media (max-width: 620px) {
-  .national-day .hero-stay-booking .stay-form-row {
+  .national-day .hero-stay-booking .stay-form-row,
+  .event-standard .hero-stay-booking .stay-form-row {
     grid-template-columns: 1fr;
   }
 
