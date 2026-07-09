@@ -13,136 +13,9 @@ Usage:
   python scripts/build_country_page.py --all          # every */<country> with a *.data.json
 """
 
-import os, sys, json, glob, html as H, datetime
+import os, sys, json, glob, html as H
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# ---------------------------------------------------------------------------
-# Auto-events: populate Find-events tab from events.register.json
-# ---------------------------------------------------------------------------
-_REG_EVENTS = None
-_COMPACT_BY_SLUG = None
-_BIG_MAC_BY_SLUG = None
-
-_BIG_MAC_SLUG_ALIASES = {
-    'czechia': 'czech-republic',
-    'united-arab-emirates': 'uae',
-    'united-kingdom': 'uk',
-}
-
-def _load_events_data():
-    global _REG_EVENTS, _COMPACT_BY_SLUG
-    if _REG_EVENTS is not None:
-        return _REG_EVENTS, _COMPACT_BY_SLUG
-    reg_path = os.path.join(ROOT, 'events.register.json')
-    compact_path = os.path.join(ROOT, 'content', 'events', 'events-compact.json')
-    _REG_EVENTS = []
-    _COMPACT_BY_SLUG = {}
-    if os.path.isfile(reg_path):
-        _REG_EVENTS = json.load(open(reg_path, encoding='utf-8')).get('events', [])
-    if os.path.isfile(compact_path):
-        _COMPACT_BY_SLUG = {e['slug']: e for e in json.load(open(compact_path, encoding='utf-8'))}
-    return _REG_EVENTS, _COMPACT_BY_SLUG
-
-
-# Maps data.json country name → additional register names to include.
-# Use when a country's name in data.json differs from what some events use.
-_COUNTRY_ALIASES = {
-    'USA': ['United States'],
-    'South Korea': ['Korea', 'Republic of Korea'],
-    'North Korea': ["Democratic People's Republic of Korea"],
-    'Czech Republic': ['Czechia'],
-    'Czechia': ['Czech Republic'],
-    'Russia': ['Russian Federation'],
-    'Iran': ['Islamic Republic of Iran'],
-    'Vietnam': ['Viet Nam'],
-    'Syria': ['Syrian Arab Republic'],
-    'Tanzania': ['United Republic of Tanzania'],
-    'Bolivia': ['Plurinational State of Bolivia'],
-    'Venezuela': ['Bolivarian Republic of Venezuela'],
-}
-
-
-def auto_events_for_country(country_name):
-    """Return events for a country from the register, sorted by startDate ascending."""
-    today = datetime.date.today().isoformat()
-    reg_events, compact_by_slug = _load_events_data()
-    match_names = {country_name} | set(_COUNTRY_ALIASES.get(country_name, []))
-    matched = []
-    for ev in reg_events:
-        if ev.get('status') == 'cancelled':
-            continue
-        if (ev.get('endDate') or '') < today:
-            continue
-        if not match_names.intersection(ev.get('location', {}).get('countries', [])):
-            continue
-        ev_slug = ev.get('slug', '')
-        comp = compact_by_slug.get(ev_slug, {})
-        # Derive absolute href
-        ep = ev.get('eventPageEN', '')
-        if ep:
-            href = '/' + ep.rstrip('/') if not ep.startswith('/') else ep
-        elif comp.get('href'):
-            h = comp['href'].lstrip('.')  # removes leading ".."
-            href = '/content' + h if h.startswith('/categories') else '/' + h.lstrip('/')
-        else:
-            href = ''
-        # Derive absolute PNG mini image (mini_img() probes WebP variants automatically)
-        if comp.get('image'):
-            img = '/content' + comp['image'].lstrip('.').lstrip('/')  # /content/categories/...
-            if not img.startswith('/content/categories'):
-                img = '/content/categories' + img.split('/categories', 1)[-1]
-            # strip size suffix (-400 / -200) to get base mini.png
-            img = img.rsplit('-', 1)[0] + '.png' if img.endswith('.webp') else img
-        elif ep:
-            event_dir = ep.rsplit('/', 1)[0]
-            img = '/' + event_dir + '/img/' + ev_slug + '-mini.png'
-        else:
-            img = ''
-        start = ev.get('startDate', '')
-        end   = ev.get('endDate', '')
-        title = ev.get('title', comp.get('title', ''))
-        meta  = comp.get('meta', ev.get('displayDates', f'{start} – {end}'))
-        matched.append({
-            'modifier': 'national',
-            'dataEnd': end,
-            'href': href,
-            'img': img,
-            'title': title,
-            'meta': meta,
-            '_sort': start or end,
-        })
-    matched.sort(key=lambda x: x.pop('_sort', ''))
-    return matched
-
-
-def _load_big_mac_data():
-    global _BIG_MAC_BY_SLUG
-    if _BIG_MAC_BY_SLUG is not None:
-        return _BIG_MAC_BY_SLUG
-    data_path = os.path.join(ROOT, 'scripts', 'data', 'bigmacindex-countries.json')
-    _BIG_MAC_BY_SLUG = {}
-    if os.path.isfile(data_path):
-        payload = json.load(open(data_path, encoding='utf-8'))
-        for country in payload.get('countries', []):
-            slug = country.get('slug', '')
-            if slug:
-                _BIG_MAC_BY_SLUG[slug] = country
-    return _BIG_MAC_BY_SLUG
-
-
-def big_mac_kpi_value(slug):
-    countries = _load_big_mac_data()
-    lookup_slug = _BIG_MAC_SLUG_ALIASES.get(slug, slug)
-    country = countries.get(lookup_slug)
-    if not country:
-        return ''
-    diff = country.get('diff_percent')
-    if not isinstance(diff, (int, float)):
-        return ''
-    if abs(diff) < 0.05:
-        return '0.0%'
-    return f'{diff:+.1f}%'
 DOMAIN = 'https://one-sliders.com'
 
 # UI labels per language. These are the ONLY language-specific strings shared by
@@ -151,8 +24,7 @@ LABELS = {
     'en': {
         'native': 'English', 'code': 'EN',
         'history': 'History', 'capital': 'Capital', 'population': 'Population',
-        'area': 'Area', 'currency': 'Currency', 'bigMacIndex': 'Big Mac Index',
-        'bigMacIndexInfo': 'Difference in Big Mac price against the index benchmark. Positive means more expensive; negative means cheaper.',
+        'area': 'Area', 'currency': 'Currency',
         'planVisit': 'Plan a visit', 'findEvents': 'Find events', 'understand': 'Understand {name}',
         'shortFacts': 'Short facts', 'worthSeeing': 'Worth seeing',
         'planningQuestions': 'Planning questions', 'upcomingEvents': 'Upcoming events',
@@ -324,7 +196,6 @@ def render(data, lang='en'):
     # ---- nav ----
     nav = (
         f'<nav class="top-menu" aria-label="Location navigation">'
-        f'<a class="os-brand" href="/" aria-label="Home"><img class="os-brand__logo" src="/assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>'
         f'<a class="nav-icon" href="{inc}events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>'
         f'<a class="nav-icon active" href="{inc}locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>'
         f'<a class="nav-icon" href="{inc}categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>'
@@ -338,13 +209,11 @@ def render(data, lang='en'):
     history = ''.join(
         f'<div><time>{esc(h["time"])}</time><span>{esc(h["text"])}</span></div>'
         for h in localized(data, lang, 'history', data['history']))
-    big_mac_value = big_mac_kpi_value(slug)
     kpis = (
         f'<div class="country-kpi"><span>{L["capital"]}</span><strong><a class="value-link" href="{esc(data["kpis"]["capitalLink"])}">{esc(kpis_d["capital"])}</a></strong></div>'
         f'<div class="country-kpi"><span>{L["population"]}</span><strong>{esc(kpis_d["population"])}</strong></div>'
         f'<div class="country-kpi"><span>{L["area"]}</span><strong>{esc(kpis_d["area"])}</strong></div>'
         f'<div class="country-kpi"><span>{L["currency"]}</span><strong>{esc(kpis_d["currency"])}</strong></div>'
-        + (f'<div class="country-kpi country-kpi--bigmac"><span class="country-kpi__label">{L.get("bigMacIndex", "Big Mac Index")}<span class="country-kpi__info" tabindex="0" aria-label="{esc(L.get("bigMacIndexInfo", "Difference in Big Mac price against the index benchmark. Positive means more expensive; negative means cheaper."))}">!</span></span><strong>{esc(big_mac_value)}</strong></div>' if big_mac_value else '')
     )
     short_facts = ''.join(
         f'<div class="fact-row"><span>{esc(f["label"])}</span><strong>{esc(f["value"])}</strong></div>'
@@ -415,10 +284,9 @@ def render(data, lang='en'):
     qa = ''.join(
         f'<div><strong>{esc(q["q"])}</strong><span>{esc(q["a"])}</span></div>'
         for q in localized(data, lang, 'planningQuestions', data['planningQuestions']))
-    event_list = auto_events_for_country(data.get('name', ''))
     events = ''.join(
         f'<a class="visual-topic-card visual-topic-card--{esc(e["modifier"])}" data-end="{esc(e["dataEnd"])}" href="{esc(e["href"])}">{mini_img(e["img"], e["title"])}<strong>{esc(e["title"])}</strong><span>{esc(e["meta"])}</span></a>'
-        for e in event_list)
+        for e in localized(data, lang, 'events', data['events']))
     food = ''.join(
         f'<a class="visual-topic-card visual-topic-card--food" href="{esc(c["href"])}">{mini_img(c["img"], c["title"])}<strong>{esc(c["title"])}</strong><span>{esc(c["label"])}</span></a>'
         for c in localized(data, lang, 'food', data['food']))
@@ -443,8 +311,7 @@ def render(data, lang='en'):
             f'<tbody>{state_rows}</tbody></table></div></div>'
         )
     states_markup = f'\n            {states_block}' if states_block else ''
-    default_empty = f'No upcoming {esc(name)}-linked events found.'
-    empty_text = localized(data, lang, 'eventsEmptyText', data.get('eventsEmptyText', default_empty))
+    empty_text = localized(data, lang, 'eventsEmptyText', data['eventsEmptyText'])
 
     # ---- hero image ----
     # Render as markup instead of inline CSS so maintained pages stay free of
@@ -493,7 +360,6 @@ def render(data, lang='en'):
   <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-title-fix-20260614">
   <meta name="theme-color" content="#0d2137">
   <title>{esc(seo['title'])}</title>
-  <script type="application/ld+json">{ldjson}</script>
 </head>
 <body class="country-onepage{' location-page--country-finder' if has_city_finder else ''}">
   {nav}

@@ -18,14 +18,11 @@ Usage:
   python scripts/build_city_page.py --booking-markets              # europe + usa + canada
 """
 
-import os, sys, json, glob, html as H, re, unicodedata
+import os, sys, json, glob, html as H, re
 from datetime import date
 from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-_cfg = json.load(open(os.path.join(ROOT, 'scripts/config.json'), encoding='utf-8'))
-_aff = _cfg['affiliate']['booking']['links']
 DOMAIN = 'https://one-sliders.com'
 TODAY = date(2026, 6, 14)
 MISSING_NODE_MINIS = []
@@ -33,7 +30,6 @@ MISSING_NODE_MINIS = []
 # Load population and airport mappings
 POPULATION_MAP = {}
 AIRPORT_MAP = {}
-CITY_HIGHLIGHT_SEEDS = {}
 pop_map_file = os.path.join(ROOT, 'data', 'city-population-mapping.json')
 if os.path.isfile(pop_map_file):
     with open(pop_map_file, 'r', encoding='utf-8-sig') as f:
@@ -42,86 +38,6 @@ airport_map_file = os.path.join(ROOT, 'data', 'city-airport-mapping.json')
 if os.path.isfile(airport_map_file):
     with open(airport_map_file, 'r', encoding='utf-8-sig') as f:
         AIRPORT_MAP = json.load(f) or {}
-
-
-def seed_key(country_slug, city_slug):
-    return f'{country_slug}/{city_slug}'
-
-
-def add_city_highlight_seed(country_slug, city_slug, names):
-    clean = []
-    seen = set()
-    for name in names or []:
-        label = str(name or '').strip()
-        key = re.sub(r'\s+', ' ', label.lower())
-        if not label or key in seen:
-            continue
-        seen.add(key)
-        clean.append({'title': label})
-    if clean:
-        CITY_HIGHLIGHT_SEEDS[seed_key(country_slug, city_slug)] = clean
-
-
-def load_city_highlight_seeds():
-    data_path = os.path.join(ROOT, 'scripts', 'data', 'nordic-stay-cities.json')
-    if os.path.isfile(data_path):
-        with open(data_path, 'r', encoding='utf-8-sig') as f:
-            data = json.load(f) or {}
-        for city in data.get('cities') or []:
-            add_city_highlight_seed(city.get('countrySlug'), city.get('slug'), city.get('highlights'))
-
-    for filename in ('city-highlight-seeds.json', 'city-highlight-seeds-memory.json'):
-        curated_path = os.path.join(ROOT, 'scripts', 'data', filename)
-        if os.path.isfile(curated_path):
-            with open(curated_path, 'r', encoding='utf-8-sig') as f:
-                data = json.load(f) or {}
-            for key, names in data.items():
-                if '/' not in key:
-                    continue
-                country_slug, city_slug = key.split('/', 1)
-                add_city_highlight_seed(country_slug, city_slug, names)
-
-    for city_slug, names in {
-        'aspen': ['Aspen Mountain', 'Maroon Bells', 'Independence Pass', 'John Denver Sanctuary', 'Wheeler Opera House', 'Rio Grande Trail'],
-        'augusta': ['Augusta National Golf Club', 'Augusta Riverwalk', 'Augusta Canal National Heritage Area', 'Meadow Garden', 'Morris Museum of Art', 'Sacred Heart Cultural Center'],
-        'austin': ['Texas State Capitol', 'Lady Bird Lake', 'Barton Springs Pool', 'South Congress Avenue', 'Zilker Park', 'LBJ Presidential Library'],
-        'black-rock-city': ['The Man', 'The Temple', 'Center Camp', 'Deep Playa art installations', 'Esplanade', 'Black Rock Desert'],
-        'boston': ['Freedom Trail', 'Boston Common', 'Fenway Park', 'Museum of Fine Arts Boston', 'Boston Harborwalk', 'Beacon Hill'],
-        'charleston': ['Historic Charleston City Market', 'The Battery', 'Rainbow Row', 'Waterfront Park', 'Fort Sumter', 'Magnolia Plantation and Gardens'],
-        'chicago': ['Millennium Park', 'Art Institute of Chicago', 'Chicago Riverwalk', 'Navy Pier', 'Willis Tower Skydeck', 'Wrigley Field'],
-        'east-hampton': ['Main Beach', 'LongHouse Reserve', 'Guild Hall', 'Mulford Farm', 'Maidstone Club', 'Hook Windmill'],
-        'honolulu': ['Waikiki Beach', 'Diamond Head', 'Iolani Palace', 'Pearl Harbor National Memorial', 'Bishop Museum', 'Ala Moana Beach Park'],
-        'jackson': ['Jackson Town Square', 'National Elk Refuge', 'Snow King Mountain', 'Grand Teton National Park', 'National Museum of Wildlife Art', 'Jackson Hole Mountain Resort'],
-        'key-west': ['Duval Street', 'Mallory Square', 'Ernest Hemingway Home and Museum', 'Southernmost Point', 'Fort Zachary Taylor Historic State Park', 'Key West Lighthouse'],
-        'las-vegas': ['Las Vegas Strip', 'Fremont Street Experience', 'Bellagio Fountains', 'The Neon Museum', 'Red Rock Canyon', 'High Roller Observation Wheel'],
-        'los-angeles': ['Griffith Observatory', 'Hollywood Walk of Fame', 'Santa Monica Pier', 'Getty Center', 'Walt Disney Concert Hall', 'Venice Beach'],
-        'miami': ['South Beach', 'Art Deco Historic District', 'Wynwood Walls', 'Vizcaya Museum and Gardens', 'Little Havana', 'Perez Art Museum Miami'],
-        'montauk': ['Montauk Point Lighthouse', 'Ditch Plains Beach', 'Hither Hills State Park', 'Montauk Harbor', 'Camp Hero State Park', 'Shadmoor State Park'],
-        'nashville': ['Grand Ole Opry', 'Ryman Auditorium', 'Country Music Hall of Fame and Museum', 'Broadway', 'The Parthenon', 'Johnny Cash Museum'],
-        'new-orleans': ['French Quarter', 'Jackson Square', 'Garden District', 'National WWII Museum', 'St. Louis Cathedral', 'Frenchmen Street'],
-        'new-york': ['Central Park', 'Empire State Building', 'Statue of Liberty', 'Times Square', 'Metropolitan Museum of Art', 'Brooklyn Bridge'],
-        'newport': ['The Breakers', 'Cliff Walk', 'Fort Adams State Park', 'Marble House', 'Bowens Wharf', 'International Tennis Hall of Fame'],
-        'newtown-square': ['Aronimink Golf Club', 'Newtown Square Historic District', 'Bartram Covered Bridge', 'Drexel Lodge Park', 'Paper Mill House Museum', 'Ridley Creek State Park'],
-        'orlando': ['Walt Disney World Resort', 'Universal Orlando Resort', 'Lake Eola Park', 'ICON Park', 'Harry P. Leu Gardens', 'Kia Center'],
-        'portland-maine': ['Old Port', 'Portland Head Light', 'Eastern Promenade', 'Portland Museum of Art', 'Casco Bay Islands', 'Victoria Mansion'],
-        'san-francisco': ['Golden Gate Bridge', 'Alcatraz Island', 'Fisherman\'s Wharf', 'Chinatown', 'Golden Gate Park', 'Ferry Building'],
-        'santa-fe': ['Santa Fe Plaza', 'Canyon Road', 'Georgia O\'Keeffe Museum', 'Loretto Chapel', 'Museum of International Folk Art', 'Palace of the Governors'],
-        'savannah': ['Forsyth Park', 'Savannah Historic District', 'River Street', 'Bonaventure Cemetery', 'Cathedral Basilica of St. John the Baptist', 'City Market'],
-        'seattle': ['Space Needle', 'Pike Place Market', 'Chihuly Garden and Glass', 'Museum of Pop Culture', 'Seattle Waterfront', 'Kerry Park'],
-        'sedona': ['Cathedral Rock', 'Bell Rock', 'Chapel of the Holy Cross', 'Red Rock Scenic Byway', 'Tlaquepaque Arts and Shopping Village', 'Airport Mesa'],
-        'southampton': ['Cooper\'s Beach', 'Southampton Arts Center', 'Parrish Art Museum', 'Southampton History Museum', 'Shinnecock Nation Cultural Center and Museum', 'Agawam Park'],
-        'washington-dc': ['National Mall', 'Lincoln Memorial', 'Smithsonian museums', 'United States Capitol', 'White House', 'Washington Monument'],
-    }.items():
-        add_city_highlight_seed('usa', city_slug, names)
-
-    for country_slug, city_slug, names in [
-        ('colombia', 'medellin', ['El Poblado', 'Berrio Park', 'Basilica of Our Lady of Candelaria', 'University of Antioquia', 'Metrocable', 'Medellin Flower Festival']),
-        ('colombia', 'bogota', ['Plaza de Bolivar', 'Gold Museum', 'Monserrate', 'La Candelaria', 'Botero Museum', 'Simon Bolivar Metropolitan Park']),
-    ]:
-        add_city_highlight_seed(country_slug, city_slug, names)
-
-
-load_city_highlight_seeds()
 
 
 def format_population(pop_val):
@@ -237,8 +153,8 @@ def parse_iso_date(value):
 
 
 BOOKING_LINKS = {
-    'north-america-usa-canada': _aff['hotels-north-america'],
-    'central-eastern-europe':   _aff['hotels-default'],
+    'north-america-usa-canada': 'https://www.jdoqocy.com/click-101771061-17293132',
+    'central-eastern-europe': 'https://www.kqzyfj.com/click-101771061-15735418',
 }
 
 
@@ -257,7 +173,7 @@ def booking_market_class(d):
         return ' affiliate-market--europe'
     if d.get('continent') == 'north-america' and d.get('countrySlug') in ('usa', 'canada'):
         return ' affiliate-market--usa-canada'
-    return ''
+    return ' affiliate-market--usa-canada'
 
 
 def booking_search_url(search, d):
@@ -267,7 +183,7 @@ def booking_search_url(search, d):
 
 def booking_cars_url(search):
     target = f'https://www.booking.com/cars/search-results/?ss={search}'
-    return _aff['cars'] + '?url=' + quote(target, safe=':/?=&,')
+    return 'https://www.jdoqocy.com/click-101771061-17122706?url=' + quote(target, safe=':/?=&,')
 
 
 ATTRACTION_AFFILIATES = {
@@ -304,7 +220,7 @@ CONTENT_RULES = {
     'airport_text_words': (18, 30),
     'nearby_text_words': (14, 24),
     'tip_text_words': (16, 28),
-    'city_intro_chars': (350, 500),
+    'city_intro_words': (44, 72),
 }
 
 
@@ -325,60 +241,12 @@ def clamp_words(text, max_words):
     return source
 
 
-def clamp_chars(text, max_chars):
-    source = re.sub(r'\s+', ' ', str(text or '')).strip()
-    if len(source) <= max_chars:
-        return source
-    sentence_parts = re.findall(r'.*?[.!?](?=\s|$)', source, re.S)
-    for sentence in sentence_parts:
-        sentence = re.sub(r'\s+', ' ', sentence).strip()
-        if sentence and len(sentence) <= max_chars:
-            return sentence
-    clause_parts = re.split(r',\s*', source)
-    clause = ''
-    for part in clause_parts:
-        candidate = f'{clause}, {part}' if clause else part
-        if len(candidate) > max_chars:
-            break
-        clause = candidate
-    if clause and len(clause) >= max_chars * 0.6:
-        return clause.rstrip(' ,;:') + '.'
-    truncated = source[:max_chars].rsplit(' ', 1)[0]
-    return truncated.rstrip(' ,;:') + '.'
-
-
-def bounded_text_chars(text, fallback, rule):
-    min_chars, max_chars = CONTENT_RULES[rule]
-    source = real_text(text)
-    if len(source) >= min_chars:
-        return clamp_chars(source, max_chars)
-    return clamp_chars(fallback, max_chars)
-
-
 def bounded_text(text, fallback, rule):
     min_words, max_words = CONTENT_RULES[rule]
     source = str(text or '').strip()
     if len(words(source)) >= min_words:
         return source
     return clamp_words(fallback, max_words)
-
-
-def real_text(text):
-    source = str(text or '').strip()
-    if not source or re.fullmatch(r'tba|tbc|tbd|pending', source, re.I):
-        return ''
-    if 'shaped by its region, population, local economy' in source:
-        return ''
-    if 'This overview summarizes the city itself' in source:
-        return ''
-    return source
-
-
-def bounded_real_text(text, rule):
-    source = real_text(text)
-    if not source:
-        return ''
-    return clamp_words(source, CONTENT_RULES[rule][1])
 
 
 MONTHS = {
@@ -645,44 +513,6 @@ def city_item_text(item):
     return ''
 
 
-def slugify_label(label):
-    ascii_label = unicodedata.normalize('NFKD', str(label or '')).encode('ascii', 'ignore').decode('ascii')
-    return re.sub(r'^-+|-+$', '', re.sub(r'[^a-z0-9]+', '-', ascii_label.lower()))
-
-
-def linkify_highlights(escaped_text, highlights, airport_label=None, city_name=''):
-    linked = set()
-    for item in highlights:
-        label = city_item_label(item)
-        key = label.lower()
-        if not label or key in linked:
-            continue
-        escaped_label = esc(label)
-        pattern = re.compile(re.escape(escaped_label))
-        new_text, count = pattern.subn(
-            f'<a href="#see-{slugify_label(label)}">{escaped_label}</a>', escaped_text, count=1
-        )
-        if count:
-            escaped_text = new_text
-            linked.add(key)
-    if airport_label:
-        stopwords = {'international', 'airport', 'city', 'the', 'of', str(city_name).lower()}
-        stripped = re.sub(r'\s*\([^)]*\)\s*$', '', airport_label).strip()
-        candidates = [airport_label, stripped]
-        candidates += re.findall(r"[A-Z][a-zA-Z'-]+", stripped)
-        for candidate in candidates:
-            if candidate.lower() in stopwords or len(candidate) < 4:
-                continue
-            pattern = re.compile(r'\b' + re.escape(esc(candidate)) + r'\b')
-            new_text, count = pattern.subn(
-                f'<a href="#stay-flights-airports">{esc(candidate)}</a>', escaped_text, count=1
-            )
-            if count:
-                escaped_text = new_text
-                break
-    return escaped_text
-
-
 def place_labels(items):
     out = []
     for item in items or []:
@@ -692,184 +522,29 @@ def place_labels(items):
     return out
 
 
-def is_dummy_see_label(label, city_name=''):
-    text = re.sub(r'\s+', ' ', str(label or '')).strip()
-    if not text:
-        return True
-    if re.search(r'\bplanning base\s+\d+\b', text, re.I):
-        return True
-    if re.fullmatch(r'attraction\s+(one|two|three|four|five|six|\d+)', text, re.I):
-        return True
-    if city_name and text.lower() == city_name.lower():
-        return True
-    if city_name and text.lower() == f'capital city in {city_name.lower()}':
-        return True
-    if re.fullmatch(r'capital city in .+', text, re.I):
-        return True
-    return False
-
-
-def see_fallback_text(label, city_name):
-    label_l = str(label or '').lower()
-    if any(x in label_l for x in ('beach', 'shore', 'coast', 'waterfront', 'harbour', 'harbor', 'pier', 'river', 'lake', 'fjord', 'canal', 'bay', 'port', 'island', 'rambla', 'corniche')):
-        return f'{label} puts water into the {city_name} visit: views, promenades, arrivals and the city edge in one stop.'
-    if any(x in label_l for x in ('museum', 'gallery', 'art', 'opera', 'theatre', 'theater', 'library', 'hall', 'cultural', 'heritage', 'collection', 'archive')):
-        return f'{label} is the {city_name} stop for collections, performance or civic memory, and it gives the See plan a clear culture anchor.'
-    if any(x in label_l for x in ('cathedral', 'church', 'chapel', 'temple', 'mosque', 'shrine', 'monastery', 'basilica', 'pagoda', 'synagogue', 'wat', 'dzong')):
-        return f'{label} brings sacred architecture into the {city_name} route, with detail, ceremony and local history visible in the building.'
-    if any(x in label_l for x in ('castle', 'palace', 'fort', 'citadel', 'tower', 'lighthouse', 'monument', 'memorial', 'mausoleum', 'gate', 'clocktower', 'clock tower', 'fortress', 'walls')):
-        return f'{label} is a strong landmark for reading {city_name}: history, orientation and a recognizable city silhouette.'
-    if any(x in label_l for x in ('garden', 'park', 'trail', 'mountain', 'rock', 'canyon', 'falls', 'forest', 'reserve', 'botanical', 'zoo', 'hill', 'valley', 'cliff', 'national park')):
-        return f'{label} adds the outdoor side of {city_name}, with green space, viewpoints, wildlife or walking time close to the urban plan.'
-    if any(x in label_l for x in ('market', 'square', 'street', 'district', 'quarter', 'old town', 'village', 'neighbourhood', 'neighborhood', 'medina', 'bazaar', 'souq', 'souk', 'plaza', 'avenue', 'mall')):
-        return f'{label} gives the See tab street life: food, shops, architecture and everyday movement in {city_name}.'
-    if any(x in label_l for x in ('stadium', 'field', 'arena', 'club', 'resort', 'course', 'circuit', 'track', 'centre', 'center')):
-        return f'{label} belongs on the {city_name} leisure and event map, especially for visitors planning around sport, shows or day trips.'
-    if any(x in label_l for x in ('university', 'campus', 'parliament', 'assembly', 'court', 'government', 'national', 'presidential', 'city hall')):
-        return f'{label} shows the civic side of {city_name}, where institutions, public space and architecture shape the city story.'
-    return f'{label} is a specific {city_name} stop worth separating from the general city overview, so visitors can plan the See tab around a real named place.'
-
-
-def history_seed_highlights(d):
-    # History prose is useful context, but it is not reliable enough to invent
-    # attraction cards. Keep See content to explicit city data and curated seeds.
-    return []
-    city_name = d.get('name') or ''
-    country_name = d.get('countryName') or ''
-    continent_name = d.get('continentName') or ''
-    blocked = {
-        city_name.lower(),
-        country_name.lower(),
-        continent_name.lower(),
-        'wikipedia',
-        'regional role',
-        'growth',
-        'origins',
-        'today',
-    }
-    feature_words = (
-        'abbey', 'airport', 'arena', 'avenue', 'basilica', 'bay', 'beach', 'bridge', 'camp',
-        'canal', 'castle', 'cathedral', 'center', 'centre', 'church', 'citadel', 'club',
-        'college', 'district', 'fort', 'garden', 'gardens', 'harbor', 'harbour', 'hill',
-        'island', 'lake', 'market', 'memorial', 'metro', 'museum', 'palace', 'park',
-        'plaza', 'poblado', 'port', 'quarter', 'railway', 'river', 'road', 'square', 'station',
-        'street', 'temple', 'theatre', 'theater', 'tower', 'tunnel', 'university', 'valley'
-    )
-
-    def clean_candidate(value):
-        value = re.sub(r'\([^)]*\)', '', str(value or ''))
-        value = re.sub(r'\b(?:the|a|an|new|old)\s+', '', value, flags=re.I).strip()
-        value = value.strip(' "\'.,;:()[]')
-        value = re.sub(r'\s+', ' ', value)
-        return value
-
-    def is_good_candidate(value):
-        value = clean_candidate(value)
-        lower = value.lower()
-        if len(value) < 4 or len(value) > 56:
-            return False
-        if lower in blocked:
-            return False
-        if any(x in lower for x in ('â', 'ã', 'http', 'wikipedia', 'tbc', 'tbd')):
-            return False
-        if re.fullmatch(r'\d+|\d+(st|nd|rd|th)? century', lower):
-            return False
-        if lower.startswith(('in ', 'on ', 'of ', 'and ', 'after ', 'before ', 'during ', 'today ')):
-            return False
-        if any(x in lower for x in ('visitor ', 'governor', 'president', 'captain', 'king ', 'queen ', 'saint ')):
-            return False
-        words_in_value = words(value)
-        if any(x in lower for x in feature_words):
-            return True
-        return False
-
-    def sentence_for_candidate(text, candidate):
-        parts = re.split(r'(?<=[.!?])\s+', text)
-        for part in parts:
-            if candidate in part:
-                return part.strip()
-        return text.strip()
-
-    items = []
-    seen = set()
-    source_texts = []
-    for row in d.get('history') or []:
-        if isinstance(row, dict):
-            source_texts.append(str(row.get('text') or ''))
-    for event in d.get('events') or []:
-        if isinstance(event, dict):
-            source_texts.append(str(event.get('title') or ''))
-            source_texts.append(str(event.get('meta') or ''))
-
-    candidate_re = re.compile(
-        r'\b(?:[A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØÑÇ][\wÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØÑÇáéíóúàèìòùâêîôûäëïöüåæøñç\'-]*'
-        r'(?:\s+(?:of|de|del|da|do|dos|das|la|las|le|du|di|van|von|el|al|and|the|for|y|e|&|[A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØÑÇ][\wÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÅÆØÑÇáéíóúàèìòùâêîôûäëïöüåæøñç\'-]*)){1,5})'
-    )
-    quoted_re = re.compile(r'"([^"]{4,56})"')
-
-    for text in source_texts:
-        clean_text = re.sub(r'\s+', ' ', text).strip()
-        if not clean_text:
-            continue
-        for regex in (quoted_re, candidate_re):
-            for match in regex.finditer(clean_text):
-                candidate = clean_candidate(match.group(1) if match.groups() else match.group(0))
-                key = candidate.lower()
-                if key in seen or not is_good_candidate(candidate):
-                    continue
-                seen.add(key)
-                sentence = sentence_for_candidate(clean_text, candidate)
-                items.append({'title': candidate, 'text': sentence})
-                if len(items) >= CONTENT_RULES['see_min_cards']:
-                    return items
-    return items
-
-
 def ensure_highlights(d, areas):
-    city_name = d.get('name') or ''
-    seed = CITY_HIGHLIGHT_SEEDS.get(seed_key(d.get('countrySlug'), d.get('slug'))) or []
-    highlights = []
-
-    for item in d.get('highlights') or d.get('worthSeeing') or []:
-        label = city_item_label(item)
-        text = city_item_text(item)
-        if is_dummy_see_label(label, city_name):
-            continue
-        if not text or re.fullmatch(r'tba|tbc|tbd|pending', str(text).strip(), re.I):
-            if isinstance(item, dict):
-                item = {**item}
-                item.pop('text', None)
-                item.pop('description', None)
-                item.pop('detail', None)
-        highlights.append(item)
-
-    if seed:
-        highlights.extend(seed)
-
-    if len(highlights) < CONTENT_RULES['see_min_cards']:
-        highlights.extend(history_seed_highlights(d))
-
+    highlights = d.get('highlights') or d.get('worthSeeing') or []
     if len(highlights) >= CONTENT_RULES['see_min_cards']:
-        labels = []
-    else:
-        labels = []
-        known = d.get('knownFor')
-        if isinstance(known, str):
-            labels.extend([x.strip() for x in re.split(r',|&| and ', known) if x.strip()])
-        labels.extend(place_labels(areas))
-        labels = [x for x in labels if not is_dummy_see_label(x, city_name)]
-
+        return highlights[:CONTENT_RULES['see_min_cards']]
+    labels = place_labels(highlights)
+    known = d.get('knownFor')
+    if isinstance(known, str):
+        labels.extend([x.strip() for x in re.split(r',|&| and ', known) if x.strip()])
+    labels.extend(place_labels(areas))
+    labels.extend([d.get('region'), d.get('state'), d.get('province')])
+    labels = [x for x in labels if x]
     seen = set()
     unique = []
-    for item in [*highlights, *labels]:
-        label = city_item_label(item)
+    for label in labels:
         key = label.lower()
         if key in seen:
             continue
         seen.add(key)
-        unique.append(item)
+        unique.append(label)
         if len(unique) >= CONTENT_RULES['see_min_cards']:
             break
+    while len(unique) < CONTENT_RULES['see_min_cards']:
+        unique.append(f"{d['name']} planning base {len(unique) + 1}")
     return unique[:CONTENT_RULES['see_min_cards']]
 
 
@@ -938,15 +613,6 @@ def ensure_city_history(d):
     return sorted(rows, key=history_order)[:CONTENT_RULES['history_max_rows']]
 
 
-def categorize_history_row(row):
-    label = str(row.get('label') or '')
-    if re.fullmatch(r'\d{3,4}(?:\s*BCE)?', label, re.I):
-        return 'timeline'
-    if re.search(r'\bregional role\b', label, re.I):
-        return 'regional'
-    return 'era'
-
-
 def render_template_city(d):
     slug, name = d['slug'], d['name']
     cont, country_slug, country_name = d['continent'], d['countrySlug'], d['countryName']
@@ -970,8 +636,6 @@ def render_template_city(d):
     areas = d.get('areas') or []
     highlights = ensure_highlights(d, areas)
     airports = d.get('airports') or []
-    airport_label = airports[0]['name'] if airports else 'Main airport TBC'
-    has_real_airport = bool(airports)
     booking_destination = d.get('bookingDestination') or f'{name}, {country_name}'
     booking_market = booking_market_class(d)
     events = local_city_events(d) or load_city_events(d)
@@ -1000,18 +664,12 @@ def render_template_city(d):
     description = f'Plan {name} around {landmark}, hotel areas, {desc_suffix} and local events.'
     if len(description) > 155:
         description = f'Plan {name}: {landmark}, hotel areas and events.' if len(f'Plan {name}: {landmark}, hotel areas and events.') <= 155 else f'Travel guide for {name}.'
-    intro = bounded_text_chars(
-        d.get('intro') or d.get('summary') or d.get('description') or d.get('heroText') or d.get('seo', {}).get('webpageDescription'),
-        f'{name}, {country_name}.',
-        'city_intro_chars'
+    intro = bounded_text(
+        d.get('heroText'),
+        f'{name} is a city in {country_name} shaped by its region, population, local economy, landmarks, climate and civic history. This overview summarizes the city itself: where it sits, what defines it, which places anchor its identity and why it matters within the wider country.',
+        'city_intro_words'
     )
     intro_title = d.get('introTitle') or f'{name} city overview'
-    intro_html = linkify_highlights(esc(intro), highlights, airport_label if has_real_airport else None, name) if intro else ''
-    intro_block = (
-        f'<section class="city-intro-block" aria-labelledby="{esc(slug)}-city-overview">'
-        f'<h2 id="{esc(slug)}-city-overview">{esc(intro_title)}</h2><p class="hero-text">{intro_html}</p></section>'
-        if intro else ''
-    )
 
     def local_target_exists(href):
         href = str(href or '')
@@ -1086,37 +744,15 @@ def render_template_city(d):
         if pie_legend else ''
     )
     history = ensure_city_history(d)
-    timeline_rows = [x for x in history if categorize_history_row(x) == 'timeline']
-    era_rows = [x for x in history if categorize_history_row(x) == 'era']
-    regional_rows = [x for x in history if categorize_history_row(x) == 'regional']
-
-    def history_list_html(rows):
-        return ''.join(f'<div><time>{esc(x["label"])}</time><span>{esc(x["text"])}</span></div>' for x in rows)
-
-    history_sections = []
-    if timeline_rows:
-        history_sections.append(
-            f'<div class="city-history-group"><h3>Timeline</h3>'
-            f'<div class="country-history-list">{history_list_html(timeline_rows)}</div></div>'
-        )
-    if era_rows:
-        history_sections.append(
-            f'<div class="city-history-group"><h3>Notable eras</h3>'
-            f'<div class="country-history-list">{history_list_html(era_rows)}</div></div>'
-        )
-    if regional_rows:
-        regional_html = ''.join(f'<p>{esc(x["text"])}</p>' for x in regional_rows)
-        history_sections.append(
-            f'<div class="city-history-group"><h3>Regional role</h3>'
-            f'<div class="city-history-notes">{regional_html}</div></div>'
-        )
+    history_html = ''.join(f'<div><time>{esc(x["label"])}</time><span>{esc(x["text"])}</span></div>' for x in history)
     history_card = (
         f'<div class="country-panel-card city-history-facts" id="history"><h2>City history</h2>'
-        f'{"".join(history_sections)}</div>'
-        if history_sections else ''
+        f'<div class="country-history-list">{history_html}</div></div>'
+        if history_html else ''
     )
+    airport_label = airports[0]['name'] if airports else 'Main airport TBC'
+    has_real_airport = bool(airports)
     known_for = ', '.join(city_item_label(x) for x in highlights[:4]) if highlights else 'culture, local areas and events'
-    transit_operator = real_text(d.get('transitOperator') or d.get('transit'))
     founded_year = next((x.get('label') for x in history if re.fullmatch(r'\d{3,4}', str(x.get('label', '')))), None)
     raw_kpis = d.get('kpis')
     # Auto-generate KPIs if missing or empty
@@ -1124,41 +760,39 @@ def render_template_city(d):
         raw_kpis = []
         if has_population:
             raw_kpis.append({'label': 'Population', 'value': population, 'note': 'city context'})
-    # Region and time zone duplicate the "Part of {country}" card already shown lower on the page.
-    # Airport base / Known for / Founded / Transportation are re-added below as lead chips, in one row.
-    dropped_labels = ('region', 'time zone', 'airport base', 'known for', 'founded', 'transportation')
-    raw_kpis = [k for k in raw_kpis if str(k.get('label', '')).strip().lower() not in dropped_labels]
+        raw_kpis.extend([
+            {'label': 'Region', 'value': region, 'note': country_name},
+            {'label': 'Time zone', 'value': tz, 'note': 'local time'},
+        ])
+    if founded_year and not any(str(k.get('label', '')).lower() == 'founded' for k in raw_kpis):
+        raw_kpis.insert(2, {'label': 'Founded', 'value': founded_year, 'note': 'historic origin'})
     next_event = next_confirmed_event()
     if next_event and not any(str(k.get('label', '')).lower() == 'next event' for k in raw_kpis):
         start_day, event = next_event
         days_until = (start_day - TODAY).days
         value = 'Today' if days_until == 0 else f'{days_until} days'
         raw_kpis.append({'label': 'Next event', 'value': value, 'note': event.get('title') or 'Confirmed event'})
-    lead_kpis = []
-    if has_real_airport:
-        lead_kpis.append({'label': 'Airport base', 'value': airport_label, 'note': 'main arrival'})
-    lead_kpis.append({'label': 'Known for', 'value': known_for, 'note': ''})
-    if founded_year:
-        lead_kpis.append({'label': 'Founded', 'value': founded_year, 'note': 'historic origin'})
-    if transit_operator:
-        lead_kpis.append({'label': 'Transportation', 'value': transit_operator, 'note': 'public transit'})
     kpi_cards = ''.join(
-        f'<div class="city-kpi-card{" city-kpi-card--text" if len(str(k.get("value", ""))) > 18 else ""}"><span>{esc(k.get("label", ""))}</span><strong>'
+        f'<div class="city-kpi-card"><span>{esc(k.get("label", ""))}</span><strong>'
         + (f'<a class="value-link" href="{esc(k.get("href"))}">{esc(k.get("value", ""))}</a>' if k.get('href') else esc(k.get('value', '')))
         + f'</strong><em>{esc(k.get("note") or k.get("text") or "")}</em></div>'
-        for k in (lead_kpis + raw_kpis)[:8]
+        for k in raw_kpis[:6]
     )
 
     see_cards = []
     for i, item in enumerate(highlights[:6], start=1):
         label = city_item_label(item)
-        fallback_text = see_fallback_text(label, name)
+        fallback_text = (
+            f'{label} is a practical {name} planning anchor: compare its location, transfer time, '
+            f'nearby hotel bases and event timing before you lock the day plan.'
+        )
         text = bounded_text(city_item_text(item), fallback_text, 'see_text_words')
         img = f'{img_base}/{slug}-see-{i}-mini.png'
-        img_html = f'<img src="{esc(img)}"{img_srcset(img)} alt="{esc(label)}, {esc(name)}" loading="lazy" width="400" height="300">'
+        img_html = optional_img(img, f'{label}, {name}')
         href = item.get('href') if isinstance(item, dict) else ''
         inner = f'{img_html}<div><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
-        attrs = f'class="destination-attraction-card" id="see-{esc(slugify_label(label))}" data-attraction-name="{esc(label)}"'
+        media_class = '' if img_html else ' destination-attraction-card--text-only'
+        attrs = f'class="destination-attraction-card{media_class}" data-attraction-name="{esc(label)}"'
         see_cards.append(linked_or_plain('div', href, attrs, inner))
     if not see_cards:
         see_cards.append(f'<p class="country-empty is-visible">Add confirmed sights for {esc(name)} in the city data file.</p>')
@@ -1168,27 +802,43 @@ def render_template_city(d):
             label = area.get('name', 'Area')
             fallback = (f'{label} works best when hotel price, local transfers, evening plans and repeat routes '
                         f'matter more than staying beside one single attraction.')
-            text = bounded_real_text(area.get('text'), 'area_text_words')
-            best = real_text(area.get('bestFor') or area.get('best_for'))
+            text = bounded_text(area.get('text'), fallback, 'area_text_words')
+            best = area.get('bestFor') or area.get('best_for') or 'first visits, access, availability'
             if isinstance(best, list):
                 best = ', '.join(str(x) for x in best if x)
         else:
             label = str(area)
-            text = ''
-            best = ''
+            fallback = (
+                f'{label} is the first area to compare for short transfers, simple arrivals, restaurants '
+                f'and a practical first-night base.' if idx == 0 else
+                f'{label} is useful when price, transit, parking, quieter nights or a specific event route '
+                f'changes the best hotel choice.'
+            )
+            text = bounded_text('', fallback, 'area_text_words')
+            best = 'first visits, dining, sightseeing' if idx == 0 else 'availability, access, alternate bases'
         href = booking_search_url(f'{label}, {name}, {country_name}', d)
         area_page = area.get('href') if isinstance(area, dict) else ''
         title = f'<h3>{esc(label)}</h3>'
         if area_page and local_target_exists(area_page):
             title = f'<h3><a href="{esc(area_page)}">{esc(label)}</a></h3>'
-        body = f'<p>{esc(text)}</p>' if text else ''
-        best_html = f'<span>Best for: {esc(best)}</span>' if best else ''
-        return f'<div class="stay-area">{title}{body}{best_html}<a class="stay-card-link{booking_market}" href="{esc(href)}" target="_blank" rel="nofollow sponsored noopener">Compare stays</a></div>'
+        return f'<div class="stay-area">{title}<p>{esc(text)}</p><span>Best for: {esc(best)}</span><a class="stay-card-link{booking_market}" href="{esc(href)}" target="_blank" rel="nofollow sponsored noopener">Compare stays</a></div>'
 
     areas_html = ''.join(stay_area(a, i) for i, a in enumerate(areas[:8]))
-    stay_overview_text = bounded_real_text(d.get('stayOverview') or d.get('stay_overview'), 'stay_overview_words')
-    hotel_intro_text = bounded_real_text(d.get('hotelIntro') or d.get('hotel_intro'), 'hotel_intro_words')
-    rental_cars_text = bounded_real_text(d.get('rentalCars') or d.get('rental_cars'), 'tip_text_words')
+    stay_overview_text = bounded_text(
+        d.get('stayOverview') or d.get('stay_overview'),
+        f"Compare {', '.join([str(a.get('name') if isinstance(a, dict) else a) for a in areas[:3]]) or name} before booking {name} hotels. Start with the places you will repeat most, then check airport timing, parking, nightly price and event demand before choosing the final base.",
+        'stay_overview_words'
+    )
+    hotel_intro_text = bounded_text(
+        d.get('hotelIntro') or d.get('hotel_intro'),
+        f"Compare accommodation options in and around {name} by area, not only by nightly price. A cheaper room can become expensive when airport transfers, parking, attraction routes, late arrivals or event-week demand add time and cost.",
+        'hotel_intro_words'
+    )
+    rental_cars_text = bounded_text(
+        d.get('rentalCars') or d.get('rental_cars'),
+        "Compare rental cars when airport arrival, day trips, parking, luggage, theme parks, coastal routes or nearby regions matter more than staying fully on transit.",
+        'tip_text_words'
+    )
     raw_tips = d.get('travelTips') or d.get('tips') or []
     default_tips = [
         {'title': 'Best time to visit', 'text': 'Check weather, school holidays, daylight, local festivals and major event calendars before locking in hotel rates or non-refundable tickets.'},
@@ -1196,22 +846,24 @@ def render_template_city(d):
         {'title': 'Crowds', 'text': 'Prices can jump around festivals, conventions, school holidays, cruise days, ski weeks, race weekends and large sports events.'},
         {'title': 'Booking detail', 'text': 'Compare total cost with taxes, breakfast, parking, resort fees, transfer timing and cancellation terms before choosing the cheapest room.'},
     ]
-    if not isinstance(raw_tips, list):
-        raw_tips = []
+    if not isinstance(raw_tips, list) or not raw_tips:
+        raw_tips = default_tips
     tip_cards = []
     for fallback_tip, item in zip(default_tips, raw_tips[:4]):
         if isinstance(item, dict):
             tip_title = item.get('title') or fallback_tip['title']
-            tip_text = bounded_real_text(item.get('text'), 'tip_text_words')
+            tip_text = bounded_text(item.get('text'), fallback_tip['text'], 'tip_text_words')
         else:
             tip_title = fallback_tip['title']
-            tip_text = bounded_real_text(str(item), 'tip_text_words')
-        if tip_text:
-            tip_cards.append(f'<div class="stay-tip"><strong>{esc(tip_title)}</strong><p>{esc(tip_text)}</p></div>')
+            tip_text = bounded_text(str(item), fallback_tip['text'], 'tip_text_words')
+        tip_cards.append(f'<div class="stay-tip"><strong>{esc(tip_title)}</strong><p>{esc(tip_text)}</p></div>')
+    while len(tip_cards) < 4:
+        fallback_tip = default_tips[len(tip_cards)]
+        tip_cards.append(f'<div class="stay-tip"><strong>{esc(fallback_tip["title"])}</strong><p>{esc(bounded_text("", fallback_tip["text"], "tip_text_words"))}</p></div>')
     airports_html = ''.join(
         f'<li><strong>{esc(a.get("name", "Airport"))}</strong><span>{esc(a.get("search", a.get("name", "")))}</span><p>{esc(bounded_text(a.get("text"), "Compare airport access against hotel location, arrival time, rental car pickup, late flights and onward driving before choosing the first night base.", "airport_text_words"))}</p></li>'
         for a in airports
-    ) or f'<li><strong>{esc(name)} airport access</strong><span>TBC</span></li>'
+    ) or f'<li><strong>{esc(name)} airport access</strong><span>Main gateway TBC.</span><p>{esc(bounded_text("", "Compare airport access against hotel location, arrival time, rental car pickup, late flights and onward driving before choosing the first night base.", "airport_text_words"))}</p></li>'
 
     nearby = []
     raw_nearby = d.get('nearbyIdeas') or d.get('nearby') or []
@@ -1221,18 +873,13 @@ def render_template_city(d):
                 label = item.get('name') or item.get('title') or 'Nearby idea'
                 tag = item.get('label') or item.get('type') or ('Core' if i == 0 else 'Nearby')
                 href = item.get('href') or ''
-                text = bounded_real_text(item.get('text'), 'nearby_text_words')
-                image = item.get('img') or item.get('image') or ''
+                text = bounded_text(item.get('text'), f'Use {label} as a nearby Oslo idea when the route or season fits the trip.', 'nearby_text_words')
             else:
                 label = str(item)
                 tag = 'Nearby'
                 href = ''
-                text = ''
-                image = ''
-            if not text:
-                continue
-            media = optional_img(image, label, class_name='node-mini-hero') if image else ''
-            card_inner = f'{media}<div><span>{esc(tag)}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
+                text = bounded_text('', f'Use {label} as a nearby Oslo idea when the route or season fits the trip.', 'nearby_text_words')
+            card_inner = f'{node_mini_image(href, label)}<div><span>{esc(tag)}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
             nearby.append(linked_or_plain('div', href, 'class="destination-nearby-card"', card_inner))
     # Auto-generate nearby from areas only if explicit nearby data exists
     # else:
@@ -1247,18 +894,14 @@ def render_template_city(d):
         if isinstance(city, dict):
             href = city.get('href') or '#'
             cname = city.get('name') or city.get('title') or 'Nearby city'
-            text = bounded_real_text(city.get('text'), 'nearby_text_words')
+            text = bounded_text(city.get('text'), f'Use {cname} as another nearby base when routes, hotel prices or event timing point away from {name}.', 'nearby_text_words')
         else:
             href = '#'
             cname = str(city)
-            text = ''
-        if not text:
-            continue
-        city_inner = f'<div><span>City</span><h3>{esc(cname)}</h3><p>{esc(text)}</p></div>'
+            text = bounded_text('', f'Use {cname} as another nearby base when routes, hotel prices or event timing point away from {name}.', 'nearby_text_words')
+        city_inner = f'{node_mini_image(href, cname)}<div><span>City</span><h3>{esc(cname)}</h3><p>{esc(text)}</p></div>'
         nearby.append(f'<a class="destination-nearby-card" href="{esc(href)}">{city_inner}</a>')
     nearby_html = ''.join(nearby)
-    nearby_input = f'<input type="radio" name="{slug}-view" id="view-nearby">' if nearby_html else ''
-    nearby_label = '<label for="view-nearby" role="tab">Nearby</label>' if nearby_html else ''
 
     upcoming_event_items = []
     past_event_items = []
@@ -1278,14 +921,18 @@ def render_template_city(d):
         if status:
             attrs.append(f'data-status="{esc(status)}"')
         attr_html = (' ' + ' '.join(attrs)) if attrs else ''
-        display_href = re.sub(r'#year-\d{4}$', '', str(e.get('href', '#')))
-        display_meta = re.sub(r'\bdate TBC\b', 'date not announced', str(e.get('meta', '')))
         card = (
             f'<a class="visual-topic-card visual-topic-card--{esc(e.get("modifier", "event"))}{media_class}" '
-            f'href="{esc(display_href)}"{attr_html}>{img}<h3>{esc(e["title"])}</h3><span>{esc(display_meta)}</span></a>'
+            f'href="{esc(e["href"])}"{attr_html}>{img}<h3>{esc(e["title"])}</h3><span>{esc(e.get("meta", ""))}</span></a>'
         )
         (past_event_items if is_past else upcoming_event_items).append(card)
     event_cards = ''.join(upcoming_event_items) or f'<p class="country-empty is-visible">No upcoming {esc(name)} events in the shared event index yet.</p>'
+    event_teaser_cards = ''.join(upcoming_event_items[:2])
+    fact_event_teaser = (
+        f'<div class="country-panel-card city-fact-events-teaser" id="event-planning"><h2>Event planning</h2>'
+        f'<div class="country-paths country-paths--events">{event_teaser_cards}</div><a class="stay-card-link" href="#events">See all events</a></div>'
+        if event_teaser_cards else ''
+    )
     past_event_cards = ''.join(past_event_items)
     past_events_html = (
         f'<details class="city-past-events"><summary>Past events</summary><div class="country-paths country-paths--events">{past_event_cards}</div></details>'
@@ -1340,52 +987,12 @@ def render_template_city(d):
 
     flight_cta_href = booking_search_url(f'{airport_label}, {country_name}', d)
     rental_cta_href = booking_cars_url(f'{name}, {country_name}')
-    booking_destination_href = booking_search_url(booking_destination, d)
-    booking_area_choices = []
-    for area in areas[:8]:
-        if isinstance(area, dict):
-            label = real_text(area.get('name'))
-        else:
-            label = real_text(area)
-        if label:
-            booking_area_choices.append((label, f'{label}, {name}, {country_name}'))
-    if not booking_area_choices:
-        booking_area_choices.append((name, booking_destination))
-    booking_area_pills = ''.join(
-        f'<label class="stay-area-pill"><input type="radio" name="{esc(slug)}-stay-region" data-stay-region value="{esc(search)}"{ " checked" if i == 0 else "" }><span>{esc(label)}</span></label>'
-        for i, (label, search) in enumerate(booking_area_choices)
-    )
-    city_stay_form = (
-        f'<section class="city-stay-booking-form" data-city-stay-booking data-booking-base="{esc(booking_base_url(d))}" aria-label="Book hotels in {esc(name)}">'
-        f'<div class="stay-booking-panel__header"><p class="stay-section-label">HOTELS</p><h3 class="stay-section-title">Check hotel prices in {esc(name)}</h3></div>'
-        f'<div class="stay-form-row"><div class="stay-form-field"><label class="stay-field-label" for="{esc(slug)}-stay-checkin">Check-in</label><input type="date" id="{esc(slug)}-stay-checkin" class="stay-field-input" data-stay-checkin></div>'
-        f'<div class="stay-form-field"><label class="stay-field-label" for="{esc(slug)}-stay-checkout">Check-out</label><input type="date" id="{esc(slug)}-stay-checkout" class="stay-field-input" data-stay-checkout></div></div>'
-        f'<div class="stay-form-row"><div class="stay-form-field"><label class="stay-field-label" for="{esc(slug)}-stay-guests">Guests</label><input type="number" id="{esc(slug)}-stay-guests" class="stay-field-input" data-stay-guests value="2" min="1" max="10"></div>'
-        f'<div class="stay-form-field"><label class="stay-field-label" for="{esc(slug)}-stay-rooms">Rooms</label><input type="number" id="{esc(slug)}-stay-rooms" class="stay-field-input" data-stay-rooms value="1" min="1" max="5"></div></div>'
-        f'<p class="stay-field-label stay-area-label">Area</p><div class="stay-area-pills">{booking_area_pills}</div>'
-        f'<a class="stay-check-btn{booking_market}" data-stay-submit href="{esc(booking_destination_href)}" target="_blank" rel="nofollow sponsored noopener">Check hotel prices</a>'
-        f'<p class="stay-booking-note">OneSliders may earn a commission if you book through Booking.com.</p>'
-        f'</section>'
-    )
-    stay_overview_body = (
-        (f'<p>{esc(stay_overview_text)}</p>' if stay_overview_text else '<p class="country-empty is-visible">TBC</p>')
-        + city_stay_form
-    )
-    hotel_intro_body = f'<p>{esc(hotel_intro_text)}</p>' if hotel_intro_text else ''
-    rental_text_body = f'<p>{esc(rental_cars_text)}</p>' if rental_cars_text else ''
-    tips_body = ''.join(tip_cards) if tip_cards else '<p class="country-empty is-visible">TBC</p>'
-    tips_actions = (
-        f'<div class="stay-affiliate-actions">'
-        f'<a class="stay-booking-button{booking_market}" href="{esc(booking_destination_href)}" target="_blank" rel="nofollow sponsored noopener">Compare stays in {esc(booking_destination)}</a>'
-        f'<a class="stay-card-link{booking_market}" href="{esc(rental_cta_href)}" target="_blank" rel="nofollow sponsored noopener">Compare rental cars</a>'
-        f'</div>'
-    )
     flight_cta = (
         f'<div class="city-context-cta"><h3>{esc(airport_label)} arrival plan</h3>'
         f'<ul>{airports_html}</ul><a class="stay-card-link{booking_market}" href="{esc(flight_cta_href)}" target="_blank" rel="nofollow sponsored noopener">Compare airport-area stays</a></div>'
     )
     rental_cta = (
-        f'<div class="city-context-cta"><h3>{esc(name)} day-trip car use</h3>{rental_text_body}'
+        f'<div class="city-context-cta"><h3>{esc(name)} day-trip car use</h3><p>{esc(rental_cars_text)}</p>'
         f'<a class="stay-card-link{booking_market}" href="{esc(rental_cta_href)}" target="_blank" rel="nofollow sponsored noopener">Compare rental cars</a></div>'
     )
 
@@ -1421,14 +1028,22 @@ def render_template_city(d):
         })
     ldjson = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(',', ':'))
 
+    # Build chip grid with conditional airport chip
+    airport_chip = f'<div><span>Airport base</span><strong>{esc(airport_label)}</strong></div>' if has_real_airport else ''
+    city_fact_chip_grid = (
+        f'<div class="city-fact-chip-grid" aria-label="City quick facts">'
+        f'{airport_chip}'
+        f'<div><span>Known for</span><strong>{esc(known_for)}</strong></div>'
+        f'</div>'
+    )
+
     return f'''<!doctype html>
 <html lang="en">
 <head>
   <!-- OneSlider generic city page -->
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css?v=city-content-cleanup-20260708">
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css?v=city-weather-dark-20260614">
   <link rel="preload" as="image" href="{hero_preload}">
   <script defer src="/assets/js/oneslider-core.js?v=city-generic-20260613"></script>
-  <script defer src="/assets/js/city-page.js?v=city-content-cleanup-20260708"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
@@ -1450,13 +1065,12 @@ def render_template_city(d):
   <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/locations.css?v=city-content-cleanup-20260708">
+  <link rel="stylesheet" href="/assets/css/locations.css?v=city-weather-dark-20260614">
   <meta name="theme-color" content="#0d2137">
   <script type="application/ld+json">{ldjson}</script>
 </head>
 <body class="country-onepage city-page--stay-template city-page--template">
   <nav class="top-menu" aria-label="Location navigation">
-    <a class="os-brand" href="/" aria-label="Home"><img class="os-brand__logo" src="/assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>
     <a class="nav-icon" href="/content/events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
     <a class="nav-icon active" href="/content/locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
     <a class="nav-icon" href="/content/categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
@@ -1467,13 +1081,13 @@ def render_template_city(d):
     <section class="country-brief" aria-label="{esc(name)} one-slide overview">
       <div class="country-brief__copy">
         <div class="city-left-fixed-head"><picture class="country-hero-image country-hero-image--clear"><source srcset="{esc(hero_1200)} 1200w" sizes="(max-width: 720px) 100vw, 42vw" type="image/webp"><img src="{hero}"{hero_sources} alt="{esc(name)} city waterfront and skyline" width="1200" height="630" loading="eager" decoding="async"></picture><div class="city-title-row"><h1 class="hero-title">{esc(h1_text)}</h1><div class="city-local-time-card" data-local-time data-time-zone="{esc(tz)}"><div><span>Local time</span><strong data-local-time-value>--:--</strong></div><em data-local-time-zone>{esc(name)} time</em></div></div></div>
-        <div class="city-left-scroll"><div class="stay-weather-card stay-weather-card--strip"{weather_attrs}><div class="stay-weather-title-row"><h2>Weather Forecast</h2><span>{esc(name)}, {esc(country_name)}</span></div><div class="stay-weather-page is-active" data-weather-page="0"><div class="stay-weather-days"><article class="stay-weather-tile"><strong>Loading</strong><div class="stay-weather-reading"><span class="weather-icon weather-icon--partly" aria-hidden="true"></span><span class="stay-weather-temp">Forecast</span></div></article></div></div><p class="stay-weather-source">Open-Meteo forecast.</p></div>{intro_block}</div>
+        <div class="city-left-scroll"><div class="stay-weather-card stay-weather-card--strip"{weather_attrs}><div class="stay-weather-title-row"><h2>Weather Forecast</h2><span>{esc(name)}, {esc(country_name)}</span></div><div class="stay-weather-page is-active" data-weather-page="0"><div class="stay-weather-days"><article class="stay-weather-tile"><strong>Loading</strong><div class="stay-weather-reading"><span class="weather-icon weather-icon--partly" aria-hidden="true"></span><span class="stay-weather-temp">Forecast</span></div></article></div></div><p class="stay-weather-source">Open-Meteo forecast.</p></div><section class="city-intro-block" aria-labelledby="{slug}-city-overview"><h2 id="{slug}-city-overview">{esc(intro_title)}</h2><p class="hero-text">{esc(intro)}</p></section></div>
         <div class="city-left-fixed-foot"><a class="location-parent-card city-country-card" href="/content/locations/{cont}/{country_slug}/index.html" aria-label="Explore {esc(country_name)}"><img src="{country_mini}"{img_srcset(country_mini, "136px")} alt="{esc(country_mini_alt)}" loading="lazy" width="400" height="300"><span>Part of {esc(country_name)}</span><strong>Explore more {esc(country_name)}</strong><em>More cities, stays and event bases across {esc(country_name)}.</em></a></div>
       </div>
-      <div class="country-brief__panel"><section class="persona-tabs" aria-label="Choose {esc(name)} view"><input type="radio" name="{slug}-view" id="view-visit" checked><input type="radio" name="{slug}-view" id="view-see"><input type="radio" name="{slug}-view" id="view-stay">{nearby_input}<input type="radio" name="{slug}-view" id="view-events">{'<input type="radio" name="' + slug + '-view" id="view-big">' if topics_html else ''}<div class="persona-tablist" role="tablist" aria-label="Choose {esc(name)} outcome"><label for="view-visit" role="tab">Fact</label><label for="view-see" role="tab">See</label><label for="view-stay" role="tab">Visit</label>{nearby_label}<label for="view-events" role="tab">Events</label>{'<label for="view-big" role="tab">Big in ' + esc(name) + '</label>' if topics_html else ''}</div>
-        <div class="persona-panel view-panel--visit" id="fact"><div class="country-panel-card city-facts-hero"><div class="city-facts-header"><h2>City facts</h2>{pie_html}</div><div class="city-kpi-grid">{kpi_cards}</div></div>{history_card}</div>
+      <div class="country-brief__panel"><section class="persona-tabs" aria-label="Choose {esc(name)} view"><input type="radio" name="{slug}-view" id="view-visit" checked><input type="radio" name="{slug}-view" id="view-see"><input type="radio" name="{slug}-view" id="view-stay"><input type="radio" name="{slug}-view" id="view-nearby"><input type="radio" name="{slug}-view" id="view-events">{'<input type="radio" name="' + slug + '-view" id="view-big">' if topics_html else ''}<div class="persona-tablist" role="tablist" aria-label="Choose {esc(name)} outcome"><label for="view-visit" role="tab">Fact</label><label for="view-see" role="tab">See</label><label for="view-stay" role="tab">Visit</label><label for="view-nearby" role="tab">Nearby</label><label for="view-events" role="tab">Events</label>{'<label for="view-big" role="tab">Big in ' + esc(name) + '</label>' if topics_html else ''}</div>
+        <div class="persona-panel view-panel--visit" id="fact"><div class="country-panel-card city-facts-hero"><div class="city-facts-header"><h2>City facts</h2>{pie_html}</div>{city_fact_chip_grid}<div class="city-kpi-grid">{kpi_cards}</div></div>{history_card}{fact_event_teaser}</div>
         <div class="persona-panel view-panel--see" id="see"><div class="country-panel-card"><h2>Worth seeing</h2><div class="destination-attraction-grid">{''.join(see_cards)}</div></div></div>
-        <div class="persona-panel view-panel--stay" id="visit"><div class="stay-planner-layout"><nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#stay-overview">Overview</a><a href="#stay-hotels-areas">Hotels &amp; Areas</a><a href="#stay-flights-airports">Flights &amp; Airports</a><a href="#stay-rental-cars">Rental cars</a><a href="#stay-tips">Tips</a></nav><div class="stay-section-stack"><div class="country-panel-card stay-overview-card stay-section-panel" id="stay-overview"><h2>Stay overview</h2>{stay_overview_body}</div><div class="country-panel-card stay-booking-card stay-section-panel" id="stay-hotels-areas"><h2>Hotels &amp; areas</h2>{hotel_intro_body}<div class="stay-area-grid">{areas_html}</div><a class="stay-booking-button{booking_market}" href="{esc(booking_destination_href)}" target="_blank" rel="nofollow sponsored noopener">Compare stays in {esc(booking_destination)}</a></div><div class="country-panel-card stay-section-panel" id="stay-flights-airports"><h2>Flights &amp; airports</h2>{flight_cta}</div><div class="country-panel-card stay-section-panel" id="stay-rental-cars"><h2>Rental cars</h2>{rental_cta}</div><div class="country-panel-card stay-section-panel" id="stay-tips"><h2>Travel tips</h2><div class="stay-tip-grid">{tips_body}</div>{tips_actions}</div></div></div></div>
+        <div class="persona-panel view-panel--stay" id="visit"><div class="stay-planner-layout"><nav class="stay-section-menu" aria-label="Stay planning sections"><a href="#stay-overview">Overview</a><a href="#stay-hotels-areas">Hotels &amp; Areas</a><a href="#stay-flights-airports">Flights &amp; Airports</a><a href="#stay-rental-cars">Rental cars</a><a href="#stay-tips">Tips</a></nav><div class="stay-section-stack"><div class="country-panel-card stay-overview-card stay-section-panel" id="stay-overview"><h2>Stay overview</h2><p>{esc(stay_overview_text)}</p></div><div class="country-panel-card stay-booking-card stay-section-panel" id="stay-hotels-areas"><h2>Hotels &amp; areas</h2><p>{esc(hotel_intro_text)}</p><div class="stay-area-grid">{areas_html}</div><a class="stay-booking-button{booking_market}" href="{esc(booking_search_url(booking_destination, d))}" target="_blank" rel="nofollow sponsored noopener">Compare stays in {esc(booking_destination)}</a></div><div class="country-panel-card stay-section-panel" id="stay-flights-airports"><h2>Flights &amp; airports</h2>{flight_cta}</div><div class="country-panel-card stay-section-panel" id="stay-rental-cars"><h2>Rental cars</h2>{rental_cta}</div><div class="country-panel-card stay-section-panel" id="stay-tips"><h2>Travel tips</h2><div class="stay-tip-grid">{''.join(tip_cards)}</div></div></div></div></div>
         {f'<div class="persona-panel view-panel--nearby" id="nearby"><div class="country-panel-card"><h2>Nearby ideas</h2><div class="destination-nearby-grid">{nearby_html}</div></div></div>' if nearby_html else ''}
         <div class="persona-panel view-panel--events" id="events"><div class="country-panel-card"><h2>Upcoming events</h2><div class="country-paths country-paths--events" data-expiring-events>{event_cards}</div>{past_events_html}</div></div>
         {f'<div class="persona-panel view-panel--big" id="big-in">{topics_html}</div>' if topics_html else ''}
@@ -1639,7 +1253,6 @@ def render(d):
   <link rel="stylesheet" href="{up}assets/css/oneslider-core.css">
   <link rel="preload" as="image" href="{hero_preload}">
 <script defer src="{up}assets/js/oneslider-core.js"></script>
-  <script defer src="/assets/js/city-page.js?v=city-content-cleanup-20260708"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="{esc(seo['twitterDescription'])}">
@@ -1963,12 +1576,12 @@ def template_preview_data():
             {'name': 'Secondary airport', 'search': 'Template City, Country'},
         ],
         'highlights': [
-            {'title': 'Central station', 'text': 'Central station anchors arrival, hotel choice and short walks into the historic centre.'},
-            {'title': 'Old town square', 'text': 'Old town square is the compact first stop for civic history, cafes and orientation.'},
-            {'title': 'City museum', 'text': 'City museum gives the page a verified cultural stop with context for the wider region.'},
-            {'title': 'Harbour walk', 'text': 'Harbour walk shows how water, trade and public space shape the city experience.'},
-            {'title': 'Botanical garden', 'text': 'Botanical garden is a calm green stop for slower visits and seasonal colour.'},
-            {'title': 'Market hall', 'text': 'Market hall is a practical food and neighbourhood stop with local vendors under one roof.'},
+            {'title': 'Attraction one', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction two', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction three', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction four', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction five', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
+            {'title': 'Attraction six', 'text': 'Attraction copy slot shown with a matching city See image when the image file exists.'},
         ],
         'history': [
             {'label': '1624', 'text': 'Early settlement, harbor, river, fort or market activity shape the first city identity.'},
