@@ -100,8 +100,52 @@ def body_text(h):
     return re.sub(r'<[^>]+>', ' ', h)
 
 
+_TRACKED_FILES = None
+
+def tracked_files():
+    """All paths tracked in HEAD (i.e. what will actually exist after this push),
+    loaded once and cached. Used to catch referenced assets that were edited on
+    disk but never `git add`ed -- the exact bug class that shipped a 404'd
+    assets/js/4_featured-rotator.js to prod on 2026-08-11."""
+    global _TRACKED_FILES
+    if _TRACKED_FILES is None:
+        out = subprocess.run(['git', 'ls-tree', '-r', 'HEAD', '--name-only'],
+                              cwd=ROOT, capture_output=True, text=True)
+        _TRACKED_FILES = set(out.stdout.splitlines())
+    return _TRACKED_FILES
+
+
+def check_tracked_assets(path, h):
+    """Every local (non-http) css/js href|src the page references must resolve to
+    a file that is actually tracked in HEAD -- not just present on the working-tree
+    disk. A file can render perfectly in local dev/QA while being invisible to git,
+    which means it 404s in prod the moment it's pushed. This is the gate's only
+    defence against that, so it must never be skipped or weakened."""
+    fails = []
+    page_dir = os.path.dirname(path)
+    tracked = tracked_files()
+    for m in re.finditer(r'(?:href|src)="([^"]+\.(?:css|js)[^"]*)"', h, re.I):
+        raw = re.sub(r'\?.*$', '', m.group(1))
+        if raw.startswith(('http://', 'https://', '//', 'data:')):
+            continue
+        if raw.startswith('/'):
+            abs_path = os.path.normpath(os.path.join(ROOT, raw.lstrip('/')))
+        else:
+            abs_path = os.path.normpath(os.path.join(page_dir, raw))
+        try:
+            rel_git = os.path.relpath(abs_path, ROOT).replace('\\', '/')
+        except ValueError:
+            continue
+        if rel_git.startswith('..') or rel_git.startswith('Templates/'):
+            continue  # Dev-tree references are a separate, pre-existing issue
+        if rel_git not in tracked:
+            fails.append(f'asset referenced but not tracked in git (will 404 in prod): {rel_git}')
+    return fails
+
+
 def check(path, h):
     fails = []
+    fails.extend(check_tracked_assets(path, h))
 
     # 200-redirect stubs (build-events.py's redirect_stub(): <title>Moved</title> +
     # canonical + meta-refresh to the real page) are a deliberate, minimal page type,
