@@ -2,6 +2,29 @@
 
 This document specifies how event pages on OneSliders are built. **Follow it literally.** Do not improvise layouts, components, or features that are not described here. If something is unclear, ask before implementing.
 
+## 0.1 Active Bug Lock
+
+Before making any code, content, script, data, image, generated-page, or configuration change, Codex must read `.active-bug.md` if it exists.
+
+Bug severity levels:
+- `low`: tracked bug. Normal project work may continue.
+- `medium`: important tracked bug. Normal project work may continue unless the user explicitly asks to prioritize the bug.
+- `high`: blocking bug. Codex must stop all unrelated work and may only work on the active high bug.
+
+When `.active-bug.md` contains `Status: active` and `Severity: high`:
+- Only work on the bug described in `.active-bug.md`.
+- Do not fix unrelated issues.
+- Do not refactor unrelated code.
+- Do not update unrelated content, data, images, or generated pages.
+- Do not run bulk generation scripts unless the active bug explicitly requires that script.
+- Follow the workflow and allowed files/scripts written in `.active-bug.md`.
+- If the user asks for unrelated work, stop and say that a high active bug lock exists.
+- If another issue is discovered while fixing the high bug, record it separately or mention it, but do not fix it unless it blocks the active bug.
+
+When `.active-bug.md` contains `Status: active` with `Severity: low` or `Severity: medium`, Codex should mention the tracked bug when relevant, but it may still work on other requested tasks.
+
+When `.active-bug.md` contains `Status: none`, or the file does not exist, normal project work may continue.
+
 ## 0.4 Location And City Image Preservation
 
 Existing real location images under `content/locations/**/img` are protected assets. Do not overwrite country, region, or city images with generated replacements, placeholders, fallback images, or scripted bulk output unless the user explicitly asks to replace that exact asset.
@@ -17,6 +40,44 @@ Do not use another city, a nearby city, a country hero, or a generic regional im
 Never place dark filters, dark gradients, black overlays, opacity scrims, or brightness-reducing CSS filters over images. Images must remain visually clear. If text needs readability on an image card, put the text on its own solid or semi-opaque light surface; do not darken the image.
 
 Never hardcode a mosaic layout for one specific page or one fixed item count. Use a reusable count-aware mosaic pattern so the grid adapts automatically to the number of nodes available, including 1, 2, 3, 5, or more topics, cities, events, or related nodes.
+
+## 0.6 Photorealistic AI Image Rule
+
+AI-generated images are allowed and often expected when no suitable project-local photo exists. However, when the user asks for a real-looking event, city, food, hero, mini, or `See` image, the generated asset must be **photorealistic** and must look like a plausible editorial/travel/event photograph. Do not create obviously fake-looking, cartoon, vector, icon, flat illustration, diagram, collage, or synthetic placeholder-style images unless the user explicitly asks for that style.
+
+For `See` thumbnails and event hero/mini images, "AI image" means photo-realistic scene generation by default. Avoid fake-feeling composites, impossible details, wrong landmarks, wrong season, wrong holiday symbols, wrong city, wrong country, or generic filler. If the prompt is about Sweden National Day, do not generate a midsummer pole, Stockholm-specific scene, or another holiday's visual language unless the user explicitly asks for it.
+
+Do not fetch or download images from the internet unless the user explicitly allows internet image sourcing for that exact task. If neither a suitable local image nor an acceptable photorealistic AI generation path is available, stop and explain what input is needed.
+
+## 0.7 Template Snapshot Before Scripted Rebuilds
+
+When iterating on a template/test page with the user, the current template output is a protected design agreement. Before running any script that can regenerate or overwrite that template page, create a snapshot copy of the current HTML output and keep it in `tmp/template-snapshots/` with a descriptive filename such as `{slug}-before-{script-name}.html`.
+
+This is mandatory when the user asks to run a build/generation script after approving or refining a template page. After the script runs, compare the regenerated page against the snapshot before continuing. If the script removed agreed content, images, tabs, stay options, copy, or layout, treat that as a script/source-data bug and fix the generator or source data so the approved template survives future builds. Do not rely only on manually patching the generated output.
+
+Never overwrite a hand-refined template page without first preserving the pre-script version somewhere local in the workspace. The snapshot exists so we can prove what looked good, compare whether the script works, and restore or migrate the approved design safely.
+
+## 0.8 No Dummy Data Ever
+
+Never create dummy data, filler data, placeholder facts, generic completion text, or synthetic "good enough" content in CSV, JSON, HTML, templates, generated pages, or scripts. This is absolute.
+
+If real content is missing, incomplete, unverified, or not available from trusted project-local data or approved research, leave the field empty, write `TBC` only where the schema explicitly allows it, or stop and explain exactly what source/input is needed. Do not make the row look complete.
+
+Do not use generic copy such as "local dishes", "celebration meals", "flag ceremonies", "capital events", "this row uses...", "should be refined...", or any similar wording as a substitute for real country/event-specific content.
+
+When expanding CSV data from an approved high-quality example set, first treat the existing good rows as protected examples. Match their specificity and factual quality. If that level of quality cannot be reached for a row, do not fill that row with dummy content.
+
+Bulk scripts that enrich data must include a dry-run or audit mode before writing, and must report exactly which rows they would change. They must protect existing hand-curated rows unless the user explicitly asks to overwrite those exact rows.
+
+## 0.9 Link And Asset Build Gate
+
+Before moving a task to `tmp/tasks/QA/` or `tmp/tasks/PROD/`, run:
+
+```powershell
+node scripts/tools/check-links.mjs
+```
+
+The script must be green unless the task file explicitly documents a known blocker. It checks served HTML/JSON in `content/`, root pages, and `ru/`, verifies internal `href`, `src`, and `srcset` targets, verifies `sitemap.xml` targets, and fails on duplicate generated paths such as `categories/contentcategories`.
 
 ## 1. Purpose
 
@@ -352,7 +413,7 @@ Every event has exactly two images. Both are required. Both must be generated if
 - Both images use the same visual style and palette.
 - The mini image is **never** used on the event's own page. It is only for other pages linking inward.
 - Storage path: `/{topic-path}/events/img/{event-slug}-hero.png` and `.../{event-slug}-mini.png`.
-- AI-generated images are acceptable. Avoid generic stock-photo feel.
+- AI-generated images are acceptable and should be used when no suitable project-local photo exists, but they must be photorealistic by default. Avoid generic stock-photo feel, illustration-like output, fake-looking composites, impossible scenes, wrong landmarks, wrong seasons, and wrong holiday symbols.
 - If a real photo becomes available later, replace the file at the same path. Linking pages update automatically.
 
 ## 12. Shared Assets
