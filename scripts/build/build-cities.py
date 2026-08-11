@@ -26,6 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 DOMAIN = 'https://one-sliders.com'
 TODAY = date(2026, 6, 14)
 MISSING_NODE_MINIS = []
+TEST_MODE = False
 
 # Load population and airport mappings
 POPULATION_MAP = {}
@@ -213,14 +214,14 @@ CONTENT_RULES = {
     'see_min_cards': 6,
     'history_min_rows': 6,
     'history_max_rows': 14,
-    'see_text_words': (18, 32),
-    'stay_overview_words': (32, 58),
-    'hotel_intro_words': (32, 52),
-    'area_text_words': (18, 30),
-    'airport_text_words': (18, 30),
-    'nearby_text_words': (14, 24),
-    'tip_text_words': (16, 28),
-    'city_intro_words': (44, 72),
+    'see_text_words': (0, 32),
+    'stay_overview_words': (0, 58),
+    'hotel_intro_words': (0, 52),
+    'area_text_words': (0, 30),
+    'airport_text_words': (0, 30),
+    'nearby_text_words': (0, 24),
+    'tip_text_words': (0, 28),
+    'city_intro_words': (0, 72),
 }
 
 
@@ -242,10 +243,10 @@ def clamp_words(text, max_words):
 
 
 def bounded_text(text, fallback, rule):
-    min_words, max_words = CONTENT_RULES[rule]
+    _, max_words = CONTENT_RULES[rule]
     source = str(text or '').strip()
-    if len(words(source)) >= min_words:
-        return source
+    if source:
+        return clamp_words(source, max_words)
     return clamp_words(fallback, max_words)
 
 
@@ -664,9 +665,17 @@ def render_template_city(d):
     description = f'Plan {name} around {landmark}, hotel areas, {desc_suffix} and local events.'
     if len(description) > 155:
         description = f'Plan {name}: {landmark}, hotel areas and events.' if len(f'Plan {name}: {landmark}, hotel areas and events.') <= 155 else f'Travel guide for {name}.'
+    intro_anchors = [city_item_label(item) for item in highlights[:3] if city_item_label(item)]
+    if intro_anchors:
+        intro_anchor_text = ', '.join(intro_anchors[:-1]) + (f' and {intro_anchors[-1]}' if len(intro_anchors) > 1 else intro_anchors[0])
+        intro_fallback = f'Plan {name} as a {country_name} base around {intro_anchor_text}.'
+    else:
+        intro_fallback = f'Plan {name} around confirmed sights, hotel areas and local event links in {country_name}.'
+    if airports:
+        intro_fallback += f' {airports[0].get("name", "The main airport")} is the main arrival anchor.'
     intro = bounded_text(
         d.get('heroText'),
-        f'{name} is a city in {country_name} shaped by its region, population, local economy, landmarks, climate and civic history. This overview summarizes the city itself: where it sits, what defines it, which places anchor its identity and why it matters within the wider country.',
+        intro_fallback,
         'city_intro_words'
     )
     intro_title = d.get('introTitle') or f'{name} city overview'
@@ -1041,9 +1050,16 @@ def render_template_city(d):
 <html lang="en">
 <head>
   <!-- OneSlider generic city page -->
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css?v=city-weather-dark-20260614">
+  <link rel="stylesheet" href="/assets/css/1_colours.css">
+  <link rel="stylesheet" href="/assets/css/1_typography.css">
+  <link rel="stylesheet" href="/assets/css/1_core.css">
+  <link rel="stylesheet" href="/assets/css/2_frame.css">
+  <link rel="stylesheet" href="/assets/css/3_city.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-tabs.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-weather.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-stay.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-see.css">
   <link rel="preload" as="image" href="{hero_preload}">
-  <script defer src="/assets/js/oneslider-core.js?v=city-generic-20260613"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
@@ -1065,9 +1081,7 @@ def render_template_city(d):
   <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/locations.css?v=city-weather-dark-20260614">
-  <meta name="theme-color" content="#0d2137">
-  <script type="application/ld+json">{ldjson}</script>
+  <meta name="theme-color" content="Canvas">
 </head>
 <body class="country-onepage city-page--stay-template city-page--template">
   <nav class="top-menu" aria-label="Location navigation">
@@ -1125,15 +1139,22 @@ def render(d):
         return (f'<img src="{esc(src)}"{ss_attr} alt="{esc(alt)} thumbnail" '
                 f'loading="lazy" width="400" height="300">')
 
-    # hero image-set (q92 webp + png fallback); single quotes inside url()
+    # hero picture (q92 webp + png fallback)
     hero_1200 = f"{img_base}/{slug}-hero-1200.webp"
+    hero_srcset = []
+    for ww in (400, 768, 1200):
+        cand = f"{img_base}/{slug}-hero-{ww}.webp"
+        if _has(cand):
+            hero_srcset.append(f"{cand} {ww}w")
+    hero_sizes = '(max-width: 720px) 100vw, 42vw'
     if _has(hero_1200):
-        hero_url = (f"image-set(url('{hero_1200}') type('image/webp'), "
-                    f"url('{hero}') type('image/png'))")
         hero_preload = hero_1200
+        source_srcset = ', '.join(hero_srcset) if hero_srcset else hero_1200
+        img_srcset = f' srcset="{source_srcset}" sizes="{hero_sizes}"' if hero_srcset else ''
+        hero_picture = f'<picture class="country-hero-image country-hero-image--clear" aria-hidden="true"><source srcset="{source_srcset}" sizes="{hero_sizes}" type="image/webp"><img src="{hero}"{img_srcset} alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
     else:
-        hero_url = f"url('{hero}')"
         hero_preload = hero
+        hero_picture = f'<picture class="country-hero-image country-hero-image--clear" aria-hidden="true"><img src="{hero}" alt="" width="1200" height="630" loading="eager" decoding="async"></picture>'
 
     # JSON-LD
     jsonld = {
@@ -1249,10 +1270,17 @@ def render(d):
     return f'''<!doctype html>
 <html lang="en">
 <head>
-  <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="{up}assets/css/oneslider-core.css">
+  <!-- OneSlider location CSS v4 -->
+  <link rel="stylesheet" href="{up}assets/css/1_colours.css">
+  <link rel="stylesheet" href="{up}assets/css/1_typography.css">
+  <link rel="stylesheet" href="{up}assets/css/1_core.css">
+  <link rel="stylesheet" href="{up}assets/css/2_frame.css">
+  <link rel="stylesheet" href="{up}assets/css/3_city.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-tabs.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-weather.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-stay.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-see.css">
   <link rel="preload" as="image" href="{hero_preload}">
-<script defer src="{up}assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="{esc(seo['twitterDescription'])}">
@@ -1269,17 +1297,15 @@ def render(d):
   <link rel="icon" href="{up}assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{up}assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="{up}assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-20260602-langmenu">
-  <meta name="theme-color" content="#0d2137">
+  <meta name="theme-color" content="Canvas">
   <title>{esc(seo['title'])}</title>
-  <script type="application/ld+json">{ldjson}</script>
 </head>
 <body class="country-onepage">
   {nav}
   <main class="page-shell country-slide country-content-box">
     <section class="country-brief" aria-label="{esc(name)} one-slide overview">
       <div class="country-brief__copy">
-        <div class="country-hero-image country-hero-image--clear" style="--country-hero-url: {hero_url}" aria-hidden="true"></div>
+        {hero_picture}
         <img class="flag-badge" src="img/flag.svg" alt="{esc(country_name)} flag" width="1280" height="640" loading="lazy">
         <p class="kicker">{esc(d['kicker'])}</p>
         <h1 class="hero-title">{esc(name)}</h1>
@@ -1475,6 +1501,7 @@ def extract(city_path):
 # ====================================================================== build
 def write(path, text):
     import time
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     for _ in range(5):
         try:
             with open(path, 'w', encoding='utf-8', newline='') as fh:
@@ -1541,7 +1568,11 @@ def build_city(city_path, extract_first=False):
 
     data = normalize_city_data(data, city_path)
     html = render_template_city(data)
-    write(os.path.normpath(city_path), html)
+    output_path = city_path
+    if TEST_MODE:
+        output_path = os.path.join(ROOT, 'Templates', 'test', os.path.relpath(city_path, ROOT))
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    write(os.path.normpath(output_path), html)
     write_missing_node_mini_log()
     return data
 
@@ -1657,6 +1688,10 @@ def build_city_paths(paths):
 
 
 def main(argv):
+    global TEST_MODE
+    if '--test' in argv:
+        TEST_MODE = True
+        argv.remove('--test')
     exclude_prefixes = []
     i = 0
     while i < len(argv):
