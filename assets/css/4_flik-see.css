@@ -1,0 +1,273 @@
+/* Split from 3_city.css. Subject-selector ownership lives in this flik module. */
+.destination-side-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.destination-side-fact {
+  min-width: 0;
+  padding: 10px 11px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.destination-side-fact--wide {
+  grid-column: 1 / -1;
+}
+
+.destination-side-fact span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destination-side-fact strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--location-ink);
+  font-size: 17px;
+  line-height: 1.05;
+}
+
+.destination-experience-grid,
+.destination-attraction-grid,
+.destination-highlight-grid,
+.destination-nearby-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.destination-experience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.destination-experience-card,
+.destination-attraction-card,
+.destination-highlight,
+.destination-nearby-card {
+  min-width: 0;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
+}
+
+.destination-experience-card,
+.destination-nearby-card {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.destination-attraction-card:target {
+  scroll-margin-top: 90px;
+  border-color: var(--location-theme-2);
+  border-width: 3px;
+}
+
+.destination-nearby-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 10px;
+}
+
+.destination-nearby-card .node-mini-hero {
+  display: block;
+  width: 100%;
+  height: 112px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--location-soft);
+}
+
+.destination-experience-card:hover,
+.destination-experience-card:focus-visible,
+.destination-nearby-card:hover,
+.destination-nearby-card:focus-visible {
+  border-color: var(--location-theme);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.destination-experience-card span,
+.destination-highlight span,
+.destination-nearby-card span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.destination-experience-card strong,
+.destination-experience-card h3,
+.destination-highlight strong,
+.destination-nearby-card strong,
+.destination-nearby-card h3 {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-ink);
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.destination-experience-card h3,
+.destination-nearby-card h3 {
+  margin-bottom: 0;
+}
+
+.city-page--template .view-panel--visit .destination-side-facts {
+  gap: 7px;
+  margin: 8px 0 0;
+}
+
+.city-page--template .view-panel--visit .destination-side-fact {
+  padding: 8px 10px;
+}
+
+.destination-experience-card p,
+.destination-attraction-card p,
+.destination-highlight p,
+.destination-nearby-card p {
+  margin: 7px 0 0;
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.destination-attraction-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  align-items: start;
+  overflow-y: auto;
+  max-height: 100%;
+  scrollbar-width: thin;
+}
+
+.destination-attraction-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  min-height: 0;
+  overflow: hidden;
+  align-self: start;
+}
+
+.destination-attraction-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.destination-attraction-card--text-only {
+  display: flex;
+  min-height: 132px;
+}
+
+.destination-attraction-card--text-only div {
+  align-self: center;
+}
+
+.destination-attraction-card div {
+  min-height: 0;
+  padding: 11px 12px 12px;
+  overflow: hidden;
+}
+
+.destination-attraction-card strong,
+.destination-attraction-card h3 {
+  display: block;
+  margin: 0;
+  color: var(--location-ink);
+  font-size: 15px;
+  line-height: 1.08;
+}
+
+.destination-attraction-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--location-theme);
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+a.destination-attraction-card:hover,
+a.destination-attraction-card:focus-visible {
+  border-color: var(--location-theme);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.destination-highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.destination-highlight {
+  padding: 12px;
+}
+
+.destination-nearby-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+@media (max-width: 1120px) {
+.city-page--template .destination-experience-grid,
+.city-page--template .destination-attraction-grid,
+.city-page--template .destination-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+.city-page--template .destination-nearby-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+.destination-side-facts,
+.destination-experience-grid,
+.destination-attraction-grid,
+.destination-highlight-grid,
+.destination-nearby-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .destination-side-facts,
+.city-page--template .destination-experience-grid,
+.city-page--template .destination-attraction-grid,
+.city-page--template .destination-highlight-grid,
+.city-page--template .destination-nearby-grid {
+    grid-template-columns: 1fr;
+  }
+
+.city-page--template .destination-attraction-card img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .destination-side-facts,
+.city-page--template .destination-experience-grid,
+.city-page--template .destination-attraction-grid,
+.city-page--template .destination-highlight-grid,
+.city-page--template .destination-nearby-grid {
+    grid-template-columns: 1fr;
+  }
+}
