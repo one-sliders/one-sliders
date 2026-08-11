@@ -3,12 +3,14 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const DEV_ROOT = path.join(ROOT, 'Dev');
+const TEST_ROOT = path.join(ROOT, 'Templates', 'test');
 const args = new Set(process.argv.slice(2));
 const writeDev = !args.has('--prod');
+const writeTest = args.has('--test');
 const scope = valueArg('--scope') || 'sport';
 const slugFilter = valueArg('--slug');
 const topicFilter = valueArg('--topic');
-const targetRoot = writeDev ? DEV_ROOT : ROOT;
+const targetRoot = writeTest ? TEST_ROOT : (writeDev ? DEV_ROOT : ROOT);
 const outRoot = path.join(targetRoot, 'content');
 const CONTENT_BASE = '/content';
 const CSS_BASE = '/assets/css';
@@ -106,6 +108,7 @@ const countryPaths = {
   czechia: 'europe/czechia',
   france: 'europe/france',
   germany: 'europe/germany',
+  ethiopia: 'africa/ethiopia',
   india: 'asia/india',
   ireland: 'europe/ireland',
   italy: 'europe/italy',
@@ -114,6 +117,7 @@ const countryPaths = {
   monaco: 'europe/monaco',
   morocco: 'africa/morocco',
   netherlands: 'europe/netherlands',
+  'new zealand': 'oceania/new-zealand',
   paraguay: 'south-america/paraguay',
   peru: 'south-america/peru',
   poland: 'europe/poland',
@@ -151,6 +155,17 @@ function countryObject(name) {
   };
 }
 
+const cityPaths = {
+  sydney: 'oceania/australia/sydney.html'
+};
+
+function cityLink(name) {
+  const normalized = String(name || '').trim();
+  if (!normalized) return '';
+  const cityPath = cityPaths[normalized.toLowerCase()];
+  return cityPath ? `<a href="${CONTENT_BASE}/locations/${cityPath}">${esc(normalized)}</a>` : esc(normalized);
+}
+
 const knownVenueOverrides = {
   'abu-dhabi-grand-prix': { city: 'Abu Dhabi', venue: 'Yas Marina Circuit', country: 'United Arab Emirates' },
   'africa-cup-of-nations': { city: 'Kenya / Tanzania / Uganda', venue: 'Kenya, Tanzania and Uganda', countries: ['Kenya', 'Tanzania', 'Uganda'], bookingCity: 'Nairobi', primaryCountry: 'Kenya' },
@@ -165,17 +180,35 @@ const knownVenueOverrides = {
   'motogp-japan': { city: 'Motegi', venue: 'Mobility Resort Motegi', country: 'Japan', bookingCity: 'Utsunomiya', bookingAreas: ['Utsunomiya', 'Motegi', 'Mito', 'Tokyo'] },
   'nba-finals': { city: 'United States / Canada', venue: 'Finalists home arenas', country: 'United States' },
   'new-york-city-marathon': { city: 'New York', venue: 'New York City five-borough course', country: 'United States' },
+  'sydney-marathon': {
+    city: 'Sydney',
+    venue: 'Miller Street, North Sydney to Sydney Opera House Forecourt',
+    country: 'Australia',
+    bookingCity: 'Sydney',
+    bookingAreas: ['Sydney CBD', 'Circular Quay and The Rocks', 'North Sydney', 'Surry Hills']
+  },
   'nrl-grand-final': { city: 'Sydney', venue: 'Accor Stadium', country: 'Australia' },
   'qatar-grand-prix': { city: 'Lusail', venue: 'Lusail International Circuit', country: 'Qatar' },
   'sao-paulo-grand-prix': { city: 'Sao Paulo', venue: 'Autodromo Jose Carlos Pace', country: 'Brazil' },
   'singapore-grand-prix': { city: 'Singapore', venue: 'Marina Bay Street Circuit', country: 'Singapore' },
   'stanley-cup-final': { city: 'United States / Canada', venue: 'Home arenas of the remaining clubs', country: 'United States' },
+  'the-hundred-final': { startDate: '2026-08-16', endDate: '2026-08-17', city: 'London', venue: 'Lord\'s Cricket Ground', country: 'United Kingdom', forceCountry: true },
   'tour-de-france': { city: 'Barcelona', venue: 'Grand Depart and route stages', country: 'France' },
   'united-states-grand-prix': { city: 'Austin', venue: 'Circuit of The Americas', country: 'United States' },
   'wimbledon': { city: 'London', venue: 'All England Lawn Tennis Club', country: 'United Kingdom' }
 };
 
 const eventNotes = {
+  'wimbledon': {
+    format: 'Grass-court Grand Slam',
+    focus: 'Wimbledon is the oldest of tennis\' four majors and the only Grand Slam still played on grass. It is held at the All England Lawn Tennis Club in Wimbledon, London.',
+    follow: 'Watch the order of play, court allocation, weather, queue guidance and transport around Wimbledon and Southfields.'
+  },
+  'the-hundred-final': {
+    format: '100-ball cricket finals day',
+    focus: 'The Hundred Final is the championship day for the ECB\'s 100-ball competition, with the women\'s and men\'s trophies decided at Lord\'s after the league stage and eliminator.',
+    follow: 'Watch the final league table, the eliminator winners, Lord\'s entry timings and late transport from St John\'s Wood and Marylebone.'
+  },
   'champions-league-final': {
     format: 'One-match UEFA club final',
     focus: 'The Champions League Final decides the top club in Europe after the knockout rounds. The finalists are not known until spring, but the host city, stadium and travel demand shape planning long before then.',
@@ -210,10 +243,224 @@ const eventNotes = {
     format: 'African national-team championship',
     focus: 'The Africa Cup of Nations is CAF’s national-team championship. A multi-host edition is about fixture cities, team followings, climate, transport and knockout movement.',
     follow: 'Watch the draw, confirmed stadium list, team bases and which host country carries the matches you want to see.'
+  },
+  'sydney-marathon': {
+    format: '42.195 km road marathon and race-week running festival',
+    focus: 'Sydney Marathon is the first Abbott World Marathon Major in Oceania, with a point-to-point city course from North Sydney across the Harbour Bridge to the Opera House finish. The 2026 race suits runners chasing a major-star finish, travelling supporters planning a harbour weekend and spectators who want a clear place to watch the city course unfold.',
+    follow: 'Track official ballot, charity and travel-package updates, then plan bib collection at Sydney Showground, race-morning trains to North Sydney, road closures and the Opera House finish crowds.'
+  }
+};
+
+const eventOverviewOverrides = {
+  'the-hundred-final': {
+    place: 'London, England',
+    facts: [
+      { label: 'First season', value: '2021' },
+      { label: 'Format', value: '100 balls per innings' },
+      { label: 'Finals venue', value: 'Lord\'s Cricket Ground' },
+      { label: 'Finals day', value: 'Women\'s final and men\'s final' },
+      { label: 'Competition field', value: '8 city-based teams in each competition' },
+      { label: 'Knockout route', value: 'League leader to final; 2nd v 3rd in eliminator' }
+    ],
+    blocks: [
+      {
+        title: 'A short-format cricket title day',
+        text: 'The Hundred Final closes the 100-ball season with two title matches on the same Lord\'s stage. The format is built for short innings, fast field changes and a clear result window for spectators.'
+      },
+      {
+        title: 'How teams reach Lord\'s',
+        text: 'The league leader goes straight to the final. The teams finishing second and third meet in an eliminator, and that winner comes to Lord\'s to play for the trophy.'
+      },
+      {
+        title: 'Visiting Lord\'s on finals day',
+        text: 'Plan around St John\'s Wood, Baker Street and Marylebone rather than driving close to the ground. Arrive early enough for bag checks and remember that one day can include both women\'s and men\'s finals.'
+      },
+      {
+        title: 'What to watch before booking',
+        text: 'The finalists are only known after the league stage and eliminator, so the practical checks are match timings, ticket category, weather, late Tube options and whether you want to stay near Lord\'s or elsewhere in central London.'
+      }
+    ]
+  },
+  'wimbledon': {
+    place: 'London, England',
+    facts: [
+      { label: 'Founded', value: '1877' },
+      { label: 'Surface', value: 'Grass courts' },
+      { label: 'Grand Slam slot', value: 'Third major of season' },
+      { label: 'Venue area', value: 'Wimbledon, London, England' },
+      { label: 'Format', value: 'Singles, doubles, mixed, juniors' },
+      { label: 'Traditions', value: 'All-white kit, Queue, strawberries' }
+    ],
+    blocks: [
+      {
+        title: 'Centre Court, grass and SW19',
+        text: 'Wimbledon is the oldest major in tennis, first held in 1877, and its identity is still tied to grass courts, Centre Court and the All England Lawn Tennis Club in south-west London.'
+      },
+      {
+        title: 'Grass changes the match',
+        text: 'The grass surface usually means lower bounce, quicker points and more pressure on the first strike. Early-round outside courts can be especially good value because several singles matches may run close together.'
+      },
+      {
+        title: 'First-time visit tips',
+        text: 'Decide first whether you are aiming for a show-court ticket, a grounds pass or the Queue. Arrive with time for entry checks, wear shoes for a long walking day, and plan around Southfields, Wimbledon or a direct Tube/rail route rather than driving close to the grounds.'
+      },
+      {
+        title: 'What to prepare for',
+        text: 'London weather can swing between sun, rain and cool evenings during the same day. Pack light layers, sun protection and a small rain layer; if play runs late, keep enough time for the walk back to station queues after the final match.'
+      }
+    ]
+  },
+  'sydney-marathon': {
+    factsMode: 'replace',
+    facts: [
+      { label: 'Date', value: '30 Aug 2026' },
+      { label: 'City', html: cityLink('Sydney') },
+      { label: 'Distance', value: '42.195 km' },
+      { label: '2025 finishers', value: '32,963' },
+      { label: '2025 spectators', value: '200K+' },
+      { label: 'Course cutoff', value: '7 hours' }
+    ],
+    blocks: [
+      {
+        title: 'Who this race is for',
+        text: 'Sydney Marathon is an Abbott World Marathon Major for runners who still want the feel of a destination race. The draw is the course: a Miller Street start in North Sydney, the Harbour Bridge early, city landmarks through The Rocks, Circular Quay and Centennial Park, then the Sydney Opera House Forecourt finish.'
+      },
+      {
+        title: 'Why 2026 matters',
+        text: 'The 2026 edition is the second Sydney Marathon after its World Marathon Major debut. The general ballot has closed, so late planners should watch charity and official travel-package routes. Treat hotels near the CBD, Circular Quay and North Sydney as race logistics, not just sightseeing.'
+      },
+      {
+        title: 'Race-week rhythm',
+        text: 'Bib collection is at the Running Show at Sydney Showground from 27 to 29 August 2026. Build one Olympic Park trip into race week, then keep race morning simple: the marathon starts early in North Sydney and finishes at the Opera House.'
+      },
+      {
+        title: 'How to watch or support',
+        text: 'Supporters get the best value by planning around public transport and choosing one or two course points, rather than trying to chase a runner by car. The finish precinct around Circular Quay and the Opera House is the emotional anchor, but it will also be the most crowded part of the day.'
+      }
+    ]
   }
 };
 
 const futureEditionOverrides = {
+  'sydney-marathon': [
+    {
+      year: 2027,
+      headingPlace: 'in Sydney',
+      status: 'upcoming',
+      statusLabel: 'Announced',
+      startDate: '2027-08-29',
+      endExclusive: '2027-08-30',
+      dates: '29 Aug 2027',
+      countries: ['Australia'],
+      cities: [{ name: 'Sydney' }],
+      venue: 'Sydney marathon course',
+      format: '42.195 km road marathon',
+      countdownText: 'Sydney Marathon 2027 is listed for 29 August 2027 in Sydney.',
+      calendarDescription: 'Sydney Marathon 2027.',
+      questions: [],
+      highlights: [
+        {
+          label: 'Date',
+          title: '29 Aug 2027',
+          detail: 'The 2027 race is listed for the last Sunday of August in Sydney.'
+        }
+      ]
+    }
+  ],
+  'wimbledon': [
+    {
+      year: 2027,
+      headingPlace: 'in London',
+      status: 'upcoming',
+      statusLabel: 'Scheduled',
+      startDate: '2027-06-28',
+      endExclusive: '2027-07-12',
+      dates: '28 Jun 2027 - 11 Jul 2027',
+      countries: ['United Kingdom'],
+      cities: [{ name: 'London' }],
+      venue: 'All England Lawn Tennis Club',
+      format: 'Tennis',
+      countdownText: 'Wimbledon 2027 is scheduled for 28 June to 11 July 2027.',
+      calendarDescription: 'Wimbledon 2027.',
+      questions: [],
+      highlights: [
+        {
+          label: 'Dates',
+          title: '28 Jun 2027 - 11 Jul 2027',
+          detail: 'The 2027 Championships are scheduled for the usual two-week grass-court window in London.'
+        }
+      ]
+    },
+    {
+      year: 2028,
+      headingPlace: 'in London',
+      status: 'upcoming',
+      statusLabel: 'Scheduled',
+      startDate: '2028-07-03',
+      endExclusive: '2028-07-17',
+      dates: '3 Jul 2028 - 16 Jul 2028',
+      countries: ['United Kingdom'],
+      cities: [{ name: 'London' }],
+      venue: 'All England Lawn Tennis Club',
+      format: 'Tennis',
+      countdownText: 'Wimbledon 2028 is scheduled for 3 July to 16 July 2028.',
+      calendarDescription: 'Wimbledon 2028.',
+      questions: [],
+      highlights: [
+        {
+          label: 'Dates',
+          title: '3 Jul 2028 - 16 Jul 2028',
+          detail: 'Wimbledon lists the 2028 Championships for this two-week window in London.'
+        }
+      ]
+    },
+    {
+      year: 2029,
+      headingPlace: 'in London',
+      status: 'upcoming',
+      statusLabel: 'Scheduled',
+      startDate: '2029-07-02',
+      endExclusive: '2029-07-16',
+      dates: '2 Jul 2029 - 15 Jul 2029',
+      countries: ['United Kingdom'],
+      cities: [{ name: 'London' }],
+      venue: 'All England Lawn Tennis Club',
+      format: 'Tennis',
+      countdownText: 'Wimbledon 2029 is scheduled for 2 July to 15 July 2029.',
+      calendarDescription: 'Wimbledon 2029.',
+      questions: [],
+      highlights: [
+        {
+          label: 'Dates',
+          title: '2 Jul 2029 - 15 Jul 2029',
+          detail: 'Wimbledon lists the 2029 Championships for this two-week window in London.'
+        }
+      ]
+    },
+    {
+      year: 2030,
+      headingPlace: 'in London',
+      status: 'upcoming',
+      statusLabel: 'Scheduled',
+      startDate: '2030-07-01',
+      endExclusive: '2030-07-15',
+      dates: '1 Jul 2030 - 14 Jul 2030',
+      countries: ['United Kingdom'],
+      cities: [{ name: 'London' }],
+      venue: 'All England Lawn Tennis Club',
+      format: 'Tennis',
+      countdownText: 'Wimbledon 2030 is scheduled for 1 July to 14 July 2030.',
+      calendarDescription: 'Wimbledon 2030.',
+      questions: [],
+      highlights: [
+        {
+          label: 'Dates',
+          title: '1 Jul 2030 - 14 Jul 2030',
+          detail: 'Wimbledon lists the 2030 Championships for this two-week window in London.'
+        }
+      ]
+    }
+  ],
   'fifa-world-cup': [
     {
       year: 2030,
@@ -275,6 +522,19 @@ const futureEditionOverrides = {
           detail: 'Wait for fixture allocation before deciding which country or city to build the trip around.'
         }
       ]
+    }
+  ]
+};
+
+const historyNoEditionOverrides = {
+  'sydney-marathon': [
+    {
+      year: 2021,
+      note: 'No in-person Sydney Marathon was held.'
+    },
+    {
+      year: 2020,
+      note: 'No in-person Sydney Marathon was held.'
     }
   ]
 };
@@ -462,6 +722,9 @@ function whereDetail(event) {
   if (isMultiHostEvent(event)) {
     return `${event.title} uses more than one host area, so the useful answer is the match or session you plan to attend, not one generic city. Choose the fixture city first, then plan flights and hotels around that route.`;
   }
+  if (event.slug === 'sydney-marathon') {
+    return 'The marathon starts on Miller Street in North Sydney, crosses the Harbour Bridge and finishes at the Sydney Opera House Forecourt.';
+  }
   return `${event.title} is held at ${event.venue} in ${placeText(event)}.`;
 }
 
@@ -474,6 +737,12 @@ function stayGuidance(event) {
     };
   }
   const first = areas[0] || event.bookingCity || event.city;
+  if (event.slug === 'sydney-marathon') {
+    return {
+      answer: areas.join(', '),
+      detail: 'Stay near the CBD or Circular Quay for the finish, North Sydney for an easier start, or Surry Hills for restaurants and rail access. Build in one separate trip to Sydney Olympic Park for bib collection.'
+    };
+  }
   return {
     answer: areas.join(', '),
     detail: `${first} is the first stay search. Compare it with ${event.venue}, local transport and how the area works after the event ends.`
@@ -485,7 +754,7 @@ function bookingPanel(event) {
   const bookingHref = `${BOOKING_BASE}ss=${encodeURIComponent(`${event.bookingCity}, ${event.primaryCountry.name}`)}`;
   const checkIn = addDaysIso(event.startDate, -1);
   const checkOut = checkoutDate(event);
-  return `<section class="stay-booking-panel hero-stay-booking" data-national-day-stay data-booking-base="${esc(BOOKING_BASE)}" data-booking-country="${esc(event.primaryCountry.name)}" aria-label="Book hotels for ${esc(event.title)}">
+  return `<section class="stay-booking-panel hero-stay-booking" data-event-stay data-booking-base="${esc(BOOKING_BASE)}" data-booking-country="${esc(event.primaryCountry.name)}" aria-label="Book hotels for ${esc(event.title)}">
     <div class="stay-booking-panel__header">
       <p class="stay-section-label">
         <span class="booking-symbols booking-symbols--small" aria-hidden="true">
@@ -524,13 +793,47 @@ function bookingPanel(event) {
 }
 
 function overviewText(event) {
+  const override = eventOverviewOverrides[event.slug];
+  if (override?.intro) return override.intro;
   const note = eventNotes[event.slug];
   const range = displayRange(event.startDate, event.endDate);
   const intro = note?.focus || `${event.title} is a ${topicLabel(event.topic).toLowerCase()} event at ${event.venue} in ${placeText(event)}.`;
   if (isMultiHostEvent(event)) {
     return `${intro} The ${event.startDate.slice(0, 4)} edition runs ${range}. Because this event is spread across multiple host areas, the practical questions are the fixture city, the route between matches, how late transport works and which base still makes sense after the schedule is confirmed.`;
   }
-  return `${intro} The ${event.startDate.slice(0, 4)} edition runs ${range} at ${event.venue}. For visitors, the useful planning details are the exact date window, the venue area, access after the event and where to stay without turning the trip into a long transfer.`;
+  return `${intro} The ${event.startDate.slice(0, 4)} edition runs ${range} at ${event.venue}. Arrive with enough time for entry or bib collection, check the local transport plan and choose a stay that keeps the event day straightforward.`;
+}
+
+function overviewFacts(event) {
+  const override = eventOverviewOverrides[event.slug];
+  const baseFacts = [
+    { label: 'Date', value: displayRange(event.startDate, event.endDate) },
+    { label: 'Venue', value: event.venue },
+    { label: 'City', html: cityLink(override?.place || event.city) },
+    { label: 'Country', html: countryLinks(event) }
+  ];
+  if (override?.factsMode === 'replace') return override.facts || [];
+  return override?.facts ? [...baseFacts, ...override.facts] : baseFacts;
+}
+
+function overviewFactItems(event) {
+  return overviewFacts(event).map((fact) => `<li class="event-overview-fact">
+                    <span>${esc(fact.label)}</span><strong>${fact.html || esc(fact.value)}</strong>
+                  </li>`).join('\n');
+}
+
+function overviewBlocks(event) {
+  const override = eventOverviewOverrides[event.slug];
+  if (override?.blocks?.length) {
+    return override.blocks.map((block) => `<section class="event-overview-note">
+                    <h3>${esc(block.title)}</h3>
+                    <p>${esc(block.text)}</p>
+                  </section>`).join('\n');
+  }
+  return `<section class="event-overview-note">
+                    <h3>${esc(event.title)} ${esc(event.startDate.slice(0, 4))}</h3>
+                    <p>${esc(overviewText(event))}</p>
+                  </section>`;
 }
 
 function topMenu(event) {
@@ -554,6 +857,20 @@ function noteFor(event) {
 }
 
 function relatedLinks(event) {
+  if (event.slug === 'sydney-marathon') {
+    return `<nav class="event-related-links" aria-label="Related links">
+            <a class="visual-topic-card visual-topic-card--national event-related-topic-card" href="${topicHref(event)}">
+              <img src="${topicMiniImage(event)}" alt="" width="400" height="300" loading="lazy">
+              <strong>${esc(topicLabel(event.topic))} topic</strong>
+              <span>More ${esc(topicLabel(event.topic))} event pages.</span>
+            </a>
+            <a class="event-country-link-card" href="${CONTENT_BASE}/locations/oceania/australia/sydney.html">
+              <img src="${CONTENT_BASE}/locations/oceania/australia/img/sydney-mini.png" alt="Sydney location guide" width="400" height="300" loading="lazy">
+              <strong>Sydney</strong>
+              <span>City guide</span>
+            </a>
+          </nav>`;
+  }
   const country = event.primaryCountry || event.countries[0];
   const countryHero = countryHeroImage(country);
   const countryCard = country && countryHero ? `<a class="event-country-link-card" href="${esc(country.url)}">
@@ -565,7 +882,7 @@ function relatedLinks(event) {
             <a class="visual-topic-card visual-topic-card--national event-related-topic-card" href="${topicHref(event)}">
               <img src="${topicMiniImage(event)}" alt="" width="400" height="300" loading="lazy">
               <strong>${esc(topicLabel(event.topic))} topic</strong>
-              <span>More ${esc(topicLabel(event.topic))} events and calendar moments.</span>
+              <span>More ${esc(topicLabel(event.topic))} event pages.</span>
             </a>
             ${countryCard}
           </nav>`;
@@ -603,13 +920,18 @@ function historyRankMeta(row, event) {
   const rankRaw = String(row.rank || '1').trim();
   const rankNumber = Number.parseInt(rankRaw, 10);
   const notes = String(row.notes || '').trim();
-  const isWomen = /women|ladies/i.test(notes) || /w$/i.test(rankRaw);
-  if (event.topic === 'tennis') {
-    return {
-      key: isWomen ? 'women' : 'men',
-      label: isWomen ? 'Women' : 'Men',
-      order: isWomen ? 2 : 1
-    };
+  const isWomen = /^(women|ladies)$/i.test(notes) || /w$/i.test(rankRaw);
+  const isMen = /^(men|gentlemen)$/i.test(notes);
+  if (event.topic === 'tennis' || event.slug === 'sydney-marathon') {
+    if (isWomen || isMen) {
+      return {
+        key: isWomen ? 'women' : 'men',
+        label: isWomen ? 'Women' : 'Men',
+        order: event.slug === 'sydney-marathon'
+          ? (isWomen ? 2 : 1)
+          : (isWomen ? 98 : 97)
+      };
+    }
   }
   return {
     key: Number.isFinite(rankNumber) ? `rank-${rankNumber}` : `rank-${rankRaw}`,
@@ -624,7 +946,8 @@ function historyRowsForPanel(event) {
     .map((row) => {
       const rank = historyRankMeta(row, event);
       const hostCountry = countryObject(row.country || row.host_country || '');
-      const winnerCountry = countryObject(row.winner_country || row.player_country || row.country || '');
+      const winner = row.winner || row.player_or_team || '';
+      const winnerCountry = countryObject(row.winner_country || row.player_country || (winner === row.country ? row.country : ''));
       const result = historyResultParts(row);
       const displayResult = [result.notes, result.score && result.score !== 'Win' ? result.score : '']
         .filter(Boolean)
@@ -637,14 +960,14 @@ function historyRowsForPanel(event) {
         venue: row.venue || '',
         city: row.city || '',
         hostCountry,
-        winner: row.winner || row.player_or_team || '',
+        winner,
         winnerCountry,
         score: displayResult || (/^(men|women|ladies|gentlemen)$/i.test(result.score || '') ? '' : result.score),
         contentPriority: displayResult ? 2 : 1,
         sourcePriority: historySourcePriority(row)
       };
     })
-    .filter((row) => row.year && row.winner && row.sourcePriority > 1)
+    .filter((row) => row.year && row.winner && row.sourcePriority > 0)
     .forEach((row) => {
       const key = `${row.year}|${row.rank.key}`;
       const current = bestRows.get(key);
@@ -656,103 +979,333 @@ function historyRowsForPanel(event) {
         bestRows.set(key, row);
       }
     });
-  return [...bestRows.values()]
-    .sort((a, b) => b.year - a.year || a.rank.order - b.rank.order)
-    .slice(0, 30);
+  const dedupedRows = [...bestRows.values()];
+  const latestYears = [...new Set(dedupedRows.map((row) => row.year))]
+    .sort((a, b) => b - a)
+    .slice(0, event.slug === 'sydney-marathon' ? 25 : 10);
+
+  return latestYears.flatMap((year) => dedupedRows
+    .filter((row) => row.year === year)
+    .sort((a, b) => (
+      a.rank.order - b.rank.order
+      || b.contentPriority - a.contentPriority
+      || b.sourcePriority - a.sourcePriority
+    ))
+    .slice(0, 3));
+}
+
+function sportHistoryCoverage(event) {
+  if (event.category !== 'sport') return null;
+  const rows = historyRowsForPanel(event);
+  if (!rows.length) return null;
+  const countsByYear = new Map();
+  rows.forEach((row) => {
+    countsByYear.set(row.year, (countsByYear.get(row.year) || 0) + 1);
+  });
+  const editionYears = [...countsByYear.keys()].sort((a, b) => b - a);
+  const requiredYears = editionYears.slice(0, 10);
+  const expectedRows = event.slug === 'sydney-marathon' || event.slug === 'the-hundred-final' ? 2 : 3;
+  const underfilledYears = requiredYears
+    .filter((year) => countsByYear.get(year) < expectedRows)
+    .map((year) => ({ year, rows: countsByYear.get(year) }));
+  if (editionYears.length >= 10 && !underfilledYears.length) return null;
+  return {
+    slug: event.slug,
+    title: event.title,
+    topic: event.topic,
+    latestYear: editionYears[0],
+    requiredYears,
+    availableEditionYears: editionYears.length,
+    missingEditionCount: Math.max(0, 10 - editionYears.length),
+    underfilledYears
+  };
 }
 
 function countryChip(country) {
   return country ? `<a class="country" href="${esc(country.url)}"><img src="${esc(country.flag)}" alt="" width="20" height="14" loading="lazy">${esc(country.name)}</a>` : '';
 }
 
+const tennisPlayerCountries = {
+  'andy murray': 'United Kingdom',
+  'cameron norrie': 'United Kingdom',
+  'carlos alcaraz': 'Spain',
+  'daniil medvedev': 'Russia',
+  'denis shapovalov': 'Canada',
+  'hubert hurkacz': 'Poland',
+  'jannik sinner': 'Italy',
+  'john isner': 'United States',
+  'kevin anderson': 'South Africa',
+  'lorenzo musetti': 'Italy',
+  'marin cilic': 'Croatia',
+  'matteo berrettini': 'Italy',
+  'milos raonic': 'Canada',
+  'nick kyrgios': 'Australia',
+  'novak djokovic': 'Serbia',
+  'rafael nadal': 'Spain',
+  'richard gasquet': 'France',
+  'roberto bautista agut': 'Spain',
+  'roger federer': 'Switzerland',
+  'sam querrey': 'United States',
+  'taylor fritz': 'United States',
+  'tomas berdych': 'Czechia'
+};
+
+function historyWinnerCell(row, label = '') {
+  const labelAttr = label ? ` data-label="${esc(label)}"` : '';
+  if (!row) return `<span class="sport-history-position sport-history-position--empty"${labelAttr} aria-hidden="true"></span>`;
+  const parts = String(row.winner || '')
+    .split('/')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const winnerText = (parts.length ? parts : [row.winner]).map((part) => {
+    const country = parts.length === 1
+      ? row.winnerCountry || countryObject(tennisPlayerCountries[part.toLowerCase()] || '')
+      : countryObject(tennisPlayerCountries[part.toLowerCase()] || '');
+    return `<span class="sport-history-person">${countryChip(country)}<span>${esc(part)}</span></span>`;
+  }).join('');
+  return `<span class="sport-history-position"${labelAttr}>${winnerText}</span>`;
+}
+
+function sportWinnerLeaders(event) {
+  const rows = historyRowsForPanel(event)
+    .filter((row) => {
+      if (!row.winner || !row.rank) return false;
+      if (event.slug === 'sydney-marathon') return row.rank.label === 'Men' || row.rank.label === 'Women';
+      if (event.slug === 'the-hundred-final') return row.rank.order === 1 || row.rank.order === 2;
+      return row.rank.label === '#1' || row.rank.order === 1;
+    });
+  if (!rows.length) return '';
+  const leaders = new Map();
+  rows.forEach((row) => {
+    const key = row.winner.toLowerCase();
+    const current = leaders.get(key) || {
+      name: row.winner,
+      country: row.winnerCountry || countryObject(tennisPlayerCountries[row.winner.toLowerCase()] || ''),
+      count: 0,
+      years: [],
+      latestYear: 0
+    };
+    current.count += 1;
+    current.years.push(row.year);
+    current.latestYear = Math.max(current.latestYear, row.year);
+    if (!current.country && row.winnerCountry) current.country = row.winnerCountry;
+    leaders.set(key, current);
+  });
+  const topLeaders = [...leaders.values()]
+    .sort((a, b) => b.count - a.count || b.latestYear - a.latestYear || a.name.localeCompare(b.name))
+    .slice(0, 3);
+  if (!topLeaders.length) return '';
+  const maxCount = Math.max(...topLeaders.map((leader) => leader.count));
+  const leaderRows = topLeaders.map((leader, index) => {
+    const years = [...new Set(leader.years)].sort((a, b) => b - a);
+    const dots = Array.from({ length: leader.count }, () => '<span class="sport-history-win-dot" aria-hidden="true"></span>').join('');
+    const remainder = Array.from({ length: maxCount - leader.count }, () => '<span class="sport-history-win-dot sport-history-win-dot--empty" aria-hidden="true"></span>').join('');
+    const titleLabel = `${leader.count} ${leader.count === 1 ? 'title' : 'titles'}`;
+    return `<tr>
+              <td>${index + 1}</td>
+              <td><span class="sport-history-person">${countryChip(leader.country)}<span>${esc(leader.name)}</span></span></td>
+              <td>${esc(leader.count)}</td>
+              <td>${esc(years.join(', '))}</td>
+              <td><span class="sport-history-win-chart" aria-label="${esc(titleLabel)}">${dots}${remainder}</span></td>
+            </tr>`;
+  }).join('\n');
+  return `<section class="sport-history-leaders" aria-labelledby="sport-history-leaders-title">
+            <h3 id="sport-history-leaders-title">Top winners in this archive</h3>
+            <table class="sport-history-leader-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Winner</th>
+                  <th scope="col">Titles</th>
+                  <th scope="col">Years</th>
+                  <th scope="col">Graph</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${leaderRows}
+              </tbody>
+            </table>
+          </section>`;
+}
+
+function calendarHref(event, edition) {
+  const year = edition.year || event.startDate.slice(0, 4);
+  const start = String(edition.startDate || event.startDate || '').replace(/-/g, '');
+  const end = String(edition.endExclusive || checkoutDate(event) || '').replace(/-/g, '');
+  const summary = `${event.title} ${year}`;
+  const description = edition.calendarDescription || `${summary}.`;
+  const location = [edition.venue || event.venue, event.city].filter(Boolean).join(', ');
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//OneSliders//Event Calendar//EN',
+    'BEGIN:VEVENT',
+    `UID:${event.slug}-${year}@one-sliders.com`,
+    `DTSTAMP:${year}0101T000000Z`,
+    `DTSTART;VALUE=DATE:${start}`,
+    `DTEND;VALUE=DATE:${end}`,
+    `SUMMARY:${summary}`,
+    `LOCATION:${location}`,
+    `DESCRIPTION:${description}`,
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;
+}
+
+function editionBookingHref(event, edition) {
+  const stayArea = `${event.bookingCity}, ${event.primaryCountry.name}`;
+  return `${BOOKING_BASE}ss%3D${encodeURIComponent(stayArea)}`
+    + `%26checkin%3D${encodeURIComponent(edition.startDate || '')}`
+    + `%26checkout%3D${encodeURIComponent(edition.endExclusive || '')}`
+    + '%26group_adults%3D2%26no_rooms%3D1';
+}
+
 function historyPanel(event) {
   const rows = historyRowsForPanel(event);
   if (!rows.length) return '';
   const latestYear = Math.max(...rows.map((row) => row.year));
-  const cards = rows.map((row) => {
-    const winnerText = row.winnerCountry && row.winner === row.winnerCountry.name
-      ? countryChip(row.winnerCountry)
-      : `${countryChip(row.winnerCountry)} ${esc(row.winner)}`.trim();
-    return `<li class="event-fact">
-                    <strong>${esc(row.year)} ${esc(row.rank.label)}</strong>
-                    <span>${winnerText}</span>
-                    <span>${row.score ? esc(row.score) : ''}</span>
-                    <span>${esc([row.venue, row.city].filter(Boolean).join(', '))}${row.hostCountry ? ` · ${countryChip(row.hostCountry)}` : ''}</span>
+  const winnerLeaders = sportWinnerLeaders(event);
+  const isDualFinal = event.slug === 'the-hundred-final' || event.slug === 'sydney-marathon';
+  const columnLabels = isDualFinal
+    ? ['Men', 'Women', '']
+    : ['#1', '#2', '#3'];
+  const rowsByYear = new Map();
+  rows.forEach((row) => {
+    const yearRows = rowsByYear.get(row.year) || [];
+    yearRows.push(row);
+    rowsByYear.set(row.year, yearRows);
+  });
+  (historyNoEditionOverrides[event.slug] || []).forEach((entry) => {
+    rowsByYear.set(entry.year, [{ noEdition: true, note: entry.note }]);
+  });
+  const yearRows = [...rowsByYear.entries()]
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, yearEntries]) => {
+      if (yearEntries[0]?.noEdition) {
+        return `<li class="sport-history-year-row" id="year-${esc(year)}">
+                    <strong class="sport-history-year">${esc(year)}</strong>
+                    <span class="sport-history-position">${esc(yearEntries[0].note)}</span>
+                    <span class="sport-history-position sport-history-position--empty" aria-hidden="true"></span>
                   </li>`;
-  }).join('\n');
-  const intro = event.topic === 'tennis'
-    ? `The latest recorded edition in this data is ${latestYear}. The archive keeps the recent men's and women's champions together with country and final note where available.`
+      }
+      const byRank = new Map(yearEntries.map((row) => [row.rank.label, row]));
+      const winnerCells = isDualFinal
+        ? `${historyWinnerCell(byRank.get('Men') || byRank.get('#1') || yearEntries[0], 'Men')}
+                    ${historyWinnerCell(byRank.get('Women') || byRank.get('#2') || yearEntries[1], 'Women')}`
+        : `${historyWinnerCell(byRank.get('#1') || yearEntries[0], '#1')}
+                    ${historyWinnerCell(byRank.get('#2') || yearEntries[1], '#2')}
+                    ${historyWinnerCell(byRank.get('#3') || yearEntries[2], '#3')}`;
+      return `<li class="sport-history-year-row" id="year-${esc(year)}">
+                    <strong class="sport-history-year">${esc(year)}</strong>
+                    ${winnerCells}
+                  </li>`;
+    }).join('\n');
+  const intro = event.slug === 'sydney-marathon'
+    ? `This archive covers every Sydney Marathon edition from 2001 to ${latestYear}, with men's and women's winners shown separately and 2020-2021 marked as years without an in-person race.`
+    : event.topic === 'tennis'
+    ? `The latest recorded edition in this data is ${latestYear}. The archive keeps the recent ranked results together with country and final note where available.`
     : `The latest recorded edition in this data is ${latestYear}. The list below keeps the archive compact: top result, host setting and final note, so the event page explains what came before without turning into a long article.`;
   return `<div class="event-tab-panel" id="panel-history">
               <div class="event-panel-inner">
-                <div class="event-about-body">
+                <div class="sport-history-body">
                   <h2>${esc(event.title)} history</h2>
                   <p>${esc(intro)}</p>
                 </div>
-                <ol class="event-key-facts event-history-list" aria-label="${esc(event.title)} recent history">
+                ${winnerLeaders}
+                <div class="sport-history-grid${isDualFinal ? ' sport-history-grid--dual' : ''}" role="table" aria-label="${esc(event.title)} recent history">
+                  <div class="sport-history-head" role="row">
+                    <span>Year</span>
+                    ${columnLabels.filter(Boolean).map((label) => `<span>${esc(label)}</span>`).join('\n                    ')}
+                  </div>
+                  <ol class="sport-history-list" role="rowgroup">
+                    ${yearRows}
+                  </ol>
+                </div>
+              </div>
+            </div>`;
+}
+
+function futureEditionsFor(event) {
+  const currentYear = Number(event.startDate.slice(0, 4));
+  return (futureEditionOverrides[event.slug] || [])
+    .filter((edition) => Number(edition.year) > currentYear)
+    .map((edition) => ({
+      ...edition,
+      countries: (edition.countries || []).map(countryObject).filter(Boolean)
+    }))
+    .sort((a, b) => Number(a.year) - Number(b.year));
+}
+
+function upcomingPanel(event) {
+  const future = futureEditionsFor(event);
+  if (!future.length) return '';
+  const intro = event.slug === 'sydney-marathon'
+    ? 'Next announced date after 2026: 29 Aug 2027. No 2028 row is shown until a reliable date is announced.'
+    : 'Future editions stay on this event page and can be linked directly with the year hash.';
+  const cards = future.map((edition) => {
+    const countryText = edition.countries.length
+      ? edition.countries.map(countryChip).join(' ')
+      : '';
+    const calendarName = `${event.slug}-${edition.year}.ics`;
+    return `<article class="event-upcoming-card" id="year-${esc(edition.year)}">
+                    <a class="event-upcoming-card__year" href="#year-${esc(edition.year)}" aria-label="${esc(event.title)} ${esc(edition.year)}">${esc(edition.year)}</a>
+                    <div class="event-upcoming-card__body">
+                      <strong>${esc(edition.dates)}</strong>
+                      <span>${esc(edition.venue)}</span>
+                      <span>${countryText}</span>
+                    </div>
+                    <div class="event-upcoming-card__actions">
+                      <a class="os-button os-button--secondary event-upcoming-action" href="${calendarHref(event, edition)}" download="${esc(calendarName)}">Add to calendar</a>
+                      <a class="os-button os-button--primary event-upcoming-action" href="${esc(editionBookingHref(event, edition))}" target="_blank" rel="nofollow sponsored noopener">Book stay</a>
+                    </div>
+                  </article>`;
+  }).join('\n');
+  return `<div class="event-tab-panel" id="panel-upcoming">
+              <div class="event-panel-inner">
+                <div class="event-upcoming-body">
+                  <h2>Upcoming ${esc(event.title)} editions</h2>
+                  <p>${esc(intro)}</p>
+                </div>
+                <div class="event-upcoming-list" aria-label="${esc(event.title)} upcoming editions">
                   ${cards}
-                </ol>
+                </div>
               </div>
             </div>`;
 }
 
 function infoTabs(event) {
   const year = event.startDate.slice(0, 4);
-  const note = noteFor(event);
   const history = historyPanel(event);
-  const stay = stayGuidance(event);
+  const upcoming = upcomingPanel(event);
   return `<div class="event-tabs">
-          <input type="radio" name="event-tab" id="tab-why" checked>
-          <input type="radio" name="event-tab" id="tab-food">
-          <input type="radio" name="event-tab" id="tab-culture">
+          <input type="radio" name="event-tab" id="tab-overview" checked>
+          ${upcoming ? '<input type="radio" name="event-tab" id="tab-upcoming">' : ''}
           ${history ? '<input type="radio" name="event-tab" id="tab-history">' : ''}
 
           <div class="event-tablist" role="tablist">
-            <label class="event-tab-label" for="tab-why">Overview</label>
-            <label class="event-tab-label" for="tab-food">Event info</label>
-            <label class="event-tab-label" for="tab-culture">Stay</label>
+            <label class="event-tab-label" for="tab-overview">Overview</label>
+            ${upcoming ? '<label class="event-tab-label" for="tab-upcoming">Upcoming</label>' : ''}
             ${history ? '<label class="event-tab-label" for="tab-history">History</label>' : ''}
           </div>
 
           <div class="event-tab-panels">
-            <div class="event-tab-panel" id="panel-why">
+            <div class="event-tab-panel" id="panel-overview">
               <div class="event-panel-inner">
-                <ol class="event-key-facts" aria-label="${esc(event.title)} key facts">
-                  <li class="event-fact"><strong>${esc(displayRange(event.startDate, event.endDate))}</strong><span>Date</span></li>
-                  <li class="event-fact"><strong>${esc(event.venue)}</strong><span>Venue</span></li>
-                  <li class="event-fact"><strong>${esc(event.city)}</strong><span>Place</span></li>
+                <span class="event-year-anchor" id="year-${esc(year)}" aria-hidden="true"></span>
+                <ol class="event-overview-facts" aria-label="${esc(event.title)} key facts">
+                  ${overviewFactItems(event)}
                 </ol>
-                <div class="event-about-body">
+                <div class="event-overview-body">
                   <h2>${esc(event.title)} ${esc(year)}</h2>
                   <p>${esc(overviewText(event))}</p>
+                  <div class="event-overview-notes">
+                    ${overviewBlocks(event)}
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="event-tab-panel" id="panel-food">
-              <div class="event-panel-inner">
-                <div class="event-about-body">
-                  <h2>About this event</h2>
-                  <p>${esc(note.focus)}</p>
-                  <p>${esc(note.follow)}</p>
-                </div>
-                <ol class="event-key-facts" aria-label="${esc(event.title)} event details">
-                  <li class="event-fact"><strong>${esc(note.format || topicLabel(event.topic))}</strong><span>Format</span></li>
-                  <li class="event-fact"><strong>${countryLinks(event)}</strong><span>Country</span></li>
-                  <li class="event-fact"><strong>${esc(event.venue)}</strong><span>Venue</span></li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="event-tab-panel" id="panel-culture">
-              <div class="event-panel-inner">
-                <div class="event-about-body">
-                  <h2>Where to stay</h2>
-                  <p>${esc(stay.detail)}</p>
-                </div>
-                <a class="event-category-link" href="${topicHref(event)}">More ${esc(topicLabel(event.topic))} events -&gt;</a>
-              </div>
-            </div>
+            ${upcoming}
             ${history}
           </div>
         </div>`;
@@ -925,24 +1478,28 @@ function page(event) {
     eventName: event.title,
     slug: event.slug,
     defaultYear: Number(defaultYear),
-    lastUpdated: '5 July 2026',
+    lastUpdated: event.lastChecked || '29 July 2026',
     templateMode: 'one-slider',
     eventType: 'edition',
     topic: event.topic,
-    sources: [],
+    sources: event.sources || [],
     editions
   };
   return `<!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <link rel="stylesheet" href="${CSS_BASE}/colors.css">
-  <link rel="stylesheet" href="${CSS_BASE}/shapes.css">
-  <link rel="stylesheet" href="${CSS_BASE}/typography.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-national-day-left.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-national-day-why.css">
-  <script defer src="/assets/js/oneslider-core.js"></script>
-  <script defer src="/assets/js/event-page.js"></script>
+  <link rel="stylesheet" href="${CSS_BASE}/1_colours.css">
+  <link rel="stylesheet" href="${CSS_BASE}/1_typography.css">
+  <link rel="stylesheet" href="${CSS_BASE}/1_core.css">
+  <link rel="stylesheet" href="${CSS_BASE}/2_frame.css">
+  <link rel="stylesheet" href="${CSS_BASE}/3_event.css">
+  <link rel="stylesheet" href="${CSS_BASE}/4_flik-left-booking.css">
+  <link rel="stylesheet" href="${CSS_BASE}/4_flik-tabs.css">
+  <link rel="stylesheet" href="${CSS_BASE}/4_flik-right-overview.css">
+  <link rel="stylesheet" href="${CSS_BASE}/4_flik-right-upcoming.css">
+  <link rel="stylesheet" href="${CSS_BASE}/4_flik-right-history.css">
+  <script defer src="/assets/js/1_core.js"></script>
+  <script defer src="/assets/js/3_event.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="os-back-href" content="${topicHref(event)}">
@@ -952,7 +1509,6 @@ function page(event) {
   <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/assets/icons/site.webmanifest">
-  <link id="palette-css" rel="stylesheet" href="/assets/css/palettes/oneslider-palette-harmonized.css">
   <link rel="canonical" href="https://one-sliders.com${canonicalPath}">
   <meta name="description" content="${esc(metaDescription(event))}">
   <meta property="og:title" content="${esc(metaTitle(event))}">
@@ -964,12 +1520,10 @@ function page(event) {
   <meta name="twitter:description" content="${esc(metaDescription(event))}">
   <meta name="twitter:image" content="https://one-sliders.com${img}-hero.png">
   <title>${esc(metaTitle(event))}</title>
-  <script type="application/json" id="event-year-data">${json(data)}</script>
-  <script type="application/ld+json">${json(schemaFor(event))}</script>
 </head>
-<body class="onepage event-standard event-standard--${esc(event.slug)}" data-cat="${esc(event.category)}" data-os-category="${esc(event.category)}">
+<body class="event-dashboard onepage event-booking-left" data-cat="${esc(event.category)}" data-os-category="${esc(event.category)}" data-event-schema="${esc(json(schemaFor(event)))}">
   ${topMenu(event)}
-  <main class="page-shell page-content page-frame" id="year-${esc(defaultYear)}">
+  <main class="page-shell page-content page-frame">
     <div class="layout-columns">
       <div class="layout__a">
         <div class="hero">
@@ -1037,6 +1591,7 @@ function main() {
 
   const ready = rows.filter((event) => event.complete);
   const skipped = rows.filter((event) => !event.complete);
+  const historyGaps = ready.map(sportHistoryCoverage).filter(Boolean);
   ready.forEach((event) => {
     const outFile = path.join(outRoot, 'categories', event.category, event.topic, 'events', `${event.slug}.html`);
     fs.mkdirSync(path.dirname(outFile), { recursive: true });
@@ -1057,8 +1612,11 @@ function main() {
     venue: event.venue,
     countries: event.location?.countries || []
   }))), 'utf8');
+  const historyGapPath = path.join(ROOT, 'tmp', `v3-register-${scope}-sport-history-gaps.json`);
+  fs.writeFileSync(historyGapPath, json(historyGaps), 'utf8');
   console.log(`build-register-v3-events: wrote ${ready.length}, skipped ${skipped.length}.`);
   if (skipped.length) console.log(`Skipped report: ${reportPath}`);
+  if (historyGaps.length) console.log(`Sport history gaps: ${historyGapPath}`);
 }
 
 main();

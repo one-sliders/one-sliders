@@ -16,8 +16,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const siteConfig = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'scripts/config.json'), 'utf8'));
+const BOOKING_SEARCH_QUERY = '?url=https%3A%2F%2Fwww.booking.com%2Fsearchresults.html%3F';
+const BOOKING_BASE = siteConfig.affiliate.booking.links['hotels-default'] + BOOKING_SEARCH_QUERY;
+
 const root       = process.cwd();
 const isTest      = process.argv.includes('--test');
+const noIndex     = process.argv.includes('--no-index');
 const slugFilter  = process.argv.find(a => a.startsWith('--slug='))?.split('=')[1]  ?? null;
 const topicFilter = process.argv.find(a => a.startsWith('--topic='))?.split('=')[1] ?? null;
 
@@ -28,8 +33,21 @@ const ndWithImages = fs.existsSync(ndWithImagesPath)
 const outRoot    = isTest
   ? path.join(root, 'Templates/test/content')
   : path.join(root, 'content');
+const contentBase = '/content';
+const cssBase = '../../../../../assets/css';
 const today = new Date();
 const currentYear = today.getFullYear();
+
+function topicPageHref(event) {
+  const key = `${event.category}/${event.topic}`;
+  const overrides = {
+    'culture/national-day': `${contentBase}/categories/culture/national-day.html`,
+    'sport/golf': `${contentBase}/categories/sport/golf.html`,
+    'culture/music': `${contentBase}/categories/music/index.html`,
+    'culture/music-festivals': `${contentBase}/categories/music/music-festivals.html`,
+  };
+  return overrides[key] || `${contentBase}/categories/${event.category}/${event.topic}.html`;
+}
 
 // ── Paths ──────────────────────────────────────────────────────────────────
 
@@ -58,6 +76,37 @@ const heroTemplate  = fs.readFileSync(heroPath,   'utf8');
 const nationalDayTemplate = fs.existsSync(nationalDayTemplatePath)
   ? fs.readFileSync(nationalDayTemplatePath, 'utf8')
   : '';
+
+const golfTemplatePath = path.join(root, 'Templates/events/event_golf.template.html');
+const golfTemplate     = fs.existsSync(golfTemplatePath)
+  ? fs.readFileSync(golfTemplatePath, 'utf8')
+  : '';
+
+const golfContentCsvPath = path.join(root, 'Templates/data/golf-events-content.csv');
+const golfContent = (() => {
+  if (!fs.existsSync(golfContentCsvPath)) return {};
+  const rows = loadCsv(golfContentCsvPath);
+  const out = {};
+  for (const [slug, row] of Object.entries(rows)) {
+    out[slug.replace(/:.*/, '')] = row;
+  }
+  return out;
+})();
+
+const golfLeaderboardPath = path.join(root, 'scripts/data/golf-espn-leaderboards.json');
+const golfLeaderboard = fs.existsSync(golfLeaderboardPath)
+  ? JSON.parse(fs.readFileSync(golfLeaderboardPath, 'utf8'))
+  : { byEventId: {}, bySlugYear: {} };
+
+const golfHistoryPath = path.join(root, 'scripts/data/golf-events-history.json');
+const golfHistoryData = fs.existsSync(golfHistoryPath)
+  ? JSON.parse(fs.readFileSync(golfHistoryPath, 'utf8'))
+  : {};
+
+const golfYearDataPath = path.join(root, 'scripts/data/golf-events-year-data.json');
+const golfYearData = fs.existsSync(golfYearDataPath)
+  ? JSON.parse(fs.readFileSync(golfYearDataPath, 'utf8'))
+  : {};
 
 const ndContentCsvPath  = path.join(root, 'Templates/data/national-days-content.csv');
 const ndContentJsonPath = path.join(root, 'Templates/data/national-days-content.json');
@@ -198,10 +247,34 @@ function flagHtml(country) {
   if (!country) return '';
   const slug = COUNTRY_FLAG[country.toLowerCase().trim()];
   if (!slug) return '';
-  return `<img class="country-flag" src="/content/locations/${slug}/img/flag.svg" alt="${country}" width="20" height="14" loading="lazy">`;
+  return `<img class="country-flag" src="/content/locations/${slug}/img/flag.svg" alt="" width="20" height="14" loading="lazy">`;
+}
+
+function countryLinkHtml(country) {
+  const label = String(country || '').trim();
+  if (!label) return '';
+  const countryPath = countryPathForCountry(label);
+  if (!countryPath) return html(label);
+  const pageFile = path.join(root, 'content', 'locations', ...countryPath.split('/'), 'index.html');
+  const flagFile = path.join(root, 'content', 'locations', ...countryPath.split('/'), 'img', 'flag.svg');
+  if (!fs.existsSync(pageFile) || !fs.existsSync(flagFile)) return html(label);
+  return `<a class="country" href="/content/locations/${countryPath}/index.html"><img src="/content/locations/${countryPath}/img/flag.svg" alt="" width="20" height="14" loading="lazy">${html(label)}</a>`;
+}
+
+function bookingBaseForCountry(country) {
+  const links = siteConfig.affiliate?.booking?.links || {};
+  const countryPath = COUNTRY_FLAG[(country || '').toLowerCase().trim()] || '';
+  const marketKey = countryPath.startsWith('north-america/')
+    ? 'hotels-north-america'
+    : 'hotels-default';
+  const base = links[marketKey] || links['hotels-default'];
+  if (!base) return '';
+  return `${base}${BOOKING_SEARCH_QUERY}`;
 }
 
 function winnerHtml(winner) {
+  const country = countryLinkHtml(winner);
+  if (country !== html(winner)) return country;
   const flag = flagHtml(winner);
   if (!flag) return html(winner);
   return `<span class="winner-with-flag">${flag}<span>${html(winner)}</span></span>`;
@@ -261,6 +334,13 @@ function html(value) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function jsonForScript(value) {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
 }
 
 function buildTabsHtml(tabs) {
@@ -353,10 +433,14 @@ function fillEditionTab(tabHtml, event) {
     ? `<p class="event-edition-winner">Winner: <strong>${winnerHtml(curHist.winner)}</strong>${curHist.col3_value ? ` · ${html(curHist.col3_value)}` : ''}</p>`
     : `<!-- edition results for ${html(event.title)} ${edYear} — fill events-history.csv -->`;
 
+  const editionResults = results.includes('fill events-history.csv') && csv.edition_text
+    ? `<p class="event-edition-winner">${html(csv.edition_text)}</p>`
+    : results;
+
   return tabHtml
     .replace(/\{\{YEAR_NAV\}\}/g,        yearNav)
     .replace(/\{\{EDITION_FACTS\}\}/g,   facts)
-    .replace(/\{\{EDITION_RESULTS\}\}/g, results);
+    .replace(/\{\{EDITION_RESULTS\}\}/g, editionResults);
 }
 
 // ── When tab fill ──────────────────────────────────────────────────────────
@@ -364,10 +448,11 @@ function fillEditionTab(tabHtml, event) {
 function fillWhenTab(tabHtml, event) {
   const csv          = csvContent[event.slug] || {};
   const nextDate     = formatDisplayDate(event.startDate);
-  const nextLocation = [
-    event.location?.cities?.[0],
-    event.location?.countries?.[0]
-  ].filter(Boolean).join(', ') || 'TBC';
+  const city         = event.location?.cities?.[0] || '';
+  const country      = event.location?.countries?.[0] || '';
+  const nextLocation = city && country
+    ? `${html(city)}, ${countryLinkHtml(country)}`
+    : (city ? html(city) : countryLinkHtml(country)) || 'TBC';
   const whenDetails  = csv.when_details
     ? `<p>${html(csv.when_details)}</p>`
     : `<!-- when/format details for ${html(event.title)} — fill events-content.csv -->`;
@@ -375,7 +460,7 @@ function fillWhenTab(tabHtml, event) {
   return tabHtml
     .replace(/\{\{NEXT_DATE_LABEL\}\}/g,  csv.next_date_label || 'Next date')
     .replace(/\{\{NEXT_DATE\}\}/g,        html(nextDate))
-    .replace(/\{\{NEXT_LOCATION\}\}/g,    html(nextLocation))
+    .replace(/\{\{NEXT_LOCATION\}\}/g,    nextLocation)
     .replace(/\{\{WHEN_DETAILS\}\}/g,     whenDetails);
 }
 
@@ -388,7 +473,7 @@ function fillAboutTab(tabHtml, event) {
     : `<!-- about text for ${html(event.title)} — fill events-content.csv -->`;
   const facts     = [
     event.startDate ? `<div class="event-fact"><strong>${html(event.displayDates || event.startDate)}</strong>Date</div>` : '',
-    event.location?.countries?.[0] ? `<div class="event-fact"><strong>${html(event.location.countries[0])}</strong>Country</div>` : ''
+    event.location?.countries?.[0] ? `<div class="event-fact"><strong>${countryLinkHtml(event.location.countries[0])}</strong>Country</div>` : ''
   ].filter(Boolean).join('\n') || '';
   return tabHtml
     .replace(/\{\{KEY_FACTS\}\}/g,   facts)
@@ -519,6 +604,33 @@ function ndDataForSlug(slug) {
   return ndData.find(d => d.eventSlug === slug) || {};
 }
 
+function countryPathForCountry(country) {
+  const key = String(country || '').toLowerCase().trim();
+  if (!key) return '';
+  if (COUNTRY_FLAG[key]) return COUNTRY_FLAG[key];
+  const match = ndData.find((item) => String(item.country || '').toLowerCase().trim() === key);
+  return match?.continent && match?.countrySlug ? `${match.continent}/${match.countrySlug}` : '';
+}
+
+function locationHeroImage(countryPath) {
+  if (!countryPath) return '';
+  const slug = countryPath.split('/').pop();
+  const rel = `content/locations/${countryPath}/img/${slug}-hero.png`;
+  return fs.existsSync(path.join(root, rel)) ? `/${rel}` : '';
+}
+
+function locationHeroSrcset(countryPath) {
+  if (!countryPath) return '';
+  const slug = countryPath.split('/').pop();
+  const base = `content/locations/${countryPath}/img/${slug}-hero`;
+  const candidates = [
+    [`${base}-400.webp`, '400w'],
+    [`${base}-768.webp`, '768w'],
+    [`${base}-1200.webp`, '1200w'],
+  ].filter(([rel]) => fs.existsSync(path.join(root, rel)));
+  return candidates.map(([rel, size]) => `/${rel} ${size}`).join(', ');
+}
+
 function buildDateBadge(event) {
   const nd       = ndDataForSlug(event.slug);
   const cnt      = ndContent[event.slug] || {};
@@ -565,7 +677,7 @@ function fillNationalDayWhy(tabHtml, event) {
       : `<!-- why text for ${html(event.slug)} -->`;
 
   const country  = (event.location?.countries?.[0] || '').toLowerCase();
-  const flagPath = COUNTRY_FLAG[country];
+  const flagPath = countryPathForCountry(country);
   const flagVisual = flagPath
     ? `<img src="/content/locations/${flagPath}/img/flag.svg" alt="${html(event.location?.countries?.[0] || '')} flag" width="128" height="80" loading="lazy" style="border-radius:6px;box-shadow:0 0 0 1px color-mix(in srgb,var(--page-line) 80%,transparent)">`
     : `<div class="nd-flag-diagram" aria-hidden="true"><span></span></div>`;
@@ -587,14 +699,14 @@ function fillNationalDayFood(tabHtml, event) {
   const imgBase = `/content/categories/${event.category}/${event.topic}/events/img/`;
 
   const foodCards = (cnt.foods || []).map(f => {
-    const imgTag = f.imageSlug
+    const imgTag = nationalDayCardImageExists(event, 'food', f.imageSlug)
       ? `<img src="${imgBase}${slug}-food-${f.imageSlug}.webp" alt="${html(f.name)}" width="400" height="260" loading="lazy">`
       : '';
     return `<div class="event-food-card">${imgTag}<strong>${html(f.name)}</strong><span>${html(f.description)}</span></div>`;
   }).join('\n') || `<!-- food cards for ${html(slug)} -->`;
 
   const drinkCards = (cnt.drinks || []).map(d => {
-    const imgTag = d.imageSlug
+    const imgTag = nationalDayCardImageExists(event, 'drink', d.imageSlug)
       ? `<img src="${imgBase}${slug}-drink-${d.imageSlug}.webp" alt="${html(d.name)}" width="400" height="260" loading="lazy">`
       : '';
     return `<div>${imgTag}<strong>${html(d.name)}</strong><span>${html(d.description)}</span></div>`;
@@ -616,7 +728,7 @@ function fillNationalDayCulture(tabHtml, event) {
   const items = cnt.cultureItems || [];
   const imgBase = `/content/categories/${event.category}/${event.topic}/events/img/`;
   const cards = items.map(c => {
-    const imgSlug = c.imageSlug
+    const imgSlug = nationalDayCardImageExists(event, 'culture', c.imageSlug)
       ? `${slug}-culture-${c.imageSlug}.webp`
       : null;
     const imgTag  = imgSlug
@@ -675,7 +787,18 @@ function replaceTemplateTokens(template, tokens) {
 }
 
 function nationalDayImageBase(event) {
+  if (event.topic === 'national-day') {
+    return '/content/categories/culture/national-day/events/img/';
+  }
   return `/content/categories/${event.category}/${event.topic}/events/img/`;
+}
+
+function nationalDayCardImageExists(event, kind, imageSlug) {
+  if (!imageSlug) return false;
+  const file = event.topic === 'national-day'
+    ? path.join(root, 'content', 'categories', 'culture', 'national-day', 'events', 'img', `${event.slug}-${kind}-${imageSlug}.webp`)
+    : path.join(root, 'content', 'categories', event.category, event.topic, 'events', 'img', `${event.slug}-${kind}-${imageSlug}.webp`);
+  return fs.existsSync(file);
 }
 
 function nationalDayDates(event) {
@@ -709,19 +832,15 @@ function buildNationalDayTemplateParagraphs(cnt, nd) {
 
 function buildNationalDayTemplateFlag(event, cnt) {
   const country = cnt.country || event.location?.countries?.[0] || '';
-  if (country.toLowerCase() === 'sweden') {
-    return '<div class="nd-flag-diagram" aria-hidden="true"><span></span></div>';
-  }
-
-  const flagPath = COUNTRY_FLAG[country.toLowerCase().trim()];
-  if (!flagPath) return `[*FLAG_VISUAL*]`;
+  const flagPath = countryPathForCountry(country);
+  if (!flagPath) return '';
   return `<img class="event-country-flag" src="/content/locations/${flagPath}/img/flag.svg" alt="${html(country)} flag" width="128" height="80" loading="lazy">`;
 }
 
 function buildNationalDayTemplateCards(event, items, kind, className) {
   const imgBase = nationalDayImageBase(event);
   return (items || []).map(item => {
-    const imgTag = item.imageSlug
+    const imgTag = nationalDayCardImageExists(event, kind, item.imageSlug)
       ? `<img src="${imgBase}${event.slug}-${kind}-${item.imageSlug}.webp" alt="${html(item.name)}" width="400" height="260" loading="lazy">`
       : '';
     return `<div class="${className}">${imgTag}<strong>${html(item.name)}</strong><span>${html(item.description)}</span></div>`;
@@ -731,7 +850,7 @@ function buildNationalDayTemplateCards(event, items, kind, className) {
 function buildNationalDayTemplateDrinkCards(event, cnt) {
   const imgBase = nationalDayImageBase(event);
   return (cnt.drinks || []).map(item => {
-    const imgTag = item.imageSlug
+    const imgTag = nationalDayCardImageExists(event, 'drink', item.imageSlug)
       ? `<img src="${imgBase}${event.slug}-drink-${item.imageSlug}.webp" alt="${html(item.name)}" width="400" height="260" loading="lazy">`
       : '';
     return `<div>${imgTag}<strong>${html(item.name)}</strong><span>${html(item.description)}</span></div>`;
@@ -764,14 +883,22 @@ function assembleNationalDayFromHtmlTemplate(event) {
   const dateText = nd.dateText || cnt.dateText || event.displayDates || '';
   const nextYear = nd.nextYear || (currentYear + 1);
   const country = cnt.country || event.location?.countries?.[0] || '';
+  const countryPath = countryPathForCountry(country);
   const dates = nationalDayDates(event);
   const canonical = `${BASE_URL}${canonicalUrl(event)}`;
-  let metaTitle = `${event.title} - ${dateText} ${nextYear} guide, food & stays`;
-  if (metaTitle.length > 60) metaTitle = `${event.title} - ${dateText} ${nextYear} guide`;
-  const metaDesc = `Everything about ${event.title} on ${dateText} - why celebrated, what to eat and where to stay - at a glance.`;
+  let metaTitle = `${event.title} - ${dateText} ${nextYear}`;
+  if (metaTitle.length > 60) metaTitle = `${event.title} ${nextYear}`;
+  const metaDesc = `${event.title}: ${dateText}, event format, food notes and stay planning.`;
   const rel = nationalDayRelativePaths(event);
+  const countryKey = country.toLowerCase().trim();
+  const cultureTabLabel = countryKey === 'united states' || countryKey === 'usa' || countryKey === 'us'
+    ? 'American culture'
+    : `${country || event.title} culture`;
 
   return replaceTemplateTokens(nationalDayTemplate, {
+    CSS_BASE: cssBase,
+    CONTENT_BASE: contentBase,
+    HOME_HREF: '/',
     LANG: 'en',
     LANG_DISPLAY: 'EN',
     LANG_LINKS: '',
@@ -780,10 +907,11 @@ function assembleNationalDayFromHtmlTemplate(event) {
     CANONICAL_URL: canonical,
     STRUCTURED_DATA: buildStructuredData(event, 'national-day'),
     HERO_WEBP: heroImagePath(event, 'webp'),
+    HERO_WEBP_ABS: `${BASE_URL}${heroImagePath(event, 'webp')}`,
     HERO_PNG: heroImagePath(event, 'png'),
     HERO_IMG_400: heroImagePathSized(event, 400),
-    HERO_IMG_640: heroImagePathSized(event, 640),
-    HERO_IMG_960: heroImagePathSized(event, 960),
+    HERO_IMG_640: heroImagePathSizedExisting(event, 640),
+    HERO_IMG_960: heroImagePathSizedExisting(event, 960),
     HERO_ALT: html(event.title),
     SLUG: html(event.slug),
     TITLE: html(event.title),
@@ -806,10 +934,22 @@ function assembleNationalDayFromHtmlTemplate(event) {
     CHECKOUT_DATE: dates.checkout,
     AREA_PILLS: buildNationalDayTemplateAreaPills(cnt),
     BOOKING_URL: html(cnt.bookingUrl || '#'),
-    BOOKING_BASE: (function() { const u = cnt.bookingUrl || ''; const i = u.indexOf('ss%3D'); return i !== -1 ? u.slice(0, i) : u; })(),
+    BOOKING_BASE: html(bookingBaseForCountry(country)),
     BOOKING_COUNTRY: html(country),
+    FOOD_DRINK_HREF: `${contentBase}/categories/culture/food-drink.html`,
+    TOPIC_HREF: topicPageHref(event),
+    TOPIC_LABEL: html('National days'),
+    TOPIC_IMAGE: `/content/categories/culture/img/national-day-hero.png`,
+    TOPIC_IMAGE_SRCSET: `/content/categories/culture/img/national-day-hero-400.webp 400w, /content/categories/culture/img/national-day-hero-768.webp 768w, /content/categories/culture/img/national-day-hero-1200.webp 1200w`,
+    TOPIC_IMAGE_ALT: html('Public celebration with flags'),
+    COUNTRY_HREF: countryPath ? `/content/locations/${countryPath}/index.html` : '#',
+    COUNTRY_IMAGE: locationHeroImage(countryPath),
+    COUNTRY_IMAGE_SRCSET: locationHeroSrcset(countryPath),
+    COUNTRY_IMAGE_ALT: html(`${country} location hero`),
+    COUNTRY_LABEL: html(country),
+    CULTURE_TAB_LABEL: html(cultureTabLabel),
+    NATIONAL_DAY_TOPIC_HREF: topicPageHref(event),
     YEAR: String(currentYear),
-    NAV_BASE: isTest ? '/Templates/test' : '',
   });
 }
 
@@ -836,7 +976,46 @@ function buildStructuredData(event, type) {
   const pageUrl  = `${BASE_URL}${canonicalUrl(event)}`;
   const imgUrl   = `${BASE_URL}${heroImagePath(event, 'webp')}`;
   const catUrl   = `${BASE_URL}/content/categories/${event.category}/index.html`;
-  const topicUrl = `${BASE_URL}/content/categories/${event.category}/${event.topic}/index.html`;
+  const topicUrl = `${BASE_URL}${topicPageHref(event)}`;
+
+  if (type === 'golf') {
+    const golfImgUrl = `${BASE_URL}/content/categories/sport/golf/events/img/${event.slug}-hero-1200.webp`;
+    const graph = [];
+    if (event.startDate) {
+      graph.push({
+        '@type': 'Event',
+        '@id': `${pageUrl}#event`,
+        'name': event.title,
+        'startDate': event.startDate,
+        'endDate':   event.endDate || event.startDate,
+        'eventStatus': 'https://schema.org/EventScheduled',
+        'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+        'location': {
+          '@type': 'Place',
+          'name': event.location?.cities?.[0] || event.location?.countries?.[0] || 'TBC',
+        },
+        'image': golfImgUrl,
+        'url': pageUrl,
+      });
+    }
+    graph.push({
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Sport', 'item': catUrl },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Golf',  'item': topicUrl },
+        { '@type': 'ListItem', 'position': 3, 'name': event.title, 'item': pageUrl },
+      ],
+    });
+    graph.push({
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      'url': pageUrl,
+      'name': event.title,
+      'description': `${event.title}: when it is, where it's played, past winners and where to stay near the course.`,
+      'image': golfImgUrl,
+    });
+    return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')}</script>`;
+  }
 
   if (type === 'national-day') {
     const graph = [];
@@ -893,11 +1072,30 @@ function buildStructuredData(event, type) {
 // ── Hero image paths ───────────────────────────────────────────────────────
 
 function heroImagePath(event, ext = 'png') {
-  return `/content/categories/${event.category}/${event.topic}/events/img/${event.slug}-hero.${ext}`;
+  const base = `/content/categories/${event.category}/${event.topic}/events/img/${event.slug}-hero`;
+  if (ext === 'webp') {
+    const direct = `${base}.webp`;
+    if (fs.existsSync(path.join(root, direct.slice(1)))) return direct;
+    const sized = `${base}-1200.webp`;
+    if (fs.existsSync(path.join(root, sized.slice(1)))) return sized;
+    const png = `${base}.png`;
+    if (fs.existsSync(path.join(root, png.slice(1)))) return png;
+  }
+  return `${base}.${ext}`;
 }
 
 function heroImagePathSized(event, width) {
   return `/content/categories/${event.category}/${event.topic}/events/img/${event.slug}-hero-${width}.webp`;
+}
+
+function heroImagePathSizedExisting(event, width) {
+  const preferred = heroImagePathSized(event, width);
+  if (fs.existsSync(path.join(root, preferred.slice(1)))) return preferred;
+  if (width === 640) {
+    const fallback600 = heroImagePathSized(event, 600);
+    if (fs.existsSync(path.join(root, fallback600.slice(1)))) return fallback600;
+  }
+  return heroImagePath(event, 'webp');
 }
 
 // ── Canonical URL ──────────────────────────────────────────────────────────
@@ -906,9 +1104,207 @@ function canonicalUrl(event) {
   return `/content/categories/${event.category}/${event.topic}/events/${event.slug}.html`;
 }
 
+// ── Golf helpers ───────────────────────────────────────────────────────────
+
+const TOUR_LABELS = { pga: 'PGA Tour', lpga: 'LPGA Tour', liv: 'LIV Golf' };
+
+function golfHeroImgPath(event, size) {
+  return `/content/categories/sport/golf/events/img/${event.slug}-hero-${size}.webp`;
+}
+
+function golfDateText(event) {
+  if (event.startDate && event.endDate && event.startDate !== event.endDate) {
+    const s = formatDisplayDate(event.startDate);
+    const e = formatDisplayDate(event.endDate);
+    return `${s} – ${e}`;
+  }
+  if (event.startDate) return formatDisplayDate(event.startDate);
+  return event.displayDates || '';
+}
+
+function golfWhenFacts(event) {
+  const cnt = golfContent[event.slug] || {};
+  const facts = [];
+  const dt = golfDateText(event);
+  if (dt) facts.push(['Dates', dt]);
+  if (cnt.venue || event.location?.venue) facts.push(['Venue', cnt.venue || event.location.venue]);
+  if (event.location?.cities?.[0])        facts.push(['City',  event.location.cities[0]]);
+  if (event.location?.countries?.[0])     facts.push(['Country', countryLinkHtml(event.location.countries[0])]);
+  const tourCode = cnt.tour || event.tourCode || '';
+  if (tourCode) facts.push(['Tour', TOUR_LABELS[tourCode] || tourCode]);
+  if (event.statusLabel) facts.push(['Status', event.statusLabel]);
+  return facts.map(([label, value]) =>
+    `<li class="event-fact"><span>${html(label)}</span><strong>${String(value).includes('<') ? value : html(value)}</strong></li>`
+  ).join('\n');
+}
+
+function golfVisitContent(event) {
+  const cnt      = golfContent[event.slug] || {};
+  const city     = cnt.stay_city || event.location?.cities?.[0] || '';
+  const country  = event.location?.countries?.[0] || '';
+  const venue    = cnt.venue || '';
+  const tourCode = cnt.tour || event.tourCode || '';
+  const tourLabel = TOUR_LABELS[tourCode] || tourCode || 'Golf';
+  const parts = [];
+
+  const countryHtml = countryLinkHtml(country);
+  const stayPlace = city && countryHtml
+    ? `${html(city)}, ${countryHtml}`
+    : (city ? html(city) : countryHtml);
+  if (stayPlace) {
+    parts.push(`<h2 class="event-visit-heading">Where to stay</h2>`);
+    parts.push(`<p class="event-visit-intro">Use <strong>${stayPlace}</strong> as the first stay area for ${html(event.title)} when course access and event timing matter.</p>`);
+  }
+
+  parts.push(`<ol class="event-key-facts">`);
+  if (venue)   parts.push(`<li class="event-fact"><span>Venue</span><strong>${html(venue)}</strong></li>`);
+  if (city)    parts.push(`<li class="event-fact"><span>Nearest city</span><strong>${html(city)}</strong></li>`);
+  if (country) parts.push(`<li class="event-fact"><span>Country</span><strong>${countryHtml}</strong></li>`);
+  parts.push(`<li class="event-fact"><span>Tour</span><strong>${html(tourLabel)}</strong></li>`);
+  parts.push(`</ol>`);
+
+  parts.push(`<h2 class="event-visit-heading">Getting there</h2>`);
+  if (city) {
+    parts.push(`<p class="event-visit-body">Use <strong>${html(city)}</strong> as the arrival anchor, then compare airport transfers, parking and course access before choosing where to stay.</p>`);
+  } else if (country) {
+    parts.push(`<p class="event-visit-body">Search for flights into <strong>${countryHtml}</strong>. Check local transport options for the final leg to the course.</p>`);
+  }
+
+  return parts.join('\n') || `<p>Travel information coming soon.</p>`;
+}
+
+function golfHistoryHTML(event) {
+  const migrated = (golfHistoryData[event.slug] || []).slice().sort((a, b) => b.year - a.year);
+
+  if (!migrated.length) {
+    // Fallback: ESPN leaderboard data as simple table
+    const bySlug = golfLeaderboard.bySlugYear || {};
+    const byId   = golfLeaderboard.byEventId  || {};
+    const rows   = [];
+    for (const key of Object.keys(bySlug).sort().reverse()) {
+      if (!key.startsWith(event.slug + ':')) continue;
+      const year    = key.split(':')[1];
+      const entry   = byId[bySlug[key]];
+      if (!entry) continue;
+      const w = (entry.players || []).find(p => p.position === 1);
+      if (!w) continue;
+      rows.push(`<tr><td>${html(year)}</td><td>${html(w.name)}</td><td>${html(w.final || '')}</td></tr>`);
+    }
+    const tbody = rows.join('\n') || '<tr><td colspan="3">No results yet</td></tr>';
+    return `<table class="event-history-table"><thead><tr><th>Year</th><th>Winner</th><th>Score</th></tr></thead><tbody>${tbody}</tbody></table>`;
+  }
+
+  // Rich year-tab display
+  const inputs = migrated.map((e, i) =>
+    `<input type="radio" name="golf-year" id="gy-${e.year}"${i === 0 ? ' checked' : ''}>`
+  ).join('\n');
+
+  const labels = migrated.map(e => {
+    const flagImg = e.flag ? `<img src="${e.flag}" alt="" width="18" height="12" loading="lazy">` : '';
+    return `<label class="golf-year-label" for="gy-${e.year}">${html(String(e.year))} ${flagImg}</label>`;
+  }).join('\n');
+
+  const panels = migrated.map(e => {
+    const flagImg = e.flag ? `<img src="${e.flag}" alt="${html(e.country)}" width="20" height="14" loading="lazy">` : '';
+    const meta = [e.dates, e.venue].filter(Boolean).join(' · ');
+    // Use pre-rendered HTML from production (copied as-is)
+    const lbHtml = e.leaderboard_html || '';
+    return `<div class="golf-year-panel" data-year="${e.year}">
+  <div class="golf-year-winner">${flagImg}${html(e.winner)}</div>
+  ${meta ? `<div class="golf-year-meta">${html(meta)}</div>` : ''}
+  ${lbHtml}
+</div>`;
+  }).join('\n');
+
+  return `<div class="golf-history">
+${inputs}
+<div class="golf-year-nav">${labels}</div>
+<div class="golf-year-panels">${panels}</div>
+</div>`;
+}
+
+function golfHistoryRows(event) {
+  return golfHistoryHTML(event);
+}
+
+function golfAreaPills(event) {
+  const cnt = golfContent[event.slug] || {};
+  const city = cnt.stay_city || event.location?.cities?.[0] || event.location?.countries?.[0] || '';
+  if (!city) return '';
+  return `<label class="stay-area-pill"><input type="radio" name="stay-region" value="${html(city)}" checked><span>${html(city)}</span></label>`;
+}
+
+function golfStayDates(event) {
+  const pad = value => String(value).padStart(2, '0');
+  const iso = date => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
+  const start = event.startDate ? new Date(`${event.startDate}T00:00:00Z`) : null;
+  const end = event.endDate ? new Date(`${event.endDate}T00:00:00Z`) : null;
+
+  return {
+    checkin: start && !Number.isNaN(start.getTime()) ? iso(new Date(start.getTime() - 86400000)) : '',
+    checkout: end && !Number.isNaN(end.getTime()) ? iso(new Date(end.getTime() + 86400000)) : '',
+  };
+}
+
+function assembleGolfFromHtmlTemplate(event) {
+  const cnt       = golfContent[event.slug] || {};
+  const yearData  = golfYearData[event.slug];
+  if (!yearData || !Array.isArray(yearData.editions) || yearData.editions.length === 0) {
+    throw new Error(`Missing golf year data for ${event.slug}. Run scripts/build/build-golf-events.mjs --json-only or restore verified golf year data before building.`);
+  }
+  const canonical = `${BASE_URL}${canonicalUrl(event)}`;
+  const hero1200  = golfHeroImgPath(event, 1200);
+  const tourCode  = cnt.tour || event.tourCode || '';
+  const tourLabel = yearData.teamEvent
+    ? (yearData.teamLabel || 'Team match play')
+    : (TOUR_LABELS[tourCode] || tourCode || 'Golf');
+  const country   = event.location?.countries?.[0] || '';
+  const city      = cnt.stay_city || event.location?.cities?.[0] || country;
+  const dateText  = golfDateText(event);
+  const dates     = golfStayDates(event);
+
+  const metaTitle = `${event.title} ${event.currentEdition || ''} — dates, venue & where to stay`.replace(/\s+/g, ' ').trim();
+  const metaDesc  = yearData.metaDescription || `${event.title}: dates, course, past winners and stay planning.`;
+
+  const bookingBase = BOOKING_BASE;
+
+  return replaceTemplateTokens(golfTemplate, {
+    LANG:             'en',
+    META_TITLE:       html(metaTitle),
+    META_DESCRIPTION: html(metaDesc),
+    CANONICAL_URL:    canonical,
+    STRUCTURED_DATA:  buildStructuredData(event, 'golf'),
+    HERO_WEBP:        hero1200,
+    HERO_WEBP_ABS:    `${BASE_URL}${hero1200}`,
+    HERO_PNG:         heroImagePath(event, 'png'),
+    HERO_IMG_400:     golfHeroImgPath(event, 400),
+    HERO_IMG_640:     golfHeroImgPath(event, 768),
+    HERO_IMG_960:     hero1200,
+    HERO_ALT:         html(event.title),
+    SLUG:             html(event.slug),
+    TITLE:            html(event.title),
+    DATE_TEXT:        html(dateText),
+    TOUR_LABEL:       html(tourLabel),
+    WHEN_FACTS:       golfWhenFacts(event),
+    HISTORY_ROWS:     golfHistoryRows(event),
+    VISIT_CONTENT:    golfVisitContent(event),
+    ABOUT_BODY:       cnt.about ? `<p>${html(cnt.about)}</p>` : '',
+    AREA_PILLS:       golfAreaPills(event),
+    CHECKIN_DATE:     dates.checkin,
+    CHECKOUT_DATE:    dates.checkout,
+    BOOKING_BASE:     bookingBase,
+    BOOKING_COUNTRY:  html(city || country),
+    NAV_BASE:         isTest ? '/Dev' : '',
+    YEAR_DATA_JSON:   jsonForScript(yearData),
+  });
+}
+
 // ── Assemble full page ─────────────────────────────────────────────────────
 
 function assemblePage(event, type) {
+  if (type === 'golf' && golfTemplate) {
+    return assembleGolfFromHtmlTemplate(event);
+  }
   if (type === 'national-day' && nationalDayTemplate) {
     return assembleNationalDayFromHtmlTemplate(event);
   }
@@ -943,8 +1339,9 @@ function assemblePage(event, type) {
     const nextYear = nd.nextYear || (currentYear + 1);
     const country  = event.location?.countries?.[0] || '';
     metaTitle = `${event.title} — ${dateText} ${nextYear} guide, food & stays`;
-    if (metaTitle.length > 60) metaTitle = `${event.title} — ${dateText} ${nextYear} guide`;
-    metaDesc  = `Everything about ${event.title} on ${dateText} — why celebrated, what to eat and where to stay — at a glance.`;
+    if (metaTitle.length > 60) metaTitle = `${event.title} — ${dateText} ${nextYear}`;
+    if (metaTitle.length > 60) metaTitle = `${event.title} ${nextYear}`;
+    metaDesc  = `${event.title}: ${dateText}, event format, food notes and stay planning.`;
     canonical  = `${BASE_URL}${canonicalUrl(event)}`;
     ogImage    = `${BASE_URL}${heroImagePath(event, 'webp')}`;
     bodyClasses = `national-day onepage--${event.slug}`;
@@ -968,7 +1365,7 @@ function assemblePage(event, type) {
     .replace(/\{\{NAV_LANG_LINKS\}\}/g,   '')
     .replace(/\{\{NAV_ACTIVE_WORLD\}\}/g, '')
     .replace(/\{\{NAV_ACTIVE_CATEGORIES\}\}/g, 'active')
-    .replace(/\{\{NAV_BACK_HREF\}\}/g,    `/content/categories/${event.category}/${event.topic}/index.html`)
+    .replace(/\{\{NAV_BACK_HREF\}\}/g,    topicPageHref(event))
     .replace(/\{\{NAV_BACK_TITLE\}\}/g,   html(type === 'national-day' ? 'National Day' : event.topic))
     .replace(/\{\{NAV_BACK_LABEL\}\}/g,   html(type === 'national-day' ? 'National Day' : event.topic))
     .replace(/\{\{BODY_CLASSES\}\}/g,     bodyClasses)
@@ -1073,7 +1470,8 @@ for (const event of events) {
     }
     if (slugFilter  && event.slug  !== slugFilter)  { skipped++; continue; }
     if (topicFilter && event.topic !== topicFilter) { skipped++; continue; }
-    if (event.topic === 'national-day' && ndWithImages && !ndWithImages.has(event.slug)) { skipped++; continue; }
+    if (event.skipBuild && !slugFilter) { skipped++; continue; }
+    if (event.topic === 'national-day' && ndWithImages && !ndWithImages.has(event.slug) && !slugFilter) { skipped++; continue; }
 
     const type    = resolveEventType(event.category, event.topic);
     const page    = assemblePage(event, type);
@@ -1088,7 +1486,7 @@ for (const event of events) {
   }
 }
 
-updateEventsIndex(builtEvents);
+if (!noIndex) updateEventsIndex(builtEvents);
 
 console.log(`\nbuild-all-events: ${generated} pages generated, ${skipped} skipped.`);
 if (errors.length) {

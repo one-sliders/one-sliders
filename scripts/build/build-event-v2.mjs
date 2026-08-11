@@ -5,7 +5,8 @@ const ROOT = process.cwd();
 const DEV_ROOT = path.join(ROOT, 'Dev');
 
 const args = new Set(process.argv.slice(2));
-const writeDev = args.has('--dev') || !args.has('--prod');
+const testMode = args.has('--test');
+const writeDev = !testMode && (args.has('--dev') || !args.has('--prod'));
 const slugFilter = process.argv.find((arg) => arg.startsWith('--slug='))?.split('=')[1] ?? null;
 const CONTENT_BASE = '/content';
 const CSS_BASE = '/assets/css';
@@ -32,7 +33,10 @@ function mergeVisuals(cards, visuals = []) {
 
 function statStrip(stats = []) {
   if (!stats.length) return '';
-  return `<div class="event-stat-strip">${stats.map(([label, value]) => `<div><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`).join('')}</div>`;
+  return `<div class="event-stat-strip">${stats.map(([label, value]) => {
+    const renderedValue = value && typeof value === 'object' && value.html ? String(value.value ?? '') : esc(value);
+    return `<div><span>${esc(label)}</span><strong>${renderedValue}</strong></div>`;
+  }).join('')}</div>`;
 }
 
 function textDateInput(id, value = '') {
@@ -46,7 +50,8 @@ function uniqueList(values = []) {
 
 function cardHtml(card) {
   const classes = ['event-card'];
-  const title = card.href ? `<a href="${esc(card.href)}">${esc(card.title)}</a>` : esc(card.title);
+  const rawTitle = card.htmlTitle ? String(card.title ?? '') : esc(card.title);
+  const title = card.href ? `<a href="${esc(card.href)}">${rawTitle}</a>` : rawTitle;
   return `<div class="${classes.join(' ')}"><span>${esc(card.label)}</span><strong>${title}</strong><p>${card.html ? card.detail : esc(card.detail)}</p></div>`;
 }
 
@@ -69,6 +74,61 @@ function eventInsight(rowEvent) {
 function country({ name, href, flag }) {
   const img = flag ? `<img src="${flag}" alt="" width="20" height="14" loading="lazy">` : '';
   return `<a class="country" href="${href}">${img}${esc(name)}</a>`;
+}
+
+function countrySlugFromName(name) {
+  const normalized = String(name || '').trim().toLowerCase();
+  const aliases = {
+    'united states': 'usa',
+    'usa': 'usa',
+    'us': 'usa',
+    'united kingdom': 'united-kingdom',
+    'uk': 'united-kingdom',
+  };
+  return aliases[normalized] || normalized
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function countryLinkByName(name) {
+  const label = String(name || '').trim();
+  if (!label) return '';
+  const slug = countrySlugFromName(label);
+  const locationsRoot = path.join(ROOT, 'content', 'locations');
+  if (!fs.existsSync(locationsRoot)) return esc(label);
+  for (const continent of fs.readdirSync(locationsRoot, { withFileTypes: true })) {
+    if (!continent.isDirectory()) continue;
+    const countryDir = path.join(locationsRoot, continent.name, slug);
+    const page = path.join(countryDir, 'index.html');
+    const flag = path.join(countryDir, 'img', 'flag.svg');
+    if (!fs.existsSync(page) || !fs.existsSync(flag)) continue;
+    const href = `/content/locations/${continent.name}/${slug}/index.html`;
+    const flagHref = `/content/locations/${continent.name}/${slug}/img/flag.svg`;
+    return country({ name: label, href, flag: flagHref });
+  }
+  return esc(label);
+}
+
+function placeWithCountry(location, countryName) {
+  const place = String(location || '').trim();
+  const linkedCountry = countryLinkByName(countryName);
+  if (!place) return linkedCountry;
+  if (!countryName) return esc(place);
+  const label = String(countryName).trim();
+  const escapedPlace = esc(place);
+  if (place.toLowerCase().includes(label.toLowerCase())) {
+    const pattern = new RegExp(`\\b${label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+    return escapedPlace.replace(pattern, linkedCountry);
+  }
+  return `${esc(place)}, ${linkedCountry}`;
+}
+
+function linkCountryInPlace(value) {
+  const text = String(value || '').trim();
+  const { country: countryName } = splitLocationParts(text);
+  if (!countryName) return esc(text);
+  return placeWithCountry(text, countryName);
 }
 
 function nav({ topicLabel = 'Protected Nature', topicHref = `${CONTENT_BASE}/categories/climate/protected-nature.html` } = {}) {
@@ -141,12 +201,12 @@ const climateDetails = {
   'world-glacier-day': {
     kicker: 'UN observance',
     overviewTitle: 'Cryosphere loss is now a water, risk and policy issue',
-    summary: 'The cryosphere stores around 70% of Earth’s freshwater, but glaciers, ice sheets, permafrost, sea ice and snow are shrinking fast. World Glacier Day exists because this loss now affects water security, ecosystems, infrastructure and disaster risk worldwide.',
+    summary: 'The cryosphere stores around 70% of Earthâ€™s freshwater, but glaciers, ice sheets, permafrost, sea ice and snow are shrinking fast. World Glacier Day exists because this loss now affects water security, ecosystems, infrastructure and disaster risk worldwide.',
     cards: [
       {
         label: 'UN response',
         title: '21 March became World Day for Glaciers',
-        detail: 'The United Nations designated 21 March as World Day for Glaciers and proclaimed 2025 as the International Year of Glaciers’ Preservation.'
+        detail: 'The United Nations designated 21 March as World Day for Glaciers and proclaimed 2025 as the International Year of Glaciersâ€™ Preservation.'
       },
       {
         label: 'Science decade',
@@ -216,7 +276,7 @@ const climateDetails = {
   'earth-day': {
     kicker: 'Global action day',
     overviewTitle: 'Why Earth Day still matters',
-    summary: 'Earth Day is the modern environmental movement’s biggest annual public-action date, linking education, campaigns, cleanups, demonstrations and local projects around 22 April.',
+    summary: 'Earth Day is the modern environmental movementâ€™s biggest annual public-action date, linking education, campaigns, cleanups, demonstrations and local projects around 22 April.',
     cards: [
       {
         label: 'Origin',
@@ -256,11 +316,11 @@ const climateDetails = {
   'world-environment-day': {
     kicker: 'UNEP-led global day',
     overviewTitle: 'What World Environment Day does',
-    summary: 'World Environment Day is the United Nations Environment Programme’s annual June 5 platform for environmental outreach, public participation and a yearly campaign theme.',
+    summary: 'World Environment Day is the United Nations Environment Programmeâ€™s annual June 5 platform for environmental outreach, public participation and a yearly campaign theme.',
     cards: [
       {
         label: 'Scale',
-        title: 'UNEP’s largest public environment platform',
+        title: 'UNEPâ€™s largest public environment platform',
         detail: 'UNEP describes World Environment Day as the biggest international day for the environment, celebrated by millions of people worldwide.'
       },
       {
@@ -270,7 +330,7 @@ const climateDetails = {
       },
       {
         label: 'Why follow it',
-        title: 'The theme sets the year’s public focus',
+        title: 'The theme sets the yearâ€™s public focus',
         detail: 'The annual focus helps explain which environmental issue governments, schools, NGOs and campaigns will amplify around 5 June.'
       },
       {
@@ -284,7 +344,7 @@ const climateDetails = {
       {
         label: 'Campaign site',
         title: 'Host, theme and participation updates',
-        detail: 'Use the official campaign website for the current year’s host country, theme, featured actions and public materials.'
+        detail: 'Use the official campaign website for the current yearâ€™s host country, theme, featured actions and public materials.'
       },
       {
         label: 'Local angle',
@@ -356,7 +416,7 @@ const climateDetails = {
       {
         label: '2026 theme',
         title: 'Observing today, protecting tomorrow',
-        detail: 'WMO lists the 2026 theme as “Observing today, protecting tomorrow”.'
+        detail: 'WMO lists the 2026 theme as â€œObserving today, protecting tomorrowâ€.'
       }
     ],
     moreInfoTitle: 'What to follow on 23 March',
@@ -827,7 +887,7 @@ function renderPage({ imageRoot, canonicalPath }) {
           <div class="event-kpis">${kpis}</div>
           <a class="event-topic-card" href="${event.topicHref}">
             <img src="${topicImage}" alt="Protected nature landscape" width="400" height="300" loading="lazy">
-            <div class="event-topic-card__body"><span>Related climate topic</span><strong>Protected Nature topic</strong><p>Parks, reserves, conservation areas and calendar moments.</p></div>
+            <div class="event-topic-card__body"><span>Related climate topic</span><strong>Protected Nature topic</strong><p>Parks, reserves, conservation areas and event listings.</p></div>
           </a>
         </div>
       </div>
@@ -1017,13 +1077,13 @@ const technologyConsumerElectronics = [
       ['Why people follow it', 'The iPhone launch signal', 'This is the Apple event people track for iPhone naming, pricing, camera changes, Apple Watch updates and release dates.'],
       ['What to search', 'iPhone date, preorder date and keynote time', 'The most useful searches are the official keynote page, Apple Newsroom posts, preorder timing and device comparison pages after the keynote.'],
       ['How to watch', 'Apple streams the keynote online', 'Apple normally publishes the stream and replay from its Apple Events hub, with product pages going live after announcements.'],
-      ['Planning note', 'Use the Apple Events page as the source of truth', 'Apple publishes keynote video, replay and product links from its event hub; product lists should come from Apple’s own event page and Newsroom posts.']
+      ['Planning note', 'Use the Apple Events page as the source of truth', 'Apple publishes keynote video, replay and product links from its event hub; product lists should come from Appleâ€™s own event page and Newsroom posts.']
     ]
   },
   {
     name: 'Samsung Galaxy Unpacked',
     slug: 'samsung-galaxy-unpacked',
-    description: 'Samsung Galaxy Unpacked is Samsung’s flagship launch format for Galaxy phones, foldables, wearables and ecosystem hardware.',
+    description: 'Samsung Galaxy Unpacked is Samsungâ€™s flagship launch format for Galaxy phones, foldables, wearables and ecosystem hardware.',
     metaDescription: 'Samsung Galaxy Unpacked guide: Galaxy launch timing, product focus, livestream and preorder notes.',
     dateLabel: '25 Feb 2026',
     checkIn: '2026-02-24',
@@ -1059,13 +1119,13 @@ const technologyConsumerElectronics = [
       ['Why people follow it', 'Pixel and Android AI roadmap', 'The launch usually matters for Pixel hardware, Gemini features, camera tools, Android updates and preorder availability.'],
       ['What to search', 'Pixel price, release date and trade-in', 'The most useful searches are official Google Store pages, carrier availability, trade-in offers and feature comparisons.'],
       ['How to watch', 'Online-first launch coverage', 'Google generally makes the announcement available online, followed by product pages and detailed spec sheets.'],
-      ['Planning note', 'Use Google’s official launch pages first', 'Google’s own Store and event pages are the safest source for launch timing, product names, preorder links and availability.']
+      ['Planning note', 'Use Googleâ€™s official launch pages first', 'Googleâ€™s own Store and event pages are the safest source for launch timing, product names, preorder links and availability.']
     ]
   },
   {
     name: 'IFA Berlin',
     slug: 'ifa-berlin',
-    description: 'IFA Berlin is one of Europe’s major consumer-electronics trade shows, covering TVs, smart homes, appliances, mobile devices and retail technology.',
+    description: 'IFA Berlin is one of Europeâ€™s major consumer-electronics trade shows, covering TVs, smart homes, appliances, mobile devices and retail technology.',
     metaDescription: 'IFA Berlin guide: dates, venue context, product categories, visitor planning and official source links.',
     dateLabel: '4-8 Sep 2026',
     checkIn: '2026-09-03',
@@ -1096,7 +1156,7 @@ const technologyConsumerElectronics = [
     endDate: '2027-03-04',
     location: 'Barcelona, Spain',
     bookingCity: 'Barcelona, Spain',
-    areas: ['Fira Gran Via', 'L’Hospitalet', 'Eixample', 'Gothic Quarter'],
+    areas: ['Fira Gran Via', 'Lâ€™Hospitalet', 'Eixample', 'Gothic Quarter'],
     officialUrl: 'https://www.mwcbarcelona.com/',
     sources: [{ label: 'MWC Barcelona', url: 'https://www.mwcbarcelona.com/' }],
     cards: [
@@ -1109,7 +1169,7 @@ const technologyConsumerElectronics = [
   {
     name: 'Computex Taipei',
     slug: 'computex-taipei',
-    description: 'Computex Taipei is a major PC, semiconductor, AI hardware and component show in Taiwan’s technology supply-chain calendar.',
+    description: 'Computex Taipei is a major PC, semiconductor, AI hardware and component show in Taiwanâ€™s technology supply-chain calendar.',
     metaDescription: 'Computex Taipei guide: PC hardware, chips, AI devices, venue planning and official links.',
     dateLabel: '2-6 Jun 2026',
     checkIn: '2026-06-01',
@@ -1131,7 +1191,7 @@ const technologyConsumerElectronics = [
   {
     name: 'Nintendo Direct Showcase',
     slug: 'nintendo-direct-showcase',
-    description: 'Nintendo Direct is Nintendo’s online showcase format for game announcements, release dates, trailers and platform updates.',
+    description: 'Nintendo Direct is Nintendoâ€™s online showcase format for game announcements, release dates, trailers and platform updates.',
     metaDescription: 'Nintendo Direct guide: showcase timing, games, trailers, release dates and official stream links.',
     dateLabel: '9 Jun 2026 - latest confirmed',
     checkIn: '2026-06-08',
@@ -1146,13 +1206,13 @@ const technologyConsumerElectronics = [
       ['Why people follow it', 'Game announcements and release dates', 'Nintendo Direct is where fans look for trailers, release windows, platform updates and surprise first-party announcements.'],
       ['What to search', 'Direct time, runtime and featured games', 'The useful searches are the official stream page, Nintendo regional channels, announced titles and eShop pages after the show.'],
       ['Format', 'Online showcase', 'This is primarily an online event, so travel planning is usually not relevant unless paired with a separate live event.'],
-      ['Planning note', 'Nintendo announces streams close to air time', 'Use Nintendo’s Direct hub and regional YouTube channels for the confirmed stream, replay and game links.']
+      ['Planning note', 'Nintendo announces streams close to air time', 'Use Nintendoâ€™s Direct hub and regional YouTube channels for the confirmed stream, replay and game links.']
     ]
   },
   {
     name: 'Sony State of Play',
     slug: 'sony-state-of-play',
-    description: 'Sony State of Play is PlayStation’s online showcase format for trailers, release dates, gameplay reveals and platform updates.',
+    description: 'Sony State of Play is PlayStationâ€™s online showcase format for trailers, release dates, gameplay reveals and platform updates.',
     metaDescription: 'Sony State of Play guide: PlayStation showcase timing, games, trailers and official stream notes.',
     dateLabel: '2 Jun 2026 - latest confirmed',
     checkIn: '2026-06-01',
@@ -1189,7 +1249,7 @@ const technologyConsumerElectronics = [
       ['Why people follow it', 'Surface and Windows hardware signal', 'This event matters for Surface Pro, Surface Laptop, Windows device strategy, Copilot PC positioning and hardware availability.'],
       ['What to search', 'Specs, pricing and preorder pages', 'The useful searches are official Surface product pages, Microsoft Store availability, processor details and business-device notes.'],
       ['Format', 'Launch content plus product pages', 'The public value is usually the announcement, product pages, store listings and hands-on coverage after the reveal.'],
-      ['Planning note', 'Confirm location and access', 'Do not assume an in-person public event; use Microsoft’s official pages for confirmed access and launch timing.']
+      ['Planning note', 'Confirm location and access', 'Do not assume an in-person public event; use Microsoftâ€™s official pages for confirmed access and launch timing.']
     ]
   },
   {
@@ -1229,7 +1289,7 @@ const technologyDeveloperConferences = [
   {
     name: 'GitHub Universe',
     slug: 'github-universe',
-    description: 'GitHub Universe is GitHub’s developer conference for Copilot, GitHub Actions, security, open source workflow and platform updates.',
+    description: 'GitHub Universe is GitHubâ€™s developer conference for Copilot, GitHub Actions, security, open source workflow and platform updates.',
     metaDescription: 'GitHub Universe guide: Copilot, Actions, security, platform updates, keynote links and developer planning notes.',
     dateLabel: '28-29 Oct 2025 - latest confirmed',
     checkIn: '2025-10-27',
@@ -1242,16 +1302,16 @@ const technologyDeveloperConferences = [
     officialUrl: 'https://githubuniverse.com/',
     sources: [{ label: 'GitHub Universe', url: 'https://githubuniverse.com/' }],
     cards: [
-      ['Why people follow it', 'GitHub’s developer roadmap', 'Universe is where developers look for Copilot updates, GitHub Actions changes, security features and platform announcements.'],
+      ['Why people follow it', 'GitHubâ€™s developer roadmap', 'Universe is where developers look for Copilot updates, GitHub Actions changes, security features and platform announcements.'],
       ['What to search', 'Keynote, sessions and Copilot news', 'The useful searches are the keynote replay, session catalog, product announcements and GitHub changelog follow-ups.'],
       ['Audience', 'Developers, platform teams and open-source maintainers', 'The event is useful for teams that rely on GitHub for source control, CI/CD, security and AI-assisted development.'],
-      ['Planning note', 'Use the official event hub', 'GitHub’s event site is the source for registration, venue details, session agenda and livestream or replay links.']
+      ['Planning note', 'Use the official event hub', 'GitHubâ€™s event site is the source for registration, venue details, session agenda and livestream or replay links.']
     ]
   },
   {
     name: 'NVIDIA GTC',
     slug: 'nvidia-gtc',
-    description: 'NVIDIA GTC is NVIDIA’s AI and accelerated-computing conference for GPUs, AI infrastructure, robotics, simulation and developer platforms.',
+    description: 'NVIDIA GTC is NVIDIAâ€™s AI and accelerated-computing conference for GPUs, AI infrastructure, robotics, simulation and developer platforms.',
     metaDescription: 'NVIDIA GTC guide: AI infrastructure, GPUs, robotics, developer sessions, keynotes and travel planning.',
     dateLabel: '16-19 Mar 2026',
     checkIn: '2026-03-15',
@@ -1267,13 +1327,13 @@ const technologyDeveloperConferences = [
       ['Why people follow it', 'AI hardware and software roadmap', 'GTC is where teams track GPU platforms, AI infrastructure, CUDA ecosystem updates, robotics and enterprise AI announcements.'],
       ['What to search', 'Keynote, sessions and developer labs', 'The practical searches are registration, keynote time, session catalog, hands-on labs and replay access.'],
       ['Audience', 'AI builders and infrastructure teams', 'The event is especially relevant for ML engineers, platform teams, researchers, robotics developers and enterprise AI buyers.'],
-      ['Planning note', 'Plan around San Jose access', 'Hotel planning should center on San Jose and nearby South Bay areas once pass and venue details are confirmed on NVIDIA’s site.']
+      ['Planning note', 'Plan around San Jose access', 'Hotel planning should center on San Jose and nearby South Bay areas once pass and venue details are confirmed on NVIDIAâ€™s site.']
     ]
   },
   {
     name: 'AWS re:Invent',
     slug: 'aws-re-invent',
-    description: 'AWS re:Invent is Amazon Web Services’ annual cloud conference for infrastructure, data, AI, security, partner updates and hands-on builders.',
+    description: 'AWS re:Invent is Amazon Web Servicesâ€™ annual cloud conference for infrastructure, data, AI, security, partner updates and hands-on builders.',
     metaDescription: 'AWS re:Invent guide: Las Vegas dates, keynotes, cloud announcements, sessions, hotels and official links.',
     dateLabel: '1-5 Dec 2025 - latest confirmed',
     checkIn: '2025-11-30',
@@ -1295,7 +1355,7 @@ const technologyDeveloperConferences = [
   {
     name: 'Meta Connect',
     slug: 'meta-connect',
-    description: 'Meta Connect is Meta’s developer and product event for AI glasses, VR, mixed reality, Horizon, Quest and creator tools.',
+    description: 'Meta Connect is Metaâ€™s developer and product event for AI glasses, VR, mixed reality, Horizon, Quest and creator tools.',
     metaDescription: 'Meta Connect guide: AI glasses, Quest, mixed reality, livestreams, developer sessions and official links.',
     dateLabel: '17-18 Sep 2025 - latest confirmed',
     checkIn: '2025-09-16',
@@ -1308,16 +1368,16 @@ const technologyDeveloperConferences = [
     officialUrl: 'https://www.metaconnect.com/',
     sources: [{ label: 'Meta Connect', url: 'https://www.metaconnect.com/' }],
     cards: [
-      ['Why people follow it', 'Meta’s AI and spatial platform signal', 'Connect is where people look for Quest updates, smart glasses, AI features, Horizon changes and developer tooling.'],
+      ['Why people follow it', 'Metaâ€™s AI and spatial platform signal', 'Connect is where people look for Quest updates, smart glasses, AI features, Horizon changes and developer tooling.'],
       ['What to search', 'Keynote, device announcements and developer sessions', 'The useful searches are livestream time, replay links, product pages and session details for developers.'],
       ['Audience', 'XR developers and AI product teams', 'The event matters for builders working with Quest, Horizon, mixed reality, AI assistants and wearable devices.'],
-      ['Planning note', 'Online viewing is central', 'Use Meta’s official event site for viewing links, session access and product announcements.']
+      ['Planning note', 'Online viewing is central', 'Use Metaâ€™s official event site for viewing links, session access and product announcements.']
     ]
   },
   {
     name: 'Salesforce Dreamforce',
     slug: 'salesforce-dreamforce',
-    description: 'Salesforce Dreamforce is Salesforce’s annual conference for CRM, Agentforce, data cloud, admins, developers, partners and customer teams.',
+    description: 'Salesforce Dreamforce is Salesforceâ€™s annual conference for CRM, Agentforce, data cloud, admins, developers, partners and customer teams.',
     metaDescription: 'Salesforce Dreamforce guide: San Francisco dates, Agentforce, CRM sessions, registration and travel planning.',
     dateLabel: '14-16 Oct 2025 - latest confirmed',
     checkIn: '2025-10-13',
@@ -1339,7 +1399,7 @@ const technologyDeveloperConferences = [
   {
     name: 'Red Hat Summit',
     slug: 'red-hat-summit',
-    description: 'Red Hat Summit is Red Hat’s conference for open source enterprise platforms, Linux, OpenShift, Ansible, automation and hybrid cloud.',
+    description: 'Red Hat Summit is Red Hatâ€™s conference for open source enterprise platforms, Linux, OpenShift, Ansible, automation and hybrid cloud.',
     metaDescription: 'Red Hat Summit guide: enterprise open source, OpenShift, Ansible, AI, hybrid cloud, sessions and official links.',
     dateLabel: '11-14 May 2026',
     checkIn: '2026-05-10',
@@ -1355,13 +1415,13 @@ const technologyDeveloperConferences = [
       ['Why people follow it', 'Enterprise open-source roadmap', 'Summit is where teams track OpenShift, RHEL, Ansible, AI infrastructure and hybrid-cloud announcements.'],
       ['What to search', 'Sessions, labs and product keynotes', 'The useful searches are registration, agenda, technical sessions, hands-on labs and Red Hat product announcements.'],
       ['Audience', 'Platform, operations and cloud teams', 'The event is useful for Linux administrators, platform engineers, architects, security teams and enterprise developers.'],
-      ['Planning note', 'Use the official Summit page', 'Red Hat’s event hub is the source for dates, city, registration, sessions and replay links.']
+      ['Planning note', 'Use the official Summit page', 'Red Hatâ€™s event hub is the source for dates, city, registration, sessions and replay links.']
     ]
   },
   {
     name: 'DockerCon',
     slug: 'dockercon',
-    description: 'DockerCon is Docker’s developer event for containers, local development, Docker Desktop, security, AI workflows and software delivery.',
+    description: 'DockerCon is Dockerâ€™s developer event for containers, local development, Docker Desktop, security, AI workflows and software delivery.',
     metaDescription: 'DockerCon guide: containers, Docker Desktop, developer workflows, security, AI sessions and official links.',
     dateLabel: '2025 - latest confirmed edition',
     checkIn: '2025-11-09',
@@ -1377,13 +1437,13 @@ const technologyDeveloperConferences = [
       ['Why people follow it', 'Container workflow updates', 'DockerCon is where developers look for Docker Desktop, container security, build workflow, AI and local development updates.'],
       ['What to search', 'Sessions, product announcements and replay', 'The useful searches are the official agenda, livestream or replay links, Docker blog posts and developer session videos.'],
       ['Audience', 'Application developers and platform teams', 'The event is useful for teams building and shipping containerized software across local machines, CI and cloud platforms.'],
-      ['Planning note', 'Online content is important', 'Use Docker’s official event page for confirmed format, session access and replay links.']
+      ['Planning note', 'Online content is important', 'Use Dockerâ€™s official event page for confirmed format, session access and replay links.']
     ]
   },
   {
     name: 'Microsoft Build',
     slug: 'microsoft-build',
-    description: 'Microsoft Build is Microsoft’s developer conference for Azure, Windows, Copilot, .NET, GitHub, AI tooling and platform services.',
+    description: 'Microsoft Build is Microsoftâ€™s developer conference for Azure, Windows, Copilot, .NET, GitHub, AI tooling and platform services.',
     metaDescription: 'Microsoft Build guide: Azure, Copilot, Windows, developer tools, sessions, registration and official links.',
     dateLabel: '2-3 Jun 2026',
     checkIn: '2026-06-01',
@@ -1396,16 +1456,16 @@ const technologyDeveloperConferences = [
     officialUrl: 'https://build.microsoft.com/',
     sources: [{ label: 'Microsoft Build', url: 'https://build.microsoft.com/' }],
     cards: [
-      ['Why people follow it', 'Microsoft’s developer roadmap', 'Build is where developers track Azure, Copilot, Windows, .NET, GitHub and Microsoft platform announcements.'],
+      ['Why people follow it', 'Microsoftâ€™s developer roadmap', 'Build is where developers track Azure, Copilot, Windows, .NET, GitHub and Microsoft platform announcements.'],
       ['What to search', 'Keynote, session catalog and announcements', 'The useful searches are registration, session agenda, keynote replay, Book of News and product documentation links.'],
       ['Audience', 'Microsoft ecosystem builders', 'The event is useful for cloud developers, Windows developers, AI builders, enterprise architects and platform teams.'],
-      ['Planning note', 'Use Build’s official site', 'Microsoft’s Build site is the source for confirmed dates, location, sessions and online access.']
+      ['Planning note', 'Use Buildâ€™s official site', 'Microsoftâ€™s Build site is the source for confirmed dates, location, sessions and online access.']
     ]
   },
   {
     name: 'Apple WWDC',
     slug: 'apple-wwdc',
-    description: 'Apple WWDC is Apple’s annual developer conference for iOS, macOS, watchOS, visionOS, Swift, developer tools and platform sessions.',
+    description: 'Apple WWDC is Appleâ€™s annual developer conference for iOS, macOS, watchOS, visionOS, Swift, developer tools and platform sessions.',
     metaDescription: 'Apple WWDC guide: June 2026 dates, keynote, sessions, Apple platforms, Swift and official links.',
     dateLabel: '8-12 Jun 2026',
     checkIn: '2026-06-07',
@@ -1421,7 +1481,7 @@ const technologyDeveloperConferences = [
       ['Why people follow it', 'Apple platform roadmap', 'WWDC is where developers track iOS, macOS, watchOS, visionOS, Swift, Xcode and App Store platform changes.'],
       ['What to search', 'Keynote, Platforms State of the Union and sessions', 'The useful searches are the keynote, Platforms State of the Union, session videos, sample code and developer documentation.'],
       ['Audience', 'Apple platform developers', 'The event is useful for iOS, macOS, watchOS, visionOS and web developers building for Apple users.'],
-      ['Planning note', 'Online sessions matter', 'WWDC is heavily online, with Apple’s developer site carrying sessions, labs, videos and documentation links.']
+      ['Planning note', 'Online sessions matter', 'WWDC is heavily online, with Appleâ€™s developer site carrying sessions, labs, videos and documentation links.']
     ]
   }
 ].map((event) => ({
@@ -1527,7 +1587,7 @@ function isGenericCultureText(text = '') {
     || /No confirmed date identified in this enrichment pass/i.test(text)
     || /Existing date carried from source file/i.test(text)
     || /^Verifiera datum$/i.test(text)
-    || /^Updated — next edition$/i.test(text);
+    || /^Updated â€” next edition$/i.test(text);
 }
 
 function compactDescription(parts) {
@@ -1619,10 +1679,8 @@ function cultureRowToSimpleEvent(row) {
     cards.push(['When', row.display_dates || row.next_date_label || 'Date to confirm', row.when_details || row.display_dates || row.next_date_label]);
   }
   if (row.location || row.country) {
-    const placeTitle = row.location && row.country && row.location !== row.country && !row.location.toLowerCase().includes(row.country.toLowerCase())
-      ? `${row.location}, ${row.country}`
-      : (row.location || row.country);
-    cards.push(['Where', placeTitle, row.venue_details || '']);
+    const placeTitle = placeWithCountry(row.location, row.country);
+    cards.push({ label: 'Where', title: placeTitle, detail: row.venue_details || '', htmlTitle: true });
   }
   if (areas.length) {
     cards.push(['Stay base', areas[0], areas.slice(1).join(', ')]);
@@ -1654,12 +1712,12 @@ function cultureRowToSimpleEvent(row) {
     sourceImageRoot: imageRootFor(row),
     topicImage: `/content/categories/culture/img/${row.topic}-mini.png`,
     relatedLabel: 'More Culture',
-    relatedDetail: 'More event families and calendar moments.',
+    relatedDetail: 'More event families and event listings.',
     description,
     metaDescription: compactDescription([
       `${row.title}:`,
       row.location || row.country || topicLabel,
-      `${topicLabel.toLowerCase()} context, venue notes and stay planning - at a glance.`
+      `${topicLabel.toLowerCase()} context, venue notes and stay planning.`
     ]),
     dateLabel: row.display_dates,
     checkIn: dates.start,
@@ -1668,6 +1726,7 @@ function cultureRowToSimpleEvent(row) {
     endDate: dates.end,
     location: row.location || row.country || topicLabel,
     displayLocation: row.location || row.country || topicLabel,
+    country: row.country,
     bookingCity,
     areas: areas.length ? areas : [bookingCity].filter(Boolean),
     officialUrl,
@@ -1743,6 +1802,7 @@ function renderTechnologyEvent(rowEvent) {
   const relatedDetail = rowEvent.relatedDetail ?? 'Devices, trade shows, product showcases and consumer technology calendars.';
   const isMusic = category === 'music';
   const locationLabel = rowEvent.displayLocation || rowEvent.location;
+  const visibleLocationLabel = rowEvent.country ? placeWithCountry(locationLabel, rowEvent.country) : linkCountryInPlace(locationLabel);
   const schemaEvent = {
     '@type': 'Event',
     name: rowEvent.startDate ? `${rowEvent.name} ${rowEvent.startDate.slice(0, 4)}` : rowEvent.name,
@@ -1772,7 +1832,16 @@ function renderTechnologyEvent(rowEvent) {
       }
     ]
   };
-  const cards = rowEvent.cards.map(([label, title, detail]) => `<div class="event-info-card"><span>${esc(label)}</span><strong>${esc(title)}</strong>${detail ? `<p>${esc(detail)}</p>` : ''}</div>`).join('');
+  const cards = rowEvent.cards.map((card) => {
+    const label = Array.isArray(card) ? card[0] : card.label;
+    const title = Array.isArray(card) ? card[1] : card.title;
+    const detail = Array.isArray(card) ? card[2] : card.detail;
+    const htmlTitle = !Array.isArray(card) && card.htmlTitle;
+    const safeTitle = htmlTitle && String(title || '').includes('class="country"')
+      ? title
+      : linkCountryInPlace(title);
+    return `<div class="event-info-card"><span>${esc(label)}</span><strong>${safeTitle}</strong>${detail ? `<p>${esc(detail)}</p>` : ''}</div>`;
+  }).join('');
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -1833,11 +1902,11 @@ function renderTechnologyEvent(rowEvent) {
       <div class="layout__b">
         <section class="event-panel event-panel--single" id="overview" aria-labelledby="overview-title">
           <p class="event-section-kicker">Content / info</p>
-          <p id="overview-title" class="event-panel-title">What to know before ${esc(rowEvent.name)}</p>
+          <p id="overview-title" class="event-panel-title">${esc(rowEvent.name)} planning notes</p>
           <p>${esc(rowEvent.description)}</p>
           ${statStrip([
             ['Date', rowEvent.dateLabel],
-            [rowEvent.venue ? 'Venue' : 'Location', locationLabel],
+            [rowEvent.venue ? 'Venue' : 'Location', { value: visibleLocationLabel, html: true }],
             ...(isMusic ? [] : [['Topic', rowEvent.topicLabel]])
           ].filter(([, value]) => value))}
           <div class="event-info-grid">
@@ -1983,7 +2052,7 @@ function renderTechnologyExample(rowEvent) {
       <div class="layout__b">
         <section class="event-panel event-panel--single" id="overview" aria-labelledby="overview-title">
           <p class="event-section-kicker">Content / info</p>
-          <p id="overview-title" class="event-panel-title">What to know before Google I/O</p>
+          <p id="overview-title" class="event-panel-title">Google I/O planning notes</p>
           <p>${esc(rowEvent.description)}</p>
           <div class="event-info-grid">
             <div class="event-info-card"><span>Why follow it</span><strong>Google's public developer roadmap</strong><p>Google I/O connects Gemini, Android, Chrome, Cloud, Search and developer tooling into one public event.</p></div>
@@ -2026,11 +2095,11 @@ function decodeHtml(value = '') {
     .replace(/&mdash;/g, '-')
     .replace(/&ndash;/g, '-')
     .replace(/&nbsp;/g, ' ')
-    .replace(/â€”/g, '-')
-    .replace(/â€“/g, '-')
-    .replace(/â€™/g, "'")
-    .replace(/â€œ/g, '"')
-    .replace(/â€/g, '"');
+    .replace(/Ã¢â‚¬â€/g, '-')
+    .replace(/Ã¢â‚¬â€œ/g, '-')
+    .replace(/Ã¢â‚¬â„¢/g, "'")
+    .replace(/Ã¢â‚¬Å“/g, '"')
+    .replace(/Ã¢â‚¬Â/g, '"');
 }
 
 function attrValue(html, name) {
@@ -2087,8 +2156,10 @@ function splitLocationParts(location) {
   };
 }
 
-function musicCards({ name, dateLabel, venue, location, displayLocation, cityCountry, officialUrl }) {
-  const whereTitle = venue ? `${venue}, ${cityCountry || location}` : (displayLocation || location || 'Venue TBC');
+function musicCards({ name, dateLabel, venue, location, displayLocation, cityCountry, countryName, officialUrl }) {
+  const linkedCityCountry = countryName ? placeWithCountry(cityCountry || location, countryName) : esc(cityCountry || location);
+  const linkedDisplayLocation = countryName ? placeWithCountry(displayLocation || location, countryName) : esc(displayLocation || location || 'Venue TBC');
+  const whereTitle = venue ? `${esc(venue)}, ${linkedCityCountry}` : linkedDisplayLocation || 'Venue TBC';
   const whereDetail = venue
     ? `Plan around ${venue} first, then compare hotels and late transport in ${cityCountry || location}. Check gate, bag and entry rules before the show.`
     : `Use the official event page to pin down the exact venue, entry gates and transport plan before choosing where to stay.`;
@@ -2097,10 +2168,10 @@ function musicCards({ name, dateLabel, venue, location, displayLocation, cityCou
     : `Start with the organiser or venue page for ticket releases, resale rules, age limits and door times.`;
   return [
     ['When it happens', dateLabel || 'Date watchlist', dateLabel ? `${name} is listed for ${dateLabel}. Use the event page for door time, support acts and any late schedule changes.` : `Use the organiser page for the confirmed date, door time and schedule before booking travel.`],
-    ['Where it happens', whereTitle, whereDetail],
+    ['Where it happens', whereTitle, whereDetail, true],
     ['Tickets and entry', 'Use official channels first', ticketDetail],
     ['Stay and transport', venue ? `Base the trip around ${venue}` : 'Base the trip around the confirmed venue', `For a concert, the useful choice is not just the city: compare walking routes, late public transport, taxi pickup points and hotels that still work after the show.`]
-  ];
+  ].map(([label, title, detail, htmlTitle]) => ({ label, title, detail, htmlTitle }));
 }
 
 function musicLinkTargets() {
@@ -2178,7 +2249,7 @@ function musicEventFromSource(link) {
   const topic = parts[0];
   const slug = parts.at(-1).replace(/\.html$/, '');
   const topicLabel = musicTopicLabels[topic] ?? topic.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
-  const name = decodeHtml(link.title || firstMatch(html, [/<meta property="og:title" content="([^"]+)"/i, /<title>([\s\S]*?)<\/title>/i])).replace(/\s+-\s+.*$/, '').replace(/\s+—\s+.*$/, '').trim();
+  const name = decodeHtml(link.title || firstMatch(html, [/<meta property="og:title" content="([^"]+)"/i, /<title>([\s\S]*?)<\/title>/i])).replace(/\s+-\s+.*$/, '').replace(/\s+â€”\s+.*$/, '').trim();
   const sourceDescription = decodeHtml(attrValue(html.match(/<meta name="description" content="[^"]*"/i)?.[0] ?? '', 'content') || attrValue(html.match(/<meta property="og:description" content="[^"]*"/i)?.[0] ?? '', 'content') || `${name} event guide for ${topicLabel}.`);
   const cardDateText = decodeHtml(link.cardDate || '');
   const pendingDate = /\bdates?\s+pending\b/i.test(cardDateText);
@@ -2203,7 +2274,7 @@ function musicEventFromSource(link) {
   const eventYear = startDate ? new Date(startDate).getFullYear() : '';
   const stayNear = city || location;
   const metaDescription = compactMetaDescription(
-    `${name}: venue, tickets and where to stay near ${stayNear} - at a glance.`
+    `${name}: venue, tickets and where to stay near ${stayNear}.`
   );
   return {
     category: 'music',
@@ -2235,7 +2306,7 @@ function musicEventFromSource(link) {
     areas,
     officialUrl: link.officialUrl || '',
     sources: link.officialUrl ? [{ label: 'Official site', url: link.officialUrl }] : [],
-    cards: musicCards({ name, dateLabel, venue, location, displayLocation, cityCountry, officialUrl: link.officialUrl })
+    cards: musicCards({ name, dateLabel, venue, location, displayLocation, cityCountry, countryName: country, officialUrl: link.officialUrl })
   };
 }
 
@@ -2290,10 +2361,10 @@ function golfEventFromYearData(data) {
     sourceImageRoot: '/content/categories/sport/golf/events/img',
     topicImage: '/content/categories/sport/img/golf-mini.png',
     relatedLabel: 'More Golf',
-    relatedDetail: 'More majors, courses and calendar moments.',
+    relatedDetail: 'More majors, courses and event listings.',
     name: data.eventName,
     slug: data.slug,
-    metaDescription: `${data.eventName}: venue, golf trip planning and recent results - at a glance.`,
+    metaDescription: `${data.eventName}: venue, golf trip planning and recent results.`,
     description: golfEventDescription(data, edition, venue, firstCity, recentResults),
     dateLabel: edition.dates || '',
     startDate: edition.startDate || '',
@@ -2629,8 +2700,7 @@ function renderGolfEventV2(rowEvent) {
   return `<!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <script defer src="/assets/js/oneslider-core.js"></script>
+  <script defer src="/assets/js/3_event.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="os-back-href" content="${pageTopicHref}">
@@ -2640,14 +2710,15 @@ function renderGolfEventV2(rowEvent) {
   <link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="${CSS_BASE}/colors.css">
-  <link rel="stylesheet" href="${CSS_BASE}/shapes.css">
-  <link rel="stylesheet" href="${CSS_BASE}/typography.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-v2.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-overview.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-booking-left.css">
-  <link rel="stylesheet" href="${CSS_BASE}/event-golf-v2.css">
-  <link id="palette-css" rel="stylesheet" href="/assets/css/palettes/oneslider-palette-harmonized.css">
+  <link rel="stylesheet" href="/assets/css/1_colours.css">
+  <link rel="stylesheet" href="/assets/css/1_typography.css">
+  <link rel="stylesheet" href="/assets/css/1_core.css">
+  <link rel="stylesheet" href="/assets/css/2_frame.css">
+  <link rel="stylesheet" href="/assets/css/3_event.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-left-booking.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-right-overview.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-event-v2-tabs.css">
+  <link rel="stylesheet" href="/assets/css/4_flik-golf-history.css">
   <link rel="canonical" href="https://one-sliders.com${rowEvent.canonicalPath}">
   <meta name="description" content="${esc(rowEvent.metaDescription)}">
   <meta property="og:title" content="${esc(seoTitleName)} - Golf Event Guide">
@@ -2730,7 +2801,7 @@ function stripGolfSponsorSuffix(name) {
 }
 
 function writeGolfEvents() {
-  const targetRoot = writeDev ? DEV_ROOT : ROOT;
+  const targetRoot = testMode ? path.join(ROOT, 'Templates', 'test') : (writeDev ? DEV_ROOT : ROOT);
   const dataPath = path.join(ROOT, 'scripts', 'data', 'golf-events-year-data.json');
   const golfData = readJsonFile(dataPath);
   const rows = Object.values(golfData)

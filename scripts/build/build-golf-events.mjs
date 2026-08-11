@@ -6,6 +6,8 @@ const today = new Date('2026-05-31T12:00:00Z');
 const lastUpdated = '31 May 2026';
 const eventDir = path.join(root, 'content/categories/sport/golf/events');
 const eventImgDir = path.join(eventDir, 'img');
+const forceEventArg = process.argv.find((arg) => arg.startsWith('--force-event='));
+const forceEventSlug = forceEventArg ? forceEventArg.split('=').slice(1).join('=').trim() : '';
 const espnHistory = readJsonIfExists(path.join(root, 'scripts/data/golf-espn-history.json'));
 const espnLeaderboards = readJsonIfExists(path.join(root, 'scripts/data/golf-espn-leaderboards.json'));
 const legacyGolfStandaloneSlugs = ['oslo-ladies-open', 'ryder-cup', 'solheim-cup'];
@@ -16,6 +18,7 @@ const countries = {
   mexico: country('Mexico', '/content/locations/north-america/mexico/index.html', '/content/locations/north-america/mexico/img/flag.svg', 'north-america', 'mexico'),
   dominicanRepublic: country('Dominican Republic', '/content/locations/north-america/dominican-republic/index.html', '/content/locations/north-america/dominican-republic/img/flag.svg', 'north-america', 'dominican-republic'),
   unitedKingdom: country('United Kingdom', '/content/locations/europe/united-kingdom/index.html', '/content/locations/europe/united-kingdom/img/flag.svg', 'europe', 'united-kingdom'),
+  scotland: country('Scotland', '/content/locations/europe/scotland/index.html', '/content/locations/europe/scotland/img/flag.svg', 'europe', 'scotland'),
   ireland: country('Ireland', '/content/locations/europe/ireland/index.html', '/content/locations/europe/ireland/img/flag.svg', 'europe', 'ireland'),
   sweden: country('Sweden', '/content/locations/europe/sweden/index.html', '/content/locations/europe/sweden/img/flag.svg', 'europe', 'sweden'),
   norway: country('Norway', '/content/locations/europe/norway/index.html', '/content/locations/europe/norway/img/flag.svg', 'europe', 'norway'),
@@ -127,8 +130,27 @@ const events = [
   pga('RBC Canadian Open', '2026-06-14', 'Canada', countries.canada),
   pga('U.S. Open Golf', '2026-06-21', 'New York', countries.usa, { slug: 'us-open-golf', major: true }),
   pga('Travelers Championship', '2026-06-28', 'Connecticut', countries.usa),
-  pga('John Deere Classic', '2026-07-05', 'Illinois', countries.usa),
-  pga('Genesis Scottish Open', '2026-07-12', 'Scotland', countries.unitedKingdom),
+  pga('John Deere Classic', '2026-07-05', 'Illinois', countries.usa, {
+    startDate: '2026-07-02',
+    city: 'Silvis',
+    venue: 'TPC Deere Run',
+    stayAreas: ['Moline', 'Silvis', 'East Moline', 'Davenport', 'Bettendorf'],
+    airportNote: {
+      title: 'Quad Cities International Airport (MLI)',
+      detail: 'MLI in Moline is the closest main airport base; compare Moline, Silvis and Davenport stays against course access and evening transport.'
+    },
+    tripCards: [
+      { title: 'Best base', detail: 'Moline is usually the practical first search area because it balances hotels, airport access and short transfers toward Silvis.' },
+      { title: 'Venue reality', detail: 'TPC Deere Run is in Silvis, so the useful hotel question is not just Illinois; compare course access, parking plans and late return routes.' },
+      { title: 'Tournament rhythm', detail: 'The 2026 tournament runs July 2-5, with four competition days and busier hotel demand around the weekend rounds.' },
+      { title: 'Booking detail', detail: 'Check cancellation terms, parking fees, shuttle notes and whether the stay still works after a long final-round day.' }
+    ],
+    sources: [
+      { label: 'PGA TOUR John Deere Classic leaderboard', url: 'https://www.pgatour.com/tournaments/2026/john-deere-classic/R2026030/leaderboard' },
+      { label: 'PGA TOUR schedule', url: 'https://www.pgatour.com/schedule' }
+    ]
+  }),
+  pga('Genesis Scottish Open', '2026-07-12', 'Scotland', countries.scotland),
   pga('ISCO Championship', '2026-07-12', 'Kentucky', countries.usa),
   pga('The Open Championship', '2026-07-19', 'England', countries.unitedKingdom, { slug: 'the-open-championship', major: true }),
   pga('Corales Puntacana Championship', '2026-07-19', 'Dominican Republic', countries.dominicanRepublic),
@@ -192,8 +214,24 @@ const events = [
   lpga('Dow Championship', '2026-06-14', 'Michigan', countries.usa),
   lpga('Meijer LPGA Classic for Simply Give', '2026-06-21', 'Michigan', countries.usa, { slug: 'meijer-lpga-classic' }),
   lpga('KPMG Women\'s PGA Championship', '2026-06-28', 'Minnesota', countries.usa, { slug: 'kpmg-womens-pga-championship', major: true }),
-  lpga('Amundi Evian Championship', '2026-07-12', 'France', countries.france, { major: true }),
-  lpga('ISPS Handa Women\'s Scottish Open', '2026-07-26', 'Scotland', countries.unitedKingdom, { slug: 'isps-handa-womens-scottish-open' }),
+  lpga('Amundi Evian Championship', '2026-07-12', 'France', countries.france, {
+    major: true,
+    startDate: '2026-07-09',
+    city: 'Evian-les-Bains',
+    venue: 'Evian Resort Golf Club',
+    stayAreas: ['Evian-les-Bains', 'Thonon-les-Bains', 'Lausanne', 'Geneva', 'Montreux'],
+    airportNote: {
+      title: 'Geneva Airport is the main international gateway',
+      detail: 'Evian-les-Bains sits on Lake Geneva, so compare lakefront stays, course transfers and cross-border travel if you stay in Switzerland.'
+    },
+    tripCards: [
+      { title: 'Best base', detail: 'Evian-les-Bains is closest to Evian Resort Golf Club; Thonon-les-Bains can be useful if local rooms tighten around the weekend rounds.' },
+      { title: 'Venue reality', detail: 'Evian Resort Golf Club sits above Lake Geneva, so gate access, shuttle timing and hillside transfers matter more than a simple city-centre booking.' },
+      { title: 'Tournament rhythm', detail: 'The 2026 major is scheduled for July 9-12, with the strongest hotel demand around Friday through Sunday.' },
+      { title: 'Booking detail', detail: 'Check cancellation terms, late transport, parking guidance and whether a Switzerland-based stay adds border or transfer time.' }
+    ]
+  }),
+  lpga('ISPS Handa Women\'s Scottish Open', '2026-07-26', 'Scotland', countries.scotland, { slug: 'isps-handa-womens-scottish-open' }),
   lpga('AIG Women\'s Open', '2026-08-02', 'England', countries.unitedKingdom, { slug: 'aig-womens-open', major: true }),
   lpga('The Standard Portland Classic', '2026-08-16', 'Oregon', countries.usa, { slug: 'portland-classic' }),
   lpga('CPKC Women\'s Open', '2026-08-23', 'Canada', countries.canada, { slug: 'cpkc-womens-open' }),
@@ -432,7 +470,10 @@ function event(tour, name, endDate, area, host, extra) {
     major: !!extra.major,
     firstEditionYear: extra.firstEditionYear || null,
     sourceLabel: extra.sourceLabel || tours[tour].sourceLabel,
-    sourceUrl: extra.sourceUrl || tours[tour].sourceUrl
+    sourceUrl: extra.sourceUrl || tours[tour].sourceUrl,
+    stayAreas: extra.stayAreas || null,
+    airportNote: extra.airportNote || null,
+    tripCards: extra.tripCards || null
   };
 }
 
@@ -939,16 +980,17 @@ function offsetIsoDate(iso, days) {
 }
 
 function usCanadaGolfModules(item, edition) {
-  if (!/^(United States|Canada)$/.test(item.host?.name || '')) return null;
+  const hasCustomTripData = Boolean(item.stayAreas?.length || item.airportNote || item.tripCards?.length);
+  if (!/^(United States|Canada)$/.test(item.host?.name || '') && !hasCustomTripData) return null;
   const base = cityAreaLabel(item) || item.area || item.host.name;
-  const destination = base && base !== item.host.name ? `${base}, ${item.host.name}` : item.host.name;
-  const stayAreas = [
+  const destination = base && base !== item.host.name && !base.includes(item.host.name) ? `${base}, ${item.host.name}` : base || item.host.name;
+  const stayAreas = (item.stayAreas || [
     base,
     `${base} downtown`,
     `${base} airport area`,
     'Venue-side hotels',
     'Nearby suburbs'
-  ].filter((value, index, list) => value && list.indexOf(value) === index);
+  ]).filter((value, index, list) => value && list.indexOf(value) === index);
   const start = item.startDate || item.endDate || edition.startDate || '';
   return {
     hotel: {
@@ -963,7 +1005,7 @@ function usCanadaGolfModules(item, edition) {
       campaign: `${item.slug}-${edition.year}-hotels`,
       pageTopic: 'golf',
       pageEvent: item.slug,
-      airportNote: {
+      airportNote: item.airportNote || {
         title: 'Check the nearest major airport',
         detail: 'Use the official tournament venue and local transport guidance before booking flights and hotels.'
       }
@@ -973,7 +1015,7 @@ function usCanadaGolfModules(item, edition) {
       eyebrow: 'Golf trip',
       title: `Plan the ${item.name} ${edition.year} trip`,
       cardLabel: 'Trip',
-      cards: [
+      cards: item.tripCards || [
         { title: 'Best base', detail: `${stayAreas[0]} is the first area to compare once the venue and transport plan are confirmed.` },
         { title: 'Venue reality', detail: `${edition.venue || 'The venue'} shapes the trip; confirm gates, parking and shuttle details close to the event.` },
         { title: 'Tournament rhythm', detail: 'Golf trips work best when hotel, course transfer and dinner base do not pull in three different directions.' },
@@ -1134,7 +1176,7 @@ function eventSnapshotCard(item) {
 function eventPage(item) {
   const tour = tours[item.tour];
   const country = countryChip(item.host);
-  const title = `${item.name} | OneSliders`;
+  const title = `${stripGolfSponsorSuffix(item.name)} | OneSliders`;
   const description = `${item.name} on the 2026 ${tour.name} schedule.`;
   const status = statusLabel(item);
   const dates = fullDateRange(item);
@@ -1146,15 +1188,22 @@ function eventPage(item) {
   const jsonData = eventYearData(item);
   return `<!doctype html><html lang="en"><head>
   <!-- golf-tour-generated-framed -->
-  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
-  <script src="/assets/js/oneslider-core.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../../assets/css/oneslider-core.css">
+  <script src="../../../../../assets/js/oneslider-core.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:description" content="${html(description)}">
-  <meta property="og:url" content="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><link rel="icon" href="/assets/icons/favicon.ico" sizes="any"><link rel="icon" href="/assets/icons/one-sliders-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><link rel="manifest" href="/assets/icons/site.webmanifest"><link rel="stylesheet" href="/assets/css/events.css?v=event-frame-20260530-golf-pga-layout-3"><script defer src="/assets/js/events.js?v=visit-tab-20260612"></script><link rel="preload" as="image" href="${eventHeroAbs(item)}"><link rel="canonical" href="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><meta name="description" content="${html(description)}">
+  <meta property="og:url" content="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><link rel="icon" href="../../../../../assets/icons/favicon.ico" sizes="any"><link rel="icon" href="../../../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../../../../../assets/icons/apple-touch-icon.png"><link rel="manifest" href="../../../../../assets/icons/site.webmanifest"><link rel="stylesheet" href="../../../../../assets/css/events.css?v=event-frame-20260530-golf-pga-layout-3"><script defer src="../../../../../assets/js/events.js?v=visit-tab-20260612"></script><link rel="preload" as="image" href="${eventHeroAbs(item)}"><link rel="canonical" href="https://one-sliders.com/content/categories/sport/golf/events/${item.slug}.html"><meta name="description" content="${html(description)}">
   <meta name="content-language" content="en">
-  <meta name="keywords" content="${html(item.name.toLowerCase())}, golf, ${html(tour.name.toLowerCase())}, one sliders"><meta property="og:title" content="${html(title)}"><meta property="og:image" content="https://one-sliders.com/content/categories/sport/golf/events/img/${item.slug}-hero.png"><meta name="twitter:card" content="summary_large_image"><title>${html(title)}</title><script type="application/json" id="event-year-data">${jsonForScript(jsonData)}</script></head><body class="event-page event-page--framed" data-generated-golf-tour="true">${navHtml()}<main class="event-frame" id="general" aria-labelledby="event-title"><section class="event-frame__visual" aria-label="${html(item.name)} overview"><div class="event-frame__media"><img src="${eventHeroAbs(item)}" alt="" width="1200" height="630" fetchpriority="high"></div><div class="event-frame__copy"><div><h1 class="event-title" id="event-title">${html(item.name)}</h1></div><div class="facts-strip"><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div></div>${snapshotCard}<a class="topic-card topic-card--inline" href="/content/categories/sport/golf.html" aria-label="Open the Golf topic page"><img src="/content/categories/sport/img/golf-mini.png" alt="" width="400" height="300" loading="eager"><span>More golf</span><strong>Golf topic</strong><p>More majors, courses and calendar moments.</p></a></div></section><section class="event-frame__panel" id="year" aria-label="Edition details"><div class="event-frame__panel-header"><h2 class="event-section-title" data-year-heading>${html(item.name)} 2026 ${headingPlace}</h2></div><div class="year-switcher" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition><div class="facts-strip"><div class="fact"><span>Country</span><strong>${country}</strong></div><div class="fact"><span>City</span><strong>${cityArea || 'TBC'}</strong></div><div class="fact"><span>Venue</span><strong>${venue}</strong></div><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div><div class="fact"><span>Format</span><strong>${html(formatLabel)}</strong></div></div></div></section></main><footer class="event-footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>.</footer></body></html>
+  <meta name="keywords" content="${html(item.name.toLowerCase())}, golf, ${html(tour.name.toLowerCase())}, one sliders"><meta property="og:title" content="${html(title)}"><meta property="og:image" content="https://one-sliders.com/content/categories/sport/golf/events/img/${item.slug}-hero.png"><meta name="twitter:card" content="summary_large_image"><title>${html(title)}</title><script type="application/json" id="event-year-data">${jsonForScript(jsonData)}</script></head><body class="event-page event-page--framed" data-generated-golf-tour="true">${navHtml()}<main class="event-frame" id="general" aria-labelledby="event-title"><section class="event-frame__visual" aria-label="${html(item.name)} overview"><div class="event-frame__media"><img src="${eventHeroAbs(item)}" alt="" width="1200" height="630" fetchpriority="high"></div><div class="event-frame__copy"><div><h1 class="event-title" id="event-title">${html(item.name)}</h1></div><div class="facts-strip"><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div></div>${snapshotCard}<a class="topic-card topic-card--inline" href="/content/categories/sport/golf.html" aria-label="Open the Golf topic page"><img src="/content/categories/sport/img/golf-mini.png" alt="" width="400" height="300" loading="eager"><span>More golf</span><strong>Golf topic</strong><p>More majors, courses and tournament listings.</p></a></div></section><section class="event-frame__panel" id="year" aria-label="Edition details"><div class="event-frame__panel-header"><h2 class="event-section-title" data-year-heading>${html(item.name)} 2026 ${headingPlace}</h2></div><div class="year-switcher" data-year-switcher aria-label="Choose edition"></div><div class="year-edition" data-year-edition><div class="facts-strip"><div class="fact"><span>Country</span><strong>${country}</strong></div><div class="fact"><span>City</span><strong>${cityArea || 'TBC'}</strong></div><div class="fact"><span>Venue</span><strong>${venue}</strong></div><div class="fact"><span>Dates</span><strong>${html(dates)}</strong></div><div class="fact"><span>Status</span><strong>${html(status)}</strong></div><div class="fact"><span>Format</span><strong>${html(formatLabel)}</strong></div></div></div></section></main><footer class="event-footer">&copy; 2026 <a href="https://3dfractal.no/">3D Fractal</a>.</footer></body></html>
 `;
+}
+
+function stripGolfSponsorSuffix(name) {
+  return String(name || '')
+    .replace(/\s+(?:presented|presented by|powered by|driven by|sponsored by)\s+.+$/i, '')
+    .replace(/\s+(?:pres\.?|presented)\s+by\s+.+$/i, '')
+    .trim();
 }
 
 function leagueList(tourSlug) {
@@ -1179,11 +1228,26 @@ function nextEventCards() {
 
 function ensureGolfPageStyles(source) {
   const calendarStyles = `      .league-events--calendar { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px; max-height: 560px; overflow: auto; padding-right: 4px; align-items: start; }\n      .league-events--calendar li { display: grid; grid-template-rows: 94px 1fr; gap: 0; min-height: 196px; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 24px rgba(18,32,46,.07); }\n      .league-event-thumb-link { display: block; width: 100%; height: 94px; overflow: hidden; background: #edf1ee; border: 0; border-radius: 0; }\n      .league-event-thumb { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .18s ease; }\n      .league-event-thumb-link:hover .league-event-thumb { transform: scale(1.04); }\n      .league-event-copy { display: grid; gap: 7px; min-width: 0; padding: 10px; align-content: start; }\n      .league-event-topline { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }\n      .league-event-topline time { color: var(--theme); font-size: 11px; font-weight: 900; text-transform: uppercase; }\n      .league-event-badge { padding: 3px 6px; border-radius: 999px; background: rgba(188,146,58,.16); color: #7a5410; font-size: 10px; font-weight: 900; text-transform: uppercase; }\n      .league-event-copy strong { display: block; }\n      .league-event-copy strong a { display: -webkit-box; min-height: 34px; overflow: hidden; color: var(--ink); font-size: 15px; line-height: 1.12; text-decoration: none; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }\n      .league-event-copy strong a:hover { color: var(--theme); }\n      .league-event-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.25; }\n      .league-event-area { padding: 4px 7px; border-radius: 999px; background: rgba(36,95,70,.08); color: var(--theme); font-size: 11px; font-weight: 900; }\n      .league-event-meta .country { min-height: 22px; padding: 0 7px; font-size: 12px; }\n      .league-event-meta .country img { width: 19px; height: 13px; }\n`;
+  const responsiveStyles = `      @media (max-width: 860px) {\n        .league-split { grid-template-columns: 1fr; grid-template-rows: auto; gap: 10px; }\n        .league-split > .league-summary,\n        .league-split > .league-block:has(.league-events--calendar) { grid-column: 1; grid-row: auto; }\n        .league-summary { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }\n        .league-summary .league-block { min-width: 0; }\n        .league-ranking li { grid-template-columns: 24px minmax(0,1fr) auto; gap: 7px; align-items: start; }\n        .league-ranking strong { overflow-wrap: anywhere; }\n        .league-events--calendar { grid-template-columns: repeat(2, minmax(0,1fr)); max-height: none; overflow: visible; padding-right: 0; }\n      }\n      @media (max-width: 620px) {\n        .league-summary,\n        .league-events--calendar { grid-template-columns: 1fr; }\n        .league-event-thumb-link { height: 118px; }\n        .league-events--calendar li { min-height: 0; }\n        .league-event-copy { padding: 12px; }\n      }\n`;
   const existingCalendarStyles = /      \.league-events--calendar \{[\s\S]*?      \.league-event-meta \.country img \{ width: 19px; height: 13px; \}\r?\n/;
-  if (existingCalendarStyles.test(source)) return source.replace(existingCalendarStyles, calendarStyles);
-  const needle = '      .league-events li { padding: 7px 8px; border-radius: 8px; background: rgba(36,95,70,.08); color: var(--muted); font-size: 13px; line-height: 1.22; }\n      .league-events strong { display: block; color: var(--ink); font-size: 13px; }\n';
-  const insert = `${needle}${calendarStyles}`;
-  return source.replace(needle, insert);
+  if (existingCalendarStyles.test(source)) {
+    source = source.replace(existingCalendarStyles, calendarStyles);
+  } else {
+    const needle = '      .league-events li { padding: 7px 8px; border-radius: 8px; background: rgba(36,95,70,.08); color: var(--muted); font-size: 13px; line-height: 1.22; }\n      .league-events strong { display: block; color: var(--ink); font-size: 13px; }\n';
+    const insert = `${needle}${calendarStyles}`;
+    source = source.replace(needle, insert);
+  }
+  source = source.replace(
+    '      .league-points { color: var(--muted); font-size: 12px; font-weight: 800; }\n',
+    '      .league-ranking strong { min-width: 0; }\n      .league-points { color: var(--muted); font-size: 12px; font-weight: 800; justify-self: end; white-space: nowrap; }\n'
+  );
+  if (!source.includes('@media (max-width: 860px)')) {
+    source = source.replace(
+      '      @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }\n',
+      `${responsiveStyles}      @media (max-width: 560px) { .event-language-menu .event-language-list { top: 56px; right: 10px; left: 10px; width: auto; max-width: none; } }\n`
+    );
+  }
+  return source;
 }
 
 function updateGolfPage() {
@@ -1383,7 +1447,7 @@ function updateLegacyStandaloneGolfEventShells() {
     if (!fs.existsSync(file)) continue;
     let source = fs.readFileSync(file, 'utf8');
     const next = source
-      .replaceAll('../../../../../../assets/', '/assets/')
+      .replaceAll('../../../../../../assets/', '../../../../../assets/')
       .replaceAll('href="../../../../events/index.html"', 'href="/content/events/index.html"')
       .replaceAll('href="../../../../locations/index.html"', 'href="/content/locations/index.html"')
       .replaceAll('href="../../../index.html"', 'href="/content/categories/index.html"');
@@ -1409,7 +1473,8 @@ function writeEventPages() {
   fs.mkdirSync(eventImgDir, { recursive: true });
   for (const item of events) {
     const target = path.join(eventDir, `${item.slug}.html`);
-    if (isDetailedEventPage(target)) continue;
+    if (forceEventSlug && item.slug !== forceEventSlug) continue;
+    if (!forceEventSlug && isDetailedEventPage(target)) continue;
     fs.writeFileSync(target, eventPage(item));
   }
 }
@@ -1419,6 +1484,47 @@ function isDetailedEventPage(file) {
   const source = fs.readFileSync(file, 'utf8');
   if (source.includes('data-generated-golf-tour="true"') || source.includes('golf-tour-generated-framed')) return false;
   return source.includes('id="event-year-data"') || source.includes('event-page--framed') || source.includes('class="event-frame"');
+}
+
+function golfYearDataRichness(data) {
+  const editions = Array.isArray(data?.editions) ? data.editions : [];
+  return editions.reduce((score, edition) => {
+    let next = score + 1;
+    if (Array.isArray(edition.sessionScores) && edition.sessionScores.length) next += 20;
+    if (edition.liveResults) next += 20;
+    if (Array.isArray(edition.questions) && edition.questions.length) next += edition.questions.length;
+    if (edition.currentModules?.golfTrip) next += 10;
+    if (edition.currentModules?.faq) next += 10;
+    if (edition.currentModules?.hotel) next += 5;
+    return next;
+  }, 0);
+}
+
+function mergePreservedGolfYearData(generated) {
+  const file = path.join(root, 'scripts/data/golf-events-year-data.json');
+  if (!fs.existsSync(file)) return generated;
+  const existing = readJsonIfExists(file) || {};
+  const merged = { ...generated };
+  for (const [slug, data] of Object.entries(existing)) {
+    if (!data || !Array.isArray(data.editions) || data.editions.length === 0) continue;
+    if (!merged[slug] || golfYearDataRichness(data) > golfYearDataRichness(merged[slug])) {
+      merged[slug] = data;
+    }
+  }
+  return merged;
+}
+
+// Export year data for build-all-events.mjs to embed in new onepage template
+let yearDataMap = {};
+for (const item of events) {
+  yearDataMap[item.slug] = eventYearData(item);
+}
+yearDataMap = mergePreservedGolfYearData(yearDataMap);
+fs.writeFileSync(path.join(root, 'scripts/data/golf-events-year-data.json'), JSON.stringify(yearDataMap));
+
+if (process.argv.includes('--json-only')) {
+  console.log(`Exported year data for ${events.length} golf events.`);
+  process.exit(0);
 }
 
 writeEventPages();

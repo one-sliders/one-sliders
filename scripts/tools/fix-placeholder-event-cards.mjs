@@ -121,7 +121,7 @@ function eventPage({ category, topic, title, slug, country }) {
   <script defer src="/assets/js/events.js"></script>
   <link rel="preload" as="image" href="${imgPath}-hero.png">
   <link rel="canonical" href="https://one-sliders.com${topicPath}/events/${slug}.html">
-  <meta name="description" content="${esc(title)} 2027 overview: dates, venue, programme and travel context for ${categoryLabel} / ${topicLabel}.">
+  <meta name="description" content="${esc(title)} 2027 overview: dates, venue, programme and visitor planning for ${categoryLabel} / ${topicLabel}.">
   <meta property="og:title" content="${esc(title)} 2027 - Dates, Schedule &amp; Results">
   <meta property="og:image" content="https://one-sliders.com${imgPath}-hero.png">
   <meta property="og:url" content="https://one-sliders.com${topicPath}/events/${slug}.html">
