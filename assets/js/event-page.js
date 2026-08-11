@@ -1698,8 +1698,62 @@
     });
   });
 
-  OneSlider.register('nationalDayStayBooking', function () {
-    var roots = Array.prototype.slice.call(document.querySelectorAll('[data-national-day-stay]'));
+  OneSlider.register('eventTabHashLinks', function () {
+    var tabs = document.querySelector('.event-tabs');
+    if (!tabs) return;
+
+    function tabIdForPanel(panelId) {
+      return panelId ? panelId.replace('panel-', 'tab-') : '';
+    }
+
+    function targetFromHash(hash) {
+      var clean = decodeURIComponent(String(hash || '').replace(/^#/, ''));
+      if (!clean) return null;
+      return document.getElementById(clean);
+    }
+
+    function scrollToTarget(target) {
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          var hadTabIndex = target.hasAttribute('tabindex');
+          if (!hadTabIndex) target.setAttribute('tabindex', '-1');
+          var nav = document.querySelector('.top-menu, .event-nav');
+          var navHeight = nav ? Math.ceil(nav.getBoundingClientRect().height) : 0;
+          target.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'auto' });
+          if (navHeight) window.scrollBy(0, -(navHeight + 10));
+          if (!hadTabIndex) {
+            target.addEventListener('blur', function () {
+              target.removeAttribute('tabindex');
+            }, { once: true });
+          }
+        });
+      });
+    }
+
+    function applyHash() {
+      var target = targetFromHash(window.location.hash);
+      if (!target) return;
+      var panel = target.closest('.event-tab-panel');
+      if (!panel) {
+        scrollToTarget(target);
+        return;
+      }
+      var input = document.getElementById(tabIdForPanel(panel.id));
+      if (input && input.name === 'event-tab') {
+        input.checked = true;
+      }
+      scrollToTarget(target);
+      window.setTimeout(function () {
+        scrollToTarget(target);
+      }, 180);
+    }
+
+    applyHash();
+    window.addEventListener('hashchange', applyHash);
+  });
+
+  OneSlider.register('eventStayBooking', function () {
+    var roots = Array.prototype.slice.call(document.querySelectorAll('[data-event-stay], [data-national-day-stay]'));
     if (!roots.length) return;
 
     roots.forEach(function (root) {
