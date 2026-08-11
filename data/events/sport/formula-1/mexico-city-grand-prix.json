@@ -1,0 +1,123 @@
+{
+  "layout": "event-basic",
+  "title": "Mexico City Grand Prix",
+  "metaDescription": "Mexico City Grand Prix: source-backed dates, circuit and visitor planning for this Formula 1 race.",
+  "canonicalUrl": "https://one-sliders.com/content/categories/sport/formula-1/events/mexico-city-grand-prix.html",
+  "ogImage": "https://one-sliders.com/content/categories/sport/formula-1/events/img/mexico-city-grand-prix-hero.png",
+  "heroImage": "/content/categories/sport/formula-1/events/img/mexico-city-grand-prix-hero.png",
+  "h1": "Mexico City Grand Prix",
+  "topic": "Formula 1",
+  "topicUrl": "./../../formula-1.html",
+  "dates": "30 October 2026 – 1 November 2026",
+  "venue": "Autódromo Hermanos Rodríguez",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "countryUrl": "/content/locations/north-america/mexico/index.html",
+  "countryFlag": "/content/locations/north-america/mexico/img/flag.svg",
+  "format": "Formula 1 Grand Prix",
+  "status": "Scheduled",
+  "overview": {
+    "personas": [
+      "Fact-checker",
+      "TV or remote follower",
+      "On-site attendee"
+    ],
+    "about": "The Mexico City Grand Prix is run at the Autodromo Hermanos Rodriguez, the highest-altitude circuit in Formula 1 at around 2,240 metres above sea level. The thin air cuts downforce and challenges engine cooling, while the stadium section - where the track snakes through a baseball arena packed with fans - creates one of the sport's best atmospheres. First held in 1963 and revived in 2015, it is a modern favourite. The 2026 race is on 30 October - 1 November.",
+    "nextEvent": "The 2026 Mexico City Grand Prix runs 30 October - 1 November. The altitude means engines, brakes and cooling work unusually hard, and the very long main straight into a tight first corner produces frequent first-lap drama in front of a huge home crowd.",
+    "kpis": [
+      {
+        "label": "First held",
+        "value": "1963",
+        "sublabel": "revived 2015"
+      },
+      {
+        "label": "Altitude",
+        "value": "~2,240 m",
+        "sublabel": "highest on the calendar"
+      },
+      {
+        "label": "Laps",
+        "value": "71",
+        "sublabel": "stadium section finale"
+      },
+      {
+        "label": "Race distance",
+        "value": "~305 km",
+        "sublabel": "thin air, low downforce"
+      }
+    ],
+    "charts": []
+  },
+  "sources": [
+    {
+      "label": "Existing OneSliders event page",
+      "url": "https://one-sliders.com/content/categories/sport/formula-1/events/mexico-city-grand-prix.html",
+      "accessed": "2026-08-02"
+    },
+    {
+      "label": "Existing OneSliders event page",
+      "url": "https://one-sliders.com/content/categories/music/hard-rock/events/scorpions-mexico-city.html",
+      "accessed": "2026-08-04"
+    },
+    {
+      "label": "Mexico City official visitor source",
+      "url": "https://mexicocity.cdmx.gob.mx/",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SportsEvent",
+        "name": "Mexico City Grand Prix",
+        "startDate": "2026-10-30",
+        "endDate": "2026-11-01",
+        "url": "https://one-sliders.com/content/categories/sport/formula-1/events/mexico-city-grand-prix.html",
+        "image": "https://one-sliders.com/content/categories/sport/formula-1/events/img/mexico-city-grand-prix-hero.png",
+        "description": "The Mexico City Grand Prix is held at Autódromo Hermanos Rodríguez, named for racing brothers Ricardo and Pedro Rodríguez. The circuit has hosted Formula 1 across several eras, beginning with a World Championship race in 1963, and its high altitude shapes car cooling, power-unit performance and race strategy. The stadium section gives the event a recognisable atmosphere as cars pass through the former baseball stadium. The existing OneSliders event page supplies the edition date through Event JSON-LD, which is retained here as the source-backed calendar. Practice, qualifying and the Grand Prix form the sporting programme; official organisers publish the detailed timetable and entry information for each edition.",
+        "location": {
+          "@type": "Place",
+          "name": "Autódromo Hermanos Rodríguez",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mexico City",
+            "addressCountry": "Mexico"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Mexico City Grand Prix"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://one-sliders.com/content/categories/sport/formula-1/events/mexico-city-grand-prix.html",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  },
+  "topicImage": "/content/categories/sport/img/formula-1-mini.png",
+  "arrivalWindow": "Arrive before 30 October if you need local check-in or opening-day access.",
+  "eventDayDetail": "Mexico City Grand Prix is dated 30 October 2026 – 1 November 2026; use that range when planning arrival, tickets and reminders.",
+  "checkIn": "10/29/2026",
+  "checkOut": "11/02/2026",
+  "guests": 2,
+  "rooms": 1,
+  "stayArea": "Mexico City",
+  "airport": "Mexico City",
+  "airportTransfer": "Use current organiser access notes for Mexico City, Mexico before choosing the airport transfer.",
+  "stayAreas": [
+    "Centro Histórico",
+    "Roma Norte",
+    "Condesa",
+    "Polanco"
+  ],
+  "stayGuidance": "Stay near Mexico City unless the organiser publishes a more precise event-week base.",
+  "transportTip": "Use current local access guidance",
+  "transportDetail": "Transport details for Mexico City, Mexico can change by edition, so check local routing close to the event.",
+  "eventDayTip": "Keep the verified date range visible",
+  "region": "Mexico City",
+  "reach": "global"
+}

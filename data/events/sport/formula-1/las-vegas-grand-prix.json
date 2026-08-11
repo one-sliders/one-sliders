@@ -1,0 +1,128 @@
+{
+  "layout": "event-basic",
+  "title": "Las Vegas Grand Prix",
+  "metaDescription": "Las Vegas Grand Prix: source-backed dates, circuit and visitor planning for this Formula 1 race.",
+  "canonicalUrl": "https://one-sliders.com/content/categories/sport/formula-1/events/las-vegas-grand-prix.html",
+  "ogImage": "https://one-sliders.com/content/categories/sport/formula-1/events/img/las-vegas-grand-prix-hero.png",
+  "heroImage": "/content/categories/sport/formula-1/events/img/las-vegas-grand-prix-hero.png",
+  "h1": "Las Vegas Grand Prix",
+  "topic": "Formula 1",
+  "topicUrl": "./../../formula-1.html",
+  "dates": "19 November 2026 – 21 November 2026",
+  "venue": "Las Vegas Strip Circuit",
+  "city": "Las Vegas",
+  "country": "United States",
+  "countryUrl": "/content/locations/north-america/usa/index.html",
+  "countryFlag": "/content/locations/north-america/usa/img/flag.svg",
+  "format": "Formula 1 Grand Prix",
+  "status": "Scheduled",
+  "overview": {
+    "personas": [
+      "Fact-checker",
+      "TV or remote follower",
+      "On-site attendee"
+    ],
+    "about": "The Las Vegas Grand Prix is Formula 1's boldest modern spectacle - a Saturday-night race down the Las Vegas Strip past the casinos and neon, revived in 2023 (the city also hosted races at Caesars Palace in 1981-82). Its long straights and cold desert night make it one of the fastest, most unusual events on the calendar, run late at night to suit global television. The 2026 race is on 19-21 November.",
+    "nextEvent": "The 2026 Las Vegas Grand Prix runs 19-21 November, racing down the Strip after dark. The low night-time temperatures make tyre warm-up a major challenge, and the street layout's long straights produce very high top speeds.",
+    "kpis": [
+      {
+        "label": "First held",
+        "value": "2023",
+        "sublabel": "Caesars Palace 1981-82"
+      },
+      {
+        "label": "Circuit",
+        "value": "Street, night",
+        "sublabel": "the Strip"
+      },
+      {
+        "label": "Laps",
+        "value": "50",
+        "sublabel": "~6.2 km per lap"
+      },
+      {
+        "label": "Race distance",
+        "value": "~309 km",
+        "sublabel": "very high top speeds"
+      }
+    ],
+    "charts": []
+  },
+  "sources": [
+    {
+      "label": "Existing OneSliders event page",
+      "url": "https://one-sliders.com/content/categories/sport/formula-1/events/las-vegas-grand-prix.html",
+      "accessed": "2026-08-02"
+    },
+    {
+      "label": "AWS re:Invent 2026 FAQ",
+      "url": "https://aws.amazon.com/events/reinvent/faqs/",
+      "accessed": "2026-08-04"
+    },
+    {
+      "label": "AWS re:Invent official event page",
+      "url": "https://aws.amazon.com/events/reinvent/",
+      "accessed": "2026-08-04"
+    },
+    {
+      "label": "Existing OneSliders event page",
+      "url": "https://one-sliders.com/content/categories/music/global-pop/events/the-weeknd-las-vegas.html",
+      "accessed": "2026-08-04"
+    },
+    {
+      "label": "Las Vegas official visitor source",
+      "url": "https://www.lasvegasnevada.gov/",
+      "accessed": "2026-08-06"
+    }
+  ],
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SportsEvent",
+        "name": "Las Vegas Grand Prix",
+        "startDate": "2026-11-19",
+        "endDate": "2026-11-21",
+        "url": "https://one-sliders.com/content/categories/sport/formula-1/events/las-vegas-grand-prix.html",
+        "image": "https://one-sliders.com/content/categories/sport/formula-1/events/img/las-vegas-grand-prix-hero.png",
+        "description": "The Las Vegas Grand Prix returned to the Formula 1 World Championship in 2023 on the Las Vegas Strip Circuit, a street layout that runs through the city’s resort corridor. It is a night race, which makes the local timetable and track-access arrangements integral to the event rather than incidental travel details. The existing OneSliders page records the current calendar dates in Event JSON-LD, and this data file carries those source dates without adding an assumed schedule. As with every Formula 1 round, the core sporting programme consists of practice, qualifying and the Grand Prix. Official event channels are the authority for the final daily timetable, ticket terms and circuit-entry information.",
+        "location": {
+          "@type": "Place",
+          "name": "Las Vegas Strip Circuit",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Las Vegas",
+            "addressCountry": "United States"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Las Vegas Grand Prix"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://one-sliders.com/content/categories/sport/formula-1/events/las-vegas-grand-prix.html",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  },
+  "topicImage": "/content/categories/sport/img/formula-1-mini.png",
+  "arrivalWindow": "Arrive before 19 November if you need local check-in or opening-day access.",
+  "eventDayDetail": "Las Vegas Grand Prix is dated 19 November 2026 – 21 November 2026; use that range when planning arrival, tickets and reminders.",
+  "checkIn": "11/18/2026",
+  "checkOut": "11/22/2026",
+  "guests": 2,
+  "rooms": 1,
+  "stayArea": "Las Vegas",
+  "airport": "Harry Reid International Airport (LAS)",
+  "airportTransfer": "Use current organiser access notes for Las Vegas, United States before choosing the airport transfer.",
+  "stayAreas": "Las Vegas Strip; Convention Center area",
+  "stayGuidance": "Stay near Las Vegas unless the organiser publishes a more precise event-week base.",
+  "transportTip": "Use current local access guidance",
+  "transportDetail": "Transport details for Las Vegas, United States can change by edition, so check local routing close to the event.",
+  "eventDayTip": "Keep the verified date range visible",
+  "region": "Las Vegas",
+  "reach": "global"
+}
