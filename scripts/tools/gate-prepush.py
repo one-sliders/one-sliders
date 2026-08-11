@@ -103,6 +103,23 @@ def body_text(h):
 def check(path, h):
     fails = []
 
+    # 200-redirect stubs (build-events.py's redirect_stub(): <title>Moved</title> +
+    # canonical + meta-refresh to the real page) are a deliberate, minimal page type,
+    # not a broken content page — the full content checklist below doesn't apply to
+    # them. Validate the stub's own contract instead: canonical present and the
+    # meta-refresh target must match it.
+    title_m = re.search(r'<title>(.*?)</title>', h, re.S | re.I)
+    if title_m and H.unescape(title_m.group(1)).strip() == 'Moved':
+        canon_m = re.search(r'<link\b(?=[^>]*\brel="canonical")(?=[^>]*\bhref="([^"]+)")[^>]*/?>', h, re.I)
+        refresh_m = re.search(r'<meta\b(?=[^>]*http-equiv="refresh")(?=[^>]*content="[^"]*url=([^"]+)")[^>]*/?>', h, re.I)
+        if not canon_m:
+            fails.append('redirect stub: MISSING canonical')
+        if not refresh_m:
+            fails.append('redirect stub: MISSING meta-refresh')
+        if canon_m and refresh_m and canon_m.group(1) != refresh_m.group(1):
+            fails.append('redirect stub: canonical and meta-refresh targets differ')
+        return fails
+
     # title
     title_m = re.search(r'<title>(.*?)</title>', h, re.S | re.I)
     if not title_m:
