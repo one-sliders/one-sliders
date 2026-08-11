@@ -144,7 +144,7 @@ def extract(country_dir):
         events.append({'modifier': U(mod), 'dataEnd': dend, 'href': href, 'img': img,
                        'title': U(title), 'meta': U(meta)})
     empty_text = U(m1(r'<p class="country-empty">([^<]*)</p>', h)) or \
-        f"No future {name}-linked events are active in the current dataset."
+        f"Use {name}'s country facts, food notes and linked locations as the first planning anchors."
 
     # Food
     food = []

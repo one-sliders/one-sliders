@@ -13,10 +13,11 @@ Usage:
   python scripts/build_country_page.py --all          # every */<country> with a *.data.json
 """
 
-import os, sys, json, glob, html as H
+import os, sys, json, glob, re, html as H
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAIN = 'https://one-sliders.com'
+TEST_MODE = False
 
 # UI labels per language. These are the ONLY language-specific strings shared by
 # every country page — translate ~25 strings once and all 197 countries get it.
@@ -76,17 +77,47 @@ def rel_prefix(depth):
 def normalize_country_seo(seo, name):
     seo = dict(seo)
     stale_title = str(seo.get('title', '')).startswith('Sports Events in ')
-    stale_description = 'sports events' in str(seo.get('webpageDescription', '')).lower()
-    default_description = f"Explore {name} with key facts, linked cities, events, food and travel context."
+    stale_description = any(
+        marker in str(seo.get(field, '')).lower()
+        for field in ('description', 'twitterDescription', 'webpageDescription')
+        for marker in ('sports events', 'historical timeline', 'travel context')
+    )
+    default_description = f"Explore {name} through its capital, linked cities, food notes and practical country facts."
     if stale_title or not seo.get('title'):
         seo['title'] = f"{name} travel, cities and events"
     if stale_description or not seo.get('description'):
-        seo['description'] = f"{name} historical timeline, capital, population, events and travel context."
+        seo['description'] = default_description
     if stale_description or not seo.get('twitterDescription'):
         seo['twitterDescription'] = default_description
     if stale_description or not seo.get('webpageDescription'):
         seo['webpageDescription'] = default_description
     return seo
+
+
+def country_empty_event_text(data, name):
+    existing = str(data.get('eventsEmptyText') or '').strip()
+    if existing and 'current dataset' not in existing.lower():
+        return existing
+
+    kpis = data.get('kpis') or {}
+    capital = str(kpis.get('capital') or '').strip()
+    cities = data.get('cities') or []
+    city_names = [str(c.get('name') or '').strip() for c in cities if isinstance(c, dict)]
+    anchor = capital or (city_names[0] if city_names else '')
+
+    if anchor:
+        return f"Use {anchor} as the first planning anchor for {name}, then compare the city, food and worth-seeing notes on this page."
+
+    worth = data.get('worthSeeing') or []
+    for item in worth:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get('title') or '').replace(':', '').strip()
+        text = str(item.get('text') or '').strip()
+        if title and text:
+            return f"Use {title.lower()} as the first planning anchor for {name}, then compare the linked topics and practical country facts on this page."
+
+    return f"Use the country facts, food notes and linked locations on this page as the first planning anchors for {name}."
 
 
 def render(data, lang='en'):
@@ -170,7 +201,9 @@ def render(data, lang='en'):
     # ---- hreflang alternates (only when more than one language exists) ----
     hreflang = ''
     if len(langs) > 1:
-        alts = ''.join(f'<link rel="alternate" hreflang="{lg}" href="{alt_url(lg)}">' for lg in langs)
+        # Russian pages are a legacy mirror and are intentionally noindex;
+        # never advertise them as an alternate at the source.
+        alts = ''.join(f'<link rel="alternate" hreflang="{lg}" href="{alt_url(lg)}">' for lg in langs if lg != 'ru')
         alts += f'<link rel="alternate" hreflang="x-default" href="{alt_url("en")}">'
         hreflang = alts
 
@@ -311,7 +344,7 @@ def render(data, lang='en'):
             f'<tbody>{state_rows}</tbody></table></div></div>'
         )
     states_markup = f'\n            {states_block}' if states_block else ''
-    empty_text = localized(data, lang, 'eventsEmptyText', data['eventsEmptyText'])
+    empty_text = localized(data, lang, 'eventsEmptyText', country_empty_event_text(data, name))
 
     # ---- hero image ----
     # Render as markup instead of inline CSS so maintained pages stay free of
@@ -337,10 +370,16 @@ def render(data, lang='en'):
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
-  <!-- OneSlider core v4 -->
-  <link rel="stylesheet" href="{up}assets/css/oneslider-core.css">
+  <!-- OneSlider location CSS v4 -->
+  <link rel="stylesheet" href="{up}assets/css/1_colours.css">
+  <link rel="stylesheet" href="{up}assets/css/1_typography.css">
+  <link rel="stylesheet" href="{up}assets/css/1_core.css">
+  <link rel="stylesheet" href="{up}assets/css/2_frame.css">
+  <link rel="stylesheet" href="{up}assets/css/3_city.css">
+  <link rel="stylesheet" href="{up}assets/css/3_country.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-tabs.css">
+  <link rel="stylesheet" href="{up}assets/css/4_flik-see.css">
   <link rel="preload" as="image" href="{hero_preload}"{f' imagesrcset="{", ".join(hero_srcset)}" imagesizes="{hero_sizes}"' if hero_srcset else ''}>
-<script defer src="{up}assets/js/oneslider-core.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:description" content="{esc(seo['twitterDescription'])}">
@@ -357,8 +396,7 @@ def render(data, lang='en'):
   <link rel="icon" href="{up}assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{up}assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="{up}assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="{up}assets/css/locations.css?v=country-onepage-title-fix-20260614">
-  <meta name="theme-color" content="#0d2137">
+  <meta name="theme-color" content="Canvas">
   <title>{esc(seo['title'])}</title>
 </head>
 <body class="country-onepage{' location-page--country-finder' if has_city_finder else ''}">
@@ -428,6 +466,28 @@ def write(path, text):
         except OSError:
             time.sleep(0.3)
     return False
+
+
+def make_test_html(html):
+    """Adapt country navigation for Templates/test/.
+
+    - Asset paths are already relative in the page template and therefore work
+      unchanged in Dev, QA and production.
+    - Page links written as root-absolute /content/... are made tree-relative
+      so navigation stays inside the test tree instead of jumping to the
+      root-served QA pages. Country pages always live at
+      content/locations/<continent>/<slug>/, so /content/ -> ../../../.
+    - Image references (src/srcset, and href targets ending in an image
+      extension) stay absolute: images live only at the root/QA tree, and
+      absolute paths resolve there correctly from both test and QA.
+    """
+    def relink(m):
+        target = m.group(1)
+        if re.search(r'\.(?:webp|jpg|jpeg|png|svg|gif|avif|ico)(?:[?#]|$)', target, re.I):
+            return m.group(0)  # image link -> keep absolute
+        return f'href="../../../{target}"'
+
+    return re.sub(r'href="/content/([^"]*)"', relink, html)
 
 
 def template_preview_data():
@@ -526,8 +586,12 @@ def build_one(country_dir):
         if lang not in LABELS:
             print('  no LABELS for lang', lang, '- skipping'); continue
         out = output_path(data, lang)
+        if TEST_MODE:
+            out = os.path.join(ROOT, 'Templates', 'test', os.path.relpath(out, ROOT))
         os.makedirs(os.path.dirname(out), exist_ok=True)
         html = render(data, lang)
+        if TEST_MODE:
+            html = make_test_html(html)
         import time
         for attempt in range(5):
             try:
@@ -543,6 +607,10 @@ def build_one(country_dir):
 
 
 def main(argv):
+    global TEST_MODE
+    if '--test' in argv:
+        TEST_MODE = True
+        argv.remove('--test')
     if '--template-preview' in argv:
         template_path, preview_path = build_template_preview()
         print(f"Built country template: {template_path}")
