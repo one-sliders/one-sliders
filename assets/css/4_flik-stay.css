@@ -1,0 +1,698 @@
+/* Split from 3_city.css. Subject-selector ownership lives in this flik module. */
+.stay-overview-grid,
+.stay-area-grid,
+.stay-trip-grid,
+.stay-tip-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.stay-overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stay-overview-grid--planning {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-overview-grid p,
+.stay-booking-card p {
+  margin: 0;
+  color: var(--location-muted);
+  line-height: 1.55;
+}
+
+.stay-overview-grid p {
+  grid-column: 1 / -1;
+}
+
+.stay-pill {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  background: var(--location-soft);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.stay-pill span,
+.stay-area span,
+.stay-trip span,
+.stay-tip span,
+.stay-airports li span {
+  color: var(--location-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.stay-pill strong,
+.stay-area strong,
+.stay-area h3,
+.stay-trip strong,
+.stay-tip strong,
+.stay-airports li strong {
+  margin: 0;
+  color: var(--location-ink);
+}
+
+.stay-area h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.stay-area-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-area,
+.stay-trip,
+.stay-tip,
+.stay-airports li {
+  display: grid;
+  gap: 5px;
+  padding: 11px 12px;
+  background: var(--location-soft);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+}
+
+.stay-area p,
+.stay-tip p,
+.stay-airports li p {
+  margin: 0;
+  color: var(--location-muted);
+  line-height: 1.45;
+}
+
+.stay-airports {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stay-trip-grid,
+.stay-tip-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stay-booking-card {
+  display: grid;
+  gap: 12px;
+}
+
+.stay-planner-layout {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.22fr) minmax(0, 1fr);
+  gap: 10px;
+  align-self: start;
+  align-items: start;
+  min-height: 0;
+}
+
+/* Event templates: a compact travel planner inside the Stay tab. */
+body.event-dashboard .event-stay-layout {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.25fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+body.event-dashboard .event-stay-layout > input {
+  display: none;
+}
+
+body.event-dashboard .event-stay-menu {
+  position: sticky;
+  top: 0;
+  display: grid;
+  gap: 7px;
+}
+
+body.event-dashboard .event-stay-menu a,
+body.event-dashboard .event-stay-menu label {
+  display: block;
+  padding: 10px 11px;
+  color: var(--page-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--page-line);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.event-dashboard .event-stay-menu a:hover,
+body.event-dashboard .event-stay-menu a:focus-visible,
+body.event-dashboard .event-stay-menu label:hover {
+  color: var(--os-surface);
+  background: var(--page-theme);
+  border-color: var(--page-theme);
+  outline: none;
+}
+
+body.event-dashboard .event-stay-content {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+body.event-dashboard .event-stay-section {
+  display: none;
+  gap: 9px;
+  padding: clamp(12px, 1.4vw, 18px);
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 14px;
+  scroll-margin-top: 16px;
+}
+
+body.event-dashboard #stay-tab-booking:checked ~ .event-stay-content #stay-booking,
+body.event-dashboard #stay-tab-flights:checked ~ .event-stay-content #stay-flights,
+body.event-dashboard #stay-tab-hotels:checked ~ .event-stay-content #stay-hotels,
+body.event-dashboard #stay-tab-tips:checked ~ .event-stay-content #stay-tips {
+  display: grid;
+}
+
+body.event-dashboard #stay-tab-booking:checked ~ .event-stay-menu label[for="stay-tab-booking"],
+body.event-dashboard #stay-tab-flights:checked ~ .event-stay-menu label[for="stay-tab-flights"],
+body.event-dashboard #stay-tab-hotels:checked ~ .event-stay-menu label[for="stay-tab-hotels"],
+body.event-dashboard #stay-tab-tips:checked ~ .event-stay-menu label[for="stay-tab-tips"] {
+  color: var(--os-surface);
+  background: var(--page-theme);
+  border-color: var(--page-theme);
+}
+
+body.event-dashboard .event-stay-section h3,
+body.event-dashboard .event-stay-section p {
+  margin: 0;
+}
+
+body.event-dashboard .event-stay-section h3 {
+  color: var(--page-ink);
+  font-size: 17px;
+}
+
+body.event-dashboard .event-stay-section p {
+  color: var(--page-muted);
+  line-height: 1.5;
+}
+
+body.event-dashboard .event-stay-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+body.event-dashboard .event-stay-field {
+  display: grid;
+  gap: 4px;
+}
+
+body.event-dashboard .event-stay-field label {
+  color: var(--page-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .07em;
+}
+
+body.event-dashboard .event-stay-field input {
+  width: 100%;
+  padding: 8px 10px;
+  color: var(--page-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--page-line);
+  border-radius: 8px;
+  font: inherit;
+}
+
+body.event-dashboard .event-stay-cta {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  color: var(--button-primary-ink);
+  background: var(--button-primary-bg);
+  border-radius: 12px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+body.event-dashboard .event-stay-cta:hover,
+body.event-dashboard .event-stay-cta:focus-visible {
+  color: var(--button-primary-ink);
+  filter: brightness(0.96);
+}
+
+@media (max-width: 760px) {
+  body.event-dashboard .event-stay-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.event-dashboard .event-stay-menu {
+    position: static;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.event-dashboard .event-stay-menu a,
+  body.event-dashboard .event-stay-menu label {
+    padding: 9px 6px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  body.event-dashboard .event-stay-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stay-section-menu {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: grid;
+  align-content: start;
+  align-self: start;
+  gap: 7px;
+  min-width: 0;
+  max-height: calc(100dvh - 190px);
+  overflow-y: auto;
+  padding-bottom: 2px;
+}
+
+.stay-section-menu a {
+  display: block;
+  padding: 10px 11px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-decoration: none;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent));
+}
+
+.stay-section-menu a:hover,
+.stay-section-menu a:focus-visible {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+  outline: none;
+}
+
+.stay-section-stack {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.city-page--template .stay-section-panel {
+  display: none;
+}
+
+.city-page--template .stay-section-stack .stay-section-panel:first-child {
+  display: block;
+}
+
+.city-page--template .stay-section-panel.is-active {
+  display: block;
+}
+
+.city-page--template .stay-section-panel[hidden] {
+  display: none !important;
+}
+
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(:is(#stay-overview, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .stay-section-panel {
+  display: none;
+}
+
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-overview:target) #stay-overview,
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-hotels-areas:target) #stay-hotels-areas,
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-flights-airports:target) #stay-flights-airports,
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-rental-cars:target) #stay-rental-cars,
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tips:target) #stay-tips {
+  display: block;
+}
+
+.city-page--template .stay-section-menu a[aria-current="true"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-overview:target) .stay-section-menu a[href="#stay-overview"],
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-hotels-areas:target) .stay-section-menu a[href="#stay-hotels-areas"],
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-flights-airports:target) .stay-section-menu a[href="#stay-flights-airports"],
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-rental-cars:target) .stay-section-menu a[href="#stay-rental-cars"],
+html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tips:target) .stay-section-menu a[href="#stay-tips"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.city-page--template .stay-section-menu a[href="#stay-overview"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.city-page--template .stay-section-menu:has(a[aria-current="true"]) a[href="#stay-overview"]:not([aria-current="true"]) {
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border-color: var(--location-line);
+}
+
+.stay-booking-button {
+  justify-self: start;
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  color: color-mix(in srgb, var(--os-accent) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-accent) 12%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-accent) 34%, var(--os-line));
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-accent) 10%, var(--os-transparent));
+}
+
+.stay-affiliate-note {
+  font-size: 12px;
+}
+
+.stay-affiliate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.city-stay-booking-form .stay-booking-panel__header {
+  margin-bottom: 0;
+}
+
+.city-stay-booking-form .stay-section-label {
+  display: block;
+  margin: 0 0 3px;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.city-stay-booking-form .stay-section-title {
+  margin: 0;
+  color: var(--location-ink);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.city-stay-booking-form .stay-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.city-stay-booking-form .stay-form-field {
+  display: grid;
+  gap: 4px;
+}
+
+.city-stay-booking-form .stay-field-label {
+  display: block;
+  margin: 0;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.city-stay-booking-form .stay-field-input {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 9px;
+  color: var(--location-ink);
+  font: inherit;
+  font-size: 13px;
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  outline: none;
+}
+
+.city-stay-booking-form .stay-field-input:focus {
+  border-color: var(--location-theme);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--location-theme) 14%, var(--os-transparent));
+}
+
+.city-stay-booking-form .stay-area-label {
+  margin: 2px 0 -2px;
+}
+
+.city-stay-booking-form .stay-area-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.city-stay-booking-form .stay-area-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 11px;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  user-select: none;
+}
+
+.city-stay-booking-form .stay-area-pill input[type="radio"] {
+  display: none;
+}
+
+.city-stay-booking-form .stay-area-pill:has(input:checked) {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  border-color: var(--location-theme);
+}
+
+.city-stay-booking-form .stay-check-btn {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 76%, var(--os-primary));
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 20px color-mix(in srgb, var(--os-accent) 18%, var(--os-transparent));
+}
+
+.city-stay-booking-form .stay-check-btn:hover,
+.city-stay-booking-form .stay-check-btn:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 88%, var(--os-primary));
+  outline: none;
+}
+
+.city-stay-booking-form .stay-booking-note {
+  margin: 0;
+  color: var(--location-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.stay-card-link {
+  justify-self: start;
+  display: inline-grid;
+  place-items: center;
+  min-height: 28px;
+  margin-top: 3px;
+  padding: 0 10px;
+  color: color-mix(in srgb, var(--os-accent) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-accent) 10%, var(--os-surface));
+  border: 1px solid color-mix(in srgb, var(--os-accent) 28%, var(--os-line));
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent));
+}
+
+.stay-card-link:hover,
+.stay-card-link:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 84%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-accent) 84%, var(--os-primary));
+  outline: none;
+}
+
+.stay-booking-button:hover,
+.stay-booking-button:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 76%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-accent) 76%, var(--os-primary));
+  outline: none;
+}
+
+.stay-card-link.affiliate-market--usa-canada,
+.stay-booking-button.affiliate-market--usa-canada {
+  color: color-mix(in srgb, var(--os-compare-orange) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-compare-orange) 14%, var(--os-surface));
+  border-color: color-mix(in srgb, var(--os-compare-orange) 40%, var(--os-line));
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-compare-orange) 18%, var(--os-transparent));
+}
+
+.stay-card-link.affiliate-market--europe,
+.stay-booking-button.affiliate-market--europe {
+  color: color-mix(in srgb, var(--os-compare-blue) 72%, var(--os-primary));
+  background: color-mix(in srgb, var(--os-compare-blue) 14%, var(--os-surface));
+  border-color: color-mix(in srgb, var(--os-compare-blue) 40%, var(--os-line));
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--os-compare-blue) 18%, var(--os-transparent));
+}
+
+.stay-card-link.affiliate-market--usa-canada:hover,
+.stay-card-link.affiliate-market--usa-canada:focus-visible,
+.stay-booking-button.affiliate-market--usa-canada:hover,
+.stay-booking-button.affiliate-market--usa-canada:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-compare-orange) 88%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-orange) 88%, var(--os-primary));
+  outline: none;
+}
+
+.stay-card-link.affiliate-market--europe:hover,
+.stay-card-link.affiliate-market--europe:focus-visible,
+.stay-booking-button.affiliate-market--europe:hover,
+.stay-booking-button.affiliate-market--europe:focus-visible {
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-compare-blue) 88%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-blue) 88%, var(--os-primary));
+  outline: none;
+}
+
+.stay-hotel-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.stay-hotel-card {
+  min-width: 0;
+  color: var(--location-ink);
+  background: var(--os-surface);
+  border: 1px solid var(--location-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
+}
+
+.stay-hotel-card span {
+  display: block;
+  color: var(--location-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stay-hotel-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--location-ink);
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.stay-hotel-card p {
+  margin: 7px 0 0;
+  color: var(--location-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.stay-hotel-card {
+  padding: 12px;
+}
+
+.stay-hotel-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+.stay-overview-grid,
+.stay-planner-layout,
+.stay-area-grid,
+.stay-trip-grid,
+.stay-tip-grid,
+.stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+
+.stay-section-menu {
+    position: sticky;
+    top: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: none;
+    padding: 6px 0;
+    background: var(--os-surface);
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .stay-section-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+.city-page--template .stay-section-menu a,
+.city-page--template .stay-card-link,
+.city-page--template .stay-booking-button {
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    text-align: center;
+    white-space: normal;
+  }
+
+.city-page--template .stay-overview-grid,
+.city-page--template .stay-area-grid,
+.city-page--template .stay-tip-grid,
+.city-page--template .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .stay-overview-grid,
+.city-page--template .stay-area-grid,
+.city-page--template .stay-tip-grid,
+.city-page--template .stay-hotel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+.city-page--template .stay-section-menu {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.stay-overview-card { display: block; }

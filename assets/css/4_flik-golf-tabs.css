@@ -1,0 +1,81 @@
+/* Golf event tab shell. Content styling remains in the other 4_flik modules. */
+
+.golf input[name="event-tab"] {
+  display: none;
+}
+
+.golf .event-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(10px, 1.4vw, 18px);
+  border: 1px solid var(--page-line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+.golf .event-tablist {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+}
+
+.golf .event-tablist::-webkit-scrollbar { display: none; }
+
+.golf .event-tab-label {
+  flex: 0 0 auto;
+  padding: 6px 16px;
+  color: var(--page-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.golf .event-tab-label:hover { color: var(--page-ink); }
+
+.golf .event-tab-panels {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.golf .event-tab-panel { display: none; }
+
+.golf #tab-overview:checked ~ .event-tab-panels #panel-overview,
+.golf #tab-history:checked ~ .event-tab-panels #panel-history,
+.golf #tab-upcoming:checked ~ .event-tab-panels #panel-upcoming,
+.golf #tab-visit:checked ~ .event-tab-panels #panel-visit,
+.golf #tab-about:checked ~ .event-tab-panels #panel-about {
+  display: block;
+}
+
+.golf #tab-overview:checked ~ .event-tablist label[for="tab-overview"],
+.golf #tab-history:checked ~ .event-tablist label[for="tab-history"],
+.golf #tab-upcoming:checked ~ .event-tablist label[for="tab-upcoming"],
+.golf #tab-visit:checked ~ .event-tablist label[for="tab-visit"],
+.golf #tab-about:checked ~ .event-tablist label[for="tab-about"] {
+  color: var(--button-primary-ink);
+  background: var(--button-primary-bg);
+}
+
+.golf .event-panel-inner { padding: 0 0 18px; }
+
+@media (max-width: 760px) {
+  .golf .event-tabs { height: auto; overflow: visible; }
+  /* flex-basis:0 collapses the panel to height 0 once .event-tabs is auto-height;
+     flex:none makes it size to the visible panel's content instead. */
+  .golf .event-tab-panels { flex: none; min-height: 0; overflow: visible; }
+  .golf .event-tab-panel { overflow: visible; }
+}

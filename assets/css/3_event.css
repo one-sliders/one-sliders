@@ -1,0 +1,29 @@
+/* Event-page identity lives here; event panels are loaded as 4_flik modules. */
+body.event-dashboard { background: var(--page-bg); }
+
+/* Shared left-column card + hero title (also used by observance layouts that don't load booking CSS) */
+.hero__title-row { display: grid; gap: 3px; }
+.event-related-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 8px; margin-top: auto; }
+.event-related-links > :only-child { grid-column: 1 / -1; }
+.event-related-topic-card { display: grid; grid-template-columns: 74px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 10px; }
+.event-related-topic-card img { grid-row: 1 / 3; width: 74px; height: 58px; object-fit: cover; border-radius: 7px; }
+.event-related-topic-card strong { display: block; min-width: 0; margin: 0; overflow-wrap: anywhere; }
+.event-related-topic-card span { display: block; min-width: 0; color: var(--page-muted); font-size: 10px; }
+.event-related-topic-card p { min-width: 0; margin: 0; color: var(--page-muted); font-size: 14px; line-height: 1.22; }
+
+/* ── Mobile: lead with content, booking after the info ──────────
+   Affiliate is a service, not a push: on a phone the visitor meets the event
+   (hero, title, info tabs) first; the "Book hotels & flights" panel follows.
+   We flatten .layout__a/.hero (display:contents) so the info column (.layout__b)
+   can be ordered between the title and the booking panel. Desktop is untouched.
+   Scoped to booking pages — observances have no booking panel. */
+@media (max-width: 860px) {
+  body.event-booking-left .layout-columns { display: flex; flex-direction: column; gap: 12px; }
+  body.event-booking-left .layout__a,
+  body.event-booking-left .hero { display: contents; }
+  body.event-booking-left .hero__image        { order: 1; flex: 0 0 auto; width: 100%; max-height: 210px; aspect-ratio: 1200 / 630; }
+  body.event-booking-left .hero__title-row    { order: 2; }
+  body.event-booking-left .layout__b          { order: 3; }
+  body.event-booking-left .stay-booking-panel { order: 4; }
+  body.event-booking-left .event-related-links { order: 5; }
+}

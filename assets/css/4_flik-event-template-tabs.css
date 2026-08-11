@@ -1,0 +1,220 @@
+/* Shared tab shell for direct-preview event templates. */
+
+body.event-dashboard input[name="event-tab"] { display: none; }
+
+body.event-dashboard .event-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(10px, 1.4vw, 18px);
+  border: 1px solid var(--page-line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--os-surface) 88%, var(--os-transparent));
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+body.event-dashboard .event-tablist {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+}
+
+body.event-dashboard .event-tablist::-webkit-scrollbar { display: none; }
+
+body.event-dashboard .event-tab-label {
+  flex: 0 0 auto;
+  padding: 6px 16px;
+  color: var(--page-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.event-dashboard .event-tab-label:hover { color: var(--page-ink); }
+body.event-dashboard .event-tab-panels { flex: 1 1 0; min-height: 0; overflow-y: auto; padding-right: 4px; }
+body.event-dashboard .event-tab-panel { display: none; }
+body.event-dashboard .event-tabs--single .event-tab-panel { display: block; }
+body.event-dashboard .event-explore { margin-top: 18px; padding-bottom: 18px; }
+
+#tab-overview:checked ~ .event-tab-panels #panel-overview,
+#tab-explore:checked ~ .event-tab-panels #panel-explore,
+#tab-past:checked ~ .event-tab-panels #panel-past,
+#tab-upcoming:checked ~ .event-tab-panels #panel-upcoming,
+#tab-stay:checked ~ .event-tab-panels #panel-stay,
+#tab-why:checked ~ .event-tab-panels #panel-why,
+#tab-food:checked ~ .event-tab-panels #panel-food,
+#tab-culture:checked ~ .event-tab-panels #panel-culture,
+#tab-winners:checked ~ .event-tab-panels #panel-winners,
+#tab-lineup:checked ~ .event-tab-panels #panel-lineup {
+  display: block;
+}
+
+#tab-overview:checked ~ .event-tablist label[for="tab-overview"],
+#tab-past:checked ~ .event-tablist label[for="tab-past"],
+#tab-upcoming:checked ~ .event-tablist label[for="tab-upcoming"],
+#tab-stay:checked ~ .event-tablist label[for="tab-stay"],
+#tab-why:checked ~ .event-tablist label[for="tab-why"],
+#tab-food:checked ~ .event-tablist label[for="tab-food"],
+#tab-culture:checked ~ .event-tablist label[for="tab-culture"],
+#tab-winners:checked ~ .event-tablist label[for="tab-winners"],
+#tab-lineup:checked ~ .event-tablist label[for="tab-lineup"] {
+  color: var(--button-primary-ink);
+  background: var(--button-primary-bg);
+}
+
+body.event-dashboard .event-panel-inner { padding: 0 0 18px; }
+
+body.event-dashboard .event-topic-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 2px;
+  color: var(--page-muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+body.event-dashboard .event-topic-link::before {
+  margin-right: 6px;
+  color: var(--page-ink);
+  content: "Topic:";
+}
+
+body.event-dashboard .event-topic-link:hover,
+body.event-dashboard .event-topic-link:focus-visible {
+  color: var(--page-ink);
+  text-decoration: underline;
+}
+
+/*
+ * Every direct-preview hero uses the event hero source format: 1200 × 630.
+ * These two templates do not have a booking block, so they opt in here rather
+ * than inheriting the booking-specific selector.
+ */
+body[data-template="national-day"] .layout-columns {
+  grid-template-columns: minmax(280px, 0.9fr) minmax(500px, 1.55fr);
+  gap: clamp(16px, 2.2vw, 40px);
+}
+
+body[data-template="national-day"] .page-frame {
+  bottom: clamp(4px, 0.8vw, 14px);
+}
+
+body[data-template="national-day"] .layout__a {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body[data-template="national-day"] .layout__b {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+body[data-template="national-day"] .hero {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 14px);
+  padding: 0 0 2px;
+}
+
+body[data-template="national-day"] .hero__image {
+  flex: none;
+  width: 100%;
+  max-height: min(37vh, 430px);
+  aspect-ratio: 1200 / 630;
+  overflow: hidden;
+  border: 1px solid var(--page-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, transparent);
+}
+
+body[data-template="national-day"] .hero__image img,
+body[data-template="global-observance"] .hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-template="global-observance"] .event-panel-inner {
+  display: grid;
+  gap: 14px;
+}
+
+body[data-template="global-observance"] .hero {
+  flex: none;
+  align-content: start;
+  gap: 14px;
+}
+
+body[data-template="global-observance"] .hero__image {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  max-height: min(34vh, 380px);
+  overflow: hidden;
+  border: 1px solid var(--page-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--os-scrim) 10%, transparent);
+}
+
+body[data-template="global-observance"] .event-overview-facts,
+body[data-template="global-observance"] .event-overview-body,
+body[data-template="global-observance"] .event-info-card {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  body[data-template="national-day"] .hero__image,
+  body[data-template="global-observance"] .hero__image {
+    max-height: 210px;
+    border-radius: 12px;
+  }
+
+  body[data-template="global-observance"] .hero {
+    flex: none;
+  }
+
+  body[data-template="global-observance"] .hero__image {
+    flex: 0 0 auto;
+    aspect-ratio: 1200 / 630;
+  }
+
+  body.event-dashboard .event-tabs { height: auto; overflow: visible; }
+  /* flex-basis:0 collapses the panel to height 0 once .event-tabs is auto-height;
+     flex:none makes it size to the visible panel's content instead. */
+  body.event-dashboard .event-tab-panels { flex: none; min-height: 0; overflow: visible; }
+  body.event-dashboard .event-tab-panel { overflow: visible; }
+
+}
+
+/* Mobile stack for observance layouts (data-template overrides above lack a mobile collapse) */
+@media (max-width: 860px) {
+  body[data-template="national-day"] .layout-columns,
+  body[data-template="global-observance"] .layout-columns {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  body[data-template="national-day"] .layout__a,
+  body[data-template="global-observance"] .layout__a,
+  body[data-template="national-day"] .layout__b,
+  body[data-template="global-observance"] .layout__b {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+}

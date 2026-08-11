@@ -1,0 +1,286 @@
+/* Split from 3_city.css. Subject-selector ownership lives in this flik module. */
+.country-brief__panel .persona-tabs {
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  align-content: start;
+}
+
+.continent-onepage .view-panel--visit {
+  overflow: hidden;
+}
+
+@media (max-width: 980px) {
+.continent-onepage .persona-panel {
+    height: auto;
+    max-height: none;
+  }
+}
+
+.persona-tabs {
+  display: grid;
+  min-height: 0;
+  gap: 10px;
+}
+
+.persona-tabs > input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.persona-tablist {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 6px;
+  background: color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+  border: 1px solid var(--location-line);
+  border-radius: 999px;
+}
+
+.persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.continent-onepage .persona-tablist {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.city-page--template .persona-tablist {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.persona-tablist label {
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  color: var(--location-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+#view-overview:checked ~ .persona-tablist label[for="view-overview"],
+#view-visit:checked ~ .persona-tablist label[for="view-visit"],
+#view-see:checked ~ .persona-tablist label[for="view-see"],
+#view-stay:checked ~ .persona-tablist label[for="view-stay"],
+#view-nearby:checked ~ .persona-tablist label[for="view-nearby"],
+#view-events:checked ~ .persona-tablist label[for="view-events"],
+#view-context:checked ~ .persona-tablist label[for="view-context"],
+#view-big:checked ~ .persona-tablist label[for="view-big"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+
+.persona-panel {
+  display: none;
+  gap: 10px;
+  min-height: 0;
+  height: 100%;
+  max-height: none;
+  overflow-y: auto;
+  padding-right: 4px;
+  align-content: start;
+  scrollbar-width: thin;
+}
+
+#view-overview:checked ~ .view-panel--overview,
+#view-visit:checked ~ .view-panel--visit,
+#view-see:checked ~ .view-panel--see,
+#view-stay:checked ~ .view-panel--stay,
+#view-nearby:checked ~ .view-panel--nearby,
+#view-events:checked ~ .view-panel--events,
+#view-context:checked ~ .view-panel--context,
+#view-big:checked ~ .view-panel--big {
+  display: grid;
+}
+
+html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-panel {
+  display: none;
+}
+
+html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .view-panel--stay {
+  display: grid;
+}
+
+html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-tablist label[for="view-visit"] {
+  color: var(--location-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overview, #stay-hotels-areas, #stay-flights-airports, #stay-rental-cars, #stay-tips):target) .persona-tablist label[for="view-stay"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.city-page--template .view-panel--visit {
+  gap: 6px;
+}
+
+.city-page--template .view-panel--visit .country-panel-card {
+  padding: 12px;
+}
+
+.view-panel--big {
+  grid-template-rows: minmax(0, 1fr);
+  align-content: stretch;
+  overflow: hidden;
+}
+
+@media (max-width: 980px) {
+.country-brief__panel .persona-tabs {
+    height: auto;
+  }
+
+.persona-panel {
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 1120px) {
+.country-onepage.location-page--country-finder .country-brief__panel .persona-tabs,
+.country-onepage.location-page--country-finder .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+.city-page--template .country-brief__panel .persona-tabs,
+.city-page--template .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+.city-page--template .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+.persona-tablist {
+    grid-template-columns: 1fr;
+  }
+
+.persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: 1fr;
+  }
+
+.persona-tablist {
+    border-radius: 14px;
+  }
+
+.country-brief__panel .persona-tabs {
+    height: auto;
+    min-height: 0;
+  }
+
+.persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 5px;
+  }
+
+.city-page--template .persona-tablist label {
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+.city-page--template .country-brief__panel .persona-tabs,
+.city-page--template .persona-panel {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 430px) {
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.city-page--template .persona-tablist,
+.city-page--template .persona-tabs:has(#view-stay) .persona-tablist {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.city-page--template .persona-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.city-page--template .persona-tablist label {
+  flex: 1 0 max-content;
+  white-space: nowrap;
+}
+
+.city-page--template .view-panel--big {
+  grid-template-rows: minmax(0, 1fr);
+  align-content: stretch;
+  overflow: hidden;
+}
+
+.city-page--template .view-panel--big .city-topic-links {
+  align-self: stretch;
+  min-height: 100%;
+}
+
+.city-page--template .view-panel--see {
+  grid-template-rows: minmax(0, 1fr);
+  align-content: stretch;
+  overflow: hidden;
+}
+
+.city-page--template .view-panel--see > .country-panel-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-self: stretch;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.view-panel--context {
+  align-content: start;
+}

@@ -991,12 +991,15 @@
         if (val('checkout')) params.set('checkout', val('checkout'));
         params.set('group_adults', val('adults') || '2');
         params.set('no_rooms', val('rooms') || '1');
-        // Functional default = Booking.com public search. Swap this base (and add
-        // your affiliate id) once an affiliate provider is approved.
-        var url = 'https://www.booking.com/searchresults.html?' + params.toString();
+        var target = 'https://www.booking.com/searchresults.html?' + params.toString();
+        var affiliateBase = box.getAttribute('data-booking-base') || '';
+        var url = affiliateBase ? affiliateBase + '?url=' + encodeURIComponent(target) : target;
         window.open(url, '_blank', 'noopener');
       };
-      if (btn) btn.addEventListener('click', openHotelSearch);
+      if (btn) btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        openHotelSearch();
+      });
       box.addEventListener('click', function (event) {
         if (!event.target.closest('[data-hotel-area-go]')) return;
         openHotelSearch();
@@ -1765,6 +1768,20 @@
 
   function initStaticStageTabs() {
     bindStageTabs(document);
+  }
+
+  function initMultiCitySelector() {
+    document.querySelectorAll('[data-multi-city-selector]').forEach(function (select) {
+      var root = select.closest('.event-panel-inner') || document;
+      var panels = Array.prototype.slice.call(root.querySelectorAll('[data-city-index]'));
+      function activate(value) {
+        panels.forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-city-index') !== String(value);
+        });
+      }
+      select.addEventListener('change', function () { activate(select.value); });
+      activate(select.value || '0');
+    });
   }
 
   function renderEditionWithStages(data, edition, target) {
@@ -2556,6 +2573,53 @@
     });
   }
 
+  function initAwardsWinnerFilters() {
+    document.querySelectorAll('[data-awards-winners]').forEach(function (root) {
+      var filter = root.querySelector('[data-awards-category-filter]');
+      var rows = Array.prototype.slice.call(root.querySelectorAll('[data-awards-winner-row]'));
+      if (!filter || !rows.length || filter.children.length) return;
+
+      var categories = [];
+      rows.forEach(function (row) {
+        var cells = row.querySelectorAll('td');
+        var category = cells.length ? cells[cells.length - 1].textContent.trim() : '';
+        row.setAttribute('data-awards-category', category);
+        if (category && categories.indexOf(category) === -1) categories.push(category);
+      });
+      if (categories.length < 2) return;
+
+      function makeButton(label, category) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'awards-category-pill';
+        button.textContent = label;
+        button.setAttribute('data-awards-filter-category', category);
+        button.setAttribute('aria-pressed', category === 'all' ? 'true' : 'false');
+        if (category === 'all') button.classList.add('active');
+        return button;
+      }
+
+      filter.appendChild(makeButton('All categories', 'all'));
+      categories.forEach(function (category) {
+        filter.appendChild(makeButton(category, category));
+      });
+
+      filter.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-awards-filter-category]');
+        if (!button) return;
+        var selected = button.getAttribute('data-awards-filter-category') || 'all';
+        filter.querySelectorAll('[data-awards-filter-category]').forEach(function (candidate) {
+          var active = candidate === button;
+          candidate.classList.toggle('active', active);
+          candidate.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        rows.forEach(function (row) {
+          row.hidden = selected !== 'all' && row.getAttribute('data-awards-category') !== selected;
+        });
+      });
+    });
+  }
+
   function initCarousel() {
     var carousel = document.querySelector('[data-carousel]');
     if (!carousel) return;
@@ -2694,16 +2758,19 @@
   document.addEventListener('DOMContentLoaded', function () {
     markEventPageScope();
     renderNonSportOnePage();
+    bindHotelSearch(document);
     // Footer is rendered by the single siteFooter module in oneslider-core.js
     // (one source for every page). events.js no longer renders its own footer.
     initCarousel();
     initYearSwitcher();
     initPartSwitcher();
     initStaticStageTabs();
+    initMultiCitySelector();
     refreshCountdowns();
     bindSaveButtons();
     bindLeadForms();
     bindEditionTabTargetLinks();
+    initAwardsWinnerFilters();
     hydrateSessionScoreBars(document);
     hydrateRyderLiveResults(document);
     window.setInterval(refreshCountdowns, 1000);

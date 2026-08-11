@@ -397,6 +397,47 @@ body[data-os-category].onepage nav.top-menu .nav-language[open] summary {
   color: var(--os-surface) !important;
 }
 
+/* The frame owns scrolling. On a phone the document is the single scroller. */
+@media (max-width: 860px) {
+  html:has(body.onepage),
+  body.onepage {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .onepage .page-shell {
+    padding: 0;
+  }
+
+  .onepage .page-frame {
+    position: static;
+    width: auto;
+    height: auto;
+    min-height: max-content;
+    margin: calc(var(--nav-height) + 8px) 8px calc(var(--footer-height) + 14px);
+    padding: 10px;
+    overflow: visible;
+    border-radius: 14px;
+  }
+
+  .onepage .layout-columns,
+  .onepage .layout-rows {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .onepage .layout__a,
+  .onepage .layout__b {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
 /* ── Responsive ────────────────────────────────────────────── */
 
 @media (max-width: 700px) {
@@ -408,4 +449,38 @@ body[data-os-category].onepage nav.top-menu .nav-language[open] summary {
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+
+/* Shared location frame viewport rules. */
+
+html {
+  background: var(--location-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--location-ink);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--location-accent) 10%, var(--os-transparent)), var(--os-transparent) 34%),
+    var(--location-bg);
+  font-family: var(--os-font-sans);
+  overflow-x: hidden;
+}
+
+.country-onepage {
+  --country-nav-height: 53px;
+  --country-content-gap: 12px;
+  --country-footer-height: 36px;
+  height: 100vh;
+  overflow: hidden;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--location-accent) 14%, var(--os-transparent)), var(--os-transparent) 32%),
+    linear-gradient(180deg, var(--location-bg) 0%, var(--location-soft) 100%);
+}
+
+html:has(body.country-onepage) {
+  height: 100vh;
+  overflow: hidden;
+  overflow-x: hidden;
 }

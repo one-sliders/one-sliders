@@ -1,7 +1,7 @@
 /* Reusable event left column: hero, title, booking panel and related link cards. */
 
 .event-booking-left .layout-columns {
-  --booking-cta: var(--os-purple, #6b4f7a);
+  --booking-cta: var(--os-purple);
   grid-template-columns: minmax(280px, 0.9fr) minmax(500px, 1.55fr);
   gap: clamp(16px, 2.2vw, 40px);
 }
@@ -64,7 +64,7 @@
 }
 
 .booking-symbols {
-  --booking-hotel: #d6a84a;
+  --booking-hotel: var(--os-gold);
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -175,6 +175,7 @@
   margin-bottom: 11px;
 }
 
+
 .stay-area-pill {
   display: inline-flex;
   align-items: center;
@@ -252,7 +253,7 @@
   border: 1px solid var(--page-line);
   border-left: 4px solid var(--os-card-accent);
   border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(14, 28, 40, 0.05);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-scrim) 5%, var(--os-transparent));
 }
 
 .event-related-links > :only-child {
@@ -305,7 +306,34 @@
   color: var(--page-ink);
   border-color: var(--os-card-accent);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(14, 28, 40, 0.08);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--os-scrim) 8%, var(--os-transparent));
+}
+
+/* The related topic belongs below the booking card in the left column. */
+.event-related-links--left {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 16px;
+}
+
+.event-related-links--left .event-related-topic-card {
+  grid-template-columns: 180px minmax(0, 1fr);
+  min-height: 136px;
+  padding: 10px 14px 10px 10px;
+}
+
+.event-related-links--left .event-related-topic-card img {
+  width: 180px;
+  height: 120px;
+  border-radius: 9px;
+}
+
+.event-related-links--left .event-related-topic-card strong {
+  font-size: 26px;
+}
+
+.event-related-links--left .event-related-topic-card span {
+  font-size: 12px;
+  line-height: 1.25;
 }
 
 @media (max-width: 980px) {
@@ -332,49 +360,6 @@
 }
 
 @media (max-width: 860px) {
-  html:has(body.event-dashboard.onepage.event-booking-left) {
-    height: auto;
-    min-height: 100dvh;
-    overflow: auto;
-  }
-
-  body.event-dashboard.onepage.event-booking-left {
-    height: auto;
-    min-height: 100dvh;
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-
-  .event-booking-left .page-shell {
-    padding: 0;
-  }
-
-  .event-booking-left .page-frame {
-    position: static;
-    width: auto;
-    height: auto;
-    min-height: max-content;
-    margin: calc(var(--nav-height) + 8px) 8px calc(var(--footer-height) + 14px);
-    padding: 10px;
-    overflow: visible;
-    border-radius: 14px;
-  }
-
-  .event-booking-left .layout-columns {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-  }
-
-  .event-booking-left .layout__a,
-  .event-booking-left .layout__b {
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-  }
-
   .event-booking-left .hero {
     gap: 10px;
   }
@@ -425,6 +410,21 @@
   .event-booking-left .event-related-topic-card,
   .event-booking-left .event-country-link-card {
     min-height: 72px;
+  }
+
+  .event-booking-left .event-related-links--left .event-related-topic-card {
+    grid-template-columns: 110px minmax(0, 1fr);
+    min-height: 98px;
+    padding: 8px;
+  }
+
+  .event-booking-left .event-related-links--left .event-related-topic-card img {
+    width: 110px;
+    height: 78px;
+  }
+
+  .event-booking-left .event-related-links--left .event-related-topic-card strong {
+    font-size: 20px;
   }
 
   .event-booking-left .event-panel {

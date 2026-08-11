@@ -1,0 +1,115 @@
+/* Event Upcoming tab content. */
+
+.event-year-anchor {
+  position: relative;
+  top: -80px;
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.event-upcoming-body {
+  max-width: 980px;
+  padding: 14px 16px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-surface) 96%, transparent);
+}
+
+.event-upcoming-body > * {
+  margin: 0 0 12px;
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+.event-upcoming-body > :last-child {
+  margin-bottom: 0;
+}
+
+.event-upcoming-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.event-upcoming-card {
+  display: grid;
+  grid-template-columns: minmax(70px, 0.24fr) minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  background: var(--page-soft);
+}
+
+.event-upcoming-card__year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: var(--button-soft-ink);
+  background: var(--button-soft-bg);
+  border: 1px solid var(--button-soft-line);
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.event-upcoming-card__year:hover,
+.event-upcoming-card__year:focus-visible {
+  outline: 2px solid var(--button-focus);
+  outline-offset: 2px;
+}
+
+.event-upcoming-card__body {
+  display: grid;
+  gap: 4px;
+  color: var(--page-muted);
+  font-size: 13px;
+}
+
+.event-upcoming-card__body strong {
+  color: var(--page-ink);
+  font-size: 15px;
+}
+
+.event-upcoming-card__body span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-upcoming-card__actions {
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.event-upcoming-action {
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .event-upcoming-list {
+    grid-template-columns: 1fr;
+  }
+
+  .event-upcoming-card {
+    grid-template-columns: 1fr;
+  }
+
+  .event-upcoming-card__year {
+    justify-content: flex-start;
+    padding-inline: 12px;
+  }
+
+  .event-upcoming-card__actions {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+}

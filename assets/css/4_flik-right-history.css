@@ -1,0 +1,296 @@
+/* Sport History tab content. */
+
+.event-panel-heading {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.event-panel-heading .event-panel-title {
+  margin-bottom: 0;
+}
+
+.event-panel-kicker {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.event-awards-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  padding: 8px;
+  border: 1px solid var(--page-line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--page-soft) 72%, var(--os-surface));
+}
+
+.awards-category-pill {
+  appearance: none;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: var(--os-surface);
+  color: var(--page-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.1;
+  padding: 8px 12px;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.awards-category-pill.active,
+.awards-category-pill[aria-pressed="true"],
+.awards-category-pill:hover,
+.awards-category-pill:focus-visible {
+  border-color: color-mix(in srgb, var(--page-theme) 68%, var(--page-line));
+  background: color-mix(in srgb, var(--page-theme) 12%, var(--os-surface));
+  color: var(--page-theme);
+}
+
+.event-awards-table tr[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .event-awards-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .awards-category-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+.sport-history-body {
+  max-width: 980px;
+  padding: 14px 16px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-surface) 96%, transparent);
+}
+
+/* A result with several placed countries is a podium, not a paragraph. */
+.event-podium { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.event-podium__row { display: grid; grid-template-columns: 2.5rem minmax(9rem, .8fr) minmax(0, 2fr); gap: 8px; align-items: center; }
+.event-podium__place { font-weight: 800; color: var(--page-theme); }
+.event-podium .country { display: inline-flex; align-items: center; gap: 6px; color: var(--page-ink); font-weight: 700; text-decoration: none; }
+.event-podium .country img { width: 20px; height: 14px; object-fit: cover; }
+.event-podium__detail { color: var(--page-muted); }
+@media (max-width: 700px) { .event-podium__row { grid-template-columns: 2rem 1fr; } .event-podium__detail { grid-column: 2; } }
+
+.sport-history-body > * {
+  margin: 0 0 12px;
+  color: var(--page-muted);
+  line-height: 1.6;
+}
+
+.sport-history-body > :last-child {
+  margin-bottom: 0;
+}
+
+.sport-history-list {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sport-history-leaders {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--page-soft) 72%, var(--os-surface));
+}
+
+.sport-history-leaders h3 {
+  margin: 0 0 12px;
+  color: var(--page-ink);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.sport-history-leader-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--page-muted);
+  font-size: 13px;
+}
+
+.sport-history-leader-table th,
+.sport-history-leader-table td {
+  padding: 10px 8px;
+  border-top: 1px solid var(--page-line);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.sport-history-leader-table th {
+  color: var(--page-ink);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.sport-history-leader-table td:first-child {
+  width: 42px;
+  color: var(--page-ink);
+  font-weight: 800;
+}
+
+.sport-history-win-chart {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sport-history-win-dot {
+  width: 22px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--page-theme);
+}
+
+.sport-history-win-dot--empty {
+  background: color-mix(in srgb, var(--page-line) 70%, transparent);
+}
+
+.sport-history-grid {
+  display: grid;
+  grid-template-columns: minmax(74px, 0.32fr) repeat(3, minmax(150px, 1fr));
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.sport-history-grid--dual {
+  grid-template-columns: minmax(74px, 0.32fr) repeat(2, minmax(180px, 1fr));
+  max-width: 980px;
+}
+
+.sport-history-head,
+.sport-history-year-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: stretch;
+}
+
+.sport-history-head span {
+  padding: 0 10px 4px;
+  color: var(--page-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.sport-history-year,
+.sport-history-position {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+  padding: 10px 12px;
+  overflow: hidden;
+  background: var(--page-soft);
+  border: 1px solid var(--page-line);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.sport-history-year {
+  justify-content: center;
+  color: var(--page-ink);
+  border-radius: 10px 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sport-history-year:hover,
+.sport-history-year:focus-visible {
+  color: var(--page-theme);
+  outline: 2px solid color-mix(in srgb, var(--page-theme) 45%, transparent);
+  outline-offset: -2px;
+}
+
+.sport-history-position {
+  flex-wrap: wrap;
+  align-content: center;
+  color: var(--page-muted);
+}
+
+.sport-history-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.sport-history-person span:last-child {
+  overflow-wrap: anywhere;
+}
+
+.sport-history-position:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.sport-history-position--empty {
+  min-height: 42px;
+}
+
+@media (max-width: 980px) {
+  .sport-history-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sport-history-head {
+    display: none;
+  }
+
+  .sport-history-year-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .sport-history-year,
+  .sport-history-position,
+  .sport-history-position:last-child {
+    justify-content: flex-start;
+    border-radius: 10px;
+  }
+
+  .sport-history-position[data-label]::before {
+    content: attr(data-label);
+    flex: 0 0 58px;
+    color: var(--page-ink);
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .sport-history-leader-table {
+    font-size: 12px;
+  }
+
+  .sport-history-leader-table th,
+  .sport-history-leader-table td {
+    padding: 9px 5px;
+  }
+
+  .sport-history-win-dot {
+    width: 14px;
+  }
+}

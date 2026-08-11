@@ -1,0 +1,286 @@
+/* Golf year history and leaderboard module. */
+
+
+.golf-history-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--page-muted) 9%, var(--os-surface));
+}
+
+
+.golf-history-years label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 14px;
+  color: var(--page-ink);
+  font-size: 14px;
+  font-weight: 900;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: var(--os-surface);
+  cursor: pointer;
+}
+
+
+.golf-history-years img {
+  inline-size: 20px;
+  block-size: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+
+.golf-history-panel {
+  display: none;
+  gap: clamp(10px, 1.2vw, 14px);
+}
+
+
+#golf-history-2020:checked ~ .golf-history-years label[for="golf-history-2020"],
+#golf-history-2021:checked ~ .golf-history-years label[for="golf-history-2021"],
+#golf-history-2022:checked ~ .golf-history-years label[for="golf-history-2022"],
+#golf-history-2023:checked ~ .golf-history-years label[for="golf-history-2023"],
+#golf-history-2024:checked ~ .golf-history-years label[for="golf-history-2024"],
+#golf-history-2025:checked ~ .golf-history-years label[for="golf-history-2025"],
+#golf-history-2026:checked ~ .golf-history-years label[for="golf-history-2026"],
+#golf-history-2027:checked ~ .golf-history-years label[for="golf-history-2027"],
+#golf-history-2028:checked ~ .golf-history-years label[for="golf-history-2028"] {
+  color: var(--os-surface);
+  border-color: var(--page-theme);
+  background: var(--page-theme);
+}
+
+
+#golf-history-2020:checked ~ .golf-history-panels .golf-history-panel--2020,
+#golf-history-2021:checked ~ .golf-history-panels .golf-history-panel--2021,
+#golf-history-2022:checked ~ .golf-history-panels .golf-history-panel--2022,
+#golf-history-2023:checked ~ .golf-history-panels .golf-history-panel--2023,
+#golf-history-2024:checked ~ .golf-history-panels .golf-history-panel--2024,
+#golf-history-2025:checked ~ .golf-history-panels .golf-history-panel--2025,
+#golf-history-2026:checked ~ .golf-history-panels .golf-history-panel--2026,
+#golf-history-2027:checked ~ .golf-history-panels .golf-history-panel--2027,
+#golf-history-2028:checked ~ .golf-history-panels .golf-history-panel--2028 {
+  display: grid;
+}
+
+
+.golf-history-leaderboard {
+  display: grid;
+  gap: 10px;
+  padding: clamp(12px, 1.3vw, 16px);
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  background: var(--os-surface);
+}
+
+
+.golf-history-leaderboard > span {
+  color: var(--page-theme);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.golf-history-leaderboard > strong {
+  color: var(--page-ink);
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+
+.golf-history-heading {
+  display: grid;
+  gap: 6px;
+}
+
+
+.golf-history-heading .event-panel-title {
+  margin: 0;
+}
+
+
+.golf-history-heading p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+
+.golf-history-heading p:last-child > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 5px 10px;
+  color: var(--page-ink);
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid var(--page-line);
+  border-radius: 999px;
+  background: var(--os-surface);
+}
+
+
+.golf-history-heading .country {
+  font-size: inherit;
+}
+
+
+.golf-history-chart {
+  overflow: hidden;
+  border: 1px solid var(--page-line);
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--os-surface), color-mix(in srgb, var(--page-muted) 5%, var(--os-surface)));
+}
+
+
+.golf-history-chart svg {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+
+.golf-history-chart--empty {
+  padding: 18px;
+}
+
+
+.golf-history-grid {
+  stroke: var(--page-line);
+  stroke-width: 1;
+}
+
+
+.golf-history-axis {
+  fill: var(--page-theme);
+  font-size: 12px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+
+.golf-history-axis--score {
+  text-anchor: end;
+}
+
+
+.golf-history-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.golf-history-point {
+  stroke: var(--os-surface);
+  stroke-width: 2;
+}
+
+
+.golf-history-line--0 {
+  stroke: var(--page-theme);
+}
+
+
+.golf-history-point--0 {
+  fill: var(--page-theme);
+}
+
+
+.golf-history-line--1 {
+  stroke: #2d789f;
+}
+
+
+.golf-history-point--1 {
+  fill: #2d789f;
+}
+
+
+.golf-history-line--2 {
+  stroke: #a74358;
+}
+
+
+.golf-history-point--2 {
+  fill: #a74358;
+}
+
+
+.golf-history-line--3 {
+  stroke: #1f2933;
+}
+
+
+.golf-history-point--3 {
+  fill: #1f2933;
+}
+
+
+.golf-history-line--4 {
+  stroke: #6f557f;
+}
+
+
+.golf-history-point--4 {
+  fill: #6f557f;
+}
+
+
+.golf-history-line--5 {
+  stroke: #5c7f67;
+}
+
+
+.golf-history-point--5 {
+  fill: #5c7f67;
+}
+
+
+.golf-history-table-wrap {
+  overflow-x: auto;
+}
+
+
+.golf-history-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  color: var(--page-ink);
+  font-size: 14px;
+}
+
+
+.golf-history-table th,
+.golf-history-table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--page-line);
+  text-align: right;
+}
+
+
+.golf-history-table th:first-child {
+  text-align: left;
+}
+
+
+.golf-history-table tbody tr:first-child {
+  box-shadow: inset 4px 0 0 var(--page-theme);
+  background: color-mix(in srgb, var(--page-theme) 5%, var(--os-surface));
+}
+
+
+@media (max-width: 760px) {
+  .golf-history-years {
+    border-radius: 18px;
+  }}
+
+.golf-history { display: block; }

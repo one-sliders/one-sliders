@@ -1,0 +1,10 @@
+/* Shared structural defaults. Color tokens are defined in 1_colours.css. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; color: var(--page-ink); background: var(--page-bg); }
+a { color: inherit; text-decoration: none; }
+svg { display: block; }
+.visual-topic-card { display: grid; grid-template-rows: 88px auto auto; overflow: hidden; color: var(--page-ink); background: var(--os-surface); border: 1px solid var(--os-line); border-radius: 8px; }
+.visual-topic-card img { width: 100%; height: 88px; object-fit: cover; }
+.visual-topic-card strong, .visual-topic-card h3 { display: block; margin: 0; padding: 10px 14px 0; }
+.visual-topic-card span { display: block; padding: 7px 14px 14px; color: var(--page-muted); }
+.visual-topic-card--national { border-left: 4px solid var(--os-red); }

@@ -63,17 +63,25 @@
     }
   } catch (e) { /* localStorage may be blocked */ }
 
-  // 1c. Bootstrap GA4.
-  gtag('js', new Date());
-  gtag('config', GA_ID);
+  // 1c. Bootstrap GA4 — but never on local/dev hosts, so previewing the
+  //     site on localhost does not pollute the production analytics.
+  var GA_DISABLED =
+    location.protocol === 'file:' ||
+    /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\]|::1)$/.test(location.hostname) ||
+    /(^|\.)local$/.test(location.hostname);
 
-  // 1d. Inject the gtag.js loader. Async so it does not block parsing.
-  (function () {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    (document.head || document.documentElement).appendChild(s);
-  })();
+  gtag('js', new Date());
+  if (!GA_DISABLED) {
+    gtag('config', GA_ID);
+
+    // 1d. Inject the gtag.js loader. Async so it does not block parsing.
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      (document.head || document.documentElement).appendChild(s);
+    })();
+  }
 
   // =====================================================================
   // PART 2 — module framework (runs at DOM-ready)
@@ -199,12 +207,12 @@
 
   // ====================================================================
   OneSlider.register('expiringEvents', function () {
-    var items = document.querySelectorAll('[data-expiring-events] [data-end]');
+    var items = document.querySelectorAll('[data-expiring-events] [data-end], [data-expiring-events] [data-start], .event-grid [data-end], .event-grid [data-start], .league-events [data-end], .league-events [data-start]');
     if (!items.length) return;
     var today = new Date();
     today.setHours(0, 0, 0, 0);
     items.forEach(function (item) {
-      var raw = item.getAttribute('data-end');
+      var raw = item.getAttribute('data-end') || item.getAttribute('data-start');
       if (!raw) return;
       var end = new Date(raw + 'T00:00:00');
       if (Number.isNaN(end.getTime())) return;
@@ -821,6 +829,10 @@
           'border-top:.5px solid var(--os-footer-line,color-mix(in srgb,var(--os-line,rgba(18,32,46,.12)) 62%,var(--os-transparent,transparent)))!important' +
         '}' +
         'body.os-has-site-footer>footer.os-footer a{color:inherit!important;border-bottom-color:transparent!important}' +
+        'body.os-has-site-footer>footer.os-footer .ai-disclosure{margin:6px 0 0!important;font-size:11px!important;line-height:1.5!important}' +
+        'body.os-has-site-footer.topic-onepage>footer.os-footer .ai-disclosure,' +
+        'body.os-has-site-footer.event-dashboard>footer.os-footer .ai-disclosure,' +
+        'body.os-has-site-footer.event-page>footer.os-footer .ai-disclosure{display:inline!important;margin:0 0 0 .45em!important;font-size:10px!important;line-height:1.2!important;white-space:nowrap!important}' +
         '@media(min-width:761px){' +
           'body.os-has-site-footer.topic-onepage>footer.os-footer,' +
           'body.os-has-site-footer.event-page>footer.os-footer{' +
@@ -850,9 +862,12 @@
     // Minimal footer. Terms, contact email and cookie-settings access live
     // in the iOS sheet "Settings" section on mobile, and the floating
     // cookie pill (auto-injected by the brand module) on desktop.
-    var content =
-      '<p>&copy; ' + year + ownerText + ' ' +
-      '<a href="' + root + 'privacy.html">Privacy</a></p>';
+    var fixedFooter = document.body.classList.contains('event-page') || document.body.classList.contains('topic-onepage') || document.body.classList.contains('event-dashboard');
+    var content = fixedFooter
+      ? '<p>&copy; ' + year + ownerText + ' <a href="' + root + 'privacy.html">Privacy</a>' +
+        '<span class="ai-disclosure">Content and images on OneSliders are wholly or partly AI-generated.</span></p>'
+      : '<p>&copy; ' + year + ownerText + ' <a href="' + root + 'privacy.html">Privacy</a></p>' +
+        '<p class="ai-disclosure">Content and images on OneSliders are wholly or partly AI-generated.</p>';
 
     var footerSelector = 'footer.os-footer, footer.site-footer, footer.site-foot, footer.site, footer.event-footer, footer.footer';
     var existing = document.querySelector(footerSelector) || document.querySelector('footer');
