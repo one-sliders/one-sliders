@@ -71,7 +71,7 @@ def git_changed_html():
 
     try:
         out = subprocess.run(
-            ['git', 'diff', '--name-only', f'{remote_ref}..HEAD'],
+            ['git', 'diff', '--name-only', f'{remote_ref}..HEAD', '--', '*.html'],
             cwd=ROOT, capture_output=True, text=True
         ).stdout
         lines = set(out.splitlines())
@@ -80,8 +80,6 @@ def git_changed_html():
 
     files = []
     for p in lines:
-        if not p.lower().endswith('.html'):
-            continue
         full = os.path.join(ROOT, p)
         if os.path.isfile(full) and not excluded(full):
             files.append(full)
@@ -116,22 +114,25 @@ def check(path, h):
         if re.search(r'\bslider\b', t, re.I):
             fails.append('title contains "slider"')
 
-    # description
-    desc_m = re.search(r'name="description"[^>]*content="([^"]*)"', h, re.I)
+    # description — attribute order inside the tag is not semantic HTML, so match
+    # the whole <meta> tag and require both name= and content= present in any order
+    # (BeautifulSoup's html.parser backend normalizes/sorts attributes, so a
+    # position-sensitive regex here was a false-positive generator, not a real check).
+    desc_m = re.search(r'<meta\b(?=[^>]*\bname="description")(?=[^>]*\bcontent="([^"]*)")[^>]*/?>', h, re.I)
     if not desc_m:
         fails.append('MISSING meta description')
     elif len(desc_m.group(1)) > 155:
         fails.append(f'description {len(desc_m.group(1))} chars (>155)')
 
     # canonical
-    canon_m = re.search(r'rel="canonical"\s+href="([^"]+)"', h, re.I)
+    canon_m = re.search(r'<link\b(?=[^>]*\brel="canonical")(?=[^>]*\bhref="([^"]+)")[^>]*/?>', h, re.I)
     if not canon_m:
         fails.append('MISSING canonical')
     elif not canon_m.group(1).startswith('https://'):
         fails.append('canonical not absolute URL')
 
     # og:image
-    ogimg_m = re.search(r'property="og:image"[^>]*content="([^"]+)"', h, re.I)
+    ogimg_m = re.search(r'<meta\b(?=[^>]*\bproperty="og:image")(?=[^>]*\bcontent="([^"]+)")[^>]*/?>', h, re.I)
     if not ogimg_m:
         fails.append('MISSING og:image')
     elif not ogimg_m.group(1).startswith(DOMAIN):
