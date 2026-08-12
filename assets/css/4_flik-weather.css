@@ -1,0 +1,57 @@
+/* Split from 3_city.css. Subject-selector ownership lives in this flik module. */
+.country-brief__copy .stay-weather-card--strip {
+  margin: 0 0 4px;
+  background: var(--location-soft);
+  border-color: var(--location-line);
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-days {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 28px;
+  background: var(--os-surface);
+  border-color: var(--location-line);
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-tile {
+  gap: 16px;
+  padding: 12px 10px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-reading {
+  gap: 7px;
+}
+
+.country-brief__copy .stay-weather-card--strip .weather-icon {
+  transform: scale(0.82);
+  transform-origin: left center;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-temp {
+  color: var(--os-red);
+  font-size: 21px;
+}
+
+.country-brief__copy .stay-weather-card--strip .stay-weather-more {
+  color: var(--location-muted);
+  min-width: 28px;
+  font-size: 20px;
+}
+
+@media (max-width: 430px) {
+.city-page--template .country-brief__copy .stay-weather-card--strip .stay-weather-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+.city-page--template .country-brief__copy .stay-weather-card--strip .stay-weather-more {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Shared weather/stay primitives formerly supplied by oneslider-core. */
+.stay-weather-card,
+.stay-weather-page,
+.stay-weather-source,
+.stay-weather-title-row { display: block; }
+
+.weather-icon--partly { display: inline-block; }
