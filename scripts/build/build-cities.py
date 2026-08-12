@@ -24,9 +24,58 @@ from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAIN = 'https://one-sliders.com'
-TODAY = date(2026, 6, 14)
+TODAY = date.today()
 MISSING_NODE_MINIS = []
 TEST_MODE = False
+_CITY_MINI_IMG_CACHE = None
+
+# Manually curated: a Nearby idea that is the SAME real subject as one of the city's own
+# highlights, just under a different name (e.g. a river's local name vs "<River> waterfront",
+# or a translated/alternate spelling of the same landmark). Each entry was checked by name,
+# not guessed by keyword overlap — an automated keyword-overlap pass produces too many false
+# positives (e.g. two different "National Park"s sharing only the word "National") to trust
+# blindly, and showing the WRONG photo for a place is worse than a letter placeholder.
+# citySlug -> {nearbyIdea name (lowercase) -> highlight index, 1-based}
+NEARBY_SAME_SUBJECT_OVERRIDES = {
+    'kinshasa': {'malebo pool': 6},              # "Congo River waterfront" highlight = the same stretch of river
+    'ndjamena': {'chari river': 5},               # "Chari River waterfront" highlight = the same river
+    'maseru': {'thaba-bosiu': 4},                 # "Thaba Bosiu" highlight = identical place, punctuation only
+    'dakar': {'île de ngor': 5},                  # "Ngor Island" highlight = French/English name for the same island
+    'libreville': {'pointe denis': 3},            # "Pointe-Denis Beach" highlight = the beach at that same point
+    'bamako': {'niger river boat trips': 5},      # "Niger River waterfront" highlight = the same river/waterfront
+    'juba': {'white nile boat trip': 6},          # "White Nile waterfront" highlight = the same river/waterfront
+    'moroni': {'itsandra ruins': 6},              # "Itsandra Beach" highlight = the same named location
+}
+
+
+def slugify_name(s):
+    s = str(s or '').strip().lower()
+    s = s.replace('ö', 'o').replace('ä', 'a').replace('å', 'a').replace('ø', 'o').replace('é', 'e')
+    s = re.sub(r'[^a-z0-9]+', '-', s).strip('-')
+    return s
+
+
+def all_city_mini_images():
+    """slug -> resolved -mini.png path for every OTHER city on the site that actually
+    has that asset on disk. Built once and cached; used so a Nearby idea naming a
+    neighbouring city (e.g. Kinshasa's Nearby card for "Brazzaville") can reuse that
+    city's own thumbnail instead of falling back to a letter placeholder."""
+    global _CITY_MINI_IMG_CACHE
+    if _CITY_MINI_IMG_CACHE is not None:
+        return _CITY_MINI_IMG_CACHE
+    mapping = {}
+    for path_ in glob.glob(os.path.join(ROOT, 'content', 'locations', '**', '*.city.data.json'), recursive=True):
+        rel = os.path.relpath(path_, ROOT).replace('\\', '/')
+        parts = rel.split('/')
+        if len(parts) < 4:
+            continue
+        cont, country = parts[2], parts[3]
+        base = os.path.basename(rel)[:-len('.city.data.json')]
+        candidate = f"/content/locations/{cont}/{country}/img/{base}-mini.png"
+        if os.path.isfile(os.path.join(ROOT, candidate.lstrip('/'))):
+            mapping[base] = candidate
+    _CITY_MINI_IMG_CACHE = mapping
+    return mapping
 
 # Load population and airport mappings
 POPULATION_MAP = {}
@@ -874,6 +923,17 @@ def render_template_city(d):
         for a in airports
     ) or f'<li><strong>{esc(name)} airport access</strong><span>Main gateway TBC.</span><p>{esc(bounded_text("", "Compare airport access against hotel location, arrival time, rental car pickup, late flights and onward driving before choosing the first night base.", "airport_text_words"))}</p></li>'
 
+    # Nearby ideas frequently repeat a landmark already covered by the "See" highlights
+    # (same place, different tab) but carry no href/img of their own, so node_mini_image()
+    # never gets a candidate path and silently falls back to a letter placeholder even when
+    # a real photo exists. Reuse the highlight's own resolved -see-N-mini.png by name match
+    # before falling back — never fabricate an image for places that truly have none.
+    nearby_img_by_name = {}
+    for hi, h in enumerate(highlights[:6], start=1):
+        h_label = city_item_label(h)
+        if h_label:
+            nearby_img_by_name[h_label.strip().lower()] = f'{img_base}/{slug}-see-{hi}-mini.png'
+
     nearby = []
     raw_nearby = d.get('nearbyIdeas') or d.get('nearby') or []
     if raw_nearby:
@@ -882,13 +942,27 @@ def render_template_city(d):
                 label = item.get('name') or item.get('title') or 'Nearby idea'
                 tag = item.get('label') or item.get('type') or ('Core' if i == 0 else 'Nearby')
                 href = item.get('href') or ''
-                text = bounded_text(item.get('text'), f'Use {label} as a nearby Oslo idea when the route or season fits the trip.', 'nearby_text_words')
+                text = bounded_text(item.get('text'), f'Use {label} as a nearby {name} idea when the route or season fits the trip.', 'nearby_text_words')
             else:
                 label = str(item)
                 tag = 'Nearby'
                 href = ''
-                text = bounded_text('', f'Use {label} as a nearby Oslo idea when the route or season fits the trip.', 'nearby_text_words')
-            card_inner = f'{node_mini_image(href, label)}<div><span>{esc(tag)}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
+                text = bounded_text('', f'Use {label} as a nearby {name} idea when the route or season fits the trip.', 'nearby_text_words')
+            matched_img = nearby_img_by_name.get(label.strip().lower())
+            if not matched_img:
+                override_idx = NEARBY_SAME_SUBJECT_OVERRIDES.get(slug, {}).get(label.strip().lower())
+                if override_idx:
+                    matched_img = f'{img_base}/{slug}-see-{override_idx}-mini.png'
+            if not matched_img:
+                # Tier 2: the Nearby idea may name another city on the site (e.g. a
+                # day-trip destination that has its own full city page) rather than a
+                # landmark inside this city's own highlights — reuse that city's own
+                # thumbnail if one exists, instead of fabricating anything new.
+                matched_img = all_city_mini_images().get(slugify_name(label))
+            media = optional_img(matched_img, f'{label}, {name}', class_name='node-mini-hero') if matched_img else ''
+            if not media:
+                media = node_mini_image(href, label)
+            card_inner = f'{media}<div><span>{esc(tag)}</span><h3>{esc(label)}</h3><p>{esc(text)}</p></div>'
             nearby.append(linked_or_plain('div', href, 'class="destination-nearby-card"', card_inner))
     # Auto-generate nearby from areas only if explicit nearby data exists
     # else:
@@ -1050,6 +1124,8 @@ def render_template_city(d):
 <html lang="en">
 <head>
   <!-- OneSlider generic city page -->
+  <script defer src="/assets/js/oneslider-core.js"></script>
+  <link rel="stylesheet" href="/assets/css/oneslider-core.css">
   <link rel="stylesheet" href="/assets/css/1_colours.css">
   <link rel="stylesheet" href="/assets/css/1_typography.css">
   <link rel="stylesheet" href="/assets/css/1_core.css">
@@ -1082,6 +1158,7 @@ def render_template_city(d):
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/assets/icons/site.webmanifest">
   <meta name="theme-color" content="Canvas">
+  <script type="application/ld+json">{ldjson}</script>
 </head>
 <body class="country-onepage city-page--stay-template city-page--template">
   <nav class="top-menu" aria-label="Location navigation">
