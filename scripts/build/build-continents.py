@@ -23,7 +23,7 @@ from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOMAIN = "https://one-sliders.com"
-TODAY = date(2026, 6, 15)
+TODAY = date.today()
 
 COUNTRY_CHIP_IMAGE_OVERRIDES = {
     "europe": {
@@ -654,7 +654,7 @@ def render(continent):
   <link rel="icon" href="../../../assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="../../../assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="../../../assets/css/locations.css?v=continent-onepage-areas-20260615">
+  <link rel="stylesheet" href="../../../assets/css/locations.css?v=continent-country-filter-20260728">
   <meta name="theme-color" content="#0d2137">
   <title>{esc(meta["title"])}</title>
   <script type="application/ld+json">{jsonld}</script>
