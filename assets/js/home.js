@@ -130,7 +130,7 @@
     window.setTimeout(function() {
 
       /* Global / climate awareness days */
-      fetch('/scripts/data/global-days.json', { cache: 'force-cache' })
+      fetch('/assets/data/global-days.json', { cache: 'force-cache' })
         .then(function(r) { return r.json(); })
         .then(function(data) {
           var extraCards = [];
