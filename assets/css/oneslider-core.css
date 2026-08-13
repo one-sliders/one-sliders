@@ -1206,3 +1206,33 @@ nav.event-nav .nav-divider {
     grid-template-columns: repeat(2, minmax(92px, 1fr)) 34px;
   }
 }
+
+/* Locale-formatted overlay for a booking <input type="date"> (see
+   bookingDateLocale module). The native widget's own OS-rendered text can't
+   be inspected or guaranteed from the page, so this hides that text and
+   shows our own Intl.DateTimeFormat(undefined, ...) label in its place —
+   ONE visible date, not two. Clicks still pass through to the real input
+   underneath (still opens the native calendar picker); this overlay only
+   covers the text portion, not the calendar-icon area, so the icon stays
+   clickable and visible. */
+/* Compound selector (two classes, not one) so this reliably outranks the
+   later-loaded per-page-type stylesheets' plain .stay-field-input color
+   rule (event-national-day-left.css, 4_flik-left-booking.css, etc.) —
+   those have equal specificity and would otherwise win by load order. */
+input.stay-field-input.stay-field-input--locale-overlaid {
+  color: transparent;
+}
+input.stay-field-input.stay-field-input--locale-overlaid::-webkit-datetime-edit,
+input.stay-field-input.stay-field-input--locale-overlaid::-webkit-datetime-edit-fields-wrapper {
+  color: transparent;
+}
+.stay-field-locale-overlay {
+  /* position/top/left/width/height are set inline by the bookingDateLocale
+     module, measured from the input's own box — not fixed here, since the
+     field wrapper also contains the CHECK-IN/CHECK-OUT label above it. */
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+}

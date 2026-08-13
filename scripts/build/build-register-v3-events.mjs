@@ -16,7 +16,7 @@ const CONTENT_BASE = '/content';
 const CSS_BASE = '/assets/css';
 
 const siteConfig = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/config.json'), 'utf8'));
-const BOOKING_BASE = siteConfig.affiliate.booking.links['hotels-default']
+const BOOKING_BASE = siteConfig.affiliate.booking.clickBase
   + '?url=https%3A%2F%2Fwww.booking.com%2Fsearchresults.html%3F';
 
 function valueArg(name) {

@@ -172,6 +172,205 @@
   })();
 
   // ====================================================================
+  // Module: cityStayViews
+  // Keeps hash-addressable Visit subviews from trapping the primary tabs.
+  //
+  // Flyttad hit fran assets/js/city-page.js (BUG-0030). Den filen laddas inte av
+  // nagon sida - stadssidorna har bara oneslider-core.js - sa undermenyn under
+  // Visit var dod pa alla 330 stadssidor. Resten av city-page.js hamtas medvetet
+  // INTE in: dess weatherStrip/localTime skulle kora parallellt med core:s egna
+  // cityWeatherStrip/cityLocalTime mot samma DOM.
+  // ====================================================================
+  OneSlider.register('cityStayViews', function () {
+    var stayHashes = {
+      '#stay-overview': true,
+      '#stay-areas': true,
+      '#stay-airports': true,
+      '#stay-hotels': true,
+      '#stay-hotels-areas': true,
+      '#stay-flights-airports': true,
+      '#stay-rental-cars': true,
+      '#stay-tips': true
+    };
+    var primaryHashes = {
+      '#fact': 'view-visit',
+      '#see': 'view-see',
+      '#visit': 'view-stay',
+      '#nearby': 'view-nearby',
+      '#events': 'view-events'
+    };
+
+    function isStayHash() {
+      return !!stayHashes[window.location.hash];
+    }
+
+    function syncHashClass() {
+      document.documentElement.classList.toggle('os-stay-hash-active', isStayHash());
+    }
+
+    function clearStayHash() {
+      if (!isStayHash() || !window.history || !window.history.replaceState) return;
+      window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      syncHashClass();
+    }
+
+    function primaryInputIdForHash(hash) {
+      if (primaryHashes[hash]) return primaryHashes[hash];
+      if (hash.indexOf('#see-') === 0) return 'view-see';
+      return null;
+    }
+
+    function activateStayTabForHash() {
+      syncHashClass();
+      var primaryInput = document.getElementById(primaryInputIdForHash(window.location.hash));
+      if (primaryInput) {
+        primaryInput.checked = true;
+        return;
+      }
+      if (!isStayHash()) return;
+      var stayInput = document.getElementById('view-stay');
+      if (stayInput) stayInput.checked = true;
+    }
+
+    function selectStayLinkForHash(menu) {
+      var links = Array.prototype.slice.call(menu.querySelectorAll('a[href^="#"]'));
+      return links.filter(function (item) {
+        return item.getAttribute('href') === window.location.hash;
+      })[0] || links[0] || null;
+    }
+
+    function activateStaySectionLink(link, updateHash) {
+      if (!link) return false;
+      var menu = link.closest('.stay-section-menu');
+      var planner = link.closest('.stay-planner-layout');
+      var id = (link.getAttribute('href') || '').replace(/^#/, '');
+      if (!menu || !planner || !id) return false;
+      var target = planner.querySelector('#' + id);
+      if (!target) return false;
+      Array.prototype.slice.call(planner.querySelectorAll('.stay-section-panel')).forEach(function (section) {
+        var isActive = section === target;
+        section.classList.toggle('is-active', isActive);
+        section.removeAttribute('hidden');
+      });
+      Array.prototype.slice.call(menu.querySelectorAll('a[href^="#"]')).forEach(function (item) {
+        var isActive = item.getAttribute('href') === '#' + id;
+        if (isActive) item.setAttribute('aria-current', 'true');
+        else item.removeAttribute('aria-current');
+      });
+      if (updateHash && window.history && window.history.replaceState) {
+        window.history.replaceState(null, document.title, window.location.pathname + window.location.search + '#' + id);
+      }
+      activateStayTabForHash();
+      return true;
+    }
+
+    function activateStaySectionForHash() {
+      Array.prototype.slice.call(document.querySelectorAll('.stay-section-menu')).forEach(function (menu) {
+        activateStaySectionLink(selectStayLinkForHash(menu), false);
+      });
+      activateStayTabForHash();
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll('.persona-tablist label[for]')).forEach(function (label) {
+      label.addEventListener('click', function () {
+        if (label.getAttribute('for') !== 'view-stay') {
+          clearStayHash();
+          return;
+        }
+        activateStaySectionForHash();
+      });
+    });
+
+    Array.prototype.slice.call(document.querySelectorAll('.stay-section-menu')).forEach(function (menu) {
+      if (menu.__cityStayMenuBound) return;
+      menu.__cityStayMenuBound = true;
+      activateStaySectionLink(selectStayLinkForHash(menu), false);
+      menu.addEventListener('click', function (event) {
+        var link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        activateStaySectionLink(link, false);
+      });
+    });
+
+    if (!document.__cityStayCaptureBound) {
+      document.__cityStayCaptureBound = true;
+      document.addEventListener('click', function (event) {
+        var closest = event.target.closest;
+        if (typeof closest !== 'function') return;
+        var link = event.target.closest('.stay-section-menu a[href^="#"]');
+        if (!link) return;
+        activateStaySectionLink(link, false);
+      }, true);
+    }
+
+    // In-copy links (e.g. attraction/airport names auto-linked inside the overview text)
+    // repeat the same hash on every click, so a native hashchange event never fires the
+    // second time. Force re-activation directly on click instead of relying on hashchange.
+    if (!document.__cityInlineLinkCaptureBound) {
+      document.__cityInlineLinkCaptureBound = true;
+      document.addEventListener('click', function (event) {
+        var closest = event.target.closest;
+        if (typeof closest !== 'function') return;
+        var link = event.target.closest('a[href^="#"]');
+        if (!link || link.closest('.stay-section-menu')) return;
+        window.setTimeout(activateStayTabForHash, 0);
+      }, true);
+    }
+
+    activateStaySectionForHash();
+    window.addEventListener('hashchange', activateStaySectionForHash);
+  });
+
+  // ====================================================================
+  // Module: affiliateLocalGuard
+  // Neutralises affiliate links when the page is NOT served from production.
+  //
+  // Why this exists: CJ has no IP filtering, so a click made while testing is
+  // indistinguishable from a real visitor's click — forever. It cannot be filtered
+  // out afterwards. The 2026 baseline of 83 clicks is unusable for exactly this
+  // reason. The build already writes untracked links in Dev (--test), but QA output
+  // IS the production artefact, so any local preview of content/ would still fire
+  // real clicks. This catches every remaining case: localhost, 127.0.0.1, file://,
+  // and any other host than the live domain.
+  //
+  // The link still works — it points at the same Booking destination, just without
+  // the affiliate redirect. Testing stays realistic; the statistics stay clean.
+  // ====================================================================
+  OneSlider.register('affiliateLocalGuard', function () {
+    // Vitlista på LOKALA värdar, inte svartlista på "allt utom prod". Skillnaden är
+    // vilket håll felet lutar åt: nås sajten någon gång från en annan riktig domän
+    // (one-sliders.github.io, en staging-domän, ett nytt CDN) ska länkarna fortsätta
+    // ge provision. Ett extra testklick är billigt; tyst utebliven intäkt är det inte.
+    var host = (window.location.hostname || '').toLowerCase();
+    var isLocal = host === ''                       // file://
+      || host === 'localhost' || host === '127.0.0.1' || host === '::1'
+      || /^127\./.test(host)
+      || /^192\.168\./.test(host) || /^10\./.test(host)
+      || /\.local$/.test(host) || /\.localhost$/.test(host);
+    if (!isLocal) return;
+
+    var links = document.querySelectorAll('a[href*="/click-"]');
+    var freed = 0;
+    Array.prototype.forEach.call(links, function (a) {
+      var href = a.getAttribute('href') || '';
+      var match = /[?&]url=([^&]+)/.exec(href);
+      if (!match) return;
+      var destination;
+      try { destination = decodeURIComponent(match[1]); }
+      catch (e) { return; }              // trasig kodning — rör den inte
+      if (!/^https?:\/\//i.test(destination)) return;
+      a.setAttribute('href', destination);
+      a.setAttribute('data-affiliate-neutralised', 'local');
+      freed += 1;
+    });
+
+    if (freed && window.console) {
+      console.info('[OneSlider] ' + freed + ' affiliate-länkar avspårade — sidan '
+        + 'visas från "' + host + '", inte ' + PRODUCTION_HOST + '. Klick här når inte CJ.');
+    }
+  });
+
+  // ====================================================================
   // Module: categoryIdentity
   // Adds a central category marker from the URL so old topic pages with
   // inline CSS still use the same semantic colour as their parent category.
@@ -233,10 +432,11 @@
       var value = card.querySelector('[data-local-time-value]');
       if (!zone || !value) return;
       try {
-        value.textContent = new Intl.DateTimeFormat('en-GB', {
+        // Visitor's own locale decides both the digit grouping and whether
+        // that's 12h/24h — never hardcode a locale or force hour12 here.
+        value.textContent = new Intl.DateTimeFormat(undefined, {
           hour: '2-digit',
           minute: '2-digit',
-          hour12: false,
           timeZone: zone
         }).format(new Date());
       } catch (e) {
@@ -250,6 +450,91 @@
 
     updateAll();
     window.setInterval(updateAll, 30000);
+  });
+
+  // ====================================================================
+  // Module: bookingDateLocale
+  // Native <input type="date"> reads the visitor's own OS/browser locale
+  // for its widget display, but that rendering is entirely inside browser
+  // chrome and can't be verified or overridden from the page (observed
+  // showing MM/DD/YYYY on machines expected to be non-US locale). Rather
+  // than trust that silently, this module makes the input's own text
+  // transparent and overlays a label in the exact same box, showing the
+  // same ISO value explicitly formatted via Intl.DateTimeFormat(undefined,
+  // ...) — so it always follows the visitor's own locale. The overlay
+  // matches the input's own computed padding/font so it looks like ONE
+  // field, not two dates — clicks still pass through to the real input
+  // underneath, which still opens the native calendar picker.
+  // Part of FEATURE-0003 (all dates in visitor locale); this is the
+  // booking-date-specific slice of it.
+  // ====================================================================
+  OneSlider.register('bookingDateLocale', function () {
+    if (!window.Intl || !Intl.DateTimeFormat) return;
+    var inputs = document.querySelectorAll('input[type="date"].stay-field-input');
+    if (!inputs.length) return;
+
+    function overlayFor(input) {
+      var id = input.id ? input.id + '-locale' : '';
+      var label = id ? document.getElementById(id) : null;
+      if (!label) {
+        label = document.createElement('span');
+        label.className = 'stay-field-locale-overlay';
+        if (id) label.id = id;
+        label.setAttribute('aria-hidden', 'true');
+        input.insertAdjacentElement('afterend', label);
+        input.classList.add('stay-field-input--locale-overlaid');
+      }
+
+      // Position from the input's own offsetParent-relative box, not the
+      // field wrapper's top/left — the wrapper also contains the CHECK-IN
+      // label above the input, so top:0/left:0 on it would sit at the
+      // label, not the input. Re-measured on every call (not just once)
+      // so it stays correct across responsive breakpoints/resizes.
+      var offsetParent = input.offsetParent;
+      if (offsetParent && getComputedStyle(offsetParent).position === 'static') {
+        offsetParent.style.position = 'relative';
+      }
+      label.style.position = 'absolute';
+      label.style.top = input.offsetTop + 'px';
+      label.style.left = input.offsetLeft + 'px';
+      // Leave the native calendar-icon area (right ~28px) uncovered so it
+      // stays visible and isn't hidden under our overlay text.
+      label.style.width = Math.max(0, input.offsetWidth - 28) + 'px';
+      label.style.height = input.offsetHeight + 'px';
+
+      var cs = getComputedStyle(input);
+      label.style.paddingLeft = cs.paddingLeft;
+      label.style.paddingTop = cs.paddingTop;
+      label.style.paddingBottom = cs.paddingBottom;
+      label.style.fontSize = cs.fontSize;
+      label.style.fontFamily = cs.fontFamily;
+      label.style.color = cs.color;
+
+      return label;
+    }
+
+    function formatValue(value) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return '';
+      var parts = value.split('-').map(Number);
+      var d = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+      try {
+        return new Intl.DateTimeFormat(undefined, {
+          year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
+        }).format(d);
+      } catch (e) {
+        return '';
+      }
+    }
+
+    function update(input) {
+      var label = overlayFor(input);
+      label.textContent = formatValue(input.value);
+    }
+
+    Array.prototype.forEach.call(inputs, function (input) {
+      update(input);
+      input.addEventListener('change', function () { update(input); });
+    });
   });
 
   // ====================================================================
@@ -283,7 +568,7 @@
     function dayLabel(value) {
       var date = new Date(String(value) + 'T12:00:00');
       if (Number.isNaN(date.getTime())) return '';
-      return new Intl.DateTimeFormat('en', { weekday: 'short' }).format(date);
+      return new Intl.DateTimeFormat(undefined, { weekday: 'short' }).format(date);
     }
 
     function temp(value) {
@@ -379,12 +664,15 @@
           'body.os-has-ios-nav.food-layout-page nav.top-menu,' +
           'body.os-has-ios-nav.country-onepage nav.top-menu,' +
           'body.os-has-ios-nav.event-page nav.top-menu,' +
-          'body.os-has-ios-nav.event-page nav.event-nav{display:none!important}' +
+          'body.os-has-ios-nav.event-dashboard nav.top-menu,' +
+          'body.os-has-ios-nav.event-page nav.event-nav,' +
+          'body.os-has-ios-nav.event-dashboard nav.event-nav{display:none!important}' +
           'body.os-has-ios-nav.topic-page .ios-nav,' +
           'body.os-has-ios-nav.food-topic-page .ios-nav,' +
           'body.os-has-ios-nav.food-layout-page .ios-nav,' +
           'body.os-has-ios-nav.country-onepage .ios-nav,' +
-          'body.os-has-ios-nav.event-page .ios-nav{display:grid!important}' +
+          'body.os-has-ios-nav.event-page .ios-nav,' +
+          'body.os-has-ios-nav.event-dashboard .ios-nav{display:grid!important}' +
           'body.os-has-ios-nav .ios-title{' +
             'margin:0!important;' +
             'color:var(--ink,color-mix(in srgb, var(--os-scrim) 58%, var(--os-transparent)))!important;' +
@@ -402,10 +690,15 @@
         '}' +
         '@media (max-width:620px),(max-height:760px){' +
           'body.os-has-ios-nav.event-page nav.event-nav,' +
-          'body.os-has-ios-nav.event-page nav.top-menu{display:none!important}' +
-          'body.os-has-ios-nav.event-page .ios-nav{display:grid!important}' +
-          'body.os-has-ios-nav.event-page .ios-back{display:inline-flex!important}' +
-          'body.os-has-ios-nav.event-page .ios-sheet:not([hidden]){display:block!important}' +
+          'body.os-has-ios-nav.event-dashboard nav.event-nav,' +
+          'body.os-has-ios-nav.event-page nav.top-menu,' +
+          'body.os-has-ios-nav.event-dashboard nav.top-menu{display:none!important}' +
+          'body.os-has-ios-nav.event-page .ios-nav,' +
+          'body.os-has-ios-nav.event-dashboard .ios-nav{display:grid!important}' +
+          'body.os-has-ios-nav.event-page .ios-back,' +
+          'body.os-has-ios-nav.event-dashboard .ios-back{display:inline-flex!important}' +
+          'body.os-has-ios-nav.event-page .ios-sheet:not([hidden]),' +
+          'body.os-has-ios-nav.event-dashboard .ios-sheet:not([hidden]){display:block!important}' +
         '}';
       (document.head || document.documentElement).appendChild(style);
     }

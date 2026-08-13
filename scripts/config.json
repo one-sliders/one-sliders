@@ -1,0 +1,33 @@
+{
+  "affiliate": {
+    "booking": {
+      "_comment": [
+        "ENDA källan för Booking-affiliatelänkar. Ligger länken någon annanstans är det ett fel.",
+        "Historik: fyra olika länk-ID användes samtidigt (13386171, 15735418, 17293132, 17122706)",
+        "eftersom varje byggskript och engångsskript hade sin egen hårdkodade sträng.",
+        "clickBase byggs av websiteId + linkId. Ändra ID:t, inte den hopslagna strängen."
+      ],
+      "websiteId": "101771061",
+      "linkId": "15735418",
+      "linkName": "Evergreen Link for Booking.com Central and Eastern Europe",
+      "advertiserId": "5096493",
+      "clickBase": "https://www.kqzyfj.com/click-101771061-15735418",
+
+      "destinations": {
+        "stays": "https://www.booking.com/searchresults.html",
+        "cars": "https://www.booking.com/cars/search-results/"
+      },
+
+      "sidParam": "sid",
+
+      "_productionHostComment": [
+        "Länkar taggas bara skarpt när sidan byggs för prod. Dev-bygget (--test) skriver",
+        "en otaggad länk, och klient-JS neutraliserar affiliate-länkar på localhost/file://.",
+        "Skälet: CJ har ingen IP-filtrering, så ett testklick går inte att skilja från en",
+        "riktig besökare i efterhand. De 83 klicken under 2026 är därför en oanvändbar",
+        "baslinje och kan aldrig rensas."
+      ],
+      "productionHost": "one-sliders.com"
+    }
+  }
+}

@@ -18,7 +18,7 @@ import path from 'node:path';
 
 const siteConfig = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'scripts/config.json'), 'utf8'));
 const BOOKING_SEARCH_QUERY = '?url=https%3A%2F%2Fwww.booking.com%2Fsearchresults.html%3F';
-const BOOKING_BASE = siteConfig.affiliate.booking.links['hotels-default'] + BOOKING_SEARCH_QUERY;
+const BOOKING_BASE = siteConfig.affiliate.booking.clickBase + BOOKING_SEARCH_QUERY;
 
 const root       = process.cwd();
 const isTest      = process.argv.includes('--test');
@@ -261,15 +261,11 @@ function countryLinkHtml(country) {
   return `<a class="country" href="/content/locations/${countryPath}/index.html"><img src="/content/locations/${countryPath}/img/flag.svg" alt="" width="20" height="14" loading="lazy">${html(label)}</a>`;
 }
 
-function bookingBaseForCountry(country) {
-  const links = siteConfig.affiliate?.booking?.links || {};
-  const countryPath = COUNTRY_FLAG[(country || '').toLowerCase().trim()] || '';
-  const marketKey = countryPath.startsWith('north-america/')
-    ? 'hotels-north-america'
-    : 'hotels-default';
-  const base = links[marketKey] || links['hotels-default'];
-  if (!base) return '';
-  return `${base}${BOOKING_SEARCH_QUERY}`;
+// Tog tidigare emot ett land och valde affiliatelänk per marknad. Uppdelningen är borta:
+// alla länkar går nu via samma Evergreen-länk oavsett destination, satt i scripts/config.json.
+// Signaturen står kvar tills anropsställena rensas i TASK-0047.
+function bookingBaseForCountry(_country) {
+  return BOOKING_BASE;
 }
 
 function winnerHtml(winner) {
@@ -653,7 +649,8 @@ function buildYearAnchors(event) {
   const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const monthName = months[nd.month - 1];
-  const years = [2026, 2027, 2028];
+  const startYear = nd.nextYear || (currentYear + 1);
+  const years = [startYear, startYear + 1, startYear + 2];
   return years.map(y => {
     const d = new Date(y, nd.month - 1, nd.day);
     const weekday = days[d.getDay()];

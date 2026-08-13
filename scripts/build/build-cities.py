@@ -202,38 +202,61 @@ def parse_iso_date(value):
         return None
 
 
-BOOKING_LINKS = {
-    'north-america-usa-canada': 'https://www.jdoqocy.com/click-101771061-17293132',
-    'central-eastern-europe': 'https://www.kqzyfj.com/click-101771061-15735418',
-}
+BOOKING = json.load(open(os.path.join(ROOT, 'scripts', 'config.json'),
+                         encoding='utf-8'))['affiliate']['booking']
 
 
-def booking_base_url(d):
-    if d.get('bookingAffiliateBase'):
-        return d['bookingAffiliateBase']
-    if d.get('continent') == 'europe':
-        return BOOKING_LINKS['central-eastern-europe']
-    if d.get('continent') == 'north-america' and d.get('countrySlug') in ('usa', 'canada'):
-        return BOOKING_LINKS['north-america-usa-canada']
-    return BOOKING_LINKS['north-america-usa-canada']
+def booking_sid(d):
+    """Stabil identifierare som följer med klicket in i CJ:s rapport.
+
+    Utan den är alla klick en enda klump och frågan "vilken sida drev bokningen"
+    går inte att besvara — CJ vet ingenting om våra sidor utom det vi skickar med.
+    Slug och inte löpnummer, så raden går att läsa om ett år.
+    """
+    return 'city-' + str(d.get('slug') or '').strip('-')
+
+
+def booking_affiliate_url(dest_base, search, d):
+    """CJ-länk till en Booking-sökning, med sid.
+
+    Destinationen byggs av två delar i stället för att tas emot färdig, så kodningen
+    kan göras rätt i båda lägena utan att dubbelkodas: dev kodar bara sökvärdet, prod
+    kodar hela mål-URL:en en gång inuti url=.
+
+    Dev-bygget hoppar över CJ helt: samma destination, ingen spårning. Ett testklick
+    går inte att skilja från en riktig besökare i efterhand (CJ har ingen
+    IP-filtrering), så det får aldrig uppstå från början.
+    """
+    if TEST_MODE:
+        return dest_base + '?ss=' + quote(search)
+
+    # safe='' är avsiktligt: hela mål-URL:en ska kodas, inklusive ? och &. Ett rått
+    # frågetecken inuti url= är precis så deeplinks tyst går sönder — bil-länkarna
+    # var helt oencodade och skickade användaren till en trasig destination.
+    #
+    # sid först, url sist — samma ordning som CJ:s egen länkgenerator producerar
+    # (verifierat 2026-08-13: .../click-101771061-15735418?sid=Testsida).
+    return (BOOKING['clickBase']
+            + '?' + BOOKING['sidParam'] + '=' + quote(booking_sid(d), safe='')
+            + '&url=' + quote(dest_base + '?ss=' + search, safe=''))
 
 
 def booking_market_class(d):
+    # Rent kosmetiskt: blå knapp i Europa, orange i övriga världen. Speglade tidigare
+    # vilket affiliateprogram länken gick till, men det gör den inte längre — alla går
+    # nu till samma. Färgdelningen står kvar tills Anders sagt vad den ska betyda,
+    # eftersom att ta bort den ändrar utseendet på 225 stadssidor.
     if d.get('continent') == 'europe':
         return ' affiliate-market--europe'
-    if d.get('continent') == 'north-america' and d.get('countrySlug') in ('usa', 'canada'):
-        return ' affiliate-market--usa-canada'
     return ' affiliate-market--usa-canada'
 
 
 def booking_search_url(search, d):
-    return (booking_base_url(d) + '?url='
-            + quote(f'https://www.booking.com/searchresults.html?ss={search}', safe=''))
+    return booking_affiliate_url(BOOKING['destinations']['stays'], search, d)
 
 
-def booking_cars_url(search):
-    target = f'https://www.booking.com/cars/search-results/?ss={search}'
-    return 'https://www.jdoqocy.com/click-101771061-17122706?url=' + quote(target, safe=':/?=&,')
+def booking_cars_url(search, d):
+    return booking_affiliate_url(BOOKING['destinations']['cars'], search, d)
 
 
 ATTRACTION_AFFILIATES = {
@@ -1069,7 +1092,7 @@ def render_template_city(d):
     )
 
     flight_cta_href = booking_search_url(f'{airport_label}, {country_name}', d)
-    rental_cta_href = booking_cars_url(f'{name}, {country_name}')
+    rental_cta_href = booking_cars_url(f'{name}, {country_name}', d)
     flight_cta = (
         f'<div class="city-context-cta"><h3>{esc(airport_label)} arrival plan</h3>'
         f'<ul>{airports_html}</ul><a class="stay-card-link{booking_market}" href="{esc(flight_cta_href)}" target="_blank" rel="nofollow sponsored noopener">Compare airport-area stays</a></div>'
@@ -1162,6 +1185,7 @@ def render_template_city(d):
 </head>
 <body class="country-onepage city-page--stay-template city-page--template">
   <nav class="top-menu" aria-label="Location navigation">
+    <a class="os-brand" href="/index.html"><img class="os-brand__logo" src="/assets/icons/one-sliders-icon.svg" width="22" height="22" alt=""><span class="os-brand__text">OneSliders</span></a>
     <a class="nav-icon" href="/content/events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
     <a class="nav-icon active" href="/content/locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
     <a class="nav-icon" href="/content/categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
@@ -1759,7 +1783,7 @@ def build_city_paths(paths):
     count = 0
     for c in paths:
         d = build_city(c)
-        print(f"  {d['continent']}/{d['countrySlug']}/{d['slug']}: {booking_base_url(d)}")
+        print(f"  {d['continent']}/{d['countrySlug']}/{d['slug']}: sid={booking_sid(d)}")
         count += 1
     return count
 
