@@ -3,6 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/oneslider-core.css">
+  <script defer src="assets/js/oneslider-core.js"></script>
+  <link rel="stylesheet" href="assets/css/1_colours.css">
+  <link rel="stylesheet" href="assets/css/1_typography.css">
+  <link rel="stylesheet" href="assets/css/1_core.css">
+  <link rel="stylesheet" href="assets/css/2_frame.css">
+  <link rel="stylesheet" href="assets/css/3_home.css">
+  <script defer src="assets/js/home.js"></script>
+  <script defer src="assets/js/4_featured-rotator.js"></script>
   <meta name="os-ios-nav" content="off">
   <meta name="robots" content="index,follow">
   <meta name="content-language" content="en">
@@ -25,22 +34,16 @@
   <link rel="icon" href="assets/icons/one-sliders-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="assets/icons/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/oneslider-core.css">
-  <link rel="stylesheet" href="assets/css/shapes.css">
-  <link rel="stylesheet" href="assets/css/home.css?v=20260728-mobile">
-  <script defer src="assets/js/oneslider-core.js"></script>
-  <script defer src="assets/js/home.js"></script>
-  <script defer src="assets/js/4_featured-rotator.js"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://one-sliders.com/#organization","name":"OneSliders","url":"https://one-sliders.com/","logo":"https://one-sliders.com/assets/icons/one-sliders-icon.svg"},{"@type":"WebSite","@id":"https://one-sliders.com/#website","url":"https://one-sliders.com/","name":"OneSliders","publisher":{"@id":"https://one-sliders.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://one-sliders.com/content/events/index.html?search={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://one-sliders.com/#webpage","url":"https://one-sliders.com/","name":"OneSliders - Events, Places & Topics Visual Guides","description":"Explore events, destinations and topics with simple visual guides. Find dates, context, places and travel planning in an easy-to-understand format.","inLanguage":"en","image":"https://one-sliders.com/assets/icons/share-image-1200x630.png","isPartOf":{"@id":"https://one-sliders.com/#website"},"publisher":{"@id":"https://one-sliders.com/#organization"}}]}</script>
   <script type="application/json" id="featured-events">[{"startDate":"2027-01-18","endDate":"2027-01-31","title":"Australian Open","image":"/content/categories/sport/tennis/events/img/australian-open-hero.png","url":"/content/categories/sport/tennis/events/australian-open.html"},{"startDate":"2027-02-14","endDate":"2027-02-15","title":"Super Bowl","image":"/content/categories/sport/american-football/events/img/super-bowl-hero.png","url":"/content/categories/sport/american-football/events/super-bowl.html"},{"startDate":"2027-04-08","endDate":"2027-04-12","title":"Masters Tournament","image":"/content/categories/sport/golf/events/img/masters-tournament-hero.png","url":"/content/categories/sport/golf/events/masters-tournament.html"},{"startDate":"2027-07-02","endDate":"2027-07-25","title":"Tour de France","image":"/content/categories/sport/cycling/events/img/tour-de-france-hero.png","url":"/content/categories/sport/cycling/events/tour-de-france.html"},{"startDate":"2026-08-23","endDate":"2026-09-12","title":"US Open Tennis","image":"/content/categories/sport/tennis/events/img/us-open-tennis-hero.png","url":"/content/categories/sport/tennis/events/us-open-tennis.html"},{"startDate":"2026-09-18","endDate":"2026-10-03","title":"Oktoberfest","image":"/content/categories/culture/food-drink/events/img/oktoberfest-hero.png","url":"/content/categories/culture/food-drink/events/oktoberfest.html"},{"startDate":"2026-09-26","endDate":"2026-09-26","title":"Berlin Marathon","image":"/content/categories/sport/marathon/events/img/berlin-marathon-hero.png","url":"/content/categories/sport/marathon/events/berlin-marathon.html"},{"startDate":"2026-12-31","endDate":"2027-01-01","title":"New Year's Eve Copacabana","image":"/content/categories/culture/tradition/events/img/new-years-eve-copacabana-hero.png","url":"/content/categories/culture/tradition/events/new-years-eve-copacabana.html"},{"startDate":"2027-01-06","endDate":"2027-01-09","title":"CES","image":"/content/categories/technology/consumer-electronics/events/img/ces-hero.png","url":"/content/categories/technology/consumer-electronics/events/ces.html"},{"startDate":"2027-12-24","endDate":"2027-12-24","title":"Christmas Midnight Mass Vatican","image":"/content/categories/culture/religion/events/img/christmas-midnight-mass-vatican-hero.png","url":"/content/categories/culture/religion/events/christmas-midnight-mass-vatican.html"}]</script>
 </head>
 <body class="home-page">
   <div class="home-app">
     <nav class="top-menu" aria-label="Site navigation">
-      <a class="os-brand" href="/" aria-label="Home"><img class="os-brand__logo" src="assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>
-      <a class="nav-icon" href="/content/events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
-      <a class="nav-icon" href="/content/locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
-      <a class="nav-icon" href="/content/categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
+      <a class="os-brand" href="./" aria-label="Home"><img class="os-brand__logo" src="assets/icons/one-sliders-icon.svg" alt="" width="22" height="22" aria-hidden="true"><span class="os-brand__text">OneSliders</span></a>
+      <a class="nav-icon" href="content/events/index.html" title="Events" aria-label="Events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      <a class="nav-icon" href="content/locations/index.html" title="World" aria-label="World"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+      <a class="nav-icon" href="content/categories/index.html" title="Categories" aria-label="Categories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></a>
       <span class="nav-spacer"></span>
       <details class="nav-language"><summary aria-label="Language">EN</summary><div class="nav-language__list"></div></details>
     </nav>
@@ -54,7 +57,7 @@
         <div class="kpi-list" aria-label="Guide counts generated from the local site tree">
           <div class="kpi-card" data-count-source="content/categories/**/events/*.html">
             <span class="kpi-icon kpi-icon--events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-            <span><strong>926</strong><b>Event Guides</b><span>Concerts, sports, festivals &amp; more</span></span>
+            <span><strong>898</strong><b>Event Guides</b><span>Concerts, sports, festivals &amp; more</span></span>
           </div>
           <div class="kpi-card" data-count-source="content/locations/**/*.html">
             <span class="kpi-icon kpi-icon--places"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
@@ -72,19 +75,19 @@
             <input id="rail-search" name="search" type="search" placeholder="Search events, places, topics...">
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
           </form>
-          <a class="rail-button" href="/content/categories/index.html">Explore all guides</a>
+          <a class="rail-button" href="content/categories/index.html">Explore all guides</a>
         </div>
         <div class="rail-categories">
           <h2>Explore by category</h2>
           <div class="category-grid">
-            <a class="category-tile" href="/content/categories/sport/index.html"><span class="category-tile__media"><img src="/content/categories/sport/img/sports-general-hero-400.webp" alt="Sport" width="400" height="300" loading="lazy" decoding="async"></span><strong>Sports</strong></a>
-            <a class="category-tile" href="/content/categories/music/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/music-mini-200.webp" alt="Music" width="200" height="150" loading="lazy" decoding="async"></span><strong>Music</strong></a>
-            <a class="category-tile" href="/content/categories/music/music-festivals.html"><span class="category-tile__media"><img src="/content/categories/culture/art/events/img/bali-arts-festival-mini-200.webp" alt="Festivals" width="200" height="150" loading="lazy" decoding="async"></span><strong>Festivals</strong></a>
-            <a class="category-tile" href="/content/categories/culture/national-day.html"><span class="category-tile__media"><img src="/content/categories/culture/national-day/events/img/iceland-national-day-mini-200.webp" alt="National Days" width="200" height="150" loading="lazy" decoding="async"></span><strong>National Days</strong></a>
-            <a class="category-tile" href="/content/categories/climate/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/wildlife-mini-200.webp" alt="Nature" width="200" height="150" loading="lazy" decoding="async"></span><strong>Nature</strong></a>
-            <a class="category-tile" href="/content/categories/culture/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/culture-mini-200.webp" alt="Culture" width="200" height="150" loading="lazy" decoding="async"></span><strong>Culture</strong></a>
-            <a class="category-tile" href="/content/categories/culture/food-drink.html"><span class="category-tile__media"><img src="/content/categories/culture/img/food-drink-mini-200.webp" alt="Food &amp; Drink" width="200" height="150" loading="lazy" decoding="async"></span><strong>Food &amp; Drink</strong></a>
-            <a class="category-tile" href="/content/categories/technology/index.html"><span class="category-tile__media"><img src="/content/categories/technology/consumer-electronics/events/img/ces-mini-200.webp" alt="Technology" width="200" height="150" loading="lazy" decoding="async"></span><strong>Technology</strong></a>
+            <a class="category-tile" href="content/categories/sport/index.html"><span class="category-tile__media"><img src="/content/categories/sport/img/sports-general-hero-400.webp" alt="Sport" width="400" height="300" loading="lazy" decoding="async"></span><strong>Sports</strong></a>
+            <a class="category-tile" href="content/categories/music/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/music-mini-200.webp" alt="Music" width="200" height="150" loading="lazy" decoding="async"></span><strong>Music</strong></a>
+            <a class="category-tile" href="content/categories/music/music-festivals.html"><span class="category-tile__media"><img src="/content/categories/culture/art/events/img/bali-arts-festival-mini-200.webp" alt="Festivals" width="200" height="150" loading="lazy" decoding="async"></span><strong>Festivals</strong></a>
+            <a class="category-tile" href="content/categories/culture/national-day.html"><span class="category-tile__media"><img src="/content/categories/culture/national-day/events/img/iceland-national-day-mini-200.webp" alt="National Days" width="200" height="150" loading="lazy" decoding="async"></span><strong>National Days</strong></a>
+            <a class="category-tile" href="content/categories/climate/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/wildlife-mini-200.webp" alt="Nature" width="200" height="150" loading="lazy" decoding="async"></span><strong>Nature</strong></a>
+            <a class="category-tile" href="content/categories/culture/index.html"><span class="category-tile__media"><img src="/content/categories/culture/img/culture-mini-200.webp" alt="Culture" width="200" height="150" loading="lazy" decoding="async"></span><strong>Culture</strong></a>
+            <a class="category-tile" href="content/categories/culture/food-drink.html"><span class="category-tile__media"><img src="/content/categories/culture/img/food-drink-mini-200.webp" alt="Food &amp; Drink" width="200" height="150" loading="lazy" decoding="async"></span><strong>Food &amp; Drink</strong></a>
+            <a class="category-tile" href="content/categories/technology/index.html"><span class="category-tile__media"><img src="/content/categories/technology/consumer-electronics/events/img/ces-mini-200.webp" alt="Technology" width="200" height="150" loading="lazy" decoding="async"></span><strong>Technology</strong></a>
           </div>
         </div>
       </aside>
@@ -109,7 +112,7 @@
           </section>
           </div><!-- /.today-featured -->
 
-          <section id="happening-now" aria-labelledby="happening-now-title" style="display:none">
+          <section id="happening-now" aria-labelledby="happening-now-title" class="is-hidden">
             <div class="section-head">
               <h2 id="happening-now-title">Happening now</h2>
             </div>
@@ -119,26 +122,26 @@
           <section aria-labelledby="popular-title">
             <div class="section-head">
               <h2 id="popular-title">Popular OneSliders</h2>
-              <a class="view-all" href="/content/categories/index.html">View all -&gt;</a>
+              <a class="view-all" href="content/categories/index.html">View all -&gt;</a>
             </div>
             <div class="popular-row">
-              <a class="node-card" href="/content/categories/sport/golf/events/ryder-cup.html#year-2027">
+              <a class="node-card" href="content/categories/sport/golf/events/ryder-cup.html#year-2027">
                 <span class="node-card__media"><img src="/content/categories/sport/golf/events/img/ryder-cup-mini-200.webp" alt="Ryder Cup event thumbnail" width="200" height="150" loading="lazy" decoding="async"><span class="card-tag">Event</span><img class="flag" src="/content/locations/europe/ireland/img/flag.svg" alt="" width="36" height="24"></span>
                 <span class="node-card__body"><strong>Ryder Cup</strong><span>13–19 Sep 2027</span><span>Adare Manor, Limerick, <span class="country-chip"><img src="/content/locations/europe/ireland/img/flag.svg" alt="" width="20" height="14">Ireland</span></span></span>
               </a>
-              <a class="node-card" href="/content/locations/europe/france/paris.html">
+              <a class="node-card" href="content/locations/europe/france/paris.html">
                 <span class="node-card__media"><img src="/content/locations/europe/france/img/paris-mini-200.webp" alt="Paris place guide thumbnail" width="200" height="150" loading="lazy" decoding="async"><span class="card-tag">Place guide</span><img class="flag" src="/content/locations/europe/france/img/flag.svg" alt="" width="36" height="24"></span>
                 <span class="node-card__body"><strong>Paris</strong><span>The ultimate guide</span><span class="country-chip"><img src="/content/locations/europe/france/img/flag.svg" alt="" width="20" height="14">France</span></span>
               </a>
-              <a class="node-card" href="/content/categories/music/song-contests/events/eurovision-song-contest.html">
+              <a class="node-card" href="content/categories/music/song-contests/events/eurovision-song-contest.html">
                 <span class="node-card__media"><img src="/content/categories/music/song-contests/events/img/eurovision-song-contest-mini-200.webp" alt="Eurovision Song Contest event thumbnail" width="200" height="150" loading="lazy" decoding="async"><span class="card-tag">Event</span><img class="flag" src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="36" height="24"></span>
                 <span class="node-card__body"><strong>Eurovision Song Contest</strong><span>2027 - host city and dates not announced</span><span>Host venue not announced, Host city not announced, <span class="country-chip"><img src="/content/locations/europe/bulgaria/img/flag.svg" alt="" width="20" height="14">Bulgaria</span></span></span>
               </a>
-              <a class="node-card" href="/content/locations/europe/iceland/index.html">
+              <a class="node-card" href="content/locations/europe/iceland/index.html">
                 <span class="node-card__media"><img src="/content/locations/europe/iceland/img/iceland-mini-200.webp" alt="Iceland place guide thumbnail" width="200" height="150" loading="lazy" decoding="async"><span class="card-tag">Place guide</span><img class="flag" src="/content/locations/europe/iceland/img/flag.svg" alt="" width="36" height="24"></span>
                 <span class="node-card__body"><strong>Iceland</strong><span>Land of fire &amp; ice</span><span class="country-chip"><img src="/content/locations/europe/iceland/img/flag.svg" alt="" width="20" height="14">Iceland</span></span>
               </a>
-              <a class="node-card" href="/content/categories/wellness/sauna.html">
+              <a class="node-card" href="content/categories/wellness/sauna.html">
                 <span class="node-card__media"><img src="/content/categories/wellness/img/sauna-mini-200.webp" alt="Sauna topic guide thumbnail" width="200" height="150" loading="lazy" decoding="async"><span class="card-tag">Topic guide</span><img class="flag" src="/content/locations/europe/finland/img/flag.svg" alt="" width="36" height="24"></span>
                 <span class="node-card__body"><strong>Sauna Culture</strong><span>History, health &amp; tradition</span><span class="country-chip"><img src="/content/locations/europe/finland/img/flag.svg" alt="" width="20" height="14">Finland</span></span>
               </a>

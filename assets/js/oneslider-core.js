@@ -470,7 +470,12 @@
   // ====================================================================
   OneSlider.register('bookingDateLocale', function () {
     if (!window.Intl || !Intl.DateTimeFormat) return;
-    var inputs = document.querySelectorAll('input[type="date"].stay-field-input');
+    // This is a global site: catch every date input here, once, rather than
+    // relying on every template remembering the class. The Visit-tab booking
+    // widget ships without .stay-field-input on 426 pages, so a selector that
+    // required the class left two DIFFERENT date formats on the same page —
+    // overlaid "Aug 4, 2026" in the hero, native "08/04/2026" under Visit.
+    var inputs = document.querySelectorAll('input[type="date"]');
     if (!inputs.length) return;
 
     function overlayFor(input) {
@@ -482,7 +487,13 @@
         if (id) label.id = id;
         label.setAttribute('aria-hidden', 'true');
         input.insertAdjacentElement('afterend', label);
-        input.classList.add('stay-field-input--locale-overlaid');
+        // Add both classes, not just the overlay marker: the CSS rule that
+        // makes the native text transparent is deliberately compound
+        // (.stay-field-input.stay-field-input--locale-overlaid) to outrank
+        // later-loaded per-page-type stylesheets at equal specificity - a
+        // lone .stay-field-input--locale-overlaid selector would lose that
+        // fight and the native (wrong-format) text would show through again.
+        input.classList.add('stay-field-input', 'stay-field-input--locale-overlaid');
       }
 
       // Position from the input's own offsetParent-relative box, not the
@@ -508,7 +519,12 @@
       label.style.paddingBottom = cs.paddingBottom;
       label.style.fontSize = cs.fontSize;
       label.style.fontFamily = cs.fontFamily;
-      label.style.color = cs.color;
+      // Deliberately NOT copying cs.color here (BUG-0033/BUG-0034): the input
+      // underneath is made transparent by CSS precisely so this overlay can
+      // show real text in its place. Copying the input's own (transparent)
+      // computed color onto the overlay made the replacement text invisible
+      // too - the overlay's visible color comes from .stay-field-locale-overlay
+      // in CSS instead.
 
       return label;
     }
@@ -534,6 +550,36 @@
     Array.prototype.forEach.call(inputs, function (input) {
       update(input);
       input.addEventListener('change', function () { update(input); });
+    });
+
+    // BUG-0022 fix: the initial update() above runs at page load, while
+    // most of these inputs sit inside a `.event-tab-panel { display: none }`
+    // (Visit/Stay is never the tab checked by default). A hidden ancestor
+    // means the input's offsetParent is null and offsetTop/Left/Width/Height
+    // all read as 0 - so the overlay label gets created with zero size,
+    // positioned relative to the page instead of the input, and its
+    // (correctly formatted) text is invisible. The native input's own text
+    // stays transparent (the CSS rule that hides it doesn't care about
+    // visibility), so the field reads as blank until something recomputes
+    // the overlay - which previously only happened on the input's own
+    // 'change' event, i.e. only after the visitor had already opened the
+    // native picker and picked a date themselves.
+    // Fix: recompute every overlay whenever a tab/radio toggle fires
+    // anywhere on the page, so the moment the Visit/Stay panel actually
+    // becomes visible, its date overlays get real, correctly positioned
+    // text - no per-template wiring needed, this listens for the radio
+    // pattern every tab implementation on the site already uses.
+    document.addEventListener('change', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'INPUT' || t.type !== 'radio') return;
+      Array.prototype.forEach.call(inputs, update);
+    });
+    // Tabs can also be reached without a 'change' event (e.g. a label click
+    // that was already checked, or restored scroll/anchor state on load) -
+    // catch the common case of arriving at a page with #tab-stay/#panel-stay
+    // already the active hash target.
+    window.addEventListener('hashchange', function () {
+      Array.prototype.forEach.call(inputs, update);
     });
   });
 
@@ -1109,13 +1155,31 @@
       var style = document.createElement('style');
       style.id = 'os-footer-runtime-style';
       style.textContent =
+        // BUG-0038 follow-up: this used to be `position:sticky;bottom:0`.
+        // For a footer that is the LAST element on the page (true on every
+        // page type that reaches this general rule - homepage, city,
+        // topic-index, etc.), a bottom-anchored sticky element detaches
+        // from normal flow and glues itself to the viewport's bottom edge
+        // for the whole final screenful of scrolling - BEFORE the visitor
+        // actually reaches the true end of the page. With z-index:60, that
+        // means it renders on TOP of whatever content (e.g. the homepage's
+        // last row of featured/popular event cards) is still scrolling
+        // into view underneath it, for a distance equal to the footer's own
+        // height. Anders saw exactly this: "footern blivit høgre... gør at
+        // jag inte ser de event korten længst ner" - a taller footer (the
+        // ai-disclosure line added below) simply widened that hidden zone.
+        // `position:static` (the default - stated explicitly so it always
+        // wins over any earlier rule) puts the footer back in normal flow:
+        // it sits after the page's last section and never overlaps it,
+        // exactly like every other footer on the web. The 3 page types that
+        // deliberately want an always-visible fixed bottom bar
+        // (topic-onepage/event-page/event-dashboard) are unaffected - their
+        // own higher-specificity `position:fixed` rules below still apply.
         'body.os-has-site-footer>footer.os-footer{' +
           'display:block!important;' +
           'visibility:visible!important;' +
-          'position:sticky!important;' +
-          'bottom:0!important;' +
-          'margin-top:auto!important;' +
-          'z-index:60!important;' +
+          'position:static!important;' +
+          'z-index:1!important;' +
           'flex:0 0 auto!important;' +
           'background:var(--os-footer-bg,var(--os-surface,#fff))!important;' +
           'color:var(--os-footer-ink,var(--os-muted,#5a6672))!important;' +
@@ -1139,7 +1203,12 @@
         '@media(max-width:760px){' +
           'body.os-has-site-footer{min-height:100svh!important;display:flex!important;flex-direction:column!important}' +
           'body.os-has-site-footer>main{flex:1 0 auto}' +
-          'body.os-has-site-footer>footer.os-footer{display:block!important;position:sticky!important;bottom:0!important}' +
+          // Same BUG-0038 fix as the base rule above, mobile just had its
+          // own duplicate sticky declaration - static here too, so a short
+          // mobile page's footer flex-grows to the bottom via the
+          // flex-column body above instead of overlapping content via
+          // sticky.
+          'body.os-has-site-footer>footer.os-footer{display:block!important;position:static!important}' +
           'body.os-has-site-footer.topic-onepage>footer.os-footer,' +
           'body.os-has-site-footer.event-page>footer.os-footer{' +
             'position:fixed!important;' +

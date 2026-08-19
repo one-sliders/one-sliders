@@ -874,6 +874,15 @@ nav.event-nav .nav-divider {
   box-shadow: none !important;
 }
 
+/* BUG-0099: trend-card heading promoted h3 -> h2 for a correct heading outline;
+   pinned to the browser default h3 metrics it already rendered at, so the
+   promotion is structural only and nothing shifts visually. */
+.trend-card h2 {
+  margin: 1em 0;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
 .os-card:hover,
 .cat-card:hover,
 .topic-card:hover,
@@ -1218,18 +1227,32 @@ nav.event-nav .nav-divider {
 /* Compound selector (two classes, not one) so this reliably outranks the
    later-loaded per-page-type stylesheets' plain .stay-field-input color
    rule (event-national-day-left.css, 4_flik-left-booking.css, etc.) —
-   those have equal specificity and would otherwise win by load order. */
+   those have equal specificity and would otherwise win by load order.
+   !important is deliberate here, not a shortcut: this class is a JS-toggled
+   state marker (added only by bookingDateLocale, only on inputs it has
+   overlaid) that must win no matter which wrapper it ends up nested in.
+   BUG-0033/0034 follow-up: found a wrapper-scoped rule
+   (body.event-dashboard .event-stay-field input, 2 classes + 2 elements)
+   with HIGHER specificity than the compound class selector below (2 classes
+   + 1 element) — it silently won inside the Visit tab and left the native,
+   wrong-format text visible there while the hero panel worked fine. */
 input.stay-field-input.stay-field-input--locale-overlaid {
-  color: transparent;
+  color: transparent !important;
 }
 input.stay-field-input.stay-field-input--locale-overlaid::-webkit-datetime-edit,
 input.stay-field-input.stay-field-input--locale-overlaid::-webkit-datetime-edit-fields-wrapper {
-  color: transparent;
+  color: transparent !important;
 }
 .stay-field-locale-overlay {
   /* position/top/left/width/height are set inline by the bookingDateLocale
      module, measured from the input's own box — not fixed here, since the
      field wrapper also contains the CHECK-IN/CHECK-OUT label above it. */
+  /* Text color belongs here, not inline (BUG-0033/BUG-0034): the module used
+     to copy the covered input's own computed color, which is transparent by
+     design (see the rule above) — that made the replacement text invisible
+     too. var(--page-ink) is the same visible ink color plain .stay-field-input
+     fields use. */
+  color: var(--page-ink);
   display: flex;
   align-items: center;
   pointer-events: none;

@@ -803,11 +803,14 @@ img { display: block; max-width: 100%; }
   .nd-week-strip { grid-template-columns: repeat(5, 1fr); }
 }
 /* ── Today column + featured side-by-side ───────────── */
+/* align-items: start, not stretch — with stretch the today column's own height
+   became the whole row's height, leaving 600+ px of empty space beside the
+   featured carousel on days with several national days. See BUG-0059. */
 .today-featured {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  align-items: stretch;
+  align-items: start;
 }
 .today-featured.has-today {
   grid-template-columns: 200px minmax(0, 1fr);
@@ -851,10 +854,12 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 /* ── Today card ─ */
+/* flex: none — only the first entry of the day is a card now, and it must keep
+   its natural height instead of stretching to fill the column. */
 .today-card {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: none;
   border-radius: 14px;
   border: 1px solid var(--home-line);
   overflow: hidden;
@@ -875,11 +880,29 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   background: #dbeafe;
 }
-.today-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
-.today-card:hover .today-card__media img { transform: scale(1.04); }
+/* :not(.today-card__flag) — the flag badge is also an <img> inside
+   .today-card__media (a sibling of the photo, not nested inside it), so this
+   rule was matching it too and stretching a 28×19 badge to fill the whole
+   4:3 photo area before the more specific .today-card__flag width/height
+   below could apply. See BUG-0059 follow-up. */
+.today-card__media img:not(.today-card__flag) { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
+.today-card:hover .today-card__media img:not(.today-card__flag) { transform: scale(1.04); }
+/* Real flag.svg by default — same asset every country page already uses, so
+   it renders identically everywhere. Windows doesn't draw flag emoji glyphs
+   at all (it falls back to showing the raw two-letter code, e.g. "IN"), which
+   is why every entry now gets an image instead. The --globe span is only for
+   non-country global/climate days, which have no single flag. See BUG-0059. */
 .today-card__flag {
   position: absolute;
   bottom: 7px; right: 8px;
+  width: 28px;
+  height: 19px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.45);
+  object-fit: cover;
+}
+.today-card__flag--globe {
   font-size: 20px;
   line-height: 1;
   filter: drop-shadow(0 1px 3px rgba(0,0,0,.35));
@@ -899,7 +922,59 @@ img { display: block; max-width: 100%; }
 .today-card__title {
   font-size: .9rem; font-weight: 850; line-height: 1.15; color: var(--home-ink);
 }
-.today-card__sub { font-size: .7rem; color: var(--home-muted); margin-top: 1px; }
+/* Clamped so the card height cannot depend on how long the data string is —
+   6 entries carry an unparsed blob in the city field and grew the sub to
+   147 px on 15 Sep. The data itself is BUG-0060; this is the layout guard. */
+.today-card__sub {
+  font-size: .7rem;
+  color: var(--home-muted);
+  margin-top: 1px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* ── Today list — entries 2..n of the same date ─ */
+/* Every entry stays a real link in the DOM; only the media is dropped so five
+   national days cost ~170 px instead of ~930 px. See BUG-0059. */
+.today-list {
+  display: grid;
+  gap: 4px;
+}
+.today-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: 10px;
+  border: 1px solid var(--home-line);
+  background: var(--home-surface);
+  text-decoration: none;
+  color: var(--home-ink);
+  transition: border-color .15s, box-shadow .15s;
+}
+.today-row:hover {
+  box-shadow: 0 4px 14px rgba(15,23,42,.08);
+}
+.today-row--nd:hover { border-color: rgba(22,163,74,.45); }
+.today-row--climate:hover { border-color: rgba(14,116,144,.45); }
+.today-row__flag {
+  flex: none;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(15,23,42,.08);
+  object-fit: cover;
+}
+.today-row__flag--globe {
+  font-size: 15px;
+  line-height: 1;
+}
+.today-row__title {
+  font-size: .74rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--home-ink);
+}
 /* ── Happening now row ────────────────────────────────── */
 .happening-row {
   display: grid;

@@ -2410,9 +2410,64 @@ html:has(body.country-onepage) {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: var(--bigmac-width, 0%);
+  width: 0%;
   border-radius: 999px;
 }
+
+/* BUG-0083: generated width steps, one per distinct value in
+   bigmacindex-countries.json (replaces the inline `style="--bigmac-width:…"`
+   custom property — see big_mac_meter() in build-continents.py). Class name
+   is the width in tenths of a percent, e.g. bm-68 = 6.8%. */
+.continent-bigmac-meter i.bm-0 { width: 0.0%; }
+.continent-bigmac-meter i.bm-9 { width: 0.9%; }
+.continent-bigmac-meter i.bm-16 { width: 1.6%; }
+.continent-bigmac-meter i.bm-17 { width: 1.7%; }
+.continent-bigmac-meter i.bm-23 { width: 2.3%; }
+.continent-bigmac-meter i.bm-44 { width: 4.4%; }
+.continent-bigmac-meter i.bm-52 { width: 5.2%; }
+.continent-bigmac-meter i.bm-62 { width: 6.2%; }
+.continent-bigmac-meter i.bm-68 { width: 6.8%; }
+.continent-bigmac-meter i.bm-83 { width: 8.3%; }
+.continent-bigmac-meter i.bm-89 { width: 8.9%; }
+.continent-bigmac-meter i.bm-104 { width: 10.4%; }
+.continent-bigmac-meter i.bm-127 { width: 12.7%; }
+.continent-bigmac-meter i.bm-128 { width: 12.8%; }
+.continent-bigmac-meter i.bm-132 { width: 13.2%; }
+.continent-bigmac-meter i.bm-146 { width: 14.6%; }
+.continent-bigmac-meter i.bm-155 { width: 15.5%; }
+.continent-bigmac-meter i.bm-161 { width: 16.1%; }
+.continent-bigmac-meter i.bm-167 { width: 16.7%; }
+.continent-bigmac-meter i.bm-171 { width: 17.1%; }
+.continent-bigmac-meter i.bm-177 { width: 17.7%; }
+.continent-bigmac-meter i.bm-179 { width: 17.9%; }
+.continent-bigmac-meter i.bm-181 { width: 18.1%; }
+.continent-bigmac-meter i.bm-184 { width: 18.4%; }
+.continent-bigmac-meter i.bm-189 { width: 18.9%; }
+.continent-bigmac-meter i.bm-192 { width: 19.2%; }
+.continent-bigmac-meter i.bm-240 { width: 24.0%; }
+.continent-bigmac-meter i.bm-254 { width: 25.4%; }
+.continent-bigmac-meter i.bm-255 { width: 25.5%; }
+.continent-bigmac-meter i.bm-257 { width: 25.7%; }
+.continent-bigmac-meter i.bm-261 { width: 26.1%; }
+.continent-bigmac-meter i.bm-280 { width: 28.0%; }
+.continent-bigmac-meter i.bm-291 { width: 29.1%; }
+.continent-bigmac-meter i.bm-305 { width: 30.5%; }
+.continent-bigmac-meter i.bm-309 { width: 30.9%; }
+.continent-bigmac-meter i.bm-317 { width: 31.7%; }
+.continent-bigmac-meter i.bm-326 { width: 32.6%; }
+.continent-bigmac-meter i.bm-327 { width: 32.7%; }
+.continent-bigmac-meter i.bm-340 { width: 34.0%; }
+.continent-bigmac-meter i.bm-386 { width: 38.6%; }
+.continent-bigmac-meter i.bm-390 { width: 39.0%; }
+.continent-bigmac-meter i.bm-397 { width: 39.7%; }
+.continent-bigmac-meter i.bm-401 { width: 40.1%; }
+.continent-bigmac-meter i.bm-417 { width: 41.7%; }
+.continent-bigmac-meter i.bm-422 { width: 42.2%; }
+.continent-bigmac-meter i.bm-434 { width: 43.4%; }
+.continent-bigmac-meter i.bm-447 { width: 44.7%; }
+.continent-bigmac-meter i.bm-457 { width: 45.7%; }
+.continent-bigmac-meter i.bm-468 { width: 46.8%; }
+.continent-bigmac-meter i.bm-490 { width: 49.0%; }
 
 .continent-bigmac-meter--positive i {
   left: 50%;
