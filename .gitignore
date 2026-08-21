@@ -1,2 +1,18 @@
 tmp/
 Templates/
+
+# Bortstadat ur det publika repot 2026-08-21 (TASK-0051).
+# Repot ar PUBLIKT. Har ligger bara sajten: content/, assets/, ru/ och
+# rotfilerna (index.html, 404.html, sitemap.xml, robots.txt, terms.html, CNAME,
+# events.register.json).
+#
+# Bakgrund: tmp/chrome-iihf-profile-*/ innehöll Login Data, Cookies och autofyll
+# och lag publikt fran 2026-05-26. Kallan bor i oneslider-scripts och ops.
+scripts/
+docs/
+data/
+.claude/
+tmp-*
+qa-*.png
+__pycache__/
+*.pyc
