@@ -975,6 +975,20 @@
     }));
   }
 
+  // Compose the affiliate booking URL from the base build-events.py wrote into
+  // data-booking-base. That base is a complete CJ deeplink whose url= parameter
+  // already holds the Booking.com search URL up to and including its encoded "?"
+  // — the destination is meant to be appended as the last, encoded parameter
+  // (build-events.py, TASK-0047). Adding a second "?url=" nested the whole search
+  // URL inside the url= parameter, so Booking.com received a parameter named
+  // "url" and no ss at all, and every click landed on an empty search. BUG-0023.
+  function bookingSearchUrl(affiliateBase, query) {
+    if (!affiliateBase) return 'https://www.booking.com/searchresults.html?' + query;
+    var base = affiliateBase;
+    if (!/(%3F|%26|\?|&)$/i.test(base)) base += '%3F';
+    return base + encodeURIComponent(query);
+  }
+
   function bindHotelSearch(root) {
     (root || document).querySelectorAll('[data-hotel-search]').forEach(function (box) {
       var btn = box.querySelector('.hotel-search__go');
@@ -982,19 +996,27 @@
       box.__hsBound = true;
       var openHotelSearch = function () {
         var val = function (n) { var el = box.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
-        var area = box.querySelector('[name="hotel-area"]:checked');
-        var country = box.getAttribute('data-country') || '';
-        var dest = (area ? area.value : '') + (country ? ', ' + country : '');
+        // Not "[name=\"hotel-area\"]": build-events.py scopes each picker's radio
+        // name to its own root (hotel-area-0, hotel-area-1, ...) so a page with
+        // both a hero panel and its own Visit-tab Booking section doesn't put
+        // both pickers in the same browser-enforced radio group -- a shared name
+        // meant only one of the two could ever be "checked" at a time, and
+        // whichever widget's markup came second in the DOM silently won,
+        // leaving this box's own selection unreadable. See BUG-0132. Any radio
+        // found here is already scoped to this box's own picker by definition.
+        var area = box.querySelector('input[type="radio"]:checked');
+        // ss carries the stay location alone — the same value build-events.py sends in
+        // the static href on the very same page. Appending data-country produced
+        // "Auckland, Australia & New Zealand", which Booking.com cannot resolve to any
+        // destination. The country is a fallback only, for pages with no area picker.
+        var dest = (area && area.value) || box.getAttribute('data-country') || '';
         var params = new URLSearchParams();
         params.set('ss', dest);
         if (val('checkin')) params.set('checkin', val('checkin'));
         if (val('checkout')) params.set('checkout', val('checkout'));
         params.set('group_adults', val('adults') || '2');
         params.set('no_rooms', val('rooms') || '1');
-        var target = 'https://www.booking.com/searchresults.html?' + params.toString();
-        var affiliateBase = box.getAttribute('data-booking-base') || '';
-        var url = affiliateBase ? affiliateBase + '?url=' + encodeURIComponent(target) : target;
-        window.open(url, '_blank', 'noopener');
+        window.open(bookingSearchUrl(box.getAttribute('data-booking-base') || '', params.toString()), '_blank', 'noopener');
       };
       if (btn) btn.addEventListener('click', function (event) {
         event.preventDefault();

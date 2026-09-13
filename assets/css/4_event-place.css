@@ -1,0 +1,240 @@
+/* 4_event-place.css — kompakta platskort på eventsidan.
+ *
+ * Tre små kort: land · stad · arena. Varje kort har en mini-hero och två
+ * textrader. Allt slås upp i data/locations/base/ utifrån tre attribut på
+ * raden: data-country, data-city, data-venue.
+ *
+ * Nivå 4 (modul). Kräver 1_colours.css för tokens. Inga färger hårdkodas här.
+ */
+
+.place-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+/* --- basen, delad av alla storlekar ---------------------------------- */
+
+.place-card {
+  display: grid;
+  background: var(--os-surface);
+  border: 1px solid var(--os-line);
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--os-ink);
+  text-decoration: none;
+  font-family: var(--os-font-sans);
+  line-height: 1.25;
+}
+
+a.place-card:hover,
+a.place-card:focus-visible {
+  border-color: var(--os-primary);
+}
+
+.place-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--os-soft);
+}
+
+.place-card__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.place-card__kind {
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+
+.place-card__name {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.place-card__meta {
+  color: var(--os-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- A. chip: 50 px hög, bilden till vänster -------------------------- */
+
+.place-card--chip {
+  grid-template-columns: 50px 1fr;
+  height: 50px;
+  width: 190px;
+}
+
+.place-card--chip .place-card__text {
+  padding: 0 0.5rem;
+}
+
+.place-card--chip .place-card__name {
+  font-size: 0.8rem;
+}
+
+.place-card--chip .place-card__meta {
+  font-size: 0.68rem;
+}
+
+/* --- B. tile 100: bilden 100×50, texten under ------------------------- */
+
+.place-card--tile {
+  grid-template-rows: 50px auto;
+  width: 100px;
+}
+
+.place-card--tile .place-card__text {
+  padding: 0.3rem 0.4rem 0.4rem;
+}
+
+.place-card--tile .place-card__name {
+  font-size: 0.72rem;
+}
+
+.place-card--tile .place-card__meta {
+  font-size: 0.62rem;
+}
+
+/* --- C. tile 140: samma form, en storlek upp ------------------------- */
+
+.place-card--tile-lg {
+  grid-template-rows: 70px auto;
+  width: 140px;
+}
+
+.place-card--tile-lg .place-card__text {
+  padding: 0.35rem 0.5rem 0.5rem;
+}
+
+.place-card--tile-lg .place-card__name {
+  font-size: 0.8rem;
+}
+
+.place-card--tile-lg .place-card__meta {
+  font-size: 0.68rem;
+}
+
+/* --- saknad bild ------------------------------------------------------
+ * Ett kort utan mini-hero får en tonad platta, aldrig en trasig bildikon. */
+
+.place-card__img--none {
+  display: grid;
+  place-items: center;
+  background: var(--os-soft);
+  color: var(--os-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --- mobil ------------------------------------------------------------ */
+
+@media (max-width: 40rem) {
+  .place-card--chip {
+    width: 100%;
+  }
+}
+
+/* --- D. kombinerat kort: land + stad + arena i ett ---------------------
+ * Arenan är rubriken, staden underrubriken och landet en flagga.
+ * Ett kort i stället för tre — samma tre id:n matar det.
+ * flag.svg finns för alla 202 länder, så flaggan blir aldrig en lucka.
+ *
+ * Kortet är INTE ett <a>. Stad och land är egna länkar, och en länk får
+ * inte ligga inuti en annan. */
+
+.place-card--combo {
+  /* Matchar event-chip-strip pa eventsidan: 83 px hog, 16 px rubrik,
+     11 px etikett. Kortet ska va ga lika mycket som datum- och
+     tidschipen bredvid, inte se ut som en fotnot till dem. */
+  grid-template-columns: 83px 1fr;
+  /* Hojden ar ett golv, inte ett tak - ett langt arenanamn ska fa radbryta
+     i stallet for att kapas med ellips. */
+  min-height: 83px;
+  width: 320px;
+}
+
+.place-card--combo .place-card__text {
+  padding: 0.5rem 0.75rem;
+  gap: 0.15rem;
+}
+
+.place-card--combo .place-card__kind {
+  font-size: 0.69rem;
+}
+
+.place-card--combo .place-card__name {
+  font-size: 1rem;
+  line-height: 1.2;
+  /* Bryter rad i stallet for att kapas. overflow-wrap fangar de enstaka
+     arenanamn som har ett enda ord langre an kortet. */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
+
+/* Raden längst ned: flagga · stad, land — båda klickbara */
+.place-card__where {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.3rem;
+  min-width: 0;
+  color: var(--os-muted);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.place-card__flag {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  border: 1px solid var(--os-line);
+  border-radius: 1px;
+}
+
+.place-card__where a {
+  color: var(--os-muted);
+  text-decoration: none;
+}
+
+.place-card__where a:hover,
+.place-card__where a:focus-visible {
+  color: var(--os-primary);
+  text-decoration: underline;
+}
+
+/* Stad och land ligger i samma flexbarn, sa kommatecknet hanger tatt intill
+ * stadsnamnet i stallet for att fa radens gap pa bada sidor. */
+.place-card__where-names {
+  min-width: 0;
+}
+
+@media (max-width: 40rem) {
+  .place-card--combo {
+    width: 100%;
+  }
+}
+
+/* Utan minibild: en kolumn i stallet for en tom bildruta. Kortet uppstod
+   annars som 83 px bildyta plus en klamd textkolumn — sa sag BAFTA ut
+   innan bilden borjade harledas ur cities.json (Anders 2026-08-26). */
+.place-card--noimg {
+  grid-template-columns: 1fr;
+}

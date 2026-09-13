@@ -405,7 +405,7 @@
   }
 
   // ====================================================================
-  OneSlider.register('expiringEvents', function () {
+  function hideExpiredEvents() {
     var items = document.querySelectorAll('[data-expiring-events] [data-end], [data-expiring-events] [data-start], .event-grid [data-end], .event-grid [data-start], .league-events [data-end], .league-events [data-start]');
     if (!items.length) return;
     var today = new Date();
@@ -417,7 +417,15 @@
       if (Number.isNaN(end.getTime())) return;
       if (end < today) item.hidden = true;
     });
-  });
+  }
+
+  OneSlider.register('expiringEvents', hideExpiredEvents);
+
+  // Public API — samma skal som localizeDates ovan: eventindexet renderar sina
+  // kort ur en JSON-blob EFTER boot, sa modulen som kordes vid DOMContentLoaded
+  // hann aldrig se dem. Renderaren anropar den har nar korten finns. EN
+  // implementation (K01) — selektorlistan ovan ar och forblir den enda.
+  OneSlider.hideExpiredEvents = hideExpiredEvents;
 
   // ====================================================================
   // Module: cityLocalTime
@@ -470,11 +478,15 @@
   // ====================================================================
   OneSlider.register('bookingDateLocale', function () {
     if (!window.Intl || !Intl.DateTimeFormat) return;
-    // This is a global site: catch every date input here, once, rather than
-    // relying on every template remembering the class. The Visit-tab booking
-    // widget ships without .stay-field-input on 426 pages, so a selector that
-    // required the class left two DIFFERENT date formats on the same page —
-    // overlaid "Aug 4, 2026" in the hero, native "08/04/2026" under Visit.
+    // Every booking date input on the page, not just ones that happen to carry
+    // .stay-field-input (BUG-0033/BUG-0034 follow-up): the Visit-tab's
+    // #stay-checkin/#stay-checkout never had that class in several templates,
+    // so this module silently skipped them and their native, un-overlaid
+    // rendering showed through - inconsistent with the hero panel's overlay on
+    // the same page, and not guaranteed to match the visitor's own locale at
+    // all (that's the whole reason this overlay exists - see the module
+    // comment below). This is a global site: catch every date input here,
+    // once, rather than relying on every template remembering the class.
     var inputs = document.querySelectorAll('input[type="date"]');
     if (!inputs.length) return;
 
@@ -582,6 +594,86 @@
       Array.prototype.forEach.call(inputs, update);
     });
   });
+
+  // ====================================================================
+  // Module: localizeDates  (FEATURE-0003, the site-wide half)
+  //
+  // bookingDateLocale (above) covers the two `<input type="date">` fields.
+  // This module is the rest of the spec: every OTHER visible date on the
+  // site — event hero dates, card "card-meta" dates, KPI/Overview facts,
+  // topic lists, "Happening now" — rewritten to the visitor's own locale
+  // the same way, via the markup contract the spec defines:
+  //
+  //   <time datetime="YYYY-MM-DD" data-os-date>…visible text…</time>
+  //   <time datetime="YYYY-MM-DD/YYYY-MM-DD" data-os-date>…</time>   (range)
+  //
+  // The ISO value stays in the `datetime` attribute for crawlers; only the
+  // element's own visible text is rewritten. This module is a generic DOM
+  // scanner — it does not care which template or which build script wrote
+  // the tag, so it does not require any template change to exist and is
+  // safe to ship now. It does nothing on a page with no `time[data-os-date]`
+  // elements yet, which today is every page: emitting the markup itself is
+  // a per-page-type template change (event/city/topic/homepage builders),
+  // outside platform-expert's remit — see FEATURE-0003's own "Kvarstår" note.
+  //
+  // Exposed as `OneSlider.localizeDates()` (not just an internal module) so
+  // client-rendered surfaces that build their own `time[data-os-date]` after
+  // page load — the register-driven topic dates, "Happening now"/"today" in
+  // home.js, the featured-rotator — can call it again once their own render
+  // finishes, per the spec's "Kör om efter dynamiskt innehåll" requirement.
+  // ====================================================================
+  OneSlider.register('localizeDates', function () {
+    localizeDates();
+  });
+
+  function formatSingleDate(iso) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
+    var parts = iso.split('-').map(Number);
+    var d = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+    if (Number.isNaN(d.getTime())) return null;
+    return d;
+  }
+
+  function localizeDates(root) {
+    if (!window.Intl || !Intl.DateTimeFormat) return;
+    var nodes = (root || document).querySelectorAll('time[data-os-date]');
+    if (!nodes.length) return;
+
+    var fmt = new Intl.DateTimeFormat(undefined, {
+      year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC'
+    });
+
+    Array.prototype.forEach.call(nodes, function (el) {
+      var raw = el.getAttribute('datetime') || '';
+      var range = raw.split('/');
+
+      if (range.length === 2) {
+        var start = formatSingleDate(range[0]);
+        var end = formatSingleDate(range[1]);
+        if (!start || !end) return;  // malformed ISO — leave the original text, don't guess
+        // Same month + year on both ends: compress to "1–3 Sep 2027" instead
+        // of "Sep 1, 2027 – Sep 3, 2027" (mirrors how the site already
+        // hand-writes ranges like "17-19 Sep 2027" today, just locale-driven).
+        var sameMonthYear = start.getUTCFullYear() === end.getUTCFullYear()
+          && start.getUTCMonth() === end.getUTCMonth();
+        if (sameMonthYear) {
+          var dayFmt = new Intl.DateTimeFormat(undefined, { day: 'numeric', timeZone: 'UTC' });
+          el.textContent = dayFmt.format(start) + '–' + fmt.format(end);
+        } else {
+          el.textContent = fmt.format(start) + '–' + fmt.format(end);
+        }
+        return;
+      }
+
+      var single = formatSingleDate(raw);
+      if (!single) return;  // malformed ISO — leave the original text, don't guess
+      el.textContent = fmt.format(single);
+    });
+  }
+
+  // Public API — see module comment above for why this needs to be callable
+  // from outside the module system, not just run once at boot.
+  OneSlider.localizeDates = localizeDates;
 
   // ====================================================================
   // Module: cityWeatherStrip
@@ -734,7 +826,12 @@
           '}' +
           'body.os-has-ios-nav .ios-back{font-size:17px!important;line-height:1!important}' +
         '}' +
-        '@media (max-width:620px),(max-height:760px){' +
+        // Hojdvillkoret var till for liggande mobil, men saknade breddtak:
+        // ett fonstrat skrivbord ar 1194px brett och under 760px hogt, sa
+        // iOS-navet tog over mitt pa en stor skarm. Full skarm, iPad och
+        // telefon var oberorda — bara mellanlaget. 900/901 ar samma grans
+        // som categories.css redan anvander for 'lag men bred'.
+        '@media (max-width:620px),(max-height:760px) and (max-width:900px){' +
           'body.os-has-ios-nav.event-page nav.event-nav,' +
           'body.os-has-ios-nav.event-dashboard nav.event-nav,' +
           'body.os-has-ios-nav.event-page nav.top-menu,' +
@@ -1823,6 +1920,104 @@
         });
       });
     });
+  });
+
+  // ====================================================================
+  // Module: analyticsEvents  (FEATURE-0012)
+  // Central visit_view + affiliate_click tracking. Lives here, not per
+  // page-type script, so every template gets the same event contract
+  // without having to remember to wire it in.
+  //
+  // visit_view fires once per page load, the first time the Visit tab
+  // (`.persona-tablist label[for="view-stay"]`, radio `#view-stay`)
+  // becomes checked — not on page load, so the CTR denominator isn't
+  // inflated by visitors who never open the tab.
+  //
+  // affiliate_click fires on any click on a real affiliate link. Real
+  // affiliate links are identified the same way the affiliateLocalGuard
+  // module (above) already identifies them: `href*="/click-"` — that is
+  // the CJ redirect pattern used across the site, template-agnostic,
+  // and already the established signal for "this is a monetised link".
+  //
+  // page_type is derived from body-class markup already emitted by every
+  // template family found in content/ (event-dashboard, city-page,
+  // location-page--country-finder, topic-onepage/category-page). Never
+  // guessed from the URL, per the task's own rule. trip_guide has no
+  // live pages yet, so its marker is speculative until one exists.
+  //
+  // Both events go through the shared gtag() defined at the top of this
+  // file — the same channel PART 1 uses for consent — so nothing here
+  // bypasses Consent Mode v2. gtag.js itself withholds the actual GA4
+  // hit until analytics_storage is granted; this module does not try to
+  // duplicate that gating.
+  // ====================================================================
+  OneSlider.register('analyticsEvents', function () {
+    if (document.__osAnalyticsEventsBound) return;
+    document.__osAnalyticsEventsBound = true;
+
+    function pageType() {
+      var cls = ' ' + (document.body.className || '') + ' ';
+      if (/\btrip-guide\b/.test(cls)) return 'trip_guide';
+      if (/\bevent-dashboard\b/.test(cls)) return 'event';
+      if (/\bcity-page\b/.test(cls)) return 'city';
+      if (/\blocation-page--country-finder\b/.test(cls)) return 'country';
+      if (/\btopic-onepage\b/.test(cls) || /\bcategory-page\b/.test(cls)) return 'topic';
+      return null;  // unrecognised template — do not guess, do not fire
+    }
+
+    function pageName() {
+      var h1 = document.querySelector('h1');
+      var text = h1 && h1.textContent && h1.textContent.trim();
+      return text || document.title || '';
+    }
+
+    function affiliateProgram(href) {
+      var dest = href;
+      var wrapped = /[?&]url=([^&]+)/.exec(href);
+      if (wrapped) {
+        try { dest = decodeURIComponent(wrapped[1]); } catch (e) { /* leave dest as-is */ }
+      }
+      if (/booking\.com/i.test(dest)) return 'booking';
+      try { return new URL(dest, window.location.href).hostname.replace(/^www\./, ''); }
+      catch (e) { return 'unknown'; }
+    }
+
+    var visitFired = false;
+    function fireVisitView() {
+      if (visitFired) return;
+      var type = pageType();
+      if (!type) return;  // unrecognised template — nothing to attribute this to
+      visitFired = true;
+      window.gtag('event', 'visit_view', {
+        page_type: type,
+        page_name: pageName(),
+        destination: pageName(),
+        cta: 'visit-tab'
+      });
+    }
+
+    var visitInput = document.getElementById('view-stay');
+    if (visitInput) {
+      if (visitInput.checked) fireVisitView();
+      visitInput.addEventListener('change', function () {
+        if (visitInput.checked) fireVisitView();
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      var closest = event.target.closest;
+      if (typeof closest !== 'function') return;
+      var link = event.target.closest('a[href*="/click-"]');
+      if (!link) return;
+      var type = pageType();
+      window.gtag('event', 'affiliate_click', {
+        program: affiliateProgram(link.getAttribute('href') || ''),
+        page_type: type,
+        page_name: pageName(),
+        destination: link.getAttribute('data-page-topic') || pageName(),
+        cta: (link.textContent || '').trim().slice(0, 100)
+      });
+    }, true);
   });
 
 })();  // end IIFE

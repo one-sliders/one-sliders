@@ -169,7 +169,10 @@
 
 .event-stat-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* Fyra fasta kolumner gav 81 px per cell i ett 380 px-kort — "as the
+     European Cup" brots pa fyra rader. Cellerna far en minsta bredd och
+     radbryter i stallet: fyra i bredd nar det finns plats, annars tva. */
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   gap: 8px;
   margin: 14px 0 12px;
 }
@@ -368,11 +371,34 @@
 
 .event-chart-rank-row .event-chart__rank-bar {
   display: block;
-  width: min(var(--rank-width), 100%);
   height: 14px;
   border-radius: 7px;
   background: var(--os-accent);
 }
+
+/* Rank-bar width steps (BUG-0083/TASK-0072): replaces the old per-bar inline
+   style="--rank-width:...px" with fixed classes. Keep in sync with
+   build-events.py _render_rank_chart(). */
+.rank-w-5 { width: 5%; }
+.rank-w-10 { width: 10%; }
+.rank-w-15 { width: 15%; }
+.rank-w-20 { width: 20%; }
+.rank-w-25 { width: 25%; }
+.rank-w-30 { width: 30%; }
+.rank-w-35 { width: 35%; }
+.rank-w-40 { width: 40%; }
+.rank-w-45 { width: 45%; }
+.rank-w-50 { width: 50%; }
+.rank-w-55 { width: 55%; }
+.rank-w-60 { width: 60%; }
+.rank-w-65 { width: 65%; }
+.rank-w-70 { width: 70%; }
+.rank-w-75 { width: 75%; }
+.rank-w-80 { width: 80%; }
+.rank-w-85 { width: 85%; }
+.rank-w-90 { width: 90%; }
+.rank-w-95 { width: 95%; }
+.rank-w-100 { width: 100%; }
 
 .event-chart__line {
   fill: none;
@@ -512,7 +538,7 @@ body.event-dashboard .event-panel .event-card p {
   border-radius: 12px;
 }
 
-.event-info-card span {
+.event-info-card > span {
   color: var(--os-muted);
   font-size: 11px;
   font-weight: 900;
@@ -598,4 +624,583 @@ body.event-dashboard .event-panel .event-card p {
     align-self: stretch;
     width: 100%;
   }
+}
+
+/* ── FEATURE-0019 onepager-komponenter (layoutreferensen 2026-08-21) ──────
+   Hero-banner med chip-remsa, kort (details/summary = dragspel på mobil,
+   låsta öppna på desktop), upplysningsband, numrerade Next Steps.
+   Avstånd: 12px inuti, 16px mellan rutor, 28px mellan grupper (3_event.css). */
+
+/* Layouten följer bildernas förhållande (40:21) — Anders 2026-08-21: bilden
+   visas hel som panel till vänster, aktiva kortet bredvid på mörk yta.
+   Inga beskurna motiv, inga omgjorda bilder. */
+body.event-onepager .event-hero-banner {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  padding: 12px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--os-accent);
+}
+body.event-onepager .event-hero-banner__img {
+  flex: 0 0 clamp(260px, 34%, 440px);
+  width: clamp(260px, 34%, 440px);
+  min-width: 0;
+  height: auto;
+  align-self: center;
+  aspect-ratio: 40 / 21;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* Ingen scrim längre — texten står på den mörka ytan bredvid bilden, inte på den. */
+body.event-onepager .event-hero-banner__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: center;
+  padding: 8px 12px;
+}
+body.event-onepager .event-hero-banner__title {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.1;
+  color: var(--os-surface);
+}
+body.event-onepager .event-hero-banner__where { margin: 0; color: color-mix(in srgb, var(--os-surface) 76%, var(--os-transparent)); font-size: 14px; }
+
+body.event-onepager .event-chip-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.event-onepager .event-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 128px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--os-surface) 26%, var(--os-transparent));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--os-scrim) 46%, var(--os-transparent));
+}
+body.event-onepager .event-chip strong { color: var(--os-surface); font-size: 16px; }
+body.event-onepager .event-chip span {
+  color: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent));
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+body.event-onepager .event-chip__tag {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--os-gold);
+  color: var(--os-scrim);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+body.event-onepager .event-hero-banner__cta {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--os-compare-green);
+  color: var(--os-scrim);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+body.event-onepager .event-notice {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--os-line);
+  border-left: 4px solid var(--os-accent);
+  border-radius: 10px;
+  background: var(--os-soft);
+  color: var(--os-ink);
+  font-size: 13px;
+}
+
+body.event-onepager .event-op-card {
+  /* 12 px mot 14 px radie sag hoptryckt ut — texten lag i kanten. */
+  padding: 16px;
+  border: 1px solid var(--os-line);
+  border-radius: 14px;
+  background: var(--os-surface);
+  min-width: 0;
+  /* Kortet fyller sin plats i raden nar den ar strackt, och innehallet
+     lagger sig uppifran i stallet for att centreras i overhojden. */
+  display: flex;
+  flex-direction: column;
+}
+/* Rubriken var 14 px och 700 — exakt samma storlek som brodtexten under.
+   Utan storleksskillnad far kortet ingen inre hierarki och allt last som
+   en enda massa. En snapp storre och lite spatiering racker. */
+body.event-onepager .event-op-card > summary {
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 12px;
+  color: var(--os-ink);
+  font-size: 14px;
+  font-weight: 700;
+  pointer-events: none;
+}
+body.event-onepager .event-op-card > summary::-webkit-details-marker { display: none; }
+body.event-onepager .event-op-card__body { display: grid; gap: 12px; overflow-x: auto; }
+body.event-onepager .event-op-card__body .event-table { width: 100%; }
+body.event-onepager .event-op-card__lead { margin: 0; color: var(--os-ink); font-size: 13px; }
+body.event-onepager .event-op-card__note { margin: 0; color: var(--os-muted); font-size: 12px; }
+body.event-onepager .event-op-card__title { margin: 0 0 12px; font-size: 14px; color: var(--os-ink); }
+body.event-onepager .event-op-card__link { color: var(--os-primary); font-weight: 700; text-decoration: none; }
+body.event-onepager .event-op-card__link:hover { text-decoration: underline; }
+
+body.event-onepager .event-getting-there,
+body.event-onepager .event-stake-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.event-onepager .event-getting-there li { display: flex; gap: 12px; font-size: 13px; }
+body.event-onepager .event-getting-there strong { flex: 0 0 108px; color: var(--os-ink); }
+body.event-onepager .event-getting-there span { color: var(--os-muted); }
+body.event-onepager .event-stake-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--os-ink);
+  font-size: 13px;
+}
+body.event-onepager .event-stake-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--os-compare-green);
+  font-weight: 800;
+}
+
+body.event-onepager .event-next-steps__list {
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.event-onepager .event-next-steps__list li {
+  counter-increment: step;
+  position: relative;
+  padding: 12px 12px 12px 46px;
+  border: 1px solid var(--os-line);
+  border-radius: 12px;
+  background: var(--os-soft);
+  font-size: 13px;
+}
+body.event-onepager .event-next-steps__list li::before {
+  content: counter(step);
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--os-primary);
+  color: var(--os-surface);
+  font-size: 12px;
+  font-weight: 800;
+}
+body.event-onepager .event-next-steps__list p { margin: 4px 0 0; color: var(--os-muted); }
+body.event-onepager #step-tickets p { color: var(--os-muted); }
+
+@media (max-width: 960px) {
+  body.event-onepager .event-next-steps__list { grid-template-columns: 1fr; }
+  body.event-onepager .event-chip-strip { gap: 12px; }
+}
+@media (max-width: 768px) {
+  body.event-onepager .event-op-card > summary { pointer-events: auto; cursor: pointer; }
+  body.event-onepager .event-op-card > summary::after { content: "\25BE"; color: var(--os-muted); }
+  body.event-onepager .event-op-card:not([open]) > summary { margin-bottom: 0; }
+}
+
+/* ── FEATURE-0019 v3: ikonchips, Save event, kortikoner, tips/landfakta, CTA. */
+body.event-onepager .event-chip { flex-direction: row; align-items: center; gap: 10px; }
+body.event-onepager .event-chip__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border: 1px solid color-mix(in srgb, var(--os-surface) 26%, var(--os-transparent));
+  border-radius: 8px;
+  color: var(--os-surface);
+}
+body.event-onepager .event-chip__icon svg { width: 16px; height: 16px; }
+body.event-onepager .event-chip__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+body.event-onepager .event-hero-banner__save {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--os-surface) 32%, var(--os-transparent));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--os-scrim) 46%, var(--os-transparent));
+  color: var(--os-surface);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+body.event-onepager .event-hero-banner__save svg { width: 16px; height: 16px; }
+body.event-onepager .event-hero-banner__content { position: relative; }
+
+body.event-onepager .event-op-card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  border: 1px solid var(--os-line);
+  border-radius: 8px;
+  color: var(--os-primary);
+  background: var(--os-soft);
+}
+body.event-onepager .event-op-card__icon svg { width: 14px; height: 14px; }
+body.event-onepager .event-op-card > summary { justify-content: flex-start; }
+
+body.event-onepager .event-country-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.event-onepager .event-country-facts li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--os-ink);
+  font-size: 13px;
+}
+body.event-onepager .event-country-facts li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--os-compare-green);
+  font-weight: 800;
+}
+
+body.event-onepager .event-op-card__cta {
+  align-self: start;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--os-primary);
+  color: var(--os-surface);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+body.event-onepager .event-next-steps { border: 1px solid var(--os-line); border-radius: 14px; background: var(--os-surface); padding: 12px; display: flex; gap: 16px; align-items: center; }
+body.event-onepager .event-next-steps__title { margin: 0; font-size: 14px; color: var(--os-ink); flex: 0 0 auto; }
+body.event-onepager .event-next-steps__list { flex: 1 1 auto; }
+@media (max-width: 960px) { body.event-onepager .event-next-steps { flex-direction: column; align-items: stretch; } }
+
+/* ── FEATURE-0019 v4: länk-chips med minibild, hero-åtgärder (Save + topic). */
+body.event-onepager a.event-chip--link { text-decoration: none; }
+body.event-onepager a.event-chip--link:hover { border-color: color-mix(in srgb, var(--os-surface) 55%, var(--os-transparent)); }
+body.event-onepager .event-chip__mini {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--os-surface) 26%, var(--os-transparent));
+}
+body.event-onepager .event-hero-banner__actions {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+body.event-onepager .event-hero-banner__actions .event-hero-banner__save { position: static; }
+/* (padding-lappen for den absoluta actions-kolumnen borttagen 2026-08-26 —
+   korten ligger i hero-cards-rutnatet och kolumnen finns inte langre.) */
+@media (max-width: 960px) {
+  body.event-onepager .event-hero-banner__actions { position: static; flex-direction: row; }
+}
+
+/* ── FEATURE-0019 v6: årslänk-remsa + ankrade årsrubriker (Year by year). */
+body.event-onepager .event-year-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+body.event-onepager .event-year-links a {
+  padding: 4px 12px;
+  border: 1px solid var(--os-line);
+  border-radius: 999px;
+  background: var(--os-soft);
+  color: var(--os-primary);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+body.event-onepager .event-year-links a:hover { border-color: var(--os-primary); }
+body.event-onepager .event-year-heading {
+  margin: 0;
+  font-size: 15px;
+  color: var(--os-surface);
+  scroll-margin-top: 12px;
+}
+
+/* ── FEATURE-0019 v7: upplagekorten (Anders modell 2026-08-21).
+   Samma article-element, två kostymer: aktiva kortet i hero, övriga som
+   rader i Year by year. */
+body.event-onepager .event-edition-slot { display: flex; flex-direction: column; }
+body.event-onepager .is-active.event-edition { display: flex; flex-direction: column; gap: 12px; }
+body.event-onepager .is-active .event-edition__title {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: 1.1;
+  color: var(--os-surface);
+  scroll-margin-top: 12px;
+}
+body.event-onepager .is-active .event-edition__where {
+  margin: 0;
+  color: color-mix(in srgb, var(--os-surface) 76%, var(--os-transparent));
+  font-size: 14px;
+}
+body.event-onepager .is-active .event-edition__note {
+  margin: 0;
+  color: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent));
+  font-size: 13px;
+}
+
+body.event-onepager .event-editions { display: grid; gap: 12px; }
+body.event-onepager .event-editions .event-edition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--os-line);
+  border-radius: 12px;
+  background: var(--os-soft);
+}
+body.event-onepager .event-editions .event-edition__title {
+  margin: 0;
+  flex: 0 0 auto;
+  min-width: 200px;
+  font-size: 14px;
+  color: var(--os-primary);
+  scroll-margin-top: 12px;
+}
+body.event-onepager .event-editions .event-edition__winner {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--os-ink);
+}
+body.event-onepager .event-editions .event-edition__winner span { color: var(--os-muted); }
+body.event-onepager .event-editions .event-edition__winner a.country span { color: var(--os-ink); font-weight: 700; }
+body.event-onepager .event-editions .event-edition__where { margin: 0; color: var(--os-muted); font-size: 13px; }
+body.event-onepager .event-editions .event-edition__note { margin: 0; color: var(--os-muted); font-size: 13px; }
+
+/* Chips i årslistan står på ljus botten — ljus variant av samma chip. */
+body.event-onepager .event-editions .event-chip-strip--edition { gap: 8px; }
+body.event-onepager .event-editions .event-chip {
+  padding: 6px 10px;
+  min-width: 0;
+  border-color: var(--os-line);
+  background: var(--os-surface);
+}
+body.event-onepager .event-editions .event-chip strong { color: var(--os-ink); font-size: 13px; }
+body.event-onepager .event-editions .event-chip span { color: var(--os-muted); }
+body.event-onepager .event-editions .event-chip__icon { border-color: var(--os-line); color: var(--os-primary); width: 24px; height: 24px; }
+
+/* ── FEATURE-0019 v8: Year by year i två spalter — historik vänster,
+   kommande höger (Anders 2026-08-21). Mobil staplar, kommande först. */
+body.event-onepager .event-editions { grid-template-columns: 1fr 1fr; align-items: start; }
+body.event-onepager .event-editions__col { display: grid; gap: 12px; min-width: 0; }
+body.event-onepager .event-editions__col--past { order: 1; }
+body.event-onepager .event-editions > .event-editions__col:only-child { grid-column: 1 / -1; }
+body.event-onepager .event-editions__col--coming { order: 2; }
+body.event-onepager .event-editions__label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+@media (max-width: 960px) {
+  body.event-onepager .event-editions { grid-template-columns: 1fr; }
+  body.event-onepager .event-editions__col--coming { order: 1; }
+  body.event-onepager .event-editions__col--past { order: 2; }
+}
+
+/* ── FEATURE-0019 v9: bildbrickor (nationaldagsmönstret — mat/kultur/dryck). */
+body.event-onepager .event-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+/* Fyll ut sidan i stället för att trycka nedåt (Anders 2026-08-21):
+   ett ensamt kort i en rad tar hela bredden, och brickorna flödar då ut. */
+body.event-onepager .event-op-row > .event-op-card:only-child { grid-column: 1 / -1; }
+/* Fyra kort i en trekolumnsgrid gav 3 + 1, och det fjarde sag ut som en
+   rest. Ett kort som blir ensamt pa sista raden tar hela bredden. */
+body.event-onepager .event-op-row--3 > .event-op-card:nth-child(3n+1):last-child,
+body.event-onepager .event-op-row--2 > .event-op-card:nth-child(2n+1):last-child {
+  grid-column: 1 / -1;
+}
+body.event-onepager .event-tile-grid .event-info-card { padding: 0 0 10px; overflow: hidden; }
+body.event-onepager .event-tile-grid .event-info-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+body.event-onepager .event-tile-grid .event-info-card strong { display: block; padding: 0 10px; }
+body.event-onepager .event-tile-grid .event-info-card p { margin: 2px 0 0; padding: 0 10px; }
+
+@media (max-width: 960px) {
+  body.event-onepager .event-hero-banner { flex-direction: column; }
+  body.event-onepager .event-hero-banner__img { flex: 0 0 auto; width: 100%; }
+}
+
+/* ── FEATURE-0019 v10: färg genom hela sidan, matchad mot kategorin (Anders
+   2026-08-21: "gå crazy men hela sidan — färgerna ska matcha, ska finnas ca 10").
+   Sajtens eget kategoritema används: oneslider-core.js sätter data-os-category
+   från URL:en och oneslider-core.css ger --theme (kategorifärgen ur 1_colours-
+   registret: --c-sport/-music/-culture/-climate/-tech...). Inget eget
+   färgregister — bara tokens och color-mix på tokens. */
+body.event-onepager {
+  --event-theme: var(--theme, var(--os-accent));
+  --event-tint: color-mix(in srgb, var(--theme, var(--os-accent)) 9%, var(--os-surface));
+  --event-tint-line: color-mix(in srgb, var(--theme, var(--os-accent)) 30%, var(--os-line));
+}
+
+/* Hero-ytan: kategorifärgen där blå plattan var. */
+body.event-onepager .event-hero-banner { background: var(--event-theme); }
+
+/* Upplysningsbandet: guld ur paletten — informationsfärgen. */
+body.event-onepager .event-notice {
+  border-left: 4px solid var(--os-gold);
+  background: color-mix(in srgb, var(--os-gold) 10%, var(--os-surface));
+}
+
+/* Byggstenskorten: kategorifärgad vänsterkant (samma mönster som
+   .visual-topic-card--national i 1_core) + tonad yta och färgade ikoner. */
+body.event-onepager .event-op-card {
+  /* Kortet ska hora till sidan, inte sticka ut ur den. Kategorifargen
+     ligger kvar som en svag ton; den 4 px breda vansterkanten ar borta —
+     med den last varje kort som en varningsruta. */
+  background: color-mix(in srgb, var(--theme, var(--os-accent)) 4%, var(--os-surface));
+}
+body.event-onepager .event-op-card summary .event-op-card__icon { color: var(--event-theme); }
+
+/* Diagramstaplar följer kategorifärgen. */
+body.event-onepager .event-chart__rank-bar { background: var(--event-theme); }
+
+/* Årsraderna: kommande år i kategoriton, passerade i palettens soft. */
+body.event-onepager .event-editions .event-edition { border-color: var(--event-tint-line); }
+body.event-onepager .event-editions__col--coming .event-edition { background: var(--event-tint); }
+body.event-onepager .event-editions .event-edition__title { color: var(--event-theme); }
+
+/* Bildbrickornas namnrad i kategorifärg. */
+body.event-onepager .event-tile-grid .event-info-card strong { color: var(--event-theme); }
+
+/* ── FEATURE-0019 v11: klassiska topic-kortet (Anders 2026-08-21: "topic
+   korten ska se ut som de alltid gjort med hero bild från topic" + "lägg den
+   där den låg under save event... ev får du minska lite"). Utseendet ur
+   categories.css-mönstret (.topic-parent-card), men i kompakt storlek och i
+   flödet i heron direkt under Save event-raden — inte fast över sidan. */
+body.event-onepager .topic-parent-card {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  padding: 8px 12px 8px 8px;
+  color: inherit;
+  background: var(--hero-card-bg);
+  border: 1px solid color-mix(in srgb, var(--theme, var(--os-accent)) 22%, var(--page-line));
+  /* 5 px accentkant borttagen 2026-08-26: herons tre kort ska ha samma
+     yta, och den har gjorde topic-kortet till det enda med en farglist.
+     Samma atgard som pa event-op-card. */
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+body.event-onepager .topic-parent-card:hover,
+body.event-onepager .topic-parent-card:focus-visible {
+  border-color: var(--theme, var(--os-primary));
+  transform: translateY(-1px);
+  outline: 0;
+}
+body.event-onepager .topic-parent-card img {
+  grid-row: 1 / 4;
+  display: block;
+  width: 84px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+body.event-onepager .topic-parent-card span {
+  min-width: 0;
+  color: var(--page-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+body.event-onepager .topic-parent-card strong {
+  min-width: 0;
+  color: var(--page-ink);
+  font-size: 15px;
+  line-height: 1.05;
+}
+body.event-onepager .topic-parent-card p {
+  min-width: 0;
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 11px;
+  line-height: 1.22;
+}
+/* Mobil: actions blir en rad — kortet bryter till egen full rad under. */
+@media (max-width: 960px) {
+  body.event-onepager .event-hero-banner__actions { flex-wrap: wrap; }
+  body.event-onepager .event-hero-banner__actions .topic-parent-card { flex: 1 1 100%; width: 100%; }
 }

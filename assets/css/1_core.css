@@ -2,6 +2,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; color: var(--page-ink); background: var(--page-bg); }
 a { color: inherit; text-decoration: none; }
+/* Generic visibility toggle for JS-revealed sections (e.g. home.js's
+   #happening-now) — replaces an inline style="display:none" (BUG-0083). */
+.is-hidden { display: none; }
 svg { display: block; }
 .visual-topic-card { display: grid; grid-template-rows: 88px auto auto; overflow: hidden; color: var(--page-ink); background: var(--os-surface); border: 1px solid var(--os-line); border-radius: 8px; }
 .visual-topic-card img { width: 100%; height: 88px; object-fit: cover; }

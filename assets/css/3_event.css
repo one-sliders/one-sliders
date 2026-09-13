@@ -27,3 +27,57 @@ body.event-dashboard { background: var(--page-bg); }
   body.event-booking-left .stay-booking-panel { order: 4; }
   body.event-booking-left .event-related-links { order: 5; }
 }
+
+/* ── FEATURE-0019 onepager v3 (flikmockupen 2026-08-21 + one-slider-kravet) ─
+   PC: EN skärm — hero, upplysningsband, tre flikar (Overview/Travel/History)
+   och Next steps-remsan fyller sidkortet exakt; kort scrollar internt.
+   Mobil/surfplatta (<961px): samma flikar, sidan scrollar i ramen.
+   Avstånd: 12px inuti en ruta, 16px mellan rutor och rader. */
+
+body.event-onepager .event-op-row { display: grid; gap: 16px; grid-template-columns: 1fr; }
+
+@media (max-width: 960px) {
+  body.event-onepager .page-frame { overflow-y: auto; }
+  body.event-onepager .page-shell { display: flex; flex-direction: column; gap: 16px; padding: 0 0 16px; }
+}
+
+@media (min-width: 961px) {
+  body.event-onepager .page-frame { overflow: hidden; }
+  body.event-onepager .page-shell {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: 16px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+  }
+  body.event-onepager .page-shell .event-hero-banner { grid-row: 1; }
+  
+  body.event-onepager .page-shell .event-hero-banner__title { font-size: clamp(20px, 2vw, 30px); }
+  body.event-onepager .page-shell .event-notice { grid-row: 2; padding: 8px 12px; }
+  body.event-onepager .event-tabs--top { grid-row: 3; min-height: 0; }
+
+  /* Inget fyrkantigt rutnät (Anders 2026-08-21): korten tar sin naturliga
+     höjd i sina fasta kolumnplatser; panelen scrollar bara om innehållet
+     faktiskt överskrider sliden. Inga interna kort-scrollers, inga klippta
+     knappar. */
+  body.event-onepager .event-tab-panel { height: 100%; min-height: 0; overflow-y: auto; }
+  body.event-onepager .event-tab-panel .event-op-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    /* Strackta till radens hojd (Anders 2026-08-26: "snygga upp som vem som
+       helst som gor en one-slider hadde gjort"). Korten stod 205, 191 och
+       225 px hoga bredvid varandra och last som en trasig mur.
+       Beslutet 2026-08-21 om "ingen fyrkantig grid" gallde interna
+       kort-scrollers och klippta knappar — stretch ger varken. */
+    align-items: stretch;
+  }
+  /* Rader med två kort delar bredden på två — ingen tom tredjedel. */
+  body.event-onepager .event-tab-panel .event-op-row--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  body.event-onepager .event-tab-panel .event-op-row { grid-template-columns: 1fr; }
+}
+

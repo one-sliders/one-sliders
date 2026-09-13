@@ -357,6 +357,40 @@ body.os-has-site-footer.topic-onepage > footer.os-footer {
   margin-top: 0 !important;
 }
 
+/* BUG-0143 — kommentaren överst i avsnittet säger varför: en fixed footer
+   överlappar innehåll och behöver bottenutfyllnad, en sticky gör det inte.
+   Reglerna ovan valde fixed för topic- och event-sidor, men utfyllnaden lades
+   aldrig till, så de sista raderna hamnade bakom footern utan att gå att
+   scrolla fram — 32 px vid 375 px på sport/running.html.
+
+   Två fall scrollar och drabbas därför:
+     1. topic-sidor med <main class="topic-slide"> — 50 av 85. Deras egen regel
+        sätter height:auto och overflow-y:auto, alltså vanlig scroll.
+     2. ALLA topic-sidor under 980 px, där categories.css släpper overflow:hidden.
+
+   Utfyllnad, inte sticky. Sticky vore den snyggare fixen men kräver att body är
+   en flexkolumn för att `margin-top:auto` ska hålla footern nere när innehållet
+   är kort — och den scrollande varianten är det inte. Provat 2026-08-20: på
+   1280 px hamnade footern direkt under toppmenyn. Utfyllnad är additiv och kan
+   inte flytta något.
+
+   Värdet kommer ur --topic-footer-height, samma variabel som positionerar
+   .topic-content-box och .topic-parent-card, plus 24 px marginal. Marginalen är
+   inte gissad: footerns <p> radbryts till två rader på smal skärm, så den
+   renderar 53 px där variabeln säger 36. Utan påslaget täcker utfyllnaden inte
+   det fall den finns för.
+
+   Den äkta one-slide-layouten har overflow:hidden och scrollar inte — där är
+   utfyllnaden osynlig, vilket är meningen.
+
+   Bara topic-onepage, inte event-page. Event-sidorna har samma fixed-regel och
+   samma teoretiska risk, men mättes 2026-08-20 vid 375 px utan ett enda överlappat
+   element — deras layout lämnar redan plats. Att lägga på utfyllnad där hade varit
+   en ändring på 397 sidor utan ett fynd bakom sig, i en annan experts sidtyp. */
+body.topic-onepage {
+  padding-bottom: calc(var(--topic-footer-height, 36px) + 24px);
+}
+
 /* ---------------------------------------------------------------------
    Framed one-slider chrome — top nav, defined ONCE and re-used by the
    golf + topic templates (their own CSS must NOT redefine it). Sticky nav
@@ -1259,3 +1293,20 @@ input.stay-field-input.stay-field-input--locale-overlaid::-webkit-datetime-edit-
   white-space: nowrap;
   overflow: hidden;
 }
+
+/* iOS-chromets ikonstorlek — UTAN media query.
+   BUG 2026-08-31: menyn visas av
+     @media (max-width: 620px), (max-height: 760px)
+   men ikonerna fick sin storlek av
+     @media (max-width: 620px)
+   Pa ett brett men LAGT fonster (t.ex. en laptop, eller devtools oppet) slog
+   darfor visningsregeln till utan storleksregeln, och varje SVG renderade i
+   sin egen storlek: 817 px styck, 3 309 px hog meny ovanfor allt innehall.
+   Bokningsrutan hamnade 4 400 px ned och sidan sag trasig ut.
+   Storleken hor inte hemma i nagot villkor alls — nar menyn ar dold kostar
+   reglerna ingenting, och nar den visas maste de galla. */
+.ios-nav svg,
+.ios-back svg,
+.ios-action svg,
+.ios-more svg { width: 22px; height: 22px; flex: 0 0 auto; }
+.ios-nav .ios-title { font-size: 17px; line-height: 1.2; }

@@ -223,6 +223,14 @@ body.event-dashboard .event-stay-field label {
 
 body.event-dashboard .event-stay-field input {
   width: 100%;
+  /* min-width: 0 kravs, inte bara width: 100%. Faltet ar ett grid-item och far
+     da min-width: auto, vilket later <input type="date"> tvinga fram sin egen
+     minsta bredd (158 px i Chrome). Cellen ar 100 px, sa datumfaltet spillde
+     58 px over GRANNFALTET — ett klick pa kalenderikonen traffade check-out i
+     stallet for check-in, och datumet gick inte att valja (Anders 2026-08-31).
+     Talfalten (guests/rooms) har en mindre inbyggd bredd och rymdes, sa felet
+     drabbade bara de tva datumen. */
+  min-width: 0;
   padding: 8px 10px;
   color: var(--page-ink);
   background: var(--os-surface);
@@ -696,3 +704,28 @@ html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tip
 }
 
 .stay-overview-card { display: block; }
+
+/* ── FEATURE-0019: Stay-blocket ligger PÅ sidan (layoutreferensen), inte i en flik. */
+body.event-onepager .event-stay-block { display: grid; gap: 12px; }
+body.event-onepager .event-stay-block .event-stay-fields {
+  display: grid;
+  /* Datumen far bredare kolumner an antalsfalten. Med fyra lika delar blev
+     cellen 100 px, och da klippte kalenderikonen datumtexten: "Sep 30, 2(ikon)"
+     (Anders 2026-08-31). Ett datum behover ~130 px for att rymma bade text och
+     ikon; guests och rooms ar ensiffriga och klarar sig pa mindre. */
+  grid-template-columns: 1.35fr 1.35fr 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 960px) {
+  body.event-onepager .event-stay-block .event-stay-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+body.event-onepager .event-stay-block__prefilter { margin: 0; color: var(--os-muted); font-size: 13px; }
+body.event-onepager .event-stay-block__disclosure { margin: 0; color: var(--os-muted); font-size: 12px; }
+body.event-onepager .event-stay-block .event-stay-cta { justify-self: start; }
+
+/* ── FEATURE-0019: boknings-CTA:n i full bredd — kortet klipper aldrig sitt
+   innehåll (naturliga korthöjder, Anders 2026-08-21). */
+body.event-onepager .event-stay-block .event-stay-cta {
+  justify-self: stretch;
+  text-align: center;
+}

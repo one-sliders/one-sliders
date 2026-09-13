@@ -1,0 +1,315 @@
+/* Herons kort delar bredd och yta. Topic-kortet satte redan mattet (353 px
+   i actions-kolumnen) och ytan (96 % surface, tunn kant, mjuk skugga);
+   datum- och platskortet var helvita och 378 px breda och stack darfor ut.
+   Anders 2026-08-26: "topic a datum kortet ar inte lika breda" + "du har
+   inte justerat fargen pa kortet". */
+body.event-onepager {
+  --hero-card-w: 349px;
+  /* Korten ska ligga PA heron, inte som vita plattor ovanpa den. Ytan bar
+   en ton av kategorifargen och slapper igenom en aning, sa heron syns
+   under. Anders 2026-08-26: "justera fargen sa de smalter mer in". */
+  --hero-card-bg: color-mix(in srgb,
+      color-mix(in srgb, var(--os-surface) 90%, var(--theme, var(--os-accent)))
+      92%, var(--os-transparent));
+  --hero-card-shadow: 0 10px 24px color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent));
+}
+
+/* 4_event-facts.css — nar och var i heron.
+ *
+ * Anders 2026-08-26: "sla when tillsammans med save event.. dvs flytta
+ * infon.. a var inte sa detaljerad". Datumet och knappen som sparar det
+ * hor ihop; platsen star for sig i heron.
+ *
+ * Nivå 4 (modul). Tokens ur 1_colours.css. Radie 10px — samma som
+ * topic-parent-card, herons andra yta. Ingen ny radie infors.
+ */
+
+/* --- herons fyra kort i ett rutnat --------------------------------------
+   Titel, location, datum och topic som likvardiga sub-divar. Rutnatet ger
+   dem bredd och plats; inget kort ar absolut positionerat langre, sa de
+   kan inte krocka eller glida isar nar innehallet andras. */
+/* Panelen ska borja och sluta dar bilden gor det. Content centrerar sitt
+   innehall vertikalt och har 8 px padding, sa panelen lag 21 px in bade
+   upptill och nedtill — bilden gick 78-292, panelen 99-271. */
+body.event-onepager .event-hero-banner__content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.event-onepager .hero-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Fasta platser, inte automatiskt floade. 136 event saknar platskortet och
+     3 saknar bade plats och datum — utan areas gled datum upp pa platsens
+     ruta och korten lag olika fran sida till sida. Anders 2026-08-26: "jag
+     vill alltid att de ligger pa samma satt". Saknas ett kort star dess ruta
+     tom; ovriga star kvar. */
+  grid-template-areas:
+    "title when"
+    "where topic";
+  gap: 10px;
+  align-items: stretch;
+  width: 100%;
+  /* Egen yta sa info-sektionen syns som en enhet mot heron — korten ligger
+     PA en panel i stallet for att sväva fritt. Tonen ar heron-fargen ett
+     steg morkare; den foljer kategorin via --theme. */
+  padding: 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--theme, var(--os-accent)) 82%, var(--os-scrim));
+}
+
+body.event-onepager .hero-card--title { grid-area: title; }
+body.event-onepager .hero-card--where { grid-area: where; }
+body.event-onepager .hero-card--when  { grid-area: when; }
+body.event-onepager .hero-card--topic { grid-area: topic; }
+
+body.event-onepager .hero-card {
+  background: var(--hero-card-bg);
+  border: 1px solid color-mix(in srgb, var(--theme, var(--os-accent)) 22%, var(--page-line));
+  border-radius: 10px;
+  box-shadow: var(--hero-card-shadow);
+  margin: 0;
+  min-width: 0;
+  max-width: none;
+  width: auto;
+}
+
+/* Titeln bar sidans namn och far darfor mer luft an de tre faktakorten. */
+body.event-onepager .hero-card--title {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+}
+
+body.event-onepager .hero-card--title .event-edition__title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  /* Titeln var vit for att den lag direkt pa den morka heron. I ett ljust
+     kort blev kontrasten 1.12:1 — samma blackfarg som de ovriga korten. */
+  color: var(--os-ink);
+}
+
+/* Topic-kortets namn i samma storlek som de ovriga tre. */
+body.event-onepager .topic-parent-card__name { margin: 0; font-size: 1.15rem; line-height: 1.2; font-weight: 700; }
+
+/* De historiska upplagorna hor hemma i Year by year, inte i heron. */
+body.event-onepager .hero-card--title .event-edition:not(.is-active) {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  body.event-onepager .hero-cards {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "when" "where" "topic";
+  }
+}
+
+/* --- mobil: heron tog 67 % av iPhone-skarmen -----------------------------
+   Uppmatt pa 375x812: hero 544 px hog, flikarna borjade forst vid y=666.
+   Fyra staplade kort plus en 175 px bild lamnade ingen plats at innehallet.
+   Titeln och platsen behover full bredd; datum och topic delar en rad. */
+@media (max-width: 30rem) {
+  body.event-onepager .hero-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "title title"
+      "when  when"
+      "where topic";
+    gap: 6px;
+    padding: 6px;
+  }
+  body.event-onepager .hero-card--title { grid-area: title; }
+  body.event-onepager .hero-card--where { grid-area: where; }
+  body.event-onepager .hero-card--when  { grid-area: when; }
+  body.event-onepager .hero-card--topic { grid-area: topic; }
+
+  body.event-onepager .hero-card--title { padding: 0.45rem 0.6rem; }
+  body.event-onepager .event-where,
+  body.event-onepager .event-when { padding: 0.45rem 0.6rem; }
+  body.event-onepager .hero-card--title .event-edition__title { font-size: 16px; }
+
+  /* Bilden ar identitet, inte innehall — den behover inte 175 px pa en
+     telefon dar hela innehallet ska rymmas. */
+  body.event-onepager .event-hero-banner__img {
+    height: 110px;
+    object-fit: cover;
+  }
+
+  /* Topic-kortet ar 146 px i halv rad och bilden tog 84 av dem — texten
+     fick 30 px och kapades. Pa mobil ar kortet ren text: bilden och den
+     forklarande meningen utgar, namnet racker som navigation. */
+  body.event-onepager .hero-card--topic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.1rem;
+    padding: 0.45rem 0.6rem;
+  }
+  body.event-onepager .hero-card--topic > img,
+  body.event-onepager .hero-card--topic > p { display: none; }
+
+  body.event-onepager .topic-parent-card__name { font-size: 0.9rem; line-height: 1.15; }
+}
+
+
+/* Etiketten ar rubriken (h2), vardet ar innehallet (p). Rubriken ar liten
+   och diskret — den namnger sektionen, den ar inte det man laser. */
+body.event-onepager .event-card__label {
+  margin: 0 0 0.15rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+
+body.event-onepager .event-when > p,
+body.event-onepager .event-where > p {
+  margin: 0;
+}
+
+/* --- NAR: datumet och knappen som sparar det, ETT block --------------- */
+.event-when {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  padding: 0.6rem 0.85rem 0.55rem;
+  background: var(--hero-card-bg);
+  border: 1px solid color-mix(in srgb, var(--theme, var(--os-accent)) 22%, var(--page-line));
+  border-radius: 10px;
+  box-shadow: var(--hero-card-shadow);
+  margin-bottom: 0;
+}
+
+.event-when__date {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--os-ink);
+}
+
+.event-when__time {
+  font-size: 0.8rem;
+  color: var(--os-muted);
+}
+
+.event-when__time.is-provisional::after {
+  content: " ·  preliminary";
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+/* Knappen sitter i samma yta som datumet och avgransas med en linje, inte
+   med en egen bakgrund — den ar en handling PA datumet ovanfor. */
+/* Kartlanken och Save event ar samma sorts element: en handling pa kortets
+   varde, avgransad med en linje i stallet for en egen knappyta. */
+body.event-onepager .event-where__map,
+body.event-onepager .event-when__save {
+  /* Herons save-knapp ar absolut positionerad i grundregeln — den satt i
+     ett horn innan korten fanns. I datumkortet ska den folja flodet. */
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border: 0;
+  border-top: 1px solid var(--os-line);
+  background: none;
+  box-shadow: none;
+  justify-content: flex-start;
+  border-radius: 0;
+  font-size: 0.8rem;
+  color: var(--os-primary);
+  text-decoration: none;
+}
+
+body.event-onepager .event-where__map:hover,
+body.event-onepager .event-where__map:focus-visible,
+body.event-onepager .event-when__save:hover,
+body.event-onepager .event-when__save:focus-visible {
+  text-decoration: underline;
+}
+
+.event-where__map svg,
+.event-when__save svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+
+/* --- VAR: i heron, under rubriken ------------------------------------ */
+.event-where {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--hero-card-bg);
+  border: 1px solid color-mix(in srgb, var(--theme, var(--os-accent)) 22%, var(--page-line));
+  border-radius: 10px;
+  box-shadow: var(--hero-card-shadow);
+  min-width: 0;
+}
+
+.event-where__name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--os-ink);
+  overflow-wrap: break-word;
+}
+
+.event-where__place {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--os-muted);
+  min-width: 0;
+}
+
+.event-where__place a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.event-where__place a:hover,
+.event-where__place a:focus-visible {
+  color: var(--os-primary);
+}
+
+.event-where__flag {
+  width: 16px;
+  height: 11px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+}
+
+@media (max-width: 40rem) {
+  .event-where, .event-when { max-width: none; }
+}
+
+/* --- passerat event, satt av 4_edition-active.js vid VISNING -------------
+   Anders 2026-08-27: "obs dolj inte i bygg utan tids baserat". Sidan byggs
+   en gang men lases over tid — ett event som var kommande vid bygget blir
+   passerat senare, och da ska knappen och fliken forsvinna utan ombygge.
+   Datum och plats star kvar: de svarar pa NAR och VAR det var. */
+body[data-os-event-past] .event-when__save,
+body[data-os-event-past] .event-hero-banner__save {
+  display: none;
+}
+
+/* Fliketiketten sätts av body.event-dashboard .event-tablist--titled
+   .event-tab-label (0-3-1). Regeln måste matcha den strukturen for att
+   vinna — annars star Travel-fliken kvar pa ett passerat event. */
+body.event-dashboard[data-os-event-past] .event-tablist .event-tab-label[for="tab-travel"],
+body[data-os-event-past] #panel-travel {
+  display: none;
+}

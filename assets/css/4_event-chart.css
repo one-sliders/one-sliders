@@ -1,0 +1,38 @@
+/* 4_event-chart.css — niva 4, modul: diagram pa eventsidan.
+   Egen fil for att en graf INTE ar ett faktakort: 4_event-facts.css
+   ager heroens var/nar/vad, den har filen ager jamforelserna. Att
+   klistra in dem i faktafilen hade gjort modulgransen falsk och nasta
+   expert hade fatt leta. */
+
+/* Stapelgraf — "Most played" och andra jamforelser dar forhallandet ar svaret.
+   Anders 2026-08-31: "most played borde vara en graf". Tre stromningssiffror i
+   en tabell tvingar lasaren att jamfora tal i huvudet; stapeln visar att Wind
+   of Change ar dubbelt sa spelad utan att man laser en enda siffra.
+   Byggaren ager formen (ren SVG, inga inline-stilar), CSS ager utseendet. */
+.event-bars {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+}
+.event-bars__bar { fill: var(--theme, var(--os-primary)); }
+.event-bars__label,
+.event-bars__value {
+  fill: currentColor;
+  font-size: 11px;
+  dominant-baseline: middle;
+}
+.event-bars__label { font-weight: 600; }
+.event-bars__value { opacity: .7; }
+
+/* Item-flikens rader: mini-hero forst, sedan datum och plats.
+   Anders 2026-08-31: "det ska inte sta se sidan. det ska vara en mini hero
+   for just det eventet" — bilden identifierar raden snabbare an lanktext. */
+.event-item-row__media { width: 108px; }
+.event-item-row__media img {
+  display: block;
+  width: 96px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+}

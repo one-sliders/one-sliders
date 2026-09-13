@@ -218,3 +218,74 @@ body[data-template="global-observance"] .event-info-card {
     overflow: visible;
   }
 }
+
+/* ── FEATURE-0019: tre toppflikar med undertitel (Overview/Travel/History). */
+#tab-travel:checked ~ .event-tab-panels #panel-travel,
+#tab-history:checked ~ .event-tab-panels #panel-history { display: block; }
+
+body.event-dashboard .event-tablist--titled { border-radius: 14px; }
+body.event-dashboard .event-tablist--titled .event-tab-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 0;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+body.event-dashboard .event-tablist--titled .event-tab-label__icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+body.event-dashboard .event-tablist--titled .event-tab-label__text { display: grid; line-height: 1.2; text-align: left; }
+body.event-dashboard .event-tablist--titled .event-tab-label__text strong { font-size: 14px; }
+body.event-dashboard .event-tablist--titled .event-tab-label__text small { font-size: 11px; font-weight: 500; color: var(--os-muted); }
+
+#tab-overview:checked ~ .event-tablist label[for="tab-overview"],
+#tab-travel:checked ~ .event-tablist label[for="tab-travel"],
+#tab-history:checked ~ .event-tablist label[for="tab-history"] {
+  background: var(--os-surface);
+  border: 1px solid var(--theme, var(--os-primary));
+  color: var(--theme, var(--os-primary));
+}
+#tab-overview:checked ~ .event-tablist label[for="tab-overview"] small,
+#tab-travel:checked ~ .event-tablist label[for="tab-travel"] small,
+#tab-history:checked ~ .event-tablist label[for="tab-history"] small { color: var(--theme, var(--os-primary)); }
+
+/* FEATURE-0019: Food & drink-fliken (datastyrd — bara sidor med mat/dryck). */
+#tab-food:checked ~ .event-tab-panels #panel-food { display: block; }
+#tab-food:checked ~ .event-tablist label[for="tab-food"] {
+  background: var(--os-surface);
+  border: 1px solid var(--theme, var(--os-primary));
+  color: var(--theme, var(--os-primary));
+}
+#tab-food:checked ~ .event-tablist label[for="tab-food"] small { color: var(--theme, var(--os-primary)); }
+body.event-dashboard input#tab-food { display: none; }
+
+/* FEATURE-0019: Culture-fliken (datastyrd — speglar gamla nd-sidans flik). */
+#tab-culture:checked ~ .event-tab-panels #panel-culture { display: block; }
+#tab-culture:checked ~ .event-tablist label[for="tab-culture"] {
+  background: var(--os-surface);
+  border: 1px solid var(--theme, var(--os-primary));
+  color: var(--theme, var(--os-primary));
+}
+#tab-culture:checked ~ .event-tablist label[for="tab-culture"] small { color: var(--theme, var(--os-primary)); }
+body.event-dashboard input#tab-culture { display: none; }
+
+/* FEATURE-0019 v8: flikikonerna i kategorifärgen. */
+body.event-onepager .event-tablist--titled .event-tab-label__icon { color: var(--theme, var(--os-accent)); }
+
+/* FEATURE-0019: item-fliken — artistens/seriens ovriga kommande datum.
+   Anders 2026-08-31: "om det finns mer an ett event som inte annu varit for
+   samma item sa vill jag att det visas som en egen ny tab". Fliken byggs bara
+   nar itemet har minst tva kommande datum utover sidan man star pa.
+   Regeln maste sta har: filen raknar upp varje flik-id explicit, sa en ny flik
+   utan sin rad visas aldrig hur ratt HTML:en an ar. */
+#tab-item:checked ~ .event-tab-panels #panel-item { display: block; }
+#tab-item:checked ~ .event-tablist label[for="tab-item"] {
+  background: var(--os-surface);
+  border: 1px solid var(--theme, var(--os-primary));
+  color: var(--theme, var(--os-primary));
+}
+#tab-item:checked ~ .event-tablist label[for="tab-item"] small { color: var(--theme, var(--os-primary)); }
