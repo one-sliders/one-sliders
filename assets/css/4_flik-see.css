@@ -314,3 +314,14 @@ a.destination-attraction-card:focus-visible {
 .city-page--template .destination-attraction-card > div h3 { margin: 0 0 0.3em; }
 .city-page--template .destination-attraction-card > div p { margin: 0; line-height: 1.4; max-height: 4.2em; }
 .city-page--template .destination-attraction-card .city-map-link { display: inline-flex; margin-top: 0.5em; }
+
+/* Anders 2026-10-11 (80 % fungerar, 90/100 % inte): vid lag viewport (t.ex.
+   1536x740) fick See-gallret rader pa 200 px medan korten var 319 px — bildens
+   hojd kommer av aspect-ratio och gallret satte radhojden innan bilden fatt
+   sin. Fast bildhojd och rader som foljer innehallet (max-content). */
+.city-page--template .destination-attraction-grid { grid-auto-rows: max-content; align-content: start; }
+.city-page--template .destination-attraction-card { grid-template-rows: max-content max-content; }
+.city-page--template .destination-attraction-card img { height: 170px; aspect-ratio: auto; object-fit: cover; }
+@media (max-width: 760px) {
+  .city-page--template .destination-attraction-card img { height: 130px; }
+}
