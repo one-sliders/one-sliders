@@ -296,7 +296,7 @@ a.destination-attraction-card:focus-visible {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.city-page--template .destination-attraction-card .city-map-link { margin-top: auto; padding-top: 6px; }
+.city-page--template .destination-attraction-card .city-map-link { margin-top: 6px; }
 
 /* Anders 2026-10-11 ("90 % zoom: forsvinner det"): kortet klippte sitt innehall
    (overflow hidden) och vid vissa zoomnivaer foll kartlanken utanfor. Kortet
@@ -304,12 +304,13 @@ a.destination-attraction-card:focus-visible {
    minsta hojd for tre rader + lank sa raden alltid far plats. */
 .city-page--template .destination-attraction-card { overflow: visible; }
 .city-page--template .destination-attraction-card img { border-radius: 8px 8px 0 0; }
-.city-page--template .destination-attraction-card > div { min-height: 118px; }
+.city-page--template .destination-attraction-card > div { min-height: 0; height: auto; }
 
-/* Anders 2026-10-11 (skarmbilder 90 %/80 %): textdelen vaxte inte forbi sin
-   minsta hojd i hans webblasare, sa tre textrader knuffade ut lanken. Fast
-   teckenstorlek och radhojd (zoom andrar inte radantalet) och en minsta hojd
-   som rymmer rubrik + tre rader + lank med marginal. */
-.city-page--template .destination-attraction-card > div { min-height: 156px; }
-.city-page--template .destination-attraction-card > div p { font-size: 12px; line-height: 1.4; max-height: calc(3 * 1.4em); }
-.city-page--template .destination-attraction-card > div h3 { font-size: 15px; line-height: 1.1; }
+/* Anders 2026-10-11 (skarmbilder 90 %/80 %): textdelen vaxte inte med texten i
+   hans webblasare och lanken foll utanfor; en fast minsta hojd gav i stallet
+   luft fore lanken. Nu: ingen fast hojd, allt i em sa storre teckensnitt
+   (zoom, minsta teckenstorlek i Chrome) ger storre kort i stallet for klipp. */
+.city-page--template .destination-attraction-card > div { display: block; overflow: visible; }
+.city-page--template .destination-attraction-card > div h3 { margin: 0 0 0.3em; }
+.city-page--template .destination-attraction-card > div p { margin: 0; line-height: 1.4; max-height: 4.2em; }
+.city-page--template .destination-attraction-card .city-map-link { display: inline-flex; margin-top: 0.5em; }
