@@ -297,3 +297,11 @@ a.destination-attraction-card:focus-visible {
   overflow: hidden;
 }
 .city-page--template .destination-attraction-card .city-map-link { margin-top: auto; padding-top: 6px; }
+
+/* Anders 2026-10-11 ("90 % zoom: forsvinner det"): kortet klippte sitt innehall
+   (overflow hidden) och vid vissa zoomnivaer foll kartlanken utanfor. Kortet
+   klipper inte langre; hornen halls av bildens egen radie. Textdelen far en
+   minsta hojd for tre rader + lank sa raden alltid far plats. */
+.city-page--template .destination-attraction-card { overflow: visible; }
+.city-page--template .destination-attraction-card img { border-radius: 8px 8px 0 0; }
+.city-page--template .destination-attraction-card > div { min-height: 118px; }
