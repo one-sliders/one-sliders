@@ -305,3 +305,11 @@ a.destination-attraction-card:focus-visible {
 .city-page--template .destination-attraction-card { overflow: visible; }
 .city-page--template .destination-attraction-card img { border-radius: 8px 8px 0 0; }
 .city-page--template .destination-attraction-card > div { min-height: 118px; }
+
+/* Anders 2026-10-11 (skarmbilder 90 %/80 %): textdelen vaxte inte forbi sin
+   minsta hojd i hans webblasare, sa tre textrader knuffade ut lanken. Fast
+   teckenstorlek och radhojd (zoom andrar inte radantalet) och en minsta hojd
+   som rymmer rubrik + tre rader + lank med marginal. */
+.city-page--template .destination-attraction-card > div { min-height: 156px; }
+.city-page--template .destination-attraction-card > div p { font-size: 12px; line-height: 1.4; max-height: calc(3 * 1.4em); }
+.city-page--template .destination-attraction-card > div h3 { font-size: 15px; line-height: 1.1; }
