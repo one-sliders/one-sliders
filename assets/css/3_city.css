@@ -6014,3 +6014,16 @@ KPI-led location pages. */
 .city-page--template .city-map-link--city { margin: 0 0 10px; font-size: 14px; }
 .city-page--template .destination-nearby-card .city-map-link,
 .city-page--template .destination-attraction-card .city-map-link { margin-top: 6px; }
+
+/* ── Anders 2026-10-11 ("fargerna matchar inte med event fargerna"): eventkorten
+   pa stadssidorna far kategorifargen fran 1_colours.css (samma som event- och
+   kategorisidorna), inte lokala blå/lila. Modifieraren ar kortets cat. */
+.visual-topic-card--sport      { border-left-color: var(--os-sport-colour); }
+.visual-topic-card--music      { border-left-color: var(--os-music-colour); }
+.visual-topic-card--culture    { border-left-color: var(--os-culture-colour); }
+.visual-topic-card--wellness   { border-left-color: var(--os-wellness-colour); }
+.visual-topic-card--food       { border-left-color: var(--os-food-colour); }
+.visual-topic-card--drinks     { border-left-color: var(--os-drinks-colour); }
+.visual-topic-card--technology,
+.visual-topic-card--tech       { border-left-color: var(--os-technology-colour); }
+.visual-topic-card--climate    { border-left-color: var(--os-climate-colour); }
