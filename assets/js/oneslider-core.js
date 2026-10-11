@@ -364,6 +364,19 @@
       freed += 1;
     });
 
+    // Bokningswidgeten bygger sin länk vid KLICK ur data-booking-base (CJ-basen)
+    // — den statiska href:en ovan är bara ett fallback. Utan det här steget gick
+    // varje klick i qa/dev via affiliate ändå (Anders 2026-10-10: "den ska gå via
+    // affiliate bara i prod.. direkt till booking i qa å dev"). Tom bas betyder i
+    // events.js/3_event.js/city-page.js "öppna booking.com direkt".
+    var boxes = document.querySelectorAll('[data-booking-base]');
+    Array.prototype.forEach.call(boxes, function (box) {
+      if (!/\/click-/.test(box.getAttribute('data-booking-base') || '')) return;
+      box.setAttribute('data-booking-base', '');
+      box.setAttribute('data-affiliate-neutralised', 'local');
+      freed += 1;
+    });
+
     if (freed && window.console) {
       console.info('[OneSlider] ' + freed + ' affiliate-länkar avspårade — sidan '
         + 'visas från "' + host + '", inte ' + PRODUCTION_HOST + '. Klick här når inte CJ.');

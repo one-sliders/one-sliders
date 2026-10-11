@@ -284,3 +284,13 @@ html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overvi
 .view-panel--context {
   align-content: start;
 }
+
+/* Anders 2026-10-11: City history som egen flik, Big in <stad> borttagen.
+   Oversikten ligger i Fact. Samma vaxlingsmonster som ovriga flikar. */
+#view-history:checked ~ .persona-tablist label[for="view-history"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+#view-history:checked ~ .view-panel--history { display: grid; }
+.city-page--template .view-panel--history .country-panel-card { padding: 12px; }

@@ -271,3 +271,29 @@ a.destination-attraction-card:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* Anders 2026-10-11 ("den maste klara sig utan bild tills de skapats"): Nearby-kort
+   utan bild ar ett textkort med accentkant — ingen bokstavsplatta, ingen tom bildyta. */
+.destination-nearby-card--text-only {
+  border-left: 4px solid var(--location-accent);
+  padding: 12px 12px 12px 14px;
+  min-height: 0;
+}
+.destination-nearby-card--text-only > div { align-self: start; }
+.destination-nearby-card--text-only span { display: block; margin-bottom: 4px; }
+
+/* Anders 2026-10-11 ("forsta raden pa see har inte google lank"): kortets textdel
+   klippte med overflow hidden nar texten var lang — lanken forsvann. Texten
+   klampas till tre rader och lanken ligger alltid sist, synlig. */
+.city-page--template .destination-attraction-card > div {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+.city-page--template .destination-attraction-card > div p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.city-page--template .destination-attraction-card .city-map-link { margin-top: auto; padding-top: 6px; }

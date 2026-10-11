@@ -1204,3 +1204,52 @@ body.event-onepager .topic-parent-card p {
   body.event-onepager .event-hero-banner__actions { flex-wrap: wrap; }
   body.event-onepager .event-hero-banner__actions .topic-parent-card { flex: 1 1 100%; width: 100%; }
 }
+
+/* Årsraden: från varje upplagesida till varje annat år (Anders 2026-09-22).
+   Sidans eget år är ingen länk — det markeras i stället som aktuellt. */
+body.event-onepager .event-year-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 12px;
+}
+body.event-onepager .event-year-nav__item {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--event-tint-line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--event-theme);
+  background: var(--os-surface);
+}
+body.event-onepager a.event-year-nav__item:hover,
+body.event-onepager a.event-year-nav__item:focus-visible {
+  background: var(--event-tint);
+}
+body.event-onepager .event-year-nav__item.is-current {
+  background: var(--event-theme);
+  border-color: var(--event-theme);
+  color: var(--os-surface);
+  font-weight: 600;
+}
+
+/* "All years"-kortet pa en upplagesida. Egen klass, inte .event-edition:
+   4_edition-active.js flyttar det forsta .event-edition i listan till
+   hero-ytan nar sidans upplaga passerat, och kortet ar ingen upplaga. */
+body.event-onepager .event-year-hub {
+  border: 1px solid var(--event-tint-line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--os-surface);
+}
+body.event-onepager .event-year-hub__title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--event-theme);
+}
+body.event-onepager .event-year-hub__note {
+  margin: 0 0 10px;
+  color: var(--page-muted);
+}

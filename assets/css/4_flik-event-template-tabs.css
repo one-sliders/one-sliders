@@ -289,3 +289,24 @@ body.event-onepager .event-tablist--titled .event-tab-label__icon { color: var(-
   color: var(--theme, var(--os-primary));
 }
 #tab-item:checked ~ .event-tablist label[for="tab-item"] small { color: var(--theme, var(--os-primary)); }
+
+/* ── Mobil (TASK-0113, Anders 2026-10-10): fem toppflikar fick inte plats pa
+   375 px — raden var overflow-x: auto utan ledtrad, och Food, Culture och
+   Year by year lag utanfor skarmen ("menyn forsvinner"). Pa smal skarm bryts
+   raden i stallet: tva kolumner, undertiteln kvar men mindre. Hard regel i
+   V3-kontraktet: PC/iPad/mobil ska validera. */
+@media (max-width: 600px) {
+  body.event-dashboard .event-tablist--titled {
+    flex-wrap: wrap;
+    overflow: visible;
+    border-radius: 14px;
+  }
+  body.event-dashboard .event-tablist--titled .event-tab-label {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  body.event-dashboard .event-tablist--titled .event-tab-label__text strong { font-size: 13px; }
+  body.event-dashboard .event-tablist--titled .event-tab-label__text small { font-size: 10px; }
+}

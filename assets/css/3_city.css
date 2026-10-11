@@ -5915,3 +5915,102 @@ KPI-led location pages. */
 .country-panel-card--food {
   --location-module-present: 1;
 }
+
+/* ── Anders 2026-10-10 ("har bak finns det en massa bra info som jag inte ser"):
+   stadsoversikten (.city-intro-block) lag UNDER vadret i en scrollruta utan
+   synlig scrollbar — ingen sag att den fanns. Oversikten forst, vadret efter,
+   tunn scrollbar pa desktop; pa ≤900 px flodar rutan fritt i sidan. */
+.city-page--template .city-left-scroll {
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+}
+.city-page--template .city-left-scroll > .city-intro-block { order: -1; }
+.city-page--template .city-left-scroll::-webkit-scrollbar { width: 6px; }
+@media (max-width: 900px) {
+  .city-page--template .city-left-scroll {
+    flex: none;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* ── Anders 2026-10-10 ("liggande bilder som visas i staende format"): Big in
+   <stad>-mosaiken lat korten fylla hela panelhojden (grid-auto-rows 1fr) — tva
+   topics blev tva staende tornkort med 4:3-bilder. Korten foljer bildens
+   format och raderna vaxer med innehallet. */
+.city-page--template .city-topic-mosaic {
+  grid-auto-rows: auto;
+  align-content: start;
+}
+.city-page--template .city-topic-link {
+  aspect-ratio: 4 / 3;
+  max-height: 340px;
+}
+
+/* ── Anders 2026-10-11 ("Oslo å bara en flagga"): H1 = stadsnamn + flaggbild
+   som lankar till landet. Bild, inte emoji — Windows ritar emoji-flaggor som
+   bokstaver. Flaggan foljer textens hojd och ligger pa samma baslinje. */
+.city-page--template .hero-title .hero-flag {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.54em;
+  margin-left: 0.22em;
+  vertical-align: baseline;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--os-scrim) 30%, var(--os-transparent));
+  object-fit: cover;
+}
+.city-page--template .hero-title .hero-flag-link { display: inline-block; line-height: 0; }
+
+/* ── Anders 2026-10-11 ("explore more Norge blir sa hog"): regeln
+   `.city-country-card { display: block }` langre upp slog ut kortets grid, sa
+   bilden staplades over texten. Tillbaka till en rad: bild till vanster,
+   tre textrader till hoger, lagre bild. */
+.city-page--template .city-country-card {
+  display: grid;
+  min-height: 0;
+  padding: 8px 12px 8px 8px;
+}
+.city-page--template .city-country-card img { height: 72px; width: 110px; }
+.city-page--template .city-country-card { grid-template-columns: 110px minmax(0, 1fr); }
+.city-page--template .city-country-card strong { font-size: 19px; margin-top: 2px; }
+.city-page--template .city-country-card em { font-size: 14px; margin-top: 3px; }
+
+/* ── Anders 2026-10-11 ("ser inte vadret"): pa skarmar under 900 px hojd blev
+   scrollrutan mellan hero och landskort 100-150 px — varken oversikt eller
+   vader fick plats. Dar scrollar hela vansterkolumnen i stallet (hero rullar
+   undan), sa oversikt, vader och landskort nas i ett svep. Hoga skarmar
+   behaller fast hero och fast landskort. */
+@media (max-height: 900px) and (min-width: 901px) {
+  .city-page--template .country-brief__copy {
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .city-page--template .city-left-scroll {
+    flex: none;
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
+/* ── Anders 2026-10-11 ("alla stader far en google lank.. sen alla See a alla
+   Nearby"): samma pin som eventsidornas View on map. Liten textlank med ikon;
+   pa stadsnivan en egen rad under City facts-rubriken. */
+.city-page--template .city-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  color: var(--location-theme-2);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.city-page--template .city-map-link svg { width: 14px; height: 14px; flex: none; }
+.city-page--template .city-map-link:hover span,
+.city-page--template .city-map-link:focus-visible span { text-decoration: underline; }
+.city-page--template .city-map-link--city { margin: 0 0 10px; font-size: 14px; }
+.city-page--template .destination-nearby-card .city-map-link,
+.city-page--template .destination-attraction-card .city-map-link { margin-top: 6px; }
