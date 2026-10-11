@@ -134,23 +134,6 @@
       "name": "National Historical Museum"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Kruje",
-      "label": "Heritage",
-      "text": "Kruje combines a hilltop castle, old bazaar and Skanderbeg history within an easy drive north of Tirana."
-    },
-    {
-      "name": "Durres",
-      "label": "Coast",
-      "text": "Durres adds Adriatic beaches, Roman remains and seafood restaurants west of Tirana for a simple coastal day."
-    },
-    {
-      "name": "Mount Dajti",
-      "label": "Nature",
-      "text": "Mount Dajti works as Tirana's quickest mountain escape, reached by road or the Dajti Ekspres cable car."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Tirana",
     "matchedCountry": "Albania"
   },
-  "transitOperator": "Tirana Public Transport"
+  "transitOperator": "Tirana Public Transport",
+  "nearby": [
+    {
+      "name": "Krujë",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "furgon minibus north from Tirana",
+      "text": "Skanderbeg's castle above a cobbled Ottoman bazaar still selling carpets and silver.",
+      "source": "https://albania.al/"
+    },
+    {
+      "name": "Mount Dajti",
+      "label": "Mountain",
+      "travelTime": "about 40 min",
+      "how": "bus to Porcelan, then the Dajti Ekspres cable car",
+      "text": "A fifteen-minute cable car to 1,100 metres, with the whole plain spread out below.",
+      "source": "https://albania.al/"
+    },
+    {
+      "name": "Durrës",
+      "label": "Beach",
+      "travelTime": "about 45 min",
+      "how": "train or furgon west to the coast",
+      "text": "A Roman amphitheatre inside the town, and a long sandy bay that fills in August.",
+      "source": "https://albania.al/"
+    }
+  ]
 }

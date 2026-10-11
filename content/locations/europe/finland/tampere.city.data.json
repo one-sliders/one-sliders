@@ -134,23 +134,6 @@
       "text": "Tammerkoski rapids is a named stop in Tampere worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Hämeenlinna",
-      "label": "Castle",
-      "text": "Hämeenlinna is a nearby side trip from Tampere; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Helvetinjärvi National Park",
-      "label": "Nature",
-      "text": "Helvetinjärvi offers rugged forest, cliffs and lake trails for a nature day from Tampere."
-    },
-    {
-      "name": "Nokia",
-      "label": "Town",
-      "text": "Nokia is a nearby town with spa facilities and local industrial history west of Tampere."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,31 @@
     "matchedName": "Tampere",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Nysse"
+  "transitOperator": "Nysse",
+  "nearby": [
+    {
+      "name": "Näsinneula and Särkänniemi",
+      "label": "Park",
+      "travelTime": "about 15 min",
+      "how": "tram 1 to Santalahti",
+      "text": "A 168-metre observation tower over the lakes, with an aquarium and planetarium below it.",
+      "source": "https://sarkanniemi.fi/en/"
+    },
+    {
+      "name": "Pyynikki ridge",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "walk or bus 8 south-west from the centre",
+      "text": "The world's highest gravel esker, with a stone tower and the doughnut café at the top.",
+      "source": "https://visittampere.fi/en/"
+    },
+    {
+      "name": "Lake Näsijärvi cruise",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "steamer from Mustalahti harbour, summer only",
+      "text": "Old lake steamers running north through a narrow waterway between pine shores.",
+      "source": "https://visittampere.fi/en/"
+    }
+  ]
 }

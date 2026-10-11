@@ -129,23 +129,6 @@
       "text": "Northern Isles tunnels is a named stop in Klaksvík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Kalsoy",
-      "label": "Island",
-      "text": "Kalsoy is the signature ferry day trip for lighthouse walks, villages and steep island scenery."
-    },
-    {
-      "name": "Vidareidi",
-      "label": "Village",
-      "text": "Vidareidi is a nearby side trip from Klaksvík; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Kunoy",
-      "label": "Scenery",
-      "text": "Kunoy is close to Klaksvik and adds mountain roads, small settlements and fjord viewpoints."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -218,5 +201,31 @@
     "matchedName": "Klaksvík",
     "matchedCountry": null
   },
-  "transitOperator": "Strandfaraskip Landsins"
+  "transitOperator": "Strandfaraskip Landsins",
+  "nearby": [
+    {
+      "name": "Kunoy",
+      "label": "Island",
+      "travelTime": "about 25 min",
+      "how": "car north over the Kunoy causeway",
+      "text": "A village of eighty people under a wall of peaks, with a planted forest that barely survives the wind.",
+      "source": "https://visitfaroeislands.com/en"
+    },
+    {
+      "name": "Viðareiði",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car north on Viðoy",
+      "text": "The northernmost settlement, under the Cape Enniberg cliff that drops 750 metres into the sea.",
+      "source": "https://visitfaroeislands.com/en"
+    },
+    {
+      "name": "Kalsoy and Kallur lighthouse",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "ferry from Klaksvík, then road through four tunnels",
+      "text": "A ridge walk to a lighthouse on a knife-edge headland; the ferry takes few cars, so book.",
+      "source": "https://visitfaroeislands.com/en"
+    }
+  ]
 }

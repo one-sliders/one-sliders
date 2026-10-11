@@ -129,23 +129,6 @@
       "text": "Rally Finland roads is a named stop in Jyväskylä worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Säynätsalo",
-      "label": "Architecture",
-      "text": "Säynätsalo is a nearby side trip from Jyväskylä; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Petäjävesi Old Church",
-      "label": "Heritage",
-      "text": "Petäjävesi Old Church is a heritage-focused side trip from Jyväskylä; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Laajavuori",
-      "label": "Nature",
-      "text": "Laajavuori works as a nature-focused side trip from Jyväskylä, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Jyväskylä",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Linkki"
+  "transitOperator": "Linkki",
+  "nearby": [
+    {
+      "name": "Alvar Aalto buildings",
+      "label": "Heritage",
+      "travelTime": "about 15 min",
+      "how": "walk or bus round the university campus",
+      "text": "Thirty of Aalto's buildings stand in and around the town, more than anywhere else.",
+      "source": "https://alvaraalto.fi/en/"
+    },
+    {
+      "name": "Petäjävesi Old Church",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "bus west on Route 23 to Petäjävesi",
+      "text": "A log church from 1765 with an axe-cut vault, listed by UNESCO for its peasant carpentry.",
+      "source": "https://www.petajavesi.fi/"
+    },
+    {
+      "name": "Laajavuori",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "bus 25 north-west from the centre",
+      "text": "A ski hill and ski-jump complex on the town's edge, with trails and a spa at the foot.",
+      "source": "https://visitjyvaskyla.fi/en"
+    }
+  ]
 }

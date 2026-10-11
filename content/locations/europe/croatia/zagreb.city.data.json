@@ -134,23 +134,6 @@
       "name": "Museum of Broken Relationships"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Plitvice Lakes",
-      "label": "Nature",
-      "text": "Plitvice Lakes is Croatia's famous waterfall national park and the classic long day trip from Zagreb."
-    },
-    {
-      "name": "Samobor",
-      "label": "Town",
-      "text": "Samobor is a small town known for cakes, old streets and an easy escape west of Zagreb."
-    },
-    {
-      "name": "Varazdin",
-      "label": "Heritage",
-      "text": "Varazdin adds baroque streets, a castle and a gentler historic-town rhythm north of Zagreb."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,39 @@
     "matchedName": "Zagreb",
     "matchedCountry": "Croatia"
   },
-  "transitOperator": "ZET"
+  "transitOperator": "ZET",
+  "nearby": [
+    {
+      "name": "Plitvice Lakes National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or coach south on the A1 motorway",
+      "text": "Sixteen terraced lakes linked by waterfalls, crossed on wooden walkways and an electric boat.",
+      "source": "https://np-plitvicka-jezera.hr/en/"
+    },
+    {
+      "name": "Samobor",
+      "label": "Town",
+      "travelTime": "about 40 min",
+      "how": "bus from Zagreb's main bus station",
+      "text": "A baroque market town known for its custard slice and a February carnival.",
+      "source": "https://croatia.hr/en-gb"
+    },
+    {
+      "name": "Medvednica Nature Park",
+      "label": "Mountain",
+      "travelTime": "about 35 min",
+      "how": "tram 14 to Mihaljevac then bus 140 to Sljeme",
+      "text": "The mountain over the city, with the Veternica cave and a medieval mining tunnel.",
+      "source": "https://www.pp-medvednica.hr/en/"
+    },
+    {
+      "name": "Varaždin",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "train or bus north from Zagreb",
+      "text": "Croatia's baroque capital for a decade, with a white fortress and a cemetery laid out as a garden.",
+      "source": "https://www.tourism-varazdin.hr/"
+    }
+  ]
 }

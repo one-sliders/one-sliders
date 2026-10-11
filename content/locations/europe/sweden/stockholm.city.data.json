@@ -128,23 +128,6 @@
       "text": "Fotografiska is a named stop in Stockholm worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Gamla Stan",
-      "label": "Heritage",
-      "text": "Gamla Stan is Stockholm's medieval old town, founded in 1252, with cobbled lanes, the Royal Palace and Stortorget square at its historic core."
-    },
-    {
-      "name": "Stockholm archipelago",
-      "label": "Nature",
-      "text": "The Stockholm archipelago spans roughly 30,000 islands and skerries stretching east into the Baltic Sea, popular for boat trips and summer cottages."
-    },
-    {
-      "name": "Fotografiska",
-      "label": "Culture",
-      "text": "Fotografiska is a photography museum on Sodermalm, housed in a former Art Nouveau customs building, known for large-scale contemporary exhibitions."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Stockholm",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Drottningholm Palace",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "metro to Brommaplan then bus, or a summer boat from Stadshuskajen",
+      "text": "The royal family's home, with a 1766 theatre that still uses its original stage machinery.",
+      "source": "https://www.kungligaslotten.se/english/royal-palaces-and-sites/drottningholm-palace.html"
+    },
+    {
+      "name": "Sigtuna",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "commuter train to Märsta, then bus 575",
+      "text": "Sweden's oldest town, a single wooden main street between rune stones and church ruins.",
+      "source": "https://destinationsigtuna.se/en/"
+    },
+    {
+      "name": "Tyresta National Park",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "bus 807 from Gullmarsplan to Tyresta by",
+      "text": "Primeval pine forest with trees over 400 years old, on marked loops from the visitor centre.",
+      "source": "https://www.sverigesnationalparker.se/park/tyresta-nationalpark/"
+    },
+    {
+      "name": "Vaxholm",
+      "label": "Island",
+      "travelTime": "about 1 h 10 min",
+      "how": "Waxholmsbolaget boat from Strömkajen",
+      "text": "The archipelago's gateway town, with a 1500s fortress island guarding the channel.",
+      "source": "https://www.vaxholm.se/"
+    }
+  ]
 }

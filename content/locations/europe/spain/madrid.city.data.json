@@ -128,23 +128,6 @@
       "text": "Gran Via Madrid is a named stop in Madrid worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Toledo",
-      "label": "Heritage",
-      "text": "Toledo is a heritage-focused side trip from Madrid; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Segovia",
-      "label": "Heritage",
-      "text": "Segovia is a heritage-focused side trip from Madrid; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "El Escorial",
-      "label": "Heritage",
-      "text": "El Escorial is a heritage-focused side trip from Madrid; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Madrid",
     "matchedCountry": "Spain"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Toledo",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "Avant high-speed train from Atocha",
+      "text": "A walled city of Christian, Jewish and Muslim quarters above a river gorge, with El Greco's paintings in place.",
+      "source": "https://www.toledo-turismo.com/"
+    },
+    {
+      "name": "Segovia",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "Avant train from Chamartín to Segovia-Guiomar",
+      "text": "A Roman aqueduct standing without mortar, and the castle that inspired Disney's silhouette.",
+      "source": "https://www.turismodesegovia.com/en/"
+    },
+    {
+      "name": "El Escorial",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "Cercanías C-3 or C-8 from Atocha",
+      "text": "Philip II's granite monastery-palace, holding the royal tombs and a library of 40,000 volumes.",
+      "source": "https://www.patrimonionacional.es/"
+    },
+    {
+      "name": "Sierra de Guadarrama National Park",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "Cercanías C-8 to Cercedilla",
+      "text": "Granite peaks and pine forest an hour from the city, with the Siete Picos ridge walk.",
+      "source": "https://www.miteco.gob.es/en/parques-nacionales-oapn/nuestros-parques/guadarrama.html"
+    }
+  ]
 }

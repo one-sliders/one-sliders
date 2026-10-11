@@ -121,23 +121,6 @@
       "text": "Frida Kahlo Museum is a key Mexico City culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Zocalo",
-      "label": "Heritage",
-      "text": "Zocalo is a heritage-focused side trip from Mexico City; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Chapultepec Park",
-      "label": "Nature",
-      "text": "Chapultepec Park works as a nature-focused side trip from Mexico City, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Palacio de Bellas Artes",
-      "label": "Heritage",
-      "text": "Palacio de Bellas Artes is a heritage-focused side trip from Mexico City; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "mexico",
   "countryName": "Mexico",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Teotihuacan",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "bus from Terminal Autobuses del Norte",
+      "text": "Climb the Avenue of the Dead between the Sun and Moon pyramids, built before the Aztecs arrived.",
+      "source": "https://www.inah.gob.mx/zonas/42-zona-arqueologica-de-teotihuacan"
+    },
+    {
+      "name": "Xochimilco",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "Tren Ligero from Tasqueña to Embarcadero",
+      "text": "Punted trajinera barges along Aztec canal farms, with floating mariachi bands at weekends.",
+      "source": "https://www.gob.mx/sectur"
+    },
+    {
+      "name": "Tepoztlán",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Terminal Taxqueña",
+      "text": "A magic town under red cliffs, with a steep climb to the Tepozteco pyramid above it.",
+      "source": "https://www.tepoztlan.gob.mx/"
+    }
+  ]
 }

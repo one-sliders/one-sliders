@@ -121,23 +121,6 @@
       "text": "El Panecillo is the hilltop statue viewpoint above the old town, best reached by taxi rather than walking."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Otavalo",
-      "label": "Market",
-      "text": "Otavalo is known for its Indigenous market, textiles and lakeside highland scenery north of Quito."
-    },
-    {
-      "name": "Cotopaxi National Park",
-      "label": "Nature",
-      "text": "Cotopaxi National Park offers volcano views and high-altitude landscapes, best with weather flexibility and warm layers."
-    },
-    {
-      "name": "Mindo",
-      "label": "Cloud forest",
-      "text": "Mindo is a cloud-forest escape for birds, waterfalls and chocolate tours, usually a full-day or overnight trip."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -220,5 +203,23 @@
   "countrySlug": "ecuador",
   "countryName": "Ecuador",
   "depth": 4,
-  "transitOperator": "Metro de Quito"
+  "transitOperator": "Metro de Quito",
+  "nearby": [
+    {
+      "name": "Otavalo market",
+      "label": "Craft",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach from Carcelén terminal north",
+      "text": "An indigenous textile market that has run on Saturdays since before the Inca arrived.",
+      "source": "https://ecuador.travel/en/"
+    },
+    {
+      "name": "Cotopaxi National Park",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south on the Panamericana to the park gate",
+      "text": "A snow cone rising to 5,897 metres, with Limpiopungo lagoon on the plain below it.",
+      "source": "https://ecuador.travel/en/"
+    }
+  ]
 }

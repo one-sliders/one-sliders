@@ -128,23 +128,6 @@
       "text": "NTNU campus is a named stop in Trondheim worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Bakklandet",
-      "label": "Heritage",
-      "text": "Bakklandet is a heritage-focused side trip from Trondheim; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kristiansten Fortress",
-      "label": "Heritage",
-      "text": "Kristiansten Fortress is a heritage-focused side trip from Trondheim; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Solsiden",
-      "label": "Heritage",
-      "text": "Solsiden is a heritage-focused side trip from Trondheim; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Trondheim",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Munkholmen",
+      "label": "Island",
+      "travelTime": "about 25 min",
+      "how": "boat from Ravnkloa, running in summer",
+      "text": "A fortress islet that has been a monastery, a prison and a customs house, with a swimming jetty.",
+      "source": "https://visittrondheim.no/en/"
+    },
+    {
+      "name": "Ringve Botanical Garden",
+      "label": "Park",
+      "travelTime": "about 25 min",
+      "how": "bus 3 or 4 towards Lade",
+      "text": "A music museum in a manor house, surrounded by a botanical garden on the fjord slope.",
+      "source": "https://ringve.no/en/"
+    },
+    {
+      "name": "Bymarka",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "Gråkallbanen tram line 1 to Lian",
+      "text": "Eighty square kilometres of forest and lakes reached on the world's northernmost tramway.",
+      "source": "https://visittrondheim.no/en/"
+    }
+  ]
 }

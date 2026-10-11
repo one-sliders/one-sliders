@@ -139,23 +139,6 @@
       "name": "Parc du Cinquantenaire"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Ghent",
-      "label": "City",
-      "text": "Ghent offers canals, medieval towers and a lively university atmosphere within an easy rail trip."
-    },
-    {
-      "name": "Bruges",
-      "label": "Heritage",
-      "text": "Bruges is the classic canal-and-gables day trip, busiest midday but beautiful early or late."
-    },
-    {
-      "name": "Antwerp",
-      "label": "Design",
-      "text": "Antwerp adds fashion, diamonds, a major port city feel and strong museums north of Brussels."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,39 @@
     "matchedName": "Brussels",
     "matchedCountry": "Belgium"
   },
-  "transitOperator": "STIB-MIVB"
+  "transitOperator": "STIB-MIVB",
+  "nearby": [
+    {
+      "name": "Bruges",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "train from Brussels-Midi",
+      "text": "Canals, a belfry you can climb and the Groeningemuseum's Flemish Primitives.",
+      "source": "https://visit.brussels/en"
+    },
+    {
+      "name": "Ghent",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "train from Brussels-Midi",
+      "text": "The Van Eyck altarpiece in St Bavo's, and a working city rather than a museum one.",
+      "source": "https://visit.brussels/en"
+    },
+    {
+      "name": "Waterloo battlefield",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "bus W from Brussels-Midi, or train to Braine-l'Alleud",
+      "text": "The Lion's Mound over the 1815 field, with the farm of Hougoumont restored below.",
+      "source": "https://visit.brussels/en"
+    },
+    {
+      "name": "Leuven",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "train from Brussels-Central",
+      "text": "A late-Gothic town hall covered in statues, and Belgium's oldest university quarter.",
+      "source": "https://visit.brussels/en"
+    }
+  ]
 }

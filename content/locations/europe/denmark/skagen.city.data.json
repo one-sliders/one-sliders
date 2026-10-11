@@ -129,23 +129,6 @@
       "text": "Old Skagen is a named stop in Skagen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Råbjerg Mile",
-      "label": "Dune",
-      "text": "Råbjerg Mile is the dramatic migrating dune south of Skagen, best with time for walking."
-    },
-    {
-      "name": "Hirtshals",
-      "label": "Coast",
-      "text": "Hirtshals adds a lighthouse, ferry harbour and the North Sea Oceanarium west of Skagen."
-    },
-    {
-      "name": "Aalborg",
-      "label": "City",
-      "text": "Aalborg is the main city gateway for Skagen, useful for flights, rail links and a city stop."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Skagen",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Nordjyllands Trafikselskab"
+  "transitOperator": "Nordjyllands Trafikselskab",
+  "nearby": [
+    {
+      "name": "Frederikshavn",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "Skagensbanen train south",
+      "text": "A ferry port with the Bangsbo estate and a bunker museum dug into the cliff above it.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Hirtshals",
+      "label": "Beach",
+      "travelTime": "about 1 h 15 min",
+      "how": "train to Hjørring, then the Hirtshalsbanen",
+      "text": "A North Sea harbour town with the Nordsøen Oceanarium, the largest aquarium in northern Europe.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Tversted dunes",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car south-west on Route 597",
+      "text": "Plantation and dune heath behind a quiet beach, with a bog lake the locals swim in.",
+      "source": "https://naturstyrelsen.dk/"
+    }
+  ]
 }

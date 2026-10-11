@@ -121,23 +121,6 @@
       "text": "Winter Carnival is a named stop in Quebec City worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Old Quebec",
-      "label": "Heritage",
-      "text": "Old Quebec is a heritage-focused side trip from Quebec City; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Chateau Frontenac",
-      "label": "Heritage",
-      "text": "Chateau Frontenac is a heritage-focused side trip from Quebec City; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Petit-Champlain",
-      "label": "Heritage",
-      "text": "Petit-Champlain is a heritage-focused side trip from Quebec City; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Île d'Orléans",
+      "label": "Island",
+      "travelTime": "about 30 min",
+      "how": "car east over the island bridge",
+      "text": "A farming island of six villages, cider houses and strawberry stands, circled in an afternoon.",
+      "source": "https://www.iledorleans.com/"
+    },
+    {
+      "name": "Sainte-Anne-de-Beaupré",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "bus 800 then 250 east along the north shore",
+      "text": "A pilgrimage basilica with crutches stacked by the door and a mosaic ceiling above.",
+      "source": "https://sanctuairesainteanne.org/en/"
+    },
+    {
+      "name": "Canyon Sainte-Anne",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car east on Route 138 past Beaupré",
+      "text": "A 74-metre fall through a granite gorge crossed on three suspension bridges.",
+      "source": "https://www.canyonsa.qc.ca/en/"
+    }
+  ]
 }

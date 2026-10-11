@@ -123,23 +123,6 @@
       "text": "National Museum of Archaeology Malta is a key Valletta culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Upper Barrakka Gardens",
-      "label": "Heritage",
-      "text": "Upper Barrakka Gardens works as a nature-focused side trip from Valletta, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Fort St. Elmo",
-      "label": "Heritage",
-      "text": "Fort St. Elmo is a heritage-focused side trip from Valletta; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Valletta Waterfront",
-      "label": "Heritage",
-      "text": "Valletta Waterfront is a heritage-focused side trip from Valletta; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Valletta",
     "matchedCountry": "Malta"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Mdina",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "bus 51, 52 or 53 from Valletta terminus",
+      "text": "A walled former capital of about 250 residents, nearly silent once the day buses leave.",
+      "source": "https://www.visitmalta.com/en/"
+    },
+    {
+      "name": "Gozo",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus to Ċirkewwa, then the Gozo Channel ferry",
+      "text": "The Ġgantija temples predate the pyramids, and the island keeps its own slower pace.",
+      "source": "https://www.visitmalta.com/en/"
+    },
+    {
+      "name": "Blue Grotto and Ħaġar Qim",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "bus 74 from Valletta to Wied iż-Żurrieq",
+      "text": "Sea caves lit electric blue in the morning, below a Neolithic temple on the cliff.",
+      "source": "https://www.visitmalta.com/en/"
+    }
+  ]
 }

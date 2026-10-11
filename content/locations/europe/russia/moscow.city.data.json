@@ -128,23 +128,6 @@
       "text": "Tretyakov Gallery is a key Moscow culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Moscow Kremlin",
-      "label": "Heritage",
-      "text": "Moscow Kremlin is a heritage-focused side trip from Moscow; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bolshoi Theatre",
-      "label": "Heritage",
-      "text": "Bolshoi Theatre is a heritage-focused side trip from Moscow; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Gorky Park",
-      "label": "Nature",
-      "text": "Gorky Park works as a nature-focused side trip from Moscow, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Moscow",
     "matchedCountry": "Russia"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Sergiev Posad",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "suburban train from Yaroslavsky station",
+      "text": "The Trinity Lavra, the spiritual centre of the Russian Orthodox church, behind white walls.",
+      "source": "https://whc.unesco.org/en/list/657/"
+    },
+    {
+      "name": "Arkhangelskoye",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "metro to Tushinskaya, then bus 549",
+      "text": "A Yusupov palace with terraced gardens over the Moskva, known as Moscow's Versailles.",
+      "source": "https://whc.unesco.org/en/"
+    },
+    {
+      "name": "Kolomenskoye",
+      "label": "Park",
+      "travelTime": "about 35 min",
+      "how": "metro to Kolomenskaya",
+      "text": "The 1532 Ascension Church, the first stone tent-roofed church in Russia, in a riverside park.",
+      "source": "https://whc.unesco.org/en/list/634/"
+    }
+  ]
 }

@@ -128,18 +128,6 @@
       "text": "Coptic Cairo is a named stop in Cairo worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Saqqara",
-      "label": "Heritage",
-      "text": "Saqqara is a heritage-focused side trip from Cairo; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Alexandria",
-      "label": "City",
-      "text": "Alexandria, Egypt's Mediterranean second city, is a comfortable day trip by train from Cairo, known for its library, corniche and ancient history."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -215,5 +203,31 @@
     "matchedName": "Cairo",
     "matchedCountry": "Egypt"
   },
-  "transitOperator": "Cairo Metro"
+  "transitOperator": "Cairo Metro",
+  "nearby": [
+    {
+      "name": "Saqqara",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car south-west on the Saqqara road",
+      "text": "Djoser's step pyramid of about 2650 BC, the oldest large stone building anywhere.",
+      "source": "https://whc.unesco.org/en/list/86/"
+    },
+    {
+      "name": "Dahshur",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car south past Saqqara",
+      "text": "The Bent and Red pyramids, where the shape was worked out; you can go inside both.",
+      "source": "https://whc.unesco.org/en/list/86/"
+    },
+    {
+      "name": "Wadi Degla",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south-east through Maadi",
+      "text": "A limestone canyon protectorate on the city's edge, used for running and cycling.",
+      "source": "https://whc.unesco.org/en/list/86/"
+    }
+  ]
 }

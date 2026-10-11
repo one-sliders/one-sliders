@@ -134,23 +134,6 @@
       "name": "Aalborg Zoo"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Skagen",
-      "label": "Coast",
-      "text": "Skagen is North Jutland's classic coast trip for Grenen, art museums and bright seaside light."
-    },
-    {
-      "name": "Rebild Bakker",
-      "label": "Nature",
-      "text": "Rebild Bakker works as a nature-focused side trip from Aalborg, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Løkken",
-      "label": "Beach",
-      "text": "Løkken is a nearby side trip from Aalborg; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,31 @@
     "matchedName": "Aalborg",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Nordjyllands Trafikselskab"
+  "transitOperator": "Nordjyllands Trafikselskab",
+  "nearby": [
+    {
+      "name": "Lindholm Høje",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "bus 2 north over the Limfjord",
+      "text": "Seven hundred Viking and Iron Age graves, many outlined with stones in the shape of ships.",
+      "source": "https://nordmus.dk/lindholm-hoeje/"
+    },
+    {
+      "name": "Rebild Bakker",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "train south to Skørping, then a short walk",
+      "text": "Heather hills and the Rold Skov forest, where Danish-Americans hold a July 4th gathering.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Løkken",
+      "label": "Beach",
+      "travelTime": "about 1 h",
+      "how": "car north-west on Route 55",
+      "text": "A wide North Sea beach lined with white bathing huts, where cars are allowed on the sand.",
+      "source": "https://www.visitdenmark.com/"
+    }
+  ]
 }

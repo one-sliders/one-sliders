@@ -128,23 +128,6 @@
       "text": "Ada Ciganlija is a named stop in Belgrade worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Belgrade Fortress",
-      "label": "Heritage",
-      "text": "Belgrade Fortress is a heritage-focused side trip from Belgrade; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Skadarlija",
-      "label": "Heritage",
-      "text": "Skadarlija is a heritage-focused side trip from Belgrade; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ada Ciganlija",
-      "label": "Heritage",
-      "text": "Ada Ciganlija is a heritage-focused side trip from Belgrade; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Belgrade",
     "matchedCountry": "Serbia"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Novi Sad and Petrovaradin",
+      "label": "Town",
+      "travelTime": "about 40 min",
+      "how": "Soko high-speed train from Belgrade Centre",
+      "text": "A fortress above the Danube that hosts EXIT festival in July, over a Habsburg-era old town.",
+      "source": "https://novisad.travel/en/"
+    },
+    {
+      "name": "Fruška Gora National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "train to Novi Sad, then local bus",
+      "text": "Sixteen Orthodox monasteries hidden in lime forest on a ridge above the Danube plain.",
+      "source": "https://npfruskagora.co.rs/"
+    },
+    {
+      "name": "Avala",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "bus 400 from Voždovac",
+      "text": "A wooded hill with a television tower you can ride up and the Monument to the Unknown Hero.",
+      "source": "https://www.beograd.rs/en/"
+    }
+  ]
 }

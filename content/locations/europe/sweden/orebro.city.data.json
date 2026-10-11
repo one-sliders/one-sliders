@@ -123,23 +123,6 @@
       "text": "Hjalmaren lake adds outdoor time to a Örebro stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Orebro Castle",
-      "label": "Heritage",
-      "text": "Orebro Castle is a heritage-focused side trip from Örebro; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Wadkoping",
-      "label": "Heritage",
-      "text": "Wadkoping is a heritage-focused side trip from Örebro; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Stadsparken",
-      "label": "Nature",
-      "text": "Stadsparken works as a nature-focused side trip from Örebro, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -187,5 +170,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Örebro",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Kilsbergen",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "bus 721 north-west from Örebro",
+      "text": "A forested ridge above the plain with marked trails, winter skiing and views over the lake.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Askersund",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "bus 841 south from Örebro",
+      "text": "A wooden town at the top of Lake Vättern, with archipelago boats in summer.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Garphyttan National Park",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "bus 304 west towards Garphyttan",
+      "text": "Sweden's smallest national park, protecting old hay meadows that fill with orchids in June.",
+      "source": "https://www.sverigesnationalparker.se/park/garphyttans-nationalpark/"
+    }
+  ]
 }

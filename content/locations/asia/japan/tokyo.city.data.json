@@ -128,23 +128,6 @@
       "text": "Tsukiji Outer Market gives Tokyo a concrete street-life stop, with food, everyday shopping and local movement that helps visitors read the city."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Senso-ji",
-      "label": "Heritage",
-      "text": "Senso-ji is a heritage-focused side trip from Tokyo; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Shibuya Crossing",
-      "label": "Heritage",
-      "text": "Shibuya Crossing is a heritage-focused side trip from Tokyo; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Tokyo Skytree",
-      "label": "Heritage",
-      "text": "Tokyo Skytree is a heritage-focused side trip from Tokyo; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tokyo",
     "matchedCountry": "Japan"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Kamakura",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "JR Yokosuka line from Tokyo Station",
+      "text": "The Great Buddha, temple hiking trails and a beach, all reachable on one local line.",
+      "source": "https://www.trip-kamakura.com/"
+    },
+    {
+      "name": "Nikko",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "Tobu Limited Express from Asakusa",
+      "text": "Toshogu's carved gold shrine in a cedar forest, with waterfalls and Lake Chuzenji above it.",
+      "source": "https://www.nikko-travel.jp/english/"
+    },
+    {
+      "name": "Mount Takao",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "Keio line from Shinjuku to Takaosanguchi",
+      "text": "A cable car and six marked trails up a 599-metre peak; the autumn colours draw crowds in November.",
+      "source": "https://www.takaotozan.co.jp/"
+    },
+    {
+      "name": "Kawagoe",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "Tobu Tojo line from Ikebukuro",
+      "text": "Clay-walled Edo merchant houses and a bell tower that still rings four times a day.",
+      "source": "https://koedo.or.jp/foreign/english/"
+    }
+  ]
 }

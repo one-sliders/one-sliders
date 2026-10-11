@@ -121,23 +121,6 @@
       "text": "Boston Harbor adds the water-facing side of Boston, making it a good break from museums, traffic and dense historic streets."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Freedom Trail",
-      "label": "Heritage",
-      "text": "Freedom Trail is a heritage-focused side trip from Boston; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Boston Common",
-      "label": "Heritage",
-      "text": "Boston Common is a heritage-focused side trip from Boston; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Fenway Park",
-      "label": "Nature",
-      "text": "Fenway Park works as a nature-focused side trip from Boston, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Salem",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "MBTA Newburyport/Rockport line from North Station",
+      "text": "The 1692 witch trials told properly at the Peabody Essex Museum, and the whole town given over to October.",
+      "source": "https://www.pem.org/"
+    },
+    {
+      "name": "Concord and Walden Pond",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "MBTA Fitchburg line from North Station",
+      "text": "Thoreau's cabin site on a glacial pond you can still swim in, plus the bridge where the revolution started.",
+      "source": "https://www.mass.gov/locations/walden-pond-state-reservation"
+    },
+    {
+      "name": "Cape Ann and Rockport",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "MBTA Rockport line from North Station",
+      "text": "A granite fishing coast with the red fish shack painters keep coming back to.",
+      "source": "https://rockportusa.com/"
+    },
+    {
+      "name": "Plymouth",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car or MBTA Kingston line south",
+      "text": "The 1620 landing site, with a replica Mayflower moored and a living-history Pilgrim village.",
+      "source": "https://plimoth.org/"
+    }
+  ]
 }

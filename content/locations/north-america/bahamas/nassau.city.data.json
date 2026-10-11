@@ -123,23 +123,6 @@
       "text": "Pirates of Nassau Museum is a key Nassau culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Queen's Staircase",
-      "label": "Heritage",
-      "text": "Queen's Staircase is a heritage-focused side trip from Nassau; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Fort Fincastle",
-      "label": "Heritage",
-      "text": "Fort Fincastle is a heritage-focused side trip from Nassau; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Atlantis Paradise Island",
-      "label": "Nature",
-      "text": "Atlantis Paradise Island works as a nature-focused side trip from Nassau, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Nassau",
     "matchedCountry": "Bahamas"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Blue Lagoon Island",
+      "label": "Island",
+      "travelTime": "about 30 min",
+      "how": "ferry from Paradise Island",
+      "text": "A private cay with a sheltered lagoon, sea lions and a beach day pass.",
+      "source": "https://www.bahamas.com/"
+    },
+    {
+      "name": "Rose Island",
+      "label": "Beach",
+      "travelTime": "about 45 min",
+      "how": "boat east from Nassau harbour",
+      "text": "A long thin cay of empty sand, with snorkelling over the reef on its north side.",
+      "source": "https://www.bahamas.com/"
+    },
+    {
+      "name": "Clifton Heritage Park",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "car west along Southwest Bay Road",
+      "text": "Lucayan sites, a plantation ruin and an underwater sculpture garden, on the island's west end.",
+      "source": "https://www.bahamas.com/"
+    }
+  ]
 }

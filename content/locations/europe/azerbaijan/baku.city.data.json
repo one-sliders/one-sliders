@@ -134,23 +134,6 @@
       "name": "Heydar Aliyev Center"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Gobustan",
-      "label": "Heritage",
-      "text": "Gobustan is a heritage-focused side trip from Baku; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ateshgah Fire Temple",
-      "label": "Heritage",
-      "text": "Ateshgah Fire Temple on the Absheron Peninsula adds Zoroastrian and fire-worship history near the city."
-    },
-    {
-      "name": "Yanar Dag",
-      "label": "Nature",
-      "text": "Yanar Dag works as a nature-focused side trip from Baku, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Baku",
     "matchedCountry": "Azerbaijan"
   },
-  "transitOperator": "Baku Metro"
+  "transitOperator": "Baku Metro",
+  "nearby": [
+    {
+      "name": "Gobustan",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car or bus south-west on the Alat highway",
+      "text": "Six thousand rock engravings of boats and dancers, beside fields of bubbling mud volcanoes.",
+      "source": "https://azerbaijan.travel/"
+    },
+    {
+      "name": "Ateshgah fire temple",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "bus 184 east to Surakhani",
+      "text": "A Zoroastrian and Hindu temple built round a natural gas vent that burned for centuries.",
+      "source": "https://azerbaijan.travel/"
+    },
+    {
+      "name": "Yanar Dag",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "bus 217 north to Mehemmedi",
+      "text": "A hillside that has been alight since antiquity, where gas seeps through the sandstone.",
+      "source": "https://azerbaijan.travel/"
+    }
+  ]
 }

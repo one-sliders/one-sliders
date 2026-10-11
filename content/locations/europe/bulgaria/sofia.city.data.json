@@ -134,23 +134,6 @@
       "name": "National Palace of Culture"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Rila Monastery",
-      "label": "Heritage",
-      "text": "Rila Monastery is Bulgaria's signature monastery day trip, set in mountain scenery south of Sofia."
-    },
-    {
-      "name": "Plovdiv",
-      "label": "City",
-      "text": "Plovdiv adds Roman theatre ruins, colourful old houses and a strong cafe scene east of Sofia."
-    },
-    {
-      "name": "Vitosha Mountain",
-      "label": "Nature",
-      "text": "Vitosha is close enough for hikes, viewpoints and winter snow without leaving the Sofia region."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Sofia",
     "matchedCountry": "Bulgaria"
   },
-  "transitOperator": "Sofia Urban Mobility Centre"
+  "transitOperator": "Sofia Urban Mobility Centre",
+  "nearby": [
+    {
+      "name": "Rila Monastery",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or coach south on the A3 motorway",
+      "text": "Striped arcades and painted porches in a mountain valley; Bulgaria's most important monastery.",
+      "source": "https://rilskimanastir.org/en/"
+    },
+    {
+      "name": "Plovdiv",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "train or coach east from Sofia",
+      "text": "A Roman theatre still used for performances, under a revival-era old town on three hills.",
+      "source": "https://visitplovdiv.com/en"
+    },
+    {
+      "name": "Bankya",
+      "label": "Spa",
+      "travelTime": "about 35 min",
+      "how": "suburban train or bus 42 west from Sofia",
+      "text": "A mineral spa town where the water comes out of the tap warm; the baths date from the 1900s.",
+      "source": "https://www.bankya.bg/"
+    }
+  ]
 }

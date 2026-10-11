@@ -129,23 +129,6 @@
       "text": "Kirkjubour trips is a named stop in Tórshavn worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Kirkjubour",
-      "label": "Heritage",
-      "text": "Kirkjubour is the closest major heritage trip, with ruins, turf-roofed farms and coastal views."
-    },
-    {
-      "name": "Saksun",
-      "label": "Village",
-      "text": "Saksun is a nearby side trip from Tórshavn; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Vestmanna",
-      "label": "Cliffs",
-      "text": "Vestmanna is a nearby side trip from Tórshavn; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Tórshavn",
     "matchedCountry": null
   },
-  "transitOperator": "Strandfaraskip Landsins"
+  "transitOperator": "Strandfaraskip Landsins",
+  "nearby": [
+    {
+      "name": "Kirkjubøur",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "bus 101 south-west from Tórshavn",
+      "text": "The medieval episcopal seat, with a roofless cathedral and a farmhouse lived in since the 1100s.",
+      "source": "https://visittorshavn.fo/en/"
+    },
+    {
+      "name": "Saksun",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car north on Streymoy to the village",
+      "text": "A turf-roofed church above a tidal lagoon that empties to sand twice a day.",
+      "source": "https://visitfaroeislands.com/en"
+    },
+    {
+      "name": "Gjógv",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "car north-east over Eysturoy",
+      "text": "A village built beside a natural sea gorge used as its harbour, with a grass-roofed slipway.",
+      "source": "https://visitfaroeislands.com/en"
+    }
+  ]
 }

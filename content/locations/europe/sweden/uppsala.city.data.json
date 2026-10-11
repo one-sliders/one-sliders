@@ -128,23 +128,6 @@
       "text": "Fyrisan river adds outdoor time to a Uppsala stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Uppsala University",
-      "label": "Heritage",
-      "text": "Uppsala University is a heritage-focused side trip from Uppsala; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Gamla Uppsala",
-      "label": "Heritage",
-      "text": "Gamla Uppsala is a heritage-focused side trip from Uppsala; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Linnaeus Garden",
-      "label": "Heritage",
-      "text": "Linnaeus Garden works as a nature-focused side trip from Uppsala, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Uppsala",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Sigtuna",
+      "label": "Town",
+      "travelTime": "about 45 min",
+      "how": "train to Märsta, then bus 575",
+      "text": "Sweden's first town, founded about 980, now one wooden street between rune stones.",
+      "source": "https://destinationsigtuna.se/en/"
+    },
+    {
+      "name": "Skokloster Castle",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "car south-east along Lake Mälaren",
+      "text": "A baroque palace left unfinished in 1676 with the scaffolding and tools still in the banqueting hall.",
+      "source": "https://skoklostersslott.se/en"
+    },
+    {
+      "name": "Hågadalen-Nåsten nature reserve",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "bus 20 west to Håga",
+      "text": "Bronze Age burial mounds in open pasture, with forest trails running on from them.",
+      "source": "https://www.uppsala.se/"
+    }
+  ]
 }

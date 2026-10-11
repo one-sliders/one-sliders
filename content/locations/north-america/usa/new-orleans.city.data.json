@@ -116,18 +116,6 @@
       "text": "Frenchmen Street is a named stop in New Orleans worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "French Quarter",
-      "label": "Heritage",
-      "text": "French Quarter is a heritage-focused side trip from New Orleans; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Garden District",
-      "label": "Heritage",
-      "text": "Garden District works as a nature-focused side trip from New Orleans, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Oak Alley Plantation",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car west on River Road along the Mississippi",
+      "text": "A quarter-mile tunnel of 300-year-old oaks, with the slavery exhibit on the grounds behind the house.",
+      "source": "https://www.oakalleyplantation.org/"
+    },
+    {
+      "name": "Barataria Preserve",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south on Highway 45 to Marrero",
+      "text": "Boardwalks over cypress swamp with alligators and herons, part of the Jean Lafitte park.",
+      "source": "https://www.nps.gov/jela/index.htm"
+    },
+    {
+      "name": "Abita Springs",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "car north over the Lake Pontchartrain Causeway",
+      "text": "A pine-woods spa town with a brewery and the Mystery House of folk-art contraptions.",
+      "source": "https://www.townofabitasprings.com/"
+    }
+  ]
 }

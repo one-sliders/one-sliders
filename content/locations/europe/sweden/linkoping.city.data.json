@@ -123,23 +123,6 @@
       "text": "University area is a named stop in Linköping worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Gamla Linkoping",
-      "label": "Heritage",
-      "text": "Gamla Linkoping is a heritage-focused side trip from Linköping; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Tradgardsforeningen",
-      "label": "Heritage",
-      "text": "Tradgardsforeningen is a heritage-focused side trip from Linköping; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kinda Canal",
-      "label": "Heritage",
-      "text": "Kinda Canal is a heritage-focused side trip from Linköping; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -207,5 +190,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Linköping",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Göta Canal at Berg",
+      "label": "Heritage",
+      "travelTime": "about 25 min",
+      "how": "bus 521 north to Berg",
+      "text": "Seven locks in a staircase lifting boats eighteen metres; the best watching is in July.",
+      "source": "https://www.gotakanal.se/en/"
+    },
+    {
+      "name": "Vadstena",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "bus 610 west towards Motala",
+      "text": "Birgitta's abbey and a Vasa castle on Lake Vättern, in a town of cobbles and lace.",
+      "source": "https://www.vadstena.se/"
+    },
+    {
+      "name": "Omberg",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car west on Route 50 past Vadstena",
+      "text": "A wooded ridge rising 170 metres over the lake, with the Alvastra monastery ruin at its foot.",
+      "source": "https://www.lansstyrelsen.se/ostergotland.html"
+    }
+  ]
 }

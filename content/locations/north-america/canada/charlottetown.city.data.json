@@ -116,23 +116,6 @@
       "text": "Seafood is a named stop in Charlottetown worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Confederation Centre",
-      "label": "Heritage",
-      "text": "Confederation Centre is a heritage-focused side trip from Charlottetown; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Charlottetown waterfront",
-      "label": "Heritage",
-      "text": "Charlottetown waterfront is a heritage-focused side trip from Charlottetown; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Victoria Row",
-      "label": "Heritage",
-      "text": "Victoria Row is a heritage-focused side trip from Charlottetown; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Cavendish and Green Gables",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "car north on Route 2 then 13",
+      "text": "The farmhouse behind Anne of Green Gables, beside the dunes of the national park.",
+      "source": "https://parks.canada.ca/lhn-nhs/pe/greengables"
+    },
+    {
+      "name": "Prince Edward Island National Park",
+      "label": "Beach",
+      "travelTime": "about 35 min",
+      "how": "car north to Brackley or Dalvay",
+      "text": "Red sandstone cliffs and warm Gulf water, with the floating boardwalk at Greenwich.",
+      "source": "https://parks.canada.ca/pn-np/pe/pei-ipe"
+    },
+    {
+      "name": "Victoria-by-the-Sea",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "car west on Route 1 to Victoria",
+      "text": "A four-block fishing village with a chocolate factory and a playhouse in the old hall.",
+      "source": "https://www.tourismpei.com/"
+    }
+  ]
 }

@@ -134,23 +134,6 @@
       "text": "Tahko trips is a named stop in Kuopio worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Tahko",
-      "label": "Outdoor",
-      "text": "Tahko is a nearby side trip from Kuopio; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Leppävirta",
-      "label": "Lake",
-      "text": "Leppävirta is a nearby side trip from Kuopio; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Orinoro Gorge",
-      "label": "Nature",
-      "text": "Orinoro Gorge works as a nature-focused side trip from Kuopio, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -227,5 +210,31 @@
     "matchedName": "Kuopio",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Vilkku"
+  "transitOperator": "Vilkku",
+  "nearby": [
+    {
+      "name": "Valamo Monastery",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car east on Route 23 to Heinävesi",
+      "text": "Finland's only Orthodox monastery, moved here from Lake Ladoga in 1940, with its own winery.",
+      "source": "https://valamo.fi/en/"
+    },
+    {
+      "name": "Kuopio open-air museum",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "walk north-east from the market square",
+      "text": "Eleven blocks of wooden town houses kept in place, with the interiors staged by decade.",
+      "source": "https://www.visitfinland.com/"
+    },
+    {
+      "name": "Nilsiä and Tahkovuori",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "bus north on Route 5 to Nilsiä",
+      "text": "Eastern Finland's main ski hill, with mountain biking on the same slopes in summer.",
+      "source": "https://www.visitfinland.com/"
+    }
+  ]
 }

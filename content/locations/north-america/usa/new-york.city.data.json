@@ -121,23 +121,6 @@
       "text": "High Line is a named stop in New York City worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Central Park",
-      "label": "Nature",
-      "text": "Central Park works as a nature-focused side trip from New York City, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Statue of Liberty",
-      "label": "Heritage",
-      "text": "Statue of Liberty is a heritage-focused side trip from New York City; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "High Line",
-      "label": "Heritage",
-      "text": "High Line is a heritage-focused side trip from New York City; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Kykuit, the Rockefeller Estate",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "Metro-North Hudson line from Grand Central to Tarrytown",
+      "text": "The Rockefeller house above the Hudson, with a sculpture garden of Picasso and Calder; tours run spring to autumn.",
+      "source": "https://hudsonvalley.org/historic-sites/kykuit/"
+    },
+    {
+      "name": "Jones Beach State Park",
+      "label": "Beach",
+      "travelTime": "about 1 h",
+      "how": "LIRR from Penn Station to Freeport, then the beach shuttle",
+      "text": "Six miles of Atlantic sand with a boardwalk and an art deco bathhouse, busiest on summer weekends.",
+      "source": "https://parks.ny.gov/parks/10/"
+    },
+    {
+      "name": "Liberty State Park",
+      "label": "Park",
+      "travelTime": "about 25 min",
+      "how": "PATH to Exchange Place, then light rail",
+      "text": "The best free view back at Lower Manhattan, plus the restored Central Railroad terminal immigrants passed through.",
+      "source": "https://dep.nj.gov/njsp/liberty-state-park/"
+    },
+    {
+      "name": "Storm King Art Center",
+      "label": "Park",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or coach north on the Palisades Parkway",
+      "text": "Five hundred acres of landscape holding monumental sculpture; hire a bike to cover it in a day.",
+      "source": "https://stormking.org/"
+    }
+  ]
 }

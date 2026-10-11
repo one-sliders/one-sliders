@@ -121,23 +121,6 @@
       "text": "Gatineau Park adds outdoor time to a Ottawa stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Parliament Hill",
-      "label": "Heritage",
-      "text": "Parliament Hill works as a nature-focused side trip from Ottawa, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Rideau Canal",
-      "label": "Heritage",
-      "text": "Rideau Canal is a heritage-focused side trip from Ottawa; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "National Gallery",
-      "label": "Heritage",
-      "text": "National Gallery is a heritage-focused side trip from Ottawa; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Rideau Canal locks at Merrickville",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car south-west on Highway 416",
+      "text": "Hand-cranked locks from 1832 in a village of stone mills and blockhouse.",
+      "source": "https://parks.canada.ca/lhn-nhs/on/rideau"
+    },
+    {
+      "name": "Wakefield",
+      "label": "Town",
+      "travelTime": "about 40 min",
+      "how": "car north on Highway 5 into the Gatineau hills",
+      "text": "A riverside village with a covered bridge, a spring-fed spa and a steam train station.",
+      "source": "https://www.canada.ca/en.html"
+    },
+    {
+      "name": "Upper Canada Village",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car east on Highway 401 to Morrisburg",
+      "text": "An 1860s village staffed in role, built from buildings moved before the Seaway flooded them.",
+      "source": "https://www.uppercanadavillage.com/"
+    }
+  ]
 }

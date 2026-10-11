@@ -128,23 +128,6 @@
       "text": "Hutongs of Beijing is a named stop in Beijing worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Forbidden City",
-      "label": "Heritage",
-      "text": "Forbidden City is a heritage-focused side trip from Beijing; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Great Wall at Badaling",
-      "label": "Heritage",
-      "text": "Great Wall at Badaling is a heritage-focused side trip from Beijing; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Hutongs of Beijing",
-      "label": "Heritage",
-      "text": "Hutongs of Beijing is a heritage-focused side trip from Beijing; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Beijing",
     "matchedCountry": "China"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Mutianyu Great Wall",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus 916 express from Dongzhimen, then local shuttle",
+      "text": "A restored stretch with watchtowers on a forested ridge, reached by cable car and left by toboggan.",
+      "source": "https://www.mutianyugreatwall.com/"
+    },
+    {
+      "name": "Ming Tombs",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "Changping line to Changping Dongguan, then bus 314",
+      "text": "Thirteen emperors buried along a spirit way lined with stone animals; Dingling's chamber is open.",
+      "source": "https://english.visitbeijing.com.cn/"
+    },
+    {
+      "name": "Chuandixia",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus 892 from Pingguoyuan",
+      "text": "A Ming-era stone village stacked up a hillside, kept because it was too remote to rebuild.",
+      "source": "https://english.visitbeijing.com.cn/"
+    }
+  ]
 }

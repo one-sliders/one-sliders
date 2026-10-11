@@ -123,23 +123,6 @@
       "text": "Isafjardardjup is a named stop in Ísafjörður worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Old town",
-      "label": "Heritage",
-      "text": "Old town is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Naustahvilft",
-      "label": "Heritage",
-      "text": "Naustahvilft is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Dynjandi trips",
-      "label": "Heritage",
-      "text": "Dynjandi trips is a heritage-focused side trip from Ísafjörður; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -211,5 +194,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Ísafjörður Airport",
     "matchedCountry": "Iceland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Dynjandi",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south on Route 60 over the Dynjandisheiði",
+      "text": "A hundred-metre fall spreading like a bridal veil, with six smaller falls below it.",
+      "source": "https://www.westfjords.is/en"
+    },
+    {
+      "name": "Bolungarvík and Ósvör",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "car north through the Bolungarvík tunnel",
+      "text": "A reconstructed turf fishing station with a warden in oilskins explaining the rowing boats.",
+      "source": "https://www.westfjords.is/en"
+    },
+    {
+      "name": "Vigur island",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "boat from Ísafjörður harbour in summer",
+      "text": "A farm island of puffins and eider ducks, with Iceland's only working windmill.",
+      "source": "https://www.westfjords.is/en"
+    }
+  ]
 }

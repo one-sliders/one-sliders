@@ -128,23 +128,6 @@
       "text": "Buchanan Street is a named stop in Glasgow worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Riverside Museum",
-      "label": "Nature",
-      "text": "Riverside Museum works as a nature-focused side trip from Glasgow, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Glasgow Botanic Gardens",
-      "label": "Heritage",
-      "text": "Glasgow Botanic Gardens works as a nature-focused side trip from Glasgow, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Buchanan Street",
-      "label": "Heritage",
-      "text": "Buchanan Street is a heritage-focused side trip from Glasgow; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Glasgow",
     "matchedCountry": "Scotland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Loch Lomond",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "train from Glasgow Queen Street to Balloch",
+      "text": "Britain's largest lake by area, with boat trips and the Conic Hill walk over the Highland fault.",
+      "source": "https://www.visitscotland.com/"
+    },
+    {
+      "name": "Stirling",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "train from Glasgow Queen Street",
+      "text": "A castle on a volcanic crag above the Wallace Monument and two battlefields.",
+      "source": "https://www.visitscotland.com/"
+    },
+    {
+      "name": "Isle of Bute",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "train to Wemyss Bay, then the CalMac ferry",
+      "text": "A Victorian seaside town and Mount Stuart, a Gothic revival house with an astrological ceiling.",
+      "source": "https://www.visitscotland.com/"
+    }
+  ]
 }

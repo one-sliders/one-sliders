@@ -129,23 +129,6 @@
       "text": "Louisiana Museum trips gives Helsingør a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Louisiana Museum of Modern Art",
-      "label": "Art",
-      "text": "Louisiana is one of Denmark's best art outings, set in gardens above the Øresund coast."
-    },
-    {
-      "name": "Frederiksborg Castle",
-      "label": "Castle",
-      "text": "Frederiksborg Castle is a heritage-focused side trip from Helsingør; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Helsingborg",
-      "label": "City",
-      "text": "Helsingborg is a quick ferry hop away for Swedish cafes, harbour walks and Kärnan tower."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Elsinore",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Movia"
+  "transitOperator": "Movia",
+  "nearby": [
+    {
+      "name": "Louisiana Museum of Modern Art",
+      "label": "Heritage",
+      "travelTime": "about 15 min",
+      "how": "coastal train south to Humlebæk",
+      "text": "Modern art in pavilions stepping down to the sound, with a sculpture park facing Sweden.",
+      "source": "https://louisiana.dk/en/"
+    },
+    {
+      "name": "Helsingborg",
+      "label": "Town",
+      "travelTime": "about 20 min",
+      "how": "ForSea ferry from Helsingør harbour",
+      "text": "Sweden in twenty minutes, with the Kärnan tower and a long seafront promenade.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Fredensborg Palace",
+      "label": "Heritage",
+      "travelTime": "about 25 min",
+      "how": "local train south-west to Fredensborg",
+      "text": "The royal family's spring and autumn residence; the gardens are open all year, the palace in July.",
+      "source": "https://kongeligeslotte.dk/en/palaces-and-gardens/fredensborg-palace/"
+    }
+  ]
 }

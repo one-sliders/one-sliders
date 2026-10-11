@@ -121,23 +121,6 @@
       "text": "Cuba Street is a named stop in Wellington worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Te Papa",
-      "label": "Heritage",
-      "text": "Te Papa is a heritage-focused side trip from Wellington; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Wellington Cable Car",
-      "label": "Heritage",
-      "text": "Wellington Cable Car is a heritage-focused side trip from Wellington; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Zealandia",
-      "label": "Heritage",
-      "text": "Zealandia is a heritage-focused side trip from Wellington; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "Oceania",
   "countrySlug": "new-zealand",
   "countryName": "New Zealand",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Martinborough",
+      "label": "Wine",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or train over the Rimutaka Hill to Featherston",
+      "text": "Pinot noir country laid out on a grid you can cycle between cellar doors.",
+      "source": "https://www.newzealand.com/int/"
+    },
+    {
+      "name": "Kapiti Coast",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "Metlink train on the Kāpiti line to Paraparaumu",
+      "text": "A long surf beach facing Kapiti Island, a predator-free reserve you can visit by permit.",
+      "source": "https://www.newzealand.com/int/"
+    },
+    {
+      "name": "Matiu/Somes Island",
+      "label": "Island",
+      "travelTime": "about 25 min",
+      "how": "East by West ferry from Queens Wharf",
+      "text": "A former quarantine station in the harbour, now a reserve with tuatara and little blue penguins.",
+      "source": "https://www.newzealand.com/int/"
+    }
+  ]
 }

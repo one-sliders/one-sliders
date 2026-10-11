@@ -128,23 +128,6 @@
       "text": "Vondelpark adds outdoor time to a Amsterdam stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Haarlem",
-      "label": "Heritage",
-      "text": "Haarlem is a heritage-focused side trip from Amsterdam; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Zaanse Schans",
-      "label": "Heritage",
-      "text": "Zaanse Schans is a heritage-focused side trip from Amsterdam; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Utrecht",
-      "label": "Heritage",
-      "text": "Utrecht is a heritage-focused side trip from Amsterdam; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Amsterdam",
     "matchedCountry": "The Netherlands"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Zaanse Schans",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "train from Amsterdam Centraal to Zaandijk Zaanse Schans",
+      "text": "Working windmills you can climb inside, grinding pigment and sawing timber as they did in the 1600s.",
+      "source": "https://www.dezaanseschans.nl/en/"
+    },
+    {
+      "name": "Haarlem",
+      "label": "Town",
+      "travelTime": "about 20 min",
+      "how": "train from Amsterdam Centraal",
+      "text": "Frans Hals Museum, hidden almshouse courtyards and a Saturday market on the Grote Markt.",
+      "source": "https://www.visithaarlem.com/en"
+    },
+    {
+      "name": "Keukenhof",
+      "label": "Park",
+      "travelTime": "about 50 min",
+      "how": "bus 852 from Schiphol or the Keukenhof Express",
+      "text": "Seven million bulbs planted in one park; it only opens from late March to mid-May.",
+      "source": "https://keukenhof.nl/en/"
+    },
+    {
+      "name": "Muiderslot",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "bus 327 from Amsterdam Amstel to Muiden",
+      "text": "A moated thirteenth-century castle at the mouth of the Vecht, with falconry and a walled herb garden.",
+      "source": "https://www.muiderslot.nl/en/"
+    }
+  ]
 }

@@ -128,23 +128,6 @@
       "text": "Odderoya is a named stop in Kristiansand worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Posebyen",
-      "label": "Heritage",
-      "text": "Posebyen is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bystranda",
-      "label": "Heritage",
-      "text": "Bystranda is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Fiskebrygga",
-      "label": "Heritage",
-      "text": "Fiskebrygga is a heritage-focused side trip from Kristiansand; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Kristiansand",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Lindesnes Lighthouse",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car west on the E39 to Norway's southern tip",
+      "text": "The mainland's southernmost point, with a wartime bunker complex under the lighthouse.",
+      "source": "https://lindesnesfyr.no/en/"
+    },
+    {
+      "name": "Ny-Hellesund",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "car to Høllen, then the Søgne archipelago boat",
+      "text": "A sheltered sound between three islands, used as a harbour since the age of sail.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Setesdalsbanen",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "car north to Grovane, trains run summer Sundays",
+      "text": "A narrow-gauge steam railway running eight kilometres up the Otra valley.",
+      "source": "https://www.visitnorway.com/"
+    }
+  ]
 }

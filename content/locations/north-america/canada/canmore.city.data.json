@@ -116,23 +116,6 @@
       "text": "Kananaskis access is a named stop in Canmore worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Three Sisters",
-      "label": "Heritage",
-      "text": "Three Sisters is a heritage-focused side trip from Canmore; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Grassi Lakes",
-      "label": "Nature",
-      "text": "Grassi Lakes works as a nature-focused side trip from Canmore, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Canmore Nordic Centre",
-      "label": "Heritage",
-      "text": "Canmore Nordic Centre is a heritage-focused side trip from Canmore; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -210,5 +193,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Banff town",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "Roam Transit route 3 west on the Trans-Canada",
+      "text": "The park's main street, hot springs and the gondola up Sulphur Mountain.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    },
+    {
+      "name": "Ha Ling Peak",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "car up Spray Lakes Road to the Goat Creek car park",
+      "text": "A steep two-hour climb named after the cook who won a bet by summiting and back in ten hours.",
+      "source": "https://www.albertaparks.ca/parks/kananaskis/"
+    },
+    {
+      "name": "Lake Minnewanka",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "car west then north on the Lake Minnewanka Loop",
+      "text": "The area's largest lake, with cruise boats passing over a submerged resort village.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    }
+  ]
 }

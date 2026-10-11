@@ -132,23 +132,6 @@
       "text": "Palermo Parks give Buenos Aires its green escape, with gardens, lakes and museum stops close to the city's main nightlife districts."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Tigre Delta",
-      "label": "Water",
-      "text": "Tigre is the classic river-delta day trip, with boat rides, markets and a cooler break from the city grid."
-    },
-    {
-      "name": "Colonia del Sacramento",
-      "label": "Heritage",
-      "text": "Colonia in Uruguay is reachable by ferry, offering cobbled streets and a compact historic centre for a long day trip."
-    },
-    {
-      "name": "San Antonio de Areco",
-      "label": "Town",
-      "text": "San Antonio de Areco is a gaucho-country town northwest of Buenos Aires, useful for estancia visits and rural history."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -230,5 +213,31 @@
   "continentName": "South America",
   "countrySlug": "argentina",
   "countryName": "Argentina",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Tigre and the Paraná Delta",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "Mitre line train from Retiro to Tigre",
+      "text": "A delta of wooden stilt houses reached only by launch, with a fruit market at the landing.",
+      "source": "https://www.argentina.travel/en"
+    },
+    {
+      "name": "San Antonio de Areco",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach from Retiro bus terminal",
+      "text": "The gaucho town, with silverwork workshops and an estancia museum by the river.",
+      "source": "https://www.argentina.travel/en"
+    },
+    {
+      "name": "Colonia del Sacramento",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "Buquebus fast ferry from Puerto Madero",
+      "text": "A Portuguese smuggling port in Uruguay, with cobbled streets and a lighthouse over the river.",
+      "source": "https://www.gub.uy/ministerio-turismo/"
+    }
+  ]
 }

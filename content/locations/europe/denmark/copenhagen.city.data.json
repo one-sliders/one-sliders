@@ -134,23 +134,6 @@
       "name": "Copenhagen harbour baths"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Louisiana Museum of Modern Art",
-      "label": "Art",
-      "text": "Louisiana Museum of Modern Art is a heritage-focused side trip from Copenhagen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Helsingor",
-      "label": "Castle",
-      "text": "Helsingor is a nearby side trip from Copenhagen; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Malmö",
-      "label": "City",
-      "text": "Malmö is a nearby side trip from Copenhagen; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,39 @@
     "matchedName": "Copenhagen",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "DOT"
+  "transitOperator": "DOT",
+  "nearby": [
+    {
+      "name": "Louisiana Museum of Modern Art",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "coastal train from København H to Humlebæk",
+      "text": "Modern art in low pavilions stepping down to the Øresund, with a sculpture park facing Sweden.",
+      "source": "https://louisiana.dk/en/"
+    },
+    {
+      "name": "Kronborg Castle",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "coastal train to Helsingør",
+      "text": "Hamlet's Elsinore, a Renaissance fortress guarding the narrowest point of the sound.",
+      "source": "https://kongeligeslotte.dk/en/palaces-and-gardens/kronborg-castle/"
+    },
+    {
+      "name": "Roskilde and the Viking Ship Museum",
+      "label": "Heritage",
+      "travelTime": "about 25 min",
+      "how": "regional train from København H",
+      "text": "Five scuttled Viking ships raised from the fjord, and a yard where replicas are still built.",
+      "source": "https://www.vikingeskibsmuseet.dk/en"
+    },
+    {
+      "name": "Frederiksborg Castle",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "S-train line E from København H to Hillerød",
+      "text": "A Renaissance castle on three islets holding the Museum of National History, with a baroque garden behind.",
+      "source": "https://dnm.dk/en/"
+    }
+  ]
 }

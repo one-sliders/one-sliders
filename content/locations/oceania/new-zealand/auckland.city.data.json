@@ -121,23 +121,6 @@
       "text": "Viaduct Harbour adds the water-facing side of Auckland, making it a good break from museums, traffic and dense historic streets."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Waiheke Island",
-      "label": "Nature",
-      "text": "Waiheke Island works as a nature-focused side trip from Auckland, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Mount Eden",
-      "label": "Nature",
-      "text": "Mount Eden works as a nature-focused side trip from Auckland, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Viaduct Harbour",
-      "label": "Heritage",
-      "text": "Viaduct Harbour is a heritage-focused side trip from Auckland; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "Oceania",
   "countrySlug": "new-zealand",
   "countryName": "New Zealand",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Rangitoto Island",
+      "label": "Island",
+      "travelTime": "about 25 min",
+      "how": "ferry from the downtown terminal",
+      "text": "A volcano that rose from the sea 600 years ago; an hour's climb over lava fields to the crater rim.",
+      "source": "https://www.newzealand.com/int/"
+    },
+    {
+      "name": "Piha",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "car west through the Waitākere Ranges",
+      "text": "Black iron sand under Lion Rock, with heavy surf; swim only between the patrol flags.",
+      "source": "https://www.newzealand.com/int/"
+    },
+    {
+      "name": "Muriwai gannet colony",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car north-west via Waimauku",
+      "text": "Over a thousand gannet pairs nesting on the headland stacks, visible from platforms August to March.",
+      "source": "https://www.doc.govt.nz/"
+    }
+  ]
 }

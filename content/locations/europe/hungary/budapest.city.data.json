@@ -134,23 +134,6 @@
       "text": "Great Market Hall is the main historic food market, useful for paprika, produce and a quick local-food stop."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Szentendre",
-      "label": "Town",
-      "text": "Szentendre is a colourful Danube Bend town and the easiest cultural day trip from Budapest."
-    },
-    {
-      "name": "Visegrád",
-      "label": "Castle",
-      "text": "Visegrád is a nearby side trip from Budapest; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Lake Balaton",
-      "label": "Lake",
-      "text": "Lake Balaton is possible as a long day, though it works better as an overnight summer trip."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Budapest",
     "matchedCountry": "Hungary"
   },
-  "transitOperator": "BKK"
+  "transitOperator": "BKK",
+  "nearby": [
+    {
+      "name": "Szentendre",
+      "label": "Town",
+      "travelTime": "about 40 min",
+      "how": "HÉV suburban train H5 from Batthyány tér",
+      "text": "A Serbian Orthodox river town of ochre houses, galleries and the Hungarian open-air museum nearby.",
+      "source": "https://iranyszentendre.hu/en/"
+    },
+    {
+      "name": "Visegrád",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Újpest-Városkapu, or Danube boat in summer",
+      "text": "A citadel on the Danube Bend with the river curving below it and a ruined summer palace at the foot.",
+      "source": "https://visitvisegrad.hu/en/"
+    },
+    {
+      "name": "Gödöllő Royal Palace",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "HÉV suburban train H8 from Örs vezér tere",
+      "text": "Empress Sisi's favourite residence, the largest baroque palace in Hungary, with her private rooms kept.",
+      "source": "https://kiralyikastely.hu/en"
+    }
+  ]
 }

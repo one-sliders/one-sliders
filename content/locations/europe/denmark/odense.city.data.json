@@ -139,23 +139,6 @@
       "text": "Munke Mose is a named stop in Odense worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Egeskov Castle",
-      "label": "Castle",
-      "text": "Egeskov Castle is a heritage-focused side trip from Odense; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kerteminde",
-      "label": "Coast",
-      "text": "Kerteminde adds harbour streets, beaches and Fjord & Bælt marine centre northeast of Odense."
-    },
-    {
-      "name": "Nyborg",
-      "label": "Town",
-      "text": "Nyborg offers castle history, Great Belt views and a compact old-town stop east of Odense."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -236,5 +219,31 @@
     "matchedName": "Odense",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "FynBus"
+  "transitOperator": "FynBus",
+  "nearby": [
+    {
+      "name": "Egeskov Castle",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "train to Kværndrup, then bus 920",
+      "text": "A Renaissance castle standing on oak piles in a lake, with mazes and a vintage car collection.",
+      "source": "https://www.egeskov.dk/en"
+    },
+    {
+      "name": "Kerteminde and Ladby",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "bus 480 north-east from Odense",
+      "text": "A fishing town beside the Ladby ship, a Viking chieftain buried in his vessel with his horses.",
+      "source": "https://vikingemuseetladby.dk/en/"
+    },
+    {
+      "name": "Svendborg and the South Funen archipelago",
+      "label": "Island",
+      "travelTime": "about 45 min",
+      "how": "train south from Odense to Svendborg",
+      "text": "A sailing town with ferries out to Ærø and Tåsinge among a hundred small islands.",
+      "source": "https://www.visitsvendborg.com/"
+    }
+  ]
 }

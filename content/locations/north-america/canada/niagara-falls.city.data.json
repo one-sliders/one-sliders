@@ -116,23 +116,6 @@
       "text": "Wine country is a named stop in Niagara Falls worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Horseshoe Falls",
-      "label": "Nature",
-      "text": "Horseshoe Falls works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Journey Behind the Falls",
-      "label": "Nature",
-      "text": "Journey Behind the Falls works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Clifton Hill",
-      "label": "Heritage",
-      "text": "Clifton Hill works as a nature-focused side trip from Niagara Falls, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Niagara-on-the-Lake",
+      "label": "Wine",
+      "travelTime": "about 30 min",
+      "how": "WEGO bus or car north on the Niagara Parkway",
+      "text": "A Regency town at the river mouth, surrounded by the estates that make Canadian icewine.",
+      "source": "https://www.niagaraparks.com/"
+    },
+    {
+      "name": "Niagara Glen",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "WEGO bus north along the gorge",
+      "text": "Stairs down into the gorge to boulder fields and Carolinian forest beside the whirlpool.",
+      "source": "https://www.niagaraparks.com/"
+    },
+    {
+      "name": "Welland Canal locks",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "car north-west to St Catharines",
+      "text": "A viewing platform at Lock 3 where ocean ships are lifted the height of the escarpment.",
+      "source": "https://www.canada.ca/en.html"
+    }
+  ]
 }

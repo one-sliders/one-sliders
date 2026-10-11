@@ -123,23 +123,6 @@
       "text": "Hveragerdi hot springs is a named stop in Selfoss worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Olfusa river",
-      "label": "Nature",
-      "text": "Olfusa river works as a nature-focused side trip from Selfoss, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Selfoss town centre",
-      "label": "Heritage",
-      "text": "Selfoss town centre is a heritage-focused side trip from Selfoss; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Golden Circle trips",
-      "label": "Heritage",
-      "text": "Golden Circle trips is a heritage-focused side trip from Selfoss; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Selfoss",
     "matchedCountry": "Iceland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Kerið crater",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "car north on Route 35",
+      "text": "A 55-metre volcanic crater with red walls and a blue-green lake at the bottom.",
+      "source": "https://www.south.is/en"
+    },
+    {
+      "name": "Seljalandsfoss",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car east on Route 1",
+      "text": "A sixty-metre fall you can walk behind; expect to get soaked.",
+      "source": "https://www.south.is/en"
+    },
+    {
+      "name": "Þingvellir National Park",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "car north-west on Route 35 then 36",
+      "text": "The continental rift and the site of the old parliament, with Silfra fissure for diving.",
+      "source": "https://www.thingvellir.is/en/"
+    }
+  ]
 }

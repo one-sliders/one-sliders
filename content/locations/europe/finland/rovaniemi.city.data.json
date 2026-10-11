@@ -129,23 +129,6 @@
       "text": "Northern lights tours are a major reason to stay several nights, with weather and cloud cover shaping success."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Ranua Wildlife Park",
-      "label": "Family",
-      "text": "Ranua Wildlife Park is a popular day trip for Arctic animals and family-friendly winter touring."
-    },
-    {
-      "name": "Korouoma Canyon",
-      "label": "Nature",
-      "text": "Korouoma Canyon is known for frozen waterfalls in winter and forested hiking in other seasons."
-    },
-    {
-      "name": "Pyhä-Luosto",
-      "label": "National park",
-      "text": "Pyhä-Luosto is a nearby side trip from Rovaniemi; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -206,5 +189,31 @@
     "matchedName": "Rovaniemi",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Linkkari"
+  "transitOperator": "Linkkari",
+  "nearby": [
+    {
+      "name": "Ranua Wildlife Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "bus south on Route 78 to Ranua",
+      "text": "Fifty Arctic species including polar bears, in forest enclosures along a boardwalk.",
+      "source": "https://ranuazoo.com/en/"
+    },
+    {
+      "name": "Auttiköngäs",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car east on Route 81 towards Posio",
+      "text": "A sixteen-metre waterfall with a boardwalk trail and an old log-floating chute beside it.",
+      "source": "https://www.nationalparks.fi/"
+    },
+    {
+      "name": "Pilke Science Centre",
+      "label": "Heritage",
+      "travelTime": "about 15 min",
+      "how": "walk to the Arktikum block on Ounasjoentie",
+      "text": "A timber building explaining how northern forests are worked, built from Lapland pine itself.",
+      "source": "https://www.visitfinland.com/"
+    }
+  ]
 }

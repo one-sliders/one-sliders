@@ -116,23 +116,6 @@
       "text": "Meow Wolf Santa Fe is a named stop in Santa Fe worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Santa Fe Plaza",
-      "label": "Heritage",
-      "text": "Santa Fe Plaza is a heritage-focused side trip from Santa Fe; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Canyon Road",
-      "label": "Nature",
-      "text": "Canyon Road works as a nature-focused side trip from Santa Fe, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Loretto Chapel",
-      "label": "Heritage",
-      "text": "Loretto Chapel is a heritage-focused side trip from Santa Fe; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Bandelier National Monument",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car north-west on US-285 then NM-4",
+      "text": "Ancestral Pueblo cliff dwellings you climb ladders into, in a canyon of volcanic tuff.",
+      "source": "https://www.nps.gov/band/index.htm"
+    },
+    {
+      "name": "Taos Pueblo",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on the High Road or NM-68",
+      "text": "Adobe houses continuously inhabited for over a thousand years, still without power or plumbing.",
+      "source": "https://taospueblo.com/"
+    },
+    {
+      "name": "Ojo Caliente",
+      "label": "Spa",
+      "travelTime": "about 50 min",
+      "how": "car north on US-285",
+      "text": "Four kinds of mineral water in open-air pools, used since long before the 1868 resort.",
+      "source": "https://www.newmexico.org/"
+    },
+    {
+      "name": "Ghost Ranch",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north-west on US-84 to Abiquiú",
+      "text": "The red and yellow cliffs Georgia O'Keeffe painted, with dinosaur quarries on the same land.",
+      "source": "https://www.ghostranch.org/"
+    }
+  ]
 }

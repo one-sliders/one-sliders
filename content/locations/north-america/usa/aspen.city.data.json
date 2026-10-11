@@ -116,23 +116,6 @@
       "text": "John Denver Sanctuary is a named stop in Aspen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Aspen Mountain",
-      "label": "Nature",
-      "text": "Aspen Mountain works as a nature-focused side trip from Aspen, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Maroon Bells",
-      "label": "Heritage",
-      "text": "Maroon Bells is a heritage-focused side trip from Aspen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Wheeler Opera House",
-      "label": "Heritage",
-      "text": "Wheeler Opera House is a heritage-focused side trip from Aspen; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Independence Pass",
+      "label": "Mountain",
+      "travelTime": "about 40 min",
+      "how": "car east on SR-82; closed November to May",
+      "text": "The Continental Divide at 3,687 metres, with a ghost mining town on the way up.",
+      "source": "https://www.codot.gov/"
+    },
+    {
+      "name": "Glenwood Springs",
+      "label": "Spa",
+      "travelTime": "about 50 min",
+      "how": "car or Amtrak west down the Roaring Fork valley",
+      "text": "The world's largest hot springs pool, plus vapour caves used by the Ute long before.",
+      "source": "https://www.visitglenwood.com/"
+    },
+    {
+      "name": "Redstone",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "car north-west then south on SR-133",
+      "text": "A company village built for coke-oven workers in 1902, with the ovens still standing in a row.",
+      "source": "https://www.colorado.com/"
+    }
+  ]
 }

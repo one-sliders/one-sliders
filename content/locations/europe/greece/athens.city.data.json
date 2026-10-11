@@ -134,23 +134,6 @@
       "text": "National Archaeological Museum gives Athens a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Cape Sounion",
-      "label": "Coast",
-      "text": "Cape Sounion is a nearby side trip from Athens; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Delphi",
-      "label": "Heritage",
-      "text": "Delphi is a heritage-focused side trip from Athens; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Aegina",
-      "label": "Island",
-      "text": "Aegina is a nearby side trip from Athens; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,39 @@
     "matchedName": "Athens",
     "matchedCountry": "Greece"
   },
-  "transitOperator": "OASA"
+  "transitOperator": "OASA",
+  "nearby": [
+    {
+      "name": "Cape Sounion",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "KTEL coastal bus from Pedion tou Areos",
+      "text": "The Temple of Poseidon on a headland, built to be seen from the sea; go for sunset.",
+      "source": "https://www.culture.gov.gr/en/"
+    },
+    {
+      "name": "Aegina",
+      "label": "Island",
+      "travelTime": "about 40 min",
+      "how": "fast ferry from Piraeus",
+      "text": "The nearest island escape, with the Temple of Aphaia and pistachio stalls along the quay.",
+      "source": "https://www.aegina.gr/"
+    },
+    {
+      "name": "Marathon",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "KTEL bus from Pedion tou Areos",
+      "text": "The burial mound of the Athenians who fell in 490 BC, beside the lake and the race's start line.",
+      "source": "https://www.culture.gov.gr/en/"
+    },
+    {
+      "name": "Mount Parnitha National Park",
+      "label": "Mountain",
+      "travelTime": "about 50 min",
+      "how": "bus 714 from Acharnai, then the cable car",
+      "text": "Fir forest and limestone caves above the city, with red deer and a 1,400-metre summit.",
+      "source": "https://www.visitgreece.gr/"
+    }
+  ]
 }

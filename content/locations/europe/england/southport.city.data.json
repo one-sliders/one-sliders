@@ -134,23 +134,6 @@
       "text": "Botanic Gardens Southport adds the water-facing side of Southport, making it a good break from museums, traffic and dense historic streets."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Formby",
-      "label": "Coast",
-      "text": "Formby offers dunes, beach walks and pine woods with red squirrel habitat south of Southport."
-    },
-    {
-      "name": "Liverpool",
-      "label": "City",
-      "text": "Liverpool is a nearby side trip from Southport; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Martin Mere",
-      "label": "Nature",
-      "text": "Martin Mere wetland centre gives birdlife, family trails and seasonal wildlife east of Southport."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Southport",
     "matchedCountry": "England"
   },
-  "transitOperator": "Merseyrail"
+  "transitOperator": "Merseyrail",
+  "nearby": [
+    {
+      "name": "Martin Mere Wetland Centre",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "car east on the A565 then A59",
+      "text": "Thousands of pink-footed geese and whooper swans winter here, watched from heated hides.",
+      "source": "https://www.wwt.org.uk/wetland-centres/martin-mere/"
+    },
+    {
+      "name": "Formby dunes",
+      "label": "Beach",
+      "travelTime": "about 25 min",
+      "how": "Merseyrail Northern line south to Freshfield",
+      "text": "Pine woods with red squirrels behind a dune coast where prehistoric footprints surface.",
+      "source": "https://www.nationaltrust.org.uk/visit/liverpool-lancashire/formby"
+    },
+    {
+      "name": "Liverpool",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "Merseyrail Northern line from Southport",
+      "text": "The Albert Dock, two cathedrals and the Beatles sites, all walkable from the terminus.",
+      "source": "https://www.visitliverpool.com/"
+    }
+  ]
 }

@@ -123,23 +123,6 @@
       "text": "Alte Rheinbrucke is a named stop in Vaduz worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Vaduz Castle",
-      "label": "Heritage",
-      "text": "Vaduz Castle is a heritage-focused side trip from Vaduz; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Red House",
-      "label": "Heritage",
-      "text": "Red House is a heritage-focused side trip from Vaduz; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Alte Rheinbrucke",
-      "label": "Heritage",
-      "text": "Alte Rheinbrucke is a heritage-focused side trip from Vaduz; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -210,5 +193,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Vaduz",
     "matchedCountry": "Liechtenstein"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Malbun",
+      "label": "Mountain",
+      "travelTime": "about 35 min",
+      "how": "bus 21 then 23 up the valley",
+      "text": "The principality's only ski resort at 1,600 metres, with a chairlift running in summer too.",
+      "source": "https://tourismus.li/en/"
+    },
+    {
+      "name": "Feldkirch",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "bus 11 or 12 north into Austria",
+      "text": "A medieval Austrian town of arcaded streets under the Schattenburg castle.",
+      "source": "https://www.austria.info/en"
+    },
+    {
+      "name": "Werdenberg",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "bus west over the Rhine into Switzerland",
+      "text": "Said to be the oldest timber settlement in Europe, a cluster of houses under a castle.",
+      "source": "https://www.myswitzerland.com/en/"
+    }
+  ]
 }

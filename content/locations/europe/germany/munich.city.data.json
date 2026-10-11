@@ -134,23 +134,6 @@
       "text": "Deutsches Museum gives Munich a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Dachau Memorial",
-      "label": "Memorial",
-      "text": "Dachau Memorial is a heritage-focused side trip from Munich; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Salzburg",
-      "label": "City",
-      "text": "Salzburg is a nearby side trip from Munich; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Neuschwanstein",
-      "label": "Castle",
-      "text": "Neuschwanstein is a nearby side trip from Munich; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,39 @@
     "matchedName": "Munich",
     "matchedCountry": "Germany"
   },
-  "transitOperator": "MVV"
+  "transitOperator": "MVV",
+  "nearby": [
+    {
+      "name": "Neuschwanstein Castle",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "train from München Hbf to Füssen, then bus 73",
+      "text": "Ludwig II's unfinished fantasy castle above the Pöllat gorge; timed tickets sell out in summer.",
+      "source": "https://www.neuschwanstein.de/englisch/tourist/index.htm"
+    },
+    {
+      "name": "Starnberger See",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "S-Bahn S6 from Munich to Starnberg",
+      "text": "Munich's weekend lake, with steamer trips and the cross marking where Ludwig II drowned.",
+      "source": "https://www.germany.travel/en/"
+    },
+    {
+      "name": "Dachau Memorial Site",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "S2 to Dachau, then bus 726",
+      "text": "The first Nazi concentration camp, kept as a memorial with free entry and audio guides.",
+      "source": "https://www.kz-gedenkstaette-dachau.de/en/"
+    },
+    {
+      "name": "Andechs Abbey",
+      "label": "Craft",
+      "travelTime": "about 1 h",
+      "how": "S8 to Herrsching, then a 45-minute walk or bus",
+      "text": "A Benedictine monastery brewing since 1455, with its beer garden looking over the Ammersee.",
+      "source": "https://www.andechs.de/en/"
+    }
+  ]
 }

@@ -128,23 +128,6 @@
       "text": "Phoenix Park adds outdoor time to a Dublin stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Howth",
-      "label": "Heritage",
-      "text": "Howth is a heritage-focused side trip from Dublin; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Glendalough",
-      "label": "Heritage",
-      "text": "Glendalough is a heritage-focused side trip from Dublin; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Malahide Castle",
-      "label": "Heritage",
-      "text": "Malahide Castle is a heritage-focused side trip from Dublin; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Dublin",
     "matchedCountry": "Ireland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Howth",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "DART train north from Dublin Connolly",
+      "text": "A fishing harbour with seal-watched piers and a cliff loop round the head.",
+      "source": "https://www.irishrail.ie/"
+    },
+    {
+      "name": "Glendalough",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "St Kevin's Bus from St Stephen's Green",
+      "text": "A sixth-century monastic city with a round tower, between two lakes in the Wicklow Mountains.",
+      "source": "https://www.nationalparks.ie/wicklow/"
+    },
+    {
+      "name": "Malahide Castle",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "DART or commuter train to Malahide",
+      "text": "Eight hundred years of the same family, with a walled botanical garden and a butterfly house.",
+      "source": "https://www.malahidecastleandgardens.ie/"
+    },
+    {
+      "name": "Newgrange",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car north on the M1 to the Brú na Bóinne visitor centre",
+      "text": "A passage tomb older than the pyramids, aligned so the winter solstice sun reaches the chamber.",
+      "source": "https://heritageireland.ie/places-to-visit/bru-na-boinne/"
+    }
+  ]
 }

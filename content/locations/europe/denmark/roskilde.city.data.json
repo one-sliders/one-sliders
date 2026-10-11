@@ -129,23 +129,6 @@
       "text": "Ledreborg trips is a named stop in Roskilde worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Lejre Land of Legends",
-      "label": "Heritage",
-      "text": "Lejre Land of Legends is an open-air history centre with reconstructed houses and family-friendly activities."
-    },
-    {
-      "name": "Ledreborg Palace",
-      "label": "Estate",
-      "text": "Ledreborg Palace is a heritage-focused side trip from Roskilde; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Copenhagen",
-      "label": "City",
-      "text": "Copenhagen is close enough by train for museums, food and airport connections from a Roskilde base."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Roskilde",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Movia"
+  "transitOperator": "Movia",
+  "nearby": [
+    {
+      "name": "Lejre Land of Legends",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "train to Lejre, then bus 233",
+      "text": "A reconstructed Iron Age village where staff live and work the old way through the summer.",
+      "source": "https://www.sagnlandet.dk/en/"
+    },
+    {
+      "name": "Copenhagen",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "regional train from Roskilde station",
+      "text": "Twenty-five minutes to the capital's museums, Tivoli and the harbour baths.",
+      "source": "https://www.visitcopenhagen.com/"
+    },
+    {
+      "name": "Boserup Skov",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "bus 206 west along the fjord",
+      "text": "Ancient woodland on the fjord shore with bathing jetties and marked walking loops.",
+      "source": "https://www.visitfjordlandet.dk/"
+    }
+  ]
 }

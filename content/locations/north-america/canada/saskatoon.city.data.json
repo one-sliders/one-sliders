@@ -121,23 +121,6 @@
       "text": "Prairie food is a named stop in Saskatoon worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Meewasin Valley",
-      "label": "Heritage",
-      "text": "Meewasin Valley works as a nature-focused side trip from Saskatoon, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Remai Modern",
-      "label": "Heritage",
-      "text": "Remai Modern is a heritage-focused side trip from Saskatoon; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Broadway Avenue",
-      "label": "Heritage",
-      "text": "Broadway Avenue is a heritage-focused side trip from Saskatoon; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -215,5 +198,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Wanuskewin Heritage Park",
+      "label": "Heritage",
+      "travelTime": "about 20 min",
+      "how": "car north on Highway 11",
+      "text": "Six thousand years of Northern Plains history on one site, with a bison herd returned in 2019.",
+      "source": "https://wanuskewin.com/"
+    },
+    {
+      "name": "Blackstrap Provincial Park",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south on Highway 11",
+      "text": "A man-made lake with a beach and the ski hill built for the 1971 Canada Winter Games.",
+      "source": "https://www.saskatchewan.ca/"
+    },
+    {
+      "name": "Batoche National Historic Site",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car north-east on Highway 312 then 225",
+      "text": "The rifle pits and church of the 1885 Métis resistance, above the South Saskatchewan.",
+      "source": "https://parks.canada.ca/lhn-nhs/sk/batoche"
+    }
+  ]
 }

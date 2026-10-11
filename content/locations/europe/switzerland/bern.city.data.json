@@ -123,23 +123,6 @@
       "text": "Rosengarten gives Bern a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Old City of Bern",
-      "label": "Heritage",
-      "text": "Old City of Bern is a heritage-focused side trip from Bern; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Zytglogge",
-      "label": "Heritage",
-      "text": "Zytglogge is a heritage-focused side trip from Bern; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bern Minster",
-      "label": "Heritage",
-      "text": "Bern Minster is a heritage-focused side trip from Bern; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Bern",
     "matchedCountry": "Switzerland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Thun and Lake Thun",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "train from Bern to Thun",
+      "text": "A castle town where the Aare leaves the lake, with pavement cafés built on the bridges.",
+      "source": "https://www.thunersee.ch/en/"
+    },
+    {
+      "name": "Fribourg",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "train from Bern",
+      "text": "A medieval lower town in a river loop, on the language border between French and German.",
+      "source": "https://www.fribourgtourisme.ch/en/"
+    },
+    {
+      "name": "Gurten",
+      "label": "Mountain",
+      "travelTime": "about 25 min",
+      "how": "tram 9 to Gurtenbahn, then the funicular",
+      "text": "The city's own 858-metre hill, with an Alpine panorama and a festival meadow in July.",
+      "source": "https://gurtenpark.ch/"
+    },
+    {
+      "name": "Emmental",
+      "label": "Craft",
+      "travelTime": "about 45 min",
+      "how": "train from Bern to Burgdorf or Langnau",
+      "text": "Rolling dairy country where the cheese is still made in open copper vats you can watch.",
+      "source": "https://www.myswitzerland.com/en/"
+    }
+  ]
 }

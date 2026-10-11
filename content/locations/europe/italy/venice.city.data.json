@@ -128,23 +128,6 @@
       "text": "Burano is a named stop in Venice worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Murano",
-      "label": "Heritage",
-      "text": "Murano is a heritage-focused side trip from Venice; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Burano",
-      "label": "Heritage",
-      "text": "Burano is a heritage-focused side trip from Venice; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Padua",
-      "label": "Heritage",
-      "text": "Padua is a heritage-focused side trip from Venice; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Venice",
     "matchedCountry": "Italy"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Padua",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "regional train from Venezia Santa Lucia",
+      "text": "Giotto's Scrovegni Chapel frescoes and the oldest university botanical garden in the world.",
+      "source": "https://www.turismopadova.it/en"
+    },
+    {
+      "name": "Treviso",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "regional train from Venezia Santa Lucia",
+      "text": "Canals and frescoed houses inside intact walls, and the home of radicchio and tiramisu.",
+      "source": "https://www.visittreviso.it/"
+    },
+    {
+      "name": "Chioggia",
+      "label": "Town",
+      "travelTime": "about 1 h 10 min",
+      "how": "bus 80 from Piazzale Roma to Sottomarina, then the Chioggia ferry",
+      "text": "A working fishing port laid out like a smaller Venice, with the catch auctioned each morning.",
+      "source": "https://www.italia.it/en"
+    },
+    {
+      "name": "Lido di Venezia",
+      "label": "Beach",
+      "travelTime": "about 20 min",
+      "how": "vaporetto line 1 or 5.1 from San Zaccaria",
+      "text": "The lagoon's sandbar, with Adriatic beaches, bicycles and the film festival palace in September.",
+      "source": "https://www.comune.venezia.it/"
+    }
+  ]
 }

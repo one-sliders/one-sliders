@@ -116,23 +116,6 @@
       "text": "King Street Charleston is a named stop in Charleston worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Rainbow Row",
-      "label": "Heritage",
-      "text": "Rainbow Row is a heritage-focused side trip from Charleston; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Waterfront Park Charleston",
-      "label": "Nature",
-      "text": "Waterfront Park Charleston works as a nature-focused side trip from Charleston, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "The Battery",
-      "label": "Heritage",
-      "text": "The Battery is a heritage-focused side trip from Charleston; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Middleton Place",
+      "label": "Park",
+      "travelTime": "about 30 min",
+      "how": "car north-west on Ashley River Road",
+      "text": "America's oldest landscaped garden, terraced down to butterfly lakes, with the stable yards worked.",
+      "source": "https://www.middletonplace.org/"
+    },
+    {
+      "name": "Sullivan's Island",
+      "label": "Beach",
+      "travelTime": "about 30 min",
+      "how": "car east over the Ravenel Bridge",
+      "text": "A quiet barrier-island beach beside Fort Moultrie, where many enslaved Africans first landed.",
+      "source": "https://www.nps.gov/fosu/index.htm"
+    },
+    {
+      "name": "Angel Oak",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south-west to Johns Island",
+      "text": "A live oak estimated at 400 years old, its limbs resting on the ground and running back up.",
+      "source": "https://www.charleston-sc.gov/"
+    }
+  ]
 }

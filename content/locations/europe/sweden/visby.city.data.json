@@ -123,23 +123,6 @@
       "text": "Medieval Week is a named stop in Visby worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Visby city wall",
-      "label": "Heritage",
-      "text": "Visby city wall is a heritage-focused side trip from Visby; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Stora Torget",
-      "label": "Heritage",
-      "text": "Stora Torget is a heritage-focused side trip from Visby; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Botanical Garden",
-      "label": "Heritage",
-      "text": "Botanical Garden works as a nature-focused side trip from Visby, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Visby",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Lummelunda caves",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "bus 61 north along the coast road",
+      "text": "Gotland's longest cave system, with underground streams and formations lit along a guided route.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Fårö",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus 20 to Fårösund, then the free ferry",
+      "text": "Bergman's island, with raukar sea stacks at Langhammars and wide empty beaches.",
+      "source": "https://www.gotland.com/en/"
+    },
+    {
+      "name": "Högklint",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "bus or car south-west from Visby",
+      "text": "A fifty-metre cliff looking back along the coast, the standard Visby sunset spot.",
+      "source": "https://www.gotland.com/en/"
+    }
+  ]
 }

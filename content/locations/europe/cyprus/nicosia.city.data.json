@@ -134,23 +134,6 @@
       "name": "Buyuk Han"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Larnaca",
-      "label": "Coast",
-      "text": "Larnaca combines the seafront, old town and airport access within an easy road trip from Nicosia."
-    },
-    {
-      "name": "Kyrenia",
-      "label": "Harbour",
-      "text": "Kyrenia offers a castle and harbour north of the mountains; check crossing and insurance rules before driving."
-    },
-    {
-      "name": "Troodos Mountains",
-      "label": "Mountain",
-      "text": "The Troodos Mountains bring cooler villages, painted churches and wine routes for a full day away."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Nicosia",
     "matchedCountry": "Cyprus"
   },
-  "transitOperator": "Cyprus Public Transport"
+  "transitOperator": "Cyprus Public Transport",
+  "nearby": [
+    {
+      "name": "Troodos Mountains",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south-west on the B9 towards Troodos square",
+      "text": "Painted Byzantine churches under shingle roofs, and the island's only ski slopes in winter.",
+      "source": "https://www.visitcyprus.com/"
+    },
+    {
+      "name": "Larnaca",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "intercity bus south-east from Nicosia",
+      "text": "A seafront promenade of palms, with a salt lake that fills with flamingos from November.",
+      "source": "https://www.visitcyprus.com/"
+    },
+    {
+      "name": "Choirokoitia",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car south on the A1 motorway",
+      "text": "A Neolithic village of round stone houses from 7000 BC, with five reconstructed on site.",
+      "source": "https://www.visitcyprus.com/"
+    }
+  ]
 }

@@ -123,23 +123,6 @@
       "text": "Esrange area is a named stop in Kiruna worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Icehotel Jukkasjarvi",
-      "label": "Heritage",
-      "text": "Icehotel Jukkasjarvi is a heritage-focused side trip from Kiruna; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "LKAB mine tours",
-      "label": "Heritage",
-      "text": "LKAB mine tours is a heritage-focused side trip from Kiruna; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Abisko National Park trips",
-      "label": "Nature",
-      "text": "Abisko National Park trips works as a nature-focused side trip from Kiruna, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Kiruna",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Jukkasjärvi and the Icehotel",
+      "label": "Craft",
+      "travelTime": "about 20 min",
+      "how": "bus 501 east from Kiruna",
+      "text": "Rebuilt from the Torne river's ice each December, with a permanent cold section open all year.",
+      "source": "https://www.icehotel.com/"
+    },
+    {
+      "name": "Abisko National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "train from Kiruna to Abisko Turiststation",
+      "text": "The Aurora Sky Station chairlift and the start of the Kungsleden trail, in Sweden's driest mountain air.",
+      "source": "https://www.sverigesnationalparker.se/park/abisko-nationalpark/"
+    },
+    {
+      "name": "Esrange Space Center",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "car east on Route 870, visits by arrangement",
+      "text": "Europe's mainland launch site, firing sounding rockets and tracking satellites since 1966.",
+      "source": "https://sscspace.com/"
+    }
+  ]
 }

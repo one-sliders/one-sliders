@@ -123,23 +123,6 @@
       "text": "STF mountain station adds outdoor time to a Abisko stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Abisko National Park",
-      "label": "Nature",
-      "text": "Abisko National Park works as a nature-focused side trip from Abisko, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Aurora Sky Station",
-      "label": "Heritage",
-      "text": "Aurora Sky Station is a heritage-focused side trip from Abisko; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kungsleden trail",
-      "label": "Heritage",
-      "text": "Kungsleden trail is a heritage-focused side trip from Abisko; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Abisko",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Björkliden",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "train one stop west from Abisko",
+      "text": "Off-piste skiing above the tree line and the Kårsavagge valley trail in summer.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Riksgränsen",
+      "label": "Mountain",
+      "travelTime": "about 40 min",
+      "how": "train west to the Norwegian border",
+      "text": "The resort where the season runs into June and you ski at midnight in May.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Narvik",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "train west on the Ofoten line into Norway",
+      "text": "An ice-free ore harbour on a fjord, with a cable car above the town and a war museum.",
+      "source": "https://www.visitnorway.com/"
+    }
+  ]
 }

@@ -121,23 +121,6 @@
       "text": "Festival season is a named stop in Edmonton worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "North Saskatchewan River Valley",
-      "label": "Nature",
-      "text": "North Saskatchewan River Valley works as a nature-focused side trip from Edmonton, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "West Edmonton Mall",
-      "label": "Heritage",
-      "text": "West Edmonton Mall is a heritage-focused side trip from Edmonton; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ice District",
-      "label": "Heritage",
-      "text": "Ice District is a heritage-focused side trip from Edmonton; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -207,5 +190,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Elk Island National Park",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "car east on Highway 16",
+      "text": "Plains and wood bison behind a fence, in a dark-sky preserve good for aurora watching.",
+      "source": "https://parks.canada.ca/pn-np/ab/elkisland"
+    },
+    {
+      "name": "Ukrainian Cultural Heritage Village",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car east on Highway 16 past Elk Island",
+      "text": "A settlement staged as 1930s rural Alberta, with costumed staff speaking Ukrainian.",
+      "source": "https://ukrainianvillage.ca/"
+    },
+    {
+      "name": "Fort Saskatchewan river valley",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "car north-east on Highway 15",
+      "text": "Sheep graze the town's riverside park in summer, with trails along the North Saskatchewan.",
+      "source": "https://www.canada.ca/en.html"
+    }
+  ]
 }

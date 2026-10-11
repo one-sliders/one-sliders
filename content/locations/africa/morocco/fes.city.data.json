@@ -128,18 +128,6 @@
       "text": "Nejjarine Museum is a key Fes culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Volubilis",
-      "label": "Ruins",
-      "text": "Volubilis, a well-preserved Roman archaeological site, makes a rewarding half-day trip from Fes through the surrounding countryside."
-    },
-    {
-      "name": "Ifrane",
-      "label": "Nature",
-      "text": "Ifrane, a cedar-forested Middle Atlas town nicknamed 'Morocco's Switzerland', is a cool-climate day trip from Fes."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Fes",
     "matchedCountry": "Morocco"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Volubilis",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "grand taxi west via Meknes",
+      "text": "A Roman provincial city with mosaics still in place on the floors where they were laid.",
+      "source": "https://www.visitmorocco.com/en"
+    },
+    {
+      "name": "Meknes",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "train west from Fes station",
+      "text": "Moulay Ismail's imperial capital, with the vast Bab Mansour gate and underground granaries.",
+      "source": "https://www.visitmorocco.com/en"
+    },
+    {
+      "name": "Moulay Idriss Zerhoun",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "grand taxi west past Meknes",
+      "text": "A whitewashed pilgrimage town on two hills, holding the tomb of Morocco's founder.",
+      "source": "https://www.visitmorocco.com/en"
+    }
+  ]
 }

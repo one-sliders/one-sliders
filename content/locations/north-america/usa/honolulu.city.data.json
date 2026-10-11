@@ -121,23 +121,6 @@
       "text": "Bishop Museum is a key Honolulu culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Waikiki Beach",
-      "label": "Nature",
-      "text": "Waikiki Beach works as a nature-focused side trip from Honolulu, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Diamond Head",
-      "label": "Heritage",
-      "text": "Diamond Head is a heritage-focused side trip from Honolulu; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Pearl Harbor National Memorial",
-      "label": "Heritage",
-      "text": "Pearl Harbor National Memorial is a heritage-focused side trip from Honolulu; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Pearl Harbor",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "TheBus route 20 or 42 west",
+      "text": "The USS Arizona memorial sits over the wreck; tickets are released online each day at 3pm.",
+      "source": "https://www.nps.gov/perl/index.htm"
+    },
+    {
+      "name": "Hanauma Bay",
+      "label": "Beach",
+      "travelTime": "about 40 min",
+      "how": "TheBus route 1L east, or car on the Kalanianaole Highway",
+      "text": "A flooded crater reef for snorkelling; entry is by reservation and closed on Mondays and Tuesdays.",
+      "source": "https://hanaumabaystatepark.com/"
+    },
+    {
+      "name": "Kailua and Lanikai",
+      "label": "Beach",
+      "travelTime": "about 45 min",
+      "how": "TheBus route 67 over the Pali",
+      "text": "Windward-side beaches with fine sand and the Mokulua islets offshore for kayaking.",
+      "source": "https://www.gohawaii.com/"
+    },
+    {
+      "name": "North Shore",
+      "label": "Beach",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on the H-2 and Kamehameha Highway",
+      "text": "Waimea Bay and Pipeline carry huge winter surf; the same beaches are flat in summer.",
+      "source": "https://www.gohawaii.com/"
+    }
+  ]
 }

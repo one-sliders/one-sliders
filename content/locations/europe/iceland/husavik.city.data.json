@@ -123,23 +123,6 @@
       "text": "Asbyrgi canyon trips is a named stop in Húsavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Whale watching harbour",
-      "label": "Heritage",
-      "text": "Whale watching harbour is a heritage-focused side trip from Húsavík; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "GeoSea baths",
-      "label": "Heritage",
-      "text": "GeoSea baths is a heritage-focused side trip from Húsavík; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Lake Myvatn trips",
-      "label": "Nature",
-      "text": "Lake Myvatn trips works as a nature-focused side trip from Húsavík, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -187,5 +170,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Husavik",
     "matchedCountry": "Iceland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Ásbyrgi canyon",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car east on Route 85",
+      "text": "A horseshoe canyon said to be a hoofprint of Odin's horse, with birch woods on its floor.",
+      "source": "https://www.vatnajokulsthjodgardur.is/en"
+    },
+    {
+      "name": "Lake Mývatn",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car south on Route 87",
+      "text": "Volcanic craters, boiling mud at Hverir and warm bathing lagoons.",
+      "source": "https://www.visitmyvatn.is/"
+    },
+    {
+      "name": "Dettifoss",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car east on Route 85 then Route 862",
+      "text": "Europe's most powerful waterfall by volume, throwing spray visible a kilometre away.",
+      "source": "https://www.vatnajokulsthjodgardur.is/en"
+    }
+  ]
 }

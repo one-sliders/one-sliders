@@ -131,23 +131,6 @@
       "text": "Jardin Botanico is a calm botanical garden near Universidad station, useful for a slower morning in the city."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Guatape",
-      "label": "Lake",
-      "text": "Guatape combines colorful streets, reservoir views and El Penol rock, making it Medellin's signature day trip."
-    },
-    {
-      "name": "Santa Fe de Antioquia",
-      "label": "Heritage",
-      "text": "Santa Fe de Antioquia offers colonial streets and warmer weather west of Medellin, usually as a full-day outing."
-    },
-    {
-      "name": "Jardin",
-      "label": "Town",
-      "text": "Jardin is a coffee-region town with mountain scenery, better as an overnight than a rushed day trip."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -230,5 +213,23 @@
   "countrySlug": "colombia",
   "countryName": "Colombia",
   "depth": 4,
-  "transitOperator": "Metro de Medellin"
+  "transitOperator": "Metro de Medellin",
+  "nearby": [
+    {
+      "name": "Guatapé and El Peñol",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach from Terminal del Norte",
+      "text": "740 steps up a granite monolith over a flooded valley, beside a town of painted house friezes.",
+      "source": "https://colombia.travel/en"
+    },
+    {
+      "name": "Santa Fe de Antioquia",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach west through the Túnel de Occidente",
+      "text": "The old colonial capital, whitewashed and hot, with a 1895 suspension bridge over the Cauca.",
+      "source": "https://colombia.travel/en"
+    }
+  ]
 }

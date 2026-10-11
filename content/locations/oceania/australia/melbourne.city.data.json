@@ -121,23 +121,6 @@
       "text": "Hosier Lane is a named stop in Melbourne worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Royal Botanic Gardens Victoria",
-      "label": "Heritage",
-      "text": "Royal Botanic Gardens Victoria works as a nature-focused side trip from Melbourne, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "National Gallery of Victoria",
-      "label": "Heritage",
-      "text": "National Gallery of Victoria is a heritage-focused side trip from Melbourne; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Melbourne Cricket Ground",
-      "label": "Heritage",
-      "text": "Melbourne Cricket Ground is a heritage-focused side trip from Melbourne; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
   "continentName": "Oceania",
   "countrySlug": "australia",
   "countryName": "Australia",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Yarra Valley",
+      "label": "Wine",
+      "travelTime": "about 1 h",
+      "how": "car north-east via the Maroondah Highway",
+      "text": "Victoria's oldest wine region, best known for cool-climate pinot noir and sparkling.",
+      "source": "https://www.visityarravalley.com.au/"
+    },
+    {
+      "name": "Mornington Peninsula",
+      "label": "Spa",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south on the Mornington Peninsula Freeway",
+      "text": "Hot springs you soak in on a hillside, plus bay beaches and the coloured bathing boxes.",
+      "source": "https://www.visitmorningtonpeninsula.org/"
+    },
+    {
+      "name": "Puffing Billy Railway",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "Belgrave train line from Flinders Street, then a short walk",
+      "text": "A century-old narrow-gauge steam train through the Dandenong Ranges, legs over the side of the carriage.",
+      "source": "https://puffingbilly.com.au/"
+    },
+    {
+      "name": "Werribee Park",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "train to Werribee, then bus 439",
+      "text": "A sixty-room Italianate mansion with formal gardens and an open-range zoo next door.",
+      "source": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park"
+    }
+  ]
 }

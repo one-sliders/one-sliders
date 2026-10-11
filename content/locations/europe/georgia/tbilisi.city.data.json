@@ -129,23 +129,6 @@
       "text": "Mtatsminda Park gives Tbilisi a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Mtskheta",
-      "label": "Heritage",
-      "text": "Mtskheta is a heritage-focused side trip from Tbilisi; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kakheti",
-      "label": "Wine",
-      "text": "Kakheti is Georgia's main wine region and works best as a long day or overnight trip."
-    },
-    {
-      "name": "David Gareja",
-      "label": "Monastery",
-      "text": "David Gareja is a nearby side trip from Tbilisi; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -221,5 +204,31 @@
     "matchedName": "Tbilisi",
     "matchedCountry": "Georgia"
   },
-  "transitOperator": "Tbilisi Transport Company"
+  "transitOperator": "Tbilisi Transport Company",
+  "nearby": [
+    {
+      "name": "Mtskheta",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "marshrutka from Didube station",
+      "text": "Georgia's ancient capital, where Svetitskhoveli cathedral stands over the robe of Christ.",
+      "source": "https://georgia.travel/"
+    },
+    {
+      "name": "Kakheti wine country",
+      "label": "Wine",
+      "travelTime": "about 1 h 15 min",
+      "how": "marshrutka east from Isani towards Telavi",
+      "text": "Qvevri wine fermented in buried clay jars, a method used here for 8,000 years.",
+      "source": "https://georgia.travel/"
+    },
+    {
+      "name": "Davit Gareja",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south-east towards the Azerbaijani border",
+      "text": "Cave monasteries cut into a desert ridge in the sixth century, with frescoes still on the walls.",
+      "source": "https://georgia.travel/"
+    }
+  ]
 }

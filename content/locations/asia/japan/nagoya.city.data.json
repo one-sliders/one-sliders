@@ -128,23 +128,6 @@
       "text": "Tokugawa Art Museum is a key Nagoya culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Nagoya Castle",
-      "label": "Heritage",
-      "text": "Nagoya Castle is a heritage-focused side trip from Nagoya; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Atsuta Shrine",
-      "label": "Heritage",
-      "text": "Atsuta Shrine is a heritage-focused side trip from Nagoya; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Osu Shopping District",
-      "label": "Heritage",
-      "text": "Osu Shopping District is a heritage-focused side trip from Nagoya; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Nagoya",
     "matchedCountry": "Japan"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Inuyama",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "Meitetsu line from Nagoya to Inuyama-yuen",
+      "text": "One of twelve original castle keeps left in Japan, with cormorant fishing on the river below in summer.",
+      "source": "https://inuyama.gr.jp/"
+    },
+    {
+      "name": "Gero Onsen",
+      "label": "Spa",
+      "travelTime": "about 1 h 15 min",
+      "how": "JR Hida limited express from Nagoya",
+      "text": "One of Japan's three great hot springs, with a pass letting you use three different baths.",
+      "source": "https://www.gero-spa.com/"
+    },
+    {
+      "name": "Ise Grand Shrine",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "Kintetsu limited express from Nagoya to Iseshi",
+      "text": "Shinto's holiest site, rebuilt from scratch every twenty years, approached through cedar forest.",
+      "source": "https://www.isejingu.or.jp/en/"
+    },
+    {
+      "name": "Tokoname",
+      "label": "Craft",
+      "travelTime": "about 40 min",
+      "how": "Meitetsu Tokoname line from Nagoya",
+      "text": "A pottery town of brick chimneys and a walking path walled with old kiln pipes.",
+      "source": "https://www.tokoname-kankou.net/"
+    }
+  ]
 }

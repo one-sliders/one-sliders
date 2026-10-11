@@ -131,23 +131,6 @@
       "text": "Liberdade is a named Sao Paulo landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Santos",
-      "label": "Coast",
-      "text": "Santos adds port history, beaches and coffee heritage, reachable from Sao Paulo by road through the Serra do Mar."
-    },
-    {
-      "name": "Embu das Artes",
-      "label": "Art",
-      "text": "Embu das Artes is a craft-and-gallery town southwest of the city, popular for slower weekend browsing."
-    },
-    {
-      "name": "Campos do Jordao",
-      "label": "Mountains",
-      "text": "Campos do Jordao is a cooler mountain resort, better for an overnight trip than a rushed day out."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -230,5 +213,31 @@
   "countrySlug": "brazil",
   "countryName": "Brazil",
   "depth": 4,
-  "transitOperator": "SPTrans"
+  "transitOperator": "SPTrans",
+  "nearby": [
+    {
+      "name": "Embu das Artes",
+      "label": "Craft",
+      "travelTime": "about 50 min",
+      "how": "bus from Terminal Rodoviário Barra Funda",
+      "text": "A colonial village given over to furniture makers and a crafts fair that fills the streets at weekends.",
+      "source": "https://www.visitbrasil.com/"
+    },
+    {
+      "name": "Serra da Cantareira",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car or bus north to Horto Florestal",
+      "text": "One of the largest urban rainforests on earth, with trails, waterfalls and howler monkeys.",
+      "source": "https://www.visitbrasil.com/"
+    },
+    {
+      "name": "Paranapiacaba",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or train to Rio Grande da Serra, then local bus",
+      "text": "A British-built railway village in the cloud forest, preserved with its funicular workshops.",
+      "source": "https://www.visitbrasil.com/"
+    }
+  ]
 }

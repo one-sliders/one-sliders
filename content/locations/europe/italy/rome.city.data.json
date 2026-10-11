@@ -128,23 +128,6 @@
       "text": "Spanish Steps is a named stop in Rome worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Tivoli",
-      "label": "Heritage",
-      "text": "Tivoli is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ostia Antica",
-      "label": "Heritage",
-      "text": "Ostia Antica is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Frascati",
-      "label": "Heritage",
-      "text": "Frascati is a heritage-focused side trip from Rome; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Rome",
     "matchedCountry": "Italy"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Ostia Antica",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "Roma-Lido train from Porta San Paolo",
+      "text": "Rome's port city with streets, baths and a theatre still standing, and almost no crowds.",
+      "source": "https://www.ostiaantica.beniculturali.it/en/"
+    },
+    {
+      "name": "Tivoli",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "regional train from Roma Tiburtina",
+      "text": "Villa d'Este's hydraulic fountains and Hadrian's Villa, two UNESCO sites in one hill town.",
+      "source": "https://villae.cultura.gov.it/en/"
+    },
+    {
+      "name": "Castelli Romani",
+      "label": "Wine",
+      "travelTime": "about 50 min",
+      "how": "regional train from Roma Termini to Frascati",
+      "text": "Volcanic hill towns above Lake Albano where Romans go for white wine and porchetta.",
+      "source": "https://www.parcocastelliromani.it/"
+    },
+    {
+      "name": "Cerveteri",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "train to Cerveteri-Ladispoli, then local bus",
+      "text": "An Etruscan necropolis of tumulus tombs laid out like streets of houses.",
+      "source": "https://www.beniculturali.it/"
+    }
+  ]
 }

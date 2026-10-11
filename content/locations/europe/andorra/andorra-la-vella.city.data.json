@@ -134,23 +134,6 @@
       "name": "La Massana"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Ordino",
-      "label": "Village",
-      "text": "Ordino is a scenic stone village with museums and mountain access north of the capital."
-    },
-    {
-      "name": "Vallnord Pal Arinsal",
-      "label": "Mountain",
-      "text": "Vallnord Pal Arinsal is the practical ski and bike area for visitors staying near La Massana."
-    },
-    {
-      "name": "La Seu d'Urgell",
-      "label": "Town",
-      "text": "La Seu d'Urgell in Spain adds a cathedral town, airport access and a lower-valley contrast to Andorra."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -217,5 +200,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Andorra la Vella",
     "matchedCountry": "Andorra"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Grandvalira",
+      "label": "Mountain",
+      "travelTime": "about 35 min",
+      "how": "bus north-east up the Valira d'Orient valley",
+      "text": "The Pyrenees' largest ski area, with 210 kilometres of pistes above Soldeu and Pas de la Casa.",
+      "source": "https://visitandorra.com/en/"
+    },
+    {
+      "name": "Madriu-Perafita-Claror valley",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "walk in from Escaldes-Engordany; no road enters",
+      "text": "A UNESCO glacial valley covering a tenth of the country, reachable only on foot.",
+      "source": "https://visitandorra.com/en/"
+    },
+    {
+      "name": "Santa Coloma and the Romanesque route",
+      "label": "Heritage",
+      "travelTime": "about 15 min",
+      "how": "bus L2 south-west along the valley",
+      "text": "A pre-Romanesque church with a round bell tower, one of about forty in the valleys.",
+      "source": "https://visitandorra.com/en/"
+    }
+  ]
 }

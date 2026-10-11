@@ -121,23 +121,6 @@
       "text": "Sphere Las Vegas is a named stop in Las Vegas worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Las Vegas Strip",
-      "label": "Heritage",
-      "text": "Las Vegas Strip is a heritage-focused side trip from Las Vegas; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bellagio Fountains",
-      "label": "Heritage",
-      "text": "Bellagio Fountains is a heritage-focused side trip from Las Vegas; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Red Rock Canyon",
-      "label": "Nature",
-      "text": "Red Rock Canyon works as a nature-focused side trip from Las Vegas, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Hoover Dam",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "car or coach tour east on US-93",
+      "text": "Walk the 1930s dam wall above Black Canyon and ride the lift down to the power plant turbines.",
+      "source": "https://www.usbr.gov/lc/hooverdam/"
+    },
+    {
+      "name": "Valley of Fire State Park",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car north on I-15 to exit 75",
+      "text": "Red Aztec sandstone, petroglyph trails and the Fire Wave; go early, summer afternoons are brutal.",
+      "source": "https://parks.nv.gov/parks/valley-of-fire"
+    },
+    {
+      "name": "Lake Mead National Recreation Area",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car east on Lake Mead Parkway",
+      "text": "Swim, paddle or hire a boat on the reservoir, with bathtub rings showing how far the water has dropped.",
+      "source": "https://www.nps.gov/lake/index.htm"
+    },
+    {
+      "name": "Seven Magic Mountains",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "car south on I-15 to Jean Dry Lake",
+      "text": "Ugo Rondinone's stack of fluorescent boulders standing alone in the desert, free and always open.",
+      "source": "https://sevenmagicmountains.com/"
+    }
+  ]
 }

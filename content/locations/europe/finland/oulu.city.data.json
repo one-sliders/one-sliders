@@ -134,23 +134,6 @@
       "text": "Winter cycling is a named stop in Oulu worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Hailuoto",
-      "label": "Island",
-      "text": "Hailuoto is the classic Oulu coast trip for dunes, lighthouses and open Bothnian scenery."
-    },
-    {
-      "name": "Liminka Bay",
-      "label": "Nature",
-      "text": "Liminka Bay is a major birding wetland south of Oulu, especially strong during migration."
-    },
-    {
-      "name": "Rokua Geopark",
-      "label": "Nature",
-      "text": "Rokua adds eskers, lakes and forest trails inland from Oulu for a longer day outside."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,31 @@
     "matchedName": "Oulu",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Oulu Public Transport"
+  "transitOperator": "Oulu Public Transport",
+  "nearby": [
+    {
+      "name": "Nallikari",
+      "label": "Beach",
+      "travelTime": "about 20 min",
+      "how": "bus 5 west to Hietasaari",
+      "text": "A Baltic sand beach on an island, which becomes a sea-ice walking route in winter.",
+      "source": "https://www.visitoulu.fi/en/"
+    },
+    {
+      "name": "Turkansaari open-air museum",
+      "label": "Heritage",
+      "travelTime": "about 25 min",
+      "how": "car east on Route 22 along the Oulujoki",
+      "text": "A river island of tar-trade buildings, including a 1694 church, staffed in summer.",
+      "source": "https://www.visitfinland.com/"
+    },
+    {
+      "name": "Koitelinkoski",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "car east to Kiiminki",
+      "text": "Rapids splitting round wooded islets, crossed on suspension bridges; a local swimming spot.",
+      "source": "https://www.visitoulu.fi/en/"
+    }
+  ]
 }

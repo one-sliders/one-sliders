@@ -129,23 +129,6 @@
       "text": "Golden Circle trips is a named stop in Reykjavík worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Þingvellir National Park",
-      "label": "Nature",
-      "text": "Þingvellir sits on the Golden Circle route where the North American and Eurasian plates meet, with walking trails through the rift valley."
-    },
-    {
-      "name": "Snæfellsnes Peninsula",
-      "label": "Nature",
-      "text": "Snæfellsnes is a compact peninsula north of Reykjavík nicknamed 'Iceland in miniature', with the Snæfellsjökull glacier, black beaches and fishing villages."
-    },
-    {
-      "name": "Blue Lagoon",
-      "label": "Spa",
-      "text": "The Blue Lagoon geothermal spa lies near Keflavík Airport, a convenient soak on the way to or from an international flight."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -225,5 +208,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Reykjavik",
     "matchedCountry": "Iceland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Thingvellir National Park",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "car or coach east on Route 36",
+      "text": "The rift between the American and Eurasian plates, and the site of the parliament founded in 930.",
+      "source": "https://www.thingvellir.is/en/"
+    },
+    {
+      "name": "Blue Lagoon",
+      "label": "Spa",
+      "travelTime": "about 50 min",
+      "how": "coach from BSÍ terminal to Grindavík",
+      "text": "Milky geothermal water at 38°C in a lava field; booking ahead is required.",
+      "source": "https://www.bluelagoon.com/"
+    },
+    {
+      "name": "Reykjadalur hot river",
+      "label": "Spa",
+      "travelTime": "about 45 min",
+      "how": "car to Hveragerði, then a 3 km uphill walk",
+      "text": "A steaming valley where you bathe in the river itself, hotter the further up you go.",
+      "source": "https://www.visiticeland.com/"
+    },
+    {
+      "name": "Geysir and Gullfoss",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or Golden Circle coach east on Route 35",
+      "text": "Strokkur erupts every few minutes, and Gullfoss drops in two steps into a canyon.",
+      "source": "https://www.geysircenter.com/"
+    }
+  ]
 }

@@ -128,23 +128,6 @@
       "text": "Train Street Hanoi is a named stop in Hanoi worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Hoan Kiem Lake",
-      "label": "Nature",
-      "text": "Hoan Kiem Lake works as a nature-focused side trip from Hanoi, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Old Quarter Hanoi",
-      "label": "Heritage",
-      "text": "Old Quarter Hanoi is a heritage-focused side trip from Hanoi; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ho Chi Minh Mausoleum",
-      "label": "Heritage",
-      "text": "Ho Chi Minh Mausoleum is a heritage-focused side trip from Hanoi; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Hanoi",
     "matchedCountry": "Vietnam"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Bat Trang ceramic village",
+      "label": "Craft",
+      "travelTime": "about 40 min",
+      "how": "bus 47A from Long Bien station",
+      "text": "Seven centuries of pottery kilns; you can throw and paint your own piece in the workshops.",
+      "source": "https://vietnam.travel/"
+    },
+    {
+      "name": "Duong Lam ancient village",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from My Dinh station to Son Tay",
+      "text": "Laterite-walled houses and communal halls from a village that has kept its Red River Delta layout.",
+      "source": "https://vietnam.travel/"
+    },
+    {
+      "name": "Perfume Pagoda",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Giap Bat station to My Duc, then a rowing boat",
+      "text": "A boat up the Yen stream then a cable car to a cave shrine; the pilgrimage festival runs February to April.",
+      "source": "https://vietnam.travel/"
+    }
+  ]
 }

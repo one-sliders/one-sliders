@@ -123,23 +123,6 @@
       "text": "Folkets Park adds outdoor time to a Malmö stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Turning Torso",
-      "label": "Heritage",
-      "text": "Turning Torso is a heritage-focused side trip from Malmö; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Lilla Torg",
-      "label": "Heritage",
-      "text": "Lilla Torg is a heritage-focused side trip from Malmö; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ribersborg beach",
-      "label": "Nature",
-      "text": "Ribersborg beach works as a nature-focused side trip from Malmö, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Malmö",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Copenhagen",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "Öresundståg train over the bridge from Malmö C",
+      "text": "Another country for lunch: Tivoli, Nyhavn and the design museums are all walkable from the station.",
+      "source": "https://www.visitcopenhagen.com/"
+    },
+    {
+      "name": "Lund",
+      "label": "Town",
+      "travelTime": "about 15 min",
+      "how": "Pågatåg train from Malmö C",
+      "text": "A Romanesque cathedral with an astronomical clock, in a university town of cobbled lanes.",
+      "source": "https://visitlund.se/en"
+    },
+    {
+      "name": "Falsterbo peninsula",
+      "label": "Beach",
+      "travelTime": "about 45 min",
+      "how": "bus 100 from Malmö to Skanör",
+      "text": "Long shallow beaches and one of Europe's great bird migration points each autumn.",
+      "source": "https://www.vellinge.se/"
+    },
+    {
+      "name": "Söderåsen National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "train to Klippan, then local bus",
+      "text": "A rift valley of beech forest with the Skäralid gorge and the Kopparhatten overlook.",
+      "source": "https://www.sverigesnationalparker.se/park/soderasens-nationalpark/"
+    }
+  ]
 }

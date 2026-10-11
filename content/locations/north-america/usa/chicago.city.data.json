@@ -121,23 +121,6 @@
       "text": "Wrigley Field is a named stop in Chicago worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Millennium Park",
-      "label": "Nature",
-      "text": "Millennium Park works as a nature-focused side trip from Chicago, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Art Institute of Chicago",
-      "label": "Heritage",
-      "text": "Art Institute of Chicago is a heritage-focused side trip from Chicago; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Chicago Riverwalk",
-      "label": "Nature",
-      "text": "Chicago Riverwalk works as a nature-focused side trip from Chicago, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Indiana Dunes National Park",
+      "label": "Beach",
+      "travelTime": "about 1 h 10 min",
+      "how": "South Shore Line train from Millennium Station",
+      "text": "Lake Michigan dunes you can climb, with the city skyline visible across the water on clear days.",
+      "source": "https://www.nps.gov/indu/index.htm"
+    },
+    {
+      "name": "Oak Park",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "Green Line or Metra from the Loop",
+      "text": "Frank Lloyd Wright's own home and studio, plus the densest cluster of his Prairie houses anywhere.",
+      "source": "https://flwright.org/"
+    },
+    {
+      "name": "Chicago Botanic Garden",
+      "label": "Park",
+      "travelTime": "about 45 min",
+      "how": "Metra Union Pacific North line to Braeside",
+      "text": "Twenty-seven gardens spread over nine islands, with a bonsai collection and a Japanese garden.",
+      "source": "https://www.chicagobotanic.org/"
+    },
+    {
+      "name": "Starved Rock State Park",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south-west on I-80",
+      "text": "Eighteen sandstone canyons off the Illinois River; the waterfalls freeze into columns in January.",
+      "source": "https://dnr.illinois.gov/parks/park.starvedrock.html"
+    }
+  ]
 }

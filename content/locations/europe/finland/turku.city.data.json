@@ -134,23 +134,6 @@
       "text": "Archipelago Trail is a clear heritage marker in Turku, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Naantali",
-      "label": "Town",
-      "text": "Naantali is a nearby side trip from Turku; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Archipelago Trail",
-      "label": "Islands",
-      "text": "The Archipelago Trail links ferries, bridges and island villages for a longer coastal circuit."
-    },
-    {
-      "name": "Pargas",
-      "label": "Coast",
-      "text": "Pargas is an easy first archipelago stop with limestone history and small-town harbour life."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,31 @@
     "matchedName": "Turku",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Föli"
+  "transitOperator": "Föli",
+  "nearby": [
+    {
+      "name": "Naantali",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "bus 6 or 7 west from Turku",
+      "text": "A wooden old town and the Moomin island, with the president's summer residence on the shore.",
+      "source": "https://www.visitfinland.com/"
+    },
+    {
+      "name": "Kurjenrahka National Park",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "car north on Route 204 towards Nousiainen",
+      "text": "Duckboards over open bog and old-growth forest, with a lake you can swim in at Savojärvi.",
+      "source": "https://www.nationalparks.fi/"
+    },
+    {
+      "name": "Pargas and the island road",
+      "label": "Island",
+      "travelTime": "about 40 min",
+      "how": "bus 801 south from Turku",
+      "text": "The first stop on the archipelago road, with a limestone quarry 60 metres deep.",
+      "source": "https://www.visitfinland.com/"
+    }
+  ]
 }

@@ -116,23 +116,6 @@
       "text": "East Hampton Village is a named stop in East Hampton worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Main Beach East Hampton",
-      "label": "Nature",
-      "text": "Main Beach East Hampton works as a nature-focused side trip from East Hampton, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Guild Hall",
-      "label": "Heritage",
-      "text": "Guild Hall is a heritage-focused side trip from East Hampton; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "LongHouse Reserve",
-      "label": "Heritage",
-      "text": "LongHouse Reserve works as a nature-focused side trip from East Hampton, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Sag Harbor",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "car north-west on Route 114",
+      "text": "A whaling port with captains' houses and the Custom House where duties were collected.",
+      "source": "https://parks.ny.gov/"
+    },
+    {
+      "name": "Montauk Point",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car east on Montauk Highway",
+      "text": "The lighthouse at the end of the island, with seals on the rocks from November to April.",
+      "source": "https://parks.ny.gov/parks/61/"
+    },
+    {
+      "name": "Shelter Island",
+      "label": "Island",
+      "travelTime": "about 45 min",
+      "how": "car to North Haven, then the South Ferry",
+      "text": "Quiet lanes and the Mashomack Preserve, a short crossing from the Hamptons bustle.",
+      "source": "https://parks.ny.gov/"
+    }
+  ]
 }

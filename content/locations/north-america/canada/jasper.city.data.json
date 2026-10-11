@@ -116,23 +116,6 @@
       "text": "Dark Sky Preserve gives Jasper a greener or more scenic stop, useful when the route needs views, shade, walking space or a slower hour."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Maligne Lake",
-      "label": "Nature",
-      "text": "Maligne Lake works as a nature-focused side trip from Jasper, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Jasper SkyTram",
-      "label": "Heritage",
-      "text": "Jasper SkyTram is a heritage-focused side trip from Jasper; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Pyramid Lake",
-      "label": "Nature",
-      "text": "Pyramid Lake works as a nature-focused side trip from Jasper, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Athabasca Falls",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "car south on the Icefields Parkway",
+      "text": "A short powerful fall cutting a gorge through quartzite, viewed from linked platforms.",
+      "source": "https://parks.canada.ca/pn-np/ab/jasper"
+    },
+    {
+      "name": "Columbia Icefield",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south on the Icefields Parkway to the Discovery Centre",
+      "text": "The Athabasca Glacier reaches the road; ice explorer buses drive onto it from May to October.",
+      "source": "https://parks.canada.ca/pn-np/ab/jasper"
+    },
+    {
+      "name": "Mount Robson Provincial Park",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "car west on Highway 16 into British Columbia",
+      "text": "The Rockies' highest peak at 3,954 metres, with the Kinney Lake trail starting at its foot.",
+      "source": "https://bcparks.ca/mount-robson-park/"
+    }
+  ]
 }

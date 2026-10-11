@@ -121,23 +121,6 @@
       "text": "Georgetown is a named stop in Washington DC worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "National Mall",
-      "label": "Heritage",
-      "text": "National Mall is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "U.S. Capitol",
-      "label": "Heritage",
-      "text": "U.S. Capitol is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "White House",
-      "label": "Heritage",
-      "text": "White House is a heritage-focused side trip from Washington DC; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Mount Vernon",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "Metro Yellow line to Huntington, then bus 101",
+      "text": "Washington's estate above the Potomac, with the slave quarters and burial ground interpreted.",
+      "source": "https://www.mountvernon.org/"
+    },
+    {
+      "name": "Great Falls Park",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "car north-west on the George Washington Parkway",
+      "text": "The Potomac drops 23 metres through Mather Gorge; three overlooks reach it in minutes.",
+      "source": "https://www.nps.gov/grfa/index.htm"
+    },
+    {
+      "name": "Annapolis",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "car east on US-50",
+      "text": "A colonial capital of brick streets and the Naval Academy, with crab houses on the dock.",
+      "source": "https://www.visitannapolis.org/"
+    },
+    {
+      "name": "Harpers Ferry",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "MARC Brunswick line from Union Station",
+      "text": "John Brown's raid site where two rivers and three states meet, with the Appalachian Trail through it.",
+      "source": "https://www.nps.gov/hafe/index.htm"
+    }
+  ]
 }

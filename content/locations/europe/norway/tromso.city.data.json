@@ -123,23 +123,6 @@
       "text": "Whale season trips is a named stop in Tromsø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Fjellheisen cable car",
-      "label": "Heritage",
-      "text": "Fjellheisen cable car is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Polaria",
-      "label": "Heritage",
-      "text": "Polaria is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Northern lights tours",
-      "label": "Heritage",
-      "text": "Northern lights tours is a heritage-focused side trip from Tromsø; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Tromsø",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Fjellheisen and Storsteinen",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "bus 26 to Solliveien, then the Fjellheisen cable car",
+      "text": "421 metres up for the midnight sun in June or the aurora on clear winter nights.",
+      "source": "https://fjellheisen.no/en/"
+    },
+    {
+      "name": "Sommarøy",
+      "label": "Beach",
+      "travelTime": "about 1 h",
+      "how": "bus 420 west from Tromsø",
+      "text": "White sand and turquoise water against Arctic peaks, an hour from the city.",
+      "source": "https://www.visittromso.no/en"
+    },
+    {
+      "name": "Ersfjordbotn",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car or bus 425 over Kvaløya",
+      "text": "A fjord head ringed by sheer peaks, the closest classic fjord view to town.",
+      "source": "https://www.visittromso.no/en"
+    }
+  ]
 }

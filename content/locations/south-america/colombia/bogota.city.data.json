@@ -126,23 +126,6 @@
       "text": "Simon Bolivar Metropolitan Park is Bogota's major urban park, useful for concerts, walking and a break from traffic."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Zipaquira Salt Cathedral",
-      "label": "Heritage",
-      "text": "Zipaquira's underground Salt Cathedral is Bogota's easiest famous day trip, usually reached by car, tour or train."
-    },
-    {
-      "name": "Guatavita",
-      "label": "Nature",
-      "text": "Guatavita works as a nature-focused side trip from Bogota, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Villa de Leyva",
-      "label": "Town",
-      "text": "Villa de Leyva is a beautiful colonial town, better as an overnight because the road trip is long."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -225,5 +208,31 @@
   "countrySlug": "colombia",
   "countryName": "Colombia",
   "depth": 4,
-  "transitOperator": "TransMilenio"
+  "transitOperator": "TransMilenio",
+  "nearby": [
+    {
+      "name": "Zipaquirá Salt Cathedral",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Portal del Norte, or the tourist train at weekends",
+      "text": "A church carved 180 metres down inside a working salt mine, lit in blue and violet.",
+      "source": "https://colombia.travel/en"
+    },
+    {
+      "name": "Guatavita",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Portal del Norte towards Sesquilé",
+      "text": "The crater lake behind the El Dorado legend, where Muisca chiefs were gilded and submerged.",
+      "source": "https://colombia.travel/en"
+    },
+    {
+      "name": "La Calera and the eastern hills",
+      "label": "Mountain",
+      "travelTime": "about 40 min",
+      "how": "car east over the Cerros Orientales",
+      "text": "A ridge road climbing out of the city to páramo grassland and a view back over the whole savanna.",
+      "source": "https://colombia.travel/en"
+    }
+  ]
 }

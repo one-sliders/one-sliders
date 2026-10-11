@@ -121,23 +121,6 @@
       "text": "Ferry Building is a named stop in San Francisco worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Alcatraz Island",
-      "label": "Nature",
-      "text": "Alcatraz Island works as a nature-focused side trip from San Francisco, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Fisherman's Wharf",
-      "label": "Heritage",
-      "text": "Fisherman's Wharf is a heritage-focused side trip from San Francisco; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Golden Gate Park",
-      "label": "Nature",
-      "text": "Golden Gate Park works as a nature-focused side trip from San Francisco, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Muir Woods National Monument",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car or the Muir Woods Shuttle over the Golden Gate Bridge",
+      "text": "Old-growth coast redwoods on flat boardwalk trails; parking and shuttle must be booked ahead.",
+      "source": "https://www.nps.gov/muwo/index.htm"
+    },
+    {
+      "name": "Sausalito",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "ferry from the Ferry Building",
+      "text": "A houseboat harbour and hillside village with the best view back at the city skyline.",
+      "source": "https://sausalito.gov/"
+    },
+    {
+      "name": "Point Reyes National Seashore",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on Highway 1",
+      "text": "Elephant seals, a cliff-edge lighthouse and oyster farms on a peninsula cut off by the San Andreas fault.",
+      "source": "https://www.nps.gov/pore/index.htm"
+    },
+    {
+      "name": "Berkeley",
+      "label": "Town",
+      "travelTime": "about 30 min",
+      "how": "BART to Downtown Berkeley",
+      "text": "The university campanile, Telegraph Avenue bookshops and the restaurant row that invented California cuisine.",
+      "source": "https://www.visitberkeley.com/"
+    }
+  ]
 }

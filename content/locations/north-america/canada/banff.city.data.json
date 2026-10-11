@@ -116,23 +116,6 @@
       "text": "Ski season is a named stop in Banff worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Banff Avenue",
-      "label": "Heritage",
-      "text": "Banff Avenue is a heritage-focused side trip from Banff; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Sulphur Mountain",
-      "label": "Nature",
-      "text": "Sulphur Mountain works as a nature-focused side trip from Banff, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Bow Falls",
-      "label": "Nature",
-      "text": "Bow Falls works as a nature-focused side trip from Banff, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Lake Louise",
+      "label": "Mountain",
+      "travelTime": "about 45 min",
+      "how": "Roam Transit route 8X from Banff",
+      "text": "A glacier-fed lake under Victoria Glacier, with canoes in summer and a skating rink in winter.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    },
+    {
+      "name": "Johnston Canyon",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "Roam Transit route 9 west on the Bow Valley Parkway",
+      "text": "Catwalks bolted to the canyon wall lead to two waterfalls that freeze into ice climbs in winter.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    },
+    {
+      "name": "Yoho National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car west on the Trans-Canada into British Columbia",
+      "text": "Takakkaw Falls drops 254 metres; the Burgess Shale fossil beds above are guided-hike only.",
+      "source": "https://parks.canada.ca/pn-np/bc/yoho"
+    }
+  ]
 }

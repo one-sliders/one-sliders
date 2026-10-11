@@ -126,23 +126,6 @@
       "text": "Parque Kennedy is a named Lima landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Pachacamac",
-      "label": "Archaeology",
-      "text": "Pachacamac is the major archaeological site south of Lima, best visited with a guide or driver."
-    },
-    {
-      "name": "Callao and La Punta",
-      "label": "Coast",
-      "text": "Callao and La Punta offer fortress history, seafood and harbor views, but routes should be planned carefully."
-    },
-    {
-      "name": "Paracas",
-      "label": "Coast",
-      "text": "Paracas is a longer coast escape for wildlife, desert scenery and boat trips to the Ballestas Islands."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -225,5 +208,31 @@
   "countrySlug": "peru",
   "countryName": "Peru",
   "depth": 4,
-  "transitOperator": "ATU"
+  "transitOperator": "ATU",
+  "nearby": [
+    {
+      "name": "Pachacámac",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "bus south on the Panamericana to Lurín",
+      "text": "An adobe pilgrimage city used for a thousand years before the Inca took it over.",
+      "source": "https://www.peru.travel/en"
+    },
+    {
+      "name": "Islas Palomino",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "boat from Callao harbour",
+      "text": "A sea lion colony you can swim with, on islands off the port.",
+      "source": "https://www.peru.travel/en"
+    },
+    {
+      "name": "Lomas de Lachay",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on the Panamericana",
+      "text": "Desert hills that turn green on coastal fog alone, between June and October.",
+      "source": "https://www.peru.travel/en"
+    }
+  ]
 }

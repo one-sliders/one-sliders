@@ -128,23 +128,6 @@
       "text": "Cheonggyecheon is a named stop in Seoul worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Bukchon Hanok Village",
-      "label": "Heritage",
-      "text": "Bukchon Hanok Village is a heritage-focused side trip from Seoul; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Myeongdong",
-      "label": "Heritage",
-      "text": "Myeongdong is a heritage-focused side trip from Seoul; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Dongdaemun Design Plaza",
-      "label": "Heritage",
-      "text": "Dongdaemun Design Plaza is a heritage-focused side trip from Seoul; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Seoul",
     "matchedCountry": "South Korea"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Suwon Hwaseong Fortress",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "Seoul Metro Line 1 to Suwon",
+      "text": "A five-kilometre eighteenth-century wall you can walk the whole way round, with archery at the command post.",
+      "source": "https://www.swcf.or.kr/"
+    },
+    {
+      "name": "Bukhansan National Park",
+      "label": "Mountain",
+      "travelTime": "about 50 min",
+      "how": "Metro Line 3 to Gupabal, then bus 704",
+      "text": "Granite peaks inside the city limits, with Baegundae reached by chains and railings in two hours.",
+      "source": "https://english.visitseoul.net/"
+    },
+    {
+      "name": "Ganghwa Island",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus 3000 from Sinchon",
+      "text": "Dolmens from 1000 BC, coastal forts and a view across the estuary into North Korea.",
+      "source": "https://www.ganghwa.go.kr/"
+    },
+    {
+      "name": "Incheon Chinatown",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "Metro Line 1 to Incheon station",
+      "text": "Korea's only Chinatown, where jajangmyeon noodles were invented, beside the old open port quarter.",
+      "source": "https://www.incheon.go.kr/en/"
+    }
+  ]
 }

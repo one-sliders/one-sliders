@@ -121,23 +121,6 @@
       "text": "Pérez Art Museum Miami is a key Miami culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "South Beach",
-      "label": "Nature",
-      "text": "South Beach works as a nature-focused side trip from Miami, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Wynwood Walls",
-      "label": "Heritage",
-      "text": "Wynwood Walls is a heritage-focused side trip from Miami; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Little Havana",
-      "label": "Heritage",
-      "text": "Little Havana is a heritage-focused side trip from Miami; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Everglades National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car south-west to the Shark Valley entrance",
+      "text": "A fifteen-mile loop past alligators on foot, by bike or on the tram; dry season runs December to April.",
+      "source": "https://www.nps.gov/ever/index.htm"
+    },
+    {
+      "name": "Key Largo and John Pennekamp",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south on US-1 through the Keys",
+      "text": "The first undersea park in the United States, with glass-bottom boats over the coral reef.",
+      "source": "https://www.floridastateparks.org/parks-and-trails/john-pennekamp-coral-reef-state-park"
+    },
+    {
+      "name": "Fort Lauderdale",
+      "label": "Beach",
+      "travelTime": "about 45 min",
+      "how": "Brightline or Tri-Rail north",
+      "text": "A beachfront promenade and the canal network you can tour by water taxi.",
+      "source": "https://www.visitlauderdale.com/"
+    },
+    {
+      "name": "Biscayne National Park",
+      "label": "Island",
+      "travelTime": "about 50 min",
+      "how": "car south to Homestead",
+      "text": "Ninety-five per cent water: mangrove shore, shipwreck trail and reef snorkelling by boat.",
+      "source": "https://www.nps.gov/bisc/index.htm"
+    }
+  ]
 }

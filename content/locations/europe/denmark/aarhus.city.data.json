@@ -139,23 +139,6 @@
       "name": "Marselisborg Palace"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Mols Bjerge",
-      "label": "Nature",
-      "text": "Mols Bjerge National Park offers hills, coast and villages for a full day east of Aarhus."
-    },
-    {
-      "name": "Ebeltoft",
-      "label": "Town",
-      "text": "Ebeltoft is a nearby side trip from Aarhus; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Silkeborg Lakes",
-      "label": "Lake",
-      "text": "Silkeborg Lakes works as a water-facing side trip from Aarhus, useful for a slower day outside the densest central route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -236,5 +219,31 @@
     "matchedName": "Aarhus",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Midttrafik"
+  "transitOperator": "Midttrafik",
+  "nearby": [
+    {
+      "name": "Mols Bjerge National Park",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "bus 123 north-east towards Ebeltoft",
+      "text": "Hills left by the ice sheet, with heath, burial mounds and the Kalø castle ruin on its causeway.",
+      "source": "https://naturstyrelsen.dk/"
+    },
+    {
+      "name": "Ebeltoft",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "bus 123 north-east from Aarhus",
+      "text": "Cobbled lanes and a half-timbered town hall, with the frigate Jylland in dry dock at the harbour.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Silkeborg lakes",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "train west from Aarhus to Silkeborg",
+      "text": "Denmark's lake district, with the Hjejlen paddle steamer running to the Himmelbjerget hill since 1861.",
+      "source": "https://www.visitdenmark.com/"
+    }
+  ]
 }

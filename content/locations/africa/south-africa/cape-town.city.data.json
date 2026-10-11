@@ -128,23 +128,6 @@
       "text": "Cape Point is a named stop in Cape Town worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Cape Winelands",
-      "label": "Wine",
-      "text": "The Cape Winelands towns of Stellenbosch and Franschhoek are under an hour's drive away, ideal for a day of tastings among vineyard-covered valleys."
-    },
-    {
-      "name": "Cape Point",
-      "label": "Nature",
-      "text": "Cape Point and the Cape of Good Hope anchor a scenic nature reserve at the peninsula's tip, roughly an hour south of the city."
-    },
-    {
-      "name": "Boulders Beach",
-      "label": "Wildlife",
-      "text": "Boulders Beach near Simon's Town is home to a colony of African penguins, a popular half-day trip along the False Bay coast."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Cape Town",
     "matchedCountry": "South Africa"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Cape of Good Hope",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south through the Table Mountain National Park gate",
+      "text": "The south-western tip of Africa, with the Cape Point funicular and baboons that raid cars.",
+      "source": "https://www.sanparks.org/parks/table-mountain"
+    },
+    {
+      "name": "Stellenbosch",
+      "label": "Wine",
+      "travelTime": "about 50 min",
+      "how": "car or Metrorail east on the N2",
+      "text": "Cape Dutch gables along oak-lined streets, surrounded by the oldest wine estates in the country.",
+      "source": "https://www.wineroute.co.za/"
+    },
+    {
+      "name": "Boulders Beach",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "Metrorail Southern Line to Simon's Town",
+      "text": "A colony of African penguins nesting between granite boulders, viewed from boardwalks.",
+      "source": "https://www.sanparks.org/parks/table-mountain"
+    },
+    {
+      "name": "Franschhoek",
+      "label": "Wine",
+      "travelTime": "about 1 h 10 min",
+      "how": "car east via Stellenbosch",
+      "text": "A Huguenot valley of restaurants and estates linked by an open-sided wine tram.",
+      "source": "https://www.franschhoek.org.za/"
+    }
+  ]
 }

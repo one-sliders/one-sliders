@@ -129,23 +129,6 @@
       "text": "Îles de Lérins are the offshore islands reached by boat, useful for beaches, walks and a quieter Riviera break."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Antibes",
-      "label": "Coast",
-      "text": "Antibes adds old-town lanes, Picasso Museum and harbour walks a short train ride from Cannes."
-    },
-    {
-      "name": "Grasse",
-      "label": "Town",
-      "text": "Grasse is the perfume capital in the hills behind Cannes, good for workshops and views."
-    },
-    {
-      "name": "Nice",
-      "label": "City",
-      "text": "Nice gives a larger Riviera city day with old-town streets, museums and airport logistics."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -221,5 +204,23 @@
     "matchedName": "Cannes",
     "matchedCountry": "France"
   },
-  "transitOperator": "Palm Bus"
+  "transitOperator": "Palm Bus",
+  "nearby": [
+    {
+      "name": "Grasse",
+      "label": "Craft",
+      "travelTime": "about 40 min",
+      "how": "bus 600 or train north from Cannes",
+      "text": "The perfume capital, where three houses run workshops letting you blend your own.",
+      "source": "https://www.paysdegrasse.fr/"
+    },
+    {
+      "name": "Saint-Paul-de-Vence",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "bus or car east via Cagnes-sur-Mer",
+      "text": "A walled hill village of galleries, with the Fondation Maeght's sculpture garden below.",
+      "source": "https://www.saint-pauldevence.com/en/"
+    }
+  ]
 }

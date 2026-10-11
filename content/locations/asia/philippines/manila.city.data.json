@@ -123,23 +123,6 @@
       "text": "Binondo is a named stop in Manila worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Intramuros",
-      "label": "Heritage",
-      "text": "Intramuros is a heritage-focused side trip from Manila; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Rizal Park",
-      "label": "Nature",
-      "text": "Rizal Park works as a nature-focused side trip from Manila, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Fort Santiago",
-      "label": "Heritage",
-      "text": "Fort Santiago is a heritage-focused side trip from Manila; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Manila",
     "matchedCountry": "Philippines"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Tagaytay and Taal Volcano",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Buendia or Cubao terminals",
+      "text": "A ridge looking down on a volcano inside a lake inside a volcano, with cooler air and bulalo soup.",
+      "source": "https://www.tourism.gov.ph/"
+    },
+    {
+      "name": "Corregidor Island",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "Sun Cruises ferry from the Esplanade Seaside Terminal",
+      "text": "The fortified island that held out in 1942, left as ruined barracks and gun batteries.",
+      "source": "https://www.tourism.gov.ph/"
+    },
+    {
+      "name": "Las Piñas Bamboo Organ",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "bus or car south along Alabang-Zapote Road",
+      "text": "An 1824 church organ with over 900 bamboo pipes, still played at daily mass.",
+      "source": "https://www.tourism.gov.ph/"
+    }
+  ]
 }

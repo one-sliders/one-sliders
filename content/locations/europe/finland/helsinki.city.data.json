@@ -134,23 +134,6 @@
       "text": "Loyly sauna is a named stop in Helsinki worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Porvoo",
-      "label": "Town",
-      "text": "Porvoo is a classic wooden old-town and riverside cafe day trip east of Helsinki."
-    },
-    {
-      "name": "Nuuksio National Park",
-      "label": "Nature",
-      "text": "Nuuksio gives forest lakes and marked trails within reach of Helsinki by public transport and taxi."
-    },
-    {
-      "name": "Tallinn",
-      "label": "Ferry",
-      "text": "Tallinn is possible by ferry for a long day, though an overnight gives a better visit."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -231,5 +214,39 @@
     "matchedName": "Helsinki",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "HSL"
+  "transitOperator": "HSL",
+  "nearby": [
+    {
+      "name": "Porvoo",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "bus from Kamppi bus terminal",
+      "text": "Red ochre shore houses and a wooden old town on the river, with chocolate shops along Välikatu.",
+      "source": "https://www.visitporvoo.fi/en/"
+    },
+    {
+      "name": "Nuuksio National Park",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "train to Espoo, then bus 245",
+      "text": "Lakes and spruce forest on marked trails, with fire pits you are allowed to use.",
+      "source": "https://www.nationalparks.fi/nuuksionp"
+    },
+    {
+      "name": "Sipoonkorpi National Park",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "bus 741 or 742 from Helsinki",
+      "text": "The nearest wilderness to the city: old forest, brooks and the Byabäcken gorge.",
+      "source": "https://www.nationalparks.fi/sipoonkorpinp"
+    },
+    {
+      "name": "Fiskars Village",
+      "label": "Craft",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or train to Karjaa then bus",
+      "text": "An ironworks village from 1649 turned over to designers and smiths, with studios open to visitors.",
+      "source": "https://www.fiskarsvillage.fi/en/"
+    }
+  ]
 }

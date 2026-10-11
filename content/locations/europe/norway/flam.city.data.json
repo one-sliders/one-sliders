@@ -123,23 +123,6 @@
       "text": "Fjord village is a named stop in Flåm worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Flam Railway",
-      "label": "Heritage",
-      "text": "Flam Railway is a heritage-focused side trip from Flåm; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Aurlandsfjord",
-      "label": "Heritage",
-      "text": "Aurlandsfjord is a heritage-focused side trip from Flåm; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Naeroyfjord cruises",
-      "label": "Heritage",
-      "text": "Naeroyfjord cruises is a heritage-focused side trip from Flåm; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -191,5 +174,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Flåm",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Undredal",
+      "label": "Craft",
+      "travelTime": "about 30 min",
+      "how": "car or fjord boat north along the Aurlandsfjord",
+      "text": "A village of eighty people and five hundred goats, with Norway's smallest stave church in use.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Gudvangen",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "bus or fjord cruise through the Nærøyfjord",
+      "text": "A Viking village built with period tools at the head of the narrowest fjord arm.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Borgund Stave Church",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "car east on the E16 through the Lærdal tunnel",
+      "text": "The best-preserved stave church in Norway, standing since about 1180 with its dragon heads intact.",
+      "source": "https://www.visitnorway.com/"
+    }
+  ]
 }

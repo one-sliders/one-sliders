@@ -121,23 +121,6 @@
       "text": "Museo del Barro is a named Asuncion landmark that helps structure a real visit, adding orientation, local context and a clear route anchor."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Aregua",
-      "label": "Town",
-      "text": "Aregua is a lakeside craft town near Asuncion, known for ceramics, strawberries and slower weekend trips."
-    },
-    {
-      "name": "San Bernardino",
-      "label": "Lake",
-      "text": "San Bernardino sits by Lake Ypacarai and works for lake views, restaurants and summer weekend energy."
-    },
-    {
-      "name": "Yaguaron",
-      "label": "Heritage",
-      "text": "Yaguaron is known for its Franciscan church and colonial history, reachable on a car-based day trip."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "South America",
   "countrySlug": "paraguay",
   "countryName": "Paraguay",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Areguá",
+      "label": "Craft",
+      "travelTime": "about 40 min",
+      "how": "bus east towards Lake Ypacaraí",
+      "text": "A ceramics town of colonial houses above the lake, with strawberry stalls in September.",
+      "source": "https://www.senatur.gov.py/"
+    },
+    {
+      "name": "San Bernardino",
+      "label": "Beach",
+      "travelTime": "about 1 h",
+      "how": "coach east on Route 2",
+      "text": "A German-founded lakeside resort that fills with Asunción in January.",
+      "source": "https://www.senatur.gov.py/"
+    },
+    {
+      "name": "Yaguarón",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "coach south-east on Route 1",
+      "text": "A Franciscan church of 1775 whose plain exterior hides a fully painted and gilded interior.",
+      "source": "https://www.senatur.gov.py/"
+    }
+  ]
 }

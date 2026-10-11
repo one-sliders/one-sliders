@@ -123,23 +123,6 @@
       "text": "Lofoten ferry is a named stop in Bodø worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Saltstraumen",
-      "label": "Heritage",
-      "text": "Saltstraumen is a heritage-focused side trip from Bodø; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bodo harbour",
-      "label": "Heritage",
-      "text": "Bodo harbour is a heritage-focused side trip from Bodø; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Mount Ronvik",
-      "label": "Nature",
-      "text": "Mount Ronvik works as a nature-focused side trip from Bodø, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -187,5 +170,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Bodø",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Keiservarden",
+      "label": "Mountain",
+      "travelTime": "about 30 min",
+      "how": "bus to Rønvik, then a 40-minute walk up",
+      "text": "A plateau named after Kaiser Wilhelm II, looking out over the Lofoten wall on clear days.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Sjunkhatten National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car east on the E80 towards Fauske",
+      "text": "Called the children's national park, with easy fjord-to-peak trails and marked family routes.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Fauske marble quarries",
+      "label": "Craft",
+      "travelTime": "about 1 h",
+      "how": "train or bus east to Fauske",
+      "text": "The pink Norwegian Rose marble quarried here lines the UN headquarters in New York.",
+      "source": "https://www.visitnorway.com/"
+    }
+  ]
 }

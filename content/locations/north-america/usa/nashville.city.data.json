@@ -116,23 +116,6 @@
       "text": "The Gulch is a named stop in Nashville worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Grand Ole Opry",
-      "label": "Heritage",
-      "text": "Grand Ole Opry is a heritage-focused side trip from Nashville; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ryman Auditorium",
-      "label": "Heritage",
-      "text": "Ryman Auditorium is a heritage-focused side trip from Nashville; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Broadway Nashville",
-      "label": "Heritage",
-      "text": "Broadway Nashville is a heritage-focused side trip from Nashville; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Franklin",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "car south on I-65",
+      "text": "A preserved main street and the Carnton plantation used as a field hospital after the 1864 battle.",
+      "source": "https://visitfranklin.com/"
+    },
+    {
+      "name": "Natchez Trace Parkway",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south-west to the double-arch bridge",
+      "text": "A 710-kilometre parkway on an old trade route, with no trucks and no billboards.",
+      "source": "https://www.nps.gov/natr/index.htm"
+    },
+    {
+      "name": "Mammoth Cave National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on I-65 into Kentucky",
+      "text": "The longest cave system known, with 676 kilometres mapped and tours from easy to crawling.",
+      "source": "https://www.nps.gov/maca/index.htm"
+    }
+  ]
 }

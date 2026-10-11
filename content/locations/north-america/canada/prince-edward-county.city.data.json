@@ -116,23 +116,6 @@
       "text": "Farm-to-table food is a named stop in Prince Edward County worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Sandbanks Provincial Park",
-      "label": "Nature",
-      "text": "Sandbanks Provincial Park works as a nature-focused side trip from Prince Edward County, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Picton",
-      "label": "Heritage",
-      "text": "Picton is a heritage-focused side trip from Prince Edward County; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Wellington",
-      "label": "Heritage",
-      "text": "Wellington is a heritage-focused side trip from Prince Edward County; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -206,5 +189,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Lake on the Mountain",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "car east to the Glenora ferry",
+      "text": "A lake sixty metres above the bay with no visible source, which puzzled settlers for a century.",
+      "source": "https://www.ontarioparks.ca/park/lakeonthemountain"
+    },
+    {
+      "name": "Prince Edward Point bird observatory",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car south-east on County Road 13",
+      "text": "A migration funnel where songbirds are banded each spring and autumn, at a lighthouse point.",
+      "source": "https://www.ontarioparks.ca/"
+    },
+    {
+      "name": "Napanee and the Lennox shore",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "car north on County Road 49 then Highway 401",
+      "text": "A limestone mill town on a river gorge, with the 1864 courthouse still in use.",
+      "source": "https://www.ontariotravel.net/"
+    }
+  ]
 }

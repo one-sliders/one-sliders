@@ -123,23 +123,6 @@
       "text": "Fjord cruises is a named stop in Geiranger worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Geirangerfjord",
-      "label": "Heritage",
-      "text": "Geirangerfjord is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Seven Sisters waterfall",
-      "label": "Heritage",
-      "text": "Seven Sisters waterfall is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Flydalsjuvet",
-      "label": "Heritage",
-      "text": "Flydalsjuvet is a heritage-focused side trip from Geiranger; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Geiranger",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Herdalssetra",
+      "label": "Craft",
+      "travelTime": "about 1 h",
+      "how": "car to Norddal, then the toll road up the valley",
+      "text": "A summer mountain farm with 400 goats, making and selling its own cheese from June to August.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Trollstigen",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north over the Linge ferry",
+      "text": "Eleven hairpins up a wall of rock with a waterfall through the middle; closed in winter.",
+      "source": "https://www.nasjonaleturistveger.no/en/routes/geiranger-trollstigen"
+    },
+    {
+      "name": "Hellesylt",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "fjord ferry west along the Geirangerfjord",
+      "text": "A waterfall splits the village in two; the ferry crossing is the scenic half of the trip.",
+      "source": "https://www.visitnorway.com/"
+    }
+  ]
 }

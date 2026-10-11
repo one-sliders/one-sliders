@@ -123,23 +123,6 @@
       "text": "Godafoss trips is a named stop in Akureyri worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Botanical Garden",
-      "label": "Heritage",
-      "text": "Botanical Garden works as a nature-focused side trip from Akureyri, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Eyjafjordur",
-      "label": "Heritage",
-      "text": "Eyjafjordur is a heritage-focused side trip from Akureyri; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Hlidarfjall",
-      "label": "Heritage",
-      "text": "Hlidarfjall is a heritage-focused side trip from Akureyri; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Akureyri",
     "matchedCountry": "Iceland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Goðafoss",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car east on Route 1",
+      "text": "The waterfall where the lawspeaker threw the pagan idols in the year 1000.",
+      "source": "https://www.northiceland.is/en"
+    },
+    {
+      "name": "Lake Mývatn",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car east on Route 1",
+      "text": "Pseudocraters, lava pillars and the Mývatn Nature Baths in a volcanic basin full of ducks.",
+      "source": "https://www.visitmyvatn.is/"
+    },
+    {
+      "name": "Hrísey",
+      "label": "Island",
+      "travelTime": "about 50 min",
+      "how": "car to Árskógssandur, then the Sævar ferry",
+      "text": "A quiet island in the fjord known for ptarmigan and walking paths, with about 150 residents.",
+      "source": "https://www.northiceland.is/en"
+    }
+  ]
 }

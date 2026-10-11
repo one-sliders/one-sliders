@@ -126,23 +126,6 @@
       "text": "Parque Ramiro Ruediger is a practical green space near Vila Germanica, good for a walk between event sessions."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Pomerode",
-      "label": "Town",
-      "text": "Pomerode is a nearby German-Brazilian town with half-timbered buildings, family attractions and an easy short drive from Blumenau."
-    },
-    {
-      "name": "Balneario Camboriu",
-      "label": "Coast",
-      "text": "Balneario Camboriu adds beaches, high-rises and nightlife to a Blumenau trip, usually as a full-day coastal detour."
-    },
-    {
-      "name": "Itajai",
-      "label": "Port",
-      "text": "Itajai is the nearest port-city option, useful for seafood, beaches nearby and airport-linked coastal logistics."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -196,5 +179,31 @@
   "continentName": "South America",
   "countrySlug": "brazil",
   "countryName": "Brazil",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Pomerode",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "bus north on SC-418",
+      "text": "The most German town in Brazil, with half-timbered houses and Pomeranian still spoken.",
+      "source": "https://www.visitbrasil.com/"
+    },
+    {
+      "name": "Parque Nacional da Serra do Itajaí",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car south-west towards Apiúna",
+      "text": "Atlantic forest on steep ridges, with the Spitzkopf peak trail starting near Blumenau.",
+      "source": "https://www.visitbrasil.com/"
+    },
+    {
+      "name": "Gaspar",
+      "label": "Nature",
+      "travelTime": "about 25 min",
+      "how": "bus east on BR-470",
+      "text": "A river town with thermal water parks that stay open through the southern winter.",
+      "source": "https://www.visitbrasil.com/"
+    }
+  ]
 }

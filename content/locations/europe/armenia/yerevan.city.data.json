@@ -134,23 +134,6 @@
       "name": "Kond"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Garni Temple",
-      "label": "Heritage",
-      "text": "Garni Temple is Armenia's classical colonnaded temple, usually paired with nearby Geghard on a day trip."
-    },
-    {
-      "name": "Geghard Monastery",
-      "label": "Heritage",
-      "text": "Geghard Monastery is partly carved into rock and sits in a dramatic gorge east of Yerevan."
-    },
-    {
-      "name": "Lake Sevan",
-      "label": "Lake",
-      "text": "Lake Sevan offers monasteries, fish restaurants and cooler air within reach of a longer day trip."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Yerevan",
     "matchedCountry": "Armenia"
   },
-  "transitOperator": "Yerevan Metro"
+  "transitOperator": "Yerevan Metro",
+  "nearby": [
+    {
+      "name": "Garni and Geghard",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "marshrutka from Gai station east",
+      "text": "A Hellenistic temple above a gorge of basalt columns, and a monastery carved into the rock.",
+      "source": "https://armenia.travel/"
+    },
+    {
+      "name": "Khor Virap",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "marshrutka south towards Artashat",
+      "text": "A monastery over the pit where Gregory the Illuminator was held, facing Mount Ararat.",
+      "source": "https://armenia.travel/"
+    },
+    {
+      "name": "Echmiadzin",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "marshrutka west from Kilikia station",
+      "text": "The seat of the Armenian Apostolic Church, founded in 301 when Armenia adopted Christianity.",
+      "source": "https://armenia.travel/"
+    }
+  ]
 }

@@ -123,23 +123,6 @@
       "text": "Rosenlundsbadet is a named stop in Jönköping worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Lake Vattern",
-      "label": "Nature",
-      "text": "Lake Vattern works as a nature-focused side trip from Jönköping, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Sofiakyrkan",
-      "label": "Heritage",
-      "text": "Sofiakyrkan is a heritage-focused side trip from Jönköping; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Elmia",
-      "label": "Heritage",
-      "text": "Elmia is a heritage-focused side trip from Jönköping; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -215,5 +198,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Jönköping",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Huskvarna",
+      "label": "Craft",
+      "travelTime": "about 15 min",
+      "how": "bus 1 east along the lake",
+      "text": "A factory town that made rifles, then sewing machines, then chainsaws; the museum has all three.",
+      "source": "https://www.jonkoping.se/"
+    },
+    {
+      "name": "Visingsö",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "bus to Gränna, then the Visingsö ferry",
+      "text": "An island in Lake Vättern with oak forest planted for the navy and horse-drawn carriages.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Store Mosse National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "car south-west on Route 151 towards Hillerstorp",
+      "text": "The largest bog south of Lapland, crossed on boardwalks with cranes stopping over in spring.",
+      "source": "https://www.sverigesnationalparker.se/park/store-mosse-nationalpark/"
+    }
+  ]
 }

@@ -128,23 +128,6 @@
       "text": "Wilanow Palace anchors the historic and ceremonial side of Warsaw, making it a practical stop for architecture, local memory and orientation."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Zelazowa Wola",
-      "label": "Heritage",
-      "text": "Zelazowa Wola is a heritage-focused side trip from Warsaw; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Kampinos National Park",
-      "label": "Nature",
-      "text": "Kampinos National Park works as a nature-focused side trip from Warsaw, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Lodz",
-      "label": "Heritage",
-      "text": "Lodz is a heritage-focused side trip from Warsaw; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Warsaw",
     "matchedCountry": "Poland"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Żelazowa Wola",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "bus from Warszawa Zachodnia to Sochaczew",
+      "text": "Chopin's birthplace manor in a park, with piano recitals in the house on summer weekends.",
+      "source": "https://nifc.pl/en"
+    },
+    {
+      "name": "Kampinos National Park",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "bus from Metro Młociny to Izabelin",
+      "text": "Inland dunes and marsh forest on the city's edge, with 360 kilometres of marked trails.",
+      "source": "https://www.poland.travel/en"
+    },
+    {
+      "name": "Łódź",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "train from Warszawa Centralna",
+      "text": "A textile boomtown of red-brick mills, with Piotrkowska Street running four kilometres through it.",
+      "source": "https://lodz.travel/en/"
+    },
+    {
+      "name": "Modlin Fortress",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "train from Warszawa Centralna to Modlin",
+      "text": "A Napoleonic fortress with the longest barracks building in Europe, at the meeting of the Vistula and Narew.",
+      "source": "https://www.twierdzamodlin.pl/"
+    }
+  ]
 }

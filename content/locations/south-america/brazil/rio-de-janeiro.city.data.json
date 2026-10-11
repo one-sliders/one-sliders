@@ -131,23 +131,6 @@
       "text": "Museum of Tomorrow is a key Rio de Janeiro culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Niteroi",
-      "label": "Bay",
-      "text": "Niteroi is a quick bay crossing for Oscar Niemeyer architecture, beaches and views back toward Rio's skyline."
-    },
-    {
-      "name": "Petropolis",
-      "label": "Heritage",
-      "text": "Petropolis offers imperial history and cooler mountain air, making it one of Rio's classic day trips."
-    },
-    {
-      "name": "Ilha Grande",
-      "label": "Island",
-      "text": "Ilha Grande is better as an overnight beach escape, with boat transfers, trails and car-free village stays."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -230,5 +213,31 @@
   "countrySlug": "brazil",
   "countryName": "Brazil",
   "depth": 4,
-  "transitOperator": "MetroRio"
+  "transitOperator": "MetroRio",
+  "nearby": [
+    {
+      "name": "Niterói",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "ferry from Praça XV",
+      "text": "Niemeyer's flying-saucer art museum on a headland, and the best view back at Rio's skyline.",
+      "source": "https://culturaniteroi.com.br/macniteroi/"
+    },
+    {
+      "name": "Tijuca National Park",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "car or taxi to the Alto da Boa Vista entrance",
+      "text": "Replanted Atlantic rainforest with waterfalls and the Pico da Tijuca climb above the city.",
+      "source": "https://www.parquenacionaldatijuca.rio/"
+    },
+    {
+      "name": "Petrópolis",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "bus from Rodoviária Novo Rio",
+      "text": "The emperor's summer capital in the mountains, cooler than the coast and built round the Imperial Museum.",
+      "source": "https://visit.rio/"
+    }
+  ]
 }

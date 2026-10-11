@@ -134,23 +134,6 @@
       "name": "Letna Park"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Kutna Hora",
-      "label": "Heritage",
-      "text": "Kutna Hora is a classic rail day trip for St Barbara's Cathedral and the Sedlec Ossuary."
-    },
-    {
-      "name": "Karlstejn Castle",
-      "label": "Castle",
-      "text": "Karlstejn Castle is a popular countryside castle trip southwest of Prague by train and walk."
-    },
-    {
-      "name": "Cesky Krumlov",
-      "label": "Town",
-      "text": "Cesky Krumlov is beautiful but long as a day trip, better with an overnight if possible."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,39 @@
     "matchedName": "Prague",
     "matchedCountry": "Czechia"
   },
-  "transitOperator": "PID"
+  "transitOperator": "PID",
+  "nearby": [
+    {
+      "name": "Karlštejn Castle",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "train from Praha hlavní nádraží to Karlštejn",
+      "text": "Charles IV built it to hold the crown jewels; the Chapel of the Holy Cross is lined with semi-precious stone.",
+      "source": "https://www.hrad-karlstejn.cz/en"
+    },
+    {
+      "name": "Kutná Hora",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "direct train from Praha hlavní nádraží",
+      "text": "A silver-mining town with St Barbara's cathedral and the ossuary decorated in human bone.",
+      "source": "https://www.visitczechia.com/"
+    },
+    {
+      "name": "Bohemian Switzerland National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h 15 min",
+      "how": "train to Děčín, then bus to Hřensko",
+      "text": "Sandstone towers and the Pravčická Brána arch, the largest natural bridge in Europe.",
+      "source": "https://www.npcs.cz/en"
+    },
+    {
+      "name": "Konopiště Castle",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "train from Praha hlavní nádraží to Benešov",
+      "text": "Franz Ferdinand's home, left as he had it, with a rose garden and a bear in the moat.",
+      "source": "https://www.zamek-konopiste.cz/en"
+    }
+  ]
 }

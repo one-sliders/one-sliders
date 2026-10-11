@@ -121,23 +121,6 @@
       "text": "Festival du Voyageur is a named stop in Winnipeg worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "The Forks",
-      "label": "Heritage",
-      "text": "The Forks is a heritage-focused side trip from Winnipeg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Exchange District",
-      "label": "Heritage",
-      "text": "Exchange District is a heritage-focused side trip from Winnipeg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Assiniboine Park",
-      "label": "Nature",
-      "text": "Assiniboine Park works as a nature-focused side trip from Winnipeg, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Lower Fort Garry",
+      "label": "Heritage",
+      "travelTime": "about 35 min",
+      "how": "car north on Highway 9",
+      "text": "The oldest intact stone fur-trade fort in North America, staffed in 1850s role.",
+      "source": "https://www.travelmanitoba.com/"
+    },
+    {
+      "name": "Birds Hill Provincial Park",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "car north-east on Highway 59",
+      "text": "An esker ridge with a swimming lake, and the site of the July folk festival.",
+      "source": "https://www.gov.mb.ca/sd/parks/"
+    },
+    {
+      "name": "Steinbach Mennonite Heritage Village",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car south-east on Highway 12",
+      "text": "A working windmill and a village street showing how Mennonite settlers farmed the prairie.",
+      "source": "https://mennoniteheritagevillage.com/"
+    }
+  ]
 }

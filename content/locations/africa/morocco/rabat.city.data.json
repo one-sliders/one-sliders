@@ -128,18 +128,6 @@
       "text": "Rabat Medina is a clear heritage marker in Rabat, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Sale",
-      "label": "History",
-      "text": "Sale, just across the Bou Regreg river, offers a quieter medina and historic corsair-era walls a short tram ride from Rabat."
-    },
-    {
-      "name": "Meknes",
-      "label": "Heritage",
-      "text": "Meknes, an imperial city about an hour away, pairs well with a Rabat stay for its monumental gates and nearby Volubilis ruins."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +202,23 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Rabat",
     "matchedCountry": "Morocco"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Salé",
+      "label": "Town",
+      "travelTime": "about 20 min",
+      "how": "tram line 2 over the Bou Regreg",
+      "text": "The corsair town across the river, with a medersa of carved cedar and far fewer visitors.",
+      "source": "https://www.visitmorocco.com/en"
+    },
+    {
+      "name": "Kenitra and the Sidi Boughaba lake",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "train north from Rabat Ville",
+      "text": "A freshwater lake behind the dunes, with marbled teal and flamingos in winter.",
+      "source": "https://www.visitmorocco.com/en"
+    }
+  ]
 }

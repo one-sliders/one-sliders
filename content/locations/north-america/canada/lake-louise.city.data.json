@@ -116,23 +116,6 @@
       "text": "Ice skating season is a named stop in Lake Louise worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Lake Louise lakeshore",
-      "label": "Nature",
-      "text": "Lake Louise lakeshore works as a nature-focused side trip from Lake Louise, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Moraine Lake access",
-      "label": "Nature",
-      "text": "Moraine Lake access works as a nature-focused side trip from Lake Louise, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Fairview Lookout",
-      "label": "Heritage",
-      "text": "Fairview Lookout is a heritage-focused side trip from Lake Louise; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -190,5 +173,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Moraine Lake",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "Parks Canada shuttle only; private cars are not allowed",
+      "text": "Ten peaks above a lake that turns deep blue as the glaciers melt through June.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    },
+    {
+      "name": "Yoho National Park",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "car west on the Trans-Canada into British Columbia",
+      "text": "Takakkaw Falls drops 254 metres, and the Burgess Shale fossils are guided-hike only.",
+      "source": "https://parks.canada.ca/pn-np/bc/yoho"
+    },
+    {
+      "name": "Icefields Parkway to Peyto Lake",
+      "label": "Mountain",
+      "travelTime": "about 45 min",
+      "how": "car north on Highway 93",
+      "text": "A wolf-head-shaped lake seen from Bow Summit, the highest point on the parkway.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    }
+  ]
 }

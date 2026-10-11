@@ -121,23 +121,6 @@
       "text": "Pocitos Beach adds outdoor time to a Montevideo stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Colonia del Sacramento",
-      "label": "Heritage",
-      "text": "Colonia del Sacramento is a UNESCO-listed riverside town, easy as a day trip or ferry link to Buenos Aires."
-    },
-    {
-      "name": "Punta del Este",
-      "label": "Beach",
-      "text": "Punta del Este is Uruguay's famous resort city, best for beaches, nightlife and a longer coastal day."
-    },
-    {
-      "name": "Piriapolis",
-      "label": "Coast",
-      "text": "Piriapolis is a nearby side trip from Montevideo; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -220,5 +203,31 @@
   "countrySlug": "uruguay",
   "countryName": "Uruguay",
   "depth": 4,
-  "transitOperator": "STM"
+  "transitOperator": "STM",
+  "nearby": [
+    {
+      "name": "Colonia del Sacramento",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach west on Route 1 from Tres Cruces",
+      "text": "A Portuguese smuggling port of cobbled streets, with a lighthouse built into convent ruins.",
+      "source": "https://www.gub.uy/ministerio-turismo/"
+    },
+    {
+      "name": "Piriápolis",
+      "label": "Beach",
+      "travelTime": "about 1 h 15 min",
+      "how": "coach east on Route Interbalnearia",
+      "text": "Uruguay's first resort, laid out in the 1890s under a hill with a chairlift to the top.",
+      "source": "https://www.gub.uy/ministerio-turismo/"
+    },
+    {
+      "name": "Canelones wine route",
+      "label": "Wine",
+      "travelTime": "about 40 min",
+      "how": "car north on Route 5 towards Las Piedras",
+      "text": "Family bodegas pouring tannat, the grape Uruguay has made its own.",
+      "source": "https://www.gub.uy/ministerio-turismo/"
+    }
+  ]
 }

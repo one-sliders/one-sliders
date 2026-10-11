@@ -128,23 +128,6 @@
       "text": "Montjuic is a named stop in Barcelona worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Montserrat",
-      "label": "Heritage",
-      "text": "Montserrat is a heritage-focused side trip from Barcelona; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Sitges",
-      "label": "Heritage",
-      "text": "Sitges is a heritage-focused side trip from Barcelona; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Girona",
-      "label": "Heritage",
-      "text": "Girona is a heritage-focused side trip from Barcelona; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Barcelona",
     "matchedCountry": "Spain"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Montserrat",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "R5 train from Plaça Espanya, then rack railway or cable car",
+      "text": "A Benedictine monastery wedged into serrated rock, with the Black Madonna and ridge walks above.",
+      "source": "https://www.montserratvisita.com/en/"
+    },
+    {
+      "name": "Sitges",
+      "label": "Beach",
+      "travelTime": "about 40 min",
+      "how": "R2 Sud train from Barcelona Sants",
+      "text": "Seventeen beaches below a seafront church, and the town that holds Catalonia's biggest carnival.",
+      "source": "https://www.visitsitges.com/en/"
+    },
+    {
+      "name": "Penedès wine country",
+      "label": "Wine",
+      "travelTime": "about 50 min",
+      "how": "R4 train to Sant Sadurní d'Anoia",
+      "text": "The cava cellars, many of them tunnelled under the town and open for tours.",
+      "source": "https://www.dopenedes.cat/en/"
+    },
+    {
+      "name": "Girona",
+      "label": "Town",
+      "travelTime": "about 40 min",
+      "how": "high-speed AVE train from Barcelona Sants",
+      "text": "Walk the medieval walls over one of Europe's best-preserved Jewish quarters, then the coloured river houses.",
+      "source": "https://www.girona.cat/turisme/eng/"
+    }
+  ]
 }

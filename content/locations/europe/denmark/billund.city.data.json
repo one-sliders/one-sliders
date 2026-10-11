@@ -129,23 +129,6 @@
       "name": "Airport gateway"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Givskud Zoo",
-      "label": "Family",
-      "text": "Givskud Zoo combines safari-style driving areas, walking zones and dinosaur exhibits north of Billund."
-    },
-    {
-      "name": "Jelling",
-      "label": "Heritage",
-      "text": "Jelling has UNESCO-listed Viking monuments and a strong visitor centre within an easy outing."
-    },
-    {
-      "name": "Vejle",
-      "label": "Town",
-      "text": "Vejle is a nearby side trip from Billund; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -194,5 +177,31 @@
     "matchedName": "Billund",
     "matchedCountry": "Denmark"
   },
-  "transitOperator": "Sydtrafik"
+  "transitOperator": "Sydtrafik",
+  "nearby": [
+    {
+      "name": "Jelling",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "bus 143 north-east towards Vejle",
+      "text": "The rune stones Harald Bluetooth raised, called Denmark's birth certificate, between two royal mounds.",
+      "source": "https://natmus.dk/museer-og-slotte/kongernes-jelling/"
+    },
+    {
+      "name": "Vejle fjord",
+      "label": "Nature",
+      "travelTime": "about 35 min",
+      "how": "bus 143 east to Vejle",
+      "text": "A town at the head of a fjord, with the Wave apartment blocks on the waterfront and forested slopes behind.",
+      "source": "https://www.visitvejle.com/"
+    },
+    {
+      "name": "Randbøl Hede",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "car west on Route 176",
+      "text": "One of Denmark's largest remaining heaths, purple in August, with sheep keeping it open.",
+      "source": "https://naturstyrelsen.dk/"
+    }
+  ]
 }

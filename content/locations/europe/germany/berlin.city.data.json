@@ -134,23 +134,6 @@
       "text": "Tempelhofer Feld is a named stop in Berlin worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Potsdam",
-      "label": "Palace",
-      "text": "Potsdam is a nearby side trip from Berlin; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Sachsenhausen",
-      "label": "Memorial",
-      "text": "Sachsenhausen is a nearby side trip from Berlin; keep it for a day when travel time, weather and opening hours fit the route."
-    },
-    {
-      "name": "Spreewald",
-      "label": "Nature",
-      "text": "Spreewald works as a nature-focused side trip from Berlin, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,39 @@
     "matchedName": "Berlin",
     "matchedCountry": "Germany"
   },
-  "transitOperator": "BVG"
+  "transitOperator": "BVG",
+  "nearby": [
+    {
+      "name": "Potsdam and Sanssouci",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "S-Bahn S7 or regional train to Potsdam Hauptbahnhof",
+      "text": "Frederick the Great's terraced vineyard palace and a park big enough to spend the whole day in.",
+      "source": "https://www.spsg.de/en/palaces-gardens/object/sanssouci-palace/"
+    },
+    {
+      "name": "Spreewald",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "regional train RE2 to Lübben or Lübbenau",
+      "text": "A maze of canals you cross by punt, with gherkins sold at every landing stage.",
+      "source": "https://www.spreewald.de/en/"
+    },
+    {
+      "name": "Sachsenhausen Memorial",
+      "label": "Heritage",
+      "travelTime": "about 45 min",
+      "how": "S1 to Oranienburg, then a 20-minute walk or bus 804",
+      "text": "The camp the SS used as its model and training ground, kept as a memorial with free entry.",
+      "source": "https://www.sachsenhausen-sbg.de/en/"
+    },
+    {
+      "name": "Werder (Havel)",
+      "label": "Town",
+      "travelTime": "about 50 min",
+      "how": "regional train RE1 to Werder (Havel)",
+      "text": "An island old town among orchards; the fruit-blossom festival fills it at the end of April.",
+      "source": "https://www.werder-havel.de/"
+    }
+  ]
 }

@@ -116,23 +116,6 @@
       "text": "Whale watching is a named stop in Victoria worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Inner Harbour",
-      "label": "Heritage",
-      "text": "Inner Harbour is a heritage-focused side trip from Victoria; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Butchart Gardens",
-      "label": "Heritage",
-      "text": "Butchart Gardens is a heritage-focused side trip from Victoria; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Fisherman's Wharf",
-      "label": "Heritage",
-      "text": "Fisherman's Wharf is a heritage-focused side trip from Victoria; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Goldstream Provincial Park",
+      "label": "Nature",
+      "travelTime": "about 30 min",
+      "how": "bus 50 north-west on the Trans-Canada",
+      "text": "Old-growth cedar and the autumn salmon run, with eagles following it in December.",
+      "source": "https://bcparks.ca/goldstream-park/"
+    },
+    {
+      "name": "Sooke Potholes",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "car west on Highway 14",
+      "text": "Swimming holes carved in bedrock by the Sooke river, reached down short forest paths.",
+      "source": "https://bcparks.ca/sooke-potholes-park/"
+    },
+    {
+      "name": "Sidney and the Saanich Peninsula",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "bus 72 north on the Pat Bay Highway",
+      "text": "A seaside town of bookshops with a Thursday market and ferries out to the Gulf Islands.",
+      "source": "https://www.hellobc.com/"
+    }
+  ]
 }

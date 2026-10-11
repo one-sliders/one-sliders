@@ -121,23 +121,6 @@
       "text": "Banff day trips is a named stop in Calgary worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Calgary Stampede",
-      "label": "Heritage",
-      "text": "Calgary Stampede is a heritage-focused side trip from Calgary; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Bow River Pathway",
-      "label": "Nature",
-      "text": "Bow River Pathway works as a nature-focused side trip from Calgary, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Studio Bell",
-      "label": "Heritage",
-      "text": "Studio Bell is a heritage-focused side trip from Calgary; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Banff National Park",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car or Banff Airporter coach west on the Trans-Canada",
+      "text": "Canada's first national park: Bow Falls, the Banff Gondola and hot springs under Sulphur Mountain.",
+      "source": "https://parks.canada.ca/pn-np/ab/banff"
+    },
+    {
+      "name": "Kananaskis Country",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "car west on Highway 1 then south on Highway 40",
+      "text": "The Rockies without the Banff crowds, with Troll Falls and the Kananaskis Nordic Spa.",
+      "source": "https://www.albertaparks.ca/parks/kananaskis/"
+    },
+    {
+      "name": "Head-Smashed-In Buffalo Jump",
+      "label": "Heritage",
+      "travelTime": "about 1 h 15 min",
+      "how": "car south-west on Highway 2 then 785",
+      "text": "A cliff the Blackfoot drove bison over for 6,000 years, explained in a museum built into the hillside.",
+      "source": "https://headsmashedin.ca/"
+    }
+  ]
 }

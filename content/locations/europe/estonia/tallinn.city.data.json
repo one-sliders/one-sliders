@@ -134,23 +134,6 @@
       "text": "Balti Jaam Market is useful for reading Tallinn's daily rhythm through food stalls, craft sellers, local errands and short stops between bigger sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Lahemaa National Park",
-      "label": "Nature",
-      "text": "Lahemaa National Park offers bog trails, manor houses and Baltic coastline east of Tallinn."
-    },
-    {
-      "name": "Helsinki",
-      "label": "Ferry",
-      "text": "Helsinki is possible as a ferry day trip, though it works better with an overnight."
-    },
-    {
-      "name": "Paldiski",
-      "label": "Coast",
-      "text": "Paldiski is a nearby side trip from Tallinn; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Tallinn",
     "matchedCountry": "Estonia"
   },
-  "transitOperator": "Tallinna Linnatransport"
+  "transitOperator": "Tallinna Linnatransport",
+  "nearby": [
+    {
+      "name": "Lahemaa National Park",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "bus from Tallinn coach station towards Käsmu",
+      "text": "Bog boardwalks, erratic boulders and restored manor houses along a forested coast.",
+      "source": "https://www.keskkonnaamet.ee/en"
+    },
+    {
+      "name": "Rummu quarry",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "car west on Route 8 to Rummu",
+      "text": "A flooded limestone prison quarry with turquoise water over the submerged buildings.",
+      "source": "https://visitestonia.com/en"
+    },
+    {
+      "name": "Keila-Joa",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "train to Keila, then bus",
+      "text": "A six-metre waterfall below a neo-Gothic manor, with suspension bridges through the park.",
+      "source": "https://visitestonia.com/en"
+    }
+  ]
 }

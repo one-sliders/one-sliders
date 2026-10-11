@@ -134,23 +134,6 @@
       "name": "MuseumsQuartier"
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Bratislava",
-      "label": "City",
-      "text": "Bratislava is close by train or boat, giving a compact old town and Danube contrast to Vienna."
-    },
-    {
-      "name": "Wachau Valley",
-      "label": "Wine",
-      "text": "The Wachau Valley is a classic day trip for Danube scenery, vineyards, Melk Abbey and small towns."
-    },
-    {
-      "name": "Klosterneuburg",
-      "label": "Heritage",
-      "text": "Klosterneuburg Abbey is a quick outing north of Vienna with wine cellars, art and river views."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -218,5 +201,39 @@
     "matchedName": "Vienna",
     "matchedCountry": "Austria"
   },
-  "transitOperator": "Wiener Linien"
+  "transitOperator": "Wiener Linien",
+  "nearby": [
+    {
+      "name": "Wachau Valley",
+      "label": "Wine",
+      "travelTime": "about 1 h 10 min",
+      "how": "train from Franz-Josefs-Bahnhof to Krems",
+      "text": "Terraced Grüner Veltliner vineyards along the Danube, with Dürnstein's blue abbey tower above them.",
+      "source": "https://www.donau.com/en/wachau-nibelungengau-kremstal/"
+    },
+    {
+      "name": "Bratislava",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "REX train from Wien Hauptbahnhof",
+      "text": "A second capital within commuting distance: castle hill, a compact old town and far lower prices.",
+      "source": "https://www.visitbratislava.com/"
+    },
+    {
+      "name": "Baden bei Wien",
+      "label": "Spa",
+      "travelTime": "about 45 min",
+      "how": "Badner Bahn tram from Vienna Oper",
+      "text": "Sulphur baths the Habsburgs used, in a Biedermeier spa town with a rose garden and casino.",
+      "source": "https://www.austria.info/en"
+    },
+    {
+      "name": "Mayerling and the Vienna Woods",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "train to Baden then bus 1140",
+      "text": "Beech forest trails from the hunting lodge where Crown Prince Rudolf died in 1889.",
+      "source": "https://www.wienerwald.info/"
+    }
+  ]
 }

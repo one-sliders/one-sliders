@@ -128,23 +128,6 @@
       "text": "Ramlosa spring park adds outdoor time to a Helsingborg stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Karnan",
-      "label": "Heritage",
-      "text": "Karnan is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Dunkers kulturhus",
-      "label": "Heritage",
-      "text": "Dunkers kulturhus is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Oresund ferries",
-      "label": "Heritage",
-      "text": "Oresund ferries is a heritage-focused side trip from Helsingborg; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Helsingborg",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Helsingør",
+      "label": "Town",
+      "travelTime": "about 20 min",
+      "how": "ForSea ferry from Helsingborg harbour",
+      "text": "Twenty minutes across the sound to Kronborg castle and a maritime museum sunk into a dry dock.",
+      "source": "https://www.visitdenmark.com/"
+    },
+    {
+      "name": "Kullaberg",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "bus 222 north-west to Mölle",
+      "text": "A rock peninsula with caves, a lighthouse and the Nimis driftwood labyrinth hidden below the cliff.",
+      "source": "https://visitsweden.com/"
+    },
+    {
+      "name": "Lund",
+      "label": "Town",
+      "travelTime": "about 35 min",
+      "how": "Pågatåg train south from Helsingborg",
+      "text": "A Romanesque cathedral with an astronomical clock that performs twice a day.",
+      "source": "https://visitlund.se/en"
+    }
+  ]
 }

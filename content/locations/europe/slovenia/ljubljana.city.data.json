@@ -128,18 +128,6 @@
       "text": "Tivoli Park adds outdoor time to a Ljubljana stay, with open space, views or waterfront breathing room between denser city sights."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Ljubljana Castle",
-      "label": "Heritage",
-      "text": "Ljubljana Castle is a heritage-focused side trip from Ljubljana; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Tivoli Park",
-      "label": "Nature",
-      "text": "Tivoli Park works as a nature-focused side trip from Ljubljana, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Ljubljana",
     "matchedCountry": "Slovenia"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Lake Bled",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "bus or train from Ljubljana to Bled",
+      "text": "An island church rowed to in a pletna boat, under a cliff castle; cream cake is the local order.",
+      "source": "https://www.bled.si/en/"
+    },
+    {
+      "name": "Postojna Cave",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "train or bus from Ljubljana to Postojna",
+      "text": "An electric train runs into 24 kilometres of karst passages, home to the blind olm.",
+      "source": "https://www.postojnska-jama.eu/en/"
+    },
+    {
+      "name": "Škocjan Caves",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "train to Divača, then the free shuttle",
+      "text": "A UNESCO underground canyon with a bridge 45 metres above the Reka river.",
+      "source": "https://www.park-skocjanske-jame.si/en/"
+    },
+    {
+      "name": "Vintgar Gorge",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "bus to Bled, then shuttle to Vintgar",
+      "text": "A boardwalk pinned to the rock above the Radovna river; open spring to late autumn.",
+      "source": "https://www.vintgar.si/en/"
+    }
+  ]
 }

@@ -123,23 +123,6 @@
       "text": "Sentosa Island adds the water-facing side of Singapore, making it a good break from museums, traffic and dense historic streets."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Marina Bay Sands",
-      "label": "Heritage",
-      "text": "Marina Bay Sands is a heritage-focused side trip from Singapore; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Gardens by the Bay",
-      "label": "Heritage",
-      "text": "Gardens by the Bay is a heritage-focused side trip from Singapore; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Merlion Park",
-      "label": "Nature",
-      "text": "Merlion Park works as a nature-focused side trip from Singapore, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Singapore",
     "matchedCountry": "Singapore"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Pulau Ubin",
+      "label": "Island",
+      "travelTime": "about 50 min",
+      "how": "MRT to Tanah Merah, bus 2 to Changi Point, then bumboat",
+      "text": "The last kampong island: hire a bike for the quarry lakes and the Chek Jawa tidal flats.",
+      "source": "https://www.nparks.gov.sg/visit/parks/park-detail/pulau-ubin"
+    },
+    {
+      "name": "Sungei Buloh Wetland Reserve",
+      "label": "Nature",
+      "travelTime": "about 1 h",
+      "how": "MRT to Kranji, then bus 925",
+      "text": "Mangrove boardwalks with mudskippers and crocodiles, and migratory waders from September to March.",
+      "source": "https://www.nparks.gov.sg/visit/parks/park-detail/sungei-buloh-wetland-reserve"
+    },
+    {
+      "name": "Labrador Nature Reserve",
+      "label": "Nature",
+      "travelTime": "about 40 min",
+      "how": "MRT Circle line to Labrador Park",
+      "text": "Coastal secondary forest over wartime gun emplacements and tunnels dug into the ridge.",
+      "source": "https://www.nparks.gov.sg/visit/parks/park-detail/labrador-nature-reserve"
+    }
+  ]
 }

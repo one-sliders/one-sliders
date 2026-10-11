@@ -123,23 +123,6 @@
       "text": "Northern lights season is a named stop in Longyearbyen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Adventfjorden",
-      "label": "Heritage",
-      "text": "Adventfjorden is a heritage-focused side trip from Longyearbyen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Mine 3",
-      "label": "Heritage",
-      "text": "Mine 3 is a heritage-focused side trip from Longyearbyen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Global Seed Vault exterior",
-      "label": "Heritage",
-      "text": "Global Seed Vault exterior is a heritage-focused side trip from Longyearbyen; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Longyearbyen",
     "matchedCountry": null
-  }
+  },
+  "nearby": [
+    {
+      "name": "Global Seed Vault",
+      "label": "Heritage",
+      "travelTime": "about 15 min",
+      "how": "road towards the airport, viewed from outside",
+      "text": "A concrete wedge into the permafrost holding backup seed for the world's crops; the vault itself is closed to visitors.",
+      "source": "https://www.seedvault.no/"
+    },
+    {
+      "name": "Adventdalen",
+      "label": "Nature",
+      "travelTime": "about 20 min",
+      "how": "road east from town, by car or dog sled",
+      "text": "A broad valley used for dog sledding and aurora watching, with reindeer and arctic fox year round.",
+      "source": "https://en.visitsvalbard.com/"
+    },
+    {
+      "name": "Barentsburg",
+      "label": "Town",
+      "travelTime": "about 1 h 15 min",
+      "how": "boat from Longyearbyen in summer, snowmobile in winter",
+      "text": "A Russian mining settlement with a Lenin bust, a brewery and about 400 residents.",
+      "source": "https://en.visitsvalbard.com/"
+    }
+  ]
 }

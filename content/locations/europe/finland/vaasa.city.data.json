@@ -129,23 +129,6 @@
       "text": "Replot Bridge is a clear heritage marker in Vaasa, best used as a fixed point when grouping nearby streets, monuments and viewpoints."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Replot",
-      "label": "Island",
-      "text": "Replot is the gateway island beyond the bridge, with coastal villages and Kvarken access."
-    },
-    {
-      "name": "Söderfjärden",
-      "label": "Nature",
-      "text": "Söderfjärden works as a nature-focused side trip from Vaasa, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Umeå",
-      "label": "Ferry",
-      "text": "Umeå is a nearby side trip from Vaasa; keep it for a day when travel time, weather and opening hours fit the route."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -226,5 +209,31 @@
     "matchedName": "Vaasa",
     "matchedCountry": "Finland"
   },
-  "transitOperator": "Vaasa Public Transport"
+  "transitOperator": "Vaasa Public Transport",
+  "nearby": [
+    {
+      "name": "Stundars",
+      "label": "Heritage",
+      "travelTime": "about 25 min",
+      "how": "car south to Solf",
+      "text": "Sixty-five relocated Ostrobothnian buildings with craftspeople working in them in summer.",
+      "source": "https://www.visitfinland.com/"
+    },
+    {
+      "name": "Björköby",
+      "label": "Island",
+      "travelTime": "about 50 min",
+      "how": "car north-west over the Replot bridge",
+      "text": "A fishing village at the far end of the Kvarken, with the Bodvattnet loop over washed boulder fields.",
+      "source": "https://www.kvarken.fi/en/"
+    },
+    {
+      "name": "Närpes",
+      "label": "Town",
+      "travelTime": "about 1 h",
+      "how": "car south on Route 8",
+      "text": "A Swedish-speaking farming town ringed by church stables, with greenhouses supplying half the country's tomatoes.",
+      "source": "https://www.visitfinland.com/"
+    }
+  ]
 }

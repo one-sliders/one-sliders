@@ -123,23 +123,6 @@
       "text": "Mudam Luxembourg is a named stop in Luxembourg worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Bock Casemates",
-      "label": "Heritage",
-      "text": "Bock Casemates is a heritage-focused side trip from Luxembourg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Chemin de la Corniche",
-      "label": "Heritage",
-      "text": "Chemin de la Corniche is a heritage-focused side trip from Luxembourg; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Place Guillaume II",
-      "label": "Heritage",
-      "text": "Place Guillaume II is a heritage-focused side trip from Luxembourg; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Luxembourg",
     "matchedCountry": "Luxembourg"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Vianden",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "train to Ettelbruck, then bus 570",
+      "text": "A restored hilltop castle over a river valley, with a chairlift up the opposite slope.",
+      "source": "https://www.visitluxembourg.com/"
+    },
+    {
+      "name": "Müllerthal",
+      "label": "Nature",
+      "travelTime": "about 45 min",
+      "how": "train to Ettelbruck or bus 100 to Echternach",
+      "text": "Sandstone clefts and mossy gorges called Little Switzerland, on a 112-kilometre trail network.",
+      "source": "https://www.visitluxembourg.com/"
+    },
+    {
+      "name": "Moselle wine route",
+      "label": "Wine",
+      "travelTime": "about 35 min",
+      "how": "bus 175 east to Remich",
+      "text": "Riesling and crémant cellars on terraced slopes along the German border.",
+      "source": "https://www.visitluxembourg.com/"
+    }
+  ]
 }

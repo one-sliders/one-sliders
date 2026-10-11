@@ -116,23 +116,6 @@
       "text": "Southampton Arts Center gives Southampton a strong culture stop for museums, exhibitions or local collections, and works best as an indoor anchor in the day's route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Cooper's Beach",
-      "label": "Nature",
-      "text": "Cooper's Beach works as a nature-focused side trip from Southampton, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Southampton Village",
-      "label": "Heritage",
-      "text": "Southampton Village is a heritage-focused side trip from Southampton; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Agawam Park",
-      "label": "Nature",
-      "text": "Agawam Park works as a nature-focused side trip from Southampton, especially when the day has enough daylight and a clear return plan."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -207,5 +190,31 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Sag Harbor",
+      "label": "Town",
+      "travelTime": "about 25 min",
+      "how": "car north-east on Route 27 then 114",
+      "text": "A whaling port of captains' houses, with a windmill on the wharf and a 1767 street plan.",
+      "source": "https://parks.ny.gov/"
+    },
+    {
+      "name": "Shinnecock Hills",
+      "label": "Nature",
+      "travelTime": "about 15 min",
+      "how": "car east on Montauk Highway",
+      "text": "Glacial moraine between two bays, with the canal that cuts Long Island's fork in half.",
+      "source": "https://parks.ny.gov/"
+    },
+    {
+      "name": "Robert Moses State Park",
+      "label": "Beach",
+      "travelTime": "about 1 h",
+      "how": "car west on Sunrise Highway to Fire Island",
+      "text": "Ocean beach at the western end of Fire Island, with a lighthouse walk east along the dunes.",
+      "source": "https://parks.ny.gov/parks/7/"
+    }
+  ]
 }

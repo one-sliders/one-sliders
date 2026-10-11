@@ -134,28 +134,6 @@
       "text": "Avenyn is Gothenburg's main boulevard for nightlife, hotels and the route toward Gotaplatsen, making it a practical base for late evenings."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Marstrand",
-      "type": "Coast",
-      "text": "Marstrand is the classic island-and-fortress day trip north of Gothenburg, useful when the city stay needs a sharper west-coast stop."
-    },
-    {
-      "name": "Alingsas",
-      "type": "Town",
-      "text": "Alingsas works as a slower cafe town east of Gothenburg, especially when the trip needs a small-city break from the harbour and tram network."
-    },
-    {
-      "name": "Boras",
-      "type": "City",
-      "text": "Boras is the inland city option from Gothenburg, best known for textiles, public art and zoo trips rather than the archipelago feel."
-    },
-    {
-      "name": "Tjorn",
-      "type": "Island",
-      "text": "Tjorn gives the nearby coast a more open island route, with sculpture, small harbours and car-friendly west-coast stops."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -235,5 +213,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Gothenburg",
     "matchedCountry": "Sweden"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Southern Gothenburg Archipelago",
+      "label": "Island",
+      "travelTime": "about 45 min",
+      "how": "tram 11 to Saltholmen, then Styrsöbolaget ferry",
+      "text": "Car-free islands reached on a city transit ticket; Vrångö has the best bathing rocks.",
+      "source": "https://www.vasttrafik.se/en/"
+    },
+    {
+      "name": "Marstrand",
+      "label": "Island",
+      "travelTime": "about 1 h",
+      "how": "bus from Nils Ericson Terminalen, then the Marstrand ferry",
+      "text": "A sailing town under the Carlsten fortress, busiest during the match-racing week in July.",
+      "source": "https://www.marstrand.se/"
+    },
+    {
+      "name": "Gunnebo House",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "tram 4 to Mölndal, then local bus",
+      "text": "A 1700s wooden summer villa with kitchen gardens that supply its own café.",
+      "source": "https://gunneboslott.se/en/"
+    }
+  ]
 }

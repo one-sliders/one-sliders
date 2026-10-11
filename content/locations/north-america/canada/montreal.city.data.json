@@ -121,23 +121,6 @@
       "text": "Formula 1 weekend is a named stop in Montreal worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Old Montreal",
-      "label": "Heritage",
-      "text": "Old Montreal is a heritage-focused side trip from Montreal; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Mount Royal",
-      "label": "Nature",
-      "text": "Mount Royal works as a nature-focused side trip from Montreal, especially when the day has enough daylight and a clear return plan."
-    },
-    {
-      "name": "Notre-Dame Basilica",
-      "label": "Heritage",
-      "text": "Notre-Dame Basilica is a heritage-focused side trip from Montreal; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,31 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Parc national d'Oka",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "car west on Highway 640",
+      "text": "A sand beach on Lac des Deux Montagnes with a Calvary trail and winter cross-country tracks.",
+      "source": "https://www.sepaq.com/pq/oka/"
+    },
+    {
+      "name": "Saint-Sauveur",
+      "label": "Mountain",
+      "travelTime": "about 1 h",
+      "how": "car north on Autoroute 15 into the Laurentians",
+      "text": "Ski hills lit for night runs in winter, a water park on the same slopes in summer.",
+      "source": "https://www.sommets.com/en/"
+    },
+    {
+      "name": "Parc national du Mont-Tremblant",
+      "label": "Mountain",
+      "travelTime": "about 1 h 15 min",
+      "how": "car north on Autoroute 15 then Route 117",
+      "text": "Quebec's oldest provincial park: lakes to paddle, and the Diable river running through hardwood forest.",
+      "source": "https://www.sepaq.com/pq/mot/"
+    }
+  ]
 }

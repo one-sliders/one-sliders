@@ -128,23 +128,6 @@
       "text": "Santa Justa Lift is a named stop in Lisbon worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Sintra",
-      "label": "Heritage",
-      "text": "Sintra is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Cascais",
-      "label": "Heritage",
-      "text": "Cascais is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Belem",
-      "label": "Heritage",
-      "text": "Belem is a heritage-focused side trip from Lisbon; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -219,5 +202,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Lisbon",
     "matchedCountry": "Portugal"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Sintra",
+      "label": "Heritage",
+      "travelTime": "about 40 min",
+      "how": "train from Rossio station",
+      "text": "The painted Pena Palace and Quinta da Regaleira's initiation well, in hills that make their own mist.",
+      "source": "https://www.parquesdesintra.pt/en/"
+    },
+    {
+      "name": "Cascais",
+      "label": "Beach",
+      "travelTime": "about 40 min",
+      "how": "train from Cais do Sodré",
+      "text": "A former royal resort with town beaches and the Boca do Inferno sea arch along the cliff path.",
+      "source": "https://www.visitcascais.com/en"
+    },
+    {
+      "name": "Setúbal and the Arrábida",
+      "label": "Nature",
+      "travelTime": "about 50 min",
+      "how": "Fertagus train from Roma-Areeiro",
+      "text": "White limestone cliffs over turquoise coves, with dolphins in the Sado estuary.",
+      "source": "https://www.visitsetubal.com.pt/en/"
+    },
+    {
+      "name": "Mafra National Palace",
+      "label": "Heritage",
+      "travelTime": "about 1 h",
+      "how": "Mafrense bus from Campo Grande",
+      "text": "A baroque palace-convent with six working carillons and a library of 36,000 books guarded by bats.",
+      "source": "https://www.visitportugal.com/en"
+    }
+  ]
 }

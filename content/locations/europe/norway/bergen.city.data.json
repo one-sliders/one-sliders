@@ -128,23 +128,6 @@
       "text": "Fjord cruises is a named stop in Bergen worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Bryggen",
-      "label": "Heritage",
-      "text": "Bryggen is a heritage-focused side trip from Bergen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Floyen",
-      "label": "Heritage",
-      "text": "Floyen is a heritage-focused side trip from Bergen; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Ulriken",
-      "label": "Heritage",
-      "text": "Ulriken is a heritage-focused side trip from Bergen; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Bergen",
     "matchedCountry": "Norway"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Mount Fløyen",
+      "label": "Mountain",
+      "travelTime": "about 20 min",
+      "how": "Fløibanen funicular from Vetrlidsallmenningen",
+      "text": "Eight minutes up to forest trails, a troll-carved playground and the view down over the harbour.",
+      "source": "https://www.floibanen.com/en"
+    },
+    {
+      "name": "Mount Ulriken",
+      "label": "Mountain",
+      "travelTime": "about 30 min",
+      "how": "bus 2 or 3 to Haukeland, then the Ulriken643 cable car",
+      "text": "The highest of the seven mountains at 643 metres, with the ridge walk over to Fløyen from the top.",
+      "source": "https://ulriken643.no/en/"
+    },
+    {
+      "name": "Troldhaugen",
+      "label": "Heritage",
+      "travelTime": "about 30 min",
+      "how": "Bybanen light rail to Hop, then a 20-minute walk",
+      "text": "Grieg's villa and the hut where he composed, with lunchtime recitals through the summer.",
+      "source": "https://www.visitnorway.com/"
+    },
+    {
+      "name": "Osterøy",
+      "label": "Island",
+      "travelTime": "about 45 min",
+      "how": "bus from Bergen bus station over the Osterøy bridge",
+      "text": "Norway's largest inland island, with the Havrå farm cluster kept as it was worked for centuries.",
+      "source": "https://museumvest.no/"
+    }
+  ]
 }

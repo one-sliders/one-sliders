@@ -121,23 +121,6 @@
       "text": "Downtown Los Angeles is a named stop in Los Angeles worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Griffith Observatory",
-      "label": "Heritage",
-      "text": "Griffith Observatory is a heritage-focused side trip from Los Angeles; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Santa Monica Pier",
-      "label": "Heritage",
-      "text": "Santa Monica Pier is a heritage-focused side trip from Los Angeles; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Hollywood Walk of Fame",
-      "label": "Heritage",
-      "text": "Hollywood Walk of Fame is a heritage-focused side trip from Los Angeles; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -224,5 +207,39 @@
   "continentName": "North America",
   "countrySlug": "usa",
   "countryName": "USA",
-  "depth": 4
+  "depth": 4,
+  "nearby": [
+    {
+      "name": "Santa Catalina Island",
+      "label": "Island",
+      "travelTime": "about 1 h 15 min",
+      "how": "Catalina Express ferry from Long Beach or San Pedro",
+      "text": "Avalon's harbour town with glass-bottom boats and a 1929 casino ballroom, no private cars allowed.",
+      "source": "https://www.catalinaexpress.com/"
+    },
+    {
+      "name": "Malibu and Zuma Beach",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "car north on the Pacific Coast Highway",
+      "text": "Wide surf beaches below the Santa Monica Mountains, with Point Dume for whale watching in spring.",
+      "source": "https://beaches.lacounty.gov/zuma-beach/"
+    },
+    {
+      "name": "Huntington Library and Gardens",
+      "label": "Park",
+      "travelTime": "about 30 min",
+      "how": "car east to San Marino",
+      "text": "A Gutenberg Bible and Blue Boy indoors, then sixteen themed gardens including a Japanese tea house.",
+      "source": "https://huntington.org/"
+    },
+    {
+      "name": "Angeles National Forest",
+      "label": "Mountain",
+      "travelTime": "about 45 min",
+      "how": "car north on the Angeles Crest Highway",
+      "text": "Pine ridges above the smog line, with Mount Wilson Observatory open for weekend tours.",
+      "source": "https://www.fs.usda.gov/angeles"
+    }
+  ]
 }

@@ -123,23 +123,6 @@
       "text": "State Museum of San Marino is a key San Marino culture stop, useful for understanding local history, collections and rainy-day planning near the main sightseeing route."
     }
   ],
-  "nearbyIdeas": [
-    {
-      "name": "Piazza della Liberta",
-      "label": "Heritage",
-      "text": "Piazza della Liberta is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Palazzo Pubblico",
-      "label": "Heritage",
-      "text": "Palazzo Pubblico is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
-    },
-    {
-      "name": "Basilica di San Marino",
-      "label": "Heritage",
-      "text": "Basilica di San Marino is a heritage-focused side trip from San Marino; check the route and opening hours before setting aside the day."
-    }
-  ],
   "events": [],
   "topicLinks": [],
   "sources": [
@@ -214,5 +197,31 @@
     "label": "Open-Meteo Geocoding API",
     "matchedName": "San Marino",
     "matchedCountry": "San Marino"
-  }
+  },
+  "nearby": [
+    {
+      "name": "Rimini",
+      "label": "Beach",
+      "travelTime": "about 50 min",
+      "how": "bus from Piazzale Calcigni down to the coast",
+      "text": "Fifteen kilometres of Adriatic beach, with Fellini's home town behind the seafront.",
+      "source": "https://www.italia.it/en"
+    },
+    {
+      "name": "Santarcangelo di Romagna",
+      "label": "Town",
+      "travelTime": "about 45 min",
+      "how": "bus to Rimini, then local train",
+      "text": "A hill town over a network of cave tunnels, with a July street-theatre festival.",
+      "source": "https://www.italia.it/en"
+    },
+    {
+      "name": "San Leo",
+      "label": "Heritage",
+      "travelTime": "about 50 min",
+      "how": "car south-west on the SS258",
+      "text": "A fortress on a sheer plug of rock, where Cagliostro was imprisoned until he died.",
+      "source": "https://www.italia.it/en"
+    }
+  ]
 }
