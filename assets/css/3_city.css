@@ -6027,3 +6027,8 @@ KPI-led location pages. */
 .visual-topic-card--technology,
 .visual-topic-card--tech       { border-left-color: var(--os-technology-colour); }
 .visual-topic-card--climate    { border-left-color: var(--os-climate-colour); }
+
+/* ── Anders 2026-10-11 ("flytta detta ocksa sa det hanger ihop"): kartlanken
+   ligger under stadsnamnet, tidszonen i klockkortet. */
+.city-page--template .city-meta-row { display: flex; align-items: center; gap: 14px; margin: 2px 0 6px; }
+.city-page--template .city-meta-row .city-map-link--city { margin: 0; }
