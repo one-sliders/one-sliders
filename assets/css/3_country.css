@@ -3,3 +3,9 @@
 .country-page--template-preview {
   --location-module-present: 1;
 }
+
+/* Anders 2026-10-12 ("filtrera pa datum a stad"): chips over eventgallret pa
+   landssidan. Knapparna delar stil med stadsfiltret (.country-city-filter). */
+.country-onepage .country-event-filters { display: grid; gap: 8px; margin: 0 0 12px; }
+.country-onepage .country-event-filters .country-city-filters { margin: 0; }
+.country-onepage .country-event-filters .country-city-count { margin: 0; }

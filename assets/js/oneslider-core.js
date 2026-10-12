@@ -434,6 +434,49 @@
 
   OneSlider.register('expiringEvents', hideExpiredEvents);
 
+  // ====================================================================
+  // Landssidans eventfilter (Anders 2026-10-12: "filtrera pa datum a stad").
+  // Chips per manad och stad, byggda av byggaren ur korten. Ett val per grupp;
+  // "All" nollstaller gruppen. Raknaren visar synliga kort (passerade ar
+  // redan dolda av expiringEvents).
+  function countryEventFilters() {
+    var box = document.querySelector('[data-event-filters]');
+    var grid = document.querySelector('[data-event-grid]');
+    if (!box || !grid) return;
+    var state = { month: '', city: '' };
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-month], [data-city]'));
+    var count = box.querySelector('[data-event-count]');
+    function apply() {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var ok = (!state.month || c.getAttribute('data-month') === state.month)
+              && (!state.city || c.getAttribute('data-city') === state.city);
+        c.hidden = !ok || c.getAttribute('data-expired') === '1';
+        if (!c.hidden) shown++;
+      });
+      if (count) count.textContent = (state.month || state.city)
+        ? 'Showing ' + shown + ' of ' + cards.length + ' events'
+        : 'Showing all ' + cards.length + ' events';
+    }
+    box.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button[data-event-filter-month], button[data-event-filter-city]');
+      if (!b) return;
+      var key = b.hasAttribute('data-event-filter-month') ? 'month' : 'city';
+      state[key] = b.getAttribute('data-event-filter-' + key) || '';
+      var group = b.parentNode;
+      Array.prototype.forEach.call(group.querySelectorAll('button'), function (x) {
+        var on = x === b;
+        x.classList.toggle('is-active', on);
+        x.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      apply();
+    });
+    // expiringEvents satter hidden pa passerade kort - markera dem sa filtret inte visar dem igen.
+    cards.forEach(function (c) { if (c.hidden) c.setAttribute('data-expired', '1'); });
+    apply();
+  }
+  OneSlider.register('countryEventFilters', countryEventFilters);
+
   // Public API — samma skal som localizeDates ovan: eventindexet renderar sina
   // kort ur en JSON-blob EFTER boot, sa modulen som kordes vid DOMContentLoaded
   // hann aldrig se dem. Renderaren anropar den har nar korten finns. EN
