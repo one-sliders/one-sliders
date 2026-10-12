@@ -2774,6 +2774,30 @@ body.drink-layout-page main.drink-page.drink-content-box {
   border-radius: 4px;
 }
 
+/* BUG-0083: swatch colour comes from the --slice-* custom properties set on
+   the ancestor .recipe-chart (generated per-drink class below), not from an
+   inline style="background:…" on each <i>. Generic by legend position, so it
+   works for every recipe-chart without a per-drink swatch rule. */
+.drink-layout-page .chart-legend li:nth-child(1) i { background: var(--slice-a); }
+.drink-layout-page .chart-legend li:nth-child(2) i { background: var(--slice-b); }
+.drink-layout-page .chart-legend li:nth-child(3) i { background: var(--slice-c); }
+.drink-layout-page .chart-legend li:nth-child(4) i { background: var(--slice-d); }
+
+/* BUG-0083: one generated class per drink instead of an inline
+   style="--a:…;--b:…;--c:…;--slice-a:…" on .recipe-chart. Values are each
+   drink's real ingredient proportions (see recipe on the page), not derived —
+   a new drink page needs its own rule here, not an inline style. */
+.recipe-chart--aperol-spritz { --a: 50%; --b: 83%; --c: 100%; --slice-a: color-mix(in srgb, var(--os-scrim) 10%, var(--os-transparent)); --slice-b: color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent)); --slice-c: var(--os-red); --slice-d: var(--os-line); }
+.recipe-chart--espresso-martini { --a: 40%; --b: 70%; --c: 90%; --slice-a: var(--os-scrim); --slice-b: var(--os-bg); --slice-c: var(--os-ink); --slice-d: var(--os-line); }
+.recipe-chart--french-75 { --a: 21%; --b: 35%; --c: 46%; --slice-a: var(--os-ink); --slice-b: var(--os-line); --slice-c: var(--os-accent); --slice-d: var(--os-line); }
+.recipe-chart--irish-coffee { --a: 60%; --b: 80%; --c: 85%; --slice-a: var(--os-bg); --slice-b: color-mix(in srgb, var(--os-surface) 94%, var(--os-transparent)); --slice-c: color-mix(in srgb, var(--os-surface) 86%, var(--os-transparent)); --slice-d: color-mix(in srgb, var(--os-scrim) 6%, var(--os-transparent)); }
+.recipe-chart--limoncello-spritz { --a: 33%; --b: 83%; --c: 100%; --slice-a: color-mix(in srgb, var(--os-surface) 72%, var(--os-transparent)); --slice-b: color-mix(in srgb, var(--os-surface) 20%, var(--os-transparent)); --slice-c: var(--os-red); --slice-d: color-mix(in srgb, var(--os-scrim) 70%, var(--os-transparent)); }
+.recipe-chart--mojito { --a: 32%; --b: 48%; --c: 61%; --slice-a: color-mix(in srgb, var(--os-scrim) 36%, var(--os-transparent)); --slice-b: var(--os-transparent); --slice-c: color-mix(in srgb, var(--os-scrim) 9%, var(--os-transparent)); --slice-d: color-mix(in srgb, var(--os-scrim) 7%, var(--os-transparent)); }
+.recipe-chart--negroni { --a: 33.3%; --b: 66.6%; --c: 99%; --slice-a: color-mix(in srgb, var(--os-gold) 16%, var(--os-transparent)); --slice-b: var(--os-gold); --slice-c: color-mix(in srgb, var(--os-accent) 8%, var(--os-transparent)); --slice-d: color-mix(in srgb, var(--os-gold) 10%, var(--os-transparent)); }
+.recipe-chart--old-fashioned { --a: 86%; --b: 96%; --c: 99%; --slice-a: var(--os-ink); --slice-b: var(--os-gold); --slice-c: var(--os-red); --slice-d: var(--os-line); }
+.recipe-chart--pina-colada { --a: 27%; --b: 76%; --c: 92%; --slice-a: var(--os-compare-blue); --slice-b: var(--os-gold); --slice-c: var(--os-soft); --slice-d: var(--os-accent); }
+.recipe-chart--whiskey-sour { --a: 50%; --b: 71%; --c: 88%; --slice-a: var(--os-ink); --slice-b: var(--os-red); --slice-c: var(--os-gold); --slice-d: var(--os-soft); }
+
 .drink-layout-page .chart-legend span {
   color: var(--muted);
   font-weight: 700;

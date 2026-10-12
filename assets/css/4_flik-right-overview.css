@@ -171,8 +171,13 @@
   display: grid;
   /* Fyra fasta kolumner gav 81 px per cell i ett 380 px-kort — "as the
      European Cup" brots pa fyra rader. Cellerna far en minsta bredd och
-     radbryter i stallet: fyra i bredd nar det finns plats, annars tva. */
-  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+     radbryter i stallet: fyra i bredd nar det finns plats, annars tva.
+
+     7.5rem racker inte langre: rutan bar sedan 2026-10-12 en tredje rad
+     (forklaringen under talet), och i overview-kortets 428 px blev det tre
+     spalter a 133 px dar varje rad brot i ett ord. 10.5rem ger tva spalter
+     a ~210 px i samma kort och fyra i bredd pa en full rad. */
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
   gap: 8px;
   margin: 14px 0 12px;
 }
