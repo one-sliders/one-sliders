@@ -310,3 +310,12 @@ body.event-onepager .event-tablist--titled .event-tab-label__icon { color: var(-
   body.event-dashboard .event-tablist--titled .event-tab-label__text strong { font-size: 13px; }
   body.event-dashboard .event-tablist--titled .event-tab-label__text small { font-size: 10px; }
 }
+
+/* Anders 2026-10-14: arets program ar en egen flik (Agenda), inte historik. Samma vaxling som item-fliken. */
+#tab-agenda:checked ~ .event-tab-panels #panel-agenda { display: block; }
+#tab-agenda:checked ~ .event-tablist label[for="tab-agenda"] {
+  color: var(--theme, var(--os-primary));
+  background: var(--os-surface);
+  border-color: var(--theme, var(--os-primary));
+}
+#tab-agenda:checked ~ .event-tablist label[for="tab-agenda"] small { color: var(--theme, var(--os-primary)); }

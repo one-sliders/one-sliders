@@ -1,0 +1,34 @@
+/* 4_flik-travel.css — Travel-flikens kortlayout på eventsidor (nivå 4).
+   Anders 2026-10-19: korten låg direkt i ett delat grid, så radhöjden synkades
+   över kolumnerna — ett kort Getting there lämnade ett hål ovanför Tickets när
+   Stay stod högt bredvid. Här staplas korten per kolumn: varje kort tar sin
+   egen höjd och nästa kort i kolumnen börjar direkt under.
+   PC (>=961px): tre spalter via CSS-kolumner (två när raden bär --2); korten
+   flödar i DOM-ordning uppifrån och ned, kolumn för kolumn, och balanseras mot
+   det högsta obrytbara kortet. Mobil/surfplatta: 3_event.css enkolumnsgrid gäller.
+   Inga inline-stilar; färger via tokens i korten själva. */
+
+@media (min-width: 961px) {
+  body.event-onepager #panel-travel .event-op-row {
+    display: block;
+    column-count: 3;
+    column-gap: 16px;
+    column-fill: balance;
+  }
+  body.event-onepager #panel-travel .event-op-row--2 { column-count: 2; }
+  body.event-onepager #panel-travel .event-op-row--1 { column-count: 1; }
+
+  body.event-onepager #panel-travel .event-op-row > .event-op-card,
+  body.event-onepager #panel-travel .event-op-row > * {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    width: 100%;
+    margin: 0 0 16px;
+    /* grid-placeringar från äldre regler (grid-column/row, align-self) saknar
+       effekt i kolumnlayout — ingen nollställning behövs. */
+  }
+  body.event-onepager #panel-travel .event-op-row > *:last-child { margin-bottom: 0; }
+
+  /* Ett ensamt kort: ingen tom tredjedel (motsvarar den gamla only-child-regeln). */
+  body.event-onepager #panel-travel .event-op-row > .event-op-card:only-child { column-span: all; }
+}

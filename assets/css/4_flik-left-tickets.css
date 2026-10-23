@@ -1,0 +1,177 @@
+/* 4_flik-left-tickets.css — Tickets-modulen (TASK-0112 PoC: TicketNetwork via CJ).
+   Nivå 4-modul för eventsidor. Länkas av byggaren (build-events-persona.py,
+   _render_tickets_module) BARA på sidor som bär modulen. Kortet ligger direkt
+   under Stay-blocket i Travel-fliken, aldrig i hero (EVENTKRAV 14).
+   Färger enbart via tokens (var(--os-*)); inga inline-stilar i html. */
+
+body.event-onepager .event-tickets-block {
+  position: relative;
+}
+
+/* Släckt modul (matrisens GRIND (bevaka), utrullning 2026-10-18): kortet
+   byggs med attributet hidden och utan länk i DOM, och ska aldrig ta plats —
+   .event-op-card sätter display/padding som annars slår ut hidden. */
+body.event-onepager .event-tickets-block--gated[hidden] {
+  display: none;
+}
+
+/* Tickets v2 (GUI-expert TASK-0173, byggd 2026-10-21 på Anders order):
+   rubrik → en kort erbjudanderad → normalstor knapp → disclosure som finstil.
+   Ingen bild, ingen banner (BESLUT 2026-10-19: lyft med form, inte med sidans
+   hero). Alla färger och grader ur nivå 1-tokens. */
+body.event-onepager .event-tickets-block > summary {
+  color: var(--os-ink);
+  font-size: var(--os-text-xl);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+body.event-onepager .event-tickets-block .event-op-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+  gap: 12px;
+  font-family: var(--os-font-sans);
+}
+
+body.event-onepager .event-tickets-block__lead {
+  margin: 0;
+  color: var(--os-ink);
+  font-size: var(--os-text-md);
+  line-height: 1.45;
+}
+
+/* Biljettabell ur personasvaren inuti kortet (Anders 2026-10-21: biljetter på
+   ett ställe). Kompakt tabell, en länk per rad. */
+body.event-onepager .event-tickets-block__table-title {
+  margin: 4px 0 0;
+  font-size: var(--os-text-sm, 12px);
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+body.event-onepager .event-tickets-block__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--os-text-md);
+}
+body.event-onepager .event-tickets-block__table th,
+body.event-onepager .event-tickets-block__table td {
+  padding: 6px 8px 6px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--os-line);
+  vertical-align: middle;
+}
+body.event-onepager .event-tickets-block__table th { font-weight: 700; color: var(--os-ink); }
+body.event-onepager .event-tickets-block__row-cta { text-align: right; padding-right: 0; white-space: nowrap; }
+body.event-onepager .event-tickets-block__row-link {
+  color: var(--os-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+body.event-onepager .event-tickets-block__row-link:hover,
+body.event-onepager .event-tickets-block__row-link:focus-visible { text-decoration: underline; }
+
+body.event-onepager .event-tickets-block__cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  width: auto;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--os-accent);
+  border-radius: 8px;
+  background: var(--os-accent);
+  color: var(--os-surface);
+  font-family: var(--os-font-sans);
+  font-size: var(--os-text-md);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+body.event-onepager .event-tickets-block__cta:hover {
+  color: var(--os-surface);
+  filter: brightness(0.96);
+}
+
+body.event-onepager .event-tickets-block__cta:focus-visible {
+  outline: 2px solid var(--os-accent);
+  outline-offset: 3px;
+  color: var(--os-surface);
+}
+
+/* CJ:s 1x1-spårpixel: ligger intill länken i HTML men tar ingen plats i gridet. */
+body.event-onepager .event-tickets-block__pixel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.event-onepager .event-tickets-block__disclosure {
+  margin: 0;
+  color: var(--os-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Biljettknapp i titelrutan (Anders 2026-10-16). Titelkortet är ankare,
+   knappen sitter uppe till höger som ett litet piller med ikon + "Tickets". */
+body.event-onepager .hero-card--title,
+body.event-onepager .event-edition-slot[data-os-edition-slot] {
+  position: relative;
+}
+body.event-onepager .event-hero-tickets {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px 0 9px;
+  border-radius: 999px;
+  background: var(--os-primary);
+  color: var(--os-surface);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--os-scrim) 14%, var(--os-transparent));
+}
+body.event-onepager .event-hero-tickets svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.event-onepager .event-hero-tickets:hover,
+body.event-onepager .event-hero-tickets:focus-visible {
+  color: var(--os-surface);
+  filter: brightness(1.08);
+}
+/* Mobil: ikonen ligger i iOS-titelraden i stället (oneslider-core.js). */
+@media (max-width: 620px) {
+  body.event-onepager .event-hero-tickets { display: none; }
+}
+
+/* Placering (Anders 2026-10-19): Travel-flikens kort staplas per kolumn i
+   4_flik-travel.css (CSS-kolumner, DOM-ordning). Byggaren lägger Tickets-kortet
+   direkt efter Getting there i DOM:en, så det hamnar under det kortet i
+   mittenspalten på PC och efter det på mobil. De tidigare grid-placeringarna
+   (rad/kolumn-spann) är borttagna — de gav hål när kortmixen skilde sig. */

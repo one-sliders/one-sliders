@@ -137,18 +137,30 @@ body.event-onepager .hero-card--title .event-edition:not(.is-active) {
     object-fit: cover;
   }
 
-  /* Topic-kortet ar 146 px i halv rad och bilden tog 84 av dem — texten
-     fick 30 px och kapades. Pa mobil ar kortet ren text: bilden och den
-     forklarande meningen utgar, namnet racker som navigation. */
+  /* Anders 2026-10-19: regeln `> p { display:none }` traffade aven namnet
+     (.topic-parent-card__name ar ett <p>), sa kortet stod tomt med bara
+     etiketten. Kompakt kort pa mobil: minibilden liten till vanster, etikett
+     + topicnamn till hoger; bara den forklarande meningen utgar. */
   body.event-onepager .hero-card--topic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.1rem;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-areas: "img label" "img name";
+    align-items: center;
+    column-gap: 0.55rem;
+    row-gap: 0.1rem;
     padding: 0.45rem 0.6rem;
   }
-  body.event-onepager .hero-card--topic > img,
-  body.event-onepager .hero-card--topic > p { display: none; }
+  body.event-onepager .hero-card--topic > img {
+    grid-area: img;
+    display: block;
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  body.event-onepager .hero-card--topic > .event-card__label { grid-area: label; margin: 0; }
+  body.event-onepager .hero-card--topic > .topic-parent-card__name { grid-area: name; }
+  body.event-onepager .hero-card--topic > p:not(.topic-parent-card__name) { display: none; }
 
   body.event-onepager .topic-parent-card__name { font-size: 0.9rem; line-height: 1.15; }
 }

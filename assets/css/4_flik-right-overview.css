@@ -328,28 +328,35 @@
   overflow: visible;
 }
 
+/* Anders 2026-10-22: värdeetiketten radbröts ("6" / "acts") och staplarna
+   började på ett fast avstånd oavsett etikettlängd. Hela listan är nu ETT
+   rutnät (raderna är display: contents), så etikettkolumnen följer den längsta
+   kategorietiketten i hela diagrammet och alla staplar börjar på samma kolumn.
+   Värdet står på en rad (nowrap) i en kolumn som tar sin egen bredd. */
 .event-chart-rank-list {
   display: grid;
-  gap: 7px;
+  grid-template-columns: 18px fit-content(45%) minmax(52px, 1fr) max-content;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 7px;
   padding: 8px 0 2px;
 }
 
 .event-chart-rank-row {
-  display: grid;
-  grid-template-columns: 18px minmax(120px, 1.3fr) minmax(52px, 168px) 24px;
-  align-items: center;
-  gap: 5px;
-  min-width: 0;
+  display: contents;
 }
 
 .event-chart-rank-row .event-chart__rank-number,
 .event-chart-rank-row .event-chart__rank-value {
   font-size: 11px;
   font-weight: 800;
+  line-height: 14px;
+  align-self: center;
 }
 
 .event-chart-rank-row .event-chart__rank-value {
   text-align: right;
+  white-space: nowrap;
 }
 
 .event-chart-rank-row .event-chart__country {
@@ -1052,9 +1059,14 @@ body.event-onepager .event-editions .event-chip__icon { border-color: var(--os-l
 /* ── FEATURE-0019 v8: Year by year i två spalter — historik vänster,
    kommande höger (Anders 2026-08-21). Mobil staplar, kommande först. */
 body.event-onepager .event-editions { grid-template-columns: 1fr 1fr; align-items: start; }
-body.event-onepager .event-editions__col { display: grid; gap: 12px; min-width: 0; }
+/* Anders 2026-10-16: årsknapparna tog rad 1 vänster, tabellen rad 1 höger, och
+   Coming years hamnade i rad 2 under ett tomrum lika högt som tabellen.
+   Årsraden spänner hela bredden; spalterna börjar på samma rad. */
+body.event-onepager .event-editions > .event-year-nav { grid-column: 1 / -1; order: 0; margin: 0; }
+body.event-onepager .event-editions__col { display: grid; gap: 12px; min-width: 0; align-content: start; }
 body.event-onepager .event-editions__col--past { order: 1; }
-body.event-onepager .event-editions > .event-editions__col:only-child { grid-column: 1 / -1; }
+body.event-onepager .event-editions > .event-editions__col:only-child,
+body.event-onepager .event-editions > div.event-editions__col:first-of-type:last-of-type { grid-column: 1 / -1; }
 body.event-onepager .event-editions__col--coming { order: 2; }
 body.event-onepager .event-editions__label {
   margin: 0;

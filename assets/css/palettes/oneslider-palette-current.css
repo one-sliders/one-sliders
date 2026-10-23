@@ -3,7 +3,6 @@
    to keep the existing look while testing palette switching. */
 
 :root {
-  --os-font-sans: Inter, Arial, Helvetica, sans-serif;
   --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --os-font-system-full: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
@@ -648,4 +647,48 @@
   --os-color-572: rgba(36,95,70,.08);
   --os-color-573: rgba(126,93,23,.10);
   --os-color-574: #a02020;
+}
+
+/* Dark mode (speglar 1_colours.css). Anders 2026-10-16: paletten importeras av
+   oneslider-core.css, som categories.css/locations.css/topic.css i sin tur
+   importerar EFTER 1_colours - da vann palettens ljusa tokens over dark-blocket
+   och topicsidorna blev aldrig morka. Samma block har, sa ordningen kvittar. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --os-ink:     #edf5f8;
+    --os-muted:   #a8b7c1;
+    --os-bg:      #0b1118;
+    --os-surface: #111b24;
+    --os-soft:    #172635;
+    --os-line:    #2b3d4c;
+    --os-primary: #dcebf5;
+    --os-primary-soft: #172635;
+    --os-accent:  #6fb39a;
+    --os-scrim:   #06111c;
+    /* Anders 2026-10-16: kategori- och temafarger anvands som TEXT (fliketiketter,
+       upplagerubriker, vadertemperatur). De ljusa vardena ger 2.5:1 mot mork yta.
+       Ljusare varianter i mork lage, samma kulor. */
+    --os-navy:    #dcebf5;
+    --os-accent-2: #7cc0e4;
+    --os-red:     #e8838f;
+    --os-purple:  #c3a6d8;
+    --os-gold:    #e9c86f;
+    --os-sport-colour:   #7cc0e4;
+    --os-climate-colour: #63c2b0;
+    --os-compare-blue:   #7cc0e4;
+    --os-compare-green:  #8fcb97;
+    --os-compare-orange: #eaa472;
+    --os-chrome-bg:    color-mix(in srgb, var(--os-surface) 96%, transparent);
+    --os-chrome-ink:   var(--os-ink);
+    --os-chrome-muted: var(--os-muted);
+    /* --c-* ar hardkodade i ljusblocket - morka varianter har. */
+    --c-sport:    #7cc0e4;
+    --c-music:    #e8838f;
+    --c-climate:  #63c2b0;
+    --c-food:     #e0a070;
+    --c-drinks:   #e9c86f;
+    --c-tech:     #a9c4de;
+    --c-wellness: #8fcb97;
+    --c-culture:  #c3a6d8;
+  }
 }

@@ -17,7 +17,6 @@
   --os-compare-orange:#b46b3c;
   --os-scrim:       #06111c;
   --os-transparent: transparent;
-  --os-font-sans:   Inter, Arial, Helvetica, sans-serif;
   --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
   --c-sport:        #3b8fb6;
@@ -78,5 +77,30 @@
     --os-primary-soft: #172635;
     --os-accent:  #6fb39a;
     --os-scrim:   #06111c;
+    /* Anders 2026-10-16: kategori- och temafarger anvands som TEXT (fliketiketter,
+       upplagerubriker, vadertemperatur). De ljusa vardena ger 2.5:1 mot mork yta.
+       Ljusare varianter i mork lage, samma kulor. */
+    --os-navy:    #dcebf5;
+    --os-accent-2: #7cc0e4;
+    --os-red:     #e8838f;
+    --os-purple:  #c3a6d8;
+    --os-gold:    #e9c86f;
+    --os-sport-colour:   #7cc0e4;
+    --os-climate-colour: #63c2b0;
+    --os-compare-blue:   #7cc0e4;
+    --os-compare-green:  #8fcb97;
+    --os-compare-orange: #eaa472;
+    --os-chrome-bg:    color-mix(in srgb, var(--os-surface) 96%, transparent);
+    --os-chrome-ink:   var(--os-ink);
+    --os-chrome-muted: var(--os-muted);
+    /* --c-* ar hardkodade i ljusblocket - morka varianter har. */
+    --c-sport:    #7cc0e4;
+    --c-music:    #e8838f;
+    --c-climate:  #63c2b0;
+    --c-food:     #e0a070;
+    --c-drinks:   #e9c86f;
+    --c-tech:     #a9c4de;
+    --c-wellness: #8fcb97;
+    --c-culture:  #c3a6d8;
   }
 }

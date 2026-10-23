@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family: var(--os-font-sans, system-ui, -apple-system, "Segoe UI", Arial, sans-serif);
   color: var(--page-ink);
   background: var(--page-bg);
 }
@@ -457,12 +457,16 @@ html {
   background: var(--location-bg);
 }
 
+/* Anders 2026-10-16 (night mode: "alla farger blir for morka"): regeln galler
+   ALLA sidor men --location-* finns bara pa platssidorna. Pa eventsidor blev
+   color ogiltig och foll till svart - osynligt i ljust lage, olasligt i morkt.
+   Fallback till sidtokens. */
 body {
   margin: 0;
-  color: var(--location-ink);
+  color: var(--location-ink, var(--page-ink, var(--os-ink)));
   background:
-    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--location-accent) 10%, var(--os-transparent)), var(--os-transparent) 34%),
-    var(--location-bg);
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--location-accent, var(--os-accent)) 10%, var(--os-transparent)), var(--os-transparent) 34%),
+    var(--location-bg, var(--page-bg, var(--os-bg)));
   font-family: var(--os-font-sans);
   overflow-x: hidden;
 }

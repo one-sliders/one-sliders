@@ -1084,3 +1084,10 @@ img { display: block; max-width: 100%; }
 }
 
 
+
+/* Anders 2026-10-16 (night mode): etiketterna hade hardkodad ljus bakgrund
+   och blev vit text pa vit platta i mork lage. Ytan foljer tokens. */
+@media (prefers-color-scheme: dark) {
+  .eyebrow { background: color-mix(in srgb, var(--home-blue) 22%, var(--os-surface)); }
+  .card-tag { background: color-mix(in srgb, var(--os-surface) 92%, transparent); color: var(--home-ink); }
+}

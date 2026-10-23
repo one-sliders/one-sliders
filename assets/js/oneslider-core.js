@@ -351,9 +351,21 @@
 
     var links = document.querySelectorAll('a[href*="/click-"]');
     var freed = 0;
+    var passed = 0;
     Array.prototype.forEach.call(links, function (a) {
       var href = a.getAttribute('href') || '';
       var match = /[?&]url=([^&]+)/.exec(href);
+      // TASK-0112 (PoC, TicketNetwork): en biljettlänk bär ingen url=-parameter
+      // att packa upp — CJ:s textlänk redirectar själv till partnern. Den
+      // skrivs ut orörd och märks, så testklicket i dev går att göra och
+      // syns i CJ med sid=event-<slug>. Skyddet för booking (url=-uppackning
+      // nedan + tömd data-booking-base) är oförändrat.
+      var partner = a.getAttribute('data-os-affiliate') || '';
+      if (!match && partner && partner !== 'booking') {
+        a.setAttribute('data-affiliate-local', 'passthrough');
+        passed += 1;
+        return;
+      }
       if (!match) return;
       var destination;
       try { destination = decodeURIComponent(match[1]); }
@@ -380,6 +392,10 @@
     if (freed && window.console) {
       console.info('[OneSlider] ' + freed + ' affiliate-länkar avspårade — sidan '
         + 'visas från "' + host + '", inte ' + PRODUCTION_HOST + '. Klick här når inte CJ.');
+    }
+    if (passed && window.console) {
+      console.info('[OneSlider] ' + passed + ' biljettlänk(ar) släppta igenom orörda '
+        + '(data-affiliate-local="passthrough") — ett klick här NÅR CJ och räknas.');
     }
   });
 
@@ -570,7 +586,18 @@
       // label, not the input. Re-measured on every call (not just once)
       // so it stays correct across responsive breakpoints/resizes.
       var offsetParent = input.offsetParent;
-      if (offsetParent && getComputedStyle(offsetParent).position === 'static') {
+      // Anders 2026-10-19 (mobil, #travel i URL:en vid laddning): panelen var
+      // dold nar modulen matte, offsetParent var null och overlagget lades
+      // pa 0,0 i sidan - datumen stod ovanfor flikarna. Ett dolt falt matts
+      // inte: overlagget halls dolt tills ResizeObserver (nedan) ser att
+      // faltet fatt en riktig box. Fältet sjalvt ar position:relative i
+      // 4_flik-stay.css, sa top/left raknas alltid mot ratt ruta.
+      if (!offsetParent || !input.offsetWidth) {
+        label.hidden = true;
+        return label;
+      }
+      label.hidden = false;
+      if (getComputedStyle(offsetParent).position === 'static') {
         offsetParent.style.position = 'relative';
       }
       label.style.position = 'absolute';
@@ -618,6 +645,12 @@
     Array.prototype.forEach.call(inputs, function (input) {
       update(input);
       input.addEventListener('change', function () { update(input); });
+      // Mat om nar faltet far (eller byter) storlek: dold flik som oppnas via
+      // programsatt .checked (4_tab-hash.js) ger varken 'change' eller
+      // 'hashchange', men faltets box gar fran 0 till verklig bredd.
+      if (window.ResizeObserver) {
+        new ResizeObserver(function () { update(input); }).observe(input);
+      }
     });
 
     // BUG-0022 fix: the initial update() above runs at page load, while
@@ -1091,7 +1124,8 @@
       grid:    '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
       cookie:  '<path d="M12 2a10 10 0 1 0 10 10c0-.46-.04-.91-.1-1.36a5 5 0 0 1-5.91-7.6A10 10 0 0 0 12 2Z"/><circle cx="8.5" cy="9" r=".7" fill="currentColor"/><circle cx="15" cy="14.5" r=".7" fill="currentColor"/><circle cx="9.5" cy="14.5" r=".7" fill="currentColor"/>',
       doc:     '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>',
-      mail:    '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/>'
+      mail:    '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/>',
+      ticket:  '<path d="M4 8a2 2 0 0 0 2-2h12a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H6a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4Z"/><path d="M13 6v2m0 3v2m0 3v2"/>'
     };
 
     // --- build nav ----------------------------------------------------
@@ -1159,9 +1193,26 @@
 
     var actions = document.createElement('div');
     actions.className = 'ios-actions';
+    // Anders 2026-10-16: biljettmodulen (Travel-fliken, under Stay) ligger
+    // utanfor skarmen — en ikon i titelraden ska ga direkt till partnern.
+    // Bara nar sidan bar modulen; samma href, rel och sparning som kortets CTA.
+    // Kortets CTA, inte bannern (bannern har eget CJ-länk-ID).
+    var ticketCta = document.querySelector('#card-tickets-partner a.event-tickets-block__cta[data-os-affiliate]') ||
+                    document.querySelector('#card-tickets-partner a[data-os-affiliate]');
+    if (ticketCta) {
+      var ticketLink = iconLink(ticketCta.getAttribute('href'), 'Tickets', 'ticket');
+      ticketLink.className += ' ios-action--tickets';
+      ticketLink.setAttribute('rel', ticketCta.getAttribute('rel') || 'nofollow sponsored noopener');
+      ticketLink.setAttribute('target', '_blank');
+      ticketLink.setAttribute('data-os-affiliate', ticketCta.getAttribute('data-os-affiliate'));
+      ticketLink.setAttribute('data-os-persona', ticketCta.getAttribute('data-os-persona') || 'topic');
+      actions.appendChild(ticketLink);
+    }
     actions.appendChild(iconLink(root + 'content/events/index.html', 'Events', 'events'));
     actions.appendChild(iconLink(root + 'content/locations/index.html', 'Locations', 'world'));
-    actions.appendChild(iconLink(root + 'content/categories/index.html', 'Categories', 'grid'));
+    // Fem ikoner pa 375 px klipper titeln till "Super B". Biljettikonen tar
+    // Categories plats i raden; Categories finns kvar i ...-menyn.
+    if (!ticketCta) actions.appendChild(iconLink(root + 'content/categories/index.html', 'Categories', 'grid'));
     actions.appendChild(moreBtn);
 
     nav.appendChild(backLink);
@@ -2067,7 +2118,10 @@
       if (!link) return;
       var type = pageType();
       window.gtag('event', 'affiliate_click', {
-        program: affiliateProgram(link.getAttribute('href') || ''),
+        // DEC-0013: partner-id ur markup när byggaren satt det; värdnamnet
+        // är fallback för äldre sidor utan attribut.
+        program: link.getAttribute('data-os-affiliate')
+          || affiliateProgram(link.getAttribute('href') || ''),
         page_type: type,
         page_name: pageName(),
         destination: link.getAttribute('data-page-topic') || pageName(),

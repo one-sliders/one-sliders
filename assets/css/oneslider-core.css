@@ -99,7 +99,7 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
     border-bottom: 1px solid var(--os-line);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial, sans-serif;
+    font-family: var(--os-font-sans, system-ui, -apple-system, "Segoe UI", Arial, sans-serif);
   }
 
   .ios-back {
@@ -157,6 +157,8 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   .ios-action {
     text-decoration: none;
   }
+  /* Biljettikon i titelraden (bara sidor med tickets-modulen), accentfarg sa den syns */
+  .ios-action--tickets { color: var(--os-accent); }
   .ios-action:active,
   .ios-more:active { background: var(--os-primary-soft); }
   .ios-action svg,
@@ -169,7 +171,7 @@ nav.event-nav[data-theme="dark"] .os-brand:hover {
   display: none;
   position: fixed; inset: 0;
   z-index: 3000;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial, sans-serif;
+  font-family: var(--os-font-sans, system-ui, -apple-system, "Segoe UI", Arial, sans-serif);
 }
 .ios-sheet--open { display: block; }
 .ios-sheet[hidden] { display: none; }
@@ -433,7 +435,7 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
   padding-left:  calc(14px + env(safe-area-inset-left, 0px));
   padding-right: calc(14px + env(safe-area-inset-right, 0px));
   pointer-events: none;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--os-font-sans, system-ui, -apple-system, "Segoe UI", Arial, sans-serif);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -458,6 +460,7 @@ body.golf-event .nav-divider, body.topic-page .nav-divider { width: 1px; height:
 
 .os-cc-card h2 {
   margin: 0 0 4px 0;
+  color: inherit; /* kortet ar inverterat; 1_typography satter annars h2 till --os-ink (nattlage 2026-10-16) */
   font-size: 16px;
   font-weight: 600;
   letter-spacing: .01em;
