@@ -6,6 +6,14 @@
   "countrySlug": "united-kingdom",
   "countryName": "United Kingdom",
   "depth": 4,
+  "seo": {
+    "title": "London travel, stays and events",
+    "description": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links.",
+    "twitterDescription": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links.",
+    "webpageDescription": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links."
+  },
+  "region": "Capital city of England",
+  "population": "~8.9M",
   "coordinates": {
     "lat": 51.50853,
     "lon": -0.12574
@@ -14,14 +22,186 @@
     "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "seo": {
-    "title": "London travel, stays and events",
-    "description": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links.",
-    "twitterDescription": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links.",
-    "webpageDescription": "Plan London around Tower of London, British Museum, London Heathrow (LHR) and nearby event links."
+  "h1": "London travel, stays & events guide",
+  "heroText": "London is a vast but readable capital when you plan around the Tube, river and neighbourhoods. Start with Westminster and the Houses of Parliament, cross to the South Bank, then save time for the British Museum or Tower of London. Heathrow is the main long-haul airport, while Gatwick, Stansted, Luton and City shape route choices.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "United Kingdom",
+      "note": "United Kingdom"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/London",
+      "note": "local time"
+    },
+    {
+      "label": "Founded",
+      "value": "680",
+      "note": "historical origin"
+    }
+  ],
+  "areas": [
+    {
+      "name": "Westminster",
+      "text": "Westminster is best for first-time landmark walks, Parliament views, royal parks and easy Underground access.",
+      "bestFor": "first visits, landmarks, royal parks"
+    },
+    {
+      "name": "Covent Garden",
+      "text": "Covent Garden puts theatres, restaurants, shops and Soho within easy walking distance, but hotels cost more.",
+      "bestFor": "theatre, restaurants, nightlife"
+    },
+    {
+      "name": "South Bank",
+      "text": "South Bank gives river views, cultural venues and walkable routes between Waterloo, Tate Modern and Westminster.",
+      "bestFor": "river walks, culture, families"
+    },
+    {
+      "name": "Kensington",
+      "text": "Kensington works for museums, Hyde Park, polished hotels and easier access toward Heathrow routes.",
+      "bestFor": "museums, parks, Heathrow"
+    },
+    {
+      "name": "Shoreditch",
+      "text": "Shoreditch suits restaurants, bars, street art and repeat visitors who want East London energy.",
+      "bestFor": "nightlife, food, repeat visits"
+    }
+  ],
+  "airports": [
+    {
+      "name": "London Heathrow Airport (LHR)",
+      "search": "London Heathrow Airport, London, England",
+      "text": "Heathrow is London's main long-haul airport, with Elizabeth line, Tube and rail connections into central districts."
+    },
+    {
+      "name": "London Gatwick Airport (LGW)",
+      "search": "London Gatwick Airport, London, England",
+      "text": "Gatwick is south of London and works well for rail links to Victoria, London Bridge and Thameslink stations."
+    },
+    {
+      "name": "London City Airport (LCY)",
+      "search": "London City Airport, London, England",
+      "text": "London City Airport is closest to Canary Wharf and the City, useful for business trips and short European routes."
+    }
+  ],
+  "airportTransfer": {
+    "value": "15-60 min depending on airport and rail route",
+    "note": "Heathrow has Elizabeth line and Tube links",
+    "distance": "about 24 km west of central London from Heathrow"
   },
+  "bookingDestination": "London, England",
+  "stayOverview": "Choose Westminster for landmarks, Covent Garden for theatre and restaurants, South Bank for river culture, Kensington for museums and Heathrow convenience, or Shoreditch for nightlife and a more local East London base.",
+  "hotelIntro": "London hotel choice is about transport as much as neighbourhood feel. Stay near a useful Tube or Elizabeth line station, then choose between landmark-heavy Westminster, theatre-led Covent Garden, museum-focused Kensington or food-led Shoreditch.",
+  "rentalCars": "Do not rent a car for London; congestion, parking and public transport make it unnecessary until leaving the city.",
+  "travelTips": [
+    {
+      "title": "Best base",
+      "text": "Pick a hotel near a Tube or Elizabeth line station rather than chasing the absolute geographic centre."
+    },
+    {
+      "title": "Airport choice",
+      "text": "Check the airport before booking flights, because Heathrow, Gatwick, Stansted, Luton and City have very different transfer routes."
+    },
+    {
+      "title": "Payments",
+      "text": "Use contactless cards or mobile wallets on Tube, buses and many rail services instead of buying paper tickets."
+    },
+    {
+      "title": "Day trip",
+      "text": "Windsor, Oxford and Hampton Court are straightforward rail day trips when you want a break from central London."
+    }
+  ],
+  "events": [],
+  "topicLinks": [
+    {
+      "label": "Fashion",
+      "href": "/content/categories/culture/fashion.html"
+    },
+    {
+      "label": "Music",
+      "href": "/content/categories/music/index.html"
+    },
+    {
+      "label": "Art",
+      "href": "/content/categories/culture/art.html"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Wikipedia: London",
+      "url": "https://en.wikipedia.org/wiki/London",
+      "usedFor": "city history and coordinates"
+    }
+  ],
+  "sourceFetchedAt": "2026-06-16",
+  "history": [
+    {
+      "label": "680",
+      "text": "By about 680 the city had become a major port again, but there is little evidence of large-scale production."
+    },
+    {
+      "label": "12th century",
+      "text": "In the 12th century the institutions of central government, which had followed the royal English court around the country, grew in size and sophistication and became increasingly fixed, for most purposes at Westminster, although."
+    },
+    {
+      "label": "1264",
+      "text": "In 1264, during the Second Barons' War, Simon de Montfort's rebels killed 500 Jews while attempting to seize records of debts. Early modern The Reformation produced a shift to Protestantism."
+    },
+    {
+      "label": "1647",
+      "text": "The fortifications failed their only test when the New Model Army entered London in 1647."
+    },
+    {
+      "label": "1663",
+      "text": "The ban was lifted during the 1660 Restoration; London's oldest theatre, Drury Lane, opened in 1663."
+    },
+    {
+      "label": "1666",
+      "text": "In 1666, the Great Fire destroyed much of the wooden-built city."
+    },
+    {
+      "label": "18th century",
+      "text": "During the 18th century London was dogged by crime, and the Bow Street Runners were established in 1750 as a professional police force."
+    },
+    {
+      "label": "1710",
+      "text": "In 1710, Christopher Wren's masterpiece St Paul's Cathedral was completed, replacing its medieval predecessor, lost in the Great Fire."
+    },
+    {
+      "label": "1844",
+      "text": "Following an 1838 fire, the Royal Exchange was rebuilt in 1844."
+    },
+    {
+      "label": "1894",
+      "text": "Lyons opened the first of their chain of teashops in Piccadilly in 1894."
+    },
+    {
+      "label": "Regional role",
+      "text": "Westminster Abbey, rebuilt in Romanesque style by King Edward the Confessor, was one of the grandest churches in Europe."
+    },
+    {
+      "label": "Regional role",
+      "text": "Winchester had been the capital of Anglo-Saxon England, but from this time, London became the main forum for foreign traders and the base for defence in time of war."
+    },
+    {
+      "label": "Regional role",
+      "text": "It became the basis of a new Palace of Westminster."
+    },
+    {
+      "label": "Regional role",
+      "text": "London became the main North Sea port, with migrants from England and abroad."
+    }
+  ],
+  "historySource": "https://en.wikipedia.org/wiki/London",
+  "timezone": "Europe/London",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "London",
+    "matchedCountry": "United Kingdom"
+  },
+  "transitOperator": "Transport for London",
   "kicker": "Capital city of United Kingdom",
-  "heroText": "London works best as a base in United Kingdom when you anchor days around Tower of London, British Museum and Buckingham Palace. Use those sights to understand the city's history, street life and visitor rhythm. London Heathrow handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "snapshot": [
     {
       "label": "Place",
@@ -38,23 +218,6 @@
     {
       "label": "Events",
       "text": "The events tab connects city context with dated event views."
-    }
-  ],
-  "kpis": [
-    {
-      "label": "Region",
-      "value": "United Kingdom",
-      "note": "United Kingdom"
-    },
-    {
-      "label": "Time zone",
-      "value": "Europe/London",
-      "note": "local time"
-    },
-    {
-      "label": "Founded",
-      "value": "680",
-      "note": "historical origin"
     }
   ],
   "shortFacts": [],
@@ -121,7 +284,6 @@
     }
   ],
   "landmarks": [],
-  "events": [],
   "knownFor": [
     "Palace of Westminster",
     "United Kingdom",
@@ -129,20 +291,6 @@
     "City transit",
     "Events",
     "United Kingdom"
-  ],
-  "topicLinks": [
-    {
-      "label": "Fashion",
-      "href": "/content/categories/culture/fashion.html"
-    },
-    {
-      "label": "Music",
-      "href": "/content/categories/music/index.html"
-    },
-    {
-      "label": "Art",
-      "href": "/content/categories/culture/art.html"
-    }
   ],
   "topicCards": [
     {
@@ -160,126 +308,6 @@
       "alt": "Europe",
       "title": "Europe outdoors",
       "text": "Routes, seasons and nearby places."
-    }
-  ],
-  "history": [
-    {
-      "label": "680",
-      "text": "By about 680 the city had become a major port again, but there is little evidence of large-scale production."
-    },
-    {
-      "label": "12th century",
-      "text": "In the 12th century the institutions of central government, which had followed the royal English court around the country, grew in size and sophistication and became increasingly fixed, for most purposes at Westminster, although."
-    },
-    {
-      "label": "1264",
-      "text": "In 1264, during the Second Barons' War, Simon de Montfort's rebels killed 500 Jews while attempting to seize records of debts. Early modern The Reformation produced a shift to Protestantism."
-    },
-    {
-      "label": "1647",
-      "text": "The fortifications failed their only test when the New Model Army entered London in 1647."
-    },
-    {
-      "label": "1663",
-      "text": "The ban was lifted during the 1660 Restoration; London's oldest theatre, Drury Lane, opened in 1663."
-    },
-    {
-      "label": "1666",
-      "text": "In 1666, the Great Fire destroyed much of the wooden-built city."
-    },
-    {
-      "label": "18th century",
-      "text": "During the 18th century London was dogged by crime, and the Bow Street Runners were established in 1750 as a professional police force."
-    },
-    {
-      "label": "1710",
-      "text": "In 1710, Christopher Wren's masterpiece St Paul's Cathedral was completed, replacing its medieval predecessor, lost in the Great Fire."
-    },
-    {
-      "label": "1844",
-      "text": "Following an 1838 fire, the Royal Exchange was rebuilt in 1844."
-    },
-    {
-      "label": "1894",
-      "text": "Lyons opened the first of their chain of teashops in Piccadilly in 1894."
-    },
-    {
-      "label": "Regional role",
-      "text": "Westminster Abbey, rebuilt in Romanesque style by King Edward the Confessor, was one of the grandest churches in Europe."
-    },
-    {
-      "label": "Regional role",
-      "text": "Winchester had been the capital of Anglo-Saxon England, but from this time, London became the main forum for foreign traders and the base for defence in time of war."
-    },
-    {
-      "label": "Regional role",
-      "text": "It became the basis of a new Palace of Westminster."
-    },
-    {
-      "label": "Regional role",
-      "text": "London became the main North Sea port, with migrants from England and abroad."
-    }
-  ],
-  "historySource": "https://en.wikipedia.org/wiki/London",
-  "timezone": "Europe/London",
-  "coordinateSource": {
-    "label": "Open-Meteo Geocoding API",
-    "matchedName": "London",
-    "matchedCountry": "United Kingdom"
-  },
-  "areas": [
-    {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in London, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
-    },
-    {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in London, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
-    },
-    {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central London reachable.",
-      "bestFor": "views, quieter evenings, walks"
-    },
-    {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first London sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
-    }
-  ],
-  "airports": [
-    {
-      "name": "London Heathrow (LHR)",
-      "search": "London Heathrow (LHR), London, United Kingdom",
-      "text": "London Heathrow (LHR) is the main air gateway for London; compare transfer time with your hotel base before locking the first night."
-    }
-  ],
-  "airportTransfer": {
-    "value": "Compare road transfer time between London Heathrow (LHR) and central London before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
-  },
-  "stayOverview": "Start with City centre for the easiest first London stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
-  "hotelIntro": "London hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
-  "rentalCars": "Do not rent a car for central London unless parking and traffic are part of the plan; use one mainly for regional day trips.",
-  "travelTips": [
-    {
-      "title": "Best base",
-      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
-    },
-    {
-      "title": "Airport timing",
-      "text": "Leave extra time for London Heathrow, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
-    },
-    {
-      "title": "Local movement",
-      "text": "Plan each day in clusters around Tower of London and British Museum so transfers do not consume the best sightseeing hours."
-    },
-    {
-      "title": "Day trips",
-      "text": "Keep one flexible slot for nearby routes from London, checking weather, transport and opening hours before committing."
     }
   ],
   "highlights": [
@@ -341,5 +369,12 @@
       "text": "Roman Verulamium, a Norman abbey and a Saturday market in one walkable market town.",
       "source": "https://www.stalbansmuseums.org.uk/"
     }
+  ],
+  "constituentCountry": "England",
+  "href": "/content/locations/europe/united-kingdom/london.html",
+  "dataFile": "/content/locations/europe/united-kingdom/london.city.data.json",
+  "mergedFrom": [
+    "europe/united-kingdom/london.city.data.json",
+    "europe/united-kingdom/london.city.data.json"
   ]
 }

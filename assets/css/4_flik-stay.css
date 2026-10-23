@@ -212,6 +212,11 @@ body.event-dashboard .event-stay-fields {
 body.event-dashboard .event-stay-field {
   display: grid;
   gap: 4px;
+  /* Ankare for datumoverlagget (.stay-field-locale-overlay, absolut i
+     oneslider-core.js). Utan detta matte modulen mot narmaste positionerade
+     forfader - pa mobil hamnade "Jul 29, 2027" ovanfor flikarna (Anders
+     2026-10-19). */
+  position: relative;
 }
 
 body.event-dashboard .event-stay-field label {
