@@ -336,18 +336,20 @@
   // The link still works — it points at the same Booking destination, just without
   // the affiliate redirect. Testing stays realistic; the statistics stay clean.
   // ====================================================================
+  var PRODUCTION_HOST = 'one-sliders.com';
   OneSlider.register('affiliateLocalGuard', function () {
-    // Vitlista på LOKALA värdar, inte svartlista på "allt utom prod". Skillnaden är
-    // vilket håll felet lutar åt: nås sajten någon gång från en annan riktig domän
-    // (one-sliders.github.io, en staging-domän, ett nytt CDN) ska länkarna fortsätta
-    // ge provision. Ett extra testklick är billigt; tyst utebliven intäkt är det inte.
+    // Nås sajten från en annan riktig domän (github.io, ett CDN) avspåras
+    // länkarna där också — det är Anders val 2026-10-23: hellre en domän utan
+    // provision än testklick i statistiken och lokala värdnamn i publik kod.
+    // Anders 2026-10-23: "cj-länk bara i prod … det kan ligga i koden men
+    // enablas om det inte är lokala url:er" — och "borde du inte vända på den?"
+    // Vänd: affiliatelänkarna är AKTIVA bara på den publika domänen; varje
+    // annan värd (lokala vhostar, förhandsvisningar, file://) avspåras. Ingen
+    // lista över lokala värdnamn i publik kod. Den gamla vitlistan på lokala
+    // värdar missade vhostarna utan punkt, så varje bokningsklick i dev/qa
+    // gick via CJ.
     var host = (window.location.hostname || '').toLowerCase();
-    var isLocal = host === ''                       // file://
-      || host === 'localhost' || host === '127.0.0.1' || host === '::1'
-      || /^127\./.test(host)
-      || /^192\.168\./.test(host) || /^10\./.test(host)
-      || /\.local$/.test(host) || /\.localhost$/.test(host);
-    if (!isLocal) return;
+    if (host === PRODUCTION_HOST || host === 'www.' + PRODUCTION_HOST) return;
 
     var links = document.querySelectorAll('a[href*="/click-"]');
     var freed = 0;
