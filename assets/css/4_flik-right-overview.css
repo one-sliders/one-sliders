@@ -321,12 +321,56 @@
   gap: 10px;
 }
 
+/* Anders 2026-10-24 (location-experts mobila diagramfynd): axeltexten lag i
+   SVG:n och skalades med bilden (8 px pa 375 px). Nu: stapel/linje i SVG,
+   etikett och varde i HTML. Kolumndiagram = ett rutnat med en kolumn per
+   stapel; linjediagram = SVG + etikettrad under med samma kolumnindelning. */
 .event-chart {
   display: block;
   width: 100%;
-  height: auto;
   overflow: visible;
 }
+.event-chart--columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-items: end;
+}
+.event-chart__col {
+  display: grid;
+  grid-template-rows: auto 96px auto;
+  justify-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.event-chart__col .event-chart__svg {
+  display: block;
+  width: 60%;
+  height: 96px;
+  align-self: end;
+}
+.event-chart--line .event-chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.event-chart__labels {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  justify-items: center;
+  padding: 2px 0 0;
+}
+.event-chart__label,
+.event-chart__value {
+  font-size: .72rem;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.event-chart__label { color: var(--os-muted); font-weight: 800; }
+.event-chart__value { color: var(--os-ink); font-weight: 800; }
 
 /* Anders 2026-10-22: värdeetiketten radbröts ("6" / "acts") och staplarna
    började på ett fast avstånd oavsett etikettlängd. Hela listan är nu ETT
@@ -431,8 +475,6 @@
   fill: var(--os-accent);
 }
 
-.event-chart__label,
-.event-chart__value,
 .event-chart__rank-number,
 .event-chart__rank-label,
 .event-chart__rank-value {
@@ -442,7 +484,6 @@
   font-weight: 800;
 }
 
-.event-chart__value,
 .event-chart__rank-value {
   fill: var(--os-ink);
 }

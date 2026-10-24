@@ -9,21 +9,47 @@
    en tabell tvingar lasaren att jamfora tal i huvudet; stapeln visar att Wind
    of Change ar dubbelt sa spelad utan att man laser en enda siffra.
    Byggaren ager formen (ren SVG, inga inline-stilar), CSS ager utseendet. */
+/* Anders 2026-10-24 (location-experts mobila diagramfynd, samma sak har):
+   texten lag i SVG:n och skalades med bilden — 9 px i tre-kolumnslaget, 18 px
+   pa surfplatta. Nu: stapeln ar SVG (en per rad), etikett och varde ar HTML
+   och foljer sidans typografi oavsett bredd. Samma arbetsdelning som .ski-bars. */
 .event-bars {
-  display: block;
+  display: grid;
+  gap: .35rem;
   width: 100%;
-  height: auto;
   max-width: 520px;
 }
-.event-bars__bar { fill: var(--theme, var(--os-primary)); }
+.event-bars__row {
+  display: grid;
+  grid-template-columns: minmax(96px, 28%) 1fr 5ch;
+  align-items: center;
+  gap: .5rem;
+}
 .event-bars__label,
 .event-bars__value {
-  fill: currentColor;
-  font-size: 11px;
-  dominant-baseline: middle;
+  font-size: .78rem;
+  line-height: 1.25;
+  color: currentColor;
 }
-.event-bars__label { font-weight: 600; }
-.event-bars__value { opacity: .7; }
+.event-bars__label {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.event-bars__value {
+  opacity: .7;
+  text-align: right;
+  white-space: nowrap;
+}
+.event-bars__svg {
+  display: block;
+  width: 100%;
+  height: 13px;
+}
+.event-bars__bar { fill: var(--theme, var(--os-primary)); }
+@media (max-width: 620px) {
+  .event-bars { max-width: 100%; }
+  .event-bars__row { grid-template-columns: minmax(96px, 36%) 1fr 5ch; }
+}
 
 /* Item-flikens rader: mini-hero forst, sedan datum och plats.
    Anders 2026-08-31: "det ska inte sta se sidan. det ska vara en mini hero
