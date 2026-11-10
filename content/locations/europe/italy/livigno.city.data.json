@@ -1,0 +1,285 @@
+{
+  "name": "Livigno",
+  "slug": "livigno",
+  "countrySlug": "italy",
+  "countryName": "Italy",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Lombardy",
+  "coordinates": {
+    "lat": 46.5363,
+    "lon": 10.13348
+  },
+  "timezone": "Europe/Rome",
+  "population": "4437",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Livigno",
+    "matchedCountry": "Italy",
+    "matchedAdmin1": "Lombardy"
+  },
+  "seo": {
+    "title": "Livigno ski resort guide",
+    "description": "115 km of slopes across Mottolino and Carosello 3000, served by 6 gondolas, 14 chairlifts and 12 ski lifts.",
+    "twitterDescription": "115 km of slopes across two mountains at 1,816 m.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Livigno in Lombardy."
+  },
+  "h1": "Livigno ski resort, stays & events guide",
+  "heroText": "Livigno lies at 1,816 metres in a high valley near the Swiss border, with two mountains facing each other across the town: Mottolino on one side, Carosello 3000 on the other. Between them the operator counts 115 kilometres of slopes, served by 6 gondolas, 14 chairlifts and 12 ski lifts, with the ski area opening on Saturday 28 November.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Lombardy",
+      "note": "Italy"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Rome",
+      "note": "local time"
+    },
+    {
+      "label": "Slopes",
+      "value": "115 km",
+      "note": "two mountains"
+    }
+  ],
+  "bookingDestination": "Livigno, Lombardy, Italy",
+  "stayOverview": "The town runs the length of the valley floor with a gondola at each end: Mottolino from the southern end, Carosello 3000 from the north. A free bus connects them.",
+  "hotelIntro": "Book against high season. Either end puts you at a gondola; the middle of town needs the bus.",
+  "rentalCars": "Livigno is reached over the Foscagno pass or through the Munt la Schera tunnel from Switzerland, about two hours from Bormio in winter.",
+  "sources": [
+    {
+      "label": "Livigno: ski area opening",
+      "url": "https://www.livigno.eu/en/events/skiarea-opening",
+      "usedFor": "slopes, lift breakdown, opening date"
+    },
+    {
+      "label": "Livigno: lifts",
+      "url": "https://www.livigno.eu/en/lifts",
+      "usedFor": "the two mountains"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-27",
+  "travelTips": [
+    {
+      "title": "Two mountains",
+      "text": "Mottolino and Carosello 3000 face each other across the town.",
+      "source": "https://www.livigno.eu/en/lifts",
+      "sourceLabel": "Livigno: lifts"
+    },
+    {
+      "title": "Opening day",
+      "text": "The ski area opens on Saturday 28 November.",
+      "source": "https://www.livigno.eu/en/events/skiarea-opening",
+      "sourceLabel": "Livigno: ski area opening"
+    },
+    {
+      "title": "115 km of slopes",
+      "text": "Served by 6 gondolas, 14 chairlifts and 12 ski lifts.",
+      "source": "https://www.livigno.eu/en/events/skiarea-opening",
+      "sourceLabel": "Livigno: ski area opening"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "A high valley",
+      "text": "The town sits at 1,816 metres, near the Swiss border.",
+      "source": "https://www.livigno.eu/en/events/skiarea-opening",
+      "sourceLabel": "Livigno: ski area opening"
+    },
+    {
+      "title": "Mottolino and Carosello 3000",
+      "text": "Two separate mountains on one pass.",
+      "source": "https://www.livigno.eu/en/lifts",
+      "sourceLabel": "Livigno: lifts"
+    },
+    {
+      "title": "115 km of slopes",
+      "text": "The operator's own figure for the ski area.",
+      "source": "https://www.livigno.eu/en/events/skiarea-opening",
+      "sourceLabel": "Livigno: ski area opening"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "ski": {
+    "operator": "Livigno",
+    "operatorUrl": "https://www.livigno.eu/en/events/skiarea-opening",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "Six gondolas, fourteen chairlifts and twelve ski lifts",
+        "note": "The gondolas are Carosello 3000 I and II, Mottolino, Livigno Centro Tagliede I and II and Cassana. The resort lists its lifts by type rather than as a total.",
+        "source": "https://www.livigno.eu/en/slopes",
+        "sourceLabel": "Livigno: the ski slopes"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the operator’s ski-area or lift pages.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.livigno.eu/en/lifts",
+        "sourceLabel": "Livigno: lifts"
+      },
+      "topElevation": {
+        "unannounced": "No top elevation is published on the operator’s ski-area or lift pages.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.livigno.eu/en/lifts",
+        "sourceLabel": "Livigno: lifts"
+      },
+      "season": {
+        "value": "28 November 2026 to 2 May 2027",
+        "note": "The span of the resort's own 2026/27 ski-pass price periods. It announces the opening date but publishes no closing day.",
+        "source": "https://www.livigno.eu/en/skipass-online",
+        "sourceLabel": "Livigno: ski pass, seasons and rates 2026/27"
+      },
+      "snowpark": {
+        "unannounced": "The operator names its two mountains, Mottolino and Carosello 3000, but no terrain park on the ski-area or lift pages.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.livigno.eu/en/lifts",
+        "sourceLabel": "Livigno: lifts"
+      },
+      "pistes": {
+        "value": "115 km on 74 runs",
+        "note": "Over 100 square kilometres of skiable terrain across both sides of the valley.",
+        "source": "https://www.livigno.eu/en/slopes",
+        "sourceLabel": "Livigno: the ski slopes"
+      },
+      "baseElevation": {
+        "unannounced": "The resort states its slopes reach almost 3,000 m and counts its runs, lifts and 100 square kilometres of terrain, but states no base altitude on its slopes or ski-pass pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.livigno.eu/en/slopes",
+        "sourceLabel": "Livigno: the ski slopes"
+      },
+      "longestRun": {
+        "unannounced": "The resort counts 74 runs over 115 km and splits them by grade, and names individual runs such as the Zuelli black, but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.livigno.eu/en/slopes",
+        "sourceLabel": "Livigno: the ski slopes"
+      },
+      "dayPass": {
+        "value": "Priced by period: promotional, season and high season",
+        "note": "Promotional runs 28 November to 18 December 2026 and 10 April to 2 May 2027; high season covers 26 December to 8 January and 30 January to 29 March. The resort publishes the rates themselves only inside its downloadable 2026/27 price list, not on the page.",
+        "source": "https://www.livigno.eu/en/skipass-online",
+        "sourceLabel": "Livigno: ski pass, seasons and rates 2026/27"
+      }
+    },
+    "facts": [
+      {
+        "label": "The lifts",
+        "value": "6 gondolas, 14 chairlifts and 12 ski lifts",
+        "source": "https://www.livigno.eu/en/events/skiarea-opening",
+        "sourceLabel": "Livigno: ski area opening"
+      },
+      {
+        "label": "The two mountains",
+        "value": "Mottolino and Carosello 3000, on opposite sides of the valley",
+        "source": "https://www.livigno.eu/en/lifts",
+        "sourceLabel": "Livigno: lifts"
+      },
+      {
+        "label": "Off-piste",
+        "value": "100 square kilometres of it, with heliski from dedicated pads into the Livigno Alps alongside a UIAGM guide",
+        "source": "https://www.livigno.eu/en/slopes",
+        "sourceLabel": "Livigno: the ski slopes"
+      },
+      {
+        "label": "Children",
+        "value": "Born 2019 or later they ski free with an adult on a pass of the same length; born 2011 or later, half price all season",
+        "source": "https://www.livigno.eu/en/skipass-online",
+        "sourceLabel": "Livigno: ski pass, seasons and rates 2026/27"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "variety",
+        "label": "Skiers who want range",
+        "facts": [
+          {
+            "text": "115 km of slopes across two mountains, Mottolino and Carosello 3000, served by gondolas, chairlifts and ski lifts.",
+            "source": "https://www.livigno.eu/en/events/skiarea-opening",
+            "sourceLabel": "Livigno: ski area opening"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "alps",
+      "unit": "count",
+      "label": "Runs by grade",
+      "note": "The resort counts 74 runs in total and lists 12 black, 37 red and 29 blue - 78 - so its own two figures differ slightly.",
+      "source": "https://www.livigno.eu/en/slopes",
+      "sourceLabel": "Livigno: the ski slopes",
+      "series": [
+        {
+          "name": "Livigno",
+          "total": 78,
+          "grades": [
+            {
+              "grade": "blue",
+              "label": "Easy",
+              "count": 29
+            },
+            {
+              "grade": "red",
+              "label": "Intermediate",
+              "count": 37
+            },
+            {
+              "grade": "black",
+              "label": "Difficult",
+              "count": 12
+            }
+          ],
+          "graded": 78,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Il Caravaggio International Airport",
+      "code": "BGY",
+      "search": "Il Caravaggio International Airport",
+      "text": "Il Caravaggio International Airport (BGY) is 102 km from Livigno by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 102
+    },
+    {
+      "name": "Milano Linate Airport",
+      "code": "LIN",
+      "search": "Milano Linate Airport",
+      "text": "Milano Linate Airport (LIN) is 138 km from Livigno by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 138
+    },
+    {
+      "name": "Verona Villafranca Valerio Catullo Airport",
+      "code": "VRN",
+      "search": "Verona Villafranca Valerio Catullo Airport",
+      "text": "Verona Villafranca Valerio Catullo Airport (VRN) is 140 km from Livigno by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 140
+    }
+  ],
+  "airportTransfer": {
+    "value": "Il Caravaggio International Airport (BGY) is the nearest airport with scheduled service, 102 km from Livigno by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "102 km straight line"
+  }
+}

@@ -7,10 +7,10 @@
   "countryName": "Norway",
   "depth": 5,
   "seo": {
-    "title": "Narvik Travel Guide - Where to Stay, Airports & Events",
-    "description": "Plan a Narvik, Norway trip with neighborhoods, airports, travel tips, events and hotel planning links.",
-    "twitterDescription": "Plan a Narvik, Norway trip with neighborhoods, airports, travel tips, events and hotel planning links.",
-    "webpageDescription": "Plan a Narvik, Norway trip with neighborhoods, airports, travel tips, events and hotel planning links."
+    "title": "Narvik ski resort guide",
+    "description": "Northern Norway's largest ski resort at 68 degrees north: 889 metres of lift-served vertical above the Ofotfjord, and host of the 2029 Alpine World Ski Championships.",
+    "twitterDescription": "889 m of vertical above the Ofotfjord, and the 2029 World Championships.",
+    "webpageDescription": "Ski facts, season, where to stay and how to get to Narvik in Nordland, Norway."
   },
   "region": "Nordland",
   "population": "tba",
@@ -23,11 +23,11 @@
     "dynamic": true
   },
   "h1": "Narvik travel, stays & events guide",
-  "heroText": "Narvik works best as a base in Norway when you anchor days around Narvikfjellet, Ofoten Railway and Narvik War Museum. Use those sights to understand the city's history, street life and visitor rhythm. Narvik International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Narvik is a ski town at 68 degrees north where a gondola runs from the street into the mountain. Twenty-two runs drop up to 889 metres with the Ofotfjord below, the off-piste terrain falls 1,154, and the resort will host the 2029 Alpine World Ski Championships. The main season starts in February and spring skiing runs into May.",
   "kpis": [
     {
       "label": "Region",
-      "value": "Norway",
+      "value": "Nordland",
       "note": "Norway"
     },
     {
@@ -36,65 +36,111 @@
       "note": "local time"
     },
     {
-      "label": "Founded",
-      "value": "200",
-      "note": "historical origin"
+      "label": "Vertical drop",
+      "value": "889 m",
+      "note": "1,154 m off-piste"
     }
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Narvik, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Narvik town",
+      "text": "The gondola leaves from the town, so no car is needed to reach the mountain.",
+      "bestFor": "the gondola, restaurants, first visits",
+      "vibe": "ski-in",
+      "bookingDestination": "Narvik town, Narvik, Norway",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Narvik, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Basecamp Narvik",
+      "text": "Apartments with ski-in ski-out access to the slopes.",
+      "bestFor": "ski-in ski-out, apartments",
+      "vibe": "ski-in",
+      "bookingDestination": "Basecamp Narvik, Narvik, Norway",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Narvik reachable.",
-      "bestFor": "views, quieter evenings, walks"
+      "name": "Camp 291",
+      "text": "Glass cabins above the fjord, away from the town.",
+      "bestFor": "northern lights, glass cabins, quiet",
+      "vibe": "views",
+      "bookingDestination": "Camp 291, Narvik, Norway",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Narvik sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "By the fjord",
+      "text": "Along the Ofotfjord below the mountain.",
+      "bestFor": "views, quieter evenings",
+      "vibe": "quiet",
+      "bookingDestination": "By the fjord, Narvik, Norway",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     }
   ],
   "airports": [
     {
-      "name": "Narvik International Airport",
-      "search": "Narvik International Airport, Narvik, Norway",
-      "text": "Narvik International Airport is the main air gateway for Narvik; compare transfer time with your hotel base before locking the first night."
+      "name": "Harstad/Narvik Airport",
+      "code": "EVE",
+      "search": "Harstad/Narvik Airport",
+      "text": "Harstad/Narvik Airport (EVE) is 31 km from Narvik by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 31
+    },
+    {
+      "name": "Bardufoss Airport",
+      "code": "BDU",
+      "search": "Bardufoss Airport",
+      "text": "Bardufoss Airport (BDU) is 82 km from Narvik by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 82
+    },
+    {
+      "name": "Stokmarknes Airport, Skagen",
+      "code": "SKN",
+      "search": "Stokmarknes Airport, Skagen",
+      "text": "Stokmarknes Airport, Skagen (SKN) is 99 km from Narvik by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 99
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Narvik International Airport and central Narvik before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Harstad/Narvik Airport (EVE) is the nearest airport with scheduled service, 31 km from Narvik by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "31 km straight line"
   },
   "bookingDestination": "Narvik, Norway",
-  "stayOverview": "Start with City centre for the easiest first Narvik stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
-  "hotelIntro": "Narvik hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
-  "rentalCars": "Do not rent a car for central Narvik unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "stayOverview": "Narvik is a town first and a ski resort second, which is unusual this far north: the gondola leaves from the street, so a bed in town is a bed at the lift. Basecamp Narvik puts you on the slopes, and Camp 291's glass cabins trade walking distance for northern lights.",
+  "hotelIntro": "Book against the season you mean to ski. The main season starts in early February, and spring skiing runs into May - late by Alpine standards, early by nothing.",
+  "rentalCars": "The gondola reaches the mountain from the town centre, so a car is for the drive here rather than for the skiing. The Ofoten railway runs to Narvik from Kiruna in Sweden.",
   "travelTips": [
     {
-      "title": "Best base",
-      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+      "title": "The gondola starts in town",
+      "text": "Narvik's gondola runs straight from the town into the mountain, so no transfer is needed to reach the slopes.",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "title": "Airport timing",
-      "text": "Leave extra time for Narvik International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "title": "When the season runs",
+      "text": "From the first winter snowfall to spring skiing in May, with the main season starting in early February.",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "title": "Local movement",
-      "text": "Plan each day in clusters around Narvikfjellet and Ofoten Railway so transfers do not consume the best sightseeing hours."
+      "title": "Groomed or not",
+      "text": "Of the 22 runs, 17 are groomed and 5 are left ungroomed, 16 kilometres in total.",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     },
     {
-      "title": "Day trips",
-      "text": "Keep one flexible slot for nearby routes from Narvik, checking weather, transport and opening hours before committing."
+      "title": "2029 World Championships",
+      "text": "Narvik will host the 2029 Alpine World Ski Championships and is being built out for it.",
+      "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+      "sourceLabel": "Norway's Best: Narvik Ski Resort"
     }
   ],
   "highlights": [
@@ -228,5 +274,178 @@
       "text": "Open fell with marked summer trails and the 1940 battlefield lines still visible in the ground.",
       "source": "https://www.visitnorway.com/"
     }
-  ]
+  ],
+  "_kind": "upgrade - bara de falt som byts. See-korten och Nearby ar sidans egna.",
+  "ski": {
+    "operator": "Narvik Ski Resort",
+    "operatorUrl": "https://www.norwaysbest.com/en/narvik/ski-resort",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "unannounced": "Narvik Ski Resort publishes its run count and vertical but no lift count.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "verticalDrop": {
+        "value": "889 m lift-served, 1,154 m off-piste",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "topElevation": {
+        "unannounced": "No summit elevation is published; the resort gives drops rather than altitudes.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "season": {
+        "value": "First winter snowfall to spring skiing in May, with the main season from early February",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "snowpark": {
+        "value": "Yes, a terrain park",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "pistes": {
+        "value": "22: 17 groomed and 5 ungroomed, 16 km in total",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "baseElevation": {
+        "unannounced": "The resort publishes its vertical - up to 889 m lift-served and 1,154 m off-piste - and its run count, but states no base altitude on its ski-resort or ski-pass pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "longestRun": {
+        "unannounced": "The resort publishes 22 runs with a combined length of 16 km, but names no longest run.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      "dayPass": {
+        "unannounced": "The resort lists a one-day ski pass alongside 3-hour, multi-day and season passes, but publishes no price for any of them on its ski-pass page - the price appears only once the pass is in the basket.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort/ski-passes",
+        "sourceLabel": "Narvikfjellet: ski passes"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "Up to 889 m lift-served, and 1,154 m in the off-piste terrain",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "Latitude",
+        "value": "68 degrees north, at the head of the Ofotfjord",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "Gondola",
+        "value": "Runs straight from the town into the mountain",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "Terrain park",
+        "value": "Yes",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "Guided off-piste",
+        "value": "Sold by the resort",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "On the mountain",
+        "value": "Two restaurants, including Restaurant Skard at 656 m",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "2029 World Championships",
+        "value": "Narvik will host the 2029 Alpine World Ski Championships",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "label": "Winter 2026/27",
+        "value": "Development runs from 2025 to 2027, and the resort says parts of the area will still be under construction this winter",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Five of the 22 runs are left ungroomed, and the off-piste terrain drops 1,154 metres against 889 lift-served.",
+            "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+            "sourceLabel": "Norway's Best: Narvik Ski Resort"
+          },
+          {
+            "text": "Guided off-piste skiing is sold by the resort.",
+            "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+            "sourceLabel": "Norway's Best: Narvik Ski Resort"
+          },
+          {
+            "text": "Narvik hosts the 2029 Alpine World Ski Championships.",
+            "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+            "sourceLabel": "Norway's Best: Narvik Ski Resort"
+          }
+        ]
+      },
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "17 of the 22 runs are groomed, and the gondola reaches the mountain from the town without a car.",
+            "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+            "sourceLabel": "Norway's Best: Narvik Ski Resort"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "lifts",
+        "checkedAt": "2026-10-24",
+        "statement": "Narvik Ski Resort publishes its run count and vertical but no lift count.",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-24",
+        "statement": "The resort splits its runs into 17 groomed and 5 ungroomed, which is not a difficulty scale, and publishes no split by grade.",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      },
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "The site links to ski passes without publishing an adult day rate for the 2026/27 winter.",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      }
+    ],
+    "skiEvents": [
+      {
+        "name": "2029 Alpine World Ski Championships",
+        "note": "Narvik will host the 2029 Alpine World Ski Championships, and the resort is being developed for it.",
+        "source": "https://www.norwaysbest.com/en/narvik/ski-resort",
+        "sourceLabel": "Norway's Best: Narvik Ski Resort"
+      }
+    ]
+  }
 }

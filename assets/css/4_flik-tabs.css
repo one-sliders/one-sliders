@@ -294,3 +294,14 @@ html.os-stay-hash-active .city-page--template .persona-tabs:has(:is(#stay-overvi
 }
 #view-history:checked ~ .view-panel--history { display: grid; }
 .city-page--template .view-panel--history .country-panel-card { padding: 12px; }
+
+/* Ski-fliken (TASK-0174). Samma vaxlingsmonster som History: fliken finns
+   bara pa en ort med ett 'ski'-block, sa regeln ar oanvand pa ovriga
+   stadssidor. Modulens eget utseende bor i 4_flik-ski.css. */
+#view-ski:checked ~ .persona-tablist label[for="view-ski"] {
+  color: var(--os-surface);
+  background: var(--location-theme);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--os-accent) 20%, var(--os-transparent));
+}
+#view-ski:checked ~ .view-panel--ski { display: grid; }
+.city-page--template .view-panel--ski .country-panel-card { padding: 12px; }

@@ -1,0 +1,328 @@
+{
+  "name": "Alpe d'Huez",
+  "slug": "alpe-d-huez",
+  "countrySlug": "france",
+  "countryName": "France",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Isère",
+  "coordinates": {
+    "lat": 45.09281,
+    "lon": 6.06986
+  },
+  "timezone": "Europe/Paris",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Alpe d'Huez",
+    "matchedCountry": "France",
+    "matchedAdmin1": "Auvergne-Rhône-Alpes"
+  },
+  "seo": {
+    "title": "Alpe d'Huez ski resort guide",
+    "description": "More than 250 km of slopes on a sunny plateau at 1,827 metres, including the Sarenne: 16 km of uninterrupted black descent.",
+    "twitterDescription": "250 km of slopes and a 16 km black run without a break.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Alpe d'Huez in Isère, France."
+  },
+  "h1": "Alpe d'Huez ski resort, stays & events guide",
+  "heroText": "Alpe d'Huez sits on a sunny plateau at 1,827 metres with more than 250 kilometres of slopes above it. The Sarenne drops 16 kilometres without a break, which the resort calls the longest black slope in the world, and the old village of Huez lies down the hairpins below.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Isère",
+      "note": "France"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Paris",
+      "note": "local time"
+    },
+    {
+      "label": "Slopes",
+      "value": "250+ km",
+      "note": "the Sarenne is 16 km"
+    }
+  ],
+  "bookingDestination": "Alpe d'Huez, France",
+  "stayOverview": "The resort itself is up on the plateau with the lifts; Huez village is cheaper down the hairpins; Oz and Vaujany are satellites on the same pass.",
+  "hotelIntro": "Book against high season. Staying on the plateau means walking to the lift; staying below means driving the twenty-one hairpins twice a day.",
+  "rentalCars": "The road up is the twenty-one-hairpin climb the Tour de France uses. Grenoble is the nearest city and airport transfers run in winter.",
+  "sources": [
+    {
+      "label": "Alpe d'Huez (official destination site)",
+      "url": "https://www.alpedhuez.com/en/",
+      "usedFor": "slopes, the Sarenne"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-26",
+  "travelTips": [
+    {
+      "title": "The Sarenne",
+      "text": "Sixteen kilometres of uninterrupted descent, which the resort calls the longest black slope in the world.",
+      "source": "https://www.alpedhuez.com/en/",
+      "sourceLabel": "Alpe d'Huez (official destination site)"
+    },
+    {
+      "title": "A sunny plateau",
+      "text": "The resort sits at 1,827 metres with more than 250 km of slopes above it.",
+      "source": "https://www.alpedhuez.com/en/",
+      "sourceLabel": "Alpe d'Huez (official destination site)"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The Sarenne",
+      "text": "Sixteen kilometres of uninterrupted black descent, the longest in the world by the resort's own count.",
+      "source": "https://www.alpedhuez.com/en/",
+      "sourceLabel": "Alpe d'Huez (official destination site)"
+    },
+    {
+      "title": "The 250 km ski area",
+      "text": "Spread above the plateau and linked to Oz and Vaujany.",
+      "source": "https://www.alpedhuez.com/en/",
+      "sourceLabel": "Alpe d'Huez (official destination site)"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Alpe d'Huez",
+      "text": "The resort on its sunny plateau at 1,827 m.",
+      "bestFor": "ski-in ski-out, the Sarenne, restaurants",
+      "vibe": "ski-in",
+      "bookingDestination": "Alpe d'Huez, Alpe d'Huez, France",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Huez village",
+      "text": "The old village down the hairpins at 1,511 m.",
+      "bestFor": "value, quieter stays",
+      "vibe": "value",
+      "bookingDestination": "Huez village, Alpe d'Huez, France",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Oz and Vaujany",
+      "text": "The satellite villages on the same ski area.",
+      "bestFor": "fewer crowds, same lift pass",
+      "vibe": "quiet",
+      "bookingDestination": "Oz and Vaujany, Alpe d'Huez, France",
+      "source": "https://www.alpedhuez.com/en/",
+      "sourceLabel": "Alpe d'Huez (official destination site)"
+    }
+  ],
+  "ski": {
+    "operator": "Alpe d'Huez ski area",
+    "operatorUrl": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "unannounced": "The operator counts pistes and kilometres but publishes no lift count on its piste-map, snowpark or lift-pass pages.",
+        "checkedAt": "2026-10-27",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "verticalDrop": {
+        "value": "2,000 m",
+        "note": "The figure the operator publishes.",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "topElevation": {
+        "value": "3,330 m",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "season": {
+        "value": "5 December 2026 to 25 April 2027",
+        "note": "The span of the lift company's own 2026/27 ticket periods.",
+        "source": "https://skipass.alpedhuez.com/en/winter/lift-pass/daily-ski-pass/",
+        "sourceLabel": "Alpe d'Huez: day and half-day ski passes 2026/27"
+      },
+      "snowpark": {
+        "value": "5 snowparks",
+        "note": "From beginner features to a 900 m expert line with 12 to 25 m tables.",
+        "source": "https://skipass.alpedhuez.com/en/winter/snowpark-alpe-dhuez/",
+        "sourceLabel": "Alpe d'Huez ski area: snowparks"
+      },
+      "pistes": {
+        "value": "250 km across 111 marked pistes",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "baseElevation": {
+        "value": "1,300 m",
+        "note": "The operator states 250 km of pistes between 1,300 and 3,330 m.",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "longestRun": {
+        "value": "La Sarenne",
+        "note": "The operator calls it Europe's longest black run but publishes no length for it.",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      "dayPass": {
+        "value": "EUR 68.00 for an adult in high season",
+        "note": "Adults 13 to 64, 19 December 2026 to 9 April 2027. It is EUR 58.00 from 5 to 18 December 2026 and EUR 54.50 from 10 to 25 April 2027.",
+        "source": "https://skipass.alpedhuez.com/en/winter/lift-pass/daily-ski-pass/",
+        "sourceLabel": "Alpe d'Huez: day and half-day ski passes 2026/27"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "2,000 m",
+        "note": "The figure the operator publishes.",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      {
+        "label": "Altitude",
+        "value": "1,300 m to 3,330 m",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      },
+      {
+        "label": "Six gateways",
+        "value": "Alpe d'Huez at 1,860 m, Auris-en-Oisans 1,600 m, Villard-Reculas 1,500 m, Oz 3300 at 1,350 m and Vaujany 1,250 m",
+        "source": "https://skipass.alpedhuez.com/en/winter/snowpark-alpe-dhuez/",
+        "sourceLabel": "Alpe d'Huez ski area: snowparks"
+      },
+      {
+        "label": "The expert line",
+        "value": "A 900 m line with 12 to 25 m tables, used for competitions",
+        "source": "https://skipass.alpedhuez.com/en/winter/snowpark-alpe-dhuez/",
+        "sourceLabel": "Alpe d'Huez ski area: snowparks"
+      },
+      {
+        "label": "La Sarenne",
+        "value": "One of the runs the ski area is known for, from the Pic Blanc",
+        "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+        "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "34 green and 31 blue of the 111 marked pistes - more than half the runs are graded for beginners or easy skiing.",
+            "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+            "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "2,000 metres of vertical from the Pic Blanc at 3,330 m, and 16 black runs including La Sarenne.",
+            "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+            "sourceLabel": "Alpe d'Huez ski area: piste map and key figures"
+          }
+        ]
+      },
+      {
+        "kind": "freestyle",
+        "label": "Park riders",
+        "facts": [
+          {
+            "text": "Five snowparks, with a 900 m expert line of 12 to 25 m tables.",
+            "source": "https://skipass.alpedhuez.com/en/winter/snowpark-alpe-dhuez/",
+            "sourceLabel": "Alpe d'Huez ski area: snowparks"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "alps",
+      "unit": "count",
+      "label": "Pistes by grade",
+      "note": "The operator counts its 111 marked pistes in four grades.",
+      "source": "https://skipass.alpedhuez.com/en/winter/alpe-dhuez-ski-holidays/piste-map/",
+      "sourceLabel": "Alpe d'Huez ski area: piste map and key figures",
+      "series": [
+        {
+          "name": "Alpe d'Huez",
+          "total": 111,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Very easy",
+              "count": 34
+            },
+            {
+              "grade": "blue",
+              "label": "Easy",
+              "count": 31
+            },
+            {
+              "grade": "red",
+              "label": "Intermediate",
+              "count": 30
+            },
+            {
+              "grade": "black",
+              "label": "Difficult",
+              "count": 16
+            }
+          ],
+          "graded": 111,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Lyon Saint-Exupéry Airport",
+      "code": "LYS",
+      "search": "Lyon Saint-Exupéry Airport",
+      "text": "Lyon Saint-Exupéry Airport (LYS) is 104 km from Alpe d'Huez by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 104
+    },
+    {
+      "name": "Chambéry Aix les Bains airport",
+      "code": "CMF",
+      "search": "Chambéry Aix les Bains airport",
+      "text": "Chambéry Aix les Bains airport (CMF) is 62 km from Alpe d'Huez by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 62
+    },
+    {
+      "name": "Grenoble Alpes Isère Airport",
+      "code": "GNB",
+      "search": "Grenoble Alpes Isère Airport",
+      "text": "Grenoble Alpes Isère Airport (GNB) is 65 km from Alpe d'Huez by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 65
+    }
+  ],
+  "airportTransfer": {
+    "value": "Lyon Saint-Exupéry Airport (LYS) is the nearest airport with scheduled service, 104 km from Alpe d'Huez by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "104 km straight line"
+  }
+}

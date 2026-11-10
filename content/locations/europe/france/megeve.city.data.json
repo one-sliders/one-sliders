@@ -1,0 +1,254 @@
+{
+  "name": "Megève",
+  "slug": "megeve",
+  "countrySlug": "france",
+  "countryName": "France",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Haute-Savoie",
+  "coordinates": {
+    "lat": 45.85687,
+    "lon": 6.61775
+  },
+  "timezone": "Europe/Paris",
+  "population": "5129",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Megève",
+    "matchedCountry": "France",
+    "matchedAdmin1": "Auvergne-Rhône-Alpes"
+  },
+  "seo": {
+    "title": "Megève ski resort guide",
+    "description": "A village resort on the Evasion Mont-Blanc pass, with over 400 km of linked slopes and a sector reaching 2,350 metres.",
+    "twitterDescription": "Over 400 km of linked slopes on Evasion Mont-Blanc.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Megève in Haute-Savoie."
+  },
+  "h1": "Megève ski resort, stays & events guide",
+  "heroText": "Megève is a village first and a ski resort second, a settlement at 1,105 metres rather than a complex built for the lifts. Its skiing sits on the Evasion Mont-Blanc pass, over 400 kilometres of linked slopes across the valley, with the lift operator's own Megève sector reaching 2,350 metres and the resort's accessible areas at Jaillet and Combloux.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Haute-Savoie",
+      "note": "France"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Paris",
+      "note": "local time"
+    },
+    {
+      "label": "Evasion Mont-Blanc",
+      "value": "400 km",
+      "note": "linked slopes"
+    }
+  ],
+  "bookingDestination": "Megève, France",
+  "stayOverview": "The old village is the centre of gravity, with the Chamois lift leaving from it and the Jaillet and Rochebrune gondolas on either side of the valley.",
+  "hotelIntro": "Book against high season. Staying in the village means walking to a lift and to dinner.",
+  "rentalCars": "Megève is about an hour from Geneva, up the Arve valley and over the Megève road.",
+  "sources": [
+    {
+      "label": "Megève Tourisme: the ski areas",
+      "url": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "usedFor": "Evasion Mont-Blanc, the accessible areas"
+    },
+    {
+      "label": "Mont-Blanc Natural Resort: annual openings",
+      "url": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "usedFor": "the Megève sector altitude"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-27",
+  "travelTips": [
+    {
+      "title": "A village, not a purpose-built resort",
+      "text": "The resort grew around an existing village rather than being built for the lifts.",
+      "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "sourceLabel": "Megève Tourisme: the ski areas"
+    },
+    {
+      "title": "Evasion Mont-Blanc",
+      "text": "Over 400 kilometres of linked slopes on one pass.",
+      "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "sourceLabel": "Megève Tourisme: the ski areas"
+    },
+    {
+      "title": "Jaillet and Combloux",
+      "text": "The resort's accessible areas.",
+      "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "sourceLabel": "Megève Tourisme: the ski areas"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Evasion Mont-Blanc",
+      "text": "Over 400 kilometres of slopes linked across the valley.",
+      "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "sourceLabel": "Megève Tourisme: the ski areas"
+    },
+    {
+      "title": "A village resort",
+      "text": "The resort grew around an existing village rather than being built for the lifts.",
+      "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+      "sourceLabel": "Megève Tourisme: the ski areas"
+    },
+    {
+      "title": "Megève Mont Blanc Escape",
+      "text": "The lift operator's own sector above the village, at 2,350 metres.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "ski": {
+    "operator": "Megève",
+    "operatorUrl": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "29",
+        "note": "In the Megève sector, serving 87 trails.",
+        "source": "https://api.montblancnaturalresort.com/en/domaine-skiable-megeve",
+        "sourceLabel": "Mont-Blanc Natural Resort: the Megève ski area"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published for Megève.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+        "sourceLabel": "Megève Tourisme: the ski areas"
+      },
+      "topElevation": {
+        "value": "2,350 m",
+        "note": "The altitude the lift operator gives for the Megève Mont Blanc Escape sector.",
+        "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+        "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+      },
+      "season": {
+        "unannounced": "The lift operator's openings table published the summer dates on the date checked and no winter dates.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+        "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+      },
+      "snowpark": {
+        "unannounced": "No terrain park is named on the resort's ski-area pages.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+        "sourceLabel": "Megève Tourisme: the ski areas"
+      },
+      "pistes": {
+        "value": "235 slopes over 400 km",
+        "note": "Across the Domaine Evasion Mont-Blanc, which links Megève with Saint-Gervais, Combloux, La Giettaz and Les Contamines.",
+        "source": "https://api.montblancnaturalresort.com/en/domaine-skiable-megeve",
+        "sourceLabel": "Mont-Blanc Natural Resort: the Megève ski area"
+      },
+      "baseElevation": {
+        "value": "1,113 m",
+        "note": "The lift company states the area runs from 1,113 m to 2,350 m. Mont d'Arbois sits at 1,840 m.",
+        "source": "https://api.montblancnaturalresort.com/en/domaine-skiable-megeve",
+        "sourceLabel": "Mont-Blanc Natural Resort: the Megève ski area"
+      },
+      "longestRun": {
+        "unannounced": "The lift company's Megève page gives the 1,113 to 2,350 m range, 235 slopes over 400 km and 29 lifts, but names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://api.montblancnaturalresort.com/en/domaine-skiable-megeve",
+        "sourceLabel": "Mont-Blanc Natural Resort: the Megève ski area"
+      },
+      "dayPass": {
+        "unannounced": "The lift company's Megève page shows only pedestrian rates, and those are labelled winter 2023-24. No 2026/27 ski day-pass price is published on it.",
+        "checkedAt": "2026-10-29",
+        "source": "https://api.montblancnaturalresort.com/en/domaine-skiable-megeve",
+        "sourceLabel": "Mont-Blanc Natural Resort: the Megève ski area"
+      }
+    },
+    "facts": [
+      {
+        "label": "Part of Evasion Mont-Blanc",
+        "value": "Over 400 km of linked slopes, which the resort calls one of the largest areas in the Alps",
+        "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+        "sourceLabel": "Megève Tourisme: the ski areas"
+      },
+      {
+        "label": "Megève Mont Blanc Escape",
+        "value": "The lift operator's sector above the village, at 2,350 m",
+        "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+        "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+      },
+      {
+        "label": "Accessible areas",
+        "value": "At Jaillet and Combloux",
+        "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+        "sourceLabel": "Megève Tourisme: the ski areas"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "variety",
+        "label": "Skiers who want range",
+        "facts": [
+          {
+            "text": "Megève sits on the Evasion Mont-Blanc pass, which links over 400 km of slopes across the valley.",
+            "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+            "sourceLabel": "Megève Tourisme: the ski areas"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-27",
+        "statement": "Megève publishes the linked area's 400 km but no figures of its own and no split by difficulty.",
+        "source": "https://www.megeve-tourisme.fr/en/skier-a-megeve/station-de-ski/domaines-skiables/",
+        "sourceLabel": "Megève Tourisme: the ski areas"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Lyon Saint-Exupéry Airport",
+      "code": "LYS",
+      "search": "Lyon Saint-Exupéry Airport",
+      "text": "Lyon Saint-Exupéry Airport (LYS) is 119 km from Megève by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 119
+    },
+    {
+      "name": "Annecy Meythet airport",
+      "code": "NCY",
+      "search": "Annecy Meythet airport",
+      "text": "Annecy Meythet airport (NCY) is 41 km from Megève by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 41
+    },
+    {
+      "name": "Chambéry Aix les Bains airport",
+      "code": "CMF",
+      "search": "Chambéry Aix les Bains airport",
+      "text": "Chambéry Aix les Bains airport (CMF) is 62 km from Megève by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 62
+    }
+  ],
+  "airportTransfer": {
+    "value": "Lyon Saint-Exupéry Airport (LYS) is the nearest airport with scheduled service, 119 km from Megève by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "119 km straight line"
+  }
+}

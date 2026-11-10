@@ -1,0 +1,274 @@
+{
+  "name": "Steamboat Springs",
+  "slug": "steamboat-springs",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "continent": "north-america",
+  "continentName": "North America",
+  "region": "Yampa Valley",
+  "coordinates": {
+    "lat": 40.48498,
+    "lon": -106.83172
+  },
+  "timezone": "America/Denver",
+  "population": "12435",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Steamboat Springs",
+    "matchedCountry": "United States",
+    "matchedAdmin1": "Colorado"
+  },
+  "seo": {
+    "title": "Steamboat ski resort guide",
+    "description": "3,741 acres and 181 trails after the Mahogany Ridge expansion made Steamboat the second largest ski resort in Colorado.",
+    "twitterDescription": "3,741 acres, 181 trails, 650 of those acres new expert terrain.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Steamboat Springs in Colorado."
+  },
+  "h1": "Steamboat ski resort, stays & events guide",
+  "heroText": "Steamboat grew to 3,741 acres and 181 trails when Mahogany Ridge opened, adding over 650 acres of advanced and expert terrain with rock cliffs and chutes - and making it, in the resort's own words, the second largest ski resort in Colorado. The town below is a working ranching town with hot springs.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Yampa Valley",
+      "note": "USA"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Denver",
+      "note": "local time"
+    },
+    {
+      "label": "Skiable terrain",
+      "value": "3,741 acres",
+      "note": "181 trails"
+    }
+  ],
+  "bookingDestination": "Steamboat Springs, Colorado, USA",
+  "stayOverview": "The base area is at the gondola; the town is three miles away and has the hot springs, the restaurants and the cheaper beds.",
+  "hotelIntro": "Book against high season. The base area is ski-in; the town needs the free bus or a car.",
+  "rentalCars": "Steamboat has its own airport at Hayden, 25 miles west, and the town runs a free bus to the mountain.",
+  "sources": [
+    {
+      "label": "Steamboat: Mahogany Ridge",
+      "url": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "usedFor": "lifts, trails, acres, the expansion"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-25",
+  "travelTips": [
+    {
+      "title": "Mahogany Ridge",
+      "text": "Over 650 acres of advanced and expert terrain with rock cliffs and chutes, which took the resort to 3,741 acres.",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    },
+    {
+      "title": "The town and the mountain",
+      "text": "Steamboat Springs is a ranching town three miles from the base area, not a purpose-built village.",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Mahogany Ridge",
+      "text": "Over 650 acres of advanced and expert terrain with rock cliffs and chutes, the expansion that took Steamboat to 3,741 acres.",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    },
+    {
+      "title": "181 trails",
+      "text": "The resort's own trail count after the expansion, served by 23 lifts.",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Steamboat base area",
+      "text": "At the foot of the gondola, below the new Mahogany Ridge terrain.",
+      "bestFor": "ski-in ski-out, the gondola, first lift",
+      "vibe": "ski-in",
+      "bookingDestination": "Steamboat base area, Steamboat Springs, Colorado, USA",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    },
+    {
+      "name": "Steamboat Springs town",
+      "text": "The old ranching town three miles from the mountain.",
+      "bestFor": "restaurants, the hot springs, value",
+      "vibe": "lively",
+      "bookingDestination": "Steamboat Springs town, Steamboat Springs, Colorado, USA",
+      "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+      "sourceLabel": "Steamboat: Mahogany Ridge"
+    }
+  ],
+  "ski": {
+    "operator": "Steamboat Ski Resort",
+    "operatorUrl": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "23",
+        "note": "The figure the resort publishes after the Mahogany Ridge expansion.",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      },
+      "verticalDrop": {
+        "value": "3,668 ft",
+        "note": "1,118 m, from the Mount Werner summit to the base.",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      "topElevation": {
+        "value": "10,568 ft at the Mount Werner summit",
+        "note": "3,224 m. The base sits at 6,900 ft.",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      "season": {
+        "unannounced": "No season dates are published on the pages the resort serves without a browser; its stats pages render client-side and are empty to a plain fetch.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      },
+      "snowpark": {
+        "value": "Mavericks Superpipe",
+        "note": "450 feet long and 56 feet wide, with 18-foot walls and a 22-foot transition.",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      "pistes": {
+        "value": "181 trails",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      },
+      "baseElevation": {
+        "value": "6,900 ft",
+        "note": "2,103 m. The operator's mountain-stats page lists it alongside Christie Peak at 8,020 ft and mid-mountain at 9,080 ft.",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      "longestRun": {
+        "value": "Why Not, over 3 miles - 4.8 km",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the resort's own pages.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "3,668 ft",
+        "note": "1,118 m, from the Mount Werner summit to the base.",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      {
+        "label": "Skiable terrain",
+        "value": "3,741 acres",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      },
+      {
+        "label": "Mahogany Ridge",
+        "value": "Over 650 acres of advanced and expert terrain with rock cliffs and chutes, which made Steamboat the second largest ski resort in Colorado",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      },
+      {
+        "label": "The mountain range",
+        "value": "Mount Werner, Sunshine Peak, Storm Peak, Thunderhead Peak, Mahogany Ridge and Christie Peak",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "314 inches - 797 cm, ten-year average at mid-mountain",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      },
+      {
+        "label": "Snowmaking",
+        "value": "375 acres / 152 hectares",
+        "source": "https://www.steamboat.com/the-mountain/mountain-stats",
+        "sourceLabel": "Steamboat: mountain stats"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Mahogany Ridge added over 650 acres of advanced and expert terrain with rock cliffs and chutes.",
+            "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+            "sourceLabel": "Steamboat: Mahogany Ridge"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-25",
+        "statement": "Steamboat publishes its trail and acreage totals on its expansion page but no split by difficulty; the stats page itself renders client-side and returns an empty document to a plain fetch.",
+        "source": "https://www.steamboat.com/the-mountain/mahogany-ridge",
+        "sourceLabel": "Steamboat: Mahogany Ridge"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Yampa Valley Airport",
+      "code": "HDN",
+      "search": "Yampa Valley Airport",
+      "text": "Yampa Valley Airport (HDN) is 33 km from Steamboat Springs by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 33
+    },
+    {
+      "name": "Eagle County Regional Airport",
+      "code": "EGE",
+      "search": "Eagle County Regional Airport",
+      "text": "Eagle County Regional Airport (EGE) is 94 km from Steamboat Springs by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 94
+    },
+    {
+      "name": "Laramie Regional Airport",
+      "code": "LAR",
+      "search": "Laramie Regional Airport",
+      "text": "Laramie Regional Airport (LAR) is 134 km from Steamboat Springs by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 134
+    }
+  ],
+  "airportTransfer": {
+    "value": "Yampa Valley Airport (HDN) is the nearest airport with scheduled service, 33 km from Steamboat Springs by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "33 km straight line"
+  }
+}

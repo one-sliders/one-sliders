@@ -47,6 +47,9 @@ body.event-dashboard .event-tabs--single .event-tab-panel { display: block; }
 body.event-dashboard .event-explore { margin-top: 18px; padding-bottom: 18px; }
 
 #tab-overview:checked ~ .event-tab-panels #panel-overview,
+#tab-resorts:checked ~ .event-tab-panels #panel-resorts,
+#tab-facts:checked ~ .event-tab-panels #panel-facts,
+#tab-events:checked ~ .event-tab-panels #panel-events,
 #tab-explore:checked ~ .event-tab-panels #panel-explore,
 #tab-past:checked ~ .event-tab-panels #panel-past,
 #tab-upcoming:checked ~ .event-tab-panels #panel-upcoming,
@@ -60,6 +63,9 @@ body.event-dashboard .event-explore { margin-top: 18px; padding-bottom: 18px; }
 }
 
 #tab-overview:checked ~ .event-tablist label[for="tab-overview"],
+#tab-resorts:checked ~ .event-tablist label[for="tab-resorts"],
+#tab-facts:checked ~ .event-tablist label[for="tab-facts"],
+#tab-events:checked ~ .event-tablist label[for="tab-events"],
 #tab-past:checked ~ .event-tablist label[for="tab-past"],
 #tab-upcoming:checked ~ .event-tablist label[for="tab-upcoming"],
 #tab-stay:checked ~ .event-tablist label[for="tab-stay"],
@@ -252,6 +258,20 @@ body.event-dashboard .event-tablist--titled .event-tab-label__text small { font-
 #tab-overview:checked ~ .event-tablist label[for="tab-overview"] small,
 #tab-travel:checked ~ .event-tablist label[for="tab-travel"] small,
 #tab-history:checked ~ .event-tablist label[for="tab-history"] small { color: var(--theme, var(--os-primary)); }
+
+/* Vald flik med fylld knappbakgrund: undertexten ärver knappens bläck. Den
+   behöll --os-muted (grått) mot --button-primary-bg - "Pick a resort" på
+   alpine-skiing var nästan oläslig i ljust läge (2026-11-09). Overview,
+   travel, history, food och culture har ytläget ovan/nedan och sin egen regel. */
+#tab-resorts:checked ~ .event-tablist label[for="tab-resorts"] small,
+#tab-facts:checked ~ .event-tablist label[for="tab-facts"] small,
+#tab-events:checked ~ .event-tablist label[for="tab-events"] small,
+#tab-past:checked ~ .event-tablist label[for="tab-past"] small,
+#tab-upcoming:checked ~ .event-tablist label[for="tab-upcoming"] small,
+#tab-stay:checked ~ .event-tablist label[for="tab-stay"] small,
+#tab-why:checked ~ .event-tablist label[for="tab-why"] small,
+#tab-winners:checked ~ .event-tablist label[for="tab-winners"] small,
+#tab-lineup:checked ~ .event-tablist label[for="tab-lineup"] small { color: inherit; }
 
 /* FEATURE-0019: Food & drink-fliken (datastyrd — bara sidor med mat/dryck). */
 #tab-food:checked ~ .event-tab-panels #panel-food { display: block; }

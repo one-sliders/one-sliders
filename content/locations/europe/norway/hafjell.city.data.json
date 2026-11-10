@@ -1,0 +1,264 @@
+{
+  "name": "Hafjell",
+  "slug": "hafjell",
+  "countrySlug": "norway",
+  "countryName": "Norway",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Innlandet",
+  "coordinates": {
+    "lat": 61.26309,
+    "lon": 10.41641
+  },
+  "timezone": "Europe/Oslo",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Øyer",
+    "matchedCountry": "Norway"
+  },
+  "seo": {
+    "title": "Hafjell ski resort guide",
+    "description": "Eighteen lifts and 67 runs over 835 height metres at Øyer, the mountain that held the alpine events of the 1994 Lillehammer Olympics.",
+    "twitterDescription": "18 lifts, 67 runs and 835 height metres above Lillehammer.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Hafjell at Øyer in Innlandet, Norway."
+  },
+  "h1": "Hafjell ski resort, stays & events guide",
+  "heroText": "Hafjell rises above Øyer with 18 lifts and 67 runs over 835 height metres, fifteen kilometres up the valley from Lillehammer. The mountain held the alpine events of the 1994 Winter Olympics and has been a Norwegian World Cup venue since.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Innlandet",
+      "note": "Norway"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Oslo",
+      "note": "local time"
+    },
+    {
+      "label": "Runs",
+      "value": "67",
+      "note": "18 lifts"
+    }
+  ],
+  "bookingDestination": "Hafjell, Norway",
+  "stayOverview": "Hafjell is a lift base rather than a village. The beds at the foot of the slopes are the ski-in ones; Lillehammer, fifteen kilometres away, has the rest and the restaurants.",
+  "hotelIntro": "Decide between the slope and the town: Hafjell base for the first lift, Lillehammer for somewhere to eat afterwards.",
+  "rentalCars": "A car is useful. Hafjell is fifteen kilometres from Lillehammer, which is on the Oslo-Trondheim railway.",
+  "sources": [
+    {
+      "label": "Alpinco: Hafjell",
+      "url": "https://www.alpinco.com/no/hafjell/",
+      "usedFor": "lifts, runs, height metres"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-24",
+  "travelTips": [
+    {
+      "title": "The 1994 Olympics",
+      "text": "Hafjell held the alpine events of the Lillehammer Winter Olympics.",
+      "source": "https://www.alpinco.com/no/hafjell/",
+      "sourceLabel": "Alpinco: Hafjell"
+    },
+    {
+      "title": "Lillehammer is close",
+      "text": "The Olympic town is fifteen kilometres down the valley with more hotel rooms than the mountain.",
+      "source": "https://www.alpinco.com/no/hafjell/",
+      "sourceLabel": "Alpinco: Hafjell"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The Olympic slopes",
+      "text": "Hafjell held the alpine events of the 1994 Lillehammer Winter Olympics.",
+      "source": "https://www.alpinco.com/no/hafjell/",
+      "sourceLabel": "Alpinco: Hafjell"
+    },
+    {
+      "title": "67 runs",
+      "text": "Eighteen lifts serve 67 runs over 835 height metres.",
+      "source": "https://www.alpinco.com/no/hafjell/",
+      "sourceLabel": "Alpinco: Hafjell"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Hafjell base",
+      "text": "At the foot of the lifts in Øyer.",
+      "bestFor": "ski-in ski-out, first lift, families",
+      "vibe": "ski-in",
+      "bookingDestination": "Hafjell base, Hafjell, Norway",
+      "source": "https://www.alpinco.com/no/hafjell/",
+      "sourceLabel": "Alpinco: Hafjell"
+    },
+    {
+      "name": "Lillehammer",
+      "text": "The Olympic town 15 km down the valley, with more hotel rooms than the mountain.",
+      "bestFor": "restaurants, value, the Olympic town",
+      "vibe": "value",
+      "bookingDestination": "Lillehammer, Hafjell, Norway",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Alpinco",
+    "operatorUrl": "https://www.alpinco.com/no/hafjell/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "18",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      },
+      "verticalDrop": {
+        "value": "835 m",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      "topElevation": {
+        "value": "1,050 m",
+        "note": "The operator gives a top point of 1,050 m above sea level and 835 m of vertical.",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      "season": {
+        "unannounced": "Alpinco mentions a 26/27 season start for Hafjell without giving dates.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      },
+      "snowpark": {
+        "unannounced": "No snowpark is stated on Alpinco's Hafjell page.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      },
+      "pistes": {
+        "value": "More than 50 km",
+        "note": "The operator counts 18 lifts over the same terrain.",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      "baseElevation": {
+        "unannounced": "The operator gives the 1,050 m top point and 835 m of vertical but states no altitude for the foot of the hill.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      "longestRun": {
+        "unannounced": "The operator counts the runs and the lifts but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      "dayPass": {
+        "unannounced": "Alpinco links to day passes of 1 to 8 days without publishing a price for the 2026/27 winter.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "835 m",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      {
+        "label": "Prepared runs",
+        "value": "more than 50 km",
+        "source": "https://www.alpinco.com/no/hafjell/loypekart",
+        "sourceLabel": "Alpinco: Hafjell loypekart"
+      },
+      {
+        "label": "Valley elevation",
+        "value": "185 m at Øyer",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Olympic venue",
+        "value": "Hafjell hosted the alpine events of the 1994 Lillehammer Winter Olympics",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "835 height metres over 67 runs, served by 18 lifts.",
+            "source": "https://www.alpinco.com/no/hafjell/",
+            "sourceLabel": "Alpinco: Hafjell"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "Alpinco links to day passes of 1 to 8 days without publishing a price for the 2026/27 winter.",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      },
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-24",
+        "statement": "Alpinco publishes 67 runs but no split by difficulty.",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      },
+      {
+        "field": "season",
+        "checkedAt": "2026-10-24",
+        "statement": "The site mentions a 26/27 season start without giving dates.",
+        "source": "https://www.alpinco.com/no/hafjell/",
+        "sourceLabel": "Alpinco: Hafjell"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Oslo-Gardermoen International Airport",
+      "code": "OSL",
+      "search": "Oslo-Gardermoen International Airport",
+      "text": "Oslo-Gardermoen International Airport (OSL) is 125 km from Hafjell by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 125
+    },
+    {
+      "name": "Scandinavian Mountains Airport",
+      "code": "SCR",
+      "search": "Scandinavian Mountains Airport",
+      "text": "Scandinavian Mountains Airport (SCR) is 130 km from Hafjell by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 130
+    }
+  ],
+  "airportTransfer": {
+    "value": "Oslo-Gardermoen International Airport (OSL) is the nearest airport with scheduled service, 125 km from Hafjell by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "125 km straight line"
+  }
+}

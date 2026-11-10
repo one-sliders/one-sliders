@@ -1,0 +1,260 @@
+{
+  "name": "Romme Alpin",
+  "slug": "romme-alpin",
+  "countrySlug": "sweden",
+  "countryName": "Sweden",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Dalarna County",
+  "coordinates": {
+    "lat": 60.43333,
+    "lon": 15.5
+  },
+  "timezone": "Europe/Stockholm",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Romme",
+    "matchedCountry": "Sweden"
+  },
+  "seo": {
+    "title": "Romme Alpin ski resort guide",
+    "description": "The closest large ski area to Stockholm: 34 runs and 14 lifts, six of them six-seat express chairs, outside Borlänge in Dalarna.",
+    "twitterDescription": "34 runs, 14 lifts, six of them six-seat express chairs.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Romme Alpin outside Borlänge in Dalarna, Sweden."
+  },
+  "h1": "Romme Alpin ski resort, stays & events guide",
+  "heroText": "Romme Alpin is the closest large ski area to Stockholm, a low hill outside Borlänge with 34 runs and 275 metres of vertical. Six of its fourteen lifts are six-seat express chairs, which is why the queues move on a Saturday when half of Stockholm has driven up.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Dalarna County",
+      "note": "Sweden"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Stockholm",
+      "note": "local time"
+    },
+    {
+      "label": "Runs",
+      "value": "34",
+      "note": "14 lifts"
+    }
+  ],
+  "bookingDestination": "Borlänge, Sweden",
+  "stayOverview": "Most people ski Romme as a day trip. If you do stay, Borlänge twenty minutes away has the hotel rooms rather than the mountain itself.",
+  "hotelIntro": "Book in Borlänge rather than at the hill: Romme is a day area, and the beds are in town.",
+  "rentalCars": "A car is the normal way here. Romme is about two and a half hours from Stockholm and twenty minutes from Borlänge.",
+  "sources": [
+    {
+      "label": "Romme Alpin (official site)",
+      "url": "https://www.rommealpin.se/",
+      "usedFor": "lifts, runs, vertical"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-24",
+  "travelTips": [
+    {
+      "title": "Six express chairs",
+      "text": "Six of the fourteen lifts are six-seat express chairs, which is what keeps the weekend queues moving.",
+      "source": "https://www.rommealpin.se/",
+      "sourceLabel": "Romme Alpin (official site)"
+    },
+    {
+      "title": "A day area",
+      "text": "275 metres of vertical over 34 runs, close enough to Stockholm to ski and drive home.",
+      "source": "https://www.rommealpin.se/",
+      "sourceLabel": "Romme Alpin (official site)"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The six-seat express chairs",
+      "text": "Six of the fourteen lifts are six-seat express chairs, unusual for a hill this size.",
+      "source": "https://www.rommealpin.se/",
+      "sourceLabel": "Romme Alpin (official site)"
+    },
+    {
+      "title": "34 runs on 275 metres",
+      "text": "A compact hill that packs in more runs than its drop suggests.",
+      "source": "https://www.rommealpin.se/",
+      "sourceLabel": "Romme Alpin (official site)"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Romme",
+      "text": "The base area at the foot of the hill.",
+      "bestFor": "day trips, first visits",
+      "vibe": "ski-in",
+      "bookingDestination": "Romme, Borlänge, Sweden",
+      "source": "https://www.rommealpin.se/",
+      "sourceLabel": "Romme Alpin (official site)"
+    },
+    {
+      "name": "Borlänge",
+      "text": "The town 20 minutes away, where most of the hotel rooms are.",
+      "bestFor": "value, hotels, car travel",
+      "vibe": "value",
+      "bookingDestination": "Borlänge, Borlänge, Sweden",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Romme Alpin",
+    "operatorUrl": "https://www.rommealpin.se/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "14",
+        "note": "Six of them six-seat express chairs.",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "verticalDrop": {
+        "value": "275 m",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "topElevation": {
+        "unannounced": "No summit elevation is published on Romme Alpin's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "season": {
+        "unannounced": "No season opening or closing dates are published on Romme Alpin's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "snowpark": {
+        "unannounced": "No snowpark is mentioned on Romme Alpin's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "pistes": {
+        "value": "34 runs",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "baseElevation": {
+        "value": "149 m",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      "longestRun": {
+        "unannounced": "The operator gives 275 m of vertical and counts 34 runs facing every direction, but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      "dayPass": {
+        "unannounced": "Romme Alpin states that the season's SkiPass prices have been released but does not publish an adult day rate.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "275 m",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      {
+        "label": "Position",
+        "value": "Outside Borlänge in Dalarna, the closest large ski area to Stockholm",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Six of the fourteen lifts are six-seat express chairs, so the queues move even on a weekend.",
+            "source": "https://www.rommealpin.se/",
+            "sourceLabel": "Romme Alpin (official site)"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "Romme Alpin states that the season's SkiPass prices have been released but does not publish an adult day rate on the page.",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-24",
+        "statement": "Romme Alpin publishes 34 runs but no split by difficulty.",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      },
+      {
+        "field": "season",
+        "checkedAt": "2026-10-24",
+        "statement": "No season opening or closing dates are published on the site.",
+        "source": "https://www.rommealpin.se/",
+        "sourceLabel": "Romme Alpin (official site)"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Stockholm Västerås Airport",
+      "code": "VST",
+      "search": "Stockholm Västerås Airport",
+      "text": "Stockholm Västerås Airport (VST) is 113 km from Romme Alpin by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 113
+    },
+    {
+      "name": "Dala Airport",
+      "code": "BLE",
+      "search": "Dala Airport",
+      "text": "Dala Airport (BLE) is 2 km from Romme Alpin by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 2
+    },
+    {
+      "name": "Mora Airport",
+      "code": "MXX",
+      "search": "Mora Airport",
+      "text": "Mora Airport (MXX) is 79 km from Romme Alpin by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 79
+    }
+  ],
+  "airportTransfer": {
+    "value": "Stockholm Västerås Airport (VST) is the nearest airport with scheduled service, 113 km from Romme Alpin by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "113 km straight line"
+  }
+}

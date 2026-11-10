@@ -1,0 +1,188 @@
+/* 4_topic-destinations.css — nivå 4, modul: destinationsväljaren på topicsidor.
+   Generisk (PoC: ski, sedan golf): komponenten känner inga topicnamn.
+   Byggaren äger formen (topic_destinations.py), den här filen äger utseendet.
+   Anders 2026-10-28: jämförelsetabell som default (ort, land, KPI-kolumner,
+   öppnar), kort som alternativ; landschipsen byter innehållet i EN yta; utan JS
+   står fulltabellen som sidans lista. Alla färger via nivå 1-tokens. */
+
+.dest-filter { display: grid; gap: 4px; margin: 0 0 8px; }
+.dest-filter__row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.dest-filter__label {
+  min-width: 64px;
+  font-size: var(--os-text-sm, 12px);
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+.dest-filter__btn,
+.dest-view__btn {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--os-line);
+  border-radius: 999px;
+  background: var(--os-surface);
+  color: var(--os-ink);
+  font: inherit;
+  font-size: var(--os-text-sm, 13px);
+  font-weight: 700;
+  cursor: pointer;
+}
+.dest-filter__btn.is-active,
+.dest-view__btn.is-active {
+  border-color: var(--os-accent);
+  background: var(--os-accent);
+  color: var(--os-surface);
+}
+.dest-filter__count { margin: 2px 0 0; font-size: var(--os-text-sm, 13px); color: var(--os-muted); }
+.dest-empty { margin: 12px 0; color: var(--os-muted); }
+
+/* Ytan */
+.dest-stage[hidden] { display: none; }
+.dest-stage { display: grid; gap: 8px; }
+.dest-stage__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.dest-stage__title {
+  margin: 0;
+  font-size: var(--os-text-sm, 13px);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--os-muted);
+}
+.dest-view { display: inline-flex; gap: 4px; }
+.dest-view__btn { min-height: 28px; padding: 0 10px; font-size: 12px; }
+
+/* Jämförelsetabellen — samma form som Europa-sidans landtabell. */
+.dest-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--os-line);
+  border-radius: 12px;
+  scrollbar-gutter: stable;
+}
+.dest-table-wrap[hidden] { display: none; }
+.dest-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 12px;
+  line-height: 1.25;
+}
+.dest-table th,
+.dest-table td {
+  padding: 7px 9px;
+  border-bottom: 1px solid var(--os-line);
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.dest-table thead th { position: sticky; top: 0; z-index: 1; background: var(--os-surface); }
+.dest-table thead button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: var(--os-transparent);
+  color: var(--os-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.dest-table thead button::after { content: "↕"; font-size: 11px; letter-spacing: 0; opacity: .6; }
+.dest-table thead button[aria-sort="ascending"]::after { content: "↑"; opacity: 1; }
+.dest-table thead button[aria-sort="descending"]::after { content: "↓"; opacity: 1; }
+.dest-table thead button.is-sorted,
+.dest-table thead button:hover { color: var(--os-accent); }
+.dest-table th.number,
+.dest-table td.number { text-align: right; font-variant-numeric: tabular-nums; }
+.dest-table th[scope="row"] { font-weight: 800; }
+.dest-table__link { color: var(--os-accent); text-decoration: none; }
+.dest-table__link:hover { text-decoration: underline; }
+.dest-table__flag { width: 20px; height: 14px; border-radius: 2px; vertical-align: -2px; margin-right: 4px; }
+.dest-table__season { color: var(--os-muted); }
+.dest-table__season.dest-card__season--open { color: var(--os-ok, var(--os-accent)); font-weight: 800; }
+.dest-table__season.dest-card__season--upcoming { color: var(--os-ink); }
+.dest-list__cards[hidden] { display: none; }
+
+/* Korten (alternativ vy) */
+.dest-group { margin: 0 0 20px; }
+.dest-group__title { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: var(--os-text-lg, 18px); }
+.dest-group__title img { width: 20px; height: 14px; border-radius: 2px; }
+.dest-group__count { font-size: var(--os-text-sm, 12px); font-weight: 700; color: var(--os-muted); }
+.dest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.dest-grid[hidden] { display: none; }
+.dest-card {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--os-line);
+  border-radius: 12px;
+  background: var(--os-surface);
+}
+.dest-card[hidden] { display: none; }
+.dest-card__link { display: grid; gap: 6px; color: inherit; text-decoration: none; }
+.dest-card__img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; }
+.dest-card__name { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 0; font-size: 13px; font-weight: 800; }
+.dest-card__flag { width: 20px; height: 14px; border-radius: 2px; flex: none; }
+.dest-card__summary { margin: 0; font-size: var(--os-text-sm, 12px); line-height: 1.35; color: var(--os-muted); }
+.dest-card__kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; }
+.dest-card__kpi {
+  display: grid;
+  gap: 1px;
+  padding: 3px 5px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--os-accent) 8%, var(--os-surface));
+  min-width: 0;
+}
+.dest-card__kpi span { font-size: 9px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--os-muted); }
+.dest-card__kpi strong { font-size: 11px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dest-card__chips { display: flex; flex-wrap: wrap; gap: 3px; }
+.dest-card__chip {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--os-primary) 10%, var(--os-surface));
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--os-ink);
+}
+.dest-card__chip--flag { background: color-mix(in srgb, var(--os-accent) 16%, var(--os-surface)); }
+.dest-card__season { margin: 0; font-size: 11px; line-height: 1.3; color: var(--os-muted); }
+.dest-card__season-state { font-weight: 800; color: var(--os-ink); }
+.dest-card__season--open .dest-card__season-state { color: var(--os-ok, var(--os-accent)); }
+
+/* Eventfliken */
+.topic-events { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.topic-event { padding: 10px; border: 1px solid var(--os-line); border-radius: 12px; background: var(--os-surface); }
+.topic-event a { color: inherit; text-decoration: none; display: grid; gap: 8px; }
+.topic-event img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.topic-event p { margin: 6px 0 0; font-size: var(--os-text-sm, 13px); color: var(--os-muted); }
+.topic-event__resort { font-weight: 700; color: var(--os-accent) !important; }
+
+/* Mobil: scrollbar men tät — filterchipsen sticky överst, rader med KPI direkt. */
+@media (max-width: 620px) {
+  .dest-filter {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin: 0 -12px 8px;
+    padding: 6px 12px;
+    background: var(--os-surface);
+    border-bottom: 1px solid var(--os-line);
+    gap: 4px;
+  }
+  .dest-filter__row { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+  .dest-filter__row::-webkit-scrollbar { display: none; }
+  .dest-filter__label { min-width: 0; flex: none; font-size: 10px; }
+  .dest-filter__btn { flex: none; min-height: 30px; padding: 0 10px; font-size: 12px; }
+  .dest-table { min-width: 0; font-size: 11px; }
+  .dest-table th, .dest-table td { padding: 6px 5px; }
+  /* Landet syns i filtret och topphöjden i ortguiden — fyra kolumner får plats
+     utan sidledsscroll: Resort · Pistes · Lifts · Opens. */
+  .dest-table td:nth-child(2), .dest-table th:nth-child(2),
+  .dest-table td:nth-child(5), .dest-table th:nth-child(5) { display: none; }
+  .dest-table td.dest-table__season { white-space: normal; max-width: 108px; line-height: 1.2; }
+  .dest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+}

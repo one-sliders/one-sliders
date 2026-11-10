@@ -1,0 +1,293 @@
+{
+  "name": "Ischgl",
+  "slug": "ischgl",
+  "countrySlug": "austria",
+  "countryName": "Austria",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Tyrol",
+  "coordinates": {
+    "lat": 47.01257,
+    "lon": 10.29179
+  },
+  "timezone": "Europe/Vienna",
+  "population": "1233",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Ischgl",
+    "matchedCountry": "Austria",
+    "matchedAdmin1": "Tyrol"
+  },
+  "seo": {
+    "title": "Ischgl ski resort guide",
+    "description": "239 km of slopes reaching 2,872 metres, with a season from 26 November 2026 to 2 May 2027 and a ski area crossing into Switzerland.",
+    "twitterDescription": "239 km of slopes, 2,872 m up, and a season into May.",
+    "webpageDescription": "Ski facts, season dates, where to stay and how to get to Ischgl in Tyrol, Austria."
+  },
+  "h1": "Ischgl ski resort, stays & events guide",
+  "heroText": "Ischgl runs 239 kilometres of slopes and snow parks up to 2,872 metres, and its 2026/27 season is published in full: 26 November 2026 to 2 May 2027, one of the longest in the Alps. The ski area crosses the border into Samnaun in Switzerland.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Tyrol",
+      "note": "Austria"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Vienna",
+      "note": "local time"
+    },
+    {
+      "label": "Slopes",
+      "value": "239 km",
+      "note": "Ischgl and Samnaun on one pass"
+    }
+  ],
+  "bookingDestination": "Ischgl, Austria",
+  "stayOverview": "Ischgl itself is where the Silvretta gondola and the nightlife are; Galtür further up the Paznaun is quieter and cheaper; Samnaun is the duty-free Swiss end of the same ski area.",
+  "hotelIntro": "Book against the published season: 26 November 2026 to 2 May 2027, which is longer than most of the Alps.",
+  "rentalCars": "Ischgl is at the end of the Paznaun valley; the nearest railway is at Landeck and a car or transfer is the normal way in.",
+  "sources": [
+    {
+      "label": "Ischgl (Silvretta Seilbahn AG)",
+      "url": "https://www.ischgl.com/en",
+      "usedFor": "slopes, top elevation, season dates, snow park"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-25",
+  "travelTips": [
+    {
+      "title": "A long season",
+      "text": "26 November 2026 to 2 May 2027, published in full by the resort.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    },
+    {
+      "title": "Two countries",
+      "text": "The ski area crosses into Samnaun in Switzerland.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    },
+    {
+      "title": "239 km",
+      "text": "Slopes and snow parks together, reaching 2,872 metres.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The 2,872-metre high point",
+      "text": "The altitude the resort states for its ski area.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    },
+    {
+      "title": "The Ischgl Snow Park",
+      "text": "Part of the 239 kilometres the resort counts.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    },
+    {
+      "title": "Samnaun",
+      "text": "The duty-free Swiss village at the other end of the ski area.",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Ischgl",
+      "text": "The village in the Paznaun valley at 1,378 m, where the Silvretta gondola leaves.",
+      "bestFor": "ski-in ski-out, the Silvretta gondola, nightlife",
+      "vibe": "ski-in",
+      "bookingDestination": "Ischgl, Ischgl, Austria",
+      "source": "https://www.ischgl.com/en",
+      "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+    },
+    {
+      "name": "Galtür",
+      "text": "Further up the Paznaun, quieter than Ischgl.",
+      "bestFor": "families, quieter evenings, value",
+      "vibe": "quiet",
+      "bookingDestination": "Galtür, Ischgl, Austria",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Samnaun",
+      "text": "The Swiss end of the same ski area.",
+      "bestFor": "duty-free, the Swiss side",
+      "vibe": "value",
+      "bookingDestination": "Samnaun, Ischgl, Austria",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Silvretta Seilbahn AG",
+    "operatorUrl": "https://www.ischgl.com/en",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "46",
+        "note": "Carrying around 97,000 people an hour.",
+        "source": "https://www.ischgl.com/en/winter/silvretta-arena",
+        "sourceLabel": "Ischgl: the Silvretta Arena ski area"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the resort's own winter page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.ischgl.com/en",
+        "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+      },
+      "topElevation": {
+        "value": "2,872 m",
+        "source": "https://www.ischgl.com/en/winter/silvretta-arena",
+        "sourceLabel": "Ischgl: the Silvretta Arena ski area"
+      },
+      "season": {
+        "value": "26 November 2026 to 2 May 2027",
+        "source": "https://www.ischgl.com/en",
+        "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+      },
+      "snowpark": {
+        "value": "Yes, the Ischgl Snow Park",
+        "source": "https://www.ischgl.com/en",
+        "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+      },
+      "pistes": {
+        "value": "239 km of slopes and snow parks",
+        "source": "https://www.ischgl.com/en",
+        "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+      },
+      "baseElevation": {
+        "value": "1,377 m",
+        "note": "The operator gives the ski area's altitude as 1,377 to 2,872 m.",
+        "source": "https://www.ischgl.com/en/winter/silvretta-arena",
+        "sourceLabel": "Ischgl: the Silvretta Arena ski area"
+      },
+      "longestRun": {
+        "value": "Up to 11 km",
+        "note": "The operator describes challenging trails up to 11 kilometres long without naming which one.",
+        "source": "https://www.ischgl.com/en/winter/silvretta-arena",
+        "sourceLabel": "Ischgl: the Silvretta Arena ski area"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the resort's own winter page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.ischgl.com/en",
+        "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+      }
+    },
+    "facts": [
+      {
+        "label": "Village elevation",
+        "value": "1,378 m",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Across the border",
+        "value": "The ski area reaches into Samnaun in Switzerland",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "239 kilometres of slopes reaching 2,872 metres, with a season that runs to 2 May.",
+            "source": "https://www.ischgl.com/en",
+            "sourceLabel": "Ischgl (Silvretta Seilbahn AG)"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "alps",
+      "unit": "km",
+      "label": "Slopes by grade",
+      "note": "The operator splits 234 of its 239 km three ways; the balance is race, mogul and 70%-gradient special slopes it gives no length for.",
+      "source": "https://www.ischgl.com/en/winter/silvretta-arena",
+      "sourceLabel": "Ischgl: the Silvretta Arena ski area",
+      "series": [
+        {
+          "name": "Silvretta Arena",
+          "total": 234,
+          "grades": [
+            {
+              "grade": "blue",
+              "label": "Easy",
+              "count": 47
+            },
+            {
+              "grade": "red",
+              "label": "Intermediate",
+              "count": 140
+            },
+            {
+              "grade": "black",
+              "label": "Difficult",
+              "count": 47
+            }
+          ],
+          "graded": 234,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Innsbruck Airport",
+      "code": "INN",
+      "search": "Innsbruck Airport",
+      "text": "Innsbruck Airport (INN) is 84 km from Ischgl by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 84
+    },
+    {
+      "name": "Bodensee Airport Friedrichshafen",
+      "code": "FDH",
+      "search": "Bodensee Airport Friedrichshafen",
+      "text": "Bodensee Airport Friedrichshafen (FDH) is 94 km from Ischgl by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 94
+    },
+    {
+      "name": "Memmingen Allgau Airport",
+      "code": "FMM",
+      "search": "Memmingen Allgau Airport",
+      "text": "Memmingen Allgau Airport (FMM) is 109 km from Ischgl by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 109
+    }
+  ],
+  "airportTransfer": {
+    "value": "Innsbruck Airport (INN) is the nearest airport with scheduled service, 84 km from Ischgl by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "84 km straight line"
+  }
+}

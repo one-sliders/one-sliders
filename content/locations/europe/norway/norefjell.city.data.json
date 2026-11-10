@@ -1,0 +1,270 @@
+{
+  "name": "Norefjell",
+  "slug": "norefjell",
+  "countrySlug": "norway",
+  "countryName": "Norway",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Buskerud",
+  "coordinates": {
+    "lat": 60.17985,
+    "lon": 9.62411
+  },
+  "timezone": "Europe/Oslo",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Noresund",
+    "matchedCountry": "Norway"
+  },
+  "seo": {
+    "title": "Norefjell ski resort guide",
+    "description": "Fifteen lifts, 30 runs and two terrain parks above Lake Krodern, under two hours from Oslo.",
+    "twitterDescription": "15 lifts, 30 runs and two parks, under two hours from Oslo.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Norefjell in Buskerud, Norway."
+  },
+  "h1": "Norefjell ski resort, stays & events guide",
+  "heroText": "Norefjell is the nearest real mountain to Oslo: fifteen lifts, 30 runs and two terrain parks, under two hours from the capital, with the slopes dropping towards Lake Krodern.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Buskerud",
+      "note": "Norway"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Oslo",
+      "note": "local time"
+    },
+    {
+      "label": "Runs",
+      "value": "30",
+      "note": "15 lifts"
+    }
+  ],
+  "bookingDestination": "Norefjell, Norway",
+  "stayOverview": "Norefjell is a day mountain for Oslo as much as a week's destination. The beds at the base are ski-in; Noresund by the lake is the cheaper alternative.",
+  "hotelIntro": "Book against high season, and remember that weekend crowds come up from Oslo in under two hours.",
+  "rentalCars": "A car is the normal way here: Norefjell is under two hours from Oslo and there is no railway to the mountain.",
+  "sources": [
+    {
+      "label": "Norefjell (official site)",
+      "url": "https://www.norefjell.com/",
+      "usedFor": "lifts, runs, terrain parks, distance from Oslo"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-24",
+  "travelTips": [
+    {
+      "title": "Closest to Oslo",
+      "text": "Under two hours from the capital, which is why the weekends are busy.",
+      "source": "https://www.norefjell.com/",
+      "sourceLabel": "Norefjell (official site)"
+    },
+    {
+      "title": "Two terrain parks",
+      "text": "Norefjell runs two parks across its 30 runs.",
+      "source": "https://www.norefjell.com/",
+      "sourceLabel": "Norefjell (official site)"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The two terrain parks",
+      "text": "Norefjell runs two parks across its 30 runs.",
+      "source": "https://www.norefjell.com/",
+      "sourceLabel": "Norefjell (official site)"
+    },
+    {
+      "title": "Above Krodern",
+      "text": "The slopes drop towards the lake in Buskerud.",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Norefjell base",
+      "text": "At the foot of the lifts, under two hours from Oslo.",
+      "bestFor": "ski-in ski-out, day trips from Oslo",
+      "vibe": "ski-in",
+      "bookingDestination": "Norefjell base, Norefjell, Norway",
+      "source": "https://www.norefjell.com/",
+      "sourceLabel": "Norefjell (official site)"
+    },
+    {
+      "name": "Noresund",
+      "text": "The village on Krodern below the mountain.",
+      "bestFor": "value, the lake, car travel",
+      "vibe": "value",
+      "bookingDestination": "Noresund, Norefjell, Norway",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Norefjell",
+    "operatorUrl": "https://www.norefjell.com/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "15",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on Norefjell's own front page.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "topElevation": {
+        "unannounced": "No summit elevation is published on Norefjell's own front page.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "season": {
+        "unannounced": "No season opening or closing dates are published on Norefjell's front page.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "snowpark": {
+        "value": "Yes, 2 terrain parks",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "pistes": {
+        "value": "30 runs",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "baseElevation": {
+        "unannounced": "The operator counts 30 runs and 15 lifts but states no altitude above sea level for either end of the hill.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "longestRun": {
+        "unannounced": "The operator counts the runs but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      "dayPass": {
+        "unannounced": "Norefjell links to a separate ski pass page without publishing an adult day rate on the front page.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      }
+    },
+    "facts": [
+      {
+        "label": "Terrain parks",
+        "value": "2",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      {
+        "label": "From Oslo",
+        "value": "Under two hours",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      {
+        "label": "Valley elevation",
+        "value": "160 m at Noresund",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Above a lake",
+        "value": "The slopes drop towards Krodern in Buskerud",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Two terrain parks across 30 runs, under two hours from Oslo.",
+            "source": "https://www.norefjell.com/",
+            "sourceLabel": "Norefjell (official site)"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "Norefjell links to a separate ski pass page without publishing an adult day rate on the front page.",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-24",
+        "statement": "Norefjell publishes 30 runs but no split by difficulty.",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      {
+        "field": "verticalDrop",
+        "checkedAt": "2026-10-24",
+        "statement": "No vertical drop or summit elevation is published on the operator's front page.",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      },
+      {
+        "field": "season",
+        "checkedAt": "2026-10-24",
+        "statement": "No season opening or closing dates are published on the front page.",
+        "source": "https://www.norefjell.com/",
+        "sourceLabel": "Norefjell (official site)"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Oslo-Gardermoen International Airport",
+      "code": "OSL",
+      "search": "Oslo-Gardermoen International Airport",
+      "text": "Oslo-Gardermoen International Airport (OSL) is 82 km from Norefjell by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 82
+    },
+    {
+      "name": "Sandefjord Airport, Torp",
+      "code": "TRF",
+      "search": "Sandefjord Airport, Torp",
+      "text": "Sandefjord Airport, Torp (TRF) is 116 km from Norefjell by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 116
+    }
+  ],
+  "airportTransfer": {
+    "value": "Oslo-Gardermoen International Airport (OSL) is the nearest airport with scheduled service, 82 km from Norefjell by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "82 km straight line"
+  }
+}

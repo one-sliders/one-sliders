@@ -36,37 +36,75 @@
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Aspen, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Downtown Aspen",
+      "text": "The Victorian grid, with Aspen Mountain rising at the end of the block.",
+      "bestFor": "restaurants, Aspen Mountain, walking",
+      "vibe": "historic",
+      "bookingDestination": "Downtown Aspen, Aspen, USA",
+      "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+      "sourceLabel": "Aspen Snowmass: Aspen Mountain"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Aspen, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Snowmass Village",
+      "text": "At the foot of the largest of the four mountains.",
+      "bestFor": "ski-in ski-out, families, most terrain",
+      "vibe": "ski-in",
+      "bookingDestination": "Snowmass Village, Aspen, USA",
+      "source": "https://www.aspensnowmass.com/our-mountains",
+      "sourceLabel": "Aspen Snowmass: four mountains"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Aspen reachable.",
-      "bestFor": "views, quieter evenings, walks"
+      "name": "Aspen Highlands",
+      "text": "The base of the third mountain, known for its hike-to bowl.",
+      "bestFor": "Highland Bowl, fewer crowds",
+      "vibe": "quiet",
+      "bookingDestination": "Aspen Highlands, Aspen, USA",
+      "source": "https://www.aspensnowmass.com/our-mountains",
+      "sourceLabel": "Aspen Snowmass: four mountains"
     },
     {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Aspen sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Buttermilk",
+      "text": "The beginner mountain of the four.",
+      "bestFor": "beginners, terrain parks",
+      "vibe": "family",
+      "bookingDestination": "Buttermilk, Aspen, USA",
+      "source": "https://www.aspensnowmass.com/our-mountains",
+      "sourceLabel": "Aspen Snowmass: four mountains"
     }
   ],
   "airports": [
     {
-      "name": "Aspen International Airport",
-      "search": "Aspen International Airport, Aspen, USA",
-      "text": "Aspen International Airport is the main air gateway for Aspen; compare transfer time with your hotel base before locking the first night."
+      "name": "Aspen-Pitkin County Airport (Sardy Field)",
+      "code": "ASE",
+      "search": "Aspen-Pitkin County Airport (Sardy Field)",
+      "text": "Aspen-Pitkin County Airport (Sardy Field) (ASE) is 6 km from Aspen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Eagle County Regional Airport",
+      "code": "EGE",
+      "search": "Eagle County Regional Airport",
+      "text": "Eagle County Regional Airport (EGE) is 51 km from Aspen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 51
+    },
+    {
+      "name": "Gunnison Crested Butte Regional Airport",
+      "code": "GUC",
+      "search": "Gunnison Crested Butte Regional Airport",
+      "text": "Gunnison Crested Butte Regional Airport (GUC) is 74 km from Aspen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 74
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Aspen International Airport and central Aspen before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Aspen-Pitkin County Airport (Sardy Field) (ASE) is the nearest airport with scheduled service, 6 km from Aspen by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Aspen, USA",
   "stayOverview": "Start with City centre for the easiest first Aspen stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -228,5 +266,162 @@
       "text": "A company village built for coke-oven workers in 1902, with the ovens still standing in a row.",
       "source": "https://www.colorado.com/"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Aspen Snowmass",
+    "operatorUrl": "https://www.aspensnowmass.com/our-mountains",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "20 at Snowmass",
+        "note": "The largest of the four mountains on one ticket. Aspen Mountain has 8, Buttermilk 5 and Aspen Highlands 5. Our pick among the operator's own per-mountain figures - it publishes no combined total.",
+        "source": "https://www.aspensnowmass.com/four-mountains/snowmass",
+        "sourceLabel": "Aspen Snowmass: Snowmass"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the four-mountain pages.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+        "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+      },
+      "topElevation": {
+        "value": "11,212 ft at the top of Aspen Mountain",
+        "note": "Stated for Aspen Mountain; the operator publishes no figure for the other three mountains on these pages.",
+        "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+        "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+      },
+      "season": {
+        "value": "Snowmass opens 26 November 2026 and closes 11 April 2027",
+        "note": "Stated for Snowmass; no dates are published for Aspen Mountain, Aspen Highlands or Buttermilk.",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      },
+      "snowpark": {
+        "unannounced": "Buttermilk's description mentions terrain parks without a count, and no park figure is published for the other three mountains.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      },
+      "pistes": {
+        "value": "98 trails over 3,342 acres at Snowmass",
+        "note": "Aspen Highlands has 117 trails over 1,024 acres, Aspen Mountain 115 over 828 and Buttermilk 44 over 472. Our pick among the operator's own per-mountain figures.",
+        "source": "https://www.aspensnowmass.com/four-mountains/snowmass",
+        "sourceLabel": "Aspen Snowmass: Snowmass"
+      },
+      "baseElevation": {
+        "unannounced": "The operator publishes each mountain's lift, trail and acreage count and the 11,212 ft summit of Aspen Mountain, but states no base elevation on any of the four mountain pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+        "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+      },
+      "longestRun": {
+        "unannounced": "No longest run is published on any of the four mountain pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+        "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the four-mountain pages.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      }
+    },
+    "facts": [
+      {
+        "label": "Four mountains",
+        "value": "Aspen Mountain, Aspen Highlands, Buttermilk and Snowmass on one pass",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      },
+      {
+        "label": "Snowmass",
+        "value": "Larger than the other three mountains combined, in the operator's own words",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      },
+      {
+        "label": "Elk Camp",
+        "value": "Snowmass has an Elk Camp Gondola and an upgraded Elk Camp six-pack chairlift",
+        "source": "https://www.aspensnowmass.com/our-mountains",
+        "sourceLabel": "Aspen Snowmass: four mountains"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Buttermilk is the beginner-friendly mountain of the four and carries terrain parks.",
+            "source": "https://www.aspensnowmass.com/our-mountains",
+            "sourceLabel": "Aspen Snowmass: four mountains"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-25",
+        "statement": "Aspen Snowmass shows a live grooming report with terrain open per grade, but publishes no static split by difficulty for any of its four mountains.",
+        "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+        "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+      }
+    ],
+    "skiEvents": [],
+    "sectors": [
+      {
+        "name": "Snowmass",
+        "summary": "98 trails over 3,342 acres, served by 20 lifts",
+        "text": "The largest of the four and the one with its own village, built for long days and mixed-ability groups.",
+        "rows": [
+          {
+            "label": "Lodging",
+            "value": "95% of it is ski-in, ski-out",
+            "source": "https://www.aspensnowmass.com/four-mountains/snowmass",
+            "sourceLabel": "Aspen Snowmass: Snowmass"
+          }
+        ]
+      },
+      {
+        "name": "Aspen Mountain",
+        "summary": "115 trails over 828 acres, served by 8 lifts",
+        "text": "Known locally as Ajax, it rises straight out of downtown Aspen and is best suited to intermediate and expert skiers - beginner terrain is limited.",
+        "rows": [
+          {
+            "label": "Top",
+            "value": "11,212 ft, where The Sundeck sits",
+            "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+            "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+          },
+          {
+            "label": "From town",
+            "value": "The Silver Queen Gondola rises from downtown Aspen to the summit",
+            "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+            "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+          },
+          {
+            "label": "New this season",
+            "value": "The Nell Bell chairlift, from Gondola Plaza to the top of Bell Mountain",
+            "source": "https://www.aspensnowmass.com/four-mountains/aspen-mountain",
+            "sourceLabel": "Aspen Snowmass: Aspen Mountain"
+          }
+        ]
+      },
+      {
+        "name": "Aspen Highlands",
+        "summary": "117 trails over 1,024 acres, served by 5 lifts",
+        "text": "The locals' mountain, with the hiked Highland Bowl above the lifts and the Maroon Bells in view.",
+        "rows": []
+      },
+      {
+        "name": "Buttermilk",
+        "summary": "44 trails over 472 acres, served by 5 lifts",
+        "text": "The learning mountain and the park mountain at once: miles of groomers for beginners, slopestyle and halfpipe for the rest.",
+        "rows": []
+      }
+    ],
+    "sectorsNote": "Aspen Snowmass is four separate mountains on one lift ticket, with no lift between them, so each figure below is that mountain's own."
+  }
 }

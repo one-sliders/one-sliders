@@ -1,0 +1,341 @@
+{
+  "name": "Big Sky",
+  "slug": "big-sky",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "continent": "north-america",
+  "continentName": "North America",
+  "region": "Madison Range",
+  "coordinates": {
+    "lat": 45.28465,
+    "lon": -111.36829
+  },
+  "timezone": "America/Denver",
+  "population": "2308",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Big Sky",
+    "matchedCountry": "United States",
+    "matchedAdmin1": "Montana"
+  },
+  "seo": {
+    "title": "Big Sky ski resort guide",
+    "description": "5,850 acres under the 11,166-foot summit of Lone Peak in Montana's Madison Range, with 300 degrees of skiing from the top.",
+    "twitterDescription": "5,850 acres and 300 degrees of skiing off Lone Peak.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Big Sky in Montana."
+  },
+  "h1": "Big Sky ski resort, stays & events guide",
+  "heroText": "Lone Peak rises to 11,166 feet above Big Sky, and from the summit the resort offers 300 degrees of skiing across 5,850 acres. The village sits at 2,200 metres in Montana's Madison Range, an hour from Bozeman and an hour from Yellowstone.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Madison Range",
+      "note": "USA"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Denver",
+      "note": "local time"
+    },
+    {
+      "label": "Skiable terrain",
+      "value": "5,850 acres",
+      "note": "Lone Peak 11,166 ft"
+    }
+  ],
+  "bookingDestination": "Big Sky, Montana, USA",
+  "stayOverview": "Mountain Village sits under Lone Peak with the tram above it; Meadow Village is further down the canyon and cheaper; the Gallatin Canyon road runs between them towards Bozeman.",
+  "hotelIntro": "Book against high season. Mountain Village is the ski-in option; the others need the shuttle or a car.",
+  "rentalCars": "Big Sky is about an hour from Bozeman airport on Highway 191, through the Gallatin Canyon.",
+  "sources": [
+    {
+      "label": "Big Sky Resort: media and press",
+      "url": "https://www.bigskyresort.com/press-kit",
+      "usedFor": "summit elevation, skiable acres, Kircliff"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-26",
+  "travelTips": [
+    {
+      "title": "300 degrees from the summit",
+      "text": "Lone Peak lets you ski off almost all sides of the summit.",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    },
+    {
+      "title": "Kircliff",
+      "text": "An alpine observatory at 11,166 feet with 360-degree views.",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Lone Peak",
+      "text": "The summit at 11,166 feet, with 300 degrees of skiing off the top.",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    },
+    {
+      "title": "Kircliff",
+      "text": "An alpine observatory at the summit with 360-degree views.",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    },
+    {
+      "title": "5,850 acres",
+      "text": "The resort's own figure for its skiable terrain.",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Mountain Village",
+      "text": "The base village under Lone Peak.",
+      "bestFor": "ski-in ski-out, the tram, first lift",
+      "vibe": "ski-in",
+      "bookingDestination": "Mountain Village, Big Sky, Montana, USA",
+      "source": "https://www.bigskyresort.com/press-kit",
+      "sourceLabel": "Big Sky Resort: media and press"
+    },
+    {
+      "name": "Meadow Village",
+      "text": "Down the canyon from the mountain.",
+      "bestFor": "value, car travel, longer stays",
+      "vibe": "value",
+      "bookingDestination": "Meadow Village, Big Sky, Montana, USA",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Gallatin Canyon",
+      "text": "Along Highway 191 towards Bozeman.",
+      "bestFor": "quieter stays, the drive to Bozeman",
+      "vibe": "quiet",
+      "bookingDestination": "Gallatin Canyon, Big Sky, Montana, USA",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Big Sky Resort",
+    "operatorUrl": "https://www.bigskyresort.com/press-kit",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "40",
+        "note": "Including 13 surface lifts, 2 gondolas and the Lone Peak Tram, with 42,000 uphill capacity an hour.",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      "verticalDrop": {
+        "value": "4,350 ft",
+        "note": "From the Lone Peak summit at 11,166 ft to the Madison base at 7,400 ft.",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      "topElevation": {
+        "value": "11,166 ft at the summit of Lone Peak",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      "season": {
+        "value": "Opening 25 November",
+        "note": "The resort has historically opened on Thanksgiving; no closing date is published.",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      "snowpark": {
+        "value": "6 terrain parks",
+        "note": "From beginner features up to Swifty, the largest.",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      "pistes": {
+        "value": "320 named runs",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      "baseElevation": {
+        "unannounced": "The resort's press kit gives an 11,166 ft summit and 4,350 vertical feet above the valley, and names two base areas - Mountain Village at 7,500 ft and Madison at 7,400 ft - but states no base elevation for the ski area, and neither base matches the published vertical.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      "longestRun": {
+        "unannounced": "The resort's press kit counts 5,850 acres and 320 named runs but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published in the resort's press kit.",
+        "checkedAt": "2026-10-26",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "4,350 ft",
+        "note": "From the Lone Peak summit at 11,166 ft to the Madison base at 7,400 ft.",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      {
+        "label": "Skiable terrain",
+        "value": "5,850 acres",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      {
+        "label": "From the summit",
+        "value": "Lone Peak offers 300 degrees of skiing",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      {
+        "label": "Kircliff",
+        "value": "An alpine observatory at 11,166 ft with 360-degree views",
+        "source": "https://www.bigskyresort.com/press-kit",
+        "sourceLabel": "Big Sky Resort: media and press"
+      },
+      {
+        "label": "Village elevation",
+        "value": "2,200 m",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Base areas",
+        "value": "Mountain Village at 7,500 ft and Madison at 7,400 ft",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "400 inches",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      },
+      {
+        "label": "Uphill capacity",
+        "value": "42,000 people an hour on 1,800 chairs",
+        "source": "https://www.bigskyresort.com/mountain-info",
+        "sourceLabel": "Big Sky Resort: mountain information"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Lone Peak gives 300 degrees of skiing from an 11,166-foot summit across 5,850 acres.",
+            "source": "https://www.bigskyresort.com/press-kit",
+            "sourceLabel": "Big Sky Resort: media and press"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade",
+      "note": "The resort publishes the split in six grades across its 320 named runs.",
+      "source": "https://www.bigskyresort.com/mountain-info",
+      "sourceLabel": "Big Sky Resort: mountain information",
+      "series": [
+        {
+          "name": "Big Sky",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 21
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 15
+            },
+            {
+              "grade": "red",
+              "label": "Advanced-Intermediate",
+              "count": 14
+            },
+            {
+              "grade": "black",
+              "label": "Advanced",
+              "count": 31
+            },
+            {
+              "grade": "double",
+              "label": "Expert",
+              "count": 11
+            },
+            {
+              "grade": "extreme",
+              "label": "Extreme",
+              "count": 8
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Bozeman Yellowstone International Airport",
+      "code": "BZN",
+      "search": "Bozeman Yellowstone International Airport",
+      "text": "Bozeman Yellowstone International Airport (BZN) is 57 km from Big Sky by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 57
+    },
+    {
+      "name": "Yellowstone Airport",
+      "code": "WYS",
+      "search": "Yellowstone Airport",
+      "text": "Yellowstone Airport (WYS) is 69 km from Big Sky by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 69
+    },
+    {
+      "name": "Bert Mooney Airport",
+      "code": "BTM",
+      "search": "Bert Mooney Airport",
+      "text": "Bert Mooney Airport (BTM) is 115 km from Big Sky by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 115
+    }
+  ],
+  "airportTransfer": {
+    "value": "Bozeman Yellowstone International Airport (BZN) is the nearest airport with scheduled service, 57 km from Big Sky by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "57 km straight line"
+  }
+}

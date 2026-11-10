@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Mont-Tremblant travel, stays & events guide",
-  "heroText": "Mont-Tremblant works best as a base in Canada when you anchor days around Tremblant Resort, Pedestrian village and Mont-Tremblant National Park. Use those sights to understand the city's history, street life and visitor rhythm. Mont-Tremblant International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Mont-Tremblant works best as a base in Canada when you anchor days around Tremblant Resort, Pedestrian village and Mont-Tremblant National Park. Use those sights to understand the city's history, street life and visitor rhythm. Montreal / Pierre Elliott Trudeau International Airport (YUL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -36,37 +36,66 @@
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Mont-Tremblant, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "The pedestrian village",
+      "text": "The painted village stacked up the hillside under the gondola.",
+      "bestFor": "ski-in ski-out, restaurants, the gondola",
+      "vibe": "ski-in",
+      "bookingDestination": "The pedestrian village, Mont-Tremblant, Canada",
+      "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+      "sourceLabel": "Tremblant: about Tremblant Mountain"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Mont-Tremblant, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Versant Soleil",
+      "text": "The sunny slope, where the Timber Summit expansion opens for 2027/28.",
+      "bestFor": "fewer crowds, the sunny side",
+      "vibe": "quiet",
+      "bookingDestination": "Versant Soleil, Mont-Tremblant, Canada",
+      "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+      "sourceLabel": "Tremblant: about Tremblant Mountain"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Mont-Tremblant reachable.",
-      "bestFor": "views, quieter evenings, walks"
-    },
-    {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Mont-Tremblant sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Mont-Tremblant town",
+      "text": "The town down the road from the resort village.",
+      "bestFor": "value, restaurants, car travel",
+      "vibe": "value",
+      "bookingDestination": "Mont-Tremblant town, Mont-Tremblant, Canada",
+      "source": "https://www.tremblant.ca/mountain-village/investments",
+      "sourceLabel": "Tremblant: mountain village investments"
     }
   ],
   "airports": [
     {
-      "name": "Mont-Tremblant International Airport",
-      "search": "Mont-Tremblant International Airport, Mont-Tremblant, Canada",
-      "text": "Mont-Tremblant International Airport is the main air gateway for Mont-Tremblant; compare transfer time with your hotel base before locking the first night."
+      "name": "Montreal / Pierre Elliott Trudeau International Airport",
+      "code": "YUL",
+      "search": "Montreal / Pierre Elliott Trudeau International Airport",
+      "text": "Montreal / Pierre Elliott Trudeau International Airport (YUL) is 105 km from Mont-Tremblant by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 105
+    },
+    {
+      "name": "Ottawa Macdonald-Cartier International Airport",
+      "code": "YOW",
+      "search": "Ottawa Macdonald-Cartier International Airport",
+      "text": "Ottawa Macdonald-Cartier International Airport (YOW) is 130 km from Mont-Tremblant by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 130
+    },
+    {
+      "name": "Montreal Mirabel International Airport",
+      "code": "YMX",
+      "search": "Montreal Mirabel International Airport",
+      "text": "Montreal Mirabel International Airport (YMX) is 73 km from Mont-Tremblant by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 73
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Mont-Tremblant International Airport and central Mont-Tremblant before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Montreal / Pierre Elliott Trudeau International Airport (YUL) is the nearest airport with scheduled service, 105 km from Mont-Tremblant by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "105 km straight line"
   },
   "bookingDestination": "Mont-Tremblant, Canada",
   "stayOverview": "Start with City centre for the easiest first Mont-Tremblant stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Mont-Tremblant International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Montreal / Pierre Elliott Trudeau International Airport (YUL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -191,5 +220,161 @@
       "text": "A village of potters and climbers, with studio tours in summer and quartzite crags above.",
       "source": "https://www.canada.ca/en.html"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Tremblant",
+    "operatorUrl": "https://www.tremblant.ca/mountain-village/mountain-info",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "Two gondolas, six high-speed quads, a quad, a triple, four magic carpets and a cabriolet",
+        "note": "The resort lists its lifts by type rather than as a total. Together they carry 27,830 skiers an hour.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      "verticalDrop": {
+        "value": "645 m",
+        "note": "2,116 feet. The figure the resort publishes is for the South Side.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      "topElevation": {
+        "value": "875 m",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      "season": {
+        "value": "26 November 2026 to 18 April 2027",
+        "source": "https://www.tremblant.ca/mountain-village/opening-hours",
+        "sourceLabel": "Tremblant: opening hours"
+      },
+      "snowpark": {
+        "unannounced": "No terrain park is stated under Mountain Statistics.",
+        "checkedAt": "2026-10-26",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      "pistes": {
+        "value": "103 ski trails on four sides, 83.4 km in all",
+        "note": "308.84 hectares - 763 acres - of skiable terrain, of which 73.4 hectares are glades.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      "baseElevation": {
+        "unannounced": "The resort's mountain-statistics page publishes the summit at 875 m and the South Side vertical drop at 645 m, but states no base elevation.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      "longestRun": {
+        "value": "Nansen, 6 km",
+        "note": "3.7 miles.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      "dayPass": {
+        "value": "From CAD 109 per adult per day",
+        "note": "The lowest per-day rate the resort publishes for a 2 to 7-day 2026/27 lift ticket booked before 26 November. It prices by date and publishes no single-day rate.",
+        "source": "https://www.tremblant.ca/plan/tickets-and-passes",
+        "sourceLabel": "Tremblant: ski tickets and season passes"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "645 m",
+        "note": "2,116 feet. The figure the resort publishes is for the South Side.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      {
+        "label": "Ski area",
+        "value": "309 hectares",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      {
+        "label": "Trails",
+        "value": "103, across 4 distinct slopes",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      {
+        "label": "First chairlift",
+        "value": "1939",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      {
+        "label": "In the operator's words",
+        "value": "The largest and most varied skiable terrain in Eastern North America",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      {
+        "label": "Coming for 2027/28",
+        "value": "Eight new trails across 62 acres, 95% of them beginner or intermediate, plus a new quad chairlift adding 10% skier capacity per hour",
+        "source": "https://www.tremblant.ca/mountain-village/investments",
+        "sourceLabel": "Tremblant: mountain village investments"
+      },
+      {
+        "label": "Timber Summit",
+        "value": "A major expansion at Versant Soleil opening for the 2027/28 winter",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      },
+      {
+        "label": "Snowmaking",
+        "value": "1,286 snowguns covering 209.9 hectares - 518 acres",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      {
+        "label": "Steepest pitch",
+        "value": "42 degrees",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      },
+      {
+        "label": "Snow parks",
+        "value": "Four",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics",
+        "sourceLabel": "Tremblant: mountain statistics"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "103 trails across four distinct slopes, and the eight coming for 2027/28 are 95% beginner or intermediate.",
+            "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+            "sourceLabel": "Tremblant: about Tremblant Mountain"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Tremblant calls itself the largest and most varied skiable terrain in Eastern North America, over 309 hectares.",
+            "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+            "sourceLabel": "Tremblant: about Tremblant Mountain"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-26",
+        "statement": "Tremblant publishes 103 trails across four slopes but no split by difficulty.",
+        "source": "https://www.tremblant.ca/mountain-village/mountain-info",
+        "sourceLabel": "Tremblant: about Tremblant Mountain"
+      }
+    ],
+    "skiEvents": []
+  }
 }

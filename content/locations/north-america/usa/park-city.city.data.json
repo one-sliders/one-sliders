@@ -1,0 +1,304 @@
+{
+  "name": "Park City",
+  "slug": "park-city",
+  "countrySlug": "usa",
+  "countryName": "USA",
+  "continent": "north-america",
+  "continentName": "North America",
+  "region": "Wasatch Range",
+  "coordinates": {
+    "lat": 40.64606,
+    "lon": -111.49797
+  },
+  "timezone": "America/Denver",
+  "population": "8128",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Park City",
+    "matchedCountry": "United States",
+    "matchedAdmin1": "Utah"
+  },
+  "seo": {
+    "title": "Park City ski resort guide",
+    "description": "7,300 acres and over 330 trails across two linked base villages, with seven terrain parks and a lift from Main Street.",
+    "twitterDescription": "7,300 acres, 330+ trails, seven terrain parks.",
+    "webpageDescription": "Ski facts, terrain by grade, where to stay and how to get to Park City in Utah."
+  },
+  "h1": "Park City ski resort, stays & events guide",
+  "heroText": "Park City Mountain is 7,300 acres, the largest single figure in this batch, served by 41 lifts over more than 330 trails. Seven terrain parks is also the most of any resort here, and the Town Lift carries skiers straight out of the historic Main Street.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Wasatch Range",
+      "note": "USA"
+    },
+    {
+      "label": "Time zone",
+      "value": "America/Denver",
+      "note": "local time"
+    },
+    {
+      "label": "Skiable terrain",
+      "value": "7,300 acres",
+      "note": "41 lifts"
+    }
+  ],
+  "bookingDestination": "Park City, Utah, USA",
+  "stayOverview": "Main Street has the restaurants and its own lift; Canyons Village is the ski-in base on the other side of the same mountain. Both are on one pass.",
+  "hotelIntro": "Book against high season, and pick between the old street and the purpose-built village - they are forty minutes apart on skis and twenty by bus.",
+  "rentalCars": "Park City is about 35 miles from Salt Lake City airport, the shortest airport transfer of any major resort in this batch.",
+  "sources": [
+    {
+      "label": "Park City Mountain: mountain info",
+      "url": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "usedFor": "lifts, acres, trails, elevations, terrain split, parks, season window"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-25",
+  "travelTips": [
+    {
+      "title": "Seven parks",
+      "text": "More terrain parks than any other resort in this batch.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "title": "The Town Lift",
+      "text": "A lift leaves from the historic Main Street itself.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "title": "Season window",
+      "text": "The resort says the season typically runs from early December through mid-April.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Historic Main Street",
+      "text": "The old mining street, with the Town Lift carrying skiers out of it onto the mountain.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "title": "7,300 acres",
+      "text": "The largest single skiable-terrain figure of the eighty resorts in this project.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "title": "Canyons Village",
+      "text": "The second base, linked to the Park City side on the same pass.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Historic Main Street",
+      "text": "The old mining street, with the Town Lift leaving from it.",
+      "bestFor": "restaurants, the Town Lift, walking",
+      "vibe": "historic",
+      "bookingDestination": "Historic Main Street, Park City, Utah, USA",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "name": "Canyons Village",
+      "text": "The second base, linked to Park City on the same pass.",
+      "bestFor": "ski-in ski-out, families, first lift",
+      "vibe": "ski-in",
+      "bookingDestination": "Canyons Village, Park City, Utah, USA",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    },
+    {
+      "name": "Park City base area",
+      "text": "At the foot of the Park City side.",
+      "bestFor": "ski-in ski-out, parking",
+      "vibe": "ski-in",
+      "bookingDestination": "Park City base area, Park City, Utah, USA",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info"
+    }
+  ],
+  "ski": {
+    "operator": "Park City Mountain",
+    "operatorUrl": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "41",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "verticalDrop": {
+        "unannounced": "Park City publishes summit and base elevations but no vertical drop.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "topElevation": {
+        "value": "3,056 m (10,026 ft)",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "season": {
+        "value": "Typically early December to mid-April",
+        "note": "The resort's FAQ gives the window rather than dates for a named season.",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "snowpark": {
+        "value": "Yes, 7 terrain parks",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "pistes": {
+        "value": "over 330 trails",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "baseElevation": {
+        "value": "2,073 m (6,800 ft)",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "longestRun": {
+        "unannounced": "The resort's mountain-info page gives the 6,800 ft base, the 10,026 ft summit, 41 lifts, 330+ trails and 7,300 acres, but names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the mountain info page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      }
+    },
+    "facts": [
+      {
+        "label": "Skiable terrain",
+        "value": "7,300 acres",
+        "note": "The largest single figure in this batch.",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "355 inches on average",
+        "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+        "sourceLabel": "Park City Mountain: mountain info"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Seven terrain parks, more than any other resort in this batch.",
+            "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "sourceLabel": "Park City Mountain: mountain info"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "7,300 acres over more than 330 trails, half of it graded advanced.",
+            "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "sourceLabel": "Park City Mountain: mountain info"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade",
+      "note": "Park City publishes the split in three grades.",
+      "source": "https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "sourceLabel": "Park City Mountain: mountain info",
+      "series": [
+        {
+          "name": "Park City Mountain",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 8
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 42
+            },
+            {
+              "grade": "black",
+              "label": "Advanced",
+              "count": 50
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Salt Lake City International Airport",
+      "code": "SLC",
+      "search": "Salt Lake City International Airport",
+      "text": "Salt Lake City International Airport (SLC) is 44 km from Park City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 44
+    },
+    {
+      "name": "Provo Municipal Airport",
+      "code": "PVU",
+      "search": "Provo Municipal Airport",
+      "text": "Provo Municipal Airport (PVU) is 51 km from Park City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 51
+    },
+    {
+      "name": "Ogden Hinckley Airport",
+      "code": "OGD",
+      "search": "Ogden Hinckley Airport",
+      "text": "Ogden Hinckley Airport (OGD) is 75 km from Park City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 75
+    }
+  ],
+  "airportTransfer": {
+    "value": "Salt Lake City International Airport (SLC) is the nearest airport with scheduled service, 44 km from Park City by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "44 km straight line"
+  }
+}

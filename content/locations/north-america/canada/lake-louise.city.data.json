@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "Lake Louise travel guide",
-    "description": "tba",
-    "twitterDescription": "tba",
-    "webpageDescription": "tba"
+    "title": "Lake Louise ski resort guide",
+    "description": "Three mountains and five faces over 4,200 acres, with 991 metres of vertical and a season from 6 November to 2 May.",
+    "twitterDescription": "4,200 acres, 170 runs and 991 m of vertical in Banff National Park.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Lake Louise in Alberta."
   },
-  "region": "Banff National Park",
-  "population": "tba",
+  "region": "Alberta",
+  "population": "1000",
   "coordinates": {
     "lat": 51.42544,
     "lon": -116.17887
@@ -15,12 +15,12 @@
     "source": "OneSlider shared weather module",
     "dynamic": true
   },
-  "h1": "Lake Louise travel, stays & events guide",
-  "heroText": "Lake Louise works best as a base in Canada when you anchor days around Lake Louise lakeshore, Moraine Lake access and Fairview Lookout. Use those sights to understand the city's history, street life and visitor rhythm. Lake Louise International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "h1": "Lake Louise ski resort, stays & events guide",
+  "heroText": "Lake Louise sits at 1,538 metres in Banff National Park, and the ski resort above it spreads across three mountains and five separate faces - over 4,200 acres, 170 named runs and 991 metres of vertical, served by 13 lifts. A quarter of it is graded beginner and 45 per cent intermediate, and the longest run goes on for eight kilometres. The season is planned from 6 November 2026 to 2 May 2027.",
   "kpis": [
     {
       "label": "Region",
-      "value": "Canada",
+      "value": "Alberta",
       "note": "Canada"
     },
     {
@@ -29,9 +29,9 @@
       "note": "local time"
     },
     {
-      "label": "Founded",
-      "value": "1882",
-      "note": "historical origin"
+      "label": "Skiable area",
+      "value": "4,200 acres",
+      "note": "170 runs"
     }
   ],
   "areas": [
@@ -58,74 +58,84 @@
   ],
   "airports": [
     {
-      "name": "Lake Louise International Airport",
-      "search": "Lake Louise International Airport, Lake Louise, Canada",
-      "text": "Lake Louise International Airport is the main air gateway for Lake Louise; compare transfer time with your hotel base before locking the first night."
+      "name": "Calgary International Airport",
+      "code": "YYC",
+      "search": "Calgary International Airport",
+      "text": "Calgary International Airport (YYC) is 155 km from Lake Louise by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 155
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Lake Louise International Airport and central Lake Louise before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Calgary International Airport (YYC) is the nearest airport with scheduled service, 155 km from Lake Louise by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "155 km straight line"
   },
-  "bookingDestination": "Lake Louise, Canada",
-  "stayOverview": "Start with City centre for the easiest first Lake Louise stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
-  "hotelIntro": "Lake Louise hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
-  "rentalCars": "Do not rent a car for central Lake Louise unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "bookingDestination": "Lake Louise, Alberta, Canada",
+  "stayOverview": "The hamlet sits by the Bow River with the ski resort across the valley and the lake itself four kilometres up the hill. Banff is 57 kilometres down the Trans-Canada Highway and has far more beds.",
+  "hotelIntro": "Book against high season. Lake Louise is small and inside a national park, so rooms are limited; Banff is the fallback.",
+  "rentalCars": "Lake Louise is on the Trans-Canada Highway, about two hours west of Calgary and 57 kilometres from Banff.",
   "travelTips": [
     {
-      "title": "Best base",
-      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+      "title": "Five faces",
+      "text": "The terrain spreads over three mountains and five separate faces.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats"
     },
     {
-      "title": "Airport timing",
-      "text": "Leave extra time for Lake Louise International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "title": "A long season",
+      "text": "Planned from 6 November 2026 to 2 May 2027.",
+      "source": "https://www.skilouise.com/things-to-do/more-mountain-for-2026-27/",
+      "sourceLabel": "Lake Louise Ski Resort: more mountain for 2026/27"
     },
     {
-      "title": "Local movement",
-      "text": "Plan each day in clusters around Lake Louise lakeshore and Moraine Lake access so transfers do not consume the best sightseeing hours."
-    },
-    {
-      "title": "Day trips",
-      "text": "Keep one flexible slot for nearby routes from Lake Louise, checking weather, transport and opening hours before committing."
+      "title": "Eight kilometres down",
+      "text": "The longest run goes on for 8 km.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats"
     }
   ],
   "highlights": [
     {
-      "title": "Lake Louise lakeshore",
-      "text": "Lake Louise lakeshore adds outdoor time to a Lake Louise stay, with open space, views or waterfront breathing room between denser city sights."
+      "title": "4,200 acres",
+      "text": "Three mountains and five faces, with 170 named runs between them.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats"
     },
     {
-      "title": "Moraine Lake access",
-      "text": "Moraine Lake access adds outdoor time to a Lake Louise stay, with open space, views or waterfront breathing room between denser city sights."
+      "title": "991 metres of vertical",
+      "text": "From a top elevation of 2,637 metres.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats"
     },
     {
-      "title": "Fairview Lookout",
-      "text": "Fairview Lookout is a named stop in Lake Louise worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
-    },
-    {
-      "title": "Lake Louise Ski Resort",
-      "text": "Lake Louise Ski Resort adds outdoor time to a Lake Louise stay, with open space, views or waterfront breathing room between denser city sights."
-    },
-    {
-      "title": "Plain of Six Glaciers",
-      "text": "Plain of Six Glaciers is a named stop in Lake Louise worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
-    },
-    {
-      "title": "Ice skating season",
-      "text": "Ice skating season is a named stop in Lake Louise worth keeping on the route when it fits the day's transport, timing and neighborhood plan."
+      "title": "The Grizzly Gondola",
+      "text": "2,918 metres long with 736 metres of vertical, carrying 1,670 people an hour.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats"
     }
   ],
   "events": [],
   "topicLinks": [],
   "sources": [
     {
-      "label": "Wikipedia: Lake Louise",
-      "url": "https://en.wikipedia.org/wiki/Lake_Louise%2C_Alberta",
-      "usedFor": "city history and coordinates"
+      "label": "Lake Louise Ski Resort: mountain stats",
+      "url": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "usedFor": "lifts, vertical, top elevation, terrain split, runs, lift details"
+    },
+    {
+      "label": "Lake Louise Ski Resort: more mountain for 2026/27",
+      "url": "https://www.skilouise.com/things-to-do/more-mountain-for-2026-27/",
+      "usedFor": "season dates"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
     }
   ],
-  "sourceFetchedAt": "2026-06-16",
+  "sourceFetchedAt": "2026-10-28",
   "history": [
     {
       "label": "1870s",
@@ -165,7 +175,8 @@
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
     "matchedName": "Lake Louise",
-    "matchedCountry": "Canada"
+    "matchedCountry": "Canada",
+    "matchedAdmin1": "Alberta"
   },
   "slug": "lake-louise",
   "name": "Lake Louise",
@@ -173,7 +184,7 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4,
+  "depth": 5,
   "nearby": [
     {
       "name": "Moraine Lake",
@@ -199,5 +210,174 @@
       "text": "A wolf-head-shaped lake seen from Bow Summit, the highest point on the parkway.",
       "source": "https://parks.canada.ca/pn-np/ab/banff"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Lake Louise Ski Resort",
+    "operatorUrl": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "13",
+        "note": "One gondola, nine chairs and three carpets, with more planned under the resort's long-range plan.",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "verticalDrop": {
+        "value": "991 m",
+        "note": "3,250 feet.",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "topElevation": {
+        "value": "2,637 m",
+        "note": "8,650 feet.",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "season": {
+        "value": "6 November 2026 to 2 May 2027",
+        "note": "The resort's planned season, conditions permitting.",
+        "source": "https://www.skilouise.com/things-to-do/more-mountain-for-2026-27/",
+        "sourceLabel": "Lake Louise Ski Resort: more mountain for 2026/27"
+      },
+      "snowpark": {
+        "value": "Boulevard terrain park",
+        "note": "Graded advanced to expert, with rails and boxes. Closed at the time of checking, before the season opens.",
+        "source": "https://www.skilouise.com/activities/winter-fun/terrain-park/",
+        "sourceLabel": "Lake Louise Ski Resort: terrain park"
+      },
+      "pistes": {
+        "value": "171 named runs across five mountain faces",
+        "note": "Over 1,700 hectares - 4,200 acres.",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "baseElevation": {
+        "unannounced": "The resort's mountain-stats page publishes the top elevation at 2,637 m and the vertical rise at 991 m, and gives each lift its own length and vertical, but states no base elevation for the ski area.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "longestRun": {
+        "value": "8 km - 5 miles",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      "dayPass": {
+        "value": "CAD 160 to 185 for an adult full day",
+        "note": "The range the resort publishes for 2026/27, excluding 5% GST. Half-day adult tickets are CAD 128 to 148, and prices rise as more lifts open.",
+        "source": "https://www.skilouise.com/tickets-passes/winter-tickets/single-day-lift-tickets/",
+        "sourceLabel": "Lake Louise Ski Resort: winter lift tickets"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "991 m",
+        "note": "3,250 feet.",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      {
+        "label": "Skiable area",
+        "value": "1,700 hectares - over 4,200 acres",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      {
+        "label": "The mountain",
+        "value": "Three mountains and five faces",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      {
+        "label": "Grizzly Gondola",
+        "value": "2,918 m long with 736 m of vertical, carrying 1,670 people an hour",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      {
+        "label": "Learning area",
+        "value": "Served by three carpet lifts outside the main lodge",
+        "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+        "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+      },
+      {
+        "label": "Winter season dates",
+        "value": "The resort says its season typically starts the first week of November and runs until the first week of May",
+        "source": "https://www.skilouise.com/things-to-do/more-mountain-for-2026-27/",
+        "sourceLabel": "Lake Louise Ski Resort: more mountain for 2026/27"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "A quarter of the mountain is graded beginner and 45% intermediate, with a learning area on three carpet lifts by the main lodge.",
+            "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+            "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "30% of the terrain is graded advanced, spread over five mountain faces and 991 metres of vertical.",
+            "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+            "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+          }
+        ]
+      },
+      {
+        "kind": "variety",
+        "label": "Skiers who want range",
+        "facts": [
+          {
+            "text": "170 named runs over 1,700 hectares, with the longest running 8 kilometres.",
+            "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+            "sourceLabel": "Lake Louise Ski Resort: mountain stats"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade",
+      "note": "The resort publishes the split in three grades across its 170 named runs.",
+      "source": "https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/",
+      "sourceLabel": "Lake Louise Ski Resort: mountain stats",
+      "series": [
+        {
+          "name": "Lake Louise",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 25
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 45
+            },
+            {
+              "grade": "black",
+              "label": "Advanced",
+              "count": 30
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  }
 }

@@ -36,37 +36,66 @@
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Jackson, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Teton Village",
+      "text": "At the foot of the tram, twelve miles from the town of Jackson.",
+      "bestFor": "ski-in ski-out, the tram, first lift",
+      "vibe": "ski-in",
+      "bookingDestination": "Teton Village, Jackson, USA",
+      "source": "https://www.jacksonhole.com/mountain-stats",
+      "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Jackson, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Jackson town",
+      "text": "The town itself, with more beds and restaurants than the village.",
+      "bestFor": "restaurants, value, the town square",
+      "vibe": "lively",
+      "bookingDestination": "Jackson town, Jackson, USA",
+      "source": "https://www.jacksonhole.com/mountain-stats",
+      "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Jackson reachable.",
-      "bestFor": "views, quieter evenings, walks"
-    },
-    {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Jackson sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Along the valley",
+      "text": "Between the town and the resort, under the Tetons.",
+      "bestFor": "quieter stays, car travel",
+      "vibe": "quiet",
+      "bookingDestination": "Along the valley, Jackson, USA",
+      "source": "https://www.jacksonhole.com/mountain-stats",
+      "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
     }
   ],
   "airports": [
     {
-      "name": "Jackson International Airport",
-      "search": "Jackson International Airport, Jackson, USA",
-      "text": "Jackson International Airport is the main air gateway for Jackson; compare transfer time with your hotel base before locking the first night."
+      "name": "Jackson Hole Airport",
+      "code": "JAC",
+      "search": "Jackson Hole Airport",
+      "text": "Jackson Hole Airport (JAC) is 14 km from Jackson by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 14
+    },
+    {
+      "name": "Idaho Falls Regional Airport",
+      "code": "IDA",
+      "search": "Idaho Falls Regional Airport",
+      "text": "Idaho Falls Regional Airport (IDA) is 106 km from Jackson by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 106
+    },
+    {
+      "name": "Yellowstone Airport",
+      "code": "WYS",
+      "search": "Yellowstone Airport",
+      "text": "Yellowstone Airport (WYS) is 137 km from Jackson by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 137
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Jackson International Airport and central Jackson before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Jackson Hole Airport (JAC) is the nearest airport with scheduled service, 14 km from Jackson by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "14 km straight line"
   },
   "bookingDestination": "Jackson, USA",
   "stayOverview": "Start with City centre for the easiest first Jackson stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -228,5 +257,168 @@
       "text": "A whole mountainside that let go in 1925, damming the river and drowning the valley behind.",
       "source": "https://www.fs.usda.gov/btnf"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Jackson Hole Mountain Resort",
+    "operatorUrl": "https://www.jacksonhole.com/mountain-stats",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "16",
+        "note": "One aerial tram, two gondolas, five high-speed quads, four fixed-grip quads, one double, two carpets and one handle tow.",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "verticalDrop": {
+        "value": "4,139 ft",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "topElevation": {
+        "value": "3,185 m (10,450 ft)",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "season": {
+        "value": "Opens 27 November 2026; closing date to be determined",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "snowpark": {
+        "value": "Yes, 2 terrain parks and 4 Burton Stash parks",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "pistes": {
+        "value": "131 named trails over 2,500 acres",
+        "note": "In-bounds terrain across two mountains, Après Vous and Rendezvous.",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "baseElevation": {
+        "value": "1,924 m (6,311 ft)",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "longestRun": {
+        "unannounced": "The resort's mountain-stats page gives the base, summit and 4,139 ft vertical and counts 131 named trails, but names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the resort's mountain stats page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "4,139 ft",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      {
+        "label": "In-bounds terrain",
+        "value": "2,500 acres over two mountains, Après Vous and Rendezvous",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      {
+        "label": "Backcountry access",
+        "value": "over 3,000 acres",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      {
+        "label": "Named trails",
+        "value": "131",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "458 inches on average",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      },
+      {
+        "label": "Opening hours",
+        "value": "09:00 to 16:00, subject to weather and business conditions",
+        "source": "https://www.jacksonhole.com/mountain-stats",
+        "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Half the in-bounds terrain is graded expert, and the resort opens over 3,000 further acres of backcountry.",
+            "source": "https://www.jacksonhole.com/mountain-stats",
+            "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+          },
+          {
+            "text": "4,139 feet of vertical, served by an aerial tram.",
+            "source": "https://www.jacksonhole.com/mountain-stats",
+            "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+          },
+          {
+            "text": "458 inches of snow a year on average.",
+            "source": "https://www.jacksonhole.com/mountain-stats",
+            "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+          }
+        ]
+      },
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Only a tenth of the terrain is graded beginner, but there are two carpet lifts and a handle tow at the base.",
+            "source": "https://www.jacksonhole.com/mountain-stats",
+            "sourceLabel": "Jackson Hole Mountain Resort: mountain stats"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade",
+      "note": "Jackson Hole publishes the split in three grades, and half of it is expert.",
+      "source": "https://www.jacksonhole.com/mountain-stats",
+      "sourceLabel": "Jackson Hole Mountain Resort: mountain stats",
+      "series": [
+        {
+          "name": "Jackson Hole",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 10
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 40
+            },
+            {
+              "grade": "double",
+              "label": "Expert",
+              "count": 50
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  }
 }

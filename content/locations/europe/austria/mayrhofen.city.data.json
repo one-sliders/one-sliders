@@ -1,0 +1,286 @@
+{
+  "name": "Mayrhofen",
+  "slug": "mayrhofen",
+  "countrySlug": "austria",
+  "countryName": "Austria",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Zillertal, Tyrol",
+  "coordinates": {
+    "lat": 47.16667,
+    "lon": 11.86667
+  },
+  "timezone": "Europe/Vienna",
+  "population": "3720",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Mayrhofen",
+    "matchedCountry": "Austria",
+    "matchedAdmin1": "Tyrol"
+  },
+  "seo": {
+    "title": "Mayrhofen ski resort guide",
+    "description": "142 km of pistes and 61 lifts in the Zillertal, with the Harakiri - Austria's steepest slope at a 78% gradient - and the PenkenPark.",
+    "twitterDescription": "142 km of pistes, 61 lifts, and Austria's steepest slope.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Mayrhofen in the Tyrolean Zillertal."
+  },
+  "h1": "Mayrhofen ski resort, stays & events guide",
+  "heroText": "Mayrhofen sits at 633 metres in the Zillertal, with 142 kilometres of pistes and 61 lifts above it across Ahorn, Penken, Finkenberg, Rastkogel and Eggalm. The Penken side holds the Harakiri, which the operator calls Austria's steepest slope experience at a 78% gradient, and the PenkenPark; Ahorn is the wide, sunny side, with a 5.5 kilometre black valley run dropping more than 1,300 metres back to the village.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Zillertal, Tyrol",
+      "note": "Austria"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Vienna",
+      "note": "local time"
+    },
+    {
+      "label": "Pistes",
+      "value": "142 km",
+      "note": "61 lifts"
+    }
+  ],
+  "bookingDestination": "Mayrhofen, Tyrol, Austria",
+  "stayOverview": "The village is the base for both mountains: the Penkenbahn and the Ahornbahn leave from Mayrhofen itself, and a free ski bus runs to the Horberg and Mosl lifts. Finkenberg and Hippach are quieter and cheaper, on the same lift network.",
+  "hotelIntro": "Book against high season. Staying in Mayrhofen means walking to a gondola; the neighbouring villages need the ski bus.",
+  "rentalCars": "Mayrhofen is at the head of the Zillertal, about an hour from Innsbruck and reachable by the Zillertalbahn railway from Jenbach.",
+  "sources": [
+    {
+      "label": "Mayrhofner Bergbahnen: Mountopolis winter",
+      "url": "https://www.mayrhofen.at/en/mountopolis/winter",
+      "usedFor": "lifts, season, pistes, share of terrain above 1,700 m"
+    },
+    {
+      "label": "Mayrhofner Bergbahnen: our mountains",
+      "url": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "usedFor": "Harakiri, PenkenPark, ValleyRun Ahorn"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-27",
+  "travelTips": [
+    {
+      "title": "Harakiri",
+      "text": "Austria's steepest slope experience, at a 78% gradient.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+    },
+    {
+      "title": "The valley run",
+      "text": "The ValleyRun Ahorn is 5.5 km long and drops over 1,300 metres to the village.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+    },
+    {
+      "title": "High ground",
+      "text": "89% of the skiable terrain lies above 1,700 metres.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+      "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Harakiri",
+      "text": "The legendary Penken run the operator calls Austria's steepest slope experience, at 78%.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+    },
+    {
+      "title": "PenkenPark",
+      "text": "Five areas, used by the international freeski and snowboard scene and open to beginners on the small kickers.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+    },
+    {
+      "title": "ValleyRun Ahorn",
+      "text": "A 5.5 kilometre black run with more than 1,300 metres of descent, open from 7.30 a.m.",
+      "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+      "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "ski": {
+    "operator": "Mayrhofner Bergbahnen",
+    "operatorUrl": "https://www.mayrhofen.at/en/mountopolis/winter",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "61",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      "verticalDrop": {
+        "unannounced": "Mayrhofner Bergbahnen publishes a descent figure for a single run - 1,300 m on the ValleyRun Ahorn - but no vertical drop for the ski area.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      },
+      "topElevation": {
+        "unannounced": "No top elevation is published for the ski area. The 2,227 m the operator names is the summit of a winter hiking path on Mount Ahorn, not the top of the lift system.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      },
+      "season": {
+        "value": "4 December 2026 to 11 April 2027",
+        "note": "The Ahornbahn opens a week later, on 12 December.",
+        "source": "https://www.mayrhofen.at/en/stories/prices-and-opening-hours-winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: prices and opening hours, winter 2026/27"
+      },
+      "snowpark": {
+        "value": "PenkenPark",
+        "note": "Five areas, from beginner kickers to pro lines.",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      },
+      "pistes": {
+        "value": "142 km",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      "baseElevation": {
+        "unannounced": "The lift company's winter pages give the piste kilometres and the lift count and speak of three-thousand-metre peaks, but state no valley-station altitude.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      "longestRun": {
+        "value": "ValleyRun Ahorn, 5.5 km",
+        "note": "Our pick of the operator's own published run lengths - it marks the Ahorn valley run at 5.5 km down to the valley but does not label any run as its longest.",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      "dayPass": {
+        "value": "EUR 82.00 for an adult",
+        "note": "The full-day ticket for the Mayrhofen ski area, including 10% VAT. Later starts cost less at the cash desk: EUR 74.00 from 11.00, EUR 61.50 from 12.00 and EUR 41.00 from 14.00.",
+        "source": "https://www.mayrhofen.at/en/stories/prices-and-opening-hours-winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: prices and opening hours, winter 2026/27"
+      }
+    },
+    "facts": [
+      {
+        "label": "Skiable terrain above 1,700 m",
+        "value": "89% on average across the area",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      {
+        "label": "Harakiri",
+        "value": "Austria's steepest slope experience, 78% gradient",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      },
+      {
+        "label": "ValleyRun Ahorn",
+        "value": "A 5.5 km black run with over 1,300 m of elevation difference down to the valley",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      },
+      {
+        "label": "Ski areas",
+        "value": "Ahorn, Penken, Finkenberg, Rastkogel and Eggalm",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter",
+        "sourceLabel": "Mayrhofner Bergbahnen: Mountopolis winter"
+      },
+      {
+        "label": "Surrounding peaks",
+        "value": "3,000-metre peaks of the Zillertal Alps",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "The Harakiri is Austria's steepest slope experience at a 78% gradient, and the Penken side adds the DevilsRun and BlackAttack.",
+            "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+            "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+          }
+        ]
+      },
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Mount Ahorn is built around wide, sun-drenched carving slopes, the FunRide arena and the KinderLand Horberg beginner area.",
+            "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+            "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+          }
+        ]
+      },
+      {
+        "kind": "freestyle",
+        "label": "Park riders",
+        "facts": [
+          {
+            "text": "PenkenPark has five areas, used by the international freeski and snowboard scene and open to beginners on the smaller kickers.",
+            "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+            "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-27",
+        "statement": "Mayrhofner Bergbahnen publishes 142 km of pistes but no split by difficulty on its winter or mountain pages.",
+        "source": "https://www.mayrhofen.at/en/mountopolis/winter/our-mountains",
+        "sourceLabel": "Mayrhofner Bergbahnen: our mountains"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Innsbruck Airport",
+      "code": "INN",
+      "search": "Innsbruck Airport",
+      "text": "Innsbruck Airport (INN) is 41 km from Mayrhofen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 41
+    },
+    {
+      "name": "Salzburg Airport",
+      "code": "SZG",
+      "search": "Salzburg Airport",
+      "text": "Salzburg Airport (SZG) is 110 km from Mayrhofen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 110
+    },
+    {
+      "name": "Munich Airport",
+      "code": "MUC",
+      "search": "Munich Airport",
+      "text": "Munich Airport (MUC) is 132 km from Mayrhofen by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 132
+    }
+  ],
+  "airportTransfer": {
+    "value": "Innsbruck Airport (INN) is the nearest airport with scheduled service, 41 km from Mayrhofen by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "41 km straight line"
+  }
+}

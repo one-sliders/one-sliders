@@ -1,9 +1,9 @@
 {
   "seo": {
-    "title": "Whistler travel guide",
-    "description": "tba",
-    "twitterDescription": "tba",
-    "webpageDescription": "tba"
+    "title": "Whistler ski resort guide",
+    "description": "North America's largest ski resort: 8,171 acres over two mountains, 1,609 metres of vertical and an 11 km run from the peak to Creekside.",
+    "twitterDescription": "8,171 acres, two mountains, 37 lifts and an 11 km run to Creekside.",
+    "webpageDescription": "Ski facts, terrain by grade per mountain, where to stay and how to get to Whistler in British Columbia."
   },
   "region": "Sea to Sky Country",
   "population": "tba",
@@ -16,11 +16,11 @@
     "dynamic": true
   },
   "h1": "Whistler travel, stays & events guide",
-  "heroText": "Whistler works best as a base in Canada when you anchor days around Whistler Blackcomb, Peak 2 Peak Gondola and Lost Lake. Use those sights to understand the city's history, street life and visitor rhythm. Whistler International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Whistler is two mountains on one lift pass, linked at the top by the PEAK 2 PEAK Gondola. Together they hold 8,171 acres and over 200 trails, the vertical runs to 1,609 metres on Blackcomb, and Peak to Creek drops 11 kilometres from the top of Whistler Mountain to Creekside. The summit has averaged 10.4 metres of snow a year over the last ten seasons.",
   "kpis": [
     {
       "label": "Region",
-      "value": "Canada",
+      "value": "British Columbia",
       "note": "Canada"
     },
     {
@@ -29,65 +29,111 @@
       "note": "local time"
     },
     {
-      "label": "Founded",
-      "value": "1877",
-      "note": "historical origin"
+      "label": "Skiable terrain",
+      "value": "8,171 acres",
+      "note": "two mountains"
     }
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Whistler, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Whistler Village",
+      "text": "Both mountain gondolas and the PEAK 2 PEAK leave from here.",
+      "bestFor": "ski-in ski-out, both gondolas, restaurants",
+      "vibe": "ski-in",
+      "bookingDestination": "Whistler Village, Whistler, Canada",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Whistler, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Upper Village",
+      "text": "At the foot of Blackcomb, a few minutes' walk from the main village.",
+      "bestFor": "Blackcomb base, quieter evenings",
+      "vibe": "ski-in",
+      "bookingDestination": "Upper Village, Whistler, Canada",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Whistler reachable.",
-      "bestFor": "views, quieter evenings, walks"
+      "name": "Creekside",
+      "text": "The original 1966 base at 653 m, with its own gondola onto Whistler Mountain.",
+      "bestFor": "first lift, parking, fewer crowds",
+      "vibe": "quiet",
+      "bookingDestination": "Creekside, Whistler, Canada",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Whistler sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Function Junction",
+      "text": "South of the village on the highway, the cheapest end of the valley.",
+      "bestFor": "value, car travel, longer stays",
+      "vibe": "value",
+      "bookingDestination": "Function Junction, Whistler, Canada",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     }
   ],
   "airports": [
     {
-      "name": "Whistler International Airport",
-      "search": "Whistler International Airport, Whistler, Canada",
-      "text": "Whistler International Airport is the main air gateway for Whistler; compare transfer time with your hotel base before locking the first night."
+      "name": "Vancouver International Airport",
+      "code": "YVR",
+      "search": "Vancouver International Airport",
+      "text": "Vancouver International Airport (YVR) is 104 km from Whistler by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 104
+    },
+    {
+      "name": "Powell River Airport",
+      "code": "YPW",
+      "search": "Powell River Airport",
+      "text": "Powell River Airport (YPW) is 115 km from Whistler by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 115
+    },
+    {
+      "name": "Abbotsford International Airport",
+      "code": "YXX",
+      "search": "Abbotsford International Airport",
+      "text": "Abbotsford International Airport (YXX) is 129 km from Whistler by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 129
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Whistler International Airport and central Whistler before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Vancouver International Airport (YVR) is the nearest airport with scheduled service, 104 km from Whistler by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "104 km straight line"
   },
   "bookingDestination": "Whistler, Canada",
-  "stayOverview": "Start with City centre for the easiest first Whistler stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
-  "hotelIntro": "Whistler hotel choice is mostly about repeat journeys: use City centre for sightseeing, Old Town for a different local base, and Waterfront or Airport area when views, parking, airport timing or longer stays matter.",
-  "rentalCars": "Do not rent a car for central Whistler unless parking and traffic are part of the plan; use one mainly for regional day trips.",
+  "stayOverview": "Where you sleep in Whistler decides which gondola you walk to. Whistler Village has both mountain gondolas and the PEAK 2 PEAK; the Upper Village sits at Blackcomb's foot; Creekside is the original 1966 base with its own gondola and easier parking; and Function Junction is the cheap end of the valley, on the highway south.",
+  "hotelIntro": "Book against high season rather than today's date. Both mountains run on one pass, so the choice between the Village and Creekside is about walking distance and parking, not about which mountain you can ski.",
+  "rentalCars": "Whistler Village is walkable and both gondolas leave from it, so a car earns its keep mainly for the drive up from Vancouver and for staying at Creekside or Function Junction. The nearest airport is Vancouver, 104 km away.",
   "travelTips": [
     {
-      "title": "Best base",
-      "text": "Choose City centre for a first stay because it keeps main sights, restaurants and practical local movement close."
+      "title": "One pass, two mountains",
+      "text": "The PEAK 2 PEAK Gondola crosses between Whistler and Blackcomb at altitude, so you can change mountain without skiing down.",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "title": "Airport timing",
-      "text": "Leave extra time for Whistler International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "title": "Which mountain",
+      "text": "Blackcomb is graded 30% advanced against Whistler's 25%, and both are 55% intermediate.",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "title": "Local movement",
-      "text": "Plan each day in clusters around Whistler Blackcomb and Peak 2 Peak Gondola so transfers do not consume the best sightseeing hours."
+      "title": "Longest run",
+      "text": "Peak to Creek runs 11 kilometres from the top of Whistler Mountain down to Creekside.",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     },
     {
-      "title": "Day trips",
-      "text": "Keep one flexible slot for nearby routes from Whistler, checking weather, transport and opening hours before committing."
+      "title": "Eating up the hill",
+      "text": "There are 18 restaurants and bars on the two mountains, seating 6,972, so lunch does not mean skiing back to the village.",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
     }
   ],
   "highlights": [
@@ -197,7 +243,7 @@
   "continentName": "North America",
   "countrySlug": "canada",
   "countryName": "Canada",
-  "depth": 4,
+  "depth": 5,
   "nearby": [
     {
       "name": "Brandywine Falls",
@@ -223,5 +269,243 @@
       "text": "A farming valley under Mount Currie, known for seed potatoes and a summer rodeo.",
       "source": "https://www.canada.ca/en.html"
     }
-  ]
+  ],
+  "_kind": "upgrade - bara de falt som byts. See-korten och Nearby ar sidans egna och ror vi inte.",
+  "ski": {
+    "operator": "Whistler Blackcomb",
+    "operatorUrl": "https://www.whistler.com/about-whistler/stats-facts/",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "37",
+        "note": "Including the PEAK 2 PEAK Gondola between the two mountains.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "verticalDrop": {
+        "value": "1,530 m on Whistler, 1,609 m on Blackcomb",
+        "note": "The resort publishes the drop per mountain and no combined figure.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "topElevation": {
+        "value": "2,284 m",
+        "note": "Highest lift-accessed point, on Blackcomb. Whistler Mountain tops out at 2,182 m.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "season": {
+        "unannounced": "No opening and closing dates for the 2026/27 winter were published on the resort's own stats and planning pages as of 24 October 2026.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "snowpark": {
+        "value": "Yes, 3 parks: one on Whistler, two on Blackcomb",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "pistes": {
+        "value": "over 200 trails",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "baseElevation": {
+        "value": "653 m at Creekside",
+        "note": "Our pick of the operator's two published base altitudes - Creekside 653 m and Whistler Village 675 m. It matches their own figures: Whistler Mountain's stated 1,530 m of vertical from a 2,182 m top, and Peak to Creek ends at Creekside. They publish no single base for the resort.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "longestRun": {
+        "value": "11 km, Peak to Creek",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate for the 2026/27 winter was published on the resort's own pages as of 24 October 2026.",
+        "checkedAt": "2026-10-24",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      }
+    },
+    "facts": [
+      {
+        "label": "Skiable terrain",
+        "value": "8,171 acres / 3,307 hectares",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Vertical drop",
+        "value": "1,530 m on Whistler, 1,609 m on Blackcomb",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Village elevation",
+        "value": "675 m, Creekside 653 m",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Terrain parks",
+        "value": "3: one on Whistler, two on Blackcomb",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "10.4 m on the summit, ten-year average",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Snowmaking",
+        "value": "131 hectares on Whistler, 156 on Blackcomb",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "On-mountain restaurants",
+        "value": "18, with 6,972 seats",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Opened",
+        "value": "Whistler Mountain 1966, Blackcomb 1980",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      },
+      {
+        "label": "Highest lift",
+        "value": "2,284 m, on Blackcomb",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "A fifth of Whistler Mountain's terrain is graded beginner, and 55% of both mountains is intermediate.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          },
+          {
+            "text": "The PEAK 2 PEAK Gondola crosses between the two mountains without skiing down.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "30% of Blackcomb is graded advanced, against 25% on Whistler.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          },
+          {
+            "text": "Peak to Creek runs 11 kilometres, and the vertical is 1,609 m on Blackcomb.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          },
+          {
+            "text": "The summit averages 10.4 metres of snow a year over the last ten seasons.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          }
+        ]
+      },
+      {
+        "kind": "dining",
+        "label": "On the mountain",
+        "facts": [
+          {
+            "text": "18 restaurants and bars on the two mountains, seating 6,972.",
+            "source": "https://www.whistler.com/about-whistler/stats-facts/",
+            "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "No adult day rate for the 2026/27 winter was published on the resort's own stats and planning pages as of 24 October 2026.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      }
+    ],
+    "skiEvents": [
+      {
+        "name": "2010 Winter Olympics alpine events",
+        "note": "Whistler Mountain hosted the Olympic alpine races in 2010; Whistler Mountain opened in 1966 and Blackcomb in 1980.",
+        "source": "https://www.whistler.com/about-whistler/stats-facts/",
+        "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics"
+      }
+    ],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade, per mountain",
+      "note": "Whistler Blackcomb publishes the split per mountain in three grades. No separate double-black figure is published, so none is shown.",
+      "source": "https://www.whistler.com/about-whistler/stats-facts/",
+      "sourceLabel": "Tourism Whistler: Whistler and Blackcomb mountain statistics",
+      "series": [
+        {
+          "name": "Whistler Mountain",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 20
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 55
+            },
+            {
+              "grade": "black",
+              "label": "Advanced",
+              "count": 25
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        },
+        {
+          "name": "Blackcomb Mountain",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 15
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 55
+            },
+            {
+              "grade": "black",
+              "label": "Advanced",
+              "count": 30
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  }
 }

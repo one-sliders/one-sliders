@@ -488,3 +488,30 @@ html:has(body.country-onepage) {
   overflow: hidden;
   overflow-x: hidden;
 }
+
+/* BUG-0208: keep language controls readable independently of page themes. */
+nav.top-menu .nav-language > summary,
+nav.top-menu .nav-language__list > a {
+  color: var(--os-control-ink) !important;
+  background: var(--os-control-bg) !important;
+}
+nav.top-menu .nav-language > summary:hover,
+nav.top-menu .nav-language[open] > summary,
+nav.top-menu .nav-language__list > a:hover,
+nav.top-menu .nav-language__list > a[aria-current="page"] {
+  color: var(--os-control-active-ink) !important;
+  background: var(--os-control-active-bg) !important;
+}
+/* BUG-0208: legacy pages use event-language-menu; share the control token pair. */
+body .top-menu .event-language-menu > summary,
+body .top-menu .event-language-menu .event-language-list > a {
+  color: var(--os-control-ink) !important;
+  background: var(--os-control-bg) !important;
+}
+body .top-menu .event-language-menu > summary:hover,
+body .top-menu .event-language-menu[open] > summary,
+body .top-menu .event-language-menu .event-language-list > a:hover,
+body .top-menu .event-language-menu .event-language-list > a[aria-current="true"] {
+  color: var(--os-control-active-ink) !important;
+  background: var(--os-control-active-bg) !important;
+}

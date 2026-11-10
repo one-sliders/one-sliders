@@ -1,0 +1,288 @@
+{
+  "name": "Zermatt",
+  "slug": "zermatt",
+  "countrySlug": "switzerland",
+  "countryName": "Switzerland",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Valais",
+  "coordinates": {
+    "lat": 46.01998,
+    "lon": 7.74863
+  },
+  "timezone": "Europe/Zurich",
+  "population": "6629",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Zermatt",
+    "matchedCountry": "Switzerland"
+  },
+  "seo": {
+    "title": "Zermatt ski resort guide",
+    "description": "A car-free village under the Matterhorn, with a ski area reaching 3,883 metres at Matterhorn Glacier Paradise.",
+    "twitterDescription": "Car-free, under the Matterhorn, and 3,883 m up.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Zermatt in Valais, Switzerland."
+  },
+  "h1": "Zermatt ski resort, stays & events guide",
+  "heroText": "Zermatt is closed to combustion cars and reached by train from Täsch, and its ski area climbs to 3,883 metres at Matterhorn Glacier Paradise - the highest lift-served point of the eighty resorts in this project. The village itself sits at 1,608 metres under the Matterhorn.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Valais",
+      "note": "Switzerland"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Zurich",
+      "note": "local time"
+    },
+    {
+      "label": "Slopes",
+      "value": "360 km",
+      "note": "across Switzerland and Italy"
+    }
+  ],
+  "bookingDestination": "Zermatt, Switzerland",
+  "stayOverview": "The village is car-free, so everything is walked or taken by electric taxi. Winkelmatten at the southern end is quieter and closer to the Matterhorn lifts; Täsch down the valley is where the road and the car parks end.",
+  "hotelIntro": "Book against high season. Staying in Täsch is cheaper but adds a shuttle train at both ends of the day.",
+  "rentalCars": "You cannot drive into Zermatt. The road ends at Täsch, and a shuttle train runs from there into the village.",
+  "sources": [
+    {
+      "label": "Zermatt-Matterhorn: snowsports",
+      "url": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "usedFor": "top elevation, opening and season-end packages"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-25",
+  "travelTips": [
+    {
+      "title": "3,883 metres",
+      "text": "Matterhorn Glacier Paradise is the highest point the ski area reaches.",
+      "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "sourceLabel": "Zermatt-Matterhorn: snowsports"
+    },
+    {
+      "title": "No cars",
+      "text": "Zermatt is closed to combustion cars; the road ends at Täsch.",
+      "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "sourceLabel": "Zermatt-Matterhorn: snowsports"
+    },
+    {
+      "title": "Opening and closing weeks",
+      "text": "The resort sells discounted Winter Opening Weeks and Season End packages rather than publishing dates.",
+      "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "sourceLabel": "Zermatt-Matterhorn: snowsports"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Matterhorn Glacier Paradise",
+      "text": "The ski area's high point at 3,883 metres above sea level.",
+      "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "sourceLabel": "Zermatt-Matterhorn: snowsports"
+    },
+    {
+      "title": "The car-free village",
+      "text": "Zermatt is closed to combustion cars and reached by train.",
+      "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+      "sourceLabel": "Zermatt-Matterhorn: snowsports"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Zermatt village",
+      "text": "The car-free village at 1,608 m under the Matterhorn.",
+      "bestFor": "car-free, restaurants, the Gornergrat railway",
+      "vibe": "ski-in",
+      "bookingDestination": "Zermatt village, Zermatt, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Winkelmatten",
+      "text": "The southern end of the village, closer to the Matterhorn lifts.",
+      "bestFor": "quieter stays, ski-in ski-out",
+      "vibe": "quiet",
+      "bookingDestination": "Winkelmatten, Zermatt, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Täsch",
+      "text": "Where the road ends and the shuttle train to Zermatt starts.",
+      "bestFor": "value, parking, the shuttle train",
+      "vibe": "value",
+      "bookingDestination": "Täsch, Zermatt, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Zermatt Bergbahnen",
+    "operatorUrl": "https://zermatt.swiss/en/activities/snowsports/ski",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "52",
+        "note": "Across the Matterhorn Ski Paradise, which spans Zermatt and the Italian side.",
+        "source": "https://www.matterhornparadise.ch/en/experience/skiing",
+        "sourceLabel": "Matterhorn Ski Paradise: skiing"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the resort's snowsports page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      "topElevation": {
+        "value": "3,883 m",
+        "note": "Matterhorn Glacier Paradise, the highest point the ski area reaches.",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      "season": {
+        "value": "1 November 2026 to 2 May 2027",
+        "note": "The validity of the lift company's winter ski pass. Flex passes run to 30 April 2027.",
+        "source": "https://www.matterhornparadise.ch/en/",
+        "sourceLabel": "Zermatt Bergbahnen: ski passes and winter season"
+      },
+      "snowpark": {
+        "value": "Snowpark Zermatt",
+        "note": "On the lower Theodul Glacier by the Furggsattel lift at 3,250 m, with six lines over 1,200 metres. In summer it moves to around 3,480 m on the Plateau Rosa.",
+        "source": "https://www.matterhornparadise.ch/en/experience/skiing/snowpark-zermatt",
+        "sourceLabel": "Matterhorn Ski Paradise: Snowpark Zermatt"
+      },
+      "pistes": {
+        "value": "360 km across two countries, which the operator calls the highest ski area in the Alps",
+        "source": "https://www.matterhornparadise.ch/en/experience/skiing",
+        "sourceLabel": "Matterhorn Ski Paradise: skiing"
+      },
+      "baseElevation": {
+        "unannounced": "The operator gives the 3,883 m high point and around 200 km of slopes on the Swiss side, but states no altitude for the foot of the ski area.",
+        "checkedAt": "2026-10-31",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      "longestRun": {
+        "unannounced": "Neither the resort's snowsports pages nor the lift company's own site names a longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      "dayPass": {
+        "unannounced": "The resort discounts a flex ski pass within its packages but publishes no adult day rate on the snowsports page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      }
+    },
+    "facts": [
+      {
+        "label": "Highest point",
+        "value": "Matterhorn Glacier Paradise at 3,883 m above sea level",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      {
+        "label": "Village elevation",
+        "value": "1,608 m",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Car-free",
+        "value": "Zermatt is closed to combustion cars and reached by train from Täsch",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "On the Swiss side",
+        "value": "Around 200 km of the 360",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      },
+      {
+        "label": "Snowpark Zermatt",
+        "value": "Six creative lines over 1,200 metres at 3,250 m on the Theodul Glacier",
+        "source": "https://www.matterhornparadise.ch/en/experience/skiing/snowpark-zermatt",
+        "sourceLabel": "Matterhorn Ski Paradise: Snowpark Zermatt"
+      },
+      {
+        "label": "Summer freestyle",
+        "value": "The park moves to around 3,480 m on the Plateau Rosa",
+        "source": "https://www.matterhornparadise.ch/en/experience/skiing/snowpark-zermatt",
+        "sourceLabel": "Matterhorn Ski Paradise: Snowpark Zermatt"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "The ski area reaches 3,883 metres at Matterhorn Glacier Paradise, the highest lift-served point of the eighty resorts in this project.",
+            "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+            "sourceLabel": "Zermatt-Matterhorn: snowsports"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-25",
+        "statement": "Zermatt publishes no split by difficulty and no piste total on its snowsports page.",
+        "source": "https://zermatt.swiss/en/activities/snowsports/ski",
+        "sourceLabel": "Zermatt-Matterhorn: snowsports"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Geneva International Airport",
+      "code": "GVA",
+      "search": "Geneva International Airport",
+      "text": "Geneva International Airport (GVA) is 129 km from Zermatt by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 129
+    },
+    {
+      "name": "Lugano Airport",
+      "code": "LUG",
+      "search": "Lugano Airport",
+      "text": "Lugano Airport (LUG) is 90 km from Zermatt by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 90
+    },
+    {
+      "name": "Bern Airport",
+      "code": "BRN",
+      "search": "Bern Airport",
+      "text": "Bern Airport (BRN) is 101 km from Zermatt by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 101
+    }
+  ],
+  "airportTransfer": {
+    "value": "Geneva International Airport (GVA) is the nearest airport with scheduled service, 129 km from Zermatt by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "129 km straight line"
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "name": "Verbier",
+  "slug": "verbier",
+  "countrySlug": "switzerland",
+  "countryName": "Switzerland",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Valais",
+  "coordinates": {
+    "lat": 46.1002,
+    "lon": 7.22651
+  },
+  "timezone": "Europe/Zurich",
+  "population": "2000",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Verbier",
+    "matchedCountry": "Switzerland"
+  },
+  "seo": {
+    "title": "Verbier ski resort guide",
+    "description": "106 km of runs and 33 lifts at Verbier, on a 4 Vallées network of 410 km, the largest ski area entirely within Switzerland.",
+    "twitterDescription": "106 km at Verbier, 410 km across the 4 Vallées.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Verbier in Valais, Switzerland."
+  },
+  "h1": "Verbier ski resort, stays & events guide",
+  "heroText": "Verbier has 106 kilometres of runs and 33 lifts of its own, on a 4 Vallées network that runs to 410 kilometres - the largest ski area entirely within Switzerland. Mont-Fort tops the network at 3,330 metres, and the speed-skiing run drops 383 metres over 1,400.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Valais",
+      "note": "Switzerland"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Zurich",
+      "note": "local time"
+    },
+    {
+      "label": "4 Vallées network",
+      "value": "410 km",
+      "note": "106 km at Verbier"
+    }
+  ],
+  "bookingDestination": "Verbier, Switzerland",
+  "stayOverview": "The resort station at 1,515 metres is where the lifts and the bars are; Verbier Village below it is the old hamlet; Le Châble on the valley floor has the railway and a gondola up.",
+  "hotelIntro": "Book against high season. Le Châble is much cheaper but adds a gondola ride at both ends of the day.",
+  "rentalCars": "Le Châble has a railway station with a gondola up to Verbier, so the resort is reachable without a car.",
+  "sources": [
+    {
+      "label": "Verbier 4Vallées: the ski resort",
+      "url": "https://verbier4vallees.ch/en/ski-resort",
+      "usedFor": "lifts, runs, the network, Mont-Fort, the speed run"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-25",
+  "travelTips": [
+    {
+      "title": "Largest inside Switzerland",
+      "text": "410 kilometres of runs across the 4 Vallées, of which 106 km are at Verbier.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    },
+    {
+      "title": "Mont-Fort",
+      "text": "The network's high point at 3,330 metres, with a viewing platform.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    },
+    {
+      "title": "The speed-skiing run",
+      "text": "1,400 metres long with a 383-metre drop, allowing 100 km/h.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Mont-Fort",
+      "text": "The high point of the 4 Vallées at 3,330 metres, with a platform at the top.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    },
+    {
+      "title": "The 4 Vallées",
+      "text": "410 kilometres of runs, the largest ski area entirely within Switzerland.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    },
+    {
+      "title": "The speed-skiing run",
+      "text": "1,400 metres long, dropping 383, where 100 km/h is possible.",
+      "source": "https://verbier4vallees.ch/en/ski-resort",
+      "sourceLabel": "Verbier 4Vallées: the ski resort"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Verbier station",
+      "text": "The resort terrace at 1,515 m above the Val de Bagnes.",
+      "bestFor": "ski-in ski-out, the Medran lifts, nightlife",
+      "vibe": "ski-in",
+      "bookingDestination": "Verbier station, Verbier, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Verbier Village",
+      "text": "The old hamlet below the resort station.",
+      "bestFor": "quieter stays, value",
+      "vibe": "quiet",
+      "bookingDestination": "Verbier Village, Verbier, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "Le Châble",
+      "text": "On the valley floor, with a gondola up to Verbier.",
+      "bestFor": "value, the railway, the gondola",
+      "vibe": "value",
+      "bookingDestination": "Le Châble, Verbier, Switzerland",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    }
+  ],
+  "ski": {
+    "operator": "Televerbier",
+    "operatorUrl": "https://verbier4vallees.ch/en/ski-resort",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "33 in the Verbier sector",
+        "note": "The operator publishes no total for the whole of the 4 Vallées.",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the ski resort page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "topElevation": {
+        "value": "3,330 m at Mont-Fort",
+        "note": "The operator's own body text rounds it to 3,300 m.",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "season": {
+        "unannounced": "No season dates are published on the ski resort page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "snowpark": {
+        "unannounced": "No snowpark is stated on the ski resort page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "pistes": {
+        "value": "106 km at Verbier",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "baseElevation": {
+        "unannounced": "The operator gives Mont-Fort at 3,330 m, 106 km of runs at Verbier and 410 km across the 4 Vallées, but states no altitude for the foot of the ski area.",
+        "checkedAt": "2026-10-31",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "longestRun": {
+        "unannounced": "The operator names the Mont-Fort black run but gives no length, and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the ski resort page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      }
+    },
+    "facts": [
+      {
+        "label": "The 4 Vallées",
+        "value": "410 km of runs, the largest ski area entirely within Switzerland",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      },
+      {
+        "label": "Village elevation",
+        "value": "1,515 m",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "The speed-skiing run",
+        "value": "1,400 m long with a 383 m drop, reaching 100 km/h",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Mont-Fort at 3,330 metres is the high point of a 410-kilometre network, the largest entirely inside Switzerland.",
+            "source": "https://verbier4vallees.ch/en/ski-resort",
+            "sourceLabel": "Verbier 4Vallées: the ski resort"
+          },
+          {
+            "text": "The speed-skiing run drops 383 metres over 1,400 and allows 100 km/h.",
+            "source": "https://verbier4vallees.ch/en/ski-resort",
+            "sourceLabel": "Verbier 4Vallées: the ski resort"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-25",
+        "statement": "Televerbier publishes 106 km at Verbier and 410 km across the 4 Vallées but no split by difficulty.",
+        "source": "https://verbier4vallees.ch/en/ski-resort",
+        "sourceLabel": "Verbier 4Vallées: the ski resort"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Geneva International Airport",
+      "code": "GVA",
+      "search": "Geneva International Airport",
+      "text": "Geneva International Airport (GVA) is 87 km from Verbier by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 87
+    },
+    {
+      "name": "Bern Airport",
+      "code": "BRN",
+      "search": "Bern Airport",
+      "text": "Bern Airport (BRN) is 93 km from Verbier by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 93
+    },
+    {
+      "name": "Lugano Airport",
+      "code": "LUG",
+      "search": "Lugano Airport",
+      "text": "Lugano Airport (LUG) is 130 km from Verbier by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 130
+    }
+  ],
+  "airportTransfer": {
+    "value": "Geneva International Airport (GVA) is the nearest airport with scheduled service, 87 km from Verbier by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "87 km straight line"
+  }
+}

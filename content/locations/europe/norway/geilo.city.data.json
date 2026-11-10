@@ -1,0 +1,300 @@
+{
+  "name": "Geilo",
+  "slug": "geilo",
+  "countrySlug": "norway",
+  "countryName": "Norway",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Buskerud",
+  "coordinates": {
+    "lat": 60.53369,
+    "lon": 8.20539
+  },
+  "timezone": "Europe/Oslo",
+  "population": "2500",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Geilo",
+    "matchedCountry": "Norway"
+  },
+  "seo": {
+    "title": "Geilo ski resort guide",
+    "description": "A ski village at 800 metres with its own station on the Oslo-Bergen railway, a November to April season and floodlit evening skiing twice a week.",
+    "twitterDescription": "800 m up, on the Bergen railway, with floodlit evenings twice a week.",
+    "webpageDescription": "Ski facts, season, where to stay and how to get to Geilo in Buskerud, Norway."
+  },
+  "h1": "Geilo ski resort, stays & events guide",
+  "heroText": "Geilo sits at 800 metres on the Oslo-Bergen railway, which makes it one of the few Norwegian ski villages you can reach without a car. The season runs from November to April, the slopes are floodlit on Tuesdays and Fridays, and the cross-country tracks at the stadium open in late October.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Buskerud",
+      "note": "Norway"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Oslo",
+      "note": "local time"
+    },
+    {
+      "label": "Elevation",
+      "value": "800 m",
+      "note": "on the Bergen railway"
+    }
+  ],
+  "bookingDestination": "Geilo, Norway",
+  "stayOverview": "Geilo is a village either side of a railway line, with the slopes above it. A bed in the village means the station is on foot; a bed at the lifts means the first run is.",
+  "hotelIntro": "Book against the season: November to April, with the floodlit evenings on Tuesdays and Fridays.",
+  "rentalCars": "Geilo has its own station on the Oslo-Bergen line, so this is one of the few Norwegian ski resorts where a car is genuinely optional.",
+  "sources": [
+    {
+      "label": "Ski Geilo",
+      "url": "https://skigeilo.no/",
+      "usedFor": "season, floodlit evenings, opening dates"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-24",
+  "travelTips": [
+    {
+      "title": "The train stops here",
+      "text": "Geilo has its own station on the Oslo-Bergen railway.",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "title": "Evening skiing",
+      "text": "The slopes are floodlit on Tuesdays and Fridays.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    },
+    {
+      "title": "Season opening",
+      "text": "The season opening weekend is 13-15 November 2026, with the Biathlon Season Opening.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    },
+    {
+      "title": "Cross-country first",
+      "text": "The tracks at Geilo stadium open on 24 October 2026.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Geilo station",
+      "text": "The Oslo-Bergen railway stops in the village, which few Norwegian ski resorts can say.",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "title": "Floodlit evenings",
+      "text": "Ski Geilo runs evening skiing on Tuesdays and Fridays.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    },
+    {
+      "title": "The Biathlon Season Opening",
+      "text": "Geilo's season opening weekend, 13-15 November 2026, includes the Biathlon Season Opening.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    },
+    {
+      "title": "Geilo stadium",
+      "text": "The cross-country tracks at the stadium open on 24 October 2026.",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "areas": [
+    {
+      "name": "Geilo village",
+      "text": "The village either side of the Bergen railway, at 800 metres.",
+      "bestFor": "the railway station, restaurants, first visits",
+      "vibe": "ski-in",
+      "bookingDestination": "Geilo village, Geilo, Norway",
+      "source": "https://open-meteo.com/en/docs/geocoding-api",
+      "sourceLabel": "Open-Meteo Geocoding API"
+    },
+    {
+      "name": "By the slopes",
+      "text": "Cabins at the lifts, where the floodlit evenings run.",
+      "bestFor": "ski-in ski-out, evening skiing",
+      "vibe": "ski-in",
+      "bookingDestination": "By the slopes, Geilo, Norway",
+      "source": "https://skigeilo.no/",
+      "sourceLabel": "Ski Geilo"
+    }
+  ],
+  "ski": {
+    "operator": "Ski Geilo",
+    "operatorUrl": "https://skigeilo.no/",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "20",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on Ski Geilo's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "topElevation": {
+        "unannounced": "No summit elevation is published on Ski Geilo's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "season": {
+        "value": "November to April",
+        "note": "The season opening weekend is 13-15 November 2026; no closing date is given.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "snowpark": {
+        "unannounced": "No snowpark is stated on Ski Geilo's own site.",
+        "checkedAt": "2026-10-24",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "pistes": {
+        "value": "46 runs",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "baseElevation": {
+        "unannounced": "The operator counts 46 runs and 20 lifts and gives its season as mid-November to late April, but states no altitude above sea level for either end of the hill.",
+        "checkedAt": "2026-10-31",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "longestRun": {
+        "unannounced": "The operator counts the runs but publishes no run lengths and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      "dayPass": {
+        "unannounced": "An Early Bird season pass runs to 31 October 2026, but no adult day rate is published.",
+        "checkedAt": "2026-10-24",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      }
+    },
+    "facts": [
+      {
+        "label": "Evening skiing",
+        "value": "Floodlit on Tuesdays and Fridays",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      {
+        "label": "Village elevation",
+        "value": "800 m, the highest village in this batch",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "On the Bergen railway",
+        "value": "Geilo has its own station on the Oslo-Bergen line",
+        "source": "https://open-meteo.com/en/docs/geocoding-api",
+        "sourceLabel": "Open-Meteo Geocoding API"
+      },
+      {
+        "label": "Cross-country start",
+        "value": "The tracks at Geilo stadium open 24 October 2026",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      {
+        "label": "Season opening weekend",
+        "value": "13-15 November 2026, with the Biathlon Season Opening",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Ski Geilo describes its slopes as family-friendly, and the resort runs floodlit evening skiing twice a week.",
+            "source": "https://skigeilo.no/",
+            "sourceLabel": "Ski Geilo"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "runs",
+        "checkedAt": "2026-10-24",
+        "statement": "No run count is published on the operator's site.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      {
+        "field": "verticalDrop",
+        "checkedAt": "2026-10-24",
+        "statement": "No vertical drop is published on the operator's site.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-24",
+        "statement": "No split by difficulty is published, and neither is a run count.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      },
+      {
+        "field": "dayPass",
+        "checkedAt": "2026-10-24",
+        "statement": "An Early Bird season pass runs to 31 October 2026, but no adult day rate is published.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      }
+    ],
+    "skiEvents": [
+      {
+        "name": "Biathlon Season Opening",
+        "note": "Geilo's season opening weekend, 13-15 November 2026, includes the Biathlon Season Opening.",
+        "source": "https://skigeilo.no/",
+        "sourceLabel": "Ski Geilo"
+      }
+    ]
+  },
+  "airports": [
+    {
+      "name": "Oslo-Gardermoen International Airport",
+      "code": "OSL",
+      "search": "Oslo-Gardermoen International Airport",
+      "text": "Oslo-Gardermoen International Airport (OSL) is 164 km from Geilo by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 164
+    }
+  ],
+  "airportTransfer": {
+    "value": "Oslo-Gardermoen International Airport (OSL) is the nearest airport with scheduled service, 164 km from Geilo by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "164 km straight line"
+  }
+}

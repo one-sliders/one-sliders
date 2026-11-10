@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Banff travel, stays & events guide",
-  "heroText": "Banff works best as a base in Canada when you anchor days around Banff Avenue, Sulphur Mountain and Bow Falls. Use those sights to understand the city's history, street life and visitor rhythm. Banff International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Banff works best as a base in Canada when you anchor days around Banff Avenue, Sulphur Mountain and Bow Falls. Use those sights to understand the city's history, street life and visitor rhythm. Calgary International Airport (YYC) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -36,37 +36,48 @@
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Banff, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Banff Avenue",
+      "text": "The town centre, with the ski bus to all three Banff mountains.",
+      "bestFor": "restaurants, first visits, the ski bus",
+      "vibe": "lively",
+      "bookingDestination": "Banff Avenue, Banff, Canada",
+      "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+      "sourceLabel": "Banff Sunshine: trail maps"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Banff, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Sunshine Mountain Lodge",
+      "text": "The only in-resort lodging, up at the ski area itself.",
+      "bestFor": "ski-in ski-out, first lift, staying up the mountain",
+      "vibe": "ski-in",
+      "bookingDestination": "Sunshine Mountain Lodge, Banff, Canada",
+      "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+      "sourceLabel": "Banff Sunshine: trail maps"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Banff reachable.",
-      "bestFor": "views, quieter evenings, walks"
-    },
-    {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Banff sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Tunnel Mountain",
+      "text": "Above the town, away from Banff Avenue.",
+      "bestFor": "quieter stays, value",
+      "vibe": "quiet",
+      "bookingDestination": "Tunnel Mountain, Banff, Canada",
+      "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+      "sourceLabel": "Banff Sunshine: trail maps"
     }
   ],
   "airports": [
     {
-      "name": "Banff International Airport",
-      "search": "Banff International Airport, Banff, Canada",
-      "text": "Banff International Airport is the main air gateway for Banff; compare transfer time with your hotel base before locking the first night."
+      "name": "Calgary International Airport",
+      "code": "YYC",
+      "search": "Calgary International Airport",
+      "text": "Calgary International Airport (YYC) is 109 km from Banff by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 109
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Banff International Airport and central Banff before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Calgary International Airport (YYC) is the nearest airport with scheduled service, 109 km from Banff by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "109 km straight line"
   },
   "bookingDestination": "Banff, Canada",
   "stayOverview": "Start with City centre for the easiest first Banff stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +90,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Banff International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Calgary International Airport (YYC), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -223,5 +234,121 @@
       "text": "Takakkaw Falls drops 254 metres; the Burgess Shale fossil beds above are guided-hike only.",
       "source": "https://parks.canada.ca/pn-np/bc/yoho"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Banff Sunshine Village",
+    "operatorUrl": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "unannounced": "Banff Sunshine publishes a live lifts and trails report but no total lift count on its trail maps or mountain pages.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published on the resort's trail maps page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "topElevation": {
+        "value": "8,900 ft at the Continental Divide",
+        "note": "The resort states the altitude skiers reach at the Divide rather than a summit figure.",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "season": {
+        "unannounced": "The resort links to hours of operation without publishing season dates on its mountain pages.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "snowpark": {
+        "value": "Yes",
+        "note": "The resort has a terrain parks page but states no count.",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "pistes": {
+        "value": "More than 3,500 acres across three mountains",
+        "note": "Goat's Eye Mountain, Lookout Mountain and Mount Standish, linked by trails and lifts around one village. The resort publishes the acreage, not a run count.",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "baseElevation": {
+        "unannounced": "The resort publishes the Continental Divide high point at 8,900 ft and its skiable acreage, but states no base elevation on its trail-map, mountain or hours pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "longestRun": {
+        "unannounced": "No longest run is published on the resort's trail-map, mountain-report or hours pages.",
+        "checkedAt": "2026-10-29",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      "dayPass": {
+        "value": "CAD 149 for an adult day ticket",
+        "note": "The advance online price the resort publishes for December 2026 dates. It prices by date, so later dates cost more.",
+        "source": "https://www.skibanff.com/tickets-passes/lift-tickets/lift-tickets",
+        "sourceLabel": "Banff Sunshine Village: winter lift tickets"
+      }
+    },
+    "facts": [
+      {
+        "label": "Skiable terrain",
+        "value": "over 3,500 acres across three mountain faces",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      {
+        "label": "Three faces",
+        "value": "Goat's Eye Mountain, Lookout Mountain and Mount Standish, all connected by trails",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      {
+        "label": "Cumulative snowfall",
+        "value": "897 cm (29 ft 5 in) in the season the report covers",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      {
+        "label": "Freeride gate",
+        "value": "Delirium Dive, entered from the top of the Great Divide Express",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      },
+      {
+        "label": "The Great Divide",
+        "value": "A ride to 8,900 ft that crosses from Alberta into British Columbia and back",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "Three mountain faces holding over 3,500 acres, reaching 8,900 ft at the Continental Divide.",
+            "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+            "sourceLabel": "Banff Sunshine: trail maps"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-25",
+        "statement": "Banff Sunshine publishes a live lifts and trails report during the season but no static split by difficulty.",
+        "source": "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
+        "sourceLabel": "Banff Sunshine: trail maps"
+      }
+    ],
+    "skiEvents": []
+  }
 }

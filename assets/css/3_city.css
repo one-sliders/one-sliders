@@ -1794,9 +1794,14 @@ KPI-led location pages. */
   overflow: hidden;
   border: 1px solid var(--location-line);
   border-radius: 18px;
+  /* BUG-0229: fallbacken var Österrikes hero — ingen sida sätter
+     --country-hero-url, så alla 600+ platssidor målade Österrike bakom sin
+     <img>, synligt i mobil/DPR 2. Fallback = neutral yta, aldrig en annan
+     plats motiv (Definitionen av klar, punkt 6). */
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--os-surface) 8%, var(--os-transparent)), var(--os-transparent)),
-    var(--country-hero-url, image-set(url("/content/locations/europe/austria/img/austria-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/austria/img/austria-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/austria/img/austria-hero.png") type("image/png") 2x)) center / cover no-repeat;
+    var(--country-hero-url, none) center / cover no-repeat;
+  background-color: var(--os-surface);
   box-shadow: 0 20px 52px color-mix(in srgb, var(--os-scrim) 13%, var(--os-transparent));
 }
 
@@ -1814,8 +1819,9 @@ KPI-led location pages. */
   aspect-ratio: 1200 / 630;
   height: auto;
   min-height: clamp(200px, 26vw, 300px);
-  background:
-    var(--country-hero-url, image-set(url("/content/locations/europe/austria/img/austria-hero-768.webp") type("image/webp") 1x, url("/content/locations/europe/austria/img/austria-hero-1200.webp") type("image/webp") 2x, url("/content/locations/europe/austria/img/austria-hero.png") type("image/png") 2x)) center / cover no-repeat;
+  /* BUG-0229: samma Österrike-fallback som ovan, borttagen. */
+  background: var(--country-hero-url, none) center / cover no-repeat;
+  background-color: var(--os-surface);
 }
 
 .country-hero-image--switzerland {
@@ -3790,10 +3796,19 @@ KPI-led location pages. */
   font-size: clamp(16px, 1.45vw, 21px);
 }
 
+/* BUG-0211 (2026-10-31): "Funasda len". overflow-wrap: anywhere lät ramen
+   bryta ett egennamn mitt itu så fort tidskortet bredvid tog plats. Ett
+   ortnamn bryts aldrig inuti ordet: storleken följer i stället kolumnens
+   bredd (cqi mot .city-left-fixed-head), och räcker inte det får tidskortet
+   flytta ner under titeln (.city-title-row nedan) i stället för att klämma
+   den. min-width håller ihop namn + flagga så länge de ryms på en rad. */
 .city-page--template .country-brief .hero-title {
-  font-size: clamp(34px, 3.5vw, 48px);
+  font-size: clamp(34px, min(3.5vw, 11cqi), 48px);
   line-height: 1;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: manual;
+  min-width: min(max-content, 100%);
 }
 
 .city-page--template .country-brief .flag-badge {
@@ -3841,6 +3856,12 @@ KPI-led location pages. */
   flex: 0 0 auto;
 }
 
+/* Behållare för hero-titelns cqi-mått (BUG-0211). Bara inline-axeln, så
+   höjden räknas fortfarande av innehållet. */
+.city-page--template .city-left-fixed-head {
+  container-type: inline-size;
+}
+
 .city-page--template .city-left-scroll {
   flex: 1 1 auto;
   min-height: 0;
@@ -3862,11 +3883,23 @@ KPI-led location pages. */
   aspect-ratio: auto;
 }
 
+/* BUG-0211: raden var ett grid med minmax(0, 1fr) auto — tidskortet tog sin
+   bredd först och titeln fick resten, hur smal den än blev. Nu en radbrytande
+   flexrad: titeln tar det den behöver, kortet lägger sig bredvid om det ryms
+   och annars på raden under. */
 .city-page--template .city-title-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 12px;
+}
+
+.city-page--template .city-title-row > .hero-title {
+  flex: 1 1 auto;
+}
+
+.city-page--template .city-title-row > .city-local-time-card {
+  flex: 0 0 auto;
 }
 
 .city-page--template .city-local-time-card {
@@ -3941,11 +3974,8 @@ KPI-led location pages. */
   text-decoration-color: currentColor;
 }
 
-.city-page--template .country-brief .hero-title {
-  font-size: clamp(34px, 3.5vw, 48px);
-  line-height: 1;
-  overflow-wrap: anywhere;
-}
+/* (dubbletten av .hero-title-regeln som stod här togs bort 2026-10-31 — en
+   regel, högre upp, så att BUG-0211 inte kan återuppstå från en kopia) */
 
 .city-page--template .top-menu {
   overflow-x: auto;
@@ -5333,6 +5363,27 @@ KPI-led location pages. */
     max-height: none;
     overflow: visible;
   }
+
+/* Hero-remsan (Whistler) / ingen hero (Åre), 2026-11-01. I enkolumnsläget
+   901–1120 px är .country-brief fortfarande ett grid i en box med fast höjd
+   (position absolute top/bottom). Panelraden tar sin fulla höjd, och
+   vänsterkolumnen — med min-height: 0 från tvåkolumnsregeln — trycks ihop
+   till 0–19 px: heron ligger kvar men målas under panelkortet. Under 900 px
+   höjd fick samma 19 px dessutom rullist. Kolumnen får aldrig bli lägre än
+   sitt innehåll här; sidan scrollar i stället i .country-content-box. */
+.city-page--template .country-brief__copy {
+    min-height: max-content;
+  }
+
+/* Gridet ärver boxens fasta höjd från .country-content-box och krymper
+   auto-raderna ner till minimum — kolumnen växer då UTANFÖR sitt spår och
+   panelen ritas över den. Spåren får vara innehållets storlek; boxen
+   scrollar. */
+.city-page--template .country-brief {
+    grid-template-rows: max-content max-content;
+    align-content: start;
+    align-self: start;
+  }
 }
 
 @media (max-width: 560px) {
@@ -5610,6 +5661,10 @@ KPI-led location pages. */
     overflow: visible;
   }
 
+.city-page--template .country-brief__copy {
+    min-height: max-content;
+  }
+
 .city-page--template .city-fact-chip-grid,
 .city-page--template .city-kpi-grid,
 .city-page--template .city-stat-strip {
@@ -5622,12 +5677,12 @@ KPI-led location pages. */
   }
 
 .city-page--template .city-title-row {
-    grid-template-columns: 1fr;
-    align-items: start;
+    align-items: flex-start;
   }
 
-.city-page--template .city-local-time-card {
-    justify-self: start;
+/* Mobil: titeln på egen rad, tidskortet under — som före BUG-0211-fixen. */
+.city-page--template .city-title-row > .hero-title {
+    flex-basis: 100%;
   }
 
 .city-page--template .city-history-facts .country-history-list {
@@ -5649,7 +5704,9 @@ KPI-led location pages. */
   }
 
 .city-page--template .country-brief .hero-title {
-    font-size: clamp(38px, 13vw, 48px);
+    /* BUG-0211: 13vw gav 48 px på 375 px — för mycket för "Funasdalen" med
+       flagga. cqi-taket låter ett långt namn krympa i stället för att brytas. */
+    font-size: clamp(32px, min(13vw, 11cqi), 48px);
   }
 
 .city-page--template .country-hero-image--clear {
@@ -5982,8 +6039,19 @@ KPI-led location pages. */
    scrollrutan mellan hero och landskort 100-150 px — varken oversikt eller
    vader fick plats. Dar scrollar hela vansterkolumnen i stallet (hero rullar
    undan), sa oversikt, vader och landskort nas i ett svep. Hoga skarmar
-   behaller fast hero och fast landskort. */
-@media (max-height: 900px) and (min-width: 901px) {
+   behaller fast hero och fast landskort.
+   2026-11-01: gränsen flyttad 901 → 1121 px. Stadsmallen går enkolumnig vid
+   1120 px (ovan), och där scrollar hela sidan redan — en scrollande
+   vänsterkolumn ovanpå det gav hero-remsan med rullist.
+   2026-11-01 kväll (BUG-0211 återkallad, Anders: remsan kvar i 1366×768 och
+   1920×1080 med krom): när hela kolumnen rullar följer heron med upp och blir
+   en remsa med rullist bredvid så fort man scrollar till vädret. Huvudet
+   (hero + titelrad) sitter nu fast överst i kolumnen (sticky) medan
+   översikt, väder och landskort rullar under det. Heron får dessutom följa
+   sin vh-höjd här: regeln .country-hero-image--clear { min-height:
+   clamp(200px, 26vw, 300px) } låste den vid 300 px på alla desktopbredder,
+   så att 700 px höga fönster inte hade plats för något under den. */
+@media (max-height: 900px) and (min-width: 1121px) {
   .city-page--template .country-brief__copy {
     overflow-y: auto;
     scrollbar-width: thin;
@@ -5992,6 +6060,17 @@ KPI-led location pages. */
     flex: none;
     min-height: 0;
     overflow: visible;
+  }
+  .city-page--template .city-left-fixed-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-bottom: 6px;
+    background: var(--os-surface);
+  }
+  .city-page--template .city-left-fixed-head .country-hero-image--clear {
+    height: clamp(190px, 30vh, 300px);
+    min-height: 0;
   }
 }
 
@@ -6032,3 +6111,18 @@ KPI-led location pages. */
    ligger under stadsnamnet, tidszonen i klockkortet. */
 .city-page--template .city-meta-row { display: flex; align-items: center; gap: 14px; margin: 2px 0 6px; }
 .city-page--template .city-meta-row .city-map-link--city { margin: 0; }
+
+/* BUG-0208: the city event teaser is navigation, with a paired token palette. */
+.city-fact-events-teaser > .stay-card-link {
+  color: var(--os-control-ink);
+  background: var(--os-control-bg);
+  border-color: var(--os-line);
+}
+.city-fact-events-teaser > .stay-card-link:hover,
+.city-fact-events-teaser > .stay-card-link:focus-visible {
+  color: var(--os-control-active-ink);
+  background: var(--os-control-active-bg);
+  border-color: var(--os-control-active-bg);
+  outline: 2px solid var(--os-control-active-bg);
+  outline-offset: 2px;
+}

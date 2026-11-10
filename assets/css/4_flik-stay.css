@@ -370,13 +370,16 @@ html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tip
   border-color: var(--location-theme);
 }
 
-.city-page--template .stay-section-menu a[href="#stay-overview"] {
+/* Startlaget i Visit ar Hotels & Areas, inte Overview. JS valjer forsta
+   lanken i menyn, sa ordningen i markupen bestammer - den har regeln bara
+   malar den valda innan JS hunnit satta aria-current. */
+.city-page--template .stay-section-menu a[href="#stay-hotels-areas"] {
   color: var(--os-surface);
   background: var(--location-theme);
   border-color: var(--location-theme);
 }
 
-.city-page--template .stay-section-menu:has(a[aria-current="true"]) a[href="#stay-overview"]:not([aria-current="true"]) {
+.city-page--template .stay-section-menu:has(a[aria-current="true"]) a[href="#stay-hotels-areas"]:not([aria-current="true"]) {
   color: var(--location-ink);
   background: var(--os-surface);
   border-color: var(--location-line);
@@ -603,6 +606,107 @@ html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tip
   outline: none;
 }
 
+/* ------------------------------------------------------- Visit: ledknappen */
+/* Affiliatelanken lag tidigare i botten av kortet Hotels & areas, bakom
+   undermenyn: Visit -> Hotels & Areas -> knappen, tre klick fran Fact. Nu
+   ligger den forst i Visit-panelen, utanfor undermenyn, sa den star kvar
+   oavsett vilket avsnitt lasaren valjer. Ett klick. */
+.stay-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  color: var(--os-surface);
+  background: color-mix(in srgb, var(--os-accent) 88%, var(--os-primary));
+  border: 1px solid color-mix(in srgb, var(--os-accent) 88%, var(--os-primary));
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-accent) 22%, var(--os-transparent));
+}
+
+.stay-lead__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.stay-lead__text > strong {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.stay-lead__sub {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-accent));
+}
+
+.stay-lead__go {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: color-mix(in srgb, var(--os-surface) 20%, var(--os-transparent));
+  border: 1px solid color-mix(in srgb, var(--os-surface) 42%, var(--os-transparent));
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.stay-lead__go svg {
+  width: 15px;
+  height: 15px;
+}
+
+.stay-lead:hover,
+.stay-lead:focus-visible {
+  background: color-mix(in srgb, var(--os-accent) 100%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-accent) 100%, var(--os-primary));
+  outline: none;
+}
+
+.stay-lead:hover .stay-lead__go,
+.stay-lead:focus-visible .stay-lead__go {
+  background: color-mix(in srgb, var(--os-surface) 30%, var(--os-transparent));
+}
+
+.stay-lead.affiliate-market--usa-canada {
+  background: color-mix(in srgb, var(--os-compare-orange) 88%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-orange) 88%, var(--os-primary));
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-compare-orange) 24%, var(--os-transparent));
+}
+
+.stay-lead.affiliate-market--usa-canada .stay-lead__sub {
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-compare-orange));
+}
+
+.stay-lead.affiliate-market--usa-canada:hover,
+.stay-lead.affiliate-market--usa-canada:focus-visible {
+  background: color-mix(in srgb, var(--os-compare-orange) 100%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-orange) 100%, var(--os-primary));
+}
+
+.stay-lead.affiliate-market--europe {
+  background: color-mix(in srgb, var(--os-compare-blue) 88%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-blue) 88%, var(--os-primary));
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--os-compare-blue) 24%, var(--os-transparent));
+}
+
+.stay-lead.affiliate-market--europe .stay-lead__sub {
+  color: color-mix(in srgb, var(--os-surface) 78%, var(--os-compare-blue));
+}
+
+.stay-lead.affiliate-market--europe:hover,
+.stay-lead.affiliate-market--europe:focus-visible {
+  background: color-mix(in srgb, var(--os-compare-blue) 100%, var(--os-primary));
+  border-color: color-mix(in srgb, var(--os-compare-blue) 100%, var(--os-primary));
+}
+
 .stay-hotel-grid {
   display: grid;
   gap: 10px;
@@ -705,6 +809,17 @@ html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tip
 @media (max-width: 430px) {
 .city-page--template .stay-section-menu {
     grid-template-columns: 1fr 1fr;
+  }
+
+/* Ortnamnet tar hela bredden och knappen lagger sig under, i full bredd -
+   annars kapas "Hotels in Mont-Tremblant, Quebec, Canada" pa en telefon. */
+.stay-lead {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+.stay-lead__go {
+    justify-content: center;
   }
 }
 

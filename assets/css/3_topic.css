@@ -1,0 +1,50 @@
+/* 3_topic.css — nivå 3, sidtyp: topicsida i topic-modellen (PoC: alpine-skiing).
+   Ramen är sajtens standardram: top-menu, event-hero-banner och event-tabs ur
+   3_event.css + 4_flik-event-template-tabs.css (Anders 2026-10-28: samma
+   flikmönster som eventsidorna). Den här filen äger bara panelens innehåll:
+   rubrik, ingress, faktablocken. Nivå 4-modulen 4_topic-destinations.css äger
+   väljaren. Inga inline-stilar. */
+
+/* Heron är ett band på topicsidan (granskning 5): titelkortet på bilden,
+   filter + urval i första skärmen på desktop. */
+/* Bandet är BILDEN som kapas (120 px), inte bannern — annars rinner titelkortet
+   ut under bannern och bakom flikraden (Anders 2026-10-29, fel 1). Kortet
+   ligger som på eventsidorna: i bannerns innehåll, ovanför flikarna. */
+body.topic-page .topic-hero-banner { max-height: none; }
+body.topic-page .topic-hero-banner .event-hero-banner__img { height: 96px; max-height: 96px; object-fit: cover; }
+body.topic-page .topic-hero-banner .hero-cards { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title"; gap: 0; }
+body.topic-page .topic-hero-banner .hero-card--title { padding: 6px 12px; }
+body.topic-page .topic-hero-banner .event-edition__title { font-size: clamp(20px, 2.2vw, 24px); line-height: 1.15; }
+body.topic-page .topic-hero-banner .event-edition__more { font-size: 12px; line-height: 1.2; }
+body.topic-page .event-tabs--top { margin-top: 4px; }
+body.topic-page .hero-card--title .event-edition__more { margin: 2px 0 0; color: var(--os-muted); font-size: var(--os-text-sm, 13px); }
+
+.topic-panel { display: grid; gap: 6px; padding: 2px 0 12px; }
+.topic-panel__title { margin: 0; font-size: var(--os-text-lg, 18px); }
+.topic-panel__lead { margin: 0; max-width: 80ch; color: var(--os-muted); line-height: 1.4; font-size: var(--os-text-sm, 13px); }
+/* Desktop = beslutsyta utan scroll: ingressen i ortväljaren säger samma sak som
+   herons underrubrik och tas bort där; på mobil står den kvar. */
+@media (min-width: 621px) { #panel-resorts .topic-panel__lead { display: none; } }
+
+.topic-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.topic-fact { padding: 12px; border: 1px solid var(--os-line); border-radius: 12px; background: var(--os-surface); }
+.topic-fact--wide { grid-column: 1 / -1; }
+.topic-fact__list { font-size: var(--os-text-sm, 13px); line-height: 1.6; }
+.topic-fact__list a { color: var(--os-accent); text-decoration: none; }
+.dest-table--facts { min-width: 0; }
+.dest-table--facts td, .dest-table--facts th { white-space: normal; }
+.topic-fact h3 { margin: 0 0 6px; font-size: var(--os-text-md, 15px); }
+.topic-fact p { margin: 0; line-height: 1.45; }
+.topic-fact__src { font-size: var(--os-text-sm, 12px); color: var(--os-muted); }
+.site-footer { padding: 24px 0; text-align: center; color: var(--os-muted); font-size: var(--os-text-sm, 13px); }
+
+@media (max-width: 620px) {
+  body.topic-page .topic-hero-banner,
+  body.topic-page .topic-hero-banner .event-hero-banner__img { max-height: 150px; }
+  .topic-panel { gap: 6px; }
+}
+
+/* Titelrutan i topichjälten: h1 och undertexten låg kant i kant ("Alpine
+   skiing80 ski resorts") - flexraden saknade gap. Bryter till två rader när
+   det är trångt. */
+body.topic-page .topic-hero-banner .hero-card--title { flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.75rem; }

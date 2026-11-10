@@ -41,37 +41,66 @@
   ],
   "areas": [
     {
-      "name": "City centre",
-      "text": "City centre is the most practical first base in Kelowna, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Big White village",
+      "text": "The village centre at 1,755 m, with the runs through it.",
+      "bestFor": "ski-in ski-out, families, first lift",
+      "vibe": "ski-in",
+      "bookingDestination": "Big White village, Kelowna, Canada",
+      "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+      "sourceLabel": "Big White: mountain statistics"
     },
     {
-      "name": "Old Town",
-      "text": "Old Town is the most practical first base in Kelowna, keeping main sights, restaurants and short local transfers close.",
-      "bestFor": "first visits, sightseeing, restaurants"
+      "name": "Gem Lake base",
+      "text": "The lower base at 1,508 m, where Around the World ends.",
+      "bestFor": "the longest run, quieter slopes",
+      "vibe": "quiet",
+      "bookingDestination": "Gem Lake base, Kelowna, Canada",
+      "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+      "sourceLabel": "Big White: mountain statistics"
     },
     {
-      "name": "Waterfront",
-      "text": "Waterfront suits travellers who want views, evening walks and a calmer base while still keeping central Kelowna reachable.",
-      "bestFor": "views, quieter evenings, walks"
-    },
-    {
-      "name": "Airport area",
-      "text": "Airport area works mainly for early departures, late arrivals or car pickup, not for a first Kelowna sightseeing base.",
-      "bestFor": "early flights, late arrivals, car pickup"
+      "name": "Kelowna",
+      "text": "The city in the Okanagan, with the nearest airport.",
+      "bestFor": "the airport, value, restaurants",
+      "vibe": "value",
+      "bookingDestination": "Kelowna, Kelowna, Canada",
+      "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+      "sourceLabel": "Big White: mountain statistics"
     }
   ],
   "airports": [
     {
       "name": "Kelowna International Airport",
-      "search": "Kelowna International Airport, Kelowna, Canada",
-      "text": "Kelowna International Airport is the main air gateway for Kelowna; compare transfer time with your hotel base before locking the first night."
+      "code": "YLW",
+      "search": "Kelowna International Airport",
+      "text": "Kelowna International Airport (YLW) is 11 km from Kelowna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 11
+    },
+    {
+      "name": "Penticton Airport",
+      "code": "YYF",
+      "search": "Penticton Airport",
+      "text": "Penticton Airport (YYF) is 47 km from Kelowna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 47
+    },
+    {
+      "name": "Kamloops John Moose Fulton Field Regional Airport",
+      "code": "YKA",
+      "search": "Kamloops John Moose Fulton Field Regional Airport",
+      "text": "Kamloops John Moose Fulton Field Regional Airport (YKA) is 114 km from Kelowna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 114
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Kelowna International Airport and central Kelowna before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Kelowna International Airport (YLW) is the nearest airport with scheduled service, 11 km from Kelowna by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "11 km straight line"
   },
   "bookingDestination": "Kelowna, Canada",
   "stayOverview": "Start with City centre for the easiest first Kelowna stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -228,5 +257,200 @@
       "text": "Dry powder and ghost-rimed trees at 1,750 metres, with lift-served biking in summer.",
       "source": "https://www.hellobc.com/"
     }
-  ]
+  ],
+  "ski": {
+    "operator": "Big White Ski Resort",
+    "operatorUrl": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+    "scale": "north-america",
+    "kpi": {
+      "lifts": {
+        "value": "17",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "verticalDrop": {
+        "value": "777 m (2,550 ft)",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "topElevation": {
+        "value": "2,319 m (7,608 ft)",
+        "note": "The Gem Lake base is 1,508 m and the Village Centre 1,755 m.",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "season": {
+        "value": "Late November to mid-April",
+        "note": "The most recent opening day the resort lists is 4 December 2025, for the 2025/26 season.",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "snowpark": {
+        "value": "Yes, TELUS Park with a skier and boarder cross course",
+        "note": "The resort describes beginner-to-intermediate and intermediate-to-advanced parks without giving a count.",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "pistes": {
+        "value": "119 designated trails across 105 km",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "baseElevation": {
+        "value": "1,508 m at Gem Lake",
+        "note": "4,948 ft. The Village Centre sits at 1,755 m and the summit at 2,319 m.",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "longestRun": {
+        "value": "7.2 km",
+        "note": "Around the World, from the Alpine T-Bar at the top down to the Gem Lake base via Whitefoot Trail, Powder Bowl, Blue Sapphire and Ogo Slow.",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      "dayPass": {
+        "unannounced": "No adult day rate is published on the mountain statistics page.",
+        "checkedAt": "2026-10-25",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      }
+    },
+    "facts": [
+      {
+        "label": "Vertical drop",
+        "value": "777 m (2,550 ft)",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Trails",
+        "value": "119 designated trails across 105 km (65 miles) of marked terrain",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Resort area",
+        "value": "7,759 acres (3,140 ha) in total, of which 2,834 acres are patrolled",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Bowls and glades",
+        "value": "1,525 acres",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Groomed",
+        "value": "905 acres",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Annual snowfall",
+        "value": "750 cm (25 ft) on average",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Longest run",
+        "value": "Around the World, 7.2 km (4.5 miles), from the Alpine T-Bar top to the Gem Lake base",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Nordic trails",
+        "value": "over 25 km",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Alpine bowls and glades",
+        "value": "618 hectares - 1,525 acres",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Night skiing",
+        "value": "15 hectares, which the resort calls the largest night skiing area in Western Canada",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      },
+      {
+        "label": "Season, in the operator's words",
+        "value": "Late November through mid-April; no dated season is published",
+        "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+        "sourceLabel": "Big White: mountain statistics"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "54% of the terrain is graded intermediate, and TELUS Park has beginner-to-intermediate progression.",
+            "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+            "sourceLabel": "Big White: mountain statistics"
+          }
+        ]
+      },
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "1,525 acres of alpine bowls and gladed terrain, and 6% graded extreme.",
+            "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+            "sourceLabel": "Big White: mountain statistics"
+          },
+          {
+            "text": "750 cm of snow a year on average.",
+            "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+            "sourceLabel": "Big White: mountain statistics"
+          }
+        ]
+      }
+    ],
+    "unannounced": [],
+    "skiEvents": [],
+    "pisteDistribution": {
+      "scale": "north-america",
+      "unit": "percent",
+      "label": "Terrain by grade",
+      "note": "The resort publishes the split in four grades across its 119 designated trails.",
+      "source": "https://www.bigwhite.com/explore/mountain-info/mountain-statistics",
+      "sourceLabel": "Big White: mountain statistics",
+      "series": [
+        {
+          "name": "Big White",
+          "total": 100,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 18
+            },
+            {
+              "grade": "blue",
+              "label": "Intermediate",
+              "count": 54
+            },
+            {
+              "grade": "black",
+              "label": "Expert",
+              "count": 22
+            },
+            {
+              "grade": "double",
+              "label": "Extreme",
+              "count": 6
+            }
+          ],
+          "graded": 100,
+          "ungraded": 0
+        }
+      ]
+    }
+  }
 }

@@ -1,0 +1,279 @@
+{
+  "name": "Tignes",
+  "slug": "tignes",
+  "countrySlug": "france",
+  "countryName": "France",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Savoie",
+  "coordinates": {
+    "lat": 45.49604,
+    "lon": 6.92463
+  },
+  "timezone": "Europe/Paris",
+  "population": "2385",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Tignes",
+    "matchedCountry": "France",
+    "matchedAdmin1": "Auvergne-Rhône-Alpes"
+  },
+  "seo": {
+    "title": "Tignes ski resort guide",
+    "description": "300 km of pistes from 1,550 to 3,456 metres, with a 1,400-metre descent off the Grande Motte glacier.",
+    "twitterDescription": "300 km of pistes and a glacier at 3,456 metres.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Tignes in Savoie."
+  },
+  "h1": "Tignes ski resort, stays & events guide",
+  "heroText": "Tignes shares its 300 kilometres of pistes with Val d'Isère across the ridge, and what it keeps for itself is the Grande Motte: a cable car to 3,456 metres on the glacier, and a descent from there to Val Claret that drops 1,400 vertical metres with your skis on the whole way. The area runs down to 1,550 metres at Les Brévières, and opens progressively from 21 November 2026.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Savoie",
+      "note": "France"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Paris",
+      "note": "local time"
+    },
+    {
+      "label": "Pistes",
+      "value": "300 km",
+      "note": "with Val d'Isère"
+    }
+  ],
+  "bookingDestination": "Tignes, France",
+  "stayOverview": "Tignes is several villages at different heights: Val Claret highest at the foot of the Grande Motte, Tignes le Lac by the water, and Les Brévières and Les Boisses down at the dam.",
+  "hotelIntro": "Book against high season. Val Claret is the one for the glacier; Les Brévières keeps the old village feel.",
+  "rentalCars": "Tignes is above Bourg-Saint-Maurice at the head of the Tarentaise, about three hours from Geneva.",
+  "sources": [
+    {
+      "label": "Tignes: le domaine skiable",
+      "url": "https://www.tignes.net/ski/domaine-skiable",
+      "usedFor": "pistes, altitude range"
+    },
+    {
+      "label": "Tignes: le ski en hiver",
+      "url": "https://www.tignes.net/ski/ski-hiver",
+      "usedFor": "the Grande Motte, the descent, the parks, the opening"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-27",
+  "travelTips": [
+    {
+      "title": "The Grande Motte",
+      "text": "A cable car to 3,456 metres on the glacier.",
+      "source": "https://www.tignes.net/ski/ski-hiver",
+      "sourceLabel": "Tignes: le ski en hiver"
+    },
+    {
+      "title": "1,400 metres down",
+      "text": "From the glacier to Val Claret, skis on the whole way.",
+      "source": "https://www.tignes.net/ski/ski-hiver",
+      "sourceLabel": "Tignes: le ski en hiver"
+    },
+    {
+      "title": "Opening",
+      "text": "Progressive from 21 November 2026.",
+      "source": "https://www.tignes.net/ski/ski-hiver",
+      "sourceLabel": "Tignes: le ski en hiver"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The Grande Motte glacier",
+      "text": "The top of the ski area at 3,456 metres.",
+      "source": "https://www.tignes.net/ski/ski-hiver",
+      "sourceLabel": "Tignes: le ski en hiver"
+    },
+    {
+      "title": "Linked with Val d'Isère",
+      "text": "300 kilometres of pistes shared across the ridge.",
+      "source": "https://www.tignes.net/ski/domaine-skiable",
+      "sourceLabel": "Tignes: le domaine skiable"
+    },
+    {
+      "title": "Two snowparks",
+      "text": "One on each side of the linked area, plus a boardercross on both.",
+      "source": "https://www.tignes.net/ski/ski-hiver",
+      "sourceLabel": "Tignes: le ski en hiver"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "ski": {
+    "operator": "Tignes",
+    "operatorUrl": "https://www.tignes.net/ski/domaine-skiable",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "71",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      "verticalDrop": {
+        "unannounced": "The operator states 1,400 m of vertical for the single descent from the Grande Motte glacier to Val Claret, but publishes no vertical drop for the ski area.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.tignes.net/ski/ski-hiver",
+        "sourceLabel": "Tignes: le ski en hiver"
+      },
+      "topElevation": {
+        "value": "3,456 m",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      "season": {
+        "value": "12 December 2026 to 23 April 2027",
+        "note": "The validity of the lift company's public winter rates.",
+        "source": "https://public.tignes.net/TIGNES.NET/TARIFS/TARIFS_FORFAITS_HIVER.pdf",
+        "sourceLabel": "Tignes: public ski pass rates, winter 2026-2027"
+      },
+      "snowpark": {
+        "value": "2 snowparks",
+        "note": "One in Tignes and one in Val d'Isère, plus a boardercross on each side and the Gliss'park at Tignes le Lac.",
+        "source": "https://www.tignes.net/ski/ski-hiver",
+        "sourceLabel": "Tignes: le ski en hiver"
+      },
+      "pistes": {
+        "value": "300 km across the linked Tignes - Val d'Isère area",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      "baseElevation": {
+        "value": "1,550 m",
+        "note": "The operator's figures give a low point of 1,550 m and a high point of 3,456 m; its own intro text rounds the top to 3,450 m.",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      "longestRun": {
+        "unannounced": "The operator publishes the altitude range, 300 km of marked pistes and the lift count, but names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      "dayPass": {
+        "value": "EUR 78.00 for an adult",
+        "note": "One day on the Tignes-Val d'Isère area, public rate for winter 2026/27. A Tignes-only day is EUR 70.00, an afternoon EUR 63.00, and the winter season pass EUR 1,130.",
+        "source": "https://public.tignes.net/TIGNES.NET/TARIFS/TARIFS_FORFAITS_HIVER.pdf",
+        "sourceLabel": "Tignes: public ski pass rates, winter 2026-2027"
+      }
+    },
+    "facts": [
+      {
+        "label": "Altitude",
+        "value": "1,550 m to 3,450 m",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      },
+      {
+        "label": "The glacier descent",
+        "value": "From the Grande Motte glacier at 3,456 m down to Val Claret, 1,400 m of vertical, skis on all the way back to the village",
+        "source": "https://www.tignes.net/ski/ski-hiver",
+        "sourceLabel": "Tignes: le ski en hiver"
+      },
+      {
+        "label": "Free sledging",
+        "value": "4 pistes for children at Le Lac",
+        "source": "https://www.tignes.net/ski/ski-hiver",
+        "sourceLabel": "Tignes: le ski en hiver"
+      },
+      {
+        "label": "Stadiums",
+        "value": "A slalom stadium and a mogul stadium",
+        "source": "https://www.tignes.net/ski/ski-hiver",
+        "sourceLabel": "Tignes: le ski en hiver"
+      }
+    ],
+    "profile": [
+      {
+        "kind": "advanced",
+        "label": "Strong skiers",
+        "facts": [
+          {
+            "text": "The Grande Motte glacier tops out at 3,456 m, and the descent to Val Claret drops 1,400 vertical metres.",
+            "source": "https://www.tignes.net/ski/ski-hiver",
+            "sourceLabel": "Tignes: le ski en hiver"
+          }
+        ]
+      },
+      {
+        "kind": "freestyle",
+        "label": "Park riders",
+        "facts": [
+          {
+            "text": "Two snowparks on the linked area, a boardercross on each side and the Gliss'park at Tignes le Lac.",
+            "source": "https://www.tignes.net/ski/ski-hiver",
+            "sourceLabel": "Tignes: le ski en hiver"
+          }
+        ]
+      },
+      {
+        "kind": "family",
+        "label": "Families",
+        "facts": [
+          {
+            "text": "Four free sledging pistes for children at Le Lac, and a themed fun run at Val Claret.",
+            "source": "https://www.tignes.net/ski/ski-hiver",
+            "sourceLabel": "Tignes: le ski en hiver"
+          }
+        ]
+      }
+    ],
+    "unannounced": [
+      {
+        "field": "pisteDistribution",
+        "checkedAt": "2026-10-27",
+        "statement": "Tignes publishes 300 km for the linked area but no split by difficulty.",
+        "source": "https://www.tignes.net/ski/domaine-skiable",
+        "sourceLabel": "Tignes: le domaine skiable"
+      }
+    ],
+    "skiEvents": []
+  },
+  "airports": [
+    {
+      "name": "Lyon Saint-Exupéry Airport",
+      "code": "LYS",
+      "search": "Lyon Saint-Exupéry Airport",
+      "text": "Lyon Saint-Exupéry Airport (LYS) is 145 km from Tignes by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 145
+    },
+    {
+      "name": "Annecy Meythet airport",
+      "code": "NCY",
+      "search": "Annecy Meythet airport",
+      "text": "Annecy Meythet airport (NCY) is 80 km from Tignes by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 80
+    },
+    {
+      "name": "Chambéry Aix les Bains airport",
+      "code": "CMF",
+      "search": "Chambéry Aix les Bains airport",
+      "text": "Chambéry Aix les Bains airport (CMF) is 83 km from Tignes by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 83
+    }
+  ],
+  "airportTransfer": {
+    "value": "Lyon Saint-Exupéry Airport (LYS) is the nearest airport with scheduled service, 145 km from Tignes by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "145 km straight line"
+  }
+}

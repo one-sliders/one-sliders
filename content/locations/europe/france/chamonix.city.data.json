@@ -1,0 +1,375 @@
+{
+  "name": "Chamonix",
+  "slug": "chamonix",
+  "countrySlug": "france",
+  "countryName": "France",
+  "continent": "europe",
+  "continentName": "Europe",
+  "region": "Haute-Savoie",
+  "coordinates": {
+    "lat": 45.92375,
+    "lon": 6.86933
+  },
+  "timezone": "Europe/Paris",
+  "population": "10614",
+  "coordinateSource": {
+    "label": "Open-Meteo Geocoding API",
+    "matchedName": "Chamonix-Mont-Blanc",
+    "matchedCountry": "France",
+    "matchedAdmin1": "Auvergne-Rhône-Alpes"
+  },
+  "seo": {
+    "title": "Chamonix ski resort guide",
+    "description": "A valley of separate ski sectors under Mont Blanc, from Brévent at 2,525 m to the Aiguille du Midi cable car at 3,842 m.",
+    "twitterDescription": "Separate sectors under Mont Blanc, up to 3,842 metres.",
+    "webpageDescription": "Ski facts, where to stay and how to get to Chamonix in Haute-Savoie."
+  },
+  "h1": "Chamonix ski resort, stays & events guide",
+  "heroText": "Chamonix is not one linked mountain but a valley of separate sectors, each with its own cable car: Brévent at 2,525 metres, Flégère at 2,396, Balme at 2,270 above Le Tour and Vallorcine, and Grands Montets at 2,765 above Argentière. Over all of them the Aiguille du Midi climbs to 3,842 metres, the starting point for the off-piste descents the valley is known for.",
+  "kpis": [
+    {
+      "label": "Region",
+      "value": "Haute-Savoie",
+      "note": "France"
+    },
+    {
+      "label": "Time zone",
+      "value": "Europe/Paris",
+      "note": "local time"
+    },
+    {
+      "label": "Aiguille du Midi",
+      "value": "3,842 m",
+      "note": "cable car"
+    }
+  ],
+  "bookingDestination": "Chamonix, France",
+  "stayOverview": "The town sits in the valley floor under Mont Blanc, with Brévent and the Aiguille du Midi leaving from its edges. Argentière is the village up the valley under Grands Montets; Les Houches is down the other way.",
+  "hotelIntro": "Book against high season. Chamonix town is the one with the life; Argentière and Les Houches sit under their own mountains.",
+  "rentalCars": "Chamonix is at the French mouth of the Mont Blanc tunnel, about an hour from Geneva.",
+  "sources": [
+    {
+      "label": "Mont-Blanc Natural Resort: annual openings",
+      "url": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "usedFor": "the sectors and their altitudes, the Grands Montets closure"
+    },
+    {
+      "label": "Mont-Blanc Natural Resort",
+      "url": "https://www.montblancnaturalresort.com/en/",
+      "usedFor": "the resorts the operator runs"
+    },
+    {
+      "label": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "usedFor": "coordinates, timezone, elevation"
+    }
+  ],
+  "sourceFetchedAt": "2026-10-27",
+  "travelTips": [
+    {
+      "title": "Separate sectors",
+      "text": "The valley's mountains are not linked to each other by lift.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    },
+    {
+      "title": "Grands Montets is closed",
+      "text": "The operator announces a revival expected by the end of 2027.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    },
+    {
+      "title": "The Aiguille du Midi",
+      "text": "3,842 metres, and the way into the off-piste descents.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    }
+  ],
+  "highlights": [
+    {
+      "title": "The Aiguille du Midi",
+      "text": "A cable car to 3,842 metres above the valley floor.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    },
+    {
+      "title": "Montenvers - Mer de Glace",
+      "text": "A rack railway to the glacier at 1,913 metres.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    },
+    {
+      "title": "Brévent and Flégère",
+      "text": "The two sectors facing Mont Blanc, at 2,525 and 2,396 metres.",
+      "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+      "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+    }
+  ],
+  "weather": {
+    "source": "OneSlider shared weather module",
+    "dynamic": true
+  },
+  "events": [],
+  "topicLinks": [],
+  "nearby": [],
+  "depth": 5,
+  "ski": {
+    "operator": "Chamonix-Mont-Blanc",
+    "operatorUrl": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+    "scale": "europe",
+    "kpi": {
+      "lifts": {
+        "value": "2 cable cars, 7 gondolas, 14 chairlifts and 21 ski lifts",
+        "note": "The operator publishes the breakdown for the Chamonix Le Pass area but no total, and adding them up would be our arithmetic rather than its figure.",
+        "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+        "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass"
+      },
+      "verticalDrop": {
+        "unannounced": "No vertical drop is published for any of the Chamonix sectors.",
+        "checkedAt": "2026-10-27",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+        "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+      },
+      "topElevation": {
+        "value": "2,800 m",
+        "note": "The highest of the valley’s pisted sectors, at Grands Montets. Our figure, taken from the sector altitudes the operator publishes - it states none for the valley as a whole. The Aiguille du Midi reaches 3,842 m but is an excursion cable car serving off-piste, not a pisted sector.",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-des-grands-montets",
+        "sourceLabel": "Chamonix-Mont-Blanc: Grands Montets"
+      },
+      "season": {
+        "value": "28 November 2026 to 18 April 2027",
+        "note": "The Chamonix Le Pass period, which covers Grands Montets, Balme and Brévent/Flégère. Each sector runs its own dates; Grands Montets goes on to 2 May.",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+        "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+      },
+      "snowpark": {
+        "value": "Freestyle area at the Teleski 2000",
+        "note": "On the Brévent side: five rails and a giant airbag, with ESF instructors on hand.",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+        "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+      },
+      "pistes": {
+        "value": "98 km on the Chamonix Le Pass area",
+        "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+        "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass"
+      },
+      "baseElevation": {
+        "value": "1,000 m at Les Houches",
+        "note": "The lowest base the operator publishes for any Chamonix sector. Les Houches - Saint-Gervais runs 1,000 to 1,900 m; Grands Montets starts at 1,235 m. Our choice among the operator's own sector figures - it states no single base for the valley.",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-les-houches-saint-gervais",
+        "sourceLabel": "Chamonix-Mont-Blanc: Les Houches - Saint-Gervais"
+      },
+      "longestRun": {
+        "unannounced": "The lift company publishes each Chamonix sector's altitudes, lifts and piste kilometres separately - the valley is not one ski area - but no run length, and names no longest run.",
+        "checkedAt": "2026-10-31",
+        "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+        "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass"
+      },
+      "dayPass": {
+        "value": "EUR 49.00 to 61.20 for an adult",
+        "note": "The range the lift company publishes for a one-day Chamonix Le Pass across its three 2026/27 periods - 28 November to 18 December 2026, 19 December to 9 April 2027 and 10 April to 2 May 2027 - without saying which price belongs to which period. Le Pass covers Brévent-Flégère, Grands Montets and Balme.",
+        "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+        "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass"
+      }
+    },
+    "facts": [
+      {
+        "label": "Cumulative vertical",
+        "value": "24,308 m across the lift network",
+        "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+        "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass"
+      },
+      {
+        "label": "Montenvers - Mer de Glace",
+        "value": "1,913 m, the rack railway to the glacier",
+        "source": "https://www.montblancnaturalresort.com/en/annual-openings",
+        "sourceLabel": "Mont-Blanc Natural Resort: annual openings"
+      },
+      {
+        "label": "The Chamonix Le Pass",
+        "value": "Covers Grands Montets, Balme and Brévent/Flégère on one ticket; Les Houches - Saint-Gervais is a separate area",
+        "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+        "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+      }
+    ],
+    "profile": [],
+    "unannounced": [],
+    "skiEvents": [],
+    "sectors": [
+      {
+        "name": "Brévent - Flégère",
+        "summary": "28 Nov 2026 - 18 Apr 2027, topping out at 2,525 m",
+        "text": "The sunny side of the valley, facing Mont Blanc, bordering the nature reserve. Brévent is reached from the centre of Chamonix, Flégère by cable car from Les Praz three kilometres away.",
+        "rows": [
+          {
+            "label": "Freestyle",
+            "value": "Five rails and a giant airbag at the Teleski 2000, on the Brévent side",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+            "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+          },
+          {
+            "label": "Speed run",
+            "value": "The timed Chavanne speed piste, on the Flégère side",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+            "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+          },
+          {
+            "label": "Beginners",
+            "value": "The Savoy area at 1,877 m, at the foot of the resort",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-brevent-flegere",
+            "sourceLabel": "Chamonix-Mont-Blanc: the valley ski areas"
+          }
+        ]
+      },
+      {
+        "name": "Grands Montets",
+        "summary": "28 Nov 2026 - 2 May 2027, the valley’s longest season",
+        "text": "The operator calls it the mecca of skiing: vertiginous drops right beside the glaciers.",
+        "rows": [
+          {
+            "label": "Altitude",
+            "value": "1,235 to 2,800 m",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-des-grands-montets",
+            "sourceLabel": "Chamonix-Mont-Blanc: Grands Montets"
+          },
+          {
+            "label": "The new lift",
+            "value": "A detachable 3S gondola from Lognan to the summit, above 3,000 m",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-des-grands-montets",
+            "sourceLabel": "Chamonix-Mont-Blanc: Grands Montets"
+          }
+        ]
+      },
+      {
+        "name": "Balme - Vallorcine",
+        "summary": "12 Dec 2026 - 9 Apr 2027, up to 2,270 m",
+        "text": "The wild end of the valley at the Swiss border, reached from the old village of Le Tour - 11 km from Chamonix - and from Vallorcine.",
+        "rows": [
+          {
+            "label": "Getting up",
+            "value": "The Charamillon gondola from Le Tour, or Vallorcine’s own",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-de-balme-vallorcine",
+            "sourceLabel": "Chamonix-Mont-Blanc: Balme - Vallorcine"
+          }
+        ]
+      },
+      {
+        "name": "Les Houches - Saint-Gervais",
+        "summary": "19 Dec 2026 - 4 Apr 2027, 1,000 to 1,900 m",
+        "text": "The wooded, lower end of the valley, and the one the families use - though it also holds the World Cup downhill.",
+        "rows": [
+          {
+            "label": "The Verte des Houches",
+            "value": "The World Cup downhill the sector is known for",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-les-houches-saint-gervais",
+            "sourceLabel": "Chamonix-Mont-Blanc: Les Houches - Saint-Gervais"
+          },
+          {
+            "label": "Getting up",
+            "value": "The Bellevue cable car and the Prarion gondola",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-les-houches-saint-gervais",
+            "sourceLabel": "Chamonix-Mont-Blanc: Les Houches - Saint-Gervais"
+          },
+          {
+            "label": "Tramway du Mont-Blanc",
+            "value": "Climbs to 2,400 m from Saint-Gervais",
+            "source": "https://www.chamonix.com/a-voir-a-faire/sports-et-outdoor/le-ski-dans-la-vallee-de-chamonix-mont-blanc/domaines-skiables/domaine-skiable-les-houches-saint-gervais",
+            "sourceLabel": "Chamonix-Mont-Blanc: Les Houches - Saint-Gervais"
+          }
+        ]
+      },
+      {
+        "name": "Aiguille du Midi",
+        "summary": "3,842 m - excursion cable car, off-piste only",
+        "text": "Not a pisted sector but an excursion cable car, and the way into the off-piste descents the valley is known for.",
+        "rows": [
+          {
+            "label": "Closed for maintenance",
+            "value": "2 November to 18 December 2026",
+            "source": "https://www.chamonix.com/informations-remontees-mecaniques-en-temps-reel",
+            "sourceLabel": "Chamonix-Mont-Blanc: lifts in real time"
+          },
+          {
+            "label": "What it serves",
+            "value": "Off-piste descents, not marked pistes",
+            "source": "https://www.chamonix.com/informations-remontees-mecaniques-en-temps-reel",
+            "sourceLabel": "Chamonix-Mont-Blanc: lifts in real time"
+          }
+        ]
+      }
+    ],
+    "sectorsNote": "Chamonix is not one ski area but separate mountains with no lift between them, which is why the figures above are open: each mountain answers for itself.",
+    "pisteDistribution": {
+      "scale": "europe",
+      "unit": "slopes",
+      "label": "Slopes by grade",
+      "note": "For the Chamonix Le Pass area - Grands Montets, Balme and Brévent/Flégère. The operator publishes the split by count.",
+      "source": "https://domaineschamonix.montblancnaturalresort.com/en/ticketing/chamonix-lepass",
+      "sourceLabel": "Mont-Blanc Natural Resort: CHAMONIX Le Pass",
+      "series": [
+        {
+          "name": "Chamonix Le Pass",
+          "total": 87,
+          "grades": [
+            {
+              "grade": "green",
+              "label": "Beginner",
+              "count": 18
+            },
+            {
+              "grade": "blue",
+              "label": "Easy",
+              "count": 27
+            },
+            {
+              "grade": "red",
+              "label": "Intermediate",
+              "count": 28
+            },
+            {
+              "grade": "black",
+              "label": "Difficult",
+              "count": 14
+            }
+          ],
+          "graded": 87,
+          "ungraded": 0
+        }
+      ]
+    }
+  },
+  "airports": [
+    {
+      "name": "Lyon Saint-Exupéry Airport",
+      "code": "LYS",
+      "search": "Lyon Saint-Exupéry Airport",
+      "text": "Lyon Saint-Exupéry Airport (LYS) is 140 km from Chamonix by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 140
+    },
+    {
+      "name": "Annecy Meythet airport",
+      "code": "NCY",
+      "search": "Annecy Meythet airport",
+      "text": "Annecy Meythet airport (NCY) is 60 km from Chamonix by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 60
+    },
+    {
+      "name": "Chambéry Aix les Bains airport",
+      "code": "CMF",
+      "search": "Chambéry Aix les Bains airport",
+      "text": "Chambéry Aix les Bains airport (CMF) is 83 km from Chamonix by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 83
+    }
+  ],
+  "airportTransfer": {
+    "value": "Lyon Saint-Exupéry Airport (LYS) is the nearest airport with scheduled service, 140 km from Chamonix by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "140 km straight line"
+  }
+}

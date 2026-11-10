@@ -16,6 +16,19 @@
   --os-compare-green:#4f7a56;
   --os-compare-orange:#b46b3c;
   --os-scrim:       #06111c;
+  --os-home-rail-start: #f8fbff;
+  --os-fixed-white: #ffffff;
+  --os-home-badge-bg: #eaf1ff;
+  --os-home-kpi-events-bg: #efe9ff;
+  --os-home-kpi-places-bg: #e7f8ee;
+  --os-home-kpi-topics-bg: #fff3d8;
+  --os-home-info-bg: #dbeafe;
+  --os-home-info-ink: #082f49;
+  --os-home-rail-end: var(--os-surface);
+  --os-control-bg: var(--os-surface);
+  --os-control-ink: var(--os-ink);
+  --os-control-active-bg: var(--os-primary);
+  --os-control-active-ink: var(--os-surface);
   --os-transparent: transparent;
   --os-font-system: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
@@ -36,6 +49,18 @@
   --os-wellness-colour: var(--c-wellness);
   --os-culture-colour: var(--c-culture);
   --os-card-accent: var(--os-accent);
+
+  /* Pistgrader. Aliasade till jamforelsepaletten sa att morkt lage foljer med
+     av sig sjalvt. Grinden ar att en grad ALLTID har sin egen fargs namn i
+     etiketten: regionskalorna skiljer (Europa gron/bla/rod/svart,
+     Nordamerika gron/bla/svart/dubbelsvart) och en bla i Frankrike ar inte
+     en bla i Colorado. Fargen illustrerar, etiketten sager. */
+  --ski-green:  var(--os-compare-green);
+  --ski-blue:   var(--os-compare-blue);
+  --ski-red:    var(--os-red);
+  --ski-black:  var(--os-ink);
+  --ski-double: var(--os-purple);
+  --ski-extreme: var(--os-red);
 
   /* Nav chrome tokens — match harmonized palette (light/white nav) */
   --os-chrome-bg:    color-mix(in srgb, var(--os-surface) 96%, transparent);
@@ -77,6 +102,14 @@
     --os-primary-soft: #172635;
     --os-accent:  #6fb39a;
     --os-scrim:   #06111c;
+    --os-home-rail-start: var(--os-soft);
+    --os-home-badge-bg: var(--os-soft);
+    --os-home-kpi-events-bg: var(--os-soft);
+    --os-home-kpi-places-bg: var(--os-soft);
+    --os-home-kpi-topics-bg: var(--os-soft);
+    --os-home-info-bg: var(--os-soft);
+    --os-home-info-ink: var(--os-ink);
+    --os-home-rail-end: var(--os-surface);
     /* Anders 2026-10-16: kategori- och temafarger anvands som TEXT (fliketiketter,
        upplagerubriker, vadertemperatur). De ljusa vardena ger 2.5:1 mot mork yta.
        Ljusare varianter i mork lage, samma kulor. */
