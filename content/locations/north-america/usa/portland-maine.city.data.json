@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Portland, Maine travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Portland, Maine took its name in 1786, after the Isle of Portland off the coast of Dorset, and became the capital of the new state of Maine in 1820. The Old Port, the Eastern Promenade, the Portland Museum of Art, Portland Head Light and the Casco Bay Islands are the places to see.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Portland, Maine International Airport",
-      "search": "Portland, Maine International Airport, Portland, Maine, USA",
-      "text": "Portland, Maine International Airport is the main air gateway for Portland, Maine; compare transfer time with your hotel base before locking the first night."
+      "name": "Portland International Jetport",
+      "code": "PWM",
+      "search": "Portland International Jetport",
+      "text": "Portland International Jetport (PWM) is 4 km from Portland, Maine by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 4
+    },
+    {
+      "name": "Portsmouth International Airport at Pease",
+      "code": "PSM",
+      "search": "Portsmouth International Airport at Pease",
+      "text": "Portsmouth International Airport at Pease (PSM) is 79 km from Portland, Maine by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 79
+    },
+    {
+      "name": "Augusta State Airport",
+      "code": "AUG",
+      "search": "Augusta State Airport",
+      "text": "Augusta State Airport (AUG) is 82 km from Portland, Maine by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 82
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Portland, Maine International Airport and central Portland, Maine before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Portland International Jetport (PWM) is the nearest airport with scheduled service, 4 km from Portland, Maine by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "4 km straight line"
   },
   "bookingDestination": "Portland, Maine, USA",
   "stayOverview": "Start with City centre for the easiest first Portland, Maine stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Portland, Maine International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Portland International Jetport (PWM), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +155,108 @@
   "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
   "history": [
     {
-      "label": "580",
-      "text": "The University of Southern Maine is improving its Portland campus with a 580-bed dormitory, student center, and an arts center."
-    },
-    {
       "label": "1623",
-      "text": "The first European settler was Christopher Levett, an English naval captain granted 6,000 acres (9.4 sq mi; 2,400 ha) in 1623 to found a settlement in Casco Bay."
+      "text": "The first European settler was Christopher Levett, an English naval captain granted 6,000 acres (9.4 sq mi; 2,400 ha) in 1623 to found a settlement in Casco Bay.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1676",
-      "text": "In 1676, the village was destroyed by the Abenaki during King Philip's War."
+      "text": "In 1676, the village was destroyed by the Abenaki during King Philip's War.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1690",
-      "text": "During King William's War, a raiding party of French and their native allies attacked and largely destroyed it again in the Battle of Fort Loyal (1690)."
+      "text": "During King William's War, a raiding party of French and their native allies attacked and largely destroyed it again in the Battle of Fort Loyal (1690).",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1786",
-      "text": "In 1786, the citizens of Falmouth formed a separate town in Falmouth Neck and named it Portland, after the Isle of Portland off the coast of Dorset, England."
+      "text": "In 1786, the citizens of Falmouth formed a separate town in Falmouth Neck and named it Portland, after the Isle of Portland off the coast of Dorset, England.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1809",
-      "text": "Portland's economy was greatly stressed by the Embargo Act of 1807 (prohibition of trade with the British), which ended in 1809, and the War of 1812, which ended in 1815."
+      "text": "Portland's economy was greatly stressed by the Embargo Act of 1807 (prohibition of trade with the British), which ended in 1809, and the War of 1812, which ended in 1815.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1820",
-      "text": "In 1820, Maine was established as a state with Portland as its capital."
+      "text": "In 1820, Maine was established as a state with Portland as its capital.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1832",
-      "text": "In 1832, the capital was moved north and east to Augusta."
+      "text": "In 1832, the capital was moved north and east to Augusta.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
+    },
+    {
+      "label": "19th century",
+      "text": "The Portland Company, located on Fore Street, manufactured more than six hundred 19th-century steam locomotives, as well as engines for trains and boats, fire engines and other railroad transportation equipment.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1851",
-      "text": "In 1851, Maine led the nation by passing the first state law prohibiting the sale of alcohol except for \"medicinal, mechanical or manufacturing purposes.\" The law subsequently became known as the Maine law, as."
+      "text": "In 1851, Maine led the nation by passing the first state law prohibiting the sale of alcohol except for \"medicinal, mechanical or manufacturing purposes.\"",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1853",
-      "text": "In 1853, upon completion of the Grand Trunk Railway to Montreal, Portland became the primary ice-free winter seaport for Canadian exports."
+      "text": "In 1853, upon completion of the Grand Trunk Railway to Montreal, Portland became the primary ice-free winter seaport for Canadian exports.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1866",
-      "text": "The 1866 Great Fire of Portland, Maine, on July 4, 1866, ignited during the Independence Day celebration, destroyed most of the commercial buildings in the city, half the churches and hundreds of homes."
+      "text": "The 1866 Great Fire of Portland, Maine, on July 4, 1866, ignited during the Independence Day celebration, destroyed most of the commercial buildings in the city, half the churches and hundreds of homes.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1899",
-      "text": "By act of the Maine Legislature in 1899, Portland annexed the city of Deering, despite a vote by Deering residents rejecting the motion, thereby greatly increasing the size of the city and opening areas."
+      "text": "By act of the Maine Legislature in 1899, Portland annexed the city of Deering, despite a vote by Deering residents rejecting the motion, thereby greatly increasing the size of the city and opening areas for development beyond the peninsula.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     },
     {
       "label": "1971",
-      "text": "The construction of The Maine Mall, an indoor shopping center established in South Portland in 1971, economically depressed downtown Portland."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Portland Company, located on Fore Street, manufactured more than six hundred 19th-century steam locomotives, as well as engines for trains and boats, fire engines and other railroad transportation equipment."
+      "text": "The construction of The Maine Mall, an indoor shopping center established in South Portland in 1971, economically depressed downtown Portland.",
+      "source": {
+        "label": "Wikipedia: Portland, Maine",
+        "url": "https://en.wikipedia.org/w/index.php?title=Portland%2C_Maine&oldid=1384600014"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Portland%2C_Maine",
@@ -228,5 +298,10 @@
       "text": "A shipbuilding village turned resort, with Walker's Point out on the rocks beyond the harbour.",
       "source": "https://www.visitmaine.com/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

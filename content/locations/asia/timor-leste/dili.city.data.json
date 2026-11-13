@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Dili travel, stays and events",
-    "description": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Dili International Airport and nearby event links.",
-    "twitterDescription": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Dili International Airport and nearby event links.",
-    "webpageDescription": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Dili International Airport and nearby event links."
+    "description": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Presidente Nicolau Lobato International Airport (DIL) and nearby event links.",
+    "twitterDescription": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Presidente Nicolau Lobato International Airport (DIL) and nearby event links.",
+    "webpageDescription": "Plan Dili around Cristo Rei of Dili, Resistance Museum, Presidente Nicolau Lobato International Airport (DIL) and nearby event links."
   },
   "region": "Capital city in Timor-Leste",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Dili travel, stays & events guide",
-  "heroText": "Dili works best as a base in Timor-Leste when you anchor days around Cristo Rei of Dili, Resistance Museum and Tais Market. Use those sights to understand the city's history, street life and visitor rhythm. Dili International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Dili works best as a base in Timor-Leste when you anchor days around Cristo Rei of Dili, Resistance Museum and Tais Market. Use those sights to understand the city's history, street life and visitor rhythm. Presidente Nicolau Lobato International Airport (DIL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Dili International Airport",
-      "search": "Dili International Airport, Dili, Timor-Leste",
-      "text": "Dili International Airport is the main air gateway for Dili; compare transfer time with your hotel base before locking the first night."
+      "name": "Presidente Nicolau Lobato International Airport",
+      "code": "DIL",
+      "search": "Presidente Nicolau Lobato International Airport",
+      "text": "Presidente Nicolau Lobato International Airport (DIL) is 6 km from Dili by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Commander in Chief of FALINTIL, Kay Rala Xanana Gusmão, International Airport",
+      "code": "UAI",
+      "search": "Commander in Chief of FALINTIL, Kay Rala Xanana Gusmão, International Airport",
+      "text": "Commander in Chief of FALINTIL, Kay Rala Xanana Gusmão, International Airport (UAI) is 88 km from Dili by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 88
+    },
+    {
+      "name": "Baucau Airport",
+      "code": "BCH",
+      "search": "Baucau Airport",
+      "text": "Baucau Airport (BCH) is 91 km from Dili by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 91
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Dili International Airport and central Dili before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Presidente Nicolau Lobato International Airport (DIL) is the nearest airport with scheduled service, 6 km from Dili by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Dili, Timor-Leste",
   "stayOverview": "Start with City centre for the easiest first Dili stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Dili International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Presidente Nicolau Lobato International Airport (DIL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -153,59 +175,91 @@
   "history": [
     {
       "label": "1520s",
-      "text": "Portuguese and Spanish interest in the island increased in the 1520s, with regular trade established by 1524."
+      "text": "Portuguese and Spanish interest in the island increased in the 1520s, with regular trade established by 1524.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1769",
-      "text": "In 1769, as Lifau came under the increasing influence of powerful local families collectively known as the Topasses, the Portuguese governor António José Teles de Meneses moved the administration and 1,200 people east to."
+      "text": "In 1769, as Lifau came under the increasing influence of powerful local families collectively known as the Topasses, the Portuguese governor António José Teles de Meneses moved the administration and 1,200 people east to establish a new capital.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1834",
-      "text": "Significant construction was undertaken under governor José Maria Marques, who arrived in 1834 and rebuilt the settlement along a grid."
+      "text": "Significant construction was undertaken under governor José Maria Marques, who arrived in 1834 and rebuilt the settlement along a grid.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1844",
-      "text": "In 1844 Timor, along with Macau and Solor, was removed from the jurisdiction of Portuguese India, with the three areas becoming a new Portuguese province."
-    },
-    {
-      "label": "1850",
-      "text": "A few years later in 1850, Portuguese Timor was removed from the jurisdiction of the governor of Macau, before being returned to the jurisdiction of Portuguese India in 1856."
+      "text": "In 1844 Timor, along with Macau and Solor, was removed from the jurisdiction of Portuguese India, with the three areas becoming a new Portuguese province.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1933",
-      "text": "The main church was demolished in 1933, and a new cathedral opened in its place in 1937. (This cathedral was later destroyed by Allied bombing in the Second World War.) Four distinct residential districts."
+      "text": "The main church was demolished in 1933, and a new cathedral opened in its place in 1937.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1940",
-      "text": "As the administrative structures developed, Dili became part of the Dili municipality in 1940, the first municipal administration to be created."
+      "text": "As the administrative structures developed, Dili became part of the Dili municipality in 1940, the first municipal administration to be created.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1951",
-      "text": "Portuguese Timor became a full part of Following the initial post-war reconstruction of Dili's immediately critical infrastructure, an urban plan was developed in 1951 covering urban layout, road development, zoning, and building regulations."
-    },
-    {
-      "label": "1960s",
-      "text": "A 1960s hotel, Hotel Turismo, which had been a site of independence activities, was demolished in 2010 and rebuilt."
+      "text": "Portuguese Timor became a full part of Following the initial post-war reconstruction of Dili's immediately critical infrastructure, an urban plan was developed in 1951 covering urban layout, road development, zoning, and building regulations.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1963",
-      "text": "The Portuguese Overseas Organic Law of 1963 created the first Legislative Council of the territory, which was given some of the powers formerly held by the governor."
+      "text": "The Portuguese Overseas Organic Law of 1963 created the first Legislative Council of the territory, which was given some of the powers formerly held by the governor.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
-      "label": "1974",
-      "text": "The 1974 Carnation Revolution in Portugal created immediate change in East Timor, with new political parties forming with the goal of independence from Portugal."
+      "label": "1960s",
+      "text": "A 1960s hotel, Hotel Turismo, which had been a site of independence activities, was demolished in 2010 and rebuilt.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "1976",
-      "text": "On 17 July 1976, Indonesia annexed East Timor, which it designated its 27th province."
+      "text": "On 17 July 1976, Indonesia annexed East Timor, which it designated its 27th province.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     },
     {
       "label": "2009",
-      "text": "In 2009 the area around the Indonesian-built Integration Monument was redesignated as the 5 May Park, the date upon which it was agreed East Timor could hold its independence referendum."
-    },
-    {
-      "label": "Regional role",
-      "text": "Structures and monuments built during this time include the Immaculate Conception Cathedral, the Integration Statue commemorating the end of Portuguese rule, and the Cristo Rei of Dili."
+      "text": "In 2009 the area around the Indonesian-built Integration Monument was redesignated as the 5 May Park, the date upon which it was agreed East Timor could hold its independence referendum.",
+      "source": {
+        "label": "Wikipedia: Dili",
+        "url": "https://en.wikipedia.org/w/index.php?title=Dili&oldid=1381709153"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Dili",

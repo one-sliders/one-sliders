@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Helsingborg travel, stays & events guide",
-  "heroText": "Helsingborg works best as a base in Sweden when you anchor days around Karnan, Sofiero Palace and Dunkers kulturhus. Use those sights to understand the city's history, street life and visitor rhythm. Helsingborg International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Helsingborg works best as a base in Sweden when you anchor days around Karnan, Sofiero Palace and Dunkers kulturhus. Use those sights to understand the city's history, street life and visitor rhythm. Malmö Sturup Airport (MMX) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Helsingborg International Airport",
-      "search": "Helsingborg International Airport, Helsingborg, Sweden",
-      "text": "Helsingborg International Airport is the main air gateway for Helsingborg; compare transfer time with your hotel base before locking the first night."
+      "name": "Malmö Sturup Airport",
+      "code": "MMX",
+      "search": "Malmö Sturup Airport",
+      "text": "Malmö Sturup Airport (MMX) is 71 km from Helsingborg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 71
+    },
+    {
+      "name": "Ängelholm-Helsingborg Airport",
+      "code": "AGH",
+      "search": "Ängelholm-Helsingborg Airport",
+      "text": "Ängelholm-Helsingborg Airport (AGH) is 29 km from Helsingborg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 29
+    },
+    {
+      "name": "Halmstad Airport",
+      "code": "HAD",
+      "search": "Halmstad Airport",
+      "text": "Halmstad Airport (HAD) is 72 km from Helsingborg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 72
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Helsingborg International Airport and central Helsingborg before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Malmö Sturup Airport (MMX) is the nearest airport with scheduled service, 71 km from Helsingborg by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "71 km straight line"
   },
   "bookingDestination": "Helsingborg, Sweden",
   "stayOverview": "Start with City centre for the easiest first Helsingborg stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Helsingborg International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Malmö Sturup Airport (MMX), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -145,60 +167,76 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "1085",
-      "text": "It has been the site of permanent settlement officially since 21 May 1085."
-    },
-    {
       "label": "1429",
-      "text": "From 1429 Eric of Pomerania introduced the Sound Dues, a levy on all trading vessels passing through the sound between Helsingør and Helsingborg."
+      "text": "From 1429 Eric of Pomerania introduced the Sound Dues, a levy on all trading vessels passing through the sound between Helsingør and Helsingborg.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1658",
-      "text": "King Charles X Gustav of Sweden landed here on 5 March 1658 to take personal possession of the Scanian lands and was met by a delegation led by the bishop of the Diocese of."
+      "text": "King Charles X Gustav of Sweden landed here on 5 March 1658 to take personal possession of the Scanian lands and was met by a delegation led by the bishop of the Diocese of Lund, Peder Winstrup.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1710",
-      "text": "The last Danish attempt to regain Scania was in 1710, when 14,000 men landed on the shores near Helsingborg."
-    },
-    {
-      "label": "1770",
-      "text": "It took a long time to recover; even in 1770 the city had only 1,321 inhabitants and was still growing slowly."
+      "text": "The last Danish attempt to regain Scania was in 1710, when 14,000 men landed on the shores near Helsingborg.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1811",
-      "text": "On 20 October 1811, Jean-Baptiste Bernadotte, Marshal of France and crown prince-elect of Sweden (later King Charles XIV John) took his first step on Swedish soil in Helsingborg on his journey from Paris to."
+      "text": "On 20 October 1811, Jean-Baptiste Bernadotte, Marshal of France and crown prince-elect of Sweden (later King Charles XIV John) took his first step on Swedish soil in Helsingborg on his journey from Paris to Stockholm.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1903",
-      "text": "A tramway network was inaugurated in 1903 and closed down in 1967."
+      "text": "A tramway network was inaugurated in 1903 and closed down in 1967.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1906",
-      "text": "Following the Swedish orthography reform of 1906, the spelling of many place names in Sweden was modernized."
+      "text": "Following the Swedish orthography reform of 1906, the spelling of many place names in Sweden was modernized.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1912",
-      "text": "In 1912, it was decided to use the form Hälsingborg."
+      "text": "In 1912, it was decided to use the form Hälsingborg.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1943",
-      "text": "Adolf Hitler had ordered that all Danish Jews were to be arrested and deported to the concentration camps on Rosh HaShanah, the Jewish New Year which fell on 2 October 1943."
+      "text": "Adolf Hitler had ordered that all Danish Jews were to be arrested and deported to the concentration camps on Rosh HaShanah, the Jewish New Year which fell on 2 October 1943.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     },
     {
       "label": "1971",
-      "text": "In preparation for the local government reform in 1971, Hälsingborg city council proposed that the new, enlarged municipality should be spelled Helsingborg; this form was adopted by the government of Sweden from 1 January."
-    },
-    {
-      "label": "7200",
-      "text": "In the span of three nights, Danes had smuggled over 7200 Jews and 680 non-Jews (gentile family members of Jews or political activists) across the Øresund, to safety in Sweden, with one of the."
-    },
-    {
-      "label": "Modern city",
-      "text": "Helsingborg's geographical position at the narrowest part of Øresund made it very important for Denmark, at that time controlling both sides of that strait."
-    },
-    {
-      "label": "Regional role",
-      "text": "In World War II, Helsingborg was among the most important drop-off points for the rescue of Denmark's Jewish population during the Holocaust."
+      "text": "In preparation for the local government reform in 1971, Hälsingborg city council proposed that the new, enlarged municipality should be spelled Helsingborg; this form was adopted by the government of Sweden from 1 January 1971.",
+      "source": {
+        "label": "Wikipedia: Helsingborg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Helsingborg&oldid=1376147546"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Helsingborg",

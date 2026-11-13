@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Quebec City travel, stays & events guide",
-  "heroText": "Quebec City works best as a base in Canada when you anchor days around Old Quebec, Chateau Frontenac and Petit-Champlain. Use those sights to understand the city's history, street life and visitor rhythm. Quebec City International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Quebec City works best as a base in Canada when you anchor days around Old Quebec, Chateau Frontenac and Petit-Champlain. Use those sights to understand the city's history, street life and visitor rhythm. Quebec Jean Lesage International Airport (YQB) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,19 @@
   ],
   "airports": [
     {
-      "name": "Quebec City International Airport",
-      "search": "Quebec City International Airport, Quebec City, Canada",
-      "text": "Quebec City International Airport is the main air gateway for Quebec City; compare transfer time with your hotel base before locking the first night."
+      "name": "Quebec Jean Lesage International Airport",
+      "code": "YQB",
+      "search": "Quebec Jean Lesage International Airport",
+      "text": "Quebec Jean Lesage International Airport (YQB) is 14 km from Quebec City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 14
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Quebec City International Airport and central Quebec City before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Quebec Jean Lesage International Airport (YQB) is the nearest airport with scheduled service, 14 km from Quebec City by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "14 km straight line"
   },
   "bookingDestination": "Quebec City, Canada",
   "stayOverview": "Start with City centre for the easiest first Quebec City stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +88,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Quebec City International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Quebec Jean Lesage International Airport (YQB), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +138,59 @@
   "history": [
     {
       "label": "1500s",
-      "text": "French regime (1500s–1763) Quebec City is one of the oldest European settlements in North America and the only fortified city north of Mexico whose walls still exist."
-    },
-    {
-      "label": "1541",
-      "text": "It is home to the earliest known French settlement in North America, Fort Charlesbourg-Royal, established in 1541 by explorer Jacques Cartier with some 400 persons but abandoned less than a year later due to."
+      "text": "French regime (1500s–1763) Quebec City is one of the oldest European settlements in North America and the only fortified city north of Mexico whose walls still exist.",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "1608",
-      "text": "Quebec was founded by Samuel de Champlain, a French explorer and diplomat, on 3 July 1608, and at the site of a long abandoned St."
-    },
-    {
-      "label": "1759",
-      "text": "In that time many battles and sieges took place: the Battle of Beauport, a French victory (31 July 1759); the Battle of the Plains of Abraham, in which British troops under General James Wolfe."
-    },
-    {
-      "label": "1763",
-      "text": "Nearby inhabitants traded their farm surpluses and firewood for imported goods from France at the two city markets. British and Canadian rule (1763–present) During the American Revolution, revolutionary troops from the southern colonies assaulted."
-    },
-    {
-      "label": "1791",
-      "text": "It was then made the capital of Lower Canada by the Constitutional Act of 1791."
+      "text": "Quebec was founded by Samuel de Champlain, a French explorer and diplomat, on 3 July 1608, and at the site of a long abandoned St. Lawrence Iroquoian settlement called Stadacona.",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "1800s",
-      "text": "The city experienced an economic golden age in the 1800s, due to its favorable location on the Saint Lawrence River which gave rise to industries of wooden sailing ships manufacture, export of squared timber."
+      "text": "The city experienced an economic golden age in the 1800s, due to its favorable location on the Saint Lawrence River which gave rise to industries of wooden sailing ships manufacture, export of squared timber logs to Europe, as well as associated enterprises such as sawmills.",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "1841",
-      "text": "From 1841 to 1867, the capital of the Province of Canada rotated between Kingston, Montreal, Toronto, Ottawa and Quebec City (from 1851 to 1855 and from 1859 to 1865)."
+      "text": "From 1841 to 1867, the capital of the Province of Canada rotated between Kingston, Montreal, Toronto, Ottawa and Quebec City (from 1851 to 1855 and from 1859 to 1865).",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "1867",
-      "text": "In 1867, Queen Victoria chose Ottawa as the definite capital of the Dominion of Canada, while Quebec City was confirmed as the capital of the newly created province of Quebec."
+      "text": "In 1867, Queen Victoria chose Ottawa as the definite capital of the Dominion of Canada, while Quebec City was confirmed as the capital of the newly created province of Quebec.",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "1876",
-      "text": "Before the Royal Military College of Canada was established in 1876, the only French-speaking officer training school was the Quebec City School of Military Instruction, founded in 1864."
+      "text": "Before the Royal Military College of Canada was established in 1876, the only French-speaking officer training school was the Quebec City School of Military Instruction, founded in 1864.",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     },
     {
       "label": "2002",
-      "text": "The fort was at the mouth of the Rivière du Cap Rouge, in the suburban former town of Cap-Rouge (which merged into Quebec City in 2002)."
-    },
-    {
-      "label": "Regional role",
-      "text": "Although the Acadian settlement at Port-Royal was established three years earlier, Quebec came to be known as the cradle of North America's Francophone population."
-    },
-    {
-      "label": "Regional role",
-      "text": "The town was distinguished by its monumental architecture, fortifications, and affluent homes of masonry and shacks in the suburbs of Saint-Jean and Saint-Roch."
-    },
-    {
-      "label": "Regional role",
-      "text": "Contributing factors included the rise of steel-hulled steamships, the expansion of railroads at the expense of waterways for continental commerce; the depletion of forest resources near major rivers upstream of Québec City and in."
+      "text": "The fort was at the mouth of the Rivière du Cap Rouge, in the suburban former town of Cap-Rouge (which merged into Quebec City in 2002).",
+      "source": {
+        "label": "Wikipedia: Quebec City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Quebec_City&oldid=1384158588"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Quebec_City",

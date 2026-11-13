@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Apia travel, stays and events",
-    "description": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Apia International Airport and nearby event links.",
-    "twitterDescription": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Apia International Airport and nearby event links.",
-    "webpageDescription": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Apia International Airport and nearby event links."
+    "description": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Faleolo International Airport (APW) and nearby event links.",
+    "twitterDescription": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Faleolo International Airport (APW) and nearby event links.",
+    "webpageDescription": "Plan Apia around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve, Faleolo International Airport (APW) and nearby event links."
   },
   "region": "Capital city in Samoa",
   "population": "tba",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Apia travel, stays & events guide",
-  "heroText": "Apia works best as a base in Samoa when you anchor days around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve and Apia Market. Use those sights to understand the city's history, street life and visitor rhythm. Apia International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Apia works best as a base in Samoa when you anchor days around Robert Louis Stevenson Museum, Palolo Deep Marine Reserve and Apia Market. Use those sights to understand the city's history, street life and visitor rhythm. Faleolo International Airport (APW) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Apia International Airport",
-      "search": "Apia International Airport, Apia, Samoa",
-      "text": "Apia International Airport is the main air gateway for Apia; compare transfer time with your hotel base before locking the first night."
+      "name": "Faleolo International Airport",
+      "code": "APW",
+      "search": "Faleolo International Airport",
+      "text": "Faleolo International Airport (APW) is 26 km from Apia by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 26
+    },
+    {
+      "name": "Pago Pago International Airport",
+      "code": "PPG",
+      "search": "Pago Pago International Airport",
+      "text": "Pago Pago International Airport (PPG) is 127 km from Apia by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 127
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Apia International Airport and central Apia before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Faleolo International Airport (APW) is the nearest airport with scheduled service, 26 km from Apia by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "26 km straight line"
   },
   "bookingDestination": "Apia, Samoa",
   "stayOverview": "Start with City centre for the easiest first Apia stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Apia International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Faleolo International Airport (APW), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -146,59 +159,83 @@
   "history": [
     {
       "label": "1800",
-      "text": "Apia was originally a small village (the 1800 population was 304), from which the country's capital took its name."
+      "text": "Apia was originally a small village (the 1800 population was 304), from which the country's capital took its name.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1850s",
-      "text": "The modern city of Apia was founded in the 1850s, and it has been the official capital of Samoa since 1959."
+      "text": "The modern city of Apia was founded in the 1850s, and it has been the official capital of Samoa since 1959.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1889",
-      "text": "The harbour was the site of a notorious 15 March 1889 naval standoff in which seven ships — from Germany, the US, and Britain — refused to leave the harbour, even though a typhoon."
+      "text": "The harbour was the site of a notorious 15 March 1889 naval standoff in which seven ships — from Germany, the US, and Britain — refused to leave the harbour, even though a typhoon was clearly approaching, lest the first one to move lose face.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1898",
-      "text": "Seumanutafa Pogai was high chief until his death in 1898."
+      "text": "Seumanutafa Pogai was high chief until his death in 1898.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1900",
-      "text": "Western Samoa was ruled by Germany as German Samoa from 1900 to 1914, with Apia as its capital."
+      "text": "Western Samoa was ruled by Germany as German Samoa from 1900 to 1914, with Apia as its capital.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1900s",
-      "text": "The country underwent a struggle for political independence in the early 1900s, organised under the aegis of the national Mau movement."
+      "text": "The country underwent a struggle for political independence in the early 1900s, organised under the aegis of the national Mau movement.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1914",
-      "text": "In August 1914, the Occupation of German Samoa by an expeditionary force from New Zealand began."
+      "text": "In August 1914, the Occupation of German Samoa by an expeditionary force from New Zealand began.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1920",
-      "text": "New Zealand governed the islands, (as the Western Samoa Trust Territory) from 1920 until Samoan independence in 1962 – first under a League of Nations Class C Mandate and then, after 1945, as a."
+      "text": "New Zealand governed the islands (as the Western Samoa Trust Territory) from 1920 until Samoan independence in 1962 – first under a League of Nations Class C Mandate and then, after 1945, as a United Nations Trust Territory.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1929",
-      "text": "On what became known as \"Black Saturday\" (28 December 1929), during a peaceful Mau gathering in the town, the New Zealand constabulary killed the paramount chief Tupua Tamasese Lealofi III."
+      "text": "On what became known as \"Black Saturday\" (28 December 1929), during a peaceful Mau gathering in the town, the New Zealand constabulary killed the paramount chief Tupua Tamasese Lealofi III.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     },
     {
       "label": "1941",
-      "text": "During World War II the United States Navy built and operated Naval Base Upolu from 1941 to 1944."
-    },
-    {
-      "label": "Growth",
-      "text": "Apia Village still exists within the larger modern capital of Apia, which has grown into a sprawling urban area that encompasses many villages."
-    },
-    {
-      "label": "Modern city",
-      "text": "Like every other settlement in the country, Apia Village has its own matai (leaders) and fa'alupega (genealogy and customary greetings) according to fa'a Samoa."
-    },
-    {
-      "label": "Regional role",
-      "text": "All the ships sank or were damaged beyond repair, except for the British cruiser Calliope, which managed to leave port, travelling at a rate of one mile per hour, and was able to ride."
-    },
-    {
-      "label": "Regional role",
-      "text": "During this period, the streets of Apia were the site of non-violent protests and marches, in the course of which many Samoans were arrested."
+      "text": "During World War II the United States Navy built and operated Naval Base Upolu from 1941 to 1944.",
+      "source": {
+        "label": "Wikipedia: Apia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Apia&oldid=1375634293"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Apia",

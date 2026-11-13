@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "New Orleans travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "New Orleans was founded in the spring of 1718 by the French Mississippi Company, and the French Quarter, Jackson Square and Bourbon Street still carry that past. The Garden District and the National WWII Museum are the city's other major sights.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "New Orleans International Airport",
-      "search": "New Orleans International Airport, New Orleans, USA",
-      "text": "New Orleans International Airport is the main air gateway for New Orleans; compare transfer time with your hotel base before locking the first night."
+      "name": "Louis Armstrong New Orleans International Airport",
+      "code": "MSY",
+      "search": "Louis Armstrong New Orleans International Airport",
+      "text": "Louis Armstrong New Orleans International Airport (MSY) is 19 km from New Orleans by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Gulfport Biloxi International Airport",
+      "code": "GPT",
+      "search": "Gulfport Biloxi International Airport",
+      "text": "Gulfport Biloxi International Airport (GPT) is 109 km from New Orleans by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 109
+    },
+    {
+      "name": "Baton Rouge Metropolitan Airport",
+      "code": "BTR",
+      "search": "Baton Rouge Metropolitan Airport",
+      "text": "Baton Rouge Metropolitan Airport (BTR) is 122 km from New Orleans by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 122
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between New Orleans International Airport and central New Orleans before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Louis Armstrong New Orleans International Airport (MSY) is the nearest airport with scheduled service, 19 km from New Orleans by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "19 km straight line"
   },
   "bookingDestination": "New Orleans, USA",
   "stayOverview": "Start with City centre for the easiest first New Orleans stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for New Orleans International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Louis Armstrong New Orleans International Airport (MSY), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,91 @@
   "history": [
     {
       "label": "1718",
-      "text": "La Nouvelle-Orléans (New Orleans) was founded in the spring of 1718 by the French Mississippi Company under Jean-Baptiste Le Moyne de Bienville, on land traditionally inhabited by the Chitimacha people."
+      "text": "La Nouvelle-Orléans (New Orleans) was founded in the spring of 1718 by the French Mississippi Company under Jean-Baptiste Le Moyne de Bienville, on land traditionally inhabited by the Chitimacha people.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1727",
-      "text": "Institutions like the Ursuline sisters, founded in 1727 by nuns sponsored by the Company of the Indies, reflected the city's integration into French religious and educational networks."
+      "text": "Institutions like the Ursuline sisters, founded in 1727 by nuns sponsored by the Company of the Indies, reflected the city's integration into French religious and educational networks.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1729",
-      "text": "In 1729, the Natchez revolt erupted with an attack on Fort Rosalie, resulting in the deaths of over 200 French colonists."
+      "text": "In 1729, the Natchez revolt erupted with an attack on Fort Rosalie, resulting in the deaths of over 200 French colonists.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1809",
-      "text": "Many of the white Francophones had been deported by officials in Cuba in 1809 as retaliation for Bonapartist schemes."
-    },
-    {
-      "label": "1811",
-      "text": "The city became 63 percent black, a greater proportion than Charleston, South Carolina's 53 percent at that time. Slave rebellion On January 8–11, 1811, about 500 enslaved Africans in St."
+      "text": "Many of the white Francophones had been deported by officials in Cuba in 1809 as retaliation for Bonapartist schemes.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1814",
-      "text": "The fighting in Louisiana began in December 1814 and did not end until late January, after the Americans held off the Royal Navy during a ten-day siege of Fort St."
+      "text": "The fighting in Louisiana began in December 1814 and did not end until late January, after the Americans held off the Royal Navy during a ten-day siege of Fort St. Philip.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1862",
-      "text": "In April 1862, following the city's occupation by the Union Navy after the Battle of Forts Jackson and St."
+      "text": "In April 1862, following the city's occupation by the Union Navy after the Battle of Forts Jackson and St. Philip, Gen. Benjamin F. Butler – a respected Massachusetts lawyer serving in that state's militia – was appointed military governor.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1863",
-      "text": "As a result, most of the southern portion of Louisiana was originally exempted from the liberating provisions of the 1863 Emancipation Proclamation issued by President Abraham Lincoln."
+      "text": "As a result, most of the southern portion of Louisiana was originally exempted from the liberating provisions of the 1863 Emancipation Proclamation issued by President Abraham Lincoln.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1868",
-      "text": "During Reconstruction, Louisiana and Texas were governed under the Fifth Military District, and Louisiana was readmitted to the Union in 1868 with a new constitution that established universal male suffrage, universal public education, and."
+      "text": "During Reconstruction, Louisiana and Texas were governed under the Fifth Military District, and Louisiana was readmitted to the Union in 1868 with a new constitution that established universal male suffrage, universal public education, and elected both black and white officials.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "1965",
-      "text": "Although the city had always faced flooding risks, awareness of its vulnerability grew after Hurricane Betsy in 1965 and the May 8th 1995 Louisiana Flood."
+      "text": "Although the city had always faced flooding risks, awareness of its vulnerability grew after Hurricane Betsy in 1965 and the May 8th 1995 Louisiana Flood.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "2005",
-      "text": "The approach of Hurricane Rita in September 2005 caused repopulation efforts to be postponed, and the Lower Ninth Ward was reflooded by Rita's storm surge."
+      "text": "The approach of Hurricane Rita in September 2005 caused repopulation efforts to be postponed, and the Lower Ninth Ward was reflooded by Rita's storm surge.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     },
     {
       "label": "2007",
-      "text": "A new annual festival, \"The Running of the Bulls New Orleans\", was created in 2007."
-    },
-    {
-      "label": "Regional role",
-      "text": "The growth of railways and highways decreased river traffic, diverting goods to other transportation corridors and markets."
-    },
-    {
-      "label": "Regional role",
-      "text": "Federal, state, and local efforts supported recovery and rebuilding in severely damaged neighborhoods."
+      "text": "A new annual festival, \"The Running of the Bulls New Orleans\", was created in 2007.",
+      "source": {
+        "label": "Wikipedia: New Orleans",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Orleans&oldid=1384648065"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/New_Orleans",
@@ -228,5 +282,10 @@
       "text": "A pine-woods spa town with a brewery and the Mystery House of folk-art contraptions.",
       "source": "https://www.townofabitasprings.com/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

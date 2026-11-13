@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Ottawa travel, stays & events guide",
-  "heroText": "Ottawa works best as a base in Canada when you anchor days around Parliament Hill, Rideau Canal and ByWard Market. Use those sights to understand the city's history, street life and visitor rhythm. Ottawa International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Ottawa works best as a base in Canada when you anchor days around Parliament Hill, Rideau Canal and ByWard Market. Use those sights to understand the city's history, street life and visitor rhythm. Ottawa Macdonald-Cartier International Airport (YOW) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "Ottawa International Airport",
-      "search": "Ottawa International Airport, Ottawa, Canada",
-      "text": "Ottawa International Airport is the main air gateway for Ottawa; compare transfer time with your hotel base before locking the first night."
+      "name": "Ottawa Macdonald-Cartier International Airport",
+      "code": "YOW",
+      "search": "Ottawa Macdonald-Cartier International Airport",
+      "text": "Ottawa Macdonald-Cartier International Airport (YOW) is 10 km from Ottawa by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 10
+    },
+    {
+      "name": "Ottawa / Rockcliffe Airport",
+      "code": "YRO",
+      "search": "Ottawa / Rockcliffe Airport",
+      "text": "Ottawa / Rockcliffe Airport (YRO) is 7 km from Ottawa by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Ottawa / Gatineau Airport",
+      "code": "YND",
+      "search": "Ottawa / Gatineau Airport",
+      "text": "Ottawa / Gatineau Airport (YND) is 16 km from Ottawa by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 16
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Ottawa International Airport and central Ottawa before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ottawa Macdonald-Cartier International Airport (YOW) is the nearest airport with scheduled service, 10 km from Ottawa by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "10 km straight line"
   },
   "bookingDestination": "Ottawa, Canada",
   "stayOverview": "Start with City centre for the easiest first Ottawa stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Ottawa International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ottawa Macdonald-Cartier International Airport (YOW), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +155,76 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "15th century",
-      "text": "This period ended with the arrival of settlers and colonization of North America by Europeans during and after the 15th century. European exploration and early development In 1610, Étienne Brûlé became the first documented."
-    },
-    {
       "label": "1841",
-      "text": "The governor-general of the Province of Canada designated Kingston as the capital in 1841."
+      "text": "The governor-general of the Province of Canada designated Kingston as the capital in 1841.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1843",
-      "text": "In 1843, a report by the Executive Council recommended Montreal as the capital, as it was a more fortifiable location and commercial centre."
+      "text": "In 1843, a report by the Executive Council recommended Montreal as the capital, as it was a more fortifiable location and commercial centre.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1844",
-      "text": "In 1844, the Queen's acceptance of a parliamentary vote moved the capital to Montreal."
+      "text": "In 1844, the Queen's acceptance of a parliamentary vote moved the capital to Montreal.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1857",
-      "text": "The Queen sent a letter to colonial authorities selecting Ottawa as the capital, effective 31 December 1857."
+      "text": "The Queen sent a letter to colonial authorities selecting Ottawa as the capital, effective 31 December 1857.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1912",
-      "text": "On 1 June 1912, the Grand Trunk Railway opened both the Château Laurier hotel and its neighbouring downtown Union Station."
+      "text": "On 1 June 1912, the Grand Trunk Railway opened both the Château Laurier hotel and its neighbouring downtown Union Station.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1916",
-      "text": "On 3 February 1916, the Centre Block of the Parliament buildings was destroyed by a fire."
+      "text": "On 3 February 1916, the Centre Block of the Parliament buildings was destroyed by a fire.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1927",
-      "text": "The National Capital Commission's structure supplanted the Federal District Commission, which was established in 1927 with a 16-year funding commitment but was reliant on the voluntary transfer of municipal planning authorities from the district's."
-    },
-    {
-      "label": "1939",
-      "text": "It became the site of the National War Memorial in 1939 and was designated a National Historic Site in 1984."
+      "text": "The National Capital Commission's structure supplanted the Federal District Commission, which was established in 1927 with a 16-year funding commitment but was reliant on the voluntary transfer of municipal planning authorities from the district's municipalities.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "1958",
-      "text": "The 1958 National Capital Act established the National Capital Commission as a crown corporation."
+      "text": "The 1958 National Capital Act established the National Capital Commission as a crown corporation.",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     },
     {
       "label": "2020",
-      "text": "The fire destroyed approximately 3,200 buildings and caused an estimated $300 million in damage (in 2020 Canadian dollars)."
-    },
-    {
-      "label": "3000",
-      "text": "Approximately 3000-3500 years before present, there is definitive evidence of continuously existing settlements, including likely hearths and heavy tools."
-    },
-    {
-      "label": "Regional role",
-      "text": "The first non-Indigenous settlement in the area was created by Philemon Wright, a New Englander."
-    },
-    {
-      "label": "Regional role",
-      "text": "The fire had a disproportionate effect on west-end lower-income neighbourhoods."
+      "text": "The fire destroyed approximately 3,200 buildings and caused an estimated $300 million in damage (in 2020 Canadian dollars).",
+      "source": {
+        "label": "Wikipedia: Ottawa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ottawa&oldid=1383790914"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Ottawa",

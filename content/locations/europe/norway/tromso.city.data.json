@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Tromsø travel, stays & events guide",
-  "heroText": "Tromsø works best as a base in Norway when you anchor days around Arctic Cathedral, Fjellheisen cable car and Polaria. Use those sights to understand the city's history, street life and visitor rhythm. Tromsø International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Tromsø works best as a base in Norway when you anchor days around Arctic Cathedral, Fjellheisen cable car and Polaria. Use those sights to understand the city's history, street life and visitor rhythm. Tromsø Airport (TOS) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Tromsø International Airport",
-      "search": "Tromsø International Airport, Tromsø, Norway",
-      "text": "Tromsø International Airport is the main air gateway for Tromsø; compare transfer time with your hotel base before locking the first night."
+      "name": "Tromsø Airport",
+      "code": "TOS",
+      "search": "Tromsø Airport",
+      "text": "Tromsø Airport (TOS) is 4 km from Tromsø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 4
+    },
+    {
+      "name": "Bardufoss Airport",
+      "code": "BDU",
+      "search": "Bardufoss Airport",
+      "text": "Bardufoss Airport (BDU) is 68 km from Tromsø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 68
+    },
+    {
+      "name": "Sørkjosen Airport",
+      "code": "SOJ",
+      "search": "Sørkjosen Airport",
+      "text": "Sørkjosen Airport (SOJ) is 79 km from Tromsø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 79
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Tromsø International Airport and central Tromsø before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Tromsø Airport (TOS) is the nearest airport with scheduled service, 4 km from Tromsø by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "4 km straight line"
   },
   "bookingDestination": "Tromsø, Norway",
   "stayOverview": "Start with City centre for the easiest first Tromsø stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Tromsø International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Tromsø Airport (TOS), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,84 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "Early settlement",
-      "text": "Archeological excavations in Tønsvika, have turned up artefacts and remains of buildings estimated to be 9,000 to 10,000 years old. Middle Ages: a fortress on the frontier The area's rich Norse and Sámi heritage."
-    },
-    {
-      "label": "1050",
-      "text": "There has also been extensive Sámi settlement on the coast south of this 'border' as well as scattered Norse settlements north of Malangen − for example, both Sámi and Norse Iron Age (0–1050 AD)."
-    },
-    {
       "label": "12th century",
-      "text": "An Icelandic source (Rimbegla) from the 12th century also describes the fjord Malangen in the south of today's Tromsø municipality as a border between Norse and Sámi coastal settlements during that part of the."
+      "text": "An Icelandic source (Rimbegla) from the 12th century also describes the fjord Malangen in the south of today's Tromsø municipality as a border between Norse and Sámi coastal settlements during that part of the Middle Ages.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1794",
-      "text": "Despite only being home to around 80 people, Tromsø was issued its city charter on 20 June 1794 by King Christian VII."
-    },
-    {
-      "label": "19th century",
-      "text": "In the 19th century, Tromsø became known as the \"Paris of the North\"."
+      "text": "Despite only being home to around 80 people, Tromsø was issued its city charter on 20 June 1794 by King Christian VII.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1804",
-      "text": "The Diocese of Hålogaland was created in 1804, with the first bishop being Mathias Bonsak Krogh."
+      "text": "The Diocese of Hålogaland was created in 1804, with the first bishop being Mathias Bonsak Krogh.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1838",
-      "text": "The city was established as a municipality 1 January 1838 (see formannskapsdistrikt law)."
+      "text": "The city was established as a municipality on 1 January 1838 (see formannskapsdistrikt law).",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1848",
-      "text": "In 1848, the teacher training college was also moved from Trondenes Municipality (near current-day Harstad) to Tromsø, with part of its mission being to educate Sámi scholars − there was a quota ensuring that."
+      "text": "In 1848, the teacher training college was also moved from Trondenes Municipality (near current-day Harstad) to Tromsø, with part of its mission being to educate Sámi scholars − there was a quota ensuring that Sámi gained access.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
+    },
+    {
+      "label": "19th century",
+      "text": "In the 19th century, Tromsø became known as the \"Paris of the North\".",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1872",
-      "text": "The teacher college was followed by the Tromsø Museum in 1872, and the Mack Brewery in 1877."
+      "text": "The teacher college was followed by the Tromsø Museum in 1872, and the Mack Brewery in 1877.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1964",
-      "text": "A major development was the opening of Tromsø Airport in 1964, situated on the main island, and in 1972 the University of Tromsø was opened, at the time one of four universities in Norway."
+      "text": "A major development was the opening of Tromsø Airport in 1964, situated on the main island, and in 1972 the University of Tromsø was opened, at the time one of four universities in Norway and the only one serving the northern half of the country.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "1998",
-      "text": "The Norwegian Polar Institute was moved to Tromsø from Oslo in 1998."
+      "text": "The Norwegian Polar Institute was moved to Tromsø from Oslo in 1998.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     },
     {
       "label": "2009",
-      "text": "More recently, the university has expanded further through two mergers, first with University College Tromsø in 2009 and then with University College Finnmark in 2013."
-    },
-    {
-      "label": "Regional role",
-      "text": "In a burial/settlement near today's airport, a sword and other combat tools have been found, as well as household tools typical for the Norwegians."
-    },
-    {
-      "label": "Regional role",
-      "text": "A local teacher's college and museum were eventually incorporated into the university."
+      "text": "More recently, the university has expanded further through two mergers, first with University College Tromsø in 2009 and then with University College Finnmark in 2013.",
+      "source": {
+        "label": "Wikipedia: Tromsø",
+        "url": "https://en.wikipedia.org/w/index.php?title=Troms%C3%B8&oldid=1382074554"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Troms%C3%B8",

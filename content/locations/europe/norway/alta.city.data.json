@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Alta travel, stays & events guide",
-  "heroText": "Alta works best as a base in Norway when you anchor days around Alta Museum rock art, Northern Lights Cathedral and Sorrisniva. Use those sights to understand the city's history, street life and visitor rhythm. Alta International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Alta works best as a base in Norway when you anchor days around Alta Museum rock art, Northern Lights Cathedral and Sorrisniva. Use those sights to understand the city's history, street life and visitor rhythm. Alta Airport (ALF) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Alta International Airport",
-      "search": "Alta International Airport, Alta, Norway",
-      "text": "Alta International Airport is the main air gateway for Alta; compare transfer time with your hotel base before locking the first night."
+      "name": "Alta Airport",
+      "code": "ALF",
+      "search": "Alta Airport",
+      "text": "Alta Airport (ALF) is 4 km from Alta by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 4
+    },
+    {
+      "name": "Lakselv Airport, Banak",
+      "code": "LKL",
+      "search": "Lakselv Airport, Banak",
+      "text": "Lakselv Airport, Banak (LKL) is 66 km from Alta by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 66
+    },
+    {
+      "name": "Hammerfest Airport",
+      "code": "HFT",
+      "search": "Hammerfest Airport",
+      "text": "Hammerfest Airport (HFT) is 80 km from Alta by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 80
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Alta International Airport and central Alta before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Alta Airport (ALF) is the nearest airport with scheduled service, 4 km from Alta by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "4 km straight line"
   },
   "bookingDestination": "Alta, Norway",
   "stayOverview": "Start with City centre for the easiest first Alta stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Alta International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Alta Airport (ALF), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -155,32 +177,7 @@
     }
   ],
   "sourceFetchedAt": "2026-06-12",
-  "history": [
-    {
-      "label": "c. 4200 BC",
-      "text": "The oldest phases of Alta's rock carvings date to the Stone Age, showing deep human activity around the Altafjord."
-    },
-    {
-      "label": "1973",
-      "text": "The first rock carvings at Jiepmaluokta near Alta were discovered, leading to wider documentation of the site."
-    },
-    {
-      "label": "1985",
-      "text": "The rock art of Alta was placed on the UNESCO World Heritage List as Norway's only prehistoric World Heritage Site."
-    },
-    {
-      "label": "1991",
-      "text": "Alta Museum moved to the rock carving area and became the main visitor centre for the World Heritage site."
-    },
-    {
-      "label": "1993",
-      "text": "Alta Museum received the European Museum of the Year Award after developing the rock art visitor centre."
-    },
-    {
-      "label": "Today",
-      "text": "Modern Alta is a Finnmark hub for rock art, Sami culture, northern lights travel, airport access and Arctic routes."
-    }
-  ],
+  "history": [],
   "historySource": "https://en.wikipedia.org/wiki/Alta_Municipality",
   "timezone": "Europe/Oslo",
   "coordinateSource": {

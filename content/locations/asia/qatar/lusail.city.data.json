@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Lusail travel, stays and events",
-    "description": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Lusail International Airport and nearby event links.",
-    "twitterDescription": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Lusail International Airport and nearby event links.",
-    "webpageDescription": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Lusail International Airport and nearby event links."
+    "description": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Doha International Airport (DIA) and nearby event links.",
+    "twitterDescription": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Doha International Airport (DIA) and nearby event links.",
+    "webpageDescription": "Plan Lusail around Lusail Boulevard, Lusail Stadium, Doha International Airport (DIA) and nearby event links."
   },
   "region": "Key city in Qatar",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Lusail travel, stays & events guide",
-  "heroText": "Lusail works best as a base in Qatar when you anchor days around Lusail Boulevard, Lusail Stadium and Place Vendome Qatar. Use those sights to understand the city's history, street life and visitor rhythm. Lusail International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Lusail works best as a base in Qatar when you anchor days around Lusail Boulevard, Lusail Stadium and Place Vendome Qatar. Use those sights to understand the city's history, street life and visitor rhythm. Doha International Airport (DIA) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Lusail International Airport",
-      "search": "Lusail International Airport, Lusail, Qatar",
-      "text": "Lusail International Airport is the main air gateway for Lusail; compare transfer time with your hotel base before locking the first night."
+      "name": "Doha International Airport",
+      "code": "DIA",
+      "search": "Doha International Airport",
+      "text": "Doha International Airport (DIA) is 19 km from Lusail by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Hamad International Airport",
+      "code": "DOH",
+      "search": "Hamad International Airport",
+      "text": "Hamad International Airport (DOH) is 19 km from Lusail by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Bahrain International Airport",
+      "code": "BAH",
+      "search": "Bahrain International Airport",
+      "text": "Bahrain International Airport (BAH) is 128 km from Lusail by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 128
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Lusail International Airport and central Lusail before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Doha International Airport (DIA) is the nearest airport with scheduled service, 19 km from Lusail by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "19 km straight line"
   },
   "bookingDestination": "Lusail, Qatar",
   "stayOverview": "Start with City centre for the easiest first Lusail stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Lusail International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Doha International Airport (DIA), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -152,40 +174,28 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Origins",
-      "text": "Lusail Stadium (Arabic: استاد لوسيل, ALA-LC: Istād Lūsayl) is a football stadium in Lusail, Qatar."
-    },
-    {
-      "label": "966",
-      "text": "It is currently the second largest football stadium in Asia but eventually will reduce its current capacity of 88,966 to 40,000 in the near future."
-    },
-    {
-      "label": "2014",
-      "text": "Lusail Stadium was inaugurated on 9 September 2022 with the Lusail Super Cup game. Construction The Procurement process for the stadium conversion began in 2014."
-    },
-    {
       "label": "2021",
-      "text": "A 2021 investigation by The Guardian revealed that over 6,500 migrant workers from Bangladesh, India, Pakistan, Nepal and Sri Lanka died between 2010 and 2020 during construction of World Cup venues in Qatar."
+      "text": "A 2021 investigation by The Guardian revealed that over 6,500 migrant workers from Bangladesh, India, Pakistan, Nepal and Sri Lanka died between 2010 and 2020 during construction of World Cup venues in Qatar.",
+      "source": {
+        "label": "Wikipedia: Lusail Stadium",
+        "url": "https://en.wikipedia.org/w/index.php?title=Lusail_Stadium&oldid=1381291111"
+      }
     },
     {
       "label": "2022",
-      "text": "Owned by the Qatar Football Association, it is the largest stadium in Qatar and the Middle East by capacity; one of eight stadiums built for the 2022 FIFA World Cup, it hosted the 2022."
+      "text": "Lusail Stadium was inaugurated on 9 September 2022 with the Lusail Super Cup game.",
+      "source": {
+        "label": "Wikipedia: Lusail Stadium",
+        "url": "https://en.wikipedia.org/w/index.php?title=Lusail_Stadium&oldid=1381291111"
+      }
     },
     {
-      "label": "2026",
-      "text": "On March 15 2026, UEFA announced the cancellation of the match due to safety concerns over the ongoing war in the region. See also Lusail Sports Arena, Lusail, Qatar Lists of stadiums References External."
-    },
-    {
-      "label": "Civic role",
-      "text": "The stadium was built as a joint venture by HBK Contracting and the China Railway Construction Corporation."
-    },
-    {
-      "label": "Regional role",
-      "text": "Excess seating will be removed and other parts of the building repurposed as a community space with shops, cafés, athletic and education facilities, and a health clinic."
-    },
-    {
-      "label": "Regional role",
-      "text": "The figures used by The Guardian did not include occupation or place of work so deaths could not be definitively associated with the World Cup construction programme."
+      "label": "2022",
+      "text": "Owned by the Qatar Football Association, it is the largest stadium in Qatar and the Middle East by capacity; one of eight stadiums built for the 2022 FIFA World Cup, it hosted the 2022 FIFA World Cup final game between Argentina and France on 18 December 2022.",
+      "source": {
+        "label": "Wikipedia: Lusail Stadium",
+        "url": "https://en.wikipedia.org/w/index.php?title=Lusail_Stadium&oldid=1381291111"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Lusail_Stadium",

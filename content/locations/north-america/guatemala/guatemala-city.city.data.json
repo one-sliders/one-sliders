@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Guatemala City travel, stays and events",
-    "description": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, Guatemala City International Airport and nearby event links.",
-    "twitterDescription": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, Guatemala City International Airport and nearby event links.",
-    "webpageDescription": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, Guatemala City International Airport and nearby event links."
+    "description": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, La Aurora International Airport (GUA) and nearby event links.",
+    "twitterDescription": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, La Aurora International Airport (GUA) and nearby event links.",
+    "webpageDescription": "Plan Guatemala City around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City, La Aurora International Airport (GUA) and nearby event links."
   },
   "region": "Capital city in Guatemala",
   "population": "tba",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Guatemala City travel, stays & events guide",
-  "heroText": "Guatemala City works best as a base in Guatemala when you anchor days around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City and La Aurora Zoo. Use those sights to understand the city's history, street life and visitor rhythm. Guatemala City International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Guatemala City works best as a base in Guatemala when you anchor days around National Palace of Culture Guatemala, Plaza de la Constitucion Guatemala City and La Aurora Zoo. Use those sights to understand the city's history, street life and visitor rhythm. La Aurora International Airport (GUA) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Guatemala City International Airport",
-      "search": "Guatemala City International Airport, Guatemala City, Guatemala",
-      "text": "Guatemala City International Airport is the main air gateway for Guatemala City; compare transfer time with your hotel base before locking the first night."
+      "name": "La Aurora International Airport",
+      "code": "GUA",
+      "search": "La Aurora International Airport",
+      "text": "La Aurora International Airport (GUA) is 7 km from Guatemala City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Retalhuleu Airport",
+      "code": "RER",
+      "search": "Retalhuleu Airport",
+      "text": "Retalhuleu Airport (RER) is 128 km from Guatemala City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 128
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Guatemala City International Airport and central Guatemala City before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "La Aurora International Airport (GUA) is the nearest airport with scheduled service, 7 km from Guatemala City by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Guatemala City, Guatemala",
   "stayOverview": "Start with City centre for the easiest first Guatemala City stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Guatemala City International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for La Aurora International Airport (GUA), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -128,60 +141,44 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Origins",
-      "text": "Human settlement on the present site of Guatemala City began with the native indigenous Maya people, who built a large ceremonial center at Kaminaljuyu."
-    },
-    {
-      "label": "300",
-      "text": "This large Maya settlement, the biggest outside the Maya lowlands in the Yucatán Peninsula, of southeast Mexico, rose to prominence around 2,300 years ago, about 300 B.C. due to an increase in mining and."
-    },
-    {
-      "label": "1542",
-      "text": "This was the palace that then served as the headquarters for the colonial government of the Captaincy General of Guatemala, from 1542 to independence in 1821."
-    },
-    {
-      "label": "1751",
-      "text": "This was the third earthquake the city experienced, after the 1717 earthquake and another in 1751."
-    },
-    {
       "label": "1773",
-      "text": "A series of devastating earthquakes in 1773 had left the old provincial capital Antigua Guatemala in ruins."
-    },
-    {
-      "label": "1776",
-      "text": "In 1776, the seat of government was moved to the current location of Guatemala City, located in a valley less prone to earthquakes."
-    },
-    {
-      "label": "19th century",
-      "text": "The subsequent decades in the 19th century saw the construction of some significant structures in the town, such as the monumental Carrera Theater in the 1850s, and the modern-day Presidential Palace of Guatemala in."
+      "text": "A series of devastating earthquakes in 1773 had left the old provincial capital Antigua Guatemala in ruins.",
+      "source": {
+        "label": "Wikipedia: Guatemala City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Guatemala_City&oldid=1384592498"
+      }
     },
     {
       "label": "1821",
-      "text": "A half-century later, after the ratification of the Act of Independence of Central America, the city became the capital of the newly organized independent United Provinces of Central America in September 1821."
+      "text": "A half-century later, after the ratification of the Act of Independence of Central America, the city became the capital of the newly organized independent United Provinces of Central America in September 1821.",
+      "source": {
+        "label": "Wikipedia: Guatemala City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Guatemala_City&oldid=1384592498"
+      }
+    },
+    {
+      "label": "19th century",
+      "text": "The subsequent decades in the 19th century saw the construction of some significant structures in the town, such as the monumental Carrera Theater in the 1850s, and the modern-day Presidential Palace of Guatemala in the 1890s, which is still occupied by the president of Guatemala.",
+      "source": {
+        "label": "Wikipedia: Guatemala City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Guatemala_City&oldid=1384592498"
+      }
     },
     {
       "label": "1871",
-      "text": "In the new capital, the central plaza became the sight of the city due to its premier landmark, the immense neo-classical Metropolitan Cathedral,, which was mostly built between 1782–1815 and completed in 1871."
+      "text": "In the new capital, the central plaza became the sight of the city's premier landmark, the immense neo-classical Metropolitan Cathedral, which was mostly built between 1782–1815 and completed in 1871.",
+      "source": {
+        "label": "Wikipedia: Guatemala City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Guatemala_City&oldid=1384592498"
+      }
     },
     {
-      "label": "1917",
-      "text": "The 1917-1918 earthquakes destroyed many historic structures from the era of the late 18th and early 19th centuries of the first period of Guatemala City capital history, erected during the 144 years after the."
-    },
-    {
-      "label": "1939",
-      "text": "This included the design and construction of the National Palace, built 1939–1943 as an official residence and headquarters for the President of the Republic."
-    },
-    {
-      "label": "Regional role",
-      "text": "Zone One is the Historic Center (Centro Histórico), lying in the very heart of the city, the location of many important historic buildings, including the Palacio Nacional de la Cultura (National Palace of Culture)."
-    },
-    {
-      "label": "Regional role",
-      "text": "Efforts to revitalize this important part of the city have been undertaken by the municipal government."
-    },
-    {
-      "label": "Regional role",
-      "text": "It is also worth mentioning, that due to the airport being in the south of the city, height limits based on aeronautical considerations have been applied to the construction code."
+      "label": "1917–1918",
+      "text": "The 1917-1918 earthquakes destroyed many structures in Guatemala City built during the late 18th and 19th centuries, during its 144 years after the previous devastating tremors of the Santa Marta Earthquake of 1773.",
+      "source": {
+        "label": "Wikipedia: Guatemala City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Guatemala_City&oldid=1384592498"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Guatemala_City",

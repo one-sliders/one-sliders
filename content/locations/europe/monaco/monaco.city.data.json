@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Monaco travel, stays and events",
-    "description": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Monaco International Airport and nearby event links.",
-    "twitterDescription": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Monaco International Airport and nearby event links.",
-    "webpageDescription": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Monaco International Airport and nearby event links."
+    "description": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Nice-Côte d'Azur Airport (NCE) and nearby event links.",
+    "twitterDescription": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Nice-Côte d'Azur Airport (NCE) and nearby event links.",
+    "webpageDescription": "Plan Monaco around Prince's Palace of Monaco, Monte Carlo Casino, Nice-Côte d'Azur Airport (NCE) and nearby event links."
   },
   "region": "Capital city of Monaco",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Monaco travel, stays & events guide",
-  "heroText": "Monaco works best as a base in Monaco when you anchor days around Prince's Palace of Monaco, Monte Carlo Casino and Oceanographic Museum of Monaco. Use those sights to understand the city's history, street life and visitor rhythm. Monaco International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Monaco works best as a base in Monaco when you anchor days around Prince's Palace of Monaco, Monte Carlo Casino and Oceanographic Museum of Monaco. Use those sights to understand the city's history, street life and visitor rhythm. Nice-Côte d'Azur Airport (NCE) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Monaco International Airport",
-      "search": "Monaco International Airport, Monaco, Monaco",
-      "text": "Monaco International Airport is the main air gateway for Monaco; compare transfer time with your hotel base before locking the first night."
+      "name": "Nice-Côte d'Azur Airport",
+      "code": "NCE",
+      "search": "Nice-Côte d'Azur Airport",
+      "text": "Nice-Côte d'Azur Airport (NCE) is 19 km from Monaco by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Genoa Cristoforo Colombo Airport",
+      "code": "GOA",
+      "search": "Genoa Cristoforo Colombo Airport",
+      "text": "Genoa Cristoforo Colombo Airport (GOA) is 136 km from Monaco by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 136
+    },
+    {
+      "name": "Cuneo International Airport",
+      "code": "CUF",
+      "search": "Cuneo International Airport",
+      "text": "Cuneo International Airport (CUF) is 92 km from Monaco by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 92
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Monaco International Airport and central Monaco before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Nice-Côte d'Azur Airport (NCE) is the nearest airport with scheduled service, 19 km from Monaco by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "19 km straight line"
   },
   "bookingDestination": "Monaco, Monaco",
   "stayOverview": "Start with Monte Carlo for the easiest first Monaco stay, then compare Monaco-Ville and La Condamine when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Monaco International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Nice-Côte d'Azur Airport (NCE), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,60 +157,84 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "1191",
-      "text": "It has taken some steps towards integration with the European Union. Arrival of the Grimaldi family Following a grant of land from Emperor Henry VI in 1191, Monaco was refounded in 1215 as a."
-    },
-    {
       "label": "1200s",
-      "text": "By the early 1200s, the Genoese had built a castle on the rock and were utilizing the port."
+      "text": "By the early 1200s, the Genoese had built a castle on the rock and were utilizing the port.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
-      "label": "1419",
-      "text": "Between 1346 and 1355, Monaco annexed the towns of Menton and Roquebrune, increasing its territory by almost ten times. 1400–1800 In 1419, the Grimaldi family purchased Monaco from the Crown of Aragon and became."
+      "label": "1346",
+      "text": "Between 1346 and 1355, Monaco annexed the towns of Menton and Roquebrune, increasing its territory by almost ten times.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "18th century",
-      "text": "France annexed it in the French Revolution at the end of the 18th century, but after the defeat of Napoleon it was put under the care of the Kingdom of Sardinia."
+      "text": "France annexed it in the French Revolution at the end of the 18th century, but after the defeat of Napoleon it was put under the care of the Kingdom of Sardinia.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "19th century",
-      "text": "In the 19th century, when Sardinia became a part of Italy, the region came under French influence but France allowed it to remain independent and it escaped being incorporated into Italy."
-    },
-    {
-      "label": "1815",
-      "text": "It was designated a protectorate of the Kingdom of Sardinia by the Congress of Vienna in 1815."
+      "text": "In the 19th century, when Sardinia became a part of Italy, the region came under French influence but France allowed it to remain independent and it escaped being incorporated into Italy.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "1919",
-      "text": "The treaty, endorsed in 1919 by the Treaty of Versailles, established that Monégasque international policy would be aligned with French political, military and economic interests."
+      "text": "The treaty, endorsed in 1919 by the Treaty of Versailles, established that Monégasque international policy would be aligned with French political, military and economic interests.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "1940s",
-      "text": "Monaco was overrun by the Axis powers in the 1940s during the Second World War and for a short time was administered by Italy, then Nazi Germany, before being liberated."
+      "text": "Monaco was overrun by the Axis powers in the 1940s during the Second World War and for a short time was administered by Italy, then Nazi Germany, before being liberated.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "1962",
-      "text": "A 1962 amendment to the constitution abolished capital punishment, provided for women's suffrage and established a Supreme Court of Monaco to guarantee fundamental liberties."
+      "text": "A 1962 amendment to the constitution abolished capital punishment, provided for women's suffrage and established a Supreme Court of Monaco to guarantee fundamental liberties.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
-      "label": "21st century",
-      "text": "In 1993, the Principality of Monaco became a member of the United Nations, with full voting rights. 21st century In 2002, a new treaty between France and Monaco specified that, should there be no."
+      "label": "1993",
+      "text": "In 1993, the Principality of Monaco became a member of the United Nations, with full voting rights.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "2005",
-      "text": "Following a period of official mourning, Prince Albert II formally assumed the princely crown on 12 July 2005, in a celebration that began with a solemn Mass at Saint Nicholas Cathedral, where his father."
+      "text": "Following a period of official mourning, Prince Albert II formally assumed the princely crown on 12 July 2005, in a celebration that began with a solemn Mass at Saint Nicholas Cathedral, where his father had been buried three months earlier.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     },
     {
       "label": "2020",
-      "text": "On 29 February 2020, Monaco announced its first case of COVID-19, a man who was admitted to the Princess Grace Hospital Centre then transferred to Nice University Hospital in France."
-    },
-    {
-      "label": "Regional role",
-      "text": "They declared their independence as the Free Cities of Menton and Roquebrune, hoping for annexation by Sardinia."
-    },
-    {
-      "label": "Regional role",
-      "text": "René Blum, the prominent French Jew who founded the Ballet de l'Opéra in Monte Carlo, was arrested in his Paris home and held in the Drancy deportation camp outside the French capital before being."
+      "text": "On 29 February 2020, Monaco announced its first case of COVID-19, a man who was admitted to the Princess Grace Hospital Centre then transferred to Nice University Hospital in France.",
+      "source": {
+        "label": "Wikipedia: Monaco",
+        "url": "https://en.wikipedia.org/w/index.php?title=Monaco&oldid=1384370684"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Monaco",

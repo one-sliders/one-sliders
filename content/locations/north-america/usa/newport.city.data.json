@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Newport travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Newport, on the Rhode Island coast, was founded in 1639 and became the most important port of colonial Rhode Island. Visitors walk the Cliff Walk, tour The Breakers and spend time around Newport Harbor and Thames Street; the International Tennis Hall of Fame is here as well.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Newport International Airport",
-      "search": "Newport International Airport, Newport, USA",
-      "text": "Newport International Airport is the main air gateway for Newport; compare transfer time with your hotel base before locking the first night."
+      "name": "Rhode Island T. F. Green International Airport",
+      "code": "PVD",
+      "search": "Rhode Island T. F. Green International Airport",
+      "text": "Rhode Island T. F. Green International Airport (PVD) is 28 km from Newport by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 28
+    },
+    {
+      "name": "Newport State Airport",
+      "code": "NPT",
+      "search": "Newport State Airport",
+      "text": "Newport State Airport (NPT) is 5 km from Newport by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 5
+    },
+    {
+      "name": "Boston Logan International Airport",
+      "code": "BOS",
+      "search": "Boston Logan International Airport",
+      "text": "Boston Logan International Airport (BOS) is 100 km from Newport by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 100
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Newport International Airport and central Newport before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Rhode Island T. F. Green International Airport (PVD) is the nearest airport with scheduled service, 28 km from Newport by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "28 km straight line"
   },
   "bookingDestination": "Newport, USA",
   "stayOverview": "Start with City centre for the easiest first Newport stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Newport International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Rhode Island T. F. Green International Airport (PVD), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,43 @@
   "history": [
     {
       "label": "1639",
-      "text": "Newport was founded in 1639 on Rhode Island, which is now called Aquidneck Island."
+      "text": "Newport was founded in 1639 on Rhode Island, which is now called Aquidneck Island.",
+      "source": {
+        "label": "Wikipedia: Newport, Rhode Island",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newport%2C_Rhode_Island&oldid=1384237108"
+      }
     },
     {
       "label": "1640",
-      "text": "Newport was the most important port in colonial Rhode Island, and a public school was established in 1640."
+      "text": "Newport was the most important port in colonial Rhode Island, and a public school was established in 1640.",
+      "source": {
+        "label": "Wikipedia: Newport, Rhode Island",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newport%2C_Rhode_Island&oldid=1384237108"
+      }
     },
     {
       "label": "1658",
-      "text": "In 1658, a group of Jews was welcomed to settle in Newport, fleeing the Inquisition in Spain and Portugal."
+      "text": "In 1658, a group of Jews was welcomed to settle in Newport, fleeing the Inquisition in Spain and Portugal.",
+      "source": {
+        "label": "Wikipedia: Newport, Rhode Island",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newport%2C_Rhode_Island&oldid=1384237108"
+      }
     },
     {
       "label": "1741",
-      "text": "The Old Colony House at the head of Washington Square in Newport served as the seat of Rhode Island's government from 1741 until the current Rhode Island State House was completed in Providence in."
+      "text": "The Old Colony House at the head of Washington Square in Newport served as the seat of Rhode Island's government from 1741 until the current Rhode Island State House was completed in Providence in 1904.",
+      "source": {
+        "label": "Wikipedia: Newport, Rhode Island",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newport%2C_Rhode_Island&oldid=1384237108"
+      }
     },
     {
-      "label": "1780",
-      "text": "This community of freemen, including Newport Gardner, founded the Free African Union Society in 1780, the first African mutual aid society in America. American Revolutionary era Newport was the scene of much activity during."
-    },
-    {
-      "label": "20th century",
-      "text": "Mary's, located on Spring Street, though the current building is not original. 20th century and beyond Rhode Island did not have a fixed capital during and after the colonial era, but rotated its legislative."
-    },
-    {
-      "label": "Modern city",
-      "text": "Many of these people were part of the settlement at Portsmouth, along with Anne Hutchinson and her followers."
-    },
-    {
-      "label": "Today",
-      "text": "They separated within a year of settling Portsmouth and began the settlement of Newport on the southern side of the island."
-    },
-    {
-      "label": "Civic role",
-      "text": "Newport grew to be the largest of the four original settlements that became the Colony of Rhode Island and Providence Plantations, including Providence Plantations and Shawomett."
-    },
-    {
-      "label": "Regional role",
-      "text": "Lopez became the wealthiest man in Newport, but he was denied citizenship on religious grounds, even though British law protected the rights of Jews to become citizens in England."
-    },
-    {
-      "label": "Regional role",
-      "text": "Throughout the 18th-century, Newport suffered from an imbalance of trade with the largest colonial ports."
-    },
-    {
-      "label": "Regional role",
-      "text": "Many were hanged in Newport and buried on Goat Island. Slave trade Newport was a major center of the slave trade in colonial and early America, active in the \"triangle trade\" in which slave-produced."
-    },
-    {
-      "label": "Regional role",
-      "text": "Newport was inhabited by a small group of abolitionists and free blacks."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Fifth Ward of Newport in the southern part of the city became a staunch Irish neighborhood for many generations."
+      "label": "18th century",
+      "text": "Throughout the 18th-century, Newport suffered from an imbalance of trade with the largest colonial ports.",
+      "source": {
+        "label": "Wikipedia: Newport, Rhode Island",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newport%2C_Rhode_Island&oldid=1384237108"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Newport%2C_Rhode_Island",
@@ -228,5 +234,10 @@
       "text": "Bluffs, two lighthouses and rented bicycles; about forty per cent of the island is conserved.",
       "source": "https://www.visitrhodeisland.com/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

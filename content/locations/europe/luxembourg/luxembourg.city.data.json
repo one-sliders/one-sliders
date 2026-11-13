@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Luxembourg travel, stays and events",
-    "description": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg International Airport and nearby event links.",
-    "twitterDescription": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg International Airport and nearby event links.",
-    "webpageDescription": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg International Airport and nearby event links."
+    "description": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg-Findel International Airport (LUX) and nearby event links.",
+    "twitterDescription": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg-Findel International Airport (LUX) and nearby event links.",
+    "webpageDescription": "Plan Luxembourg around Bock Casemates, Grand Ducal Palace, Luxembourg-Findel International Airport (LUX) and nearby event links."
   },
   "region": "Capital city of Luxembourg",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Luxembourg travel, stays & events guide",
-  "heroText": "Luxembourg works best as a base in Luxembourg when you anchor days around Bock Casemates, Grand Ducal Palace and Notre-Dame Cathedral Luxembourg. Use those sights to understand the city's history, street life and visitor rhythm. Luxembourg International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Luxembourg works best as a base in Luxembourg when you anchor days around Bock Casemates, Grand Ducal Palace and Notre-Dame Cathedral Luxembourg. Use those sights to understand the city's history, street life and visitor rhythm. Luxembourg-Findel International Airport (LUX) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Luxembourg International Airport",
-      "search": "Luxembourg International Airport, Luxembourg, Luxembourg",
-      "text": "Luxembourg International Airport is the main air gateway for Luxembourg; compare transfer time with your hotel base before locking the first night."
+      "name": "Luxembourg-Findel International Airport",
+      "code": "LUX",
+      "search": "Luxembourg-Findel International Airport",
+      "text": "Luxembourg-Findel International Airport (LUX) is 6 km from Luxembourg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Frankfurt-Hahn Airport",
+      "code": "HHN",
+      "search": "Frankfurt-Hahn Airport",
+      "text": "Frankfurt-Hahn Airport (HHN) is 89 km from Luxembourg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 89
+    },
+    {
+      "name": "Maastricht Aachen Airport",
+      "code": "MST",
+      "search": "Maastricht Aachen Airport",
+      "text": "Maastricht Aachen Airport (MST) is 147 km from Luxembourg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 147
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Luxembourg International Airport and central Luxembourg before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Luxembourg-Findel International Airport (LUX) is the nearest airport with scheduled service, 6 km from Luxembourg by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Luxembourg, Luxembourg",
   "stayOverview": "Start with Ville Haute for the easiest first Luxembourg stay, then compare Grund and Gare when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Luxembourg International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Luxembourg-Findel International Airport (LUX), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,60 +157,68 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Early settlement",
-      "text": "Before AD 963 The first traces of settlement in what is now Luxembourg are dated back to the Palaeolithic Age, about 35,000 years ago."
-    },
-    {
       "label": "4th century",
-      "text": "The territory was infiltrated by the Germanic Franks from the 4th century, and was abandoned by Rome in AD 406, after which it became part of the Kingdom of the Franks."
-    },
-    {
-      "label": "698",
-      "text": "The most famous figure in this context is Willibrord, a Northumbrian missionary saint, who together with other monks established the Abbey of Echternach in AD 698, and is celebrated annually in the dancing procession."
+      "text": "The territory was infiltrated by the Germanic Franks from the 4th century, and was abandoned by Rome in AD 406, after which it became part of the Kingdom of the Franks.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "11th century",
-      "text": "The Codex Aureus of Echternach, an important surviving codex written entirely in gold ink, was produced here in the 11th century."
+      "text": "The Codex Aureus of Echternach, an important surviving codex written entirely in gold ink, was produced here in the 11th century.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "1083",
-      "text": "Over the years, the fortress was extended by Siegfried's descendants and by 1083, one of them, Conrad I, was the first to call himself a \"Count of Luxembourg\", and with it effectively creating the."
+      "text": "Over the years, the fortress was extended by Siegfried's descendants and by 1083, one of them, Conrad I, was the first to call himself a \"Count of Luxembourg\", and with it effectively creating the independent County of Luxembourg (which was still a state within the Holy Roman Empire).",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "1312",
-      "text": "The ascension of the Counts of Luxembourg culminated when Henry VII became King of the Romans, King of Italy and finally, in 1312, Holy Roman Emperor. Golden Age (1312–1443) With the ascension of Henry."
-    },
-    {
-      "label": "1340",
-      "text": "He is also known for having founded the Schueberfouer in 1340 and for his heroic death at the Battle of Crécy in 1346."
+      "text": "The ascension of the Counts of Luxembourg culminated when Henry VII became King of the Romans, King of Italy and finally, in 1312, Holy Roman Emperor.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "1356",
-      "text": "Charles IV created the long-lasting Golden Bull of 1356, a decree which fixed important aspects of the constitutional structure of the Empire."
+      "text": "Charles IV created the long-lasting Golden Bull of 1356, a decree which fixed important aspects of the constitutional structure of the Empire.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "1839",
-      "text": "The treaty of 1839 also established full independence of the remaining Germanic-speaking Grand-Duchy of Luxembourg."
+      "text": "The treaty of 1839 also established full independence of the remaining Germanic-speaking Grand-Duchy of Luxembourg.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "1866",
-      "text": "After the Luxembourg Crisis of 1866 nearly led to war between Prussia and France, as both were unwilling to see the other taking influence over Luxembourg and its mighty fortress, the Grand Duchy's independence."
-    },
-    {
-      "label": "1890",
-      "text": "Beginning with Adolph of Nassau-Weilburg, the Grand-Duchy would have its own monarchy, thus reaffirming its full independence. German occupations and interwar political crisis (1890–1945) In August 1914, during World War I, Imperial Germany violated."
+      "text": "After the Luxembourg Crisis of 1866 nearly led to war between Prussia and France, as both were unwilling to see the other taking influence over Luxembourg and its mighty fortress, the Grand Duchy's independence and neutrality were reaffirmed by the Second Treaty of London and Prussia was finally willing to withdraw its troops from the Fortress of Luxembourg under the condition that the fortifications would be dismantled.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     },
     {
       "label": "2020",
-      "text": "In 2020, Luxembourg became the first country in the world to provide free public transport at a national scale."
-    },
-    {
-      "label": "Regional role",
-      "text": "Around this fort, a town gradually developed, which became the centre of a state of great strategic value within the Duchy of Lorraine."
-    },
-    {
-      "label": "Regional role",
-      "text": "In contrast to the First World War, under the German occupation of Luxembourg during World War II, the country was treated as German territory and informally annexed to the adjacent province of Nazi Germany."
+      "text": "In 2020, Luxembourg became the first country in the world to provide free public transport at a national scale.",
+      "source": {
+        "label": "Wikipedia: Luxembourg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Luxembourg&oldid=1384633579"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Luxembourg",

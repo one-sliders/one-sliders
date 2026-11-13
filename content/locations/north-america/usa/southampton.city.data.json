@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Southampton travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Southampton, in the Hamptons, was founded in 1640 by settlers from Lynn, Massachusetts, on land obtained from the Shinnecock Indian Nation. Cooper's Beach, Southampton Village, the Parrish Art Museum, Agawam Park and the Shinnecock Nation Cultural Center are its sights.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Southampton International Airport",
-      "search": "Southampton International Airport, Southampton, USA",
-      "text": "Southampton International Airport is the main air gateway for Southampton; compare transfer time with your hotel base before locking the first night."
+      "name": "Bradley International Airport",
+      "code": "BDL",
+      "search": "Bradley International Airport",
+      "text": "Bradley International Airport (BDL) is 120 km from Southampton by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 120
+    },
+    {
+      "name": "Tweed New Haven Airport",
+      "code": "HVN",
+      "search": "Tweed New Haven Airport",
+      "text": "Tweed New Haven Airport (HVN) is 59 km from Southampton by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 59
+    },
+    {
+      "name": "John F. Kennedy International Airport",
+      "code": "JFK",
+      "search": "John F. Kennedy International Airport",
+      "text": "John F. Kennedy International Airport (JFK) is 120 km from Southampton by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 120
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Southampton International Airport and central Southampton before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Bradley International Airport (BDL) is the nearest airport with scheduled service, 120 km from Southampton by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "120 km straight line"
   },
   "bookingDestination": "Southampton, USA",
   "stayOverview": "Start with City centre for the easiest first Southampton stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Southampton International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Bradley International Airport (BDL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,48 +155,44 @@
   "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
   "history": [
     {
-      "label": "500",
-      "text": "Although other tribal members immediately protested that the petition was a forgery, the legislature approved the sale of 3,500 acres (14 km2) of tribal land."
-    },
-    {
       "label": "1640",
-      "text": "The town was founded in 1640, when settlers from Lynn, Massachusetts, established residence on lands obtained from local Shinnecock Indian Nation."
+      "text": "The town was founded in 1640, when settlers from Lynn, Massachusetts, established residence on lands obtained from local Shinnecock Indian Nation.",
+      "source": {
+        "label": "Wikipedia: Southampton, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Southampton%2C_New_York&oldid=1384418694"
+      }
     },
     {
       "label": "1644",
-      "text": "From 1644, the colonists established an organized whale fishery, significant in the history of whaling as the first in New England."
+      "text": "From 1644, the colonists established an organized whale fishery, significant in the history of whaling as the first in New England.",
+      "source": {
+        "label": "Wikipedia: Southampton, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Southampton%2C_New_York&oldid=1384418694"
+      }
     },
     {
       "label": "1703",
-      "text": "The tribe alleged this broke the terms of a 1,000-year-lease signed by Southampton colonial officials and the tribe in 1703."
+      "text": "The tribe alleged this broke the terms of a 1,000-year-lease signed by Southampton colonial officials and the tribe in 1703.",
+      "source": {
+        "label": "Wikipedia: Southampton, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Southampton%2C_New_York&oldid=1384418694"
+      }
     },
     {
       "label": "1859",
-      "text": "The suit charged that in 1859, a group of powerful New York investors conspired to break the lease by sending the state Legislature a fraudulent petition from a number of Shinnecock tribal members."
-    },
-    {
-      "label": "2005",
-      "text": "The site shows the locations of over 100 points of interest, historic markers, and historic districts as well as over 1500 photos. Native American land claim In 2005, the Shinnecock Indian Nation filed a."
+      "text": "The suit charged that in 1859, a group of powerful New York investors conspired to break the lease by sending the state Legislature a fraudulent petition from a number of Shinnecock tribal members.",
+      "source": {
+        "label": "Wikipedia: Southampton, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Southampton%2C_New_York&oldid=1384418694"
+      }
     },
     {
       "label": "2006",
-      "text": "In 2006, the court ruled against the tribe finding the lawsuit was barred by laches."
-    },
-    {
-      "label": "Regional role",
-      "text": "They observed the Native Americans' hunting techniques, improved on their weapons and boats, and then went out to ocean hunting."
-    },
-    {
-      "label": "Regional role",
-      "text": "The first meeting house was on a hill that is the site of the current Southampton Hospital."
-    },
-    {
-      "label": "Regional role",
-      "text": "The town's oldest existent house is the Halsey House at 249 Main Street, which was built by Thomas Halsey, one of the first Englishmen to trade with the Shinnecocks."
-    },
-    {
-      "label": "Regional role",
-      "text": "Southampton is named after the port city of Southampton in Hampshire, England."
+      "text": "In 2006, the court ruled against the tribe finding the lawsuit was barred by laches.",
+      "source": {
+        "label": "Wikipedia: Southampton, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Southampton%2C_New_York&oldid=1384418694"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Southampton%2C_New_York",
@@ -216,5 +234,10 @@
       "text": "Ocean beach at the western end of Fire Island, with a lighthouse walk east along the dunes.",
       "source": "https://parks.ny.gov/parks/7/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

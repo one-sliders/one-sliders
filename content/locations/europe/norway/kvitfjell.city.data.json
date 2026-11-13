@@ -387,27 +387,19 @@
   },
   "airports": [
     {
-      "name": "Røros Airport",
-      "code": "RRS",
-      "search": "Røros Airport",
-      "text": "Røros Airport (RRS) is 132 km from Kvitfjell by straight line; check the road route before booking a transfer.",
-      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
-      "sourceLabel": "OurAirports open data (airports.csv)",
-      "distanceKmComputed": 132
-    },
-    {
-      "name": "Scandinavian Mountains Airport",
-      "code": "SCR",
-      "search": "Scandinavian Mountains Airport",
-      "text": "Scandinavian Mountains Airport (SCR) is 149 km from Kvitfjell by straight line; check the road route before booking a transfer.",
-      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
-      "sourceLabel": "OurAirports open data (airports.csv)",
-      "distanceKmComputed": 149
+      "name": "Oslo-Gardermoen International Airport",
+      "code": "OSL",
+      "search": "Oslo-Gardermoen International Airport",
+      "text": "Oslo-Gardermoen International Airport (OSL) is the airport the resort names for Kvitfjell, 157 km away by straight line; the train from the airport to Kvitfjell station takes about 2 hours.",
+      "source": "https://www.alpinco.com/en/kvitfjell/travel",
+      "sourceLabel": "Alpinco (Kvitfjell operator): Travel to Kvitfjell",
+      "distanceKmComputed": 157
     }
   ],
   "airportTransfer": {
-    "value": "Røros Airport (RRS) is the nearest airport with scheduled service, 132 km from Kvitfjell by straight line.",
-    "note": "nearest airport from the location register",
-    "distance": "132 km straight line"
+    "value": "Oslo-Gardermoen International Airport (OSL) is the airport Kvitfjell's operator names, 157 km from Kvitfjell by straight line.",
+    "note": "operator travel page (TASK-0237); replaced Roros (RRS), which was only the nearest by straight line",
+    "distance": "157 km straight line",
+    "source": "https://www.alpinco.com/en/kvitfjell/travel"
   }
 }

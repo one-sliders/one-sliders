@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Basseterre travel, stays and events",
-    "description": "Plan Basseterre around Independence Square, The Circus, Basseterre International Airport and nearby event links.",
-    "twitterDescription": "Plan Basseterre around Independence Square, The Circus, Basseterre International Airport and nearby event links.",
-    "webpageDescription": "Plan Basseterre around Independence Square, The Circus, Basseterre International Airport and nearby event links."
+    "description": "Plan Basseterre around Independence Square, The Circus, Robert L. Bradshaw International Airport (SKB) and nearby event links.",
+    "twitterDescription": "Plan Basseterre around Independence Square, The Circus, Robert L. Bradshaw International Airport (SKB) and nearby event links.",
+    "webpageDescription": "Plan Basseterre around Independence Square, The Circus, Robert L. Bradshaw International Airport (SKB) and nearby event links."
   },
   "region": "Capital city in Saint Kitts and Nevis",
   "population": "tba",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Basseterre travel, stays & events guide",
-  "heroText": "Basseterre works best as a base in Saint Kitts and Nevis when you anchor days around Independence Square, The Circus and St. George's Anglican Church. Use those sights to understand the city's history, street life and visitor rhythm. Basseterre International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Basseterre works best as a base in Saint Kitts and Nevis when you anchor days around Independence Square, The Circus and St. George's Anglican Church. Use those sights to understand the city's history, street life and visitor rhythm. Robert L. Bradshaw International Airport (SKB) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Basseterre International Airport",
-      "search": "Basseterre International Airport, Basseterre, Saint Kitts and Nevis",
-      "text": "Basseterre International Airport is the main air gateway for Basseterre; compare transfer time with your hotel base before locking the first night."
+      "name": "Robert L. Bradshaw International Airport",
+      "code": "SKB",
+      "search": "Robert L. Bradshaw International Airport",
+      "text": "Robert L. Bradshaw International Airport (SKB) is 2 km from Basseterre by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 2
+    },
+    {
+      "name": "Vance W. Amory International Airport",
+      "code": "NEV",
+      "search": "Vance W. Amory International Airport",
+      "text": "Vance W. Amory International Airport (NEV) is 17 km from Basseterre by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 17
+    },
+    {
+      "name": "John A. Osborne Airport",
+      "code": "MNI",
+      "search": "John A. Osborne Airport",
+      "text": "John A. Osborne Airport (MNI) is 80 km from Basseterre by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 80
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Basseterre International Airport and central Basseterre before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Robert L. Bradshaw International Airport (SKB) is the nearest airport with scheduled service, 2 km from Basseterre by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "2 km straight line"
   },
   "bookingDestination": "Basseterre, Saint Kitts and Nevis",
   "stayOverview": "Start with City centre for the easiest first Basseterre stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Basseterre International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Robert L. Bradshaw International Airport (SKB), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -146,43 +168,51 @@
   "history": [
     {
       "label": "1627",
-      "text": "Basseterre was founded in 1627 by the French, under Sieur Pierre Belain d'Esnambuc."
+      "text": "Basseterre was founded in 1627 by the French, under Sieur Pierre Belain d'Esnambuc.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     },
     {
       "label": "1639",
-      "text": "Kitts in 1639, the town turned into a large, successful port, commanding Eastern Caribbean trade and colonisation."
+      "text": "When Phillippe de Longvilliers de Poincy was made the French governor of St. Kitts in 1639, the town turned into a large, successful port, commanding Eastern Caribbean trade and colonisation.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     },
     {
       "label": "1660",
-      "text": "De Poincy then quickly made Basseterre capital of the entire French West Indies colony, which included the islands of Guadeloupe and Martinique, and remained so until his death in 1660."
+      "text": "De Poincy then quickly made Basseterre capital of the entire French West Indies colony, which included the islands of Guadeloupe and Martinique, and remained so until his death in 1660.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     },
     {
       "label": "1727",
-      "text": "Kitts in 1727, following the expulsion of the French from the island and the establishment of full British control."
+      "text": "The city was made capital of the island of St. Kitts in 1727, following the expulsion of the French from the island and the establishment of full British control.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     },
     {
       "label": "1867",
-      "text": "Most of the city structures were built after the great fire of 1867."
+      "text": "Most of the city structures were built after the great fire of 1867.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     },
     {
       "label": "1883",
-      "text": "The Circus was modelled after Piccadilly Circus, and the fountain in the centre was built in 1883, and dedicated to The Honourable Thomas Berkeley Hardtman Berkeley, the father of Henry Spencer Berkeley. Geography and."
-    },
-    {
-      "label": "Growth",
-      "text": "It served as the capital of the French colony of Saint-Christophe, which consisted of the northern and southern extremities of the island of St."
-    },
-    {
-      "label": "Regional role",
-      "text": "The city was made capital of the island of St."
-    },
-    {
-      "label": "Regional role",
-      "text": "The city of Basseterre has one of the most tragic histories of any Caribbean capital, destroyed many times by colonial wars, fire, earthquakes, floods, riots, and hurricanes."
-    },
-    {
-      "label": "Regional role",
-      "text": "Despite all of this, a considerable number of well-restored buildings still exist in the centre of Basseterre."
+      "text": "The Circus was modelled after Piccadilly Circus, and the fountain in the centre was built in 1883, and dedicated to The Honourable Thomas Berkeley Hardtman Berkeley, the father of Henry Spencer Berkeley.",
+      "source": {
+        "label": "Wikipedia: Basseterre",
+        "url": "https://en.wikipedia.org/w/index.php?title=Basseterre&oldid=1383629274"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Basseterre",

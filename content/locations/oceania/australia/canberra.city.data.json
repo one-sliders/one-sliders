@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Canberra travel, stays and events",
-    "description": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra International Airport and nearby event links.",
-    "twitterDescription": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra International Airport and nearby event links.",
-    "webpageDescription": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra International Airport and nearby event links."
+    "description": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra Airport (CBR) and nearby event links.",
+    "twitterDescription": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra Airport (CBR) and nearby event links.",
+    "webpageDescription": "Plan Canberra around Australian Parliament House, Australian War Memorial, Canberra Airport (CBR) and nearby event links."
   },
   "region": "Capital city in Australia",
   "population": "~474K",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Canberra travel, stays & events guide",
-  "heroText": "Canberra works best as a base in Australia when you anchor days around Australian Parliament House, Australian War Memorial and National Gallery of Australia. Use those sights to understand the city's history, street life and visitor rhythm. Canberra International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Canberra works best as a base in Australia when you anchor days around Australian Parliament House, Australian War Memorial and National Gallery of Australia. Use those sights to understand the city's history, street life and visitor rhythm. Canberra Airport (CBR) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "Canberra International Airport",
-      "search": "Canberra International Airport, Canberra, Australia",
-      "text": "Canberra International Airport is the main air gateway for Canberra; compare transfer time with your hotel base before locking the first night."
+      "name": "Canberra Airport",
+      "code": "CBR",
+      "search": "Canberra Airport",
+      "text": "Canberra Airport (CBR) is 7 km from Canberra by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Cooma Snowy Mountains Airport",
+      "code": "OOM",
+      "search": "Cooma Snowy Mountains Airport",
+      "text": "Cooma Snowy Mountains Airport (OOM) is 114 km from Canberra by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 114
+    },
+    {
+      "name": "Moruya Airport",
+      "code": "MYA",
+      "search": "Moruya Airport",
+      "text": "Moruya Airport (MYA) is 114 km from Canberra by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 114
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Canberra International Airport and central Canberra before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Canberra Airport (CBR) is the nearest airport with scheduled service, 7 km from Canberra by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Canberra, Australia",
   "stayOverview": "Start with City centre for the easiest first Canberra stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Canberra International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Canberra Airport (CBR), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,75 @@
   "history": [
     {
       "label": "1823",
-      "text": "British settlement of the area probably dates from late 1823, when a sheep station was formed on what is now the Acton Peninsula by James Cowan, the head stockman employed by Joshua John Moore."
+      "text": "British settlement of the area probably dates from late 1823, when a sheep station was formed on what is now the Acton Peninsula by James Cowan, the head stockman employed by Joshua John Moore.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1827",
-      "text": "Other notable early colonists included Henry Donnison, who established the Yarralumla estate—now the site of the official residence of the Governor-General of Australia—in 1827, and John Palmer who employed Duncan Macfarlane to form the."
+      "text": "Other notable early colonists included Henry Donnison, who established the Yarralumla estate—now the site of the official residence of the Governor-General of Australia—in 1827, and John Palmer who employed Duncan Macfarlane to form the Jerrabomberra property in 1828.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1832",
-      "text": "Campbell and his family built a dairy on the site in 1832, now regarded as the oldest standing European building in Canberra, followed by the imposing stone house that is now the officers' mess."
-    },
-    {
-      "label": "1845",
-      "text": "Canberra's first school, St John's School (now a museum), was situated next to the church and opened in the same year of 1845."
+      "text": "Campbell and his family built a dairy on the site in 1832, now regarded as the oldest standing European building in Canberra, followed by the imposing stone house that is now the officers' mess of the Royal Military College, Duntroon.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1904",
-      "text": "Dalgety was chosen by the federal parliament and it passed the Seat of Government Act 1904 confirming Dalgety as the site of the nation's capital."
+      "text": "Dalgety was chosen by the federal parliament and it passed the Seat of Government Act 1904 confirming Dalgety as the site of the nation's capital.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1911",
-      "text": "The NSW government ceded the district to the federal government in 1911 and the Federal Capital Territory was established."
+      "text": "The NSW government ceded the district to the federal government in 1911 and the Federal Capital Territory was established.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1912",
-      "text": "On 25 November 1912, the board advised that it could not support the Griffins' plan in its entirety and suggested an alternative plan of its own devising."
+      "text": "On 25 November 1912, the board advised that it could not support the Griffins' plan in its entirety and suggested an alternative plan of its own devising.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1913",
-      "text": "In 1913, Walter Burley Griffin was appointed Federal Capital Director of Design and Construction and construction began."
-    },
-    {
-      "label": "1920",
-      "text": "It is the only cathedral in Canberra.) From 1920 to 1957, three bodies — successively the Federal Capital Advisory Committee, the Federal Capital Commission, and the National Capital Planning and Development Committee — continued."
+      "text": "In 1913, Walter Burley Griffin was appointed Federal Capital Director of Design and Construction and construction began.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "1988",
-      "text": "On 9 May 1988, a larger and permanent Parliament House was opened on Capital Hill as part of Australia's bicentenary celebrations."
+      "text": "On 9 May 1988, a larger and permanent Parliament House was opened on Capital Hill as part of Australia's bicentenary celebrations.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     },
     {
       "label": "2003",
-      "text": "Parts of Canberra were engulfed by bushfires on 18 January 2003 that killed four people, injured 435 and destroyed more than 500 homes as well as the major research telescopes of Australian National University's."
-    },
-    {
-      "label": "Civic role",
-      "text": "The Canberry or Nganbra clan lived mostly around Sullivan's Creek and had ceremonial grounds at the base of Galambary (Black Mountain), while the Pialligo clan had land around what is now Canberra Airport."
-    },
-    {
-      "label": "Regional role",
-      "text": "Archaeological evidence of settlement in the region includes inhabited rock shelters, rock paintings and engravings, burial places, camps and quarry sites as well as stone tools and arrangements."
-    },
-    {
-      "label": "Regional role",
-      "text": "Following a long dispute over whether Sydney or Melbourne should be the national capital, a compromise was reached: the new capital would be built in New South Wales, so long as it was at."
+      "text": "Parts of Canberra were engulfed by bushfires on 18 January 2003 that killed four people, injured 435 and destroyed more than 500 homes as well as the major research telescopes of Australian National University's Mount Stromlo Observatory.",
+      "source": {
+        "label": "Wikipedia: Canberra",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canberra&oldid=1382572761"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Canberra",

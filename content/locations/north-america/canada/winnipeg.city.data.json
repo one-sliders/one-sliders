@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Winnipeg travel, stays & events guide",
-  "heroText": "Winnipeg works best as a base in Canada when you anchor days around The Forks, Canadian Museum for Human Rights and Exchange District. Use those sights to understand the city's history, street life and visitor rhythm. Winnipeg International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Winnipeg works best as a base in Canada when you anchor days around The Forks, Canadian Museum for Human Rights and Exchange District. Use those sights to understand the city's history, street life and visitor rhythm. Winnipeg / James Armstrong Richardson International Airport (YWG) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,19 @@
   ],
   "airports": [
     {
-      "name": "Winnipeg International Airport",
-      "search": "Winnipeg International Airport, Winnipeg, Canada",
-      "text": "Winnipeg International Airport is the main air gateway for Winnipeg; compare transfer time with your hotel base before locking the first night."
+      "name": "Winnipeg / James Armstrong Richardson International Airport",
+      "code": "YWG",
+      "search": "Winnipeg / James Armstrong Richardson International Airport",
+      "text": "Winnipeg / James Armstrong Richardson International Airport (YWG) is 7 km from Winnipeg by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Winnipeg International Airport and central Winnipeg before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Winnipeg / James Armstrong Richardson International Airport (YWG) is the nearest airport with scheduled service, 7 km from Winnipeg by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Winnipeg, Canada",
   "stayOverview": "Start with City centre for the easiest first Winnipeg stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +88,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Winnipeg International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Winnipeg / James Armstrong Richardson International Airport (YWG), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +137,92 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Early settlement",
-      "text": "Estimates of the date of first settlement in the area range from 11,500 years ago for a site southwest of the present city to 6,000 years ago at the Forks."
-    },
-    {
       "label": "1730s",
-      "text": "French-Canadian fur trader La Vérendrye referred to the lake as Lac Gouinipique or Ouinipigon when he built the first forts in the area in the 1730s."
+      "text": "French-Canadian fur trader La Vérendrye referred to the lake as Lac Gouinipique or Ouinipigon when he built the first forts in the area in the 1730s.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1738",
-      "text": "Sieur de La Vérendrye built the first fur-trading post on the site in 1738, called Fort Rouge."
+      "text": "Sieur de La Vérendrye built the first fur-trading post on the site in 1738, called Fort Rouge.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1809",
-      "text": "The North West Company built Fort Gibraltar in 1809, and the Hudson's Bay Company built Fort Douglas in 1812, both in the area of present-day Winnipeg."
+      "text": "The North West Company built Fort Gibraltar in 1809, and the Hudson's Bay Company built Fort Douglas in 1812, both in the area of present-day Winnipeg.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1822",
-      "text": "Fort Gibraltar was renamed Fort Garry in 1822 and became the leading post in the region for the Hudson's Bay Company."
+      "text": "Fort Gibraltar was renamed Fort Garry in 1822 and became the leading post in the region for the Hudson's Bay Company.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1826",
-      "text": "A flood destroyed the fort in 1826 and it was not rebuilt until 1835."
+      "text": "A flood destroyed the fort in 1826 and it was not rebuilt until 1835.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1873",
-      "text": "On 8 November 1873, Winnipeg was incorporated as a city, with the Selkirk settlement as its nucleus."
+      "text": "On 8 November 1873, Winnipeg was incorporated as a city, with the Selkirk settlement as its nucleus.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1881",
-      "text": "Winnipeg developed rapidly after the coming of the Canadian Pacific Railway in 1881."
-    },
-    {
-      "label": "1914",
-      "text": "However, the city faced financial difficulty when the Panama Canal opened in 1914."
+      "text": "Winnipeg developed rapidly after the coming of the Canadian Pacific Railway in 1881.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1919",
-      "text": "After many arrests, deportations, and incidents of violence, the strike ended on 21 June 1919 when the Riot Act was read."
+      "text": "After many arrests, deportations, and incidents of violence, the strike ended on 21 June 1919 when the Riot Act was read.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1920",
-      "text": "Proportional voting was also introduced in 1920, and used provincially until 1957."
+      "text": "Proportional voting was also introduced in 1920, and used provincially until 1957.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1939",
-      "text": "The Depression ended after the start of World War II in 1939."
+      "text": "The Depression ended after the start of World War II in 1939.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     },
     {
       "label": "1950",
-      "text": "When the war ended, pent-up demand generated a boom in housing development, although building activity was checked by the 1950 Red River flood."
-    },
-    {
-      "label": "Regional role",
-      "text": "A rebuilt section of the fort, consisting of the front gate and a section of the wall, is near the modern-day corner of Main Street and Broadway in downtown Winnipeg."
+      "text": "When the war ended, pent-up demand generated a boom in housing development, although building activity was checked by the 1950 Red River flood.",
+      "source": {
+        "label": "Wikipedia: Winnipeg",
+        "url": "https://en.wikipedia.org/w/index.php?title=Winnipeg&oldid=1384237676"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Winnipeg",

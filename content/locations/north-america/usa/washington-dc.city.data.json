@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Washington DC travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Washington DC's sights are the National Mall, the U.S. Capitol, the White House, the Lincoln Memorial and the Smithsonian Museums. The port of Georgetown, founded in 1751, was one of two existing settlements taken into the new federal territory.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "Washington DC International Airport",
-      "search": "Washington DC International Airport, Washington DC, USA",
-      "text": "Washington DC International Airport is the main air gateway for Washington DC; compare transfer time with your hotel base before locking the first night."
+      "name": "Ronald Reagan Washington National Airport",
+      "code": "DCA",
+      "search": "Ronald Reagan Washington National Airport",
+      "text": "Ronald Reagan Washington National Airport (DCA) is 6 km from Washington DC by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Washington Dulles International Airport",
+      "code": "IAD",
+      "search": "Washington Dulles International Airport",
+      "text": "Washington Dulles International Airport (IAD) is 36 km from Washington DC by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 36
+    },
+    {
+      "name": "Baltimore/Washington International Thurgood Marshall Airport",
+      "code": "BWI",
+      "search": "Baltimore/Washington International Thurgood Marshall Airport",
+      "text": "Baltimore/Washington International Thurgood Marshall Airport (BWI) is 44 km from Washington DC by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 44
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Washington DC International Airport and central Washington DC before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ronald Reagan Washington National Airport (DCA) is the nearest airport with scheduled service, 6 km from Washington DC by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Washington DC, USA",
   "stayOverview": "Start with City centre for the easiest first Washington DC stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Washington DC International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ronald Reagan Washington National Airport (DCA), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -139,59 +161,91 @@
   "history": [
     {
       "label": "17th century",
-      "text": "The Algonquian-speaking Piscataway people inhabited present-day Washington, D.C. and lands around the Potomac River when Europeans first arrived and colonized the region in the early 17th century."
+      "text": "The Algonquian-speaking Piscataway people inhabited present-day Washington, D.C. and lands around the Potomac River when Europeans first arrived and colonized the region in the early 17th century.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1699",
-      "text": "Conflicts with European colonists and neighboring tribes ultimately displaced the Piscataway people, some of whom established a new settlement in 1699 near Point of Rocks, Maryland."
+      "text": "The Nacotchtank, also called the Nacostines by Catholic missionaries, maintained settlements around the Anacostia River in present-day Washington, D.C. Conflicts with European colonists and neighboring tribes ultimately displaced the Piscataway people, some of whom established a new settlement in 1699 near Point of Rocks, Maryland.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1751",
-      "text": "Two pre-existing settlements were included in the territory, the port of Georgetown, founded in 1751, and the port city of Alexandria, Virginia, founded in 1749."
+      "text": "Two pre-existing settlements were included in the territory, the port of Georgetown, founded in 1751, and the port city of Alexandria, Virginia, founded in 1749.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1783",
-      "text": "On October 6, 1783, after the Pennsylvania Mutiny of 1783 forced the capital to move briefly from Philadelphia to present-day Princeton University in Princeton, New Jersey, Congress resolved to consider a new location for."
+      "text": "On October 6, 1783, after the Pennsylvania Mutiny of 1783 forced the capital to move briefly from Philadelphia to present-day Princeton University in Princeton, New Jersey, Congress resolved to consider a new location for it.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1788",
-      "text": "43, published on January 23, 1788, James Madison argued that the new federal government would need authority over a national capital to provide for its own maintenance and safety."
+      "text": "In Federalist No. 43, published on January 23, 1788, James Madison argued that the new federal government would need authority over a national capital to provide for its own maintenance and safety.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1790",
-      "text": "Following independence, New York City served briefly as the first capital following adoption of the Constitution before the capital returned to Philadelphia, where it remained from 1790 to 1800."
+      "text": "Following independence, New York City briefly served as the first capital under the Constitution before the capital returned to Philadelphia, where it remained from 1790 to 1800.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1791",
-      "text": "On September 9, 1791, three commissioners overseeing the capital's construction named the city in honor of President Washington."
+      "text": "On September 9, 1791, three commissioners overseeing the capital's construction named the city in honor of President Washington.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
-      "label": "1830s",
-      "text": "Most federal buildings were repaired quickly, but the Capitol, which was then still under construction, was not completed in its current form until 1868. Retrocession and the Civil War In the 1830s, the district's."
+      "label": "1868",
+      "text": "Most federal buildings were repaired quickly, but the Capitol, which was then still under construction, was not completed in its current form until 1868.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "1871",
-      "text": "In the Organic Act of 1871, Congress repealed the individual charters of the cities of Washington and Georgetown, abolished Washington County, and created a new territorial government for the whole District of Columbia."
+      "text": "In the Organic Act of 1871, Congress repealed the individual charters of the cities of Washington and Georgetown, abolished Washington County, and created a new territorial government for the whole District of Columbia.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
-      "label": "1980s",
-      "text": "In 1975, Walter Washington became the district's first elected and first black mayor. Statehood movement Since the 1980s, the D.C. statehood movement has grown in prominence."
+      "label": "1975",
+      "text": "In 1975, Walter Washington became the district's first elected and first black mayor.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     },
     {
       "label": "2016",
-      "text": "In 2016, a referendum on D.C. statehood resulted in an 85% support among Washington, D.C., voters for it to become the nation's 51st state."
-    },
-    {
-      "label": "Growth",
-      "text": "The Nacotchtank, also called the Nacostines by Catholic missionaries, maintained settlements around the Anacostia River in present-day Washington, D.C."
-    },
-    {
-      "label": "Today",
-      "text": "During the American Revolution and Revolutionary War, nine cities served as capitals to the Continental Congress and under the Articles of Confederation."
-    },
-    {
-      "label": "Regional role",
-      "text": "The city became an important slave market and a center of the nation's internal slave trade."
+      "text": "In 2016, a referendum on D.C. statehood showed 85% support among Washington, D.C., voters for it to become the nation's 51st state.",
+      "source": {
+        "label": "Wikipedia: Washington, D.C.",
+        "url": "https://en.wikipedia.org/w/index.php?title=Washington%2C_D.C.&oldid=1384433238"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Washington%2C_D.C.",
@@ -241,5 +295,10 @@
       "text": "John Brown's raid site where two rivers and three states meet, with the Appalachian Trail through it.",
       "source": "https://www.nps.gov/hafe/index.htm"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

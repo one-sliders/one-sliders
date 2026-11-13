@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Selfoss travel, stays & events guide",
-  "heroText": "Selfoss works best as a base in Iceland when you anchor days around Olfusa river, Selfoss town centre and Golden Circle trips. Use those sights to understand the city's history, street life and visitor rhythm. Selfoss International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Selfoss works best as a base in Iceland when you anchor days around Olfusa river, Selfoss town centre and Golden Circle trips. Use those sights to understand the city's history, street life and visitor rhythm. Keflavik International Airport (KEF) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,28 @@
   ],
   "airports": [
     {
-      "name": "Selfoss International Airport",
-      "search": "Selfoss International Airport, Selfoss, Iceland",
-      "text": "Selfoss International Airport is the main air gateway for Selfoss; compare transfer time with your hotel base before locking the first night."
+      "name": "Keflavik International Airport",
+      "code": "KEF",
+      "search": "Keflavik International Airport",
+      "text": "Keflavik International Airport (KEF) is 79 km from Selfoss by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 79
+    },
+    {
+      "name": "Reykjavík Domestic Airport",
+      "code": "RKV",
+      "search": "Reykjavík Domestic Airport",
+      "text": "Reykjavík Domestic Airport (RKV) is 51 km from Selfoss by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 51
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Selfoss International Airport and central Selfoss before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Keflavik International Airport (KEF) is the nearest airport with scheduled service, 79 km from Selfoss by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "79 km straight line"
   },
   "bookingDestination": "Selfoss, Iceland",
   "stayOverview": "Start with City centre for the easiest first Selfoss stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +99,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Selfoss International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Keflavik International Airport (KEF), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,59 +154,59 @@
   "history": [
     {
       "label": "1000",
-      "text": "Overview Selfoss was settled by Þórir Ásason sometime after 1000, but the sagas of Icelanders mention that Ingólfur Arnarson was there during the winter of 873-74, under the Ingólfsfjall mountain, which is west of."
+      "text": "Overview Selfoss was settled by Þórir Ásason sometime after 1000, but the sagas of Icelanders mention that Ingólfur Arnarson was there during the winter of 873-74, under the Ingólfsfjall mountain, which is west of the Ölfusá river.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "1891",
-      "text": "In the summer of 1891, due to the lobbying of Tryggvi Gunnarsson, a member of the Alþing, the first suspension bridge was built over the Ölfusá."
+      "text": "In the summer of 1891, due to the lobbying of Tryggvi Gunnarsson, a member of the Alþing, the first suspension bridge was built over the Ölfusá.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "1929",
-      "text": "The largest building is the reconstructed 'Old Dairy' building, a dairy processing plant constructed in 1929 and demolished in 1954, now in use as a food hall."
+      "text": "The largest building is the reconstructed 'Old Dairy' building, a dairy processing plant constructed in 1929 and demolished in 1954, now in use as a food hall.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "1931",
-      "text": "In 1931, the dairy firm Mjólkurbú Flóamanna and general store Kaupfélag Árnesinga were established."
+      "text": "In 1931, the dairy firm Mjólkurbú Flóamanna and general store Kaupfélag Árnesinga were established.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "1945",
-      "text": "The current bridge was built in 1945 after the original structure collapsed."
+      "text": "The current bridge was built in 1945 after the original structure collapsed.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "1974",
-      "text": "After the construction the building was used for travellers' accommodation and dining, until 1974."
-    },
-    {
-      "label": "2008",
-      "text": "Former World Chess Champion Bobby Fischer is buried near Selfoss at Laugardælir cemetery. 2008 earthquake According to the United States Geological Survey, an earthquake with a moment magnitude of 6.3 occurred near Selfoss on."
-    },
-    {
-      "label": "2021",
-      "text": "A number of sheep in the Selfoss area were killed. New town center In the summer of 2021, a new pedestrianised town center was opened."
+      "text": "After the construction the building was used for travellers' accommodation and dining, until 1974.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     },
     {
       "label": "2022",
-      "text": "As a result of its success, in 2022 it was decided to expand the project with 40 new houses, including two hotels."
-    },
-    {
-      "label": "Civic role",
-      "text": "The cabin built to house workers constructing the bridge is the oldest building in Selfoss, and was named Tryggvaskáli in honor of Tryggvi for his efforts to construct the bridge."
-    },
-    {
-      "label": "Regional role",
-      "text": "The two companies were the main employers in the area for several decades."
-    },
-    {
-      "label": "Regional role",
-      "text": "During World War II the British stationed troops at Selfoss to guard the strategic bridge. Population growth Today, with more efficient transportation, Selfoss benefits from its proximity to the Reykjavík area and is predicted."
-    },
-    {
-      "label": "Regional role",
-      "text": "The fete involves the selling of homemade goods on small stalls, performances by musicians and magicians on a temporary stage and in the evenings, the revelry continues with large bonfires and free fireworks display."
-    },
-    {
-      "label": "Regional role",
-      "text": "The earthquake was felt across southern Iceland, including in the capital Reykjavík and the airbase at Keflavik."
+      "text": "As a result of its success, in 2022 it was decided to expand the project with 40 new houses, including two hotels.",
+      "source": {
+        "label": "Wikipedia: Selfoss (town)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Selfoss_(town)&oldid=1378742864"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Selfoss_%28town%29",

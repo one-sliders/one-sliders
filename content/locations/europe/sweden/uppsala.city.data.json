@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Uppsala travel, stays & events guide",
-  "heroText": "Uppsala works best as a base in Sweden when you anchor days around Uppsala Cathedral, Uppsala University and Gamla Uppsala. Use those sights to understand the city's history, street life and visitor rhythm. Uppsala International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Uppsala works best as a base in Sweden when you anchor days around Uppsala Cathedral, Uppsala University and Gamla Uppsala. Use those sights to understand the city's history, street life and visitor rhythm. Stockholm-Arlanda Airport (ARN) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Uppsala International Airport",
-      "search": "Uppsala International Airport, Uppsala, Sweden",
-      "text": "Uppsala International Airport is the main air gateway for Uppsala; compare transfer time with your hotel base before locking the first night."
+      "name": "Stockholm-Arlanda Airport",
+      "code": "ARN",
+      "search": "Stockholm-Arlanda Airport",
+      "text": "Stockholm-Arlanda Airport (ARN) is 28 km from Uppsala by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 28
+    },
+    {
+      "name": "Stockholm Västerås Airport",
+      "code": "VST",
+      "search": "Stockholm Västerås Airport",
+      "text": "Stockholm Västerås Airport (VST) is 64 km from Uppsala by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 64
+    },
+    {
+      "name": "Stockholm Skavsta Airport",
+      "code": "NYO",
+      "search": "Stockholm Skavsta Airport",
+      "text": "Stockholm Skavsta Airport (NYO) is 126 km from Uppsala by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 126
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Uppsala International Airport and central Uppsala before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Stockholm-Arlanda Airport (ARN) is the nearest airport with scheduled service, 28 km from Uppsala by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "28 km straight line"
   },
   "bookingDestination": "Uppsala, Sweden",
   "stayOverview": "Start with City centre for the easiest first Uppsala stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Uppsala International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Stockholm-Arlanda Airport (ARN), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -145,60 +167,84 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "118",
-      "text": "The cathedral is built in the Gothic style and is one of the largest in northern Europe, with towers reaching 118.70 metres (389.4 ft)."
-    },
-    {
-      "label": "980s",
-      "text": "The Kungsängen plains along the river south of Uppsala have been identified as a possible match for Fyrisvellir, the site of the Battle of Fyrisvellir in the 980s. Östra Aros was at that time."
-    },
-    {
       "label": "1160",
-      "text": "In 1160, King Eric Jedvardsson was attacked and killed outside the church of Östra Aros, and later became venerated as a saint in the Catholic Church."
+      "text": "In 1160, King Eric Jedvardsson was attacked and killed outside the church of Östra Aros, and later became venerated as a saint in the Catholic Church.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1274",
-      "text": "In 1274, Östra Aros overtook Gamla Uppsala as the main regional centre, and when the cathedral of Gamla Uppsala burnt down, the archbishopric and the relics of Saint Eric were moved to Östra Aros."
+      "text": "In 1274, Östra Aros overtook Gamla Uppsala as the main regional centre, and when the cathedral of Gamla Uppsala burnt down, the archbishopric and the relics of Saint Eric were moved to Östra Aros, where the present-day Uppsala Cathedral was erected; it was inaugurated in 1435.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1477",
-      "text": "The city is the site of the oldest university in Scandinavia, founded in 1477, and is where Carl Linnaeus, one of the renowned scholars of Uppsala University, lived for many years; both his house."
+      "text": "The city is the site of the oldest university in Scandinavia, founded in 1477, and is where Carl Linnaeus, one of the renowned scholars of Uppsala University, lived for many years; both his house and garden can still be visited.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
+    },
+    {
+      "label": "16th century",
+      "text": "Uppsala is also the site of the 16th-century Uppsala Castle.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1702",
-      "text": "The city was severely damaged by a fire in 1702."
+      "text": "The city was severely damaged by a fire in 1702.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1961",
-      "text": "In ecclesiastical terms, the place has always belonged to Uppsala parish, from 1961 called Uppsala cathedral parish."
+      "text": "In ecclesiastical terms, the place has always belonged to Uppsala parish, from 1961 called Uppsala cathedral parish.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1971",
-      "text": "Until 1971, the town was part of the district court for Uppsala City Hall Court and has been part of the Uppsala Court since 1971."
+      "text": "Until 1971, the town was part of the district court for Uppsala City Hall Court and has been part of the Uppsala Court since 1971.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1974",
-      "text": "After parish break-up in 1974, parts of the town are located in Gottsunda parish."
+      "text": "After parish break-up in 1974, parts of the town are located in Gottsunda parish.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "1986",
-      "text": "The arms bearing the lion can be traced to 1737 and have been modernised several times, most recently in 1986."
+      "text": "The arms bearing the lion can be traced to 1737 and have been modernised several times, most recently in 1986.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     },
     {
       "label": "2010",
-      "text": "After further building expansion, some are also in Denmark-Funbo parish, before 2010 in Denmark parish."
-    },
-    {
-      "label": "Growth",
-      "text": "Today's Uppsala was called Aros, 'river mouth', due to its location at the time at the mouth of the River Fyris in Ekoln, a bay in Lake Mälaren."
-    },
-    {
-      "label": "Regional role",
-      "text": "Uppsala is also the site of the 16th-century Uppsala Castle."
-    },
-    {
-      "label": "Regional role",
-      "text": "The incorporated parts of Uppsala belong to Gamla Uppsala parish, Helga Trefaldighets parish and Vaksala parish."
+      "text": "After further building expansion, some are also in Denmark-Funbo parish, before 2010 in Denmark parish.",
+      "source": {
+        "label": "Wikipedia: Uppsala",
+        "url": "https://en.wikipedia.org/w/index.php?title=Uppsala&oldid=1384474604"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Uppsala",

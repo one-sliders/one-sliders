@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Motegi travel, stays and events",
-    "description": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Motegi International Airport and nearby event links.",
-    "twitterDescription": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Motegi International Airport and nearby event links.",
-    "webpageDescription": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Motegi International Airport and nearby event links."
+    "description": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Ibaraki Airport (IBR) and nearby event links.",
+    "twitterDescription": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Ibaraki Airport (IBR) and nearby event links.",
+    "webpageDescription": "Plan Motegi around Mobility Resort Motegi, Honda Collection Hall, Ibaraki Airport (IBR) and nearby event links."
   },
   "region": "Key city in Japan",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Motegi travel, stays & events guide",
-  "heroText": "Motegi works best as a base in Japan when you anchor days around Mobility Resort Motegi, Honda Collection Hall and Twin Ring Motegi Road Course. Use those sights to understand the city's history, street life and visitor rhythm. Motegi International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Motegi works best as a base in Japan when you anchor days around Mobility Resort Motegi, Honda Collection Hall and Twin Ring Motegi Road Course. Use those sights to understand the city's history, street life and visitor rhythm. Ibaraki Airport (IBR) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Motegi International Airport",
-      "search": "Motegi International Airport, Motegi, Japan",
-      "text": "Motegi International Airport is the main air gateway for Motegi; compare transfer time with your hotel base before locking the first night."
+      "name": "Ibaraki Airport",
+      "code": "IBR",
+      "search": "Ibaraki Airport",
+      "text": "Ibaraki Airport (IBR) is 43 km from Motegi by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 43
+    },
+    {
+      "name": "Narita International Airport",
+      "code": "NRT",
+      "search": "Narita International Airport",
+      "text": "Narita International Airport (NRT) is 85 km from Motegi by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 85
+    },
+    {
+      "name": "Tokyo Haneda International Airport",
+      "code": "HND",
+      "search": "Tokyo Haneda International Airport",
+      "text": "Tokyo Haneda International Airport (HND) is 113 km from Motegi by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 113
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Motegi International Airport and central Motegi before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ibaraki Airport (IBR) is the nearest airport with scheduled service, 43 km from Motegi by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "43 km straight line"
   },
   "bookingDestination": "Motegi, Japan",
   "stayOverview": "Start with City centre for the easiest first Motegi stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Motegi International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ibaraki Airport (IBR), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,60 +157,36 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "120",
-      "text": "Motegi is more than 120 km (75 mi) from Fukushima Daiichi Nuclear Power Plant."
-    },
-    {
-      "label": "750",
-      "text": "Seating outside the grandstand is limited to areas of the infield and along the 750 m (820 yd) backstraight of the road course."
-    },
-    {
       "label": "1998",
-      "text": "Mike Skinner won the only NASCAR Winston Cup Series exhibition race held at the track in 1998, the Coca-Cola 500."
+      "text": "Mike Skinner won the only NASCAR Winston Cup Series exhibition race held at the track in 1998, the Coca-Cola 500.",
+      "source": {
+        "label": "Wikipedia: Motegi Circuit",
+        "url": "https://en.wikipedia.org/w/index.php?title=Motegi_Circuit&oldid=1384469778"
+      }
     },
     {
       "label": "1999",
-      "text": "The track also hosted the NASCAR Winston West Series finale in 1999, with Kevin Richards getting the win. Demolition On May 13, 2026, news broke that Twin Ring Motegi's oval would be demolished and."
-    },
-    {
-      "label": "2000",
-      "text": "It has hosted the Pacific motorcycle Grand Prix from 2000 to 2003 and the Japanese motorcycle Grand Prix since 2004. Other facilities In addition to the main racing complex, Mobility Resort Motegi features a."
+      "text": "The track also hosted the NASCAR Winston West Series finale in 1999, with Kevin Richards getting the win.",
+      "source": {
+        "label": "Wikipedia: Motegi Circuit",
+        "url": "https://en.wikipedia.org/w/index.php?title=Motegi_Circuit&oldid=1384469778"
+      }
     },
     {
       "label": "2005",
-      "text": "In Honda's 2005 Clio Awards winning commercial \"Impossible Dream\", the sequence in which the BAR Formula One car is driven into the bridge was filmed at the circuit."
+      "text": "In Honda's 2005 Clio Awards winning commercial \"Impossible Dream\", the sequence in which the BAR Formula One car is driven into the bridge was filmed at the circuit.",
+      "source": {
+        "label": "Wikipedia: Motegi Circuit",
+        "url": "https://en.wikipedia.org/w/index.php?title=Motegi_Circuit&oldid=1384469778"
+      }
     },
     {
       "label": "2011",
-      "text": "In 2011, Casey Stoner and Jorge Lorenzo proposed to boycott the MotoGP race out of fears for their health from radiation from the Fukushima Daiichi Nuclear Power Plant even though all the independent scientific."
-    },
-    {
-      "label": "2026",
-      "text": "As of May 2026, the fastest official race lap records at the Mobility Resort Motegi are listed as: In popular media As a large recently constructed Japanese circuit, Mobility Resort Motegi has and continues."
-    },
-    {
-      "label": "4501",
-      "text": "During the first tankery battle in Girls und Panzer Das Finale Part 1, Ooarai Girls Academy against BC Freedom High School, members of Leopon Team, the VK 4501 (P) reference the track, saying they."
-    },
-    {
-      "label": "Growth",
-      "text": "The race was most noted for being the first oval track NASCAR race in Japan as well as being the first in which Dale Earnhardt and his son, Dale Earnhardt Jr., competed with one."
-    },
-    {
-      "label": "Today",
-      "text": "Although they are separate tracks, it is impossible for races to occur simultaneously on the two courses; to access the oval track, teams must cross the road course pit and front straight."
-    },
-    {
-      "label": "Civic role",
-      "text": "The road course also runs in the opposite direction from the oval; clockwise, rather than counter-clockwise."
-    },
-    {
-      "label": "Regional role",
-      "text": "The course itself is built in a stop-start straight-hairpin style, which flows differently than many similarly-sized tracks."
-    },
-    {
-      "label": "Regional role",
-      "text": "Train links to the area are extremely limited (the major regional lines, JR East and Tobu Railway do not service the area), nor has a planned superhighway been completed."
+      "text": "In 2011, Casey Stoner and Jorge Lorenzo proposed to boycott the MotoGP race out of fears for their health from radiation from the Fukushima Daiichi Nuclear Power Plant even though all the independent scientific experts including the World Health Organization and Australian Radiation Protection and Nuclear Safety Agency had stated that it is safe to live permanently 80 km (50 mi) or more from the plant.",
+      "source": {
+        "label": "Wikipedia: Motegi Circuit",
+        "url": "https://en.wikipedia.org/w/index.php?title=Motegi_Circuit&oldid=1384469778"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Mobility_Resort_Motegi",

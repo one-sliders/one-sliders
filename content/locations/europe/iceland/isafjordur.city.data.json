@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ísafjörður travel, stays & events guide",
-  "heroText": "Ísafjörður works best as a base in Iceland when you anchor days around Old town, Westfjords Heritage Museum and Naustahvilft. Use those sights to understand the city's history, street life and visitor rhythm. Ísafjörður International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Ísafjörður works best as a base in Iceland when you anchor days around Old town, Westfjords Heritage Museum and Naustahvilft. Use those sights to understand the city's history, street life and visitor rhythm. Ísafjörður Airport (IFJ) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,19 @@
   ],
   "airports": [
     {
-      "name": "Ísafjörður International Airport",
-      "search": "Ísafjörður International Airport, Ísafjörður, Iceland",
-      "text": "Ísafjörður International Airport is the main air gateway for Ísafjörður; compare transfer time with your hotel base before locking the first night."
+      "name": "Ísafjörður Airport",
+      "code": "IFJ",
+      "search": "Ísafjörður Airport",
+      "text": "Ísafjörður Airport (IFJ) is 0 km from Ísafjörður by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 0
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Ísafjörður International Airport and central Ísafjörður before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ísafjörður Airport (IFJ) is the nearest airport with scheduled service, 0 km from Ísafjörður by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "0 km straight line"
   },
   "bookingDestination": "Ísafjörður, Iceland",
   "stayOverview": "Start with City centre for the easiest first Ísafjörður stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +90,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Ísafjörður International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ísafjörður Airport (IFJ), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,52 +144,52 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "120",
-      "text": "The warmest month is July with the mean temperature of 9.9 °C (49.8 °F); the wettest is November with 120 mm (4.7 in) of precipitation."
-    },
-    {
       "label": "9th century",
-      "text": "According to the Landnámabók (the book of settlement), Skutulsfjörður was first settled by Helgi Magri Hrólfsson in the 9th century."
+      "text": "According to the Landnámabók (the book of settlement), Skutulsfjörður was first settled by Helgi Magri Hrólfsson in the 9th century.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     },
     {
       "label": "16th century",
-      "text": "In the 16th century, the town grew as it became a trading post for foreign merchants."
+      "text": "In the 16th century, the town grew as it became a trading post for foreign merchants.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     },
     {
       "label": "18th century",
-      "text": "The former Danish trading post Neðstikaupstaður, established in the 18th century, contains the oldest collection of timber frame houses in Iceland."
-    },
-    {
-      "label": "1757",
-      "text": "These include Krambúð (1757), Faktorshús (1765), now the Danish consulate, Tjöruhúsið (1781), now a restaurant, and the site of the Westfjords Heritage Museum Turnhúsið (1784). Geography and climate The Westfjords are known to be."
+      "text": "The former Danish trading post Neðstikaupstaður, established in the 18th century, contains the oldest collection of timber frame houses in Iceland.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     },
     {
       "label": "1786",
-      "text": "The town of Ísafjörður was granted municipal status in 1786."
+      "text": "The town of Ísafjörður was granted municipal status in 1786.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     },
     {
       "label": "1996",
-      "text": "The partly one-lane Vestfjarðagöng (Vestfirðir Tunnel), completed in 1996, leads to the towns of Flateyri and Suðureyri, and to the western parts of the Westfjords. Ísafjörður has an airport with regular flights to Reykjavík."
+      "text": "The partly one-lane Vestfjarðagöng (Vestfirðir Tunnel), completed in 1996, leads to the towns of Flateyri and Suðureyri, and to the western parts of the Westfjords. Ísafjörður has an airport with regular flights to Reykjavík.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     },
     {
       "label": "2005",
-      "text": "A university center, Háskólasetur Vestfjarða, which acts as a distance learning center for the 7,000 residents of the Westfjords, was established in March 2005."
-    },
-    {
-      "label": "Regional role",
-      "text": "Fishing has been the main industry in Ísafjörður, and the town has one of the largest fisheries in Iceland."
-    },
-    {
-      "label": "Regional role",
-      "text": "The harbor also serves ferries to nearby settlements as well as larger cruise ships for tourists visiting the area."
-    },
-    {
-      "label": "Regional role",
-      "text": "The tourist industry is growing; it is a major access point to the nature reserve on the Hornstrandir Peninsula, an uninhabited wilderness area to which ferries run daily during summer."
-    },
-    {
-      "label": "Regional role",
-      "text": "Recently, the small town has become known in the country as a center for alternative music outside of Iceland."
+      "text": "A university center, Háskólasetur Vestfjarða, which acts as a distance learning center for the 7,000 residents of the Westfjords as well as provides graduate education and research on coastal issues, was established in March 2005.",
+      "source": {
+        "label": "Wikipedia: Ísafjörður",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%8Dsafj%C3%B6r%C3%B0ur&oldid=1380368065"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/%C3%8Dsafj%C3%B6r%C3%B0ur",

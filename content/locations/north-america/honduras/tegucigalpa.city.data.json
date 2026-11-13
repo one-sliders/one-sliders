@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Tegucigalpa travel, stays and events",
-    "description": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Tegucigalpa International Airport and nearby event links.",
-    "twitterDescription": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Tegucigalpa International Airport and nearby event links.",
-    "webpageDescription": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Tegucigalpa International Airport and nearby event links."
+    "description": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Palmerola International Airport (XPL) and nearby event links.",
+    "twitterDescription": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Palmerola International Airport (XPL) and nearby event links.",
+    "webpageDescription": "Plan Tegucigalpa around Parque Central Tegucigalpa, Basilica de Suyapa, Palmerola International Airport (XPL) and nearby event links."
   },
   "region": "Capital city in Honduras",
   "population": "tba",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Tegucigalpa travel, stays & events guide",
-  "heroText": "Tegucigalpa works best as a base in Honduras when you anchor days around Parque Central Tegucigalpa, Basilica de Suyapa and Cristo del Picacho. Use those sights to understand the city's history, street life and visitor rhythm. Tegucigalpa International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Tegucigalpa works best as a base in Honduras when you anchor days around Parque Central Tegucigalpa, Basilica de Suyapa and Cristo del Picacho. Use those sights to understand the city's history, street life and visitor rhythm. Palmerola International Airport (XPL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Tegucigalpa International Airport",
-      "search": "Tegucigalpa International Airport, Tegucigalpa, Honduras",
-      "text": "Tegucigalpa International Airport is the main air gateway for Tegucigalpa; compare transfer time with your hotel base before locking the first night."
+      "name": "Palmerola International Airport",
+      "code": "XPL",
+      "search": "Palmerola International Airport",
+      "text": "Palmerola International Airport (XPL) is 56 km from Tegucigalpa by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 56
+    },
+    {
+      "name": "Toncontín Airport",
+      "code": "TGU",
+      "search": "Toncontín Airport",
+      "text": "Toncontín Airport (TGU) is 3 km from Tegucigalpa by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 3
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Tegucigalpa International Airport and central Tegucigalpa before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Palmerola International Airport (XPL) is the nearest airport with scheduled service, 56 km from Tegucigalpa by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "56 km straight line"
   },
   "bookingDestination": "Tegucigalpa, Honduras",
   "stayOverview": "Start with City centre for the easiest first Tegucigalpa stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Tegucigalpa International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Palmerola International Airport (XPL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -146,59 +159,75 @@
   "history": [
     {
       "label": "1578",
-      "text": "Tegucigalpa was founded by Spanish settlers as Real de Minas de San Miguel de Tegucigalpa on September 29, 1578, on the site of an existing native settlement of the Lenca and Tolupans."
+      "text": "Tegucigalpa was founded by Spanish settlers as Real de Minas de San Miguel de Tegucigalpa on September 29, 1578, on the site of an existing native settlement of the Lenca and Tolupans.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1579",
-      "text": "The first mayor of Tegucigalpa was Juan de la Cueva, who took office in 1579."
+      "text": "The first mayor of Tegucigalpa was Juan de la Cueva, who took office in 1579.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1735",
-      "text": "The Dolores Church (1735), the San Miguel Cathedral (1765), the Casa de la Moneda (1780), and the Immaculate Conception Church (1788) were some of the first important buildings constructed."
-    },
-    {
-      "label": "1762",
-      "text": "Almost 200 years later, on June 10, 1762, this mining town became Real Villa de San Miguel de Tegucigalpa y Heredia under the rule of Alonso Fernández de Heredia, then-acting governor of Honduras."
+      "text": "The Dolores Church (1735), the San Miguel Cathedral (1765), the Casa de la Moneda (1780), and the Immaculate Conception Church (1788) were some of the first important buildings constructed.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1788",
-      "text": "The late 18th and early 19th centuries saw disruption in Tegucigalpa's local government, from being extinguished in 1788 to becoming part of Comayagua in 1791 to returning to self-city governance in 1817."
+      "text": "The late 18th and early 19th centuries saw disruption in Tegucigalpa's local government, from being extinguished in 1788 to becoming part of Comayagua in 1791 to returning to self-city governance in 1817.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1817",
-      "text": "In 1817, then-Mayor Narciso Mallol started the construction of the first bridge, a ten-arch masonry, connecting both sides of the Choluteca River."
+      "text": "In 1817, then-Mayor Narciso Mallol started the construction of the first bridge, a ten-arch masonry, connecting both sides of the Choluteca River.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1824",
-      "text": "In 1824, the first Congress of the Republic of Honduras declared Tegucigalpa and Comayagua, then the two most important cities in the country, to alternate as capital of the country."
+      "text": "In 1824, the first Congress of the Republic of Honduras declared Tegucigalpa and Comayagua, then the two most important cities in the country, to alternate as capital of the country.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1838",
-      "text": "After October 1838, following Honduras' independence as a single republic, the capital continued to switch back and forth between Tegucigalpa and Comayagua until October 30, 1880, when Tegucigalpa was declared the permanent capital of."
+      "text": "After October 1838, following Honduras' independence as a single republic, the capital continued to switch back and forth between Tegucigalpa and Comayagua until October 30, 1880, when Tegucigalpa was declared the permanent capital of Honduras by then-president Marco Aurelio Soto.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1898",
-      "text": "By 1898, it was decided that both Tegucigalpa and Comayagua, being neighbor cities on the banks of the Choluteca River, would form the capital, but with separate names and separate local governments."
+      "text": "By 1898, it was decided that both Tegucigalpa and Comayagua, being neighbor cities on the banks of the Choluteca River, would form the capital, but with separate names and separate local governments.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     },
     {
       "label": "1998",
-      "text": "On 30 October 1998, Hurricane Mitch devastated the capital, along with the rest of Honduras."
-    },
-    {
-      "label": "Regional role",
-      "text": "A popular myth claims that the society of Comayagua, the long-time colonial capital of Honduras, publicly disliked the wife of President Soto, who took revenge by moving the capital to Tegucigalpa."
-    },
-    {
-      "label": "Regional role",
-      "text": "A more likely theory is that the change took place because President Soto was an important partner of the Rosario Mining Company, an American silver mining company, whose operations were based in San Juancito."
-    },
-    {
-      "label": "Regional role",
-      "text": "A portion of Comayagua was destroyed along with several neighborhoods on both sides of the Honduran capital."
-    },
-    {
-      "label": "Regional role",
-      "text": "In an effort to modernize the capital, increase its infrastructure and improve the quality of life of its inhabitants, the administration has passed several ordinances and projects to turn the city around within the."
+      "text": "On 30 October 1998, Hurricane Mitch devastated the capital, along with the rest of Honduras.",
+      "source": {
+        "label": "Wikipedia: Tegucigalpa",
+        "url": "https://en.wikipedia.org/w/index.php?title=Tegucigalpa&oldid=1384639511"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Tegucigalpa",

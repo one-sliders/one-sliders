@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Pyongyang travel, stays and events",
-    "description": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang International Airport and nearby event links.",
-    "twitterDescription": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang International Airport and nearby event links.",
-    "webpageDescription": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang International Airport and nearby event links."
+    "description": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang Sunan International Airport (FNJ) and nearby event links.",
+    "twitterDescription": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang Sunan International Airport (FNJ) and nearby event links.",
+    "webpageDescription": "Plan Pyongyang around Kim Il Sung Square, Juche Tower, Pyongyang Sunan International Airport (FNJ) and nearby event links."
   },
   "region": "Capital city in North Korea",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Pyongyang travel, stays & events guide",
-  "heroText": "Pyongyang works best as a base in North Korea when you anchor days around Kim Il Sung Square, Juche Tower and Arch of Triumph Pyongyang. Use those sights to understand the city's history, street life and visitor rhythm. Pyongyang International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Pyongyang works best as a base in North Korea when you anchor days around Kim Il Sung Square, Juche Tower and Arch of Triumph Pyongyang. Use those sights to understand the city's history, street life and visitor rhythm. Pyongyang Sunan International Airport (FNJ) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,19 @@
   ],
   "airports": [
     {
-      "name": "Pyongyang International Airport",
-      "search": "Pyongyang International Airport, Pyongyang, North Korea",
-      "text": "Pyongyang International Airport is the main air gateway for Pyongyang; compare transfer time with your hotel base before locking the first night."
+      "name": "Pyongyang Sunan International Airport",
+      "code": "FNJ",
+      "search": "Pyongyang Sunan International Airport",
+      "text": "Pyongyang Sunan International Airport (FNJ) is 22 km from Pyongyang by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 22
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Pyongyang International Airport and central Pyongyang before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Pyongyang Sunan International Airport (FNJ) is the nearest airport with scheduled service, 22 km from Pyongyang by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "22 km straight line"
   },
   "bookingDestination": "Pyongyang, North Korea",
   "stayOverview": "Start with City centre for the easiest first Pyongyang stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +90,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Pyongyang International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Pyongyang Sunan International Airport (FNJ), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -152,60 +156,76 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "194",
-      "text": "Wanggeom-seong, which was located in the same place as modern-day Pyongyang, served as the capital of Gojoseon from 194 to 108 BC."
+      "label": "108 BC",
+      "text": "Wanggeom-seong, which was located in the same place as modern-day Pyongyang, served as the capital of Gojoseon from 194 to 108 BC.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "313",
-      "text": "As the capital of Nanglang (낙랑국; 樂浪國), Pyongyang remained an important commercial and cultural outpost after the Lelang Commandery was destroyed by an expanding Goguryeo in 313."
+      "text": "As the capital of Nanglang (낙랑국; 樂浪國), Pyongyang remained an important commercial and cultural outpost after the Lelang Commandery was destroyed by an expanding Goguryeo in 313.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "668",
-      "text": "In 668, Pyongyang became the capital of the Protectorate General to Pacify the East established by the Tang dynasty of China."
+      "text": "In 668, Pyongyang became the capital of the Protectorate General to Pacify the East established by the Tang dynasty of China.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
-      "label": "1122",
-      "text": "Nevertheless, Pyongyang became a major city in old Joseon. Historical period According to legend, Pyongyang was founded in 1122 BC on the site of the capital of the legendary king Tan'gun."
+      "label": "13th century",
+      "text": "North Koreans associate Pyongyang with the mythological city of \"Asadal\", or Wanggeom-seong, the first capital of Gojoseon (\"Old Joseon\") in the second millennium BC, according to Korean historiographies beginning with the 13th-century Samguk yusa.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "16th century",
-      "text": "While the invasions made Koreans suspicious of foreigners, the influence of Christianity began to grow after the country opened itself up to foreigners in the 16th century."
-    },
-    {
-      "label": "1896",
-      "text": "It was the provincial capital of South Pyongan Province beginning in 1896."
+      "text": "While the invasions made Koreans suspicious of foreigners, the influence of Christianity began to grow after the country opened itself up to foreigners in the 16th century.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "1920s",
-      "text": "During the Japanese colonial rule, Japan tried to develop the city as an industrial center, but faced the March First Movement in 1919 and severe anti-Japanese socialist movements in 1920s due to economic exploitation."
+      "text": "During the Japanese colonial rule, Japan tried to develop the city as an industrial center, but faced the March First Movement in 1919 and severe anti-Japanese socialist movements in 1920s due to economic exploitation.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "1931",
-      "text": "In July 1931, the city experienced anti-Chinese riots as a result of the Wanpaoshan Incident and the sensationalized media reports about it which appeared in Imperial Japanese and Korean newspapers."
+      "text": "In July 1931, the city experienced anti-Chinese riots as a result of the Wanpaoshan Incident and the sensationalized media reports about it which appeared in Imperial Japanese and Korean newspapers.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "1948",
-      "text": "Pyongyang became the de facto capital of North Korea upon its establishment in 1948."
+      "text": "Pyongyang became the de facto capital of North Korea upon its establishment in 1948.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     },
     {
       "label": "2012",
-      "text": "Other recent public building projects include the Mansudae People's Theatre opened in 2012, the Munsu Water Park opened in 2013, and the renovated and expanded Sunan International Airport and Pyongyang Sci-Tech Complex, both completed."
-    },
-    {
-      "label": "2018",
-      "text": "Also in 2018, the Youth Park Open-Air Theatre on Sungri Street, used to host political rallies, was rebuilt."
-    },
-    {
-      "label": "Growth",
-      "text": "North Koreans associate Pyongyang with the mythological city of \"Asadal\", or Wanggeom-seong, the first capital of Gojoseon (\"Old Joseon\") in the second millennium BC, according to Korean historiographies beginning with the 13th-century Samguk yusa."
-    },
-    {
-      "label": "Regional role",
-      "text": "Emperor Wu of Han ordered four commanderies be set up, with Lelang Commandery in the center and its capital established as \"Joseon\" (朝鮮縣, 조선현) at the location of Pyongyang."
-    },
-    {
-      "label": "Regional role",
-      "text": "After the war, the city was quickly rebuilt with assistance from the Soviet Union, and many buildings were built in the style of Stalinist architecture."
+      "text": "Other recent public building projects include the Mansudae People's Theatre opened in 2012, the Munsu Water Park opened in 2013, and the renovated and expanded Sunan International Airport and Pyongyang Sci-Tech Complex, both completed in 2015, the Samjiyon Orchestra Theater, which was fitted out of the domed Korean People's Army Circus built in 1964, and the Pyongyang General Hospital, of which construction started in 2020.",
+      "source": {
+        "label": "Wikipedia: Pyongyang",
+        "url": "https://en.wikipedia.org/w/index.php?title=Pyongyang&oldid=1384661423"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Pyongyang",

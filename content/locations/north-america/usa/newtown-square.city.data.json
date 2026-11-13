@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Newtown Square travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Newtown Square, on the Philadelphia Main Line, has Aronimink Golf Club, the Newtown Square Historic District and Drexel Lodge Park, and this page also covers Ridley Creek State Park and the Wayne Art Center. The township is first mentioned in 1684, and Old St. David's Church dates from 1715.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Newtown Square International Airport",
-      "search": "Newtown Square International Airport, Newtown Square, USA",
-      "text": "Newtown Square International Airport is the main air gateway for Newtown Square; compare transfer time with your hotel base before locking the first night."
+      "name": "Philadelphia International Airport",
+      "code": "PHL",
+      "search": "Philadelphia International Airport",
+      "text": "Philadelphia International Airport (PHL) is 19 km from Newtown Square by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Newark Liberty International Airport",
+      "code": "EWR",
+      "search": "Newark Liberty International Airport",
+      "text": "Newark Liberty International Airport (EWR) is 130 km from Newtown Square by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 130
+    },
+    {
+      "name": "Baltimore/Washington International Thurgood Marshall Airport",
+      "code": "BWI",
+      "search": "Baltimore/Washington International Thurgood Marshall Airport",
+      "text": "Baltimore/Washington International Thurgood Marshall Airport (BWI) is 141 km from Newtown Square by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 141
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Newtown Square International Airport and central Newtown Square before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Philadelphia International Airport (PHL) is the nearest airport with scheduled service, 19 km from Newtown Square by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "19 km straight line"
   },
   "bookingDestination": "Newtown Square, USA",
   "stayOverview": "Start with City centre for the easiest first Newtown Square stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Newtown Square International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Philadelphia International Airport (PHL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,51 @@
   "history": [
     {
       "label": "1684",
-      "text": "The first mention of the township was in 1684, when Thomas Norbury and John Humphrey were appointed collectors of the \"Levie for the cort house and Prison for ye Township of Newtowne\"."
+      "text": "The first mention of the township was in 1684, when Thomas Norbury and John Humphrey were appointed collectors of the \"Levie for the cort house and Prison for ye Township of Newtowne\".",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     },
     {
       "label": "1687",
-      "text": "As such, in 1687, an east–west road was laid out (Goshen Road) so the Friends could attend either Goshen or the Haverford Friends Meeting."
+      "text": "As such, in 1687, an east–west road was laid out (Goshen Road) so the Friends could attend either Goshen or the Haverford Friends Meeting.",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     },
     {
       "label": "1696",
-      "text": "By 1696, these friends had become numerous enough to hold their own meeting in Newtown and continued to meet in a private home until the completion of the Newtown Square Friends Meetinghouse in 1711."
+      "text": "By 1696, these friends had become numerous enough to hold their own meeting in Newtown and continued to meet in a private home until the completion of the Newtown Square Friends Meetinghouse in 1711.",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     },
     {
       "label": "1715",
-      "text": "David's Church (1715) – the oldest non-Quaker church in Delaware County, founded by Welsh Anglicans; burial place of General \"Mad\" Anthony Wayne, located on S."
+      "text": "Old St. David's Church (1715) – the oldest non-Quaker church in Delaware County, founded by Welsh Anglicans; burial place of General \"Mad\" Anthony Wayne, located on S. Valley Forge Road in the very corner of the Township.",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     },
     {
       "label": "1889",
-      "text": "By 1889, the reorganized Philadelphia and West Chester Traction Company had completed the track to West Chester."
-    },
-    {
-      "label": "1892",
-      "text": "Before this time, railroad lines had been proposed, but due to a series of reorganizations and competition between companies for rights of way, as of 1892 no track had been laid."
+      "text": "By 1889, the reorganized Philadelphia and West Chester Traction Company had completed the track to West Chester.",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     },
     {
       "label": "1894",
-      "text": "In 1894, however, a mule-drawn service was initiated by the Philadelphia and Delaware County Railroad, with steam dummies used to help out on the hills."
-    },
-    {
-      "label": "1895",
-      "text": "Electrification was completed the following year and the trolley was open from Newtown to Fernwood in 1895."
-    },
-    {
-      "label": "1980s",
-      "text": "252) and Goshen Roads Paper Mill House (1770, 1845) – mill workers' home and general store, restored in the 1980s and now used as museum and headquarters for the Newtown Square Historical Society."
-    },
-    {
-      "label": "Modern city",
-      "text": "These Welsh \"Friends\" (Quakers) needed a road to facilitate their journey to meeting, the only established road at the time being Newtown Street Road, which ran north and south."
-    },
-    {
-      "label": "Regional role",
-      "text": "Taverns and inns were also opened to accommodate local patrons as well as drovers taking their livestock to the markets in Philadelphia."
-    },
-    {
-      "label": "Regional role",
-      "text": "In the Darby Creek area a number of tenement houses were built as well as a general store to service the needs of the mill workers."
-    },
-    {
-      "label": "Regional role",
-      "text": "At this time, the railroad was laying track out of Philadelphia in all directions with services to Chester, Media, West Chester, and Radnor, but not Newtown Square."
-    },
-    {
-      "label": "Regional role",
-      "text": "Although construction slackened during the depression, another boom was experienced after World War II."
+      "text": "In 1894, however, a mule-drawn service was initiated by the Philadelphia and Delaware County Railroad, with steam dummies used to help out on the hills.",
+      "source": {
+        "label": "Wikipedia: Newtown Township, Delaware County, Pennsylvania",
+        "url": "https://en.wikipedia.org/w/index.php?title=Newtown_Township%2C_Delaware_County%2C_Pennsylvania&oldid=1376929050"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Newtown_Township%2C_Delaware_County%2C_Pennsylvania",
@@ -228,5 +242,10 @@
       "text": "Independence Hall, the Barnes collection and the art museum steps, forty minutes east.",
       "source": "https://www.visitphilly.com/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

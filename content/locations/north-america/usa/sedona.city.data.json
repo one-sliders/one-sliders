@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Sedona travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Sedona's pink rocks have appeared in Hollywood productions since 1923. Cathedral Rock, Bell Rock, Airport Mesa, the Chapel of the Holy Cross and Tlaquepaque Arts and Shopping Village are the places to see in this Northern Arizona town.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Sedona International Airport",
-      "search": "Sedona International Airport, Sedona, USA",
-      "text": "Sedona International Airport is the main air gateway for Sedona; compare transfer time with your hotel base before locking the first night."
+      "name": "Flagstaff Pulliam Airport",
+      "code": "FLG",
+      "search": "Flagstaff Pulliam Airport",
+      "text": "Flagstaff Pulliam Airport (FLG) is 31 km from Sedona by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 31
+    },
+    {
+      "name": "Prescott Regional Airport - Ernest A. Love Field",
+      "code": "PRC",
+      "search": "Prescott Regional Airport - Ernest A. Love Field",
+      "text": "Prescott Regional Airport - Ernest A. Love Field (PRC) is 65 km from Sedona by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 65
+    },
+    {
+      "name": "Grand Canyon National Park Airport",
+      "code": "GCN",
+      "search": "Grand Canyon National Park Airport",
+      "text": "Grand Canyon National Park Airport (GCN) is 125 km from Sedona by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 125
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Sedona International Airport and central Sedona before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Flagstaff Pulliam Airport (FLG) is the nearest airport with scheduled service, 31 km from Sedona by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "31 km straight line"
   },
   "bookingDestination": "Sedona, USA",
   "stayOverview": "Start with City centre for the easiest first Sedona stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Sedona International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Flagstaff Pulliam Airport (FLG), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +155,76 @@
   "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
   "history": [
     {
-      "label": "227",
-      "text": "The Slide Fire spread across 21,227 acres (86 km2) in Oak Creek Canyon over nine days and prompted evacuations."
-    },
-    {
-      "label": "317",
-      "text": "The Brins Fire covered 4,317 acres (17 km2) on Brins Mesa, Wilson Mountain and in Oak Creek Canyon before the US Forest Service declared it 100 percent contained on June 28."
-    },
-    {
       "label": "1876",
-      "text": "Thompson, moved to Oak Creek Canyon in 1876, an area well known for its peach and apple orchards."
+      "text": "The first European-American settler, John J. Thompson, moved to Oak Creek Canyon in 1876, an area well known for its peach and apple orchards.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "1902",
-      "text": "In 1902, when the Sedona post office was established, there were 55 residents."
+      "text": "In 1902, when the Sedona post office was established, there were 55 residents.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "1923",
-      "text": "Stretching as far back as 1923, Sedona's pink rocks were a fixture in major Hollywood productions – including films such as Angel and the Badman, Desert Fury, Blood on the Moon, Johnny Guitar, The."
+      "text": "Stretching as far back as 1923, Sedona's pink rocks were a fixture in major Hollywood productions – including films such as Angel and the Badman, Desert Fury, Blood on the Moon, Johnny Guitar, The Last Wagon, 3:10 to Yuma and Broken Arrow.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "1950s",
-      "text": "In the mid-1950s, the first telephone directory listed 155 names."
-    },
-    {
-      "label": "1956",
-      "text": "Important early settlers included the Steele family, originally of Scotland. Chapel of the Holy Cross In 1956, construction of the Chapel of the Holy Cross was completed."
+      "text": "In the mid-1950s, the first telephone directory listed 155 names.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "1980s",
-      "text": "Most of the development seen today was constructed in the 1980s and 1990s."
+      "text": "Most of the development seen today was constructed in the 1980s and 1990s.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "2007",
-      "text": "As of 2007, there are no large tracts of undeveloped land remaining."
+      "text": "As of 2007, there are no large tracts of undeveloped land remaining.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "2011",
-      "text": "The town lent its name to the 2011 film Sedona, which is set in the community."
+      "text": "The town lent its name to the 2011 film Sedona, which is set in the community.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "2014",
-      "text": "Containment cost was estimated at $6.4 million. Slide Fire On May 20, 2014, a wildfire started from an unknown cause began north of Sedona at Slide Rock State Park."
+      "text": "Containment cost was estimated at $6.4 million. Slide Fire On May 20, 2014, a wildfire started from an unknown cause began north of Sedona at Slide Rock State Park.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     },
     {
       "label": "2023",
-      "text": "Additionally, HIM, a film exploring the “reality” of reality dating television, was shot entirely in Sedona in 2023, and made its premiere at the Sedona International Film Festival in 2024. Brins Fire On June."
-    },
-    {
-      "label": "Regional role",
-      "text": "The area, then unincorporated, had no local government and was bisected by two counties."
-    },
-    {
-      "label": "Regional role",
-      "text": "That meant area residents no longer had to transport water, and could directly build infrastructure."
+      "text": "Additionally, HIM, a film exploring the “reality” of reality dating television, was shot entirely in Sedona in 2023, and made its premiere at the Sedona International Film Festival in 2024.",
+      "source": {
+        "label": "Wikipedia: Sedona, Arizona",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sedona%2C_Arizona&oldid=1384264239"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Sedona%2C_Arizona",
@@ -228,5 +266,10 @@
       "text": "A copper town clinging to a 30-degree slope, half-abandoned and now full of studios.",
       "source": "https://azstateparks.com/jerome/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

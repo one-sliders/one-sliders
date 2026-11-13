@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Canmore travel, stays & events guide",
-  "heroText": "Canmore works best as a base in Canada when you anchor days around Three Sisters, Grassi Lakes and Canmore Nordic Centre. Use those sights to understand the city's history, street life and visitor rhythm. Canmore International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Canmore works best as a base in Canada when you anchor days around Three Sisters, Grassi Lakes and Canmore Nordic Centre. Use those sights to understand the city's history, street life and visitor rhythm. Calgary International Airport (YYC) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,19 @@
   ],
   "airports": [
     {
-      "name": "Canmore International Airport",
-      "search": "Canmore International Airport, Canmore, Canada",
-      "text": "Canmore International Airport is the main air gateway for Canmore; compare transfer time with your hotel base before locking the first night."
+      "name": "Calgary International Airport",
+      "code": "YYC",
+      "search": "Calgary International Airport",
+      "text": "Calgary International Airport (YYC) is 94 km from Canmore by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 94
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Canmore International Airport and central Canmore before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Calgary International Airport (YYC) is the nearest airport with scheduled service, 94 km from Canmore by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "94 km straight line"
   },
   "bookingDestination": "Canmore, Canada",
   "stayOverview": "Start with City centre for the easiest first Canmore stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +83,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Canmore International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Calgary International Airport (YYC), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -129,55 +133,83 @@
   "history": [
     {
       "label": "1884",
-      "text": "Canmore was officially named in 1884 by Canadian Pacific Railway director Donald A."
+      "text": "Canmore was officially named in 1884 by Canadian Pacific Railway director Donald A. Smith (later 1st Baron Strathcona and Mount Royal).",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1886",
-      "text": "In 1886, Queen Victoria granted a coal mining charter to the town, and the No."
-    },
-    {
-      "label": "1890s",
-      "text": "By the 1890s, a North-West Mounted Police barrack had been instated on Main Street, however, it was vacated in 1927."
+      "text": "In 1886, Queen Victoria granted a coal mining charter to the town, and the No. 1 mine was opened in 1887.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1890",
-      "text": "The Canmore Hotel was built in 1890 on the main street."
+      "text": "The Canmore Hotel was built in 1890 on the main street.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
+    },
+    {
+      "label": "1890s",
+      "text": "By the 1890s, a North-West Mounted Police barrack had been instated on Main Street, however, it was vacated in 1927.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "20th century",
-      "text": "The coal mining industry in Canmore boomed well into the 20th century."
+      "text": "The coal mining industry in Canmore boomed well into the 20th century.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1965",
-      "text": "In 1965, with a population of 2,000, Canmore was incorporated as a town."
+      "text": "In 1965, with a population of 2,000, Canmore was incorporated as a town.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1970s",
-      "text": "By the 1970s, the market for coal was diminished, and in 1979 Canmore Mines Ltd. ceased operations."
+      "text": "By the 1970s, the market for coal was diminished, and in 1979 Canmore Mines Ltd. ceased operations.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1980s",
-      "text": "Canmore's economic future seemed dismal until the announcement in the early 1980s that Calgary would be hosting the 1988 Winter Olympics, and that Canmore would play host to the Nordic events."
+      "text": "Canmore's economic future seemed dismal until the announcement in the early 1980s that Calgary would be hosting the 1988 Winter Olympics, and that Canmore would play host to the Nordic events.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "1989",
-      "text": "The building was restored in 1989 and it is under the care of the Canmore Museum and Geoscience Centre."
+      "text": "The building was restored in 1989 and it is under the care of the Canmore Museum and Geoscience Centre.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     },
     {
       "label": "2015",
-      "text": "In 2015, the building received a heritage designation and was being renovated to restore it."
-    },
-    {
-      "label": "Regional role",
-      "text": "As a result of safety and reclamation policies instigated by the province of Alberta, all but a few mining structures were demolished in the following year; only the lamp house and a few mine."
-    },
-    {
-      "label": "Regional role",
-      "text": "This resulted in an increase in tourism, and Canmore began to develop into the recreational tourist destination it is today."
-    },
-    {
-      "label": "Regional role",
-      "text": "Canmore is known by the Nakoda people as Chuwapchipchiyan Kude Bi."
+      "text": "In 2015, the building received a heritage designation and was being renovated to restore it.",
+      "source": {
+        "label": "Wikipedia: Canmore, Alberta",
+        "url": "https://en.wikipedia.org/w/index.php?title=Canmore%2C_Alberta&oldid=1374263443"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Canmore%2C_Alberta",

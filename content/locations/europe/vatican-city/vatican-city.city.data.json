@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Vatican City travel, stays and events",
-    "description": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Vatican City International Airport and nearby event links.",
-    "twitterDescription": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Vatican City International Airport and nearby event links.",
-    "webpageDescription": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Vatican City International Airport and nearby event links."
+    "description": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Ciampino–G. B. Pastine International Airport (CIA) and nearby event links.",
+    "twitterDescription": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Ciampino–G. B. Pastine International Airport (CIA) and nearby event links.",
+    "webpageDescription": "Plan Vatican City around St. Peter's Basilica, St. Peter's Square, Ciampino–G. B. Pastine International Airport (CIA) and nearby event links."
   },
   "region": "Capital city of Vatican City",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Vatican City travel, stays & events guide",
-  "heroText": "Vatican City works best as a base in Vatican City when you anchor days around St. Peter's Basilica, St. Peter's Square and Vatican Museums. Use those sights to understand the city's history, street life and visitor rhythm. Vatican City International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Vatican City works best as a base in Vatican City when you anchor days around St. Peter's Basilica, St. Peter's Square and Vatican Museums. Use those sights to understand the city's history, street life and visitor rhythm. Ciampino–G. B. Pastine International Airport (CIA) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Vatican City International Airport",
-      "search": "Vatican City International Airport, Vatican City, Vatican City",
-      "text": "Vatican City International Airport is the main air gateway for Vatican City; compare transfer time with your hotel base before locking the first night."
+      "name": "Ciampino–G. B. Pastine International Airport",
+      "code": "CIA",
+      "search": "Ciampino–G. B. Pastine International Airport",
+      "text": "Ciampino–G. B. Pastine International Airport (CIA) is 16 km from Vatican City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 16
+    },
+    {
+      "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
+      "code": "FCO",
+      "search": "Rome–Fiumicino Leonardo da Vinci International Airport",
+      "text": "Rome–Fiumicino Leonardo da Vinci International Airport (FCO) is 20 km from Vatican City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 20
+    },
+    {
+      "name": "Perugia San Francesco d'Assisi – Umbria International Airport",
+      "code": "PEG",
+      "search": "Perugia San Francesco d'Assisi – Umbria International Airport",
+      "text": "Perugia San Francesco d'Assisi – Umbria International Airport (PEG) is 133 km from Vatican City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 133
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Vatican City International Airport and central Vatican City before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ciampino–G. B. Pastine International Airport (CIA) is the nearest airport with scheduled service, 16 km from Vatican City by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "16 km straight line"
   },
   "bookingDestination": "Vatican City, Vatican City",
   "stayOverview": "Start with City centre for the easiest first Vatican City stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Vatican City International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ciampino–G. B. Pastine International Airport (CIA), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -153,59 +175,59 @@
   "history": [
     {
       "label": "326",
-      "text": "The Constantinian basilica was built in 326 over what was believed to be the tomb of Saint Peter, buried in that cemetery."
+      "text": "The Constantinian basilica was built in 326 over what was believed to be the tomb of Saint Peter, buried in that cemetery.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "5th century",
-      "text": "A palace was constructed nearby as early as the 5th century during the pontificate of Pope Symmachus (reigned 498–514)."
-    },
-    {
-      "label": "1583",
-      "text": "They moved to the Quirinal Palace in 1583, after work on it was completed under Pope Paul V (1605–1621)."
+      "text": "A palace was constructed nearby as early as the 5th century during the pontificate of Pope Symmachus (reigned 498–514).",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "1586",
-      "text": "In 1586, the obelisk was moved to its current position by Pope Sixtus V, using a method devised by the Italian architect Domenico Fontana."
-    },
-    {
-      "label": "19th century",
-      "text": "They ruled the Papal States, which covered a large portion of the Italian peninsula, for more than a thousand years until the mid-19th century, when all the territory belonging to the papacy was seized."
-    },
-    {
-      "label": "1870",
-      "text": "Their prior residence at the Quirinal Palace was taken over by the King of Italy. Under Italian rule (1871–1929) In 1870 the pope's holdings were left in an uncertain situation when Rome was annexed."
+      "text": "In 1586, the obelisk was moved to its current position by Pope Sixtus V, using a method devised by the Italian architect Domenico Fontana.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "1871",
-      "text": "In 1871 the Quirinal Palace was confiscated by the king of Italy and became the royal palace."
+      "text": "In 1871 the Quirinal Palace was confiscated by the king of Italy and became the royal palace.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "1929",
-      "text": "The treaty, which was ratified and took effect on 7 June 1929, established the independent state of Vatican City and reaffirmed the special status of Catholic Christianity in Italy. World War II The Holy."
+      "text": "The treaty, which was ratified and took effect on 7 June 1929, established the independent state of Vatican City and reaffirmed the special status of Catholic Christianity in Italy.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "1943",
-      "text": "In connection with the Allied invasion of Sicily, 500 United States Army Air Forces aircraft bombed Rome on 19 July 1943, targeting Rome's railway hub in particular."
+      "text": "In connection with the Allied invasion of Sicily, 500 United States Army Air Forces aircraft bombed Rome on 19 July 1943, targeting Rome's railway hub in particular.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     },
     {
       "label": "1946",
-      "text": "Pius XII created 32 cardinals in early 1946, having announced his intention to do so in his preceding Christmas message."
-    },
-    {
-      "label": "Regional role",
-      "text": "It was later completed by the emperor Nero and named the Circus Gaii et Neronis, usually called, simply, the Circus of Nero."
-    },
-    {
-      "label": "Regional role",
-      "text": "From then on, the land mass became more populated in connection with activity at the basilica."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Lateran Palace, on the opposite side of Rome, was their habitual residence for about a thousand years."
-    },
-    {
-      "label": "Regional role",
-      "text": "By the end of World War II, there were several prominent vacancies: Cardinal Secretary of State, Camerlengo, Chancellor, and Prefect for the Congregation for the Religious among them."
+      "text": "Pius XII created 32 cardinals in early 1946, having announced his intention to do so in his preceding Christmas message.",
+      "source": {
+        "label": "Wikipedia: Vatican City",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vatican_City&oldid=1384431202"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Vatican_City",

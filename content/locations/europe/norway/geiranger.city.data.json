@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Geiranger travel, stays & events guide",
-  "heroText": "Geiranger works best as a base in Norway when you anchor days around Geirangerfjord, Seven Sisters waterfall and Flydalsjuvet. Use those sights to understand the city's history, street life and visitor rhythm. Geiranger International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Geiranger works best as a base in Norway when you anchor days around Geirangerfjord, Seven Sisters waterfall and Flydalsjuvet. Use those sights to understand the city's history, street life and visitor rhythm. Ålesund Airport (AES) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Geiranger International Airport",
-      "search": "Geiranger International Airport, Geiranger, Norway",
-      "text": "Geiranger International Airport is the main air gateway for Geiranger; compare transfer time with your hotel base before locking the first night."
+      "name": "Ålesund Airport",
+      "code": "AES",
+      "search": "Ålesund Airport",
+      "text": "Ålesund Airport (AES) is 76 km from Geiranger by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 76
+    },
+    {
+      "name": "Ørsta-Volda Airport, Hovden",
+      "code": "HOV",
+      "search": "Ørsta-Volda Airport, Hovden",
+      "text": "Ørsta-Volda Airport, Hovden (HOV) is 60 km from Geiranger by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 60
+    },
+    {
+      "name": "Molde Airport, Årø",
+      "code": "MOL",
+      "search": "Molde Airport, Årø",
+      "text": "Molde Airport, Årø (MOL) is 72 km from Geiranger by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 72
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Geiranger International Airport and central Geiranger before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ålesund Airport (AES) is the nearest airport with scheduled service, 76 km from Geiranger by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "76 km straight line"
   },
   "bookingDestination": "Geiranger, Norway",
   "stayOverview": "Start with City centre for the easiest first Geiranger stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Geiranger International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ålesund Airport (AES), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,36 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "Origins",
-      "text": "Geiranger is a small tourist village in Sunnmøre region of Møre og Romsdal county in the western part of Norway."
-    },
-    {
-      "label": "236",
-      "text": "It is 236 metres (774 ft) long and 4.5 metres (15 ft) wide on 10 pontoons, which moves (like a floatable jetwalk) to accommodate up to 4,000 passengers per hour disembarking from a single."
-    },
-    {
-      "label": "250",
-      "text": "Several hundred thousand people pass through the village every summer, and tourism is the main business for the 250 people who live there permanently."
-    },
-    {
-      "label": "497",
-      "text": "It comprises a half marathon run and a bicycle race, both starting from the sea level at the fjord and ending at the 1,497-metre (4,911 ft) summit of Mount Dalsnibba, near the lake Djupvatnet."
-    },
-    {
       "label": "2005",
-      "text": "Since 2005, the Geirangerfjord area has been listed as a UNESCO World Heritage Site."
+      "text": "Since 2005, the Geirangerfjord area has been listed as a UNESCO World Heritage Site.",
+      "source": {
+        "label": "Wikipedia: Geiranger",
+        "url": "https://en.wikipedia.org/w/index.php?title=Geiranger&oldid=1378788766"
+      }
     },
     {
       "label": "2012",
-      "text": "In 2012 some 300,000 cruise passengers visited Geiranger during the summer season."
+      "text": "In 2012 some 300,000 cruise passengers visited Geiranger during the summer season.",
+      "source": {
+        "label": "Wikipedia: Geiranger",
+        "url": "https://en.wikipedia.org/w/index.php?title=Geiranger&oldid=1378788766"
+      }
     },
     {
       "label": "2013",
-      "text": "Constructed in 2013, the Seawalk is a three-segment articulated floating pier."
+      "text": "Constructed in 2013, the Seawalk is a three-segment articulated floating pier.",
+      "source": {
+        "label": "Wikipedia: Geiranger",
+        "url": "https://en.wikipedia.org/w/index.php?title=Geiranger&oldid=1378788766"
+      }
     },
     {
       "label": "2018",
-      "text": "A sequel, The Quake (Norwegian: Skjelvet) was released in 2018. References External links geiranger.no Geiranger Fjord Archived 2019-06-05 at the Wayback Machine—David Cartagena print Destinasjon Geirangerfjord—Trollstigen Image from Geiranger Geiranger—From Fjord to Summit UNESCO."
-    },
-    {
-      "label": "2025",
-      "text": "In 2025 a new floating quay was built that included enough power to allow ships of up to 400 passengers to plug in and turn off their engines with a view to preserving air."
-    },
-    {
-      "label": "Growth",
-      "text": "It is located in Stranda Municipality and at the end of the Geirangerfjorden, which is a branch of the large Storfjorden."
-    },
-    {
-      "label": "Modern city",
-      "text": "Geiranger is home to spectacular scenery, and has been named the best travel destination in Scandinavia by Lonely Planet."
-    },
-    {
-      "label": "Regional role",
-      "text": "The suffix angr (which can mean \"fjord\") is a common element in Norwegian place names (such as Hardanger and Varanger)."
-    },
-    {
-      "label": "Regional role",
-      "text": "This would then refer to the several small farms and fields lying in the steep mountain sides around the fjord (such as Knivsflå and Skageflå). Tourism This third biggest cruise ship port in Norway."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Seven Sisters waterfall is located just west of Geiranger, directly across another waterfall called \"The Suitor.\" Each year in June, the Geiranger – From Fjord to Summit event occurs."
+      "text": "A sequel, The Quake (Norwegian: Skjelvet) was released in 2018.",
+      "source": {
+        "label": "Wikipedia: Geiranger",
+        "url": "https://en.wikipedia.org/w/index.php?title=Geiranger&oldid=1378788766"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Geiranger",

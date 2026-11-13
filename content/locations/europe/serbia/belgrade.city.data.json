@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Belgrade travel, stays and events",
-    "description": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade International Airport and nearby event links.",
-    "twitterDescription": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade International Airport and nearby event links.",
-    "webpageDescription": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade International Airport and nearby event links."
+    "description": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade Nikola Tesla Airport (BEG) and nearby event links.",
+    "twitterDescription": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade Nikola Tesla Airport (BEG) and nearby event links.",
+    "webpageDescription": "Plan Belgrade around Belgrade Fortress, Knez Mihailova Street, Belgrade Nikola Tesla Airport (BEG) and nearby event links."
   },
   "region": "Capital city of Serbia",
   "population": "~1.2M",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Belgrade travel, stays & events guide",
-  "heroText": "Belgrade works best as a base in Serbia when you anchor days around Belgrade Fortress, Knez Mihailova Street and Saint Sava Temple. Use those sights to understand the city's history, street life and visitor rhythm. Belgrade International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Belgrade works best as a base in Serbia when you anchor days around Belgrade Fortress, Knez Mihailova Street and Saint Sava Temple. Use those sights to understand the city's history, street life and visitor rhythm. Belgrade Nikola Tesla Airport (BEG) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Belgrade International Airport",
-      "search": "Belgrade International Airport, Belgrade, Serbia",
-      "text": "Belgrade International Airport is the main air gateway for Belgrade; compare transfer time with your hotel base before locking the first night."
+      "name": "Belgrade Nikola Tesla Airport",
+      "code": "BEG",
+      "search": "Belgrade Nikola Tesla Airport",
+      "text": "Belgrade Nikola Tesla Airport (BEG) is 12 km from Belgrade by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 12
+    },
+    {
+      "name": "Morava Airport",
+      "code": "KVO",
+      "search": "Morava Airport",
+      "text": "Morava Airport (KVO) is 110 km from Belgrade by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 110
+    },
+    {
+      "name": "Timișoara Traian Vuia International Airport",
+      "code": "TSR",
+      "search": "Timișoara Traian Vuia International Airport",
+      "text": "Timișoara Traian Vuia International Airport (TSR) is 131 km from Belgrade by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 131
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Belgrade International Airport and central Belgrade before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Belgrade Nikola Tesla Airport (BEG) is the nearest airport with scheduled service, 12 km from Belgrade by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "12 km straight line"
   },
   "bookingDestination": "Belgrade, Serbia",
   "stayOverview": "Start with Stari Grad for the easiest first Belgrade stay, then compare Dorcol and Vracar when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Belgrade International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Belgrade Nikola Tesla Airport (BEG), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,92 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "1st century",
-      "text": "It became the romanised Singidunum in the 1st century AD and, by the mid-2nd century, the city was proclaimed a municipium by the Roman authorities, evolving into a full-fledged colonia (the highest city class)."
+      "label": "4500 BC",
+      "text": "The Starčevo culture was succeeded by the Vinča culture (5500–4500 BC), a more sophisticated farming culture that grew out of the earlier Starčevo settlements and also named for a site in the Belgrade region (Vinča-Belo Brdo).",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
-      "label": "279",
-      "text": "Specifically, Belgrade was at one point inhabited by the Thraco-Dacian tribe Singi; following Celtic invasion in 279 BC, the Scordisci wrested the city from their hands, naming it Singidūn (d|ūn, fortress)."
-    },
-    {
-      "label": "1284",
-      "text": "1276–1282) received Belgrade from his father-in-law, Stephen V of Hungary, in 1284, and it served as the capital of the Kingdom of Syrmia, a vassal state to the Kingdom of Hungary."
+      "label": "279 BC",
+      "text": "Specifically, Belgrade was at one point inhabited by the Thraco-Dacian tribe Singi; following Celtic invasion in 279 BC, the Scordisci wrested the city from their hands, naming it Singidūn (dūn, fortress).",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1427",
-      "text": "In 1427, Stefan's successor Đurađ Branković, returning Belgrade to the Hungarian king, made Smederevo his new capital."
+      "text": "In 1427, Stefan's successor Đurađ Branković, returning Belgrade to the Hungarian king, made Smederevo his new capital.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1840",
-      "text": "Between 1835 and 1850, the amount of neoclassicist and baroque buildings south of the Austrian border rose considerably, exemplified by Cathedral of Saint Archangel Michael (Serbian: Saborna crkva), completed in 1840."
+      "text": "Between 1835 and 1850, the amount of neoclassicist and baroque buildings south of the Austrian border rose considerably, exemplified by Cathedral of Saint Archangel Michael (Serbian: Saborna crkva), completed in 1840.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1841",
-      "text": "In 1841, Prince Mihailo Obrenović moved the capital of the Principality of Serbia from Kragujevac to Belgrade."
+      "text": "In 1841, Prince Mihailo Obrenović moved the capital of the Principality of Serbia from Kragujevac to Belgrade.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1878",
-      "text": "With the Principality's full independence in 1878 and its transformation into the Kingdom of Serbia in 1882, Belgrade once again became a key city in the Balkans, and developed rapidly."
+      "text": "With the Principality's full independence in 1878 and its transformation into the Kingdom of Serbia in 1882, Belgrade once again became a key city in the Balkans, and developed rapidly.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1909",
-      "text": "The first permanent cinema was opened in 1909 in Belgrade. World War I: Austro–German invasion The First World War began on 28 July 1914 when Austria-Hungary declared war on Serbia."
+      "text": "The first permanent cinema was opened in 1909 in Belgrade.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1927",
-      "text": "In 1927, Belgrade's first airport opened, and in 1929, its first radio station began broadcasting."
+      "text": "In 1927, Belgrade's first airport opened, and in 1929, its first radio station began broadcasting.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1939",
-      "text": "On 3 September 1939 the first Belgrade Grand Prix, the last Grand Prix motor racing race before the outbreak of World War II, was held around the Belgrade Fortress and was followed by 80,000."
+      "text": "On 3 September 1939 the first Belgrade Grand Prix, the last Grand Prix motor racing race before the outbreak of World War II, was held around the Belgrade Fortress and was followed by 80,000 spectators.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1941",
-      "text": "The winner was Tazio Nuvolari. World War II On 25 March 1941, the government of regent Crown Prince Paul signed the Tripartite Pact, joining the Axis powers in an effort to stay out of."
+      "text": "The winner was Tazio Nuvolari. World War II On 25 March 1941, the government of regent Crown Prince Paul signed the Tripartite Pact, joining the Axis powers in an effort to stay out of the Second World War and keep Yugoslavia neutral during the conflict.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     },
     {
       "label": "1962",
-      "text": "In 1962, Belgrade Nikola Tesla Airport was built."
-    },
-    {
-      "label": "5500",
-      "text": "The Starčevo culture was succeeded by the Vinča culture (5500–4500 BC), a more sophisticated farming culture that grew out of the earlier Starčevo settlements and also named for a site in the Belgrade region."
-    },
-    {
-      "label": "Regional role",
-      "text": "Belgrade, devastated as a front-line city, lost the title of largest city in the Kingdom to Subotica for some time. Kingdom of Yugoslavia After the war, Belgrade became the capital of the new Kingdom."
+      "text": "In 1962, Belgrade Nikola Tesla Airport was built. In the 1960s, a number of prestige buildings were put up such as the parliament building, the Ušće Towers which served as the headquarters for the Central Committee of the League of Communists, and the Hotel Jugoslavija.",
+      "source": {
+        "label": "Wikipedia: Belgrade",
+        "url": "https://en.wikipedia.org/w/index.php?title=Belgrade&oldid=1384655852"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Belgrade",

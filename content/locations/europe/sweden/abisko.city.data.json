@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Abisko travel, stays & events guide",
-  "heroText": "Abisko works best as a base in Sweden when you anchor days around Abisko National Park, Aurora Sky Station and Kungsleden trail. Use those sights to understand the city's history, street life and visitor rhythm. Abisko International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Abisko works best as a base in Sweden when you anchor days around Abisko National Park, Aurora Sky Station and Kungsleden trail. Use those sights to understand the city's history, street life and visitor rhythm. Kiruna Airport (KRN) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Abisko International Airport",
-      "search": "Abisko International Airport, Abisko, Sweden",
-      "text": "Abisko International Airport is the main air gateway for Abisko; compare transfer time with your hotel base before locking the first night."
+      "name": "Kiruna Airport",
+      "code": "KRN",
+      "search": "Kiruna Airport",
+      "text": "Kiruna Airport (KRN) is 86 km from Abisko by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 86
+    },
+    {
+      "name": "Harstad/Narvik Airport",
+      "code": "EVE",
+      "search": "Harstad/Narvik Airport",
+      "text": "Harstad/Narvik Airport (EVE) is 89 km from Abisko by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 89
+    },
+    {
+      "name": "Tromsø Airport",
+      "code": "TOS",
+      "search": "Tromsø Airport",
+      "text": "Tromsø Airport (TOS) is 148 km from Abisko by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 148
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Abisko International Airport and central Abisko before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Kiruna Airport (KRN) is the nearest airport with scheduled service, 86 km from Abisko by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "86 km straight line"
   },
   "bookingDestination": "Abisko, Sweden",
   "stayOverview": "Start with City centre for the easiest first Abisko stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Abisko International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Kiruna Airport (KRN), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,12 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "195",
-      "text": "As its location is 195 km north of the Arctic Circle, summer hikers enjoy the midnight sun, while winter visitors may find the light pollution-free location ideal for viewing the aurora borealis."
-    },
-    {
-      "label": "200",
-      "text": "Abisko (Swedish: ; Northern Sami: Ábeskovvu) is a village in Sápmi (Lapland), in northern Sweden, roughly 200 km north of the Arctic Circle, and near Abisko National Park, located 4 km west of the."
-    },
-    {
-      "label": "330",
-      "text": "Abisko is also located near the 330 square kilometre (130 sq mi) lake Torneträsk. Research station Abisko is home to the Abisko Scientific Research Station, an important centre for research into Arctic ecology and."
-    },
-    {
       "label": "1980s",
-      "text": "Abisko is also reachable by car via the highway E10 which has linked Kiruna and Narvik since the early 1980s."
-    },
-    {
-      "label": "Growth",
-      "text": "Permafrost is common around the village, although this low-altitude permafrost is disappearing because of global warming and increased snowfall. Transportation Daily passenger electric trains run by SJ AB connect Stockholm with the Norwegian city."
-    },
-    {
-      "label": "Civic role",
-      "text": "Other local forms of transportation include hiking and dog-sledding in winter."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Abisko Turiststation, run by the Svenska Turistföreningen (STF), houses many visitors to the park and provides lodging, food, and other amenities, and is one of many similar facilities located periodically along the Kungsleden."
-    },
-    {
-      "label": "Regional role",
-      "text": "The national park is known for its cross-country skiing opportunities, snowshoeing, and other winter sports (Mount Nuolja and nearby Björkliden provides backcountry skiing and freeriding opportunities)."
-    },
-    {
-      "label": "Regional role",
-      "text": "The nine-hole golfcourse at Björkliden is the northern most in Sweden."
-    },
-    {
-      "label": "Regional role",
-      "text": "One of the most recognized natural sights is Lapporten, a U-shaped valley visible from Abisko."
-    },
-    {
-      "label": "Regional role",
-      "text": "The research station hosts the Climate Impacts Research Centre, Umeå University, where research, education and outreach on aquatic and terrestrial ecology are undertaken. Climate Abisko has a subarctic climate (Dfc), typical of Northern Sweden."
-    },
-    {
-      "label": "Regional role",
-      "text": "Summers are cool and rainy with chilly nights and snow covers are often modest except for during milder winters where maritime air brings more precipitation."
-    },
-    {
-      "label": "Regional role",
-      "text": "Winters are long and cold but somewhat moderated by mild Gulf Stream air coming from the west."
-    },
-    {
-      "label": "Regional role",
-      "text": "Abisko is a very cloudy village by Swedish standards but is also one of the driest places in the country due to it being in a rain shadow from the Scandinavian Mountains."
+      "text": "Abisko is also reachable by car via the highway E10 which has linked Kiruna and Narvik since the early 1980s.",
+      "source": {
+        "label": "Wikipedia: Abisko",
+        "url": "https://en.wikipedia.org/w/index.php?title=Abisko&oldid=1374559542"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Abisko",

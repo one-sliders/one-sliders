@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Nassau travel, stays and events",
-    "description": "Plan Nassau around Queen's Staircase, Fort Fincastle, Nassau International Airport and nearby event links.",
-    "twitterDescription": "Plan Nassau around Queen's Staircase, Fort Fincastle, Nassau International Airport and nearby event links.",
-    "webpageDescription": "Plan Nassau around Queen's Staircase, Fort Fincastle, Nassau International Airport and nearby event links."
+    "description": "Plan Nassau around Queen's Staircase, Fort Fincastle, Lynden Pindling International Airport (NAS) and nearby event links.",
+    "twitterDescription": "Plan Nassau around Queen's Staircase, Fort Fincastle, Lynden Pindling International Airport (NAS) and nearby event links.",
+    "webpageDescription": "Plan Nassau around Queen's Staircase, Fort Fincastle, Lynden Pindling International Airport (NAS) and nearby event links."
   },
   "region": "Capital city in Bahamas",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Nassau travel, stays & events guide",
-  "heroText": "Nassau works best as a base in Bahamas when you anchor days around Queen's Staircase, Fort Fincastle and Nassau Straw Market. Use those sights to understand the city's history, street life and visitor rhythm. Nassau International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Nassau works best as a base in Bahamas when you anchor days around Queen's Staircase, Fort Fincastle and Nassau Straw Market. Use those sights to understand the city's history, street life and visitor rhythm. Lynden Pindling International Airport (NAS) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Nassau International Airport",
-      "search": "Nassau International Airport, Nassau, Bahamas",
-      "text": "Nassau International Airport is the main air gateway for Nassau; compare transfer time with your hotel base before locking the first night."
+      "name": "Lynden Pindling International Airport",
+      "code": "NAS",
+      "search": "Lynden Pindling International Airport",
+      "text": "Lynden Pindling International Airport (NAS) is 13 km from Nassau by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 13
+    },
+    {
+      "name": "Andros Town Airport",
+      "code": "ASD",
+      "search": "Andros Town Airport",
+      "text": "Andros Town Airport (ASD) is 61 km from Nassau by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 61
+    },
+    {
+      "name": "Chub Cay Airport",
+      "code": "CCZ",
+      "search": "Chub Cay Airport",
+      "text": "Chub Cay Airport (CCZ) is 67 km from Nassau by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 67
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Nassau International Airport and central Nassau before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Lynden Pindling International Airport (NAS) is the nearest airport with scheduled service, 13 km from Nassau by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "13 km straight line"
   },
   "bookingDestination": "Nassau, Bahamas",
   "stayOverview": "Start with City centre for the easiest first Nassau stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Nassau International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Lynden Pindling International Airport (NAS), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -136,59 +158,59 @@
   "history": [
     {
       "label": "1670",
-      "text": "The town that would be called Nassau was founded in 1670 by British noblemen who brought British settlers with them to New Providence."
+      "text": "The town that would be called Nassau was founded in 1670 by British noblemen who brought British settlers with them to New Providence.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1684",
-      "text": "In 1684 the town was burned to the ground during the Raid on Charles Town."
+      "text": "In 1684 the town was burned to the ground during the Raid on Charles Town.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1689",
-      "text": "William was the Dutch Stadtholder (stadhouder in Dutch), and, from 1689, the King of England, Scotland and Ireland."
-    },
-    {
-      "label": "1695",
-      "text": "It was rebuilt in 1695 under Governor Nicholas Trott and renamed Nassau in honour of King William III, who belonged to a branch of the House of Nassau."
+      "text": "William was the Dutch Stadtholder (stadhouder in Dutch), and, from 1689, the King of England, Scotland and Ireland.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1703",
-      "text": "In 1703, Spanish and French allied forces briefly occupied Nassau."
+      "text": "In 1703, Spanish and French allied forces briefly occupied Nassau.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1713",
-      "text": "Thomas Walker was the island's last remaining appointed official and although evidence is scarce, it appears that he was acting in the role of deputy governor upon Benjamin Hornigold's arrival in 1713."
+      "text": "Thomas Walker was the island's last remaining appointed official and although evidence is scarce, it appears that he was acting in the role of deputy governor upon Benjamin Hornigold's arrival in 1713.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1776",
-      "text": "In 1776, the Battle of Nassau resulted in a brief occupation by American Continental Marines during the American War of Independence, where the marines staged their first amphibious raid on Fort Montague after attempting."
+      "text": "In 1776, the Battle of Nassau resulted in a brief occupation by American Continental Marines during the American War of Independence, where the marines staged their first amphibious raid on Fort Montague after attempting to sneak up on Fort Nassau.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     },
     {
       "label": "1783",
-      "text": "In April 1783, Andrew Deveaux, an American Loyalist who resettled on the island, set forth and recaptured the island for the British Crown."
-    },
-    {
-      "label": "2300",
-      "text": "With funds from privateering, a new fort, street lights and over 2300 sumptuous houses were built and Nassau was extended."
-    },
-    {
-      "label": "Growth",
-      "text": "They built a fort, and named it Charles Town in honour of England's King Charles II."
-    },
-    {
-      "label": "Regional role",
-      "text": "Benjamin Hornigold, along with his great rival Henry Jennings, became the unofficial overlord of a veritable pirate republic which played host to the self-styled Flying Gang."
-    },
-    {
-      "label": "Regional role",
-      "text": "Rogers cleaned up Nassau and rebuilt the fort, using his own wealth to try to overcome problems."
-    },
-    {
-      "label": "Regional role",
-      "text": "He oversaw the construction of Fort Charlotte and Fort Fincastle in Nassau."
-    },
-    {
-      "label": "Regional role",
-      "text": "During the American Civil War, Nassau served as a port for blockade runners making their way to and from ports along the southern Atlantic Coast for continued trade with the Confederacy."
+      "text": "In April 1783, Andrew Deveaux, an American Loyalist who resettled on the island, set forth and recaptured the island for the British Crown.",
+      "source": {
+        "label": "Wikipedia: Nassau, Bahamas",
+        "url": "https://en.wikipedia.org/w/index.php?title=Nassau%2C_Bahamas&oldid=1380021837"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Nassau%2C_Bahamas",

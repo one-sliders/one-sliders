@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bodø travel, stays & events guide",
-  "heroText": "Bodø works best as a base in Norway when you anchor days around Saltstraumen, Norwegian Aviation Museum and Bodo harbour. Use those sights to understand the city's history, street life and visitor rhythm. Bodø International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Bodø works best as a base in Norway when you anchor days around Saltstraumen, Norwegian Aviation Museum and Bodo harbour. Use those sights to understand the city's history, street life and visitor rhythm. Bodø Airport (BOO) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Bodø International Airport",
-      "search": "Bodø International Airport, Bodø, Norway",
-      "text": "Bodø International Airport is the main air gateway for Bodø; compare transfer time with your hotel base before locking the first night."
+      "name": "Bodø Airport",
+      "code": "BOO",
+      "search": "Bodø Airport",
+      "text": "Bodø Airport (BOO) is 2 km from Bodø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 2
+    },
+    {
+      "name": "Leknes Airport",
+      "code": "LKN",
+      "search": "Leknes Airport",
+      "text": "Leknes Airport (LKN) is 102 km from Bodø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 102
+    },
+    {
+      "name": "Mo i Rana Airport, Røssvoll",
+      "code": "MQN",
+      "search": "Mo i Rana Airport, Røssvoll",
+      "text": "Mo i Rana Airport, Røssvoll (MQN) is 102 km from Bodø by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 102
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Bodø International Airport and central Bodø before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Bodø Airport (BOO) is the nearest airport with scheduled service, 2 km from Bodø by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "2 km straight line"
   },
   "bookingDestination": "Bodø, Norway",
   "stayOverview": "Start with City centre for the easiest first Bodø stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Bodø International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Bodø Airport (BOO), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,28 +162,12 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "Origins",
-      "text": "The municipality is named after the old Bodøgård farm (Old Norse: Boðvin), since the town was built on its ground."
-    },
-    {
       "label": "1959",
-      "text": "The current version which is a simplified, modern version of the old arms was granted on 24 July 1959."
-    },
-    {
-      "label": "Growth",
-      "text": "The first element might be boði which means \"sunken rock\" or \"skerry\" and the last element is vin which means \"meadow\" or \"pasture\"."
-    },
-    {
-      "label": "Modern city",
-      "text": "It showed a midnight sun above a boat on the sea in front of a mountain range."
-    },
-    {
-      "label": "Civic role",
-      "text": "The official blazon is \"Gules, a sun Or\" (Norwegian: På rød bunn en gull sol)."
-    },
-    {
-      "label": "Regional role",
-      "text": "The sun was chosen since Bodø was the first town in Northern Norway, and it experiences the midnight sun every year."
+      "text": "The current version which is a simplified, modern version of the old arms was granted on 24 July 1959.",
+      "source": {
+        "label": "Wikipedia: Bodø Municipality",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bod%C3%B8_Municipality&oldid=1375901138"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Bod%C3%B8_Municipality",

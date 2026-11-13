@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Montauk travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Montauk, in the Hamptons, is the town of Montauk Point Lighthouse, Ditch Plains Beach, Hither Hills State Park, Gosman's Dock and Camp Hero State Park. In the Great Hurricane of 1938, water flooded across Napeague and turned Montauk into an island.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Montauk International Airport",
-      "search": "Montauk International Airport, Montauk, USA",
-      "text": "Montauk International Airport is the main air gateway for Montauk; compare transfer time with your hotel base before locking the first night."
+      "name": "Rhode Island T. F. Green International Airport",
+      "code": "PVD",
+      "search": "Rhode Island T. F. Green International Airport",
+      "text": "Rhode Island T. F. Green International Airport (PVD) is 88 km from Montauk by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 88
+    },
+    {
+      "name": "Bradley International Airport",
+      "code": "BDL",
+      "search": "Bradley International Airport",
+      "text": "Bradley International Airport (BDL) is 117 km from Montauk by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 117
+    },
+    {
+      "name": "Westerly State Airport",
+      "code": "WST",
+      "search": "Westerly State Airport",
+      "text": "Westerly State Airport (WST) is 37 km from Montauk by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 37
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Montauk International Airport and central Montauk before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Rhode Island T. F. Green International Airport (PVD) is the nearest airport with scheduled service, 88 km from Montauk by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "88 km straight line"
   },
   "bookingDestination": "Montauk, USA",
   "stayOverview": "Start with City centre for the easiest first Montauk stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Montauk International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Rhode Island T. F. Green International Airport (PVD), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,67 @@
   "history": [
     {
       "label": "1661",
-      "text": "A deed was issued in 1661 titled \"Ye deed of Guift\" which granted all of the lands east of Fort Pond to be for the common use of both the indigenous people and the."
-    },
-    {
-      "label": "19th century",
-      "text": "It was completed in 1796. 19th century In 1839, slaves who had seized the schooner La Amistad came ashore in the hamlet looking for provisions after being told by the white crew they had."
+      "text": "A deed was issued in 1661 titled \"Ye deed of Guift\" which granted all of the lands east of Fort Pond to be for the common use of both the indigenous people and the townsmen.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1852",
-      "text": "Less than one month later, on April 2, 1852, a state law was passed that incorporated the proprietors of Montauk, establishing the corporation of the trustees of Montauk and affirming its right to govern."
-    },
-    {
-      "label": "20th century",
-      "text": "Floodwaters inundated the main downtown, and it was moved 3 miles (5 km) to the south, immediately next to the Atlantic Ocean. Mid 20th century During World War II the United States Navy bought."
+      "text": "Less than one month later, on April 2, 1852, a state law was passed that incorporated the proprietors of Montauk, establishing the corporation of the trustees of Montauk and affirming its right to govern.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1938",
-      "text": "In the Great Hurricane of 1938, water flooded across Napeague, turning Montauk into an island."
+      "text": "In the Great Hurricane of 1938, water flooded across Napeague, turning Montauk into an island.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1951",
-      "text": "In 1951, sport fisherman Frank Mundus began to lead charter fishing trips out of Lake Montauk, initially looking for bluefish but soon found fishing for sharks was more lucrative."
+      "text": "In 1951, sport fisherman Frank Mundus began to lead charter fishing trips out of Lake Montauk, initially looking for bluefish but soon found fishing for sharks was more lucrative.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1957",
-      "text": "In 1957, the Army closed Camp Hero, and it was taken over by the United States Air Force, which in 1958 built a 100-foot-wide (30 m) AN/FPS-35 radar."
+      "text": "In 1957, the Army closed Camp Hero, and it was taken over by the United States Air Force, which in 1958 built a 100-foot-wide (30 m) AN/FPS-35 radar.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1994",
-      "text": "Montauk Friends of Olmsted Parks LLC was established in 1994 to protect an extensive system of beaches and waterfront properties and roadways."
+      "text": "Montauk Friends of Olmsted Parks LLC was established in 1994 to protect an extensive system of beaches and waterfront properties and roadways.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "1995",
-      "text": "In 1995, Montauk became the birthplace of the extreme surfcasting technique known as skishing."
-    },
-    {
-      "label": "21st century",
-      "text": "The sport involves donning a wetsuit and flippers and swimming into the ocean with rod and reel to catch fish while drifting offshore. 21st century In October 2007, a fishing boat dragged up a."
+      "text": "In 1995, Montauk became the birthplace of the extreme surfcasting technique known as skishing.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     },
     {
       "label": "2016",
-      "text": "In August 2016 OCEARCH designated the waters off of Montauk and the rest of the South Shore of Long Island as a birthing ground for great white sharks."
-    },
-    {
-      "label": "Regional role",
-      "text": "Corbin built the dock on Fort Pond Bay, but the plans never materialized when, among other things, Fort Pond Bay was found to be too shallow and rocky to handle oceangoing ships."
-    },
-    {
-      "label": "Regional role",
-      "text": "His projects included blasting a hole through the freshwater Lake Montauk to access Block Island Sound to replace the shallow Fort Pond Bay as the hamlet's port; establishing the Montauk Yacht Club and the."
-    },
-    {
-      "label": "Regional role",
-      "text": "Other hotels that opened at the time of Fisher's project include Gurney's Inn, built by W."
+      "text": "In August 2016 OCEARCH designated the waters off of Montauk and the rest of the South Shore of Long Island as a birthing ground for great white sharks.",
+      "source": {
+        "label": "Wikipedia: Montauk, New York",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montauk%2C_New_York&oldid=1379641823"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Montauk%2C_New_York",
@@ -228,5 +258,10 @@
       "text": "A narrow neck of dune between ocean and bay, with the fishing-village museum on Bluff Road.",
       "source": "https://parks.ny.gov/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

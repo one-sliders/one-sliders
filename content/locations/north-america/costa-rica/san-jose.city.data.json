@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "San Jose travel, stays and events",
-    "description": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, San Jose International Airport and nearby event links.",
-    "twitterDescription": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, San Jose International Airport and nearby event links.",
-    "webpageDescription": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, San Jose International Airport and nearby event links."
+    "description": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, Juan Santamaría International Airport (SJO) and nearby event links.",
+    "twitterDescription": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, Juan Santamaría International Airport (SJO) and nearby event links.",
+    "webpageDescription": "Plan San Jose around National Theatre of Costa Rica, Pre-Columbian Gold Museum, Juan Santamaría International Airport (SJO) and nearby event links."
   },
   "region": "Capital city in Costa Rica",
   "population": "~1M",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "San Jose travel, stays & events guide",
-  "heroText": "San Jose works best as a base in Costa Rica when you anchor days around National Theatre of Costa Rica, Pre-Columbian Gold Museum and Central Market San Jose. Use those sights to understand the city's history, street life and visitor rhythm. San Jose International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "San Jose works best as a base in Costa Rica when you anchor days around National Theatre of Costa Rica, Pre-Columbian Gold Museum and Central Market San Jose. Use those sights to understand the city's history, street life and visitor rhythm. Juan Santamaría International Airport (SJO) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "San Jose International Airport",
-      "search": "San Jose International Airport, San Jose, Costa Rica",
-      "text": "San Jose International Airport is the main air gateway for San Jose; compare transfer time with your hotel base before locking the first night."
+      "name": "Juan Santamaría International Airport",
+      "code": "SJO",
+      "search": "Juan Santamaría International Airport",
+      "text": "Juan Santamaría International Airport (SJO) is 15 km from San Jose by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 15
+    },
+    {
+      "name": "Tobías Bolaños International Airport",
+      "code": "SYQ",
+      "search": "Tobías Bolaños International Airport",
+      "text": "Tobías Bolaños International Airport (SYQ) is 7 km from San Jose by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Quepos Managua Airport",
+      "code": "XQP",
+      "search": "Quepos Managua Airport",
+      "text": "Quepos Managua Airport (XQP) is 55 km from San Jose by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 55
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between San Jose International Airport and central San Jose before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Juan Santamaría International Airport (SJO) is the nearest airport with scheduled service, 15 km from San Jose by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "15 km straight line"
   },
   "bookingDestination": "San Jose, Costa Rica",
   "stayOverview": "Start with City centre for the easiest first San Jose stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for San Jose International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Juan Santamaría International Airport (SJO), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,47 +156,35 @@
   "history": [
     {
       "label": "1736",
-      "text": "Founded in 1736 by order of Cabildo de León, its objective was to concentrate the scattered inhabitants of the Aserrí Valley."
-    },
-    {
-      "label": "19th century",
-      "text": "The first modern urban neighborhood carries the name of its founder, the French coffee entrepreneur Monsieur Amon, and was created in the late 19th century, in line with Belle Époque contemporary architecture."
-    },
-    {
-      "label": "1812",
-      "text": "It was not until the enactment of the Constitution of Cádiz in 1812 that San José had its first city government."
+      "text": "Founded in 1736 by order of Cabildo de León, the population of San José rose during the 18th century through the use of colonial planning.",
+      "source": {
+        "label": "Wikipedia: San José, Costa Rica",
+        "url": "https://en.wikipedia.org/w/index.php?title=San_Jos%C3%A9%2C_Costa_Rica&oldid=1383449109"
+      }
     },
     {
       "label": "1814",
-      "text": "On 18 October 1813, the area was first defined as a city by presbyter Florencio del Castillo, on behalf of the Spanish government, a title which was then lost in 1814 when Ferdinand VII."
+      "text": "On 18 October 1813, the area was first defined as a city by presbyter Florencio del Castillo, on behalf of the Spanish government, a title which was then lost in 1814 when Ferdinand VII of Spain annulled the proceedings of the courts.",
+      "source": {
+        "label": "Wikipedia: San José, Costa Rica",
+        "url": "https://en.wikipedia.org/w/index.php?title=San_Jos%C3%A9%2C_Costa_Rica&oldid=1383449109"
+      }
     },
     {
       "label": "1820",
-      "text": "The municipal government was restored in 1820 along with the title of city and in 1823 San José became the capital of Costa Rica."
+      "text": "The municipal government was restored in 1820 along with the title of city and in 1823 San José became the capital of Costa Rica.",
+      "source": {
+        "label": "Wikipedia: San José, Costa Rica",
+        "url": "https://en.wikipedia.org/w/index.php?title=San_Jos%C3%A9%2C_Costa_Rica&oldid=1383449109"
+      }
     },
     {
-      "label": "Modern city",
-      "text": "De León thus ordered the construction of a chapel near the area known as La Boca del Monte which was completed a year later."
-    },
-    {
-      "label": "Regional role",
-      "text": "Unlike neighboring Cartago, San José was not founded by formal decree and thus lacked a city government."
-    },
-    {
-      "label": "Regional role",
-      "text": "This makes San José one of the youngest capital cities in Latin America by year of conception."
-    },
-    {
-      "label": "Regional role",
-      "text": "The accumulation of capital brought by tobacco plantations allowed the city to economically surpass neighboring provinces."
-    },
-    {
-      "label": "Regional role",
-      "text": "Spurred by the country's improved tourism industry, it is a significant destination and stopover for foreign visitors."
-    },
-    {
-      "label": "Regional role",
-      "text": "San José exerts a strong influence because of its proximity to other cities (Alajuela, Heredia and Cartago) and the country's demographic assemblage in the Central Valley. Districts The borders of San José city, as."
+      "label": "19th century",
+      "text": "The first modern urban neighborhood carries the name of its founder, the French coffee entrepreneur Monsieur Amon, and was created in the late 19th century, in line with Belle Époque contemporary architecture.",
+      "source": {
+        "label": "Wikipedia: San José, Costa Rica",
+        "url": "https://en.wikipedia.org/w/index.php?title=San_Jos%C3%A9%2C_Costa_Rica&oldid=1383449109"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/San_Jos%C3%A9%2C_Costa_Rica",

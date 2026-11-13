@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Örebro travel, stays & events guide",
-  "heroText": "Örebro works best as a base in Sweden when you anchor days around Orebro Castle, Wadkoping and Stadsparken. Use those sights to understand the city's history, street life and visitor rhythm. Örebro International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Örebro works best as a base in Sweden when you anchor days around Orebro Castle, Wadkoping and Stadsparken. Use those sights to understand the city's history, street life and visitor rhythm. Stockholm Västerås Airport (VST) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Örebro International Airport",
-      "search": "Örebro International Airport, Örebro, Sweden",
-      "text": "Örebro International Airport is the main air gateway for Örebro; compare transfer time with your hotel base before locking the first night."
+      "name": "Stockholm Västerås Airport",
+      "code": "VST",
+      "search": "Stockholm Västerås Airport",
+      "text": "Stockholm Västerås Airport (VST) is 88 km from Örebro by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 88
+    },
+    {
+      "name": "Örebro Airport",
+      "code": "ORB",
+      "search": "Örebro Airport",
+      "text": "Örebro Airport (ORB) is 11 km from Örebro by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 11
+    },
+    {
+      "name": "Linköping City Airport",
+      "code": "LPI",
+      "search": "Linköping City Airport",
+      "text": "Linköping City Airport (LPI) is 100 km from Örebro by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 100
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Örebro International Airport and central Örebro before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Stockholm Västerås Airport (VST) is the nearest airport with scheduled service, 88 km from Örebro by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "88 km straight line"
   },
   "bookingDestination": "Örebro, Sweden",
   "stayOverview": "Start with City centre for the easiest first Örebro stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Örebro International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Stockholm Västerås Airport (VST), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,27 +163,27 @@
   "history": [
     {
       "label": "13th century",
-      "text": "The location became a natural seat of commerce in the Scandinavian Middle Ages and is mentioned in print in the 13th century."
-    },
-    {
-      "label": "1404",
-      "text": "The prefix Öre- is derived from ör 'gravel (bank)'. Örebro received its Royal Charter and city privileges not later than 1404."
-    },
-    {
-      "label": "19th century",
-      "text": "Although a trade town, Örebro remained small until the second half of the 19th century, when it grew rapidly as a center of the national shoe-manufacturing industry. 2025 Risbergska school shooting On 4 February."
+      "text": "The location became a natural seat of commerce in the Scandinavian Middle Ages and is mentioned in print in the 13th century.",
+      "source": {
+        "label": "Wikipedia: Örebro",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%96rebro&oldid=1384641688"
+      }
     },
     {
       "label": "1810",
-      "text": "Notable events in Örebro's history include the national diet meeting at Örebro in 1810, where Jean-Baptiste Bernadotte was elected crown prince of Sweden."
+      "text": "Notable events in Örebro's history include the national diet meeting at Örebro in 1810, where Jean-Baptiste Bernadotte was elected crown prince of Sweden.",
+      "source": {
+        "label": "Wikipedia: Örebro",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%96rebro&oldid=1384641688"
+      }
     },
     {
-      "label": "Civic role",
-      "text": "The natural center of the city is otherwise Örebro Castle, situated on an islet in the Svartån, and dividing the town into a northern and a southern part."
-    },
-    {
-      "label": "Regional role",
-      "text": "According to Swedish prime minister Ulf Kristersson, it is the deadliest mass shooting in the country's history."
+      "label": "19th century",
+      "text": "Although a trade town, Örebro remained small until the second half of the 19th century, when it grew rapidly as a center of the national shoe-manufacturing industry.",
+      "source": {
+        "label": "Wikipedia: Örebro",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%96rebro&oldid=1384641688"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/%C3%96rebro",

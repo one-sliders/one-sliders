@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Churchill travel, stays & events guide",
-  "heroText": "Churchill works best as a base in Canada when you anchor days around Polar bear season, Beluga whales and Northern lights. Use those sights to understand the city's history, street life and visitor rhythm. Churchill International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Churchill works best as a base in Canada when you anchor days around Polar bear season, Beluga whales and Northern lights. Use those sights to understand the city's history, street life and visitor rhythm. Churchill Airport (YYQ) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,19 @@
   ],
   "airports": [
     {
-      "name": "Churchill International Airport",
-      "search": "Churchill International Airport, Churchill, Canada",
-      "text": "Churchill International Airport is the main air gateway for Churchill; compare transfer time with your hotel base before locking the first night."
+      "name": "Churchill Airport",
+      "code": "YYQ",
+      "search": "Churchill Airport",
+      "text": "Churchill Airport (YYQ) is 7 km from Churchill by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Churchill International Airport and central Churchill before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Churchill Airport (YYQ) is the nearest airport with scheduled service, 7 km from Churchill by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Churchill, Canada",
   "stayOverview": "Start with City centre for the easiest first Churchill stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +83,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Churchill International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Churchill Airport (YYQ), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -129,59 +133,51 @@
   "history": [
     {
       "label": "1688",
-      "text": "After an abortive attempt in 1688–89, in 1717, the Hudson's Bay Company built the first permanent settlement, Churchill River Post, a log fort a few kilometres upstream from the mouth of the Churchill River."
+      "text": "After an abortive attempt in 1688–89, in 1717, the Hudson's Bay Company built the first permanent settlement, Churchill River Post, a log fort a few kilometres upstream from the mouth of the Churchill River.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
     },
     {
       "label": "1731",
-      "text": "As part of the Anglo-French dispute for North America, in 1731–1741, the original fort was replaced with Prince of Wales Fort, a large stone fort on the western peninsula at the mouth of the."
+      "text": "As part of the Anglo-French dispute for North America, in 1731–1741, the original fort was replaced with Prince of Wales Fort, a large stone fort on the western peninsula at the mouth of the river.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
     },
     {
       "label": "1912",
-      "text": "Initially, Port Nelson was selected for this purpose in 1912."
+      "text": "Initially, Port Nelson was selected for this purpose in 1912.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
     },
     {
       "label": "1942",
-      "text": "In 1942, the United States Army Air Forces established a base called Fort Churchill, 8 km (5.0 mi) east of the town."
+      "text": "In 1942, the United States Army Air Forces established a base called Fort Churchill, 8 km (5.0 mi) east of the town.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
+    },
+    {
+      "label": "1943",
+      "text": "Naval Radio Station Churchill, call sign CFL, was activated as an ionospheric study station by the Royal Canadian Navy in support of the U-boat high-frequency direction finding (HFDF) net and became operational on 1 August 1943.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
     },
     {
       "label": "1949",
-      "text": "Around 1949, Churchill became part of the Canadian SUPRAD (signals intelligence) network and remained in that role until it closed its doors in 1968."
-    },
-    {
-      "label": "Today",
-      "text": "Since before the time of European contact, the region around Churchill has been predominantly inhabited by the Chipewyan and Cree peoples."
-    },
-    {
-      "label": "Regional role",
-      "text": "The discoveries were all taken to Denmark; some are on display at the National Museum in Copenhagen."
-    },
-    {
-      "label": "Regional role",
-      "text": "The fort, Prince of Wales Fort, was rebuilt at the mouth of the river."
-    },
-    {
-      "label": "Regional role",
-      "text": "The fort was primarily built to capitalize on the North American fur trade, out of the reach of York Factory."
-    },
-    {
-      "label": "Regional role",
-      "text": "A defensive battery, Cape Merry Battery, was built on the opposite side of the fort to provide protection."
-    },
-    {
-      "label": "Regional role",
-      "text": "After several years of effort and millions of dollars, this project was abandoned, and Churchill was chosen as the alternative after World War One."
-    },
-    {
-      "label": "Regional role",
-      "text": "Once this transportation rail link from farms to the Churchill port was completed, commercial shipping took many more years to pick up."
-    },
-    {
-      "label": "Regional role",
-      "text": "Following the demolition of the base it was repurposed into the town's airport."
-    },
-    {
-      "label": "Regional role",
-      "text": "Naval Radio Station Churchill, call sign CFL, was activated as an ionospheric study station by the Royal Canadian Navy in support of the U-boat high-frequency direction finding (HFDF) net and became operational on 1."
+      "text": "Around 1949, Churchill became part of the Canadian SUPRAD (signals intelligence) network and remained in that role until it closed its doors in 1968.",
+      "source": {
+        "label": "Wikipedia: Churchill, Manitoba",
+        "url": "https://en.wikipedia.org/w/index.php?title=Churchill%2C_Manitoba&oldid=1382273098"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Churchill%2C_Manitoba",

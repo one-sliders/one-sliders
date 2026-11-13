@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Montreal travel, stays & events guide",
-  "heroText": "Montreal works best as a base in Canada when you anchor days around Old Montreal, Mount Royal and Notre-Dame Basilica. Use those sights to understand the city's history, street life and visitor rhythm. Montreal International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Montreal works best as a base in Canada when you anchor days around Old Montreal, Mount Royal and Notre-Dame Basilica. Use those sights to understand the city's history, street life and visitor rhythm. Montreal / Pierre Elliott Trudeau International Airport (YUL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "Montreal International Airport",
-      "search": "Montreal International Airport, Montreal, Canada",
-      "text": "Montreal International Airport is the main air gateway for Montreal; compare transfer time with your hotel base before locking the first night."
+      "name": "Montreal / Pierre Elliott Trudeau International Airport",
+      "code": "YUL",
+      "search": "Montreal / Pierre Elliott Trudeau International Airport",
+      "text": "Montreal / Pierre Elliott Trudeau International Airport (YUL) is 13 km from Montreal by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 13
+    },
+    {
+      "name": "Montréal / Saint-Hubert Metropolitan Airport",
+      "code": "YHU",
+      "search": "Montréal / Saint-Hubert Metropolitan Airport",
+      "text": "Montréal / Saint-Hubert Metropolitan Airport (YHU) is 13 km from Montreal by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 13
+    },
+    {
+      "name": "Montreal Mirabel International Airport",
+      "code": "YMX",
+      "search": "Montreal Mirabel International Airport",
+      "text": "Montreal Mirabel International Airport (YMX) is 40 km from Montreal by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 40
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Montreal International Airport and central Montreal before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Montreal / Pierre Elliott Trudeau International Airport (YUL) is the nearest airport with scheduled service, 13 km from Montreal by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "13 km straight line"
   },
   "bookingDestination": "Montreal, Canada",
   "stayOverview": "Start with City centre for the easiest first Montreal stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Montreal International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Montreal / Pierre Elliott Trudeau International Airport (YUL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +155,76 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Origins",
-      "text": "In the Ojibwe language, the land is called Mooniyaang or Moon’yaang which was \"the first stopping place\" in the Ojibwe migration story as related in the seven fires prophecy."
-    },
-    {
       "label": "1611",
-      "text": "In 1611, Champlain established a fur trading post on the Island of Montreal on a site initially named La Place Royale."
-    },
-    {
-      "label": "1642",
-      "text": "Evidence of earlier occupation of the island, such as those uncovered in 1642 during the construction of Fort Ville-Marie, have effectively been removed. Early European settlement (1600–1760) In 1603, French explorer Samuel de Champlain."
-    },
-    {
-      "label": "18th century",
-      "text": "By the early 18th century, the Sulpician Order was established there."
+      "text": "In 1611, Champlain established a fur trading post on the Island of Montreal on a site initially named La Place Royale.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1705",
-      "text": "Ville-Marie was the name for the settlement that appeared in all official documents until 1705, when Montreal appeared for the first time, although people referred to the \"Island of Montreal\" long before then. American."
+      "text": "Ville-Marie was the name for the settlement that appeared in all official documents until 1705, when Montreal appeared for the first time, although people referred to the \"Island of Montreal\" long before then.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1745",
-      "text": "In 1745, several Mohawk families moved upriver to create another settlement, known as Akwesasne."
+      "text": "In 1745, several Mohawk families moved upriver to create another settlement, known as Akwesasne.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
+    },
+    {
+      "label": "18th century",
+      "text": "By the early 18th century, the Sulpician Order was established there.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1844",
-      "text": "Montreal was the capital of the Province of Canada from 1844 to 1849, but lost its status when a Tory mob burnt down the Parliament building to protest the passage of the Rebellion Losses."
-    },
-    {
-      "label": "1857",
-      "text": "Thereafter, the capital rotated between Quebec City and Toronto until in 1857, Queen Victoria herself established Ottawa as the capital due to strategic reasons."
+      "text": "Montreal was the capital of the Province of Canada from 1844 to 1849, but lost its status when a Tory mob burnt down the Parliament building to protest the passage of the Rebellion Losses Bill.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1867",
-      "text": "Ottawa retained the status as capital of Canada when the Province of Canada joined with Nova Scotia and New Brunswick to form the Dominion of Canada in 1867."
+      "text": "Ottawa retained the status as capital of Canada when the Province of Canada joined with Nova Scotia and New Brunswick to form the Dominion of Canada in 1867.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1883",
-      "text": "Montreal annexed 27 other cities, towns and villages beginning with Hochelaga in 1883, with the last prior to 2002 being Pointe-aux-Trembles in 1982."
+      "text": "Montreal annexed 27 other cities, towns and villages beginning with Hochelaga in 1883, with the last prior to 2002 being Pointe-aux-Trembles in 1982.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1959",
-      "text": "Lawrence Seaway opened in 1959, allowing vessels to bypass Montreal."
+      "text": "The St. Lawrence Seaway opened in 1959, allowing vessels to bypass Montreal.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     },
     {
       "label": "1976",
-      "text": "The October Crisis and the 1976 election of the Parti Québécois, which supported sovereign status for Quebec, resulted in the departure of many businesses and people from the city."
-    },
-    {
-      "label": "Regional role",
-      "text": "Within a few hundred years, they had built fortified villages."
-    },
-    {
-      "label": "Regional role",
-      "text": "The opening of the Lachine Canal permitted ships to bypass the unnavigable Lachine Rapids, while the construction of the Victoria Bridge established Montreal as a major railway hub."
+      "text": "The October Crisis and the 1976 election of the Parti Québécois, which supported sovereign status for Quebec, resulted in the departure of many businesses and people from the city.",
+      "source": {
+        "label": "Wikipedia: Montreal",
+        "url": "https://en.wikipedia.org/w/index.php?title=Montreal&oldid=1384390779"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Montreal",

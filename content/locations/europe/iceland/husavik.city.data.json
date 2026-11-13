@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Húsavík travel, stays & events guide",
-  "heroText": "Húsavík works best as a base in Iceland when you anchor days around Whale watching harbour, Husavik Whale Museum and GeoSea baths. Use those sights to understand the city's history, street life and visitor rhythm. Húsavík International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Húsavík works best as a base in Iceland when you anchor days around Whale watching harbour, Husavik Whale Museum and GeoSea baths. Use those sights to understand the city's history, street life and visitor rhythm. Akureyri International Airport (AEY) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Húsavík International Airport",
-      "search": "Húsavík International Airport, Húsavík, Iceland",
-      "text": "Húsavík International Airport is the main air gateway for Húsavík; compare transfer time with your hotel base before locking the first night."
+      "name": "Akureyri International Airport",
+      "code": "AEY",
+      "search": "Akureyri International Airport",
+      "text": "Akureyri International Airport (AEY) is 55 km from Húsavík by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 55
+    },
+    {
+      "name": "Grímsey Airport",
+      "code": "GRY",
+      "search": "Grímsey Airport",
+      "text": "Grímsey Airport (GRY) is 63 km from Húsavík by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 63
+    },
+    {
+      "name": "Vopnafjörður Airport",
+      "code": "VPN",
+      "search": "Vopnafjörður Airport",
+      "text": "Vopnafjörður Airport (VPN) is 119 km from Húsavík by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 119
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Húsavík International Airport and central Húsavík before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Akureyri International Airport (AEY) is the nearest airport with scheduled service, 55 km from Húsavík by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "55 km straight line"
   },
   "bookingDestination": "Húsavík, Iceland",
   "stayOverview": "Start with City centre for the easiest first Húsavík stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Húsavík International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Akureyri International Airport (AEY), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -138,32 +160,7 @@
     }
   ],
   "sourceFetchedAt": "2026-06-12",
-  "history": [
-    {
-      "label": "c. 870",
-      "text": "According to Landnamabok, Swedish Viking Gardar Svavarsson wintered at Husavik around 870."
-    },
-    {
-      "label": "c. 870",
-      "text": "Nattfari and two enslaved people were left behind when Gardar departed, creating an early farm settlement."
-    },
-    {
-      "label": "Name",
-      "text": "The name Husavik means bay of houses, probably referring to Gardar's homestead at the site."
-    },
-    {
-      "label": "1907",
-      "text": "Husavikurkirkja, the town's well-known wooden church, was built and became a key local landmark."
-    },
-    {
-      "label": "2004",
-      "text": "Until 2004, Husavik served as an export harbour for silica extracted from the Lake Myvatn area."
-    },
-    {
-      "label": "Today",
-      "text": "Modern Husavik is shaped by fishing, tourism, whale watching, GeoSea baths and its harbour on Skjalfandi bay."
-    }
-  ],
+  "history": [],
   "historySource": "https://en.wikipedia.org/wiki/H%C3%BAsav%C3%ADk",
   "timezone": "Atlantic/Faroe",
   "coordinateSource": {

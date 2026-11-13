@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Bucharest travel, stays and events",
-    "description": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest International Airport and nearby event links.",
-    "twitterDescription": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest International Airport and nearby event links.",
-    "webpageDescription": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest International Airport and nearby event links."
+    "description": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest Băneasa Aurel Vlaicu International Airport (BBU) and nearby event links.",
+    "twitterDescription": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest Băneasa Aurel Vlaicu International Airport (BBU) and nearby event links.",
+    "webpageDescription": "Plan Bucharest around Palace of the Parliament, Old Town Bucharest, Bucharest Băneasa Aurel Vlaicu International Airport (BBU) and nearby event links."
   },
   "region": "Capital city of Romania",
   "population": "~1.7M",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bucharest travel, stays & events guide",
-  "heroText": "Bucharest works best as a base in Romania when you anchor days around Palace of the Parliament, Old Town Bucharest and Romanian Athenaeum. Use those sights to understand the city's history, street life and visitor rhythm. Bucharest International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Bucharest works best as a base in Romania when you anchor days around Palace of the Parliament, Old Town Bucharest and Romanian Athenaeum. Use those sights to understand the city's history, street life and visitor rhythm. Bucharest Băneasa Aurel Vlaicu International Airport (BBU) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Bucharest International Airport",
-      "search": "Bucharest International Airport, Bucharest, Romania",
-      "text": "Bucharest International Airport is the main air gateway for Bucharest; compare transfer time with your hotel base before locking the first night."
+      "name": "Bucharest Băneasa Aurel Vlaicu International Airport",
+      "code": "BBU",
+      "search": "Bucharest Băneasa Aurel Vlaicu International Airport",
+      "text": "Bucharest Băneasa Aurel Vlaicu International Airport (BBU) is 8 km from Bucharest by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 8
+    },
+    {
+      "name": "Bucharest Henri Coandă International Airport",
+      "code": "OTP",
+      "search": "Bucharest Henri Coandă International Airport",
+      "text": "Bucharest Henri Coandă International Airport (OTP) is 16 km from Bucharest by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 16
+    },
+    {
+      "name": "Brașov-Ghimbav International Airport",
+      "code": "GHV",
+      "search": "Brașov-Ghimbav International Airport",
+      "text": "Brașov-Ghimbav International Airport (GHV) is 149 km from Bucharest by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 149
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Bucharest International Airport and central Bucharest before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Bucharest Băneasa Aurel Vlaicu International Airport (BBU) is the nearest airport with scheduled service, 8 km from Bucharest by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "8 km straight line"
   },
   "bookingDestination": "Bucharest, Romania",
   "stayOverview": "Start with Old Town for the easiest first Bucharest stay, then compare Piata Romana and Victoriei when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Bucharest International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Bucharest Băneasa Aurel Vlaicu International Airport (BBU), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,84 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "200",
-      "text": "The city was partly destroyed by natural disasters and rebuilt several times, in the following 200 years."
-    },
-    {
       "label": "1459",
-      "text": "First mentioned as the 'Citadel of București' in 1459, it became the residence of the ruler of Wallachia, Voivode Vlad the Impaler."
+      "text": "First mentioned as the 'Citadel of București' in 1459, it became the residence of the ruler of Wallachia, Voivode Vlad the Impaler.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1698",
-      "text": "Bucharest finally became the permanent location of the Wallachian court after 1698, starting with the reign of Constantin Brâncoveanu."
-    },
-    {
-      "label": "19th century",
-      "text": "Bucharest's history alternated periods of development and decline from the early settlements in antiquity until its consolidation as the national capital of Romania late in the 19th century."
+      "text": "Bucharest finally became the permanent location of the Wallachian court after 1698, starting with the reign of Constantin Brâncoveanu.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1847",
-      "text": "On 23 March 1847, a fire consumed about 2,000 buildings, destroying a third of the city."
+      "text": "On 23 March 1847, a fire consumed about 2,000 buildings, destroying a third of the city.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
+    },
+    {
+      "label": "19th century",
+      "text": "Bucharest's history alternated periods of development and decline from the early settlements in antiquity until its consolidation as the national capital of Romania late in the 19th century.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1862",
-      "text": "In 1862, after Wallachia and Moldavia were united to form the Principality of Romania, Bucharest became the new nation's capital city."
+      "text": "In 1862, after Wallachia and Moldavia were united to form the Principality of Romania, Bucharest became the new nation's capital city.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1881",
-      "text": "In 1881, it became the political centre of the newly proclaimed Kingdom of Romania under King Carol I."
+      "text": "In 1881, it became the political centre of the newly proclaimed Kingdom of Romania under King Carol I. During the second half of the 19th century, the city's population increased dramatically, and a new period of urban development began.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1883",
-      "text": "The Dâmbovița River was also massively channelled in 1883, thus putting a stop to previously endemic floods like the 1865 flooding of Bucharest."
+      "text": "The Dâmbovița River was also massively channelled in 1883, thus putting a stop to previously endemic floods like the 1865 flooding of Bucharest.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1916",
-      "text": "Between 6 December 1916 and November 1918, the city was occupied by German forces as a result of the Battle of Bucharest, with the official capital temporarily moved to Iași (also called Jassy), in."
+      "text": "Between 6 December 1916 and November 1918, the city was occupied by German forces as a result of the Battle of Bucharest, with the official capital temporarily moved to Iași (also called Jassy), in the Moldavia region.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1965",
-      "text": "During Nicolae Ceaușescu's leadership (1965–89), a part of the historic city was demolished and replaced by 'Socialist realism' style development: (1) the Centrul Civic (the Civic Centre) and (2) the Palace of the Parliament."
+      "text": "During Nicolae Ceaușescu's leadership (1965–89), a part of the historic city was demolished and replaced by 'Socialist realism' style development: (1) the Centrul Civic (the Civic Centre) and (2) the Palace of the Parliament, for which an entire historic quarter was razed to make way for Ceaușescu's megalomaniac plans.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     },
     {
       "label": "1977",
-      "text": "On 4 March 1977, an earthquake centred in Vrancea, about 135 km (83.89 mi) away, claimed 1,500 lives and caused further damage to the historic centre."
-    },
-    {
-      "label": "Regional role",
-      "text": "During the years to come, it competed with Târgoviște on the status of capital city after an increase in the importance of Southern Muntenia brought about by demands of the suzerain power – the."
-    },
-    {
-      "label": "Regional role",
-      "text": "After World War I, Bucharest became the capital of Greater Romania."
-    },
-    {
-      "label": "Regional role",
-      "text": "As the capital of an Axis country and a major transit point for Axis troops en route to the Eastern Front, Bucharest suffered heavy damage during World War II due to Allied bombings."
+      "text": "On 4 March 1977, an earthquake centred in Vrancea, about 135 km (83.89 mi) away, claimed 1,500 lives and caused further damage to the historic centre.",
+      "source": {
+        "label": "Wikipedia: Bucharest",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bucharest&oldid=1384548549"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Bucharest",

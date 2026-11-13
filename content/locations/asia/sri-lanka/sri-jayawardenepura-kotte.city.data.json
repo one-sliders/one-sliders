@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Sri Jayawardenepura Kotte travel, stays and events",
-    "description": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Sri Jayawardenepura Kotte International Airport and nearby event links.",
-    "twitterDescription": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Sri Jayawardenepura Kotte International Airport and nearby event links.",
-    "webpageDescription": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Sri Jayawardenepura Kotte International Airport and nearby event links."
+    "description": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Colombo Ratmalana International Airport (RML) and nearby event links.",
+    "twitterDescription": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Colombo Ratmalana International Airport (RML) and nearby event links.",
+    "webpageDescription": "Plan Sri Jayawardenepura Kotte around Parliament of Sri Lanka, Diyatha Uyana, Colombo Ratmalana International Airport (RML) and nearby event links."
   },
   "region": "Capital city in Sri Lanka",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Sri Jayawardenepura Kotte travel, stays & events guide",
-  "heroText": "Sri Jayawardenepura Kotte works best as a base in Sri Lanka when you anchor days around Parliament of Sri Lanka, Diyatha Uyana and Beddagana Wetland Park. Use those sights to understand the city's history, street life and visitor rhythm. Sri Jayawardenepura Kotte International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Sri Jayawardenepura Kotte works best as a base in Sri Lanka when you anchor days around Parliament of Sri Lanka, Diyatha Uyana and Beddagana Wetland Park. Use those sights to understand the city's history, street life and visitor rhythm. Colombo Ratmalana International Airport (RML) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Sri Jayawardenepura Kotte International Airport",
-      "search": "Sri Jayawardenepura Kotte International Airport, Sri Jayawardenepura Kotte, Sri Lanka",
-      "text": "Sri Jayawardenepura Kotte International Airport is the main air gateway for Sri Jayawardenepura Kotte; compare transfer time with your hotel base before locking the first night."
+      "name": "Colombo Ratmalana International Airport",
+      "code": "RML",
+      "search": "Colombo Ratmalana International Airport",
+      "text": "Colombo Ratmalana International Airport (RML) is 7 km from Sri Jayawardenepura Kotte by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Bandaranaike International Colombo Airport",
+      "code": "CMB",
+      "search": "Bandaranaike International Colombo Airport",
+      "text": "Bandaranaike International Colombo Airport (CMB) is 33 km from Sri Jayawardenepura Kotte by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 33
+    },
+    {
+      "name": "Koggala Airport",
+      "code": "KCT",
+      "search": "Koggala Airport",
+      "text": "Koggala Airport (KCT) is 109 km from Sri Jayawardenepura Kotte by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 109
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Sri Jayawardenepura Kotte International Airport and central Sri Jayawardenepura Kotte before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Colombo Ratmalana International Airport (RML) is the nearest airport with scheduled service, 7 km from Sri Jayawardenepura Kotte by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Sri Jayawardenepura Kotte, Sri Lanka",
   "stayOverview": "Start with City centre for the easiest first Sri Jayawardenepura Kotte stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Sri Jayawardenepura Kotte International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Colombo Ratmalana International Airport (RML), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -153,59 +175,43 @@
   "history": [
     {
       "label": "13th century",
-      "text": "Here, in the 13th century, a local chieftain, Nissanka Alagakkonara, built a Kotte, or fortress."
-    },
-    {
-      "label": "16th century",
-      "text": "It became the capital of the ancient Kingdom of Kotte, which it remained until the end of the 16th century."
+      "text": "Here, in the 13th century, a local chieftain, Nissanka Alagakkonara, built a Kotte, or fortress.",
+      "source": {
+        "label": "Wikipedia: Sri Jayawardenepura Kotte",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sri_Jayawardenepura_Kotte&oldid=1376908641"
+      }
     },
     {
       "label": "1505",
-      "text": "The Portuguese arrived on the island in 1505 and were initially welcomed by the king, but they had militaristic and monopolistic intentions and gained control of the city by 1565."
-    },
-    {
-      "label": "1930s",
-      "text": "The process of relocating government institutions from the former capital of Colombo is still in progress. Municipal structure The Kotte Urban Development Council was created in the 1930s, with a modern building at Rajagiriya."
+      "text": "The Portuguese arrived on the island in 1505 and were initially welcomed by the king, but they had militaristic and monopolistic intentions and gained control of the city by 1565.",
+      "source": {
+        "label": "Wikipedia: Sri Jayawardenepura Kotte",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sri_Jayawardenepura_Kotte&oldid=1376908641"
+      }
     },
     {
       "label": "1977",
-      "text": "While designated as the new capital in 1977 to relieve congestion in Colombo, the official relocation was marked by the inauguration of the new Parliament building in Kotte on 29 April 1982. Legislature The."
+      "text": "While designated as the new capital in 1977 to relieve congestion in Colombo, the official relocation was marked by the inauguration of the new Parliament building in Kotte on 29 April 1982.",
+      "source": {
+        "label": "Wikipedia: Sri Jayawardenepura Kotte",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sri_Jayawardenepura_Kotte&oldid=1376908641"
+      }
     },
     {
       "label": "1982",
-      "text": "Sri Lanka formally changed its administrative capital from Colombo to Sri Jayawardenepura Kotte in 1982."
+      "text": "Sri Lanka formally changed its administrative capital from Colombo to Sri Jayawardenepura Kotte in 1982.",
+      "source": {
+        "label": "Wikipedia: Sri Jayawardenepura Kotte",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sri_Jayawardenepura_Kotte&oldid=1376908641"
+      }
     },
     {
       "label": "1997",
-      "text": "The Kotte Urban Council became the Sri Jayawardenepura Kotte Municipal Council in 1997, with Chandra Silva as the first Mayor."
-    },
-    {
-      "label": "Regional role",
-      "text": "Kotte was a jala durgha (water fortress), in the shape of a triangle, with the Diyawanna Oya and Kolonnawa Oya marshes forming two long sides; along the shorter third (land) side a large moat."
-    },
-    {
-      "label": "Regional role",
-      "text": "From the ramparts to the magnificent three storied buildings that housed the kings palace, laterite and clay were the main raw material used in its construction."
-    },
-    {
-      "label": "Regional role",
-      "text": "The main features of the capital city were: The King's palace, with walls of quartz that sparkle in the moonlight (candrakanta pasana) and a golden spire, with beautiful flower gardens and springs of water."
-    },
-    {
-      "label": "Regional role",
-      "text": "Failing to withstand repeated assaults by the forces of the neighbouring Kingdom of Sitawaka, the city was abandoned by the Portuguese, who made Colombo their new capital."
-    },
-    {
-      "label": "Regional role",
-      "text": "Like similar cities of that era, Sri Jayawardenepura was built with security in mind."
-    },
-    {
-      "label": "Regional role",
-      "text": "The buildings were built on reclaimed land, after a massive lake was formed by dredging the marshlands around the Diyawanna Oya."
-    },
-    {
-      "label": "Regional role",
-      "text": "The island (off Baddegana Road, Pita Kotte) had been used as a recreation and brawling spot for Portuguese soldiers in the last days of Kotte era, alcohol being banned from the Royal City."
+      "text": "The Kotte Urban Council became the Sri Jayawardenepura Kotte Municipal Council in 1997, with Chandra Silva as the first Mayor.",
+      "source": {
+        "label": "Wikipedia: Sri Jayawardenepura Kotte",
+        "url": "https://en.wikipedia.org/w/index.php?title=Sri_Jayawardenepura_Kotte&oldid=1376908641"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Sri_Jayawardenepura_Kotte",

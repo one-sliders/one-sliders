@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Podgorica travel, stays and events",
-    "description": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica International Airport and nearby event links.",
-    "twitterDescription": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica International Airport and nearby event links.",
-    "webpageDescription": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica International Airport and nearby event links."
+    "description": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica Airport / Podgorica Golubovci Airbase (TGD) and nearby event links.",
+    "twitterDescription": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica Airport / Podgorica Golubovci Airbase (TGD) and nearby event links.",
+    "webpageDescription": "Plan Podgorica around Millennium Bridge Podgorica, Old Ribnica River Bridge, Podgorica Airport / Podgorica Golubovci Airbase (TGD) and nearby event links."
   },
   "region": "Capital city of Montenegro",
   "population": "~151K",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Podgorica travel, stays & events guide",
-  "heroText": "Podgorica works best as a base in Montenegro when you anchor days around Millennium Bridge Podgorica, Old Ribnica River Bridge and Cathedral of the Resurrection of Christ. Use those sights to understand the city's history, street life and visitor rhythm. Podgorica International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Podgorica works best as a base in Montenegro when you anchor days around Millennium Bridge Podgorica, Old Ribnica River Bridge and Cathedral of the Resurrection of Christ. Use those sights to understand the city's history, street life and visitor rhythm. Podgorica Airport / Podgorica Golubovci Airbase (TGD) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Podgorica International Airport",
-      "search": "Podgorica International Airport, Podgorica, Montenegro",
-      "text": "Podgorica International Airport is the main air gateway for Podgorica; compare transfer time with your hotel base before locking the first night."
+      "name": "Podgorica Airport / Podgorica Golubovci Airbase",
+      "code": "TGD",
+      "search": "Podgorica Airport / Podgorica Golubovci Airbase",
+      "text": "Podgorica Airport / Podgorica Golubovci Airbase (TGD) is 9 km from Podgorica by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 9
+    },
+    {
+      "name": "Tivat Airport",
+      "code": "TIV",
+      "search": "Tivat Airport",
+      "text": "Tivat Airport (TIV) is 44 km from Podgorica by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 44
+    },
+    {
+      "name": "Dubrovnik Ruđer Bošković Airport",
+      "code": "DBV",
+      "search": "Dubrovnik Ruđer Bošković Airport",
+      "text": "Dubrovnik Ruđer Bošković Airport (DBV) is 83 km from Podgorica by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 83
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Podgorica International Airport and central Podgorica before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Podgorica Airport / Podgorica Golubovci Airbase (TGD) is the nearest airport with scheduled service, 9 km from Podgorica by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "9 km straight line"
   },
   "bookingDestination": "Podgorica, Montenegro",
   "stayOverview": "Start with City Centre for the easiest first Podgorica stay, then compare Stara Varos and Preko Morace when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Podgorica International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Podgorica Airport / Podgorica Golubovci Airbase (TGD), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,92 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "1455",
-      "text": "However, Venetian rule of Podgorica did not last long, because Mehmed II soon conquered the fortified town of Medun in 1455, and two years later, most of Zeta. Ottoman Empire The Ottoman Empire captured."
-    },
-    {
       "label": "1479",
-      "text": "In 1479, The Ottomans built a large fortress in Podgorica, and the existing settlement, with its highly developed merchant connections, became the main Ottoman defensive and attacking bastion in the region."
+      "text": "In 1479, The Ottomans built a large fortress in Podgorica, and the existing settlement, with its highly developed merchant connections, became the main Ottoman defensive and attacking bastion in the region.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1864",
-      "text": "In 1864, Podgorica became a kaza of the Scutari Vilayet called Böğürtlen (\"blackberry\", also known as Burguriçe)."
+      "text": "In 1864, Podgorica became a kaza of the Scutari Vilayet called Böğürtlen (\"blackberry\", also known as Burguriçe).",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1902",
-      "text": "The first forms of capital concentration were seen in 1902 when roads were built to all neighboring towns, and tobacco became Podgorica's first significant commercial product."
+      "text": "The first forms of capital concentration were seen in 1902 when roads were built to all neighboring towns, and tobacco became Podgorica's first significant commercial product.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1918",
-      "text": "After the liberation by the Allies in 1918, the controversial Podgorica Assembly marked the end of Montenegrin statehood, as Montenegro was merged with the Kingdom of Serbia and incorporated into the Kingdom of Serbs."
-    },
-    {
-      "label": "1925",
-      "text": "However, the Imperial hotel built in 1925 had two bathrooms, which was unprecedented at the time."
-    },
-    {
-      "label": "1941",
-      "text": "It was one of at least six hotels built in the city during the interwar period. World War II After the Yugoslav coup d'état on 27 March 1941, demonstrations supporting the coup took place."
+      "text": "After the liberation by the Allies in 1918, the controversial Podgorica Assembly marked the end of Montenegrin statehood, as Montenegro was merged with the Kingdom of Serbia and incorporated into the Kingdom of Serbs, Croats, and Slovenes.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1946",
-      "text": "The Radoje Dakić factory, built-in 1946 for the production of heavy machinery, became one of the largest employers in Titograd."
+      "text": "The Radoje Dakić factory, built-in 1946 for the production of heavy machinery, became one of the largest employers in Titograd.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1974",
-      "text": "In 1974, the public Veljko Vlahović University was founded in Titograd."
+      "text": "In 1974, the public Veljko Vlahović University was founded in Titograd.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1979",
-      "text": "On 15 April 1979, the city suffered damage by a 6.9 magnitude earthquake."
+      "text": "On 15 April 1979, the city suffered damage by a 6.9 magnitude earthquake.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "1992",
-      "text": "As Yugoslavia began to break up, Titograd was renamed to Podgorica after a referendum on 2 April 1992."
+      "text": "As Yugoslavia began to break up, Titograd was renamed to Podgorica after a referendum on 2 April 1992.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "2005",
-      "text": "On 13 July 2005, the newly constructed Millennium Bridge opened for traffic."
+      "text": "On 13 July 2005, the newly constructed Millennium Bridge opened for traffic.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "2006",
-      "text": "Following the results of the independence referendum in May 2006, Podgorica saw significant development as the capital of an independent state, including the reconstruction and renaming of the former Ivan Milutinović Square to Independence."
+      "text": "Following the results of the independence referendum in May 2006, Podgorica saw significant development as the capital of an independent state, including the reconstruction and renaming of the former Ivan Milutinović Square to Independence Square.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     },
     {
       "label": "2008",
-      "text": "On 13 October 2008, at least 10,000 people protested against Kosovo's declaration of independence."
+      "text": "On 13 October 2008, at least 10,000 people protested against Kosovo's declaration of independence.",
+      "source": {
+        "label": "Wikipedia: Podgorica",
+        "url": "https://en.wikipedia.org/w/index.php?title=Podgorica&oldid=1383724735"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Podgorica",

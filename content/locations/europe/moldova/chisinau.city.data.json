@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Chisinau travel, stays and events",
-    "description": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chisinau International Airport and nearby event links.",
-    "twitterDescription": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chisinau International Airport and nearby event links.",
-    "webpageDescription": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chisinau International Airport and nearby event links."
+    "description": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chişinău International Airport (RMO) and nearby event links.",
+    "twitterDescription": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chişinău International Airport (RMO) and nearby event links.",
+    "webpageDescription": "Plan Chisinau around Stefan cel Mare Central Park, Nativity Cathedral Chisinau, Chişinău International Airport (RMO) and nearby event links."
   },
   "region": "Capital city of Moldova",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Chisinau travel, stays & events guide",
-  "heroText": "Chisinau works best as a base in Moldova when you anchor days around Stefan cel Mare Central Park, Nativity Cathedral Chisinau and Triumphal Arch Chisinau. Use those sights to understand the city's history, street life and visitor rhythm. Chisinau International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Chisinau works best as a base in Moldova when you anchor days around Stefan cel Mare Central Park, Nativity Cathedral Chisinau and Triumphal Arch Chisinau. Use those sights to understand the city's history, street life and visitor rhythm. Chişinău International Airport (RMO) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,28 @@
   ],
   "airports": [
     {
-      "name": "Chisinau International Airport",
-      "search": "Chisinau International Airport, Chisinau, Moldova",
-      "text": "Chisinau International Airport is the main air gateway for Chisinau; compare transfer time with your hotel base before locking the first night."
+      "name": "Chişinău International Airport",
+      "code": "RMO",
+      "search": "Chişinău International Airport",
+      "text": "Chişinău International Airport (RMO) is 11 km from Chisinau by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 11
+    },
+    {
+      "name": "Iaşi International Airport",
+      "code": "IAS",
+      "search": "Iaşi International Airport",
+      "text": "Iaşi International Airport (IAS) is 96 km from Chisinau by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 96
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Chisinau International Airport and central Chisinau before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Chişinău International Airport (RMO) is the nearest airport with scheduled service, 11 km from Chisinau by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "11 km straight line"
   },
   "bookingDestination": "Chisinau, Moldova",
   "stayOverview": "Start with City centre for the easiest first Chisinau stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +99,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Chisinau International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Chişinău International Airport (RMO), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,60 +148,84 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "795",
-      "text": "The epicenter of the quake was in the Vrancea Mountains, and it led to substantial destruction: 78 deaths and 2,795 damaged buildings (of which 172 were destroyed)."
-    },
-    {
       "label": "1840",
-      "text": "In 1840, the building of the Triumphal Arch, planned by the architect Luca Zaushkevich, was completed."
+      "text": "In 1840, the building of the Triumphal Arch, planned by the architect Luca Zaushkevich, was completed.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1875",
-      "text": "Chișinău-Ungheni-Iași railway was opened on 1 June 1875 in preparation for the Russo-Turkish War (1877–1878)."
+      "text": "Chișinău-Ungheni-Iași railway was opened on 1 June 1875 in preparation for the Russo-Turkish War (1877–1878).",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1905",
-      "text": "On 22 August 1905, another violent event occurred: the police opened fire on an estimated 3,000 demonstrating agricultural workers."
+      "text": "On 22 August 1905, another violent event occurred: the police opened fire on an estimated 3,000 demonstrating agricultural workers.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1933",
-      "text": "In 1933, the first higher education institution in Bessarabia was established by transferring the Agricultural Sciences Section of the University of Iași to Chișinău, as the Faculty of Agricultural Sciences. World War II On."
+      "text": "In 1933, the first higher education institution in Bessarabia was established by transferring the Agricultural Sciences Section of the University of Iași to Chișinău, as the Faculty of Agricultural Sciences.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1940",
-      "text": "Following the Soviet occupation, mass deportations, linked with atrocities, were executed by the NKVD between June 1940 and June 1941."
+      "text": "Following the Soviet occupation, mass deportations, linked with atrocities, were executed by the NKVD between June 1940 and June 1941.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1941",
-      "text": "In June 1941, in order to recover Bessarabia, Romania entered World War II under the command of the German Wehrmacht, declaring war on the Soviet Union."
+      "text": "In June 1941, in order to recover Bessarabia, Romania entered World War II under the command of the German Wehrmacht, declaring war on the Soviet Union.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1951",
-      "text": "The share of dwellings built during the Soviet period (1951–1990) represents 74.3 percent of total households."
+      "text": "The share of dwellings built during the Soviet period (1951–1990) represents 74.3 percent of total households.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "1977",
-      "text": "On 4 March 1977, the city was again jolted by a devastating earthquake."
+      "text": "On 4 March 1977, the city was again jolted by a devastating earthquake.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "2022",
-      "text": "On 5 September 2022, the country's first Christian university, Universitatea Moldo-Americană, opened its doors, supported by the Scandinavian broadcaster Visjon Norge and several donors in Norway, and run in cooperation with the American Southeastern."
+      "text": "On 5 September 2022, the country's first Christian university, Universitatea Moldo-Americană, opened its doors, supported by the Scandinavian broadcaster Visjon Norge and several donors in Norway, and run in cooperation with the American Southeastern University in Florida, United States.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     },
     {
       "label": "2023",
-      "text": "In April 2023, the Dutch government opened a new embassy in Chișinău."
-    },
-    {
-      "label": "Regional role",
-      "text": "Under the Russian government, Chișinău became the capital of the newly annexed oblast (later guberniya) of Bessarabia."
-    },
-    {
-      "label": "Regional role",
-      "text": "Romania granted important subsidies to its provinces and initiated large-scale investment programs in the infrastructure of the main cities in Bessarabia, expanded the railroad infrastructure, and launched an extensive program to eradicate illiteracy."
-    },
-    {
-      "label": "Regional role",
-      "text": "During this time, Chișinău, part of Lăpușna County, was the capital of the newly established Bessarabia Governorate of Romania."
+      "text": "In April 2023, the Dutch government opened a new embassy in Chișinău.",
+      "source": {
+        "label": "Wikipedia: Chișinău",
+        "url": "https://en.wikipedia.org/w/index.php?title=Chi%C8%99in%C4%83u&oldid=1382990772"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",

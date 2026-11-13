@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Linköping travel, stays & events guide",
-  "heroText": "Linköping works best as a base in Sweden when you anchor days around Gamla Linkoping, Linkoping Cathedral and Air Force Museum. Use those sights to understand the city's history, street life and visitor rhythm. Linköping International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Linköping works best as a base in Sweden when you anchor days around Gamla Linkoping, Linkoping Cathedral and Air Force Museum. Use those sights to understand the city's history, street life and visitor rhythm. Linköping City Airport (LPI) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Linköping International Airport",
-      "search": "Linköping International Airport, Linköping, Sweden",
-      "text": "Linköping International Airport is the main air gateway for Linköping; compare transfer time with your hotel base before locking the first night."
+      "name": "Linköping City Airport",
+      "code": "LPI",
+      "search": "Linköping City Airport",
+      "text": "Linköping City Airport (LPI) is 4 km from Linköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 4
+    },
+    {
+      "name": "Stockholm Skavsta Airport",
+      "code": "NYO",
+      "search": "Stockholm Skavsta Airport",
+      "text": "Stockholm Skavsta Airport (NYO) is 86 km from Linköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 86
+    },
+    {
+      "name": "Stockholm Västerås Airport",
+      "code": "VST",
+      "search": "Stockholm Västerås Airport",
+      "text": "Stockholm Västerås Airport (VST) is 143 km from Linköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 143
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Linköping International Airport and central Linköping before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Linköping City Airport (LPI) is the nearest airport with scheduled service, 4 km from Linköping by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "4 km straight line"
   },
   "bookingDestination": "Linköping, Sweden",
   "stayOverview": "Start with City centre for the easiest first Linköping stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Linköping International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Linköping City Airport (LPI), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,48 +162,68 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "Origins",
-      "text": "The city is possibly named after the Lionga ting assembly which according to Medieval Scandinavian laws was the most important thing in Östergötland."
-    },
-    {
       "label": "1082",
-      "text": "1082, second in Sweden (within its pre-1658 boundaries) only to Skara."
+      "text": "Historically, Linköping is famed for being an early diocese, c. 1082, second in Sweden (within its pre-1658 boundaries) only to Skara.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "12th century",
-      "text": "The monastery of Vreta Kloster near Roxen north of Linköping was established in 1128, and the oldest parts of the cathedral are also from the 12th century (although it has been changed many times."
+      "text": "The monastery of Vreta Kloster near Roxen north of Linköping was established in 1128, and the oldest parts of the cathedral are also from the 12th century (although it has been changed many times since then, the eye-catching tower with copper roofing being a 19th-century product).",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "1164",
-      "text": "On several occasions attempts to achieve a separate Swedish archdiocese were based in Linköping, although, when they finally were successful in 1164, Uppsala was chosen instead."
+      "text": "On several occasions attempts to achieve a separate Swedish archdiocese were based in Linköping, although, when they finally were successful in 1164, Uppsala was chosen instead.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "1251",
-      "text": "The coronation of Valdemar Birgersson took place in the cathedral in 1251."
+      "text": "The coronation of Valdemar Birgersson took place in the cathedral in 1251.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "1266",
-      "text": "A cathedral school can be traced from 1266."
-    },
-    {
-      "label": "1600",
-      "text": "This ultimately led to the rise to the throne of Charles (de facto at the 1600 Riksdag of the Estates meeting in Linköping and formally four years later) and the end of the short-lived."
+      "text": "A cathedral school can be traced from 1266. In 1627 the current Linköping cathedral school was established, making it the third oldest gymnasium in Sweden.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "1627",
-      "text": "In 1627 the current Linköping cathedral school was established, making it the third oldest gymnasium in Sweden."
+      "text": "In 1627 the current Linköping cathedral school was established, making it the third oldest gymnasium in Sweden.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "1937",
-      "text": "Linköping was a small town until 1937, when the Saab aircraft industry was formed, starting a period of rapid expansion."
+      "text": "Linköping was a small town until 1937, when the Saab aircraft industry was formed, starting a period of rapid expansion.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     },
     {
       "label": "2022",
-      "text": "In 2022, a rare Viking grave was found in Linköping that seemed to mark the Viking transition from paganism to Christianity."
-    },
-    {
-      "label": "Regional role",
-      "text": "In the reign of Gustavus Vasa several important diets were held in the town."
+      "text": "In 2022, a rare Viking grave was found in Linköping that seemed to mark the Viking transition from paganism to Christianity.",
+      "source": {
+        "label": "Wikipedia: Linköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=Link%C3%B6ping&oldid=1376610319"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Link%C3%B6ping",

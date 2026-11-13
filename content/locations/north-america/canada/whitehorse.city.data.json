@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Whitehorse travel, stays & events guide",
-  "heroText": "Whitehorse works best as a base in Canada when you anchor days around Yukon River, SS Klondike and Miles Canyon. Use those sights to understand the city's history, street life and visitor rhythm. Whitehorse International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Whitehorse works best as a base in Canada when you anchor days around Yukon River, SS Klondike and Miles Canyon. Use those sights to understand the city's history, street life and visitor rhythm. Whitehorse / Erik Nielsen International Airport (YXY) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,19 @@
   ],
   "airports": [
     {
-      "name": "Whitehorse International Airport",
-      "search": "Whitehorse International Airport, Whitehorse, Canada",
-      "text": "Whitehorse International Airport is the main air gateway for Whitehorse; compare transfer time with your hotel base before locking the first night."
+      "name": "Whitehorse / Erik Nielsen International Airport",
+      "code": "YXY",
+      "search": "Whitehorse / Erik Nielsen International Airport",
+      "text": "Whitehorse / Erik Nielsen International Airport (YXY) is 1 km from Whitehorse by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 1
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Whitehorse International Airport and central Whitehorse before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Whitehorse / Erik Nielsen International Airport (YXY) is the nearest airport with scheduled service, 1 km from Whitehorse by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "1 km straight line"
   },
   "bookingDestination": "Whitehorse, Canada",
   "stayOverview": "Start with City centre for the easiest first Whitehorse stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +83,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Whitehorse International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Whitehorse / Erik Nielsen International Airport (YXY), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -129,59 +133,83 @@
   "history": [
     {
       "label": "1883",
-      "text": "The surrounding area had seasonal fish camps and Frederick Schwatka, in 1883, observed the presence of a portage trail used to bypass Miles Canyon."
+      "text": "The surrounding area had seasonal fish camps and Frederick Schwatka, in 1883, observed the presence of a portage trail used to bypass Miles Canyon.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1896",
-      "text": "The discovery of gold in the Klondike in August 1896, by Skookum Jim, Tagish Charlie, and George Washington Carmack, set off a major change in the historical patterns of the region."
-    },
-    {
-      "label": "1897",
-      "text": "Early prospectors used the Chilkoot Pass, but by July 1897, crowds of neophyte prospectors had arrived via steamship and were camping at \"White Horse\"."
+      "text": "The discovery of gold in the Klondike in August 1896, by Skookum Jim, Tagish Charlie, and George Washington Carmack, set off a major change in the historical patterns of the region.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1898",
-      "text": "The White Pass and Yukon Route narrow-gauge railway linking Skagway to Whitehorse had begun construction in May 1898."
+      "text": "The White Pass and Yukon Route narrow-gauge railway linking Skagway to Whitehorse had begun construction in May 1898.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1899",
-      "text": "By May 1899, construction had arrived at the south end of Bennett Lake."
-    },
-    {
-      "label": "1900",
-      "text": "It was only in June–July 1900 that construction finished the difficult Bennett Lake section itself, completing the entire route."
+      "text": "By May 1899, construction had arrived at the south end of Bennett Lake.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1901",
-      "text": "By 1901, the Whitehorse Star was already reporting on daily freight volumes."
+      "text": "By 1901, the Whitehorse Star was already reporting on daily freight volumes.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1905",
-      "text": "On May 23, 1905, a small fire in the barber shop of the Windsor Hotel got out of control when the fire engine ran out of water, spreading throughout the city and causing $300,000."
+      "text": "On May 23, 1905, a small fire in the barber shop of the Windsor Hotel got out of control when the fire engine ran out of water, spreading throughout the city and causing $300,000 (equivalent to $10 million in 2025) in damage, though there were no deaths.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1920",
-      "text": "In 1920, the first planes landed in Whitehorse and the first air mail was sent in November 1927."
+      "text": "In 1920, the first planes landed in Whitehorse and the first air mail was sent in November 1927.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1942",
-      "text": "Until 1942, rail, river, and air were the only way to get to Whitehorse, but in 1942 the US military decided an interior road would be safer to transfer troops and provisions between Alaska."
+      "text": "Until 1942, rail, river, and air were the only way to get to Whitehorse, but in 1942 the US military decided an interior road would be safer to transfer troops and provisions between Alaska and the US mainland and began construction of the Alaska Highway.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1950",
-      "text": "In 1950, the city was incorporated and by 1951 the population had doubled from its 1941 numbers."
+      "text": "In 1950, the city was incorporated and by 1951 the population had doubled from its 1941 numbers.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     },
     {
       "label": "1953",
-      "text": "On April 1, 1953, the city was designated the capital of the Yukon Territory when the seat was moved from Dawson City after the construction of the Klondike Highway."
-    },
-    {
-      "label": "Regional role",
-      "text": "The White Horse Restaurant and Inn was among the buildings destroyed, after its co-founder Frederick Trump had sold his shares and left the city."
-    },
-    {
-      "label": "Regional role",
-      "text": "The Canadian portion of the highway was only returned to Canadian sovereignty after the war."
+      "text": "On April 1, 1953, the city was designated the capital of the Yukon Territory when the seat was moved from Dawson City after the construction of the Klondike Highway.",
+      "source": {
+        "label": "Wikipedia: Whitehorse",
+        "url": "https://en.wikipedia.org/w/index.php?title=Whitehorse&oldid=1383668420"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Whitehorse",

@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Bern travel, stays and events",
-    "description": "Plan Bern around Old City of Bern, Zytglogge, Bern International Airport and nearby event links.",
-    "twitterDescription": "Plan Bern around Old City of Bern, Zytglogge, Bern International Airport and nearby event links.",
-    "webpageDescription": "Plan Bern around Old City of Bern, Zytglogge, Bern International Airport and nearby event links."
+    "description": "Plan Bern around Old City of Bern, Zytglogge, Zürich Airport (ZRH) and nearby event links.",
+    "twitterDescription": "Plan Bern around Old City of Bern, Zytglogge, Zürich Airport (ZRH) and nearby event links.",
+    "webpageDescription": "Plan Bern around Old City of Bern, Zytglogge, Zürich Airport (ZRH) and nearby event links."
   },
   "region": "Capital city of Switzerland",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bern travel, stays & events guide",
-  "heroText": "Bern works best as a base in Switzerland when you anchor days around Old City of Bern, Zytglogge and Bern Minster. Use those sights to understand the city's history, street life and visitor rhythm. Bern International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Bern works best as a base in Switzerland when you anchor days around Old City of Bern, Zytglogge and Bern Minster. Use those sights to understand the city's history, street life and visitor rhythm. Zürich Airport (ZRH) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Bern International Airport",
-      "search": "Bern International Airport, Bern, Switzerland",
-      "text": "Bern International Airport is the main air gateway for Bern; compare transfer time with your hotel base before locking the first night."
+      "name": "Zürich Airport",
+      "code": "ZRH",
+      "search": "Zürich Airport",
+      "text": "Zürich Airport (ZRH) is 101 km from Bern by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 101
+    },
+    {
+      "name": "Geneva International Airport",
+      "code": "GVA",
+      "search": "Geneva International Airport",
+      "text": "Geneva International Airport (GVA) is 129 km from Bern by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 129
+    },
+    {
+      "name": "Bern Airport",
+      "code": "BRN",
+      "search": "Bern Airport",
+      "text": "Bern Airport (BRN) is 6 km from Bern by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Bern International Airport and central Bern before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Zürich Airport (ZRH) is the nearest airport with scheduled service, 101 km from Bern by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "101 km straight line"
   },
   "bookingDestination": "Bern, Switzerland",
   "stayOverview": "Start with City centre for the easiest first Bern stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Bern International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Zürich Airport (ZRH), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,60 +157,76 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
+      "label": "2nd century BC",
+      "text": "In antiquity, a Celtic oppidum stood on the Engehalbinsel (peninsula) north of Bern, fortified since the second century BC (late La Tène period), thought to be one of the 12 oppida of the Helvetii mentioned by Caesar.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
+    },
+    {
       "label": "12th century",
-      "text": "No archaeological evidence that indicates a settlement on the site of today's city centre prior to the 12th century has been found so far."
+      "text": "No archaeological evidence that indicates a settlement on the site of today's city centre prior to the 12th century has been found so far.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "1191",
-      "text": "According to 14th-century historiography (Cronica de Berno, 1309), Bern was founded in 1191 by Berthold V, Duke of Zähringen."
+      "text": "According to 14th-century historiography (Cronica de Berno, 1309), Bern was founded in 1191 by Berthold V, Duke of Zähringen.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "1218",
-      "text": "In 1218, after Berthold died without an heir, Bern was made a free imperial city by the Goldene Handfeste of Holy Roman Emperor Frederick II. Old Swiss Confederacy In 1353, Bern joined the Swiss."
+      "text": "In 1218, after Berthold died without an heir, Bern was made a free imperial city by the Goldene Handfeste of Holy Roman Emperor Frederick II.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "1405",
-      "text": "After a major blaze in 1405, the city's original wooden buildings were gradually replaced by half-timbered houses, and subsequently the sandstone buildings which came to be characteristic for the Old Town."
+      "text": "After a major blaze in 1405, the city's original wooden buildings were gradually replaced by half-timbered houses, and subsequently the sandstone buildings which came to be characteristic for the Old Town.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "1415",
-      "text": "Bern invaded and conquered Aargau in 1415 and Vaud in 1536, as well as other smaller territories, thereby becoming the largest city-state north of the Alps."
-    },
-    {
-      "label": "1622",
-      "text": "It was succeeded by the Christoffelturm (formerly located closer to the site of the modern-day railway station) until 1622."
+      "text": "Bern invaded and conquered Aargau in 1415 and Vaud in 1536, as well as other smaller territories, thereby becoming the largest city-state north of the Alps.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "18th century",
-      "text": "By the 18th century, it comprised most of what is today the canton of Bern and the canton of Vaud."
-    },
-    {
-      "label": "19th century",
-      "text": "The city was originally built on a hilly peninsula surrounded by the river Aare, but outgrew natural boundaries by the 19th century."
+      "text": "By the 18th century, it comprised most of what is today the canton of Bern and the canton of Vaud.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
       "label": "1848",
-      "text": "On 28 November 1848, during the revolutions that year, a majority of the new Swiss Federal Assembly deputies chose Bern as the Federal City (seat of the government) of the newly created Swiss federal."
+      "text": "On 28 November 1848, during the revolutions that year, a majority of the new Swiss Federal Assembly deputies chose Bern as the Federal City (seat of the government) of the newly created Swiss federal state, ahead of Zurich and Lucerne.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     },
     {
-      "label": "1979",
-      "text": "At this time, it once again became the largest canton of the Confederacy as it stood during the Restoration and until the secession of the canton of Jura in 1979."
-    },
-    {
-      "label": "Regional role",
-      "text": "In antiquity, a Celtic oppidum stood on the Engehalbinsel (peninsula) north of Bern, fortified since the second century BC (late La Tène period), thought to be one of the 12 oppida of the Helvetii."
-    },
-    {
-      "label": "Regional role",
-      "text": "During the Thirty Years' War, two new fortifications – the so-called big and small Schanze (entrenchments) – were built to protect the whole area of the peninsula."
-    },
-    {
-      "label": "Regional role",
-      "text": "In addition, Bern had a more central location and was supported by the French-speaking cantons due to proximity to them."
-    },
-    {
-      "label": "Regional role",
-      "text": "A number of congresses of the socialist First and Second Internationals were held in Bern, particularly during World War I when Switzerland was neutral; see Bern International."
+      "label": "19th century",
+      "text": "The city was originally built on a hilly peninsula surrounded by the river Aare, but outgrew natural boundaries by the 19th century.",
+      "source": {
+        "label": "Wikipedia: Bern",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bern&oldid=1384625813"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Bern",

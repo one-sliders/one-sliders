@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Vaduz travel, stays and events",
-    "description": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Vaduz International Airport and nearby event links.",
-    "twitterDescription": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Vaduz International Airport and nearby event links.",
-    "webpageDescription": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Vaduz International Airport and nearby event links."
+    "description": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Bodensee Airport Friedrichshafen (FDH) and nearby event links.",
+    "twitterDescription": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Bodensee Airport Friedrichshafen (FDH) and nearby event links.",
+    "webpageDescription": "Plan Vaduz around Vaduz Castle, Kunstmuseum Liechtenstein, Bodensee Airport Friedrichshafen (FDH) and nearby event links."
   },
   "region": "Capital city of Liechtenstein",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Vaduz travel, stays & events guide",
-  "heroText": "Vaduz works best as a base in Liechtenstein when you anchor days around Vaduz Castle, Kunstmuseum Liechtenstein and Liechtenstein National Museum. Use those sights to understand the city's history, street life and visitor rhythm. Vaduz International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Vaduz works best as a base in Liechtenstein when you anchor days around Vaduz Castle, Kunstmuseum Liechtenstein and Liechtenstein National Museum. Use those sights to understand the city's history, street life and visitor rhythm. Bodensee Airport Friedrichshafen (FDH) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Vaduz International Airport",
-      "search": "Vaduz International Airport, Vaduz, Liechtenstein",
-      "text": "Vaduz International Airport is the main air gateway for Vaduz; compare transfer time with your hotel base before locking the first night."
+      "name": "Bodensee Airport Friedrichshafen",
+      "code": "FDH",
+      "search": "Bodensee Airport Friedrichshafen",
+      "text": "Bodensee Airport Friedrichshafen (FDH) is 59 km from Vaduz by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 59
+    },
+    {
+      "name": "Sankt Gallen Altenrhein Airport",
+      "code": "ACH",
+      "search": "Sankt Gallen Altenrhein Airport",
+      "text": "Sankt Gallen Altenrhein Airport (ACH) is 38 km from Vaduz by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 38
+    },
+    {
+      "name": "Zürich Airport",
+      "code": "ZRH",
+      "search": "Zürich Airport",
+      "text": "Zürich Airport (ZRH) is 81 km from Vaduz by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 81
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Vaduz International Airport and central Vaduz before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Bodensee Airport Friedrichshafen (FDH) is the nearest airport with scheduled service, 59 km from Vaduz by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "59 km straight line"
   },
   "bookingDestination": "Vaduz, Liechtenstein",
   "stayOverview": "Start with City centre for the easiest first Vaduz stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Vaduz International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Bodensee Airport Friedrichshafen (FDH), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -135,56 +157,76 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "120",
-      "text": "As testimony to the pure political expediency of the purchases, the Princes of Liechtenstein did not set foot in their new principality for over 120 years. Politics Vaduz is located in the Oberland electoral."
-    },
-    {
       "label": "1322",
-      "text": "In 1322 a mention of the castle is made, which was sacked by the Swiss in 1499 during the Swabian War."
+      "text": "In 1322 a mention of the castle is made, which was sacked by the Swiss in 1499 during the Swabian War.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "17th century",
-      "text": "In the 17th century the Liechtenstein family was seeking a seat in the Imperial diet, the Reichstag."
+      "text": "In the 17th century the Liechtenstein family was seeking a seat in the Imperial diet, the Reichstag.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1699",
-      "text": "After some time, the family was able to arrange the purchase of the minuscule Herrschaft (\"Lordship\") of Schellenberg and the countship of Vaduz (in 1699 and 1712, respectively) from the Hohenems."
+      "text": "After some time, the family was able to arrange the purchase of the minuscule Herrschaft (\"Lordship\") of Schellenberg and the countship of Vaduz (in 1699 and 1712, respectively) from the Hohenems.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1719",
-      "text": "Thereby, on 23 January 1719, after the purchase had been duly made, Charles VI, Holy Roman Emperor, decreed Vaduz and Schellenberg were united, and raised to the dignity of Fürstentum (principality) with the name."
+      "text": "Thereby, on 23 January 1719, after the purchase had been duly made, Charles VI, Holy Roman Emperor, decreed Vaduz and Schellenberg were united, and raised to the dignity of Fürstentum (principality) with the name \"Liechtenstein\" in honour of \"[his] true servant, Anton Florian of Liechtenstein\".",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1864",
-      "text": "Since the introduction of Liechtenstein municipal law of 1864, Vaduz has been locally administered by a mayor and municipal council."
+      "text": "Since the introduction of Liechtenstein municipal law of 1864, Vaduz has been locally administered by a mayor and municipal council.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1941",
-      "text": "Until 1941, this consisted of the mayor, the municipal treasurer, and seven other councillors."
+      "text": "Until 1941, this consisted of the mayor, the municipal treasurer, and seven other councillors.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1976",
-      "text": "In 1976, Vaduz replaced universal male suffrage with universal suffrage."
+      "text": "In 1976, Vaduz replaced universal male suffrage with universal suffrage.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "1984",
-      "text": "Universal suffrage was not introduced to Liechtenstein on a national level until 1984."
+      "text": "Universal suffrage was not introduced to Liechtenstein on a national level until 1984.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     },
     {
       "label": "2024",
-      "text": "The incumbent mayor is Florian Meier, elected in the 2024 Vaduz mayoral by-election. Last election"
-    },
-    {
-      "label": "Regional role",
-      "text": "The family yearned for the added power a seat in the Imperial government would bring, and therefore sought to acquire lands that would be reichsunmittelbar, or held directly from the Holy Roman Emperor himself."
-    },
-    {
-      "label": "Regional role",
-      "text": "It is on this date that Liechtenstein became a sovereign member state of the Holy Roman Empire."
-    },
-    {
-      "label": "Regional role",
-      "text": "The system to elect the municipal council was changed to use an open list proportional representation system."
+      "text": "The incumbent mayor is Florian Meier, elected in the 2024 Vaduz mayoral by-election.",
+      "source": {
+        "label": "Wikipedia: Vaduz",
+        "url": "https://en.wikipedia.org/w/index.php?title=Vaduz&oldid=1383007656"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Vaduz",

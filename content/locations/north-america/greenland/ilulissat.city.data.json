@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Ilulissat travel, stays & events guide",
-  "heroText": "Ilulissat works best as a base in Greenland when you anchor days around Ilulissat Icefjord, Sermermiut and Disko Bay. Use those sights to understand the city's history, street life and visitor rhythm. Ilulissat International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Ilulissat works best as a base in Greenland when you anchor days around Ilulissat Icefjord, Sermermiut and Disko Bay. Use those sights to understand the city's history, street life and visitor rhythm. Ilulissat Airport (JAV) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Ilulissat International Airport",
-      "search": "Ilulissat International Airport, Ilulissat, Greenland",
-      "text": "Ilulissat International Airport is the main air gateway for Ilulissat; compare transfer time with your hotel base before locking the first night."
+      "name": "Ilulissat Airport",
+      "code": "JAV",
+      "search": "Ilulissat Airport",
+      "text": "Ilulissat Airport (JAV) is 3 km from Ilulissat by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 3
+    },
+    {
+      "name": "Aasiaat Airport",
+      "code": "JEG",
+      "search": "Aasiaat Airport",
+      "text": "Aasiaat Airport (JEG) is 87 km from Ilulissat by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 87
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Ilulissat International Airport and central Ilulissat before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ilulissat Airport (JAV) is the nearest airport with scheduled service, 3 km from Ilulissat by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "3 km straight line"
   },
   "bookingDestination": "Ilulissat, Greenland",
   "stayOverview": "Start with City centre for the easiest first Ilulissat stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Ilulissat International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ilulissat Airport (JAV), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,40 +146,36 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "1500",
-      "text": "Archaeological finds at Semermiut, near Ilulissat, show that the area was inhabited by Inuit peoples from prehistoric times, with evidence of Saqqaq settlement around 1500 BC and Dorset occupation from about 300 AD."
-    },
-    {
-      "label": "18th century",
-      "text": "The Zion Church (Zions Kirke) was built in the late 18th century; it was the largest man-made structure in Greenland at the time."
+      "label": "1500 BC",
+      "text": "Archaeological finds at Semermiut, near Ilulissat, show that the area was inhabited by Inuit peoples from prehistoric times, with evidence of Saqqaq settlement around 1500 BC and Dorset occupation from about 300 AD.",
+      "source": {
+        "label": "Wikipedia: Ilulissat",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ilulissat&oldid=1382974867"
+      }
     },
     {
       "label": "1741",
-      "text": "The town was established as a trading post by Jacob Severin's company in 1741; it was named in his honor after the Battle of Jacobshavn, in which Danish forces defeated the Dutch whalers."
+      "text": "The town was established as a trading post by Jacob Severin's company in 1741; it was named in his honor after the Battle of Jacobshavn, in which Danish forces defeated the Dutch whalers.",
+      "source": {
+        "label": "Wikipedia: Ilulissat",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ilulissat&oldid=1382974867"
+      }
+    },
+    {
+      "label": "18th century",
+      "text": "The Zion Church (Zions Kirke) was built in the late 18th century; it was the largest man-made structure in Greenland at the time.",
+      "source": {
+        "label": "Wikipedia: Ilulissat",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ilulissat&oldid=1382974867"
+      }
     },
     {
       "label": "1850",
-      "text": "The final resident of nearby Sermermiut moved to Ilulissat in 1850. Ilulissat Declaration The town was the site of the Arctic Ocean Conference in May 2008."
-    },
-    {
-      "label": "2021",
-      "text": "The states involved would continue the developments within the Arctic Ocean and continue to implement appropriate measures to further said developments. Hotel Ilulissat fire On 7 March 2021 at 20.12 (local time), a major."
-    },
-    {
-      "label": "Regional role",
-      "text": "It stated that the law of the sea provided for important rights and obligations concerning the delineation of the outer limits of the continental shelf, the protection of the marine environment (including ice-covered areas)."
-    },
-    {
-      "label": "Regional role",
-      "text": "It also said that it remained committed to this legal framework and to the orderly settlement of any possible overlapping claims."
-    },
-    {
-      "label": "Regional role",
-      "text": "Police asked everyone in the area to stay home and keep their windows closed, until the fire fighters ended the fire."
-    },
-    {
-      "label": "Regional role",
-      "text": "Not long after the fire fighters arrived, a gas cylinder exploded."
+      "text": "The final resident of nearby Sermermiut moved to Ilulissat in 1850.",
+      "source": {
+        "label": "Wikipedia: Ilulissat",
+        "url": "https://en.wikipedia.org/w/index.php?title=Ilulissat&oldid=1382974867"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Ilulissat",

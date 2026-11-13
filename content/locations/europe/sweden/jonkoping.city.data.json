@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Jönköping travel, stays & events guide",
-  "heroText": "Jönköping works best as a base in Sweden when you anchor days around Lake Vattern, Match Museum and Sofiakyrkan. Use those sights to understand the city's history, street life and visitor rhythm. Jönköping International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Jönköping works best as a base in Sweden when you anchor days around Lake Vattern, Match Museum and Sofiakyrkan. Use those sights to understand the city's history, street life and visitor rhythm. Göteborg Landvetter Airport (GOT) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Jönköping International Airport",
-      "search": "Jönköping International Airport, Jönköping, Sweden",
-      "text": "Jönköping International Airport is the main air gateway for Jönköping; compare transfer time with your hotel base before locking the first night."
+      "name": "Göteborg Landvetter Airport",
+      "code": "GOT",
+      "search": "Göteborg Landvetter Airport",
+      "text": "Göteborg Landvetter Airport (GOT) is 112 km from Jönköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 112
+    },
+    {
+      "name": "Linköping City Airport",
+      "code": "LPI",
+      "search": "Linköping City Airport",
+      "text": "Linköping City Airport (LPI) is 113 km from Jönköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 113
+    },
+    {
+      "name": "Jönköping Airport",
+      "code": "JKG",
+      "search": "Jönköping Airport",
+      "text": "Jönköping Airport (JKG) is 6 km from Jönköping by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Jönköping International Airport and central Jönköping before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Göteborg Landvetter Airport (GOT) is the nearest airport with scheduled service, 112 km from Jönköping by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "112 km straight line"
   },
   "bookingDestination": "Jönköping, Sweden",
   "stayOverview": "Start with City centre for the easiest first Jönköping stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Jönköping International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Göteborg Landvetter Airport (GOT), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,55 +163,43 @@
   "history": [
     {
       "label": "1284",
-      "text": "On 18 May 1284 Jönköping became the first City in Sweden to be granted its rights by king Magnus Ladulås, who ruled mostly from Vättern's largest island Visingsö."
+      "text": "On 18 May 1284 Jönköping became the first City in Sweden to be granted its rights by king Magnus Ladulås, who ruled mostly from Vättern's largest island Visingsö.",
+      "source": {
+        "label": "Wikipedia: Jönköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=J%C3%B6nk%C3%B6ping&oldid=1382610398"
+      }
+    },
+    {
+      "label": "17th century",
+      "text": "The city was plundered and burned several times until it was fortified during the 16th and 17th centuries.",
+      "source": {
+        "label": "Wikipedia: Jönköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=J%C3%B6nk%C3%B6ping&oldid=1382610398"
+      }
     },
     {
       "label": "1831",
-      "text": "The phosphorus match was invented in 1831, and these matches became very popular because one could strike it against any surface to ignite it."
+      "text": "The phosphorus match was invented in 1831, and these matches became very popular because one could strike it against any surface to ignite it.",
+      "source": {
+        "label": "Wikipedia: Jönköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=J%C3%B6nk%C3%B6ping&oldid=1382610398"
+      }
     },
     {
       "label": "1844",
-      "text": "In 1844, Swedish professor Gustav Erik Pasch patented a new invention, \"Safety matches – Strike against the box only\"."
+      "text": "In 1844, Swedish professor Gustav Erik Pasch patented a new invention, \"Safety matches – Strike against the box only\".",
+      "source": {
+        "label": "Wikipedia: Jönköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=J%C3%B6nk%C3%B6ping&oldid=1382610398"
+      }
     },
     {
       "label": "1845",
-      "text": "Jönköping was known for its matchstick industry between 1845 and 1970."
-    },
-    {
-      "label": "2001",
-      "text": "Since 2001, Elmia has been the site of the world's largest LAN party, DreamHack, with two events every year, Dreamhack Summer and Dreamhack Winter."
-    },
-    {
-      "label": "Regional role",
-      "text": "The city was plundered and burned several times until it was fortified during the 16th and 17th centuries."
-    },
-    {
-      "label": "Regional role",
-      "text": "To prevent the matches from igniting so easily, Gustav Erik Pasch separated the chemicals in the match head and placed the phosphorus on a separate surface on the outside of the box for striking."
-    },
-    {
-      "label": "Regional role",
-      "text": "Later, they manufactured their new Safety matches in their factory in Jönköping."
-    },
-    {
-      "label": "Regional role",
-      "text": "Today, the Match Museum is located in Jönköping's first match factory. Present The urban area of Jönköping today includes the eastern industrial town of Huskvarna, with which it has grown together."
-    },
-    {
-      "label": "Regional role",
-      "text": "Elmia, a major trade fair and exhibition centre, is situated in Jönköping."
-    },
-    {
-      "label": "Regional role",
-      "text": "Elmia Wood is the world's largest forestry fair, and fairs for subcontractors, trucks, caravans and railways are the biggest of their kind in Europe."
-    },
-    {
-      "label": "Regional role",
-      "text": "The city is an important Nordic logistical center, with many companies' central warehouses (such as Elgiganten, IKEA, Electrolux and Husqvarna) situated there."
-    },
-    {
-      "label": "Regional role",
-      "text": "Jönköping has one of the highest hotel and restaurant densities in Sweden."
+      "text": "Jönköping was known for its matchstick industry between 1845 and 1970.",
+      "source": {
+        "label": "Wikipedia: Jönköping",
+        "url": "https://en.wikipedia.org/w/index.php?title=J%C3%B6nk%C3%B6ping&oldid=1382610398"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/J%C3%B6nk%C3%B6ping",

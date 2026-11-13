@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Flåm travel, stays & events guide",
-  "heroText": "Flåm works best as a base in Norway when you anchor days around Flam Railway, Aurlandsfjord and Naeroyfjord cruises. Use those sights to understand the city's history, street life and visitor rhythm. Flåm International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Flåm works best as a base in Norway when you anchor days around Flam Railway, Aurlandsfjord and Naeroyfjord cruises. Use those sights to understand the city's history, street life and visitor rhythm. Bergen Airport, Flesland (BGO) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,28 @@
   ],
   "airports": [
     {
-      "name": "Flåm International Airport",
-      "search": "Flåm International Airport, Flåm, Norway",
-      "text": "Flåm International Airport is the main air gateway for Flåm; compare transfer time with your hotel base before locking the first night."
+      "name": "Bergen Airport, Flesland",
+      "code": "BGO",
+      "search": "Bergen Airport, Flesland",
+      "text": "Bergen Airport, Flesland (BGO) is 120 km from Flåm by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 120
+    },
+    {
+      "name": "Florø Airport",
+      "code": "FRO",
+      "search": "Florø Airport",
+      "text": "Florø Airport (FRO) is 140 km from Flåm by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 140
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Flåm International Airport and central Flåm before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Bergen Airport, Flesland (BGO) is the nearest airport with scheduled service, 120 km from Flåm by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "120 km straight line"
   },
   "bookingDestination": "Flåm, Norway",
   "stayOverview": "Start with City centre for the easiest first Flåm stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +99,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Flåm International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Bergen Airport, Flesland (BGO), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,31 +154,59 @@
   "history": [
     {
       "label": "1670",
-      "text": "In 1670, Flåm Church was built in the village, replacing an older stave church."
+      "text": "In 1670, Flåm Church was built in the village, replacing an older stave church.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "1800s",
-      "text": "The original Fretheim Hotel, established in the late 1800s, expanded to welcome more international guests, offering a comfortable stay amid the wild nature."
+      "text": "The original Fretheim Hotel, established in the late 1800s, expanded to welcome more international guests, offering a comfortable stay amid the wild nature.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "1908",
-      "text": "In 1908, the Norwegian Parliament approved the construction of the Flåm Line railway, though the funds to construct the railway were not allocated until 1923."
+      "text": "In 1908, the Norwegian Parliament approved the construction of the Flåm Line railway, though the funds to construct the railway were not allocated until 1923.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "1942",
-      "text": "In 1942, regular operation of steam-powered trains started on the Flåm Line."
+      "text": "In 1942, regular operation of steam-powered trains started on the Flåm Line.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "1960s",
-      "text": "By the 1960s, cruise ships had begun anchoring in the fjord (they were too large to dock, so passengers would take smaller boats ashore)."
+      "text": "By the 1960s, cruise ships had begun anchoring in the fjord (they were too large to dock, so passengers would take smaller boats ashore).",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "1980s",
-      "text": "The Norway in a Nutshell tour – a popular packaged day-trip including the Flåm Railway and fjord ferry – started bringing many visitors to Flåm starting in the 1980s and onward."
+      "text": "The Norway in a Nutshell tour – a popular packaged day-trip including the Flåm Railway and fjord ferry – started bringing many visitors to Flåm starting in the 1980s and onward.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     },
     {
       "label": "2000",
-      "text": "In 2000, Flåm built a new pier that allowed large cruise ships to dock directly which led to a great increase in tourism. Name The name Flåm is documented as early as 1340 as."
+      "text": "In 2000, Flåm built a new pier that allowed large cruise ships to dock directly which led to a great increase in tourism.",
+      "source": {
+        "label": "Wikipedia: Flåm",
+        "url": "https://en.wikipedia.org/w/index.php?title=Fl%C3%A5m&oldid=1378783422"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Fl%C3%A5m",

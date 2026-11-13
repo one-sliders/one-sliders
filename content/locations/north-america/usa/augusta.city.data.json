@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Augusta travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Augusta is home to Augusta National Golf Club and the Augusta Riverwalk. Its story starts in 1735, when James Oglethorpe sent troops up the river, and Georgia ratified the U.S. Constitution here on January 2, 1788. The Augusta Museum of History, the Sacred Heart Cultural Center and Phinizy Swamp Nature Park complete a visit.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Augusta International Airport",
-      "search": "Augusta International Airport, Augusta, USA",
-      "text": "Augusta International Airport is the main air gateway for Augusta; compare transfer time with your hotel base before locking the first night."
+      "name": "Augusta Regional At Bush Field",
+      "code": "AGS",
+      "search": "Augusta Regional At Bush Field",
+      "text": "Augusta Regional At Bush Field (AGS) is 12 km from Augusta by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 12
+    },
+    {
+      "name": "Columbia Metropolitan Airport",
+      "code": "CAE",
+      "search": "Columbia Metropolitan Airport",
+      "text": "Columbia Metropolitan Airport (CAE) is 97 km from Augusta by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 97
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Augusta International Airport and central Augusta before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Augusta Regional At Bush Field (AGS) is the nearest airport with scheduled service, 12 km from Augusta by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "12 km straight line"
   },
   "bookingDestination": "Augusta, USA",
   "stayOverview": "Start with City centre for the easiest first Augusta stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Augusta International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Augusta Regional At Bush Field (AGS), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -133,60 +146,68 @@
   "sourceFetchedAt": "2026-06-12T07:39:54.580Z",
   "history": [
     {
-      "label": "500",
-      "text": "A protest against his death broke out into a riot involving some 500 people; during the unrest, six Black men were killed by police, each found to have been shot in the back."
-    },
-    {
-      "label": "18th century",
-      "text": "The devastating Augusta fire of 1916 damaged 25 blocks of the city's downtown and wiped out many buildings of historical significance, some dating back to the 18th century."
-    },
-    {
       "label": "1735",
-      "text": "Establishment In 1735, two years after James Oglethorpe founded Savannah, he sent a detachment of troops to explore the upper Savannah River."
+      "text": "Establishment In 1735, two years after James Oglethorpe founded Savannah, he sent a detachment of troops to explore the upper Savannah River.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "1739",
-      "text": "Oglethorpe visited Augusta in September 1739 on his return to Savannah from a perilous visit to Coweta Town, near present-day Phenix City, Alabama."
+      "text": "Oglethorpe visited Augusta in September 1739 on his return to Savannah from a perilous visit to Coweta Town, near present-day Phenix City, Alabama.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
+    },
+    {
+      "label": "18th century",
+      "text": "The devastating Augusta fire of 1916 damaged 35 blocks of the city's downtown and wiped out many buildings of historical significance, some dating back to the 18th century.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "1785",
-      "text": "A historical marker in Augusta reads:Augusta served as the capital of Georgia from 1785 until 1795 when the seat of government was moved to the new capital, Louisville."
+      "text": "A historical marker in Augusta reads:Augusta served as the capital of Georgia from 1785 until 1795 when the seat of government was moved to the new capital, Louisville.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "1788",
-      "text": "In Augusta on January 2, 1788, Georgia became the fourth state to ratify the United States Constitution."
+      "text": "In Augusta on January 2, 1788, Georgia became the fourth state to ratify the United States Constitution.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "1789",
-      "text": "In 1789 the General Assembly, meeting here, adopted a new state constitution creating today's bicameral (two-house) state legislature consisting of the Senate and House of Representatives. Development Augusta developed rapidly as a market town."
+      "text": "In 1789 the General Assembly, meeting here, adopted a new state constitution creating today's bicameral (two-house) state legislature consisting of the Senate and House of Representatives.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "20th century",
-      "text": "In the mid-20th century, it was a site of civil rights demonstrations."
+      "text": "In the mid-20th century, it was a site of civil-rights demonstrations.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     },
     {
       "label": "1970",
-      "text": "In 1970, Charles Oatman, a mentally disabled teenager, was killed by his cellmates in an Augusta jail."
-    },
-    {
-      "label": "1993",
-      "text": "The noted singer and entertainer James Brown, a native of Augusta, was called in to help quell lingering tensions, which he succeeded in doing. Hyde Park contamination In 1993, an area known as Hyde."
-    },
-    {
-      "label": "Growth",
-      "text": "He gave them an order to build a fort at the head of the navigable part of the river."
-    },
-    {
-      "label": "Modern city",
-      "text": "The expedition was led by Noble Jones, who the following year created a settlement as a first line of defense for coastal areas against potential Spanish or French invasion from the interior."
-    },
-    {
-      "label": "Today",
-      "text": "Oglethorpe named the town in honor of Princess Augusta, the mother of King George III and the wife of Frederick, Prince of Wales."
-    },
-    {
-      "label": "Regional role",
-      "text": "There, he had met with a convention of 7,000 Native American warriors and concluded a peace treaty with them in their territories in northern and western Georgia."
+      "text": "In 1970, Charles Oatman, a mentally disabled teenager, was killed by his cellmates in an Augusta jail.",
+      "source": {
+        "label": "Wikipedia: Augusta, Georgia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Augusta%2C_Georgia&oldid=1383521497"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Augusta%2C_Georgia",
@@ -228,5 +249,10 @@
       "text": "Lakeside camping and bass fishing on Clarks Hill Lake, with a swimming beach.",
       "source": "https://gastateparks.org/Mistletoe"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

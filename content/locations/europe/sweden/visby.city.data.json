@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Visby travel, stays & events guide",
-  "heroText": "Visby works best as a base in Sweden when you anchor days around Visby city wall, Stora Torget and Botanical Garden. Use those sights to understand the city's history, street life and visitor rhythm. Visby International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Visby works best as a base in Sweden when you anchor days around Visby city wall, Stora Torget and Botanical Garden. Use those sights to understand the city's history, street life and visitor rhythm. Visby Airport (VBY) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,19 @@
   ],
   "airports": [
     {
-      "name": "Visby International Airport",
-      "search": "Visby International Airport, Visby, Sweden",
-      "text": "Visby International Airport is the main air gateway for Visby; compare transfer time with your hotel base before locking the first night."
+      "name": "Visby Airport",
+      "code": "VBY",
+      "search": "Visby Airport",
+      "text": "Visby Airport (VBY) is 4 km from Visby by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 4
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Visby International Airport and central Visby before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Visby Airport (VBY) is the nearest airport with scheduled service, 4 km from Visby by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "4 km straight line"
   },
   "bookingDestination": "Visby, Sweden",
   "stayOverview": "Start with City centre for the easiest first Visby stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +90,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Visby International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Visby Airport (VBY), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,59 +145,75 @@
   "history": [
     {
       "label": "12th century",
-      "text": "In the 12th century, Visby Cathedral, dedicated to Saint Mary, was constructed."
-    },
-    {
-      "label": "13th century",
-      "text": "It was reshaped in the 13th century to its current appearance, and was officially opened in 1225, by the bishop of the Swedish city of Linköping (in regional map)."
+      "text": "In the 12th century, Visby Cathedral, dedicated to Saint Mary, was constructed.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "14th century",
-      "text": "In the Gutasagan (mid 14th century) the place is referred to as just Wi meaning \"holy place, place of worship\"."
+      "text": "In the Gutasagan (mid 14th century) the place is referred to as just Wi meaning \"holy place, place of worship\".",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "1361",
-      "text": "In 1361, Gotland was conquered by Valdemar IV of Denmark."
+      "text": "In 1361, Gotland was conquered by Valdemar IV of Denmark.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "1391",
-      "text": "In 1391, 1394 and 1398, it was taken and plundered by the Victual Brothers, pirates who sailed the Baltic Sea."
+      "text": "In 1391, 1394 and 1398, it was taken and plundered by the Victual Brothers, pirates who sailed the Baltic Sea.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "1398",
-      "text": "An invading army of Teutonic Knights conquered Gotland in 1398, destroyed Visby and expelled the Victual Brothers."
-    },
-    {
-      "label": "15th century",
-      "text": "Around 1300, it was rebuilt to reach its current height, acquiring the characteristic towers, although some towers were not constructed until the 15th century."
+      "text": "An invading army of Teutonic Knights conquered Gotland in 1398, destroyed Visby and expelled the Victual Brothers.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "1409",
-      "text": "In 1409, Grand Master Ulrich von Jungingen of the Teutonic Knights guaranteed peace with the Kalmar Union of Scandinavia by selling the island of Gotland to Queen Margaret of Denmark, Norway and Sweden."
+      "text": "In 1409, Grand Master Ulrich von Jungingen of the Teutonic Knights guaranteed peace with the Kalmar Union of Scandinavia by selling the island of Gotland to Queen Margaret of Denmark, Norway and Sweden.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
       "label": "1411",
-      "text": "In 1411, the Norwegian, Danish and Swedish King Eric of Pomerania had the castle of Visborg constructed, and settled himself there for 12 years, during which the city virtually became a pirates' nest, and."
+      "text": "In 1411, the Norwegian, Danish and Swedish King Eric of Pomerania had the castle of Visborg constructed, and settled himself there for 12 years, during which the city virtually became a pirates' nest, and the commerce halted.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
-      "label": "Civic role",
-      "text": "It was inhabited as early as the Stone Age, probably because of the access to fresh water and a natural harbour."
+      "label": "15th century",
+      "text": "Around 1300, it was rebuilt to reach its current height, acquiring the characteristic towers, although some towers were not constructed until the 15th century.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     },
     {
-      "label": "Regional role",
-      "text": "1,800 Gotlanders were killed in battle in front of the city."
-    },
-    {
-      "label": "Regional role",
-      "text": "In the Danish throne quarrel, Lübeck, a Free City of the Holy Roman Empire and a leading member of the Hanseatic League, supported Frederick I, while Søren Norby the Danish governor of Gotland fought."
-    },
-    {
-      "label": "Regional role",
-      "text": "While Norby fought a military action in Sweden, the Lübeckers successfully attacked Visby and set the city on fire from four sites."
-    },
-    {
-      "label": "Regional role",
-      "text": "Mary's Cathedral remained the last functional church and became the new city parish."
+      "label": "1523",
+      "text": "In the Danish throne quarrel, Lübeck, a Free City of the Holy Roman Empire and a leading member of the Hanseatic League, supported Frederick I, while Søren Norby the Danish governor of Gotland fought for Christian II, even after Christian's official resignation in 1523.",
+      "source": {
+        "label": "Wikipedia: Visby",
+        "url": "https://en.wikipedia.org/w/index.php?title=Visby&oldid=1373680216"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Visby",

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Black Rock City travel, stays & events guide",
-  "heroText": "tba",
+  "heroText": "Black Rock City is the temporary city of the Burning Man event in the Black Rock Desert, laid out around the Man, the Temple, Center Camp and the Esplanade. It became a real city plan in 1997, with labelled streets, zoning and vehicle registration, and the Temple has been a fixture since 2000. Beyond the street grid lies the open Deep Playa.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,19 @@
   ],
   "airports": [
     {
-      "name": "Black Rock City International Airport",
-      "search": "Black Rock City International Airport, Black Rock City, USA",
-      "text": "Black Rock City International Airport is the main air gateway for Black Rock City; compare transfer time with your hotel base before locking the first night."
+      "name": "Reno Tahoe International Airport",
+      "code": "RNO",
+      "search": "Reno Tahoe International Airport",
+      "text": "Reno Tahoe International Airport (RNO) is 149 km from Black Rock City by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 149
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Black Rock City International Airport and central Black Rock City before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Reno Tahoe International Airport (RNO) is the nearest airport with scheduled service, 149 km from Black Rock City by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "149 km straight line"
   },
   "bookingDestination": "Black Rock City, USA",
   "stayOverview": "Start with City centre for the easiest first Black Rock City stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +83,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Black Rock City International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Reno Tahoe International Airport (RNO), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +138,59 @@
   "history": [
     {
       "label": "1986",
-      "text": "Sculptor Mary Grauberger, a friend of Larry Harvey's girlfriend, Janet Lohr, held solstice bonfire gatherings on Baker Beach for several years before 1986, some of which Harvey attended."
+      "text": "Sculptor Mary Grauberger, a friend of Larry Harvey's girlfriend, Janet Lohr, held solstice bonfire gatherings on Baker Beach for several years before 1986, some of which Harvey attended.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "1996",
-      "text": "1996 was the first year a formal partnership was created to own the name \"Burning Man\" and was also the last year the event was held in the middle of the Black Rock Desert."
+      "text": "1996 was the first year a formal partnership was created to own the name \"Burning Man\" and was also the last year the event was held in the middle of the Black Rock Desert with no fence around it.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "1997",
-      "text": "Black Rock City truly became a city in 1997, with formal, labeled streets, zoning, and registration for vehicles and theme camps."
-    },
-    {
-      "label": "1998",
-      "text": "This became a point of contention as early as 1998 when the BLM proposed a complicated usage formula, effectively limiting the size of the event to that of the previous year."
+      "text": "Black Rock City truly became a city in 1997, with formal, labeled streets, zoning, and registration for vehicles and theme camps.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "2000",
-      "text": "2000 saw the introduction of the Temple as a fixture on the playa, and it has grown to be easily as important as the Man."
-    },
-    {
-      "label": "2004",
-      "text": "They were originally written by Larry Harvey in 2004 as guidelines for regional organizing, then later became universal criteria of the general culture of the multifaceted movement."
+      "text": "2000 saw the introduction of the Temple as a fixture on the playa, and it has grown to be easily as important as the Man.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "2011",
-      "text": "On August 26, it was reported that tickets remained unsold for the event for the first time since 2011."
+      "text": "On August 26, it was reported that tickets remained unsold for the event for the first time since 2011.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "2015",
-      "text": "In 2015, organizers established a new area known as the \"Deep Playa Music Zone\" to serve as a new host for art cars featuring live DJs."
+      "text": "In 2015, organizers established a new area known as the \"Deep Playa Music Zone\" to serve as a new host for art cars featuring live DJs.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     },
     {
       "label": "2017",
-      "text": "On September 3, 2017, a 41-year-old man, Aaron Joel Mitchell, fought his way past a safety cordon of volunteers and firefighters and threw himself into the flames of the Man."
-    },
-    {
-      "label": "2018",
-      "text": "There are active and successful outreach efforts to enlarge the regional scope of the event and the grant program. No Spectators: The Art of Burning Man In 2018, the Renwick Gallery of the Smithsonian."
-    },
-    {
-      "label": "2023",
-      "text": "There was a massive illuminated drone display outlining the Man instead of the burning of a Man effigy. 2023 The 2023 Burning Man had rains and subsequent flooding on Labor Day weekend, with a."
-    },
-    {
-      "label": "2024",
-      "text": "On December 19, 2024, CEO Marian Goodell emailed supporters that the project still requires $14 million to meet its financial goal for the 2025 event. 2025 The 2025 Burning Man event opened on August."
-    },
-    {
-      "label": "Regional role",
-      "text": "An airport use fee, payable at the airport upon first entry."
-    },
-    {
-      "label": "Regional role",
-      "text": "Firefighting, emergency medical services (EMS), mental health, and communications support is provided by the volunteer Black Rock City Emergency Services Department (ESD)."
+      "text": "On September 3, 2017, a 41-year-old man, Aaron Joel Mitchell, fought his way past a safety cordon of volunteers and firefighters and threw himself into the flames of the Man.",
+      "source": {
+        "label": "Wikipedia: Burning Man",
+        "url": "https://en.wikipedia.org/w/index.php?title=Burning_Man&oldid=1383787871"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Burning_Man",
@@ -228,5 +232,10 @@
       "text": "A mineral cone thrown up by a 1964 drilling accident, still spraying and growing.",
       "source": "https://www.travelnevada.com/"
     }
-  ]
+  ],
+  "heroTextSource": {
+    "label": "Composed from this page's sights (highlights) and dated history rows; each history row carries its own source",
+    "task": "TASK-0178",
+    "written": "2026-11-10"
+  }
 }

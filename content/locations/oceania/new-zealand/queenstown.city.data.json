@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Queenstown travel, stays and events",
-    "description": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown International Airport and nearby event links.",
-    "twitterDescription": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown International Airport and nearby event links.",
-    "webpageDescription": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown International Airport and nearby event links."
+    "description": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown Airport (ZQN) and nearby event links.",
+    "twitterDescription": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown Airport (ZQN) and nearby event links.",
+    "webpageDescription": "Plan Queenstown around Lake Wakatipu, Skyline Queenstown, Queenstown Airport (ZQN) and nearby event links."
   },
   "region": "Key city in New Zealand",
   "population": "tba",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Queenstown travel, stays & events guide",
-  "heroText": "Queenstown works best as a base in New Zealand when you anchor days around Lake Wakatipu, Skyline Queenstown and Queenstown Gardens. Use those sights to understand the city's history, street life and visitor rhythm. Queenstown International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Queenstown works best as a base in New Zealand when you anchor days around Lake Wakatipu, Skyline Queenstown and Queenstown Gardens. Use those sights to understand the city's history, street life and visitor rhythm. Queenstown Airport (ZQN) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Queenstown International Airport",
-      "search": "Queenstown International Airport, Queenstown, New Zealand",
-      "text": "Queenstown International Airport is the main air gateway for Queenstown; compare transfer time with your hotel base before locking the first night."
+      "name": "Queenstown Airport",
+      "code": "ZQN",
+      "search": "Queenstown Airport",
+      "text": "Queenstown Airport (ZQN) is 7 km from Queenstown by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 7
+    },
+    {
+      "name": "Wanaka Airport",
+      "code": "WKA",
+      "search": "Wanaka Airport",
+      "text": "Wanaka Airport (WKA) is 57 km from Queenstown by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 57
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Queenstown International Airport and central Queenstown before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Queenstown Airport (ZQN) is the nearest airport with scheduled service, 7 km from Queenstown by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "7 km straight line"
   },
   "bookingDestination": "Queenstown, New Zealand",
   "stayOverview": "Start with City centre for the easiest first Queenstown stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Queenstown International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Queenstown Airport (ZQN), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -128,60 +141,36 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "Origins",
-      "text": "Māori settlement and presence The area was discovered and first settled by Māori."
-    },
-    {
-      "label": "310",
-      "text": "The level of the lake rose from 310.5 m to 312.77 m, leading to the most severe flooding in Queenstown's recorded history."
-    },
-    {
       "label": "1853",
-      "text": "The first non-Māori to see Lake Wakatipu was European Nathanael Chalmers who was guided by Reko, the chief of the Tuturau, over the Waimea Plains and up the Mataura River in September 1853."
-    },
-    {
-      "label": "1860s",
-      "text": "The tribe of Kāti Māmoe occupied a settlement called Te Kirikiri Pa where the Queenstown Gardens are today, but by the time European migrants arrived in the 1860s this settlement was no longer being."
+      "text": "The first non-Māori to see Lake Wakatipu was European Nathanael Chalmers who was guided by Reko, the chief of the Tuturau, over the Waimea Plains and up the Mataura River in September 1853.",
+      "source": {
+        "label": "Wikipedia: Queenstown, New Zealand",
+        "url": "https://en.wikipedia.org/w/index.php?title=Queenstown%2C_New_Zealand&oldid=1379694931"
+      }
     },
     {
       "label": "1860",
-      "text": "In 1860, Rees established a high country farm where Queenstown's town centre now stands, but the discovery of gold in the Arrow River in 1862 encouraged him to convert his wool shed into a."
+      "text": "In 1860, Rees established a high country farm where Queenstown's town centre now stands, but the discovery of gold in the Arrow River in 1862 encouraged him to convert his wool shed into a hotel named the Queen's Arms, now known as Eichardt's.",
+      "source": {
+        "label": "Wikipedia: Queenstown, New Zealand",
+        "url": "https://en.wikipedia.org/w/index.php?title=Queenstown%2C_New_Zealand&oldid=1379694931"
+      }
     },
     {
       "label": "1864",
-      "text": "By the start of 1864 Queenstown had multiple shops, several bars, a post office, a local newspaper, both an Anglican and Catholic church, and a timber yard."
+      "text": "By the start of 1864 Queenstown had multiple shops, several bars, a post office, a local newspaper, both an Anglican and Catholic church, and a timber yard.",
+      "source": {
+        "label": "Wikipedia: Queenstown, New Zealand",
+        "url": "https://en.wikipedia.org/w/index.php?title=Queenstown%2C_New_Zealand&oldid=1379694931"
+      }
     },
     {
-      "label": "1999",
-      "text": "William's Cottage, the Lake Lodge of Ophir (now Artbay Gallery), Queenstown Police Station, and St Peter's Anglican Church lie close together in a designated historic precinct. 1999 flooding There was a severe weather event."
-    },
-    {
-      "label": "Growth",
-      "text": "Kāi Tahu say that the lake was dug by the Waitaha ancestor, Rākaihautū, with his kō (digging stick) named Tūwhakaroria."
-    },
-    {
-      "label": "Modern city",
-      "text": "After arriving at Whakatū Nelson in the waka Uruao, Rākaihautū divided his crew into two."
-    },
-    {
-      "label": "Civic role",
-      "text": "After digging the lakes Hāwea, Wānaka, and Whakatipu Waimāori, he travelled through the Greenstone and Hollyford valleys before finally digging Whakatipu Waitai (Lake McKerrow)."
-    },
-    {
-      "label": "Regional role",
-      "text": "Evidence of stake nets, baskets for catching eels, spears and ashes indicated the Glenorchy area was visited by Māori."
-    },
-    {
-      "label": "Regional role",
-      "text": "The settlement swiftly grew after the discovery of gold with hotels and entertainment venues erected to provide for the prospectors."
-    },
-    {
-      "label": "Regional role",
-      "text": "Market gardens shortly followed and replaced the need for produce to be transported from Dunedin to the town."
-    },
-    {
-      "label": "Regional role",
-      "text": "Properties in Glenorchy and Kingston were also flooded, and the road from Queenstown to Glenorchy was damaged by washouts."
+      "label": "1860s",
+      "text": "The tribe of Kāti Māmoe occupied a settlement called Te Kirikiri Pa where the Queenstown Gardens are today, but by the time European migrants arrived in the 1860s this settlement was no longer being used.",
+      "source": {
+        "label": "Wikipedia: Queenstown, New Zealand",
+        "url": "https://en.wikipedia.org/w/index.php?title=Queenstown%2C_New_Zealand&oldid=1379694931"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Queenstown%2C_New_Zealand",

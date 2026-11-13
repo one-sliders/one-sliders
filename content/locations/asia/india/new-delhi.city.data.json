@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "New Delhi travel, stays and events",
-    "description": "Plan New Delhi around India Gate, Rashtrapati Bhavan, New Delhi International Airport and nearby event links.",
-    "twitterDescription": "Plan New Delhi around India Gate, Rashtrapati Bhavan, New Delhi International Airport and nearby event links.",
-    "webpageDescription": "Plan New Delhi around India Gate, Rashtrapati Bhavan, New Delhi International Airport and nearby event links."
+    "description": "Plan New Delhi around India Gate, Rashtrapati Bhavan, Indira Gandhi International Airport (DEL) and nearby event links.",
+    "twitterDescription": "Plan New Delhi around India Gate, Rashtrapati Bhavan, Indira Gandhi International Airport (DEL) and nearby event links.",
+    "webpageDescription": "Plan New Delhi around India Gate, Rashtrapati Bhavan, Indira Gandhi International Airport (DEL) and nearby event links."
   },
   "region": "Capital city in India",
   "population": "tba",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "New Delhi travel, stays & events guide",
-  "heroText": "New Delhi works best as a base in India when you anchor days around India Gate, Rashtrapati Bhavan and Humayun's Tomb. Use those sights to understand the city's history, street life and visitor rhythm. New Delhi International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "New Delhi works best as a base in India when you anchor days around India Gate, Rashtrapati Bhavan and Humayun's Tomb. Use those sights to understand the city's history, street life and visitor rhythm. Indira Gandhi International Airport (DEL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,28 @@
   ],
   "airports": [
     {
-      "name": "New Delhi International Airport",
-      "search": "New Delhi International Airport, New Delhi, India",
-      "text": "New Delhi International Airport is the main air gateway for New Delhi; compare transfer time with your hotel base before locking the first night."
+      "name": "Indira Gandhi International Airport",
+      "code": "DEL",
+      "search": "Indira Gandhi International Airport",
+      "text": "Indira Gandhi International Airport (DEL) is 14 km from New Delhi by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 14
+    },
+    {
+      "name": "Noida International Airport",
+      "code": "DXN",
+      "search": "Noida International Airport",
+      "text": "Noida International Airport (DXN) is 63 km from New Delhi by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 63
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between New Delhi International Airport and central New Delhi before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Indira Gandhi International Airport (DEL) is the nearest airport with scheduled service, 14 km from New Delhi by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "14 km straight line"
   },
   "bookingDestination": "New Delhi, India",
   "stayOverview": "Start with City centre for the easiest first New Delhi stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +99,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for New Delhi International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Indira Gandhi International Airport (DEL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -136,59 +149,59 @@
   "history": [
     {
       "label": "1900s",
-      "text": "During the early 1900s, a proposal was made to the British administration to shift the capital of the British Indian Empire, as India was officially named, from Calcutta on the east coast, to Delhi."
-    },
-    {
-      "label": "1911",
-      "text": "Establishment Until December 1911, Calcutta was the capital of India during British rule."
+      "text": "During the early 1900s, a proposal was made to the British administration to shift the capital of the British Indian Empire, as India was officially named, from Calcutta on the east coast, to Delhi.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     },
     {
       "label": "1912",
-      "text": "After the capital of India moved to Delhi, a temporary secretariat building was constructed in a few months in 1912 in North Delhi."
+      "text": "After the capital of India moved to Delhi, a temporary secretariat building was constructed in a few months in 1912 in North Delhi.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     },
     {
       "label": "1926",
-      "text": "The New Delhi Railway Station opened in 1926, with a single platform at Ajmeri Gate near Paharganj, and was completed in time for the city's inauguration in 1931."
+      "text": "The New Delhi Railway Station opened in 1926, with a single platform at Ajmeri Gate near Paharganj, and was completed in time for the city's inauguration in 1931.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     },
     {
       "label": "1931",
-      "text": "Construction really began after World War I and was completed by 1931."
+      "text": "Construction really began after World War I and was completed by 1931.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
+    },
+    {
+      "label": "1931",
+      "text": "Most of the government offices of the new capital moved here from the 'Old secretariat' in Civil Lines Delhi (the building now houses the Delhi Legislative Assembly), a decade before the new capital was inaugurated in 1931.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     },
     {
       "label": "1940s",
-      "text": "Built in the 1940s, to house government employees, with bungalows for senior officials in the nearby Lodi Estate area, Lodi Colony near historic Lodi Gardens, was the last residential areas built by the British."
+      "text": "Built in the 1940s to house government employees, with bungalows for senior officials in the nearby Lodi Estate area, Lodi Colony, near historic Lodi Gardens, was the last residential area built by the British Raj.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     },
     {
       "label": "1991",
-      "text": "The Constitution (Sixty-ninth Amendment) Act, 1991 declared the Union Territory of Delhi to be formally known as the National Capital Territory of Delhi."
-    },
-    {
-      "label": "Growth",
-      "text": "However, it had become the centre of the nationalist movements since the late nineteenth century, which led to the partition of Bengal by Viceroy Curzon."
-    },
-    {
-      "label": "Modern city",
-      "text": "This created a massive upsurge in political and religious activity including political assassinations of British officials in Calcutta."
-    },
-    {
-      "label": "Today",
-      "text": "The anti-colonial sentiments among the public led to a complete boycott of British goods, which forced the colonial government to reunite Bengal and immediately shift the capital to New Delhi."
-    },
-    {
-      "label": "Regional role",
-      "text": "The original plan called for its construction in Tughlaqabad, inside the Tughlaqabad Fort, but this was given up because of the Delhi-Calcutta trunk line that passed through the fort."
-    },
-    {
-      "label": "Regional role",
-      "text": "Indeed, the Delhi Town Planning Committee, set up to plan the new imperial capital, with George Swinton as chairman, and John A."
-    },
-    {
-      "label": "Regional role",
-      "text": "Before construction could begin on the rocky ridge of Raisina Hill, a circular railway line around the Council House (now Parliament House), called the Imperial Delhi Railway, was built to transport construction material and."
-    },
-    {
-      "label": "Regional role",
-      "text": "Most of the government offices of the new capital moved here from the 'Old secretariat' in Old Delhi (the building now houses the Delhi Legislative Assembly), a decade before the new capital was inaugurated."
+      "text": "The Constitution (Sixty-ninth Amendment) Act, 1991 declared the Union Territory of Delhi to be formally known as the National Capital Territory of Delhi.",
+      "source": {
+        "label": "Wikipedia: New Delhi",
+        "url": "https://en.wikipedia.org/w/index.php?title=New_Delhi&oldid=1384650418"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/New_Delhi",

@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Kiruna travel, stays & events guide",
-  "heroText": "Kiruna works best as a base in Sweden when you anchor days around Kiruna Church, Icehotel Jukkasjarvi and LKAB mine tours. Use those sights to understand the city's history, street life and visitor rhythm. Kiruna International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Kiruna works best as a base in Sweden when you anchor days around Kiruna Church, Icehotel Jukkasjarvi and LKAB mine tours. Use those sights to understand the city's history, street life and visitor rhythm. Kiruna Airport (KRN) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Kiruna International Airport",
-      "search": "Kiruna International Airport, Kiruna, Sweden",
-      "text": "Kiruna International Airport is the main air gateway for Kiruna; compare transfer time with your hotel base before locking the first night."
+      "name": "Kiruna Airport",
+      "code": "KRN",
+      "search": "Kiruna Airport",
+      "text": "Kiruna Airport (KRN) is 6 km from Kiruna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Gällivare Airport",
+      "code": "GEV",
+      "search": "Gällivare Airport",
+      "text": "Gällivare Airport (GEV) is 84 km from Kiruna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 84
+    },
+    {
+      "name": "Enontekio Airport",
+      "code": "ENF",
+      "search": "Enontekio Airport",
+      "text": "Enontekio Airport (ENF) is 144 km from Kiruna by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 144
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Kiruna International Airport and central Kiruna before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Kiruna Airport (KRN) is the nearest airport with scheduled service, 6 km from Kiruna by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Kiruna, Sweden",
   "stayOverview": "Start with City centre for the easiest first Kiruna stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Kiruna International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Kiruna Airport (KRN), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -141,59 +163,99 @@
   "history": [
     {
       "label": "1736",
-      "text": "The ore became better known after it was reported by Mangi, a Sámi man, in 1736 to Swedish authorities that had gathered in Jukkasjärvi Church."
+      "text": "The ore became better known after it was reported by Mangi, a Sámi man, in 1736 to Swedish authorities that had gathered in Jukkasjärvi Church.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1884",
-      "text": "In 1884, a concession for a railway from Luleå to Narvik was granted to The Northern Europe Railway Company."
+      "text": "In 1884, a concession for a railway from Luleå to Narvik was granted to The Northern Europe Railway Company.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1888",
-      "text": "The provisional railway between Luleå and Malmberget was finished in 1888 and the first train left Malmberget in March."
+      "text": "The provisional railway between Luleå and Malmberget was finished in 1888 and the first train left Malmberget in March.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1890",
-      "text": "At the initiative of Robert Schoug, the Luossavaara-Kiirunavaara Aktiebolag (LKAB) was founded in 1890."
+      "text": "At the initiative of Robert Schoug, the Luossavaara-Kiirunavaara Aktiebolag (LKAB) was founded in 1890.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1893",
-      "text": "In 1893, Gustaf Broms became CEO of both LKAB and AGM."
-    },
-    {
-      "label": "1903",
-      "text": "However, official residences were built at a high pace, and when the king opened the railway in 1903, all illegal residences and most other provisional buildings had been demolished and replaced."
+      "text": "In 1893, Gustaf Broms became CEO of both LKAB and AGM.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1908",
-      "text": "Kiruna became a municipalsamhälle (a community within a municipality) in 1908."
+      "text": "Kiruna became a municipalsamhälle (a community within a municipality) in 1908.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1912",
-      "text": "In return, the mining company LKAB paid for a hospital, fire station, sewerage, roads, a church (opened 1912) and the priest's home."
+      "text": "In return, the mining company LKAB paid for a hospital, fire station, sewerage, roads, a church (opened 1912) and the priest's home.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1920",
-      "text": "During World War I, iron ore production dropped to the lowest level in LKAB's history, and when exports increased again, a successful three-month strike in 1920 led to a 20% increase in salaries for."
+      "text": "During World War I, iron ore production dropped to the lowest level in LKAB's history, and when exports increased again, a successful three-month strike in 1920 led to a 20% increase in salaries for the miners.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1957",
-      "text": "In 1957, the Kiruna Geophysical Observatory (KGO) (now the Swedish Institute of Space Physics) was founded and established by the Royal Swedish Academy of Sciences."
+      "text": "In 1957, the Kiruna Geophysical Observatory (KGO) (now the Swedish Institute of Space Physics) was founded and established by the Royal Swedish Academy of Sciences.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1960",
-      "text": "On 10 November 1960, Kiruna Airport opened to separate civilian air traffic from the military airplanes that had landed at Kalixfors airport and at Luossajärvi since World War I."
+      "text": "On 10 November 1960, Kiruna Airport opened to separate civilian air traffic from the military airplanes that had landed at Kalixfors airport and at Luossajärvi since World War I. A road to Nikkaluokta was opened in 1971 and to Riksgränsen and Narvik (a coastal Norwegian town) in 1984.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1990",
-      "text": "In 1990, the first Icehotel, rebuilt each year from blocks of ice, was built in Jukkasjärvi and advertised as the world's largest igloo."
+      "text": "In 1990, the first Icehotel, rebuilt each year from blocks of ice, was built in Jukkasjärvi and advertised as the world's largest igloo.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     },
     {
       "label": "1993",
-      "text": "In 1993, The Umeå space engineers moved to the same building housing IRF and a year later another Luleå University programme, civil engineering with specialisation in space technology, started at the same location."
-    },
-    {
-      "label": "Regional role",
-      "text": "Swedish Railways had already run special trains before World War II, but started a special Dollar train in the summer months between Gothenburg and Kiruna, connecting to cruise ships from the United States."
+      "text": "In 1993, The Umeå space engineers moved to the same building housing IRF and a year later another Luleå University programme, civil engineering with specialisation in space technology, started at the same location.",
+      "source": {
+        "label": "Wikipedia: Kiruna",
+        "url": "https://en.wikipedia.org/w/index.php?title=Kiruna&oldid=1377819194"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Kiruna",

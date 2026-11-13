@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Ålesund travel, stays & events guide",
-  "heroText": "Ålesund works best as a base in Norway when you anchor days around Aksla viewpoint, Art Nouveau Centre and Brosundet. Use those sights to understand the city's history, street life and visitor rhythm. Ålesund International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Ålesund works best as a base in Norway when you anchor days around Aksla viewpoint, Art Nouveau Centre and Brosundet. Use those sights to understand the city's history, street life and visitor rhythm. Ålesund Airport (AES) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -65,15 +65,37 @@
   ],
   "airports": [
     {
-      "name": "Ålesund International Airport",
-      "search": "Ålesund International Airport, Ålesund, Norway",
-      "text": "Ålesund International Airport is the main air gateway for Ålesund; compare transfer time with your hotel base before locking the first night."
+      "name": "Ålesund Airport",
+      "code": "AES",
+      "search": "Ålesund Airport",
+      "text": "Ålesund Airport (AES) is 10 km from Ålesund by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 10
+    },
+    {
+      "name": "Ørsta-Volda Airport, Hovden",
+      "code": "HOV",
+      "search": "Ørsta-Volda Airport, Hovden",
+      "text": "Ørsta-Volda Airport, Hovden (HOV) is 33 km from Ålesund by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 33
+    },
+    {
+      "name": "Molde Airport, Årø",
+      "code": "MOL",
+      "search": "Molde Airport, Årø",
+      "text": "Molde Airport, Årø (MOL) is 64 km from Ålesund by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 64
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Ålesund International Airport and central Ålesund before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Ålesund Airport (AES) is the nearest airport with scheduled service, 10 km from Ålesund by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "10 km straight line"
   },
   "bookingDestination": "Ålesund, Norway",
   "stayOverview": "Start with City centre for the easiest first Ålesund stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -86,7 +108,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Ålesund International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Ålesund Airport (AES), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,52 @@
   "sourceFetchedAt": "2026-06-12",
   "history": [
     {
-      "label": "Origins",
-      "text": "Legend has it that Gangerolf (outside of Norway better known as Rollo), the 10th-century founder of the dynasty of the dukes of Normandy, hailed from the island of Giske, north-west of the present-day town."
+      "label": "10th century",
+      "text": "Legend has it that Gangerolf (outside of Norway better known as Rollo), the 10th-century founder of the dynasty of the dukes of Normandy, hailed from the island of Giske, north-west of the present-day town of Ålesund.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     },
     {
       "label": "1793",
-      "text": "In 1793, the port of Aalesund was granted limited ladested rights."
+      "text": "In 1793, the port of Aalesund was granted limited ladested rights.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     },
     {
       "label": "1838",
-      "text": "On 1 January 1838, the new formannskapsdistrikt law went into effect, granting limited local self-government to all parishes in Norway."
+      "text": "On 1 January 1838, the new formannskapsdistrikt law went into effect, granting limited local self-government to all parishes in Norway.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     },
     {
       "label": "1848",
-      "text": "In 1848, it was upgraded to the status of a kjøpstad, a more important market town."
+      "text": "In 1848, it was upgraded to the status of a kjøpstad, a more important market town.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     },
     {
       "label": "1904",
-      "text": "In the night of 23 January 1904, the town was the scene of the Ålesund Fire, one of the most terrible of the many conflagrations to which Norwegian towns, once built largely of wood."
+      "text": "In the night of 23 January 1904, the town was the scene of the Ålesund Fire, one of the most terrible of the many conflagrations to which Norwegian towns, once built largely of wood, have been subjected.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     },
     {
       "label": "1960s",
-      "text": "During the 1960s, there were many municipal mergers across Norway due to the work of the Schei Committee."
-    },
-    {
-      "label": "Growth",
-      "text": "At least three statues of Rolle exist: in the town park in Ålesund, in the city of Rouen, France, and in Fargo, North Dakota, United States."
-    },
-    {
-      "label": "Regional role",
-      "text": "Therefore, on that date, the small ladested of Aalesund became a small municipality with its own municipal council."
-    },
-    {
-      "label": "Regional role",
-      "text": "Practically the entire town was destroyed during the night, a gale aiding the flames, and the population had to leave the town in the middle of the night with only a few minutes' notice."
-    },
-    {
-      "label": "Regional role",
-      "text": "Kaiser Wilhelm of Germany had often been on vacation to Sunnmøre."
-    },
-    {
-      "label": "Regional role",
-      "text": "After the fire, he sent four warships with materials to build temporary shelters and barracks."
-    },
-    {
-      "label": "Regional role",
-      "text": "After a period of planning, the town was rebuilt in stone, brick, and mortar in Jugendstil (Art Nouveau), the architectural style of the time."
-    },
-    {
-      "label": "Regional role",
-      "text": "To honor Wilhelm, one of the most frequented streets of the town is named after him."
-    },
-    {
-      "label": "Regional role",
-      "text": "After the merger, the town no longer had its own council and was no longer self-governing, with the new municipal council representing the whole municipality."
+      "text": "During the 1960s, there were many municipal mergers across Norway due to the work of the Schei Committee.",
+      "source": {
+        "label": "Wikipedia: Ålesund",
+        "url": "https://en.wikipedia.org/w/index.php?title=%C3%85lesund&oldid=1383022460"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/%C3%85lesund",

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Charlottetown travel, stays & events guide",
-  "heroText": "Charlottetown works best as a base in Canada when you anchor days around Confederation Centre, Charlottetown waterfront and Victoria Row. Use those sights to understand the city's history, street life and visitor rhythm. Charlottetown International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Charlottetown works best as a base in Canada when you anchor days around Confederation Centre, Charlottetown waterfront and Victoria Row. Use those sights to understand the city's history, street life and visitor rhythm. Charlottetown Airport (YYG) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,28 @@
   ],
   "airports": [
     {
-      "name": "Charlottetown International Airport",
-      "search": "Charlottetown International Airport, Charlottetown, Canada",
-      "text": "Charlottetown International Airport is the main air gateway for Charlottetown; compare transfer time with your hotel base before locking the first night."
+      "name": "Charlottetown Airport",
+      "code": "YYG",
+      "search": "Charlottetown Airport",
+      "text": "Charlottetown Airport (YYG) is 6 km from Charlottetown by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 6
+    },
+    {
+      "name": "Greater Moncton Roméo LeBlanc International Airport",
+      "code": "YQM",
+      "search": "Greater Moncton Roméo LeBlanc International Airport",
+      "text": "Greater Moncton Roméo LeBlanc International Airport (YQM) is 120 km from Charlottetown by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 120
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Charlottetown International Airport and central Charlottetown before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Charlottetown Airport (YYG) is the nearest airport with scheduled service, 6 km from Charlottetown by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "6 km straight line"
   },
   "bookingDestination": "Charlottetown, Canada",
   "stayOverview": "Start with City centre for the easiest first Charlottetown stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +92,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Charlottetown International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Charlottetown Airport (YYG), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -128,60 +141,84 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "500",
-      "text": "French officer Jean-Baptiste Nicolas Roch de Ramezay attacked with 500 men at the Battle at Port-la-Joye, resulting in a British defeat and the capture or death of all involved British troops."
-    },
-    {
       "label": "1720",
-      "text": "The first European settlers in the area were French; personnel from Fortress Louisbourg founded a settlement in 1720 named Port La Joye on the southwestern part of the harbour opposite the present-day city."
+      "text": "The first European settlers in the area were French; personnel from Fortress Louisbourg founded a settlement in 1720 named Port La Joye on the southwestern part of the harbour opposite the present-day city.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1758",
-      "text": "In August 1758, at the height of the French and Indian War, a British fleet took control of the settlement and the rest of the island, promptly deporting those French settlers that they could."
+      "text": "In August 1758, at the height of the French and Indian War, a British fleet took control of the settlement and the rest of the island, promptly deporting those French settlers that they could find in the Ile Saint-Jean Campaign (this being fully three years after the initial Acadian Expulsion in Nova Scotia).",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1764",
-      "text": "Charlottetown was selected as the site for the county seat of Queens County in the colonial survey of 1764 by Captain Samuel Holland of the Royal Engineers."
+      "text": "Charlottetown was selected as the site for the county seat of Queens County in the colonial survey of 1764 by Captain Samuel Holland of the Royal Engineers.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1768",
-      "text": "Further surveys conducted between 1768 and 1771 established the street grid and public squares which can be seen in the city's historic district."
+      "text": "Further surveys conducted between 1768 and 1771 established the street grid and public squares which can be seen in the city's historic district.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1775",
-      "text": "On November 17, 1775, during the American Revolution, the colony's new capital was ransacked by Massachusetts-based privateers in the Raid on Charlottetown."
+      "text": "On November 17, 1775, during the American Revolution, the colony's new capital was ransacked by Massachusetts-based privateers in the Raid on Charlottetown.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1793",
-      "text": "In 1793, land had been set aside by Governor Fanning on the western limits of the community for use by the \"Administrator of Government\" (the governor), and as such it became known informally as."
+      "text": "In 1793, land had been set aside by Governor Fanning on the western limits of the community for use by the \"Administrator of Government\" (the governor), and as such it became known informally as \"Fanning's Bank\" or just \"Fanning Bank\".",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1805",
-      "text": "In 1805, the local British garrison constructed a harbour defence called \"Fort Edward\" to the west of the capital's waterfront and the \"Prince Edward Battery\" manned this facility."
+      "text": "In 1805, the local British garrison constructed a harbour defence called \"Fort Edward\" to the west of the capital's waterfront and the \"Prince Edward Battery\" manned this facility.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
+    },
+    {
+      "label": "19th century",
+      "text": "Aside from being the seat of colonial government, the community came to be noted during the early nineteenth century for shipbuilding and its lumber industry as well as being a fishing port.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1874",
-      "text": "In August 1874, the Prince Edward Island Railway opened its main line between Charlottetown and Summerside."
+      "text": "In August 1874, the Prince Edward Island Railway opened its main line between Charlottetown and Summerside.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     },
     {
       "label": "1960s",
-      "text": "In the 1960s, new public schools were constructed in the community, and in 1969 the city became home to the amalgamated University of Prince Edward Island (UPEI), located on the campus of the former."
-    },
-    {
-      "label": "Regional role",
-      "text": "British forces built Fort Amherst near the site of the abandoned Port La Joye settlement to protect the entrance to the harbour."
-    },
-    {
-      "label": "Regional role",
-      "text": "A year later, Charlottetown was made the colonial capital of St."
-    },
-    {
-      "label": "Regional role",
-      "text": "The completion of this structure with Isaac Smith as builder/architect was an important milestone in the history of the capital and it is still in use today as the provincial legislature as well as."
-    },
-    {
-      "label": "Regional role",
-      "text": "Aside from being the seat of colonial government, the community came to be noted during the early nineteenth century for shipbuilding and its lumber industry as well as being a fishing port."
+      "text": "In the 1960s, new public schools were constructed in the community, and in 1969 the city became home to the amalgamated University of Prince Edward Island (UPEI), located on the campus of the former St. Dunstan's University.",
+      "source": {
+        "label": "Wikipedia: Charlottetown",
+        "url": "https://en.wikipedia.org/w/index.php?title=Charlottetown&oldid=1383758600"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Charlottetown",

@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Melbourne travel, stays and events",
-    "description": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne International Airport and nearby event links.",
-    "twitterDescription": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne International Airport and nearby event links.",
-    "webpageDescription": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne International Airport and nearby event links."
+    "description": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne Airport (MEL) and nearby event links.",
+    "twitterDescription": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne Airport (MEL) and nearby event links.",
+    "webpageDescription": "Plan Melbourne around Federation Square, Queen Victoria Market, Melbourne Airport (MEL) and nearby event links."
   },
   "region": "Key city in Australia",
   "population": "~5.4M",
@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Melbourne travel, stays & events guide",
-  "heroText": "Melbourne works best as a base in Australia when you anchor days around Federation Square, Queen Victoria Market and Royal Botanic Gardens Victoria. Use those sights to understand the city's history, street life and visitor rhythm. Melbourne International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Melbourne works best as a base in Australia when you anchor days around Federation Square, Queen Victoria Market and Royal Botanic Gardens Victoria. Use those sights to understand the city's history, street life and visitor rhythm. Melbourne Airport (MEL) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,37 @@
   ],
   "airports": [
     {
-      "name": "Melbourne International Airport",
-      "search": "Melbourne International Airport, Melbourne, Australia",
-      "text": "Melbourne International Airport is the main air gateway for Melbourne; compare transfer time with your hotel base before locking the first night."
+      "name": "Melbourne Airport",
+      "code": "MEL",
+      "search": "Melbourne Airport",
+      "text": "Melbourne Airport (MEL) is 19 km from Melbourne by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 19
+    },
+    {
+      "name": "Melbourne Avalon International Airport",
+      "code": "AVV",
+      "search": "Melbourne Avalon International Airport",
+      "text": "Melbourne Avalon International Airport (AVV) is 50 km from Melbourne by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 50
+    },
+    {
+      "name": "Melbourne Essendon Airport",
+      "code": "MEB",
+      "search": "Melbourne Essendon Airport",
+      "text": "Melbourne Essendon Airport (MEB) is 11 km from Melbourne by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 11
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Melbourne International Airport and central Melbourne before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Melbourne Airport (MEL) is the nearest airport with scheduled service, 19 km from Melbourne by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "19 km straight line"
   },
   "bookingDestination": "Melbourne, Australia",
   "stayOverview": "Start with City centre for the easiest first Melbourne stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +106,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Melbourne International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Melbourne Airport (MEL), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,59 +156,91 @@
   "history": [
     {
       "label": "1835",
-      "text": "In August 1835, another group of Vandemonian settlers arrived in the area and established a settlement at the site of the current Melbourne Immigration Museum."
+      "text": "In August 1835, another group of Vandemonian settlers arrived in the area and established a settlement at the site of the current Melbourne Immigration Museum.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1836",
-      "text": "In 1836, Bourke declared the city the administrative capital of the Port Phillip District of New South Wales, and commissioned the first plan for its urban layout, the Hoddle Grid, in 1837."
+      "text": "In 1836, Bourke declared the city the administrative capital of the Port Phillip District of New South Wales, and commissioned the first plan for its urban layout, the Hoddle Grid, in 1837.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1837",
-      "text": "Previously known under various informal names, the settlement was named Melbourne on 10 April 1837 by Bourke after the British Prime Minister, William Lamb, 2nd Viscount Melbourne, whose seat was Melbourne Hall in the."
+      "text": "Previously known under various informal names, the settlement was named Melbourne on 10 April 1837 by Bourke after the British Prime Minister, William Lamb, 2nd Viscount Melbourne, whose seat was Melbourne Hall in the market town of Melbourne, Derbyshire.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1839",
-      "text": "The British Colonial Office had appointed five Aboriginal Protectors for the Aboriginal people of Victoria, in 1839, but their work was nullified by a land policy that favoured squatters who took possession of Aboriginal."
+      "text": "The British Colonial Office had appointed five Aboriginal Protectors for the Aboriginal people of Victoria, in 1839, but their work was nullified by a land policy that favoured squatters who took possession of Aboriginal lands.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1840",
-      "text": "In 1840, the Superintendent of the Port Phillip District, Charles La Trobe issued a directive to banish Aboriginals from the immediate vicinity of Melbourne."
-    },
-    {
-      "label": "1844",
-      "text": "However, Aboriginal people still managed to continue living near the settlement and by January 1844 there were said to be 675 residing in squalid camps around Melbourne."
+      "text": "In 1840, the Superintendent of the Port Phillip District, Charles La Trobe, issued a directive to banish Aboriginal people from the immediate vicinity of Melbourne.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1845",
-      "text": "By 1845, fewer than 240 wealthy Europeans held all the pastoral licences then issued in Victoria and became a powerful political and economic force in Victoria for generations to come."
+      "text": "By 1845, fewer than 240 wealthy Europeans held all the pastoral licences then issued in Victoria; this group would remain a powerful political and economic force in the colony for generations.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1851",
-      "text": "On 1 July 1851, the Port Phillip District separated from New South Wales to become the Colony of Victoria, with Melbourne as its capital. Victorian gold rush The discovery of gold in Victoria in."
+      "text": "On 1 July 1851, the Port Phillip District separated from New South Wales to become the Colony of Victoria, with Melbourne as its capital.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1860",
-      "text": "With the gold rush largely over by 1860, Melbourne continued to grow on the back of continuing gold-mining, as the major port for exporting the agricultural products of Victoria (especially wool) and with a."
+      "text": "With the gold rush largely over by 1860, Melbourne continued to grow through ongoing gold mining, its role as the major port for exporting Victoria's agricultural products—especially wool—and a developing manufacturing sector protected by high tariffs.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1861",
-      "text": "Melbourne quickly became a major finance centre, home to several banks, the Royal Mint, and (in 1861) Australia's first stock exchange."
+      "text": "Melbourne quickly became a major finance centre, home to several banks, the Royal Mint, and (in 1861) Australia's first stock exchange.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1885",
-      "text": "The Melbourne cable tramway system opened in 1885 and became one of the world's most extensive systems by 1890."
+      "text": "The Melbourne cable tramway system opened in 1885 and became one of the world's most extensive systems by 1890.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     },
     {
       "label": "1890s",
-      "text": "The effects of the depression on the city were profound, with virtually no significant construction until the late 1890s. Temporary capital of Australia and World War II At the time of Australia's federation on."
-    },
-    {
-      "label": "Regional role",
-      "text": "That year, the settlement's general post office officially opened with that name."
-    },
-    {
-      "label": "Regional role",
-      "text": "Middle suburbs like Box Hill became denser as a greater proportion of Melburnians began living in apartments."
+      "text": "The effects of the depression on the city were profound, with virtually no significant construction until the late 1890s.",
+      "source": {
+        "label": "Wikipedia: Melbourne",
+        "url": "https://en.wikipedia.org/w/index.php?title=Melbourne&oldid=1384168429"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Melbourne",

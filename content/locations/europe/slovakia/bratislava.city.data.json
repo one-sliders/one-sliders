@@ -8,9 +8,9 @@
   "depth": 4,
   "seo": {
     "title": "Bratislava travel, stays and events",
-    "description": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, Bratislava International Airport and nearby event links.",
-    "twitterDescription": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, Bratislava International Airport and nearby event links.",
-    "webpageDescription": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, Bratislava International Airport and nearby event links."
+    "description": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, M. R. Štefánik Airport (BTS) and nearby event links.",
+    "twitterDescription": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, M. R. Štefánik Airport (BTS) and nearby event links.",
+    "webpageDescription": "Plan Bratislava around Bratislava Castle, Old Town Bratislava, M. R. Štefánik Airport (BTS) and nearby event links."
   },
   "region": "Capital city of Slovakia",
   "population": "~479K",
@@ -23,7 +23,7 @@
     "dynamic": true
   },
   "h1": "Bratislava travel, stays & events guide",
-  "heroText": "Bratislava works best as a base in Slovakia when you anchor days around Bratislava Castle, Old Town Bratislava and St. Martin's Cathedral. Use those sights to understand the city's history, street life and visitor rhythm. Bratislava International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Bratislava works best as a base in Slovakia when you anchor days around Bratislava Castle, Old Town Bratislava and St. Martin's Cathedral. Use those sights to understand the city's history, street life and visitor rhythm. M. R. Štefánik Airport (BTS) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -70,15 +70,37 @@
   ],
   "airports": [
     {
-      "name": "Bratislava International Airport",
-      "search": "Bratislava International Airport, Bratislava, Slovakia",
-      "text": "Bratislava International Airport is the main air gateway for Bratislava; compare transfer time with your hotel base before locking the first night."
+      "name": "M. R. Štefánik Airport",
+      "code": "BTS",
+      "search": "M. R. Štefánik Airport",
+      "text": "M. R. Štefánik Airport (BTS) is 8 km from Bratislava by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 8
+    },
+    {
+      "name": "Vienna International Airport",
+      "code": "VIE",
+      "search": "Vienna International Airport",
+      "text": "Vienna International Airport (VIE) is 40 km from Bratislava by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 40
+    },
+    {
+      "name": "Brno-Tuřany Airport",
+      "code": "BRQ",
+      "search": "Brno-Tuřany Airport",
+      "text": "Brno-Tuřany Airport (BRQ) is 116 km from Bratislava by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 116
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Bratislava International Airport and central Bratislava before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "M. R. Štefánik Airport (BTS) is the nearest airport with scheduled service, 8 km from Bratislava by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "8 km straight line"
   },
   "bookingDestination": "Bratislava, Slovakia",
   "stayOverview": "Start with Old Town for the easiest first Bratislava stay, then compare Palisady and Ruzinov when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -91,7 +113,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Bratislava International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for M. R. Štefánik Airport (BTS), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -140,60 +162,84 @@
   "sourceFetchedAt": "2026-06-16",
   "history": [
     {
-      "label": "623",
-      "text": "As a response to onslaughts by Avars, the local Slavic tribes rebelled and established Samo's Empire (623–658), the first known Slavic political entity."
+      "label": "623–658",
+      "text": "As a response to onslaughts by Avars, the local Slavic tribes rebelled and established Samo's Empire (623–658), the first known Slavic political entity.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "9th century",
-      "text": "In the 9th century, the castles at Bratislava (Brezalauspurk) and Devín (Dowina) were important centres of the Slavic states: the Principality of Nitra and Great Moravia."
-    },
-    {
-      "label": "10th century",
-      "text": "In the 10th century, the territory of Pressburg (what would later become Pozsony county) became part of Hungary (called the \"Kingdom of Hungary\" from 1000)."
+      "text": "In the 9th century, the castles at Bratislava (Brezalauspurk) and Devín (Dowina) were important centres of the Slavic states: the Principality of Nitra and Great Moravia.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "907",
-      "text": "The medieval settlement Brezalauspurc (literally 'Braslav's castle') was first mentioned in 907, and is attributed to Bratislava, but the actual location of Brezalauspurc is under scholarly debate."
+      "text": "The medieval settlement Brezalauspurc (literally 'Braslav's castle') was first mentioned in 907, and is attributed to Bratislava, but the actual location of Brezalauspurc is under scholarly debate.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
+    },
+    {
+      "label": "10th century",
+      "text": "In the 10th century, the territory of Pressburg (what would later become Pozsony county) became part of Hungary (called the \"Kingdom of Hungary\" from 1000).",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "1536",
-      "text": "Owing to Ottoman advances into Hungarian territory, the city was designated the new capital of Hungary in 1536, after becoming part of the Habsburg monarchy and marking the beginning of a new era."
+      "text": "Owing to Ottoman advances into Hungarian territory, the city was designated the new capital of Hungary in 1536, after becoming part of the Habsburg monarchy and marking the beginning of a new era.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
+    },
+    {
+      "label": "18th century",
+      "text": "Pressburg flourished during the 18th-century reign of Queen Maria Theresa, becoming the largest and most important town in the Kingdom of Hungary.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "1762",
-      "text": "Wolfgang Amadeus Mozart gave a concert in 1762 in the Pálffy Palace."
+      "text": "Wolfgang Amadeus Mozart gave a concert in 1762 in the Pálffy Palace.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "1840",
-      "text": "The first horse-drawn railway in the Kingdom of Hungary, from Pressburg to Szentgyörgy (Svätý Jur), was built in 1840."
+      "text": "The first horse-drawn railway in the Kingdom of Hungary, from Pressburg to Szentgyörgy (Svätý Jur), was built in 1840.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "1918",
-      "text": "After World War I, during the dissolution of Austria-Hungary, between 1918 and 1919, the name Wilsonov or Wilsonstadt was proposed by Slovak Americans."
+      "text": "After World War I, during the dissolution of Austria-Hungary, between 1918 and 1919, the name Wilsonov or Wilsonstadt was proposed by Slovak Americans.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     },
     {
       "label": "1993",
-      "text": "In 1993, Bratislava once again became the capital of the newly formed independent Slovak Republic, following the Velvet Divorce."
-    },
-    {
-      "label": "5000",
-      "text": "The first known permanent settlement of the area began with the Linear Pottery Culture, around 5000 B.C. in the Neolithic era."
-    },
-    {
-      "label": "Regional role",
-      "text": "About 200 B.C., the Celtic Boii tribe founded the first significant settlement, a fortified town known as the Bratislava oppidum."
-    },
-    {
-      "label": "Regional role",
-      "text": "Scholars have debated the identification as fortresses of the two castles built in Great Moravia, based on linguistic arguments and because of the absence of convincing archaeological evidence."
-    },
-    {
-      "label": "Regional role",
-      "text": "Pressburg flourished during the 18th-century reign of Queen Maria Theresa, becoming the largest and most important town in the Kingdom of Hungary."
-    },
-    {
-      "label": "Regional role",
-      "text": "After World War II, Slovak Republic lost its so-called independence and was reunified again with the Czech Republic as Czechoslovak Republic."
+      "text": "In 1993, Bratislava once again became the capital of the newly formed independent Slovak Republic, following the Velvet Divorce.",
+      "source": {
+        "label": "Wikipedia: Bratislava",
+        "url": "https://en.wikipedia.org/w/index.php?title=Bratislava&oldid=1384318385"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Bratislava",

@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Tofino travel, stays & events guide",
-  "heroText": "Tofino works best as a base in Canada when you anchor days around Long Beach, Chesterman Beach and Cox Bay. Use those sights to understand the city's history, street life and visitor rhythm. Tofino International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Tofino works best as a base in Canada when you anchor days around Long Beach, Chesterman Beach and Cox Bay. Use those sights to understand the city's history, street life and visitor rhythm. Tofino / Long Beach Airport (YAZ) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Region",
@@ -58,15 +58,37 @@
   ],
   "airports": [
     {
-      "name": "Tofino International Airport",
-      "search": "Tofino International Airport, Tofino, Canada",
-      "text": "Tofino International Airport is the main air gateway for Tofino; compare transfer time with your hotel base before locking the first night."
+      "name": "Tofino / Long Beach Airport",
+      "code": "YAZ",
+      "search": "Tofino / Long Beach Airport",
+      "text": "Tofino / Long Beach Airport (YAZ) is 13 km from Tofino by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 13
+    },
+    {
+      "name": "Comox Valley International Airport / CFB Comox",
+      "code": "YQQ",
+      "search": "Comox Valley International Airport / CFB Comox",
+      "text": "Comox Valley International Airport / CFB Comox (YQQ) is 96 km from Tofino by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 96
+    },
+    {
+      "name": "Campbell River Airport",
+      "code": "YBL",
+      "search": "Campbell River Airport",
+      "text": "Campbell River Airport (YBL) is 100 km from Tofino by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 100
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Tofino International Airport and central Tofino before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Tofino / Long Beach Airport (YAZ) is the nearest airport with scheduled service, 13 km from Tofino by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "13 km straight line"
   },
   "bookingDestination": "Tofino, Canada",
   "stayOverview": "Start with City centre for the easiest first Tofino stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -79,7 +101,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Tofino International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Tofino / Long Beach Airport (YAZ), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -126,33 +148,7 @@
     }
   ],
   "sourceFetchedAt": "2026-06-16",
-  "history": [
-    {
-      "label": "2021",
-      "text": "Squamish (; ; 2021 census population 23,819) is a community and a district municipality in the Canadian province of British Columbia, located at the north end of Howe Sound on the."
-    },
-    {
-      "label": "232",
-      "text": "The population of the Squamish census agglomeration is 24,232."
-    },
-    {
-      "label": "2006",
-      "text": "However, Western's operations in Squamish permanently ceased on January 26, 2006."
-    },
-    {
-      "label": "300",
-      "text": "As well as over 300 climbing routes on the Chief proper, a majority of which require traditional climbing protection, there are steep hiking trails around the back to access the three."
-    },
-    {
-      "label": "1500",
-      "text": "In all, between Shannon Falls, Murrin Park, The Malamute, and the Smoke Bluffs, there are over 1500 rock-climbing routes in the Squamish area (and another 300 or so climbs north of."
-    },
-    {
-      "label": "2500",
-      "text": "In recent years, Squamish has also become a major destination for bouldering, with over 2500 problems described in the local guidebook."
-    }
-  ],
-  "historySource": "https://en.wikipedia.org/wiki/Squamish%2C_British_Columbia",
+  "history": [],
   "timezone": "America/Vancouver",
   "coordinateSource": {
     "label": "Open-Meteo Geocoding API",
@@ -191,5 +187,9 @@
       "text": "Vancouver Island's largest freshwater lake, warm enough to swim by August.",
       "source": "https://bcparks.ca/"
     }
-  ]
+  ],
+  "historySourceRemoved": {
+    "was": "https://en.wikipedia.org/wiki/Squamish%2C_British_Columbia",
+    "reason": "Artikeln handlar om Squamish, British Columbia, inte Tofino (BUG-0219-granskning 2026-11-10)."
+  }
 }

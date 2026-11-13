@@ -16,7 +16,7 @@
     "dynamic": true
   },
   "h1": "Saskatoon travel, stays & events guide",
-  "heroText": "Saskatoon works best as a base in Canada when you anchor days around Meewasin Valley, Remai Modern and Broadway Avenue. Use those sights to understand the city's history, street life and visitor rhythm. Saskatoon International Airport handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
+  "heroText": "Saskatoon works best as a base in Canada when you anchor days around Meewasin Valley, Remai Modern and Broadway Avenue. Use those sights to understand the city's history, street life and visitor rhythm. Saskatoon John G. Diefenbaker International Airport (YXE) handles the main arrival flow, so hotel choice should balance the centre, transfer time and day-trip plans.",
   "kpis": [
     {
       "label": "Population",
@@ -63,15 +63,28 @@
   ],
   "airports": [
     {
-      "name": "Saskatoon International Airport",
-      "search": "Saskatoon International Airport, Saskatoon, Canada",
-      "text": "Saskatoon International Airport is the main air gateway for Saskatoon; compare transfer time with your hotel base before locking the first night."
+      "name": "Saskatoon John G. Diefenbaker International Airport",
+      "code": "YXE",
+      "search": "Saskatoon John G. Diefenbaker International Airport",
+      "text": "Saskatoon John G. Diefenbaker International Airport (YXE) is 5 km from Saskatoon by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 5
+    },
+    {
+      "name": "Prince Albert Glass Field",
+      "code": "YPA",
+      "search": "Prince Albert Glass Field",
+      "text": "Prince Albert Glass Field (YPA) is 138 km from Saskatoon by straight line; check the road route before booking a transfer.",
+      "source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "sourceLabel": "OurAirports open data (airports.csv)",
+      "distanceKmComputed": 138
     }
   ],
   "airportTransfer": {
-    "value": "Compare road transfer time between Saskatoon International Airport and central Saskatoon before choosing an airport-area or city-centre hotel.",
-    "note": "main airport transfer planning",
-    "distance": "confirm by route"
+    "value": "Saskatoon John G. Diefenbaker International Airport (YXE) is the nearest airport with scheduled service, 5 km from Saskatoon by straight line.",
+    "note": "nearest airport from the location register",
+    "distance": "5 km straight line"
   },
   "bookingDestination": "Saskatoon, Canada",
   "stayOverview": "Start with City centre for the easiest first Saskatoon stay, then compare Old Town and Waterfront when price, nightlife, quieter evenings or transfer timing matter more than being beside every major sight.",
@@ -84,7 +97,7 @@
     },
     {
       "title": "Airport timing",
-      "text": "Leave extra time for Saskatoon International Airport, especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
+      "text": "Leave extra time for Saskatoon John G. Diefenbaker International Airport (YXE), especially for early flights, late arrivals, traffic or unfamiliar transfer routes."
     },
     {
       "title": "Local movement",
@@ -134,55 +147,51 @@
   "history": [
     {
       "label": "1882",
-      "text": "In 1882, the Toronto-based Temperance Colonization Society was granted 21 sections of land straddling the South Saskatchewan River, between what is now Warman and Dundurn."
+      "text": "In 1882, the Toronto-based Temperance Colonization Society was granted 21 sections of land straddling the South Saskatchewan River, between what is now Warman and Dundurn.",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     },
     {
       "label": "1883",
-      "text": "Founder John Neilson Lake apparently told multiple stories, including the most famous, where in August 1883 he was handed a handful of berries, told their name, and exclaimed, \"Arise Saskatoon, Queen of the North!\"."
+      "text": "Founder John Neilson Lake apparently told multiple stories, including the most famous, where in August 1883 he was handed a handful of berries, told their name, and exclaimed, \"Arise Saskatoon, Queen of the North!\".",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     },
     {
       "label": "1885",
-      "text": "In 1885 the North-West Rebellion affected the tiny community in a variety of ways."
+      "text": "In 1885, the North-West Rebellion affected the tiny community in a variety of ways.",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     },
     {
       "label": "1903",
-      "text": "A town charter for the west side of the river was obtained in 1903, and this settlement adopted the name Saskatoon; the original townsite, which became a village that year, was renamed Nutana."
+      "text": "A town charter for the west side of the river was obtained in 1903, and this settlement adopted the name Saskatoon; the original townsite, which became a village that year, was renamed Nutana.",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     },
     {
       "label": "1906",
-      "text": "In 1906 Saskatoon became a city with a population of 4,500, which included the communities of Saskatoon, Riversdale and Nutana."
+      "text": "In 1906, Saskatoon became a city with a population of 4,500, which included the communities of Saskatoon, Riversdale and Nutana.",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     },
     {
       "label": "1955",
-      "text": "In 1955, a newly established community west of the city, Montgomery Place, was annexed, followed by the neighbouring town of Sutherland in 1956."
-    },
-    {
-      "label": "Growth",
-      "text": "However, the exact origin of the naming of the settlement is unclear."
-    },
-    {
-      "label": "Today",
-      "text": "It is considered most likely that the name in fact derived from one already in use: manemesaskwatan, or \"the place where willows are cut\", referring to the Cree practice of cutting saskatoon berry willows."
-    },
-    {
-      "label": "Regional role",
-      "text": "The aim of the group was to escape the liquor trade in Toronto and set up a \"dry\" community in the Prairie region."
-    },
-    {
-      "label": "Regional role",
-      "text": "The following year settlers, led by John Neilson Lake, arrived on the site of what is now \"Saskatoon\" and established the first permanent settlement."
-    },
-    {
-      "label": "Regional role",
-      "text": "The settlers travelled by railway from Ontario to Moose Jaw and then completed the final leg via horse-drawn cart, as the railway had yet to be completed to Saskatoon."
-    },
-    {
-      "label": "Regional role",
-      "text": "Chief Whitecap and Charles Trottier passed through the present day University campus on their way to join Louis Riel's armed forces at Batoche, Saskatchewan."
-    },
-    {
-      "label": "Regional role",
-      "text": "A few died in care and were buried in the Pioneer Cemetery near the Exhibition Grounds."
+      "text": "In 1955, a newly established community west of the city, Montgomery Place, was annexed, followed by the neighbouring town of Sutherland in 1956.",
+      "source": {
+        "label": "Wikipedia: Saskatoon",
+        "url": "https://en.wikipedia.org/w/index.php?title=Saskatoon&oldid=1384697380"
+      }
     }
   ],
   "historySource": "https://en.wikipedia.org/wiki/Saskatoon",
