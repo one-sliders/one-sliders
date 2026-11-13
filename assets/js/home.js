@@ -224,3 +224,178 @@
     }, 200);
   }, { once: true });
 })();
+
+/* Startsidans sök: event, platser och topics (Anders 2026-11-10, TASK-0233).
+   Läser /search-index.json — byggt ur sitemapen av
+   oneslider-scripts/scripts/tools/build_search_index.py — och visar de 8 bästa
+   träffarna under sökrutan medan man skriver. Rankningen är densamma som
+   rank() i build_search_index.py; check_search_coverage.py prövar med den att
+   varje sida i sitemapen kommer upp på sitt namn. Enter går till den markerade
+   (annars första) träffen; utan träff skickas frågan som förut till
+   eventkalendern. Indexet hämtas först när rutan får fokus. */
+(function () {
+  'use strict';
+  var MAX = 8;
+  var ORDER = { p: 0, t: 1, e: 2 };
+  var LABEL = { p: 'Place', t: 'Topic', e: 'Event' };
+
+  function init() {
+    var input = document.getElementById('rail-search');
+    var form = input && input.form;
+    if (!input || !form || !window.fetch) return;
+
+    var list = document.createElement('ul');
+    list.id = 'rail-search-results';
+    list.className = 'rail-search-results';
+    list.setAttribute('role', 'listbox');
+    list.setAttribute('aria-label', 'Search results');
+    list.hidden = true;
+    form.insertAdjacentElement('afterend', list);
+
+    input.setAttribute('role', 'combobox');
+    input.setAttribute('aria-autocomplete', 'list');
+    input.setAttribute('aria-controls', list.id);
+    input.setAttribute('aria-expanded', 'false');
+    input.setAttribute('autocomplete', 'off');
+
+    var index = null, loading = null, shown = [], active = -1;
+    var today = new Date().toISOString().slice(0, 10);
+
+    function norm(s) {
+      return String(s || '').toLowerCase().normalize('NFD')
+        .replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function load() {
+      if (!loading) {
+        loading = fetch('/search-index.json', { cache: 'no-cache' })
+          .then(function (r) { if (!r.ok) throw new Error('search index ' + r.status); return r.json(); })
+          .then(function (data) {
+            index = data.map(function (p) {
+              var n = norm(p.n);
+              return { p: p, n: n, w: n.split(' '), d: norm(p.d) };
+            });
+          })
+          .catch(function () { index = []; });
+      }
+      return loading;
+    }
+
+    function rank(query) {
+      var q = norm(query);
+      if (!q || !index) return [];
+      var hits = [];
+      index.forEach(function (it, i) {
+        var s;
+        if (it.n === q) s = 0;
+        else if (it.n.indexOf(q) === 0) s = 1;
+        else if (it.w.some(function (w) { return w.indexOf(q) === 0; })) s = 2;
+        else if (it.n.indexOf(q) !== -1) s = 3;
+        else if (it.d.indexOf(q) !== -1) s = 4;
+        else return;
+        var past = it.p.x && it.p.x < today ? 1 : 0;
+        hits.push([s, past, ORDER[it.p.k], it.n.length, it.n, i]);
+      });
+      hits.sort(function (a, b) {
+        for (var k = 0; k < 5; k++) {
+          if (a[k] < b[k]) return -1;
+          if (a[k] > b[k]) return 1;
+        }
+        return a[5] - b[5];
+      });
+      return hits.slice(0, MAX).map(function (h) { return index[h[5]].p; });
+    }
+
+    function close() {
+      list.hidden = true;
+      list.textContent = '';
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      shown = [];
+      active = -1;
+    }
+
+    function setActive(i) {
+      var items = list.querySelectorAll('[role="option"]');
+      if (!items.length) return;
+      active = (i + items.length) % items.length;
+      Array.prototype.forEach.call(items, function (el, k) {
+        el.setAttribute('aria-selected', k === active ? 'true' : 'false');
+      });
+      input.setAttribute('aria-activedescendant', items[active].id);
+    }
+
+    function render() {
+      var q = input.value;
+      if (!norm(q)) { close(); return; }
+      shown = rank(q);
+      list.textContent = '';
+      active = -1;
+      input.removeAttribute('aria-activedescendant');
+      if (!shown.length) {
+        var none = document.createElement('li');
+        none.className = 'rail-search-results__empty';
+        none.textContent = index ? 'No guide matches “' + q.trim() + '”' : 'Loading…';
+        list.appendChild(none);
+      }
+      shown.forEach(function (p, i) {
+        var li = document.createElement('li');
+        li.id = 'rail-search-option-' + i;
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', 'false');
+        var a = document.createElement('a');
+        a.href = p.u;
+        a.tabIndex = -1;
+        var type = document.createElement('span');
+        type.className = 'rail-search-results__type rail-search-results__type--' + p.k;
+        type.textContent = LABEL[p.k];
+        var name = document.createElement('span');
+        name.className = 'rail-search-results__name';
+        name.textContent = p.n;
+        a.appendChild(type);
+        a.appendChild(name);
+        if (p.d) {
+          var ctx = document.createElement('span');
+          ctx.className = 'rail-search-results__context';
+          ctx.textContent = p.d;
+          a.appendChild(ctx);
+        }
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    input.addEventListener('focus', function () { load(); });
+    input.addEventListener('input', function () {
+      if (index) render();
+      else load().then(render);
+    });
+    input.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+        if (list.hidden) render();
+        ev.preventDefault();
+        setActive(active + (ev.key === 'ArrowDown' ? 1 : -1));
+      } else if (ev.key === 'Escape') {
+        close();
+      }
+    });
+    form.addEventListener('submit', function (ev) {
+      if (!index) return;               /* indexet inte laddat: eventkalendern som förut */
+      var hits = shown.length ? shown : rank(input.value);
+      if (!hits.length) return;
+      ev.preventDefault();
+      window.location.href = hits[active >= 0 ? active : 0].u;
+    });
+    document.addEventListener('click', function (ev) {
+      if (ev.target !== input && !list.contains(ev.target)) close();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();

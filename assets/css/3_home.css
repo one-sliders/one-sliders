@@ -1086,3 +1086,65 @@ img { display: block; max-width: 100%; }
 }
 
 
+/* Startsidans sökträffar (TASK-0233): event, platser och topics ur
+   /search-index.json. Listan ligger i flödet under sökrutan — vänsterpanelen
+   scrollar på desktop (overflow: auto), så en svävande lista skulle klippas. */
+.rail-search-results {
+  display: grid;
+  gap: 2px;
+  margin: 6px 0 0;
+  padding: 4px;
+  list-style: none;
+  border: 1px solid var(--home-line);
+  border-radius: 12px;
+  background: var(--home-surface);
+  box-shadow: var(--home-shadow);
+}
+.rail-search-results[hidden] { display: none; }
+.rail-search-results a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: center;
+  padding: 7px 8px;
+  border-radius: 9px;
+  color: var(--home-ink);
+  text-decoration: none;
+  font-size: .78rem;
+  line-height: 1.25;
+}
+.rail-search-results a:hover,
+.rail-search-results [aria-selected="true"] a {
+  background: var(--home-soft);
+}
+.rail-search-results__type {
+  grid-row: 1 / span 2;
+  min-width: 46px;
+  padding: 2px 6px;
+  border: 1px solid var(--home-line);
+  border-radius: 999px;
+  color: var(--home-ink);
+  font-size: .64rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.rail-search-results__name {
+  overflow: hidden;
+  font-weight: 800;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.rail-search-results__context {
+  overflow: hidden;
+  color: var(--home-muted);
+  font-size: .7rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.rail-search-results__empty {
+  padding: 8px;
+  color: var(--home-muted);
+  font-size: .76rem;
+}
