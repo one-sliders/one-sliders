@@ -515,3 +515,12 @@ body .top-menu .event-language-menu .event-language-list > a[aria-current="true"
   color: var(--os-control-active-ink) !important;
   background: var(--os-control-active-bg) !important;
 }
+/* Bokningsikoner (hotel, tickets, cabin, car) från _cta_icons.py.
+   Samma ikon för samma sak på alla sidtyper; färgen ärvs från länken. */
+.os-icon {
+  display: inline-block;
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+}

@@ -707,6 +707,50 @@ html.os-stay-hash-active .city-page--template .stay-planner-layout:has(#stay-tip
   border-color: color-mix(in srgb, var(--os-compare-blue) 100%, var(--os-primary));
 }
 
+/* TASK-0237: stugkortet (DanCenter) ligger direkt under Booking-banderollen.
+   Sekundart: ljus yta och kantlinje, sa hotellknappen fortfarande ar forst. */
+.stay-lead.stay-lead--cabin {
+  margin-top: 10px;
+  color: var(--os-primary);
+  background: var(--os-surface);
+  border-color: var(--os-line);
+  box-shadow: none;
+}
+
+.stay-lead.stay-lead--cabin .stay-lead__sub {
+  color: var(--os-muted);
+}
+
+.stay-lead.stay-lead--cabin .stay-lead__go {
+  color: var(--os-surface);
+  background: var(--os-primary);
+  border-color: var(--os-primary);
+}
+
+.stay-lead.stay-lead--cabin:hover,
+.stay-lead.stay-lead--cabin:focus-visible {
+  background: color-mix(in srgb, var(--os-primary) 6%, var(--os-surface));
+  border-color: var(--os-primary);
+}
+
+.stay-lead.stay-lead--cabin:hover .stay-lead__go,
+.stay-lead.stay-lead--cabin:focus-visible .stay-lead__go {
+  background: var(--os-primary);
+}
+
+/* Ikoner pa bokningslankarna (Anders 2026-11-13): hotell, stuga, bil.
+   Ikonen sitter i knappen, fore knapptexten. */
+.stay-card-link:has(> .os-icon) {
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.stay-lead__go > .os-icon {
+  width: 18px;
+  height: 18px;
+}
+
 .stay-hotel-grid {
   display: grid;
   gap: 10px;
