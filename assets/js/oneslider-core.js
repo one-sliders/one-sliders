@@ -436,21 +436,79 @@
   }
 
   // ====================================================================
+  // KRAV 19 (Anders 2026-10-23): "indexsidor lyder samma datumregler som
+  // eventsidor; ratta genereringen, inte enskilda rader."
+  //
+  // Provet kordes EN gang, vid sidladdning, pa de datum som stod i den
+  // statiska HTML:en. Sedan hamtar 4_topic-dates.js events.register.json och
+  // skriver om card.dataset.end - men ror aldrig synligheten. Felet gick at
+  // bada hallen, uppmatt pa den publicerade sauna-topicsidan 2026-10-23:
+  //
+  //   * FYRA kommande event var DOLDA: japan-sauna-fair (2027-02-26),
+  //     sauna-region-week och tuira-sauna-festival (2027-06-14) och
+  //     interbad-sauna-forum (2028-10-12). Alla hade ett passerat datum i den
+  //     statiska HTML:en, doldes vid laddning, och forblev dolda efter att
+  //     hydreringen gett dem sitt riktiga framtida datum.
+  //   * Ett passerat event syntes: den statiska sidan sa juni 2027, och
+  //     hydreringen gav tomt datum.
+  //
+  // Provet ar darfor inte langre en engangskorning utan en REGEL som appliceras
+  // om sa snart ett kort byter datum. Den satter OCH rensar hidden, sa ett kort
+  // som rullats fram kommer tillbaka av sig sjalvt.
+  //
+  // Odaterade kort (krav 9 - "Next edition not announced") lamnas SYNLIGA:
+  // sidan finns och etiketten sager sanningen. De ar inte passerade, de ar
+  // oannonserade, och att dolja dem vore att dolja att vi vet att vi inte vet.
+  var EXPIRING_SELECTOR = '[data-expiring-events] [data-end], [data-expiring-events] [data-start], .event-grid [data-end], .event-grid [data-start], .league-events [data-end], .league-events [data-start]';
+
+  function applyEventVisibility(item, today) {
+    var raw = item.getAttribute('data-end') || item.getAttribute('data-start');
+    if (!raw) {
+      // Odaterat = krav 9, inte passerat. Statisk HTML bar aldrig ett tomt
+      // datum (uppmatt: 0 av 1 108 pa publicerade topic- och landssidor), sa
+      // det har uppstar bara nar hydreringen ger kortet registrets tomma
+      // datum. Da ska det BEHANDLAS LIKA: utan den har raden avgjorde det
+      // gamla statiska datumet om kortet syntes, och tio identiskt odaterade
+      // sauna-kort delade sig i atta dolda och tva synliga.
+      item.hidden = false;
+      return;
+    }
+    var end = new Date(raw + 'T00:00:00');
+    if (Number.isNaN(end.getTime())) return;
+    item.hidden = end < today;
+  }
+
   function hideExpiredEvents() {
-    var items = document.querySelectorAll('[data-expiring-events] [data-end], [data-expiring-events] [data-start], .event-grid [data-end], .event-grid [data-start], .league-events [data-end], .league-events [data-start]');
+    var items = document.querySelectorAll(EXPIRING_SELECTOR);
     if (!items.length) return;
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    items.forEach(function (item) {
-      var raw = item.getAttribute('data-end') || item.getAttribute('data-start');
-      if (!raw) return;
-      var end = new Date(raw + 'T00:00:00');
-      if (Number.isNaN(end.getTime())) return;
-      if (end < today) item.hidden = true;
+    items.forEach(function (item) { applyEventVisibility(item, today); });
+  }
+
+  function watchEventDates() {
+    if (typeof MutationObserver !== 'function') return;
+    if (!document.querySelector(EXPIRING_SELECTOR)) return;
+    var observer = new MutationObserver(function (records) {
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      records.forEach(function (record) {
+        if (record.target && record.target.nodeType === 1) {
+          applyEventVisibility(record.target, today);
+        }
+      });
+    });
+    observer.observe(document.body, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['data-end', 'data-start']
     });
   }
 
-  OneSlider.register('expiringEvents', hideExpiredEvents);
+  OneSlider.register('expiringEvents', function () {
+    hideExpiredEvents();
+    watchEventDates();
+  });
 
   // ====================================================================
   // Landssidans eventfilter (Anders 2026-10-12: "filtrera pa datum a stad").

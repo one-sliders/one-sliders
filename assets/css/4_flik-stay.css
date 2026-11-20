@@ -883,6 +883,18 @@ body.event-onepager .event-stay-block .event-stay-fields {
 @media (max-width: 960px) {
   body.event-onepager .event-stay-block .event-stay-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+/* BUG-0231 (livefel, Anders 2026-11-09): faltet far aldrig bli smalare an sitt
+   innehall. Gridmallens fr-delar hade inget golv: vid 1 600 px ar resekortet
+   454 px och datumcellen blev 115 px — "12 Sept 2027" plus kalenderikonen
+   behover minst 130. Raden ar nu flex med ett golv per falt; ryms inte fyra i
+   bredd bryts guests/rooms till en egen rad i stallet for att klippa datumet.
+   Galler aven <=960 px (overstyr 2-kolumnsmallen ovan). */
+body.event-onepager .event-stay-block .event-stay-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+body.event-onepager .event-stay-block .event-stay-fields > * { flex: 1 1 56px; min-width: 56px; }
+body.event-onepager .event-stay-block .event-stay-fields > :has(input[type="date"]) { flex: 1.35 1 136px; min-width: 136px; }
 body.event-onepager .event-stay-block__prefilter { margin: 0; color: var(--os-muted); font-size: 13px; }
 body.event-onepager .event-stay-block__disclosure { margin: 0; color: var(--os-muted); font-size: 12px; }
 body.event-onepager .event-stay-block .event-stay-cta { justify-self: start; }
@@ -893,3 +905,58 @@ body.event-onepager .event-stay-block .event-stay-cta {
   justify-self: stretch;
   text-align: center;
 }
+
+/* Transfer flygplats -> centrum, en rad per fardsatt med kalla (2026-11-09). */
+.airport-transfer-list {
+  display: grid;
+  gap: 6px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.city-context-cta .airport-transfer-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  font-size: 13px;
+}
+.city-context-cta .airport-transfer-list li strong { font-size: 13px; }
+.airport-transfer__source,
+.stay-area__source {
+  color: var(--location-muted, var(--os-muted));
+  font-size: 11px;
+  text-decoration: underline;
+}
+
+/* Bokningsikonen före texten (Anders 2026-11-13, samma som stadssidorna).
+   Storlek och färg kommer från .os-icon i 2_frame.css; här bara avståndet. */
+body.event-onepager .event-stay-cta .os-icon,
+body.event-dashboard .event-stay-cta .os-icon,
+.stay-check-btn .os-icon { margin-right: .45em; }
+
+/* Affiliateknapparna har EN färg (Anders 2026-11-13): --os-accent med
+   --os-surface som text, i båda färglägena. Stay-knappen ärvde förut
+   --page-accent, som varierar per sida (grön i mörkt läge). Samma regel finns
+   för biljettknapparna i 4_flik-left-tickets.css och flyghotellet i
+   4_flik-right-overview.css. */
+body.event-onepager .event-stay-cta,
+body.event-dashboard .event-stay-cta {
+  color: var(--os-surface);
+  background: var(--os-accent);
+  border: 1px solid var(--os-accent);
+}
+body.event-onepager .event-stay-cta:hover,
+body.event-onepager .event-stay-cta:focus-visible,
+body.event-dashboard .event-stay-cta:hover,
+body.event-dashboard .event-stay-cta:focus-visible {
+  color: var(--os-surface);
+  filter: brightness(0.96);
+}
+
+/* Stay-knappen får samma 44 px minhöjd som de andra affiliateknapparna. */
+body.event-onepager .event-stay-cta { min-height: 44px; }
+
+/* Pill-formen från heroknappen "Tickets" (Anders 2026-11-13: "jag tycker om
+   den på toppen") — alla affiliateknappar får den. */
+body.event-onepager .event-stay-cta { border-radius: 999px; }
