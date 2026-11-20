@@ -1311,3 +1311,64 @@ body.event-onepager .event-year-hub__note {
   margin: 0 0 10px;
   color: var(--page-muted);
 }
+
+/* Bokningsikonen före texten i flygkortets hotellänk (Anders 2026-11-13). */
+body.event-onepager .event-op-card__link .os-icon { margin-right: .4em; }
+
+/* "Hotels near the airport" är en affiliateknapp i samma stil som Stay- och
+   biljettknapparna (Anders 2026-11-13), inte en textlänk. */
+body.event-onepager .event-op-card__link[data-os-affiliate="booking"] {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--os-accent);
+  border-radius: 8px;
+  background: var(--os-accent);
+  color: var(--os-surface);
+  font-weight: 700;
+  text-decoration: none;
+}
+body.event-onepager .event-op-card__link[data-os-affiliate="booking"]:hover,
+body.event-onepager .event-op-card__link[data-os-affiliate="booking"]:focus-visible {
+  color: var(--os-surface);
+  text-decoration: none;
+  filter: brightness(0.96);
+}
+
+/* Samma knappform som Stay-knappen (Anders 2026-11-13). */
+body.event-onepager .event-op-card__link[data-os-affiliate="booking"] {
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* Pill-formen från heroknappen (Anders 2026-11-13). */
+body.event-onepager .event-op-card__link[data-os-affiliate="booking"] { border-radius: 999px; padding: 11px 18px; }
+
+/* TASK-0237 (issue 9): hyrbilen i Getting there (VIP Cars) är samma sorts
+   affiliateknapp som flyghotellet ovan — samma form och färg. Står båda i
+   kortet ligger de med luft emellan. */
+body.event-onepager .event-op-card__link[data-os-affiliate="vipcars"] {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-height: 44px;
+  padding: 11px 18px;
+  border: 1px solid var(--os-accent);
+  border-radius: 999px;
+  background: var(--os-accent);
+  color: var(--os-surface);
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+}
+body.event-onepager .event-op-card__link[data-os-affiliate="vipcars"]:hover,
+body.event-onepager .event-op-card__link[data-os-affiliate="vipcars"]:focus-visible {
+  color: var(--os-surface);
+  text-decoration: none;
+  filter: brightness(0.96);
+}
+body.event-onepager .event-op-card__link + .event-op-card__link { margin-top: 10px; }
