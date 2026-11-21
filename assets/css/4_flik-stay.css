@@ -940,23 +940,23 @@ body.event-dashboard .event-stay-cta .os-icon,
    --page-accent, som varierar per sida (grön i mörkt läge). Samma regel finns
    för biljettknapparna i 4_flik-left-tickets.css och flyghotellet i
    4_flik-right-overview.css. */
-body.event-onepager .event-stay-cta,
-body.event-dashboard .event-stay-cta {
+body.event-onepager .event-stay-cta:has(.os-icon),
+body.event-dashboard .event-stay-cta:has(.os-icon) {
   color: var(--os-surface);
   background: var(--os-accent);
   border: 1px solid var(--os-accent);
 }
-body.event-onepager .event-stay-cta:hover,
-body.event-onepager .event-stay-cta:focus-visible,
-body.event-dashboard .event-stay-cta:hover,
-body.event-dashboard .event-stay-cta:focus-visible {
+body.event-onepager .event-stay-cta:has(.os-icon):hover,
+body.event-onepager .event-stay-cta:has(.os-icon):focus-visible,
+body.event-dashboard .event-stay-cta:has(.os-icon):hover,
+body.event-dashboard .event-stay-cta:has(.os-icon):focus-visible {
   color: var(--os-surface);
   filter: brightness(0.96);
 }
 
 /* Stay-knappen får samma 44 px minhöjd som de andra affiliateknapparna. */
-body.event-onepager .event-stay-cta { min-height: 44px; }
+body.event-onepager .event-stay-cta:has(.os-icon) { min-height: 44px; }
 
 /* Pill-formen från heroknappen "Tickets" (Anders 2026-11-13: "jag tycker om
    den på toppen") — alla affiliateknappar får den. */
-body.event-onepager .event-stay-cta { border-radius: 999px; }
+body.event-onepager .event-stay-cta:has(.os-icon) { border-radius: 999px; }

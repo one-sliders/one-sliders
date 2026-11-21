@@ -65,17 +65,26 @@
         next = card;
       }
     });
-    if (!next) {
-      next = coming.querySelector('.event-edition:not([data-edition-end])');
-    }
+    // TASK-0241 (qa-validator 2026-11-20): ett kort utan datum ("Not
+    // announced") flyttas inte upp i heron. Den passerade upplagan star kvar
+    // som aktiv — "datumet nar det var ska fortfarande finnas" (Anders
+    // 2026-08-27) — och notisen star kvar i hogerspalten, dar den gar att lasa.
     if (!next) return;
     active.classList.remove('is-active');
     next.classList.add('is-active');
-    var pastLabel = past.querySelector('.event-editions__label');
-    if (pastLabel && pastLabel.nextSibling) {
-      past.insertBefore(active, pastLabel.nextSibling);
+    // Bygget kan redan ha lagt den passerade upplagan i historiken; den ska
+    // inte sta dar tva ganger.
+    var dubblett = active.getAttribute('data-edition-start')
+      && past.querySelector('.event-edition[data-edition-start="' + active.getAttribute('data-edition-start') + '"]');
+    if (dubblett) {
+      active.parentNode.removeChild(active);
     } else {
-      past.appendChild(active);
+      var pastLabel = past.querySelector('.event-editions__label');
+      if (pastLabel && pastLabel.nextSibling) {
+        past.insertBefore(active, pastLabel.nextSibling);
+      } else {
+        past.appendChild(active);
+      }
     }
     slot.appendChild(next);
   }

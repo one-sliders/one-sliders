@@ -72,6 +72,8 @@ body.event-onepager .event-tickets-block__row-link {
 }
 body.event-onepager .event-tickets-block__row-link:hover,
 body.event-onepager .event-tickets-block__row-link:focus-visible { text-decoration: underline; }
+/* Biljettikonen i tabellens radlänkar (TASK-0241, consultant 2026-11-20). */
+body.event-onepager .event-tickets-block__row-link .os-icon { margin-right: .35em; vertical-align: -0.15em; }
 
 body.event-onepager .event-tickets-block__cta {
   box-sizing: border-box;
@@ -175,3 +177,54 @@ body.event-onepager .event-hero-tickets:focus-visible {
    direkt efter Getting there i DOM:en, så det hamnar under det kortet i
    mittenspalten på PC och efter det på mobil. De tidigare grid-placeringarna
    (rad/kolumn-spann) är borttagna — de gav hål när kortmixen skilde sig. */
+
+/* Biljettikonen före texten i kortets knapp (Anders 2026-11-13); knappen är
+   redan inline-flex, så avståndet sätts med gap. Heroknappen har sitt gap. */
+body.event-onepager .event-tickets-block__cta:has(.os-icon) { gap: .5em; }
+
+/* Ett biljettkort (Anders 2026-11-13): den officiella vägen (mallens gamla
+   Tickets-kort) ligger UNDER affiliateknappen, dämpad, så att knappen är det
+   man ser först. */
+body.event-onepager .event-tickets-block__official {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--os-line);
+  color: var(--os-muted);
+  font-size: 14px;
+}
+body.event-onepager .event-tickets-block__official-label {
+  margin: 0;
+  color: var(--os-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+body.event-onepager .event-tickets-block__official p { margin: 0; }
+
+/* Affiliateknapparna har EN färg (Anders 2026-11-13): heroknappen "Tickets"
+   byter från --os-primary till samma --os-accent som kortets knapp och
+   Stay-knappen. */
+body.event-onepager .event-hero-tickets:has(.os-icon) {
+  background: var(--os-accent);
+  color: var(--os-surface);
+}
+body.event-onepager .event-hero-tickets:has(.os-icon):hover,
+body.event-onepager .event-hero-tickets:has(.os-icon):focus-visible {
+  color: var(--os-surface);
+}
+
+/* Samma knappform som Stay-knappen (Anders 2026-11-13: "tickets e inte samma"):
+   12 px hörn, 16 px text, vikt 800, 44 px höjd, 11/14 px padding. */
+body.event-onepager .event-tickets-block__cta:has(.os-icon) {
+  min-height: 44px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* Pill-formen från heroknappen (Anders 2026-11-13). */
+body.event-onepager .event-tickets-block__cta:has(.os-icon) { border-radius: 999px; padding: 11px 18px; }

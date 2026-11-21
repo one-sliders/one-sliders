@@ -1009,7 +1009,21 @@
         // the static href on the very same page. Appending data-country produced
         // "Auckland, Australia & New Zealand", which Booking.com cannot resolve to any
         // destination. The country is a fallback only, for pages with no area picker.
-        var dest = (area && area.value) || box.getAttribute('data-country') || '';
+        // BUG-0232 (2026-11-13): utan områdesväljare föll klicket tillbaka på
+        // data-country — Copacabana sökte på "Brazil" fast knappens href (och
+        // byggaren) sa "Rio de Janeiro". Ordningen är nu: vald area, sedan ss ur
+        // knappens egen href (CJ-url= eller direkt), sist landet.
+        var hrefSs = function () {
+          try {
+            var a = box.querySelector('a.event-stay-cta, a.stay-check-btn, .hotel-search__go');
+            var h = a ? (a.getAttribute('href') || '') : '';
+            var u = h.match(/[?&]url=([^&]+)/);
+            if (u) h = decodeURIComponent(u[1]);
+            var s = h.match(/[?&]ss=([^&]*)/);
+            return s ? decodeURIComponent(s[1].replace(/\+/g, ' ')) : '';
+          } catch (e) { return ''; }
+        };
+        var dest = (area && area.value) || hrefSs() || box.getAttribute('data-country') || '';
         var params = new URLSearchParams();
         params.set('ss', dest);
         if (val('checkin')) params.set('checkin', val('checkin'));
